@@ -5,10 +5,10 @@ on:
     tags:
       - "*"
     paths:
-      - "ansys-product-library-openapi/**"
+      - "ansys-grantami-serverapi-openapi/**"
   pull_request:
     paths:
-      - "ansys-product-library-openapi/**"
+      - "ansys-grantami-serverapi-openapi/**"
 
 jobs:
   build:
@@ -26,11 +26,11 @@ jobs:
         run: pip install flit
 
       - name: Create wheel
-        working-directory: ansys-product-library-openapi
+        working-directory: ansys-grantami-serverapi-openapi
         run: flit build
 
       - name: Validate wheel
-        working-directory: ansys-product-library-openapi
+        working-directory: ansys-grantami-serverapi-openapi
         run: |
           pip install twine
           twine check dist/*
@@ -38,8 +38,8 @@ jobs:
       - name: Upload wheel artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ansys-product-library-openapi-wheel
-          path: ansys-product-library-openapi/dist/
+          name: ansys-grantami-serverapi-openapi-wheel
+          path: ansys-grantami-serverapi-openapi/dist/
           retention-days: 7
 
   test:
@@ -62,6 +62,6 @@ jobs:
           pip install tox tox-gh-actions
 
       - name: Test with tox
-        working-directory: ansys-product-library-openapi
+        working-directory: ansys-grantami-serverapi-openapi
         run: |
           tox
