@@ -86,6 +86,12 @@ class GrantaServerApiDataExportDatumsApplicableDatum(GrantaServerApiDataExportDa
             raise ValueError("Invalid value for `not_applicable`, must not be `None`")  # noqa: E501
         self._not_applicable = not_applicable
 
+    def get_real_child_model(self, data):
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[self.discriminator].lower()
+        # The actual class name is not available in swagger-codegen, 
+        # so we have to extract it from the JSON reference
+        return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]
 
     def to_dict(self):
         """Returns the model properties as a dict"""

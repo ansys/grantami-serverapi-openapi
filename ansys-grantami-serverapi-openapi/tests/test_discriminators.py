@@ -5,8 +5,8 @@ import ansys.grantami.serverapi_openapi.models as models
 
 
 ALL_MODELS = {k: v for k, v in models.__dict__.items() if isinstance(v, type) and k != "ModelBase"}
-POLYMORPHIC_MODELS = {k: v for k, v in ALL_MODELS.items() if hasattr(v, "discriminator_value_class_map")}
-MONOMORPHIC_MODELS = {k: v for k, v in ALL_MODELS.items() if k not in POLYMORPHIC_MODELS}
+POLYMORPHIC_MODELS = {k: v for k, v in ALL_MODELS.items() if "discriminator_value_class_map" in v.__dict__}
+MONOMORPHIC_MODELS = {k: v for k, v in ALL_MODELS.items() if k not in POLYMORPHIC_MODELS.keys()}
 
 
 @pytest.mark.parametrize("cls", ALL_MODELS.values())
@@ -26,7 +26,7 @@ def test_get_real_child_model_returns_correct_class_name(cls):
 def test_polymorphic_child_class_exists(cls):
     for sub_cls in cls.discriminator_value_class_map.values():
         sub_cls_name = sub_cls.rsplit("/", 1)[-1]
-        assert sub_cls_name in POLYMORPHIC_MODELS.keys()
+        assert sub_cls_name in ALL_MODELS.keys()
 
 
 @pytest.mark.parametrize("cls", MONOMORPHIC_MODELS.values())
