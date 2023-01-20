@@ -58,6 +58,7 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
 
     def __init__(self, datum_type='floatFunctional', unit_symbol=None, x_axis_parameter=None, parameters=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFunctionalDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._unit_symbol = None
         self._x_axis_parameter = None
@@ -70,7 +71,6 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
             self.x_axis_parameter = x_axis_parameter
         if parameters is not None:
             self.parameters = parameters
-        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
 
     @property
     def datum_type(self):
@@ -146,12 +146,18 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
         """
         self._parameters = parameters
 
+
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
+        discriminator_value = data[self._get_discriminator_field_name()].lower()
         # The actual class name is not available in swagger-codegen, 
         # so we have to extract it from the JSON reference
         return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]
+
+    def _get_discriminator_field_name(self):
+        name_tokens = self.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def to_dict(self):
         """Returns the model properties as a dict"""

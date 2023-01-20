@@ -52,6 +52,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(GrantaServerApi
 
     def __init__(self, item_type='crossDatabaseLink', source_database_guid=None, source_table_guid=None, link_group_guid=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
         self._source_database_guid = None
         self._source_table_guid = None
@@ -64,7 +65,6 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(GrantaServerApi
             self.source_table_guid = source_table_guid
         if link_group_guid is not None:
             self.link_group_guid = link_group_guid
-        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
 
     @property
     def item_type(self):
@@ -139,6 +139,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(GrantaServerApi
         :type: str
         """
         self._link_group_guid = link_group_guid
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

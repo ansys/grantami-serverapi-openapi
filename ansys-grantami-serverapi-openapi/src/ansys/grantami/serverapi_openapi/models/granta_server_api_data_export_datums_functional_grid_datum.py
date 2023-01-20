@@ -49,13 +49,13 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(GrantaServerApiDataExpo
 
     def __init__(self, graph_type='grid', points=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFunctionalGridDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsFunctionalDatum.__init__(self, *args, **kwargs)
         self._graph_type = None
         self._points = None
         self.discriminator = None
         self.graph_type = graph_type
         if points is not None:
             self.points = points
-        GrantaServerApiDataExportDatumsFunctionalDatum.__init__(self, *args, **kwargs)
 
     @property
     def graph_type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(GrantaServerApiDataExpo
         :type: list[GrantaServerApiDataExportDatumsGridPoint]
         """
         self._points = points
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

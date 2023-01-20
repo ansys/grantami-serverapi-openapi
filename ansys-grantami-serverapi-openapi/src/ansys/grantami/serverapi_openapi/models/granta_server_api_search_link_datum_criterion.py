@@ -61,6 +61,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
     def __init__(self, target_table_identity=None, target_database_key=None, local_criterion=None, link_datum_type=None, target_attribute_identity=None, inner_criterion=None, type='link', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchLinkDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._target_table_identity = None
         self._target_database_key = None
         self._local_criterion = None
@@ -82,7 +83,6 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
         self.type = type
-        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def target_table_identity(self):
@@ -217,6 +217,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

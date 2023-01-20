@@ -52,6 +52,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
 
     def __init__(self, type='mathsFunctional', unit=None, parameters=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesMathsFunctionalAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
         self._parameters = None
@@ -61,7 +62,6 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
             self.unit = unit
         if parameters is not None:
             self.parameters = parameters
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -118,6 +118,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
         :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._parameters = parameters
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

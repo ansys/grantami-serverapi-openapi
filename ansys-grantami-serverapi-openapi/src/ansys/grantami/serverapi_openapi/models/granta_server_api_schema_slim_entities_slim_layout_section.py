@@ -46,10 +46,10 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(GrantaServerApiSchemaLa
 
     def __init__(self, section_detail_type='slim', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaSlimEntitiesSlimLayoutSection - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsLayoutSection.__init__(self, *args, **kwargs)
         self._section_detail_type = None
         self.discriminator = None
         self.section_detail_type = section_detail_type
-        GrantaServerApiSchemaLayoutsLayoutSection.__init__(self, *args, **kwargs)
 
     @property
     def section_detail_type(self):
@@ -70,6 +70,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(GrantaServerApiSchemaLa
         if section_detail_type is None:
             raise ValueError("Invalid value for `section_detail_type`, must not be `None`")  # noqa: E501
         self._section_detail_type = section_detail_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

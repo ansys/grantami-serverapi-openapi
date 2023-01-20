@@ -110,6 +110,7 @@ class GrantaServerApiAdminMiVersion(ModelBase):
         """
         self._major_minor_version = major_minor_version
 
+
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

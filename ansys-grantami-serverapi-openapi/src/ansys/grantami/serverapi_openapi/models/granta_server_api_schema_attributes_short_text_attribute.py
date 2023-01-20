@@ -48,13 +48,13 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
 
     def __init__(self, type='shortText', is_unique=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesShortTextAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._is_unique = None
         self.discriminator = None
         self.type = type
         if is_unique is not None:
             self.is_unique = is_unique
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
         :type: bool
         """
         self._is_unique = is_unique
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

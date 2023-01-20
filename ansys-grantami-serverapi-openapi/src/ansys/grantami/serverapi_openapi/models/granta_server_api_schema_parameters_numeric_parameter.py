@@ -60,6 +60,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
 
     def __init__(self, type='numeric', is_restricted=None, unit=None, values=None, interpolation_type=None, scale_type=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaParametersNumericParameter - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaParametersParameter.__init__(self, *args, **kwargs)
         self._type = None
         self._is_restricted = None
         self._unit = None
@@ -78,7 +79,6 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
             self.interpolation_type = interpolation_type
         if scale_type is not None:
             self.scale_type = scale_type
-        GrantaServerApiSchemaParametersParameter.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -189,6 +189,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         :type: GrantaServerApiSchemaParametersParameterScaleType
         """
         self._scale_type = scale_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -51,6 +51,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(GrantaServerApiS
 
     def __init__(self, item_type='associationChain', association_chain_name=None, association_chain_links=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
         self._association_chain_name = None
         self._association_chain_links = None
@@ -60,7 +61,6 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(GrantaServerApiS
             self.association_chain_name = association_chain_name
         if association_chain_links is not None:
             self.association_chain_links = association_chain_links
-        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
 
     @property
     def item_type(self):
@@ -117,6 +117,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(GrantaServerApiS
         :type: list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
         """
         self._association_chain_links = association_chain_links
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -58,6 +58,7 @@ class GrantaServerApiSearchNumericParameterConstraint(GrantaServerApiSearchParam
 
     def __init__(self, gte=None, lte=None, unit=None, scale_type=None, interpolation_type=None, significant_figures=None, type='numeric', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchNumericParameterConstraint - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchParameterConstraint.__init__(self, *args, **kwargs)
         self._gte = None
         self._lte = None
         self._unit = None
@@ -79,7 +80,6 @@ class GrantaServerApiSearchNumericParameterConstraint(GrantaServerApiSearchParam
         if significant_figures is not None:
             self.significant_figures = significant_figures
         self.type = type
-        GrantaServerApiSearchParameterConstraint.__init__(self, *args, **kwargs)
 
     @property
     def gte(self):
@@ -212,6 +212,7 @@ class GrantaServerApiSearchNumericParameterConstraint(GrantaServerApiSearchParam
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

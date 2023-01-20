@@ -51,6 +51,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
 
     def __init__(self, any=None, type='discreteFunctionalValues', constraints=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._any = None
         self._type = None
         self._constraints = None
@@ -60,7 +61,6 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
         self.type = type
         if constraints is not None:
             self.constraints = constraints
-        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def any(self):
@@ -121,6 +121,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
         :type: list[GrantaServerApiSearchParameterConstraint]
         """
         self._constraints = constraints
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

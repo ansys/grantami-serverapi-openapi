@@ -49,13 +49,13 @@ class GrantaServerApiSearchAttributeExistsCriterion(GrantaServerApiSearchAttribu
 
     def __init__(self, inner_criterion=None, attribute_criterion_type='exists', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeExistsCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchAttributeCriterion.__init__(self, *args, **kwargs)
         self._inner_criterion = None
         self._attribute_criterion_type = None
         self.discriminator = None
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
         self.attribute_criterion_type = attribute_criterion_type
-        GrantaServerApiSearchAttributeCriterion.__init__(self, *args, **kwargs)
 
     @property
     def inner_criterion(self):
@@ -94,6 +94,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(GrantaServerApiSearchAttribu
         if attribute_criterion_type is None:
             raise ValueError("Invalid value for `attribute_criterion_type`, must not be `None`")  # noqa: E501
         self._attribute_criterion_type = attribute_criterion_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

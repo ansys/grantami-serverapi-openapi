@@ -46,10 +46,10 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(GrantaServerApiSearch
 
     def __init__(self, attribute_criterion_type='notApplicable', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeNotApplicableCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchAttributeCriterion.__init__(self, *args, **kwargs)
         self._attribute_criterion_type = None
         self.discriminator = None
         self.attribute_criterion_type = attribute_criterion_type
-        GrantaServerApiSearchAttributeCriterion.__init__(self, *args, **kwargs)
 
     @property
     def attribute_criterion_type(self):
@@ -70,6 +70,7 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(GrantaServerApiSearch
         if attribute_criterion_type is None:
             raise ValueError("Invalid value for `attribute_criterion_type`, must not be `None`")  # noqa: E501
         self._attribute_criterion_type = attribute_criterion_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

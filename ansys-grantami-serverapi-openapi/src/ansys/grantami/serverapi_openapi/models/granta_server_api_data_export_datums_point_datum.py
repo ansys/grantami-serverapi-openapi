@@ -50,6 +50,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
 
     def __init__(self, datum_type='point', datum_value=None, unit=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsPointDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._datum_value = None
         self._unit = None
@@ -59,7 +60,6 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
             self.datum_value = datum_value
         if unit is not None:
             self.unit = unit
-        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
 
     @property
     def datum_type(self):
@@ -116,6 +116,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
         :type: str
         """
         self._unit = unit
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

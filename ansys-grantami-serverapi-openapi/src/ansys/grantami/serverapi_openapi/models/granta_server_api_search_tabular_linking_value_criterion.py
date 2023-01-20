@@ -51,6 +51,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
 
     def __init__(self, values=None, linking_value_match_behaviour=None, type='tabularLinkingValue', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchTabularLinkingValueCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._values = None
         self._linking_value_match_behaviour = None
         self._type = None
@@ -60,7 +61,6 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         if linking_value_match_behaviour is not None:
             self.linking_value_match_behaviour = linking_value_match_behaviour
         self.type = type
-        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
 
     @property
     def values(self):
@@ -117,6 +117,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

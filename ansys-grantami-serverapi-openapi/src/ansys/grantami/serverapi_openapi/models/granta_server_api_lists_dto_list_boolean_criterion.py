@@ -52,6 +52,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     def __init__(self, match_any=None, match_all=None, type='listBoolean', *args, **kwargs):  # noqa: E501
         """GrantaServerApiListsDtoListBooleanCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiListsDtoListCriterion.__init__(self, *args, **kwargs)
         self._match_any = None
         self._match_all = None
         self._type = None
@@ -61,7 +62,6 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         if match_all is not None:
             self.match_all = match_all
         self.type = type
-        GrantaServerApiListsDtoListCriterion.__init__(self, *args, **kwargs)
 
     @property
     def match_any(self):
@@ -118,6 +118,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

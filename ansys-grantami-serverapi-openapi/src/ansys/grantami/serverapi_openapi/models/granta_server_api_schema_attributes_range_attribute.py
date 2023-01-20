@@ -49,13 +49,13 @@ class GrantaServerApiSchemaAttributesRangeAttribute(GrantaServerApiSchemaAttribu
 
     def __init__(self, type='range', unit=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesRangeAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
         self.discriminator = None
         self.type = type
         if unit is not None:
             self.unit = unit
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(GrantaServerApiSchemaAttribu
         :type: GrantaServerApiSchemaSlimEntitiesSlimUnit
         """
         self._unit = unit
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

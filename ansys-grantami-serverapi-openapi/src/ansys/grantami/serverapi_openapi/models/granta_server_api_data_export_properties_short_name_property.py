@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(GrantaServerApiDataEx
 
     def __init__(self, property_name='shortName', short_name=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesShortNameProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._short_name = None
         self.discriminator = None
         self.property_name = property_name
         if short_name is not None:
             self.short_name = short_name
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(GrantaServerApiDataEx
         :type: str
         """
         self._short_name = short_name
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

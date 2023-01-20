@@ -51,6 +51,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
 
     def __init__(self, link_group_name=None, linked_records=None, datum_type='link', *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsLinkedRecordsDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._link_group_name = None
         self._linked_records = None
         self._datum_type = None
@@ -60,7 +61,6 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         if linked_records is not None:
             self.linked_records = linked_records
         self.datum_type = datum_type
-        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
 
     @property
     def link_group_name(self):
@@ -117,6 +117,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         if datum_type is None:
             raise ValueError("Invalid value for `datum_type`, must not be `None`")  # noqa: E501
         self._datum_type = datum_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -54,6 +54,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
 
     def __init__(self, type='point', unit=None, is_multi_valued=None, parameters=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesPointAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
         self._is_multi_valued = None
@@ -66,7 +67,6 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
             self.is_multi_valued = is_multi_valued
         if parameters is not None:
             self.parameters = parameters
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -141,6 +141,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._parameters = parameters
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

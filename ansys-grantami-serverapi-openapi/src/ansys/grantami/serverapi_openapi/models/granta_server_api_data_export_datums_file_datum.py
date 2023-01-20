@@ -49,13 +49,13 @@ class GrantaServerApiDataExportDatumsFileDatum(GrantaServerApiDataExportDatumsAp
 
     def __init__(self, datum_type='file', datum_value=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFileDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._datum_value = None
         self.discriminator = None
         self.datum_type = datum_type
         if datum_value is not None:
             self.datum_value = datum_value
-        GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
 
     @property
     def datum_type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiDataExportDatumsFileDatum(GrantaServerApiDataExportDatumsAp
         :type: GrantaServerApiDataExportDatumsBinaryData
         """
         self._datum_value = datum_value
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

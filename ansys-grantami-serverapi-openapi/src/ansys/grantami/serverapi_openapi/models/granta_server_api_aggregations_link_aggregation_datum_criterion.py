@@ -49,13 +49,13 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(GrantaServerApiAg
 
     def __init__(self, type='link', local_aggregation_criteria=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsLinkAggregationDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAggregationDatumCriterion.__init__(self, *args, **kwargs)
         self._type = None
         self._local_aggregation_criteria = None
         self.discriminator = None
         self.type = type
         if local_aggregation_criteria is not None:
             self.local_aggregation_criteria = local_aggregation_criteria
-        GrantaServerApiAggregationsAggregationDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(GrantaServerApiAg
         :type: list[GrantaServerApiAggregationsAggregationCriterion]
         """
         self._local_aggregation_criteria = local_aggregation_criteria
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

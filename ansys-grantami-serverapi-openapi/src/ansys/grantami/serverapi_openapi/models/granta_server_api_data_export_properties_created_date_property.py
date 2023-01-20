@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(GrantaServerApiData
 
     def __init__(self, property_name='createdDate', created_date=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesCreatedDateProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._created_date = None
         self.discriminator = None
         self.property_name = property_name
         if created_date is not None:
             self.created_date = created_date
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(GrantaServerApiData
         :type: datetime
         """
         self._created_date = created_date
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

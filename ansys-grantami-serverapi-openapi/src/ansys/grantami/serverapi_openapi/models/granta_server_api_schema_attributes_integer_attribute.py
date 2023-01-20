@@ -48,13 +48,13 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(GrantaServerApiSchemaAttri
 
     def __init__(self, type='integer', is_unique=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesIntegerAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._is_unique = None
         self.discriminator = None
         self.type = type
         if is_unique is not None:
             self.is_unique = is_unique
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(GrantaServerApiSchemaAttri
         :type: bool
         """
         self._is_unique = is_unique
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

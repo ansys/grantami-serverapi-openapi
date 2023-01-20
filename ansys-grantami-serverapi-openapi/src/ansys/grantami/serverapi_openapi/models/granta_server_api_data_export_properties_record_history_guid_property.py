@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty(GrantaServerA
 
     def __init__(self, property_name='recordHistoryGuid', record_history_guid=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._record_history_guid = None
         self.discriminator = None
         self.property_name = property_name
         if record_history_guid is not None:
             self.record_history_guid = record_history_guid
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty(GrantaServerA
         :type: str
         """
         self._record_history_guid = record_history_guid
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

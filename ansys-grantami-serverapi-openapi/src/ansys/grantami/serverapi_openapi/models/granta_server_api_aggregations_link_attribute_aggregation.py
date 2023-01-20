@@ -49,13 +49,13 @@ class GrantaServerApiAggregationsLinkAttributeAggregation(GrantaServerApiAggrega
 
     def __init__(self, local_aggregations=None, datum_type='link', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsLinkAttributeAggregation - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
         self._local_aggregations = None
         self._datum_type = None
         self.discriminator = None
         if local_aggregations is not None:
             self.local_aggregations = local_aggregations
         self.datum_type = datum_type
-        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
 
     @property
     def local_aggregations(self):
@@ -94,6 +94,7 @@ class GrantaServerApiAggregationsLinkAttributeAggregation(GrantaServerApiAggrega
         if datum_type is None:
             raise ValueError("Invalid value for `datum_type`, must not be `None`")  # noqa: E501
         self._datum_type = datum_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

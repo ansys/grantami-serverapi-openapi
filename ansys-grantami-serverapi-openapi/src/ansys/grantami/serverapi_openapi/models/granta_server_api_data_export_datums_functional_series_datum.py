@@ -51,6 +51,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
 
     def __init__(self, graph_type='series', series=None, is_logarithmic=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFunctionalSeriesDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsFunctionalDatum.__init__(self, *args, **kwargs)
         self._graph_type = None
         self._series = None
         self._is_logarithmic = None
@@ -60,7 +61,6 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
             self.series = series
         if is_logarithmic is not None:
             self.is_logarithmic = is_logarithmic
-        GrantaServerApiDataExportDatumsFunctionalDatum.__init__(self, *args, **kwargs)
 
     @property
     def graph_type(self):
@@ -117,6 +117,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
         :type: bool
         """
         self._is_logarithmic = is_logarithmic
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

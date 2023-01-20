@@ -58,6 +58,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
 
     def __init__(self, item_type='link', link_type=None, target_database=None, target_table=None, forwards=None, next_link=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsLayoutLinkItem - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
         self._link_type = None
         self._target_database = None
@@ -76,7 +77,6 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
             self.forwards = forwards
         if next_link is not None:
             self.next_link = next_link
-        GrantaServerApiSchemaLayoutsLayoutItem.__init__(self, *args, **kwargs)
 
     @property
     def item_type(self):
@@ -187,6 +187,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
         :type: GrantaServerApiSchemaLayoutsLayoutLinkItem
         """
         self._next_link = next_link
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
