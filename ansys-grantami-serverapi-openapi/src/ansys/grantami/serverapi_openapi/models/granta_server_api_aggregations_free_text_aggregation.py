@@ -50,6 +50,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
 
     def __init__(self, guid=None, terms=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsFreeTextAggregation - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAggregation.__init__(self, *args, **kwargs)
         self._guid = None
         self._terms = None
         self._type = None
@@ -59,7 +60,6 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         if terms is not None:
             self.terms = terms
         self.type = type
-        GrantaServerApiAggregationsAggregation.__init__(self, *args, **kwargs)
 
     @property
     def guid(self):
@@ -120,6 +120,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

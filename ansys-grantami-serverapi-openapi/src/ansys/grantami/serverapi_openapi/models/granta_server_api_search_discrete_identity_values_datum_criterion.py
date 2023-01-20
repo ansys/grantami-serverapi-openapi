@@ -52,6 +52,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(GrantaServerApiS
 
     def __init__(self, all=None, any=None, _none=None, type='discreteIdentityValues', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._all = None
         self._any = None
         self.__none = None
@@ -64,7 +65,6 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(GrantaServerApiS
         if _none is not None:
             self._none = _none
         self.type = type
-        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def all(self):
@@ -145,6 +145,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(GrantaServerApiS
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

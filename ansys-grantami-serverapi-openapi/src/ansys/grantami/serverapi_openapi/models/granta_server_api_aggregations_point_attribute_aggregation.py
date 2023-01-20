@@ -50,6 +50,7 @@ class GrantaServerApiAggregationsPointAttributeAggregation(GrantaServerApiAggreg
 
     def __init__(self, minimum=None, maximum=None, datum_type='point', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsPointAttributeAggregation - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
         self._minimum = None
         self._maximum = None
         self._datum_type = None
@@ -59,7 +60,6 @@ class GrantaServerApiAggregationsPointAttributeAggregation(GrantaServerApiAggreg
         if maximum is not None:
             self.maximum = maximum
         self.datum_type = datum_type
-        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
 
     @property
     def minimum(self):
@@ -116,6 +116,7 @@ class GrantaServerApiAggregationsPointAttributeAggregation(GrantaServerApiAggreg
         if datum_type is None:
             raise ValueError("Invalid value for `datum_type`, must not be `None`")  # noqa: E501
         self._datum_type = datum_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

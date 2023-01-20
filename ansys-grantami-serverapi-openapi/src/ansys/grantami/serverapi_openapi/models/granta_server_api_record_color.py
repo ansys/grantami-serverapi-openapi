@@ -61,6 +61,7 @@ class GrantaServerApiRecordColor(ModelBase):
         """GrantaServerApiRecordColor - a model defined in Swagger"""  # noqa: E501
         self.discriminator = None
 
+
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

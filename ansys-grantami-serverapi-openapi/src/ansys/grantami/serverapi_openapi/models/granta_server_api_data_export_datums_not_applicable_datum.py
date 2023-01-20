@@ -49,13 +49,13 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(GrantaServerApiDataExpor
 
     def __init__(self, datum_type=None, not_applicable=True, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsNotApplicableDatum - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportDatumsDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._not_applicable = None
         self.discriminator = None
         if datum_type is not None:
             self.datum_type = datum_type
         self.not_applicable = not_applicable
-        GrantaServerApiDataExportDatumsDatum.__init__(self, *args, **kwargs)
 
     @property
     def datum_type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(GrantaServerApiDataExpor
         if not_applicable is None:
             raise ValueError("Invalid value for `not_applicable`, must not be `None`")  # noqa: E501
         self._not_applicable = not_applicable
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

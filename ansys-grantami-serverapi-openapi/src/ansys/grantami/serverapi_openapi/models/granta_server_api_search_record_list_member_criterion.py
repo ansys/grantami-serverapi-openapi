@@ -48,13 +48,13 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
 
     def __init__(self, record_list_identifiers=None, type='recordListMember', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordListMemberCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._record_list_identifiers = None
         self._type = None
         self.discriminator = None
         if record_list_identifiers is not None:
             self.record_list_identifiers = record_list_identifiers
         self.type = type
-        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
 
     @property
     def record_list_identifiers(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

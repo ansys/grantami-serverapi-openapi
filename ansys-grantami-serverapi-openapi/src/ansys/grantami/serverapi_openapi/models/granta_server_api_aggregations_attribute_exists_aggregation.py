@@ -46,10 +46,10 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(GrantaServerApiAggre
 
     def __init__(self, attribute_aggregation_type='exists', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsAttributeExistsAggregation - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAttributeAggregation.__init__(self, *args, **kwargs)
         self._attribute_aggregation_type = None
         self.discriminator = None
         self.attribute_aggregation_type = attribute_aggregation_type
-        GrantaServerApiAggregationsAttributeAggregation.__init__(self, *args, **kwargs)
 
     @property
     def attribute_aggregation_type(self):
@@ -70,6 +70,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(GrantaServerApiAggre
         if attribute_aggregation_type is None:
             raise ValueError("Invalid value for `attribute_aggregation_type`, must not be `None`")  # noqa: E501
         self._attribute_aggregation_type = attribute_aggregation_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

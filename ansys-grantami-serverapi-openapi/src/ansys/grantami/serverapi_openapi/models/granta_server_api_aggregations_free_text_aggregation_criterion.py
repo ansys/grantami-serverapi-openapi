@@ -54,6 +54,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
 
     def __init__(self, criterion_guid=None, identities=None, number_of_terms=None, prefix=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsFreeTextAggregationCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
         self._criterion_guid = None
         self._identities = None
         self._number_of_terms = None
@@ -69,7 +70,6 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         if prefix is not None:
             self.prefix = prefix
         self.type = type
-        GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
 
     @property
     def criterion_guid(self):
@@ -164,6 +164,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

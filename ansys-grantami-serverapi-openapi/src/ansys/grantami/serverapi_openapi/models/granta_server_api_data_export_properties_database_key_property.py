@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(GrantaServerApiData
 
     def __init__(self, property_name='databaseKey', database_key=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesDatabaseKeyProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._database_key = None
         self.discriminator = None
         self.property_name = property_name
         if database_key is not None:
             self.database_key = database_key
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(GrantaServerApiData
         :type: str
         """
         self._database_key = database_key
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

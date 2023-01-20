@@ -50,6 +50,7 @@ class GrantaServerApiSearchDateTimeDatumCriterion(GrantaServerApiSearchDatumCrit
 
     def __init__(self, gte=None, lte=None, type='dateTime', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDateTimeDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._gte = None
         self._lte = None
         self._type = None
@@ -59,7 +60,6 @@ class GrantaServerApiSearchDateTimeDatumCriterion(GrantaServerApiSearchDatumCrit
         if lte is not None:
             self.lte = lte
         self.type = type
-        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def gte(self):
@@ -120,6 +120,7 @@ class GrantaServerApiSearchDateTimeDatumCriterion(GrantaServerApiSearchDatumCrit
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -63,6 +63,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
 
     def __init__(self, item_type='attribute', attribute_type=None, required=None, read_only=None, meta_attributes=None, tabular_columns=None, target_database=None, target_table=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsLayoutAttributeItem - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
         self._attribute_type = None
         self._required = None
@@ -87,7 +88,6 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
             self.target_database = target_database
         if target_table is not None:
             self.target_table = target_table
-        GrantaServerApiSchemaLayoutsLayoutItem.__init__(self, *args, **kwargs)
 
     @property
     def item_type(self):
@@ -234,6 +234,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         :type: str
         """
         self._target_table = target_table
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

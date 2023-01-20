@@ -49,13 +49,13 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
 
     def __init__(self, section_detail_type='full', section_items=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsFullLayoutSection - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsLayoutSection.__init__(self, *args, **kwargs)
         self._section_detail_type = None
         self._section_items = None
         self.discriminator = None
         self.section_detail_type = section_detail_type
         if section_items is not None:
             self.section_items = section_items
-        GrantaServerApiSchemaLayoutsLayoutSection.__init__(self, *args, **kwargs)
 
     @property
     def section_detail_type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         :type: list[GrantaServerApiSchemaLayoutsLayoutItem]
         """
         self._section_items = section_items
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -51,6 +51,7 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(GrantaServerApiSchemaAttr
 
     def __init__(self, type='discrete', discrete_type=None, is_multi_valued=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesDiscreteAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._discrete_type = None
         self._is_multi_valued = None
@@ -60,7 +61,6 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(GrantaServerApiSchemaAttr
             self.discrete_type = discrete_type
         if is_multi_valued is not None:
             self.is_multi_valued = is_multi_valued
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -117,6 +117,7 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(GrantaServerApiSchemaAttr
         :type: bool
         """
         self._is_multi_valued = is_multi_valued
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

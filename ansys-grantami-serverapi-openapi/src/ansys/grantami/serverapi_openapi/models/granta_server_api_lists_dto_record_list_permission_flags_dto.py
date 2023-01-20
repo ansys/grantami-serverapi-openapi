@@ -166,6 +166,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
         """
         self._is_publisher = is_publisher
 
+
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

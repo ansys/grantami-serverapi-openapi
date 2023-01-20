@@ -50,6 +50,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
 
     def __init__(self, value=None, exact_match=None, type='shortText', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchShortTextDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._value = None
         self._exact_match = None
         self._type = None
@@ -59,7 +60,6 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         if exact_match is not None:
             self.exact_match = exact_match
         self.type = type
-        GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def value(self):
@@ -116,6 +116,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

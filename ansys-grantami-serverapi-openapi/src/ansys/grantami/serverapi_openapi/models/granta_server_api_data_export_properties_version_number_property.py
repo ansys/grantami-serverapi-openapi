@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(GrantaServerApiDa
 
     def __init__(self, property_name='versionNumber', version_number=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesVersionNumberProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._version_number = None
         self.discriminator = None
         self.property_name = property_name
         if version_number is not None:
             self.version_number = version_number
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(GrantaServerApiDa
         :type: int
         """
         self._version_number = version_number
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

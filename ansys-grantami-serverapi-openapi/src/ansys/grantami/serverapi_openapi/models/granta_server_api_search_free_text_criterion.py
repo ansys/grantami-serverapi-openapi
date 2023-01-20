@@ -53,6 +53,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
 
     def __init__(self, identities=None, value=None, identities_to_boost=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchFreeTextCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._identities = None
         self._value = None
         self._identities_to_boost = None
@@ -65,7 +66,6 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         if identities_to_boost is not None:
             self.identities_to_boost = identities_to_boost
         self.type = type
-        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
 
     @property
     def identities(self):
@@ -140,6 +140,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -49,13 +49,13 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(GrantaServer
 
     def __init__(self, attribute_aggregation_criterion_type='value', inner_criterion=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsAttributeAggregationValueCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAttributeAggregationCriterion.__init__(self, *args, **kwargs)
         self._attribute_aggregation_criterion_type = None
         self._inner_criterion = None
         self.discriminator = None
         self.attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
-        GrantaServerApiAggregationsAttributeAggregationCriterion.__init__(self, *args, **kwargs)
 
     @property
     def attribute_aggregation_criterion_type(self):
@@ -94,6 +94,7 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(GrantaServer
         :type: GrantaServerApiAggregationsAggregationDatumCriterion
         """
         self._inner_criterion = inner_criterion
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

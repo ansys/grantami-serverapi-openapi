@@ -56,6 +56,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(GrantaServerApiAg
 
     def __init__(self, identity=None, name=None, is_meta_attribute=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsAttributeAggregationCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
         self._identity = None
         self._name = None
         self._is_meta_attribute = None
@@ -68,7 +69,6 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(GrantaServerApiAg
         if is_meta_attribute is not None:
             self.is_meta_attribute = is_meta_attribute
         self.type = type
-        GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
 
     @property
     def identity(self):
@@ -144,12 +144,18 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(GrantaServerApiAg
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
 
+
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
+        discriminator_value = data[self._get_discriminator_field_name()].lower()
         # The actual class name is not available in swagger-codegen, 
         # so we have to extract it from the JSON reference
         return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]
+
+    def _get_discriminator_field_name(self):
+        name_tokens = self.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def to_dict(self):
         """Returns the model properties as a dict"""

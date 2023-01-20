@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(GrantaServer
 
     def __init__(self, property_name='lastModifiedByUser', last_modified_by_user=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesLastModifiedByUserProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._last_modified_by_user = None
         self.discriminator = None
         self.property_name = property_name
         if last_modified_by_user is not None:
             self.last_modified_by_user = last_modified_by_user
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(GrantaServer
         :type: str
         """
         self._last_modified_by_user = last_modified_by_user
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

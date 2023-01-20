@@ -48,13 +48,13 @@ class GrantaServerApiDataExportPropertiesTableGuidProperty(GrantaServerApiDataEx
 
     def __init__(self, property_name='tableGuid', table_guid=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportPropertiesTableGuidProperty - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
         self._property_name = None
         self._table_guid = None
         self.discriminator = None
         self.property_name = property_name
         if table_guid is not None:
             self.table_guid = table_guid
-        GrantaServerApiDataExportPropertiesProperty.__init__(self, *args, **kwargs)
 
     @property
     def property_name(self):
@@ -93,6 +93,7 @@ class GrantaServerApiDataExportPropertiesTableGuidProperty(GrantaServerApiDataEx
         :type: str
         """
         self._table_guid = table_guid
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

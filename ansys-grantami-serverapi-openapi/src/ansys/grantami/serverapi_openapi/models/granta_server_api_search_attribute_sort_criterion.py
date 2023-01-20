@@ -53,6 +53,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     def __init__(self, identity=None, name=None, attribute_type=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeSortCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchSortCriterion.__init__(self, *args, **kwargs)
         self._identity = None
         self._name = None
         self._attribute_type = None
@@ -65,7 +66,6 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         if attribute_type is not None:
             self.attribute_type = attribute_type
         self.type = type
-        GrantaServerApiSearchSortCriterion.__init__(self, *args, **kwargs)
 
     @property
     def identity(self):
@@ -140,6 +140,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -48,13 +48,13 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
 
     def __init__(self, subset_identity=None, type='subset', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordSubsetCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._subset_identity = None
         self._type = None
         self.discriminator = None
         if subset_identity is not None:
             self.subset_identity = subset_identity
         self.type = type
-        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
 
     @property
     def subset_identity(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

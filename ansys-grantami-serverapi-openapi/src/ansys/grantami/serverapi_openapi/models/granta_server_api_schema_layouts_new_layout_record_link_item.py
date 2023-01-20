@@ -48,13 +48,13 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(GrantaServerApiSchemaL
 
     def __init__(self, item_type='recordLink', link_group_guid=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
         self._link_group_guid = None
         self.discriminator = None
         self.item_type = item_type
         if link_group_guid is not None:
             self.link_group_guid = link_group_guid
-        GrantaServerApiSchemaLayoutsNewLayoutItem.__init__(self, *args, **kwargs)
 
     @property
     def item_type(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(GrantaServerApiSchemaL
         :type: str
         """
         self._link_group_guid = link_group_guid
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

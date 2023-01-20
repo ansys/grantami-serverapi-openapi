@@ -49,13 +49,13 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
 
     def __init__(self, values=None, type='discrete', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaParametersDiscreteParameter - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaParametersParameter.__init__(self, *args, **kwargs)
         self._values = None
         self._type = None
         self.discriminator = None
         if values is not None:
             self.values = values
         self.type = type
-        GrantaServerApiSchemaParametersParameter.__init__(self, *args, **kwargs)
 
     @property
     def values(self):
@@ -94,6 +94,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

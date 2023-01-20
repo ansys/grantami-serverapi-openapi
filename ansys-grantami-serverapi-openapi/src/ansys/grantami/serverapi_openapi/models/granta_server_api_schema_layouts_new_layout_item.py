@@ -71,12 +71,18 @@ class GrantaServerApiSchemaLayoutsNewLayoutItem(ModelBase):
         """
         self._guid = guid
 
+
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self.discriminator].lower()
+        discriminator_value = data[self._get_discriminator_field_name()].lower()
         # The actual class name is not available in swagger-codegen, 
         # so we have to extract it from the JSON reference
         return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]
+
+    def _get_discriminator_field_name(self):
+        name_tokens = self.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def to_dict(self):
         """Returns the model properties as a dict"""

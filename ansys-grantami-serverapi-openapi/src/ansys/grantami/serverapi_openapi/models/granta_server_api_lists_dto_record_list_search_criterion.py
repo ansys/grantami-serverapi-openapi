@@ -69,6 +69,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
 
     def __init__(self, name_contains=None, user_role=None, is_published=None, is_awaiting_approval=None, is_internal_use=None, is_revision=None, contains_records_in_databases=None, contains_records_in_integration_schemas=None, contains_records_in_tables=None, contains_records=None, user_can_add_or_remove_items=None, type='recordList', *args, **kwargs):  # noqa: E501
         """GrantaServerApiListsDtoRecordListSearchCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiListsDtoListCriterion.__init__(self, *args, **kwargs)
         self._name_contains = None
         self._user_role = None
         self._is_published = None
@@ -105,7 +106,6 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
         if user_can_add_or_remove_items is not None:
             self.user_can_add_or_remove_items = user_can_add_or_remove_items
         self.type = type
-        GrantaServerApiListsDtoListCriterion.__init__(self, *args, **kwargs)
 
     @property
     def name_contains(self):
@@ -336,6 +336,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

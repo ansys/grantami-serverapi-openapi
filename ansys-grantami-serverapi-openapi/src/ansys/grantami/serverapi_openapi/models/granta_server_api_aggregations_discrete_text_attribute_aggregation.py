@@ -49,13 +49,13 @@ class GrantaServerApiAggregationsDiscreteTextAttributeAggregation(GrantaServerAp
 
     def __init__(self, terms=None, datum_type='discreteText', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsDiscreteTextAttributeAggregation - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
         self._terms = None
         self._datum_type = None
         self.discriminator = None
         if terms is not None:
             self.terms = terms
         self.datum_type = datum_type
-        GrantaServerApiAggregationsAttributeValueAggregation.__init__(self, *args, **kwargs)
 
     @property
     def terms(self):
@@ -94,6 +94,7 @@ class GrantaServerApiAggregationsDiscreteTextAttributeAggregation(GrantaServerAp
         if datum_type is None:
             raise ValueError("Invalid value for `datum_type`, must not be `None`")  # noqa: E501
         self._datum_type = datum_type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

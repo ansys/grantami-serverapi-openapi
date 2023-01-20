@@ -52,6 +52,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
 
     def __init__(self, database_key=None, record_identity=None, record_guid=None, type='reference', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordReferenceCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._database_key = None
         self._record_identity = None
         self._record_guid = None
@@ -64,7 +65,6 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         if record_guid is not None:
             self.record_guid = record_guid
         self.type = type
-        GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
 
     @property
     def database_key(self):
@@ -139,6 +139,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

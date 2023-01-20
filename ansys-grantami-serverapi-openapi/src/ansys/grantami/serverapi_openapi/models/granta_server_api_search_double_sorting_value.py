@@ -48,13 +48,13 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
 
     def __init__(self, value=None, type='double', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDoubleSortingValue - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchSortingValue.__init__(self, *args, **kwargs)
         self._value = None
         self._type = None
         self.discriminator = None
         if value is not None:
             self.value = value
         self.type = type
-        GrantaServerApiSearchSortingValue.__init__(self, *args, **kwargs)
 
     @property
     def value(self):
@@ -93,6 +93,7 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

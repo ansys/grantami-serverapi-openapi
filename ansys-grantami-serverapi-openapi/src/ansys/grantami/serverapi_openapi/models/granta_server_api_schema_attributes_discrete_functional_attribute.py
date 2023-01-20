@@ -52,6 +52,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
 
     def __init__(self, type='discreteFunctional', discrete_type=None, parameters=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._discrete_type = None
         self._parameters = None
@@ -61,7 +62,6 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
             self.discrete_type = discrete_type
         if parameters is not None:
             self.parameters = parameters
-        GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
 
     @property
     def type(self):
@@ -118,6 +118,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
         :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._parameters = parameters
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

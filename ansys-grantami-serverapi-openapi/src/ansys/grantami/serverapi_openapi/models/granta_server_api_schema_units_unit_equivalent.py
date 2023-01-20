@@ -113,6 +113,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         """
         self._equivalent_unit = equivalent_unit
 
+
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

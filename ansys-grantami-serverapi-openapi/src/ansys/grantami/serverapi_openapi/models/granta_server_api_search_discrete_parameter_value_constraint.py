@@ -50,6 +50,7 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(GrantaServerApiSearc
 
     def __init__(self, any=None, _none=None, type='discreteValue', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteParameterValueConstraint - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiSearchParameterConstraint.__init__(self, *args, **kwargs)
         self._any = None
         self.__none = None
         self._type = None
@@ -59,7 +60,6 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(GrantaServerApiSearc
         if _none is not None:
             self._none = _none
         self.type = type
-        GrantaServerApiSearchParameterConstraint.__init__(self, *args, **kwargs)
 
     @property
     def any(self):
@@ -116,6 +116,7 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(GrantaServerApiSearc
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

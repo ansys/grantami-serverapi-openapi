@@ -50,6 +50,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
 
     def __init__(self, number_of_terms=None, prefix=None, type='discreteText', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion - a model defined in Swagger"""  # noqa: E501
+        GrantaServerApiAggregationsAggregationDatumCriterion.__init__(self, *args, **kwargs)
         self._number_of_terms = None
         self._prefix = None
         self._type = None
@@ -59,7 +60,6 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
         if prefix is not None:
             self.prefix = prefix
         self.type = type
-        GrantaServerApiAggregationsAggregationDatumCriterion.__init__(self, *args, **kwargs)
 
     @property
     def number_of_terms(self):
@@ -120,6 +120,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -89,6 +89,7 @@ class GrantaServerApiSchemaAllProfilesInfo(ModelBase):
         """
         self._default_profile = default_profile
 
+
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()
