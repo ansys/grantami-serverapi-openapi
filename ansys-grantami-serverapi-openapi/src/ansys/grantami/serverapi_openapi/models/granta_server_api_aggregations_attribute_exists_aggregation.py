@@ -71,7 +71,6 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(GrantaServerApiAggre
             raise ValueError("Invalid value for `attribute_aggregation_type`, must not be `None`")  # noqa: E501
         self._attribute_aggregation_type = attribute_aggregation_type
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

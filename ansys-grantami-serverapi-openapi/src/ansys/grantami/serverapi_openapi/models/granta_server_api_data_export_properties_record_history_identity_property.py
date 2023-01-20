@@ -94,7 +94,6 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(GrantaSer
         """
         self._record_history_identity = record_history_identity
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

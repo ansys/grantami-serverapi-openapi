@@ -323,7 +323,6 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         """
         self._foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

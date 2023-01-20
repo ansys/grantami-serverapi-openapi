@@ -94,7 +94,6 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(GrantaServerAp
         """
         self._last_modified_date = last_modified_date
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

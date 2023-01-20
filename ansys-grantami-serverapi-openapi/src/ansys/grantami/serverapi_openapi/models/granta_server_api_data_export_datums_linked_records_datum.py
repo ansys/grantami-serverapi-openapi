@@ -118,7 +118,6 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
             raise ValueError("Invalid value for `datum_type`, must not be `None`")  # noqa: E501
         self._datum_type = datum_type
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

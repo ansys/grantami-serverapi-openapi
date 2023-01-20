@@ -222,10 +222,9 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         """
         self._guid = guid
 
-
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[self._get_discriminator_field_name()].lower()
+        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen, 
         # so we have to extract it from the JSON reference
         return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]

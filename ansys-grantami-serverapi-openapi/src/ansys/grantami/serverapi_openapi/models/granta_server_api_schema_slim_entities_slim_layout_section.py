@@ -71,7 +71,6 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(GrantaServerApiSchemaLa
             raise ValueError("Invalid value for `section_detail_type`, must not be `None`")  # noqa: E501
         self._section_detail_type = section_detail_type
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

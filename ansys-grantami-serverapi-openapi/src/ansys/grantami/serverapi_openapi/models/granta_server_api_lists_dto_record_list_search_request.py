@@ -113,7 +113,6 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         """
         self._response_options = response_options
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

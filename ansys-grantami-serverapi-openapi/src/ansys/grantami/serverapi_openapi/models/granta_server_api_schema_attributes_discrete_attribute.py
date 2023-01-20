@@ -118,7 +118,6 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(GrantaServerApiSchemaAttr
         """
         self._is_multi_valued = is_multi_valued
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

@@ -95,7 +95,6 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(GrantaServe
         """
         self._inner_criterion = inner_criterion
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

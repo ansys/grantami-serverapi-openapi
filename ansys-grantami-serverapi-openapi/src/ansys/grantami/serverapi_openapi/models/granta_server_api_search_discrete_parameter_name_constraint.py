@@ -117,7 +117,6 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(GrantaServerApiSearch
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

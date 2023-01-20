@@ -95,7 +95,6 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(GrantaServerApiDataExpor
             raise ValueError("Invalid value for `not_applicable`, must not be `None`")  # noqa: E501
         self._not_applicable = not_applicable
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()
