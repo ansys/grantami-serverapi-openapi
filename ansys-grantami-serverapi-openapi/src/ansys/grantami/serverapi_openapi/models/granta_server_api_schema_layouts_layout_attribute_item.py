@@ -235,7 +235,6 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         """
         self._target_table = target_table
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

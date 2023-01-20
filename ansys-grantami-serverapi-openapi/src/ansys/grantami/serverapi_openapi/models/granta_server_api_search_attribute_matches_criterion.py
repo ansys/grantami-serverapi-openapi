@@ -95,7 +95,6 @@ class GrantaServerApiSearchAttributeMatchesCriterion(GrantaServerApiSearchAttrib
             raise ValueError("Invalid value for `attribute_criterion_type`, must not be `None`")  # noqa: E501
         self._attribute_criterion_type = attribute_criterion_type
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

@@ -95,7 +95,6 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(GrantaServerApiData
         """
         self._record_color = record_color
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

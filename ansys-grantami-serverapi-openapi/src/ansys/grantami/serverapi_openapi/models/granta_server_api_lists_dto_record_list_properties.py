@@ -179,7 +179,6 @@ class GrantaServerApiListsDtoRecordListProperties(ModelBase):
         """
         self._internal_use = internal_use
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()

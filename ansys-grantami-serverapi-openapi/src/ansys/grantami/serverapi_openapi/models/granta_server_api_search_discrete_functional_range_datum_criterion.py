@@ -147,7 +147,6 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(GrantaServerApi
         """
         self._constraints = constraints
 
-
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
         raise NotImplementedError()
