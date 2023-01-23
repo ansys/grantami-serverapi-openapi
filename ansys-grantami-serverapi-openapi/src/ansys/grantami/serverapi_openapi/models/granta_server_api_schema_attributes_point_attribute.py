@@ -32,7 +32,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         'type': 'str',
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
         'is_multi_valued': 'bool',
-        'parameters': 'list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]'
+        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
@@ -41,32 +41,32 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         'type': 'type',
         'unit': 'unit',
         'is_multi_valued': 'isMultiValued',
-        'parameters': 'parameters'
+        'attribute_parameters': 'attributeParameters'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaAttributesAttribute.attribute_map)
 
     subtype_mapping = {
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'parameters': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
+        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter'
     }
 
 
-    def __init__(self, type='point', unit=None, is_multi_valued=None, parameters=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, type='point', unit=None, is_multi_valued=None, attribute_parameters=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesPointAttribute - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
         self._is_multi_valued = None
-        self._parameters = None
+        self._attribute_parameters = None
         self.discriminator = None
         self.type = type
         if unit is not None:
             self.unit = unit
         if is_multi_valued is not None:
             self.is_multi_valued = is_multi_valued
-        if parameters is not None:
-            self.parameters = parameters
+        if attribute_parameters is not None:
+            self.attribute_parameters = attribute_parameters
 
     @property
     def type(self):
@@ -125,22 +125,22 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         self._is_multi_valued = is_multi_valued
 
     @property
-    def parameters(self):
-        """Gets the parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
+    def attribute_parameters(self):
+        """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
 
-        :return: The parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :return: The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
+        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        return self._parameters
+        return self._attribute_parameters
 
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this GrantaServerApiSchemaAttributesPointAttribute.
+    @attribute_parameters.setter
+    def attribute_parameters(self, attribute_parameters):
+        """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 
-        :param parameters: The parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
+        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        self._parameters = parameters
+        self._attribute_parameters = attribute_parameters
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

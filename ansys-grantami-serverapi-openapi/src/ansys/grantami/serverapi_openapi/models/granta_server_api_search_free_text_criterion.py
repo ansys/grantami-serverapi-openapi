@@ -32,6 +32,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         'identities': 'list[int]',
         'value': 'str',
         'identities_to_boost': 'list[GrantaServerApiSearchBoost]',
+        'identities_to_exclude': 'list[int]',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchCriterion, "swagger_types"):
@@ -41,6 +42,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         'identities': 'identities',
         'value': 'value',
         'identities_to_boost': 'identitiesToBoost',
+        'identities_to_exclude': 'identitiesToExclude',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchCriterion, "attribute_map"):
@@ -51,12 +53,13 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     }
 
 
-    def __init__(self, identities=None, value=None, identities_to_boost=None, type='text', *args, **kwargs):  # noqa: E501
+    def __init__(self, identities=None, value=None, identities_to_boost=None, identities_to_exclude=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchFreeTextCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._identities = None
         self._value = None
         self._identities_to_boost = None
+        self._identities_to_exclude = None
         self._type = None
         self.discriminator = None
         if identities is not None:
@@ -65,6 +68,8 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
             self.value = value
         if identities_to_boost is not None:
             self.identities_to_boost = identities_to_boost
+        if identities_to_exclude is not None:
+            self.identities_to_exclude = identities_to_exclude
         self.type = type
 
     @property
@@ -120,6 +125,24 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         :type: list[GrantaServerApiSearchBoost]
         """
         self._identities_to_boost = identities_to_boost
+
+    @property
+    def identities_to_exclude(self):
+        """Gets the identities_to_exclude of this GrantaServerApiSearchFreeTextCriterion.  # noqa: E501
+
+        :return: The identities_to_exclude of this GrantaServerApiSearchFreeTextCriterion.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._identities_to_exclude
+
+    @identities_to_exclude.setter
+    def identities_to_exclude(self, identities_to_exclude):
+        """Sets the identities_to_exclude of this GrantaServerApiSearchFreeTextCriterion.
+
+        :param identities_to_exclude: The identities_to_exclude of this GrantaServerApiSearchFreeTextCriterion.  # noqa: E501
+        :type: list[int]
+        """
+        self._identities_to_exclude = identities_to_exclude
 
     @property
     def type(self):

@@ -31,7 +31,8 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
     swagger_types = {
         'type': 'str',
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'parameters': 'list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]'
+        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]',
+        'is_range': 'bool'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
@@ -39,29 +40,33 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
     attribute_map = {
         'type': 'type',
         'unit': 'unit',
-        'parameters': 'parameters'
+        'attribute_parameters': 'attributeParameters',
+        'is_range': 'isRange'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaAttributesAttribute.attribute_map)
 
     subtype_mapping = {
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'parameters': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
+        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter',
     }
 
 
-    def __init__(self, type='floatFunctional', unit=None, parameters=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, type='floatFunctional', unit=None, attribute_parameters=None, is_range=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesFloatFunctionalAttribute - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
-        self._parameters = None
+        self._attribute_parameters = None
+        self._is_range = None
         self.discriminator = None
         self.type = type
         if unit is not None:
             self.unit = unit
-        if parameters is not None:
-            self.parameters = parameters
+        if attribute_parameters is not None:
+            self.attribute_parameters = attribute_parameters
+        if is_range is not None:
+            self.is_range = is_range
 
     @property
     def type(self):
@@ -102,22 +107,40 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
         self._unit = unit
 
     @property
-    def parameters(self):
-        """Gets the parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+    def attribute_parameters(self):
+        """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
 
-        :return: The parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :return: The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        return self._parameters
+        return self._attribute_parameters
 
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
+    @attribute_parameters.setter
+    def attribute_parameters(self, attribute_parameters):
+        """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
-        :param parameters: The parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        self._parameters = parameters
+        self._attribute_parameters = attribute_parameters
+
+    @property
+    def is_range(self):
+        """Gets the is_range of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+
+        :return: The is_range of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_range
+
+    @is_range.setter
+    def is_range(self, is_range):
+        """Sets the is_range of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
+
+        :param is_range: The is_range of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._is_range = is_range
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

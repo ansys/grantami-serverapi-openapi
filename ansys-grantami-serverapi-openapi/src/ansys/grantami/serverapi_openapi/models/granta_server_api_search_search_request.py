@@ -29,29 +29,35 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
     """
     swagger_types = {
         'criterion': 'GrantaServerApiSearchCriterion',
-        'sort_criteria': 'list[GrantaServerApiSearchSortCriterion]'
+        'sort_criteria': 'list[GrantaServerApiSearchSortCriterion]',
+        'paging_options': 'GrantaServerApiSearchPagingOptions'
     }
 
     attribute_map = {
         'criterion': 'criterion',
-        'sort_criteria': 'sortCriteria'
+        'sort_criteria': 'sortCriteria',
+        'paging_options': 'pagingOptions'
     }
 
     subtype_mapping = {
         'criterion': 'GrantaServerApiSearchCriterion',
-        'sortCriteria': 'GrantaServerApiSearchSortCriterion'
+        'sortCriteria': 'GrantaServerApiSearchSortCriterion',
+        'pagingOptions': 'GrantaServerApiSearchPagingOptions'
     }
 
 
-    def __init__(self, criterion=None, sort_criteria=None):  # noqa: E501
+    def __init__(self, criterion=None, sort_criteria=None, paging_options=None):  # noqa: E501
         """GrantaServerApiSearchSearchRequest - a model defined in Swagger"""  # noqa: E501
         self._criterion = None
         self._sort_criteria = None
+        self._paging_options = None
         self.discriminator = None
         if criterion is not None:
             self.criterion = criterion
         if sort_criteria is not None:
             self.sort_criteria = sort_criteria
+        if paging_options is not None:
+            self.paging_options = paging_options
 
     @property
     def criterion(self):
@@ -90,6 +96,24 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         :type: list[GrantaServerApiSearchSortCriterion]
         """
         self._sort_criteria = sort_criteria
+
+    @property
+    def paging_options(self):
+        """Gets the paging_options of this GrantaServerApiSearchSearchRequest.  # noqa: E501
+
+        :return: The paging_options of this GrantaServerApiSearchSearchRequest.  # noqa: E501
+        :rtype: GrantaServerApiSearchPagingOptions
+        """
+        return self._paging_options
+
+    @paging_options.setter
+    def paging_options(self, paging_options):
+        """Sets the paging_options of this GrantaServerApiSearchSearchRequest.
+
+        :param paging_options: The paging_options of this GrantaServerApiSearchSearchRequest.  # noqa: E501
+        :type: GrantaServerApiSearchPagingOptions
+        """
+        self._paging_options = paging_options
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

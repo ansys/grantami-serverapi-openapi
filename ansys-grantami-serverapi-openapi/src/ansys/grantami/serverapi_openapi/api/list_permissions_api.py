@@ -27,7 +27,7 @@ class ListPermissionsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: list[GrantaServerApiListsDtoUserPermissionDto]
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_permissions_get_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -39,7 +39,7 @@ class ListPermissionsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: list[GrantaServerApiListsDtoUserPermissionDto]
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -74,6 +74,10 @@ class ListPermissionsApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -85,7 +89,7 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='list[GrantaServerApiListsDtoUserPermissionDto]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -98,7 +102,7 @@ class ListPermissionsApi(ApiBase):
 
         :param str list_identifier: (required)
         :param list[GrantaServerApiListsDtoUserPermissionInputDto] body:
-        :return: None
+        :return: list[str]
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_permissions_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -111,7 +115,7 @@ class ListPermissionsApi(ApiBase):
 
         :param str list_identifier: (required)
         :param list[GrantaServerApiListsDtoUserPermissionInputDto] body:
-        :return: None
+        :return: list[str]
         """
 
         all_params = ['list_identifier', 'body']  # noqa: E501
@@ -148,6 +152,10 @@ class ListPermissionsApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -163,7 +171,7 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='list[str]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -316,7 +324,7 @@ class ListPermissionsApi(ApiBase):
 
         :param str list_identifier: (required)
         :param str user_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListPermissionFlagsDto
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_permissions_user_user_identifier_get_with_http_info(list_identifier, user_identifier, **kwargs)  # noqa: E501
@@ -329,7 +337,7 @@ class ListPermissionsApi(ApiBase):
 
         :param str list_identifier: (required)
         :param str user_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListPermissionFlagsDto
         """
 
         all_params = ['list_identifier', 'user_identifier']  # noqa: E501
@@ -370,6 +378,10 @@ class ListPermissionsApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -381,7 +393,7 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='GrantaServerApiListsDtoRecordListPermissionFlagsDto',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

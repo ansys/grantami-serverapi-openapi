@@ -27,7 +27,7 @@ class SchemaUnitsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimUnitSystem]
+        :return: GrantaServerApiSchemaUnitsUnitSystemsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_unit_systems_get_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -39,7 +39,7 @@ class SchemaUnitsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimUnitSystem]
+        :return: GrantaServerApiSchemaUnitsUnitSystemsInfo
         """
 
         all_params = ['database_key']  # noqa: E501
@@ -89,7 +89,7 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimUnitSystem]',  # noqa: E501
+            response_type='GrantaServerApiSchemaUnitsUnitSystemsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -429,7 +429,7 @@ class SchemaUnitsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        :return: GrantaServerApiSchemaUnitsUnitsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_units_get_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -441,7 +441,7 @@ class SchemaUnitsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        :return: GrantaServerApiSchemaUnitsUnitsInfo
         """
 
         all_params = ['database_key']  # noqa: E501
@@ -491,7 +491,7 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimUnit]',  # noqa: E501
+            response_type='GrantaServerApiSchemaUnitsUnitsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -660,7 +660,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_guid: (required)
-        :return: list[GrantaServerApiSchemaUnitsUnitEquivalent]
+        :return: GrantaServerApiSchemaUnitsUnitEquivalentsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_units_unit_guid_equivalent_units_get_with_http_info(database_key, unit_guid, **kwargs)  # noqa: E501
@@ -673,7 +673,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_guid: (required)
-        :return: list[GrantaServerApiSchemaUnitsUnitEquivalent]
+        :return: GrantaServerApiSchemaUnitsUnitEquivalentsInfo
         """
 
         all_params = ['database_key', 'unit_guid']  # noqa: E501
@@ -729,7 +729,7 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaUnitsUnitEquivalent]',  # noqa: E501
+            response_type='GrantaServerApiSchemaUnitsUnitEquivalentsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -1008,7 +1008,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_guid: (required)
-        :return: list[GrantaServerApiSchemaUnitsUnit]
+        :return: GrantaServerApiSchemaUnitsUnitsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_units_unit_guidcompatible_units_get_with_http_info(database_key, unit_guid, **kwargs)  # noqa: E501
@@ -1021,7 +1021,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_guid: (required)
-        :return: list[GrantaServerApiSchemaUnitsUnit]
+        :return: GrantaServerApiSchemaUnitsUnitsInfo
         """
 
         all_params = ['database_key', 'unit_guid']  # noqa: E501
@@ -1077,7 +1077,7 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaUnitsUnit]',  # noqa: E501
+            response_type='GrantaServerApiSchemaUnitsUnitsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -30,7 +30,6 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
     """
     swagger_types = {
         'identity': 'int',
-        'name': 'str',
         'is_meta_attribute': 'bool',
         'type': 'str'
     }
@@ -39,7 +38,6 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
 
     attribute_map = {
         'identity': 'identity',
-        'name': 'name',
         'is_meta_attribute': 'isMetaAttribute',
         'type': 'type'
     }
@@ -55,18 +53,15 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
         'notApplicable'.lower(): '#/components/schemas/GrantaServerApiSearchAttributeNotApplicableCriterion',
     }
 
-    def __init__(self, identity=None, name=None, is_meta_attribute=None, type='attribute', *args, **kwargs):  # noqa: E501
+    def __init__(self, identity=None, is_meta_attribute=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._identity = None
-        self._name = None
         self._is_meta_attribute = None
         self._type = None
         self.discriminator = 'attribute_criterion_type'
         if identity is not None:
             self.identity = identity
-        if name is not None:
-            self.name = name
         if is_meta_attribute is not None:
             self.is_meta_attribute = is_meta_attribute
         self.type = type
@@ -88,24 +83,6 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
         :type: int
         """
         self._identity = identity
-
-    @property
-    def name(self):
-        """Gets the name of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
-
-        :return: The name of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this GrantaServerApiSearchAttributeCriterion.
-
-        :param name: The name of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
-        :type: str
-        """
-        self._name = name
 
     @property
     def is_meta_attribute(self):

@@ -30,6 +30,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
     """
     swagger_types = {
         'value': 'str',
+        'exact_match': 'bool',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchDatumCriterion, "swagger_types"):
@@ -37,6 +38,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
 
     attribute_map = {
         'value': 'value',
+        'exact_match': 'exactMatch',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchDatumCriterion, "attribute_map"):
@@ -46,14 +48,17 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
     }
 
 
-    def __init__(self, value=None, type='discreteText', *args, **kwargs):  # noqa: E501
+    def __init__(self, value=None, exact_match=None, type='discreteText', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteTextDatumCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._value = None
+        self._exact_match = None
         self._type = None
         self.discriminator = None
         if value is not None:
             self.value = value
+        if exact_match is not None:
+            self.exact_match = exact_match
         self.type = type
 
     @property
@@ -73,6 +78,24 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
         :type: str
         """
         self._value = value
+
+    @property
+    def exact_match(self):
+        """Gets the exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+
+        :return: The exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+        :rtype: bool
+        """
+        return self._exact_match
+
+    @exact_match.setter
+    def exact_match(self, exact_match):
+        """Sets the exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+
+        :param exact_match: The exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+        :type: bool
+        """
+        self._exact_match = exact_match
 
     @property
     def type(self):

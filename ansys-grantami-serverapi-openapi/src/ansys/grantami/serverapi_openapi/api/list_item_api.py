@@ -105,7 +105,7 @@ class ListItemApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_items_get_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -117,7 +117,7 @@ class ListItemApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -152,6 +152,10 @@ class ListItemApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 
@@ -163,7 +167,7 @@ class ListItemApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='GrantaServerApiListsDtoRecordListItems',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -51,6 +51,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(GrantaServerApiAggreg
         'shortText'.lower(): '#/components/schemas/GrantaServerApiAggregationsShortTextAttributeAggregation',
         'discreteText'.lower(): '#/components/schemas/GrantaServerApiAggregationsDiscreteTextAttributeAggregation',
         'link'.lower(): '#/components/schemas/GrantaServerApiAggregationsLinkAttributeAggregation',
+        'logical'.lower(): '#/components/schemas/GrantaServerApiAggregationsLogicalAttributeAggregation',
     }
 
     def __init__(self, attribute_aggregation_type='value', *args, **kwargs):  # noqa: E501

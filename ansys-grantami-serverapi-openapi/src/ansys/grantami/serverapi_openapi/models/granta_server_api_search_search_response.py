@@ -28,11 +28,13 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'search_identifier': 'str',
         'total_result_count': 'int',
         'results': 'list[GrantaServerApiSearchSearchResult]'
     }
 
     attribute_map = {
+        'search_identifier': 'searchIdentifier',
         'total_result_count': 'totalResultCount',
         'results': 'results'
     }
@@ -42,15 +44,38 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
     }
 
 
-    def __init__(self, total_result_count=None, results=None):  # noqa: E501
+    def __init__(self, search_identifier=None, total_result_count=None, results=None):  # noqa: E501
         """GrantaServerApiSearchSearchResponse - a model defined in Swagger"""  # noqa: E501
+        self._search_identifier = None
         self._total_result_count = None
         self._results = None
         self.discriminator = None
+        if search_identifier is not None:
+            self.search_identifier = search_identifier
         if total_result_count is not None:
             self.total_result_count = total_result_count
         if results is not None:
             self.results = results
+
+    @property
+    def search_identifier(self):
+        """Gets the search_identifier of this GrantaServerApiSearchSearchResponse.  # noqa: E501
+        If the search request had paging options specified, this will return an identifier that can be used to get the rest of the results  # noqa: E501
+
+        :return: The search_identifier of this GrantaServerApiSearchSearchResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._search_identifier
+
+    @search_identifier.setter
+    def search_identifier(self, search_identifier):
+        """Sets the search_identifier of this GrantaServerApiSearchSearchResponse.
+        If the search request had paging options specified, this will return an identifier that can be used to get the rest of the results  # noqa: E501
+
+        :param search_identifier: The search_identifier of this GrantaServerApiSearchSearchResponse.  # noqa: E501
+        :type: str
+        """
+        self._search_identifier = search_identifier
 
     @property
     def total_result_count(self):

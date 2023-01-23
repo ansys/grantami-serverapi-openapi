@@ -27,7 +27,7 @@ class SchemaProfileTablesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str profile_guid: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]
+        :return: GrantaServerApiSchemaProfileTablesInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_profiles_profile_guid_profile_tables_get_with_http_info(profile_guid, **kwargs)  # noqa: E501
@@ -39,7 +39,7 @@ class SchemaProfileTablesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str profile_guid: (required)
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]
+        :return: GrantaServerApiSchemaProfileTablesInfo
         """
 
         all_params = ['profile_guid']  # noqa: E501
@@ -89,7 +89,7 @@ class SchemaProfileTablesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]',  # noqa: E501
+            response_type='GrantaServerApiSchemaProfileTablesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

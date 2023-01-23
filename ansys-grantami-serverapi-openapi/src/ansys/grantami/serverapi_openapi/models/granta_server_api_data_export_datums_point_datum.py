@@ -30,7 +30,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
     """
     swagger_types = {
         'datum_type': 'str',
-        'datum_value': 'list[float]',
+        'datum_value': 'list[GrantaServerApiDataExportDatumsPoint]',
         'unit': 'str'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "swagger_types"):
@@ -45,6 +45,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
         attribute_map.update(GrantaServerApiDataExportDatumsApplicableDatum.attribute_map)
 
     subtype_mapping = {
+        'datumValue': 'GrantaServerApiDataExportDatumsPoint',
     }
 
 
@@ -86,7 +87,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
         """Gets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.  # noqa: E501
 
         :return: The datum_value of this GrantaServerApiDataExportDatumsPointDatum.  # noqa: E501
-        :rtype: list[float]
+        :rtype: list[GrantaServerApiDataExportDatumsPoint]
         """
         return self._datum_value
 
@@ -95,7 +96,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
         """Sets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.
 
         :param datum_value: The datum_value of this GrantaServerApiDataExportDatumsPointDatum.  # noqa: E501
-        :type: list[float]
+        :type: list[GrantaServerApiDataExportDatumsPoint]
         """
         self._datum_value = datum_value
 

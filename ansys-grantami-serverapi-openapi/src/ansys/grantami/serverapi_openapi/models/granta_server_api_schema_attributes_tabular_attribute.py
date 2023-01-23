@@ -29,27 +29,54 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str'
+        'type': 'str',
+        'display_full_table': 'bool',
+        'display_summary_row_inline': 'bool',
+        'hide_unlinked_rows': 'bool',
+        'target': 'GrantaServerApiSchemaAttributesTabularAttributeTarget',
+        'tabular_columns': 'list[GrantaServerApiSchemaTabularColumnsTabularColumn]'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
 
     attribute_map = {
-        'type': 'type'
+        'type': 'type',
+        'display_full_table': 'displayFullTable',
+        'display_summary_row_inline': 'displaySummaryRowInline',
+        'hide_unlinked_rows': 'hideUnlinkedRows',
+        'target': 'target',
+        'tabular_columns': 'tabularColumns'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaAttributesAttribute.attribute_map)
 
     subtype_mapping = {
+        'target': 'GrantaServerApiSchemaAttributesTabularAttributeTarget',
+        'tabularColumns': 'GrantaServerApiSchemaTabularColumnsTabularColumn'
     }
 
 
-    def __init__(self, type='link', *args, **kwargs):  # noqa: E501
+    def __init__(self, type='link', display_full_table=None, display_summary_row_inline=None, hide_unlinked_rows=None, target=None, tabular_columns=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesTabularAttribute - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
+        self._display_full_table = None
+        self._display_summary_row_inline = None
+        self._hide_unlinked_rows = None
+        self._target = None
+        self._tabular_columns = None
         self.discriminator = None
         self.type = type
+        if display_full_table is not None:
+            self.display_full_table = display_full_table
+        if display_summary_row_inline is not None:
+            self.display_summary_row_inline = display_summary_row_inline
+        if hide_unlinked_rows is not None:
+            self.hide_unlinked_rows = hide_unlinked_rows
+        if target is not None:
+            self.target = target
+        if tabular_columns is not None:
+            self.tabular_columns = tabular_columns
 
     @property
     def type(self):
@@ -70,6 +97,96 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         if type is None:
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
         self._type = type
+
+    @property
+    def display_full_table(self):
+        """Gets the display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+
+        :return: The display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._display_full_table
+
+    @display_full_table.setter
+    def display_full_table(self, display_full_table):
+        """Sets the display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.
+
+        :param display_full_table: The display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._display_full_table = display_full_table
+
+    @property
+    def display_summary_row_inline(self):
+        """Gets the display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+
+        :return: The display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._display_summary_row_inline
+
+    @display_summary_row_inline.setter
+    def display_summary_row_inline(self, display_summary_row_inline):
+        """Sets the display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.
+
+        :param display_summary_row_inline: The display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._display_summary_row_inline = display_summary_row_inline
+
+    @property
+    def hide_unlinked_rows(self):
+        """Gets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+
+        :return: The hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._hide_unlinked_rows
+
+    @hide_unlinked_rows.setter
+    def hide_unlinked_rows(self, hide_unlinked_rows):
+        """Sets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.
+
+        :param hide_unlinked_rows: The hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._hide_unlinked_rows = hide_unlinked_rows
+
+    @property
+    def target(self):
+        """Gets the target of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+
+        :return: The target of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :rtype: GrantaServerApiSchemaAttributesTabularAttributeTarget
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """Sets the target of this GrantaServerApiSchemaAttributesTabularAttribute.
+
+        :param target: The target of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :type: GrantaServerApiSchemaAttributesTabularAttributeTarget
+        """
+        self._target = target
+
+    @property
+    def tabular_columns(self):
+        """Gets the tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+
+        :return: The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :rtype: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        """
+        return self._tabular_columns
+
+    @tabular_columns.setter
+    def tabular_columns(self, tabular_columns):
+        """Sets the tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
+
+        :param tabular_columns: The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.  # noqa: E501
+        :type: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        """
+        self._tabular_columns = tabular_columns
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -53,7 +53,7 @@ class GrantaServerApiSearchFloatFunctionalDatumCriterion(GrantaServerApiSearchDa
     }
 
 
-    def __init__(self, type='floatFunctional', gte=None, lte=None, unit=None, constraints=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, type='floatFunctionalData', gte=None, lte=None, unit=None, constraints=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchFloatFunctionalDatumCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._type = None

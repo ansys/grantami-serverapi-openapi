@@ -330,7 +330,7 @@ class SchemaDatabasesApi(ApiBase):
 
         This method makes a synchronous HTTP request.
 
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimDatabase]
+        :return: GrantaServerApiSchemaDatabasesInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_get_with_http_info(**kwargs)  # noqa: E501
@@ -341,7 +341,7 @@ class SchemaDatabasesApi(ApiBase):
 
         This method makes a synchronous HTTP request.
 
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimDatabase]
+        :return: GrantaServerApiSchemaDatabasesInfo
         """
 
         all_params = []  # noqa: E501
@@ -385,7 +385,7 @@ class SchemaDatabasesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimDatabase]',  # noqa: E501
+            response_type='GrantaServerApiSchemaDatabasesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

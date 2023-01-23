@@ -44,6 +44,7 @@ class GrantaServerApiAggregationsAggregationDatumCriterion(ModelBase):
         'range'.lower(): '#/components/schemas/GrantaServerApiAggregationsRangeAggregationDatumCriterion',
         'shortText'.lower(): '#/components/schemas/GrantaServerApiAggregationsShortTextAggregationDatumCriterion',
         'link'.lower(): '#/components/schemas/GrantaServerApiAggregationsLinkAggregationDatumCriterion',
+        'logical'.lower(): '#/components/schemas/GrantaServerApiAggregationsLogicalAggregationDatumCriterion',
     }
 
     def __init__(self):  # noqa: E501

@@ -34,9 +34,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         'required': 'bool',
         'read_only': 'bool',
         'meta_attributes': 'list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]',
-        'tabular_columns': 'list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]',
-        'target_database': 'str',
-        'target_table': 'str'
+        'tabular_columns': 'list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]'
     }
     if hasattr(GrantaServerApiSchemaLayoutsLayoutItem, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaLayoutsLayoutItem.swagger_types)
@@ -47,9 +45,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         'required': 'required',
         'read_only': 'readOnly',
         'meta_attributes': 'metaAttributes',
-        'tabular_columns': 'tabularColumns',
-        'target_database': 'targetDatabase',
-        'target_table': 'targetTable'
+        'tabular_columns': 'tabularColumns'
     }
     if hasattr(GrantaServerApiSchemaLayoutsLayoutItem, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaLayoutsLayoutItem.attribute_map)
@@ -57,11 +53,11 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
     subtype_mapping = {
         'attributeType': 'GrantaServerApiAttributeType',
         'metaAttributes': 'GrantaServerApiSchemaLayoutsLayoutAttributeItem',
-        'tabularColumns': 'GrantaServerApiSchemaLayoutsLayoutTabularColumn',
+        'tabularColumns': 'GrantaServerApiSchemaLayoutsLayoutTabularColumn'
     }
 
 
-    def __init__(self, item_type='attribute', attribute_type=None, required=None, read_only=None, meta_attributes=None, tabular_columns=None, target_database=None, target_table=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, item_type='attribute', attribute_type=None, required=None, read_only=None, meta_attributes=None, tabular_columns=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaLayoutsLayoutAttributeItem - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaLayoutsLayoutItem.__init__(self, *args, **kwargs)
         self._item_type = None
@@ -70,8 +66,6 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         self._read_only = None
         self._meta_attributes = None
         self._tabular_columns = None
-        self._target_database = None
-        self._target_table = None
         self.discriminator = None
         self.item_type = item_type
         if attribute_type is not None:
@@ -84,10 +78,6 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
             self.meta_attributes = meta_attributes
         if tabular_columns is not None:
             self.tabular_columns = tabular_columns
-        if target_database is not None:
-            self.target_database = target_database
-        if target_table is not None:
-            self.target_table = target_table
 
     @property
     def item_type(self):
@@ -198,42 +188,6 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         :type: list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]
         """
         self._tabular_columns = tabular_columns
-
-    @property
-    def target_database(self):
-        """Gets the target_database of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-
-        :return: The target_database of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._target_database
-
-    @target_database.setter
-    def target_database(self, target_database):
-        """Sets the target_database of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
-
-        :param target_database: The target_database of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-        :type: str
-        """
-        self._target_database = target_database
-
-    @property
-    def target_table(self):
-        """Gets the target_table of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-
-        :return: The target_table of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-        :rtype: str
-        """
-        return self._target_table
-
-    @target_table.setter
-    def target_table(self, target_table):
-        """Sets the target_table of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
-
-        :param target_table: The target_table of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.  # noqa: E501
-        :type: str
-        """
-        self._target_table = target_table
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

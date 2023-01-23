@@ -29,7 +29,7 @@ class SchemaTablesApi(ApiBase):
         :param str database_key: (required)
         :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimTable]
+        :return: GrantaServerApiSchemaTablesInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_get_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -43,7 +43,7 @@ class SchemaTablesApi(ApiBase):
         :param str database_key: (required)
         :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimTable]
+        :return: GrantaServerApiSchemaTablesInfo
         """
 
         all_params = ['database_key', 'mode', 'x_ansys_vc_mode']  # noqa: E501
@@ -97,7 +97,7 @@ class SchemaTablesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimTable]',  # noqa: E501
+            response_type='GrantaServerApiSchemaTablesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -246,6 +246,10 @@ class SchemaTablesApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
 

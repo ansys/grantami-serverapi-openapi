@@ -27,7 +27,7 @@ class SchemaStandardNamesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaStandardName]
+        :return: GrantaServerApiSchemaStandardNamesInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_standard_names_get_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -39,7 +39,7 @@ class SchemaStandardNamesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: list[GrantaServerApiSchemaStandardName]
+        :return: GrantaServerApiSchemaStandardNamesInfo
         """
 
         all_params = ['database_key']  # noqa: E501
@@ -89,7 +89,7 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaStandardName]',  # noqa: E501
+            response_type='GrantaServerApiSchemaStandardNamesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
