@@ -30,6 +30,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     """
     swagger_types = {
         'subset_identity': 'int',
+        'subset_guid': 'str',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchCriterion, "swagger_types"):
@@ -37,6 +38,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
 
     attribute_map = {
         'subset_identity': 'subsetIdentity',
+        'subset_guid': 'subsetGuid',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchCriterion, "attribute_map"):
@@ -46,14 +48,17 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     }
 
 
-    def __init__(self, subset_identity=None, type='subset', *args, **kwargs):  # noqa: E501
+    def __init__(self, subset_identity=None, subset_guid=None, type='subset', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordSubsetCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._subset_identity = None
+        self._subset_guid = None
         self._type = None
         self.discriminator = None
         if subset_identity is not None:
             self.subset_identity = subset_identity
+        if subset_guid is not None:
+            self.subset_guid = subset_guid
         self.type = type
 
     @property
@@ -73,6 +78,24 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         :type: int
         """
         self._subset_identity = subset_identity
+
+    @property
+    def subset_guid(self):
+        """Gets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.  # noqa: E501
+
+        :return: The subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._subset_guid
+
+    @subset_guid.setter
+    def subset_guid(self, subset_guid):
+        """Sets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
+
+        :param subset_guid: The subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.  # noqa: E501
+        :type: str
+        """
+        self._subset_guid = subset_guid
 
     @property
     def type(self):

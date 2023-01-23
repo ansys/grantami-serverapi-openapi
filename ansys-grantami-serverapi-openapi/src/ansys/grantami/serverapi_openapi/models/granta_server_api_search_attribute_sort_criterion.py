@@ -30,7 +30,6 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
     """
     swagger_types = {
         'identity': 'int',
-        'name': 'str',
         'attribute_type': 'GrantaServerApiAttributeType',
         'type': 'str'
     }
@@ -39,7 +38,6 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     attribute_map = {
         'identity': 'identity',
-        'name': 'name',
         'attribute_type': 'attributeType',
         'type': 'type'
     }
@@ -51,18 +49,15 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
     }
 
 
-    def __init__(self, identity=None, name=None, attribute_type=None, type='attribute', *args, **kwargs):  # noqa: E501
+    def __init__(self, identity=None, attribute_type=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeSortCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchSortCriterion.__init__(self, *args, **kwargs)
         self._identity = None
-        self._name = None
         self._attribute_type = None
         self._type = None
         self.discriminator = None
         if identity is not None:
             self.identity = identity
-        if name is not None:
-            self.name = name
         if attribute_type is not None:
             self.attribute_type = attribute_type
         self.type = type
@@ -84,24 +79,6 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         :type: int
         """
         self._identity = identity
-
-    @property
-    def name(self):
-        """Gets the name of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
-
-        :return: The name of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this GrantaServerApiSearchAttributeSortCriterion.
-
-        :param name: The name of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
-        :type: str
-        """
-        self._name = name
 
     @property
     def attribute_type(self):

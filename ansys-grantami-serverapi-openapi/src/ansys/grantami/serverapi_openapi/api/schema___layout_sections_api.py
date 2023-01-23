@@ -32,7 +32,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         :param bool show_full_detail:
         :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        :return: list[GrantaServerApiSchemaLayoutsLayoutSection]
+        :return: GrantaServerApiSchemaLayoutsLayoutSectionsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_get_with_http_info(database_key, table_guid, layout_guid, **kwargs)  # noqa: E501
@@ -49,7 +49,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         :param bool show_full_detail:
         :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        :return: list[GrantaServerApiSchemaLayoutsLayoutSection]
+        :return: GrantaServerApiSchemaLayoutsLayoutSectionsInfo
         """
 
         all_params = ['database_key', 'table_guid', 'layout_guid', 'show_full_detail', 'mode', 'x_ansys_vc_mode']  # noqa: E501
@@ -117,7 +117,7 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaLayoutsLayoutSection]',  # noqa: E501
+            response_type='GrantaServerApiSchemaLayoutsLayoutSectionsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
@@ -229,8 +229,8 @@ class SchemaLayoutSectionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str layout_guid: (required)
-        :param list[GrantaServerApiSchemaSlimEntitiesSlimEntity] body:
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection]
+        :param GrantaServerApiSchemaLayoutsLayoutSectionsInfo body:
+        :return: GrantaServerApiSchemaLayoutsLayoutSectionsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_put_with_http_info(database_key, table_guid, layout_guid, **kwargs)  # noqa: E501
@@ -244,8 +244,8 @@ class SchemaLayoutSectionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str layout_guid: (required)
-        :param list[GrantaServerApiSchemaSlimEntitiesSlimEntity] body:
-        :return: list[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection]
+        :param GrantaServerApiSchemaLayoutsLayoutSectionsInfo body:
+        :return: GrantaServerApiSchemaLayoutsLayoutSectionsInfo
         """
 
         all_params = ['database_key', 'table_guid', 'layout_guid', 'body']  # noqa: E501
@@ -313,7 +313,7 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection]',  # noqa: E501
+            response_type='GrantaServerApiSchemaLayoutsLayoutSectionsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),

@@ -17,6 +17,7 @@ from .schema___constants_api import SchemaConstantsApi
 from .schema___databases_api import SchemaDatabasesApi
 from .schema___discrete_types___discrete_values_api import SchemaDiscreteTypesDiscreteValuesApi
 from .schema___discrete_types_api import SchemaDiscreteTypesApi
+from .schema___expressions_api import SchemaExpressionsApi
 from .schema___layout_sections_api import SchemaLayoutSectionsApi
 from .schema___layouts_api import SchemaLayoutsApi
 from .schema___parameters_api import SchemaParametersApi
@@ -28,4 +29,3 @@ from .schema___tables_api import SchemaTablesApi
 from .schema___units_api import SchemaUnitsApi
 from .search_api import SearchApi
 from .status_api import StatusApi
-from .suggestions_api import SuggestionsApi

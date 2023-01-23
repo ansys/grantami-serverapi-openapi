@@ -388,3 +388,155 @@ class SearchApi(ApiBase):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def v1alpha_searches_search_identifier_delete(self, search_identifier, **kwargs):  # noqa: E501
+        """v1alpha_searches_search_identifier_delete  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str search_identifier: (required)
+        :return: None
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_searches_search_identifier_delete_with_http_info(search_identifier, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_searches_search_identifier_delete_with_http_info(self, search_identifier, **kwargs):  # noqa: E501
+        """v1alpha_searches_search_identifier_delete  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str search_identifier: (required)
+        :return: None
+        """
+
+        all_params = ['search_identifier']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_searches_search_identifier_delete".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'search_identifier' is set
+        if ('search_identifier' not in params or
+                params['search_identifier'] is None):
+            raise ValueError("Missing the required parameter `search_identifier` when calling `v1alpha_searches_search_identifier_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'search_identifier' in params:
+            path_params['searchIdentifier'] = params['search_identifier']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1alpha/searches/{searchIdentifier}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def v1alpha_searches_search_identifier_results_post(self, search_identifier, **kwargs):  # noqa: E501
+        """v1alpha_searches_search_identifier_results_post  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str search_identifier: (required)
+        :param GrantaServerApiSearchSearchResultsRequest body:
+        :return: GrantaServerApiSearchSearchResponse
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_searches_search_identifier_results_post_with_http_info(search_identifier, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_searches_search_identifier_results_post_with_http_info(self, search_identifier, **kwargs):  # noqa: E501
+        """v1alpha_searches_search_identifier_results_post  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str search_identifier: (required)
+        :param GrantaServerApiSearchSearchResultsRequest body:
+        :return: GrantaServerApiSearchSearchResponse
+        """
+
+        all_params = ['search_identifier', 'body']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_searches_search_identifier_results_post".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'search_identifier' is set
+        if ('search_identifier' not in params or
+                params['search_identifier'] is None):
+            raise ValueError("Missing the required parameter `search_identifier` when calling `v1alpha_searches_search_identifier_results_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'search_identifier' in params:
+            path_params['searchIdentifier'] = params['search_identifier']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1alpha/searches/{searchIdentifier}/results', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)

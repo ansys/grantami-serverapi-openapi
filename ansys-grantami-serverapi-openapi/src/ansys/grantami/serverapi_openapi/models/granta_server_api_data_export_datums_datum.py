@@ -28,27 +28,29 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'attribute_identity': 'int'
+        'attribute_identity': 'int',
+        'meta_datums': 'list[GrantaServerApiDataExportDatumsDatum]'
     }
 
     attribute_map = {
-        'attribute_identity': 'attributeIdentity'
+        'attribute_identity': 'attributeIdentity',
+        'meta_datums': 'metaDatums'
     }
 
     subtype_mapping = {
+        'metaDatums': 'GrantaServerApiDataExportDatumsDatum'
     }
 
-    discriminator_value_class_map = {
-        'True'.lower(): '#/components/schemas/GrantaServerApiDataExportDatumsNotApplicableDatum',
-        'False'.lower(): '#/components/schemas/GrantaServerApiDataExportDatumsApplicableDatum',
-    }
 
-    def __init__(self, attribute_identity=None):  # noqa: E501
+    def __init__(self, attribute_identity=None, meta_datums=None):  # noqa: E501
         """GrantaServerApiDataExportDatumsDatum - a model defined in Swagger"""  # noqa: E501
         self._attribute_identity = None
-        self.discriminator = 'not_applicable'
+        self._meta_datums = None
+        self.discriminator = None
         if attribute_identity is not None:
             self.attribute_identity = attribute_identity
+        if meta_datums is not None:
+            self.meta_datums = meta_datums
 
     @property
     def attribute_identity(self):
@@ -68,17 +70,27 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         """
         self._attribute_identity = attribute_identity
 
-    def get_real_child_model(self, data):
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
-        # The actual class name is not available in swagger-codegen, 
-        # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit("/", 1)[-1]
+    @property
+    def meta_datums(self):
+        """Gets the meta_datums of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
 
-    def _get_discriminator_field_name(self):
-        name_tokens = self.discriminator.split("_")
-        later_tokens = [element.capitalize() for element in name_tokens[1:]]
-        return "".join([name_tokens[0], *later_tokens])
+        :return: The meta_datums of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
+        :rtype: list[GrantaServerApiDataExportDatumsDatum]
+        """
+        return self._meta_datums
+
+    @meta_datums.setter
+    def meta_datums(self, meta_datums):
+        """Sets the meta_datums of this GrantaServerApiDataExportDatumsDatum.
+
+        :param meta_datums: The meta_datums of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
+        :type: list[GrantaServerApiDataExportDatumsDatum]
+        """
+        self._meta_datums = meta_datums
+
+    def get_real_child_model(self, data):
+        """Raises a NotImplementedError for a type without a discriminator defined."""
+        raise NotImplementedError()
 
     def to_dict(self):
         """Returns the model properties as a dict"""

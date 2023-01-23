@@ -31,7 +31,12 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
     swagger_types = {
         'type': 'str',
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'parameters': 'list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]'
+        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]',
+        'expressions': 'list[GrantaServerApiSchemaSlimEntitiesSlimExpression]',
+        'allow_extrapolation': 'bool',
+        'is_range': 'bool',
+        'allow_all_compatible_expressions': 'bool',
+        'default_content': 'GrantaServerApiSchemaAttributesMathsContent'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
@@ -39,29 +44,51 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
     attribute_map = {
         'type': 'type',
         'unit': 'unit',
-        'parameters': 'parameters'
+        'attribute_parameters': 'attributeParameters',
+        'expressions': 'expressions',
+        'allow_extrapolation': 'allowExtrapolation',
+        'is_range': 'isRange',
+        'allow_all_compatible_expressions': 'allowAllCompatibleExpressions',
+        'default_content': 'defaultContent'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaAttributesAttribute.attribute_map)
 
     subtype_mapping = {
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'parameters': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
+        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter',
+        'expressions': 'GrantaServerApiSchemaSlimEntitiesSlimExpression',
+        'defaultContent': 'GrantaServerApiSchemaAttributesMathsContent'
     }
 
 
-    def __init__(self, type='mathsFunctional', unit=None, parameters=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, type='mathsFunctional', unit=None, attribute_parameters=None, expressions=None, allow_extrapolation=None, is_range=None, allow_all_compatible_expressions=None, default_content=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesMathsFunctionalAttribute - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._unit = None
-        self._parameters = None
+        self._attribute_parameters = None
+        self._expressions = None
+        self._allow_extrapolation = None
+        self._is_range = None
+        self._allow_all_compatible_expressions = None
+        self._default_content = None
         self.discriminator = None
         self.type = type
         if unit is not None:
             self.unit = unit
-        if parameters is not None:
-            self.parameters = parameters
+        if attribute_parameters is not None:
+            self.attribute_parameters = attribute_parameters
+        if expressions is not None:
+            self.expressions = expressions
+        if allow_extrapolation is not None:
+            self.allow_extrapolation = allow_extrapolation
+        if is_range is not None:
+            self.is_range = is_range
+        if allow_all_compatible_expressions is not None:
+            self.allow_all_compatible_expressions = allow_all_compatible_expressions
+        if default_content is not None:
+            self.default_content = default_content
 
     @property
     def type(self):
@@ -102,22 +129,112 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
         self._unit = unit
 
     @property
-    def parameters(self):
-        """Gets the parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+    def attribute_parameters(self):
+        """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
 
-        :return: The parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :return: The attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        return self._parameters
+        return self._attribute_parameters
 
-    @parameters.setter
-    def parameters(self, parameters):
-        """Sets the parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+    @attribute_parameters.setter
+    def attribute_parameters(self, attribute_parameters):
+        """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
-        :param parameters: The parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
         """
-        self._parameters = parameters
+        self._attribute_parameters = attribute_parameters
+
+    @property
+    def expressions(self):
+        """Gets the expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+
+        :return: The expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        """
+        return self._expressions
+
+    @expressions.setter
+    def expressions(self, expressions):
+        """Sets the expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        :param expressions: The expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        """
+        self._expressions = expressions
+
+    @property
+    def allow_extrapolation(self):
+        """Gets the allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+
+        :return: The allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_extrapolation
+
+    @allow_extrapolation.setter
+    def allow_extrapolation(self, allow_extrapolation):
+        """Sets the allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        :param allow_extrapolation: The allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._allow_extrapolation = allow_extrapolation
+
+    @property
+    def is_range(self):
+        """Gets the is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+
+        :return: The is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_range
+
+    @is_range.setter
+    def is_range(self, is_range):
+        """Sets the is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        :param is_range: The is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._is_range = is_range
+
+    @property
+    def allow_all_compatible_expressions(self):
+        """Gets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+
+        :return: The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_all_compatible_expressions
+
+    @allow_all_compatible_expressions.setter
+    def allow_all_compatible_expressions(self, allow_all_compatible_expressions):
+        """Sets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        :param allow_all_compatible_expressions: The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: bool
+        """
+        self._allow_all_compatible_expressions = allow_all_compatible_expressions
+
+    @property
+    def default_content(self):
+        """Gets the default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+
+        :return: The default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :rtype: GrantaServerApiSchemaAttributesMathsContent
+        """
+        return self._default_content
+
+    @default_content.setter
+    def default_content(self, default_content):
+        """Sets the default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        :param default_content: The default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.  # noqa: E501
+        :type: GrantaServerApiSchemaAttributesMathsContent
+        """
+        self._default_content = default_content
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -31,6 +31,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     swagger_types = {
         'criterion_guid': 'str',
         'identities': 'list[int]',
+        'identities_to_exclude': 'list[int]',
         'number_of_terms': 'int',
         'prefix': 'str',
         'type': 'str'
@@ -41,6 +42,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     attribute_map = {
         'criterion_guid': 'criterionGuid',
         'identities': 'identities',
+        'identities_to_exclude': 'identitiesToExclude',
         'number_of_terms': 'numberOfTerms',
         'prefix': 'prefix',
         'type': 'type'
@@ -52,11 +54,12 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     }
 
 
-    def __init__(self, criterion_guid=None, identities=None, number_of_terms=None, prefix=None, type='text', *args, **kwargs):  # noqa: E501
+    def __init__(self, criterion_guid=None, identities=None, identities_to_exclude=None, number_of_terms=None, prefix=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsFreeTextAggregationCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
         self._criterion_guid = None
         self._identities = None
+        self._identities_to_exclude = None
         self._number_of_terms = None
         self._prefix = None
         self._type = None
@@ -65,6 +68,8 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
             self.criterion_guid = criterion_guid
         if identities is not None:
             self.identities = identities
+        if identities_to_exclude is not None:
+            self.identities_to_exclude = identities_to_exclude
         if number_of_terms is not None:
             self.number_of_terms = number_of_terms
         if prefix is not None:
@@ -110,8 +115,27 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         self._identities = identities
 
     @property
+    def identities_to_exclude(self):
+        """Gets the identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+
+        :return: The identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :rtype: list[int]
+        """
+        return self._identities_to_exclude
+
+    @identities_to_exclude.setter
+    def identities_to_exclude(self, identities_to_exclude):
+        """Sets the identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        :param identities_to_exclude: The identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :type: list[int]
+        """
+        self._identities_to_exclude = identities_to_exclude
+
+    @property
     def number_of_terms(self):
         """Gets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        The number of terms that should be returned  # noqa: E501
 
         :return: The number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
         :rtype: int
@@ -121,6 +145,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     @number_of_terms.setter
     def number_of_terms(self, number_of_terms):
         """Sets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+        The number of terms that should be returned  # noqa: E501
 
         :param number_of_terms: The number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
         :type: int

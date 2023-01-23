@@ -42,6 +42,7 @@ class GrantaServerApiSearchCriterion(ModelBase):
         'recordListMember'.lower(): '#/components/schemas/GrantaServerApiSearchRecordListMemberCriterion',
         'recordProperty'.lower(): '#/components/schemas/GrantaServerApiSearchRecordPropertyCriterion',
         'reference'.lower(): '#/components/schemas/GrantaServerApiSearchRecordReferenceCriterion',
+        'recordAncestor'.lower(): '#/components/schemas/GrantaServerApiSearchRecordAncestorCriterion',
         'subset'.lower(): '#/components/schemas/GrantaServerApiSearchRecordSubsetCriterion',
         'tabularLinkingValue'.lower(): '#/components/schemas/GrantaServerApiSearchTabularLinkingValueCriterion',
         'attribute'.lower(): '#/components/schemas/GrantaServerApiSearchAttributeCriterion',
