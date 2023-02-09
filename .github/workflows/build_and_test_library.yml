@@ -1,6 +1,7 @@
 name: Build and Test Client Library
 # Update the paths once you have created a client library build
 on:
+  workflow_dispatch:
   push:
     tags:
       - "*"
