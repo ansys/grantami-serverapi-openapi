@@ -108,7 +108,12 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaLayoutsLayoutSectionsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections', 'GET',
             path_params,
@@ -117,11 +122,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaLayoutsLayoutSectionsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_post(self, database_key, table_guid, layout_guid, **kwargs):  # noqa: E501
         """Create a new layout section.  # noqa: E501
@@ -206,7 +211,15 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaSlimEntitiesSlimLayoutSection',
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections', 'POST',
             path_params,
@@ -215,11 +228,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaSlimEntitiesSlimLayoutSection',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_put(self, database_key, table_guid, layout_guid, **kwargs):  # noqa: E501
         """Reorder the list of layout sections for a layout.  # noqa: E501
@@ -304,7 +317,14 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaLayoutsLayoutSectionsInfo',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections', 'PUT',
             path_params,
@@ -313,11 +333,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaLayoutsLayoutSectionsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_section_guid_delete(self, database_key, table_guid, layout_guid, section_guid, **kwargs):  # noqa: E501
         """Delete a layout section.  # noqa: E501
@@ -398,7 +418,14 @@ class SchemaLayoutSectionsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections/{section-guid}', 'DELETE',
             path_params,
@@ -407,11 +434,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_section_guid_get(self, database_key, table_guid, layout_guid, section_guid, **kwargs):  # noqa: E501
         """Get a layout section with a specified guid for a given layout.  # noqa: E501
@@ -508,7 +535,12 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaLayoutsLayoutSection',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections/{section-guid}', 'GET',
             path_params,
@@ -517,11 +549,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaLayoutsLayoutSection',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_section_guid_items_item_guid_delete(self, database_key, table_guid, layout_guid, section_guid, item_guid, **kwargs):  # noqa: E501
         """Delete a layout item.  # noqa: E501
@@ -610,7 +642,14 @@ class SchemaLayoutSectionsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections/{section-guid}/items/{item-guid}', 'DELETE',
             path_params,
@@ -619,11 +658,11 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_layouts_layout_guid_sections_section_guid_items_post(self, database_key, table_guid, layout_guid, section_guid, **kwargs):  # noqa: E501
         """Add a new layout item.  # noqa: E501
@@ -716,7 +755,15 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaLayoutsNewLayoutItem',
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/{layout-guid}/sections/{section-guid}/items', 'POST',
             path_params,
@@ -725,8 +772,8 @@ class SchemaLayoutSectionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaLayoutsNewLayoutItem',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

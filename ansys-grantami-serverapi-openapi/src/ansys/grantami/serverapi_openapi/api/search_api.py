@@ -104,7 +104,11 @@ class SearchApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchSearchResponse',
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}:search', 'POST',
             path_params,
@@ -113,11 +117,11 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_identitysearch_post(self, database_key, table_identity, **kwargs):  # noqa: E501
         """v1alpha_databases_database_key_tables_table_identitysearch_post  # noqa: E501
@@ -202,7 +206,11 @@ class SearchApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchSearchResponse',
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-identity}:search', 'POST',
             path_params,
@@ -211,11 +219,11 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_keysearch_post(self, database_key, **kwargs):  # noqa: E501
         """v1alpha_databases_database_keysearch_post  # noqa: E501
@@ -292,7 +300,11 @@ class SearchApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchSearchResponse',
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}:search', 'POST',
             path_params,
@@ -301,11 +313,11 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schemasearch_post(self, schema, **kwargs):  # noqa: E501
         """Runs a search against the integration schema.  # noqa: E501
@@ -374,7 +386,12 @@ class SearchApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchSearchResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}:search', 'POST',
             path_params,
@@ -383,11 +400,11 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_searches_search_identifier_delete(self, search_identifier, **kwargs):  # noqa: E501
         """v1alpha_searches_search_identifier_delete  # noqa: E501
@@ -444,7 +461,12 @@ class SearchApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/searches/{searchIdentifier}', 'DELETE',
             path_params,
@@ -453,11 +475,11 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_searches_search_identifier_results_post(self, search_identifier, **kwargs):  # noqa: E501
         """v1alpha_searches_search_identifier_results_post  # noqa: E501
@@ -526,7 +548,12 @@ class SearchApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchSearchResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/searches/{searchIdentifier}/results', 'POST',
             path_params,
@@ -535,8 +562,8 @@ class SearchApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSearchSearchResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

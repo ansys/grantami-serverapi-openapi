@@ -104,7 +104,12 @@ class AggregationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiAggregationsAggregationsResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}:aggregations', 'POST',
             path_params,
@@ -113,11 +118,11 @@ class AggregationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiAggregationsAggregationsResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_identityaggregations_post(self, database_key, table_identity, **kwargs):  # noqa: E501
         """Runs an aggregation against the table.  # noqa: E501
@@ -202,7 +207,12 @@ class AggregationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiAggregationsAggregationsResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-identity}:aggregations', 'POST',
             path_params,
@@ -211,11 +221,11 @@ class AggregationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiAggregationsAggregationsResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_keyaggregations_post(self, database_key, **kwargs):  # noqa: E501
         """Runs an aggregation against the database.  # noqa: E501
@@ -292,7 +302,12 @@ class AggregationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiAggregationsAggregationsResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}:aggregations', 'POST',
             path_params,
@@ -301,11 +316,11 @@ class AggregationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiAggregationsAggregationsResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schemaaggregations_post(self, schema, **kwargs):  # noqa: E501
         """Runs an aggregation against the integration schema.  # noqa: E501
@@ -374,7 +389,12 @@ class AggregationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiAggregationsAggregationsResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}:aggregations', 'POST',
             path_params,
@@ -383,8 +403,8 @@ class AggregationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiAggregationsAggregationsResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

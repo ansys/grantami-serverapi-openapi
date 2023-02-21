@@ -80,7 +80,12 @@ class SchemaStandardNamesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaStandardNamesInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names', 'GET',
             path_params,
@@ -89,11 +94,11 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaStandardNamesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_standard_names_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new standard name  # noqa: E501
@@ -158,7 +163,14 @@ class SchemaStandardNamesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names', 'POST',
             path_params,
@@ -167,11 +179,11 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_standard_names_standard_name_guid_delete(self, database_key, standard_name_guid, **kwargs):  # noqa: E501
         """Delete a standard name.  # noqa: E501
@@ -236,7 +248,14 @@ class SchemaStandardNamesApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names/{standard-name-guid}', 'DELETE',
             path_params,
@@ -245,11 +264,11 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_standard_names_standard_name_guid_get(self, database_key, standard_name_guid, **kwargs):  # noqa: E501
         """Gets a standard name for a given database and guid.  # noqa: E501
@@ -318,7 +337,12 @@ class SchemaStandardNamesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaStandardName',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names/{standard-name-guid}', 'GET',
             path_params,
@@ -327,11 +351,11 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaStandardName',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_standard_names_standard_name_guid_patch(self, database_key, standard_name_guid, **kwargs):  # noqa: E501
         """Edit a standard name  # noqa: E501
@@ -408,7 +432,14 @@ class SchemaStandardNamesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaStandardName',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names/{standard-name-guid}', 'PATCH',
             path_params,
@@ -417,8 +448,8 @@ class SchemaStandardNamesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaStandardName',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

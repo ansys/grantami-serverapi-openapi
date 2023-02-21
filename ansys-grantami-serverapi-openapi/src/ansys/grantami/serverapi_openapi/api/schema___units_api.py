@@ -80,7 +80,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitSystemsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/unit-systems', 'GET',
             path_params,
@@ -89,11 +94,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitSystemsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_unit_systems_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new unit system.  # noqa: E501
@@ -158,7 +163,14 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/unit-systems', 'POST',
             path_params,
@@ -167,11 +179,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_unit_systems_unit_system_guid_delete(self, database_key, unit_system_guid, **kwargs):  # noqa: E501
         """Delete a unit system.  # noqa: E501
@@ -236,7 +248,14 @@ class SchemaUnitsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}', 'DELETE',
             path_params,
@@ -245,11 +264,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_unit_systems_unit_system_guid_get(self, database_key, unit_system_guid, **kwargs):  # noqa: E501
         """Get an individual unit system  # noqa: E501
@@ -318,7 +337,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitSystem',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}', 'GET',
             path_params,
@@ -327,11 +351,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitSystem',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_unit_systems_unit_system_guid_patch(self, database_key, unit_system_guid, **kwargs):  # noqa: E501
         """Update a unit system.  # noqa: E501
@@ -408,7 +432,14 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitSystem',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}', 'PATCH',
             path_params,
@@ -417,11 +448,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitSystem',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_get(self, database_key, **kwargs):  # noqa: E501
         """Get all units  # noqa: E501
@@ -482,7 +513,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units', 'GET',
             path_params,
@@ -491,11 +527,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new unit.  # noqa: E501
@@ -560,7 +596,15 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units', 'POST',
             path_params,
@@ -569,11 +613,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guid_delete(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Delete unit.  # noqa: E501
@@ -638,7 +682,14 @@ class SchemaUnitsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}', 'DELETE',
             path_params,
@@ -647,11 +698,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guid_equivalent_units_get(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Get equivalent units (one per unit system)  # noqa: E501
@@ -720,7 +771,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitEquivalentsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units', 'GET',
             path_params,
@@ -729,11 +785,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitEquivalentsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post(self, database_key, unit_guid, unit_system_guid, equivalent_unit_guid, **kwargs):  # noqa: E501
         """Set the equivalent unit for a given unit system  # noqa: E501
@@ -814,7 +870,12 @@ class SchemaUnitsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units/unit-system/{unit-system-guid}/equivalent-unit/{equivalent-unit-guid}:set-equivalent-unit', 'POST',
             path_params,
@@ -823,11 +884,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guid_get(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Get individual units  # noqa: E501
@@ -896,7 +957,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnit',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}', 'GET',
             path_params,
@@ -905,11 +971,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnit',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guid_patch(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Update unit.  # noqa: E501
@@ -986,7 +1052,14 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnit',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}', 'PATCH',
             path_params,
@@ -995,11 +1068,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnit',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guidcompatible_units_get(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Get compatible units for unit  # noqa: E501
@@ -1068,7 +1141,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}:compatible-units', 'GET',
             path_params,
@@ -1077,11 +1155,11 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_units_unit_guidusages_get(self, database_key, unit_guid, **kwargs):  # noqa: E501
         """Get all usages of unit  # noqa: E501
@@ -1150,7 +1228,12 @@ class SchemaUnitsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaUnitsUnitUsage',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/units/{unit-guid}:usages', 'GET',
             path_params,
@@ -1159,8 +1242,8 @@ class SchemaUnitsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaUnitsUnitUsage',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

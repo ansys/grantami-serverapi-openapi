@@ -88,7 +88,14 @@ class SchemaConstantsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            400: 'GrantaServerApiExceptionsConstantDeletionException',
+            200: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/constants/{constant-guid}', 'DELETE',
             path_params,
@@ -97,11 +104,11 @@ class SchemaConstantsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_constants_constant_guid_get(self, database_key, constant_guid, **kwargs):  # noqa: E501
         """Get individual constant  # noqa: E501
@@ -170,7 +177,12 @@ class SchemaConstantsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaConstant',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/constants/{constant-guid}', 'GET',
             path_params,
@@ -179,11 +191,11 @@ class SchemaConstantsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaConstant',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_constants_constant_guid_patch(self, database_key, constant_guid, **kwargs):  # noqa: E501
         """Update constant.  # noqa: E501
@@ -260,7 +272,14 @@ class SchemaConstantsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaConstant',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/constants/{constant-guid}', 'PATCH',
             path_params,
@@ -269,11 +288,11 @@ class SchemaConstantsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaConstant',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_constants_get(self, database_key, **kwargs):  # noqa: E501
         """Get all constants  # noqa: E501
@@ -334,7 +353,12 @@ class SchemaConstantsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaConstantsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/constants', 'GET',
             path_params,
@@ -343,11 +367,11 @@ class SchemaConstantsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaConstantsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_constants_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new constant.  # noqa: E501
@@ -412,7 +436,15 @@ class SchemaConstantsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/constants', 'POST',
             path_params,
@@ -421,8 +453,8 @@ class SchemaConstantsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

@@ -72,7 +72,12 @@ class SchemaProfilesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaAllProfilesInfo',
+            403: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles', 'GET',
             path_params,
@@ -81,11 +86,11 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaAllProfilesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_profiles_patch(self, **kwargs):  # noqa: E501
         """Update AllProfilesInfo  # noqa: E501
@@ -146,7 +151,14 @@ class SchemaProfilesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaAllProfilesInfo',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles', 'PATCH',
             path_params,
@@ -155,11 +167,11 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaAllProfilesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_profiles_post(self, **kwargs):  # noqa: E501
         """Create a new profile  # noqa: E501
@@ -216,7 +228,14 @@ class SchemaProfilesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles', 'POST',
             path_params,
@@ -225,11 +244,11 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_profiles_profile_guid_delete(self, profile_guid, **kwargs):  # noqa: E501
         """Delete a profile  # noqa: E501
@@ -286,7 +305,14 @@ class SchemaProfilesApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles/{profile-guid}', 'DELETE',
             path_params,
@@ -295,11 +321,11 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_profiles_profile_guid_get(self, profile_guid, **kwargs):  # noqa: E501
         """Get individual profile  # noqa: E501
@@ -360,7 +386,13 @@ class SchemaProfilesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaProfile',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles/{profile-guid}', 'GET',
             path_params,
@@ -369,11 +401,11 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaProfile',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_profiles_profile_guid_patch(self, profile_guid, **kwargs):  # noqa: E501
         """Update a profile  # noqa: E501
@@ -442,7 +474,14 @@ class SchemaProfilesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaProfile',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/profiles/{profile-guid}', 'PATCH',
             path_params,
@@ -451,8 +490,8 @@ class SchemaProfilesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaProfile',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

@@ -84,7 +84,11 @@ class ListItemApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/items/add', 'POST',
             path_params,
@@ -93,11 +97,11 @@ class ListItemApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_items_get(self, list_identifier, **kwargs):  # noqa: E501
         """Returns the items in the given list  # noqa: E501
@@ -158,7 +162,11 @@ class ListItemApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListItems',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/items', 'GET',
             path_params,
@@ -167,11 +175,11 @@ class ListItemApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListItems',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_items_remove_post(self, list_identifier, **kwargs):  # noqa: E501
         """Removed the specified items from an existing list.  # noqa: E501
@@ -236,7 +244,11 @@ class ListItemApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/items/remove', 'POST',
             path_params,
@@ -245,8 +257,8 @@ class ListItemApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
