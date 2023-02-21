@@ -72,7 +72,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[GrantaServerApiListsDtoRecordListHeader]',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists', 'GET',
             path_params,
@@ -81,11 +85,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiListsDtoRecordListHeader]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_copy_post(self, list_identifier, **kwargs):  # noqa: E501
         """Creates a copy of the list and its items  # noqa: E501
@@ -142,7 +146,11 @@ class ListManagementApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/copy', 'POST',
             path_params,
@@ -151,11 +159,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_delete(self, list_identifier, **kwargs):  # noqa: E501
         """Delete an existing list.  # noqa: E501
@@ -212,7 +220,11 @@ class ListManagementApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}', 'DELETE',
             path_params,
@@ -221,11 +233,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_get(self, list_identifier, **kwargs):  # noqa: E501
         """Returns the given list if it exists and the calling user has read access to it  # noqa: E501
@@ -286,7 +298,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}', 'GET',
             path_params,
@@ -295,11 +311,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListHeader',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_patch(self, list_identifier, **kwargs):  # noqa: E501
         """Performs a partial update on the properties of a list.  # noqa: E501
@@ -368,7 +384,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}', 'PATCH',
             path_params,
@@ -377,11 +397,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListHeader',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_publish_post(self, list_identifier, **kwargs):  # noqa: E501
         """Update the status of an existing list to \"published\". The list must be awaiting approval, and not already published.  The \"awaiting approval\" flag will be reset to false.  # noqa: E501
@@ -442,7 +462,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListResource',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/publish', 'POST',
             path_params,
@@ -451,11 +475,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListResource',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_put(self, list_identifier, **kwargs):  # noqa: E501
         """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, create it (empty)  # noqa: E501
@@ -524,7 +548,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}', 'PUT',
             path_params,
@@ -533,11 +561,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListHeader',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_request_approval_post(self, list_identifier, **kwargs):  # noqa: E501
         """Update the status of an existing list to \"awaiting approval\".  # noqa: E501
@@ -598,7 +626,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListResource',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/request-approval', 'POST',
             path_params,
@@ -607,11 +639,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListResource',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_reset_post(self, list_identifier, **kwargs):  # noqa: E501
         """Update the status of an existing list to not be \"awaiting approval\".  # noqa: E501
@@ -672,7 +704,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListResource',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/reset', 'POST',
             path_params,
@@ -681,11 +717,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListResource',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_revise_post(self, list_identifier, **kwargs):  # noqa: E501
         """Creates a private copy of a list that can be revised.  # noqa: E501
@@ -742,7 +778,11 @@ class ListManagementApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/revise', 'POST',
             path_params,
@@ -751,11 +791,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_unpublish_post(self, list_identifier, **kwargs):  # noqa: E501
         """Update the status of an existing list to \"unpublished\". The list must be published, and awaiting approval.  The \"awaiting approval\" flag will be reset to false.  # noqa: E501
@@ -816,7 +856,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListResource',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/unpublish', 'POST',
             path_params,
@@ -825,11 +869,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListResource',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_post(self, **kwargs):  # noqa: E501
         """Creates a new list with the specified properties and items.  # noqa: E501
@@ -886,7 +930,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists', 'POST',
             path_params,
@@ -895,11 +943,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_search_post(self, **kwargs):  # noqa: E501
         """Posts a search request, and returns a resource containing the results  # noqa: E501
@@ -960,7 +1008,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListResource',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/search', 'POST',
             path_params,
@@ -969,11 +1021,11 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListResource',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_search_results_result_resource_identifier_get(self, result_resource_identifier, **kwargs):  # noqa: E501
         """Returns the search results found in the specified resource  # noqa: E501
@@ -1034,7 +1086,11 @@ class ListManagementApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[GrantaServerApiListsDtoRecordListSearchResult]',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/search/results/{resultResourceIdentifier}', 'GET',
             path_params,
@@ -1043,8 +1099,8 @@ class ListManagementApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiListsDtoRecordListSearchResult]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

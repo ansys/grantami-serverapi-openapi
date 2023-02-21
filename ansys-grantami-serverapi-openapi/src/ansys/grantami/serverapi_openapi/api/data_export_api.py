@@ -96,7 +96,13 @@ class DataExportApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiDataExportDataExportResponse',
+            404: None,
+            403: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}:export', 'POST',
             path_params,
@@ -105,11 +111,11 @@ class DataExportApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiDataExportDataExportResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schemaexport_post(self, schema, **kwargs):  # noqa: E501
         """Export data from the integration schema.  # noqa: E501
@@ -178,7 +184,12 @@ class DataExportApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiDataExportDataExportResponse',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}:export', 'POST',
             path_params,
@@ -187,8 +198,8 @@ class DataExportApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiDataExportDataExportResponse',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

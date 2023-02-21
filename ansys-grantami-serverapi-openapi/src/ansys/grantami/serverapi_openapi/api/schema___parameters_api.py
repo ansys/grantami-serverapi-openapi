@@ -80,7 +80,12 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaParametersParametersInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters', 'GET',
             path_params,
@@ -89,11 +94,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaParametersParametersInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_delete(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Delete a parameter.  # noqa: E501
@@ -162,7 +167,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            400: 'GrantaServerApiExceptionsParameterDeletionException',
+            200: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}', 'DELETE',
             path_params,
@@ -171,11 +183,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_get(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Get a parameter with a specified guid for a given database.  # noqa: E501
@@ -244,7 +256,12 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaParametersParameter',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}', 'GET',
             path_params,
@@ -253,11 +270,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaParametersParameter',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_delete(self, database_key, parameter_guid, parameter_value_guid, **kwargs):  # noqa: E501
         """Delete a parameter value.  # noqa: E501
@@ -334,7 +351,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            400: 'GrantaServerApiExceptionsParameterValueDeletionException',
+            200: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values/{parameter-value-guid}', 'DELETE',
             path_params,
@@ -343,11 +367,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_patch(self, database_key, parameter_guid, parameter_value_guid, **kwargs):  # noqa: E501
         """Update a parameter value.  # noqa: E501
@@ -432,7 +456,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaParametersParameterValue',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values/{parameter-value-guid}', 'PATCH',
             path_params,
@@ -441,11 +472,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaParametersParameterValue',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_post(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Create a new parameter value.  # noqa: E501
@@ -518,7 +549,15 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values', 'POST',
             path_params,
@@ -527,11 +566,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Replace the whole parameter value collection for a given parameter.  This will result in adding, modifying and deleting parameter values. If any of those operations fail, the whole operation fails.  # noqa: E501
@@ -608,7 +647,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaParametersParameterValuesInfo',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values', 'PUT',
             path_params,
@@ -617,11 +663,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaParametersParameterValuesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guid_patch(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Update a parameter.  # noqa: E501
@@ -698,7 +744,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaParametersParameter',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}', 'PATCH',
             path_params,
@@ -707,11 +760,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaParametersParameter',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_parameter_guidusages_get(self, database_key, parameter_guid, **kwargs):  # noqa: E501
         """Get attributes which currently use the given parameter.  # noqa: E501
@@ -780,7 +833,12 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaSlimEntitiesSlimObjects',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters/{parameter-guid}:usages', 'GET',
             path_params,
@@ -789,11 +847,11 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaSlimEntitiesSlimObjects',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_parameters_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new parameter.  # noqa: E501
@@ -858,7 +916,14 @@ class SchemaParametersApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/parameters', 'POST',
             path_params,
@@ -867,8 +932,8 @@ class SchemaParametersApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

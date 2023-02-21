@@ -88,7 +88,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/standard-names:generate-integration-schema', 'POST',
             path_params,
@@ -97,11 +103,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_identity_layout_layout_identitygenerate_integration_schema_get(self, database_key, table_identity, layout_identity, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.  # noqa: E501
@@ -178,7 +184,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-identity}/layout/{layout-identity}:generate-integration-schema', 'GET',
             path_params,
@@ -187,11 +199,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_identity_layout_layout_namegenerate_integration_schema_get(self, database_key, table_identity, layout_name, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.  # noqa: E501
@@ -268,7 +280,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-identity}/layout/{layout-name}:generate-integration-schema', 'GET',
             path_params,
@@ -277,11 +295,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_identitygenerate_integration_schema_get(self, database_key, table_identity, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given table. The user must be an Admin user for the database.  # noqa: E501
@@ -350,7 +368,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-identity}:generate-integration-schema', 'GET',
             path_params,
@@ -359,11 +383,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_name_layout_layout_identitygenerate_integration_schema_get(self, database_key, table_name, layout_identity, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.  # noqa: E501
@@ -440,7 +464,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-name}/layout/{layout-identity}:generate-integration-schema', 'GET',
             path_params,
@@ -449,11 +479,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_name_layout_layout_namegenerate_integration_schema_get(self, database_key, table_name, layout_name, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.  # noqa: E501
@@ -530,7 +560,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-name}/layout/{layout-name}:generate-integration-schema', 'GET',
             path_params,
@@ -539,11 +575,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_namegenerate_integration_schema_get(self, database_key, table_name, **kwargs):  # noqa: E501
         """Generate an integration schema from the attributes in the given table. The user must be an Admin user for the database.  # noqa: E501
@@ -612,7 +648,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-name}:generate-integration-schema', 'GET',
             path_params,
@@ -621,11 +663,11 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_standard_namesgenerate_integration_schema_post(self, **kwargs):  # noqa: E501
         """Generate an integration schema with attributes for each provided standard name. This will include attribute from all loaded databases for which the user is an Admin.  # noqa: E501
@@ -686,7 +728,13 @@ class DatabaseApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/standard-names:generate-integration-schema', 'POST',
             path_params,
@@ -695,8 +743,8 @@ class DatabaseApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

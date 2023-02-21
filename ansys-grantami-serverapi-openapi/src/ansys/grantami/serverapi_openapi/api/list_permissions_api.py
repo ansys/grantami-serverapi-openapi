@@ -80,7 +80,11 @@ class ListPermissionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[GrantaServerApiListsDtoUserPermissionDto]',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions', 'GET',
             path_params,
@@ -89,11 +93,11 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiListsDtoUserPermissionDto]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_permissions_post(self, list_identifier, **kwargs):  # noqa: E501
         """Sets permissions for the specified list. Returns a collection of URIs to the created/updated permissions.  # noqa: E501
@@ -162,7 +166,11 @@ class ListPermissionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[str]',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions', 'POST',
             path_params,
@@ -171,11 +179,11 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_permissions_subscribe_post(self, list_identifier, **kwargs):  # noqa: E501
         """Subscribes the calling user to the specified list.  # noqa: E501
@@ -232,7 +240,11 @@ class ListPermissionsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions/subscribe', 'POST',
             path_params,
@@ -241,11 +253,11 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_permissions_unsubscribe_post(self, list_identifier, **kwargs):  # noqa: E501
         """Unsubscribes the calling user from the specified list.  # noqa: E501
@@ -302,7 +314,11 @@ class ListPermissionsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions/unsubscribe', 'POST',
             path_params,
@@ -311,11 +327,11 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_permissions_user_user_identifier_get(self, list_identifier, user_identifier, **kwargs):  # noqa: E501
         """Gets the permission flags of the permission associating the specified list with the specified user.  # noqa: E501
@@ -384,7 +400,11 @@ class ListPermissionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiListsDtoRecordListPermissionFlagsDto',
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions/user/{userIdentifier}', 'GET',
             path_params,
@@ -393,11 +413,11 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiListsDtoRecordListPermissionFlagsDto',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_permissions_user_user_identifier_put(self, list_identifier, user_identifier, **kwargs):  # noqa: E501
         """Sets the permission flags of the permission associating the specified list with the specified user.  # noqa: E501
@@ -470,7 +490,11 @@ class ListPermissionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+        }
+        
         return self.api_client.call_api(
             '/api/v1/lists/list/{listIdentifier}/permissions/user/{userIdentifier}', 'PUT',
             path_params,
@@ -479,8 +503,8 @@ class ListPermissionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

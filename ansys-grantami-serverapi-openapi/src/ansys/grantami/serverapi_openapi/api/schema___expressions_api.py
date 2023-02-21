@@ -92,7 +92,14 @@ class SchemaExpressionsApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/expressions/{expression-guid}', 'DELETE',
             path_params,
@@ -101,11 +108,11 @@ class SchemaExpressionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_expressions_expression_guid_get(self, database_key, table_guid, expression_guid, **kwargs):  # noqa: E501
         """Get an expression with a specified guid for a given database and table.  # noqa: E501
@@ -182,7 +189,12 @@ class SchemaExpressionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaExpression',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/expressions/{expression-guid}', 'GET',
             path_params,
@@ -191,11 +203,11 @@ class SchemaExpressionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaExpression',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_expressions_expression_guid_patch(self, database_key, table_guid, expression_guid, **kwargs):  # noqa: E501
         """Update an expression.  # noqa: E501
@@ -280,7 +292,14 @@ class SchemaExpressionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaExpression',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/expressions/{expression-guid}', 'PATCH',
             path_params,
@@ -289,11 +308,11 @@ class SchemaExpressionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaExpression',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_expressions_get(self, database_key, table_guid, **kwargs):  # noqa: E501
         """Get all expressions for table  # noqa: E501
@@ -362,7 +381,12 @@ class SchemaExpressionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaExpressionsInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/expressions', 'GET',
             path_params,
@@ -371,11 +395,11 @@ class SchemaExpressionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaExpressionsInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_tables_table_guid_expressions_post(self, database_key, table_guid, **kwargs):  # noqa: E501
         """Create a new expression.  # noqa: E501
@@ -448,7 +472,15 @@ class SchemaExpressionsApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/tables/{table-guid}/expressions', 'POST',
             path_params,
@@ -457,8 +489,8 @@ class SchemaExpressionsApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

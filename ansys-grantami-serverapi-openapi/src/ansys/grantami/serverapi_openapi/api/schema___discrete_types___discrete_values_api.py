@@ -96,7 +96,14 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            400: 'GrantaServerApiExceptionsDiscreteValueDeletionException',
+            200: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values/{discrete-value-guid}', 'DELETE',
             path_params,
@@ -105,11 +112,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_discrete_value_guid_get(self, database_key, discrete_type_guid, discrete_value_guid, **kwargs):  # noqa: E501
         """Gets specific discrete value for a given discreteType within a given database.  # noqa: E501
@@ -186,7 +193,12 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteValue',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values/{discrete-value-guid}', 'GET',
             path_params,
@@ -195,11 +207,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteValue',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_discrete_value_guid_patch(self, database_key, discrete_type_guid, discrete_value_guid, **kwargs):  # noqa: E501
         """Update discrete value.  # noqa: E501
@@ -284,7 +296,14 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteValue',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values/{discrete-value-guid}', 'PATCH',
             path_params,
@@ -293,11 +312,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteValue',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_get(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Gets all discrete values for a given discreteType. If discreteType is ordered, then discreteValues will be return in order, otherwise order is not deterministic.  # noqa: E501
@@ -366,7 +385,12 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteValuesInfo',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values', 'GET',
             path_params,
@@ -375,11 +399,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteValuesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_post(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Create new discrete value. If it's ordered, it will be added at the end.  # noqa: E501
@@ -452,7 +476,15 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values', 'POST',
             path_params,
@@ -461,11 +493,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_put(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.  # noqa: E501
@@ -542,7 +574,14 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteValuesInfo',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values', 'PUT',
             path_params,
@@ -551,11 +590,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteValuesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_valuesfind_unused_get(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Find discrete values that are not in use by any data  # noqa: E501
@@ -624,7 +663,13 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteValuesInfo',
+            400: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}/discrete-values:find-unused', 'GET',
             path_params,
@@ -633,8 +678,8 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteValuesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

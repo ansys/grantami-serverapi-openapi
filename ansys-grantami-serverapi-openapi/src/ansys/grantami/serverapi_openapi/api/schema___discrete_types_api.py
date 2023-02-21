@@ -88,7 +88,14 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            400: 'GrantaServerApiExceptionsDiscreteTypeDeletionException',
+            200: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}', 'DELETE',
             path_params,
@@ -97,11 +104,11 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_get(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Gets a single discrete type.  # noqa: E501
@@ -170,7 +177,12 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteType',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}', 'GET',
             path_params,
@@ -179,11 +191,11 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteType',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Update discrete type.  # noqa: E501
@@ -260,7 +272,14 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteType',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}', 'PATCH',
             path_params,
@@ -269,11 +288,11 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteType',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get(self, database_key, discrete_type_guid, **kwargs):  # noqa: E501
         """Gets objects that are using this discrete type.  # noqa: E501
@@ -342,7 +361,13 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaSlimEntitiesSlimObjects',
+            400: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}:usages', 'GET',
             path_params,
@@ -351,11 +376,11 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaSlimEntitiesSlimObjects',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_get(self, database_key, **kwargs):  # noqa: E501
         """Gets all discrete types for a given database.  # noqa: E501
@@ -416,7 +441,13 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaDiscreteTypesInfo',
+            400: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types', 'GET',
             path_params,
@@ -425,11 +456,11 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiSchemaDiscreteTypesInfo',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_databases_database_key_discrete_types_post(self, database_key, **kwargs):  # noqa: E501
         """Create a new discrete type.  # noqa: E501
@@ -494,7 +525,15 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/discrete-types', 'POST',
             path_params,
@@ -503,8 +542,8 @@ class SchemaDiscreteTypesApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)

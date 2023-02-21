@@ -72,7 +72,11 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[str]',
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas', 'GET',
             path_params,
@@ -81,11 +85,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_post(self, **kwargs):  # noqa: E501
         """Add an integration schema. Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.  # noqa: E501
@@ -142,7 +146,13 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            201: None,
+            422: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas', 'POST',
             path_params,
@@ -151,11 +161,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schema_attributes_get(self, schema, **kwargs):  # noqa: E501
         """Returns a list of the attributes defined in the integration schema.  # noqa: E501
@@ -220,7 +230,12 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[GrantaServerApiIntegrationSchemaAttribute]',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}/attributes', 'GET',
             path_params,
@@ -229,11 +244,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiIntegrationSchemaAttribute]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schema_delete(self, schema, **kwargs):  # noqa: E501
         """Delete an integration schema. Will fail if the schema does not exist, or if the user is not both a global administrator and an administrator for the schema.  # noqa: E501
@@ -290,7 +305,12 @@ class IntegrationApi(ApiBase):
         body_params = None
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}', 'DELETE',
             path_params,
@@ -299,11 +319,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schema_get(self, schema, **kwargs):  # noqa: E501
         """Returns the full object representing the integration schema.  Names and identities of source items will be populated if they can be found in the databases currently loaded in MI, otherwise just the GUIDs will be returned.  # noqa: E501
@@ -368,7 +388,12 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}', 'GET',
             path_params,
@@ -377,11 +402,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationSchemaIntegrationSchema',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schema_put(self, schema, **kwargs):  # noqa: E501
         """Updates an integration schema, or adds a new one if there is not one with the same key already.  Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.  # noqa: E501
@@ -446,7 +471,12 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: None,
+            422: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}', 'PUT',
             path_params,
@@ -455,11 +485,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schema_sources_database_database_key_table_table_identity_get(self, schema, database_key, table_identity, **kwargs):  # noqa: E501
         """Returns a list of the schema source mapping from the given table. Will fail if the database is not loaded in MI.  Names and identities of source items will be populated.  # noqa: E501
@@ -536,7 +566,12 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'list[GrantaServerApiIntegrationSchemaSource]',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}/sources/database/{database-key}/table/{table-identity}', 'GET',
             path_params,
@@ -545,11 +580,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[GrantaServerApiIntegrationSchemaSource]',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemas_schemastatus_get(self, schema, **kwargs):  # noqa: E501
         """Returns the status of the integration schema, including whether each referenced database has been successfully loaded into the schemas search index.  # noqa: E501
@@ -610,7 +645,12 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'GrantaServerApiIntegrationIntegrationSchemaStatus',
+            404: None,
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas/{schema}:status', 'GET',
             path_params,
@@ -619,11 +659,11 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='GrantaServerApiIntegrationIntegrationSchemaStatus',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
 
     def v1alpha_integration_schemasstatus_get(self, **kwargs):  # noqa: E501
         """Returns the status of all available integration schemas.  # noqa: E501
@@ -676,7 +716,11 @@ class IntegrationApi(ApiBase):
 
         # Authentication setting
         auth_settings = []  # noqa: E501
-
+        
+        response_type_map = {
+            200: 'dict(str, GrantaServerApiIntegrationIntegrationSchemaStatus)',
+        }
+        
         return self.api_client.call_api(
             '/v1alpha/integration-schemas:status', 'GET',
             path_params,
@@ -685,8 +729,8 @@ class IntegrationApi(ApiBase):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='dict(str, GrantaServerApiIntegrationIntegrationSchemaStatus)',  # noqa: E501
             _return_http_data_only=params.get('_return_http_data_only'),
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
