@@ -62,5 +62,3 @@ jobs:
           Update library with new YAML interface definition
         labels: |
           automated
-        team-reviewers: |
-          matbu-project-maintainers
