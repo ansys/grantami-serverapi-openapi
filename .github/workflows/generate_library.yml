@@ -63,4 +63,4 @@ jobs:
         labels: |
           automated
         team-reviewers: |
-          Maintainers
+          matbu-project-maintainers
