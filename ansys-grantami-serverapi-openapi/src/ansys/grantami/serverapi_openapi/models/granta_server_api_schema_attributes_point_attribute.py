@@ -32,7 +32,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         'type': 'str',
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
         'is_multi_valued': 'bool',
-        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]'
+        'attribute_parameters': 'list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
@@ -48,7 +48,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
 
     subtype_mapping = {
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter'
+        'attributeParameters': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
     }
 
 
@@ -129,7 +129,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
 
         :return: The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :rtype: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         return self._attribute_parameters
 
@@ -138,7 +138,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 
         :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :type: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._attribute_parameters = attribute_parameters
 

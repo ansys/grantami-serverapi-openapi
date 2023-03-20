@@ -107,7 +107,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaUnitsUnitSystem body:
-        :return: None
+        :return: GrantaServerApiSchemaUnitsUnitSystem
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_unit_systems_post_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -120,7 +120,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaUnitsUnitSystem body:
-        :return: None
+        :return: GrantaServerApiSchemaUnitsUnitSystem
         """
 
         all_params = ['database_key', 'body']  # noqa: E501
@@ -157,6 +157,10 @@ class SchemaUnitsApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -165,7 +169,7 @@ class SchemaUnitsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaUnitsUnitSystem',
             400: None,
             403: None,
             404: None,
@@ -364,7 +368,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_system_guid: (required)
-        :param GrantaServerApiSchemaUnitsUnitSystem body:
+        :param GrantaServerApiSchemaUnitsUpdateUnitSystem body:
         :return: GrantaServerApiSchemaUnitsUnitSystem
         """
         kwargs['_return_http_data_only'] = True
@@ -378,7 +382,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param str unit_system_guid: (required)
-        :param GrantaServerApiSchemaUnitsUnitSystem body:
+        :param GrantaServerApiSchemaUnitsUpdateUnitSystem body:
         :return: GrantaServerApiSchemaUnitsUnitSystem
         """
 
@@ -540,7 +544,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaUnitsUnit body:
-        :return: None
+        :return: GrantaServerApiSchemaUnitsUnit
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_units_post_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -553,7 +557,7 @@ class SchemaUnitsApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaUnitsUnit body:
-        :return: None
+        :return: GrantaServerApiSchemaUnitsUnit
         """
 
         all_params = ['database_key', 'body']  # noqa: E501
@@ -590,6 +594,10 @@ class SchemaUnitsApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -598,7 +606,7 @@ class SchemaUnitsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaUnitsUnit',
             201: None,
             400: None,
             403: None,

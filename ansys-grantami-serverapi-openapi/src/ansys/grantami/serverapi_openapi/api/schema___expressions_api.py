@@ -122,6 +122,8 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str expression_guid: (required)
+        :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         :return: GrantaServerApiSchemaExpression
         """
         kwargs['_return_http_data_only'] = True
@@ -136,10 +138,12 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str expression_guid: (required)
+        :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         :return: GrantaServerApiSchemaExpression
         """
 
-        all_params = ['database_key', 'table_guid', 'expression_guid']  # noqa: E501
+        all_params = ['database_key', 'table_guid', 'expression_guid', 'mode', 'x_ansys_vc_mode']  # noqa: E501
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -176,8 +180,12 @@ class SchemaExpressionsApi(ApiBase):
             path_params['expression-guid'] = params['expression_guid']  # noqa: E501
 
         query_params = []
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
+        if 'x_ansys_vc_mode' in params:
+            header_params['X-Ansys-VC-Mode'] = params['x_ansys_vc_mode']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -217,7 +225,7 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str expression_guid: (required)
-        :param GrantaServerApiSchemaExpression body:
+        :param GrantaServerApiSchemaUpdateExpression body:
         :return: GrantaServerApiSchemaExpression
         """
         kwargs['_return_http_data_only'] = True
@@ -232,7 +240,7 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str expression_guid: (required)
-        :param GrantaServerApiSchemaExpression body:
+        :param GrantaServerApiSchemaUpdateExpression body:
         :return: GrantaServerApiSchemaExpression
         """
 
@@ -321,6 +329,8 @@ class SchemaExpressionsApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
+        :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         :return: GrantaServerApiSchemaExpressionsInfo
         """
         kwargs['_return_http_data_only'] = True
@@ -334,10 +344,12 @@ class SchemaExpressionsApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
+        :param str mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        :param str x_ansys_vc_mode: The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         :return: GrantaServerApiSchemaExpressionsInfo
         """
 
-        all_params = ['database_key', 'table_guid']  # noqa: E501
+        all_params = ['database_key', 'table_guid', 'mode', 'x_ansys_vc_mode']  # noqa: E501
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -368,8 +380,12 @@ class SchemaExpressionsApi(ApiBase):
             path_params['table-guid'] = params['table_guid']  # noqa: E501
 
         query_params = []
+        if 'mode' in params:
+            query_params.append(('mode', params['mode']))  # noqa: E501
 
         header_params = {}
+        if 'x_ansys_vc_mode' in params:
+            header_params['X-Ansys-VC-Mode'] = params['x_ansys_vc_mode']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -409,7 +425,7 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param GrantaServerApiSchemaExpression body:
-        :return: None
+        :return: GrantaServerApiSchemaExpression
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_guid_expressions_post_with_http_info(database_key, table_guid, **kwargs)  # noqa: E501
@@ -423,7 +439,7 @@ class SchemaExpressionsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param GrantaServerApiSchemaExpression body:
-        :return: None
+        :return: GrantaServerApiSchemaExpression
         """
 
         all_params = ['database_key', 'table_guid', 'body']  # noqa: E501
@@ -466,6 +482,10 @@ class SchemaExpressionsApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -474,7 +494,7 @@ class SchemaExpressionsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaExpression',
             201: None,
             400: None,
             403: None,

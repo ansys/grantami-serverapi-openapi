@@ -486,7 +486,7 @@ class SchemaParametersApi(ApiBase):
         :param str database_key: (required)
         :param str parameter_guid: (required)
         :param GrantaServerApiSchemaParametersParameterValue body:
-        :return: None
+        :return: GrantaServerApiSchemaParametersParameterValue
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_post_with_http_info(database_key, parameter_guid, **kwargs)  # noqa: E501
@@ -500,7 +500,7 @@ class SchemaParametersApi(ApiBase):
         :param str database_key: (required)
         :param str parameter_guid: (required)
         :param GrantaServerApiSchemaParametersParameterValue body:
-        :return: None
+        :return: GrantaServerApiSchemaParametersParameterValue
         """
 
         all_params = ['database_key', 'parameter_guid', 'body']  # noqa: E501
@@ -543,6 +543,10 @@ class SchemaParametersApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -551,7 +555,7 @@ class SchemaParametersApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaParametersParameterValue',
             201: None,
             400: None,
             403: None,
@@ -676,7 +680,7 @@ class SchemaParametersApi(ApiBase):
 
         :param str database_key: (required)
         :param str parameter_guid: (required)
-        :param GrantaServerApiSchemaParametersParameter body:
+        :param GrantaServerApiSchemaParametersUpdateParameter body:
         :return: GrantaServerApiSchemaParametersParameter
         """
         kwargs['_return_http_data_only'] = True
@@ -690,7 +694,7 @@ class SchemaParametersApi(ApiBase):
 
         :param str database_key: (required)
         :param str parameter_guid: (required)
-        :param GrantaServerApiSchemaParametersParameter body:
+        :param GrantaServerApiSchemaParametersUpdateParameter body:
         :return: GrantaServerApiSchemaParametersParameter
         """
 
@@ -860,7 +864,7 @@ class SchemaParametersApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaParametersParameter body:
-        :return: None
+        :return: GrantaServerApiSchemaParametersParameter
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_parameters_post_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -873,7 +877,7 @@ class SchemaParametersApi(ApiBase):
 
         :param str database_key: (required)
         :param GrantaServerApiSchemaParametersParameter body:
-        :return: None
+        :return: GrantaServerApiSchemaParametersParameter
         """
 
         all_params = ['database_key', 'body']  # noqa: E501
@@ -910,6 +914,10 @@ class SchemaParametersApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -918,7 +926,7 @@ class SchemaParametersApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaParametersParameter',
             400: None,
             403: None,
             404: None,

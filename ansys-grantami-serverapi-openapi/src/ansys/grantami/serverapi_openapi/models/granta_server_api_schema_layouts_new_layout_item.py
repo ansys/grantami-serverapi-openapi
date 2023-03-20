@@ -49,7 +49,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutItem(ModelBase):
     def __init__(self, guid=None):  # noqa: E501
         """GrantaServerApiSchemaLayoutsNewLayoutItem - a model defined in Swagger"""  # noqa: E501
         self._guid = None
-        self.discriminator = 'item_type'
+        self.discriminator = 'itemType'
         if guid is not None:
             self.guid = guid
 

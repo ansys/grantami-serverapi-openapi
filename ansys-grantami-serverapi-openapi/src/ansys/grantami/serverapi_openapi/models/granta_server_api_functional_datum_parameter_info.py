@@ -42,7 +42,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
 
     attribute_map = {
         'scale_type_defined_at': 'scaleTypeDefinedAt',
-        'interpolation_method_defined_at': 'interpolationMethodDefinedAT',
+        'interpolation_method_defined_at': 'interpolationMethodDefinedAt',
         'default_value_defined_at': 'defaultValueDefinedAt',
         'name': 'name',
         'identity': 'identity',
@@ -55,7 +55,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
 
     subtype_mapping = {
         'scaleTypeDefinedAt': 'GrantaServerApiDataExportParameterSettingDefinedAt',
-        'interpolationMethodDefinedAT': 'GrantaServerApiDataExportParameterSettingDefinedAt',
+        'interpolationMethodDefinedAt': 'GrantaServerApiDataExportParameterSettingDefinedAt',
         'defaultValueDefinedAt': 'GrantaServerApiDataExportParameterSettingDefinedAt',
         'defaultValue': 'GrantaServerApiDataExportDatumsParameterValue'
     }

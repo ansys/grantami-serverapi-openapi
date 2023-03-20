@@ -32,7 +32,8 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
         'datum_type': 'str',
         'unit_symbol': 'str',
         'x_axis_parameter': 'GrantaServerApiFunctionalDatumParameterInfo',
-        'parameters': 'list[GrantaServerApiFunctionalDatumParameterInfo]'
+        'parameters': 'list[GrantaServerApiFunctionalDatumParameterInfo]',
+        'is_estimated': 'bool'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "swagger_types"):
         swagger_types.update(GrantaServerApiDataExportDatumsApplicableDatum.swagger_types)
@@ -41,14 +42,15 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
         'datum_type': 'datumType',
         'unit_symbol': 'unitSymbol',
         'x_axis_parameter': 'xAxisParameter',
-        'parameters': 'parameters'
+        'parameters': 'parameters',
+        'is_estimated': 'isEstimated'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "attribute_map"):
         attribute_map.update(GrantaServerApiDataExportDatumsApplicableDatum.attribute_map)
 
     subtype_mapping = {
         'xAxisParameter': 'GrantaServerApiFunctionalDatumParameterInfo',
-        'parameters': 'GrantaServerApiFunctionalDatumParameterInfo'
+        'parameters': 'GrantaServerApiFunctionalDatumParameterInfo',
     }
 
     discriminator_value_class_map = {
@@ -56,13 +58,14 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
         'series'.lower(): '#/components/schemas/GrantaServerApiDataExportDatumsFunctionalSeriesDatum',
     }
 
-    def __init__(self, datum_type='floatFunctional', unit_symbol=None, x_axis_parameter=None, parameters=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, datum_type='floatFunctional', unit_symbol=None, x_axis_parameter=None, parameters=None, is_estimated=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFunctionalDatum - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._unit_symbol = None
         self._x_axis_parameter = None
         self._parameters = None
+        self._is_estimated = None
         self.discriminator = 'graph_type'
         self.datum_type = datum_type
         if unit_symbol is not None:
@@ -71,6 +74,8 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
             self.x_axis_parameter = x_axis_parameter
         if parameters is not None:
             self.parameters = parameters
+        if is_estimated is not None:
+            self.is_estimated = is_estimated
 
     @property
     def datum_type(self):
@@ -145,6 +150,24 @@ class GrantaServerApiDataExportDatumsFunctionalDatum(GrantaServerApiDataExportDa
         :type: list[GrantaServerApiFunctionalDatumParameterInfo]
         """
         self._parameters = parameters
+
+    @property
+    def is_estimated(self):
+        """Gets the is_estimated of this GrantaServerApiDataExportDatumsFunctionalDatum.  # noqa: E501
+
+        :return: The is_estimated of this GrantaServerApiDataExportDatumsFunctionalDatum.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated):
+        """Sets the is_estimated of this GrantaServerApiDataExportDatumsFunctionalDatum.
+
+        :param is_estimated: The is_estimated of this GrantaServerApiDataExportDatumsFunctionalDatum.  # noqa: E501
+        :type: bool
+        """
+        self._is_estimated = is_estimated
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

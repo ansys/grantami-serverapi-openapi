@@ -64,7 +64,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
     @property
     def number_of_terms(self):
         """Gets the number_of_terms of this GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion.  # noqa: E501
-        The maximum number of terms to return in this aggregation. If this is not provided,  or if an invalid value is provided, then a default value of 10 will be assumed.  # noqa: E501
+        The maximum number of terms to return in this aggregation.  # noqa: E501
 
         :return: The number_of_terms of this GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion.  # noqa: E501
         :rtype: int
@@ -74,7 +74,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
     @number_of_terms.setter
     def number_of_terms(self, number_of_terms):
         """Sets the number_of_terms of this GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion.
-        The maximum number of terms to return in this aggregation. If this is not provided,  or if an invalid value is provided, then a default value of 10 will be assumed.  # noqa: E501
+        The maximum number of terms to return in this aggregation.  # noqa: E501
 
         :param number_of_terms: The number_of_terms of this GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion.  # noqa: E501
         :type: int
