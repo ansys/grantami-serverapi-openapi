@@ -108,7 +108,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         :param str profile_guid: (required)
         :param GrantaServerApiSchemaProfileTable body:
-        :return: None
+        :return: GrantaServerApiSchemaProfileTable
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_profiles_profile_guid_profile_tables_post_with_http_info(profile_guid, **kwargs)  # noqa: E501
@@ -121,7 +121,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         :param str profile_guid: (required)
         :param GrantaServerApiSchemaProfileTable body:
-        :return: None
+        :return: GrantaServerApiSchemaProfileTable
         """
 
         all_params = ['profile_guid', 'body']  # noqa: E501
@@ -158,6 +158,10 @@ class SchemaProfileTablesApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -166,7 +170,7 @@ class SchemaProfileTablesApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaProfileTable',
             201: None,
             400: None,
             403: None,
@@ -366,7 +370,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         :param str profile_guid: (required)
         :param str profile_table_guid: (required)
-        :param GrantaServerApiSchemaProfileTable body:
+        :param GrantaServerApiSchemaUpdateProfileTable body:
         :return: GrantaServerApiSchemaProfileTable
         """
         kwargs['_return_http_data_only'] = True
@@ -380,7 +384,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         :param str profile_guid: (required)
         :param str profile_table_guid: (required)
-        :param GrantaServerApiSchemaProfileTable body:
+        :param GrantaServerApiSchemaUpdateProfileTable body:
         :return: GrantaServerApiSchemaProfileTable
         """
 

@@ -123,7 +123,7 @@ class SchemaSubsetsApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
-        :param GrantaServerApiSchemaSubset body:
+        :param GrantaServerApiSchemaUpdateSubset body:
         :return: GrantaServerApiSchemaSubset
         """
         kwargs['_return_http_data_only'] = True
@@ -137,7 +137,7 @@ class SchemaSubsetsApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
-        :param GrantaServerApiSchemaSubset body:
+        :param GrantaServerApiSchemaUpdateSubset body:
         :return: GrantaServerApiSchemaSubset
         """
 
@@ -418,7 +418,7 @@ class SchemaSubsetsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str subset_guid: (required)
-        :param GrantaServerApiSchemaSubset body:
+        :param GrantaServerApiSchemaUpdateSubset body:
         :return: GrantaServerApiSchemaSubset
         """
         kwargs['_return_http_data_only'] = True
@@ -433,7 +433,7 @@ class SchemaSubsetsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str subset_guid: (required)
-        :param GrantaServerApiSchemaSubset body:
+        :param GrantaServerApiSchemaUpdateSubset body:
         :return: GrantaServerApiSchemaSubset
         """
 

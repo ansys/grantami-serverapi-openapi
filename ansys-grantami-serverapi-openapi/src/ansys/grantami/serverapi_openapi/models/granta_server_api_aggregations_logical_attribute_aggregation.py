@@ -29,7 +29,7 @@ class GrantaServerApiAggregationsLogicalAttributeAggregation(GrantaServerApiAggr
                             and the value is json key in definition.
     """
     swagger_types = {
-        'values': 'list[GrantaServerApiAggregationsValueWithCount]',
+        'values': 'list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]',
         'datum_type': 'str'
     }
     if hasattr(GrantaServerApiAggregationsAttributeValueAggregation, "swagger_types"):
@@ -43,7 +43,7 @@ class GrantaServerApiAggregationsLogicalAttributeAggregation(GrantaServerApiAggr
         attribute_map.update(GrantaServerApiAggregationsAttributeValueAggregation.attribute_map)
 
     subtype_mapping = {
-        'values': 'GrantaServerApiAggregationsValueWithCount',
+        'values': 'GrantaServerApiAggregationsValueWithCountOfSystemBoolean',
     }
 
 
@@ -62,7 +62,7 @@ class GrantaServerApiAggregationsLogicalAttributeAggregation(GrantaServerApiAggr
         """Gets the values of this GrantaServerApiAggregationsLogicalAttributeAggregation.  # noqa: E501
 
         :return: The values of this GrantaServerApiAggregationsLogicalAttributeAggregation.  # noqa: E501
-        :rtype: list[GrantaServerApiAggregationsValueWithCount]
+        :rtype: list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]
         """
         return self._values
 
@@ -71,7 +71,7 @@ class GrantaServerApiAggregationsLogicalAttributeAggregation(GrantaServerApiAggr
         """Sets the values of this GrantaServerApiAggregationsLogicalAttributeAggregation.
 
         :param values: The values of this GrantaServerApiAggregationsLogicalAttributeAggregation.  # noqa: E501
-        :type: list[GrantaServerApiAggregationsValueWithCount]
+        :type: list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]
         """
         self._values = values
 

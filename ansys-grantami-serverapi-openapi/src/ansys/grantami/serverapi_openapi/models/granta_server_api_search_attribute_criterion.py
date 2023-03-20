@@ -30,6 +30,7 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
     """
     swagger_types = {
         'identity': 'int',
+        'guid': 'str',
         'is_meta_attribute': 'bool',
         'type': 'str'
     }
@@ -38,6 +39,7 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
 
     attribute_map = {
         'identity': 'identity',
+        'guid': 'guid',
         'is_meta_attribute': 'isMetaAttribute',
         'type': 'type'
     }
@@ -53,15 +55,18 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
         'notApplicable'.lower(): '#/components/schemas/GrantaServerApiSearchAttributeNotApplicableCriterion',
     }
 
-    def __init__(self, identity=None, is_meta_attribute=None, type='attribute', *args, **kwargs):  # noqa: E501
+    def __init__(self, identity=None, guid=None, is_meta_attribute=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._identity = None
+        self._guid = None
         self._is_meta_attribute = None
         self._type = None
         self.discriminator = 'attribute_criterion_type'
         if identity is not None:
             self.identity = identity
+        if guid is not None:
+            self.guid = guid
         if is_meta_attribute is not None:
             self.is_meta_attribute = is_meta_attribute
         self.type = type
@@ -83,6 +88,24 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
         :type: int
         """
         self._identity = identity
+
+    @property
+    def guid(self):
+        """Gets the guid of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
+
+        :return: The guid of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid):
+        """Sets the guid of this GrantaServerApiSearchAttributeCriterion.
+
+        :param guid: The guid of this GrantaServerApiSearchAttributeCriterion.  # noqa: E501
+        :type: str
+        """
+        self._guid = guid
 
     @property
     def is_meta_attribute(self):

@@ -324,7 +324,7 @@ class SchemaLayoutsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str layout_guid: (required)
-        :param GrantaServerApiSchemaLayoutsLayout body:
+        :param GrantaServerApiSchemaLayoutsUpdateLayout body:
         :return: GrantaServerApiSchemaLayoutsLayout
         """
         kwargs['_return_http_data_only'] = True
@@ -339,7 +339,7 @@ class SchemaLayoutsApi(ApiBase):
         :param str database_key: (required)
         :param str table_guid: (required)
         :param str layout_guid: (required)
-        :param GrantaServerApiSchemaLayoutsLayout body:
+        :param GrantaServerApiSchemaLayoutsUpdateLayout body:
         :return: GrantaServerApiSchemaLayoutsLayout
         """
 

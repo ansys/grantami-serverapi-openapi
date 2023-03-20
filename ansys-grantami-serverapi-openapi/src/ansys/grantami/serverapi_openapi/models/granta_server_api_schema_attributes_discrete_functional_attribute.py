@@ -31,7 +31,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
     swagger_types = {
         'type': 'str',
         'discrete_type': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity',
-        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]'
+        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
@@ -46,7 +46,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
 
     subtype_mapping = {
         'discreteType': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity',
-        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter'
+        'attributeParameters': 'GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter'
     }
 
 
@@ -106,7 +106,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.  # noqa: E501
 
         :return: The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :rtype: list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
         """
         return self._attribute_parameters
 
@@ -115,7 +115,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
 
         :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :type: list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
         """
         self._attribute_parameters = attribute_parameters
 

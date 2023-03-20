@@ -30,7 +30,9 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
     """
     swagger_types = {
         'identity': 'int',
+        'guid': 'str',
         'attribute_type': 'GrantaServerApiAttributeType',
+        'sort_type': 'GrantaServerApiSearchSortType',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchSortCriterion, "swagger_types"):
@@ -38,7 +40,9 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     attribute_map = {
         'identity': 'identity',
+        'guid': 'guid',
         'attribute_type': 'attributeType',
+        'sort_type': 'sortType',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchSortCriterion, "attribute_map"):
@@ -46,20 +50,27 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     subtype_mapping = {
         'attributeType': 'GrantaServerApiAttributeType',
+        'sortType': 'GrantaServerApiSearchSortType',
     }
 
 
-    def __init__(self, identity=None, attribute_type=None, type='attribute', *args, **kwargs):  # noqa: E501
+    def __init__(self, identity=None, guid=None, attribute_type=None, sort_type=None, type='attribute', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchAttributeSortCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchSortCriterion.__init__(self, *args, **kwargs)
         self._identity = None
+        self._guid = None
         self._attribute_type = None
+        self._sort_type = None
         self._type = None
         self.discriminator = None
         if identity is not None:
             self.identity = identity
+        if guid is not None:
+            self.guid = guid
         if attribute_type is not None:
             self.attribute_type = attribute_type
+        if sort_type is not None:
+            self.sort_type = sort_type
         self.type = type
 
     @property
@@ -81,6 +92,24 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self._identity = identity
 
     @property
+    def guid(self):
+        """Gets the guid of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+
+        :return: The guid of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid):
+        """Sets the guid of this GrantaServerApiSearchAttributeSortCriterion.
+
+        :param guid: The guid of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+        :type: str
+        """
+        self._guid = guid
+
+    @property
     def attribute_type(self):
         """Gets the attribute_type of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
 
@@ -97,6 +126,24 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         :type: GrantaServerApiAttributeType
         """
         self._attribute_type = attribute_type
+
+    @property
+    def sort_type(self):
+        """Gets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+
+        :return: The sort_type of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+        :rtype: GrantaServerApiSearchSortType
+        """
+        return self._sort_type
+
+    @sort_type.setter
+    def sort_type(self, sort_type):
+        """Sets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
+
+        :param sort_type: The sort_type of this GrantaServerApiSearchAttributeSortCriterion.  # noqa: E501
+        :type: GrantaServerApiSearchSortType
+        """
+        self._sort_type = sort_type
 
     @property
     def type(self):

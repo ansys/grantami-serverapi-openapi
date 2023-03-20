@@ -60,7 +60,7 @@ class GrantaServerApiDataExportPropertiesProperty(ModelBase):
 
     def __init__(self):  # noqa: E501
         """GrantaServerApiDataExportPropertiesProperty - a model defined in Swagger"""  # noqa: E501
-        self.discriminator = 'property_name'
+        self.discriminator = 'propertyName'
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

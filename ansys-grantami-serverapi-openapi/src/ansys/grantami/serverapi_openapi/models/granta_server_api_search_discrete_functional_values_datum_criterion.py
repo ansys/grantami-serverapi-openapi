@@ -29,7 +29,8 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
                             and the value is json key in definition.
     """
     swagger_types = {
-        'any': 'list[int]',
+        'any_identities': 'list[int]',
+        'any_guids': 'list[str]',
         'type': 'str',
         'constraints': 'list[GrantaServerApiSearchParameterConstraint]'
     }
@@ -37,7 +38,8 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
         swagger_types.update(GrantaServerApiSearchDatumCriterion.swagger_types)
 
     attribute_map = {
-        'any': 'any',
+        'any_identities': 'anyIdentities',
+        'any_guids': 'anyGuids',
         'type': 'type',
         'constraints': 'constraints'
     }
@@ -49,38 +51,61 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(GrantaServerAp
     }
 
 
-    def __init__(self, any=None, type='discreteFunctionalValues', constraints=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, any_identities=None, any_guids=None, type='discreteFunctionalValues', constraints=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
-        self._any = None
+        self._any_identities = None
+        self._any_guids = None
         self._type = None
         self._constraints = None
         self.discriminator = None
-        if any is not None:
-            self.any = any
+        if any_identities is not None:
+            self.any_identities = any_identities
+        if any_guids is not None:
+            self.any_guids = any_guids
         self.type = type
         if constraints is not None:
             self.constraints = constraints
 
     @property
-    def any(self):
-        """Gets the any of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+    def any_identities(self):
+        """Gets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
         Match any of these discrete type identities  # noqa: E501
 
-        :return: The any of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+        :return: The any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
         :rtype: list[int]
         """
-        return self._any
+        return self._any_identities
 
-    @any.setter
-    def any(self, any):
-        """Sets the any of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
+    @any_identities.setter
+    def any_identities(self, any_identities):
+        """Sets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities  # noqa: E501
 
-        :param any: The any of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+        :param any_identities: The any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
         :type: list[int]
         """
-        self._any = any
+        self._any_identities = any_identities
+
+    @property
+    def any_guids(self):
+        """Gets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+        Match any of these discrete type GUIDs  # noqa: E501
+
+        :return: The any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._any_guids
+
+    @any_guids.setter
+    def any_guids(self, any_guids):
+        """Sets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
+        Match any of these discrete type GUIDs  # noqa: E501
+
+        :param any_guids: The any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.  # noqa: E501
+        :type: list[str]
+        """
+        self._any_guids = any_guids
 
     @property
     def type(self):

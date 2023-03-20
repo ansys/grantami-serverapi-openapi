@@ -30,12 +30,14 @@ class GrantaServerApiDataExportDatumsApplicableDatum(ModelBase):
     swagger_types = {
         'not_applicable': 'bool',
         'attribute_identity': 'int',
+        'attribute_guid': 'str',
         'meta_datums': 'list[GrantaServerApiDataExportDatumsDatum]'
     }
 
     attribute_map = {
         'not_applicable': 'notApplicable',
         'attribute_identity': 'attributeIdentity',
+        'attribute_guid': 'attributeGuid',
         'meta_datums': 'metaDatums'
     }
 
@@ -59,16 +61,19 @@ class GrantaServerApiDataExportDatumsApplicableDatum(ModelBase):
         'shortText'.lower(): '#/components/schemas/GrantaServerApiDataExportDatumsShortTextDatum',
     }
 
-    def __init__(self, not_applicable=None, attribute_identity=None, meta_datums=None):  # noqa: E501
+    def __init__(self, not_applicable=None, attribute_identity=None, attribute_guid=None, meta_datums=None):  # noqa: E501
         """GrantaServerApiDataExportDatumsApplicableDatum - a model defined in Swagger"""  # noqa: E501
         self._not_applicable = None
         self._attribute_identity = None
+        self._attribute_guid = None
         self._meta_datums = None
-        self.discriminator = 'datum_type'
+        self.discriminator = 'datumType'
         if not_applicable is not None:
             self.not_applicable = not_applicable
         if attribute_identity is not None:
             self.attribute_identity = attribute_identity
+        if attribute_guid is not None:
+            self.attribute_guid = attribute_guid
         if meta_datums is not None:
             self.meta_datums = meta_datums
 
@@ -107,6 +112,24 @@ class GrantaServerApiDataExportDatumsApplicableDatum(ModelBase):
         :type: int
         """
         self._attribute_identity = attribute_identity
+
+    @property
+    def attribute_guid(self):
+        """Gets the attribute_guid of this GrantaServerApiDataExportDatumsApplicableDatum.  # noqa: E501
+
+        :return: The attribute_guid of this GrantaServerApiDataExportDatumsApplicableDatum.  # noqa: E501
+        :rtype: str
+        """
+        return self._attribute_guid
+
+    @attribute_guid.setter
+    def attribute_guid(self, attribute_guid):
+        """Sets the attribute_guid of this GrantaServerApiDataExportDatumsApplicableDatum.
+
+        :param attribute_guid: The attribute_guid of this GrantaServerApiDataExportDatumsApplicableDatum.  # noqa: E501
+        :type: str
+        """
+        self._attribute_guid = attribute_guid
 
     @property
     def meta_datums(self):

@@ -55,10 +55,20 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
     }
 
     discriminator_value_class_map = {
-        'local'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalTabularColumn',
         'linkedAttribute'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLinkedAttributeTabularColumn',
         'linkedColumn'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn',
         'linkedRecord'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn',
+        'localPoint'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn',
+        'localRange'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalRangeTabularColumn',
+        'localInteger'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn',
+        'localLogical'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalLogicalTabularColumn',
+        'localShortText'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalShortTextTabularColumn',
+        'localLongText'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalLongTextTabularColumn',
+        'localDateTime'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalDateTimeTabularColumn',
+        'localDiscrete'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn',
+        'localHyperlink'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalHyperlinkTabularColumn',
+        'localFile'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalFileTabularColumn',
+        'localPicture'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsLocalPictureTabularColumn',
         'unavailable'.lower(): '#/components/schemas/GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn',
     }
 
@@ -72,7 +82,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = 'column_type'
+        self.discriminator = 'columnType'
         if show_as_link is not None:
             self.show_as_link = show_as_link
         if summary_row_enabled is not None:

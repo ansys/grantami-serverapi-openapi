@@ -28,52 +28,53 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'attribute_identities': 'list[int]',
+        'attributes': 'list[GrantaServerApiDataExportAttributeToExport]',
         'record_properties': 'list[GrantaServerApiRecordProperty]',
         'record_history_identities': 'list[int]'
     }
 
     attribute_map = {
-        'attribute_identities': 'attributeIdentities',
+        'attributes': 'attributes',
         'record_properties': 'recordProperties',
         'record_history_identities': 'recordHistoryIdentities'
     }
 
     subtype_mapping = {
+        'attributes': 'GrantaServerApiDataExportAttributeToExport',
         'recordProperties': 'GrantaServerApiRecordProperty',
     }
 
 
-    def __init__(self, attribute_identities=None, record_properties=None, record_history_identities=None):  # noqa: E501
+    def __init__(self, attributes=None, record_properties=None, record_history_identities=None):  # noqa: E501
         """GrantaServerApiDataExportDataExportRequest - a model defined in Swagger"""  # noqa: E501
-        self._attribute_identities = None
+        self._attributes = None
         self._record_properties = None
         self._record_history_identities = None
         self.discriminator = None
-        if attribute_identities is not None:
-            self.attribute_identities = attribute_identities
+        if attributes is not None:
+            self.attributes = attributes
         if record_properties is not None:
             self.record_properties = record_properties
         if record_history_identities is not None:
             self.record_history_identities = record_history_identities
 
     @property
-    def attribute_identities(self):
-        """Gets the attribute_identities of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
+    def attributes(self):
+        """Gets the attributes of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
 
-        :return: The attribute_identities of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
-        :rtype: list[int]
+        :return: The attributes of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
+        :rtype: list[GrantaServerApiDataExportAttributeToExport]
         """
-        return self._attribute_identities
+        return self._attributes
 
-    @attribute_identities.setter
-    def attribute_identities(self, attribute_identities):
-        """Sets the attribute_identities of this GrantaServerApiDataExportDataExportRequest.
+    @attributes.setter
+    def attributes(self, attributes):
+        """Sets the attributes of this GrantaServerApiDataExportDataExportRequest.
 
-        :param attribute_identities: The attribute_identities of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
-        :type: list[int]
+        :param attributes: The attributes of this GrantaServerApiDataExportDataExportRequest.  # noqa: E501
+        :type: list[GrantaServerApiDataExportAttributeToExport]
         """
-        self._attribute_identities = attribute_identities
+        self._attributes = attributes
 
     @property
     def record_properties(self):

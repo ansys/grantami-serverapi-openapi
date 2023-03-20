@@ -30,31 +30,37 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
     """
     swagger_types = {
         'type': 'str',
-        'is_unique': 'bool'
+        'is_unique': 'bool',
+        'data_rule': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
         swagger_types.update(GrantaServerApiSchemaAttributesAttribute.swagger_types)
 
     attribute_map = {
         'type': 'type',
-        'is_unique': 'isUnique'
+        'is_unique': 'isUnique',
+        'data_rule': 'dataRule'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "attribute_map"):
         attribute_map.update(GrantaServerApiSchemaAttributesAttribute.attribute_map)
 
     subtype_mapping = {
+        'dataRule': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity'
     }
 
 
-    def __init__(self, type='shortText', is_unique=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, type='shortText', is_unique=None, data_rule=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiSchemaAttributesShortTextAttribute - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSchemaAttributesAttribute.__init__(self, *args, **kwargs)
         self._type = None
         self._is_unique = None
+        self._data_rule = None
         self.discriminator = None
         self.type = type
         if is_unique is not None:
             self.is_unique = is_unique
+        if data_rule is not None:
+            self.data_rule = data_rule
 
     @property
     def type(self):
@@ -93,6 +99,24 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
         :type: bool
         """
         self._is_unique = is_unique
+
+    @property
+    def data_rule(self):
+        """Gets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.  # noqa: E501
+
+        :return: The data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.  # noqa: E501
+        :rtype: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        """
+        return self._data_rule
+
+    @data_rule.setter
+    def data_rule(self, data_rule):
+        """Sets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
+
+        :param data_rule: The data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.  # noqa: E501
+        :type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        """
+        self._data_rule = data_rule
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -30,6 +30,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
     """
     swagger_types = {
         '_property': 'GrantaServerApiSearchSearchableRecordProperty',
+        'sort_type': 'GrantaServerApiSearchSortType',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchSortCriterion, "swagger_types"):
@@ -37,6 +38,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
 
     attribute_map = {
         '_property': 'property',
+        'sort_type': 'sortType',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchSortCriterion, "attribute_map"):
@@ -44,17 +46,21 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
 
     subtype_mapping = {
         'property': 'GrantaServerApiSearchSearchableRecordProperty',
+        'sortType': 'GrantaServerApiSearchSortType',
     }
 
 
-    def __init__(self, _property=None, type='recordProperty', *args, **kwargs):  # noqa: E501
+    def __init__(self, _property=None, sort_type=None, type='recordProperty', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordPropertySortCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchSortCriterion.__init__(self, *args, **kwargs)
         self.__property = None
+        self._sort_type = None
         self._type = None
         self.discriminator = None
         if _property is not None:
             self._property = _property
+        if sort_type is not None:
+            self.sort_type = sort_type
         self.type = type
 
     @property
@@ -74,6 +80,24 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
         :type: GrantaServerApiSearchSearchableRecordProperty
         """
         self.__property = _property
+
+    @property
+    def sort_type(self):
+        """Gets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.  # noqa: E501
+
+        :return: The sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.  # noqa: E501
+        :rtype: GrantaServerApiSearchSortType
+        """
+        return self._sort_type
+
+    @sort_type.setter
+    def sort_type(self, sort_type):
+        """Sets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
+
+        :param sort_type: The sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.  # noqa: E501
+        :type: GrantaServerApiSearchSortType
+        """
+        self._sort_type = sort_type
 
     @property
     def type(self):

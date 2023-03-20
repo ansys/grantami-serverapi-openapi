@@ -28,7 +28,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param list[str] body:
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_standard_namesgenerate_integration_schema_post_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -41,7 +41,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param list[str] body:
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'body']  # noqa: E501
@@ -90,7 +90,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -117,7 +117,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param int table_identity: (required)
         :param int layout_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_identity_layout_layout_identitygenerate_integration_schema_get_with_http_info(database_key, table_identity, layout_identity, **kwargs)  # noqa: E501
@@ -131,7 +131,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param int table_identity: (required)
         :param int layout_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_identity', 'layout_identity']  # noqa: E501
@@ -186,7 +186,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -213,7 +213,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param int table_identity: (required)
         :param str layout_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_identity_layout_layout_namegenerate_integration_schema_get_with_http_info(database_key, table_identity, layout_name, **kwargs)  # noqa: E501
@@ -227,7 +227,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param int table_identity: (required)
         :param str layout_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_identity', 'layout_name']  # noqa: E501
@@ -282,7 +282,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -308,7 +308,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param int table_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_identitygenerate_integration_schema_get_with_http_info(database_key, table_identity, **kwargs)  # noqa: E501
@@ -321,7 +321,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param int table_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_identity']  # noqa: E501
@@ -370,7 +370,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -397,7 +397,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param str table_name: (required)
         :param int layout_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_name_layout_layout_identitygenerate_integration_schema_get_with_http_info(database_key, table_name, layout_identity, **kwargs)  # noqa: E501
@@ -411,7 +411,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param str table_name: (required)
         :param int layout_identity: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_name', 'layout_identity']  # noqa: E501
@@ -466,7 +466,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -493,7 +493,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param str table_name: (required)
         :param str layout_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_name_layout_layout_namegenerate_integration_schema_get_with_http_info(database_key, table_name, layout_name, **kwargs)  # noqa: E501
@@ -507,7 +507,7 @@ class DatabaseApi(ApiBase):
         :param str database_key: (required)
         :param str table_name: (required)
         :param str layout_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_name', 'layout_name']  # noqa: E501
@@ -562,7 +562,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -588,7 +588,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_tables_table_namegenerate_integration_schema_get_with_http_info(database_key, table_name, **kwargs)  # noqa: E501
@@ -601,7 +601,7 @@ class DatabaseApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_name: (required)
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['database_key', 'table_name']  # noqa: E501
@@ -650,7 +650,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }
@@ -669,13 +669,95 @@ class DatabaseApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map)
 
+    def v1alpha_databases_database_keysearch_index_status_get(self, database_key, **kwargs):  # noqa: E501
+        """v1alpha_databases_database_keysearch_index_status_get  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param bool include_diagnostics:
+        :return: GrantaServerApiSearchIndexStatus
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_databases_database_keysearch_index_status_get_with_http_info(database_key, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_databases_database_keysearch_index_status_get_with_http_info(self, database_key, **kwargs):  # noqa: E501
+        """v1alpha_databases_database_keysearch_index_status_get  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param bool include_diagnostics:
+        :return: GrantaServerApiSearchIndexStatus
+        """
+
+        all_params = ['database_key', 'include_diagnostics']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_databases_database_keysearch_index_status_get".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'database_key' is set
+        if ('database_key' not in params or
+                params['database_key'] is None):
+            raise ValueError("Missing the required parameter `database_key` when calling `v1alpha_databases_database_keysearch_index_status_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'database_key' in params:
+            path_params['database-key'] = params['database_key']  # noqa: E501
+
+        query_params = []
+        if 'include_diagnostics' in params:
+            query_params.append(('include-diagnostics', params['include_diagnostics']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+        
+        response_type_map = {
+            200: 'GrantaServerApiSearchIndexStatus',
+        }
+        
+        return self.api_client.call_api(
+            '/v1alpha/databases/{database-key}:search-index-status', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
+
     def v1alpha_standard_namesgenerate_integration_schema_post(self, **kwargs):  # noqa: E501
         """Generate an integration schema with attributes for each provided standard name. This will include attribute from all loaded databases for which the user is an Admin.  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param list[str] body:
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_standard_namesgenerate_integration_schema_post_with_http_info(**kwargs)  # noqa: E501
@@ -687,7 +769,7 @@ class DatabaseApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param list[str] body:
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['body']  # noqa: E501
@@ -730,7 +812,7 @@ class DatabaseApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             403: None,
             404: None,
         }

@@ -318,12 +318,12 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_patch(self, list_identifier, **kwargs):  # noqa: E501
-        """Performs a partial update on the properties of a list.  # noqa: E501
+        """Performs a partial update on the properties of a list. Only replace operations on name, description or notes are supported.  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :param list[MicrosoftAspNetCoreJsonPatchOperationsOperation] body:
+        :param list[JsonPatchDocument] body:
         :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
@@ -331,12 +331,12 @@ class ListManagementApi(ApiBase):
         return data
 
     def api_v1_lists_list_list_identifier_patch_with_http_info(self, list_identifier, **kwargs):  # noqa: E501
-        """Performs a partial update on the properties of a list.  # noqa: E501
+        """Performs a partial update on the properties of a list. Only replace operations on name, description or notes are supported.  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :param list[MicrosoftAspNetCoreJsonPatchOperationsOperation] body:
+        :param list[JsonPatchDocument] body:
         :return: GrantaServerApiListsDtoRecordListHeader
         """
 
@@ -482,7 +482,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map)
 
     def api_v1_lists_list_list_identifier_put(self, list_identifier, **kwargs):  # noqa: E501
-        """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, create it (empty)  # noqa: E501
+        """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, returns '404 not found' response  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
@@ -495,7 +495,7 @@ class ListManagementApi(ApiBase):
         return data
 
     def api_v1_lists_list_list_identifier_put_with_http_info(self, list_identifier, **kwargs):  # noqa: E501
-        """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, create it (empty)  # noqa: E501
+        """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, returns '404 not found' response  # noqa: E501
 
         This method makes a synchronous HTTP request.
 

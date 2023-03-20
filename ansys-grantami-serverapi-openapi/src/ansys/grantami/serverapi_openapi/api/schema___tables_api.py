@@ -114,7 +114,7 @@ class SchemaTablesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :param GrantaServerApiSchemaTable body:
+        :param GrantaServerApiSchemaUpdateTable body:
         :return: GrantaServerApiSchemaTable
         """
         kwargs['_return_http_data_only'] = True
@@ -127,7 +127,7 @@ class SchemaTablesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :param GrantaServerApiSchemaTable body:
+        :param GrantaServerApiSchemaUpdateTable body:
         :return: GrantaServerApiSchemaTable
         """
 
@@ -389,7 +389,7 @@ class SchemaTablesApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
-        :param GrantaServerApiSchemaTable body:
+        :param GrantaServerApiSchemaUpdateTable body:
         :return: GrantaServerApiSchemaTable
         """
         kwargs['_return_http_data_only'] = True
@@ -403,7 +403,7 @@ class SchemaTablesApi(ApiBase):
 
         :param str database_key: (required)
         :param str table_guid: (required)
-        :param GrantaServerApiSchemaTable body:
+        :param GrantaServerApiSchemaUpdateTable body:
         :return: GrantaServerApiSchemaTable
         """
 

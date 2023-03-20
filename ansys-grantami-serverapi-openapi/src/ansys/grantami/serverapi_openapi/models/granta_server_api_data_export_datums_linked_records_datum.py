@@ -30,7 +30,10 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
     """
     swagger_types = {
         'link_group_name': 'str',
-        'linked_records': 'list[GrantaServerApiIntegrationDataExportRecordReference]',
+        'link_attribute_type': 'GrantaServerApiDataExportLinkAttributeType',
+        'export_in_reversed_direction': 'bool',
+        'target_database_guid': 'str',
+        'linked_records': 'list[GrantaServerApiDataExportRecordWithData]',
         'datum_type': 'str'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "swagger_types"):
@@ -38,6 +41,9 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
 
     attribute_map = {
         'link_group_name': 'linkGroupName',
+        'link_attribute_type': 'linkAttributeType',
+        'export_in_reversed_direction': 'exportInReversedDirection',
+        'target_database_guid': 'targetDatabaseGuid',
         'linked_records': 'linkedRecords',
         'datum_type': 'datumType'
     }
@@ -45,19 +51,29 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         attribute_map.update(GrantaServerApiDataExportDatumsApplicableDatum.attribute_map)
 
     subtype_mapping = {
-        'linkedRecords': 'GrantaServerApiIntegrationDataExportRecordReference',
+        'linkAttributeType': 'GrantaServerApiDataExportLinkAttributeType',
+        'linkedRecords': 'GrantaServerApiDataExportRecordWithData',
     }
 
 
-    def __init__(self, link_group_name=None, linked_records=None, datum_type='link', *args, **kwargs):  # noqa: E501
+    def __init__(self, link_group_name=None, link_attribute_type=None, export_in_reversed_direction=None, target_database_guid=None, linked_records=None, datum_type='link', *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsLinkedRecordsDatum - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._link_group_name = None
+        self._link_attribute_type = None
+        self._export_in_reversed_direction = None
+        self._target_database_guid = None
         self._linked_records = None
         self._datum_type = None
         self.discriminator = None
         if link_group_name is not None:
             self.link_group_name = link_group_name
+        if link_attribute_type is not None:
+            self.link_attribute_type = link_attribute_type
+        if export_in_reversed_direction is not None:
+            self.export_in_reversed_direction = export_in_reversed_direction
+        if target_database_guid is not None:
+            self.target_database_guid = target_database_guid
         if linked_records is not None:
             self.linked_records = linked_records
         self.datum_type = datum_type
@@ -81,11 +97,65 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         self._link_group_name = link_group_name
 
     @property
+    def link_attribute_type(self):
+        """Gets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+
+        :return: The link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :rtype: GrantaServerApiDataExportLinkAttributeType
+        """
+        return self._link_attribute_type
+
+    @link_attribute_type.setter
+    def link_attribute_type(self, link_attribute_type):
+        """Sets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+
+        :param link_attribute_type: The link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :type: GrantaServerApiDataExportLinkAttributeType
+        """
+        self._link_attribute_type = link_attribute_type
+
+    @property
+    def export_in_reversed_direction(self):
+        """Gets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+
+        :return: The export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :rtype: bool
+        """
+        return self._export_in_reversed_direction
+
+    @export_in_reversed_direction.setter
+    def export_in_reversed_direction(self, export_in_reversed_direction):
+        """Sets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+
+        :param export_in_reversed_direction: The export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :type: bool
+        """
+        self._export_in_reversed_direction = export_in_reversed_direction
+
+    @property
+    def target_database_guid(self):
+        """Gets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+
+        :return: The target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_database_guid
+
+    @target_database_guid.setter
+    def target_database_guid(self, target_database_guid):
+        """Sets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+
+        :param target_database_guid: The target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
+        :type: str
+        """
+        self._target_database_guid = target_database_guid
+
+    @property
     def linked_records(self):
         """Gets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
 
         :return: The linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
-        :rtype: list[GrantaServerApiIntegrationDataExportRecordReference]
+        :rtype: list[GrantaServerApiDataExportRecordWithData]
         """
         return self._linked_records
 
@@ -94,7 +164,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         """Sets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         :param linked_records: The linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.  # noqa: E501
-        :type: list[GrantaServerApiIntegrationDataExportRecordReference]
+        :type: list[GrantaServerApiDataExportRecordWithData]
         """
         self._linked_records = linked_records
 
