@@ -30,7 +30,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
     """
     swagger_types = {
         'value': 'str',
-        'exact_match': 'bool',
+        'text_match_behaviour': 'GrantaServerApiSearchTextMatchBehaviour',
         'type': 'str'
     }
     if hasattr(GrantaServerApiSearchDatumCriterion, "swagger_types"):
@@ -38,27 +38,28 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
 
     attribute_map = {
         'value': 'value',
-        'exact_match': 'exactMatch',
+        'text_match_behaviour': 'textMatchBehaviour',
         'type': 'type'
     }
     if hasattr(GrantaServerApiSearchDatumCriterion, "attribute_map"):
         attribute_map.update(GrantaServerApiSearchDatumCriterion.attribute_map)
 
     subtype_mapping = {
+        'textMatchBehaviour': 'GrantaServerApiSearchTextMatchBehaviour',
     }
 
 
-    def __init__(self, value=None, exact_match=None, type='discreteText', *args, **kwargs):  # noqa: E501
+    def __init__(self, value=None, text_match_behaviour=None, type='discreteText', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchDiscreteTextDatumCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._value = None
-        self._exact_match = None
+        self._text_match_behaviour = None
         self._type = None
         self.discriminator = None
         if value is not None:
             self.value = value
-        if exact_match is not None:
-            self.exact_match = exact_match
+        if text_match_behaviour is not None:
+            self.text_match_behaviour = text_match_behaviour
         self.type = type
 
     @property
@@ -80,22 +81,22 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(GrantaServerApiSearchDatum
         self._value = value
 
     @property
-    def exact_match(self):
-        """Gets the exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+    def text_match_behaviour(self):
+        """Gets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
 
-        :return: The exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
-        :rtype: bool
+        :return: The text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+        :rtype: GrantaServerApiSearchTextMatchBehaviour
         """
-        return self._exact_match
+        return self._text_match_behaviour
 
-    @exact_match.setter
-    def exact_match(self, exact_match):
-        """Sets the exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+    @text_match_behaviour.setter
+    def text_match_behaviour(self, text_match_behaviour):
+        """Sets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
-        :param exact_match: The exact_match of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
-        :type: bool
+        :param text_match_behaviour: The text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.  # noqa: E501
+        :type: GrantaServerApiSearchTextMatchBehaviour
         """
-        self._exact_match = exact_match
+        self._text_match_behaviour = text_match_behaviour
 
     @property
     def type(self):

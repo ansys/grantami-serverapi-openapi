@@ -28,7 +28,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'column_type': 'GrantaServerApiSchemaTabularColumnsTabularColumnType',
+        'column_type': 'GrantaServerApiSchemaTabularColumnsTabularColumnDtoType',
         'tabular_column_guid': 'str',
         'name': 'str',
         'guid': 'str'
@@ -42,7 +42,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
     }
 
     subtype_mapping = {
-        'columnType': 'GrantaServerApiSchemaTabularColumnsTabularColumnType',
+        'columnType': 'GrantaServerApiSchemaTabularColumnsTabularColumnDtoType',
     }
 
 
@@ -67,7 +67,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         """Gets the column_type of this GrantaServerApiSchemaLayoutsLayoutTabularColumn.  # noqa: E501
 
         :return: The column_type of this GrantaServerApiSchemaLayoutsLayoutTabularColumn.  # noqa: E501
-        :rtype: GrantaServerApiSchemaTabularColumnsTabularColumnType
+        :rtype: GrantaServerApiSchemaTabularColumnsTabularColumnDtoType
         """
         return self._column_type
 
@@ -76,7 +76,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         """Sets the column_type of this GrantaServerApiSchemaLayoutsLayoutTabularColumn.
 
         :param column_type: The column_type of this GrantaServerApiSchemaLayoutsLayoutTabularColumn.  # noqa: E501
-        :type: GrantaServerApiSchemaTabularColumnsTabularColumnType
+        :type: GrantaServerApiSchemaTabularColumnsTabularColumnDtoType
         """
         self._column_type = column_type
 

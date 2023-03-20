@@ -29,11 +29,13 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
     """
     swagger_types = {
         'attribute_identity': 'int',
+        'attribute_guid': 'str',
         'meta_datums': 'list[GrantaServerApiDataExportDatumsDatum]'
     }
 
     attribute_map = {
         'attribute_identity': 'attributeIdentity',
+        'attribute_guid': 'attributeGuid',
         'meta_datums': 'metaDatums'
     }
 
@@ -42,13 +44,16 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
     }
 
 
-    def __init__(self, attribute_identity=None, meta_datums=None):  # noqa: E501
+    def __init__(self, attribute_identity=None, attribute_guid=None, meta_datums=None):  # noqa: E501
         """GrantaServerApiDataExportDatumsDatum - a model defined in Swagger"""  # noqa: E501
         self._attribute_identity = None
+        self._attribute_guid = None
         self._meta_datums = None
         self.discriminator = None
         if attribute_identity is not None:
             self.attribute_identity = attribute_identity
+        if attribute_guid is not None:
+            self.attribute_guid = attribute_guid
         if meta_datums is not None:
             self.meta_datums = meta_datums
 
@@ -69,6 +74,24 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         :type: int
         """
         self._attribute_identity = attribute_identity
+
+    @property
+    def attribute_guid(self):
+        """Gets the attribute_guid of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
+
+        :return: The attribute_guid of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
+        :rtype: str
+        """
+        return self._attribute_guid
+
+    @attribute_guid.setter
+    def attribute_guid(self, attribute_guid):
+        """Sets the attribute_guid of this GrantaServerApiDataExportDatumsDatum.
+
+        :param attribute_guid: The attribute_guid of this GrantaServerApiDataExportDatumsDatum.  # noqa: E501
+        :type: str
+        """
+        self._attribute_guid = attribute_guid
 
     @property
     def meta_datums(self):

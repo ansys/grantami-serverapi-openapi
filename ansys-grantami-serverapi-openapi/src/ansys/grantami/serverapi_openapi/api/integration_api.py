@@ -96,7 +96,7 @@ class IntegrationApi(ApiBase):
 
         This method makes a synchronous HTTP request.
 
-        :param GrantaServerApiIntegrationSchemaIntegrationSchema body:
+        :param GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier body:
         :return: None
         """
         kwargs['_return_http_data_only'] = True
@@ -108,7 +108,7 @@ class IntegrationApi(ApiBase):
 
         This method makes a synchronous HTTP request.
 
-        :param GrantaServerApiIntegrationSchemaIntegrationSchema body:
+        :param GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier body:
         :return: None
         """
 
@@ -332,7 +332,7 @@ class IntegrationApi(ApiBase):
 
         :param str schema: The schema name. (required)
         :param bool include_implicit_attributes: Whether to add in the schema attributes derived from certain record properties (e.g. Record Name) that are implicitly in all integration schemas. False by default.
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_integration_schemas_schema_get_with_http_info(schema, **kwargs)  # noqa: E501
@@ -345,7 +345,7 @@ class IntegrationApi(ApiBase):
 
         :param str schema: The schema name. (required)
         :param bool include_implicit_attributes: Whether to add in the schema attributes derived from certain record properties (e.g. Record Name) that are implicitly in all integration schemas. False by default.
-        :return: GrantaServerApiIntegrationSchemaIntegrationSchema
+        :return: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
         """
 
         all_params = ['schema', 'include_implicit_attributes']  # noqa: E501
@@ -390,7 +390,7 @@ class IntegrationApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiIntegrationSchemaIntegrationSchema',
+            200: 'GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier',
             404: None,
         }
         
@@ -414,7 +414,7 @@ class IntegrationApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str schema: (required)
-        :param GrantaServerApiIntegrationSchemaIntegrationSchema body:
+        :param GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier body:
         :return: None
         """
         kwargs['_return_http_data_only'] = True
@@ -427,7 +427,7 @@ class IntegrationApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str schema: (required)
-        :param GrantaServerApiIntegrationSchemaIntegrationSchema body:
+        :param GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier body:
         :return: None
         """
 
@@ -499,7 +499,7 @@ class IntegrationApi(ApiBase):
         :param str schema: (required)
         :param str database_key: (required)
         :param int table_identity: (required)
-        :return: list[GrantaServerApiIntegrationSchemaSource]
+        :return: list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_integration_schemas_schema_sources_database_database_key_table_table_identity_get_with_http_info(schema, database_key, table_identity, **kwargs)  # noqa: E501
@@ -513,7 +513,7 @@ class IntegrationApi(ApiBase):
         :param str schema: (required)
         :param str database_key: (required)
         :param int table_identity: (required)
-        :return: list[GrantaServerApiIntegrationSchemaSource]
+        :return: list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]
         """
 
         all_params = ['schema', 'database_key', 'table_identity']  # noqa: E501
@@ -568,7 +568,7 @@ class IntegrationApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'list[GrantaServerApiIntegrationSchemaSource]',
+            200: 'list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]',
             404: None,
         }
         
@@ -586,28 +586,30 @@ class IntegrationApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map)
 
-    def v1alpha_integration_schemas_schemastatus_get(self, schema, **kwargs):  # noqa: E501
-        """Returns the status of the integration schema, including whether each referenced database has been successfully loaded into the schemas search index.  # noqa: E501
+    def v1alpha_integration_schemas_schemasearch_index_status_get(self, schema, **kwargs):  # noqa: E501
+        """v1alpha_integration_schemas_schemasearch_index_status_get  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param str schema: (required)
+        :param bool include_diagnostics:
         :return: GrantaServerApiIntegrationIntegrationSchemaStatus
         """
         kwargs['_return_http_data_only'] = True
-        (data) = self.v1alpha_integration_schemas_schemastatus_get_with_http_info(schema, **kwargs)  # noqa: E501
+        (data) = self.v1alpha_integration_schemas_schemasearch_index_status_get_with_http_info(schema, **kwargs)  # noqa: E501
         return data
 
-    def v1alpha_integration_schemas_schemastatus_get_with_http_info(self, schema, **kwargs):  # noqa: E501
-        """Returns the status of the integration schema, including whether each referenced database has been successfully loaded into the schemas search index.  # noqa: E501
+    def v1alpha_integration_schemas_schemasearch_index_status_get_with_http_info(self, schema, **kwargs):  # noqa: E501
+        """v1alpha_integration_schemas_schemasearch_index_status_get  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param str schema: (required)
+        :param bool include_diagnostics:
         :return: GrantaServerApiIntegrationIntegrationSchemaStatus
         """
 
-        all_params = ['schema']  # noqa: E501
+        all_params = ['schema', 'include_diagnostics']  # noqa: E501
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -616,14 +618,14 @@ class IntegrationApi(ApiBase):
         for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '{}' to method v1alpha_integration_schemas_schemastatus_get".format(key)
+                    "Got an unexpected keyword argument '{}' to method v1alpha_integration_schemas_schemasearch_index_status_get".format(key)
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'schema' is set
         if ('schema' not in params or
                 params['schema'] is None):
-            raise ValueError("Missing the required parameter `schema` when calling `v1alpha_integration_schemas_schemastatus_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `schema` when calling `v1alpha_integration_schemas_schemasearch_index_status_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -632,6 +634,8 @@ class IntegrationApi(ApiBase):
             path_params['schema'] = params['schema']  # noqa: E501
 
         query_params = []
+        if 'include_diagnostics' in params:
+            query_params.append(('include-diagnostics', params['include_diagnostics']))  # noqa: E501
 
         header_params = {}
 
@@ -648,11 +652,10 @@ class IntegrationApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiIntegrationIntegrationSchemaStatus',
-            404: None,
         }
         
         return self.api_client.call_api(
-            '/v1alpha/integration-schemas/{schema}:status', 'GET',
+            '/v1alpha/integration-schemas/{schema}:search-index-status', 'GET',
             path_params,
             query_params,
             header_params,
@@ -665,26 +668,28 @@ class IntegrationApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map)
 
-    def v1alpha_integration_schemasstatus_get(self, **kwargs):  # noqa: E501
+    def v1alpha_integration_schemassearch_index_status_get(self, **kwargs):  # noqa: E501
         """Returns the status of all available integration schemas.  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
+        :param bool include_diagnostics:
         :return: dict(str, GrantaServerApiIntegrationIntegrationSchemaStatus)
         """
         kwargs['_return_http_data_only'] = True
-        (data) = self.v1alpha_integration_schemasstatus_get_with_http_info(**kwargs)  # noqa: E501
+        (data) = self.v1alpha_integration_schemassearch_index_status_get_with_http_info(**kwargs)  # noqa: E501
         return data
 
-    def v1alpha_integration_schemasstatus_get_with_http_info(self, **kwargs):  # noqa: E501
+    def v1alpha_integration_schemassearch_index_status_get_with_http_info(self, **kwargs):  # noqa: E501
         """Returns the status of all available integration schemas.  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
+        :param bool include_diagnostics:
         :return: dict(str, GrantaServerApiIntegrationIntegrationSchemaStatus)
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['include_diagnostics']  # noqa: E501
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -693,7 +698,7 @@ class IntegrationApi(ApiBase):
         for key, val in params['kwargs'].items():
             if key not in all_params:
                 raise TypeError(
-                    "Got an unexpected keyword argument '{}' to method v1alpha_integration_schemasstatus_get".format(key)
+                    "Got an unexpected keyword argument '{}' to method v1alpha_integration_schemassearch_index_status_get".format(key)
                 )
             params[key] = val
         del params['kwargs']
@@ -703,6 +708,8 @@ class IntegrationApi(ApiBase):
         path_params = {}
 
         query_params = []
+        if 'include_diagnostics' in params:
+            query_params.append(('include-diagnostics', params['include_diagnostics']))  # noqa: E501
 
         header_params = {}
 
@@ -722,7 +729,7 @@ class IntegrationApi(ApiBase):
         }
         
         return self.api_client.call_api(
-            '/v1alpha/integration-schemas:status', 'GET',
+            '/v1alpha/integration-schemas:search-index-status', 'GET',
             path_params,
             query_params,
             header_params,

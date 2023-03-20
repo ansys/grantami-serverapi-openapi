@@ -106,7 +106,7 @@ class SchemaDatabasesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :param GrantaServerApiSchemaDatabase body:
+        :param GrantaServerApiSchemaUpdateDatabase body:
         :return: GrantaServerApiSchemaDatabase
         """
         kwargs['_return_http_data_only'] = True
@@ -119,7 +119,7 @@ class SchemaDatabasesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :param GrantaServerApiSchemaDatabase body:
+        :param GrantaServerApiSchemaUpdateDatabase body:
         :return: GrantaServerApiSchemaDatabase
         """
 

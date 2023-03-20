@@ -117,7 +117,7 @@ class SchemaConstantsApi(ApiBase):
 
         :param str database_key: Database in which constant will be search for (required)
         :param str constant_guid: Guid of requested constant (required)
-        :return: GrantaServerApiSchemaConstant
+        :return: GrantaServerApiSchemaConstantsConstant
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_constants_constant_guid_get_with_http_info(database_key, constant_guid, **kwargs)  # noqa: E501
@@ -130,7 +130,7 @@ class SchemaConstantsApi(ApiBase):
 
         :param str database_key: Database in which constant will be search for (required)
         :param str constant_guid: Guid of requested constant (required)
-        :return: GrantaServerApiSchemaConstant
+        :return: GrantaServerApiSchemaConstantsConstant
         """
 
         all_params = ['database_key', 'constant_guid']  # noqa: E501
@@ -179,7 +179,7 @@ class SchemaConstantsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiSchemaConstant',
+            200: 'GrantaServerApiSchemaConstantsConstant',
             404: None,
         }
         
@@ -204,8 +204,8 @@ class SchemaConstantsApi(ApiBase):
 
         :param str database_key: Database in which constant will be search for (required)
         :param str constant_guid: Guid of constant to update (required)
-        :param GrantaServerApiSchemaConstant body: Constant data to be updated
-        :return: GrantaServerApiSchemaConstant
+        :param GrantaServerApiSchemaConstantsUpdateConstant body: Constant data to be updated
+        :return: GrantaServerApiSchemaConstantsConstant
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_constants_constant_guid_patch_with_http_info(database_key, constant_guid, **kwargs)  # noqa: E501
@@ -218,8 +218,8 @@ class SchemaConstantsApi(ApiBase):
 
         :param str database_key: Database in which constant will be search for (required)
         :param str constant_guid: Guid of constant to update (required)
-        :param GrantaServerApiSchemaConstant body: Constant data to be updated
-        :return: GrantaServerApiSchemaConstant
+        :param GrantaServerApiSchemaConstantsUpdateConstant body: Constant data to be updated
+        :return: GrantaServerApiSchemaConstantsConstant
         """
 
         all_params = ['database_key', 'constant_guid', 'body']  # noqa: E501
@@ -274,7 +274,7 @@ class SchemaConstantsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiSchemaConstant',
+            200: 'GrantaServerApiSchemaConstantsConstant',
             400: None,
             403: None,
             404: None,
@@ -300,7 +300,7 @@ class SchemaConstantsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: GrantaServerApiSchemaConstantsInfo
+        :return: GrantaServerApiSchemaConstantsConstantsInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_constants_get_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -312,7 +312,7 @@ class SchemaConstantsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: (required)
-        :return: GrantaServerApiSchemaConstantsInfo
+        :return: GrantaServerApiSchemaConstantsConstantsInfo
         """
 
         all_params = ['database_key']  # noqa: E501
@@ -355,7 +355,7 @@ class SchemaConstantsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiSchemaConstantsInfo',
+            200: 'GrantaServerApiSchemaConstantsConstantsInfo',
             404: None,
         }
         
@@ -379,8 +379,8 @@ class SchemaConstantsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: Database in which constant will be created (required)
-        :param GrantaServerApiSchemaConstant body: Constant to add to database
-        :return: None
+        :param GrantaServerApiSchemaConstantsCreateConstant body: Constant to add to database
+        :return: GrantaServerApiSchemaConstantsConstant
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_constants_post_with_http_info(database_key, **kwargs)  # noqa: E501
@@ -392,8 +392,8 @@ class SchemaConstantsApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str database_key: Database in which constant will be created (required)
-        :param GrantaServerApiSchemaConstant body: Constant to add to database
-        :return: None
+        :param GrantaServerApiSchemaConstantsCreateConstant body: Constant to add to database
+        :return: GrantaServerApiSchemaConstantsConstant
         """
 
         all_params = ['database_key', 'body']  # noqa: E501
@@ -430,6 +430,10 @@ class SchemaConstantsApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -438,7 +442,7 @@ class SchemaConstantsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaConstantsConstant',
             201: None,
             400: None,
             403: None,

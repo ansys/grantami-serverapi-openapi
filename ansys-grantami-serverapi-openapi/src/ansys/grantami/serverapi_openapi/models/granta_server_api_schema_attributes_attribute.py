@@ -30,6 +30,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
     swagger_types = {
         'default_threshold_type': 'GrantaServerApiSchemaAttributesAttributeThresholdType',
         'axis_name': 'str',
+        'help_path': 'str',
         'about_attribute': 'GrantaServerApiSchemaSlimEntitiesSlimNamedEntity',
         'info': 'GrantaServerApiSchemaAttributesAttributeAttributeInfo',
         'display_names': 'dict(str, str)',
@@ -40,6 +41,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
     attribute_map = {
         'default_threshold_type': 'defaultThresholdType',
         'axis_name': 'axisName',
+        'help_path': 'helpPath',
         'about_attribute': 'aboutAttribute',
         'info': 'info',
         'display_names': 'displayNames',
@@ -71,10 +73,11 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         'mathsFunctional'.lower(): '#/components/schemas/GrantaServerApiSchemaAttributesMathsFunctionalAttribute',
     }
 
-    def __init__(self, default_threshold_type=None, axis_name=None, about_attribute=None, info=None, display_names=None, name=None, guid=None):  # noqa: E501
+    def __init__(self, default_threshold_type=None, axis_name=None, help_path=None, about_attribute=None, info=None, display_names=None, name=None, guid=None):  # noqa: E501
         """GrantaServerApiSchemaAttributesAttribute - a model defined in Swagger"""  # noqa: E501
         self._default_threshold_type = None
         self._axis_name = None
+        self._help_path = None
         self._about_attribute = None
         self._info = None
         self._display_names = None
@@ -85,6 +88,8 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
             self.default_threshold_type = default_threshold_type
         if axis_name is not None:
             self.axis_name = axis_name
+        if help_path is not None:
+            self.help_path = help_path
         if about_attribute is not None:
             self.about_attribute = about_attribute
         if info is not None:
@@ -131,6 +136,24 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         :type: str
         """
         self._axis_name = axis_name
+
+    @property
+    def help_path(self):
+        """Gets the help_path of this GrantaServerApiSchemaAttributesAttribute.  # noqa: E501
+
+        :return: The help_path of this GrantaServerApiSchemaAttributesAttribute.  # noqa: E501
+        :rtype: str
+        """
+        return self._help_path
+
+    @help_path.setter
+    def help_path(self, help_path):
+        """Sets the help_path of this GrantaServerApiSchemaAttributesAttribute.
+
+        :param help_path: The help_path of this GrantaServerApiSchemaAttributesAttribute.  # noqa: E501
+        :type: str
+        """
+        self._help_path = help_path
 
     @property
     def about_attribute(self):

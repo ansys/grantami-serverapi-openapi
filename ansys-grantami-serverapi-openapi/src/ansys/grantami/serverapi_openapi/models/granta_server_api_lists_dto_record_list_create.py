@@ -29,6 +29,7 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
     """
     swagger_types = {
         'items': 'GrantaServerApiListsDtoRecordListItems',
+        'identifier': 'str',
         'name': 'str',
         'description': 'str',
         'notes': 'str',
@@ -39,6 +40,7 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
 
     attribute_map = {
         'items': 'items',
+        'identifier': 'identifier',
         'name': 'name',
         'description': 'description',
         'notes': 'notes',
@@ -52,9 +54,10 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
     }
 
 
-    def __init__(self, items=None, name=None, description=None, notes=None, published=None, awaiting_approval=None, internal_use=None):  # noqa: E501
+    def __init__(self, items=None, identifier=None, name=None, description=None, notes=None, published=None, awaiting_approval=None, internal_use=None):  # noqa: E501
         """GrantaServerApiListsDtoRecordListCreate - a model defined in Swagger"""  # noqa: E501
         self._items = None
+        self._identifier = None
         self._name = None
         self._description = None
         self._notes = None
@@ -64,6 +67,8 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
         self.discriminator = None
         if items is not None:
             self.items = items
+        if identifier is not None:
+            self.identifier = identifier
         if name is not None:
             self.name = name
         if description is not None:
@@ -94,6 +99,24 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
         :type: GrantaServerApiListsDtoRecordListItems
         """
         self._items = items
+
+    @property
+    def identifier(self):
+        """Gets the identifier of this GrantaServerApiListsDtoRecordListCreate.  # noqa: E501
+
+        :return: The identifier of this GrantaServerApiListsDtoRecordListCreate.  # noqa: E501
+        :rtype: str
+        """
+        return self._identifier
+
+    @identifier.setter
+    def identifier(self, identifier):
+        """Sets the identifier of this GrantaServerApiListsDtoRecordListCreate.
+
+        :param identifier: The identifier of this GrantaServerApiListsDtoRecordListCreate.  # noqa: E501
+        :type: str
+        """
+        self._identifier = identifier
 
     @property
     def name(self):

@@ -39,6 +39,8 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         'cubic_spline_status': 'str',
         'version_control_state': 'str',
         'version_number': 'int',
+        'parent_identity': 'int',
+        'type': 'GrantaServerApiRecordType',
         'score': 'float',
         'sorting_value': 'GrantaServerApiSearchSortingValue'
     }
@@ -55,16 +57,19 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         'cubic_spline_status': 'cubicSplineStatus',
         'version_control_state': 'versionControlState',
         'version_number': 'versionNumber',
+        'parent_identity': 'parentIdentity',
+        'type': 'type',
         'score': 'score',
         'sorting_value': 'sortingValue'
     }
 
     subtype_mapping = {
+        'type': 'GrantaServerApiRecordType',
         'sortingValue': 'GrantaServerApiSearchSortingValue'
     }
 
 
-    def __init__(self, database_key=None, record_history_identity=None, record_identity=None, record_history_guid=None, record_guid=None, record_name=None, record_color=None, table_identity=None, cubic_spline_status=None, version_control_state=None, version_number=None, score=None, sorting_value=None):  # noqa: E501
+    def __init__(self, database_key=None, record_history_identity=None, record_identity=None, record_history_guid=None, record_guid=None, record_name=None, record_color=None, table_identity=None, cubic_spline_status=None, version_control_state=None, version_number=None, parent_identity=None, type=None, score=None, sorting_value=None):  # noqa: E501
         """GrantaServerApiSearchSearchResult - a model defined in Swagger"""  # noqa: E501
         self._database_key = None
         self._record_history_identity = None
@@ -77,6 +82,8 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         self._cubic_spline_status = None
         self._version_control_state = None
         self._version_number = None
+        self._parent_identity = None
+        self._type = None
         self._score = None
         self._sorting_value = None
         self.discriminator = None
@@ -102,6 +109,10 @@ class GrantaServerApiSearchSearchResult(ModelBase):
             self.version_control_state = version_control_state
         if version_number is not None:
             self.version_number = version_number
+        if parent_identity is not None:
+            self.parent_identity = parent_identity
+        if type is not None:
+            self.type = type
         if score is not None:
             self.score = score
         if sorting_value is not None:
@@ -304,6 +315,42 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         :type: int
         """
         self._version_number = version_number
+
+    @property
+    def parent_identity(self):
+        """Gets the parent_identity of this GrantaServerApiSearchSearchResult.  # noqa: E501
+
+        :return: The parent_identity of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :rtype: int
+        """
+        return self._parent_identity
+
+    @parent_identity.setter
+    def parent_identity(self, parent_identity):
+        """Sets the parent_identity of this GrantaServerApiSearchSearchResult.
+
+        :param parent_identity: The parent_identity of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :type: int
+        """
+        self._parent_identity = parent_identity
+
+    @property
+    def type(self):
+        """Gets the type of this GrantaServerApiSearchSearchResult.  # noqa: E501
+
+        :return: The type of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :rtype: GrantaServerApiRecordType
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """Sets the type of this GrantaServerApiSearchSearchResult.
+
+        :param type: The type of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :type: GrantaServerApiRecordType
+        """
+        self._type = type
 
     @property
     def score(self):

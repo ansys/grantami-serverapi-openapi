@@ -179,7 +179,7 @@ class SchemaProfilesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiSchemaProfile body:
-        :return: None
+        :return: GrantaServerApiSchemaProfile
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_profiles_post_with_http_info(**kwargs)  # noqa: E501
@@ -191,7 +191,7 @@ class SchemaProfilesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiSchemaProfile body:
-        :return: None
+        :return: GrantaServerApiSchemaProfile
         """
 
         all_params = ['body']  # noqa: E501
@@ -222,6 +222,10 @@ class SchemaProfilesApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -230,7 +234,7 @@ class SchemaProfilesApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaProfile',
             201: None,
             400: None,
             403: None,
@@ -413,7 +417,7 @@ class SchemaProfilesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str profile_guid: (required)
-        :param GrantaServerApiSchemaProfile body:
+        :param GrantaServerApiSchemaUpdateProfile body:
         :return: GrantaServerApiSchemaProfile
         """
         kwargs['_return_http_data_only'] = True
@@ -426,7 +430,7 @@ class SchemaProfilesApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str profile_guid: (required)
-        :param GrantaServerApiSchemaProfile body:
+        :param GrantaServerApiSchemaUpdateProfile body:
         :return: GrantaServerApiSchemaProfile
         """
 

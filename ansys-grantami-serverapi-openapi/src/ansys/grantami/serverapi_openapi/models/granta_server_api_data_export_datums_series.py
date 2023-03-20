@@ -29,29 +29,35 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
     """
     swagger_types = {
         'parameter_values': 'list[GrantaServerApiDataExportDatumsParameterValue]',
-        'points': 'list[GrantaServerApiDataExportDatumsSeriesPoint]'
+        'points': 'list[GrantaServerApiDataExportDatumsSeriesPoint]',
+        'graph_decoration': 'GrantaServerApiDataExportDatumsGraphDecoration'
     }
 
     attribute_map = {
         'parameter_values': 'parameterValues',
-        'points': 'points'
+        'points': 'points',
+        'graph_decoration': 'graphDecoration'
     }
 
     subtype_mapping = {
         'parameterValues': 'GrantaServerApiDataExportDatumsParameterValue',
-        'points': 'GrantaServerApiDataExportDatumsSeriesPoint'
+        'points': 'GrantaServerApiDataExportDatumsSeriesPoint',
+        'graphDecoration': 'GrantaServerApiDataExportDatumsGraphDecoration'
     }
 
 
-    def __init__(self, parameter_values=None, points=None):  # noqa: E501
+    def __init__(self, parameter_values=None, points=None, graph_decoration=None):  # noqa: E501
         """GrantaServerApiDataExportDatumsSeries - a model defined in Swagger"""  # noqa: E501
         self._parameter_values = None
         self._points = None
+        self._graph_decoration = None
         self.discriminator = None
         if parameter_values is not None:
             self.parameter_values = parameter_values
         if points is not None:
             self.points = points
+        if graph_decoration is not None:
+            self.graph_decoration = graph_decoration
 
     @property
     def parameter_values(self):
@@ -88,6 +94,24 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
         :type: list[GrantaServerApiDataExportDatumsSeriesPoint]
         """
         self._points = points
+
+    @property
+    def graph_decoration(self):
+        """Gets the graph_decoration of this GrantaServerApiDataExportDatumsSeries.  # noqa: E501
+
+        :return: The graph_decoration of this GrantaServerApiDataExportDatumsSeries.  # noqa: E501
+        :rtype: GrantaServerApiDataExportDatumsGraphDecoration
+        """
+        return self._graph_decoration
+
+    @graph_decoration.setter
+    def graph_decoration(self, graph_decoration):
+        """Sets the graph_decoration of this GrantaServerApiDataExportDatumsSeries.
+
+        :param graph_decoration: The graph_decoration of this GrantaServerApiDataExportDatumsSeries.  # noqa: E501
+        :type: GrantaServerApiDataExportDatumsGraphDecoration
+        """
+        self._graph_decoration = graph_decoration
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

@@ -52,7 +52,7 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = 'section_detail_type'
+        self.discriminator = 'sectionDetailType'
         if display_names is not None:
             self.display_names = display_names
         if name is not None:

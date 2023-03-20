@@ -31,7 +31,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
     swagger_types = {
         'type': 'str',
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesAttributeParameter]',
+        'attribute_parameters': 'list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]',
         'is_range': 'bool'
     }
     if hasattr(GrantaServerApiSchemaAttributesAttribute, "swagger_types"):
@@ -48,7 +48,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
 
     subtype_mapping = {
         'unit': 'GrantaServerApiSchemaSlimEntitiesSlimUnit',
-        'attributeParameters': 'GrantaServerApiSchemaAttributesAttributeParameter',
+        'attributeParameters': 'GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter',
     }
 
 
@@ -111,7 +111,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
 
         :return: The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
-        :rtype: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :rtype: list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
         """
         return self._attribute_parameters
 
@@ -120,7 +120,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(GrantaServerApiSch
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         :param attribute_parameters: The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.  # noqa: E501
-        :type: list[GrantaServerApiSchemaAttributesAttributeParameter]
+        :type: list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
         """
         self._attribute_parameters = attribute_parameters
 

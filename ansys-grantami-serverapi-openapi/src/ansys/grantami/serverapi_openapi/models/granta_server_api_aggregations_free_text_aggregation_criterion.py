@@ -32,6 +32,8 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         'criterion_guid': 'str',
         'identities': 'list[int]',
         'identities_to_exclude': 'list[int]',
+        'guids': 'list[str]',
+        'guids_to_exclude': 'list[str]',
         'number_of_terms': 'int',
         'prefix': 'str',
         'type': 'str'
@@ -43,6 +45,8 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         'criterion_guid': 'criterionGuid',
         'identities': 'identities',
         'identities_to_exclude': 'identitiesToExclude',
+        'guids': 'guids',
+        'guids_to_exclude': 'guidsToExclude',
         'number_of_terms': 'numberOfTerms',
         'prefix': 'prefix',
         'type': 'type'
@@ -54,12 +58,14 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     }
 
 
-    def __init__(self, criterion_guid=None, identities=None, identities_to_exclude=None, number_of_terms=None, prefix=None, type='text', *args, **kwargs):  # noqa: E501
+    def __init__(self, criterion_guid=None, identities=None, identities_to_exclude=None, guids=None, guids_to_exclude=None, number_of_terms=None, prefix=None, type='text', *args, **kwargs):  # noqa: E501
         """GrantaServerApiAggregationsFreeTextAggregationCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiAggregationsAggregationCriterion.__init__(self, *args, **kwargs)
         self._criterion_guid = None
         self._identities = None
         self._identities_to_exclude = None
+        self._guids = None
+        self._guids_to_exclude = None
         self._number_of_terms = None
         self._prefix = None
         self._type = None
@@ -70,6 +76,10 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
             self.identities = identities
         if identities_to_exclude is not None:
             self.identities_to_exclude = identities_to_exclude
+        if guids is not None:
+            self.guids = guids
+        if guids_to_exclude is not None:
+            self.guids_to_exclude = guids_to_exclude
         if number_of_terms is not None:
             self.number_of_terms = number_of_terms
         if prefix is not None:
@@ -131,6 +141,42 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
         :type: list[int]
         """
         self._identities_to_exclude = identities_to_exclude
+
+    @property
+    def guids(self):
+        """Gets the guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+
+        :return: The guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._guids
+
+    @guids.setter
+    def guids(self, guids):
+        """Sets the guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        :param guids: The guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :type: list[str]
+        """
+        self._guids = guids
+
+    @property
+    def guids_to_exclude(self):
+        """Gets the guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+
+        :return: The guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._guids_to_exclude
+
+    @guids_to_exclude.setter
+    def guids_to_exclude(self, guids_to_exclude):
+        """Sets the guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        :param guids_to_exclude: The guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.  # noqa: E501
+        :type: list[str]
+        """
+        self._guids_to_exclude = guids_to_exclude
 
     @property
     def number_of_terms(self):

@@ -31,6 +31,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
     swagger_types = {
         'datum_type': 'str',
         'datum_value': 'GrantaServerApiDataExportDatumsRange',
+        'is_estimated': 'bool',
         'unit': 'str'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "swagger_types"):
@@ -39,6 +40,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
     attribute_map = {
         'datum_type': 'datumType',
         'datum_value': 'datumValue',
+        'is_estimated': 'isEstimated',
         'unit': 'unit'
     }
     if hasattr(GrantaServerApiDataExportDatumsApplicableDatum, "attribute_map"):
@@ -49,16 +51,19 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
     }
 
 
-    def __init__(self, datum_type='range', datum_value=None, unit=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, datum_type='range', datum_value=None, is_estimated=None, unit=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsRangeDatum - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiDataExportDatumsApplicableDatum.__init__(self, *args, **kwargs)
         self._datum_type = None
         self._datum_value = None
+        self._is_estimated = None
         self._unit = None
         self.discriminator = None
         self.datum_type = datum_type
         if datum_value is not None:
             self.datum_value = datum_value
+        if is_estimated is not None:
+            self.is_estimated = is_estimated
         if unit is not None:
             self.unit = unit
 
@@ -99,6 +104,24 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
         :type: GrantaServerApiDataExportDatumsRange
         """
         self._datum_value = datum_value
+
+    @property
+    def is_estimated(self):
+        """Gets the is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.  # noqa: E501
+
+        :return: The is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated):
+        """Sets the is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.
+
+        :param is_estimated: The is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.  # noqa: E501
+        :type: bool
+        """
+        self._is_estimated = is_estimated
 
     @property
     def unit(self):

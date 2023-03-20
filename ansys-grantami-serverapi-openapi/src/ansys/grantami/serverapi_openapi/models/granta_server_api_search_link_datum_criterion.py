@@ -30,10 +30,13 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     """
     swagger_types = {
         'target_table_identity': 'int',
+        'target_table_guid': 'str',
         'target_database_key': 'str',
         'local_criterion': 'GrantaServerApiSearchCriterion',
-        'link_datum_type': 'GrantaServerApiSearchLinkDatumType',
+        'link_datum_type': 'GrantaServerApiSearchLinkAttributeType',
+        'search_in_reversed_direction': 'bool',
         'target_attribute_identity': 'int',
+        'target_attribute_guid': 'str',
         'inner_criterion': 'GrantaServerApiSearchCriterion',
         'type': 'str'
     }
@@ -42,10 +45,13 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
     attribute_map = {
         'target_table_identity': 'targetTableIdentity',
+        'target_table_guid': 'targetTableGuid',
         'target_database_key': 'targetDatabaseKey',
         'local_criterion': 'localCriterion',
         'link_datum_type': 'linkDatumType',
+        'search_in_reversed_direction': 'searchInReversedDirection',
         'target_attribute_identity': 'targetAttributeIdentity',
+        'target_attribute_guid': 'targetAttributeGuid',
         'inner_criterion': 'innerCriterion',
         'type': 'type'
     }
@@ -54,32 +60,41 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
     subtype_mapping = {
         'localCriterion': 'GrantaServerApiSearchCriterion',
-        'linkDatumType': 'GrantaServerApiSearchLinkDatumType',
+        'linkDatumType': 'GrantaServerApiSearchLinkAttributeType',
         'innerCriterion': 'GrantaServerApiSearchCriterion',
     }
 
 
-    def __init__(self, target_table_identity=None, target_database_key=None, local_criterion=None, link_datum_type=None, target_attribute_identity=None, inner_criterion=None, type='link', *args, **kwargs):  # noqa: E501
+    def __init__(self, target_table_identity=None, target_table_guid=None, target_database_key=None, local_criterion=None, link_datum_type=None, search_in_reversed_direction=None, target_attribute_identity=None, target_attribute_guid=None, inner_criterion=None, type='link', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchLinkDatumCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchDatumCriterion.__init__(self, *args, **kwargs)
         self._target_table_identity = None
+        self._target_table_guid = None
         self._target_database_key = None
         self._local_criterion = None
         self._link_datum_type = None
+        self._search_in_reversed_direction = None
         self._target_attribute_identity = None
+        self._target_attribute_guid = None
         self._inner_criterion = None
         self._type = None
         self.discriminator = None
         if target_table_identity is not None:
             self.target_table_identity = target_table_identity
+        if target_table_guid is not None:
+            self.target_table_guid = target_table_guid
         if target_database_key is not None:
             self.target_database_key = target_database_key
         if local_criterion is not None:
             self.local_criterion = local_criterion
         if link_datum_type is not None:
             self.link_datum_type = link_datum_type
+        if search_in_reversed_direction is not None:
+            self.search_in_reversed_direction = search_in_reversed_direction
         if target_attribute_identity is not None:
             self.target_attribute_identity = target_attribute_identity
+        if target_attribute_guid is not None:
+            self.target_attribute_guid = target_attribute_guid
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
         self.type = type
@@ -103,6 +118,26 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         :type: int
         """
         self._target_table_identity = target_table_identity
+
+    @property
+    def target_table_guid(self):
+        """Gets the target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        Table containing the linked records  # noqa: E501
+
+        :return: The target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_table_guid
+
+    @target_table_guid.setter
+    def target_table_guid(self, target_table_guid):
+        """Sets the target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.
+        Table containing the linked records  # noqa: E501
+
+        :param target_table_guid: The target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :type: str
+        """
+        self._target_table_guid = target_table_guid
 
     @property
     def target_database_key(self):
@@ -147,7 +182,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         """Gets the link_datum_type of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
 
         :return: The link_datum_type of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
-        :rtype: GrantaServerApiSearchLinkDatumType
+        :rtype: GrantaServerApiSearchLinkAttributeType
         """
         return self._link_datum_type
 
@@ -156,9 +191,27 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         """Sets the link_datum_type of this GrantaServerApiSearchLinkDatumCriterion.
 
         :param link_datum_type: The link_datum_type of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
-        :type: GrantaServerApiSearchLinkDatumType
+        :type: GrantaServerApiSearchLinkAttributeType
         """
         self._link_datum_type = link_datum_type
+
+    @property
+    def search_in_reversed_direction(self):
+        """Gets the search_in_reversed_direction of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+
+        :return: The search_in_reversed_direction of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_in_reversed_direction
+
+    @search_in_reversed_direction.setter
+    def search_in_reversed_direction(self, search_in_reversed_direction):
+        """Sets the search_in_reversed_direction of this GrantaServerApiSearchLinkDatumCriterion.
+
+        :param search_in_reversed_direction: The search_in_reversed_direction of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :type: bool
+        """
+        self._search_in_reversed_direction = search_in_reversed_direction
 
     @property
     def target_attribute_identity(self):
@@ -179,6 +232,26 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         :type: int
         """
         self._target_attribute_identity = target_attribute_identity
+
+    @property
+    def target_attribute_guid(self):
+        """Gets the target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        For tabular searching: this is the GUID of the short-text linking attribute.  Otherwise null.  # noqa: E501
+
+        :return: The target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :rtype: str
+        """
+        return self._target_attribute_guid
+
+    @target_attribute_guid.setter
+    def target_attribute_guid(self, target_attribute_guid):
+        """Sets the target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.
+        For tabular searching: this is the GUID of the short-text linking attribute.  Otherwise null.  # noqa: E501
+
+        :param target_attribute_guid: The target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.  # noqa: E501
+        :type: str
+        """
+        self._target_attribute_guid = target_attribute_guid
 
     @property
     def inner_criterion(self):

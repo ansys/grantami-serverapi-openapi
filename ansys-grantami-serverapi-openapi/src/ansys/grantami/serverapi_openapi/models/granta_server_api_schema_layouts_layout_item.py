@@ -52,7 +52,7 @@ class GrantaServerApiSchemaLayoutsLayoutItem(ModelBase):
         self._underlying_entity_guid = None
         self._name = None
         self._guid = None
-        self.discriminator = 'item_type'
+        self.discriminator = 'itemType'
         if underlying_entity_guid is not None:
             self.underlying_entity_guid = underlying_entity_guid
         if name is not None:

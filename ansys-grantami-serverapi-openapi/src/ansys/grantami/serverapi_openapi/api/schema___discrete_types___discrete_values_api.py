@@ -413,7 +413,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         :param str database_key: (required)
         :param str discrete_type_guid: (required)
         :param GrantaServerApiSchemaDiscreteValue body:
-        :return: None
+        :return: GrantaServerApiSchemaDiscreteValue
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_post_with_http_info(database_key, discrete_type_guid, **kwargs)  # noqa: E501
@@ -427,7 +427,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         :param str database_key: (required)
         :param str discrete_type_guid: (required)
         :param GrantaServerApiSchemaDiscreteValue body:
-        :return: None
+        :return: GrantaServerApiSchemaDiscreteValue
         """
 
         all_params = ['database_key', 'discrete_type_guid', 'body']  # noqa: E501
@@ -470,6 +470,10 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -478,7 +482,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiSchemaDiscreteValue',
             201: None,
             400: None,
             403: None,

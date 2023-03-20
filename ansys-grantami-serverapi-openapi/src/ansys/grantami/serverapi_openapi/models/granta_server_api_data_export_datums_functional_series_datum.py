@@ -31,7 +31,9 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
     swagger_types = {
         'graph_type': 'str',
         'series': 'list[GrantaServerApiDataExportDatumsSeries]',
-        'is_logarithmic': 'bool'
+        'is_logarithmic': 'bool',
+        'is_range': 'bool',
+        'show_as_table': 'bool'
     }
     if hasattr(GrantaServerApiDataExportDatumsFunctionalDatum, "swagger_types"):
         swagger_types.update(GrantaServerApiDataExportDatumsFunctionalDatum.swagger_types)
@@ -39,7 +41,9 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
     attribute_map = {
         'graph_type': 'graphType',
         'series': 'series',
-        'is_logarithmic': 'isLogarithmic'
+        'is_logarithmic': 'isLogarithmic',
+        'is_range': 'isRange',
+        'show_as_table': 'showAsTable'
     }
     if hasattr(GrantaServerApiDataExportDatumsFunctionalDatum, "attribute_map"):
         attribute_map.update(GrantaServerApiDataExportDatumsFunctionalDatum.attribute_map)
@@ -49,18 +53,24 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
     }
 
 
-    def __init__(self, graph_type='series', series=None, is_logarithmic=None, *args, **kwargs):  # noqa: E501
+    def __init__(self, graph_type='series', series=None, is_logarithmic=None, is_range=None, show_as_table=None, *args, **kwargs):  # noqa: E501
         """GrantaServerApiDataExportDatumsFunctionalSeriesDatum - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiDataExportDatumsFunctionalDatum.__init__(self, *args, **kwargs)
         self._graph_type = None
         self._series = None
         self._is_logarithmic = None
+        self._is_range = None
+        self._show_as_table = None
         self.discriminator = None
         self.graph_type = graph_type
         if series is not None:
             self.series = series
         if is_logarithmic is not None:
             self.is_logarithmic = is_logarithmic
+        if is_range is not None:
+            self.is_range = is_range
+        if show_as_table is not None:
+            self.show_as_table = show_as_table
 
     @property
     def graph_type(self):
@@ -117,6 +127,42 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
         :type: bool
         """
         self._is_logarithmic = is_logarithmic
+
+    @property
+    def is_range(self):
+        """Gets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+
+        :return: The is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_range
+
+    @is_range.setter
+    def is_range(self, is_range):
+        """Sets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
+
+        :param is_range: The is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+        :type: bool
+        """
+        self._is_range = is_range
+
+    @property
+    def show_as_table(self):
+        """Gets the show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+
+        :return: The show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+        :rtype: bool
+        """
+        return self._show_as_table
+
+    @show_as_table.setter
+    def show_as_table(self, show_as_table):
+        """Sets the show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
+
+        :param show_as_table: The show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.  # noqa: E501
+        :type: bool
+        """
+        self._show_as_table = show_as_table
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""

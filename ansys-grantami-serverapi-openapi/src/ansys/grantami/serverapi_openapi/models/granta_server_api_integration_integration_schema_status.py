@@ -31,29 +31,56 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         'loaded_databases': 'list[str]',
         'loading_databases': 'list[str]',
         'not_loaded_databases': 'list[str]',
-        'out_of_sync_databases': 'dict(str, list[GrantaServerApiIntegrationIndexRecordFailure])',
-        'errored_databases': 'dict(str, str)'
+        'errored_databases': 'dict(str, str)',
+        'loaded_database_index_statuses': 'dict(str, GrantaServerApiSearchIndexStatus)',
+        'search_index_up_to_date': 'bool',
+        'search_index_in_sync': 'bool',
+        'search_index_location': 'str',
+        'search_index_is_read_only': 'bool',
+        'disk_status': 'GrantaServerApiDiskStatus',
+        'disk_threshold': 'str',
+        'search_index_unavailable': 'bool',
+        'records_that_failed_to_index': 'list[GrantaServerApiIndexRecordFailure]'
     }
 
     attribute_map = {
         'loaded_databases': 'loadedDatabases',
         'loading_databases': 'loadingDatabases',
         'not_loaded_databases': 'notLoadedDatabases',
-        'out_of_sync_databases': 'outOfSyncDatabases',
-        'errored_databases': 'erroredDatabases'
+        'errored_databases': 'erroredDatabases',
+        'loaded_database_index_statuses': 'loadedDatabaseIndexStatuses',
+        'search_index_up_to_date': 'searchIndexUpToDate',
+        'search_index_in_sync': 'searchIndexInSync',
+        'search_index_location': 'searchIndexLocation',
+        'search_index_is_read_only': 'searchIndexIsReadOnly',
+        'disk_status': 'diskStatus',
+        'disk_threshold': 'diskThreshold',
+        'search_index_unavailable': 'searchIndexUnavailable',
+        'records_that_failed_to_index': 'recordsThatFailedToIndex'
     }
 
     subtype_mapping = {
+        'loadedDatabaseIndexStatuses': 'GrantaServerApiSearchIndexStatus',
+        'diskStatus': 'GrantaServerApiDiskStatus',
+        'recordsThatFailedToIndex': 'GrantaServerApiIndexRecordFailure'
     }
 
 
-    def __init__(self, loaded_databases=None, loading_databases=None, not_loaded_databases=None, out_of_sync_databases=None, errored_databases=None):  # noqa: E501
+    def __init__(self, loaded_databases=None, loading_databases=None, not_loaded_databases=None, errored_databases=None, loaded_database_index_statuses=None, search_index_up_to_date=None, search_index_in_sync=None, search_index_location=None, search_index_is_read_only=None, disk_status=None, disk_threshold=None, search_index_unavailable=None, records_that_failed_to_index=None):  # noqa: E501
         """GrantaServerApiIntegrationIntegrationSchemaStatus - a model defined in Swagger"""  # noqa: E501
         self._loaded_databases = None
         self._loading_databases = None
         self._not_loaded_databases = None
-        self._out_of_sync_databases = None
         self._errored_databases = None
+        self._loaded_database_index_statuses = None
+        self._search_index_up_to_date = None
+        self._search_index_in_sync = None
+        self._search_index_location = None
+        self._search_index_is_read_only = None
+        self._disk_status = None
+        self._disk_threshold = None
+        self._search_index_unavailable = None
+        self._records_that_failed_to_index = None
         self.discriminator = None
         if loaded_databases is not None:
             self.loaded_databases = loaded_databases
@@ -61,15 +88,31 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
             self.loading_databases = loading_databases
         if not_loaded_databases is not None:
             self.not_loaded_databases = not_loaded_databases
-        if out_of_sync_databases is not None:
-            self.out_of_sync_databases = out_of_sync_databases
         if errored_databases is not None:
             self.errored_databases = errored_databases
+        if loaded_database_index_statuses is not None:
+            self.loaded_database_index_statuses = loaded_database_index_statuses
+        if search_index_up_to_date is not None:
+            self.search_index_up_to_date = search_index_up_to_date
+        if search_index_in_sync is not None:
+            self.search_index_in_sync = search_index_in_sync
+        if search_index_location is not None:
+            self.search_index_location = search_index_location
+        if search_index_is_read_only is not None:
+            self.search_index_is_read_only = search_index_is_read_only
+        if disk_status is not None:
+            self.disk_status = disk_status
+        if disk_threshold is not None:
+            self.disk_threshold = disk_threshold
+        if search_index_unavailable is not None:
+            self.search_index_unavailable = search_index_unavailable
+        if records_that_failed_to_index is not None:
+            self.records_that_failed_to_index = records_that_failed_to_index
 
     @property
     def loaded_databases(self):
         """Gets the loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
-        Loaded databases have been successfully indexed into the integration schema. Data from them will be available in searches.  # noqa: E501
+        Loaded databases have been successfully indexed into the integration schema.  # noqa: E501
 
         :return: The loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
         :rtype: list[str]
@@ -79,7 +122,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     @loaded_databases.setter
     def loaded_databases(self, loaded_databases):
         """Sets the loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
-        Loaded databases have been successfully indexed into the integration schema. Data from them will be available in searches.  # noqa: E501
+        Loaded databases have been successfully indexed into the integration schema.  # noqa: E501
 
         :param loaded_databases: The loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
         :type: list[str]
@@ -127,26 +170,6 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         self._not_loaded_databases = not_loaded_databases
 
     @property
-    def out_of_sync_databases(self):
-        """Gets the out_of_sync_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
-        These databases have been loaded, but some data has not made it to Elasticsearch. They are available for searching, but results  may not be accurate.  # noqa: E501
-
-        :return: The out_of_sync_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
-        :rtype: dict(str, list[GrantaServerApiIntegrationIndexRecordFailure])
-        """
-        return self._out_of_sync_databases
-
-    @out_of_sync_databases.setter
-    def out_of_sync_databases(self, out_of_sync_databases):
-        """Sets the out_of_sync_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
-        These databases have been loaded, but some data has not made it to Elasticsearch. They are available for searching, but results  may not be accurate.  # noqa: E501
-
-        :param out_of_sync_databases: The out_of_sync_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
-        :type: dict(str, list[GrantaServerApiIntegrationIndexRecordFailure])
-        """
-        self._out_of_sync_databases = out_of_sync_databases
-
-    @property
     def errored_databases(self):
         """Gets the errored_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
         Databases that encountered an error while loading. These databases will not be available for searches.  # noqa: E501
@@ -165,6 +188,184 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         :type: dict(str, str)
         """
         self._errored_databases = errored_databases
+
+    @property
+    def loaded_database_index_statuses(self):
+        """Gets the loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        Index information about all loaded databases, including the out of sync status.  # noqa: E501
+
+        :return: The loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: dict(str, GrantaServerApiSearchIndexStatus)
+        """
+        return self._loaded_database_index_statuses
+
+    @loaded_database_index_statuses.setter
+    def loaded_database_index_statuses(self, loaded_database_index_statuses):
+        """Sets the loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        Index information about all loaded databases, including the out of sync status.  # noqa: E501
+
+        :param loaded_database_index_statuses: The loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: dict(str, GrantaServerApiSearchIndexStatus)
+        """
+        self._loaded_database_index_statuses = loaded_database_index_statuses
+
+    @property
+    def search_index_up_to_date(self):
+        """Gets the search_index_up_to_date of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        Whether all changes up to and including the most recent database revision have been sent to the search index. This will return true  even if some of those revisions could not be indexed  # noqa: E501
+
+        :return: The search_index_up_to_date of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_index_up_to_date
+
+    @search_index_up_to_date.setter
+    def search_index_up_to_date(self, search_index_up_to_date):
+        """Sets the search_index_up_to_date of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        Whether all changes up to and including the most recent database revision have been sent to the search index. This will return true  even if some of those revisions could not be indexed  # noqa: E501
+
+        :param search_index_up_to_date: The search_index_up_to_date of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: bool
+        """
+        self._search_index_up_to_date = search_index_up_to_date
+
+    @property
+    def search_index_in_sync(self):
+        """Gets the search_index_in_sync of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        Returns false if the search index is out of sync with the database (i.e. because changes were made that could not be indexed)  # noqa: E501
+
+        :return: The search_index_in_sync of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_index_in_sync
+
+    @search_index_in_sync.setter
+    def search_index_in_sync(self, search_index_in_sync):
+        """Sets the search_index_in_sync of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        Returns false if the search index is out of sync with the database (i.e. because changes were made that could not be indexed)  # noqa: E501
+
+        :param search_index_in_sync: The search_index_in_sync of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: bool
+        """
+        self._search_index_in_sync = search_index_in_sync
+
+    @property
+    def search_index_location(self):
+        """Gets the search_index_location of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        The location of the index.  # noqa: E501
+
+        :return: The search_index_location of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._search_index_location
+
+    @search_index_location.setter
+    def search_index_location(self, search_index_location):
+        """Sets the search_index_location of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        The location of the index.  # noqa: E501
+
+        :param search_index_location: The search_index_location of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: str
+        """
+        self._search_index_location = search_index_location
+
+    @property
+    def search_index_is_read_only(self):
+        """Gets the search_index_is_read_only of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        True if the index is read only.  # noqa: E501
+
+        :return: The search_index_is_read_only of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_index_is_read_only
+
+    @search_index_is_read_only.setter
+    def search_index_is_read_only(self, search_index_is_read_only):
+        """Sets the search_index_is_read_only of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        True if the index is read only.  # noqa: E501
+
+        :param search_index_is_read_only: The search_index_is_read_only of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: bool
+        """
+        self._search_index_is_read_only = search_index_is_read_only
+
+    @property
+    def disk_status(self):
+        """Gets the disk_status of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+
+        :return: The disk_status of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: GrantaServerApiDiskStatus
+        """
+        return self._disk_status
+
+    @disk_status.setter
+    def disk_status(self, disk_status):
+        """Sets the disk_status of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+
+        :param disk_status: The disk_status of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: GrantaServerApiDiskStatus
+        """
+        self._disk_status = disk_status
+
+    @property
+    def disk_threshold(self):
+        """Gets the disk_threshold of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        The 'flood stage' threshold from Elasticsearch.  # noqa: E501
+
+        :return: The disk_threshold of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: str
+        """
+        return self._disk_threshold
+
+    @disk_threshold.setter
+    def disk_threshold(self, disk_threshold):
+        """Sets the disk_threshold of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        The 'flood stage' threshold from Elasticsearch.  # noqa: E501
+
+        :param disk_threshold: The disk_threshold of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: str
+        """
+        self._disk_threshold = disk_threshold
+
+    @property
+    def search_index_unavailable(self):
+        """Gets the search_index_unavailable of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        True if the index could not be contacted.  # noqa: E501
+
+        :return: The search_index_unavailable of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_index_unavailable
+
+    @search_index_unavailable.setter
+    def search_index_unavailable(self, search_index_unavailable):
+        """Sets the search_index_unavailable of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        True if the index could not be contacted.  # noqa: E501
+
+        :param search_index_unavailable: The search_index_unavailable of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: bool
+        """
+        self._search_index_unavailable = search_index_unavailable
+
+    @property
+    def records_that_failed_to_index(self):
+        """Gets the records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        Details of any records that failed to index.  # noqa: E501
+
+        :return: The records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :rtype: list[GrantaServerApiIndexRecordFailure]
+        """
+        return self._records_that_failed_to_index
+
+    @records_that_failed_to_index.setter
+    def records_that_failed_to_index(self, records_that_failed_to_index):
+        """Sets the records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.
+        Details of any records that failed to index.  # noqa: E501
+
+        :param records_that_failed_to_index: The records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.  # noqa: E501
+        :type: list[GrantaServerApiIndexRecordFailure]
+        """
+        self._records_that_failed_to_index = records_that_failed_to_index
 
     def get_real_child_model(self, data):
         """Raises a NotImplementedError for a type without a discriminator defined."""
