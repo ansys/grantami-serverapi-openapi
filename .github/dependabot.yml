@@ -10,6 +10,13 @@ updates:
     schedule:
       interval: "weekly"
 
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "maintenance"
+
 # Uncomment once you have built an initial client library
 #    You can either patch versions here, or submit a PR on the openapi-client-template repository
 #    https://github.com/pyansys/openapi-client-template
