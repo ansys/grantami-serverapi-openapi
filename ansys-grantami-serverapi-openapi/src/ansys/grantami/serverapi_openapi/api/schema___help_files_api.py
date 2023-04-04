@@ -105,6 +105,98 @@ class SchemaHelpFilesApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map)
 
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Delete a Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :return: None
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete_with_http_info(database_key, folder_guid, file_guid, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete_with_http_info(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Delete a Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :return: None
+        """
+
+        all_params = ['database_key', 'folder_guid', 'file_guid']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'database_key' is set
+        if ('database_key' not in params or
+                params['database_key'] is None):
+            raise ValueError("Missing the required parameter `database_key` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete`")  # noqa: E501
+        # verify the required parameter 'folder_guid' is set
+        if ('folder_guid' not in params or
+                params['folder_guid'] is None):
+            raise ValueError("Missing the required parameter `folder_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete`")  # noqa: E501
+        # verify the required parameter 'file_guid' is set
+        if ('file_guid' not in params or
+                params['file_guid'] is None):
+            raise ValueError("Missing the required parameter `file_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'database_key' in params:
+            path_params['database-key'] = params['database_key']  # noqa: E501
+        if 'folder_guid' in params:
+            path_params['folder-guid'] = params['folder_guid']  # noqa: E501
+        if 'file_guid' in params:
+            path_params['file-guid'] = params['file_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+        
+        response_type_map = {
+            200: None,
+            403: None,
+            404: None,
+        }
+        
+        return self.api_client.call_api(
+            '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files/{file-guid}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
+
     def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_get(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
         """Get header information for a help file  # noqa: E501
 
@@ -188,6 +280,111 @@ class SchemaHelpFilesApi(ApiBase):
         
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files/{file-guid}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Update an existing Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :param GrantaServerApiSchemaFilesUpdateFile body:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch_with_http_info(database_key, folder_guid, file_guid, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch_with_http_info(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Update an existing Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :param GrantaServerApiSchemaFilesUpdateFile body:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+
+        all_params = ['database_key', 'folder_guid', 'file_guid', 'body']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'database_key' is set
+        if ('database_key' not in params or
+                params['database_key'] is None):
+            raise ValueError("Missing the required parameter `database_key` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch`")  # noqa: E501
+        # verify the required parameter 'folder_guid' is set
+        if ('folder_guid' not in params or
+                params['folder_guid'] is None):
+            raise ValueError("Missing the required parameter `folder_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch`")  # noqa: E501
+        # verify the required parameter 'file_guid' is set
+        if ('file_guid' not in params or
+                params['file_guid'] is None):
+            raise ValueError("Missing the required parameter `file_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guid_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'database_key' in params:
+            path_params['database-key'] = params['database_key']  # noqa: E501
+        if 'folder_guid' in params:
+            path_params['folder-guid'] = params['folder_guid']  # noqa: E501
+        if 'file_guid' in params:
+            path_params['file-guid'] = params['file_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaFilesFileHeader',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
+        return self.api_client.call_api(
+            '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files/{file-guid}', 'PATCH',
             path_params,
             query_params,
             header_params,
@@ -291,6 +488,111 @@ class SchemaHelpFilesApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map)
 
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Move an existing Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :param GrantaServerApiSchemaFilesMoveFile body:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post_with_http_info(database_key, folder_guid, file_guid, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post_with_http_info(self, database_key, folder_guid, file_guid, **kwargs):  # noqa: E501
+        """Move an existing Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str file_guid: (required)
+        :param GrantaServerApiSchemaFilesMoveFile body:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+
+        all_params = ['database_key', 'folder_guid', 'file_guid', 'body']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'database_key' is set
+        if ('database_key' not in params or
+                params['database_key'] is None):
+            raise ValueError("Missing the required parameter `database_key` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post`")  # noqa: E501
+        # verify the required parameter 'folder_guid' is set
+        if ('folder_guid' not in params or
+                params['folder_guid'] is None):
+            raise ValueError("Missing the required parameter `folder_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post`")  # noqa: E501
+        # verify the required parameter 'file_guid' is set
+        if ('file_guid' not in params or
+                params['file_guid'] is None):
+            raise ValueError("Missing the required parameter `file_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_file_guidmove_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'database_key' in params:
+            path_params['database-key'] = params['database_key']  # noqa: E501
+        if 'folder_guid' in params:
+            path_params['folder-guid'] = params['folder_guid']  # noqa: E501
+        if 'file_guid' in params:
+            path_params['file-guid'] = params['file_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaFilesFileHeader',
+            400: None,
+            403: None,
+            404: None,
+        }
+        
+        return self.api_client.call_api(
+            '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files/{file-guid}:move', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
+
     def v1alpha_databases_database_key_help_folders_folder_guid_files_get(self, database_key, folder_guid, **kwargs):  # noqa: E501
         """Get Files in a Folder  # noqa: E501
 
@@ -366,6 +668,128 @@ class SchemaHelpFilesApi(ApiBase):
         
         return self.api_client.call_api(
             '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map)
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_post(self, database_key, folder_guid, **kwargs):  # noqa: E501
+        """Create a new Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str content_type:
+        :param str content_disposition:
+        :param dict(str, list[str]) headers:
+        :param int length:
+        :param str name:
+        :param str file_name:
+        :param str description:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+        kwargs['_return_http_data_only'] = True
+        (data) = self.v1alpha_databases_database_key_help_folders_folder_guid_files_post_with_http_info(database_key, folder_guid, **kwargs)  # noqa: E501
+        return data
+
+    def v1alpha_databases_database_key_help_folders_folder_guid_files_post_with_http_info(self, database_key, folder_guid, **kwargs):  # noqa: E501
+        """Create a new Help File.  # noqa: E501
+
+        This method makes a synchronous HTTP request.
+
+        :param str database_key: (required)
+        :param str folder_guid: (required)
+        :param str content_type:
+        :param str content_disposition:
+        :param dict(str, list[str]) headers:
+        :param int length:
+        :param str name:
+        :param str file_name:
+        :param str description:
+        :return: GrantaServerApiSchemaFilesFileHeader
+        """
+
+        all_params = ['database_key', 'folder_guid', 'content_type', 'content_disposition', 'headers', 'length', 'name', 'file_name', 'description']  # noqa: E501
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in params['kwargs'].items():
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '{}' to method v1alpha_databases_database_key_help_folders_folder_guid_files_post".format(key)
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'database_key' is set
+        if ('database_key' not in params or
+                params['database_key'] is None):
+            raise ValueError("Missing the required parameter `database_key` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_post`")  # noqa: E501
+        # verify the required parameter 'folder_guid' is set
+        if ('folder_guid' not in params or
+                params['folder_guid'] is None):
+            raise ValueError("Missing the required parameter `folder_guid` when calling `v1alpha_databases_database_key_help_folders_folder_guid_files_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'database_key' in params:
+            path_params['database-key'] = params['database_key']  # noqa: E501
+        if 'folder_guid' in params:
+            path_params['folder-guid'] = params['folder_guid']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+        if 'content_type' in params:
+            form_params.append(('ContentType', params['content_type']))  # noqa: E501
+        if 'content_disposition' in params:
+            form_params.append(('ContentDisposition', params['content_disposition']))  # noqa: E501
+        if 'headers' in params:
+            form_params.append(('Headers', params['headers']))  # noqa: E501
+        if 'length' in params:
+            form_params.append(('Length', params['length']))  # noqa: E501
+        if 'name' in params:
+            form_params.append(('Name', params['name']))  # noqa: E501
+        if 'file_name' in params:
+            form_params.append(('FileName', params['file_name']))  # noqa: E501
+        if 'description' in params:
+            form_params.append(('description', params['description']))  # noqa: E501
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['multipart/form-data'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+        
+        response_type_map = {
+            200: 'GrantaServerApiSchemaFilesFileHeader',
+            201: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+        
+        return self.api_client.call_api(
+            '/v1alpha/databases/{database-key}/help-folders/{folder-guid}/files', 'POST',
             path_params,
             query_params,
             header_params,
