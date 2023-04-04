@@ -4607,7 +4607,24 @@
             }
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -4684,7 +4701,24 @@
             }
           },
           "202": {
-            "description": "Accepted"
+            "description": "Accepted",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListItems"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -4790,7 +4824,24 @@
             }
           },
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -4853,7 +4904,24 @@
             }
           },
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListSearchInfo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListSearchInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListSearchInfo"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -5445,7 +5513,24 @@
             }
           },
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              }
+            }
           },
           "400": {
             "description": "Bad request"
@@ -5498,7 +5583,24 @@
             }
           },
           "201": {
-            "description": "Created"
+            "description": "Created",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GrantaServerApiListsDtoRecordListHeader"
+                }
+              }
+            }
           },
           "403": {
             "description": "Forbidden"
