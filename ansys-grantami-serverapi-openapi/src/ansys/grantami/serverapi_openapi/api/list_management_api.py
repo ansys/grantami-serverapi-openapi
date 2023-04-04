@@ -75,6 +75,7 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'list[GrantaServerApiListsDtoRecordListHeader]',
+            403: None,
         }
         
         return self.api_client.call_api(
@@ -97,7 +98,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_copy_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -109,7 +110,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -144,11 +145,18 @@ class ListManagementApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            201: 'GrantaServerApiListsDtoRecordListHeader',
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -223,6 +231,8 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -301,6 +311,8 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -387,6 +399,9 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -409,7 +424,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_publish_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -421,7 +436,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -464,7 +479,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListResource',
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -551,6 +569,9 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -573,7 +594,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_request_approval_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -585,7 +606,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -628,7 +649,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListResource',
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -651,7 +675,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_reset_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -663,7 +687,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -706,7 +730,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListResource',
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -729,7 +756,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_revise_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -741,7 +768,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -776,11 +803,19 @@ class ListManagementApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # Authentication setting
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            201: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -803,7 +838,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_unpublish_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -815,7 +850,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param str list_identifier: (required)
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['list_identifier']  # noqa: E501
@@ -858,7 +893,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListResource',
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -881,7 +919,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiListsDtoRecordListCreate body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_post_with_http_info(**kwargs)  # noqa: E501
@@ -893,7 +931,7 @@ class ListManagementApi(ApiBase):
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiListsDtoRecordListCreate body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListHeader
         """
 
         all_params = ['body']  # noqa: E501
@@ -924,6 +962,10 @@ class ListManagementApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -932,7 +974,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiListsDtoRecordListHeader',
+            201: 'GrantaServerApiListsDtoRecordListHeader',
+            400: None,
+            403: None,
         }
         
         return self.api_client.call_api(
@@ -950,24 +995,24 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map)
 
     def api_v1_lists_search_post(self, **kwargs):  # noqa: E501
-        """Posts a search request, and returns a resource containing the results  # noqa: E501
+        """Posts a search request, and returns an object containing search result identifier  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiListsDtoRecordListSearchRequest body:
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListSearchInfo
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_search_post_with_http_info(**kwargs)  # noqa: E501
         return data
 
     def api_v1_lists_search_post_with_http_info(self, **kwargs):  # noqa: E501
-        """Posts a search request, and returns a resource containing the results  # noqa: E501
+        """Posts a search request, and returns an object containing search result identifier  # noqa: E501
 
         This method makes a synchronous HTTP request.
 
         :param GrantaServerApiListsDtoRecordListSearchRequest body:
-        :return: GrantaServerApiListsDtoRecordListResource
+        :return: GrantaServerApiListsDtoRecordListSearchInfo
         """
 
         all_params = ['body']  # noqa: E501
@@ -1010,7 +1055,10 @@ class ListManagementApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListResource',
+            200: 'GrantaServerApiListsDtoRecordListSearchInfo',
+            201: 'GrantaServerApiListsDtoRecordListSearchInfo',
+            400: None,
+            403: None,
         }
         
         return self.api_client.call_api(
@@ -1089,6 +1137,9 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'list[GrantaServerApiListsDtoRecordListSearchResult]',
+            403: None,
+            404: None,
+            410: None,
         }
         
         return self.api_client.call_api(

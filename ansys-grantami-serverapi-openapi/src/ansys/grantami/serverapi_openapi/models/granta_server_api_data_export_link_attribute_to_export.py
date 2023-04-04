@@ -34,7 +34,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         'target_database_guid': 'str',
         'target_attribute_identity': 'int',
         'attribute_type': 'str',
-        'link_attribute_type': 'GrantaServerApiDataExportLinkAttributeType',
+        'link_attribute_type': 'GrantaServerApiLinkAttributeType',
         'export_in_reversed_direction': 'bool',
         'record_properties': 'list[GrantaServerApiRecordProperty]',
         'attributes': 'list[GrantaServerApiDataExportAttributeToExport]'
@@ -58,7 +58,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
 
     subtype_mapping = {
         'localData': 'GrantaServerApiDataExportSimpleAttributeToExport',
-        'linkAttributeType': 'GrantaServerApiDataExportLinkAttributeType',
+        'linkAttributeType': 'GrantaServerApiLinkAttributeType',
         'recordProperties': 'GrantaServerApiRecordProperty',
         'attributes': 'GrantaServerApiDataExportAttributeToExport'
     }
@@ -136,7 +136,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
     @property
     def target_database_guid(self):
         """Gets the target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
-        Database containing the linked records. For reverse cross database links, this is the database where the link is defined  # noqa: E501
+        Database containing the linked records. For reverse cross database links, this is the database where the link is defined.  This is not required for tabular links, and for cross-database link groups that don't have a target database.  # noqa: E501
 
         :return: The target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
         :rtype: str
@@ -146,7 +146,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
     @target_database_guid.setter
     def target_database_guid(self, target_database_guid):
         """Sets the target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.
-        Database containing the linked records. For reverse cross database links, this is the database where the link is defined  # noqa: E501
+        Database containing the linked records. For reverse cross database links, this is the database where the link is defined.  This is not required for tabular links, and for cross-database link groups that don't have a target database.  # noqa: E501
 
         :param target_database_guid: The target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
         :type: str
@@ -198,7 +198,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         """Gets the link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
 
         :return: The link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
-        :rtype: GrantaServerApiDataExportLinkAttributeType
+        :rtype: GrantaServerApiLinkAttributeType
         """
         return self._link_attribute_type
 
@@ -207,7 +207,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         """Sets the link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.
 
         :param link_attribute_type: The link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.  # noqa: E501
-        :type: GrantaServerApiDataExportLinkAttributeType
+        :type: GrantaServerApiLinkAttributeType
         """
         self._link_attribute_type = link_attribute_type
 
