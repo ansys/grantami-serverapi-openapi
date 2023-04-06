@@ -112,6 +112,14 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
           TWINE_REPOSITORY_URL: "https://pkgs.dev.azure.com/pyansys/_packaging/pyansys/pypi/upload"
 
+      - name: "Release to public PyPI"
+        run: |
+          python -m twine upload --verbose --skip-existing --non-interactive ~/dist/*.whl
+        env:
+          TWINE_USERNAME: "__token__"
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+          TWINE_REPOSITORY_URL: "https://upload.pypi.org/legacy/"
+
       - name: "Release to GitHub"
         uses: softprops/action-gh-release@v1
         with:
