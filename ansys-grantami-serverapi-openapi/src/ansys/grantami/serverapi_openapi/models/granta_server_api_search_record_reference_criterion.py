@@ -31,6 +31,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     swagger_types = {
         'database_key': 'str',
         'record_identity': 'int',
+        'record_history_identity': 'int',
         'record_guid': 'str',
         'type': 'str'
     }
@@ -40,6 +41,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     attribute_map = {
         'database_key': 'databaseKey',
         'record_identity': 'recordIdentity',
+        'record_history_identity': 'recordHistoryIdentity',
         'record_guid': 'recordGuid',
         'type': 'type'
     }
@@ -50,11 +52,12 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     }
 
 
-    def __init__(self, database_key=None, record_identity=None, record_guid=None, type='reference', *args, **kwargs):  # noqa: E501
+    def __init__(self, database_key=None, record_identity=None, record_history_identity=None, record_guid=None, type='reference', *args, **kwargs):  # noqa: E501
         """GrantaServerApiSearchRecordReferenceCriterion - a model defined in Swagger"""  # noqa: E501
         GrantaServerApiSearchCriterion.__init__(self, *args, **kwargs)
         self._database_key = None
         self._record_identity = None
+        self._record_history_identity = None
         self._record_guid = None
         self._type = None
         self.discriminator = None
@@ -62,6 +65,8 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
             self.database_key = database_key
         if record_identity is not None:
             self.record_identity = record_identity
+        if record_history_identity is not None:
+            self.record_history_identity = record_history_identity
         if record_guid is not None:
             self.record_guid = record_guid
         self.type = type
@@ -101,6 +106,24 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         :type: int
         """
         self._record_identity = record_identity
+
+    @property
+    def record_history_identity(self):
+        """Gets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.  # noqa: E501
+
+        :return: The record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.  # noqa: E501
+        :rtype: int
+        """
+        return self._record_history_identity
+
+    @record_history_identity.setter
+    def record_history_identity(self, record_history_identity):
+        """Sets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
+
+        :param record_history_identity: The record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.  # noqa: E501
+        :type: int
+        """
+        self._record_history_identity = record_history_identity
 
     @property
     def record_guid(self):

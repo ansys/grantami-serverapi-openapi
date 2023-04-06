@@ -28,7 +28,7 @@ class ListItemApi(ApiBase):
 
         :param str list_identifier: (required)
         :param GrantaServerApiListsDtoRecordListItems body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_items_add_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -41,7 +41,7 @@ class ListItemApi(ApiBase):
 
         :param str list_identifier: (required)
         :param GrantaServerApiListsDtoRecordListItems body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
 
         all_params = ['list_identifier', 'body']  # noqa: E501
@@ -78,6 +78,10 @@ class ListItemApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -86,7 +90,11 @@ class ListItemApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiListsDtoRecordListItems',
+            202: 'GrantaServerApiListsDtoRecordListItems',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -165,6 +173,8 @@ class ListItemApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListItems',
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
@@ -188,7 +198,7 @@ class ListItemApi(ApiBase):
 
         :param str list_identifier: (required)
         :param GrantaServerApiListsDtoRecordListItems body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
         kwargs['_return_http_data_only'] = True
         (data) = self.api_v1_lists_list_list_identifier_items_remove_post_with_http_info(list_identifier, **kwargs)  # noqa: E501
@@ -201,7 +211,7 @@ class ListItemApi(ApiBase):
 
         :param str list_identifier: (required)
         :param GrantaServerApiListsDtoRecordListItems body:
-        :return: None
+        :return: GrantaServerApiListsDtoRecordListItems
         """
 
         all_params = ['list_identifier', 'body']  # noqa: E501
@@ -238,6 +248,10 @@ class ListItemApi(ApiBase):
         body_params = None
         if 'body' in params:
             body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
+
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
@@ -246,7 +260,11 @@ class ListItemApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: None,
+            200: 'GrantaServerApiListsDtoRecordListItems',
+            202: 'GrantaServerApiListsDtoRecordListItems',
+            400: None,
+            403: None,
+            404: None,
         }
         
         return self.api_client.call_api(
