@@ -13,15 +13,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     labels:
       - "maintenance"
-
-# Uncomment once you have built an initial client library
-#    You can either patch versions here, or submit a PR on the openapi-client-template repository
-#    https://github.com/pyansys/openapi-client-template
-# updates:
-#   - package-ecosystem: "pip" # See documentation for possible values
-#     directory: "/ansys-product-library-openapi/" # Location of package manifests
-#     schedule:
-#       interval: "weekly"
+      
+  - package-ecosystem: "pip" # See documentation for possible values
+    directory: "/ansys-product-library-openapi/" # Location of package manifests
+    schedule:
+      interval: "weekly"
