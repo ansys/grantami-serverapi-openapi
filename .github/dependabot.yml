@@ -9,6 +9,8 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    labels:
+      - "maintenance"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -21,3 +23,5 @@ updates:
     directory: "/ansys-product-library-openapi/" # Location of package manifests
     schedule:
       interval: "weekly"
+    labels:
+      - "maintenance"
