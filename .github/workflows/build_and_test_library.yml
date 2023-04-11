@@ -100,7 +100,7 @@ jobs:
           name: ansys-grantami-serverapi-openapi-wheel
           path: ~/dist
 
-      - name: "Install Pyton dependencies"
+      - name: "Install Python dependencies"
         run: |
           python -m pip install --upgrade pip twine
 
