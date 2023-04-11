@@ -82,7 +82,7 @@ jobs:
   release:
     name: "Release"
     if: contains(github.ref, 'refs/tags') && github.event_name == 'push'
-    needs: build
+    needs: build-library
     runs-on: ubuntu-latest
     steps:
 
