@@ -1,4 +1,4 @@
-name: Generate Library and Create PR
+name: 'Generate client library'
 
 on:
   push:
@@ -15,49 +15,52 @@ on:
 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
 
+  generate-client-library:
+    name: "Generate and update client library"
+    runs-on: ubuntu-latest
     steps:
-    - name: Get Bot Application Token
+
+    - name: "Get Bot Application Token"
       id: get_workflow_token
       uses: peter-murray/workflow-application-token-action@v1
       with:
         application_id: ${{ secrets.BOT_APPLICATION_ID }}
         application_private_key: ${{ secrets.BOT_APPLICATION_PRIVATE_KEY }}
     
-    - uses: actions/checkout@v2
+    - name: "Checkout repository"
+      uses: actions/checkout@v3
       with:
         token: ${{ steps.get_workflow_token.outputs.token }}
     
-    - name: Set up JDK 11
+    - name: "Set up JDK 11"
       uses: actions/setup-java@v2
       with:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
     
-    - name: Clean library folder
+    - name: "Clean library folder"
       run: rm -rf ansys-product-library-openapi
       
-    - name: Build client library
+    - name: "Build client library"
       run: mvn -Dbuild-id=${{ github.run_number }} -s .m2/settings.xml compile
       env:
         MAVEN_OPTS: "-Dlog4j2.formatMsgNoLookups=true"
         SERVER_USERNAME: ${{ secrets.REPO_USER }}
         SERVER_PASSWORD: ${{ secrets.REPO_TOKEN }}
         
-    - name: Create Pull Request
+    - name: "Create pull-request"
       uses: peter-evans/create-pull-request@v3
       with:
-        commit-message: Update client library
+        commit-message: 'Update client library'
         committer: GitHub <noreply@github.com>
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         signoff: false
         branch: client-library-build
         delete-branch: true
         token: ${{ steps.get_workflow_token.outputs.token }}
-        title: 'Update client library'
+        title: Update client library
         body: |
           Update library with new YAML interface definition
         labels: |
