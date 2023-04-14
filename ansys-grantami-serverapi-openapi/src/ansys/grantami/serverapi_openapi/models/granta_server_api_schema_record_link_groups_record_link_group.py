@@ -29,6 +29,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
     """
     swagger_types = {
         'link_info': 'GrantaServerApiSchemaRecordLinkGroupsLinkInfo',
+        'identity': 'int',
         'reverse_name': 'str',
         'reverse_display_names': 'dict(str, str)',
         'display_names': 'dict(str, str)',
@@ -38,6 +39,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
 
     attribute_map = {
         'link_info': 'linkInfo',
+        'identity': 'identity',
         'reverse_name': 'reverseName',
         'reverse_display_names': 'reverseDisplayNames',
         'display_names': 'displayNames',
@@ -55,9 +57,10 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         'crossDatabase'.lower(): '#/components/schemas/GrantaServerApiSchemaRecordLinkGroupsCrossDatabaseRecordLinkGroup',
     }
 
-    def __init__(self, link_info=None, reverse_name=None, reverse_display_names=None, display_names=None, name=None, guid=None):  # noqa: E501
+    def __init__(self, link_info=None, identity=None, reverse_name=None, reverse_display_names=None, display_names=None, name=None, guid=None):  # noqa: E501
         """GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup - a model defined in Swagger"""  # noqa: E501
         self._link_info = None
+        self._identity = None
         self._reverse_name = None
         self._reverse_display_names = None
         self._display_names = None
@@ -66,6 +69,8 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         self.discriminator = 'type'
         if link_info is not None:
             self.link_info = link_info
+        if identity is not None:
+            self.identity = identity
         if reverse_name is not None:
             self.reverse_name = reverse_name
         if reverse_display_names is not None:
@@ -94,6 +99,24 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         :type: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
         """
         self._link_info = link_info
+
+    @property
+    def identity(self):
+        """Gets the identity of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.  # noqa: E501
+
+        :return: The identity of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.  # noqa: E501
+        :rtype: int
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity):
+        """Sets the identity of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
+
+        :param identity: The identity of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.  # noqa: E501
+        :type: int
+        """
+        self._identity = identity
 
     @property
     def reverse_name(self):
