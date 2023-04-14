@@ -91,7 +91,7 @@ class ListItemApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListItems',
-            202: 'GrantaServerApiListsDtoRecordListItems',
+            202: None,
             400: None,
             403: None,
             404: None,
@@ -261,7 +261,7 @@ class ListItemApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListItems',
-            202: 'GrantaServerApiListsDtoRecordListItems',
+            202: None,
             400: None,
             403: None,
             404: None,
