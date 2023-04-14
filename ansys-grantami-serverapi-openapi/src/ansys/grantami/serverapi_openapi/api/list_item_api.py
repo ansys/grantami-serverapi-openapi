@@ -90,7 +90,6 @@ class ListItemApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListItems',
             202: 'GrantaServerApiListsDtoRecordListItems',
             400: None,
             403: None,
@@ -260,7 +259,6 @@ class ListItemApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListItems',
             202: 'GrantaServerApiListsDtoRecordListItems',
             400: None,
             403: None,
