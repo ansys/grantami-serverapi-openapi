@@ -50,4 +50,3 @@ jobs:
         add: 'ansys-grantami-serverapi-openapi'
         default_author: github_actor
         message: 'Generate Client Library code - Automated'
-        push: true
