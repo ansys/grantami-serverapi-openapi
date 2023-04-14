@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'pyansys-bot' }}
     steps:
+    
+    - name: "Debugging..."
+      run: |
+        echo "${{ github.actor }}"
 
     - name: "Get Bot Application Token"
       id: get_workflow_token
