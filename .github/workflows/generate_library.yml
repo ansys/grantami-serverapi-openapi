@@ -13,7 +13,7 @@ jobs:
   generate-client-library:
     name: "Generate and update client library"
     runs-on: ubuntu-latest
-    if: github.event.commits[0].author.name != 'GitHub Actions'
+    if: ${{ github.actor != "pyansys-bot" }}
     steps:
 
     - name: "Get Bot Application Token"
