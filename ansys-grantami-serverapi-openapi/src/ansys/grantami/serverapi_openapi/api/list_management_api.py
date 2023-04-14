@@ -154,7 +154,7 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
-            201: 'GrantaServerApiListsDtoRecordListHeader',
+            201: None,
             403: None,
             404: None,
         }
@@ -812,7 +812,7 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
-            201: 'GrantaServerApiListsDtoRecordListHeader',
+            201: None,
             400: None,
             403: None,
             404: None,
@@ -975,7 +975,7 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListHeader',
-            201: 'GrantaServerApiListsDtoRecordListHeader',
+            201: None,
             400: None,
             403: None,
         }
@@ -1056,7 +1056,7 @@ class ListManagementApi(ApiBase):
         
         response_type_map = {
             200: 'GrantaServerApiListsDtoRecordListSearchInfo',
-            201: 'GrantaServerApiListsDtoRecordListSearchInfo',
+            201: None,
             400: None,
             403: None,
         }

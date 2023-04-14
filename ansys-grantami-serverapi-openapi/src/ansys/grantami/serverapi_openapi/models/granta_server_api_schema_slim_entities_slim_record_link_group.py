@@ -28,6 +28,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'identity': 'int',
         'type': 'GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType',
         'reverse_name': 'str',
         'reverse_display_names': 'dict(str, str)',
@@ -37,6 +38,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
     }
 
     attribute_map = {
+        'identity': 'identity',
         'type': 'type',
         'reverse_name': 'reverseName',
         'reverse_display_names': 'reverseDisplayNames',
@@ -50,8 +52,9 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
     }
 
 
-    def __init__(self, type=None, reverse_name=None, reverse_display_names=None, display_names=None, name=None, guid=None):  # noqa: E501
+    def __init__(self, identity=None, type=None, reverse_name=None, reverse_display_names=None, display_names=None, name=None, guid=None):  # noqa: E501
         """GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup - a model defined in Swagger"""  # noqa: E501
+        self._identity = None
         self._type = None
         self._reverse_name = None
         self._reverse_display_names = None
@@ -59,6 +62,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         self._name = None
         self._guid = None
         self.discriminator = None
+        if identity is not None:
+            self.identity = identity
         if type is not None:
             self.type = type
         if reverse_name is not None:
@@ -71,6 +76,24 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
             self.name = name
         if guid is not None:
             self.guid = guid
+
+    @property
+    def identity(self):
+        """Gets the identity of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.  # noqa: E501
+
+        :return: The identity of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.  # noqa: E501
+        :rtype: int
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity):
+        """Sets the identity of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
+
+        :param identity: The identity of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.  # noqa: E501
+        :type: int
+        """
+        self._identity = identity
 
     @property
     def type(self):
