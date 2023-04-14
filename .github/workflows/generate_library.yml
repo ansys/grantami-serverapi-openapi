@@ -1,11 +1,7 @@
 name: 'Generate client library'
 
 on:
-  push:
-    tags:
-    - "*"
-    branches:
-    - main
+  pull_request:
     paths:
     - 'yaml/*.yaml'
     - 'yaml/*.json'
@@ -13,9 +9,7 @@ on:
     - '.github/workflows/generate_library.yml'
   workflow_dispatch:
 
-
 jobs:
-
   generate-client-library:
     name: "Generate and update client library"
     runs-on: ubuntu-latest
@@ -49,19 +43,11 @@ jobs:
         MAVEN_OPTS: "-Dlog4j2.formatMsgNoLookups=true"
         SERVER_USERNAME: ${{ secrets.REPO_USER }}
         SERVER_PASSWORD: ${{ secrets.REPO_TOKEN }}
-        
-    - name: "Create pull-request"
-      uses: peter-evans/create-pull-request@v5
-      with:
-        commit-message: 'Update client library'
-        committer: GitHub <noreply@github.com>
-        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        signoff: false
-        branch: client-library-build
-        delete-branch: true
-        token: ${{ steps.get_workflow_token.outputs.token }}
-        title: Update client library
-        body: |
-          Update library with new YAML interface definition
-        labels: |
-          automated
+    
+    - name: "Commit changes to library code"
+      run: |
+        git config --global user.name '${{ github.actor }}'
+        git config --global user.email '${{ github.actor }}@users.noreply.github.com'
+        git add ansys-grantami-serverapi-openapi
+        git commit -m "Update client library"
+        git push
