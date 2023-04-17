@@ -169,7 +169,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "a654b303-6b0e-4b2d-9ff8-e15251e17d27",
+                        "criterionGuid": "1d270908-dfbb-4d80-a9bf-65908eddcec8",
                         "identities": [
                           -4,
                           -7,
@@ -325,7 +325,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "a654b303-6b0e-4b2d-9ff8-e15251e17d27",
+                        "criterionGuid": "1d270908-dfbb-4d80-a9bf-65908eddcec8",
                         "identities": [
                           -4,
                           -7,
@@ -481,7 +481,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "a654b303-6b0e-4b2d-9ff8-e15251e17d27",
+                        "criterionGuid": "1d270908-dfbb-4d80-a9bf-65908eddcec8",
                         "identities": [
                           -4,
                           -7,
@@ -637,7 +637,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "a654b303-6b0e-4b2d-9ff8-e15251e17d27",
+                        "criterionGuid": "1d270908-dfbb-4d80-a9bf-65908eddcec8",
                         "identities": [
                           -4,
                           -7,
@@ -873,7 +873,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "0ff0d767-b590-40c7-959e-736cfc8cb579",
+                        "criterionGuid": "f446fa83-58a0-4fa3-b348-2cd24e074016",
                         "identities": [
                           -4,
                           -7,
@@ -1029,7 +1029,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "0ff0d767-b590-40c7-959e-736cfc8cb579",
+                        "criterionGuid": "f446fa83-58a0-4fa3-b348-2cd24e074016",
                         "identities": [
                           -4,
                           -7,
@@ -1185,7 +1185,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "0ff0d767-b590-40c7-959e-736cfc8cb579",
+                        "criterionGuid": "f446fa83-58a0-4fa3-b348-2cd24e074016",
                         "identities": [
                           -4,
                           -7,
@@ -1341,7 +1341,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "0ff0d767-b590-40c7-959e-736cfc8cb579",
+                        "criterionGuid": "f446fa83-58a0-4fa3-b348-2cd24e074016",
                         "identities": [
                           -4,
                           -7,
@@ -1568,7 +1568,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "8d7ee135-9dad-4457-aa20-765903061fa5",
+                        "criterionGuid": "ac02fd3a-02b6-44cc-98b8-45a9a20a76bf",
                         "identities": [
                           -4,
                           -7,
@@ -1724,7 +1724,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "8d7ee135-9dad-4457-aa20-765903061fa5",
+                        "criterionGuid": "ac02fd3a-02b6-44cc-98b8-45a9a20a76bf",
                         "identities": [
                           -4,
                           -7,
@@ -1880,7 +1880,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "8d7ee135-9dad-4457-aa20-765903061fa5",
+                        "criterionGuid": "ac02fd3a-02b6-44cc-98b8-45a9a20a76bf",
                         "identities": [
                           -4,
                           -7,
@@ -2036,7 +2036,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "8d7ee135-9dad-4457-aa20-765903061fa5",
+                        "criterionGuid": "ac02fd3a-02b6-44cc-98b8-45a9a20a76bf",
                         "identities": [
                           -4,
                           -7,
@@ -2239,7 +2239,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "7c88b082-3f3d-42f8-a083-3dbf92045621",
+                        "criterionGuid": "8492b0d4-942d-4b2a-8c50-ed7ba479d528",
                         "identities": [
                           -4,
                           -7,
@@ -2395,7 +2395,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "7c88b082-3f3d-42f8-a083-3dbf92045621",
+                        "criterionGuid": "8492b0d4-942d-4b2a-8c50-ed7ba479d528",
                         "identities": [
                           -4,
                           -7,
@@ -2551,7 +2551,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "7c88b082-3f3d-42f8-a083-3dbf92045621",
+                        "criterionGuid": "8492b0d4-942d-4b2a-8c50-ed7ba479d528",
                         "identities": [
                           -4,
                           -7,
@@ -2707,7 +2707,7 @@
                     },
                     "aggregationCriteria": [
                       {
-                        "criterionGuid": "7c88b082-3f3d-42f8-a083-3dbf92045621",
+                        "criterionGuid": "8492b0d4-942d-4b2a-8c50-ed7ba479d528",
                         "identities": [
                           -4,
                           -7,
@@ -4586,8 +4586,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "202": {
+            "description": "Accepted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4605,9 +4605,6 @@
                 }
               }
             }
-          },
-          "202": {
-            "description": "Accepted"
           },
           "400": {
             "description": "Bad request"
@@ -4663,8 +4660,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "202": {
+            "description": "Accepted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4682,9 +4679,6 @@
                 }
               }
             }
-          },
-          "202": {
-            "description": "Accepted"
           },
           "400": {
             "description": "Bad request"
@@ -4769,8 +4763,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4788,9 +4782,6 @@
                 }
               }
             }
-          },
-          "201": {
-            "description": "Created"
           },
           "400": {
             "description": "Bad request"
@@ -4832,8 +4823,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
@@ -4851,9 +4842,6 @@
                 }
               }
             }
-          },
-          "201": {
-            "description": "Created"
           },
           "400": {
             "description": "Bad request"
@@ -5424,8 +5412,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5443,9 +5431,6 @@
                 }
               }
             }
-          },
-          "201": {
-            "description": "Created"
           },
           "400": {
             "description": "Bad request"
@@ -5477,8 +5462,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5496,9 +5481,6 @@
                 }
               }
             }
-          },
-          "201": {
-            "description": "Created"
           },
           "403": {
             "description": "Forbidden"
@@ -5527,8 +5509,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "202": {
+            "description": "Accepted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5546,9 +5528,6 @@
                 }
               }
             }
-          },
-          "202": {
-            "description": "Accepted"
           },
           "400": {
             "description": "Bad request"
@@ -5580,8 +5559,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "Success",
+          "202": {
+            "description": "Accepted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5599,9 +5578,6 @@
                 }
               }
             }
-          },
-          "202": {
-            "description": "Accepted"
           },
           "400": {
             "description": "Bad request"
@@ -5723,8 +5699,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "202": {
+            "description": "Accepted",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5751,9 +5727,6 @@
                 }
               }
             }
-          },
-          "202": {
-            "description": "Accepted"
           },
           "400": {
             "description": "Bad request"
@@ -5872,8 +5845,8 @@
           }
         },
         "responses": {
-          "200": {
-            "description": "Success",
+          "201": {
+            "description": "Created",
             "content": {
               "text/plain": {
                 "schema": {
@@ -5891,9 +5864,6 @@
                 }
               }
             }
-          },
-          "201": {
-            "description": "Created"
           },
           "400": {
             "description": "Bad request"
@@ -6039,7 +6009,7 @@
                     "type": "dateTime",
                     "defaultThresholdType": "atMost",
                     "name": "Delivery date (guid)",
-                    "guid": "df774f34-f241-470d-a95e-c2691da3962e"
+                    "guid": "ae7944cc-844a-4e2c-8295-699398e0ea97"
                   }
                 },
                 "Example 3": {
@@ -6383,7 +6353,7 @@
                     "type": "dateTime",
                     "defaultThresholdType": "atMost",
                     "name": "Delivery date (guid)",
-                    "guid": "df774f34-f241-470d-a95e-c2691da3962e"
+                    "guid": "ae7944cc-844a-4e2c-8295-699398e0ea97"
                   }
                 },
                 "Example 3": {
@@ -6727,7 +6697,7 @@
                     "type": "dateTime",
                     "defaultThresholdType": "atMost",
                     "name": "Delivery date (guid)",
-                    "guid": "df774f34-f241-470d-a95e-c2691da3962e"
+                    "guid": "ae7944cc-844a-4e2c-8295-699398e0ea97"
                   }
                 },
                 "Example 3": {
@@ -7071,7 +7041,7 @@
                     "type": "dateTime",
                     "defaultThresholdType": "atMost",
                     "name": "Delivery date (guid)",
-                    "guid": "df774f34-f241-470d-a95e-c2691da3962e"
+                    "guid": "ae7944cc-844a-4e2c-8295-699398e0ea97"
                   }
                 },
                 "Example 3": {
@@ -7494,7 +7464,7 @@
                         "foreignDataLinkGroups": [
                           {
                             "name": "Source of data (MaterialUniverse)",
-                            "guid": "5ffe38bb-e373-48ed-a3b6-426e841b684c"
+                            "guid": "82bae075-9b8c-4ee9-a71d-d298e5737d9b"
                           }
                         ],
                         "primaryDynamicLinkGroups": [],
@@ -7773,7 +7743,7 @@
                         "foreignDataLinkGroups": [
                           {
                             "name": "Source of data (MaterialUniverse)",
-                            "guid": "503dbd01-c0e1-4440-a0f9-905e8b2fb0a6"
+                            "guid": "01c097cd-8384-4161-97d0-f9cca1c69973"
                           }
                         ],
                         "primaryDynamicLinkGroups": [],
@@ -8969,7 +8939,7 @@
                         "foreignDataLinkGroups": [
                           {
                             "name": "Source of data (MaterialUniverse)",
-                            "guid": "4b8539d4-e1ea-4861-8488-9c00aa2908db"
+                            "guid": "0e83e057-1437-4de9-a755-eda6654c4bcf"
                           }
                         ],
                         "primaryDynamicLinkGroups": [],
@@ -9388,7 +9358,7 @@
                         "foreignDataLinkGroups": [
                           {
                             "name": "Source of data (MaterialUniverse)",
-                            "guid": "654072a3-d876-4dcd-a5c0-c062ea1936e7"
+                            "guid": "114b358e-058a-47ec-85f4-73ba2b3a275c"
                           }
                         ],
                         "primaryDynamicLinkGroups": [],
@@ -9792,7 +9762,7 @@
                         "foreignDataLinkGroups": [
                           {
                             "name": "Source of data (MaterialUniverse)",
-                            "guid": "1ba78d38-7432-4256-b4dd-407df17bfea4"
+                            "guid": "4e81ccc1-72dd-40a8-bd47-f894edae686d"
                           }
                         ],
                         "primaryDynamicLinkGroups": [],
@@ -9953,7 +9923,7 @@
                   "$ref": "#/components/schemas/GrantaServerApiExceptionsAttributeDeletionException"
                 },
                 "example": {
-                  "message": "Cannot delete attribute 'Notes' (GUID = '85834a45-2558-4314-a483-ae4d4b797b4a').",
+                  "message": "Cannot delete attribute 'Notes' (GUID = 'b7d45fc3-bf0e-4654-9ba4-ad8193bdfd62').",
                   "code": 400,
                   "errors": [
                     {
@@ -9968,7 +9938,7 @@
                       "referencedBy": [
                         {
                           "name": "Search mask that searches in Notes",
-                          "guid": "4a82c283-2e15-4a45-9394-dcd32264d14f"
+                          "guid": "17c01b2c-481e-4387-8f47-1f827dd753fb"
                         }
                       ]
                     }
@@ -10331,7 +10301,7 @@
                     "description": "Basic configuration that can be used in explore.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "basic configuration",
-                    "guid": "adfa6d85-02e5-4097-9f44-c48942df6011"
+                    "guid": "d1e85f78-1a22-49f3-928e-83e8db9aaeb3"
                   }
                 }
               }
@@ -10356,7 +10326,7 @@
                     "description": "Basic configuration that can be used in explore.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "basic configuration",
-                    "guid": "adfa6d85-02e5-4097-9f44-c48942df6011"
+                    "guid": "d1e85f78-1a22-49f3-928e-83e8db9aaeb3"
                   }
                 }
               }
@@ -10381,7 +10351,7 @@
                     "description": "Basic configuration that can be used in explore.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "basic configuration",
-                    "guid": "adfa6d85-02e5-4097-9f44-c48942df6011"
+                    "guid": "d1e85f78-1a22-49f3-928e-83e8db9aaeb3"
                   }
                 }
               }
@@ -10406,7 +10376,7 @@
                     "description": "Basic configuration that can be used in explore.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "basic configuration",
-                    "guid": "adfa6d85-02e5-4097-9f44-c48942df6011"
+                    "guid": "d1e85f78-1a22-49f3-928e-83e8db9aaeb3"
                   }
                 }
               }
@@ -10556,7 +10526,7 @@
                     "description": "Updated description for MI_Training Explore 'examples' configuration.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "examples (updated)",
-                    "guid": "1bfc2777-6b44-4f98-88fc-0bd7617c9c07"
+                    "guid": "ea32843b-1537-460e-9410-29cdc917d6ca"
                   }
                 },
                 "Example 2": {
@@ -10580,7 +10550,7 @@
                     "description": "Updated description for MI_Training Explore 'examples' configuration.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "examples (updated)",
-                    "guid": "1bfc2777-6b44-4f98-88fc-0bd7617c9c07"
+                    "guid": "ea32843b-1537-460e-9410-29cdc917d6ca"
                   }
                 },
                 "Example 2": {
@@ -10604,7 +10574,7 @@
                     "description": "Updated description for MI_Training Explore 'examples' configuration.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "examples (updated)",
-                    "guid": "1bfc2777-6b44-4f98-88fc-0bd7617c9c07"
+                    "guid": "ea32843b-1537-460e-9410-29cdc917d6ca"
                   }
                 },
                 "Example 2": {
@@ -10628,7 +10598,7 @@
                     "description": "Updated description for MI_Training Explore 'examples' configuration.",
                     "value": "{\n\t\"configurations\": [\n\t{\n\t\t\t\"key\": \"training-materials\",\n\t\t\t\"displayName\": \"MI Training Materials\",\n\t\t\t\"default\": true,\n\t\t\t\"groups\": [\n\t\t\t\t\"MI Training examples\"\n\t\t\t],\n\t\t\t\"table\": \"MaterialUniverse\",\n\t\t\t\"loadDataOnDemand\": false,\n\t\t\t\"description\": \"Explore MaterialUniverse data in the MI Training database\",\n\t\t\t\"searchLayout\": \"All bulk materials\",\n\t\t\t\"dataSheetLayout\": \"All bulk materials\",\n\t\t\t\"editableDatasheetLayout\": \"All bulk materials\",\n\t\t\t\"searchListLayout\": \"Explore list layout Materials\",\n\t\t\t\"newRecordLocation\": \"NEW RECORDS/{Base}\",\n\t\t\t\"subset\": \"All bulk materials\",\n\t\t\t\"logsliders\": true,\n\t\t\t\"xyChart\": {\n\t\t\t\t\"colorAttribute\": \"UV radiation (sunlight)\",\n\t\t\t\t\"colorAttribute2\": \"Flammability\",\n\t\t\t\t\"colorAttribute3\": \"Food contact\",\n\t\t\t\t\"colorAttribute4\": \"Material form\",\n\t\t\t\t\"colorAttribute5\": \"Organic solvents\",\n\t\t\t\t\"colorAttribute6\": \"Oxidation at 500C\",\n\t\t\t\t\"colorAttribute7\": \"Strong acids\",\n\t\t\t\t\"colorAttribute8\": \"Strong alkalis\",\n\t\t\t\t\"colorAttribute9\": \"Weak acids\",\n\t\t\t\t\"colorAttribute10\": \"Weak alkalis\",\n\t\t\t\t\"colorAttribute11\": \"Water (fresh)\",\n\t\t\t\t\"colorAttribute12\": \"Water (salt)\",\n\t\t\t\t\"colorAttribute13\": \"Transparency\",\n\t\t\t\t\"colorAttribute14\": \"Wear resistance\",\n\t\t\t\t\"xAttribute\": \"Density\",\n\t\t\t\t\"yAttribute\": \"Yield strength (elastic limit)\",\n\t\t\t\t\"preventAxisChange\": false,\n\t\t\t\t\"xAxisLogarithmic\": true,\n\t\t\t\t\"yAxisLogarithmic\": true\n\t\t\t},\n\t\t\t\"showBlanks\": false,\n\t\t\t\"reportsDisabled\": false,\n\t\t\t\"exportersDisabled\": false,\n\t\t\t\"tabularEditingEnabled\": true,\n\t\t\t\"configSwitching\": \"keyOnly\",\n\t\t\t\"workflowEnabled\": true,\n\t\t\t\"useCustomFormatters\": {\n\t\t\t\t\"Recycle fraction in current supply\": \"recyclingPercent\",\n\t\t\t\t\"Recycle\": \"recyclingBool\",\n\t\t\t\t\"Biodegrade\": \"biodegradeBool\",\n\t\t\t\t\"UV radiation (sunlight)\": \"uvradiationsunlightDiscrete\",\n\t\t\t\t\"Flammability\": \"flammabilityDiscrete\",\n\t\t\t\t\"Food contact\": \"foodcontactDiscrete\",\n\t\t\t\t\"Material form\": \"materialformDiscrete\",\n\t\t\t\t\"Organic solvents\": \"organicsolventsDiscrete\",\n\t\t\t\t\"Oxidation at 500C\": \"oxidationat500cDiscrete\",\n\t\t\t\t\"Strong acids\": \"strongacidsDiscrete\",\n\t\t\t\t\"Strong alkalis\": \"strongalkalisDiscrete\",\n\t\t\t\t\"Weak acids\": \"weakacidsDiscrete\",\n\t\t\t\t\"Weak alkalis\": \"weakalkalisDiscrete\",\n\t\t\t\t\"Water (fresh)\": \"waterfreshDiscrete\",\n\t\t\t\t\"Water (salt)\": \"watersaltDiscrete\",\n\t\t\t\t\"Transparency\": \"transparencyDiscrete\",\n\t\t\t\t\"Wear resistance\": \"wearresistanceDiscrete\",\n\t\t\t\t\"A renewable resource?\": \"arenewableresourceBool\",\n\t\t\t\t\"Combust for energy recovery\": \"combustforenergyrecoveryBool\",\n\t\t\t\t\"Downcycle\": \"downcycleBool\",\n\t\t\t\t\"Flame retardant additive\": \"flameretardantadditiveBool\",\n\t\t\t\t\"Landfill\": \"landfillBool\",\n\t\t\t\t\"RoHS (EU) compliant grades?\": \"rohseucompliantgradesBool\",\n\t\t\t\t\"Substance declaration available?\": \"substancedeclarationavailableBool\"\n\t\t\t}\n\t\t}\n\t],\n\t\"customFormatterDefinitions\": {\n\t\t\"recyclingBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleYes.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/RecycleNo.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be recycled\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t\"biodegradeBool\": {\n\t\t\t\"attributeFormatter\": {\n\t\t\t\t\"list\": {\n\t\t\t\t\t\"columnHeader\": false,\n\t\t\t\t\t\"columnWidth\": 40\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"valueFormatters\": [{\n\t\t\t\t\t\"match\": true,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafGreen.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"green\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"match\": false,\n\t\t\t\t\t\"list\": {\n\t\t\t\t\t\t\"iconUrl\": \"/mi_servicelayer/Assets/v1.svc/HelpPageFiles/MI_Training/ExploreImages/LeafRed.png\",\n\t\t\t\t\t\t\"tooltipValue\": \"Can not be biodegraded\"\n\t\t\t\t\t},\n\t\t\t\t\t\"chart\": {\n\t\t\t\t\t\t\"renderColor\": \"red\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t}\n}",
                     "name": "examples (updated)",
-                    "guid": "1bfc2777-6b44-4f98-88fc-0bd7617c9c07"
+                    "guid": "ea32843b-1537-460e-9410-29cdc917d6ca"
                   }
                 },
                 "Example 2": {
@@ -10851,7 +10821,7 @@
                   "value": {
                     "value": 0.0072973525693,
                     "name": "fine-structure constant (guid)",
-                    "guid": "95e6ed1d-000f-47d7-b16a-b5abafe21f34"
+                    "guid": "b7b339d5-9d17-4bd5-ae89-880e22c94730"
                   }
                 },
                 "Example 3": {
@@ -10884,7 +10854,7 @@
                   "value": {
                     "value": 0.0072973525693,
                     "name": "fine-structure constant (guid)",
-                    "guid": "95e6ed1d-000f-47d7-b16a-b5abafe21f34"
+                    "guid": "b7b339d5-9d17-4bd5-ae89-880e22c94730"
                   }
                 },
                 "Example 3": {
@@ -10917,7 +10887,7 @@
                   "value": {
                     "value": 0.0072973525693,
                     "name": "fine-structure constant (guid)",
-                    "guid": "95e6ed1d-000f-47d7-b16a-b5abafe21f34"
+                    "guid": "b7b339d5-9d17-4bd5-ae89-880e22c94730"
                   }
                 },
                 "Example 3": {
@@ -10950,7 +10920,7 @@
                   "value": {
                     "value": 0.0072973525693,
                     "name": "fine-structure constant (guid)",
-                    "guid": "95e6ed1d-000f-47d7-b16a-b5abafe21f34"
+                    "guid": "b7b339d5-9d17-4bd5-ae89-880e22c94730"
                   }
                 },
                 "Example 3": {
@@ -11094,7 +11064,7 @@
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
                     "value": 376.730313668,
                     "name": "characteristic impedance of vacuum",
-                    "guid": "03d34fba-cabc-4097-bd46-800006f8a080"
+                    "guid": "11a8ef77-be19-4963-aeaf-11c2edd222c4"
                   }
                 },
                 "Example 2": {
@@ -11109,7 +11079,7 @@
                   "description": "This example shows how to update the 'Guid' and 'Unit' properties of the 'Speed of light in Vacuum' constant (guid = 0000000f-0004-4fff-8fff-0000ffff0000) from the MI_Training database. Its unit is changed to 'Ohm'",
                   "value": {
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
-                    "guid": "165b490f-b651-4a93-9033-d7e88ba05a66"
+                    "guid": "538afa95-3aa8-44a2-a528-d20a463ab361"
                   }
                 }
               }
@@ -11126,7 +11096,7 @@
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
                     "value": 376.730313668,
                     "name": "characteristic impedance of vacuum",
-                    "guid": "03d34fba-cabc-4097-bd46-800006f8a080"
+                    "guid": "11a8ef77-be19-4963-aeaf-11c2edd222c4"
                   }
                 },
                 "Example 2": {
@@ -11141,7 +11111,7 @@
                   "description": "This example shows how to update the 'Guid' and 'Unit' properties of the 'Speed of light in Vacuum' constant (guid = 0000000f-0004-4fff-8fff-0000ffff0000) from the MI_Training database. Its unit is changed to 'Ohm'",
                   "value": {
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
-                    "guid": "165b490f-b651-4a93-9033-d7e88ba05a66"
+                    "guid": "538afa95-3aa8-44a2-a528-d20a463ab361"
                   }
                 }
               }
@@ -11158,7 +11128,7 @@
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
                     "value": 376.730313668,
                     "name": "characteristic impedance of vacuum",
-                    "guid": "03d34fba-cabc-4097-bd46-800006f8a080"
+                    "guid": "11a8ef77-be19-4963-aeaf-11c2edd222c4"
                   }
                 },
                 "Example 2": {
@@ -11173,7 +11143,7 @@
                   "description": "This example shows how to update the 'Guid' and 'Unit' properties of the 'Speed of light in Vacuum' constant (guid = 0000000f-0004-4fff-8fff-0000ffff0000) from the MI_Training database. Its unit is changed to 'Ohm'",
                   "value": {
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
-                    "guid": "165b490f-b651-4a93-9033-d7e88ba05a66"
+                    "guid": "538afa95-3aa8-44a2-a528-d20a463ab361"
                   }
                 }
               }
@@ -11190,7 +11160,7 @@
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
                     "value": 376.730313668,
                     "name": "characteristic impedance of vacuum",
-                    "guid": "03d34fba-cabc-4097-bd46-800006f8a080"
+                    "guid": "11a8ef77-be19-4963-aeaf-11c2edd222c4"
                   }
                 },
                 "Example 2": {
@@ -11205,7 +11175,7 @@
                   "description": "This example shows how to update the 'Guid' and 'Unit' properties of the 'Speed of light in Vacuum' constant (guid = 0000000f-0004-4fff-8fff-0000ffff0000) from the MI_Training database. Its unit is changed to 'Ohm'",
                   "value": {
                     "unitGuid": "00000059-0013-4fff-8fff-0000ffff0000",
-                    "guid": "165b490f-b651-4a93-9033-d7e88ba05a66"
+                    "guid": "538afa95-3aa8-44a2-a528-d20a463ab361"
                   }
                 }
               }
@@ -11728,9 +11698,9 @@
                     "company": "ANSYS, Inc. (updated)",
                     "notes": "MI Training Database for Granta MI v2022R2 and above.\r\n\r\n\nThis database has been developed to support training classes. Any other use of this database will not be supported by Ansys Granta. (Updated)",
                     "currencyCode": "PLN",
-                    "versionGuid": "b2496908-e70c-4c40-a63c-2ede7df255b2",
+                    "versionGuid": "3364a23a-7c74-4839-b120-0df2fddbbfd4",
                     "name": "MI Training (Updated)",
-                    "guid": "523c7996-99f9-410b-86f4-8b264dc403a3"
+                    "guid": "52faa8db-9b2a-4dd2-84a8-a0ddb96713de"
                   }
                 },
                 "Update the author": {
@@ -11754,9 +11724,9 @@
                     "company": "ANSYS, Inc. (updated)",
                     "notes": "MI Training Database for Granta MI v2022R2 and above.\r\n\r\n\nThis database has been developed to support training classes. Any other use of this database will not be supported by Ansys Granta. (Updated)",
                     "currencyCode": "PLN",
-                    "versionGuid": "b2496908-e70c-4c40-a63c-2ede7df255b2",
+                    "versionGuid": "3364a23a-7c74-4839-b120-0df2fddbbfd4",
                     "name": "MI Training (Updated)",
-                    "guid": "523c7996-99f9-410b-86f4-8b264dc403a3"
+                    "guid": "52faa8db-9b2a-4dd2-84a8-a0ddb96713de"
                   }
                 },
                 "Update the author": {
@@ -11780,9 +11750,9 @@
                     "company": "ANSYS, Inc. (updated)",
                     "notes": "MI Training Database for Granta MI v2022R2 and above.\r\n\r\n\nThis database has been developed to support training classes. Any other use of this database will not be supported by Ansys Granta. (Updated)",
                     "currencyCode": "PLN",
-                    "versionGuid": "b2496908-e70c-4c40-a63c-2ede7df255b2",
+                    "versionGuid": "3364a23a-7c74-4839-b120-0df2fddbbfd4",
                     "name": "MI Training (Updated)",
-                    "guid": "523c7996-99f9-410b-86f4-8b264dc403a3"
+                    "guid": "52faa8db-9b2a-4dd2-84a8-a0ddb96713de"
                   }
                 },
                 "Update the author": {
@@ -11806,9 +11776,9 @@
                     "company": "ANSYS, Inc. (updated)",
                     "notes": "MI Training Database for Granta MI v2022R2 and above.\r\n\r\n\nThis database has been developed to support training classes. Any other use of this database will not be supported by Ansys Granta. (Updated)",
                     "currencyCode": "PLN",
-                    "versionGuid": "b2496908-e70c-4c40-a63c-2ede7df255b2",
+                    "versionGuid": "3364a23a-7c74-4839-b120-0df2fddbbfd4",
                     "name": "MI Training (Updated)",
-                    "guid": "523c7996-99f9-410b-86f4-8b264dc403a3"
+                    "guid": "52faa8db-9b2a-4dd2-84a8-a0ddb96713de"
                   }
                 },
                 "Update the author": {
@@ -12794,7 +12764,7 @@
                   "value": {
                     "value": "[A:Tensile strength] + [P:Stress Ratio] * [A:Yield strength (elastic limit)] / log10(20000000) + 5",
                     "name": "Simple expression with specified guid",
-                    "guid": "87238dfd-1e5f-4c0d-85ce-13bb4f99e9a2"
+                    "guid": "efaf98f0-b495-42e1-85bf-7277967f8e6b"
                   }
                 },
                 "Example 3": {
@@ -12829,7 +12799,7 @@
                   "value": {
                     "value": "[A:Tensile strength] + [P:Stress Ratio] * [A:Yield strength (elastic limit)] / log10(20000000) + 5",
                     "name": "Simple expression with specified guid",
-                    "guid": "87238dfd-1e5f-4c0d-85ce-13bb4f99e9a2"
+                    "guid": "efaf98f0-b495-42e1-85bf-7277967f8e6b"
                   }
                 },
                 "Example 3": {
@@ -12864,7 +12834,7 @@
                   "value": {
                     "value": "[A:Tensile strength] + [P:Stress Ratio] * [A:Yield strength (elastic limit)] / log10(20000000) + 5",
                     "name": "Simple expression with specified guid",
-                    "guid": "87238dfd-1e5f-4c0d-85ce-13bb4f99e9a2"
+                    "guid": "efaf98f0-b495-42e1-85bf-7277967f8e6b"
                   }
                 },
                 "Example 3": {
@@ -12899,7 +12869,7 @@
                   "value": {
                     "value": "[A:Tensile strength] + [P:Stress Ratio] * [A:Yield strength (elastic limit)] / log10(20000000) + 5",
                     "name": "Simple expression with specified guid",
-                    "guid": "87238dfd-1e5f-4c0d-85ce-13bb4f99e9a2"
+                    "guid": "efaf98f0-b495-42e1-85bf-7277967f8e6b"
                   }
                 },
                 "Example 3": {
@@ -13162,7 +13132,7 @@
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
                     "name": "Fatigue Model (Updated)",
-                    "guid": "36fccf67-51ae-447a-abe9-e224cf6f527f"
+                    "guid": "00af0484-d085-4be5-8ec1-355add8eb9f6"
                   }
                 },
                 "Example 2": {
@@ -13188,7 +13158,7 @@
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
                     "name": "Fatigue Model (Updated)",
-                    "guid": "36fccf67-51ae-447a-abe9-e224cf6f527f"
+                    "guid": "00af0484-d085-4be5-8ec1-355add8eb9f6"
                   }
                 },
                 "Example 2": {
@@ -13214,7 +13184,7 @@
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
                     "name": "Fatigue Model (Updated)",
-                    "guid": "36fccf67-51ae-447a-abe9-e224cf6f527f"
+                    "guid": "00af0484-d085-4be5-8ec1-355add8eb9f6"
                   }
                 },
                 "Example 2": {
@@ -13240,7 +13210,7 @@
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
                     "name": "Fatigue Model (Updated)",
-                    "guid": "36fccf67-51ae-447a-abe9-e224cf6f527f"
+                    "guid": "00af0484-d085-4be5-8ec1-355add8eb9f6"
                   }
                 },
                 "Example 2": {
@@ -13774,7 +13744,7 @@
                   "summary": "Change guid for Help File Folder",
                   "description": "This example demonstrates how to modify the guid of an existing help file folder.",
                   "value": {
-                    "guid": "7a64242d-086d-4f03-a486-039b2d988cff"
+                    "guid": "ed2c4775-e23a-4435-ae9b-3507c14d93e1"
                   }
                 }
               }
@@ -13795,7 +13765,7 @@
                   "summary": "Change guid for Help File Folder",
                   "description": "This example demonstrates how to modify the guid of an existing help file folder.",
                   "value": {
-                    "guid": "7a64242d-086d-4f03-a486-039b2d988cff"
+                    "guid": "ed2c4775-e23a-4435-ae9b-3507c14d93e1"
                   }
                 }
               }
@@ -13816,7 +13786,7 @@
                   "summary": "Change guid for Help File Folder",
                   "description": "This example demonstrates how to modify the guid of an existing help file folder.",
                   "value": {
-                    "guid": "7a64242d-086d-4f03-a486-039b2d988cff"
+                    "guid": "ed2c4775-e23a-4435-ae9b-3507c14d93e1"
                   }
                 }
               }
@@ -13837,7 +13807,7 @@
                   "summary": "Change guid for Help File Folder",
                   "description": "This example demonstrates how to modify the guid of an existing help file folder.",
                   "value": {
-                    "guid": "7a64242d-086d-4f03-a486-039b2d988cff"
+                    "guid": "ed2c4775-e23a-4435-ae9b-3507c14d93e1"
                   }
                 }
               }
@@ -14530,7 +14500,7 @@
                   "summary": "Change guid for Help File",
                   "description": "This example demonstrates how to modify the guid of an existing help file.",
                   "value": {
-                    "guid": "922d175c-83b1-4e47-ac7f-b014aba0911b"
+                    "guid": "3bc1520a-72e7-4627-a6d9-7d9d1994fa9d"
                   }
                 }
               }
@@ -14558,7 +14528,7 @@
                   "summary": "Change guid for Help File",
                   "description": "This example demonstrates how to modify the guid of an existing help file.",
                   "value": {
-                    "guid": "922d175c-83b1-4e47-ac7f-b014aba0911b"
+                    "guid": "3bc1520a-72e7-4627-a6d9-7d9d1994fa9d"
                   }
                 }
               }
@@ -14586,7 +14556,7 @@
                   "summary": "Change guid for Help File",
                   "description": "This example demonstrates how to modify the guid of an existing help file.",
                   "value": {
-                    "guid": "922d175c-83b1-4e47-ac7f-b014aba0911b"
+                    "guid": "3bc1520a-72e7-4627-a6d9-7d9d1994fa9d"
                   }
                 }
               }
@@ -14614,7 +14584,7 @@
                   "summary": "Change guid for Help File",
                   "description": "This example demonstrates how to modify the guid of an existing help file.",
                   "value": {
-                    "guid": "922d175c-83b1-4e47-ac7f-b014aba0911b"
+                    "guid": "3bc1520a-72e7-4627-a6d9-7d9d1994fa9d"
                   }
                 }
               }
@@ -15038,9 +15008,9 @@
                               "required": false,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "f5ba5932-6459-4318-b4cf-0bce1c0529fd",
+                              "underlyingEntityGuid": "e4bcc297-0112-42e9-8bfc-b4ced0615ec3",
                               "name": "Price",
-                              "guid": "7fb63743-86e1-4669-8ae1-0481a4a822ad"
+                              "guid": "8f48586a-3ae4-443e-810d-c9de56cda9a5"
                             },
                             {
                               "itemType": "attribute",
@@ -15048,9 +15018,9 @@
                               "required": false,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "e16f9ec8-0271-41c4-a3cd-4b69518b3375",
+                              "underlyingEntityGuid": "0f66ee70-77a1-4a9f-9df3-0c0e28ba8b88",
                               "name": "Density",
-                              "guid": "8447c234-0d3b-48d1-a928-cae83c55ec9e"
+                              "guid": "21b3a8b8-738c-40d4-a60c-ed3297e2fa08"
                             }
                           ],
                           "displayNames": {
@@ -15069,9 +15039,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "facc63d2-b042-43e2-affd-1581794b6177",
+                              "underlyingEntityGuid": "fad374ed-a2be-4030-9d6b-2d29271b3bae",
                               "name": "Young's modulus",
-                              "guid": "b75ac34b-b186-4236-98cd-756e1d5f0a81"
+                              "guid": "263d02de-b64e-41f8-9162-1e737b3a456d"
                             },
                             {
                               "itemType": "attribute",
@@ -15079,9 +15049,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "7f8947b4-aba1-4f4f-bc31-27399c17764b",
+                              "underlyingEntityGuid": "54da3d20-306e-4659-bc64-e14ee106b411",
                               "name": "Tensile strength",
-                              "guid": "fc82907d-5e4a-4a73-8be6-7ed169f6515b"
+                              "guid": "95b1dbf7-1bab-40db-8d1b-01ab5645ac99"
                             },
                             {
                               "itemType": "attribute",
@@ -15089,9 +15059,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "5d7ca590-0e7c-4a8b-a8e1-b90d3a54a52c",
+                              "underlyingEntityGuid": "605ddf65-bbcf-4f35-894b-692e84ea5d5a",
                               "name": "Shape factor",
-                              "guid": "01fca53f-f2f2-422c-b234-3643e436af5a"
+                              "guid": "90d4a93f-3c2e-4c91-b61e-1117594d3ece"
                             }
                           ],
                           "displayNames": {
@@ -15165,7 +15135,7 @@
                   "description": "This example demonstrates how to create a new layout section with a specified guid value in the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
                     "name": "Additional Properties (Guid)",
-                    "guid": "2a2b6ca7-282f-4ad9-93a3-4e021c9e5cf3"
+                    "guid": "8a1fdbfe-88c7-4cc5-a67c-944da80a7326"
                   }
                 }
               }
@@ -15187,7 +15157,7 @@
                   "description": "This example demonstrates how to create a new layout section with a specified guid value in the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
                     "name": "Additional Properties (Guid)",
-                    "guid": "2a2b6ca7-282f-4ad9-93a3-4e021c9e5cf3"
+                    "guid": "8a1fdbfe-88c7-4cc5-a67c-944da80a7326"
                   }
                 }
               }
@@ -15209,7 +15179,7 @@
                   "description": "This example demonstrates how to create a new layout section with a specified guid value in the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
                     "name": "Additional Properties (Guid)",
-                    "guid": "2a2b6ca7-282f-4ad9-93a3-4e021c9e5cf3"
+                    "guid": "8a1fdbfe-88c7-4cc5-a67c-944da80a7326"
                   }
                 }
               }
@@ -15231,7 +15201,7 @@
                   "description": "This example demonstrates how to create a new layout section with a specified guid value in the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
                     "name": "Additional Properties (Guid)",
-                    "guid": "2a2b6ca7-282f-4ad9-93a3-4e021c9e5cf3"
+                    "guid": "8a1fdbfe-88c7-4cc5-a67c-944da80a7326"
                   }
                 }
               }
@@ -15250,7 +15220,7 @@
                   "sectionDetailType": "slim",
                   "displayNames": {},
                   "name": "Additional Properties",
-                  "guid": "d800e374-ae56-4eb3-a5dd-5d866b3394d0"
+                  "guid": "83a0ea4b-759c-4af6-baaa-d242df590190"
                 }
               }
             }
@@ -16707,7 +16677,7 @@
                         "fr": "Testing Information French Display Name"
                       },
                       "name": "Testing Information",
-                      "guid": "ffc714cc-3929-4d89-a1b8-5a318c00e6c3"
+                      "guid": "849abd6c-005f-4f4a-a4ff-ac506b8540ad"
                     }
                   },
                   "Example 2": {
@@ -16722,9 +16692,9 @@
                           "required": true,
                           "readOnly": false,
                           "metaAttributes": [],
-                          "underlyingEntityGuid": "6cf3e16e-62f3-45aa-abca-a2b0965d5d30",
+                          "underlyingEntityGuid": "97653112-3524-429e-bf49-ec0e22a7e007",
                           "name": "Form",
-                          "guid": "fda16df4-6f94-4ac2-b347-f4a15f3b96c8"
+                          "guid": "ef9511f1-995b-415c-8002-57bd2ad83a8f"
                         },
                         {
                           "itemType": "attribute",
@@ -16737,33 +16707,33 @@
                               "attributeType": "longText",
                               "required": true,
                               "readOnly": false,
-                              "underlyingEntityGuid": "1f15d00e-efed-468f-ab59-8d988ea56172",
+                              "underlyingEntityGuid": "a3411914-c0b3-40bf-9e49-378344987ecb",
                               "name": "Sources",
-                              "guid": "937d9dbc-13b9-42cd-b070-955984dd8821"
+                              "guid": "6dfce70b-a17a-414a-834b-8a035991876b"
                             },
                             {
                               "itemType": "attribute",
                               "attributeType": "shortText",
                               "required": true,
                               "readOnly": false,
-                              "underlyingEntityGuid": "f5c0e21c-cb45-43f9-b957-8985700f0209",
+                              "underlyingEntityGuid": "9a7f9b20-2559-4a2f-ba76-0f495fed179f",
                               "name": "Notes",
-                              "guid": "f839beae-eafd-426c-b5ff-d5fe0832438b"
+                              "guid": "e6477475-44da-4761-9c0a-f7621ca925ad"
                             }
                           ],
-                          "underlyingEntityGuid": "26ef2ad6-a5fa-4ac2-bf91-90159d452814",
+                          "underlyingEntityGuid": "767e116e-5584-459b-ad66-c4854b332fc3",
                           "name": "Chemical resistance",
-                          "guid": "8bc4eff0-222c-4660-9e66-77876c202f1a"
+                          "guid": "80e0b71f-efeb-4596-b15a-855a33fb7122"
                         },
                         {
                           "itemType": "link",
                           "linkType": "recordLink",
-                          "targetDatabase": "c292e56b-5d6f-4bd3-9828-ed92d94fc8e6",
-                          "targetTable": "7fed26e4-20a3-4021-8472-cf1edcaede65",
+                          "targetDatabase": "01c05855-f17c-4d82-aee3-42cf177b2b72",
+                          "targetTable": "8da39222-6b0d-4f8c-a885-10f1fa42feea",
                           "forwards": true,
-                          "underlyingEntityGuid": "b57667ec-0707-45c5-8fed-64eff82424ee",
+                          "underlyingEntityGuid": "966603c6-1f66-4632-8f16-e5a7bb49debd",
                           "name": "Material Pedigree",
-                          "guid": "3d7f69e4-7948-4a6f-a214-6d2fe929a563"
+                          "guid": "32d46e9f-4281-4a56-a5c4-bfd6287600d7"
                         },
                         {
                           "itemType": "attribute",
@@ -16774,40 +16744,40 @@
                           "tabularColumns": [
                             {
                               "columnType": "linkedAttribute",
-                              "tabularColumnGuid": "0ba648ba-6dd3-4cbc-a62f-17c1a0900642",
+                              "tabularColumnGuid": "0e4cbc97-3ec3-4338-98ab-fb2fca9973d2",
                               "name": "Offset Yield Stress",
-                              "guid": "803037bc-41b4-40f7-ac0a-6a2347d20308"
+                              "guid": "cea596ce-5e2c-42cf-8dc1-48ac584ed531"
                             },
                             {
                               "columnType": "localShortText",
-                              "tabularColumnGuid": "2a78d5a3-1b51-4dac-8fc3-60315d2a2c88",
+                              "tabularColumnGuid": "91ef44c6-de3d-4d8f-82aa-9bf6f32e9b1e",
                               "name": "Young's Modulus Notes",
-                              "guid": "5d8b7ade-737f-4a5c-bb84-ebc295a490da"
+                              "guid": "c1637a32-b437-4c29-b6d4-7b4923381d2d"
                             }
                           ],
-                          "underlyingEntityGuid": "4ed308a4-73af-4355-8968-1aa2dd967861",
+                          "underlyingEntityGuid": "73b5c903-bbc0-4b88-95fc-9107f10a8850",
                           "name": "Reference Characteristics",
-                          "guid": "7cb62698-45cd-43b6-90d3-03bc201f9600"
+                          "guid": "590b0091-db2a-408e-8ea3-233e3805571b"
                         },
                         {
                           "itemType": "link",
                           "linkType": "associationChain",
-                          "targetDatabase": "c292e56b-5d6f-4bd3-9828-ed92d94fc8e6",
-                          "targetTable": "ac3aa33a-7389-41e3-bd37-82139ac05b7a",
+                          "targetDatabase": "01c05855-f17c-4d82-aee3-42cf177b2b72",
+                          "targetTable": "116a4b13-d958-4ea3-9845-0bc090ee16aa",
                           "forwards": true,
                           "nextLink": {
                             "itemType": "link",
                             "linkType": "associationChain",
-                            "targetDatabase": "c292e56b-5d6f-4bd3-9828-ed92d94fc8e6",
-                            "targetTable": "6a588a1e-4ae7-4c0f-ba5b-462ee2eff5f0",
+                            "targetDatabase": "01c05855-f17c-4d82-aee3-42cf177b2b72",
+                            "targetTable": "ccfa76d6-a151-46be-9c67-57261aa6bb7e",
                             "forwards": false,
-                            "underlyingEntityGuid": "94c33b3f-6333-4770-9a2e-f47cab53b9bb",
+                            "underlyingEntityGuid": "46ba3f64-83fb-485c-a48a-e66d131417b8",
                             "name": "Pedigree information",
-                            "guid": "01a15030-e725-46ed-875b-1eeb7ec85e5b"
+                            "guid": "ee3f8a8e-6569-43cb-a052-ac37e7901a52"
                           },
-                          "underlyingEntityGuid": "2e34474f-001b-4fbf-a994-c7bb16e5886e",
+                          "underlyingEntityGuid": "7011e9f4-173c-436e-b1dd-69dc0487a5cb",
                           "name": "To Pedigree from Producers",
-                          "guid": "46e95891-8c82-47b4-aab3-73f31e8c3a2c"
+                          "guid": "183f9246-15d9-4ab5-b03e-49ddee71947e"
                         }
                       ],
                       "propertyNameToStatusMap": null,
@@ -16816,7 +16786,7 @@
                         "fr": "Testing Information French Display Name"
                       },
                       "name": "Testing Information",
-                      "guid": "9164fde7-d6af-47d6-b3ba-52b7ade68a50"
+                      "guid": "2407064c-d261-4187-bc90-69e1343d9839"
                     }
                   }
                 }
@@ -17004,9 +16974,9 @@
                   "description": "This example demonstrates how to add a cross database link group to the 'General Properties' layout section (guid = b10170ab-ff56-4828-81b8-c4427674ed2f) of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "itemType": "crossDatabaseLink",
-                    "sourceDatabaseGuid": "bda0ceeb-bc68-4611-b9dc-6b3c28cf3c15",
-                    "sourceTableGuid": "c4cc2209-6dbf-44ff-ba40-26fe5ca0228b",
-                    "linkGroupGuid": "c443313c-e4c6-4530-b1b7-2c9fca7c384d"
+                    "sourceDatabaseGuid": "7373823c-3f92-4529-b9a9-467dd79ec0dc",
+                    "sourceTableGuid": "30bf45fc-84c4-43ea-a1ee-dfa00642b99d",
+                    "linkGroupGuid": "8ea136fb-bd72-4291-8720-d676be085a89"
                   }
                 },
                 "Example 8": {
@@ -17018,11 +16988,11 @@
                     "associationChainLinks": [
                       {
                         "forwards": true,
-                        "tabularAttributeGuid": "1a03a3a1-d9bd-4d99-a01c-c6ff6164a0d0"
+                        "tabularAttributeGuid": "fa1e9497-896b-4618-b875-961921fc6f57"
                       },
                       {
                         "forwards": false,
-                        "tabularAttributeGuid": "481c66f9-4a4e-4913-943f-18c175691b41"
+                        "tabularAttributeGuid": "317f117e-d6fb-4677-a983-afd47c103b36"
                       }
                     ]
                   }
@@ -17102,9 +17072,9 @@
                   "description": "This example demonstrates how to add a cross database link group to the 'General Properties' layout section (guid = b10170ab-ff56-4828-81b8-c4427674ed2f) of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "itemType": "crossDatabaseLink",
-                    "sourceDatabaseGuid": "bda0ceeb-bc68-4611-b9dc-6b3c28cf3c15",
-                    "sourceTableGuid": "c4cc2209-6dbf-44ff-ba40-26fe5ca0228b",
-                    "linkGroupGuid": "c443313c-e4c6-4530-b1b7-2c9fca7c384d"
+                    "sourceDatabaseGuid": "7373823c-3f92-4529-b9a9-467dd79ec0dc",
+                    "sourceTableGuid": "30bf45fc-84c4-43ea-a1ee-dfa00642b99d",
+                    "linkGroupGuid": "8ea136fb-bd72-4291-8720-d676be085a89"
                   }
                 },
                 "Example 8": {
@@ -17116,11 +17086,11 @@
                     "associationChainLinks": [
                       {
                         "forwards": true,
-                        "tabularAttributeGuid": "1a03a3a1-d9bd-4d99-a01c-c6ff6164a0d0"
+                        "tabularAttributeGuid": "fa1e9497-896b-4618-b875-961921fc6f57"
                       },
                       {
                         "forwards": false,
-                        "tabularAttributeGuid": "481c66f9-4a4e-4913-943f-18c175691b41"
+                        "tabularAttributeGuid": "317f117e-d6fb-4677-a983-afd47c103b36"
                       }
                     ]
                   }
@@ -17200,9 +17170,9 @@
                   "description": "This example demonstrates how to add a cross database link group to the 'General Properties' layout section (guid = b10170ab-ff56-4828-81b8-c4427674ed2f) of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "itemType": "crossDatabaseLink",
-                    "sourceDatabaseGuid": "bda0ceeb-bc68-4611-b9dc-6b3c28cf3c15",
-                    "sourceTableGuid": "c4cc2209-6dbf-44ff-ba40-26fe5ca0228b",
-                    "linkGroupGuid": "c443313c-e4c6-4530-b1b7-2c9fca7c384d"
+                    "sourceDatabaseGuid": "7373823c-3f92-4529-b9a9-467dd79ec0dc",
+                    "sourceTableGuid": "30bf45fc-84c4-43ea-a1ee-dfa00642b99d",
+                    "linkGroupGuid": "8ea136fb-bd72-4291-8720-d676be085a89"
                   }
                 },
                 "Example 8": {
@@ -17214,11 +17184,11 @@
                     "associationChainLinks": [
                       {
                         "forwards": true,
-                        "tabularAttributeGuid": "1a03a3a1-d9bd-4d99-a01c-c6ff6164a0d0"
+                        "tabularAttributeGuid": "fa1e9497-896b-4618-b875-961921fc6f57"
                       },
                       {
                         "forwards": false,
-                        "tabularAttributeGuid": "481c66f9-4a4e-4913-943f-18c175691b41"
+                        "tabularAttributeGuid": "317f117e-d6fb-4677-a983-afd47c103b36"
                       }
                     ]
                   }
@@ -17298,9 +17268,9 @@
                   "description": "This example demonstrates how to add a cross database link group to the 'General Properties' layout section (guid = b10170ab-ff56-4828-81b8-c4427674ed2f) of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "itemType": "crossDatabaseLink",
-                    "sourceDatabaseGuid": "bda0ceeb-bc68-4611-b9dc-6b3c28cf3c15",
-                    "sourceTableGuid": "c4cc2209-6dbf-44ff-ba40-26fe5ca0228b",
-                    "linkGroupGuid": "c443313c-e4c6-4530-b1b7-2c9fca7c384d"
+                    "sourceDatabaseGuid": "7373823c-3f92-4529-b9a9-467dd79ec0dc",
+                    "sourceTableGuid": "30bf45fc-84c4-43ea-a1ee-dfa00642b99d",
+                    "linkGroupGuid": "8ea136fb-bd72-4291-8720-d676be085a89"
                   }
                 },
                 "Example 8": {
@@ -17312,11 +17282,11 @@
                     "associationChainLinks": [
                       {
                         "forwards": true,
-                        "tabularAttributeGuid": "1a03a3a1-d9bd-4d99-a01c-c6ff6164a0d0"
+                        "tabularAttributeGuid": "fa1e9497-896b-4618-b875-961921fc6f57"
                       },
                       {
                         "forwards": false,
-                        "tabularAttributeGuid": "481c66f9-4a4e-4913-943f-18c175691b41"
+                        "tabularAttributeGuid": "317f117e-d6fb-4677-a983-afd47c103b36"
                       }
                     ]
                   }
@@ -17345,7 +17315,7 @@
                       "metaAttributes": null,
                       "tabularColumnGuids": null,
                       "propertyNameToStatusMap": null,
-                      "guid": "54a1b1ac-6c4f-4b7e-af37-a52b42770cc5"
+                      "guid": "9775a40c-7f1c-4785-b904-e85e689e6ba2"
                     }
                   },
                   "Example 2": {
@@ -17366,7 +17336,7 @@
                       ],
                       "tabularColumnGuids": null,
                       "propertyNameToStatusMap": null,
-                      "guid": "58e4ddcf-4355-42c7-8ea3-7d6377c60623"
+                      "guid": "a9d9e431-0d1f-4f59-aad7-c8daa6841745"
                     }
                   },
                   "Example 3": {
@@ -17412,9 +17382,9 @@
                     "description": "This example demonstrates the response to creating a new cross database link group layout item. It was created by adding a cross database link group to the 'General Properties' layout section (guid = b10170ab-ff56-4828-81b8-c4427674ed2f) of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                     "value": {
                       "itemType": "crossDatabaseLink",
-                      "sourceDatabaseGuid": "1e96ca10-2c9f-4fa0-b4ea-69ba17bbd192",
-                      "sourceTableGuid": "839cf012-8407-4cc6-8026-f7684d2e1d98",
-                      "linkGroupGuid": "06be9bb5-8c6c-48d0-a3cc-e2e8606eb49a",
+                      "sourceDatabaseGuid": "f99237cc-abc9-4fe9-8c12-0f6650860111",
+                      "sourceTableGuid": "1620b628-8024-4118-8b89-88cdf440628c",
+                      "linkGroupGuid": "d54c2f9f-d8b5-4c47-be36-09a0d5ae62bb",
                       "propertyNameToStatusMap": null,
                       "guid": null
                     }
@@ -17428,11 +17398,11 @@
                       "associationChainLinks": [
                         {
                           "forwards": true,
-                          "tabularAttributeGuid": "0bbff29f-5669-4617-900a-0c8afc4fabd8"
+                          "tabularAttributeGuid": "a93789cd-5c79-424d-8f1f-c43c98844345"
                         },
                         {
                           "forwards": false,
-                          "tabularAttributeGuid": "102fc5ec-382f-4940-ac40-0ebc8224ae64"
+                          "tabularAttributeGuid": "2b4e0854-c30e-4022-8eca-11f282f102c6"
                         }
                       ],
                       "propertyNameToStatusMap": null,
@@ -17656,7 +17626,7 @@
                   "description": "This example demonstrates how to create a new layout for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database with a specified guid value. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Composite materials (guid)",
-                    "guid": "d2750397-6e0c-4d0a-a122-c154e1c0e5f6"
+                    "guid": "1ee29b4d-6bd8-467f-9968-7da09073bb2d"
                   }
                 }
               }
@@ -17678,7 +17648,7 @@
                   "description": "This example demonstrates how to create a new layout for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database with a specified guid value. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Composite materials (guid)",
-                    "guid": "d2750397-6e0c-4d0a-a122-c154e1c0e5f6"
+                    "guid": "1ee29b4d-6bd8-467f-9968-7da09073bb2d"
                   }
                 }
               }
@@ -17700,7 +17670,7 @@
                   "description": "This example demonstrates how to create a new layout for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database with a specified guid value. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Composite materials (guid)",
-                    "guid": "d2750397-6e0c-4d0a-a122-c154e1c0e5f6"
+                    "guid": "1ee29b4d-6bd8-467f-9968-7da09073bb2d"
                   }
                 }
               }
@@ -17722,7 +17692,7 @@
                   "description": "This example demonstrates how to create a new layout for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database with a specified guid value. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Composite materials (guid)",
-                    "guid": "d2750397-6e0c-4d0a-a122-c154e1c0e5f6"
+                    "guid": "1ee29b4d-6bd8-467f-9968-7da09073bb2d"
                   }
                 }
               }
@@ -17740,7 +17710,7 @@
                 "example": {
                   "displayNames": {},
                   "name": "Ceramics",
-                  "guid": "6e13d8c8-7d80-4ed9-96d0-092431221e02"
+                  "guid": "14af96a2-db1e-443d-92e9-756dd424dc92"
                 }
               }
             }
@@ -17880,9 +17850,9 @@
                               "required": false,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "d3a33125-0ee0-498b-a878-df145ff78149",
+                              "underlyingEntityGuid": "1b4ce808-6158-4705-9bef-02c517a36b19",
                               "name": "Price",
-                              "guid": "e1640bf5-8783-40cf-930d-5d4e7a6b0279"
+                              "guid": "099a4ab8-da3d-4a74-bbd4-625ee8e0dbbe"
                             },
                             {
                               "itemType": "attribute",
@@ -17890,9 +17860,9 @@
                               "required": false,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "9fc15b1d-0b2a-4ddd-9a49-b5b77eb640f0",
+                              "underlyingEntityGuid": "5c0395d3-0e2f-46e2-ab38-f2e620e15b51",
                               "name": "Density",
-                              "guid": "d22a5a84-44f3-46d5-8feb-d679be5d4d01"
+                              "guid": "246bd7c5-0ca8-4735-833d-22c0eb052ddc"
                             }
                           ],
                           "displayNames": {
@@ -17911,9 +17881,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "97354eb0-f69f-4487-bec6-6e7b3929911a",
+                              "underlyingEntityGuid": "0271e7ed-d5b5-4069-8de1-cbdb4d637d0c",
                               "name": "Young's modulus",
-                              "guid": "279b8684-0fd0-4b73-98b7-440fe01058b1"
+                              "guid": "e3b9db33-3b9f-4b9c-a456-d37b55721ea6"
                             },
                             {
                               "itemType": "attribute",
@@ -17921,9 +17891,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "e365348a-14ee-446f-8843-17eafdb9cae1",
+                              "underlyingEntityGuid": "925a1bea-23b3-4bcf-b7f1-02275fa334e7",
                               "name": "Tensile strength",
-                              "guid": "8d32cfa5-a051-4783-9fc7-e3a4b670edbd"
+                              "guid": "87e29c0f-5cbb-4c34-8b42-22e5275e3261"
                             },
                             {
                               "itemType": "attribute",
@@ -17931,9 +17901,9 @@
                               "required": true,
                               "readOnly": false,
                               "metaAttributes": [],
-                              "underlyingEntityGuid": "d6a43fad-f6ce-41a8-b319-c00f94a3f5c2",
+                              "underlyingEntityGuid": "156cb952-4d18-49e9-a277-c7563720d84c",
                               "name": "Shape factor",
-                              "guid": "2cc905a0-a4c5-47fe-94d4-333f73b10312"
+                              "guid": "2103e5c5-c240-4226-b0ea-04d5b5ab8e09"
                             }
                           ],
                           "displayNames": {
@@ -18006,7 +17976,7 @@
                   "description": "This example demonstrates how to update all properties of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "Ceramics (Updated)",
-                    "guid": "56aee39e-cc08-4765-b486-b74d808b40d4"
+                    "guid": "4322547f-c374-403a-9144-ee7022f1f56c"
                   }
                 },
                 "Example 2": {
@@ -18028,7 +17998,7 @@
                   "description": "This example demonstrates how to update all properties of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "Ceramics (Updated)",
-                    "guid": "56aee39e-cc08-4765-b486-b74d808b40d4"
+                    "guid": "4322547f-c374-403a-9144-ee7022f1f56c"
                   }
                 },
                 "Example 2": {
@@ -18050,7 +18020,7 @@
                   "description": "This example demonstrates how to update all properties of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "Ceramics (Updated)",
-                    "guid": "56aee39e-cc08-4765-b486-b74d808b40d4"
+                    "guid": "4322547f-c374-403a-9144-ee7022f1f56c"
                   }
                 },
                 "Example 2": {
@@ -18072,7 +18042,7 @@
                   "description": "This example demonstrates how to update all properties of the 'Ceramics' layout (guid = 00000b36-0009-4fff-8fff-dd92ffff0000) from the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "Ceramics (Updated)",
-                    "guid": "56aee39e-cc08-4765-b486-b74d808b40d4"
+                    "guid": "4322547f-c374-403a-9144-ee7022f1f56c"
                   }
                 },
                 "Example 2": {
@@ -18338,7 +18308,7 @@
                         "type": "discrete",
                         "isDefault": true,
                         "name": "Red",
-                        "guid": "7bb8848e-994f-4e7d-8a04-b334bf7d9591"
+                        "guid": "3dd76b2f-47fd-422c-a8be-d5793d82729a"
                       },
                       {
                         "type": "discrete",
@@ -18348,7 +18318,7 @@
                     ],
                     "type": "discrete",
                     "name": "Colour (guid)",
-                    "guid": "c7caeb6f-2875-4fc0-9776-6d83bbfb33e4"
+                    "guid": "a4d8c961-1afa-4a96-b0d0-67db7514f16f"
                   }
                 },
                 "Example 3": {
@@ -18484,7 +18454,7 @@
                         "type": "discrete",
                         "isDefault": true,
                         "name": "Red",
-                        "guid": "7bb8848e-994f-4e7d-8a04-b334bf7d9591"
+                        "guid": "3dd76b2f-47fd-422c-a8be-d5793d82729a"
                       },
                       {
                         "type": "discrete",
@@ -18494,7 +18464,7 @@
                     ],
                     "type": "discrete",
                     "name": "Colour (guid)",
-                    "guid": "c7caeb6f-2875-4fc0-9776-6d83bbfb33e4"
+                    "guid": "a4d8c961-1afa-4a96-b0d0-67db7514f16f"
                   }
                 },
                 "Example 3": {
@@ -18630,7 +18600,7 @@
                         "type": "discrete",
                         "isDefault": true,
                         "name": "Red",
-                        "guid": "7bb8848e-994f-4e7d-8a04-b334bf7d9591"
+                        "guid": "3dd76b2f-47fd-422c-a8be-d5793d82729a"
                       },
                       {
                         "type": "discrete",
@@ -18640,7 +18610,7 @@
                     ],
                     "type": "discrete",
                     "name": "Colour (guid)",
-                    "guid": "c7caeb6f-2875-4fc0-9776-6d83bbfb33e4"
+                    "guid": "a4d8c961-1afa-4a96-b0d0-67db7514f16f"
                   }
                 },
                 "Example 3": {
@@ -18776,7 +18746,7 @@
                         "type": "discrete",
                         "isDefault": true,
                         "name": "Red",
-                        "guid": "7bb8848e-994f-4e7d-8a04-b334bf7d9591"
+                        "guid": "3dd76b2f-47fd-422c-a8be-d5793d82729a"
                       },
                       {
                         "type": "discrete",
@@ -18786,7 +18756,7 @@
                     ],
                     "type": "discrete",
                     "name": "Colour (guid)",
-                    "guid": "c7caeb6f-2875-4fc0-9776-6d83bbfb33e4"
+                    "guid": "a4d8c961-1afa-4a96-b0d0-67db7514f16f"
                   }
                 },
                 "Example 3": {
@@ -19059,7 +19029,7 @@
                     "scaleType": "logarithmic",
                     "helpPath": "help/strain-updated.html",
                     "name": "Strain (Updated)",
-                    "guid": "44ee105c-85c5-4ee5-8296-68ba5d78d816"
+                    "guid": "c8f3729a-0a99-48b0-896b-e0adb8680c48"
                   }
                 },
                 "Example 2": {
@@ -19069,7 +19039,7 @@
                     "type": "discrete",
                     "helpPath": "help/basis-updated.html",
                     "name": "Basis (Updated)",
-                    "guid": "f68600e0-0e38-4846-8072-5f8385e0d86a"
+                    "guid": "3a7624f5-8482-475f-b3e1-f83301930181"
                   }
                 },
                 "Example 3": {
@@ -19077,7 +19047,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Strain' parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database. Guid can be updated for both kinds of parameters.",
                   "value": {
                     "type": "numeric",
-                    "guid": "221e80cf-a187-4e6c-a4e6-9fa7f20d9383"
+                    "guid": "9f1adf17-3d5a-48dc-86e3-bb1ca998106c"
                   }
                 },
                 "Example 4": {
@@ -19096,7 +19066,7 @@
                     "unit": {
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
-                    "guid": "0cd1a46e-b219-4b70-b3a6-da3e13ecc6ae"
+                    "guid": "8414b1bb-749c-4c9d-b0a2-90c18656a3a8"
                   }
                 },
                 "Example 6": {
@@ -19135,7 +19105,7 @@
                     "scaleType": "logarithmic",
                     "helpPath": "help/strain-updated.html",
                     "name": "Strain (Updated)",
-                    "guid": "44ee105c-85c5-4ee5-8296-68ba5d78d816"
+                    "guid": "c8f3729a-0a99-48b0-896b-e0adb8680c48"
                   }
                 },
                 "Example 2": {
@@ -19145,7 +19115,7 @@
                     "type": "discrete",
                     "helpPath": "help/basis-updated.html",
                     "name": "Basis (Updated)",
-                    "guid": "f68600e0-0e38-4846-8072-5f8385e0d86a"
+                    "guid": "3a7624f5-8482-475f-b3e1-f83301930181"
                   }
                 },
                 "Example 3": {
@@ -19153,7 +19123,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Strain' parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database. Guid can be updated for both kinds of parameters.",
                   "value": {
                     "type": "numeric",
-                    "guid": "221e80cf-a187-4e6c-a4e6-9fa7f20d9383"
+                    "guid": "9f1adf17-3d5a-48dc-86e3-bb1ca998106c"
                   }
                 },
                 "Example 4": {
@@ -19172,7 +19142,7 @@
                     "unit": {
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
-                    "guid": "0cd1a46e-b219-4b70-b3a6-da3e13ecc6ae"
+                    "guid": "8414b1bb-749c-4c9d-b0a2-90c18656a3a8"
                   }
                 },
                 "Example 6": {
@@ -19211,7 +19181,7 @@
                     "scaleType": "logarithmic",
                     "helpPath": "help/strain-updated.html",
                     "name": "Strain (Updated)",
-                    "guid": "44ee105c-85c5-4ee5-8296-68ba5d78d816"
+                    "guid": "c8f3729a-0a99-48b0-896b-e0adb8680c48"
                   }
                 },
                 "Example 2": {
@@ -19221,7 +19191,7 @@
                     "type": "discrete",
                     "helpPath": "help/basis-updated.html",
                     "name": "Basis (Updated)",
-                    "guid": "f68600e0-0e38-4846-8072-5f8385e0d86a"
+                    "guid": "3a7624f5-8482-475f-b3e1-f83301930181"
                   }
                 },
                 "Example 3": {
@@ -19229,7 +19199,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Strain' parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database. Guid can be updated for both kinds of parameters.",
                   "value": {
                     "type": "numeric",
-                    "guid": "221e80cf-a187-4e6c-a4e6-9fa7f20d9383"
+                    "guid": "9f1adf17-3d5a-48dc-86e3-bb1ca998106c"
                   }
                 },
                 "Example 4": {
@@ -19248,7 +19218,7 @@
                     "unit": {
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
-                    "guid": "0cd1a46e-b219-4b70-b3a6-da3e13ecc6ae"
+                    "guid": "8414b1bb-749c-4c9d-b0a2-90c18656a3a8"
                   }
                 },
                 "Example 6": {
@@ -19287,7 +19257,7 @@
                     "scaleType": "logarithmic",
                     "helpPath": "help/strain-updated.html",
                     "name": "Strain (Updated)",
-                    "guid": "44ee105c-85c5-4ee5-8296-68ba5d78d816"
+                    "guid": "c8f3729a-0a99-48b0-896b-e0adb8680c48"
                   }
                 },
                 "Example 2": {
@@ -19297,7 +19267,7 @@
                     "type": "discrete",
                     "helpPath": "help/basis-updated.html",
                     "name": "Basis (Updated)",
-                    "guid": "f68600e0-0e38-4846-8072-5f8385e0d86a"
+                    "guid": "3a7624f5-8482-475f-b3e1-f83301930181"
                   }
                 },
                 "Example 3": {
@@ -19305,7 +19275,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Strain' parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database. Guid can be updated for both kinds of parameters.",
                   "value": {
                     "type": "numeric",
-                    "guid": "221e80cf-a187-4e6c-a4e6-9fa7f20d9383"
+                    "guid": "9f1adf17-3d5a-48dc-86e3-bb1ca998106c"
                   }
                 },
                 "Example 4": {
@@ -19324,7 +19294,7 @@
                     "unit": {
                       "guid": "0000007a-0013-4fff-8fff-0000ffff0000"
                     },
-                    "guid": "0cd1a46e-b219-4b70-b3a6-da3e13ecc6ae"
+                    "guid": "8414b1bb-749c-4c9d-b0a2-90c18656a3a8"
                   }
                 },
                 "Example 6": {
@@ -20046,7 +20016,7 @@
                     "type": "numeric",
                     "isDefault": false,
                     "name": "Strain 0.1 (Updated)",
-                    "guid": "60b3a0ad-2661-444b-95bc-84364759683a"
+                    "guid": "69f763f6-a3c7-4ba9-a9b7-77c2b9fdfe7d"
                   }
                 },
                 "Example 2": {
@@ -20056,7 +20026,7 @@
                     "type": "discrete",
                     "isDefault": false,
                     "name": "Mean (Updated)",
-                    "guid": "4c14b12b-922e-4e00-84ba-a38afc96809f"
+                    "guid": "eeeb6fdf-b6af-4f06-bcdd-c68fd5f5d6bc"
                   }
                 },
                 "Example 3": {
@@ -20072,7 +20042,7 @@
                   "description": "This example demonstrates how to update guid of the 'Strain 0.1' numeric parameter value (guid = 173284fb-e557-406f-a7eb-f4e75f1d48a9) from the 'Strain' numeric parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database using a PATCH request.",
                   "value": {
                     "type": "numeric",
-                    "guid": "fd7771aa-c79d-4c82-9edd-4c31a063bc28"
+                    "guid": "ee760a61-a989-4588-9f61-35eaf337837b"
                   }
                 }
               }
@@ -20090,7 +20060,7 @@
                     "type": "numeric",
                     "isDefault": false,
                     "name": "Strain 0.1 (Updated)",
-                    "guid": "60b3a0ad-2661-444b-95bc-84364759683a"
+                    "guid": "69f763f6-a3c7-4ba9-a9b7-77c2b9fdfe7d"
                   }
                 },
                 "Example 2": {
@@ -20100,7 +20070,7 @@
                     "type": "discrete",
                     "isDefault": false,
                     "name": "Mean (Updated)",
-                    "guid": "4c14b12b-922e-4e00-84ba-a38afc96809f"
+                    "guid": "eeeb6fdf-b6af-4f06-bcdd-c68fd5f5d6bc"
                   }
                 },
                 "Example 3": {
@@ -20116,7 +20086,7 @@
                   "description": "This example demonstrates how to update guid of the 'Strain 0.1' numeric parameter value (guid = 173284fb-e557-406f-a7eb-f4e75f1d48a9) from the 'Strain' numeric parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database using a PATCH request.",
                   "value": {
                     "type": "numeric",
-                    "guid": "fd7771aa-c79d-4c82-9edd-4c31a063bc28"
+                    "guid": "ee760a61-a989-4588-9f61-35eaf337837b"
                   }
                 }
               }
@@ -20134,7 +20104,7 @@
                     "type": "numeric",
                     "isDefault": false,
                     "name": "Strain 0.1 (Updated)",
-                    "guid": "60b3a0ad-2661-444b-95bc-84364759683a"
+                    "guid": "69f763f6-a3c7-4ba9-a9b7-77c2b9fdfe7d"
                   }
                 },
                 "Example 2": {
@@ -20144,7 +20114,7 @@
                     "type": "discrete",
                     "isDefault": false,
                     "name": "Mean (Updated)",
-                    "guid": "4c14b12b-922e-4e00-84ba-a38afc96809f"
+                    "guid": "eeeb6fdf-b6af-4f06-bcdd-c68fd5f5d6bc"
                   }
                 },
                 "Example 3": {
@@ -20160,7 +20130,7 @@
                   "description": "This example demonstrates how to update guid of the 'Strain 0.1' numeric parameter value (guid = 173284fb-e557-406f-a7eb-f4e75f1d48a9) from the 'Strain' numeric parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database using a PATCH request.",
                   "value": {
                     "type": "numeric",
-                    "guid": "fd7771aa-c79d-4c82-9edd-4c31a063bc28"
+                    "guid": "ee760a61-a989-4588-9f61-35eaf337837b"
                   }
                 }
               }
@@ -20178,7 +20148,7 @@
                     "type": "numeric",
                     "isDefault": false,
                     "name": "Strain 0.1 (Updated)",
-                    "guid": "60b3a0ad-2661-444b-95bc-84364759683a"
+                    "guid": "69f763f6-a3c7-4ba9-a9b7-77c2b9fdfe7d"
                   }
                 },
                 "Example 2": {
@@ -20188,7 +20158,7 @@
                     "type": "discrete",
                     "isDefault": false,
                     "name": "Mean (Updated)",
-                    "guid": "4c14b12b-922e-4e00-84ba-a38afc96809f"
+                    "guid": "eeeb6fdf-b6af-4f06-bcdd-c68fd5f5d6bc"
                   }
                 },
                 "Example 3": {
@@ -20204,7 +20174,7 @@
                   "description": "This example demonstrates how to update guid of the 'Strain 0.1' numeric parameter value (guid = 173284fb-e557-406f-a7eb-f4e75f1d48a9) from the 'Strain' numeric parameter (guid = 00000005-000a-4fff-8fff-0000ffff0000) from the MI_Training database using a PATCH request.",
                   "value": {
                     "type": "numeric",
-                    "guid": "fd7771aa-c79d-4c82-9edd-4c31a063bc28"
+                    "guid": "ee760a61-a989-4588-9f61-35eaf337837b"
                   }
                 }
               }
@@ -20717,7 +20687,7 @@
                   "summary": "Profile with specified guid",
                   "description": "This example demonstrates how to create a new profile with a specified guid. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
-                    "guid": "88fd98e8-361c-4d99-9e5e-2648fca7c97f",
+                    "guid": "1707b428-981a-4354-89ea-752088e319dc",
                     "name": "MI:Training Processes"
                   }
                 },
@@ -20727,7 +20697,7 @@
                   "value": {
                     "description": "#markdown\r\nFor process-oriented users.",
                     "homepageUrl": "TrainingProfiles/TrainingProcesses",
-                    "guid": "3e79441f-15f9-4d9f-be45-15f84f5f5576",
+                    "guid": "a8228b48-e17b-437a-9e2b-da5805377947",
                     "groupName": "MI:Training Profiles",
                     "name": "MI:Training Processes"
                   }
@@ -20750,7 +20720,7 @@
                   "summary": "Profile with specified guid",
                   "description": "This example demonstrates how to create a new profile with a specified guid. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
-                    "guid": "88fd98e8-361c-4d99-9e5e-2648fca7c97f",
+                    "guid": "1707b428-981a-4354-89ea-752088e319dc",
                     "name": "MI:Training Processes"
                   }
                 },
@@ -20760,7 +20730,7 @@
                   "value": {
                     "description": "#markdown\r\nFor process-oriented users.",
                     "homepageUrl": "TrainingProfiles/TrainingProcesses",
-                    "guid": "3e79441f-15f9-4d9f-be45-15f84f5f5576",
+                    "guid": "a8228b48-e17b-437a-9e2b-da5805377947",
                     "groupName": "MI:Training Profiles",
                     "name": "MI:Training Processes"
                   }
@@ -20783,7 +20753,7 @@
                   "summary": "Profile with specified guid",
                   "description": "This example demonstrates how to create a new profile with a specified guid. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
-                    "guid": "88fd98e8-361c-4d99-9e5e-2648fca7c97f",
+                    "guid": "1707b428-981a-4354-89ea-752088e319dc",
                     "name": "MI:Training Processes"
                   }
                 },
@@ -20793,7 +20763,7 @@
                   "value": {
                     "description": "#markdown\r\nFor process-oriented users.",
                     "homepageUrl": "TrainingProfiles/TrainingProcesses",
-                    "guid": "3e79441f-15f9-4d9f-be45-15f84f5f5576",
+                    "guid": "a8228b48-e17b-437a-9e2b-da5805377947",
                     "groupName": "MI:Training Profiles",
                     "name": "MI:Training Processes"
                   }
@@ -20816,7 +20786,7 @@
                   "summary": "Profile with specified guid",
                   "description": "This example demonstrates how to create a new profile with a specified guid. Normally, if the guid is not specified, a random new Guid will be generated.",
                   "value": {
-                    "guid": "88fd98e8-361c-4d99-9e5e-2648fca7c97f",
+                    "guid": "1707b428-981a-4354-89ea-752088e319dc",
                     "name": "MI:Training Processes"
                   }
                 },
@@ -20826,7 +20796,7 @@
                   "value": {
                     "description": "#markdown\r\nFor process-oriented users.",
                     "homepageUrl": "TrainingProfiles/TrainingProcesses",
-                    "guid": "3e79441f-15f9-4d9f-be45-15f84f5f5576",
+                    "guid": "a8228b48-e17b-437a-9e2b-da5805377947",
                     "groupName": "MI:Training Profiles",
                     "name": "MI:Training Processes"
                   }
@@ -20971,7 +20941,7 @@
                   "summary": "Update a guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "6fcd5360-923c-4e1a-b497-541c248852a6"
+                    "guid": "6ac1b2e4-70c4-4bae-9005-23d182ac44d6"
                   }
                 },
                 "Example 2": {
@@ -20991,7 +20961,7 @@
                       "81bb4607-e2a3-4c78-81fc-a18a09979c72",
                       "a7cb2018-8410-42fd-ac6a-8bc1b441ba6e"
                     ],
-                    "guid": "fa20eb8f-6d44-4975-9b06-c61c95ecb012",
+                    "guid": "dd3b66fb-f28e-47c7-bf38-03f6366588b1",
                     "groupName": "MI:Training Profiles (Updated)",
                     "name": "MI:Training Metals"
                   }
@@ -21007,7 +20977,7 @@
                   "summary": "Update a guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "6fcd5360-923c-4e1a-b497-541c248852a6"
+                    "guid": "6ac1b2e4-70c4-4bae-9005-23d182ac44d6"
                   }
                 },
                 "Example 2": {
@@ -21027,7 +20997,7 @@
                       "81bb4607-e2a3-4c78-81fc-a18a09979c72",
                       "a7cb2018-8410-42fd-ac6a-8bc1b441ba6e"
                     ],
-                    "guid": "fa20eb8f-6d44-4975-9b06-c61c95ecb012",
+                    "guid": "dd3b66fb-f28e-47c7-bf38-03f6366588b1",
                     "groupName": "MI:Training Profiles (Updated)",
                     "name": "MI:Training Metals"
                   }
@@ -21043,7 +21013,7 @@
                   "summary": "Update a guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "6fcd5360-923c-4e1a-b497-541c248852a6"
+                    "guid": "6ac1b2e4-70c4-4bae-9005-23d182ac44d6"
                   }
                 },
                 "Example 2": {
@@ -21063,7 +21033,7 @@
                       "81bb4607-e2a3-4c78-81fc-a18a09979c72",
                       "a7cb2018-8410-42fd-ac6a-8bc1b441ba6e"
                     ],
-                    "guid": "fa20eb8f-6d44-4975-9b06-c61c95ecb012",
+                    "guid": "dd3b66fb-f28e-47c7-bf38-03f6366588b1",
                     "groupName": "MI:Training Profiles (Updated)",
                     "name": "MI:Training Metals"
                   }
@@ -21079,7 +21049,7 @@
                   "summary": "Update a guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "6fcd5360-923c-4e1a-b497-541c248852a6"
+                    "guid": "6ac1b2e4-70c4-4bae-9005-23d182ac44d6"
                   }
                 },
                 "Example 2": {
@@ -21099,7 +21069,7 @@
                       "81bb4607-e2a3-4c78-81fc-a18a09979c72",
                       "a7cb2018-8410-42fd-ac6a-8bc1b441ba6e"
                     ],
-                    "guid": "fa20eb8f-6d44-4975-9b06-c61c95ecb012",
+                    "guid": "dd3b66fb-f28e-47c7-bf38-03f6366588b1",
                     "groupName": "MI:Training Profiles (Updated)",
                     "name": "MI:Training Metals"
                   }
@@ -21278,7 +21248,7 @@
                   "value": {
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "781ea894-8d89-48ad-85c0-816291599b1c"
+                    "guid": "0823cfa0-f555-4a05-92e0-be7e34184d34"
                   }
                 },
                 "Example 3": {
@@ -21289,7 +21259,7 @@
                     "layoutGuid": "f8379ae4-a8a8-4329-b9b5-cd0b2d285fd0",
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "2ee60005-d6e2-4fde-9f50-83b69229864a"
+                    "guid": "57ede0bf-9b56-4422-8fce-7cdfd68061cb"
                   }
                 }
               }
@@ -21313,7 +21283,7 @@
                   "value": {
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "781ea894-8d89-48ad-85c0-816291599b1c"
+                    "guid": "0823cfa0-f555-4a05-92e0-be7e34184d34"
                   }
                 },
                 "Example 3": {
@@ -21324,7 +21294,7 @@
                     "layoutGuid": "f8379ae4-a8a8-4329-b9b5-cd0b2d285fd0",
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "2ee60005-d6e2-4fde-9f50-83b69229864a"
+                    "guid": "57ede0bf-9b56-4422-8fce-7cdfd68061cb"
                   }
                 }
               }
@@ -21348,7 +21318,7 @@
                   "value": {
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "781ea894-8d89-48ad-85c0-816291599b1c"
+                    "guid": "0823cfa0-f555-4a05-92e0-be7e34184d34"
                   }
                 },
                 "Example 3": {
@@ -21359,7 +21329,7 @@
                     "layoutGuid": "f8379ae4-a8a8-4329-b9b5-cd0b2d285fd0",
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "2ee60005-d6e2-4fde-9f50-83b69229864a"
+                    "guid": "57ede0bf-9b56-4422-8fce-7cdfd68061cb"
                   }
                 }
               }
@@ -21383,7 +21353,7 @@
                   "value": {
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "781ea894-8d89-48ad-85c0-816291599b1c"
+                    "guid": "0823cfa0-f555-4a05-92e0-be7e34184d34"
                   }
                 },
                 "Example 3": {
@@ -21394,7 +21364,7 @@
                     "layoutGuid": "f8379ae4-a8a8-4329-b9b5-cd0b2d285fd0",
                     "databaseGuid": "43a43640-4919-428a-bac9-16efbc4ce6ed",
                     "tableGuid": "bc666ac6-8ac6-482b-9a16-502e6ab3730e",
-                    "guid": "2ee60005-d6e2-4fde-9f50-83b69229864a"
+                    "guid": "57ede0bf-9b56-4422-8fce-7cdfd68061cb"
                   }
                 }
               }
@@ -21532,7 +21502,7 @@
                   "value": {
                     "subsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "layoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
-                    "guid": "db2a2bd5-1c4e-44f2-af5a-a0b2d482e3ad"
+                    "guid": "8ba77c64-ab85-42de-8d18-d37c164faeed"
                   }
                 },
                 "Example 2": {
@@ -21547,7 +21517,7 @@
                   "summary": "Just guid",
                   "description": "This example shows how to update the 'Guid' property of the 'MaterialUniverse' profile table (guid = a7cb2018-8410-42fd-ac6a-8bc1b441ba6e) from the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "f3b15652-0ac7-4f8c-9e08-5a7cc503f10b"
+                    "guid": "58ad30c6-8b42-4a33-9d5e-5be2dd70dc9c"
                   }
                 }
               }
@@ -21563,7 +21533,7 @@
                   "value": {
                     "subsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "layoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
-                    "guid": "db2a2bd5-1c4e-44f2-af5a-a0b2d482e3ad"
+                    "guid": "8ba77c64-ab85-42de-8d18-d37c164faeed"
                   }
                 },
                 "Example 2": {
@@ -21578,7 +21548,7 @@
                   "summary": "Just guid",
                   "description": "This example shows how to update the 'Guid' property of the 'MaterialUniverse' profile table (guid = a7cb2018-8410-42fd-ac6a-8bc1b441ba6e) from the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "f3b15652-0ac7-4f8c-9e08-5a7cc503f10b"
+                    "guid": "58ad30c6-8b42-4a33-9d5e-5be2dd70dc9c"
                   }
                 }
               }
@@ -21594,7 +21564,7 @@
                   "value": {
                     "subsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "layoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
-                    "guid": "db2a2bd5-1c4e-44f2-af5a-a0b2d482e3ad"
+                    "guid": "8ba77c64-ab85-42de-8d18-d37c164faeed"
                   }
                 },
                 "Example 2": {
@@ -21609,7 +21579,7 @@
                   "summary": "Just guid",
                   "description": "This example shows how to update the 'Guid' property of the 'MaterialUniverse' profile table (guid = a7cb2018-8410-42fd-ac6a-8bc1b441ba6e) from the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "f3b15652-0ac7-4f8c-9e08-5a7cc503f10b"
+                    "guid": "58ad30c6-8b42-4a33-9d5e-5be2dd70dc9c"
                   }
                 }
               }
@@ -21625,7 +21595,7 @@
                   "value": {
                     "subsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "layoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
-                    "guid": "db2a2bd5-1c4e-44f2-af5a-a0b2d482e3ad"
+                    "guid": "8ba77c64-ab85-42de-8d18-d37c164faeed"
                   }
                 },
                 "Example 2": {
@@ -21640,7 +21610,7 @@
                   "summary": "Just guid",
                   "description": "This example shows how to update the 'Guid' property of the 'MaterialUniverse' profile table (guid = a7cb2018-8410-42fd-ac6a-8bc1b441ba6e) from the 'MI:Training Metals' profile (guid = f76e3ce8-608a-42da-8d99-f0009dac966f).",
                   "value": {
-                    "guid": "f3b15652-0ac7-4f8c-9e08-5a7cc503f10b"
+                    "guid": "58ad30c6-8b42-4a33-9d5e-5be2dd70dc9c"
                   }
                 }
               }
@@ -21808,7 +21778,7 @@
                       "reverseDisplayNames": {},
                       "displayNames": {},
                       "name": "MI Training Exercise for Import - Second Training Database And Table",
-                      "guid": "39e1737e-877b-4aa2-834d-34d2c6c388ed"
+                      "guid": "655fdba4-5db7-4ccd-9a9e-803f014827b9"
                     }
                   ]
                 }
@@ -21886,7 +21856,7 @@
                     },
                     "reverseName": "Material Universe static link",
                     "name": "Process Universe static link",
-                    "guid": "365e6061-2546-4302-9b37-de55627ecf04"
+                    "guid": "029db07c-2f7b-48d6-8f67-71563b360ae8"
                   }
                 },
                 "Example 3": {
@@ -21902,7 +21872,7 @@
                         "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                       },
                       "linkTarget": {
-                        "tableGuid": "b6f54191-0e1a-4321-ab7f-b63668c3746f"
+                        "tableGuid": "541f3942-36d0-4d9f-8fc7-c42b4d1ff6d3"
                       }
                     },
                     "reverseName": "Cross database link to Material Universe",
@@ -21917,13 +21887,13 @@
                     "type": "crossDatabase",
                     "linkInfo": {
                       "linkTarget": {
-                        "databaseGuid": "9a3625d1-e58b-4807-9692-142c3649c381",
-                        "tableGuid": "1b340fc8-40a9-4b12-a6bd-8a5cc745e7ff"
+                        "databaseGuid": "b8c358b2-b0b6-4115-b013-474fedd1a9cc",
+                        "tableGuid": "27f6749a-d008-488c-8c05-350fddcf670b"
                       }
                     },
                     "reverseName": "Cross database link to MI Training - Material Universe",
                     "name": "Cross database link from MI Training - Material Universe",
-                    "guid": "9ebb9aea-70e3-416b-a87d-7744f7ff3396"
+                    "guid": "83d917c5-168c-449c-9f74-1163a38c8774"
                   }
                 },
                 "Example 5": {
@@ -22009,7 +21979,7 @@
                     },
                     "reverseName": "Material Universe dynamic link",
                     "name": "Process Universe dynamic link",
-                    "guid": "9f855377-0108-411c-9916-18f0b9a2931f"
+                    "guid": "a7f89140-c803-4870-bd44-c98ba3e8ee38"
                   }
                 }
               }
@@ -22054,7 +22024,7 @@
                     },
                     "reverseName": "Material Universe static link",
                     "name": "Process Universe static link",
-                    "guid": "365e6061-2546-4302-9b37-de55627ecf04"
+                    "guid": "029db07c-2f7b-48d6-8f67-71563b360ae8"
                   }
                 },
                 "Example 3": {
@@ -22070,7 +22040,7 @@
                         "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                       },
                       "linkTarget": {
-                        "tableGuid": "b6f54191-0e1a-4321-ab7f-b63668c3746f"
+                        "tableGuid": "541f3942-36d0-4d9f-8fc7-c42b4d1ff6d3"
                       }
                     },
                     "reverseName": "Cross database link to Material Universe",
@@ -22085,13 +22055,13 @@
                     "type": "crossDatabase",
                     "linkInfo": {
                       "linkTarget": {
-                        "databaseGuid": "9a3625d1-e58b-4807-9692-142c3649c381",
-                        "tableGuid": "1b340fc8-40a9-4b12-a6bd-8a5cc745e7ff"
+                        "databaseGuid": "b8c358b2-b0b6-4115-b013-474fedd1a9cc",
+                        "tableGuid": "27f6749a-d008-488c-8c05-350fddcf670b"
                       }
                     },
                     "reverseName": "Cross database link to MI Training - Material Universe",
                     "name": "Cross database link from MI Training - Material Universe",
-                    "guid": "9ebb9aea-70e3-416b-a87d-7744f7ff3396"
+                    "guid": "83d917c5-168c-449c-9f74-1163a38c8774"
                   }
                 },
                 "Example 5": {
@@ -22177,7 +22147,7 @@
                     },
                     "reverseName": "Material Universe dynamic link",
                     "name": "Process Universe dynamic link",
-                    "guid": "9f855377-0108-411c-9916-18f0b9a2931f"
+                    "guid": "a7f89140-c803-4870-bd44-c98ba3e8ee38"
                   }
                 }
               }
@@ -22222,7 +22192,7 @@
                     },
                     "reverseName": "Material Universe static link",
                     "name": "Process Universe static link",
-                    "guid": "365e6061-2546-4302-9b37-de55627ecf04"
+                    "guid": "029db07c-2f7b-48d6-8f67-71563b360ae8"
                   }
                 },
                 "Example 3": {
@@ -22238,7 +22208,7 @@
                         "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                       },
                       "linkTarget": {
-                        "tableGuid": "b6f54191-0e1a-4321-ab7f-b63668c3746f"
+                        "tableGuid": "541f3942-36d0-4d9f-8fc7-c42b4d1ff6d3"
                       }
                     },
                     "reverseName": "Cross database link to Material Universe",
@@ -22253,13 +22223,13 @@
                     "type": "crossDatabase",
                     "linkInfo": {
                       "linkTarget": {
-                        "databaseGuid": "9a3625d1-e58b-4807-9692-142c3649c381",
-                        "tableGuid": "1b340fc8-40a9-4b12-a6bd-8a5cc745e7ff"
+                        "databaseGuid": "b8c358b2-b0b6-4115-b013-474fedd1a9cc",
+                        "tableGuid": "27f6749a-d008-488c-8c05-350fddcf670b"
                       }
                     },
                     "reverseName": "Cross database link to MI Training - Material Universe",
                     "name": "Cross database link from MI Training - Material Universe",
-                    "guid": "9ebb9aea-70e3-416b-a87d-7744f7ff3396"
+                    "guid": "83d917c5-168c-449c-9f74-1163a38c8774"
                   }
                 },
                 "Example 5": {
@@ -22345,7 +22315,7 @@
                     },
                     "reverseName": "Material Universe dynamic link",
                     "name": "Process Universe dynamic link",
-                    "guid": "9f855377-0108-411c-9916-18f0b9a2931f"
+                    "guid": "a7f89140-c803-4870-bd44-c98ba3e8ee38"
                   }
                 }
               }
@@ -22390,7 +22360,7 @@
                     },
                     "reverseName": "Material Universe static link",
                     "name": "Process Universe static link",
-                    "guid": "365e6061-2546-4302-9b37-de55627ecf04"
+                    "guid": "029db07c-2f7b-48d6-8f67-71563b360ae8"
                   }
                 },
                 "Example 3": {
@@ -22406,7 +22376,7 @@
                         "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                       },
                       "linkTarget": {
-                        "tableGuid": "b6f54191-0e1a-4321-ab7f-b63668c3746f"
+                        "tableGuid": "541f3942-36d0-4d9f-8fc7-c42b4d1ff6d3"
                       }
                     },
                     "reverseName": "Cross database link to Material Universe",
@@ -22421,13 +22391,13 @@
                     "type": "crossDatabase",
                     "linkInfo": {
                       "linkTarget": {
-                        "databaseGuid": "9a3625d1-e58b-4807-9692-142c3649c381",
-                        "tableGuid": "1b340fc8-40a9-4b12-a6bd-8a5cc745e7ff"
+                        "databaseGuid": "b8c358b2-b0b6-4115-b013-474fedd1a9cc",
+                        "tableGuid": "27f6749a-d008-488c-8c05-350fddcf670b"
                       }
                     },
                     "reverseName": "Cross database link to MI Training - Material Universe",
                     "name": "Cross database link from MI Training - Material Universe",
-                    "guid": "9ebb9aea-70e3-416b-a87d-7744f7ff3396"
+                    "guid": "83d917c5-168c-449c-9f74-1163a38c8774"
                   }
                 },
                 "Example 5": {
@@ -22513,7 +22483,7 @@
                     },
                     "reverseName": "Material Universe dynamic link",
                     "name": "Process Universe dynamic link",
-                    "guid": "9f855377-0108-411c-9916-18f0b9a2931f"
+                    "guid": "a7f89140-c803-4870-bd44-c98ba3e8ee38"
                   }
                 }
               }
@@ -22568,8 +22538,8 @@
                           "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                         },
                         "linkTarget": {
-                          "databaseGuid": "38d3680c-fe8d-4cf8-8eea-0c7052ba3a61",
-                          "tableGuid": "0e288309-0017-4d19-b8e8-343dd77bbd47"
+                          "databaseGuid": "7057fd84-7807-4105-b4c1-41df27d53e79",
+                          "tableGuid": "b9d5aa07-0c00-44b4-89e7-e6a711ff6900"
                         }
                       },
                       "identity": 1,
@@ -22577,7 +22547,7 @@
                       "reverseDisplayNames": {},
                       "displayNames": {},
                       "name": "Different database - different table",
-                      "guid": "e54c44aa-856f-40c3-8d0e-6e142c229a95"
+                      "guid": "06f14ab3-c016-430a-b519-aa839a15ddc5"
                     }
                   },
                   "Example 3": {
@@ -22732,7 +22702,7 @@
                       "reverseDisplayNames": {},
                       "displayNames": {},
                       "name": "Second Training Database And Table - MI Training MaterialUniverse",
-                      "guid": "b34123b7-98d9-4e9c-9033-8be190a9fbe7"
+                      "guid": "8a6ddd7a-47eb-4058-8d4b-4d1eb25db633"
                     }
                   ]
                 }
@@ -22865,8 +22835,8 @@
                           "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                         },
                         "linkTarget": {
-                          "databaseGuid": "950f7e06-3744-4c63-9cee-f1fc8dbdd2cc",
-                          "tableGuid": "51687321-06bd-4b18-9bd8-f63cad02fbd4"
+                          "databaseGuid": "c1defcd7-1943-477d-932f-ef46e8204881",
+                          "tableGuid": "5cfa65ff-6d98-4ac8-9117-618d6383dc2a"
                         }
                       },
                       "identity": 1,
@@ -22874,7 +22844,7 @@
                       "reverseDisplayNames": {},
                       "displayNames": {},
                       "name": "Different database - different table",
-                      "guid": "37ff62f8-daca-4b68-a1aa-49c2f89d957b"
+                      "guid": "9d2d6de4-4be7-42ca-99fa-9e6ef0627565"
                     }
                   },
                   "Example 3": {
@@ -23035,7 +23005,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Fatigue Test Data' static record link group (GUID = '485da78d-d094-4edb-a5a9-077fe1bc02f2') from the 'Fatigue Statistical Data' table (GUID = 'c9954321-b4d4-4443-949e-f9b161e2c8fb') from the MI_Training database.",
                   "value": {
                     "type": "static",
-                    "guid": "f2747a56-bd3d-4da2-a93d-79da4ad81ef7"
+                    "guid": "466bbac0-d869-4ad1-9d27-c1f06f3ea57d"
                   }
                 },
                 "Example 2": {
@@ -23055,7 +23025,7 @@
                     "type": "static",
                     "reverseName": "Fatigue Statistical Data (updated)",
                     "name": "Fatigue Test Data (updated)",
-                    "guid": "720dbbcd-b866-45f0-bc2b-3a2850f9ad51"
+                    "guid": "6863d880-47e8-4fec-a995-15528d1642fd"
                   }
                 },
                 "Example 4": {
@@ -23066,7 +23036,7 @@
                     "type": "crossDatabase",
                     "reverseName": "Link To MI Training - Material Universe (Updated)",
                     "name": "Link From MI Training - Material Universe (Updated)",
-                    "guid": "0765ac5f-0b47-4bd4-84f5-3aa9a56e21b5"
+                    "guid": "b89d9c33-faa6-4e49-b854-2b50ef32785a"
                   }
                 },
                 "Example 5": {
@@ -23108,7 +23078,7 @@
                     "type": "dynamic",
                     "reverseName": "Further panel information (Updated)",
                     "name": "Tensile test data (Updated)",
-                    "guid": "88024b67-620a-4298-a1b5-56fc633302c4"
+                    "guid": "46a8a6f8-9472-4fa8-ac46-e89ee2664bd7"
                   }
                 }
               }
@@ -23123,7 +23093,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Fatigue Test Data' static record link group (GUID = '485da78d-d094-4edb-a5a9-077fe1bc02f2') from the 'Fatigue Statistical Data' table (GUID = 'c9954321-b4d4-4443-949e-f9b161e2c8fb') from the MI_Training database.",
                   "value": {
                     "type": "static",
-                    "guid": "f2747a56-bd3d-4da2-a93d-79da4ad81ef7"
+                    "guid": "466bbac0-d869-4ad1-9d27-c1f06f3ea57d"
                   }
                 },
                 "Example 2": {
@@ -23143,7 +23113,7 @@
                     "type": "static",
                     "reverseName": "Fatigue Statistical Data (updated)",
                     "name": "Fatigue Test Data (updated)",
-                    "guid": "720dbbcd-b866-45f0-bc2b-3a2850f9ad51"
+                    "guid": "6863d880-47e8-4fec-a995-15528d1642fd"
                   }
                 },
                 "Example 4": {
@@ -23154,7 +23124,7 @@
                     "type": "crossDatabase",
                     "reverseName": "Link To MI Training - Material Universe (Updated)",
                     "name": "Link From MI Training - Material Universe (Updated)",
-                    "guid": "0765ac5f-0b47-4bd4-84f5-3aa9a56e21b5"
+                    "guid": "b89d9c33-faa6-4e49-b854-2b50ef32785a"
                   }
                 },
                 "Example 5": {
@@ -23196,7 +23166,7 @@
                     "type": "dynamic",
                     "reverseName": "Further panel information (Updated)",
                     "name": "Tensile test data (Updated)",
-                    "guid": "88024b67-620a-4298-a1b5-56fc633302c4"
+                    "guid": "46a8a6f8-9472-4fa8-ac46-e89ee2664bd7"
                   }
                 }
               }
@@ -23211,7 +23181,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Fatigue Test Data' static record link group (GUID = '485da78d-d094-4edb-a5a9-077fe1bc02f2') from the 'Fatigue Statistical Data' table (GUID = 'c9954321-b4d4-4443-949e-f9b161e2c8fb') from the MI_Training database.",
                   "value": {
                     "type": "static",
-                    "guid": "f2747a56-bd3d-4da2-a93d-79da4ad81ef7"
+                    "guid": "466bbac0-d869-4ad1-9d27-c1f06f3ea57d"
                   }
                 },
                 "Example 2": {
@@ -23231,7 +23201,7 @@
                     "type": "static",
                     "reverseName": "Fatigue Statistical Data (updated)",
                     "name": "Fatigue Test Data (updated)",
-                    "guid": "720dbbcd-b866-45f0-bc2b-3a2850f9ad51"
+                    "guid": "6863d880-47e8-4fec-a995-15528d1642fd"
                   }
                 },
                 "Example 4": {
@@ -23242,7 +23212,7 @@
                     "type": "crossDatabase",
                     "reverseName": "Link To MI Training - Material Universe (Updated)",
                     "name": "Link From MI Training - Material Universe (Updated)",
-                    "guid": "0765ac5f-0b47-4bd4-84f5-3aa9a56e21b5"
+                    "guid": "b89d9c33-faa6-4e49-b854-2b50ef32785a"
                   }
                 },
                 "Example 5": {
@@ -23284,7 +23254,7 @@
                     "type": "dynamic",
                     "reverseName": "Further panel information (Updated)",
                     "name": "Tensile test data (Updated)",
-                    "guid": "88024b67-620a-4298-a1b5-56fc633302c4"
+                    "guid": "46a8a6f8-9472-4fa8-ac46-e89ee2664bd7"
                   }
                 }
               }
@@ -23299,7 +23269,7 @@
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Fatigue Test Data' static record link group (GUID = '485da78d-d094-4edb-a5a9-077fe1bc02f2') from the 'Fatigue Statistical Data' table (GUID = 'c9954321-b4d4-4443-949e-f9b161e2c8fb') from the MI_Training database.",
                   "value": {
                     "type": "static",
-                    "guid": "f2747a56-bd3d-4da2-a93d-79da4ad81ef7"
+                    "guid": "466bbac0-d869-4ad1-9d27-c1f06f3ea57d"
                   }
                 },
                 "Example 2": {
@@ -23319,7 +23289,7 @@
                     "type": "static",
                     "reverseName": "Fatigue Statistical Data (updated)",
                     "name": "Fatigue Test Data (updated)",
-                    "guid": "720dbbcd-b866-45f0-bc2b-3a2850f9ad51"
+                    "guid": "6863d880-47e8-4fec-a995-15528d1642fd"
                   }
                 },
                 "Example 4": {
@@ -23330,7 +23300,7 @@
                     "type": "crossDatabase",
                     "reverseName": "Link To MI Training - Material Universe (Updated)",
                     "name": "Link From MI Training - Material Universe (Updated)",
-                    "guid": "0765ac5f-0b47-4bd4-84f5-3aa9a56e21b5"
+                    "guid": "b89d9c33-faa6-4e49-b854-2b50ef32785a"
                   }
                 },
                 "Example 5": {
@@ -23372,7 +23342,7 @@
                     "type": "dynamic",
                     "reverseName": "Further panel information (Updated)",
                     "name": "Tensile test data (Updated)",
-                    "guid": "88024b67-620a-4298-a1b5-56fc633302c4"
+                    "guid": "46a8a6f8-9472-4fa8-ac46-e89ee2664bd7"
                   }
                 }
               }
@@ -23427,8 +23397,8 @@
                           "tableGuid": "0000dd92-0011-4fff-8fff-0000ffff0000"
                         },
                         "linkTarget": {
-                          "databaseGuid": "ae1a9e59-31dc-4d1a-8a2f-ff77e209d20a",
-                          "tableGuid": "a6a631c2-238e-4fac-8806-3b47c6a9ed36"
+                          "databaseGuid": "ed84f3f3-2858-480d-b2d8-134042b75a4b",
+                          "tableGuid": "955f18c7-c1f3-492e-9e0b-8ea4beae0644"
                         }
                       },
                       "identity": 1,
@@ -23436,7 +23406,7 @@
                       "reverseDisplayNames": {},
                       "displayNames": {},
                       "name": "Different database - different table",
-                      "guid": "5b4f272f-82c0-429f-971f-030199b7c2e1"
+                      "guid": "502056b4-648d-410a-917a-f2ddc28593f8"
                     }
                   },
                   "Example 6": {
@@ -23600,7 +23570,7 @@
                   "value": {
                     "mappedCrossDatabaseRecordLinkGroups": [
                       {
-                        "guid": "d776ceb1-05eb-424b-9e11-5347856d13aa"
+                        "guid": "dc94af2e-9317-4cd9-b7a6-e349fe3dcd76"
                       }
                     ],
                     "name": "Unification"
@@ -23681,7 +23651,7 @@
                   "value": {
                     "mappedCrossDatabaseRecordLinkGroups": [
                       {
-                        "guid": "d776ceb1-05eb-424b-9e11-5347856d13aa"
+                        "guid": "dc94af2e-9317-4cd9-b7a6-e349fe3dcd76"
                       }
                     ],
                     "name": "Unification"
@@ -23762,7 +23732,7 @@
                   "value": {
                     "mappedCrossDatabaseRecordLinkGroups": [
                       {
-                        "guid": "d776ceb1-05eb-424b-9e11-5347856d13aa"
+                        "guid": "dc94af2e-9317-4cd9-b7a6-e349fe3dcd76"
                       }
                     ],
                     "name": "Unification"
@@ -23843,7 +23813,7 @@
                   "value": {
                     "mappedCrossDatabaseRecordLinkGroups": [
                       {
-                        "guid": "d776ceb1-05eb-424b-9e11-5347856d13aa"
+                        "guid": "dc94af2e-9317-4cd9-b7a6-e349fe3dcd76"
                       }
                     ],
                     "name": "Unification"
@@ -23930,7 +23900,7 @@
                     "value": {
                       "mappedCrossDatabaseRecordLinkGroups": [
                         {
-                          "guid": "1a3892a3-9d34-4265-8361-a8b95de6b9e2"
+                          "guid": "0f700543-38fb-4b99-a8a2-a7e0d32866ca"
                         }
                       ],
                       "name": "Unification"
@@ -24054,7 +24024,7 @@
                     "value": {
                       "mappedCrossDatabaseRecordLinkGroups": [
                         {
-                          "guid": "2356193a-27cd-4446-a2c7-a5deabc8cae7"
+                          "guid": "ff8505a3-8fd5-4120-ad16-840dd4595ba9"
                         }
                       ],
                       "name": "Unification"
@@ -24131,7 +24101,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Density' standard name (guid = 5f5b89f7-da4e-4ae2-8c65-485e3c1a98fd) from the MI_Training database.",
                   "value": {
-                    "guid": "5276bc54-e853-42ab-acff-8db2f3f8b578"
+                    "guid": "f1c9f7ae-a9eb-4799-847e-77fa242225a1"
                   }
                 },
                 "Example 3": {
@@ -24181,7 +24151,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Density' standard name (guid = 5f5b89f7-da4e-4ae2-8c65-485e3c1a98fd) from the MI_Training database.",
                   "value": {
-                    "guid": "5276bc54-e853-42ab-acff-8db2f3f8b578"
+                    "guid": "f1c9f7ae-a9eb-4799-847e-77fa242225a1"
                   }
                 },
                 "Example 3": {
@@ -24231,7 +24201,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Density' standard name (guid = 5f5b89f7-da4e-4ae2-8c65-485e3c1a98fd) from the MI_Training database.",
                   "value": {
-                    "guid": "5276bc54-e853-42ab-acff-8db2f3f8b578"
+                    "guid": "f1c9f7ae-a9eb-4799-847e-77fa242225a1"
                   }
                 },
                 "Example 3": {
@@ -24281,7 +24251,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' property of the 'Density' standard name (guid = 5f5b89f7-da4e-4ae2-8c65-485e3c1a98fd) from the MI_Training database.",
                   "value": {
-                    "guid": "5276bc54-e853-42ab-acff-8db2f3f8b578"
+                    "guid": "f1c9f7ae-a9eb-4799-847e-77fa242225a1"
                   }
                 },
                 "Example 3": {
@@ -24374,7 +24344,7 @@
                     "value": {
                       "mappedCrossDatabaseRecordLinkGroups": [
                         {
-                          "guid": "3a36cad1-9d67-432f-985e-121b25783a7c"
+                          "guid": "45de1813-be4a-4373-9b48-edac451c81ca"
                         }
                       ],
                       "name": "Unification"
@@ -24585,7 +24555,7 @@
                   "description": "This example demonstrates how to create a new subset with a specified guid value for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Alloys (guid)",
-                    "guid": "d4828b2d-3e33-4cf0-adcc-82e19df46552"
+                    "guid": "c580bb9a-c28b-4d8f-9dce-eb997b6df02f"
                   }
                 },
                 "Example 3": {
@@ -24617,7 +24587,7 @@
                   "description": "This example demonstrates how to create a new subset with a specified guid value for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Alloys (guid)",
-                    "guid": "d4828b2d-3e33-4cf0-adcc-82e19df46552"
+                    "guid": "c580bb9a-c28b-4d8f-9dce-eb997b6df02f"
                   }
                 },
                 "Example 3": {
@@ -24649,7 +24619,7 @@
                   "description": "This example demonstrates how to create a new subset with a specified guid value for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Alloys (guid)",
-                    "guid": "d4828b2d-3e33-4cf0-adcc-82e19df46552"
+                    "guid": "c580bb9a-c28b-4d8f-9dce-eb997b6df02f"
                   }
                 },
                 "Example 3": {
@@ -24681,7 +24651,7 @@
                   "description": "This example demonstrates how to create a new subset with a specified guid value for the 'MaterialUniverse' table (guid = 0000dd92-0011-4fff-8fff-0000ffff0000) from the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Alloys (guid)",
-                    "guid": "d4828b2d-3e33-4cf0-adcc-82e19df46552"
+                    "guid": "c580bb9a-c28b-4d8f-9dce-eb997b6df02f"
                   }
                 },
                 "Example 3": {
@@ -24871,7 +24841,7 @@
                       "guid": "0000b135-0009-4fff-8fff-dd92ffff0000"
                     },
                     "name": "Ceramics (Updated)",
-                    "guid": "c70178b7-8278-4f9d-8948-429d316767dd"
+                    "guid": "0fbd084b-dc18-4d8b-a870-c9c839a6803b"
                   }
                 },
                 "Example 2": {
@@ -24912,7 +24882,7 @@
                       "guid": "0000b135-0009-4fff-8fff-dd92ffff0000"
                     },
                     "name": "Ceramics (Updated)",
-                    "guid": "c70178b7-8278-4f9d-8948-429d316767dd"
+                    "guid": "0fbd084b-dc18-4d8b-a870-c9c839a6803b"
                   }
                 },
                 "Example 2": {
@@ -24953,7 +24923,7 @@
                       "guid": "0000b135-0009-4fff-8fff-dd92ffff0000"
                     },
                     "name": "Ceramics (Updated)",
-                    "guid": "c70178b7-8278-4f9d-8948-429d316767dd"
+                    "guid": "0fbd084b-dc18-4d8b-a870-c9c839a6803b"
                   }
                 },
                 "Example 2": {
@@ -24994,7 +24964,7 @@
                       "guid": "0000b135-0009-4fff-8fff-dd92ffff0000"
                     },
                     "name": "Ceramics (Updated)",
-                    "guid": "c70178b7-8278-4f9d-8948-429d316767dd"
+                    "guid": "0fbd084b-dc18-4d8b-a870-c9c839a6803b"
                   }
                 },
                 "Example 2": {
@@ -25224,7 +25194,7 @@
                   "description": "This example demonstrates how to create a new table with a specified guid value in the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Coatings (Guid)",
-                    "guid": "3ba3bd55-d01e-47d2-8bf1-9c939c53d6d1"
+                    "guid": "a06becbc-7182-47cd-9570-3a7730877095"
                   }
                 },
                 "Example 3": {
@@ -25255,7 +25225,7 @@
                   "description": "This example demonstrates how to create a new table with a specified guid value in the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Coatings (Guid)",
-                    "guid": "3ba3bd55-d01e-47d2-8bf1-9c939c53d6d1"
+                    "guid": "a06becbc-7182-47cd-9570-3a7730877095"
                   }
                 },
                 "Example 3": {
@@ -25286,7 +25256,7 @@
                   "description": "This example demonstrates how to create a new table with a specified guid value in the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Coatings (Guid)",
-                    "guid": "3ba3bd55-d01e-47d2-8bf1-9c939c53d6d1"
+                    "guid": "a06becbc-7182-47cd-9570-3a7730877095"
                   }
                 },
                 "Example 3": {
@@ -25317,7 +25287,7 @@
                   "description": "This example demonstrates how to create a new table with a specified guid value in the MI_Training database. Normally, if the guid is not specified, a random new Guid will be generated. ",
                   "value": {
                     "name": "Coatings (Guid)",
-                    "guid": "3ba3bd55-d01e-47d2-8bf1-9c939c53d6d1"
+                    "guid": "a06becbc-7182-47cd-9570-3a7730877095"
                   }
                 },
                 "Example 3": {
@@ -25547,7 +25517,7 @@
                     "defaultSubsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "defaultLayoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
                     "name": "MaterialUniverse (Updated)",
-                    "guid": "f2177fca-e600-41ed-a8c7-544edc115b03"
+                    "guid": "dbe37695-ae4e-4ce4-88f3-47ed06f98ccc"
                   }
                 },
                 "Example 2": {
@@ -25608,7 +25578,7 @@
                     "defaultSubsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "defaultLayoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
                     "name": "MaterialUniverse (Updated)",
-                    "guid": "f2177fca-e600-41ed-a8c7-544edc115b03"
+                    "guid": "dbe37695-ae4e-4ce4-88f3-47ed06f98ccc"
                   }
                 },
                 "Example 2": {
@@ -25669,7 +25639,7 @@
                     "defaultSubsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "defaultLayoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
                     "name": "MaterialUniverse (Updated)",
-                    "guid": "f2177fca-e600-41ed-a8c7-544edc115b03"
+                    "guid": "dbe37695-ae4e-4ce4-88f3-47ed06f98ccc"
                   }
                 },
                 "Example 2": {
@@ -25730,7 +25700,7 @@
                     "defaultSubsetGuid": "00000b36-0010-4fff-8fff-dd92ffff0000",
                     "defaultLayoutGuid": "00000b36-0009-4fff-8fff-dd92ffff0000",
                     "name": "MaterialUniverse (Updated)",
-                    "guid": "f2177fca-e600-41ed-a8c7-544edc115b03"
+                    "guid": "dbe37695-ae4e-4ce4-88f3-47ed06f98ccc"
                   }
                 },
                 "Example 2": {
@@ -26426,7 +26396,7 @@
                   "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                   "value": {
                     "name": "Hawaiian common",
-                    "guid": "2669c2bf-73d5-48e9-879b-eca6a075bd7e"
+                    "guid": "7d5e9050-ed9c-464b-90ff-63ff6ba2d648"
                   }
                 }
               }
@@ -26441,7 +26411,7 @@
                   "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                   "value": {
                     "name": "Hawaiian common",
-                    "guid": "2669c2bf-73d5-48e9-879b-eca6a075bd7e"
+                    "guid": "7d5e9050-ed9c-464b-90ff-63ff6ba2d648"
                   }
                 }
               }
@@ -26456,7 +26426,7 @@
                   "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                   "value": {
                     "name": "Hawaiian common",
-                    "guid": "2669c2bf-73d5-48e9-879b-eca6a075bd7e"
+                    "guid": "7d5e9050-ed9c-464b-90ff-63ff6ba2d648"
                   }
                 }
               }
@@ -26471,7 +26441,7 @@
                   "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                   "value": {
                     "name": "Hawaiian common",
-                    "guid": "2669c2bf-73d5-48e9-879b-eca6a075bd7e"
+                    "guid": "7d5e9050-ed9c-464b-90ff-63ff6ba2d648"
                   }
                 }
               }
@@ -26492,7 +26462,7 @@
                     "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                     "value": {
                       "name": "Hawaiian common",
-                      "guid": "75e48bb2-e21c-44fa-b4f2-052c7ae660e1"
+                      "guid": "ed46a7aa-b8dd-4a22-9638-18e3ba06a22b"
                     }
                   }
                 }
@@ -26550,7 +26520,7 @@
                     "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                     "value": {
                       "name": "Hawaiian common",
-                      "guid": "5835e8d7-b5c5-4c4e-8b30-7ae05dd731f6"
+                      "guid": "bbddd796-18b3-45d8-80e9-e4ceb2b9f0a0"
                     }
                   }
                 }
@@ -26598,7 +26568,7 @@
                   "description": "This example demonstrates how to update all properties of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "UK Imperial (Updated)",
-                    "guid": "b8ab17b1-00d2-4dca-9888-cec4a1c7a479"
+                    "guid": "38ddb406-08bf-417c-94bc-2909be062408"
                   }
                 },
                 "Example 2": {
@@ -26612,7 +26582,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
-                    "guid": "c776e415-8b0c-4f26-b61c-95aa1195c8b8"
+                    "guid": "cc792169-b156-4622-a91d-eb91b683dcbd"
                   }
                 }
               }
@@ -26627,7 +26597,7 @@
                   "description": "This example demonstrates how to update all properties of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "UK Imperial (Updated)",
-                    "guid": "b8ab17b1-00d2-4dca-9888-cec4a1c7a479"
+                    "guid": "38ddb406-08bf-417c-94bc-2909be062408"
                   }
                 },
                 "Example 2": {
@@ -26641,7 +26611,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
-                    "guid": "c776e415-8b0c-4f26-b61c-95aa1195c8b8"
+                    "guid": "cc792169-b156-4622-a91d-eb91b683dcbd"
                   }
                 }
               }
@@ -26656,7 +26626,7 @@
                   "description": "This example demonstrates how to update all properties of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "UK Imperial (Updated)",
-                    "guid": "b8ab17b1-00d2-4dca-9888-cec4a1c7a479"
+                    "guid": "38ddb406-08bf-417c-94bc-2909be062408"
                   }
                 },
                 "Example 2": {
@@ -26670,7 +26640,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
-                    "guid": "c776e415-8b0c-4f26-b61c-95aa1195c8b8"
+                    "guid": "cc792169-b156-4622-a91d-eb91b683dcbd"
                   }
                 }
               }
@@ -26685,7 +26655,7 @@
                   "description": "This example demonstrates how to update all properties of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
                     "name": "UK Imperial (Updated)",
-                    "guid": "b8ab17b1-00d2-4dca-9888-cec4a1c7a479"
+                    "guid": "38ddb406-08bf-417c-94bc-2909be062408"
                   }
                 },
                 "Example 2": {
@@ -26699,7 +26669,7 @@
                   "summary": "Update guid",
                   "description": "This example demonstrates how to update the 'Guid' of the 'UK Imperial' unit system (guid = 00000007-0014-4fff-8fff-0000ffff0000) from the MI_Training database.",
                   "value": {
-                    "guid": "c776e415-8b0c-4f26-b61c-95aa1195c8b8"
+                    "guid": "cc792169-b156-4622-a91d-eb91b683dcbd"
                   }
                 }
               }
@@ -26720,7 +26690,7 @@
                     "description": "This example demonstrates how to create a new unit system for the MI_Training database. Only guid and name can be set as the rest of fields is backend generated and changes via equivalents endpoints.",
                     "value": {
                       "name": "Hawaiian common",
-                      "guid": "04de6fa1-24d0-4c1f-b415-ccf67a798feb"
+                      "guid": "ab0635ac-e6d2-41c8-a084-26f10b27a48f"
                     }
                   }
                 }
