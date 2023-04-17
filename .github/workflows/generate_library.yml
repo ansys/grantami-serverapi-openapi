@@ -36,7 +36,7 @@ jobs:
         cache: maven
     
     - name: "Clean library folder"
-      run: rm -rf ansys-product-library-openapi
+      run: rm -rf ansys-grantami-serverapi-openapi
       
     - name: "Build client library"
       run: mvn -Dbuild-id=${{ github.run_number }} -s .m2/settings.xml compile
