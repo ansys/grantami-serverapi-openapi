@@ -170,8 +170,7 @@ class ListPermissionsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'list[GrantaServerApiListsDtoUserPermissionDto]',
-            202: None,
+            202: 'list[GrantaServerApiListsDtoUserPermissionDto]',
             400: None,
             403: None,
             404: None,
@@ -252,8 +251,7 @@ class ListPermissionsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoUserPermissionDto',
-            202: None,
+            202: 'GrantaServerApiListsDtoUserPermissionDto',
             400: None,
             403: None,
             404: None,
@@ -334,8 +332,7 @@ class ListPermissionsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoUserPermissionDto',
-            202: None,
+            202: 'GrantaServerApiListsDtoUserPermissionDto',
             400: None,
             403: None,
             404: None,
@@ -520,8 +517,7 @@ class ListPermissionsApi(ApiBase):
         auth_settings = []  # noqa: E501
         
         response_type_map = {
-            200: 'GrantaServerApiListsDtoRecordListPermissionFlagsDto',
-            201: None,
+            201: 'GrantaServerApiListsDtoRecordListPermissionFlagsDto',
             400: None,
             403: None,
             404: None,
