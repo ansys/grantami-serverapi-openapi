@@ -48,3 +48,65 @@ the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines
    ```
 
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
+
+
+## Direct use
+
+As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic dedicated 
+libraries.
+We do understand that internal or external users might want to experiment with GRANTA MI Server API functionality that 
+is not exposed via an idiomatic python library. To that extent, the following code snippet demonstrates how to perform 
+the minimal setup required to perform query the API using this library.
+
+```python
+from typing import Optional
+from importlib.metadata import version
+
+from ansys.openapi.common import (
+    ApiClientFactory,
+    ApiClient,
+    generate_user_agent,
+    SessionConfiguration,
+)
+from ansys.grantami.serverapi_openapi import models
+
+SERVICE_PATH = "/proxy/v1.svc"
+MI_AUTH_PATH = "/v1alpha/schema/mi-version"
+GRANTA_APPLICATION_NAME_HEADER = "MI Scripting Toolkit"
+
+
+class Connection(ApiClientFactory):
+    def __init__(self, api_url: str, session_configuration: Optional[SessionConfiguration] = None) -> None:
+        package_name = "ansys-grantami-serverapi-openapi"
+        ver = version(package_name)
+
+        self._full_api_url = api_url.strip("/") + SERVICE_PATH
+        auth_url = self._full_api_url + MI_AUTH_PATH
+
+        super().__init__(auth_url, session_configuration)
+        session_configuration = self._session_configuration
+        session_configuration.headers["X-Granta-ApplicationName"] = GRANTA_APPLICATION_NAME_HEADER
+        session_configuration.headers["User-Agent"] = generate_user_agent(package_name, ver)
+
+    def connect(self) -> ApiClient:
+        self._validate_builder()
+        client = ApiClient(
+            session=self._session,
+            api_url=self._full_api_url,
+            configuration=self._session_configuration,
+        )
+        client.setup_client(models)
+        return client
+
+
+if __name__ == '__main__':
+    from ansys.grantami.serverapi_openapi import api
+    
+    # Update URL and connection method for your system
+    URL = "http://localhost/mi_servicelayer"
+    api_client = Connection(api_url=URL).with_autologon().connect()
+    
+    schema_api = api.SchemaApi(api_client)
+    server_version = schema_api.v1alpha_schema_mi_version_get()
+    print(server_version.version)
+```
