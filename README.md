@@ -50,13 +50,13 @@ the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
 
 
-## Direct use
+## Using this package directly
 
-As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic dedicated 
-libraries.
-We do understand that internal or external users might want to experiment with GRANTA MI Server API functionality that 
+As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic
+libraries written for specific API areas.
+We do understand that internal or external users might want to experiment with Granta MI Server API functionality that 
 is not exposed via an idiomatic python library. To that extent, the following code snippet demonstrates how to perform 
-the minimal setup required to perform query the API using this library.
+the minimal setup required to interact with the API using this library.
 
 ```python
 from typing import Optional
@@ -103,7 +103,7 @@ if __name__ == '__main__':
     from ansys.grantami.serverapi_openapi import api
     
     # Update URL and connection method for your system
-    URL = "http://localhost/mi_servicelayer"
+    URL = "http://my_server_name/mi_servicelayer"
     api_client = Connection(api_url=URL).with_autologon().connect()
     
     schema_api = api.SchemaApi(api_client)
