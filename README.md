@@ -31,10 +31,9 @@ definition. All development is done in the following repositories:
 Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated, the release process differs slightly from
 the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines/dev_practices.html#release-procedures).
 
-1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``Build and Test 
-   Client Library`` workflow was successful.
+1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
 2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (for example, release/0.2).
-3. Make the following changes in ``ansys-<product/service>-<library>-openapi/src/setup.cfg``:
+3. Make the following changes in ``ansys-grantami-serverapi-openapi/pyproject.toml``:
     - Set the ``version`` to ``MAJOR.MINOR``.
     - Set the ``Development Status`` classifier to ``Development Status :: 5 - Production/Stable``.
 4. Commit this file. Push the branch to GitHub and create a new PR for this release that merges it to ``main``.
@@ -49,3 +48,65 @@ the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines
    ```
 
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
+
+
+## Using this package directly
+
+As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic
+libraries written for specific API areas.
+We do understand that internal or external users might want to experiment with Granta MI Server API functionality that 
+is not exposed via an idiomatic python library. To that extent, the following code snippet demonstrates how to perform 
+the minimal setup required to interact with the API using this library.
+
+```python
+from typing import Optional
+from importlib.metadata import version
+
+from ansys.openapi.common import (
+    ApiClientFactory,
+    ApiClient,
+    generate_user_agent,
+    SessionConfiguration,
+)
+from ansys.grantami.serverapi_openapi import models
+
+SERVICE_PATH = "/proxy/v1.svc"
+MI_AUTH_PATH = "/v1alpha/schema/mi-version"
+GRANTA_APPLICATION_NAME_HEADER = "PyGranta ServerAPI"
+
+
+class Connection(ApiClientFactory):
+    def __init__(self, api_url: str, session_configuration: Optional[SessionConfiguration] = None) -> None:
+        package_name = "ansys-grantami-serverapi-openapi"
+        ver = version(package_name)
+
+        self._full_api_url = api_url.strip("/") + SERVICE_PATH
+        auth_url = self._full_api_url + MI_AUTH_PATH
+
+        super().__init__(auth_url, session_configuration)
+        session_configuration = self._session_configuration
+        session_configuration.headers["X-Granta-ApplicationName"] = GRANTA_APPLICATION_NAME_HEADER
+        session_configuration.headers["User-Agent"] = generate_user_agent(package_name, ver)
+
+    def connect(self) -> ApiClient:
+        self._validate_builder()
+        client = ApiClient(
+            session=self._session,
+            api_url=self._full_api_url,
+            configuration=self._session_configuration,
+        )
+        client.setup_client(models)
+        return client
+
+
+if __name__ == '__main__':
+    from ansys.grantami.serverapi_openapi import api
+    
+    # Update URL and connection method for your system
+    URL = "http://my_server_name/mi_servicelayer"
+    api_client = Connection(api_url=URL).with_autologon().connect()
+    
+    schema_api = api.SchemaApi(api_client)
+    server_version = schema_api.v1alpha_schema_mi_version_get()
+    print(server_version.version)
+```
