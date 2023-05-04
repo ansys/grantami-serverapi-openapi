@@ -72,7 +72,7 @@ from ansys.grantami.serverapi_openapi import models
 
 SERVICE_PATH = "/proxy/v1.svc"
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
-GRANTA_APPLICATION_NAME_HEADER = "MI Scripting Toolkit"
+GRANTA_APPLICATION_NAME_HEADER = "PyGranta ServerAPI"
 
 
 class Connection(ApiClientFactory):
