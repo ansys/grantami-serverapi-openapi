@@ -31,10 +31,9 @@ definition. All development is done in the following repositories:
 Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated, the release process differs slightly from
 the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines/dev_practices.html#release-procedures).
 
-1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``Build and Test 
-   Client Library`` workflow was successful.
+1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
 2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (for example, release/0.2).
-3. Make the following changes in ``ansys-<product/service>-<library>-openapi/src/setup.cfg``:
+3. Make the following changes in ``ansys-grantami-serverapi-openapi/pyproject.toml``:
     - Set the ``version`` to ``MAJOR.MINOR``.
     - Set the ``Development Status`` classifier to ``Development Status :: 5 - Production/Stable``.
 4. Commit this file. Push the branch to GitHub and create a new PR for this release that merges it to ``main``.
