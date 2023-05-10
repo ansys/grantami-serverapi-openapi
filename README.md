@@ -28,24 +28,25 @@ definition. All development is done in the following repositories:
 
 ## Releasing
 
-Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated, the release process differs slightly from
-the standard [PyAnsys release guidelines](https://dev.docs.pyansys.com/how-to/releasing.html).
+Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated from the Server API documentation, the 
+versioning scheme will follow the Ansys Granta MI versioning scheme: ``YEAR.RELEASE``, e.g. ``2023.2``.
+
+Release candidates are versioned as ``YEAR.RELEASE.PATCH.rc<ITERATION>``.
+
+The release process follows the standard [PyAnsys release guidelines](https://dev.docs.pyansys.com/how-to/releasing.html).
 
 1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
-2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (for example, release/0.2).
+2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (for example, release/2023.2).
 3. Make the following changes in ``ansys-grantami-serverapi-openapi/pyproject.toml``:
-    - Set the ``version`` to ``MAJOR.MINOR``.
+    - Set the ``version`` to ``MAJOR.MINOR.0rc0``.
     - Set the ``Development Status`` classifier to ``Development Status :: 5 - Production/Stable``.
-4. Commit this file. Push the branch to GitHub and create a new PR for this release that merges it to ``main``.
-   While effort is focused on the release, changes should not be made to either the YAML definition
-   or the ``openapi-client-template``.
-5. Wait for the PyAnsys developers to functionally test the new release. Testers should locally install this
-   branch and use it to run the full suite of tests in the ``main`` branch of the pythonic packages.
-6. Tag the release:
+4. Commit this file. Push the branch to GitHub. Tag the release:
    ```console
-   git tag v<MAJOR.MINOR.0>
+   git tag v<MAJOR.MINOR.0rc0>
    git push origin --tags
    ```
+5. From this point on, changes that would result require regenerating the client code will be made in the ``main`` branch, 
+   then cherry-picked to the release branch. Do not forget to update the version and classifiers before pushing a new tag.
 
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
 
@@ -55,8 +56,28 @@ Once the tag is pushed to GitHub, a workflow will build and publish the release.
 As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic
 libraries written for specific API areas.
 We do understand that internal or external users might want to experiment with Granta MI Server API functionality that 
-is not exposed via an idiomatic python library. To that extent, the following code snippet demonstrates how to perform 
-the minimal setup required to interact with the API using this library.
+is not exposed via an idiomatic python library. To that extent, the following sections demonstrate how to install and
+get started with the library.
+
+### Installation
+
+During active development phases of Granta MI, this repository is kept up to date with new versions of the API 
+documentation. To use the most up-to-date version of this package in another project, add a dependency on the 
+repository's main branch, e.g. with poetry:
+
+```console
+   poetry add git+https://github.com/pyansys/grantami-serverapi-openapi#subdirectory=ansys-grantami-serverapi-openapi
+```
+
+Or with pip:
+
+```console
+   pip install git+https://github.com/pyansys/grantami-serverapi-openapi.git#subdirectory=ansys-grantami-serverapi-openapi
+```
+
+### Minimal setup
+The following code snippet demonstrates how to perform the minimal setup required to interact with the API using this 
+library.
 
 ```python
 from typing import Optional
