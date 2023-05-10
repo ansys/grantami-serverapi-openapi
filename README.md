@@ -29,7 +29,7 @@ definition. All development is done in the following repositories:
 ## Releasing
 
 Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated, the release process differs slightly from
-the standard [PyAnsys release procedure](https://dev.docs.pyansys.com/guidelines/dev_practices.html#release-procedures).
+the standard [PyAnsys release guidelines](https://dev.docs.pyansys.com/how-to/releasing.html).
 
 1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
 2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (for example, release/0.2).
