@@ -34,8 +34,10 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         'record_history_guid': 'str',
         'record_guid': 'str',
         'record_name': 'str',
+        'tree_name': 'str',
         'record_color': 'str',
         'table_identity': 'int',
+        'table_guid': 'str',
         'cubic_spline_status': 'str',
         'version_control_state': 'str',
         'version_number': 'int',
@@ -52,8 +54,10 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         'record_history_guid': 'recordHistoryGuid',
         'record_guid': 'recordGuid',
         'record_name': 'recordName',
+        'tree_name': 'treeName',
         'record_color': 'recordColor',
         'table_identity': 'tableIdentity',
+        'table_guid': 'tableGuid',
         'cubic_spline_status': 'cubicSplineStatus',
         'version_control_state': 'versionControlState',
         'version_number': 'versionNumber',
@@ -69,7 +73,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
     }
 
 
-    def __init__(self, database_key=None, record_history_identity=None, record_identity=None, record_history_guid=None, record_guid=None, record_name=None, record_color=None, table_identity=None, cubic_spline_status=None, version_control_state=None, version_number=None, parent_identity=None, type=None, score=None, sorting_value=None):  # noqa: E501
+    def __init__(self, database_key=None, record_history_identity=None, record_identity=None, record_history_guid=None, record_guid=None, record_name=None, tree_name=None, record_color=None, table_identity=None, table_guid=None, cubic_spline_status=None, version_control_state=None, version_number=None, parent_identity=None, type=None, score=None, sorting_value=None):  # noqa: E501
         """GrantaServerApiSearchSearchResult - a model defined in Swagger"""  # noqa: E501
         self._database_key = None
         self._record_history_identity = None
@@ -77,8 +81,10 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         self._record_history_guid = None
         self._record_guid = None
         self._record_name = None
+        self._tree_name = None
         self._record_color = None
         self._table_identity = None
+        self._table_guid = None
         self._cubic_spline_status = None
         self._version_control_state = None
         self._version_number = None
@@ -99,10 +105,14 @@ class GrantaServerApiSearchSearchResult(ModelBase):
             self.record_guid = record_guid
         if record_name is not None:
             self.record_name = record_name
+        if tree_name is not None:
+            self.tree_name = tree_name
         if record_color is not None:
             self.record_color = record_color
         if table_identity is not None:
             self.table_identity = table_identity
+        if table_guid is not None:
+            self.table_guid = table_guid
         if cubic_spline_status is not None:
             self.cubic_spline_status = cubic_spline_status
         if version_control_state is not None:
@@ -227,6 +237,24 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         self._record_name = record_name
 
     @property
+    def tree_name(self):
+        """Gets the tree_name of this GrantaServerApiSearchSearchResult.  # noqa: E501
+
+        :return: The tree_name of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._tree_name
+
+    @tree_name.setter
+    def tree_name(self, tree_name):
+        """Sets the tree_name of this GrantaServerApiSearchSearchResult.
+
+        :param tree_name: The tree_name of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :type: str
+        """
+        self._tree_name = tree_name
+
+    @property
     def record_color(self):
         """Gets the record_color of this GrantaServerApiSearchSearchResult.  # noqa: E501
 
@@ -261,6 +289,24 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         :type: int
         """
         self._table_identity = table_identity
+
+    @property
+    def table_guid(self):
+        """Gets the table_guid of this GrantaServerApiSearchSearchResult.  # noqa: E501
+
+        :return: The table_guid of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._table_guid
+
+    @table_guid.setter
+    def table_guid(self, table_guid):
+        """Sets the table_guid of this GrantaServerApiSearchSearchResult.
+
+        :param table_guid: The table_guid of this GrantaServerApiSearchSearchResult.  # noqa: E501
+        :type: str
+        """
+        self._table_guid = table_guid
 
     @property
     def cubic_spline_status(self):
