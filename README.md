@@ -46,8 +46,6 @@ The release process follows the standard [PyAnsys release guidelines](https://de
    git tag v<MAJOR.MINOR.0rc0>
    git push origin --tags
    ```
-5. From this point on, changes that would result require regenerating the client code will be made in the ``main`` branch, 
-   then cherry-picked to the release branch. Do not forget to update the version and classifiers before pushing a new tag.
 
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
 
