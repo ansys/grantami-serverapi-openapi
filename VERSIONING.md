@@ -13,8 +13,8 @@ This repository only contains code generated from OpenAPI JSON definition files,
 with Granta MI. Granta MI follows a CalVer-type approach of `YYYY.[1,2]`, with two versions released per year.
 
 These OpenAPI JSON definition files are _backwards-compatible_, but not _forwards-compatible_. In other words,
-the API definition from an older version of Granta MI is compatible with a newer version, but not the other way
-round.
+the API definition from an older version of Granta MI is compatible with the Server API interface in a newer
+version of Granta MI, but not the other way round.
 
 Given that multiple versions of Granta MI are often used in parallel for a number of releases, a key requirement
 of the `ansys-grantami-serverapi-openapi` package and other PyGranta packages is that users can quickly and easily
@@ -26,11 +26,11 @@ Granta MI version number as the first two parts of the version number for releas
 * Granta MI 2023 R2 -> `ansys-grantami-serverapi-openapi` `v2023.2.0`, `v2023.2.1`, etc.
 * Granta MI 2024 R1 -> `ansys-grantami-serverapi-openapi` `v2024.1.0`, `v2024.1.1`, etc.
 
-As a result, to install a version that is guaranteed to work with your version of Granta MI, just specify:
+As a result, to install a version that is guaranteed to work with your version of Granta MI, you just need to specify:
 
 `pip install ansys-grantami-serverapi-openapi ~= 2023.1.0`
 
-# Potential alternatives
+# Alternative strategies that were considered
 
 ## SemVer, with a mapping between SemVer versions and Granta MI versions
 
