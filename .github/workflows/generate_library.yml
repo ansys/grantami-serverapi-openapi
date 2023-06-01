@@ -18,7 +18,6 @@ jobs:
     - name: "Checkout repository"
       uses: actions/checkout@v3
       with:
-        token: ${{ steps.get_workflow_token.outputs.token }}
         ref: ${{ github.event.pull_request.head.ref }}
     
     - name: "Set up JDK 11"
