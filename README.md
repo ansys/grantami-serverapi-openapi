@@ -28,16 +28,12 @@ definition. All development is done in the following repositories:
 
 ## Releasing
 
-Since the ``ansys-grantami-serverapi-openapi`` package is auto-generated from the Server API documentation, the 
-versioning scheme will follow the Ansys Granta MI versioning scheme: ``YEAR.RELEASE``, e.g. ``2023.2``.
-
-Release candidates are versioned as ``YEAR.RELEASE.0rc<ITERATION>``.
+This package follows [Semantic Versioning](https://semver.org/). Release candidates are versioned as ``MAJOR.MINOR.0rc<ITERATION>``.
 
 The release process follows the standard [PyAnsys release guidelines](https://dev.docs.pyansys.com/how-to/releasing.html).
 
 1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
-2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` (in this case release/YEAR.RELEASE,
-   for example release/2023.2).
+2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR``, .
 3. Make the following changes in ``ansys-grantami-serverapi-openapi/pyproject.toml``:
     - Set the ``version`` to ``MAJOR.MINOR.0rc0``.
     - Set the ``Development Status`` classifier to ``Development Status :: 5 - Production/Stable``.
