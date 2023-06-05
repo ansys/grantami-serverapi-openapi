@@ -42,7 +42,8 @@
                 <projectName>${package-name}</projectName>
                 <projectDescription>${package-description}</projectDescription>
                 <pythonicPackageName>ansys-grantami-recordlists</pythonicPackageName>
-                <pythonicPackageUrl>https://github.com/pyansys/grantami-recordlists</pythonicPackageUrl>
+                <pythonicPackageUrl>https://github.com/ansys/grantami-recordlists</pythonicPackageUrl>
+                <homepageUrl>https://github.com/ansys/grantami-serverapi-openapi</homepageUrl>
                 <packageVersion>${package-version}</packageVersion>
               </configOptions>
             </configuration>
