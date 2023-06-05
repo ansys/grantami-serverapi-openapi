@@ -38,8 +38,6 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/ansys/grantami-serverapi-openapi"
-Source = "https://github.com/ansys/grantami-serverapi-openapi"
-Documentation = "https://github.com/ansys/grantami-serverapi-openapi"
 
 [project.optional-dependencies]
 test = [
