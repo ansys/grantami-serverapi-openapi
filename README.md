@@ -50,9 +50,13 @@ Once the tag is pushed to GitHub, a workflow will build and publish the release.
 
 As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic
 libraries written for specific API areas.
+
 We do understand that internal or external users might want to experiment with Granta MI Server API functionality that 
 is not exposed via an idiomatic python library. To that extent, the following sections demonstrate how to install and
 get started with the library.
+
+## Dependencies
+The ansys.grantami.serverapi-openapi package requires Granta MI 2023 R2.
 
 ### Installation
 
