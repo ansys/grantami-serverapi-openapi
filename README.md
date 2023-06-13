@@ -55,8 +55,8 @@ We do understand that internal or external users might want to experiment with G
 is not exposed via an idiomatic python library. To that extent, the following sections demonstrate how to install and
 get started with the library.
 
-## Dependencies
-The ansys.grantami.serverapi-openapi package requires Granta MI 2023 R2.
+### Requirements
+The `ansys.grantami.serverapi-openapi` package requires Granta MI 2023 R2.
 
 ### Installation
 
