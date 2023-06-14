@@ -31,13 +31,13 @@ jobs:
       run: rm -rf ansys-grantami-serverapi-openapi
 
     - name: "Get build-id (dependabot)"
-      if: ${{ github.actor == 'pyansys-bot[bot]' }}
+      if: ${{ github.actor != 'pyansys-bot[bot]' }}
       run: |
         version_number=$(grep -oP 'version\s=\s"\d\.\d\.\d\.dev\K\d+' ./ansys-grantami-serverapi-openapi/pyproject.toml)
         echo "version_number=$version_number" >> "$GITHUB_ENV"
 
     - name: "Get build-id"
-      if: ${{ github.actor != 'pyansys-bot[bot]' }}
+      if: ${{ github.actor == 'pyansys-bot[bot]' }}
       run: |
         echo "version_number=${{ github.run_number }}" >> "$GITHUB_ENV"
 
