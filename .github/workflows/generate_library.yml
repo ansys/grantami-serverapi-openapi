@@ -30,8 +30,7 @@ jobs:
     - name: "Get build-id (dependabot)"
       if: ${{ github.actor != 'pyansys-bot[bot]' }}
       run: |
-        ls -r
-        version_number=$(grep -oP 'version\s=\s"\d\.\d\.\d\.dev\K\d+' ./**/ansys-grantami-serverapi-openapi/pyproject.toml)
+        version_number=$(grep -oP 'version\s=\s"\d\.\d\.\d\.dev\K\d+' ./ansys-grantami-serverapi-openapi/pyproject.toml)
         echo "version_number=$version_number" >> "$GITHUB_ENV"
 
     - name: "Get build-id"
