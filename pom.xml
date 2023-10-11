@@ -44,7 +44,9 @@
                 <pythonicPackageName>ansys-grantami-recordlists</pythonicPackageName>
                 <pythonicPackageUrl>https://github.com/ansys/grantami-recordlists</pythonicPackageUrl>
                 <homepageUrl>https://github.com/ansys/grantami-serverapi-openapi</homepageUrl>
-                <packageVersion>${package-version}</packageVersion>
+                <packageVersion>${project.version}</packageVersion>
+                <buildNumber>${build-id}</buildNumber>
+                <isReleaseBuild>${is-release}</isReleaseBuild>
               </configOptions>
             </configuration>
           </execution>
