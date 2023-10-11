@@ -35,13 +35,13 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
 
     """
     swagger_types = {
-        "results": "list[GrantaServerApiDataExportRecordWithData]",
         "failures": "list[GrantaServerApiDataExportExportFailure]",
+        "results": "list[GrantaServerApiDataExportRecordWithData]",
     }
 
     attribute_map = {
-        "results": "results",
         "failures": "failures",
+        "results": "results",
     }
 
     subtype_mapping = {
@@ -49,7 +49,7 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         "failures": "GrantaServerApiDataExportExportFailure",
     }
 
-    def __init__(self, *, failures: "Optional[List[GrantaServerApiDataExportExportFailure]]" = None, results: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None) -> None:
+    def __init__(self, *, failures: "Optional[List[GrantaServerApiDataExportExportFailure]]" = None, results: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None,) -> None:
         """GrantaServerApiDataExportDataExportResponse - a model defined in Swagger
 
         Parameters

@@ -46,7 +46,7 @@ class GrantaServerApiSchemaConstantsConstantsInfo(ModelBase):
         "constants": "GrantaServerApiSchemaSlimEntitiesSlimConstant",
     }
 
-    def __init__(self, *, constants: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimConstant]]" = None) -> None:
+    def __init__(self, *, constants: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimConstant]]" = None,) -> None:
         """GrantaServerApiSchemaConstantsConstantsInfo - a model defined in Swagger
 
         Parameters

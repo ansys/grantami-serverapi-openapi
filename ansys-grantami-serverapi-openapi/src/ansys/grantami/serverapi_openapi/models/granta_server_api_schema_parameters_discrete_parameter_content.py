@@ -36,15 +36,17 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(GrantaServerApiSch
 
     """
     swagger_types = {
-        "type": "str",
-        "parameter_value": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameter_range": "GrantaServerApiSchemaParametersDiscreteRange",
+        "parameter_value": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
-        "parameter_value": "parameterValue",
+        "parameter": "parameter",
         "parameter_range": "parameterRange",
+        "parameter_value": "parameterValue",
+        "type": "type",
     }
 
     subtype_mapping = {
@@ -52,7 +54,7 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(GrantaServerApiSch
         "parameterRange": "GrantaServerApiSchemaParametersDiscreteRange",
     }
 
-    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_range: "Optional[GrantaServerApiSchemaParametersDiscreteRange]" = None, parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, type: "str" = 'discrete') -> None:
+    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_range: "Optional[GrantaServerApiSchemaParametersDiscreteRange]" = None, parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, type: "str" = 'discrete',) -> None:
         """GrantaServerApiSchemaParametersDiscreteParameterContent - a model defined in Swagger
 
         Parameters

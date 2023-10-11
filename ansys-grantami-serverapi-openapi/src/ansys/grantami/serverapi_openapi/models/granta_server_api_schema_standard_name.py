@@ -35,21 +35,21 @@ class GrantaServerApiSchemaStandardName(ModelBase):
 
     """
     swagger_types = {
+        "guid": "str",
         "mapped_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "mapped_cross_database_record_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "mapped_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "mapped_record_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "mapped_cross_database_record_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "mapped_attributes": "mappedAttributes",
+        "mapped_cross_database_record_link_groups": "mappedCrossDatabaseRecordLinkGroups",
         "mapped_parameters": "mappedParameters",
         "mapped_record_link_groups": "mappedRecordLinkGroups",
-        "mapped_cross_database_record_link_groups": "mappedCrossDatabaseRecordLinkGroups",
         "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
@@ -59,7 +59,7 @@ class GrantaServerApiSchemaStandardName(ModelBase):
         "mappedCrossDatabaseRecordLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, mapped_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_cross_database_record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, mapped_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_cross_database_record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, mapped_record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaStandardName - a model defined in Swagger
 
         Parameters

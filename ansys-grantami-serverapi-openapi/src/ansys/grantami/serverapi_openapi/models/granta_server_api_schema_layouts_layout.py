@@ -35,24 +35,24 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
 
     """
     swagger_types = {
-        "sections": "list[GrantaServerApiSchemaLayoutsLayoutSection]",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "sections": "list[GrantaServerApiSchemaLayoutsLayoutSection]",
     }
 
     attribute_map = {
-        "sections": "sections",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "sections": "sections",
     }
 
     subtype_mapping = {
         "sections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, sections: "Optional[List[GrantaServerApiSchemaLayoutsLayoutSection]]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, sections: "Optional[List[GrantaServerApiSchemaLayoutsLayoutSection]]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayout - a model defined in Swagger
 
         Parameters

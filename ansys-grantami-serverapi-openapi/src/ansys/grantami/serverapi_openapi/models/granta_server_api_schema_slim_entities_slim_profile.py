@@ -35,25 +35,25 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfile(ModelBase):
 
     """
     swagger_types = {
-        "key": "str",
-        "guid": "str",
         "group_name": "str",
+        "guid": "str",
         "is_implicit": "bool",
+        "key": "str",
         "name": "str",
     }
 
     attribute_map = {
-        "key": "key",
-        "guid": "guid",
         "group_name": "groupName",
+        "guid": "guid",
         "is_implicit": "isImplicit",
+        "key": "key",
         "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, is_implicit: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, is_implicit: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimProfile - a model defined in Swagger
 
         Parameters

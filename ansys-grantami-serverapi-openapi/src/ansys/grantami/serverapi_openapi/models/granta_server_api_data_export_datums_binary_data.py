@@ -35,23 +35,23 @@ class GrantaServerApiDataExportDatumsBinaryData(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
-        "description": "str",
         "content_type": "str",
         "data": "str",
+        "description": "str",
+        "name": "str",
     }
 
     attribute_map = {
-        "name": "name",
-        "description": "description",
         "content_type": "contentType",
         "data": "data",
+        "description": "description",
+        "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, content_type: "Optional[str]" = None, data: "Optional[str]" = None, description: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, content_type: "Optional[str]" = None, data: "Optional[str]" = None, description: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportDatumsBinaryData - a model defined in Swagger
 
         Parameters

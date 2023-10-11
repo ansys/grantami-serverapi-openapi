@@ -36,26 +36,26 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(GrantaServerApiSearchDa
 
     """
     swagger_types = {
-        "type": "str",
+        "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "gte": "float",
         "lte": "float",
+        "type": "str",
         "unit": "str",
-        "constraints": "list[GrantaServerApiSearchParameterConstraint]",
     }
 
     attribute_map = {
-        "type": "type",
+        "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
+        "type": "type",
         "unit": "unit",
-        "constraints": "constraints",
     }
 
     subtype_mapping = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
-    def __init__(self, *, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]" = None, gte: "Optional[float]" = None, lte: "Optional[float]" = None, type: "str" = 'mathsFunctional', unit: "Optional[str]" = None) -> None:
+    def __init__(self, *, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]" = None, gte: "Optional[float]" = None, lte: "Optional[float]" = None, type: "str" = 'mathsFunctional', unit: "Optional[str]" = None,) -> None:
         """GrantaServerApiSearchMathsFunctionalDatumCriterion - a model defined in Swagger
 
         Parameters

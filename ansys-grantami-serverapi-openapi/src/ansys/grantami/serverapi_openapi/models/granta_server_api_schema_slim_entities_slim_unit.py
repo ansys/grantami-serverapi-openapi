@@ -35,19 +35,19 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
 
     """
     swagger_types = {
-        "symbol": "str",
         "guid": "str",
+        "symbol": "str",
     }
 
     attribute_map = {
-        "symbol": "symbol",
         "guid": "guid",
+        "symbol": "symbol",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, symbol: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, symbol: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimUnit - a model defined in Swagger
 
         Parameters

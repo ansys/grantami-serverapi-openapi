@@ -35,43 +35,43 @@ class GrantaServerApiSearchSearchResult(ModelBase):
 
     """
     swagger_types = {
+        "cubic_spline_status": "str",
         "database_key": "str",
+        "parent_identity": "int",
+        "record_color": "str",
+        "record_guid": "str",
+        "record_history_guid": "str",
         "record_history_identity": "int",
         "record_identity": "int",
-        "record_history_guid": "str",
-        "record_guid": "str",
         "record_name": "str",
-        "tree_name": "str",
-        "record_color": "str",
-        "table_identity": "int",
-        "table_guid": "str",
-        "cubic_spline_status": "str",
-        "version_control_state": "str",
-        "version_number": "int",
-        "parent_identity": "int",
-        "type": "GrantaServerApiRecordType",
         "score": "float",
         "sorting_value": "GrantaServerApiSearchSortingValue",
+        "table_guid": "str",
+        "table_identity": "int",
+        "tree_name": "str",
+        "type": "GrantaServerApiRecordType",
+        "version_control_state": "str",
+        "version_number": "int",
     }
 
     attribute_map = {
+        "cubic_spline_status": "cubicSplineStatus",
         "database_key": "databaseKey",
+        "parent_identity": "parentIdentity",
+        "record_color": "recordColor",
+        "record_guid": "recordGuid",
+        "record_history_guid": "recordHistoryGuid",
         "record_history_identity": "recordHistoryIdentity",
         "record_identity": "recordIdentity",
-        "record_history_guid": "recordHistoryGuid",
-        "record_guid": "recordGuid",
         "record_name": "recordName",
-        "tree_name": "treeName",
-        "record_color": "recordColor",
-        "table_identity": "tableIdentity",
-        "table_guid": "tableGuid",
-        "cubic_spline_status": "cubicSplineStatus",
-        "version_control_state": "versionControlState",
-        "version_number": "versionNumber",
-        "parent_identity": "parentIdentity",
-        "type": "type",
         "score": "score",
         "sorting_value": "sortingValue",
+        "table_guid": "tableGuid",
+        "table_identity": "tableIdentity",
+        "tree_name": "treeName",
+        "type": "type",
+        "version_control_state": "versionControlState",
+        "version_number": "versionNumber",
     }
 
     subtype_mapping = {
@@ -79,7 +79,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         "sortingValue": "GrantaServerApiSearchSortingValue",
     }
 
-    def __init__(self, *, cubic_spline_status: "Optional[str]" = None, database_key: "Optional[str]" = None, parent_identity: "Optional[int]" = None, record_color: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_guid: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_identity: "Optional[int]" = None, record_name: "Optional[str]" = None, score: "Optional[float]" = None, sorting_value: "Optional[GrantaServerApiSearchSortingValue]" = None, table_guid: "Optional[str]" = None, table_identity: "Optional[int]" = None, tree_name: "Optional[str]" = None, type: "Optional[GrantaServerApiRecordType]" = None, version_control_state: "Optional[str]" = None, version_number: "Optional[int]" = None) -> None:
+    def __init__(self, *, cubic_spline_status: "Optional[str]" = None, database_key: "Optional[str]" = None, parent_identity: "Optional[int]" = None, record_color: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_guid: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_identity: "Optional[int]" = None, record_name: "Optional[str]" = None, score: "Optional[float]" = None, sorting_value: "Optional[GrantaServerApiSearchSortingValue]" = None, table_guid: "Optional[str]" = None, table_identity: "Optional[int]" = None, tree_name: "Optional[str]" = None, type: "Optional[GrantaServerApiRecordType]" = None, version_control_state: "Optional[str]" = None, version_number: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchSearchResult - a model defined in Swagger
 
         Parameters

@@ -36,15 +36,15 @@ class GrantaServerApiSchemaLayoutsLayoutItem(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "underlying_entity_guid": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "underlying_entity_guid": "str",
     }
 
     attribute_map = {
-        "underlying_entity_guid": "underlyingEntityGuid",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "underlying_entity_guid": "underlyingEntityGuid",
     }
 
     subtype_mapping = {
@@ -55,7 +55,7 @@ class GrantaServerApiSchemaLayoutsLayoutItem(ModelBase):
         "link".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsLayoutLinkItem",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, underlying_entity_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, underlying_entity_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutItem - a model defined in Swagger
 
         Parameters

@@ -46,7 +46,7 @@ class GrantaServerApiListsDtoRecordListItems(ModelBase):
         "items": "GrantaServerApiListsDtoListItem",
     }
 
-    def __init__(self, *, items: "Optional[List[GrantaServerApiListsDtoListItem]]" = None) -> None:
+    def __init__(self, *, items: "Optional[List[GrantaServerApiListsDtoListItem]]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListItems - a model defined in Swagger
 
         Parameters

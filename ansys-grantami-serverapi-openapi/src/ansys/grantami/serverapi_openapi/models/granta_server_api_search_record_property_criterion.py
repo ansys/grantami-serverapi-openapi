@@ -52,7 +52,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         "innerCriterion": "GrantaServerApiSearchDatumCriterion",
     }
 
-    def __init__(self, *, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]" = None, type: "str" = 'recordProperty') -> None:
+    def __init__(self, *, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]" = None, type: "str" = 'recordProperty',) -> None:
         """GrantaServerApiSearchRecordPropertyCriterion - a model defined in Swagger
 
         Parameters

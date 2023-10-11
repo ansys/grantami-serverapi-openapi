@@ -36,20 +36,30 @@ class GrantaServerApiAggregationsIntegerAttributeHistogramAggregation(GrantaServ
 
     """
     swagger_types = {
-        "histogram": "GrantaServerApiAggregationsHistogram",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "histogram": "GrantaServerApiAggregationsHistogram",
+        "type": "str",
     }
 
     attribute_map = {
-        "histogram": "histogram",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "histogram": "histogram",
+        "type": "type",
     }
 
     subtype_mapping = {
         "histogram": "GrantaServerApiAggregationsHistogram",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'integerHistogram', histogram: "Optional[GrantaServerApiAggregationsHistogram]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'integerHistogram', histogram: "Optional[GrantaServerApiAggregationsHistogram]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsIntegerAttributeHistogramAggregation - a model defined in Swagger
 
         Parameters

@@ -35,27 +35,27 @@ class GrantaServerApiListsDtoRecordListProperties(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
+        "awaiting_approval": "bool",
         "description": "str",
+        "internal_use": "bool",
+        "name": "str",
         "notes": "str",
         "published": "bool",
-        "awaiting_approval": "bool",
-        "internal_use": "bool",
     }
 
     attribute_map = {
-        "name": "name",
+        "awaiting_approval": "awaitingApproval",
         "description": "description",
+        "internal_use": "internalUse",
+        "name": "name",
         "notes": "notes",
         "published": "published",
-        "awaiting_approval": "awaitingApproval",
-        "internal_use": "internalUse",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, description: "Optional[str]" = None, internal_use: "Optional[bool]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, published: "Optional[bool]" = None) -> None:
+    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, description: "Optional[str]" = None, internal_use: "Optional[bool]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, published: "Optional[bool]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListProperties - a model defined in Swagger
 
         Parameters

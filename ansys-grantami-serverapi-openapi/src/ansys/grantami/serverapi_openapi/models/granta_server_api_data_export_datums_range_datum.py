@@ -36,16 +36,24 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
 
     """
     swagger_types = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "str",
         "datum_value": "GrantaServerApiDataExportDatumsRange",
         "is_estimated": "bool",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
         "unit": "str",
     }
 
     attribute_map = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "datum_value": "datumValue",
         "is_estimated": "isEstimated",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
         "unit": "unit",
     }
 
@@ -53,7 +61,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(GrantaServerApiDataExportDatumsA
         "datumValue": "GrantaServerApiDataExportDatumsRange",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'range', datum_value: "Optional[GrantaServerApiDataExportDatumsRange]" = None, is_estimated: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, unit: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'range', datum_value: "Optional[GrantaServerApiDataExportDatumsRange]" = None, is_estimated: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, unit: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportDatumsRangeDatum - a model defined in Swagger
 
         Parameters

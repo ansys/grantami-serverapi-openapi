@@ -48,7 +48,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(Granta
     subtype_mapping = {
     }
 
-    def __init__(self, *, number_of_parameter_values: "Optional[int]" = None, type: "str" = 'floatFunctionalGraph') -> None:
+    def __init__(self, *, number_of_parameter_values: "Optional[int]" = None, type: "str" = 'floatFunctionalGraph',) -> None:
         """GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

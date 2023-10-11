@@ -50,7 +50,7 @@ class GrantaServerApiAggregationsIntegerFixedWidthHistogramAggregationDatumCrite
     subtype_mapping = {
     }
 
-    def __init__(self, *, interval: "Optional[float]" = None, offset: "Optional[float]" = None, type: "str" = 'integerFixedWidthHistogram') -> None:
+    def __init__(self, *, interval: "Optional[float]" = None, offset: "Optional[float]" = None, type: "str" = 'integerFixedWidthHistogram',) -> None:
         """GrantaServerApiAggregationsIntegerFixedWidthHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

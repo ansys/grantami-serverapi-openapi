@@ -36,26 +36,44 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(GrantaServerApiDataEx
 
     """
     swagger_types = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "datum_type": "str",
         "graph_type": "str",
-        "series": "list[GrantaServerApiDataExportDatumsSeries]",
+        "is_estimated": "bool",
         "is_logarithmic": "bool",
         "is_range": "bool",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
+        "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
+        "series": "list[GrantaServerApiDataExportDatumsSeries]",
         "show_as_table": "bool",
+        "unit_symbol": "str",
+        "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
     attribute_map = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
         "graph_type": "graphType",
-        "series": "series",
+        "is_estimated": "isEstimated",
         "is_logarithmic": "isLogarithmic",
         "is_range": "isRange",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
+        "parameters": "parameters",
+        "series": "series",
         "show_as_table": "showAsTable",
+        "unit_symbol": "unitSymbol",
+        "x_axis_parameter": "xAxisParameter",
     }
 
     subtype_mapping = {
         "series": "GrantaServerApiDataExportDatumsSeries",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'floatFunctional', graph_type: "str" = 'series', is_estimated: "Optional[bool]" = None, is_logarithmic: "Optional[bool]" = None, is_range: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, series: "Optional[List[GrantaServerApiDataExportDatumsSeries]]" = None, show_as_table: "Optional[bool]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'floatFunctional', graph_type: "str" = 'series', is_estimated: "Optional[bool]" = None, is_logarithmic: "Optional[bool]" = None, is_range: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, series: "Optional[List[GrantaServerApiDataExportDatumsSeries]]" = None, show_as_table: "Optional[bool]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,) -> None:
         """GrantaServerApiDataExportDatumsFunctionalSeriesDatum - a model defined in Swagger
 
         Parameters

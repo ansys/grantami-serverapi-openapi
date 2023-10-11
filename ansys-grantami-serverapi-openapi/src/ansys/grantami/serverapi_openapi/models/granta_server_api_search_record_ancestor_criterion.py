@@ -50,7 +50,7 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
     subtype_mapping = {
     }
 
-    def __init__(self, *, ancestor_identity: "Optional[int]" = None, direct_parent_only: "Optional[bool]" = None, type: "str" = 'recordAncestor') -> None:
+    def __init__(self, *, ancestor_identity: "Optional[int]" = None, direct_parent_only: "Optional[bool]" = None, type: "str" = 'recordAncestor',) -> None:
         """GrantaServerApiSearchRecordAncestorCriterion - a model defined in Swagger
 
         Parameters

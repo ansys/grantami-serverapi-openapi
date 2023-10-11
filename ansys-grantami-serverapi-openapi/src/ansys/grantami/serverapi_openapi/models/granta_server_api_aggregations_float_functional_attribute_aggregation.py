@@ -36,21 +36,31 @@ class GrantaServerApiAggregationsFloatFunctionalAttributeAggregation(GrantaServe
 
     """
     swagger_types = {
-        "x_axis_parameter_identity_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemInt32]",
-        "x_axis_parameter_guid_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemGuid]",
-        "show_as_table_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]",
-        "minimum_number_of_series": "int",
-        "maximum_number_of_series": "int",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "maximum_number_of_series": "int",
+        "minimum_number_of_series": "int",
+        "show_as_table_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]",
+        "type": "str",
+        "x_axis_parameter_guid_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemGuid]",
+        "x_axis_parameter_identity_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemInt32]",
     }
 
     attribute_map = {
-        "x_axis_parameter_identity_values": "xAxisParameterIdentityValues",
-        "x_axis_parameter_guid_values": "xAxisParameterGuidValues",
-        "show_as_table_values": "showAsTableValues",
-        "minimum_number_of_series": "minimumNumberOfSeries",
-        "maximum_number_of_series": "maximumNumberOfSeries",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "maximum_number_of_series": "maximumNumberOfSeries",
+        "minimum_number_of_series": "minimumNumberOfSeries",
+        "show_as_table_values": "showAsTableValues",
+        "type": "type",
+        "x_axis_parameter_guid_values": "xAxisParameterGuidValues",
+        "x_axis_parameter_identity_values": "xAxisParameterIdentityValues",
     }
 
     subtype_mapping = {
@@ -59,7 +69,7 @@ class GrantaServerApiAggregationsFloatFunctionalAttributeAggregation(GrantaServe
         "showAsTableValues": "GrantaServerApiAggregationsValueWithCountOfSystemBoolean",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'floatFunctionalGraph', maximum_number_of_series: "Optional[int]" = None, minimum_number_of_series: "Optional[int]" = None, show_as_table_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]" = None, type: "str" = 'attribute', x_axis_parameter_guid_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid]]" = None, x_axis_parameter_identity_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32]]" = None) -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'floatFunctionalGraph', maximum_number_of_series: "Optional[int]" = None, minimum_number_of_series: "Optional[int]" = None, show_as_table_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]" = None, type: "str" = 'attribute', x_axis_parameter_guid_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid]]" = None, x_axis_parameter_identity_values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32]]" = None,) -> None:
         """GrantaServerApiAggregationsFloatFunctionalAttributeAggregation - a model defined in Swagger
 
         Parameters

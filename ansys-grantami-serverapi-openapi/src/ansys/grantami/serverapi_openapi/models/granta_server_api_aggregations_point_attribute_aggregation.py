@@ -36,21 +36,31 @@ class GrantaServerApiAggregationsPointAttributeAggregation(GrantaServerApiAggreg
 
     """
     swagger_types = {
-        "minimum": "float",
-        "maximum": "float",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "maximum": "float",
+        "minimum": "float",
+        "type": "str",
     }
 
     attribute_map = {
-        "minimum": "minimum",
-        "maximum": "maximum",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "maximum": "maximum",
+        "minimum": "minimum",
+        "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'point', maximum: "Optional[float]" = None, minimum: "Optional[float]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'point', maximum: "Optional[float]" = None, minimum: "Optional[float]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsPointAttributeAggregation - a model defined in Swagger
 
         Parameters

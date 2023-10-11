@@ -35,22 +35,22 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
 
     """
     swagger_types = {
+        "results": "list[GrantaServerApiSearchSearchResult]",
         "search_identifier": "str",
         "total_result_count": "int",
-        "results": "list[GrantaServerApiSearchSearchResult]",
     }
 
     attribute_map = {
+        "results": "results",
         "search_identifier": "searchIdentifier",
         "total_result_count": "totalResultCount",
-        "results": "results",
     }
 
     subtype_mapping = {
         "results": "GrantaServerApiSearchSearchResult",
     }
 
-    def __init__(self, *, results: "Optional[List[GrantaServerApiSearchSearchResult]]" = None, search_identifier: "Optional[str]" = None, total_result_count: "Optional[int]" = None) -> None:
+    def __init__(self, *, results: "Optional[List[GrantaServerApiSearchSearchResult]]" = None, search_identifier: "Optional[str]" = None, total_result_count: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchSearchResponse - a model defined in Swagger
 
         Parameters

@@ -35,22 +35,22 @@ class GrantaServerApiListsDtoUserPermissionDto(ModelBase):
 
     """
     swagger_types = {
-        "user_or_group_name": "str",
-        "user_or_group_identifier": "str",
         "flags": "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
+        "user_or_group_identifier": "str",
+        "user_or_group_name": "str",
     }
 
     attribute_map = {
-        "user_or_group_name": "userOrGroupName",
-        "user_or_group_identifier": "userOrGroupIdentifier",
         "flags": "flags",
+        "user_or_group_identifier": "userOrGroupIdentifier",
+        "user_or_group_name": "userOrGroupName",
     }
 
     subtype_mapping = {
         "flags": "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
     }
 
-    def __init__(self, *, flags: "Optional[GrantaServerApiListsDtoRecordListPermissionFlagsDto]" = None, user_or_group_identifier: "Optional[str]" = None, user_or_group_name: "Optional[str]" = None) -> None:
+    def __init__(self, *, flags: "Optional[GrantaServerApiListsDtoRecordListPermissionFlagsDto]" = None, user_or_group_identifier: "Optional[str]" = None, user_or_group_name: "Optional[str]" = None,) -> None:
         """GrantaServerApiListsDtoUserPermissionDto - a model defined in Swagger
 
         Parameters

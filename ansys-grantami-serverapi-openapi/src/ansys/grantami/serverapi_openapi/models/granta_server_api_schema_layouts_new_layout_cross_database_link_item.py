@@ -36,23 +36,25 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(GrantaServerApi
 
     """
     swagger_types = {
+        "guid": "str",
         "item_type": "str",
+        "link_group_guid": "str",
         "source_database_guid": "str",
         "source_table_guid": "str",
-        "link_group_guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "item_type": "itemType",
+        "link_group_guid": "linkGroupGuid",
         "source_database_guid": "sourceDatabaseGuid",
         "source_table_guid": "sourceTableGuid",
-        "link_group_guid": "linkGroupGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, item_type: "str" = 'crossDatabaseLink', link_group_guid: "Optional[str]" = None, source_database_guid: "Optional[str]" = None, source_table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, item_type: "str" = 'crossDatabaseLink', link_group_guid: "Optional[str]" = None, source_database_guid: "Optional[str]" = None, source_table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem - a model defined in Swagger
 
         Parameters

@@ -36,20 +36,34 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(GrantaServerA
 
     """
     swagger_types = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "datum_type": "str",
         "graph_type": "str",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
+        "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
         "series": "list[GrantaServerApiDataExportDatumsDiscreteSeries]",
+        "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
     attribute_map = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
         "graph_type": "graphType",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
+        "parameters": "parameters",
         "series": "series",
+        "x_axis_parameter": "xAxisParameter",
     }
 
     subtype_mapping = {
         "series": "GrantaServerApiDataExportDatumsDiscreteSeries",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'discreteFunctional', graph_type: "str" = 'series', meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, series: "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeries]]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'discreteFunctional', graph_type: "str" = 'series', meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, series: "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeries]]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,) -> None:
         """GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum - a model defined in Swagger
 
         Parameters

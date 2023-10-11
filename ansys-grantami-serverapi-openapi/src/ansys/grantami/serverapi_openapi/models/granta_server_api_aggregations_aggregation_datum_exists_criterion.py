@@ -46,7 +46,7 @@ class GrantaServerApiAggregationsAggregationDatumExistsCriterion(ModelBase):
         "type": "GrantaServerApiAttributeType",
     }
 
-    def __init__(self, *, type: "Optional[GrantaServerApiAttributeType]" = None) -> None:
+    def __init__(self, *, type: "Optional[GrantaServerApiAttributeType]" = None,) -> None:
         """GrantaServerApiAggregationsAggregationDatumExistsCriterion - a model defined in Swagger
 
         Parameters

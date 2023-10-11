@@ -36,17 +36,33 @@ class GrantaServerApiSchemaAttributesHyperlinkAttribute(GrantaServerApiSchemaAtt
 
     """
     swagger_types = {
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "name": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
+        "name": "name",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, type: "str" = 'hyperlink') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, type: "str" = 'hyperlink',) -> None:
         """GrantaServerApiSchemaAttributesHyperlinkAttribute - a model defined in Swagger
 
         Parameters

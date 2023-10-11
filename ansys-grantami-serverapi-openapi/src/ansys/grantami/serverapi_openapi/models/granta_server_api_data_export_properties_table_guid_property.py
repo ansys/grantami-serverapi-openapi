@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesTableGuidProperty(GrantaServerApiDataEx
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'tableGuid', table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'tableGuid', table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesTableGuidProperty - a model defined in Swagger
 
         Parameters

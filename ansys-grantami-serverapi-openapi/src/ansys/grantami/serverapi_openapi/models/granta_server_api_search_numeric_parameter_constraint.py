@@ -37,28 +37,30 @@ class GrantaServerApiSearchNumericParameterConstraint(GrantaServerApiSearchParam
     """
     swagger_types = {
         "gte": "float",
-        "lte": "float",
-        "unit": "str",
-        "scale_type": "str",
         "interpolation_type": "str",
+        "lte": "float",
+        "parameter": "GrantaServerApiObjectIdentifier",
+        "scale_type": "str",
         "significant_figures": "int",
         "type": "str",
+        "unit": "str",
     }
 
     attribute_map = {
         "gte": "gte",
-        "lte": "lte",
-        "unit": "unit",
-        "scale_type": "scaleType",
         "interpolation_type": "interpolationType",
+        "lte": "lte",
+        "parameter": "parameter",
+        "scale_type": "scaleType",
         "significant_figures": "significantFigures",
         "type": "type",
+        "unit": "unit",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, gte: "Optional[float]" = None, interpolation_type: "Optional[str]" = None, lte: "Optional[float]" = None, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None, scale_type: "Optional[str]" = None, significant_figures: "Optional[int]" = None, type: "str" = 'numeric', unit: "Optional[str]" = None) -> None:
+    def __init__(self, *, gte: "Optional[float]" = None, interpolation_type: "Optional[str]" = None, lte: "Optional[float]" = None, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None, scale_type: "Optional[str]" = None, significant_figures: "Optional[int]" = None, type: "str" = 'numeric', unit: "Optional[str]" = None,) -> None:
         """GrantaServerApiSearchNumericParameterConstraint - a model defined in Swagger
 
         Parameters

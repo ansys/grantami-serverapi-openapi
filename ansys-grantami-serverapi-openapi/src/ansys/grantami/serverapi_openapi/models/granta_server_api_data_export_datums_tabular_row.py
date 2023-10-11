@@ -35,19 +35,19 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
 
     """
     swagger_types = {
-        "row_guid": "str",
-        "linking_value": "str",
-        "row_number": "int",
-        "local_data": "list[GrantaServerApiDataExportDatumsDatum]",
         "linked_records": "list[GrantaServerApiIntegrationDataExportRecordReference]",
+        "linking_value": "str",
+        "local_data": "list[GrantaServerApiDataExportDatumsDatum]",
+        "row_guid": "str",
+        "row_number": "int",
     }
 
     attribute_map = {
-        "row_guid": "rowGuid",
-        "linking_value": "linkingValue",
-        "row_number": "rowNumber",
-        "local_data": "localData",
         "linked_records": "linkedRecords",
+        "linking_value": "linkingValue",
+        "local_data": "localData",
+        "row_guid": "rowGuid",
+        "row_number": "rowNumber",
     }
 
     subtype_mapping = {
@@ -55,7 +55,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         "linkedRecords": "GrantaServerApiIntegrationDataExportRecordReference",
     }
 
-    def __init__(self, *, linked_records: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None, linking_value: "Optional[str]" = None, local_data: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, row_guid: "Optional[str]" = None, row_number: "Optional[int]" = None) -> None:
+    def __init__(self, *, linked_records: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None, linking_value: "Optional[str]" = None, local_data: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, row_guid: "Optional[str]" = None, row_number: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportDatumsTabularRow - a model defined in Swagger
 
         Parameters

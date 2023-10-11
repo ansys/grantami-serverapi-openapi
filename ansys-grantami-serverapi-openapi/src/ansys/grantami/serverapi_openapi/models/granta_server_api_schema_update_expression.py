@@ -35,24 +35,24 @@ class GrantaServerApiSchemaUpdateExpression(ModelBase):
 
     """
     swagger_types = {
-        "value": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
-        "unit": "unit",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "unit": "unit",
+        "value": "value",
     }
 
     subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateExpression - a model defined in Swagger
 
         Parameters

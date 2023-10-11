@@ -36,21 +36,23 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(GrantaServerApiSearc
 
     """
     swagger_types = {
-        "any": "list[float]",
         "_none": "list[float]",
+        "any": "list[float]",
+        "parameter": "GrantaServerApiObjectIdentifier",
         "type": "str",
     }
 
     attribute_map = {
-        "any": "any",
         "_none": "none",
+        "any": "any",
+        "parameter": "parameter",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, _none: "Optional[List[float]]" = None, any: "Optional[List[float]]" = None, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None, type: "str" = 'discreteValue') -> None:
+    def __init__(self, *, _none: "Optional[List[float]]" = None, any: "Optional[List[float]]" = None, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None, type: "str" = 'discreteValue',) -> None:
         """GrantaServerApiSearchDiscreteParameterValueConstraint - a model defined in Swagger
 
         Parameters

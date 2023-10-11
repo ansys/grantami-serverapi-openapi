@@ -35,17 +35,17 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
 
     """
     swagger_types = {
+        "link_source_type": "GrantaServerApiIntegrationSchemaLinkSourceType",
+        "parameter_mappings": "list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]",
         "source": "GrantaServerApiObjectIdentifier",
         "target_identity": "int",
-        "parameter_mappings": "list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]",
-        "link_source_type": "GrantaServerApiIntegrationSchemaLinkSourceType",
     }
 
     attribute_map = {
+        "link_source_type": "linkSourceType",
+        "parameter_mappings": "parameterMappings",
         "source": "source",
         "target_identity": "targetIdentity",
-        "parameter_mappings": "parameterMappings",
-        "link_source_type": "linkSourceType",
     }
 
     subtype_mapping = {
@@ -54,7 +54,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         "linkSourceType": "GrantaServerApiIntegrationSchemaLinkSourceType",
     }
 
-    def __init__(self, *, link_source_type: "Optional[GrantaServerApiIntegrationSchemaLinkSourceType]" = None, parameter_mappings: "Optional[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]]" = None, source: "Optional[GrantaServerApiObjectIdentifier]" = None, target_identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, link_source_type: "Optional[GrantaServerApiIntegrationSchemaLinkSourceType]" = None, parameter_mappings: "Optional[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]]" = None, source: "Optional[GrantaServerApiObjectIdentifier]" = None, target_identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier - a model defined in Swagger
 
         Parameters

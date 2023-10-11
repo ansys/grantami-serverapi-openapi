@@ -49,7 +49,7 @@ class GrantaServerApiDataExportDatumsDiscreteSeries(ModelBase):
         "points": "GrantaServerApiDataExportDatumsDiscreteSeriesPoint",
     }
 
-    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeriesPoint]]" = None) -> None:
+    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeriesPoint]]" = None,) -> None:
         """GrantaServerApiDataExportDatumsDiscreteSeries - a model defined in Swagger
 
         Parameters

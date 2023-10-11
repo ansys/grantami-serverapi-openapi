@@ -46,7 +46,7 @@ class GrantaServerApiSchemaDiscreteValuesInfo(ModelBase):
         "discreteValues": "GrantaServerApiSchemaDiscreteValue",
     }
 
-    def __init__(self, *, discrete_values: "Optional[List[GrantaServerApiSchemaDiscreteValue]]" = None) -> None:
+    def __init__(self, *, discrete_values: "Optional[List[GrantaServerApiSchemaDiscreteValue]]" = None,) -> None:
         """GrantaServerApiSchemaDiscreteValuesInfo - a model defined in Swagger
 
         Parameters

@@ -35,19 +35,19 @@ class GrantaServerApiIntegrationSchemaSecurityGroups(ModelBase):
 
     """
     swagger_types = {
-        "read_group": "str",
         "admin_group": "str",
+        "read_group": "str",
     }
 
     attribute_map = {
-        "read_group": "readGroup",
         "admin_group": "adminGroup",
+        "read_group": "readGroup",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, admin_group: "Optional[str]" = None, read_group: "Optional[str]" = None) -> None:
+    def __init__(self, *, admin_group: "Optional[str]" = None, read_group: "Optional[str]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaSecurityGroups - a model defined in Swagger
 
         Parameters

@@ -36,20 +36,20 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayout(ModelBase):
     """
     swagger_types = {
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "name": "str",
     }
 
     attribute_map = {
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimLayout - a model defined in Swagger
 
         Parameters

@@ -36,20 +36,28 @@ class GrantaServerApiSearchAttributeExistsCriterion(GrantaServerApiSearchAttribu
 
     """
     swagger_types = {
-        "inner_criterion": "GrantaServerApiSearchDatumExistsCriterion",
         "attribute_criterion_type": "str",
+        "guid": "str",
+        "identity": "int",
+        "inner_criterion": "GrantaServerApiSearchDatumExistsCriterion",
+        "is_meta_attribute": "bool",
+        "type": "str",
     }
 
     attribute_map = {
-        "inner_criterion": "innerCriterion",
         "attribute_criterion_type": "attributeCriterionType",
+        "guid": "guid",
+        "identity": "identity",
+        "inner_criterion": "innerCriterion",
+        "is_meta_attribute": "isMetaAttribute",
+        "type": "type",
     }
 
     subtype_mapping = {
         "innerCriterion": "GrantaServerApiSearchDatumExistsCriterion",
     }
 
-    def __init__(self, *, attribute_criterion_type: "str" = 'exists', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumExistsCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_criterion_type: "str" = 'exists', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumExistsCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiSearchAttributeExistsCriterion - a model defined in Swagger
 
         Parameters

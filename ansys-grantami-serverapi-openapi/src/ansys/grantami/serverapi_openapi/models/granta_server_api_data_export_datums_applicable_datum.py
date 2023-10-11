@@ -36,17 +36,17 @@ class GrantaServerApiDataExportDatumsApplicableDatum(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "not_applicable": "bool",
-        "attribute_identity": "int",
         "attribute_guid": "str",
+        "attribute_identity": "int",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
     }
 
     attribute_map = {
-        "not_applicable": "notApplicable",
-        "attribute_identity": "attributeIdentity",
         "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
     }
 
     subtype_mapping = {
@@ -70,7 +70,7 @@ class GrantaServerApiDataExportDatumsApplicableDatum(ModelBase):
         "shortText".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsShortTextDatum",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None,) -> None:
         """GrantaServerApiDataExportDatumsApplicableDatum - a model defined in Swagger
 
         Parameters

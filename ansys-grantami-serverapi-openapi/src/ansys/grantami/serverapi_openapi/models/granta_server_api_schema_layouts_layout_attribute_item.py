@@ -36,21 +36,27 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
 
     """
     swagger_types = {
-        "item_type": "str",
         "attribute_type": "GrantaServerApiAttributeType",
-        "required": "bool",
-        "read_only": "bool",
+        "guid": "str",
+        "item_type": "str",
         "meta_attributes": "list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]",
+        "name": "str",
+        "read_only": "bool",
+        "required": "bool",
         "tabular_columns": "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]",
+        "underlying_entity_guid": "str",
     }
 
     attribute_map = {
-        "item_type": "itemType",
         "attribute_type": "attributeType",
-        "required": "required",
-        "read_only": "readOnly",
+        "guid": "guid",
+        "item_type": "itemType",
         "meta_attributes": "metaAttributes",
+        "name": "name",
+        "read_only": "readOnly",
+        "required": "required",
         "tabular_columns": "tabularColumns",
+        "underlying_entity_guid": "underlyingEntityGuid",
     }
 
     subtype_mapping = {
@@ -59,7 +65,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(GrantaServerApiSchemaLayou
         "tabularColumns": "GrantaServerApiSchemaLayoutsLayoutTabularColumn",
     }
 
-    def __init__(self, *, attribute_type: "Optional[GrantaServerApiAttributeType]" = None, guid: "Optional[str]" = None, item_type: "str" = 'attribute', meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]]" = None, name: "Optional[str]" = None, read_only: "Optional[bool]" = None, required: "Optional[bool]" = None, tabular_columns: "Optional[List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]]" = None, underlying_entity_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_type: "Optional[GrantaServerApiAttributeType]" = None, guid: "Optional[str]" = None, item_type: "str" = 'attribute', meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]]" = None, name: "Optional[str]" = None, read_only: "Optional[bool]" = None, required: "Optional[bool]" = None, tabular_columns: "Optional[List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]]" = None, underlying_entity_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutAttributeItem - a model defined in Swagger
 
         Parameters

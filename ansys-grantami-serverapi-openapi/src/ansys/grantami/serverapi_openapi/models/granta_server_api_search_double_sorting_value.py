@@ -36,19 +36,19 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
 
     """
     swagger_types = {
-        "value": "float",
         "type": "str",
+        "value": "float",
     }
 
     attribute_map = {
-        "value": "value",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'double', value: "Optional[float]" = None) -> None:
+    def __init__(self, *, type: "str" = 'double', value: "Optional[float]" = None,) -> None:
         """GrantaServerApiSearchDoubleSortingValue - a model defined in Swagger
 
         Parameters

@@ -49,7 +49,7 @@ class GrantaServerApiSchemaParametersParameterValueType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSchemaParametersParameterValueType - a model defined in Swagger
 
         """

@@ -46,7 +46,7 @@ class GrantaServerApiSchemaAttributesAttributesInfo(ModelBase):
         "attributes": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
     }
 
-    def __init__(self, *, attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimAttribute]]" = None) -> None:
+    def __init__(self, *, attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimAttribute]]" = None,) -> None:
         """GrantaServerApiSchemaAttributesAttributesInfo - a model defined in Swagger
 
         Parameters

@@ -36,27 +36,31 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
 
     """
     swagger_types = {
-        "local_data": "list[GrantaServerApiDataExportSimpleAttributeToExport]",
-        "target_table_guid": "str",
-        "target_database_guid": "str",
-        "target_attribute_identity": "int",
         "attribute_type": "str",
-        "link_attribute_type": "GrantaServerApiLinkAttributeType",
-        "export_in_reversed_direction": "bool",
-        "record_properties": "list[GrantaServerApiRecordProperty]",
         "attributes": "list[GrantaServerApiDataExportAttributeToExport]",
+        "export_in_reversed_direction": "bool",
+        "guid": "str",
+        "identity": "int",
+        "link_attribute_type": "GrantaServerApiLinkAttributeType",
+        "local_data": "list[GrantaServerApiDataExportSimpleAttributeToExport]",
+        "record_properties": "list[GrantaServerApiRecordProperty]",
+        "target_attribute_identity": "int",
+        "target_database_guid": "str",
+        "target_table_guid": "str",
     }
 
     attribute_map = {
-        "local_data": "localData",
-        "target_table_guid": "targetTableGuid",
-        "target_database_guid": "targetDatabaseGuid",
-        "target_attribute_identity": "targetAttributeIdentity",
         "attribute_type": "attributeType",
-        "link_attribute_type": "linkAttributeType",
-        "export_in_reversed_direction": "exportInReversedDirection",
-        "record_properties": "recordProperties",
         "attributes": "attributes",
+        "export_in_reversed_direction": "exportInReversedDirection",
+        "guid": "guid",
+        "identity": "identity",
+        "link_attribute_type": "linkAttributeType",
+        "local_data": "localData",
+        "record_properties": "recordProperties",
+        "target_attribute_identity": "targetAttributeIdentity",
+        "target_database_guid": "targetDatabaseGuid",
+        "target_table_guid": "targetTableGuid",
     }
 
     subtype_mapping = {
@@ -66,7 +70,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         "attributes": "GrantaServerApiDataExportAttributeToExport",
     }
 
-    def __init__(self, *, attribute_type: "str" = 'link', attributes: "Optional[List[GrantaServerApiDataExportAttributeToExport]]" = None, export_in_reversed_direction: "Optional[bool]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]" = None, local_data: "Optional[List[GrantaServerApiDataExportSimpleAttributeToExport]]" = None, record_properties: "Optional[List[GrantaServerApiRecordProperty]]" = None, target_attribute_identity: "Optional[int]" = None, target_database_guid: "Optional[str]" = None, target_table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_type: "str" = 'link', attributes: "Optional[List[GrantaServerApiDataExportAttributeToExport]]" = None, export_in_reversed_direction: "Optional[bool]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]" = None, local_data: "Optional[List[GrantaServerApiDataExportSimpleAttributeToExport]]" = None, record_properties: "Optional[List[GrantaServerApiRecordProperty]]" = None, target_attribute_identity: "Optional[int]" = None, target_database_guid: "Optional[str]" = None, target_table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportLinkAttributeToExport - a model defined in Swagger
 
         Parameters

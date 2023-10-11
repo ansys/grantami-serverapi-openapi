@@ -36,19 +36,25 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(GrantaSer
 
     """
     swagger_types = {
+        "guid": "str",
         "include_indirect_links": "bool",
+        "name": "str",
+        "reverse_name": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "include_indirect_links": "includeIndirectLinks",
+        "name": "name",
+        "reverse_name": "reverseName",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, include_indirect_links: "Optional[bool]" = None, name: "Optional[str]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'static') -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, include_indirect_links: "Optional[bool]" = None, name: "Optional[str]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'static',) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup - a model defined in Swagger
 
         Parameters

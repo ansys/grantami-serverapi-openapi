@@ -37,27 +37,27 @@ class GrantaServerApiSchemaUpdateDatabase(ModelBase):
     swagger_types = {
         "author": "str",
         "company": "str",
-        "notes": "str",
         "currency_code": "str",
-        "version_guid": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "notes": "str",
+        "version_guid": "str",
     }
 
     attribute_map = {
         "author": "author",
         "company": "company",
-        "notes": "notes",
         "currency_code": "currencyCode",
-        "version_guid": "versionGuid",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "notes": "notes",
+        "version_guid": "versionGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, author: "Optional[str]" = None, company: "Optional[str]" = None, currency_code: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, version_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, author: "Optional[str]" = None, company: "Optional[str]" = None, currency_code: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, version_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateDatabase - a model defined in Swagger
 
         Parameters

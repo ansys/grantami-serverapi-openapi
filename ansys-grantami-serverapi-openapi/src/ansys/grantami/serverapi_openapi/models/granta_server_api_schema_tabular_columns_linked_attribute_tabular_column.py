@@ -37,19 +37,35 @@ class GrantaServerApiSchemaTabularColumnsLinkedAttributeTabularColumn(GrantaServ
     """
     swagger_types = {
         "column_type": "str",
+        "display_names": "dict(str, str)",
+        "guid": "str",
         "linked_attribute": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
+        "name": "str",
+        "roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "show_as_link": "bool",
+        "summary_row_enabled": "bool",
+        "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "summary_row_text": "str",
     }
 
     attribute_map = {
         "column_type": "columnType",
+        "display_names": "displayNames",
+        "guid": "guid",
         "linked_attribute": "linkedAttribute",
+        "name": "name",
+        "roll_up_type": "rollUpType",
+        "show_as_link": "showAsLink",
+        "summary_row_enabled": "summaryRowEnabled",
+        "summary_row_roll_up_type": "summaryRowRollUpType",
+        "summary_row_text": "summaryRowText",
     }
 
     subtype_mapping = {
         "linkedAttribute": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
     }
 
-    def __init__(self, *, column_type: "str" = 'linkedAttribute', display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, linked_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None) -> None:
+    def __init__(self, *, column_type: "str" = 'linkedAttribute', display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, linked_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaTabularColumnsLinkedAttributeTabularColumn - a model defined in Swagger
 
         Parameters

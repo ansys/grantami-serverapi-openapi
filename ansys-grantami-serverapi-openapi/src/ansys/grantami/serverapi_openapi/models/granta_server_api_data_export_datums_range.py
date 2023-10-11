@@ -36,22 +36,22 @@ class GrantaServerApiDataExportDatumsRange(ModelBase):
     """
     swagger_types = {
         "high_value": "float",
-        "low_value": "float",
         "high_value_is_inclusive": "bool",
+        "low_value": "float",
         "low_value_is_inclusive": "bool",
     }
 
     attribute_map = {
         "high_value": "highValue",
-        "low_value": "lowValue",
         "high_value_is_inclusive": "highValueIsInclusive",
+        "low_value": "lowValue",
         "low_value_is_inclusive": "lowValueIsInclusive",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, high_value: "Optional[float]" = None, high_value_is_inclusive: "Optional[bool]" = None, low_value: "Optional[float]" = None, low_value_is_inclusive: "Optional[bool]" = None) -> None:
+    def __init__(self, *, high_value: "Optional[float]" = None, high_value_is_inclusive: "Optional[bool]" = None, low_value: "Optional[float]" = None, low_value_is_inclusive: "Optional[bool]" = None,) -> None:
         """GrantaServerApiDataExportDatumsRange - a model defined in Swagger
 
         Parameters

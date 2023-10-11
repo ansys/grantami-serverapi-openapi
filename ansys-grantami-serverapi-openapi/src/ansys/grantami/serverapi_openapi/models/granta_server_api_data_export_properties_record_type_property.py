@@ -49,7 +49,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(GrantaServerApiDataE
         "recordType": "GrantaServerApiRecordType",
     }
 
-    def __init__(self, *, property_name: "str" = 'recordType', record_type: "Optional[GrantaServerApiRecordType]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'recordType', record_type: "Optional[GrantaServerApiRecordType]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesRecordTypeProperty - a model defined in Swagger
 
         Parameters

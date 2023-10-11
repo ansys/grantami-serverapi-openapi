@@ -36,11 +36,17 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
 
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "name": "str",
         "section_detail_type": "str",
         "section_items": "list[GrantaServerApiSchemaLayoutsLayoutItem]",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
+        "name": "name",
         "section_detail_type": "sectionDetailType",
         "section_items": "sectionItems",
     }
@@ -49,7 +55,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         "sectionItems": "GrantaServerApiSchemaLayoutsLayoutItem",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, section_detail_type: "str" = 'full', section_items: "Optional[List[GrantaServerApiSchemaLayoutsLayoutItem]]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, section_detail_type: "str" = 'full', section_items: "Optional[List[GrantaServerApiSchemaLayoutsLayoutItem]]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsFullLayoutSection - a model defined in Swagger
 
         Parameters

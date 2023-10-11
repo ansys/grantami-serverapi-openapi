@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(GrantaServerApiDat
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'releasedDate', released_date: "Optional[datetime]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'releasedDate', released_date: "Optional[datetime]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesReleasedDateProperty - a model defined in Swagger
 
         Parameters

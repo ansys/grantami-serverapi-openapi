@@ -35,29 +35,29 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
 
     """
     swagger_types = {
-        "folder_guid": "str",
+        "data_length": "int",
         "description": "str",
         "extension": "str",
-        "data_length": "int",
-        "path": "str",
-        "name": "str",
+        "folder_guid": "str",
         "guid": "str",
+        "name": "str",
+        "path": "str",
     }
 
     attribute_map = {
-        "folder_guid": "folderGuid",
+        "data_length": "dataLength",
         "description": "description",
         "extension": "extension",
-        "data_length": "dataLength",
-        "path": "path",
-        "name": "name",
+        "folder_guid": "folderGuid",
         "guid": "guid",
+        "name": "name",
+        "path": "path",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, data_length: "Optional[int]" = None, description: "Optional[str]" = None, extension: "Optional[str]" = None, folder_guid: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, path: "Optional[str]" = None) -> None:
+    def __init__(self, *, data_length: "Optional[int]" = None, description: "Optional[str]" = None, extension: "Optional[str]" = None, folder_guid: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, path: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaFilesFileHeader - a model defined in Swagger
 
         Parameters

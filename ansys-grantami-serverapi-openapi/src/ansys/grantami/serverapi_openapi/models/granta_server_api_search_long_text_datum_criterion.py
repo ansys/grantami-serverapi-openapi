@@ -36,19 +36,19 @@ class GrantaServerApiSearchLongTextDatumCriterion(GrantaServerApiSearchDatumCrit
 
     """
     swagger_types = {
-        "value": "str",
         "type": "str",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'longText', value: "Optional[str]" = None) -> None:
+    def __init__(self, *, type: "str" = 'longText', value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSearchLongTextDatumCriterion - a model defined in Swagger
 
         Parameters

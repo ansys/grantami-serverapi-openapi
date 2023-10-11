@@ -36,20 +36,30 @@ class GrantaServerApiAggregationsDateTimeAttributeHistogramAggregation(GrantaSer
 
     """
     swagger_types = {
-        "histogram": "GrantaServerApiAggregationsDateTimeHistogram",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "histogram": "GrantaServerApiAggregationsDateTimeHistogram",
+        "type": "str",
     }
 
     attribute_map = {
-        "histogram": "histogram",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "histogram": "histogram",
+        "type": "type",
     }
 
     subtype_mapping = {
         "histogram": "GrantaServerApiAggregationsDateTimeHistogram",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'dateTimeHistogram', histogram: "Optional[GrantaServerApiAggregationsDateTimeHistogram]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'dateTimeHistogram', histogram: "Optional[GrantaServerApiAggregationsDateTimeHistogram]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsDateTimeAttributeHistogramAggregation - a model defined in Swagger
 
         Parameters

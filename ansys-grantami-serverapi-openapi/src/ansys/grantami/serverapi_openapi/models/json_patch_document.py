@@ -49,7 +49,7 @@ class JsonPatchDocument(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, op: "Optional[str]" = None, path: "Optional[str]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, op: "Optional[str]" = None, path: "Optional[str]" = None, value: "Optional[str]" = None,) -> None:
         """JsonPatchDocument - a model defined in Swagger
 
         Parameters

@@ -35,19 +35,19 @@ class GrantaServerApiSchemaAttributesValidateAttributeRequest(ModelBase):
 
     """
     swagger_types = {
-        "value": "str",
         "record_history_guid": "str",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
         "record_history_guid": "recordHistoryGuid",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, record_history_guid: "Optional[str]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, record_history_guid: "Optional[str]" = None, value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaAttributesValidateAttributeRequest - a model defined in Swagger
 
         Parameters

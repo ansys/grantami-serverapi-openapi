@@ -46,7 +46,7 @@ class GrantaServerApiSchemaDatabasesInfo(ModelBase):
         "databases": "GrantaServerApiSchemaSlimEntitiesSlimDatabase",
     }
 
-    def __init__(self, *, databases: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase]]" = None) -> None:
+    def __init__(self, *, databases: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase]]" = None,) -> None:
         """GrantaServerApiSchemaDatabasesInfo - a model defined in Swagger
 
         Parameters

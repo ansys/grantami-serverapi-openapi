@@ -49,7 +49,7 @@ class GrantaServerApiListsDtoListCriterion(ModelBase):
         "recordList".lower(): "#/components/schemas/GrantaServerApiListsDtoRecordListSearchCriterion",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiListsDtoListCriterion - a model defined in Swagger
 
         """

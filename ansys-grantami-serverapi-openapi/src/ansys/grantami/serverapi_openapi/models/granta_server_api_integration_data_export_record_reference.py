@@ -35,19 +35,19 @@ class GrantaServerApiIntegrationDataExportRecordReference(ModelBase):
 
     """
     swagger_types = {
-        "record_history_identity": "int",
         "database_key": "str",
+        "record_history_identity": "int",
     }
 
     attribute_map = {
-        "record_history_identity": "recordHistoryIdentity",
         "database_key": "databaseKey",
+        "record_history_identity": "recordHistoryIdentity",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_key: "Optional[str]" = None, record_history_identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, database_key: "Optional[str]" = None, record_history_identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiIntegrationDataExportRecordReference - a model defined in Swagger
 
         Parameters

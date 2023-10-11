@@ -36,20 +36,30 @@ class GrantaServerApiAggregationsLinkAttributeAggregation(GrantaServerApiAggrega
 
     """
     swagger_types = {
-        "local_aggregations": "list[GrantaServerApiAggregationsAttributeAggregation]",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "local_aggregations": "list[GrantaServerApiAggregationsAttributeAggregation]",
+        "type": "str",
     }
 
     attribute_map = {
-        "local_aggregations": "localAggregations",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "local_aggregations": "localAggregations",
+        "type": "type",
     }
 
     subtype_mapping = {
         "localAggregations": "GrantaServerApiAggregationsAttributeAggregation",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'link', local_aggregations: "Optional[List[GrantaServerApiAggregationsAttributeAggregation]]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'link', local_aggregations: "Optional[List[GrantaServerApiAggregationsAttributeAggregation]]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsLinkAttributeAggregation - a model defined in Swagger
 
         Parameters

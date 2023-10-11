@@ -36,17 +36,17 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
     """
     swagger_types = {
         "attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "constants": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "units": "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
     }
 
     attribute_map = {
         "attributes": "attributes",
-        "parameters": "parameters",
         "constants": "constants",
         "expressions": "expressions",
+        "parameters": "parameters",
         "units": "units",
     }
 
@@ -58,7 +58,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         "units": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    def __init__(self, *, attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, constants: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, units: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimUnit]]" = None) -> None:
+    def __init__(self, *, attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, constants: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, units: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimUnit]]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnitUsage - a model defined in Swagger
 
         Parameters

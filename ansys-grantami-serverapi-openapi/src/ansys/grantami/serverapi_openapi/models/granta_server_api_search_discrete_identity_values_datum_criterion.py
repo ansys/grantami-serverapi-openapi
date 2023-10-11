@@ -36,23 +36,23 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(GrantaServerApiS
 
     """
     swagger_types = {
+        "_none": "list[int]",
         "all": "list[int]",
         "any": "list[int]",
-        "_none": "list[int]",
         "type": "str",
     }
 
     attribute_map = {
+        "_none": "none",
         "all": "all",
         "any": "any",
-        "_none": "none",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, _none: "Optional[List[int]]" = None, all: "Optional[List[int]]" = None, any: "Optional[List[int]]" = None, type: "str" = 'discreteIdentityValues') -> None:
+    def __init__(self, *, _none: "Optional[List[int]]" = None, all: "Optional[List[int]]" = None, any: "Optional[List[int]]" = None, type: "str" = 'discreteIdentityValues',) -> None:
         """GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion - a model defined in Swagger
 
         Parameters

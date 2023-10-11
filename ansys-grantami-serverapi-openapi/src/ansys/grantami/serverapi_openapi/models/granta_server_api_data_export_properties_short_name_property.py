@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(GrantaServerApiDataEx
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'shortName', short_name: "Optional[str]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'shortName', short_name: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesShortNameProperty - a model defined in Swagger
 
         Parameters

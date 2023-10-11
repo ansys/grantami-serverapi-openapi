@@ -36,17 +36,19 @@ class GrantaServerApiSearchRelevanceSortCriterion(GrantaServerApiSearchSortCrite
 
     """
     swagger_types = {
+        "sort_direction": "GrantaServerApiSearchSortDirection",
         "type": "str",
     }
 
     attribute_map = {
+        "sort_direction": "sortDirection",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, type: "str" = 'relevance') -> None:
+    def __init__(self, *, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, type: "str" = 'relevance',) -> None:
         """GrantaServerApiSearchRelevanceSortCriterion - a model defined in Swagger
 
         Parameters

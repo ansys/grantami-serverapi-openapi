@@ -35,30 +35,30 @@ class GrantaServerApiParameterInfo(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
-        "identity": "int",
-        "unit_symbol": "str",
-        "scale_type": "str",
-        "interpolation_type": "str",
-        "parameter_type": "str",
         "default_value": "GrantaServerApiDataExportDatumsParameterValue",
+        "identity": "int",
+        "interpolation_type": "str",
+        "name": "str",
+        "parameter_type": "str",
+        "scale_type": "str",
+        "unit_symbol": "str",
     }
 
     attribute_map = {
-        "name": "name",
-        "identity": "identity",
-        "unit_symbol": "unitSymbol",
-        "scale_type": "scaleType",
-        "interpolation_type": "interpolationType",
-        "parameter_type": "parameterType",
         "default_value": "defaultValue",
+        "identity": "identity",
+        "interpolation_type": "interpolationType",
+        "name": "name",
+        "parameter_type": "parameterType",
+        "scale_type": "scaleType",
+        "unit_symbol": "unitSymbol",
     }
 
     subtype_mapping = {
         "defaultValue": "GrantaServerApiDataExportDatumsParameterValue",
     }
 
-    def __init__(self, *, default_value: "Optional[GrantaServerApiDataExportDatumsParameterValue]" = None, identity: "Optional[int]" = None, interpolation_type: "Optional[str]" = None, name: "Optional[str]" = None, parameter_type: "Optional[str]" = None, scale_type: "Optional[str]" = None, unit_symbol: "Optional[str]" = None) -> None:
+    def __init__(self, *, default_value: "Optional[GrantaServerApiDataExportDatumsParameterValue]" = None, identity: "Optional[int]" = None, interpolation_type: "Optional[str]" = None, name: "Optional[str]" = None, parameter_type: "Optional[str]" = None, scale_type: "Optional[str]" = None, unit_symbol: "Optional[str]" = None,) -> None:
         """GrantaServerApiParameterInfo - a model defined in Swagger
 
         Parameters

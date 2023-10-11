@@ -32,9 +32,7 @@ def test_polymorphic_child_class_exists(cls):
 @pytest.mark.parametrize("cls", MONOMORPHIC_MODELS.values())
 def test_monomorphic_model_raises_notimplemented(cls):
     kwargs = {}
-    for param in inspect.getfullargspec(cls.__init__).args:
-        if param == "self":
-            continue
+    for param in inspect.getfullargspec(cls.__init__).kwonlyargs:
         kwargs[param] = f"{param}Value"
     
     with pytest.raises(NotImplementedError):

@@ -35,21 +35,21 @@ class GrantaServerApiSchemaUpdateProfileTable(ModelBase):
 
     """
     swagger_types = {
-        "subset_guid": "str",
-        "layout_guid": "str",
         "guid": "str",
+        "layout_guid": "str",
+        "subset_guid": "str",
     }
 
     attribute_map = {
-        "subset_guid": "subsetGuid",
-        "layout_guid": "layoutGuid",
         "guid": "guid",
+        "layout_guid": "layoutGuid",
+        "subset_guid": "subsetGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, layout_guid: "Optional[str]" = None, subset_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, layout_guid: "Optional[str]" = None, subset_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateProfileTable - a model defined in Swagger
 
         Parameters

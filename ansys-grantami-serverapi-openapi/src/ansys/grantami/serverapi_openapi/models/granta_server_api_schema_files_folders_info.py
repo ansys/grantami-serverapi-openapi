@@ -46,7 +46,7 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
         "folders": "GrantaServerApiSchemaFilesFolder",
     }
 
-    def __init__(self, *, folders: "Optional[List[GrantaServerApiSchemaFilesFolder]]" = None) -> None:
+    def __init__(self, *, folders: "Optional[List[GrantaServerApiSchemaFilesFolder]]" = None,) -> None:
         """GrantaServerApiSchemaFilesFoldersInfo - a model defined in Swagger
 
         Parameters

@@ -51,7 +51,7 @@ class GrantaServerApiSearchLinkingValueMatchBehaviour(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchLinkingValueMatchBehaviour - a model defined in Swagger
 
         """

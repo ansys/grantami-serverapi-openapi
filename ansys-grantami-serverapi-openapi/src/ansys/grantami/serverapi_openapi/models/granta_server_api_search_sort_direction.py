@@ -49,7 +49,7 @@ class GrantaServerApiSearchSortDirection(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchSortDirection - a model defined in Swagger
 
         """

@@ -36,20 +36,20 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
     """
     swagger_types = {
         "curve_label": "str",
-        "transpose_axes": "bool",
-        "use_logarithmic_scale": "bool",
         "expression": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
         "free_parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameter_contents": "list[GrantaServerApiSchemaParametersParameterContent]",
+        "transpose_axes": "bool",
+        "use_logarithmic_scale": "bool",
     }
 
     attribute_map = {
         "curve_label": "curveLabel",
-        "transpose_axes": "transposeAxes",
-        "use_logarithmic_scale": "useLogarithmicScale",
         "expression": "expression",
         "free_parameter": "freeParameter",
         "parameter_contents": "parameterContents",
+        "transpose_axes": "transposeAxes",
+        "use_logarithmic_scale": "useLogarithmicScale",
     }
 
     subtype_mapping = {
@@ -58,7 +58,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         "parameterContents": "GrantaServerApiSchemaParametersParameterContent",
     }
 
-    def __init__(self, *, curve_label: "Optional[str]" = None, expression: "Optional[GrantaServerApiSchemaSlimEntitiesSlimExpression]" = None, free_parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_contents: "Optional[List[GrantaServerApiSchemaParametersParameterContent]]" = None, transpose_axes: "Optional[bool]" = None, use_logarithmic_scale: "Optional[bool]" = None) -> None:
+    def __init__(self, *, curve_label: "Optional[str]" = None, expression: "Optional[GrantaServerApiSchemaSlimEntitiesSlimExpression]" = None, free_parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_contents: "Optional[List[GrantaServerApiSchemaParametersParameterContent]]" = None, transpose_axes: "Optional[bool]" = None, use_logarithmic_scale: "Optional[bool]" = None,) -> None:
         """GrantaServerApiSchemaAttributesMathsContent - a model defined in Swagger
 
         Parameters

@@ -36,19 +36,27 @@ class GrantaServerApiDataExportDatumsShortTextDatum(GrantaServerApiDataExportDat
 
     """
     swagger_types = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "str",
         "datum_value": "str",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
     }
 
     attribute_map = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "datum_value": "datumValue",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'shortText', datum_value: "Optional[str]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'shortText', datum_value: "Optional[str]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None,) -> None:
         """GrantaServerApiDataExportDatumsShortTextDatum - a model defined in Swagger
 
         Parameters

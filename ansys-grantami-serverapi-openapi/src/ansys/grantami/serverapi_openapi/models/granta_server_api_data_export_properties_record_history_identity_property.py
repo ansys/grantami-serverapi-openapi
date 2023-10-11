@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(GrantaSer
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'recordHistoryIdentity', record_history_identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'recordHistoryIdentity', record_history_identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty - a model defined in Swagger
 
         Parameters

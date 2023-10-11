@@ -35,21 +35,21 @@ class GrantaServerApiSchemaDiscreteType(ModelBase):
 
     """
     swagger_types = {
+        "guid": "str",
         "is_ordered": "bool",
         "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "is_ordered": "isOrdered",
         "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, is_ordered: "Optional[bool]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, is_ordered: "Optional[bool]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaDiscreteType - a model defined in Swagger
 
         Parameters

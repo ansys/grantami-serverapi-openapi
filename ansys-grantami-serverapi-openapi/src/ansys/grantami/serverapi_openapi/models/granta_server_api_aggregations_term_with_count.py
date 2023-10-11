@@ -35,19 +35,19 @@ class GrantaServerApiAggregationsTermWithCount(ModelBase):
 
     """
     swagger_types = {
-        "term": "str",
         "count": "int",
+        "term": "str",
     }
 
     attribute_map = {
-        "term": "term",
         "count": "count",
+        "term": "term",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, count: "Optional[int]" = None, term: "Optional[str]" = None) -> None:
+    def __init__(self, *, count: "Optional[int]" = None, term: "Optional[str]" = None,) -> None:
         """GrantaServerApiAggregationsTermWithCount - a model defined in Swagger
 
         Parameters

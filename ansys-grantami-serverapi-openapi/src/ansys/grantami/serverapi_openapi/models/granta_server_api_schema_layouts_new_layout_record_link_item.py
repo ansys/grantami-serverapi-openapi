@@ -36,11 +36,13 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(GrantaServerApiSchemaL
 
     """
     swagger_types = {
+        "guid": "str",
         "item_type": "str",
         "link_group_guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "item_type": "itemType",
         "link_group_guid": "linkGroupGuid",
     }
@@ -48,7 +50,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(GrantaServerApiSchemaL
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, item_type: "str" = 'recordLink', link_group_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, item_type: "str" = 'recordLink', link_group_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem - a model defined in Swagger
 
         Parameters

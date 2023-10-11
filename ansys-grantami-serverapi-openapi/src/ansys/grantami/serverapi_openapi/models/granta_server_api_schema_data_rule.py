@@ -36,25 +36,25 @@ class GrantaServerApiSchemaDataRule(ModelBase):
     """
     swagger_types = {
         "description": "str",
+        "guid": "str",
+        "name": "str",
         "regular_expression": "str",
         "used_by_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
         "description": "description",
+        "guid": "guid",
+        "name": "name",
         "regular_expression": "regularExpression",
         "used_by_attributes": "usedByAttributes",
-        "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
         "usedByAttributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, description: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, regular_expression: "Optional[str]" = None, used_by_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None) -> None:
+    def __init__(self, *, description: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, regular_expression: "Optional[str]" = None, used_by_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,) -> None:
         """GrantaServerApiSchemaDataRule - a model defined in Swagger
 
         Parameters

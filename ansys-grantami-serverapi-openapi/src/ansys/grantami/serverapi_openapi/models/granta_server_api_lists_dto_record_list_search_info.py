@@ -45,7 +45,7 @@ class GrantaServerApiListsDtoRecordListSearchInfo(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, search_result_identifier: "Optional[str]" = None) -> None:
+    def __init__(self, *, search_result_identifier: "Optional[str]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListSearchInfo - a model defined in Swagger
 
         Parameters

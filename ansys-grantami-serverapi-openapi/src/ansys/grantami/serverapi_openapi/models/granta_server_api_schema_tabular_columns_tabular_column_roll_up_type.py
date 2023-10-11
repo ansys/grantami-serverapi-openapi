@@ -58,7 +58,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType - a model defined in Swagger
 
         """

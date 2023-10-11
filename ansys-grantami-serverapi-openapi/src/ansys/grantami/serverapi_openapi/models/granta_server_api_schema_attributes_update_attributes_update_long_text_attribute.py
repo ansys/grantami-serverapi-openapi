@@ -36,17 +36,29 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(Gra
 
     """
     swagger_types = {
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "guid": "str",
+        "help_path": "str",
+        "name": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'longText') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'longText',) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute - a model defined in Swagger
 
         Parameters

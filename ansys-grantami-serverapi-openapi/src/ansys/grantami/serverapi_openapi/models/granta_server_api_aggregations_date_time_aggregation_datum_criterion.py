@@ -46,7 +46,7 @@ class GrantaServerApiAggregationsDateTimeAggregationDatumCriterion(GrantaServerA
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'dateTime') -> None:
+    def __init__(self, *, type: "str" = 'dateTime',) -> None:
         """GrantaServerApiAggregationsDateTimeAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

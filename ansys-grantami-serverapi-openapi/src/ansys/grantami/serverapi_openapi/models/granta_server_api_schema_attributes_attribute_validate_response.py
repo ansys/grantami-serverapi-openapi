@@ -35,21 +35,21 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
 
     """
     swagger_types = {
-        "is_valid": "bool",
         "has_validation_rules": "bool",
+        "is_valid": "bool",
         "value_changed": "bool",
     }
 
     attribute_map = {
-        "is_valid": "isValid",
         "has_validation_rules": "hasValidationRules",
+        "is_valid": "isValid",
         "value_changed": "valueChanged",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, has_validation_rules: "Optional[bool]" = None, is_valid: "Optional[bool]" = None, value_changed: "Optional[bool]" = None) -> None:
+    def __init__(self, *, has_validation_rules: "Optional[bool]" = None, is_valid: "Optional[bool]" = None, value_changed: "Optional[bool]" = None,) -> None:
         """GrantaServerApiSchemaAttributesAttributeValidateResponse - a model defined in Swagger
 
         Parameters

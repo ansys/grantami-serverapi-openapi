@@ -49,7 +49,7 @@ class GrantaServerApiDataExportDatumsDiscreteGridPoint(ModelBase):
         "value": "GrantaServerApiDiscreteValue",
     }
 
-    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, value: "Optional[GrantaServerApiDiscreteValue]" = None) -> None:
+    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, value: "Optional[GrantaServerApiDiscreteValue]" = None,) -> None:
         """GrantaServerApiDataExportDatumsDiscreteGridPoint - a model defined in Swagger
 
         Parameters

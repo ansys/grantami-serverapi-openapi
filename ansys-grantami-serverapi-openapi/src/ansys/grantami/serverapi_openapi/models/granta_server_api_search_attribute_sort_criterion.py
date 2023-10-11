@@ -36,17 +36,19 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     """
     swagger_types = {
-        "identity": "int",
-        "guid": "str",
         "attribute_type": "GrantaServerApiAttributeType",
+        "guid": "str",
+        "identity": "int",
+        "sort_direction": "GrantaServerApiSearchSortDirection",
         "sort_type": "GrantaServerApiSearchSortType",
         "type": "str",
     }
 
     attribute_map = {
-        "identity": "identity",
-        "guid": "guid",
         "attribute_type": "attributeType",
+        "guid": "guid",
+        "identity": "identity",
+        "sort_direction": "sortDirection",
         "sort_type": "sortType",
         "type": "type",
     }
@@ -56,7 +58,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         "sortType": "GrantaServerApiSearchSortType",
     }
 
-    def __init__(self, *, attribute_type: "Optional[GrantaServerApiAttributeType]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, sort_type: "Optional[GrantaServerApiSearchSortType]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_type: "Optional[GrantaServerApiAttributeType]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, sort_type: "Optional[GrantaServerApiSearchSortType]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiSearchAttributeSortCriterion - a model defined in Swagger
 
         Parameters

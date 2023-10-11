@@ -36,19 +36,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(Gra
 
     """
     swagger_types = {
-        "type": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "guid": "str",
+        "help_path": "str",
         "is_multi_valued": "bool",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "guid": "guid",
+        "help_path": "helpPath",
         "is_multi_valued": "isMultiValued",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_multi_valued: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'discrete') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_multi_valued: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'discrete',) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute - a model defined in Swagger
 
         Parameters

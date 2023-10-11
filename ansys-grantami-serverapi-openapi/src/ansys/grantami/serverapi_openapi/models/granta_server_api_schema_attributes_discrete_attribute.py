@@ -36,22 +36,38 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(GrantaServerApiSchemaAttr
 
     """
     swagger_types = {
-        "type": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_multi_valued": "bool",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
         "is_multi_valued": "isMultiValued",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_multi_valued: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'discrete') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_multi_valued: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'discrete',) -> None:
         """GrantaServerApiSchemaAttributesDiscreteAttribute - a model defined in Swagger
 
         Parameters

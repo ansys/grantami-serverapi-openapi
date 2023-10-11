@@ -35,14 +35,14 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
 
     """
     swagger_types = {
-        "attribute_identity": "int",
         "attribute_guid": "str",
+        "attribute_identity": "int",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
     }
 
     attribute_map = {
-        "attribute_identity": "attributeIdentity",
         "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
     }
 
@@ -50,7 +50,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         "metaDatums": "GrantaServerApiDataExportDatumsDatum",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,) -> None:
         """GrantaServerApiDataExportDatumsDatum - a model defined in Swagger
 
         Parameters

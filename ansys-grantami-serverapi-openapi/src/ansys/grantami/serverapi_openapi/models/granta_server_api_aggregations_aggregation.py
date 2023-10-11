@@ -49,7 +49,7 @@ class GrantaServerApiAggregationsAggregation(ModelBase):
         "text".lower(): "#/components/schemas/GrantaServerApiAggregationsFreeTextAggregation",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiAggregationsAggregation - a model defined in Swagger
 
         """

@@ -36,25 +36,25 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
 
     """
     swagger_types = {
-        "identities": "list[int]",
-        "value": "str",
-        "identities_to_boost": "list[GrantaServerApiSearchBoostByIdentity]",
-        "identities_to_exclude": "list[int]",
         "guids": "list[str]",
         "guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
         "guids_to_exclude": "list[str]",
+        "identities": "list[int]",
+        "identities_to_boost": "list[GrantaServerApiSearchBoostByIdentity]",
+        "identities_to_exclude": "list[int]",
         "type": "str",
+        "value": "str",
     }
 
     attribute_map = {
-        "identities": "identities",
-        "value": "value",
-        "identities_to_boost": "identitiesToBoost",
-        "identities_to_exclude": "identitiesToExclude",
         "guids": "guids",
         "guids_to_boost": "guidsToBoost",
         "guids_to_exclude": "guidsToExclude",
+        "identities": "identities",
+        "identities_to_boost": "identitiesToBoost",
+        "identities_to_exclude": "identitiesToExclude",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
@@ -62,7 +62,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         "guidsToBoost": "GrantaServerApiSearchBoostByGuid",
     }
 
-    def __init__(self, *, guids: "Optional[List[str]]" = None, guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]" = None, guids_to_exclude: "Optional[List[str]]" = None, identities: "Optional[List[int]]" = None, identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]" = None, identities_to_exclude: "Optional[List[int]]" = None, type: "str" = 'text', value: "Optional[str]" = None) -> None:
+    def __init__(self, *, guids: "Optional[List[str]]" = None, guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]" = None, guids_to_exclude: "Optional[List[str]]" = None, identities: "Optional[List[int]]" = None, identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]" = None, identities_to_exclude: "Optional[List[int]]" = None, type: "str" = 'text', value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSearchFreeTextCriterion - a model defined in Swagger
 
         Parameters

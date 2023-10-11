@@ -39,12 +39,28 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(GrantaServer
         "column_type": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "name": "str",
+        "roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "show_as_link": "bool",
+        "summary_row_enabled": "bool",
+        "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "summary_row_text": "str",
     }
 
     attribute_map = {
         "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "name": "name",
+        "roll_up_type": "rollUpType",
+        "show_as_link": "showAsLink",
+        "summary_row_enabled": "summaryRowEnabled",
+        "summary_row_roll_up_type": "summaryRowRollUpType",
+        "summary_row_text": "summaryRowText",
     }
 
     subtype_mapping = {
@@ -52,7 +68,7 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(GrantaServer
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, column_type: "str" = 'localDiscrete', default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None) -> None:
+    def __init__(self, *, column_type: "str" = 'localDiscrete', default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn - a model defined in Swagger
 
         Parameters

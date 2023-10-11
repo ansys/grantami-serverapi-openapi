@@ -63,7 +63,7 @@ class GrantaServerApiRecordColor(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiRecordColor - a model defined in Swagger
 
         """

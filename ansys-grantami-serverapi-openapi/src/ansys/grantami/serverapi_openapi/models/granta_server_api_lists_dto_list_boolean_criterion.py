@@ -36,14 +36,14 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     """
     swagger_types = {
-        "match_any": "list[GrantaServerApiListsDtoListCriterion]",
         "match_all": "list[GrantaServerApiListsDtoListCriterion]",
+        "match_any": "list[GrantaServerApiListsDtoListCriterion]",
         "type": "str",
     }
 
     attribute_map = {
-        "match_any": "matchAny",
         "match_all": "matchAll",
+        "match_any": "matchAny",
         "type": "type",
     }
 
@@ -52,7 +52,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         "matchAll": "GrantaServerApiListsDtoListCriterion",
     }
 
-    def __init__(self, *, match_all: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None, match_any: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None, type: "str" = 'listBoolean') -> None:
+    def __init__(self, *, match_all: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None, match_any: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None, type: "str" = 'listBoolean',) -> None:
         """GrantaServerApiListsDtoListBooleanCriterion - a model defined in Swagger
 
         Parameters

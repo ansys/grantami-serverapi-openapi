@@ -37,42 +37,42 @@ class GrantaServerApiSchemaDatabase(ModelBase):
     swagger_types = {
         "author": "str",
         "company": "str",
-        "notes": "str",
         "currency_code": "str",
-        "is_access_controlled": "bool",
-        "key": "str",
-        "version_guid": "str",
-        "status": "GrantaServerApiSchemaDatabaseStatus",
-        "is_read_only": "bool",
-        "is_locked": "bool",
-        "index_in_sync": "bool",
-        "schema_version": "str",
-        "name": "str",
         "guid": "str",
+        "index_in_sync": "bool",
+        "is_access_controlled": "bool",
+        "is_locked": "bool",
+        "is_read_only": "bool",
+        "key": "str",
+        "name": "str",
+        "notes": "str",
+        "schema_version": "str",
+        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "version_guid": "str",
     }
 
     attribute_map = {
         "author": "author",
         "company": "company",
-        "notes": "notes",
         "currency_code": "currencyCode",
-        "is_access_controlled": "isAccessControlled",
-        "key": "key",
-        "version_guid": "versionGuid",
-        "status": "status",
-        "is_read_only": "isReadOnly",
-        "is_locked": "isLocked",
-        "index_in_sync": "indexInSync",
-        "schema_version": "schemaVersion",
-        "name": "name",
         "guid": "guid",
+        "index_in_sync": "indexInSync",
+        "is_access_controlled": "isAccessControlled",
+        "is_locked": "isLocked",
+        "is_read_only": "isReadOnly",
+        "key": "key",
+        "name": "name",
+        "notes": "notes",
+        "schema_version": "schemaVersion",
+        "status": "status",
+        "version_guid": "versionGuid",
     }
 
     subtype_mapping = {
         "status": "GrantaServerApiSchemaDatabaseStatus",
     }
 
-    def __init__(self, *, author: "Optional[str]" = None, company: "Optional[str]" = None, currency_code: "Optional[str]" = None, guid: "Optional[str]" = None, index_in_sync: "Optional[bool]" = None, is_access_controlled: "Optional[bool]" = None, is_locked: "Optional[bool]" = None, is_read_only: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, schema_version: "Optional[str]" = None, status: "Optional[GrantaServerApiSchemaDatabaseStatus]" = None, version_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, author: "Optional[str]" = None, company: "Optional[str]" = None, currency_code: "Optional[str]" = None, guid: "Optional[str]" = None, index_in_sync: "Optional[bool]" = None, is_access_controlled: "Optional[bool]" = None, is_locked: "Optional[bool]" = None, is_read_only: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, schema_version: "Optional[str]" = None, status: "Optional[GrantaServerApiSchemaDatabaseStatus]" = None, version_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaDatabase - a model defined in Swagger
 
         Parameters

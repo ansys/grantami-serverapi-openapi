@@ -36,19 +36,25 @@ class GrantaServerApiSchemaParametersNumericParameterValue(GrantaServerApiSchema
 
     """
     swagger_types = {
-        "value": "float",
+        "guid": "str",
+        "is_default": "bool",
+        "name": "str",
         "type": "str",
+        "value": "float",
     }
 
     attribute_map = {
-        "value": "value",
+        "guid": "guid",
+        "is_default": "isDefault",
+        "name": "name",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, is_default: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'numeric', value: "Optional[float]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, is_default: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'numeric', value: "Optional[float]" = None,) -> None:
         """GrantaServerApiSchemaParametersNumericParameterValue - a model defined in Swagger
 
         Parameters

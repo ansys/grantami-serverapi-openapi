@@ -35,30 +35,30 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
 
     """
     swagger_types = {
-        "identity": "int",
-        "type": "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
-        "reverse_name": "str",
-        "reverse_display_names": "dict(str, str)",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "identity": "int",
+        "name": "str",
+        "reverse_display_names": "dict(str, str)",
+        "reverse_name": "str",
+        "type": "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
     }
 
     attribute_map = {
-        "identity": "identity",
-        "type": "type",
-        "reverse_name": "reverseName",
-        "reverse_display_names": "reverseDisplayNames",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "identity": "identity",
+        "name": "name",
+        "reverse_display_names": "reverseDisplayNames",
+        "reverse_name": "reverseName",
+        "type": "type",
     }
 
     subtype_mapping = {
         "type": "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "Optional[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "Optional[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup - a model defined in Swagger
 
         Parameters

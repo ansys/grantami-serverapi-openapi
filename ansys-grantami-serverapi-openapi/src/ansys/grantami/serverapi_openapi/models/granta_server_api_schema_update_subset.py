@@ -36,21 +36,21 @@ class GrantaServerApiSchemaUpdateSubset(ModelBase):
     """
     swagger_types = {
         "associated_layout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
-        "name": "str",
         "guid": "str",
+        "name": "str",
     }
 
     attribute_map = {
         "associated_layout": "associatedLayout",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
     }
 
     subtype_mapping = {
         "associatedLayout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
     }
 
-    def __init__(self, *, associated_layout: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, associated_layout: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateSubset - a model defined in Swagger
 
         Parameters

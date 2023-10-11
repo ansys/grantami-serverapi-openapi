@@ -53,7 +53,7 @@ class GrantaServerApiListsDtoUserRole(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiListsDtoUserRole - a model defined in Swagger
 
         """

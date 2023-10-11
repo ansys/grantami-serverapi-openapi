@@ -36,21 +36,23 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(GrantaServerApiSchemaLa
 
     """
     swagger_types = {
-        "item_type": "str",
         "forwards": "bool",
+        "guid": "str",
+        "item_type": "str",
         "link_group_guid": "str",
     }
 
     attribute_map = {
-        "item_type": "itemType",
         "forwards": "forwards",
+        "guid": "guid",
+        "item_type": "itemType",
         "link_group_guid": "linkGroupGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, forwards: "Optional[bool]" = None, guid: "Optional[str]" = None, item_type: "str" = 'smartLink', link_group_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, forwards: "Optional[bool]" = None, guid: "Optional[str]" = None, item_type: "str" = 'smartLink', link_group_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem - a model defined in Swagger
 
         Parameters

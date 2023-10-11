@@ -36,16 +36,30 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(GrantaServerAp
 
     """
     swagger_types = {
-        "forbid_orphans": "bool",
-        "referential_integrity_model": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
         "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        "display_names": "dict(str, str)",
+        "forbid_orphans": "bool",
+        "guid": "str",
+        "identity": "int",
+        "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        "name": "str",
+        "referential_integrity_model": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
+        "reverse_display_names": "dict(str, str)",
+        "reverse_name": "str",
         "type": "str",
     }
 
     attribute_map = {
-        "forbid_orphans": "forbidOrphans",
-        "referential_integrity_model": "referentialIntegrityModel",
         "attribute_pairs": "attributePairs",
+        "display_names": "displayNames",
+        "forbid_orphans": "forbidOrphans",
+        "guid": "guid",
+        "identity": "identity",
+        "link_info": "linkInfo",
+        "name": "name",
+        "referential_integrity_model": "referentialIntegrityModel",
+        "reverse_display_names": "reverseDisplayNames",
+        "reverse_name": "reverseName",
         "type": "type",
     }
 
@@ -54,7 +68,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(GrantaServerAp
         "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair",
     }
 
-    def __init__(self, *, attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None, display_names: "Optional[Dict[str, str]]" = None, forbid_orphans: "Optional[bool]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'dynamic') -> None:
+    def __init__(self, *, attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None, display_names: "Optional[Dict[str, str]]" = None, forbid_orphans: "Optional[bool]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'dynamic',) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup - a model defined in Swagger
 
         Parameters

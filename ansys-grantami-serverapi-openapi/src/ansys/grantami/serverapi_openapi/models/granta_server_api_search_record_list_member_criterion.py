@@ -48,7 +48,7 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
     subtype_mapping = {
     }
 
-    def __init__(self, *, record_list_identifiers: "Optional[List[str]]" = None, type: "str" = 'recordListMember') -> None:
+    def __init__(self, *, record_list_identifiers: "Optional[List[str]]" = None, type: "str" = 'recordListMember',) -> None:
         """GrantaServerApiSearchRecordListMemberCriterion - a model defined in Swagger
 
         Parameters

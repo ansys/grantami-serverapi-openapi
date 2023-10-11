@@ -36,22 +36,24 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(GrantaServerApiS
 
     """
     swagger_types = {
-        "item_type": "str",
-        "association_chain_name": "str",
         "association_chain_links": "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
+        "association_chain_name": "str",
+        "guid": "str",
+        "item_type": "str",
     }
 
     attribute_map = {
-        "item_type": "itemType",
-        "association_chain_name": "associationChainName",
         "association_chain_links": "associationChainLinks",
+        "association_chain_name": "associationChainName",
+        "guid": "guid",
+        "item_type": "itemType",
     }
 
     subtype_mapping = {
         "associationChainLinks": "GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink",
     }
 
-    def __init__(self, *, association_chain_links: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]]" = None, association_chain_name: "Optional[str]" = None, guid: "Optional[str]" = None, item_type: "str" = 'associationChain') -> None:
+    def __init__(self, *, association_chain_links: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]]" = None, association_chain_name: "Optional[str]" = None, guid: "Optional[str]" = None, item_type: "str" = 'associationChain',) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem - a model defined in Swagger
 
         Parameters

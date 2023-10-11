@@ -46,7 +46,7 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
         "layoutSections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
-    def __init__(self, *, layout_sections: "Optional[List[GrantaServerApiSchemaLayoutsLayoutSection]]" = None) -> None:
+    def __init__(self, *, layout_sections: "Optional[List[GrantaServerApiSchemaLayoutsLayoutSection]]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutSectionsInfo - a model defined in Swagger
 
         Parameters

@@ -36,24 +36,24 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(GrantaServerApiSearchDatumEx
 
     """
     swagger_types = {
-        "target_table_identity": "int",
-        "target_table_guid": "str",
-        "target_database_key": "str",
         "link_datum_type": "GrantaServerApiLinkAttributeType",
         "search_in_reversed_direction": "bool",
-        "target_attribute_identity": "int",
         "target_attribute_guid": "str",
+        "target_attribute_identity": "int",
+        "target_database_key": "str",
+        "target_table_guid": "str",
+        "target_table_identity": "int",
         "type": "str",
     }
 
     attribute_map = {
-        "target_table_identity": "targetTableIdentity",
-        "target_table_guid": "targetTableGuid",
-        "target_database_key": "targetDatabaseKey",
         "link_datum_type": "linkDatumType",
         "search_in_reversed_direction": "searchInReversedDirection",
-        "target_attribute_identity": "targetAttributeIdentity",
         "target_attribute_guid": "targetAttributeGuid",
+        "target_attribute_identity": "targetAttributeIdentity",
+        "target_database_key": "targetDatabaseKey",
+        "target_table_guid": "targetTableGuid",
+        "target_table_identity": "targetTableIdentity",
         "type": "type",
     }
 
@@ -61,7 +61,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(GrantaServerApiSearchDatumEx
         "linkDatumType": "GrantaServerApiLinkAttributeType",
     }
 
-    def __init__(self, *, link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None, search_in_reversed_direction: "Optional[bool]" = None, target_attribute_guid: "Optional[str]" = None, target_attribute_identity: "Optional[int]" = None, target_database_key: "Optional[str]" = None, target_table_guid: "Optional[str]" = None, target_table_identity: "Optional[int]" = None, type: "str" = 'link') -> None:
+    def __init__(self, *, link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None, search_in_reversed_direction: "Optional[bool]" = None, target_attribute_guid: "Optional[str]" = None, target_attribute_identity: "Optional[int]" = None, target_database_key: "Optional[str]" = None, target_table_guid: "Optional[str]" = None, target_table_identity: "Optional[int]" = None, type: "str" = 'link',) -> None:
         """GrantaServerApiSearchLinkExistsDatumCriterion - a model defined in Swagger
 
         Parameters

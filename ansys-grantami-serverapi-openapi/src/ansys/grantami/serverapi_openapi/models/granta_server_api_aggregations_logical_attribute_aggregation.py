@@ -36,20 +36,30 @@ class GrantaServerApiAggregationsLogicalAttributeAggregation(GrantaServerApiAggr
 
     """
     swagger_types = {
-        "values": "list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "type": "str",
+        "values": "list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]",
     }
 
     attribute_map = {
-        "values": "values",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "type": "type",
+        "values": "values",
     }
 
     subtype_mapping = {
         "values": "GrantaServerApiAggregationsValueWithCountOfSystemBoolean",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'logical', type: "str" = 'attribute', values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]" = None) -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'logical', type: "str" = 'attribute', values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]" = None,) -> None:
         """GrantaServerApiAggregationsLogicalAttributeAggregation - a model defined in Swagger
 
         Parameters

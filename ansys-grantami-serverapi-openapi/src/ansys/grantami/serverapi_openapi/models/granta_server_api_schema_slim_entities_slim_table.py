@@ -35,27 +35,27 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
 
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
         "is_versioned": "bool",
-        "display_names": "dict(str, str)",
         "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
         "is_versioned": "isVersioned",
-        "display_names": "displayNames",
         "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, is_versioned: "Optional[bool]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, is_versioned: "Optional[bool]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimTable - a model defined in Swagger
 
         Parameters

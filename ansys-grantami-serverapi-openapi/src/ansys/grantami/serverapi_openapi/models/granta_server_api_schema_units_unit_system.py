@@ -35,24 +35,24 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
 
     """
     swagger_types = {
-        "unit_mappings": "list[GrantaServerApiSchemaUnitsUnitMapping]",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "unit_mappings": "list[GrantaServerApiSchemaUnitsUnitMapping]",
     }
 
     attribute_map = {
-        "unit_mappings": "unitMappings",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "unit_mappings": "unitMappings",
     }
 
     subtype_mapping = {
         "unitMappings": "GrantaServerApiSchemaUnitsUnitMapping",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit_mappings: "Optional[List[GrantaServerApiSchemaUnitsUnitMapping]]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit_mappings: "Optional[List[GrantaServerApiSchemaUnitsUnitMapping]]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnitSystem - a model defined in Swagger
 
         Parameters

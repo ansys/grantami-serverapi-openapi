@@ -36,22 +36,34 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(Gr
 
     """
     swagger_types = {
-        "type": "str",
-        "is_unique": "bool",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
         "data_rule": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "guid": "str",
+        "help_path": "str",
+        "is_unique": "bool",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
-        "is_unique": "isUnique",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
         "data_rule": "dataRule",
+        "default_threshold_type": "defaultThresholdType",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "is_unique": "isUnique",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
         "dataRule": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_unique: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'shortText') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_unique: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'shortText',) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute - a model defined in Swagger
 
         Parameters

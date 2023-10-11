@@ -47,7 +47,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, forwards: "Optional[bool]" = None, tabular_attribute_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, forwards: "Optional[bool]" = None, tabular_attribute_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink - a model defined in Swagger
 
         Parameters

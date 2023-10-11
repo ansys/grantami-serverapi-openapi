@@ -35,35 +35,35 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
 
     """
     swagger_types = {
+        "disk_status": "GrantaServerApiDiskStatus",
+        "disk_threshold": "str",
+        "errored_databases": "dict(str, str)",
+        "loaded_database_index_statuses": "dict(str, GrantaServerApiSearchIndexStatus)",
         "loaded_databases": "list[str]",
         "loading_databases": "list[str]",
         "not_loaded_databases": "list[str]",
-        "errored_databases": "dict(str, str)",
-        "loaded_database_index_statuses": "dict(str, GrantaServerApiSearchIndexStatus)",
-        "search_index_up_to_date": "bool",
-        "search_index_in_sync": "bool",
-        "search_index_location": "str",
-        "search_index_is_read_only": "bool",
-        "disk_status": "GrantaServerApiDiskStatus",
-        "disk_threshold": "str",
-        "search_index_unavailable": "bool",
         "records_that_failed_to_index": "list[GrantaServerApiIndexRecordFailure]",
+        "search_index_in_sync": "bool",
+        "search_index_is_read_only": "bool",
+        "search_index_location": "str",
+        "search_index_unavailable": "bool",
+        "search_index_up_to_date": "bool",
     }
 
     attribute_map = {
+        "disk_status": "diskStatus",
+        "disk_threshold": "diskThreshold",
+        "errored_databases": "erroredDatabases",
+        "loaded_database_index_statuses": "loadedDatabaseIndexStatuses",
         "loaded_databases": "loadedDatabases",
         "loading_databases": "loadingDatabases",
         "not_loaded_databases": "notLoadedDatabases",
-        "errored_databases": "erroredDatabases",
-        "loaded_database_index_statuses": "loadedDatabaseIndexStatuses",
-        "search_index_up_to_date": "searchIndexUpToDate",
-        "search_index_in_sync": "searchIndexInSync",
-        "search_index_location": "searchIndexLocation",
-        "search_index_is_read_only": "searchIndexIsReadOnly",
-        "disk_status": "diskStatus",
-        "disk_threshold": "diskThreshold",
-        "search_index_unavailable": "searchIndexUnavailable",
         "records_that_failed_to_index": "recordsThatFailedToIndex",
+        "search_index_in_sync": "searchIndexInSync",
+        "search_index_is_read_only": "searchIndexIsReadOnly",
+        "search_index_location": "searchIndexLocation",
+        "search_index_unavailable": "searchIndexUnavailable",
+        "search_index_up_to_date": "searchIndexUpToDate",
     }
 
     subtype_mapping = {
@@ -72,7 +72,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         "recordsThatFailedToIndex": "GrantaServerApiIndexRecordFailure",
     }
 
-    def __init__(self, *, disk_status: "Optional[GrantaServerApiDiskStatus]" = None, disk_threshold: "Optional[str]" = None, errored_databases: "Optional[Dict[str, str]]" = None, loaded_database_index_statuses: "Optional[Dict[str, GrantaServerApiSearchIndexStatus]]" = None, loaded_databases: "Optional[List[str]]" = None, loading_databases: "Optional[List[str]]" = None, not_loaded_databases: "Optional[List[str]]" = None, records_that_failed_to_index: "Optional[List[GrantaServerApiIndexRecordFailure]]" = None, search_index_in_sync: "Optional[bool]" = None, search_index_is_read_only: "Optional[bool]" = None, search_index_location: "Optional[str]" = None, search_index_unavailable: "Optional[bool]" = None, search_index_up_to_date: "Optional[bool]" = None) -> None:
+    def __init__(self, *, disk_status: "Optional[GrantaServerApiDiskStatus]" = None, disk_threshold: "Optional[str]" = None, errored_databases: "Optional[Dict[str, str]]" = None, loaded_database_index_statuses: "Optional[Dict[str, GrantaServerApiSearchIndexStatus]]" = None, loaded_databases: "Optional[List[str]]" = None, loading_databases: "Optional[List[str]]" = None, not_loaded_databases: "Optional[List[str]]" = None, records_that_failed_to_index: "Optional[List[GrantaServerApiIndexRecordFailure]]" = None, search_index_in_sync: "Optional[bool]" = None, search_index_is_read_only: "Optional[bool]" = None, search_index_location: "Optional[str]" = None, search_index_unavailable: "Optional[bool]" = None, search_index_up_to_date: "Optional[bool]" = None,) -> None:
         """GrantaServerApiIntegrationIntegrationSchemaStatus - a model defined in Swagger
 
         Parameters

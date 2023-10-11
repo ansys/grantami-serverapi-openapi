@@ -46,7 +46,7 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
         "units": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    def __init__(self, *, units: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimUnit]]" = None) -> None:
+    def __init__(self, *, units: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimUnit]]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnitsInfo - a model defined in Swagger
 
         Parameters

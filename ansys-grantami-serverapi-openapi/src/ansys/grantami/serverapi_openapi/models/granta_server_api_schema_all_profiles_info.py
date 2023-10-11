@@ -35,13 +35,13 @@ class GrantaServerApiSchemaAllProfilesInfo(ModelBase):
 
     """
     swagger_types = {
-        "profiles": "list[GrantaServerApiSchemaSlimEntitiesSlimProfile]",
         "default_profile": "GrantaServerApiSchemaSlimEntitiesSlimProfile",
+        "profiles": "list[GrantaServerApiSchemaSlimEntitiesSlimProfile]",
     }
 
     attribute_map = {
-        "profiles": "profiles",
         "default_profile": "defaultProfile",
+        "profiles": "profiles",
     }
 
     subtype_mapping = {
@@ -49,7 +49,7 @@ class GrantaServerApiSchemaAllProfilesInfo(ModelBase):
         "defaultProfile": "GrantaServerApiSchemaSlimEntitiesSlimProfile",
     }
 
-    def __init__(self, *, default_profile: "Optional[GrantaServerApiSchemaSlimEntitiesSlimProfile]" = None, profiles: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimProfile]]" = None) -> None:
+    def __init__(self, *, default_profile: "Optional[GrantaServerApiSchemaSlimEntitiesSlimProfile]" = None, profiles: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimProfile]]" = None,) -> None:
         """GrantaServerApiSchemaAllProfilesInfo - a model defined in Swagger
 
         Parameters

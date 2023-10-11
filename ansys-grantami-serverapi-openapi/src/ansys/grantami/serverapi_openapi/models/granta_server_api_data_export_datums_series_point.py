@@ -37,21 +37,21 @@ class GrantaServerApiDataExportDatumsSeriesPoint(ModelBase):
     swagger_types = {
         "x": "float",
         "x_name": "str",
-        "y_low": "float",
         "y_high": "float",
+        "y_low": "float",
     }
 
     attribute_map = {
         "x": "x",
         "x_name": "xName",
-        "y_low": "yLow",
         "y_high": "yHigh",
+        "y_low": "yLow",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, x: "Optional[float]" = None, x_name: "Optional[str]" = None, y_high: "Optional[float]" = None, y_low: "Optional[float]" = None) -> None:
+    def __init__(self, *, x: "Optional[float]" = None, x_name: "Optional[str]" = None, y_high: "Optional[float]" = None, y_low: "Optional[float]" = None,) -> None:
         """GrantaServerApiDataExportDatumsSeriesPoint - a model defined in Swagger
 
         Parameters

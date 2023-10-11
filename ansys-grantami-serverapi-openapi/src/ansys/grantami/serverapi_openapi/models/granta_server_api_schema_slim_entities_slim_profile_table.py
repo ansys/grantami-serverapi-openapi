@@ -35,25 +35,25 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
 
     """
     swagger_types = {
-        "database_guid": "str",
         "database_fallback_hint": "str",
-        "table_guid": "str",
-        "table_fallback_hint": "str",
+        "database_guid": "str",
         "guid": "str",
+        "table_fallback_hint": "str",
+        "table_guid": "str",
     }
 
     attribute_map = {
-        "database_guid": "databaseGuid",
         "database_fallback_hint": "databaseFallbackHint",
-        "table_guid": "tableGuid",
-        "table_fallback_hint": "tableFallbackHint",
+        "database_guid": "databaseGuid",
         "guid": "guid",
+        "table_fallback_hint": "tableFallbackHint",
+        "table_guid": "tableGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_fallback_hint: "Optional[str]" = None, database_guid: "Optional[str]" = None, guid: "Optional[str]" = None, table_fallback_hint: "Optional[str]" = None, table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, database_fallback_hint: "Optional[str]" = None, database_guid: "Optional[str]" = None, guid: "Optional[str]" = None, table_fallback_hint: "Optional[str]" = None, table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimProfileTable - a model defined in Swagger
 
         Parameters

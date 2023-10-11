@@ -46,7 +46,7 @@ class GrantaServerApiSchemaLayoutsLayoutsInfo(ModelBase):
         "layouts": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
     }
 
-    def __init__(self, *, layouts: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimLayout]]" = None) -> None:
+    def __init__(self, *, layouts: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimLayout]]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutsInfo - a model defined in Swagger
 
         Parameters

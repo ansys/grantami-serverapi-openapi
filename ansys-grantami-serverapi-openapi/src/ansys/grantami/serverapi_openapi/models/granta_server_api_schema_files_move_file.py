@@ -45,7 +45,7 @@ class GrantaServerApiSchemaFilesMoveFile(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, folder_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, folder_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaFilesMoveFile - a model defined in Swagger
 
         Parameters

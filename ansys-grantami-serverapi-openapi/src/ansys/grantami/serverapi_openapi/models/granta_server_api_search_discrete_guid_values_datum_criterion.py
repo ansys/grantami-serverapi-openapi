@@ -36,23 +36,23 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(GrantaServerApiSearc
 
     """
     swagger_types = {
+        "_none": "list[str]",
         "all": "list[str]",
         "any": "list[str]",
-        "_none": "list[str]",
         "type": "str",
     }
 
     attribute_map = {
+        "_none": "none",
         "all": "all",
         "any": "any",
-        "_none": "none",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, _none: "Optional[List[str]]" = None, all: "Optional[List[str]]" = None, any: "Optional[List[str]]" = None, type: "str" = 'discreteGuidValues') -> None:
+    def __init__(self, *, _none: "Optional[List[str]]" = None, all: "Optional[List[str]]" = None, any: "Optional[List[str]]" = None, type: "str" = 'discreteGuidValues',) -> None:
         """GrantaServerApiSearchDiscreteGuidValuesDatumCriterion - a model defined in Swagger
 
         Parameters

@@ -36,23 +36,23 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
-        "identity": "int",
-        "reverse_name": "str",
-        "reverse_display_names": "dict(str, str)",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "identity": "int",
+        "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        "name": "str",
+        "reverse_display_names": "dict(str, str)",
+        "reverse_name": "str",
     }
 
     attribute_map = {
-        "link_info": "linkInfo",
-        "identity": "identity",
-        "reverse_name": "reverseName",
-        "reverse_display_names": "reverseDisplayNames",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "identity": "identity",
+        "link_info": "linkInfo",
+        "name": "name",
+        "reverse_display_names": "reverseDisplayNames",
+        "reverse_name": "reverseName",
     }
 
     subtype_mapping = {
@@ -65,7 +65,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         "crossDatabase".lower(): "#/components/schemas/GrantaServerApiSchemaRecordLinkGroupsCrossDatabaseRecordLinkGroup",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup - a model defined in Swagger
 
         Parameters

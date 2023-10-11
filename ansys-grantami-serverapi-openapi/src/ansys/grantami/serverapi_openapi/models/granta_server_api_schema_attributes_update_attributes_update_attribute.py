@@ -36,21 +36,21 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        "axis_name": "str",
-        "help_path": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "name": "str",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
+        "help_path": "str",
+        "name": "str",
     }
 
     attribute_map = {
-        "default_threshold_type": "defaultThresholdType",
-        "axis_name": "axisName",
-        "help_path": "helpPath",
         "about_attribute": "aboutAttribute",
-        "name": "name",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
     }
 
     subtype_mapping = {
@@ -76,7 +76,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         "mathsFunctional".lower(): "#/components/schemas/GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute - a model defined in Swagger
 
         Parameters

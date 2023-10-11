@@ -50,7 +50,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, terms: "Optional[List[str]]" = None, type: "str" = 'text') -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, terms: "Optional[List[str]]" = None, type: "str" = 'text',) -> None:
         """GrantaServerApiAggregationsFreeTextAggregation - a model defined in Swagger
 
         Parameters

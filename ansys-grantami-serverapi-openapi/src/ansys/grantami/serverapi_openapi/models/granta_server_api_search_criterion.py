@@ -56,7 +56,7 @@ class GrantaServerApiSearchCriterion(ModelBase):
         "attribute".lower(): "#/components/schemas/GrantaServerApiSearchAttributeCriterion",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchCriterion - a model defined in Swagger
 
         """

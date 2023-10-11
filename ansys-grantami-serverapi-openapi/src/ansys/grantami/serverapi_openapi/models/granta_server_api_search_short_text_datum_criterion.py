@@ -36,22 +36,22 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
 
     """
     swagger_types = {
-        "value": "str",
         "text_match_behaviour": "GrantaServerApiSearchTextMatchBehaviour",
         "type": "str",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
         "text_match_behaviour": "textMatchBehaviour",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
         "textMatchBehaviour": "GrantaServerApiSearchTextMatchBehaviour",
     }
 
-    def __init__(self, *, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]" = None, type: "str" = 'shortText', value: "Optional[str]" = None) -> None:
+    def __init__(self, *, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]" = None, type: "str" = 'shortText', value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSearchShortTextDatumCriterion - a model defined in Swagger
 
         Parameters

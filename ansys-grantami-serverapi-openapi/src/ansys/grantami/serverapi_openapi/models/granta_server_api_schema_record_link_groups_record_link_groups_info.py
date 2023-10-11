@@ -46,7 +46,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo(ModelBase):
         "recordLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup",
     }
 
-    def __init__(self, *, record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup]]" = None) -> None:
+    def __init__(self, *, record_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup]]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo - a model defined in Swagger
 
         Parameters

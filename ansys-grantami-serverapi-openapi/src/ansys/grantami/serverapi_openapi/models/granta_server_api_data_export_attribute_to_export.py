@@ -36,13 +36,13 @@ class GrantaServerApiDataExportAttributeToExport(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "identity": "int",
         "guid": "str",
+        "identity": "int",
     }
 
     attribute_map = {
-        "identity": "identity",
         "guid": "guid",
+        "identity": "identity",
     }
 
     subtype_mapping = {
@@ -53,7 +53,7 @@ class GrantaServerApiDataExportAttributeToExport(ModelBase):
         "simple".lower(): "#/components/schemas/GrantaServerApiDataExportSimpleAttributeToExport",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportAttributeToExport - a model defined in Swagger
 
         Parameters

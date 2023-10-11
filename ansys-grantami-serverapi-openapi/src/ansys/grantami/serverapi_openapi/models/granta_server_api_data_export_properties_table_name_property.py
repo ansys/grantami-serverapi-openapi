@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesTableNameProperty(GrantaServerApiDataEx
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'tableName', table_name: "Optional[str]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'tableName', table_name: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesTableNameProperty - a model defined in Swagger
 
         Parameters

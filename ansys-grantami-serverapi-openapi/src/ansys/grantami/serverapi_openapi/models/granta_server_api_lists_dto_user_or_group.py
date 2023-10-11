@@ -35,21 +35,21 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
 
     """
     swagger_types = {
-        "identifier": "str",
         "display_name": "str",
+        "identifier": "str",
         "name": "str",
     }
 
     attribute_map = {
-        "identifier": "identifier",
         "display_name": "displayName",
+        "identifier": "identifier",
         "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_name: "Optional[str]" = None, identifier: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_name: "Optional[str]" = None, identifier: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiListsDtoUserOrGroup - a model defined in Swagger
 
         Parameters

@@ -36,25 +36,35 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
 
     """
     swagger_types = {
-        "link_group_name": "str",
-        "link_attribute_type": "GrantaServerApiLinkAttributeType",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "datum_type": "str",
         "export_in_reversed_direction": "bool",
-        "target_database_guid": "str",
-        "linked_records": "list[GrantaServerApiDataExportRecordWithData]",
-        "link_group_names_by_database_key": "dict(str, str)",
-        "link_group_identities_by_database_key": "dict(str, int)",
+        "link_attribute_type": "GrantaServerApiLinkAttributeType",
         "link_datum_type": "str",
+        "link_group_identities_by_database_key": "dict(str, int)",
+        "link_group_name": "str",
+        "link_group_names_by_database_key": "dict(str, str)",
+        "linked_records": "list[GrantaServerApiDataExportRecordWithData]",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
+        "target_database_guid": "str",
     }
 
     attribute_map = {
-        "link_group_name": "linkGroupName",
-        "link_attribute_type": "linkAttributeType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
         "export_in_reversed_direction": "exportInReversedDirection",
-        "target_database_guid": "targetDatabaseGuid",
-        "linked_records": "linkedRecords",
-        "link_group_names_by_database_key": "linkGroupNamesByDatabaseKey",
-        "link_group_identities_by_database_key": "linkGroupIdentitiesByDatabaseKey",
+        "link_attribute_type": "linkAttributeType",
         "link_datum_type": "linkDatumType",
+        "link_group_identities_by_database_key": "linkGroupIdentitiesByDatabaseKey",
+        "link_group_name": "linkGroupName",
+        "link_group_names_by_database_key": "linkGroupNamesByDatabaseKey",
+        "linked_records": "linkedRecords",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
+        "target_database_guid": "targetDatabaseGuid",
     }
 
     subtype_mapping = {
@@ -62,7 +72,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         "linkedRecords": "GrantaServerApiDataExportRecordWithData",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'link', export_in_reversed_direction: "Optional[bool]" = None, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]" = None, link_datum_type: "str" = 'linkGroup', link_group_identities_by_database_key: "Optional[Dict[str, int]]" = None, link_group_name: "Optional[str]" = None, link_group_names_by_database_key: "Optional[Dict[str, str]]" = None, linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, target_database_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'link', export_in_reversed_direction: "Optional[bool]" = None, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]" = None, link_datum_type: "str" = 'linkGroup', link_group_identities_by_database_key: "Optional[Dict[str, int]]" = None, link_group_name: "Optional[str]" = None, link_group_names_by_database_key: "Optional[Dict[str, str]]" = None, linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, target_database_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportDatumsLinkedRecordsDatum - a model defined in Swagger
 
         Parameters

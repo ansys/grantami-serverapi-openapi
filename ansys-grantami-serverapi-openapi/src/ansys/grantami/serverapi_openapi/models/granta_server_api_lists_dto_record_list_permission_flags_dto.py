@@ -35,25 +35,25 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
 
     """
     swagger_types = {
-        "is_owner": "bool",
-        "is_subscribed": "bool",
-        "is_curator": "bool",
         "is_administrator": "bool",
+        "is_curator": "bool",
+        "is_owner": "bool",
         "is_publisher": "bool",
+        "is_subscribed": "bool",
     }
 
     attribute_map = {
-        "is_owner": "isOwner",
-        "is_subscribed": "isSubscribed",
-        "is_curator": "isCurator",
         "is_administrator": "isAdministrator",
+        "is_curator": "isCurator",
+        "is_owner": "isOwner",
         "is_publisher": "isPublisher",
+        "is_subscribed": "isSubscribed",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, is_administrator: "Optional[bool]" = None, is_curator: "Optional[bool]" = None, is_owner: "Optional[bool]" = None, is_publisher: "Optional[bool]" = None, is_subscribed: "Optional[bool]" = None) -> None:
+    def __init__(self, *, is_administrator: "Optional[bool]" = None, is_curator: "Optional[bool]" = None, is_owner: "Optional[bool]" = None, is_publisher: "Optional[bool]" = None, is_subscribed: "Optional[bool]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListPermissionFlagsDto - a model defined in Swagger
 
         Parameters

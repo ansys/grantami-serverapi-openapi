@@ -36,20 +36,28 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
 
     """
     swagger_types = {
-        "values": "list[GrantaServerApiSchemaParametersDiscreteParameterValue]",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "name": "str",
         "type": "str",
+        "values": "list[GrantaServerApiSchemaParametersDiscreteParameterValue]",
     }
 
     attribute_map = {
-        "values": "values",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
         "type": "type",
+        "values": "values",
     }
 
     subtype_mapping = {
         "values": "GrantaServerApiSchemaParametersDiscreteParameterValue",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discrete', values: "Optional[List[GrantaServerApiSchemaParametersDiscreteParameterValue]]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discrete', values: "Optional[List[GrantaServerApiSchemaParametersDiscreteParameterValue]]" = None,) -> None:
         """GrantaServerApiSchemaParametersDiscreteParameter - a model defined in Swagger
 
         Parameters

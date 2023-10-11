@@ -36,19 +36,19 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(GrantaServerApiData
 
     """
     swagger_types = {
-        "property_name": "str",
         "created_date": "datetime",
+        "property_name": "str",
     }
 
     attribute_map = {
-        "property_name": "propertyName",
         "created_date": "createdDate",
+        "property_name": "propertyName",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, created_date: "Optional[datetime]" = None, property_name: "str" = 'createdDate') -> None:
+    def __init__(self, *, created_date: "Optional[datetime]" = None, property_name: "str" = 'createdDate',) -> None:
         """GrantaServerApiDataExportPropertiesCreatedDateProperty - a model defined in Swagger
 
         Parameters

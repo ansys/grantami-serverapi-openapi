@@ -35,17 +35,17 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
 
     """
     swagger_types = {
-        "database_key": "str",
-        "record_history_identity": "int",
         "data": "list[GrantaServerApiDataExportDatumsDatum]",
+        "database_key": "str",
         "properties": "list[GrantaServerApiDataExportPropertiesProperty]",
+        "record_history_identity": "int",
     }
 
     attribute_map = {
-        "database_key": "databaseKey",
-        "record_history_identity": "recordHistoryIdentity",
         "data": "data",
+        "database_key": "databaseKey",
         "properties": "properties",
+        "record_history_identity": "recordHistoryIdentity",
     }
 
     subtype_mapping = {
@@ -53,7 +53,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
         "properties": "GrantaServerApiDataExportPropertiesProperty",
     }
 
-    def __init__(self, *, data: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, database_key: "Optional[str]" = None, properties: "Optional[List[GrantaServerApiDataExportPropertiesProperty]]" = None, record_history_identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, data: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, database_key: "Optional[str]" = None, properties: "Optional[List[GrantaServerApiDataExportPropertiesProperty]]" = None, record_history_identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportRecordWithData - a model defined in Swagger
 
         Parameters

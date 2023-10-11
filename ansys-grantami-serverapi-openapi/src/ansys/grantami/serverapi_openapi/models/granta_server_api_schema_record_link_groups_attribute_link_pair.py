@@ -49,7 +49,7 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
         "attributeTarget": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
     }
 
-    def __init__(self, *, attribute_source: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None, attribute_target: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None) -> None:
+    def __init__(self, *, attribute_source: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None, attribute_target: "Optional[GrantaServerApiSchemaSlimEntitiesSlimAttribute]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair - a model defined in Swagger
 
         Parameters

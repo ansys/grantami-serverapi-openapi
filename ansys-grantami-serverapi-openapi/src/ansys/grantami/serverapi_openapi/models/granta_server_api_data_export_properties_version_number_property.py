@@ -48,7 +48,7 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(GrantaServerApiDa
     subtype_mapping = {
     }
 
-    def __init__(self, *, property_name: "str" = 'versionNumber', version_number: "Optional[int]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'versionNumber', version_number: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesVersionNumberProperty - a model defined in Swagger
 
         Parameters

@@ -45,7 +45,7 @@ class GrantaServerApiSearchSearchResultsRequest(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, page_number: "Optional[int]" = None) -> None:
+    def __init__(self, *, page_number: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchSearchResultsRequest - a model defined in Swagger
 
         Parameters

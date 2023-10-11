@@ -36,19 +36,19 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(GrantaServerAp
 
     """
     swagger_types = {
-        "property_name": "str",
         "last_modified_date": "datetime",
+        "property_name": "str",
     }
 
     attribute_map = {
-        "property_name": "propertyName",
         "last_modified_date": "lastModifiedDate",
+        "property_name": "propertyName",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, last_modified_date: "Optional[datetime]" = None, property_name: "str" = 'lastModifiedDate') -> None:
+    def __init__(self, *, last_modified_date: "Optional[datetime]" = None, property_name: "str" = 'lastModifiedDate',) -> None:
         """GrantaServerApiDataExportPropertiesLastModifiedDateProperty - a model defined in Swagger
 
         Parameters

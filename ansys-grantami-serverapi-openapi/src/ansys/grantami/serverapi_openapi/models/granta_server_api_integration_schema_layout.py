@@ -35,19 +35,19 @@ class GrantaServerApiIntegrationSchemaLayout(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
         "attribute_identities": "list[int]",
+        "name": "str",
     }
 
     attribute_map = {
-        "name": "name",
         "attribute_identities": "attributeIdentities",
+        "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_identities: "Optional[List[int]]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_identities: "Optional[List[int]]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaLayout - a model defined in Swagger
 
         Parameters

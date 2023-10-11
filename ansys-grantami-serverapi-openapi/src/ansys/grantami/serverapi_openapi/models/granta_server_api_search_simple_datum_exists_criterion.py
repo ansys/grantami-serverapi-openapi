@@ -46,7 +46,7 @@ class GrantaServerApiSearchSimpleDatumExistsCriterion(GrantaServerApiSearchDatum
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'type') -> None:
+    def __init__(self, *, type: "str" = 'type',) -> None:
         """GrantaServerApiSearchSimpleDatumExistsCriterion - a model defined in Swagger
 
         Parameters

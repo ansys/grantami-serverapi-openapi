@@ -35,25 +35,25 @@ class GrantaServerApiSchemaExpression(ModelBase):
 
     """
     swagger_types = {
-        "value": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "attribute_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "constant_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "parameter_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "parameter_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
-        "unit": "unit",
         "attribute_dependencies": "attributeDependencies",
         "constant_dependencies": "constantDependencies",
-        "parameter_dependencies": "parameterDependencies",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "parameter_dependencies": "parameterDependencies",
+        "unit": "unit",
+        "value": "value",
     }
 
     subtype_mapping = {
@@ -63,7 +63,7 @@ class GrantaServerApiSchemaExpression(ModelBase):
         "parameterDependencies": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, attribute_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, constant_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, parameter_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, attribute_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, constant_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, parameter_dependencies: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, value: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaExpression - a model defined in Swagger
 
         Parameters

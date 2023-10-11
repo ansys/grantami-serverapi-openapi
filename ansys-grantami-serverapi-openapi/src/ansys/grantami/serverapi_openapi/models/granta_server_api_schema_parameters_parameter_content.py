@@ -52,7 +52,7 @@ class GrantaServerApiSchemaParametersParameterContent(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersNumericParameterContent",
     }
 
-    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None) -> None:
+    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,) -> None:
         """GrantaServerApiSchemaParametersParameterContent - a model defined in Swagger
 
         Parameters

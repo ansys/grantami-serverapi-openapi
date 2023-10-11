@@ -36,17 +36,17 @@ class GrantaServerApiSearchDiscreteTextValuesDatumCriterion(GrantaServerApiSearc
 
     """
     swagger_types = {
+        "_none": "list[str]",
         "all": "list[str]",
         "any": "list[str]",
-        "_none": "list[str]",
         "text_match_behaviour": "GrantaServerApiSearchTextMatchBehaviour",
         "type": "str",
     }
 
     attribute_map = {
+        "_none": "none",
         "all": "all",
         "any": "any",
-        "_none": "none",
         "text_match_behaviour": "textMatchBehaviour",
         "type": "type",
     }
@@ -55,7 +55,7 @@ class GrantaServerApiSearchDiscreteTextValuesDatumCriterion(GrantaServerApiSearc
         "textMatchBehaviour": "GrantaServerApiSearchTextMatchBehaviour",
     }
 
-    def __init__(self, *, _none: "Optional[List[str]]" = None, all: "Optional[List[str]]" = None, any: "Optional[List[str]]" = None, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]" = None, type: "str" = 'discreteTextValues') -> None:
+    def __init__(self, *, _none: "Optional[List[str]]" = None, all: "Optional[List[str]]" = None, any: "Optional[List[str]]" = None, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]" = None, type: "str" = 'discreteTextValues',) -> None:
         """GrantaServerApiSearchDiscreteTextValuesDatumCriterion - a model defined in Swagger
 
         Parameters

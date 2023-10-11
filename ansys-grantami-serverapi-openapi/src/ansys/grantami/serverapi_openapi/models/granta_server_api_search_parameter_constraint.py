@@ -53,7 +53,7 @@ class GrantaServerApiSearchParameterConstraint(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSearchNumericParameterConstraint",
     }
 
-    def __init__(self, *, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None) -> None:
+    def __init__(self, *, parameter: "Optional[GrantaServerApiObjectIdentifier]" = None,) -> None:
         """GrantaServerApiSearchParameterConstraint - a model defined in Swagger
 
         Parameters

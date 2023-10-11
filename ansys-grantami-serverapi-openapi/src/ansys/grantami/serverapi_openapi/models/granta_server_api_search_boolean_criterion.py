@@ -36,16 +36,16 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
 
     """
     swagger_types = {
+        "_none": "list[GrantaServerApiSearchCriterion]",
         "all": "list[GrantaServerApiSearchCriterion]",
         "any": "list[GrantaServerApiSearchCriterion]",
-        "_none": "list[GrantaServerApiSearchCriterion]",
         "type": "str",
     }
 
     attribute_map = {
+        "_none": "none",
         "all": "all",
         "any": "any",
-        "_none": "none",
         "type": "type",
     }
 
@@ -55,7 +55,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         "none": "GrantaServerApiSearchCriterion",
     }
 
-    def __init__(self, *, _none: "Optional[List[GrantaServerApiSearchCriterion]]" = None, all: "Optional[List[GrantaServerApiSearchCriterion]]" = None, any: "Optional[List[GrantaServerApiSearchCriterion]]" = None, type: "str" = 'boolean') -> None:
+    def __init__(self, *, _none: "Optional[List[GrantaServerApiSearchCriterion]]" = None, all: "Optional[List[GrantaServerApiSearchCriterion]]" = None, any: "Optional[List[GrantaServerApiSearchCriterion]]" = None, type: "str" = 'boolean',) -> None:
         """GrantaServerApiSearchBooleanCriterion - a model defined in Swagger
 
         Parameters

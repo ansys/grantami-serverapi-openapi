@@ -36,19 +36,19 @@ class GrantaServerApiSearchLongSortingValue(GrantaServerApiSearchSortingValue):
 
     """
     swagger_types = {
-        "value": "int",
         "type": "str",
+        "value": "int",
     }
 
     attribute_map = {
-        "value": "value",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'long', value: "Optional[int]" = None) -> None:
+    def __init__(self, *, type: "str" = 'long', value: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchLongSortingValue - a model defined in Swagger
 
         Parameters

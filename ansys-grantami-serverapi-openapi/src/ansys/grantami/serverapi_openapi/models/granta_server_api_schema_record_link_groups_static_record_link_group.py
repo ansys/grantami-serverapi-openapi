@@ -36,19 +36,33 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(GrantaServerApi
 
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "identity": "int",
         "include_indirect_links": "bool",
+        "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        "name": "str",
+        "reverse_display_names": "dict(str, str)",
+        "reverse_name": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
+        "identity": "identity",
         "include_indirect_links": "includeIndirectLinks",
+        "link_info": "linkInfo",
+        "name": "name",
+        "reverse_display_names": "reverseDisplayNames",
+        "reverse_name": "reverseName",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, include_indirect_links: "Optional[bool]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'static') -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, identity: "Optional[int]" = None, include_indirect_links: "Optional[bool]" = None, link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None, name: "Optional[str]" = None, reverse_display_names: "Optional[Dict[str, str]]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'static',) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup - a model defined in Swagger
 
         Parameters

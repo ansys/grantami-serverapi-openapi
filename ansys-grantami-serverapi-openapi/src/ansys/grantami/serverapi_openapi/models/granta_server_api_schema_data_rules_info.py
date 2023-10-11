@@ -46,7 +46,7 @@ class GrantaServerApiSchemaDataRulesInfo(ModelBase):
         "dataRules": "GrantaServerApiSchemaDataRule",
     }
 
-    def __init__(self, *, data_rules: "Optional[List[GrantaServerApiSchemaDataRule]]" = None) -> None:
+    def __init__(self, *, data_rules: "Optional[List[GrantaServerApiSchemaDataRule]]" = None,) -> None:
         """GrantaServerApiSchemaDataRulesInfo - a model defined in Swagger
 
         Parameters

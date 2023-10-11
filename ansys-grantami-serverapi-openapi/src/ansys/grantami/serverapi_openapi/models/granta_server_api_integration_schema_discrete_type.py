@@ -49,7 +49,7 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, identity: "Optional[int]" = None, name: "Optional[str]" = None, values: "Optional[List[str]]" = None) -> None:
+    def __init__(self, *, identity: "Optional[int]" = None, name: "Optional[str]" = None, values: "Optional[List[str]]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaDiscreteType - a model defined in Swagger
 
         Parameters

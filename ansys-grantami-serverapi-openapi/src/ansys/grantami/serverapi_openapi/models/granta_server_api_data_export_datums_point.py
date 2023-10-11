@@ -35,20 +35,20 @@ class GrantaServerApiDataExportDatumsPoint(ModelBase):
 
     """
     swagger_types = {
-        "value": "float",
         "parameter_values": "list[GrantaServerApiDataExportDatumsParameterValue]",
+        "value": "float",
     }
 
     attribute_map = {
-        "value": "value",
         "parameter_values": "parameterValues",
+        "value": "value",
     }
 
     subtype_mapping = {
         "parameterValues": "GrantaServerApiDataExportDatumsParameterValue",
     }
 
-    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, value: "Optional[float]" = None) -> None:
+    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, value: "Optional[float]" = None,) -> None:
         """GrantaServerApiDataExportDatumsPoint - a model defined in Swagger
 
         Parameters

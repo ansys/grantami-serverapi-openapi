@@ -36,24 +36,24 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(GrantaServerApi
 
     """
     swagger_types = {
-        "type": "str",
+        "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "gte": "int",
         "lte": "int",
-        "constraints": "list[GrantaServerApiSearchParameterConstraint]",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
-        "constraints": "constraints",
+        "type": "type",
     }
 
     subtype_mapping = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
-    def __init__(self, *, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]" = None, gte: "Optional[int]" = None, lte: "Optional[int]" = None, type: "str" = 'discreteFunctionalRange') -> None:
+    def __init__(self, *, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]" = None, gte: "Optional[int]" = None, lte: "Optional[int]" = None, type: "str" = 'discreteFunctionalRange',) -> None:
         """GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion - a model defined in Swagger
 
         Parameters

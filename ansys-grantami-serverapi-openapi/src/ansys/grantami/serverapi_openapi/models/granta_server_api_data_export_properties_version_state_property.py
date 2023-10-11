@@ -49,7 +49,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(GrantaServerApiDat
         "versionState": "GrantaServerApiVersionState",
     }
 
-    def __init__(self, *, property_name: "str" = 'versionState', version_state: "Optional[GrantaServerApiVersionState]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'versionState', version_state: "Optional[GrantaServerApiVersionState]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesVersionStateProperty - a model defined in Swagger
 
         Parameters

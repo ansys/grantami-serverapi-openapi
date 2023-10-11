@@ -66,7 +66,7 @@ class GrantaServerApiDataExportPropertiesProperty(ModelBase):
         "versionState".lower(): "#/components/schemas/GrantaServerApiDataExportPropertiesVersionStateProperty",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiDataExportPropertiesProperty - a model defined in Swagger
 
         """

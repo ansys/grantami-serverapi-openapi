@@ -35,25 +35,25 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
 
     """
     swagger_types = {
-        "search_index_up_to_date": "bool",
-        "search_index_in_sync": "bool",
-        "search_index_location": "str",
-        "search_index_is_read_only": "bool",
         "disk_status": "GrantaServerApiDiskStatus",
         "disk_threshold": "str",
-        "search_index_unavailable": "bool",
         "records_that_failed_to_index": "list[GrantaServerApiIndexRecordFailure]",
+        "search_index_in_sync": "bool",
+        "search_index_is_read_only": "bool",
+        "search_index_location": "str",
+        "search_index_unavailable": "bool",
+        "search_index_up_to_date": "bool",
     }
 
     attribute_map = {
-        "search_index_up_to_date": "searchIndexUpToDate",
-        "search_index_in_sync": "searchIndexInSync",
-        "search_index_location": "searchIndexLocation",
-        "search_index_is_read_only": "searchIndexIsReadOnly",
         "disk_status": "diskStatus",
         "disk_threshold": "diskThreshold",
-        "search_index_unavailable": "searchIndexUnavailable",
         "records_that_failed_to_index": "recordsThatFailedToIndex",
+        "search_index_in_sync": "searchIndexInSync",
+        "search_index_is_read_only": "searchIndexIsReadOnly",
+        "search_index_location": "searchIndexLocation",
+        "search_index_unavailable": "searchIndexUnavailable",
+        "search_index_up_to_date": "searchIndexUpToDate",
     }
 
     subtype_mapping = {
@@ -61,7 +61,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "recordsThatFailedToIndex": "GrantaServerApiIndexRecordFailure",
     }
 
-    def __init__(self, *, disk_status: "Optional[GrantaServerApiDiskStatus]" = None, disk_threshold: "Optional[str]" = None, records_that_failed_to_index: "Optional[List[GrantaServerApiIndexRecordFailure]]" = None, search_index_in_sync: "Optional[bool]" = None, search_index_is_read_only: "Optional[bool]" = None, search_index_location: "Optional[str]" = None, search_index_unavailable: "Optional[bool]" = None, search_index_up_to_date: "Optional[bool]" = None) -> None:
+    def __init__(self, *, disk_status: "Optional[GrantaServerApiDiskStatus]" = None, disk_threshold: "Optional[str]" = None, records_that_failed_to_index: "Optional[List[GrantaServerApiIndexRecordFailure]]" = None, search_index_in_sync: "Optional[bool]" = None, search_index_is_read_only: "Optional[bool]" = None, search_index_location: "Optional[str]" = None, search_index_unavailable: "Optional[bool]" = None, search_index_up_to_date: "Optional[bool]" = None,) -> None:
         """GrantaServerApiSearchIndexStatus - a model defined in Swagger
 
         Parameters

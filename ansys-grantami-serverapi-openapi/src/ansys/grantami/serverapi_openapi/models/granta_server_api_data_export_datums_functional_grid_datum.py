@@ -36,20 +36,38 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(GrantaServerApiDataExpo
 
     """
     swagger_types = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "datum_type": "str",
         "graph_type": "str",
+        "is_estimated": "bool",
+        "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
+        "not_applicable": "bool",
+        "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
         "points": "list[GrantaServerApiDataExportDatumsGridPoint]",
+        "unit_symbol": "str",
+        "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
     attribute_map = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
         "graph_type": "graphType",
+        "is_estimated": "isEstimated",
+        "meta_datums": "metaDatums",
+        "not_applicable": "notApplicable",
+        "parameters": "parameters",
         "points": "points",
+        "unit_symbol": "unitSymbol",
+        "x_axis_parameter": "xAxisParameter",
     }
 
     subtype_mapping = {
         "points": "GrantaServerApiDataExportDatumsGridPoint",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'floatFunctional', graph_type: "str" = 'grid', is_estimated: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, datum_type: "str" = 'floatFunctional', graph_type: "str" = 'grid', is_estimated: "Optional[bool]" = None, meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None, not_applicable: "Optional[bool]" = None, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,) -> None:
         """GrantaServerApiDataExportDatumsFunctionalGridDatum - a model defined in Swagger
 
         Parameters

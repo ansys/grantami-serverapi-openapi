@@ -36,20 +36,20 @@ class GrantaServerApiAdminMiVersion(ModelBase):
     """
     swagger_types = {
         "binary_compatibility_version": "str",
-        "version": "str",
         "major_minor_version": "str",
+        "version": "str",
     }
 
     attribute_map = {
         "binary_compatibility_version": "binaryCompatibilityVersion",
-        "version": "version",
         "major_minor_version": "majorMinorVersion",
+        "version": "version",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, binary_compatibility_version: "Optional[str]" = None, major_minor_version: "Optional[str]" = None, version: "Optional[str]" = None) -> None:
+    def __init__(self, *, binary_compatibility_version: "Optional[str]" = None, major_minor_version: "Optional[str]" = None, version: "Optional[str]" = None,) -> None:
         """GrantaServerApiAdminMiVersion - a model defined in Swagger
 
         Parameters

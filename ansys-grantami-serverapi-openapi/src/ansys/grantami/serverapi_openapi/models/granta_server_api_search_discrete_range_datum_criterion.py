@@ -50,7 +50,7 @@ class GrantaServerApiSearchDiscreteRangeDatumCriterion(GrantaServerApiSearchDatu
     subtype_mapping = {
     }
 
-    def __init__(self, *, gte: "Optional[int]" = None, lte: "Optional[int]" = None, type: "str" = 'discreteRange') -> None:
+    def __init__(self, *, gte: "Optional[int]" = None, lte: "Optional[int]" = None, type: "str" = 'discreteRange',) -> None:
         """GrantaServerApiSearchDiscreteRangeDatumCriterion - a model defined in Swagger
 
         Parameters

@@ -36,15 +36,15 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
+        "guid": "str",
         "is_default": "bool",
         "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
         "is_default": "isDefault",
         "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
@@ -55,7 +55,7 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersNumericParameterValue",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, is_default: "Optional[bool]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, is_default: "Optional[bool]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaParametersParameterValue - a model defined in Swagger
 
         Parameters

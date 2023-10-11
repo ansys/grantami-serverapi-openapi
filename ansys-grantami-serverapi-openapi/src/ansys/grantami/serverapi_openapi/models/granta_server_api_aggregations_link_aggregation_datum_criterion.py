@@ -36,20 +36,20 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(GrantaServerApiAg
 
     """
     swagger_types = {
-        "type": "str",
         "local_aggregation_criteria": "list[GrantaServerApiAggregationsAggregationCriterion]",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
         "local_aggregation_criteria": "localAggregationCriteria",
+        "type": "type",
     }
 
     subtype_mapping = {
         "localAggregationCriteria": "GrantaServerApiAggregationsAggregationCriterion",
     }
 
-    def __init__(self, *, local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsAggregationCriterion]]" = None, type: "str" = 'link') -> None:
+    def __init__(self, *, local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsAggregationCriterion]]" = None, type: "str" = 'link',) -> None:
         """GrantaServerApiAggregationsLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

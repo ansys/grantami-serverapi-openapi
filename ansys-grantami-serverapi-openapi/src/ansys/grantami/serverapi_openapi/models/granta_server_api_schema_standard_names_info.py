@@ -46,7 +46,7 @@ class GrantaServerApiSchemaStandardNamesInfo(ModelBase):
         "standardNames": "GrantaServerApiSchemaStandardName",
     }
 
-    def __init__(self, *, standard_names: "Optional[List[GrantaServerApiSchemaStandardName]]" = None) -> None:
+    def __init__(self, *, standard_names: "Optional[List[GrantaServerApiSchemaStandardName]]" = None,) -> None:
         """GrantaServerApiSchemaStandardNamesInfo - a model defined in Swagger
 
         Parameters

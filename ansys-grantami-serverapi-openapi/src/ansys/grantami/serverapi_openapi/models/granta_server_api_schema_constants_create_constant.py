@@ -35,23 +35,23 @@ class GrantaServerApiSchemaConstantsCreateConstant(ModelBase):
 
     """
     swagger_types = {
+        "guid": "str",
+        "name": "str",
         "unit_guid": "str",
         "value": "float",
-        "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "guid": "guid",
+        "name": "name",
         "unit_guid": "unitGuid",
         "value": "value",
-        "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit_guid: "Optional[str]" = None, value: "Optional[float]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, unit_guid: "Optional[str]" = None, value: "Optional[float]" = None,) -> None:
         """GrantaServerApiSchemaConstantsCreateConstant - a model defined in Swagger
 
         Parameters

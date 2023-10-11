@@ -35,33 +35,33 @@ class GrantaServerApiSchemaProfileTable(ModelBase):
 
     """
     swagger_types = {
-        "subset_guid": "str",
-        "subset_fallback_hint": "str",
-        "layout_guid": "str",
-        "layout_fallback_hint": "str",
-        "database_guid": "str",
         "database_fallback_hint": "str",
-        "table_guid": "str",
-        "table_fallback_hint": "str",
+        "database_guid": "str",
         "guid": "str",
+        "layout_fallback_hint": "str",
+        "layout_guid": "str",
+        "subset_fallback_hint": "str",
+        "subset_guid": "str",
+        "table_fallback_hint": "str",
+        "table_guid": "str",
     }
 
     attribute_map = {
-        "subset_guid": "subsetGuid",
-        "subset_fallback_hint": "subsetFallbackHint",
-        "layout_guid": "layoutGuid",
-        "layout_fallback_hint": "layoutFallbackHint",
-        "database_guid": "databaseGuid",
         "database_fallback_hint": "databaseFallbackHint",
-        "table_guid": "tableGuid",
-        "table_fallback_hint": "tableFallbackHint",
+        "database_guid": "databaseGuid",
         "guid": "guid",
+        "layout_fallback_hint": "layoutFallbackHint",
+        "layout_guid": "layoutGuid",
+        "subset_fallback_hint": "subsetFallbackHint",
+        "subset_guid": "subsetGuid",
+        "table_fallback_hint": "tableFallbackHint",
+        "table_guid": "tableGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_fallback_hint: "Optional[str]" = None, database_guid: "Optional[str]" = None, guid: "Optional[str]" = None, layout_fallback_hint: "Optional[str]" = None, layout_guid: "Optional[str]" = None, subset_fallback_hint: "Optional[str]" = None, subset_guid: "Optional[str]" = None, table_fallback_hint: "Optional[str]" = None, table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, database_fallback_hint: "Optional[str]" = None, database_guid: "Optional[str]" = None, guid: "Optional[str]" = None, layout_fallback_hint: "Optional[str]" = None, layout_guid: "Optional[str]" = None, subset_fallback_hint: "Optional[str]" = None, subset_guid: "Optional[str]" = None, table_fallback_hint: "Optional[str]" = None, table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaProfileTable - a model defined in Swagger
 
         Parameters

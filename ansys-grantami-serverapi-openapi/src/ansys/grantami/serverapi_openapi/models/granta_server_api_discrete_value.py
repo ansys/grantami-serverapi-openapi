@@ -35,19 +35,19 @@ class GrantaServerApiDiscreteValue(ModelBase):
 
     """
     swagger_types = {
-        "value": "str",
         "order": "int",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
         "order": "order",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, order: "Optional[int]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, order: "Optional[int]" = None, value: "Optional[str]" = None,) -> None:
         """GrantaServerApiDiscreteValue - a model defined in Swagger
 
         Parameters

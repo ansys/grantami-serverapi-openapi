@@ -50,7 +50,7 @@ class GrantaServerApiRecordType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiRecordType - a model defined in Swagger
 
         """

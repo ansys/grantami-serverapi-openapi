@@ -37,16 +37,24 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(GrantaServerApiAggre
     """
     swagger_types = {
         "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
+        "type": "str",
     }
 
     attribute_map = {
         "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
+        "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'exists', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'exists', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsAttributeExistsAggregation - a model defined in Swagger
 
         Parameters

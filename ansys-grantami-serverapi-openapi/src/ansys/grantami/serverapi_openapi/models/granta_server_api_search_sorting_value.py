@@ -50,7 +50,7 @@ class GrantaServerApiSearchSortingValue(ModelBase):
         "text".lower(): "#/components/schemas/GrantaServerApiSearchStringSortingValue",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchSortingValue - a model defined in Swagger
 
         """

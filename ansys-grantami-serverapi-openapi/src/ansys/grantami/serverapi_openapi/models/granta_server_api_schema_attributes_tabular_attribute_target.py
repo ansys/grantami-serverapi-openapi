@@ -35,23 +35,23 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
 
     """
     swagger_types = {
+        "target_attribute_guid": "str",
         "target_database_guid": "str",
         "target_database_version_guid": "str",
         "target_table_guid": "str",
-        "target_attribute_guid": "str",
     }
 
     attribute_map = {
+        "target_attribute_guid": "targetAttributeGuid",
         "target_database_guid": "targetDatabaseGuid",
         "target_database_version_guid": "targetDatabaseVersionGuid",
         "target_table_guid": "targetTableGuid",
-        "target_attribute_guid": "targetAttributeGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, target_attribute_guid: "Optional[str]" = None, target_database_guid: "Optional[str]" = None, target_database_version_guid: "Optional[str]" = None, target_table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, target_attribute_guid: "Optional[str]" = None, target_database_guid: "Optional[str]" = None, target_database_version_guid: "Optional[str]" = None, target_table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaAttributesTabularAttributeTarget - a model defined in Swagger
 
         Parameters

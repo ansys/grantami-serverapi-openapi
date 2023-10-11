@@ -35,19 +35,19 @@ class GrantaServerApiAggregationsDateTimeHistogramBucket(ModelBase):
 
     """
     swagger_types = {
-        "lower": "datetime",
         "count": "int",
+        "lower": "datetime",
     }
 
     attribute_map = {
-        "lower": "lower",
         "count": "count",
+        "lower": "lower",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, count: "Optional[int]" = None, lower: "Optional[datetime]" = None) -> None:
+    def __init__(self, *, count: "Optional[int]" = None, lower: "Optional[datetime]" = None,) -> None:
         """GrantaServerApiAggregationsDateTimeHistogramBucket - a model defined in Swagger
 
         Parameters

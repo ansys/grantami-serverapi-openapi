@@ -36,19 +36,19 @@ class GrantaServerApiSearchDiscreteIdentityDatumCriterion(GrantaServerApiSearchD
 
     """
     swagger_types = {
-        "value": "int",
         "type": "str",
+        "value": "int",
     }
 
     attribute_map = {
-        "value": "value",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'discreteIdentity', value: "Optional[int]" = None) -> None:
+    def __init__(self, *, type: "str" = 'discreteIdentity', value: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchDiscreteIdentityDatumCriterion - a model defined in Swagger
 
         Parameters

@@ -49,7 +49,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         "linkTarget": "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
     }
 
-    def __init__(self, *, link_source: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None, link_target: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None) -> None:
+    def __init__(self, *, link_source: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None, link_target: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsLinkInfo - a model defined in Swagger
 
         Parameters

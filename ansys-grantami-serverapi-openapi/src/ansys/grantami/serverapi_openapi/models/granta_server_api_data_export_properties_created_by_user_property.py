@@ -36,19 +36,19 @@ class GrantaServerApiDataExportPropertiesCreatedByUserProperty(GrantaServerApiDa
 
     """
     swagger_types = {
-        "property_name": "str",
         "created_by_user": "str",
+        "property_name": "str",
     }
 
     attribute_map = {
-        "property_name": "propertyName",
         "created_by_user": "createdByUser",
+        "property_name": "propertyName",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, created_by_user: "Optional[str]" = None, property_name: "str" = 'createdByUser') -> None:
+    def __init__(self, *, created_by_user: "Optional[str]" = None, property_name: "str" = 'createdByUser',) -> None:
         """GrantaServerApiDataExportPropertiesCreatedByUserProperty - a model defined in Swagger
 
         Parameters

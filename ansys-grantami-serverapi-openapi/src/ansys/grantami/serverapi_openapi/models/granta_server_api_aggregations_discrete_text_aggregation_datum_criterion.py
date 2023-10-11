@@ -50,7 +50,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion(GrantaSer
     subtype_mapping = {
     }
 
-    def __init__(self, *, number_of_terms: "Optional[int]" = None, prefix: "Optional[str]" = None, type: "str" = 'discreteText') -> None:
+    def __init__(self, *, number_of_terms: "Optional[int]" = None, prefix: "Optional[str]" = None, type: "str" = 'discreteText',) -> None:
         """GrantaServerApiAggregationsDiscreteTextAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

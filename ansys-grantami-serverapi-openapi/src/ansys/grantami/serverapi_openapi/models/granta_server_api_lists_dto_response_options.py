@@ -35,21 +35,21 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
 
     """
     swagger_types = {
+        "include_record_list_items": "bool",
         "include_user_actions": "bool",
         "include_user_permissions": "bool",
-        "include_record_list_items": "bool",
     }
 
     attribute_map = {
+        "include_record_list_items": "includeRecordListItems",
         "include_user_actions": "includeUserActions",
         "include_user_permissions": "includeUserPermissions",
-        "include_record_list_items": "includeRecordListItems",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, include_record_list_items: "Optional[bool]" = None, include_user_actions: "Optional[bool]" = None, include_user_permissions: "Optional[bool]" = None) -> None:
+    def __init__(self, *, include_record_list_items: "Optional[bool]" = None, include_user_actions: "Optional[bool]" = None, include_user_permissions: "Optional[bool]" = None,) -> None:
         """GrantaServerApiListsDtoResponseOptions - a model defined in Swagger
 
         Parameters

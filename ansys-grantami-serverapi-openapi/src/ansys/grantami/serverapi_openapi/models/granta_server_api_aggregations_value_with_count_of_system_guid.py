@@ -35,19 +35,19 @@ class GrantaServerApiAggregationsValueWithCountOfSystemGuid(ModelBase):
 
     """
     swagger_types = {
-        "value": "str",
         "count": "int",
+        "value": "str",
     }
 
     attribute_map = {
-        "value": "value",
         "count": "count",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, count: "Optional[int]" = None, value: "Optional[str]" = None) -> None:
+    def __init__(self, *, count: "Optional[int]" = None, value: "Optional[str]" = None,) -> None:
         """GrantaServerApiAggregationsValueWithCountOfSystemGuid - a model defined in Swagger
 
         Parameters

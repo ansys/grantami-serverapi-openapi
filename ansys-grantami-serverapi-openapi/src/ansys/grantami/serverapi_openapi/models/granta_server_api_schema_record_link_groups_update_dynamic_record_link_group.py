@@ -36,16 +36,22 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(GrantaSe
 
     """
     swagger_types = {
-        "forbid_orphans": "bool",
-        "referential_integrity_model": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
         "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        "forbid_orphans": "bool",
+        "guid": "str",
+        "name": "str",
+        "referential_integrity_model": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
+        "reverse_name": "str",
         "type": "str",
     }
 
     attribute_map = {
-        "forbid_orphans": "forbidOrphans",
-        "referential_integrity_model": "referentialIntegrityModel",
         "attribute_pairs": "attributePairs",
+        "forbid_orphans": "forbidOrphans",
+        "guid": "guid",
+        "name": "name",
+        "referential_integrity_model": "referentialIntegrityModel",
+        "reverse_name": "reverseName",
         "type": "type",
     }
 
@@ -54,7 +60,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(GrantaSe
         "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair",
     }
 
-    def __init__(self, *, attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None, forbid_orphans: "Optional[bool]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'dynamic') -> None:
+    def __init__(self, *, attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None, forbid_orphans: "Optional[bool]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None, reverse_name: "Optional[str]" = None, type: "str" = 'dynamic',) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup - a model defined in Swagger
 
         Parameters

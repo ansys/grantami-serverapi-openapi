@@ -36,17 +36,25 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(GrantaServerApiSche
 
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "name": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discrete') -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discrete',) -> None:
         """GrantaServerApiSchemaParametersUpdateDiscreteParameter - a model defined in Swagger
 
         Parameters

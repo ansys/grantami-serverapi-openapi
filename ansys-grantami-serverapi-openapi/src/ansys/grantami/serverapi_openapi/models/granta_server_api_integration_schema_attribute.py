@@ -35,30 +35,30 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
-        "identity": "int",
         "type": "GrantaServerApiAttributeType",
-        "unit_symbol": "str",
-        "is_unitted": "bool",
         "discrete_type_identity": "int",
+        "graph_type": "str",
+        "identity": "int",
+        "is_unitted": "bool",
+        "name": "str",
         "parameters": "list[GrantaServerApiParameterInfo]",
         "target_database": "GrantaServerApiObjectIdentifier",
         "target_table": "GrantaServerApiObjectIdentifier",
-        "graph_type": "str",
+        "unit_symbol": "str",
         "x_axis_parameter": "str",
     }
 
     attribute_map = {
-        "name": "name",
-        "identity": "identity",
         "type": "type",
-        "unit_symbol": "unitSymbol",
-        "is_unitted": "isUnitted",
         "discrete_type_identity": "discreteTypeIdentity",
+        "graph_type": "graphType",
+        "identity": "identity",
+        "is_unitted": "isUnitted",
+        "name": "name",
         "parameters": "parameters",
         "target_database": "targetDatabase",
         "target_table": "targetTable",
-        "graph_type": "graphType",
+        "unit_symbol": "unitSymbol",
         "x_axis_parameter": "xAxisParameter",
     }
 
@@ -69,7 +69,7 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         "targetTable": "GrantaServerApiObjectIdentifier",
     }
 
-    def __init__(self, *, type: "GrantaServerApiAttributeType", discrete_type_identity: "Optional[int]" = None, graph_type: "Optional[str]" = None, identity: "Optional[int]" = None, is_unitted: "Optional[bool]" = None, name: "Optional[str]" = None, parameters: "Optional[List[GrantaServerApiParameterInfo]]" = None, target_database: "Optional[GrantaServerApiObjectIdentifier]" = None, target_table: "Optional[GrantaServerApiObjectIdentifier]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[str]" = None) -> None:
+    def __init__(self, *, type: "GrantaServerApiAttributeType", discrete_type_identity: "Optional[int]" = None, graph_type: "Optional[str]" = None, identity: "Optional[int]" = None, is_unitted: "Optional[bool]" = None, name: "Optional[str]" = None, parameters: "Optional[List[GrantaServerApiParameterInfo]]" = None, target_database: "Optional[GrantaServerApiObjectIdentifier]" = None, target_table: "Optional[GrantaServerApiObjectIdentifier]" = None, unit_symbol: "Optional[str]" = None, x_axis_parameter: "Optional[str]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaAttribute - a model defined in Swagger
 
         Parameters

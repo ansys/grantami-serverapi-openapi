@@ -36,23 +36,23 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
     """
     swagger_types = {
         "column_type": "GrantaServerApiSchemaTabularColumnsTabularColumnDtoType",
-        "tabular_column_guid": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "tabular_column_guid": "str",
     }
 
     attribute_map = {
         "column_type": "columnType",
-        "tabular_column_guid": "tabularColumnGuid",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "tabular_column_guid": "tabularColumnGuid",
     }
 
     subtype_mapping = {
         "columnType": "GrantaServerApiSchemaTabularColumnsTabularColumnDtoType",
     }
 
-    def __init__(self, *, column_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnDtoType]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, tabular_column_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, column_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnDtoType]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, tabular_column_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutTabularColumn - a model defined in Swagger
 
         Parameters

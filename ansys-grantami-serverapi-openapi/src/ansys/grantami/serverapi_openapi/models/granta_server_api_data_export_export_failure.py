@@ -35,20 +35,20 @@ class GrantaServerApiDataExportExportFailure(ModelBase):
 
     """
     swagger_types = {
-        "failure_reason": "str",
         "failed_records": "list[GrantaServerApiIntegrationDataExportRecordReference]",
+        "failure_reason": "str",
     }
 
     attribute_map = {
-        "failure_reason": "failureReason",
         "failed_records": "failedRecords",
+        "failure_reason": "failureReason",
     }
 
     subtype_mapping = {
         "failedRecords": "GrantaServerApiIntegrationDataExportRecordReference",
     }
 
-    def __init__(self, *, failed_records: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None, failure_reason: "Optional[str]" = None) -> None:
+    def __init__(self, *, failed_records: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None, failure_reason: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportExportFailure - a model defined in Swagger
 
         Parameters

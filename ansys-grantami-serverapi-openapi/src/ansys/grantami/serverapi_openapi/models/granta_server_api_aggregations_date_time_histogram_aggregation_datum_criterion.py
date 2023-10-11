@@ -48,7 +48,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregationDatumCriterion(Gran
     subtype_mapping = {
     }
 
-    def __init__(self, *, maximum_number_of_buckets: "Optional[int]" = None, type: "str" = 'dateTimeHistogram') -> None:
+    def __init__(self, *, maximum_number_of_buckets: "Optional[int]" = None, type: "str" = 'dateTimeHistogram',) -> None:
         """GrantaServerApiAggregationsDateTimeHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

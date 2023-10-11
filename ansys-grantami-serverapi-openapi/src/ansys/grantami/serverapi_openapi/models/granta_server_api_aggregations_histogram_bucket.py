@@ -35,21 +35,21 @@ class GrantaServerApiAggregationsHistogramBucket(ModelBase):
 
     """
     swagger_types = {
+        "count": "int",
         "lower": "float",
         "upper": "float",
-        "count": "int",
     }
 
     attribute_map = {
+        "count": "count",
         "lower": "lower",
         "upper": "upper",
-        "count": "count",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, count: "Optional[int]" = None, lower: "Optional[float]" = None, upper: "Optional[float]" = None) -> None:
+    def __init__(self, *, count: "Optional[int]" = None, lower: "Optional[float]" = None, upper: "Optional[float]" = None,) -> None:
         """GrantaServerApiAggregationsHistogramBucket - a model defined in Swagger
 
         Parameters

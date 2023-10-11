@@ -35,21 +35,21 @@ class GrantaServerApiSchemaFilesCreateFolder(ModelBase):
 
     """
     swagger_types = {
-        "parent_guid": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "parent_guid": "str",
     }
 
     attribute_map = {
-        "parent_guid": "parentGuid",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "parent_guid": "parentGuid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, parent_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, parent_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaFilesCreateFolder - a model defined in Swagger
 
         Parameters

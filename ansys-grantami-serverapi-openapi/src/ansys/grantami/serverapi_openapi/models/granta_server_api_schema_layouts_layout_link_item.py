@@ -36,21 +36,27 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
 
     """
     swagger_types = {
+        "forwards": "bool",
+        "guid": "str",
         "item_type": "str",
         "link_type": "GrantaServerApiSchemaLayoutsLayoutItemLinkType",
+        "name": "str",
+        "next_link": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
         "target_database": "str",
         "target_table": "str",
-        "forwards": "bool",
-        "next_link": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
+        "underlying_entity_guid": "str",
     }
 
     attribute_map = {
+        "forwards": "forwards",
+        "guid": "guid",
         "item_type": "itemType",
         "link_type": "linkType",
+        "name": "name",
+        "next_link": "nextLink",
         "target_database": "targetDatabase",
         "target_table": "targetTable",
-        "forwards": "forwards",
-        "next_link": "nextLink",
+        "underlying_entity_guid": "underlyingEntityGuid",
     }
 
     subtype_mapping = {
@@ -58,7 +64,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
         "nextLink": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
     }
 
-    def __init__(self, *, forwards: "Optional[bool]" = None, guid: "Optional[str]" = None, item_type: "str" = 'link', link_type: "Optional[GrantaServerApiSchemaLayoutsLayoutItemLinkType]" = None, name: "Optional[str]" = None, next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]" = None, target_database: "Optional[str]" = None, target_table: "Optional[str]" = None, underlying_entity_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, forwards: "Optional[bool]" = None, guid: "Optional[str]" = None, item_type: "str" = 'link', link_type: "Optional[GrantaServerApiSchemaLayoutsLayoutItemLinkType]" = None, name: "Optional[str]" = None, next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]" = None, target_database: "Optional[str]" = None, target_table: "Optional[str]" = None, underlying_entity_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsLayoutLinkItem - a model defined in Swagger
 
         Parameters

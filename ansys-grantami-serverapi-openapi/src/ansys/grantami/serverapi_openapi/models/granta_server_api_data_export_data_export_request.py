@@ -36,14 +36,14 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     """
     swagger_types = {
         "attributes": "list[GrantaServerApiDataExportAttributeToExport]",
-        "record_properties": "list[GrantaServerApiRecordProperty]",
         "record_history_identities": "list[int]",
+        "record_properties": "list[GrantaServerApiRecordProperty]",
     }
 
     attribute_map = {
         "attributes": "attributes",
-        "record_properties": "recordProperties",
         "record_history_identities": "recordHistoryIdentities",
+        "record_properties": "recordProperties",
     }
 
     subtype_mapping = {
@@ -51,7 +51,7 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         "recordProperties": "GrantaServerApiRecordProperty",
     }
 
-    def __init__(self, *, attributes: "Optional[List[GrantaServerApiDataExportAttributeToExport]]" = None, record_history_identities: "Optional[List[int]]" = None, record_properties: "Optional[List[GrantaServerApiRecordProperty]]" = None) -> None:
+    def __init__(self, *, attributes: "Optional[List[GrantaServerApiDataExportAttributeToExport]]" = None, record_history_identities: "Optional[List[int]]" = None, record_properties: "Optional[List[GrantaServerApiRecordProperty]]" = None,) -> None:
         """GrantaServerApiDataExportDataExportRequest - a model defined in Swagger
 
         Parameters

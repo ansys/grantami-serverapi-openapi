@@ -65,7 +65,7 @@ class GrantaServerApiAggregationsAggregationDatumCriterion(ModelBase):
         "floatFunctionalGraph".lower(): "#/components/schemas/GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiAggregationsAggregationDatumCriterion - a model defined in Swagger
 
         """

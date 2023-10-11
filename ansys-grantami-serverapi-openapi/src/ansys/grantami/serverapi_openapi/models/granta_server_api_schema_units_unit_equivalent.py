@@ -35,15 +35,15 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
 
     """
     swagger_types = {
+        "equivalent_unit": "GrantaServerApiSchemaUnitsUnit",
         "unit": "GrantaServerApiSchemaUnitsUnit",
         "unit_system": "GrantaServerApiSchemaUnitsUnitSystem",
-        "equivalent_unit": "GrantaServerApiSchemaUnitsUnit",
     }
 
     attribute_map = {
+        "equivalent_unit": "equivalentUnit",
         "unit": "unit",
         "unit_system": "unitSystem",
-        "equivalent_unit": "equivalentUnit",
     }
 
     subtype_mapping = {
@@ -52,7 +52,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         "equivalentUnit": "GrantaServerApiSchemaUnitsUnit",
     }
 
-    def __init__(self, *, equivalent_unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None, unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None, unit_system: "Optional[GrantaServerApiSchemaUnitsUnitSystem]" = None) -> None:
+    def __init__(self, *, equivalent_unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None, unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None, unit_system: "Optional[GrantaServerApiSchemaUnitsUnitSystem]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnitEquivalent - a model defined in Swagger
 
         Parameters

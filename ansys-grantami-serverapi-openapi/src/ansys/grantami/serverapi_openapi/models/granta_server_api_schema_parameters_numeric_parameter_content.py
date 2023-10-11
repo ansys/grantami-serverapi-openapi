@@ -36,22 +36,24 @@ class GrantaServerApiSchemaParametersNumericParameterContent(GrantaServerApiSche
 
     """
     swagger_types = {
+        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "parameter_range": "GrantaServerApiSchemaParametersContinuousRange",
         "type": "str",
         "value": "float",
-        "parameter_range": "GrantaServerApiSchemaParametersContinuousRange",
     }
 
     attribute_map = {
+        "parameter": "parameter",
+        "parameter_range": "parameterRange",
         "type": "type",
         "value": "value",
-        "parameter_range": "parameterRange",
     }
 
     subtype_mapping = {
         "parameterRange": "GrantaServerApiSchemaParametersContinuousRange",
     }
 
-    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_range: "Optional[GrantaServerApiSchemaParametersContinuousRange]" = None, type: "str" = 'numeric', value: "Optional[float]" = None) -> None:
+    def __init__(self, *, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, parameter_range: "Optional[GrantaServerApiSchemaParametersContinuousRange]" = None, type: "str" = 'numeric', value: "Optional[float]" = None,) -> None:
         """GrantaServerApiSchemaParametersNumericParameterContent - a model defined in Swagger
 
         Parameters

@@ -49,7 +49,7 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         "items": "GrantaServerApiListsDtoListItem",
     }
 
-    def __init__(self, *, header: "Optional[GrantaServerApiListsDtoRecordListHeader]" = None, items: "Optional[List[GrantaServerApiListsDtoListItem]]" = None) -> None:
+    def __init__(self, *, header: "Optional[GrantaServerApiListsDtoRecordListHeader]" = None, items: "Optional[List[GrantaServerApiListsDtoListItem]]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListSearchResult - a model defined in Swagger
 
         Parameters

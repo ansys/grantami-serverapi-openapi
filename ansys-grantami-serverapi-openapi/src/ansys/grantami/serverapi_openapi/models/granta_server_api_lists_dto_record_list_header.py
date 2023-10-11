@@ -35,41 +35,41 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
 
     """
     swagger_types = {
-        "identifier": "str",
-        "metadata": "dict(str, dict(str, object))",
-        "parent_record_list_identifier": "str",
+        "awaiting_approval": "bool",
         "created_timestamp": "datetime",
         "created_user": "GrantaServerApiListsDtoUserOrGroup",
+        "description": "str",
+        "identifier": "str",
+        "internal_use": "bool",
+        "is_revision": "bool",
         "last_modified_timestamp": "datetime",
         "last_modified_user": "GrantaServerApiListsDtoUserOrGroup",
+        "metadata": "dict(str, dict(str, object))",
+        "name": "str",
+        "notes": "str",
+        "parent_record_list_identifier": "str",
+        "published": "bool",
         "published_timestamp": "datetime",
         "published_user": "GrantaServerApiListsDtoUserOrGroup",
-        "is_revision": "bool",
-        "name": "str",
-        "description": "str",
-        "notes": "str",
-        "published": "bool",
-        "awaiting_approval": "bool",
-        "internal_use": "bool",
     }
 
     attribute_map = {
-        "identifier": "identifier",
-        "metadata": "metadata",
-        "parent_record_list_identifier": "parentRecordListIdentifier",
+        "awaiting_approval": "awaitingApproval",
         "created_timestamp": "createdTimestamp",
         "created_user": "createdUser",
+        "description": "description",
+        "identifier": "identifier",
+        "internal_use": "internalUse",
+        "is_revision": "isRevision",
         "last_modified_timestamp": "lastModifiedTimestamp",
         "last_modified_user": "lastModifiedUser",
+        "metadata": "metadata",
+        "name": "name",
+        "notes": "notes",
+        "parent_record_list_identifier": "parentRecordListIdentifier",
+        "published": "published",
         "published_timestamp": "publishedTimestamp",
         "published_user": "publishedUser",
-        "is_revision": "isRevision",
-        "name": "name",
-        "description": "description",
-        "notes": "notes",
-        "published": "published",
-        "awaiting_approval": "awaitingApproval",
-        "internal_use": "internalUse",
     }
 
     subtype_mapping = {
@@ -78,7 +78,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         "publishedUser": "GrantaServerApiListsDtoUserOrGroup",
     }
 
-    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, created_timestamp: "Optional[datetime]" = None, created_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None, description: "Optional[str]" = None, identifier: "Optional[str]" = None, internal_use: "Optional[bool]" = None, is_revision: "Optional[bool]" = None, last_modified_timestamp: "Optional[datetime]" = None, last_modified_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None, metadata: "Optional[Dict[str, Dict[str, object]]]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, parent_record_list_identifier: "Optional[str]" = None, published: "Optional[bool]" = None, published_timestamp: "Optional[datetime]" = None, published_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None) -> None:
+    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, created_timestamp: "Optional[datetime]" = None, created_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None, description: "Optional[str]" = None, identifier: "Optional[str]" = None, internal_use: "Optional[bool]" = None, is_revision: "Optional[bool]" = None, last_modified_timestamp: "Optional[datetime]" = None, last_modified_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None, metadata: "Optional[Dict[str, Dict[str, object]]]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, parent_record_list_identifier: "Optional[str]" = None, published: "Optional[bool]" = None, published_timestamp: "Optional[datetime]" = None, published_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListHeader - a model defined in Swagger
 
         Parameters

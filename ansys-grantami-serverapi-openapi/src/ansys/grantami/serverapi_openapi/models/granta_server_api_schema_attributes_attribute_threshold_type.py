@@ -58,7 +58,7 @@ class GrantaServerApiSchemaAttributesAttributeThresholdType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSchemaAttributesAttributeThresholdType - a model defined in Swagger
 
         """

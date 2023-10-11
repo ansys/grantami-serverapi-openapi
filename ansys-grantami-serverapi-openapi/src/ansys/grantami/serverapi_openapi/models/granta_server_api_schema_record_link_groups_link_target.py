@@ -49,7 +49,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkTarget(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_guid: "Optional[str]" = None, database_version_guid: "Optional[str]" = None, table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, database_guid: "Optional[str]" = None, database_version_guid: "Optional[str]" = None, table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsLinkTarget - a model defined in Swagger
 
         Parameters

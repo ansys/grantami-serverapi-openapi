@@ -35,29 +35,29 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
 
     """
     swagger_types = {
-        "scale_type_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
-        "interpolation_method_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
-        "default_value_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
-        "name": "str",
-        "identity": "int",
-        "unit_symbol": "str",
-        "scale_type": "str",
-        "interpolation_type": "str",
-        "parameter_type": "str",
         "default_value": "GrantaServerApiDataExportDatumsParameterValue",
+        "default_value_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
+        "identity": "int",
+        "interpolation_method_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
+        "interpolation_type": "str",
+        "name": "str",
+        "parameter_type": "str",
+        "scale_type": "str",
+        "scale_type_defined_at": "GrantaServerApiDataExportParameterSettingDefinedAt",
+        "unit_symbol": "str",
     }
 
     attribute_map = {
-        "scale_type_defined_at": "scaleTypeDefinedAt",
-        "interpolation_method_defined_at": "interpolationMethodDefinedAt",
-        "default_value_defined_at": "defaultValueDefinedAt",
-        "name": "name",
-        "identity": "identity",
-        "unit_symbol": "unitSymbol",
-        "scale_type": "scaleType",
-        "interpolation_type": "interpolationType",
-        "parameter_type": "parameterType",
         "default_value": "defaultValue",
+        "default_value_defined_at": "defaultValueDefinedAt",
+        "identity": "identity",
+        "interpolation_method_defined_at": "interpolationMethodDefinedAt",
+        "interpolation_type": "interpolationType",
+        "name": "name",
+        "parameter_type": "parameterType",
+        "scale_type": "scaleType",
+        "scale_type_defined_at": "scaleTypeDefinedAt",
+        "unit_symbol": "unitSymbol",
     }
 
     subtype_mapping = {
@@ -67,7 +67,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
         "defaultValue": "GrantaServerApiDataExportDatumsParameterValue",
     }
 
-    def __init__(self, *, default_value: "Optional[GrantaServerApiDataExportDatumsParameterValue]" = None, default_value_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, identity: "Optional[int]" = None, interpolation_method_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, interpolation_type: "Optional[str]" = None, name: "Optional[str]" = None, parameter_type: "Optional[str]" = None, scale_type: "Optional[str]" = None, scale_type_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, unit_symbol: "Optional[str]" = None) -> None:
+    def __init__(self, *, default_value: "Optional[GrantaServerApiDataExportDatumsParameterValue]" = None, default_value_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, identity: "Optional[int]" = None, interpolation_method_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, interpolation_type: "Optional[str]" = None, name: "Optional[str]" = None, parameter_type: "Optional[str]" = None, scale_type: "Optional[str]" = None, scale_type_defined_at: "Optional[GrantaServerApiDataExportParameterSettingDefinedAt]" = None, unit_symbol: "Optional[str]" = None,) -> None:
         """GrantaServerApiFunctionalDatumParameterInfo - a model defined in Swagger
 
         Parameters

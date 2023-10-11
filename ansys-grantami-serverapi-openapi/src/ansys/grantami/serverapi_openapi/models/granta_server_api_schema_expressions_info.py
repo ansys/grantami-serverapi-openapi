@@ -46,7 +46,7 @@ class GrantaServerApiSchemaExpressionsInfo(ModelBase):
         "expressions": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
     }
 
-    def __init__(self, *, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None) -> None:
+    def __init__(self, *, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None,) -> None:
         """GrantaServerApiSchemaExpressionsInfo - a model defined in Swagger
 
         Parameters

@@ -36,22 +36,22 @@ class GrantaServerApiSchemaUpdateDataRule(ModelBase):
     """
     swagger_types = {
         "description": "str",
-        "regular_expression": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "regular_expression": "str",
     }
 
     attribute_map = {
         "description": "description",
-        "regular_expression": "regularExpression",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "regular_expression": "regularExpression",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, description: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, regular_expression: "Optional[str]" = None) -> None:
+    def __init__(self, *, description: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, regular_expression: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateDataRule - a model defined in Swagger
 
         Parameters

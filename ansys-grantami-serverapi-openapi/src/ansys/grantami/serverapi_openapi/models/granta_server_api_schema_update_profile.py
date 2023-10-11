@@ -36,26 +36,26 @@ class GrantaServerApiSchemaUpdateProfile(ModelBase):
     """
     swagger_types = {
         "description": "str",
-        "homepage_url": "str",
-        "profile_table_guids": "list[str]",
-        "guid": "str",
         "group_name": "str",
+        "guid": "str",
+        "homepage_url": "str",
         "name": "str",
+        "profile_table_guids": "list[str]",
     }
 
     attribute_map = {
         "description": "description",
-        "homepage_url": "homepageUrl",
-        "profile_table_guids": "profileTableGuids",
-        "guid": "guid",
         "group_name": "groupName",
+        "guid": "guid",
+        "homepage_url": "homepageUrl",
         "name": "name",
+        "profile_table_guids": "profileTableGuids",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, description: "Optional[str]" = None, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, homepage_url: "Optional[str]" = None, name: "Optional[str]" = None, profile_table_guids: "Optional[List[str]]" = None) -> None:
+    def __init__(self, *, description: "Optional[str]" = None, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, homepage_url: "Optional[str]" = None, name: "Optional[str]" = None, profile_table_guids: "Optional[List[str]]" = None,) -> None:
         """GrantaServerApiSchemaUpdateProfile - a model defined in Swagger
 
         Parameters

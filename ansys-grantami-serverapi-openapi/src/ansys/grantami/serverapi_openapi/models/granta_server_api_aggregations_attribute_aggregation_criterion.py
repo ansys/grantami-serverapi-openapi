@@ -37,15 +37,15 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(GrantaServerApiAg
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "identity": "int",
         "guid": "str",
+        "identity": "int",
         "is_meta_attribute": "bool",
         "type": "str",
     }
 
     attribute_map = {
-        "identity": "identity",
         "guid": "guid",
+        "identity": "identity",
         "is_meta_attribute": "isMetaAttribute",
         "type": "type",
     }
@@ -58,7 +58,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(GrantaServerApiAg
         "exists".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeAggregationExistsCriterion",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsAttributeAggregationCriterion - a model defined in Swagger
 
         Parameters

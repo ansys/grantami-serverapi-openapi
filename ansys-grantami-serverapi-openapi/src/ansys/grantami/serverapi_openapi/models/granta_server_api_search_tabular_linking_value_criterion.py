@@ -36,22 +36,22 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
 
     """
     swagger_types = {
-        "values": "list[str]",
         "linking_value_match_behaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
         "type": "str",
+        "values": "list[str]",
     }
 
     attribute_map = {
-        "values": "values",
         "linking_value_match_behaviour": "linkingValueMatchBehaviour",
         "type": "type",
+        "values": "values",
     }
 
     subtype_mapping = {
         "linkingValueMatchBehaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
     }
 
-    def __init__(self, *, linking_value_match_behaviour: "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]" = None, type: "str" = 'tabularLinkingValue', values: "Optional[List[str]]" = None) -> None:
+    def __init__(self, *, linking_value_match_behaviour: "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]" = None, type: "str" = 'tabularLinkingValue', values: "Optional[List[str]]" = None,) -> None:
         """GrantaServerApiSearchTabularLinkingValueCriterion - a model defined in Swagger
 
         Parameters

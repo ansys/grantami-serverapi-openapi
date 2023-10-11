@@ -50,7 +50,7 @@ class GrantaServerApiSchemaAttributesAttributeScaleType(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSchemaAttributesAttributeScaleType - a model defined in Swagger
 
         """

@@ -36,19 +36,19 @@ class GrantaServerApiDataExportPropertiesFullNameProperty(GrantaServerApiDataExp
 
     """
     swagger_types = {
-        "property_name": "str",
         "full_name": "str",
+        "property_name": "str",
     }
 
     attribute_map = {
-        "property_name": "propertyName",
         "full_name": "fullName",
+        "property_name": "propertyName",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, full_name: "Optional[str]" = None, property_name: "str" = 'fullName') -> None:
+    def __init__(self, *, full_name: "Optional[str]" = None, property_name: "str" = 'fullName',) -> None:
         """GrantaServerApiDataExportPropertiesFullNameProperty - a model defined in Swagger
 
         Parameters

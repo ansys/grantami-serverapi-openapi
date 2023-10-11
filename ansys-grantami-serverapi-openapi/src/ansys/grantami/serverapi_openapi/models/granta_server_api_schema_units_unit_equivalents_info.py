@@ -46,7 +46,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalentsInfo(ModelBase):
         "unitEquivalents": "GrantaServerApiSchemaUnitsUnitEquivalent",
     }
 
-    def __init__(self, *, unit_equivalents: "Optional[List[GrantaServerApiSchemaUnitsUnitEquivalent]]" = None) -> None:
+    def __init__(self, *, unit_equivalents: "Optional[List[GrantaServerApiSchemaUnitsUnitEquivalent]]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnitEquivalentsInfo - a model defined in Swagger
 
         Parameters

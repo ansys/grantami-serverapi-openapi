@@ -37,24 +37,24 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     """
     swagger_types = {
         "database_key": "str",
-        "record_identity": "int",
-        "record_history_identity": "int",
         "record_guid": "str",
+        "record_history_identity": "int",
+        "record_identity": "int",
         "type": "str",
     }
 
     attribute_map = {
         "database_key": "databaseKey",
-        "record_identity": "recordIdentity",
-        "record_history_identity": "recordHistoryIdentity",
         "record_guid": "recordGuid",
+        "record_history_identity": "recordHistoryIdentity",
+        "record_identity": "recordIdentity",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_key: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_identity: "Optional[int]" = None, type: "str" = 'reference') -> None:
+    def __init__(self, *, database_key: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_identity: "Optional[int]" = None, type: "str" = 'reference',) -> None:
         """GrantaServerApiSearchRecordReferenceCriterion - a model defined in Swagger
 
         Parameters

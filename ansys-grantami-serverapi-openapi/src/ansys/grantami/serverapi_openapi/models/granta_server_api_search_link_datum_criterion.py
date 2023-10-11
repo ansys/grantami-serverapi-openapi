@@ -36,28 +36,28 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
     """
     swagger_types = {
-        "target_table_identity": "int",
-        "target_table_guid": "str",
-        "target_database_key": "str",
-        "local_criterion": "GrantaServerApiSearchCriterion",
-        "link_datum_type": "GrantaServerApiLinkAttributeType",
-        "search_in_reversed_direction": "bool",
-        "target_attribute_identity": "int",
-        "target_attribute_guid": "str",
         "inner_criterion": "GrantaServerApiSearchCriterion",
+        "link_datum_type": "GrantaServerApiLinkAttributeType",
+        "local_criterion": "GrantaServerApiSearchCriterion",
+        "search_in_reversed_direction": "bool",
+        "target_attribute_guid": "str",
+        "target_attribute_identity": "int",
+        "target_database_key": "str",
+        "target_table_guid": "str",
+        "target_table_identity": "int",
         "type": "str",
     }
 
     attribute_map = {
-        "target_table_identity": "targetTableIdentity",
-        "target_table_guid": "targetTableGuid",
-        "target_database_key": "targetDatabaseKey",
-        "local_criterion": "localCriterion",
-        "link_datum_type": "linkDatumType",
-        "search_in_reversed_direction": "searchInReversedDirection",
-        "target_attribute_identity": "targetAttributeIdentity",
-        "target_attribute_guid": "targetAttributeGuid",
         "inner_criterion": "innerCriterion",
+        "link_datum_type": "linkDatumType",
+        "local_criterion": "localCriterion",
+        "search_in_reversed_direction": "searchInReversedDirection",
+        "target_attribute_guid": "targetAttributeGuid",
+        "target_attribute_identity": "targetAttributeIdentity",
+        "target_database_key": "targetDatabaseKey",
+        "target_table_guid": "targetTableGuid",
+        "target_table_identity": "targetTableIdentity",
         "type": "type",
     }
 
@@ -67,7 +67,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         "innerCriterion": "GrantaServerApiSearchCriterion",
     }
 
-    def __init__(self, *, inner_criterion: "Optional[GrantaServerApiSearchCriterion]" = None, link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None, local_criterion: "Optional[GrantaServerApiSearchCriterion]" = None, search_in_reversed_direction: "Optional[bool]" = None, target_attribute_guid: "Optional[str]" = None, target_attribute_identity: "Optional[int]" = None, target_database_key: "Optional[str]" = None, target_table_guid: "Optional[str]" = None, target_table_identity: "Optional[int]" = None, type: "str" = 'link') -> None:
+    def __init__(self, *, inner_criterion: "Optional[GrantaServerApiSearchCriterion]" = None, link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None, local_criterion: "Optional[GrantaServerApiSearchCriterion]" = None, search_in_reversed_direction: "Optional[bool]" = None, target_attribute_guid: "Optional[str]" = None, target_attribute_identity: "Optional[int]" = None, target_database_key: "Optional[str]" = None, target_table_guid: "Optional[str]" = None, target_table_identity: "Optional[int]" = None, type: "str" = 'link',) -> None:
         """GrantaServerApiSearchLinkDatumCriterion - a model defined in Swagger
 
         Parameters

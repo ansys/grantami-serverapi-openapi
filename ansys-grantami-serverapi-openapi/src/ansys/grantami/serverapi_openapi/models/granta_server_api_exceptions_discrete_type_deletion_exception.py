@@ -35,15 +35,15 @@ class GrantaServerApiExceptionsDiscreteTypeDeletionException(ModelBase):
 
     """
     swagger_types = {
-        "message": "str",
         "code": "SystemNetHttpStatusCode",
         "errors": "list[GrantaServerApiExceptionsErrorDetail]",
+        "message": "str",
     }
 
     attribute_map = {
-        "message": "message",
         "code": "code",
         "errors": "errors",
+        "message": "message",
     }
 
     subtype_mapping = {
@@ -51,7 +51,7 @@ class GrantaServerApiExceptionsDiscreteTypeDeletionException(ModelBase):
         "errors": "GrantaServerApiExceptionsErrorDetail",
     }
 
-    def __init__(self, *, code: "Optional[SystemNetHttpStatusCode]" = None, errors: "Optional[List[GrantaServerApiExceptionsErrorDetail]]" = None, message: "Optional[str]" = None) -> None:
+    def __init__(self, *, code: "Optional[SystemNetHttpStatusCode]" = None, errors: "Optional[List[GrantaServerApiExceptionsErrorDetail]]" = None, message: "Optional[str]" = None,) -> None:
         """GrantaServerApiExceptionsDiscreteTypeDeletionException - a model defined in Swagger
 
         Parameters

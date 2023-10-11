@@ -36,20 +36,30 @@ class GrantaServerApiAggregationsDiscreteTextAttributeAggregation(GrantaServerAp
 
     """
     swagger_types = {
-        "terms": "list[GrantaServerApiAggregationsTermWithCount]",
+        "attribute_aggregation_type": "str",
+        "attribute_guid": "str",
+        "attribute_identity": "int",
+        "count": "int",
         "datum_type": "str",
+        "terms": "list[GrantaServerApiAggregationsTermWithCount]",
+        "type": "str",
     }
 
     attribute_map = {
-        "terms": "terms",
+        "attribute_aggregation_type": "attributeAggregationType",
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
+        "count": "count",
         "datum_type": "datumType",
+        "terms": "terms",
+        "type": "type",
     }
 
     subtype_mapping = {
         "terms": "GrantaServerApiAggregationsTermWithCount",
     }
 
-    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'discreteText', terms: "Optional[List[GrantaServerApiAggregationsTermWithCount]]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_type: "str" = 'value', attribute_guid: "Optional[str]" = None, attribute_identity: "Optional[int]" = None, count: "Optional[int]" = None, datum_type: "str" = 'discreteText', terms: "Optional[List[GrantaServerApiAggregationsTermWithCount]]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsDiscreteTextAttributeAggregation - a model defined in Swagger
 
         Parameters

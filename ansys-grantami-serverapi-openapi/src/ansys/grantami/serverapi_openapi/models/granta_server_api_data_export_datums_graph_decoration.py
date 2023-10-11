@@ -50,7 +50,7 @@ class GrantaServerApiDataExportDatumsGraphDecoration(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiDataExportDatumsGraphDecoration - a model defined in Swagger
 
         """

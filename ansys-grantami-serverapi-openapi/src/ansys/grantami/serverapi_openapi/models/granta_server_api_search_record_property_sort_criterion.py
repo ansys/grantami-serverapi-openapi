@@ -37,12 +37,14 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
     """
     swagger_types = {
         "_property": "GrantaServerApiSearchSearchableRecordProperty",
+        "sort_direction": "GrantaServerApiSearchSortDirection",
         "sort_type": "GrantaServerApiSearchSortType",
         "type": "str",
     }
 
     attribute_map = {
         "_property": "property",
+        "sort_direction": "sortDirection",
         "sort_type": "sortType",
         "type": "type",
     }
@@ -52,7 +54,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
         "sortType": "GrantaServerApiSearchSortType",
     }
 
-    def __init__(self, *, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, sort_type: "Optional[GrantaServerApiSearchSortType]" = None, type: "str" = 'recordProperty') -> None:
+    def __init__(self, *, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None, sort_type: "Optional[GrantaServerApiSearchSortType]" = None, type: "str" = 'recordProperty',) -> None:
         """GrantaServerApiSearchRecordPropertySortCriterion - a model defined in Swagger
 
         Parameters

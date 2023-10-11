@@ -37,10 +37,10 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     """
     swagger_types = {
         "criterion_guid": "str",
-        "identities": "list[int]",
-        "identities_to_exclude": "list[int]",
         "guids": "list[str]",
         "guids_to_exclude": "list[str]",
+        "identities": "list[int]",
+        "identities_to_exclude": "list[int]",
         "number_of_terms": "int",
         "prefix": "str",
         "type": "str",
@@ -48,10 +48,10 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
 
     attribute_map = {
         "criterion_guid": "criterionGuid",
-        "identities": "identities",
-        "identities_to_exclude": "identitiesToExclude",
         "guids": "guids",
         "guids_to_exclude": "guidsToExclude",
+        "identities": "identities",
+        "identities_to_exclude": "identitiesToExclude",
         "number_of_terms": "numberOfTerms",
         "prefix": "prefix",
         "type": "type",
@@ -60,7 +60,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(GrantaServerApiAgg
     subtype_mapping = {
     }
 
-    def __init__(self, *, criterion_guid: "Optional[str]" = None, guids: "Optional[List[str]]" = None, guids_to_exclude: "Optional[List[str]]" = None, identities: "Optional[List[int]]" = None, identities_to_exclude: "Optional[List[int]]" = None, number_of_terms: "Optional[int]" = None, prefix: "Optional[str]" = None, type: "str" = 'text') -> None:
+    def __init__(self, *, criterion_guid: "Optional[str]" = None, guids: "Optional[List[str]]" = None, guids_to_exclude: "Optional[List[str]]" = None, identities: "Optional[List[int]]" = None, identities_to_exclude: "Optional[List[int]]" = None, number_of_terms: "Optional[int]" = None, prefix: "Optional[str]" = None, type: "str" = 'text',) -> None:
         """GrantaServerApiAggregationsFreeTextAggregationCriterion - a model defined in Swagger
 
         Parameters

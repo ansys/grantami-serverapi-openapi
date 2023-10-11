@@ -36,25 +36,25 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        "axis_name": "str",
-        "help_path": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "name": "str",
     }
 
     attribute_map = {
-        "default_threshold_type": "defaultThresholdType",
-        "axis_name": "axisName",
-        "help_path": "helpPath",
         "about_attribute": "aboutAttribute",
-        "info": "info",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
+        "name": "name",
     }
 
     subtype_mapping = {
@@ -81,7 +81,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         "mathsFunctional".lower(): "#/components/schemas/GrantaServerApiSchemaAttributesMathsFunctionalAttribute",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaAttributesAttribute - a model defined in Swagger
 
         Parameters

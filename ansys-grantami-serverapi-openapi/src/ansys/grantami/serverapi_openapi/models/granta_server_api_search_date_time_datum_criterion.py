@@ -50,7 +50,7 @@ class GrantaServerApiSearchDateTimeDatumCriterion(GrantaServerApiSearchDatumCrit
     subtype_mapping = {
     }
 
-    def __init__(self, *, gte: "Optional[datetime]" = None, lte: "Optional[datetime]" = None, type: "str" = 'dateTime') -> None:
+    def __init__(self, *, gte: "Optional[datetime]" = None, lte: "Optional[datetime]" = None, type: "str" = 'dateTime',) -> None:
         """GrantaServerApiSearchDateTimeDatumCriterion - a model defined in Swagger
 
         Parameters

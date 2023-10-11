@@ -53,7 +53,7 @@ class GrantaServerApiSearchSortCriterion(ModelBase):
         "relevance".lower(): "#/components/schemas/GrantaServerApiSearchRelevanceSortCriterion",
     }
 
-    def __init__(self, *, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None) -> None:
+    def __init__(self, *, sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None,) -> None:
         """GrantaServerApiSearchSortCriterion - a model defined in Swagger
 
         Parameters

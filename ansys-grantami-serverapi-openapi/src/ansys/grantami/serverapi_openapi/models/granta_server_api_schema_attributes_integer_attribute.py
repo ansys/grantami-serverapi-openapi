@@ -36,19 +36,35 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(GrantaServerApiSchemaAttri
 
     """
     swagger_types = {
-        "type": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_unique": "bool",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
         "is_unique": "isUnique",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_unique: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'integer') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_unique: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'integer',) -> None:
         """GrantaServerApiSchemaAttributesIntegerAttribute - a model defined in Swagger
 
         Parameters

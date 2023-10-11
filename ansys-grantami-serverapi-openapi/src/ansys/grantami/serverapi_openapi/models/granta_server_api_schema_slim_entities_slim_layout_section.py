@@ -36,17 +36,23 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(GrantaServerApiSchemaLa
 
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "name": "str",
         "section_detail_type": "str",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
+        "name": "name",
         "section_detail_type": "sectionDetailType",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, section_detail_type: "str" = 'slim') -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, section_detail_type: "str" = 'slim',) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimLayoutSection - a model defined in Swagger
 
         Parameters

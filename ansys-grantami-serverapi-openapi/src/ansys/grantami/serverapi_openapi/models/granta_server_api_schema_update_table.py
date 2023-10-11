@@ -35,27 +35,27 @@ class GrantaServerApiSchemaUpdateTable(ModelBase):
 
     """
     swagger_types = {
+        "default_layout_guid": "str",
+        "default_subset_guid": "str",
+        "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
-        "default_subset_guid": "str",
-        "default_layout_guid": "str",
         "name": "str",
-        "guid": "str",
     }
 
     attribute_map = {
+        "default_layout_guid": "defaultLayoutGuid",
+        "default_subset_guid": "defaultSubsetGuid",
+        "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
-        "default_subset_guid": "defaultSubsetGuid",
-        "default_layout_guid": "defaultLayoutGuid",
         "name": "name",
-        "guid": "guid",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, default_layout_guid: "Optional[str]" = None, default_subset_guid: "Optional[str]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, default_layout_guid: "Optional[str]" = None, default_subset_guid: "Optional[str]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUpdateTable - a model defined in Swagger
 
         Parameters

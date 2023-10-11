@@ -35,32 +35,32 @@ class GrantaServerApiListsDtoRecordListCreate(ModelBase):
 
     """
     swagger_types = {
-        "items": "GrantaServerApiListsDtoRecordListItems",
-        "identifier": "str",
-        "name": "str",
+        "awaiting_approval": "bool",
         "description": "str",
+        "identifier": "str",
+        "internal_use": "bool",
+        "items": "GrantaServerApiListsDtoRecordListItems",
+        "name": "str",
         "notes": "str",
         "published": "bool",
-        "awaiting_approval": "bool",
-        "internal_use": "bool",
     }
 
     attribute_map = {
-        "items": "items",
-        "identifier": "identifier",
-        "name": "name",
+        "awaiting_approval": "awaitingApproval",
         "description": "description",
+        "identifier": "identifier",
+        "internal_use": "internalUse",
+        "items": "items",
+        "name": "name",
         "notes": "notes",
         "published": "published",
-        "awaiting_approval": "awaitingApproval",
-        "internal_use": "internalUse",
     }
 
     subtype_mapping = {
         "items": "GrantaServerApiListsDtoRecordListItems",
     }
 
-    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, description: "Optional[str]" = None, identifier: "Optional[str]" = None, internal_use: "Optional[bool]" = None, items: "Optional[GrantaServerApiListsDtoRecordListItems]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, published: "Optional[bool]" = None) -> None:
+    def __init__(self, *, awaiting_approval: "Optional[bool]" = None, description: "Optional[str]" = None, identifier: "Optional[str]" = None, internal_use: "Optional[bool]" = None, items: "Optional[GrantaServerApiListsDtoRecordListItems]" = None, name: "Optional[str]" = None, notes: "Optional[str]" = None, published: "Optional[bool]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListCreate - a model defined in Swagger
 
         Parameters

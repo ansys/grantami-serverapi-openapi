@@ -49,7 +49,7 @@ class GrantaServerApiSearchDatumExistsCriterion(ModelBase):
         "type".lower(): "#/components/schemas/GrantaServerApiSearchSimpleDatumExistsCriterion",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchDatumExistsCriterion - a model defined in Swagger
 
         """

@@ -51,7 +51,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         "interval": "GrantaServerApiAggregationsCalendarInterval",
     }
 
-    def __init__(self, *, interval: "Optional[GrantaServerApiAggregationsCalendarInterval]" = None, offset: "Optional[str]" = None, type: "str" = 'dateTimeFixedCalendarWidthHistogram') -> None:
+    def __init__(self, *, interval: "Optional[GrantaServerApiAggregationsCalendarInterval]" = None, offset: "Optional[str]" = None, type: "str" = 'dateTimeFixedCalendarWidthHistogram',) -> None:
         """GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters

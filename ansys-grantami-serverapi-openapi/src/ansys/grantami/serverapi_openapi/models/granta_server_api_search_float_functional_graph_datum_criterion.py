@@ -36,27 +36,27 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(GrantaServerApiSea
 
     """
     swagger_types = {
-        "type": "str",
-        "x_axis_parameter_identity": "int",
-        "x_axis_parameter_guid": "str",
-        "number_of_series_lte": "int",
         "number_of_series_gte": "int",
+        "number_of_series_lte": "int",
         "show_as_table": "bool",
+        "type": "str",
+        "x_axis_parameter_guid": "str",
+        "x_axis_parameter_identity": "int",
     }
 
     attribute_map = {
-        "type": "type",
-        "x_axis_parameter_identity": "xAxisParameterIdentity",
-        "x_axis_parameter_guid": "xAxisParameterGuid",
-        "number_of_series_lte": "numberOfSeriesLte",
         "number_of_series_gte": "numberOfSeriesGte",
+        "number_of_series_lte": "numberOfSeriesLte",
         "show_as_table": "showAsTable",
+        "type": "type",
+        "x_axis_parameter_guid": "xAxisParameterGuid",
+        "x_axis_parameter_identity": "xAxisParameterIdentity",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, number_of_series_gte: "Optional[int]" = None, number_of_series_lte: "Optional[int]" = None, show_as_table: "Optional[bool]" = None, type: "str" = 'floatFunctionalGraph', x_axis_parameter_guid: "Optional[str]" = None, x_axis_parameter_identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, number_of_series_gte: "Optional[int]" = None, number_of_series_lte: "Optional[int]" = None, show_as_table: "Optional[bool]" = None, type: "str" = 'floatFunctionalGraph', x_axis_parameter_guid: "Optional[str]" = None, x_axis_parameter_identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchFloatFunctionalGraphDatumCriterion - a model defined in Swagger
 
         Parameters

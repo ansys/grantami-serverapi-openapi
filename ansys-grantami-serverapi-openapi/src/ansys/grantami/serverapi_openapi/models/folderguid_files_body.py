@@ -35,29 +35,29 @@ class FolderguidFilesBody(ModelBase):
 
     """
     swagger_types = {
-        "content_type": "str",
         "content_disposition": "str",
+        "content_type": "str",
+        "description": "str",
+        "file_name": "str",
         "headers": "dict(str, list[str])",
         "length": "int",
         "name": "str",
-        "file_name": "str",
-        "description": "str",
     }
 
     attribute_map = {
-        "content_type": "ContentType",
         "content_disposition": "ContentDisposition",
+        "content_type": "ContentType",
+        "description": "description",
+        "file_name": "FileName",
         "headers": "Headers",
         "length": "Length",
         "name": "Name",
-        "file_name": "FileName",
-        "description": "description",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, content_disposition: "Optional[str]" = None, content_type: "Optional[str]" = None, description: "Optional[str]" = None, file_name: "Optional[str]" = None, headers: "Optional[Dict[str, List[str]]]" = None, length: "Optional[int]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, content_disposition: "Optional[str]" = None, content_type: "Optional[str]" = None, description: "Optional[str]" = None, file_name: "Optional[str]" = None, headers: "Optional[Dict[str, List[str]]]" = None, length: "Optional[int]" = None, name: "Optional[str]" = None,) -> None:
         """FolderguidFilesBody - a model defined in Swagger
 
         Parameters

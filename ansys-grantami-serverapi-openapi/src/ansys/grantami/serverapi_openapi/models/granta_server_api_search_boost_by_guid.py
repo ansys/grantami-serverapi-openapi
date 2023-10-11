@@ -47,7 +47,7 @@ class GrantaServerApiSearchBoostByGuid(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, boost_factor: "Optional[float]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, boost_factor: "Optional[float]" = None,) -> None:
         """GrantaServerApiSearchBoostByGuid - a model defined in Swagger
 
         Parameters

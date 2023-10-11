@@ -49,7 +49,7 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(GrantaServerApiData
         "recordColor": "GrantaServerApiRecordColor",
     }
 
-    def __init__(self, *, property_name: "str" = 'recordColor', record_color: "Optional[GrantaServerApiRecordColor]" = None) -> None:
+    def __init__(self, *, property_name: "str" = 'recordColor', record_color: "Optional[GrantaServerApiRecordColor]" = None,) -> None:
         """GrantaServerApiDataExportPropertiesRecordColorProperty - a model defined in Swagger
 
         Parameters

@@ -47,7 +47,7 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, message: "Optional[str]" = None, reason: "Optional[str]" = None) -> None:
+    def __init__(self, *, message: "Optional[str]" = None, reason: "Optional[str]" = None,) -> None:
         """GrantaServerApiExceptionsErrorDetail - a model defined in Swagger
 
         Parameters

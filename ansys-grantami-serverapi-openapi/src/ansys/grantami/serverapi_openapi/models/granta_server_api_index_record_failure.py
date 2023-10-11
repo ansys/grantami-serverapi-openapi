@@ -35,23 +35,23 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
 
     """
     swagger_types = {
+        "error": "str",
         "record_history_identity": "int",
         "record_name": "str",
-        "error": "str",
         "record_was_oversized": "bool",
     }
 
     attribute_map = {
+        "error": "error",
         "record_history_identity": "recordHistoryIdentity",
         "record_name": "recordName",
-        "error": "error",
         "record_was_oversized": "recordWasOversized",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, error: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_name: "Optional[str]" = None, record_was_oversized: "Optional[bool]" = None) -> None:
+    def __init__(self, *, error: "Optional[str]" = None, record_history_identity: "Optional[int]" = None, record_name: "Optional[str]" = None, record_was_oversized: "Optional[bool]" = None,) -> None:
         """GrantaServerApiIndexRecordFailure - a model defined in Swagger
 
         Parameters

@@ -36,25 +36,41 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
 
     """
     swagger_types = {
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "allow_all_compatible_expressions": "bool",
+        "allow_extrapolation": "bool",
+        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "axis_name": "str",
+        "default_content": "GrantaServerApiSchemaAttributesMathsContent",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "display_names": "dict(str, str)",
+        "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]",
+        "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "is_range": "bool",
+        "name": "str",
         "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]",
-        "allow_extrapolation": "bool",
-        "is_range": "bool",
-        "allow_all_compatible_expressions": "bool",
-        "default_content": "GrantaServerApiSchemaAttributesMathsContent",
     }
 
     attribute_map = {
+        "about_attribute": "aboutAttribute",
+        "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
+        "allow_extrapolation": "allowExtrapolation",
+        "attribute_parameters": "attributeParameters",
+        "axis_name": "axisName",
+        "default_content": "defaultContent",
+        "default_threshold_type": "defaultThresholdType",
+        "display_names": "displayNames",
+        "expressions": "expressions",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
+        "is_range": "isRange",
+        "name": "name",
         "type": "type",
         "unit": "unit",
-        "attribute_parameters": "attributeParameters",
-        "expressions": "expressions",
-        "allow_extrapolation": "allowExtrapolation",
-        "is_range": "isRange",
-        "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
-        "default_content": "defaultContent",
     }
 
     subtype_mapping = {
@@ -64,7 +80,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(GrantaServerApiSch
         "defaultContent": "GrantaServerApiSchemaAttributesMathsContent",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, allow_all_compatible_expressions: "Optional[bool]" = None, allow_extrapolation: "Optional[bool]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, axis_name: "Optional[str]" = None, default_content: "Optional[GrantaServerApiSchemaAttributesMathsContent]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_range: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'mathsFunctional', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None) -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, allow_all_compatible_expressions: "Optional[bool]" = None, allow_extrapolation: "Optional[bool]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, axis_name: "Optional[str]" = None, default_content: "Optional[GrantaServerApiSchemaAttributesMathsContent]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, is_range: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'mathsFunctional', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,) -> None:
         """GrantaServerApiSchemaAttributesMathsFunctionalAttribute - a model defined in Swagger
 
         Parameters

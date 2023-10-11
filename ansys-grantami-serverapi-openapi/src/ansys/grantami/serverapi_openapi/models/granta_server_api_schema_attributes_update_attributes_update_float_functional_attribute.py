@@ -36,17 +36,29 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
 
     """
     swagger_types = {
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "attribute_parameters": "list[GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter]",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "guid": "str",
+        "help_path": "str",
+        "is_range": "bool",
+        "name": "str",
         "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "attribute_parameters": "list[GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter]",
-        "is_range": "bool",
     }
 
     attribute_map = {
+        "about_attribute": "aboutAttribute",
+        "attribute_parameters": "attributeParameters",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "is_range": "isRange",
+        "name": "name",
         "type": "type",
         "unit": "unit",
-        "attribute_parameters": "attributeParameters",
-        "is_range": "isRange",
     }
 
     subtype_mapping = {
@@ -54,7 +66,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         "attributeParameters": "GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_range: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'floatFunctional', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None) -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, is_range: "Optional[bool]" = None, name: "Optional[str]" = None, type: "str" = 'floatFunctional', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute - a model defined in Swagger
 
         Parameters

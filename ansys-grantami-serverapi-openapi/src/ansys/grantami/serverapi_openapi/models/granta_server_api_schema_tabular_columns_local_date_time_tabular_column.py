@@ -38,18 +38,34 @@ class GrantaServerApiSchemaTabularColumnsLocalDateTimeTabularColumn(GrantaServer
     swagger_types = {
         "column_type": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "name": "str",
+        "roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "show_as_link": "bool",
+        "summary_row_enabled": "bool",
+        "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        "summary_row_text": "str",
     }
 
     attribute_map = {
         "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "name": "name",
+        "roll_up_type": "rollUpType",
+        "show_as_link": "showAsLink",
+        "summary_row_enabled": "summaryRowEnabled",
+        "summary_row_roll_up_type": "summaryRowRollUpType",
+        "summary_row_text": "summaryRowText",
     }
 
     subtype_mapping = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
     }
 
-    def __init__(self, *, column_type: "str" = 'localDateTime', default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None) -> None:
+    def __init__(self, *, column_type: "str" = 'localDateTime', default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaTabularColumnsLocalDateTimeTabularColumn - a model defined in Swagger
 
         Parameters

@@ -35,29 +35,29 @@ class GrantaServerApiSchemaTable(ModelBase):
 
     """
     swagger_types = {
-        "default_subset": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
-        "subsets": "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
         "default_layout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
-        "layouts": "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
+        "default_subset": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
+        "display_names": "dict(str, str)",
+        "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
         "is_versioned": "bool",
-        "display_names": "dict(str, str)",
+        "layouts": "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
         "name": "str",
-        "guid": "str",
+        "subsets": "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
     }
 
     attribute_map = {
-        "default_subset": "defaultSubset",
-        "subsets": "subsets",
         "default_layout": "defaultLayout",
-        "layouts": "layouts",
+        "default_subset": "defaultSubset",
+        "display_names": "displayNames",
+        "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
         "is_versioned": "isVersioned",
-        "display_names": "displayNames",
+        "layouts": "layouts",
         "name": "name",
-        "guid": "guid",
+        "subsets": "subsets",
     }
 
     subtype_mapping = {
@@ -67,7 +67,7 @@ class GrantaServerApiSchemaTable(ModelBase):
         "layouts": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
     }
 
-    def __init__(self, *, default_layout: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None, default_subset: "Optional[GrantaServerApiSchemaSlimEntitiesSlimSubset]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, is_versioned: "Optional[bool]" = None, layouts: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimLayout]]" = None, name: "Optional[str]" = None, subsets: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimSubset]]" = None) -> None:
+    def __init__(self, *, default_layout: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None, default_subset: "Optional[GrantaServerApiSchemaSlimEntitiesSlimSubset]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, is_hidden_from_browse: "Optional[bool]" = None, is_hidden_from_search: "Optional[bool]" = None, is_versioned: "Optional[bool]" = None, layouts: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimLayout]]" = None, name: "Optional[str]" = None, subsets: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimSubset]]" = None,) -> None:
         """GrantaServerApiSchemaTable - a model defined in Swagger
 
         Parameters

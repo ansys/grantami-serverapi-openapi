@@ -35,19 +35,19 @@ class GrantaServerApiSchemaUnitsUpdateUnitSystem(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
         "guid": "str",
+        "name": "str",
     }
 
     attribute_map = {
-        "name": "name",
         "guid": "guid",
+        "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUpdateUnitSystem - a model defined in Swagger
 
         Parameters

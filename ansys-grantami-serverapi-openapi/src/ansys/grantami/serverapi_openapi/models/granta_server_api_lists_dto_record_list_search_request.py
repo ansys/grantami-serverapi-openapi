@@ -35,15 +35,15 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
 
     """
     swagger_types = {
-        "search_criterion": "GrantaServerApiListsDtoListCriterion",
         "paging_options": "GrantaServerApiListsDtoPagingOptions",
         "response_options": "GrantaServerApiListsDtoResponseOptions",
+        "search_criterion": "GrantaServerApiListsDtoListCriterion",
     }
 
     attribute_map = {
-        "search_criterion": "searchCriterion",
         "paging_options": "pagingOptions",
         "response_options": "responseOptions",
+        "search_criterion": "searchCriterion",
     }
 
     subtype_mapping = {
@@ -52,7 +52,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         "responseOptions": "GrantaServerApiListsDtoResponseOptions",
     }
 
-    def __init__(self, *, paging_options: "Optional[GrantaServerApiListsDtoPagingOptions]" = None, response_options: "Optional[GrantaServerApiListsDtoResponseOptions]" = None, search_criterion: "Optional[GrantaServerApiListsDtoListCriterion]" = None) -> None:
+    def __init__(self, *, paging_options: "Optional[GrantaServerApiListsDtoPagingOptions]" = None, response_options: "Optional[GrantaServerApiListsDtoResponseOptions]" = None, search_criterion: "Optional[GrantaServerApiListsDtoListCriterion]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListSearchRequest - a model defined in Swagger
 
         Parameters

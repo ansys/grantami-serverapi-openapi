@@ -46,7 +46,7 @@ class GrantaServerApiAggregationsDateTimeHistogram(ModelBase):
         "buckets": "GrantaServerApiAggregationsDateTimeHistogramBucket",
     }
 
-    def __init__(self, *, buckets: "Optional[List[GrantaServerApiAggregationsDateTimeHistogramBucket]]" = None) -> None:
+    def __init__(self, *, buckets: "Optional[List[GrantaServerApiAggregationsDateTimeHistogramBucket]]" = None,) -> None:
         """GrantaServerApiAggregationsDateTimeHistogram - a model defined in Swagger
 
         Parameters

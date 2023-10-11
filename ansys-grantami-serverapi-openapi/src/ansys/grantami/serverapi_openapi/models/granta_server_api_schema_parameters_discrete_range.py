@@ -46,7 +46,7 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         "parameterValues": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None) -> None:
+    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,) -> None:
         """GrantaServerApiSchemaParametersDiscreteRange - a model defined in Swagger
 
         Parameters

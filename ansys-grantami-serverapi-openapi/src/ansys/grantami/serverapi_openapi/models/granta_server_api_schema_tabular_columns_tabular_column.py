@@ -36,25 +36,25 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "name": "str",
+        "roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "show_as_link": "bool",
         "summary_row_enabled": "bool",
-        "summary_row_text": "str",
-        "roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
-        "display_names": "dict(str, str)",
-        "name": "str",
-        "guid": "str",
+        "summary_row_text": "str",
     }
 
     attribute_map = {
+        "display_names": "displayNames",
+        "guid": "guid",
+        "name": "name",
+        "roll_up_type": "rollUpType",
         "show_as_link": "showAsLink",
         "summary_row_enabled": "summaryRowEnabled",
-        "summary_row_text": "summaryRowText",
-        "roll_up_type": "rollUpType",
         "summary_row_roll_up_type": "summaryRowRollUpType",
-        "display_names": "displayNames",
-        "name": "name",
-        "guid": "guid",
+        "summary_row_text": "summaryRowText",
     }
 
     subtype_mapping = {
@@ -80,7 +80,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         "unavailable".lower(): "#/components/schemas/GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, show_as_link: "Optional[bool]" = None, summary_row_enabled: "Optional[bool]" = None, summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None, summary_row_text: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaTabularColumnsTabularColumn - a model defined in Swagger
 
         Parameters

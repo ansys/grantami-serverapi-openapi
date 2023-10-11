@@ -37,16 +37,20 @@ class GrantaServerApiDataExportSimpleAttributeToExport(GrantaServerApiDataExport
     """
     swagger_types = {
         "attribute_type": "str",
+        "guid": "str",
+        "identity": "int",
     }
 
     attribute_map = {
         "attribute_type": "attributeType",
+        "guid": "guid",
+        "identity": "identity",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, attribute_type: "str" = 'simple', guid: "Optional[str]" = None, identity: "Optional[int]" = None) -> None:
+    def __init__(self, *, attribute_type: "str" = 'simple', guid: "Optional[str]" = None, identity: "Optional[int]" = None,) -> None:
         """GrantaServerApiDataExportSimpleAttributeToExport - a model defined in Swagger
 
         Parameters

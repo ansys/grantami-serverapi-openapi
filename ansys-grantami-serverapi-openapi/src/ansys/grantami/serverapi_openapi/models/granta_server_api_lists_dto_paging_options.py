@@ -35,19 +35,19 @@ class GrantaServerApiListsDtoPagingOptions(ModelBase):
 
     """
     swagger_types = {
-        "start_index": "int",
         "page_size": "int",
+        "start_index": "int",
     }
 
     attribute_map = {
-        "start_index": "startIndex",
         "page_size": "pageSize",
+        "start_index": "startIndex",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, page_size: "Optional[int]" = None, start_index: "Optional[int]" = None) -> None:
+    def __init__(self, *, page_size: "Optional[int]" = None, start_index: "Optional[int]" = None,) -> None:
         """GrantaServerApiListsDtoPagingOptions - a model defined in Swagger
 
         Parameters

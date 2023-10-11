@@ -56,7 +56,7 @@ class GrantaMISearchRecordPropertyFakeAttributeNumbers(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaMISearchRecordPropertyFakeAttributeNumbers - a model defined in Swagger
 
         """

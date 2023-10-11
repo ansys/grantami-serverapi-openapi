@@ -36,31 +36,31 @@ class GrantaServerApiSchemaProfile(ModelBase):
     """
     swagger_types = {
         "description": "str",
-        "homepage_url": "str",
-        "profile_tables": "list[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]",
-        "key": "str",
-        "guid": "str",
         "group_name": "str",
+        "guid": "str",
+        "homepage_url": "str",
         "is_implicit": "bool",
+        "key": "str",
         "name": "str",
+        "profile_tables": "list[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]",
     }
 
     attribute_map = {
         "description": "description",
-        "homepage_url": "homepageUrl",
-        "profile_tables": "profileTables",
-        "key": "key",
-        "guid": "guid",
         "group_name": "groupName",
+        "guid": "guid",
+        "homepage_url": "homepageUrl",
         "is_implicit": "isImplicit",
+        "key": "key",
         "name": "name",
+        "profile_tables": "profileTables",
     }
 
     subtype_mapping = {
         "profileTables": "GrantaServerApiSchemaSlimEntitiesSlimProfileTable",
     }
 
-    def __init__(self, *, description: "Optional[str]" = None, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, homepage_url: "Optional[str]" = None, is_implicit: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None, profile_tables: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]]" = None) -> None:
+    def __init__(self, *, description: "Optional[str]" = None, group_name: "Optional[str]" = None, guid: "Optional[str]" = None, homepage_url: "Optional[str]" = None, is_implicit: "Optional[bool]" = None, key: "Optional[str]" = None, name: "Optional[str]" = None, profile_tables: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]]" = None,) -> None:
         """GrantaServerApiSchemaProfile - a model defined in Swagger
 
         Parameters

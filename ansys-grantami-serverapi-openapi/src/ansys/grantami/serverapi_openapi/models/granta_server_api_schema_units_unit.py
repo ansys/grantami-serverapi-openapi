@@ -35,23 +35,23 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
 
     """
     swagger_types = {
-        "name": "str",
         "equation": "str",
-        "symbol": "str",
         "guid": "str",
+        "name": "str",
+        "symbol": "str",
     }
 
     attribute_map = {
-        "name": "name",
         "equation": "equation",
-        "symbol": "symbol",
         "guid": "guid",
+        "name": "name",
+        "symbol": "symbol",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, equation: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, symbol: "Optional[str]" = None) -> None:
+    def __init__(self, *, equation: "Optional[str]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, symbol: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaUnitsUnit - a model defined in Swagger
 
         Parameters

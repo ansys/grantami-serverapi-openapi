@@ -36,20 +36,28 @@ class GrantaServerApiSearchAttributeMatchesCriterion(GrantaServerApiSearchAttrib
 
     """
     swagger_types = {
-        "inner_criterion": "GrantaServerApiSearchDatumCriterion",
         "attribute_criterion_type": "str",
+        "guid": "str",
+        "identity": "int",
+        "inner_criterion": "GrantaServerApiSearchDatumCriterion",
+        "is_meta_attribute": "bool",
+        "type": "str",
     }
 
     attribute_map = {
-        "inner_criterion": "innerCriterion",
         "attribute_criterion_type": "attributeCriterionType",
+        "guid": "guid",
+        "identity": "identity",
+        "inner_criterion": "innerCriterion",
+        "is_meta_attribute": "isMetaAttribute",
+        "type": "type",
     }
 
     subtype_mapping = {
         "innerCriterion": "GrantaServerApiSearchDatumCriterion",
     }
 
-    def __init__(self, *, attribute_criterion_type: "str" = 'matches', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_criterion_type: "str" = 'matches', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiSearchAttributeMatchesCriterion - a model defined in Swagger
 
         Parameters

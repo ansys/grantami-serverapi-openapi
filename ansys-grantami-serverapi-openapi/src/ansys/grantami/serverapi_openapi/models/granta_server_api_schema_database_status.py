@@ -55,7 +55,7 @@ class GrantaServerApiSchemaDatabaseStatus(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSchemaDatabaseStatus - a model defined in Swagger
 
         """

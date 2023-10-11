@@ -36,20 +36,22 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
 
     """
     swagger_types = {
-        "item_type": "str",
         "attribute_guid": "str",
-        "required": "bool",
-        "read_only": "bool",
+        "guid": "str",
+        "item_type": "str",
         "meta_attributes": "list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]",
+        "read_only": "bool",
+        "required": "bool",
         "tabular_column_guids": "list[str]",
     }
 
     attribute_map = {
-        "item_type": "itemType",
         "attribute_guid": "attributeGuid",
-        "required": "required",
-        "read_only": "readOnly",
+        "guid": "guid",
+        "item_type": "itemType",
         "meta_attributes": "metaAttributes",
+        "read_only": "readOnly",
+        "required": "required",
         "tabular_column_guids": "tabularColumnGuids",
     }
 
@@ -57,7 +59,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         "metaAttributes": "GrantaServerApiSchemaLayoutsNewLayoutAttributeItem",
     }
 
-    def __init__(self, *, attribute_guid: "Optional[str]" = None, guid: "Optional[str]" = None, item_type: "str" = 'attribute', meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]" = None, read_only: "Optional[bool]" = None, required: "Optional[bool]" = None, tabular_column_guids: "Optional[List[str]]" = None) -> None:
+    def __init__(self, *, attribute_guid: "Optional[str]" = None, guid: "Optional[str]" = None, item_type: "str" = 'attribute', meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]" = None, read_only: "Optional[bool]" = None, required: "Optional[bool]" = None, tabular_column_guids: "Optional[List[str]]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAttributeItem - a model defined in Swagger
 
         Parameters

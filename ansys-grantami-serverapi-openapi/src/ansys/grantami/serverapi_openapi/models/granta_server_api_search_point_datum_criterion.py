@@ -50,7 +50,7 @@ class GrantaServerApiSearchPointDatumCriterion(GrantaServerApiSearchDatumCriteri
     subtype_mapping = {
     }
 
-    def __init__(self, *, gte: "Optional[float]" = None, lte: "Optional[float]" = None, type: "str" = 'point') -> None:
+    def __init__(self, *, gte: "Optional[float]" = None, lte: "Optional[float]" = None, type: "str" = 'point',) -> None:
         """GrantaServerApiSearchPointDatumCriterion - a model defined in Swagger
 
         Parameters

@@ -46,7 +46,7 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
         "files": "GrantaServerApiSchemaSlimEntitiesSlimFile",
     }
 
-    def __init__(self, *, files: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimFile]]" = None) -> None:
+    def __init__(self, *, files: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimFile]]" = None,) -> None:
         """GrantaServerApiSchemaFilesFilesInfo - a model defined in Swagger
 
         Parameters

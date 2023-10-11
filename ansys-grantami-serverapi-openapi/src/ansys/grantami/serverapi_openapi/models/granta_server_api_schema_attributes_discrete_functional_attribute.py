@@ -36,15 +36,31 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
 
     """
     swagger_types = {
-        "type": "str",
-        "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
-        "discrete_type": "discreteType",
+        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "discrete_type": "discreteType",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "info": "info",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
@@ -52,7 +68,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(GrantaServerApi
         "attributeParameters": "GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, type: "str" = 'discreteFunctional') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, type: "str" = 'discreteFunctional',) -> None:
         """GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute - a model defined in Swagger
 
         Parameters

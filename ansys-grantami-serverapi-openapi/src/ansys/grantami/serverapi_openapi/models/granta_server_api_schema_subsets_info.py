@@ -46,7 +46,7 @@ class GrantaServerApiSchemaSubsetsInfo(ModelBase):
         "subsets": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
     }
 
-    def __init__(self, *, subsets: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimSubset]]" = None) -> None:
+    def __init__(self, *, subsets: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimSubset]]" = None,) -> None:
         """GrantaServerApiSchemaSubsetsInfo - a model defined in Swagger
 
         Parameters

@@ -35,15 +35,15 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
 
     """
     swagger_types = {
+        "graph_decoration": "GrantaServerApiDataExportDatumsGraphDecoration",
         "parameter_values": "list[GrantaServerApiDataExportDatumsParameterValue]",
         "points": "list[GrantaServerApiDataExportDatumsSeriesPoint]",
-        "graph_decoration": "GrantaServerApiDataExportDatumsGraphDecoration",
     }
 
     attribute_map = {
+        "graph_decoration": "graphDecoration",
         "parameter_values": "parameterValues",
         "points": "points",
-        "graph_decoration": "graphDecoration",
     }
 
     subtype_mapping = {
@@ -52,7 +52,7 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
         "graphDecoration": "GrantaServerApiDataExportDatumsGraphDecoration",
     }
 
-    def __init__(self, *, graph_decoration: "Optional[GrantaServerApiDataExportDatumsGraphDecoration]" = None, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsSeriesPoint]]" = None) -> None:
+    def __init__(self, *, graph_decoration: "Optional[GrantaServerApiDataExportDatumsGraphDecoration]" = None, parameter_values: "Optional[List[GrantaServerApiDataExportDatumsParameterValue]]" = None, points: "Optional[List[GrantaServerApiDataExportDatumsSeriesPoint]]" = None,) -> None:
         """GrantaServerApiDataExportDatumsSeries - a model defined in Swagger
 
         Parameters

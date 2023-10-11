@@ -35,24 +35,24 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
 
     """
     swagger_types = {
-        "type": "GrantaServerApiAttributeType",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "type": "GrantaServerApiAttributeType",
     }
 
     attribute_map = {
-        "type": "type",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
         "type": "GrantaServerApiAttributeType",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, type: "Optional[GrantaServerApiAttributeType]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, name: "Optional[str]" = None, type: "Optional[GrantaServerApiAttributeType]" = None,) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimAttribute - a model defined in Swagger
 
         Parameters

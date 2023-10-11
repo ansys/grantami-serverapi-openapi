@@ -35,21 +35,21 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
 
     """
     swagger_types = {
-        "page_size": "int",
         "keep_alive_in_minutes": "int",
         "page_number": "int",
+        "page_size": "int",
     }
 
     attribute_map = {
-        "page_size": "pageSize",
         "keep_alive_in_minutes": "keepAliveInMinutes",
         "page_number": "pageNumber",
+        "page_size": "pageSize",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, keep_alive_in_minutes: "Optional[int]" = None, page_number: "Optional[int]" = None, page_size: "Optional[int]" = None) -> None:
+    def __init__(self, *, keep_alive_in_minutes: "Optional[int]" = None, page_number: "Optional[int]" = None, page_size: "Optional[int]" = None,) -> None:
         """GrantaServerApiSearchPagingOptions - a model defined in Swagger
 
         Parameters

@@ -36,21 +36,21 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
 
     """
     swagger_types = {
-        "subset_identity": "int",
         "subset_guid": "str",
+        "subset_identity": "int",
         "type": "str",
     }
 
     attribute_map = {
-        "subset_identity": "subsetIdentity",
         "subset_guid": "subsetGuid",
+        "subset_identity": "subsetIdentity",
         "type": "type",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, subset_guid: "Optional[str]" = None, subset_identity: "Optional[int]" = None, type: "str" = 'subset') -> None:
+    def __init__(self, *, subset_guid: "Optional[str]" = None, subset_identity: "Optional[int]" = None, type: "str" = 'subset',) -> None:
         """GrantaServerApiSearchRecordSubsetCriterion - a model defined in Swagger
 
         Parameters

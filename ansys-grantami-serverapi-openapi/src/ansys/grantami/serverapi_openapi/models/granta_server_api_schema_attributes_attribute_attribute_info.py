@@ -35,33 +35,33 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
 
     """
     swagger_types = {
-        "type_code": "str",
         "chartable": "bool",
         "expressionable": "bool",
-        "linkable": "bool",
         "extended_name": "str",
-        "is_meta_attribute": "bool",
-        "ordered_meta_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "standard_names": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "primary_data_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "foreign_data_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "primary_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "foreign_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "is_meta_attribute": "bool",
+        "linkable": "bool",
+        "ordered_meta_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "primary_data_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "primary_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "standard_names": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "type_code": "str",
     }
 
     attribute_map = {
-        "type_code": "typeCode",
         "chartable": "chartable",
         "expressionable": "expressionable",
-        "linkable": "linkable",
         "extended_name": "extendedName",
-        "is_meta_attribute": "isMetaAttribute",
-        "ordered_meta_attributes": "orderedMetaAttributes",
-        "standard_names": "standardNames",
-        "primary_data_link_groups": "primaryDataLinkGroups",
         "foreign_data_link_groups": "foreignDataLinkGroups",
-        "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
         "foreign_dynamic_link_groups": "foreignDynamicLinkGroups",
+        "is_meta_attribute": "isMetaAttribute",
+        "linkable": "linkable",
+        "ordered_meta_attributes": "orderedMetaAttributes",
+        "primary_data_link_groups": "primaryDataLinkGroups",
+        "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
+        "standard_names": "standardNames",
+        "type_code": "typeCode",
     }
 
     subtype_mapping = {
@@ -73,7 +73,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         "foreignDynamicLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, chartable: "Optional[bool]" = None, expressionable: "Optional[bool]" = None, extended_name: "Optional[str]" = None, foreign_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, foreign_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, is_meta_attribute: "Optional[bool]" = None, linkable: "Optional[bool]" = None, ordered_meta_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, primary_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, primary_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, standard_names: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, type_code: "Optional[str]" = None) -> None:
+    def __init__(self, *, chartable: "Optional[bool]" = None, expressionable: "Optional[bool]" = None, extended_name: "Optional[str]" = None, foreign_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, foreign_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, is_meta_attribute: "Optional[bool]" = None, linkable: "Optional[bool]" = None, ordered_meta_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, primary_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, primary_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, standard_names: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None, type_code: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaAttributesAttributeAttributeInfo - a model defined in Swagger
 
         Parameters

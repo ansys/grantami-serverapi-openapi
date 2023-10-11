@@ -36,20 +36,32 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
 
     """
     swagger_types = {
-        "type": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        "guid": "str",
+        "help_path": "str",
+        "name": "str",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
+        "type": "type",
     }
 
     subtype_mapping = {
         "attributeParameters": "GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discreteFunctional') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None, type: "str" = 'discreteFunctional',) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttribute - a model defined in Swagger
 
         Parameters

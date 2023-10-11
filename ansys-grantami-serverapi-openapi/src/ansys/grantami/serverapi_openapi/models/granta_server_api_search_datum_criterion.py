@@ -70,7 +70,7 @@ class GrantaServerApiSearchDatumCriterion(ModelBase):
         "shortText".lower(): "#/components/schemas/GrantaServerApiSearchShortTextDatumCriterion",
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiSearchDatumCriterion - a model defined in Swagger
 
         """

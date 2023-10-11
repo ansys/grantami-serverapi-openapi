@@ -36,19 +36,19 @@ class GrantaServerApiSearchLogicalDatumCriterion(GrantaServerApiSearchDatumCrite
 
     """
     swagger_types = {
-        "value": "bool",
         "type": "str",
+        "value": "bool",
     }
 
     attribute_map = {
-        "value": "value",
         "type": "type",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'logical', value: "Optional[bool]" = None) -> None:
+    def __init__(self, *, type: "str" = 'logical', value: "Optional[bool]" = None,) -> None:
         """GrantaServerApiSearchLogicalDatumCriterion - a model defined in Swagger
 
         Parameters

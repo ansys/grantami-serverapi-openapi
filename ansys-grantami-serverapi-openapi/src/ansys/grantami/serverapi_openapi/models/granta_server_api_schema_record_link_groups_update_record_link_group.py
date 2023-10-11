@@ -36,15 +36,15 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateRecordLinkGroup(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "reverse_name": "str",
-        "name": "str",
         "guid": "str",
+        "name": "str",
+        "reverse_name": "str",
     }
 
     attribute_map = {
-        "reverse_name": "reverseName",
-        "name": "name",
         "guid": "guid",
+        "name": "name",
+        "reverse_name": "reverseName",
     }
 
     subtype_mapping = {
@@ -56,7 +56,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateRecordLinkGroup(ModelBase):
         "crossDatabase".lower(): "#/components/schemas/GrantaServerApiSchemaRecordLinkGroupsUpdateCrossDatabaseRecordLinkGroup",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, reverse_name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, name: "Optional[str]" = None, reverse_name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsUpdateRecordLinkGroup - a model defined in Swagger
 
         Parameters

@@ -36,16 +36,16 @@ class GrantaServerApiListsDtoListItem(ModelBase):
     """
     swagger_types = {
         "database_guid": "str",
-        "record_history_guid": "str",
         "record_guid": "str",
+        "record_history_guid": "str",
         "record_version": "int",
         "table_guid": "str",
     }
 
     attribute_map = {
         "database_guid": "databaseGuid",
-        "record_history_guid": "recordHistoryGuid",
         "record_guid": "recordGuid",
+        "record_history_guid": "recordHistoryGuid",
         "record_version": "recordVersion",
         "table_guid": "tableGuid",
     }
@@ -53,7 +53,7 @@ class GrantaServerApiListsDtoListItem(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_guid: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_guid: "Optional[str]" = None, record_version: "Optional[int]" = None, table_guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, database_guid: "Optional[str]" = None, record_guid: "Optional[str]" = None, record_history_guid: "Optional[str]" = None, record_version: "Optional[int]" = None, table_guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiListsDtoListItem - a model defined in Swagger
 
         Parameters

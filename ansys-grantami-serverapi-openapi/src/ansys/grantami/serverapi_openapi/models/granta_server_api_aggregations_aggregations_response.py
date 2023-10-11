@@ -46,7 +46,7 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
         "results": "GrantaServerApiAggregationsAggregation",
     }
 
-    def __init__(self, *, results: "Optional[List[GrantaServerApiAggregationsAggregation]]" = None) -> None:
+    def __init__(self, *, results: "Optional[List[GrantaServerApiAggregationsAggregation]]" = None,) -> None:
         """GrantaServerApiAggregationsAggregationsResponse - a model defined in Swagger
 
         Parameters

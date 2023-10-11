@@ -36,17 +36,17 @@ class GrantaServerApiSchemaParametersUpdateParameter(ModelBase):
         They key is discriminator value and the value is associated subtype.
     """
     swagger_types = {
-        "help_path": "str",
         "display_names": "dict(str, str)",
-        "name": "str",
         "guid": "str",
+        "help_path": "str",
+        "name": "str",
     }
 
     attribute_map = {
-        "help_path": "helpPath",
         "display_names": "displayNames",
-        "name": "name",
         "guid": "guid",
+        "help_path": "helpPath",
+        "name": "name",
     }
 
     subtype_mapping = {
@@ -57,7 +57,7 @@ class GrantaServerApiSchemaParametersUpdateParameter(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersUpdateNumericParameter",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaParametersUpdateParameter - a model defined in Swagger
 
         Parameters

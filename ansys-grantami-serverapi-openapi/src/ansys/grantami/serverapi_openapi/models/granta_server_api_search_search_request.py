@@ -36,14 +36,14 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
     """
     swagger_types = {
         "criterion": "GrantaServerApiSearchCriterion",
-        "sort_criteria": "list[GrantaServerApiSearchSortCriterion]",
         "paging_options": "GrantaServerApiSearchPagingOptions",
+        "sort_criteria": "list[GrantaServerApiSearchSortCriterion]",
     }
 
     attribute_map = {
         "criterion": "criterion",
-        "sort_criteria": "sortCriteria",
         "paging_options": "pagingOptions",
+        "sort_criteria": "sortCriteria",
     }
 
     subtype_mapping = {
@@ -52,7 +52,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         "pagingOptions": "GrantaServerApiSearchPagingOptions",
     }
 
-    def __init__(self, *, criterion: "Optional[GrantaServerApiSearchCriterion]" = None, paging_options: "Optional[GrantaServerApiSearchPagingOptions]" = None, sort_criteria: "Optional[List[GrantaServerApiSearchSortCriterion]]" = None) -> None:
+    def __init__(self, *, criterion: "Optional[GrantaServerApiSearchCriterion]" = None, paging_options: "Optional[GrantaServerApiSearchPagingOptions]" = None, sort_criteria: "Optional[List[GrantaServerApiSearchSortCriterion]]" = None,) -> None:
         """GrantaServerApiSearchSearchRequest - a model defined in Swagger
 
         Parameters

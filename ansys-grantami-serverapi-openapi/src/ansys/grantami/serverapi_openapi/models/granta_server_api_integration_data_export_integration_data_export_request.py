@@ -35,20 +35,20 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
 
     """
     swagger_types = {
-        "record_references": "list[GrantaServerApiIntegrationDataExportRecordReference]",
         "attribute_identities": "list[int]",
+        "record_references": "list[GrantaServerApiIntegrationDataExportRecordReference]",
     }
 
     attribute_map = {
-        "record_references": "recordReferences",
         "attribute_identities": "attributeIdentities",
+        "record_references": "recordReferences",
     }
 
     subtype_mapping = {
         "recordReferences": "GrantaServerApiIntegrationDataExportRecordReference",
     }
 
-    def __init__(self, *, attribute_identities: "Optional[List[int]]" = None, record_references: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None) -> None:
+    def __init__(self, *, attribute_identities: "Optional[List[int]]" = None, record_references: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None,) -> None:
         """GrantaServerApiIntegrationDataExportIntegrationDataExportRequest - a model defined in Swagger
 
         Parameters

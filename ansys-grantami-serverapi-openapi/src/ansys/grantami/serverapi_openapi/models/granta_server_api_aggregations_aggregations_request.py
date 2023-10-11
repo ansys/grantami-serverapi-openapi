@@ -35,13 +35,13 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
 
     """
     swagger_types = {
-        "criterion": "GrantaServerApiSearchCriterion",
         "aggregation_criteria": "list[GrantaServerApiAggregationsAggregationCriterion]",
+        "criterion": "GrantaServerApiSearchCriterion",
     }
 
     attribute_map = {
-        "criterion": "criterion",
         "aggregation_criteria": "aggregationCriteria",
+        "criterion": "criterion",
     }
 
     subtype_mapping = {
@@ -49,7 +49,7 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
         "aggregationCriteria": "GrantaServerApiAggregationsAggregationCriterion",
     }
 
-    def __init__(self, *, aggregation_criteria: "Optional[List[GrantaServerApiAggregationsAggregationCriterion]]" = None, criterion: "Optional[GrantaServerApiSearchCriterion]" = None) -> None:
+    def __init__(self, *, aggregation_criteria: "Optional[List[GrantaServerApiAggregationsAggregationCriterion]]" = None, criterion: "Optional[GrantaServerApiSearchCriterion]" = None,) -> None:
         """GrantaServerApiAggregationsAggregationsRequest - a model defined in Swagger
 
         Parameters

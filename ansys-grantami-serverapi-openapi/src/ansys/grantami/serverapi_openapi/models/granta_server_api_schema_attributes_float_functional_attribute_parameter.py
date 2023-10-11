@@ -35,16 +35,16 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
 
     """
     swagger_types = {
-        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "default_value": "float",
         "interpolation_method": "GrantaServerApiSchemaAttributesAttributeInterpolationMethod",
+        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "scale_type": "GrantaServerApiSchemaAttributesAttributeScaleType",
     }
 
     attribute_map = {
-        "parameter": "parameter",
         "default_value": "defaultValue",
         "interpolation_method": "interpolationMethod",
+        "parameter": "parameter",
         "scale_type": "scaleType",
     }
 
@@ -54,7 +54,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
         "scaleType": "GrantaServerApiSchemaAttributesAttributeScaleType",
     }
 
-    def __init__(self, *, default_value: "Optional[float]" = None, interpolation_method: "Optional[GrantaServerApiSchemaAttributesAttributeInterpolationMethod]" = None, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, scale_type: "Optional[GrantaServerApiSchemaAttributesAttributeScaleType]" = None) -> None:
+    def __init__(self, *, default_value: "Optional[float]" = None, interpolation_method: "Optional[GrantaServerApiSchemaAttributesAttributeInterpolationMethod]" = None, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, scale_type: "Optional[GrantaServerApiSchemaAttributesAttributeScaleType]" = None,) -> None:
         """GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter - a model defined in Swagger
 
         Parameters

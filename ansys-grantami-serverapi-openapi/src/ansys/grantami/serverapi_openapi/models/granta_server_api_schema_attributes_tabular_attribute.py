@@ -36,21 +36,37 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
 
     """
     swagger_types = {
-        "type": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_full_table": "bool",
+        "display_names": "dict(str, str)",
         "display_summary_row_inline": "bool",
+        "guid": "str",
+        "help_path": "str",
         "hide_unlinked_rows": "bool",
-        "target": "GrantaServerApiSchemaAttributesTabularAttributeTarget",
+        "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        "name": "str",
         "tabular_columns": "list[GrantaServerApiSchemaTabularColumnsTabularColumn]",
+        "target": "GrantaServerApiSchemaAttributesTabularAttributeTarget",
+        "type": "str",
     }
 
     attribute_map = {
-        "type": "type",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
+        "display_names": "displayNames",
         "display_summary_row_inline": "displaySummaryRowInline",
+        "guid": "guid",
+        "help_path": "helpPath",
         "hide_unlinked_rows": "hideUnlinkedRows",
-        "target": "target",
+        "info": "info",
+        "name": "name",
         "tabular_columns": "tabularColumns",
+        "target": "target",
+        "type": "type",
     }
 
     subtype_mapping = {
@@ -58,7 +74,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         "tabularColumns": "GrantaServerApiSchemaTabularColumnsTabularColumn",
     }
 
-    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_full_table: "Optional[bool]" = None, display_names: "Optional[Dict[str, str]]" = None, display_summary_row_inline: "Optional[bool]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, hide_unlinked_rows: "Optional[bool]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsTabularColumn]]" = None, target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]" = None, type: "str" = 'link') -> None:
+    def __init__(self, *, about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None, axis_name: "Optional[str]" = None, default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None, display_full_table: "Optional[bool]" = None, display_names: "Optional[Dict[str, str]]" = None, display_summary_row_inline: "Optional[bool]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, hide_unlinked_rows: "Optional[bool]" = None, info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None, name: "Optional[str]" = None, tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsTabularColumn]]" = None, target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]" = None, type: "str" = 'link',) -> None:
         """GrantaServerApiSchemaAttributesTabularAttribute - a model defined in Swagger
 
         Parameters

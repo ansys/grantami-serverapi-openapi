@@ -46,7 +46,7 @@ class GrantaServerApiSchemaParametersParameterValuesInfo(ModelBase):
         "parameterValues": "GrantaServerApiSchemaParametersParameterValue",
     }
 
-    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiSchemaParametersParameterValue]]" = None) -> None:
+    def __init__(self, *, parameter_values: "Optional[List[GrantaServerApiSchemaParametersParameterValue]]" = None,) -> None:
         """GrantaServerApiSchemaParametersParameterValuesInfo - a model defined in Swagger
 
         Parameters

@@ -46,7 +46,7 @@ class GrantaServerApiSearchPictureDatumCriterion(GrantaServerApiSearchDatumCrite
     subtype_mapping = {
     }
 
-    def __init__(self, *, type: "str" = 'picture') -> None:
+    def __init__(self, *, type: "str" = 'picture',) -> None:
         """GrantaServerApiSearchPictureDatumCriterion - a model defined in Swagger
 
         Parameters

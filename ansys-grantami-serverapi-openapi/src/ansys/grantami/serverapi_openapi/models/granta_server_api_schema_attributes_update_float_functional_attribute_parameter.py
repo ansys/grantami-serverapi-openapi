@@ -35,16 +35,16 @@ class GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter(Mod
 
     """
     swagger_types = {
-        "parameter_guid": "str",
         "default_value": "float",
         "interpolation_method": "GrantaServerApiSchemaAttributesAttributeInterpolationMethod",
+        "parameter_guid": "str",
         "scale_type": "GrantaServerApiSchemaAttributesAttributeScaleType",
     }
 
     attribute_map = {
-        "parameter_guid": "parameterGuid",
         "default_value": "defaultValue",
         "interpolation_method": "interpolationMethod",
+        "parameter_guid": "parameterGuid",
         "scale_type": "scaleType",
     }
 
@@ -53,7 +53,7 @@ class GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter(Mod
         "scaleType": "GrantaServerApiSchemaAttributesAttributeScaleType",
     }
 
-    def __init__(self, *, default_value: "Optional[float]" = None, interpolation_method: "Optional[GrantaServerApiSchemaAttributesAttributeInterpolationMethod]" = None, parameter_guid: "Optional[str]" = None, scale_type: "Optional[GrantaServerApiSchemaAttributesAttributeScaleType]" = None) -> None:
+    def __init__(self, *, default_value: "Optional[float]" = None, interpolation_method: "Optional[GrantaServerApiSchemaAttributesAttributeInterpolationMethod]" = None, parameter_guid: "Optional[str]" = None, scale_type: "Optional[GrantaServerApiSchemaAttributesAttributeScaleType]" = None,) -> None:
         """GrantaServerApiSchemaAttributesUpdateFloatFunctionalAttributeParameter - a model defined in Swagger
 
         Parameters

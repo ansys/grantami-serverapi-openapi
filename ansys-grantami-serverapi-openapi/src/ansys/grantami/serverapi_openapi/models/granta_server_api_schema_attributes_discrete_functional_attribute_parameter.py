@@ -35,20 +35,20 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter(ModelB
 
     """
     swagger_types = {
-        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "default_value": "float",
+        "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
     attribute_map = {
-        "parameter": "parameter",
         "default_value": "defaultValue",
+        "parameter": "parameter",
     }
 
     subtype_mapping = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    def __init__(self, *, default_value: "Optional[float]" = None, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None) -> None:
+    def __init__(self, *, default_value: "Optional[float]" = None, parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,) -> None:
         """GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter - a model defined in Swagger
 
         Parameters

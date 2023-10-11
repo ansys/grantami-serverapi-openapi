@@ -51,7 +51,7 @@ class GrantaServerApiDiskStatus(ModelBase):
     subtype_mapping = {
     }
 
-    def __init__(self) -> None:
+    def __init__(self,) -> None:
         """GrantaServerApiDiskStatus - a model defined in Swagger
 
         """

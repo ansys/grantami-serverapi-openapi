@@ -36,40 +36,40 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
 
     """
     swagger_types = {
-        "name_contains": "str",
-        "user_role": "GrantaServerApiListsDtoUserRole",
-        "is_published": "bool",
-        "is_awaiting_approval": "bool",
-        "is_internal_use": "bool",
-        "is_revision": "bool",
+        "contains_records": "list[str]",
         "contains_records_in_databases": "list[str]",
         "contains_records_in_integration_schemas": "list[str]",
         "contains_records_in_tables": "list[str]",
-        "contains_records": "list[str]",
-        "user_can_add_or_remove_items": "bool",
+        "is_awaiting_approval": "bool",
+        "is_internal_use": "bool",
+        "is_published": "bool",
+        "is_revision": "bool",
+        "name_contains": "str",
         "type": "str",
+        "user_can_add_or_remove_items": "bool",
+        "user_role": "GrantaServerApiListsDtoUserRole",
     }
 
     attribute_map = {
-        "name_contains": "nameContains",
-        "user_role": "userRole",
-        "is_published": "isPublished",
-        "is_awaiting_approval": "isAwaitingApproval",
-        "is_internal_use": "isInternalUse",
-        "is_revision": "isRevision",
+        "contains_records": "containsRecords",
         "contains_records_in_databases": "containsRecordsInDatabases",
         "contains_records_in_integration_schemas": "containsRecordsInIntegrationSchemas",
         "contains_records_in_tables": "containsRecordsInTables",
-        "contains_records": "containsRecords",
-        "user_can_add_or_remove_items": "userCanAddOrRemoveItems",
+        "is_awaiting_approval": "isAwaitingApproval",
+        "is_internal_use": "isInternalUse",
+        "is_published": "isPublished",
+        "is_revision": "isRevision",
+        "name_contains": "nameContains",
         "type": "type",
+        "user_can_add_or_remove_items": "userCanAddOrRemoveItems",
+        "user_role": "userRole",
     }
 
     subtype_mapping = {
         "userRole": "GrantaServerApiListsDtoUserRole",
     }
 
-    def __init__(self, *, contains_records: "Optional[List[str]]" = None, contains_records_in_databases: "Optional[List[str]]" = None, contains_records_in_integration_schemas: "Optional[List[str]]" = None, contains_records_in_tables: "Optional[List[str]]" = None, is_awaiting_approval: "Optional[bool]" = None, is_internal_use: "Optional[bool]" = None, is_published: "Optional[bool]" = None, is_revision: "Optional[bool]" = None, name_contains: "Optional[str]" = None, type: "str" = 'recordList', user_can_add_or_remove_items: "Optional[bool]" = None, user_role: "Optional[GrantaServerApiListsDtoUserRole]" = None) -> None:
+    def __init__(self, *, contains_records: "Optional[List[str]]" = None, contains_records_in_databases: "Optional[List[str]]" = None, contains_records_in_integration_schemas: "Optional[List[str]]" = None, contains_records_in_tables: "Optional[List[str]]" = None, is_awaiting_approval: "Optional[bool]" = None, is_internal_use: "Optional[bool]" = None, is_published: "Optional[bool]" = None, is_revision: "Optional[bool]" = None, name_contains: "Optional[str]" = None, type: "str" = 'recordList', user_can_add_or_remove_items: "Optional[bool]" = None, user_role: "Optional[GrantaServerApiListsDtoUserRole]" = None,) -> None:
         """GrantaServerApiListsDtoRecordListSearchCriterion - a model defined in Swagger
 
         Parameters

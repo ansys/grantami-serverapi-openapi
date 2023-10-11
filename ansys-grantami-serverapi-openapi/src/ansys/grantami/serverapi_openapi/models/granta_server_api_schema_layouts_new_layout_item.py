@@ -54,7 +54,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutItem(ModelBase):
         "associationChain".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem",
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None,) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutItem - a model defined in Swagger
 
         Parameters

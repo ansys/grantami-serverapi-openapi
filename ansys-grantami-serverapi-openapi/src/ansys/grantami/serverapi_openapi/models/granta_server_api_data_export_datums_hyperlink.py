@@ -36,20 +36,20 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
     """
     swagger_types = {
         "address": "str",
-        "formatted_address": "str",
         "description": "str",
+        "formatted_address": "str",
     }
 
     attribute_map = {
         "address": "address",
-        "formatted_address": "formattedAddress",
         "description": "description",
+        "formatted_address": "formattedAddress",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, address: "Optional[str]" = None, description: "Optional[str]" = None, formatted_address: "Optional[str]" = None) -> None:
+    def __init__(self, *, address: "Optional[str]" = None, description: "Optional[str]" = None, formatted_address: "Optional[str]" = None,) -> None:
         """GrantaServerApiDataExportDatumsHyperlink - a model defined in Swagger
 
         Parameters

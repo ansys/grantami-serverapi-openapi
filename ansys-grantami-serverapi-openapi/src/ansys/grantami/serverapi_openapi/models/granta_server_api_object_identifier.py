@@ -36,20 +36,20 @@ class GrantaServerApiObjectIdentifier(ModelBase):
     """
     swagger_types = {
         "guid": "str",
-        "name": "str",
         "identity": "int",
+        "name": "str",
     }
 
     attribute_map = {
         "guid": "guid",
-        "name": "name",
         "identity": "identity",
+        "name": "name",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None, name: "Optional[str]" = None) -> None:
+    def __init__(self, *, guid: "Optional[str]" = None, identity: "Optional[int]" = None, name: "Optional[str]" = None,) -> None:
         """GrantaServerApiObjectIdentifier - a model defined in Swagger
 
         Parameters

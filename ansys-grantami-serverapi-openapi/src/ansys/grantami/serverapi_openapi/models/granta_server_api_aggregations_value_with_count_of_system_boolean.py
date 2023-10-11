@@ -35,19 +35,19 @@ class GrantaServerApiAggregationsValueWithCountOfSystemBoolean(ModelBase):
 
     """
     swagger_types = {
-        "value": "bool",
         "count": "int",
+        "value": "bool",
     }
 
     attribute_map = {
-        "value": "value",
         "count": "count",
+        "value": "value",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, count: "Optional[int]" = None, value: "Optional[bool]" = None) -> None:
+    def __init__(self, *, count: "Optional[int]" = None, value: "Optional[bool]" = None,) -> None:
         """GrantaServerApiAggregationsValueWithCountOfSystemBoolean - a model defined in Swagger
 
         Parameters

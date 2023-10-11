@@ -37,15 +37,15 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(Mo
     swagger_types = {
         "database": "GrantaServerApiObjectIdentifier",
         "database_key": "str",
-        "table": "GrantaServerApiObjectIdentifier",
         "mappings": "list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]",
+        "table": "GrantaServerApiObjectIdentifier",
     }
 
     attribute_map = {
         "database": "database",
         "database_key": "databaseKey",
-        "table": "table",
         "mappings": "mappings",
+        "table": "table",
     }
 
     subtype_mapping = {
@@ -54,7 +54,7 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(Mo
         "mappings": "GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier",
     }
 
-    def __init__(self, *, database: "Optional[GrantaServerApiObjectIdentifier]" = None, database_key: "Optional[str]" = None, mappings: "Optional[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]]" = None, table: "Optional[GrantaServerApiObjectIdentifier]" = None) -> None:
+    def __init__(self, *, database: "Optional[GrantaServerApiObjectIdentifier]" = None, database_key: "Optional[str]" = None, mappings: "Optional[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]]" = None, table: "Optional[GrantaServerApiObjectIdentifier]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier - a model defined in Swagger
 
         Parameters

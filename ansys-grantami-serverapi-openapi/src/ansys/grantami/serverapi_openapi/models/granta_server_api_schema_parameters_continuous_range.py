@@ -35,19 +35,19 @@ class GrantaServerApiSchemaParametersContinuousRange(ModelBase):
 
     """
     swagger_types = {
-        "low_value": "float",
         "high_value": "float",
+        "low_value": "float",
     }
 
     attribute_map = {
-        "low_value": "lowValue",
         "high_value": "highValue",
+        "low_value": "lowValue",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, high_value: "Optional[float]" = None, low_value: "Optional[float]" = None) -> None:
+    def __init__(self, *, high_value: "Optional[float]" = None, low_value: "Optional[float]" = None,) -> None:
         """GrantaServerApiSchemaParametersContinuousRange - a model defined in Swagger
 
         Parameters

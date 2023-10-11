@@ -36,21 +36,29 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
 
     """
     swagger_types = {
-        "type": "str",
+        "display_names": "dict(str, str)",
+        "guid": "str",
+        "help_path": "str",
+        "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "is_restricted": "bool",
+        "name": "str",
+        "scale_type": "GrantaServerApiSchemaParametersParameterScaleType",
+        "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "values": "list[GrantaServerApiSchemaParametersNumericParameterValue]",
-        "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
-        "scale_type": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
     attribute_map = {
-        "type": "type",
+        "display_names": "displayNames",
+        "guid": "guid",
+        "help_path": "helpPath",
+        "interpolation_type": "interpolationType",
         "is_restricted": "isRestricted",
+        "name": "name",
+        "scale_type": "scaleType",
+        "type": "type",
         "unit": "unit",
         "values": "values",
-        "interpolation_type": "interpolationType",
-        "scale_type": "scaleType",
     }
 
     subtype_mapping = {
@@ -60,7 +68,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         "scaleType": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
-    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]" = None, is_restricted: "Optional[bool]" = None, name: "Optional[str]" = None, scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]" = None, type: "str" = 'numeric', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, values: "Optional[List[GrantaServerApiSchemaParametersNumericParameterValue]]" = None) -> None:
+    def __init__(self, *, display_names: "Optional[Dict[str, str]]" = None, guid: "Optional[str]" = None, help_path: "Optional[str]" = None, interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]" = None, is_restricted: "Optional[bool]" = None, name: "Optional[str]" = None, scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]" = None, type: "str" = 'numeric', unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None, values: "Optional[List[GrantaServerApiSchemaParametersNumericParameterValue]]" = None,) -> None:
         """GrantaServerApiSchemaParametersNumericParameter - a model defined in Swagger
 
         Parameters

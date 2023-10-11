@@ -35,27 +35,27 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
 
     """
     swagger_types = {
-        "key": "str",
-        "version": "int",
-        "attributes": "list[GrantaServerApiIntegrationSchemaAttribute]",
-        "layouts": "list[GrantaServerApiIntegrationSchemaLayout]",
-        "unit_system": "str",
-        "discrete_types": "list[GrantaServerApiIntegrationSchemaDiscreteType]",
-        "sources": "list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]",
         "access_control_category_values": "dict(str, list[str])",
+        "attributes": "list[GrantaServerApiIntegrationSchemaAttribute]",
+        "discrete_types": "list[GrantaServerApiIntegrationSchemaDiscreteType]",
+        "key": "str",
+        "layouts": "list[GrantaServerApiIntegrationSchemaLayout]",
         "security_groups": "GrantaServerApiIntegrationSchemaSecurityGroups",
+        "sources": "list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]",
+        "unit_system": "str",
+        "version": "int",
     }
 
     attribute_map = {
-        "key": "key",
-        "version": "version",
-        "attributes": "attributes",
-        "layouts": "layouts",
-        "unit_system": "unitSystem",
-        "discrete_types": "discreteTypes",
-        "sources": "sources",
         "access_control_category_values": "accessControlCategoryValues",
+        "attributes": "attributes",
+        "discrete_types": "discreteTypes",
+        "key": "key",
+        "layouts": "layouts",
         "security_groups": "securityGroups",
+        "sources": "sources",
+        "unit_system": "unitSystem",
+        "version": "version",
     }
 
     subtype_mapping = {
@@ -66,7 +66,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
         "securityGroups": "GrantaServerApiIntegrationSchemaSecurityGroups",
     }
 
-    def __init__(self, *, access_control_category_values: "Optional[Dict[str, List[str]]]" = None, attributes: "Optional[List[GrantaServerApiIntegrationSchemaAttribute]]" = None, discrete_types: "Optional[List[GrantaServerApiIntegrationSchemaDiscreteType]]" = None, key: "Optional[str]" = None, layouts: "Optional[List[GrantaServerApiIntegrationSchemaLayout]]" = None, security_groups: "Optional[GrantaServerApiIntegrationSchemaSecurityGroups]" = None, sources: "Optional[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]]" = None, unit_system: "Optional[str]" = None, version: "Optional[int]" = None) -> None:
+    def __init__(self, *, access_control_category_values: "Optional[Dict[str, List[str]]]" = None, attributes: "Optional[List[GrantaServerApiIntegrationSchemaAttribute]]" = None, discrete_types: "Optional[List[GrantaServerApiIntegrationSchemaDiscreteType]]" = None, key: "Optional[str]" = None, layouts: "Optional[List[GrantaServerApiIntegrationSchemaLayout]]" = None, security_groups: "Optional[GrantaServerApiIntegrationSchemaSecurityGroups]" = None, sources: "Optional[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]]" = None, unit_system: "Optional[str]" = None, version: "Optional[int]" = None,) -> None:
         """GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier - a model defined in Swagger
 
         Parameters

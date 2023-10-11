@@ -50,7 +50,7 @@ class GrantaServerApiDataExportDatumsDiscreteSeriesPoint(ModelBase):
         "y": "GrantaServerApiDiscreteValue",
     }
 
-    def __init__(self, *, x: "Optional[float]" = None, x_name: "Optional[str]" = None, y: "Optional[GrantaServerApiDiscreteValue]" = None) -> None:
+    def __init__(self, *, x: "Optional[float]" = None, x_name: "Optional[str]" = None, y: "Optional[GrantaServerApiDiscreteValue]" = None,) -> None:
         """GrantaServerApiDataExportDatumsDiscreteSeriesPoint - a model defined in Swagger
 
         Parameters

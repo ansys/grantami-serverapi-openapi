@@ -36,19 +36,19 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(GrantaServerApiData
 
     """
     swagger_types = {
-        "property_name": "str",
         "database_key": "str",
+        "property_name": "str",
     }
 
     attribute_map = {
-        "property_name": "propertyName",
         "database_key": "databaseKey",
+        "property_name": "propertyName",
     }
 
     subtype_mapping = {
     }
 
-    def __init__(self, *, database_key: "Optional[str]" = None, property_name: "str" = 'databaseKey') -> None:
+    def __init__(self, *, database_key: "Optional[str]" = None, property_name: "str" = 'databaseKey',) -> None:
         """GrantaServerApiDataExportPropertiesDatabaseKeyProperty - a model defined in Swagger
 
         Parameters

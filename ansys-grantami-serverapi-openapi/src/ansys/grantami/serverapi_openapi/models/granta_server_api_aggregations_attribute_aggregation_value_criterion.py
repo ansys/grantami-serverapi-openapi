@@ -37,19 +37,27 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(GrantaServer
     """
     swagger_types = {
         "attribute_aggregation_criterion_type": "str",
+        "guid": "str",
+        "identity": "int",
         "inner_criterion": "GrantaServerApiAggregationsAggregationDatumCriterion",
+        "is_meta_attribute": "bool",
+        "type": "str",
     }
 
     attribute_map = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
+        "guid": "guid",
+        "identity": "identity",
         "inner_criterion": "innerCriterion",
+        "is_meta_attribute": "isMetaAttribute",
+        "type": "type",
     }
 
     subtype_mapping = {
         "innerCriterion": "GrantaServerApiAggregationsAggregationDatumCriterion",
     }
 
-    def __init__(self, *, attribute_aggregation_criterion_type: "str" = 'value', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiAggregationsAggregationDatumCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute') -> None:
+    def __init__(self, *, attribute_aggregation_criterion_type: "str" = 'value', guid: "Optional[str]" = None, identity: "Optional[int]" = None, inner_criterion: "Optional[GrantaServerApiAggregationsAggregationDatumCriterion]" = None, is_meta_attribute: "Optional[bool]" = None, type: "str" = 'attribute',) -> None:
         """GrantaServerApiAggregationsAttributeAggregationValueCriterion - a model defined in Swagger
 
         Parameters
