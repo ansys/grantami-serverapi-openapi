@@ -17,7 +17,9 @@ from .schema___configurations_api import SchemaConfigurationsApi
 from .schema___constants_api import SchemaConstantsApi
 from .schema___data_rules_api import SchemaDataRulesApi
 from .schema___databases_api import SchemaDatabasesApi
-from .schema___discrete_types___discrete_values_api import SchemaDiscreteTypesDiscreteValuesApi
+from .schema___discrete_types___discrete_values_api import (
+    SchemaDiscreteTypesDiscreteValuesApi,
+)
 from .schema___discrete_types_api import SchemaDiscreteTypesApi
 from .schema___expressions_api import SchemaExpressionsApi
 from .schema___help_files_api import SchemaHelpFilesApi

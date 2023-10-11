@@ -26,17 +26,34 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
         cache: maven
-    
+
     - name: "Clean library folder"
-      run: rm -rf ansys-grantami-serverapi-openapi
-      
+      run: find . ! -name 'poetry.lock' -type f -exec rm -f {} +
+      working-directory: ansys-grantami-serverapi-openapi
+
     - name: "Build client library"
       run: mvn -Dbuild-id=${{ github.run_number }} -s .m2/settings.xml compile
       env:
         MAVEN_OPTS: "-Dlog4j2.formatMsgNoLookups=true"
         SERVER_USERNAME: ${{ secrets.REPO_USER }}
         SERVER_PASSWORD: ${{ secrets.REPO_TOKEN }}
-    
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: "Ensure poetry.lock file is up to date"
+      run: |
+        pip install poetry
+        poetry lock --no-update
+      working-directory: ansys-grantami-serverapi-openapi
+
+    - name: "Install and run black"
+      run: |
+        pip install black
+        black ./src ./tests
+      working-directory: ansys-grantami-serverapi-openapi
+
     - name: "Commit changes to library code"
       uses: EndBug/add-and-commit@v9
       with:
