@@ -166,7 +166,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayoutSection]" = None,
     ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection, None]":
         """Create a new layout section.
 
@@ -177,7 +177,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: str
         table_guid: str
         layout_guid: str
-        body: GrantaServerApiSchemaSlimEntitiesSlimLayoutSection
+        body: GrantaServerApiSchemaLayoutsCreateLayoutSection
 
         Returns
         -------
@@ -193,7 +193,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayoutSection]" = None,
         **kwargs,
     ):
         all_params = [
@@ -266,8 +266,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSlimEntitiesSlimLayoutSection",
-            201: None,
+            201: "GrantaServerApiSchemaSlimEntitiesSlimLayoutSection",
             400: None,
             403: None,
             404: None,
@@ -295,7 +294,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsLayoutSectionsInfo]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsReorderSectionsInfo]" = None,
     ) -> "Union[GrantaServerApiSchemaLayoutsLayoutSectionsInfo, None]":
         """Reorder the list of layout sections for a layout.
 
@@ -306,7 +305,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: str
         table_guid: str
         layout_guid: str
-        body: GrantaServerApiSchemaLayoutsLayoutSectionsInfo
+        body: GrantaServerApiSchemaLayoutsReorderSectionsInfo
 
         Returns
         -------
@@ -322,7 +321,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsLayoutSectionsInfo]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsReorderSectionsInfo]" = None,
         **kwargs,
     ):
         all_params = [
@@ -943,8 +942,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaLayoutsNewLayoutItem",
-            201: None,
+            201: "GrantaServerApiSchemaLayoutsNewLayoutItem",
             400: None,
             403: None,
             404: None,

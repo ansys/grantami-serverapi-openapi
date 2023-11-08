@@ -35,6 +35,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "data_length": "int",
@@ -58,28 +60,30 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        data_length: "Optional[int]" = None,
-        description: "Optional[str]" = None,
-        extension: "Optional[str]" = None,
-        folder_guid: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        path: "Optional[str]" = None,
+        data_length: "int",
+        description: "str",
+        extension: "str",
+        folder_guid: "str",
+        guid: "str",
+        name: "str",
+        path: "str",
     ) -> None:
         """GrantaServerApiSchemaFilesFileHeader - a model defined in Swagger
 
         Parameters
         ----------
-            data_length: int, optional
-            description: str, optional
-            extension: str, optional
-            folder_guid: str, optional
-            guid: str, optional
-            name: str, optional
-            path: str, optional
+            data_length: int
+            description: str
+            extension: str
+            folder_guid: str
+            guid: str
+            name: str
+            path: str
         """
         self._folder_guid = None
         self._description = None
@@ -88,21 +92,14 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         self._path = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if folder_guid is not None:
-            self.folder_guid = folder_guid
-        if description is not None:
-            self.description = description
-        if extension is not None:
-            self.extension = extension
-        if data_length is not None:
-            self.data_length = data_length
-        if path is not None:
-            self.path = path
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.folder_guid = folder_guid
+        self.description = description
+        self.extension = extension
+        self.data_length = data_length
+        self.path = path
+        self.name = name
+        self.guid = guid
 
     @property
     def folder_guid(self) -> "str":
@@ -124,6 +121,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         folder_guid: str
             The folder_guid of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if folder_guid is None:
+            raise ValueError("Invalid value for 'folder_guid', must not be 'None'")
         self._folder_guid = folder_guid
 
     @property
@@ -146,6 +145,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         description: str
             The description of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if description is None:
+            raise ValueError("Invalid value for 'description', must not be 'None'")
         self._description = description
 
     @property
@@ -168,6 +169,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         extension: str
             The extension of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if extension is None:
+            raise ValueError("Invalid value for 'extension', must not be 'None'")
         self._extension = extension
 
     @property
@@ -190,6 +193,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         data_length: int
             The data_length of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if data_length is None:
+            raise ValueError("Invalid value for 'data_length', must not be 'None'")
         self._data_length = data_length
 
     @property
@@ -212,6 +217,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         path: str
             The path of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if path is None:
+            raise ValueError("Invalid value for 'path', must not be 'None'")
         self._path = path
 
     @property
@@ -234,6 +241,8 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -256,9 +265,12 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaFilesFileHeader.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

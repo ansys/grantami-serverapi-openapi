@@ -26,7 +26,7 @@ class SchemaStandardNamesApi(ApiBase):
 
     def v1alpha_databases_database_key_standard_names_get(
         self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaStandardNamesInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaStandardNamesStandardNamesInfo, None]":
         """Gets all standard names for a given database.
 
         This method makes a synchronous HTTP request.
@@ -37,7 +37,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaStandardNamesInfo, None]
+        Union[GrantaServerApiSchemaStandardNamesStandardNamesInfo, None]
         """
         data = self._v1alpha_databases_database_key_standard_names_get_with_http_info(
             database_key, _return_http_data_only=True
@@ -88,7 +88,7 @@ class SchemaStandardNamesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaStandardNamesInfo",
+            200: "GrantaServerApiSchemaStandardNamesStandardNamesInfo",
             404: None,
         }
 
@@ -112,8 +112,8 @@ class SchemaStandardNamesApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaStandardName]" = None,
-    ) -> "Union[GrantaServerApiSchemaStandardName, None]":
+        body: "Optional[GrantaServerApiSchemaStandardNamesCreateStandardName]" = None,
+    ) -> "Union[GrantaServerApiSchemaStandardNamesStandardName, None]":
         """Create a new standard name
 
         This method makes a synchronous HTTP request.
@@ -121,11 +121,11 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaStandardName
+        body: GrantaServerApiSchemaStandardNamesCreateStandardName
 
         Returns
         -------
-        Union[GrantaServerApiSchemaStandardName, None]
+        Union[GrantaServerApiSchemaStandardNamesStandardName, None]
         """
         data = self._v1alpha_databases_database_key_standard_names_post_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -135,7 +135,7 @@ class SchemaStandardNamesApi(ApiBase):
     def _v1alpha_databases_database_key_standard_names_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaStandardName]" = None,
+        body: "Optional[GrantaServerApiSchemaStandardNamesCreateStandardName]" = None,
         **kwargs,
     ):
         all_params = [
@@ -192,7 +192,7 @@ class SchemaStandardNamesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaStandardName",
+            201: "GrantaServerApiSchemaStandardNamesStandardName",
             400: None,
             403: None,
             404: None,
@@ -306,7 +306,7 @@ class SchemaStandardNamesApi(ApiBase):
 
     def v1alpha_databases_database_key_standard_names_standard_name_guid_get(
         self, *, database_key: "str", standard_name_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaStandardName, None]":
+    ) -> "Union[GrantaServerApiSchemaStandardNamesStandardName, None]":
         """Gets a standard name for a given database and guid.
 
         This method makes a synchronous HTTP request.
@@ -318,7 +318,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaStandardName, None]
+        Union[GrantaServerApiSchemaStandardNamesStandardName, None]
         """
         data = self._v1alpha_databases_database_key_standard_names_standard_name_guid_get_with_http_info(
             database_key, standard_name_guid, _return_http_data_only=True
@@ -377,7 +377,7 @@ class SchemaStandardNamesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaStandardName",
+            200: "GrantaServerApiSchemaStandardNamesStandardName",
             404: None,
         }
 
@@ -402,8 +402,8 @@ class SchemaStandardNamesApi(ApiBase):
         *,
         database_key: "str",
         standard_name_guid: "str",
-        body: "Optional[GrantaServerApiSchemaStandardName]" = None,
-    ) -> "Union[GrantaServerApiSchemaStandardName, None]":
+        body: "Optional[GrantaServerApiSchemaStandardNamesUpdateStandardName]" = None,
+    ) -> "Union[GrantaServerApiSchemaStandardNamesStandardName, None]":
         """Edit a standard name
 
         This method makes a synchronous HTTP request.
@@ -412,11 +412,11 @@ class SchemaStandardNamesApi(ApiBase):
         ----------
         database_key: str
         standard_name_guid: str
-        body: GrantaServerApiSchemaStandardName
+        body: GrantaServerApiSchemaStandardNamesUpdateStandardName
 
         Returns
         -------
-        Union[GrantaServerApiSchemaStandardName, None]
+        Union[GrantaServerApiSchemaStandardNamesStandardName, None]
         """
         data = self._v1alpha_databases_database_key_standard_names_standard_name_guid_patch_with_http_info(
             database_key, standard_name_guid, body, _return_http_data_only=True
@@ -427,7 +427,7 @@ class SchemaStandardNamesApi(ApiBase):
         self,
         database_key: "str",
         standard_name_guid: "str",
-        body: "Optional[GrantaServerApiSchemaStandardName]" = None,
+        body: "Optional[GrantaServerApiSchemaStandardNamesUpdateStandardName]" = None,
         **kwargs,
     ):
         all_params = [
@@ -492,7 +492,7 @@ class SchemaStandardNamesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaStandardName",
+            200: "GrantaServerApiSchemaStandardNamesStandardName",
             400: None,
             403: None,
             404: None,

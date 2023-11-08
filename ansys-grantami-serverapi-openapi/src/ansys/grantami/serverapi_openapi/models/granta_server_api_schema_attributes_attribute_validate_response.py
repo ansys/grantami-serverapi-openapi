@@ -35,6 +35,8 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "has_validation_rules": "bool",
@@ -49,6 +51,8 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -68,7 +72,7 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
         self._is_valid = None
         self._has_validation_rules = None
         self._value_changed = None
-        self.discriminator = None
+
         if is_valid is not None:
             self.is_valid = is_valid
         if has_validation_rules is not None:
@@ -148,7 +152,8 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
         """
         self._value_changed = value_changed
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

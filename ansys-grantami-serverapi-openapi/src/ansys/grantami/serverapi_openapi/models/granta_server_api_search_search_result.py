@@ -35,6 +35,8 @@ class GrantaServerApiSearchSearchResult(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "cubic_spline_status": "str",
@@ -80,6 +82,8 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         "type": "GrantaServerApiRecordType",
         "sortingValue": "GrantaServerApiSearchSortingValue",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -141,7 +145,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         self._type = None
         self._score = None
         self._sorting_value = None
-        self.discriminator = None
+
         if database_key is not None:
             self.database_key = database_key
         if record_history_identity is not None:
@@ -551,7 +555,8 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         """
         self._sorting_value = sorting_value
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

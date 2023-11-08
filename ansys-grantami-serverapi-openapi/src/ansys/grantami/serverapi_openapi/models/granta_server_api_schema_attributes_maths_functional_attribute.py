@@ -40,41 +40,45 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "allow_all_compatible_expressions": "bool",
+        "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "axis_name": "str",
         "default_content": "GrantaServerApiSchemaAttributesMathsContent",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]",
         "guid": "str",
-        "help_path": "str",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_range": "bool",
         "name": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
+        "allow_anonymous_expressions": "allowAnonymousExpressions",
         "allow_extrapolation": "allowExtrapolation",
         "attribute_parameters": "attributeParameters",
-        "axis_name": "axisName",
         "default_content": "defaultContent",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_range": "isRange",
         "name": "name",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "type": "type",
         "unit": "unit",
     }
@@ -86,23 +90,26 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         "defaultContent": "GrantaServerApiSchemaAttributesMathsContent",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        allow_all_compatible_expressions: "bool",
+        allow_anonymous_expressions: "bool",
+        allow_extrapolation: "bool",
+        attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        default_content: "GrantaServerApiSchemaAttributesMathsContent",
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        display_names: "Dict[str, str]",
+        expressions: "List[GrantaServerApiSchemaSlimEntitiesSlimExpression]",
+        guid: "str",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        is_range: "bool",
+        name: "str",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        allow_all_compatible_expressions: "Optional[bool]" = None,
-        allow_extrapolation: "Optional[bool]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
         axis_name: "Optional[str]" = None,
-        default_content: "Optional[GrantaServerApiSchemaAttributesMathsContent]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        is_range: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "mathsFunctional",
         unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
     ) -> None:
@@ -110,32 +117,33 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
         Parameters
         ----------
+            allow_all_compatible_expressions: bool
+            allow_anonymous_expressions: bool
+            allow_extrapolation: bool
+            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            default_content: GrantaServerApiSchemaAttributesMathsContent
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            display_names: Dict[str, str]
+            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+            guid: str
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            is_range: bool
+            name: str
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            allow_all_compatible_expressions: bool, optional
-            allow_extrapolation: bool, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
             axis_name: str, optional
-            default_content: GrantaServerApiSchemaAttributesMathsContent, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_names: Dict[str, str], optional
-            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression], optional
-            guid: str, optional
             help_path: str, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            is_range: bool, optional
-            name: str, optional
             type: str
             unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._unit = None
@@ -144,23 +152,19 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         self._allow_extrapolation = None
         self._is_range = None
         self._allow_all_compatible_expressions = None
+        self._allow_anonymous_expressions = None
         self._default_content = None
-        self.discriminator = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
-        if attribute_parameters is not None:
-            self.attribute_parameters = attribute_parameters
-        if expressions is not None:
-            self.expressions = expressions
-        if allow_extrapolation is not None:
-            self.allow_extrapolation = allow_extrapolation
-        if is_range is not None:
-            self.is_range = is_range
-        if allow_all_compatible_expressions is not None:
-            self.allow_all_compatible_expressions = allow_all_compatible_expressions
-        if default_content is not None:
-            self.default_content = default_content
+        self.attribute_parameters = attribute_parameters
+        self.expressions = expressions
+        self.allow_extrapolation = allow_extrapolation
+        self.is_range = is_range
+        self.allow_all_compatible_expressions = allow_all_compatible_expressions
+        self.allow_anonymous_expressions = allow_anonymous_expressions
+        self.default_content = default_content
 
     @property
     def type(self) -> "str":
@@ -233,6 +237,10 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if attribute_parameters is None:
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'None'"
+            )
         self._attribute_parameters = attribute_parameters
 
     @property
@@ -257,6 +265,8 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         expressions: list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
             The expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if expressions is None:
+            raise ValueError("Invalid value for 'expressions', must not be 'None'")
         self._expressions = expressions
 
     @property
@@ -279,6 +289,10 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         allow_extrapolation: bool
             The allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if allow_extrapolation is None:
+            raise ValueError(
+                "Invalid value for 'allow_extrapolation', must not be 'None'"
+            )
         self._allow_extrapolation = allow_extrapolation
 
     @property
@@ -301,6 +315,8 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         is_range: bool
             The is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if is_range is None:
+            raise ValueError("Invalid value for 'is_range', must not be 'None'")
         self._is_range = is_range
 
     @property
@@ -325,7 +341,37 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         allow_all_compatible_expressions: bool
             The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if allow_all_compatible_expressions is None:
+            raise ValueError(
+                "Invalid value for 'allow_all_compatible_expressions', must not be 'None'"
+            )
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
+
+    @property
+    def allow_anonymous_expressions(self) -> "bool":
+        """Gets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        Returns
+        -------
+        bool
+            The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+        """
+        return self._allow_anonymous_expressions
+
+    @allow_anonymous_expressions.setter
+    def allow_anonymous_expressions(self, allow_anonymous_expressions: "bool") -> None:
+        """Sets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+
+        Parameters
+        ----------
+        allow_anonymous_expressions: bool
+            The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
+        """
+        if allow_anonymous_expressions is None:
+            raise ValueError(
+                "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
+            )
+        self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @property
     def default_content(self) -> "GrantaServerApiSchemaAttributesMathsContent":
@@ -349,9 +395,12 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         default_content: GrantaServerApiSchemaAttributesMathsContent
             The default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        if default_content is None:
+            raise ValueError("Invalid value for 'default_content', must not be 'None'")
         self._default_content = default_content
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

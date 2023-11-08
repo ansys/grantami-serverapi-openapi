@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -53,7 +55,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         "link_group_names_by_database_key": "dict(str, str)",
         "linked_records": "list[GrantaServerApiDataExportRecordWithData]",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
+        "rolled_up_data": "list[GrantaServerApiDataExportDatumsRollupRollupDatum]",
         "target_database_guid": "str",
     }
 
@@ -70,13 +73,17 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         "linked_records": "linkedRecords",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
+        "rolled_up_data": "rolledUpData",
         "target_database_guid": "targetDatabaseGuid",
     }
 
     subtype_mapping = {
         "linkAttributeType": "GrantaServerApiLinkAttributeType",
         "linkedRecords": "GrantaServerApiDataExportRecordWithData",
+        "rolledUpData": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -92,7 +99,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         link_group_names_by_database_key: "Optional[Dict[str, str]]" = None,
         linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
+        rolled_up_data: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]" = None,
         target_database_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiDataExportDatumsLinkedRecordsDatum - a model defined in Swagger
@@ -110,7 +118,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
             link_group_names_by_database_key: Dict[str, str], optional
             linked_records: List[GrantaServerApiDataExportRecordWithData], optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
+            rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
             target_database_guid: str, optional
         """
         super().__init__(
@@ -127,8 +136,9 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._linked_records = None
         self._link_group_names_by_database_key = None
         self._link_group_identities_by_database_key = None
+        self._rolled_up_data = None
         self._link_datum_type = None
-        self.discriminator = None
+
         if link_group_name is not None:
             self.link_group_name = link_group_name
         if link_attribute_type is not None:
@@ -145,6 +155,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
             self.link_group_identities_by_database_key = (
                 link_group_identities_by_database_key
             )
+        if rolled_up_data is not None:
+            self.rolled_up_data = rolled_up_data
         self.link_datum_type = link_datum_type
 
     @property
@@ -314,6 +326,32 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         )
 
     @property
+    def rolled_up_data(
+        self,
+    ) -> "list[GrantaServerApiDataExportDatumsRollupRollupDatum]":
+        """Gets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+
+        Returns
+        -------
+        list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+        """
+        return self._rolled_up_data
+
+    @rolled_up_data.setter
+    def rolled_up_data(
+        self, rolled_up_data: "list[GrantaServerApiDataExportDatumsRollupRollupDatum]"
+    ) -> None:
+        """Sets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+
+        Parameters
+        ----------
+        rolled_up_data: list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
+        """
+        self._rolled_up_data = rolled_up_data
+
+    @property
     def link_datum_type(self) -> "str":
         """Gets the link_datum_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
@@ -337,7 +375,8 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
             raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
         self._link_datum_type = link_datum_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "error": "str",
@@ -51,6 +53,8 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -73,7 +77,7 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         self._record_name = None
         self._error = None
         self._record_was_oversized = None
-        self.discriminator = None
+
         if record_history_identity is not None:
             self.record_history_identity = record_history_identity
         if record_name is not None:
@@ -175,7 +179,8 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         """
         self._record_was_oversized = record_was_oversized
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

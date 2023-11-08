@@ -40,39 +40,40 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "attributes": "GrantaServerApiValueSpecifier",
         "criterion_guid": "str",
-        "guids": "list[str]",
-        "guids_to_exclude": "list[str]",
-        "identities": "list[int]",
-        "identities_to_exclude": "list[int]",
+        "local_columns": "GrantaServerApiValueSpecifier",
         "number_of_terms": "int",
         "prefix": "str",
         "type": "str",
     }
 
     attribute_map = {
+        "attributes": "attributes",
         "criterion_guid": "criterionGuid",
-        "guids": "guids",
-        "guids_to_exclude": "guidsToExclude",
-        "identities": "identities",
-        "identities_to_exclude": "identitiesToExclude",
+        "local_columns": "localColumns",
         "number_of_terms": "numberOfTerms",
         "prefix": "prefix",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping = {
+        "attributes": "GrantaServerApiValueSpecifier",
+        "localColumns": "GrantaServerApiValueSpecifier",
+    }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
+        attributes: "Optional[GrantaServerApiValueSpecifier]" = None,
         criterion_guid: "Optional[str]" = None,
-        guids: "Optional[List[str]]" = None,
-        guids_to_exclude: "Optional[List[str]]" = None,
-        identities: "Optional[List[int]]" = None,
-        identities_to_exclude: "Optional[List[int]]" = None,
+        local_columns: "Optional[GrantaServerApiValueSpecifier]" = None,
         number_of_terms: "Optional[int]" = None,
         prefix: "Optional[str]" = None,
         type: "str" = "text",
@@ -81,39 +82,31 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
 
         Parameters
         ----------
+            attributes: GrantaServerApiValueSpecifier, optional
             criterion_guid: str, optional
-            guids: List[str], optional
-            guids_to_exclude: List[str], optional
-            identities: List[int], optional
-            identities_to_exclude: List[int], optional
+            local_columns: GrantaServerApiValueSpecifier, optional
             number_of_terms: int, optional
             prefix: str, optional
             type: str
         """
         super().__init__()
         self._criterion_guid = None
-        self._identities = None
-        self._identities_to_exclude = None
-        self._guids = None
-        self._guids_to_exclude = None
         self._number_of_terms = None
         self._prefix = None
+        self._attributes = None
+        self._local_columns = None
         self._type = None
-        self.discriminator = None
+
         if criterion_guid is not None:
             self.criterion_guid = criterion_guid
-        if identities is not None:
-            self.identities = identities
-        if identities_to_exclude is not None:
-            self.identities_to_exclude = identities_to_exclude
-        if guids is not None:
-            self.guids = guids
-        if guids_to_exclude is not None:
-            self.guids_to_exclude = guids_to_exclude
         if number_of_terms is not None:
             self.number_of_terms = number_of_terms
         if prefix is not None:
             self.prefix = prefix
+        if attributes is not None:
+            self.attributes = attributes
+        if local_columns is not None:
+            self.local_columns = local_columns
         self.type = type
 
     @property
@@ -139,94 +132,6 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
             The criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         self._criterion_guid = criterion_guid
-
-    @property
-    def identities(self) -> "list[int]":
-        """Gets the identities of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Returns
-        -------
-        list[int]
-            The identities of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        return self._identities
-
-    @identities.setter
-    def identities(self, identities: "list[int]") -> None:
-        """Sets the identities of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Parameters
-        ----------
-        identities: list[int]
-            The identities of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        self._identities = identities
-
-    @property
-    def identities_to_exclude(self) -> "list[int]":
-        """Gets the identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Returns
-        -------
-        list[int]
-            The identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        return self._identities_to_exclude
-
-    @identities_to_exclude.setter
-    def identities_to_exclude(self, identities_to_exclude: "list[int]") -> None:
-        """Sets the identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Parameters
-        ----------
-        identities_to_exclude: list[int]
-            The identities_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        self._identities_to_exclude = identities_to_exclude
-
-    @property
-    def guids(self) -> "list[str]":
-        """Gets the guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Returns
-        -------
-        list[str]
-            The guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        return self._guids
-
-    @guids.setter
-    def guids(self, guids: "list[str]") -> None:
-        """Sets the guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Parameters
-        ----------
-        guids: list[str]
-            The guids of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        self._guids = guids
-
-    @property
-    def guids_to_exclude(self) -> "list[str]":
-        """Gets the guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Returns
-        -------
-        list[str]
-            The guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        return self._guids_to_exclude
-
-    @guids_to_exclude.setter
-    def guids_to_exclude(self, guids_to_exclude: "list[str]") -> None:
-        """Sets the guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-
-        Parameters
-        ----------
-        guids_to_exclude: list[str]
-            The guids_to_exclude of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
-        """
-        self._guids_to_exclude = guids_to_exclude
 
     @property
     def number_of_terms(self) -> "int":
@@ -275,6 +180,50 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._prefix = prefix
 
     @property
+    def attributes(self) -> "GrantaServerApiValueSpecifier":
+        """Gets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        Returns
+        -------
+        GrantaServerApiValueSpecifier
+            The attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes: "GrantaServerApiValueSpecifier") -> None:
+        """Sets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        Parameters
+        ----------
+        attributes: GrantaServerApiValueSpecifier
+            The attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+        """
+        self._attributes = attributes
+
+    @property
+    def local_columns(self) -> "GrantaServerApiValueSpecifier":
+        """Gets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        Returns
+        -------
+        GrantaServerApiValueSpecifier
+            The local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+        """
+        return self._local_columns
+
+    @local_columns.setter
+    def local_columns(self, local_columns: "GrantaServerApiValueSpecifier") -> None:
+        """Sets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+
+        Parameters
+        ----------
+        local_columns: GrantaServerApiValueSpecifier
+            The local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
+        """
+        self._local_columns = local_columns
+
+    @property
     def type(self) -> "str":
         """Gets the type of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
@@ -298,7 +247,8 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

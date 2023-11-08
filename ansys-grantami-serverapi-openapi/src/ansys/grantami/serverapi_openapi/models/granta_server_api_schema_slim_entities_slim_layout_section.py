@@ -40,6 +40,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -57,26 +59,28 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
         section_detail_type: "str" = "slim",
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimLayoutSection - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
             section_detail_type: str
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
         self._section_detail_type = None
-        self.discriminator = None
+
         self.section_detail_type = section_detail_type
 
     @property
@@ -105,7 +109,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
             )
         self._section_detail_type = section_detail_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

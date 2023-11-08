@@ -35,6 +35,8 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "configurations": "list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]",
@@ -48,21 +50,22 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
         "configurations": "GrantaServerApiSchemaSlimEntitiesSlimConfiguration",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        configurations: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]]" = None,
+        configurations: "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]",
     ) -> None:
         """GrantaServerApiSchemaConfigurationsConfigurationsInfo - a model defined in Swagger
 
         Parameters
         ----------
-            configurations: List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration], optional
+            configurations: List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
         """
         self._configurations = None
-        self.discriminator = None
-        if configurations is not None:
-            self.configurations = configurations
+
+        self.configurations = configurations
 
     @property
     def configurations(
@@ -88,9 +91,12 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
         configurations: list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
             The configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
         """
+        if configurations is None:
+            raise ValueError("Invalid value for 'configurations', must not be 'None'")
         self._configurations = configurations
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

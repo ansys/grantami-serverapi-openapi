@@ -35,60 +35,84 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "database_fallback_hint": "str",
         "database_guid": "str",
+        "table_guid": "str",
+        "database_fallback_hint": "str",
         "guid": "str",
         "table_fallback_hint": "str",
-        "table_guid": "str",
     }
 
     attribute_map = {
-        "database_fallback_hint": "databaseFallbackHint",
         "database_guid": "databaseGuid",
+        "table_guid": "tableGuid",
+        "database_fallback_hint": "databaseFallbackHint",
         "guid": "guid",
         "table_fallback_hint": "tableFallbackHint",
-        "table_guid": "tableGuid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        database_guid: "str",
+        table_guid: "str",
         database_fallback_hint: "Optional[str]" = None,
-        database_guid: "Optional[str]" = None,
         guid: "Optional[str]" = None,
         table_fallback_hint: "Optional[str]" = None,
-        table_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimProfileTable - a model defined in Swagger
 
         Parameters
         ----------
+            database_guid: str
+            table_guid: str
             database_fallback_hint: str, optional
-            database_guid: str, optional
             guid: str, optional
             table_fallback_hint: str, optional
-            table_guid: str, optional
         """
+        self._guid = None
         self._database_guid = None
         self._database_fallback_hint = None
         self._table_guid = None
         self._table_fallback_hint = None
-        self._guid = None
-        self.discriminator = None
-        if database_guid is not None:
-            self.database_guid = database_guid
-        if database_fallback_hint is not None:
-            self.database_fallback_hint = database_fallback_hint
-        if table_guid is not None:
-            self.table_guid = table_guid
-        if table_fallback_hint is not None:
-            self.table_fallback_hint = table_fallback_hint
+
         if guid is not None:
             self.guid = guid
+        self.database_guid = database_guid
+        if database_fallback_hint is not None:
+            self.database_fallback_hint = database_fallback_hint
+        self.table_guid = table_guid
+        if table_fallback_hint is not None:
+            self.table_fallback_hint = table_fallback_hint
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
+
+        Returns
+        -------
+        str
+            The guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
+        """
+        self._guid = guid
 
     @property
     def database_guid(self) -> "str":
@@ -110,6 +134,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
         database_guid: str
             The database_guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
         """
+        if database_guid is None:
+            raise ValueError("Invalid value for 'database_guid', must not be 'None'")
         self._database_guid = database_guid
 
     @property
@@ -154,6 +180,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
         table_guid: str
             The table_guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
         """
+        if table_guid is None:
+            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
         self._table_guid = table_guid
 
     @property
@@ -178,29 +206,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
         """
         self._table_fallback_hint = table_fallback_hint
 
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
-
-        Returns
-        -------
-        str
-            The guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
-        """
-        self._guid = guid
-
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

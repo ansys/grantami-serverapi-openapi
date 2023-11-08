@@ -40,6 +40,8 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "number_of_terms": "int",
@@ -54,6 +56,8 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -74,7 +78,7 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
         self._number_of_terms = None
         self._prefix = None
         self._type = None
-        self.discriminator = None
+
         if number_of_terms is not None:
             self.number_of_terms = number_of_terms
         if prefix is not None:
@@ -84,7 +88,7 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
     @property
     def number_of_terms(self) -> "int":
         """Gets the number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
-        The maximum number of terms to return in this aggregation. If this is not provided,  or if an invalid value is provided, then a default value of 10 will be assumed.
+        The maximum number of terms to return in this aggregation.
 
         Returns
         -------
@@ -96,7 +100,7 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
     @number_of_terms.setter
     def number_of_terms(self, number_of_terms: "int") -> None:
         """Sets the number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
-        The maximum number of terms to return in this aggregation. If this is not provided,  or if an invalid value is provided, then a default value of 10 will be assumed.
+        The maximum number of terms to return in this aggregation.
 
         Parameters
         ----------
@@ -153,7 +157,8 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

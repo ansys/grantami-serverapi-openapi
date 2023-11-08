@@ -35,6 +35,8 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "equivalent_unit": "GrantaServerApiSchemaUnitsUnit",
@@ -54,31 +56,30 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         "equivalentUnit": "GrantaServerApiSchemaUnitsUnit",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        equivalent_unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
-        unit: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
-        unit_system: "Optional[GrantaServerApiSchemaUnitsUnitSystem]" = None,
+        equivalent_unit: "GrantaServerApiSchemaUnitsUnit",
+        unit: "GrantaServerApiSchemaUnitsUnit",
+        unit_system: "GrantaServerApiSchemaUnitsUnitSystem",
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitEquivalent - a model defined in Swagger
 
         Parameters
         ----------
-            equivalent_unit: GrantaServerApiSchemaUnitsUnit, optional
-            unit: GrantaServerApiSchemaUnitsUnit, optional
-            unit_system: GrantaServerApiSchemaUnitsUnitSystem, optional
+            equivalent_unit: GrantaServerApiSchemaUnitsUnit
+            unit: GrantaServerApiSchemaUnitsUnit
+            unit_system: GrantaServerApiSchemaUnitsUnitSystem
         """
         self._unit = None
         self._unit_system = None
         self._equivalent_unit = None
-        self.discriminator = None
-        if unit is not None:
-            self.unit = unit
-        if unit_system is not None:
-            self.unit_system = unit_system
-        if equivalent_unit is not None:
-            self.equivalent_unit = equivalent_unit
+
+        self.unit = unit
+        self.unit_system = unit_system
+        self.equivalent_unit = equivalent_unit
 
     @property
     def unit(self) -> "GrantaServerApiSchemaUnitsUnit":
@@ -100,6 +101,8 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         unit: GrantaServerApiSchemaUnitsUnit
             The unit of this GrantaServerApiSchemaUnitsUnitEquivalent.
         """
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
@@ -122,6 +125,8 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         unit_system: GrantaServerApiSchemaUnitsUnitSystem
             The unit_system of this GrantaServerApiSchemaUnitsUnitEquivalent.
         """
+        if unit_system is None:
+            raise ValueError("Invalid value for 'unit_system', must not be 'None'")
         self._unit_system = unit_system
 
     @property
@@ -146,9 +151,12 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         equivalent_unit: GrantaServerApiSchemaUnitsUnit
             The equivalent_unit of this GrantaServerApiSchemaUnitsUnitEquivalent.
         """
+        if equivalent_unit is None:
+            raise ValueError("Invalid value for 'equivalent_unit', must not be 'None'")
         self._equivalent_unit = equivalent_unit
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

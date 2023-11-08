@@ -40,37 +40,39 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_full_table": "bool",
         "display_names": "dict(str, str)",
         "display_summary_row_inline": "bool",
         "guid": "str",
-        "help_path": "str",
         "hide_unlinked_rows": "bool",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "name": "str",
         "tabular_columns": "list[GrantaServerApiSchemaTabularColumnsTabularColumn]",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "target": "GrantaServerApiSchemaAttributesTabularAttributeTarget",
         "type": "str",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
         "display_names": "displayNames",
         "display_summary_row_inline": "displaySummaryRowInline",
         "guid": "guid",
-        "help_path": "helpPath",
         "hide_unlinked_rows": "hideUnlinkedRows",
         "info": "info",
         "name": "name",
         "tabular_columns": "tabularColumns",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "target": "target",
         "type": "type",
     }
@@ -80,21 +82,23 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         "tabularColumns": "GrantaServerApiSchemaTabularColumnsTabularColumn",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        display_full_table: "bool",
+        display_names: "Dict[str, str]",
+        display_summary_row_inline: "bool",
+        guid: "str",
+        hide_unlinked_rows: "bool",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        name: "str",
+        tabular_columns: "List[GrantaServerApiSchemaTabularColumnsTabularColumn]",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
         axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_full_table: "Optional[bool]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        display_summary_row_inline: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        hide_unlinked_rows: "Optional[bool]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        name: "Optional[str]" = None,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsTabularColumn]]" = None,
         target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]" = None,
         type: "str" = "link",
     ) -> None:
@@ -102,30 +106,30 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
 
         Parameters
         ----------
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            display_full_table: bool
+            display_names: Dict[str, str]
+            display_summary_row_inline: bool
+            guid: str
+            hide_unlinked_rows: bool
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            name: str
+            tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
             axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_full_table: bool, optional
-            display_names: Dict[str, str], optional
-            display_summary_row_inline: bool, optional
-            guid: str, optional
             help_path: str, optional
-            hide_unlinked_rows: bool, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            name: str, optional
-            tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn], optional
             target: GrantaServerApiSchemaAttributesTabularAttributeTarget, optional
             type: str
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._display_full_table = None
@@ -133,18 +137,14 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         self._hide_unlinked_rows = None
         self._target = None
         self._tabular_columns = None
-        self.discriminator = None
+
         self.type = type
-        if display_full_table is not None:
-            self.display_full_table = display_full_table
-        if display_summary_row_inline is not None:
-            self.display_summary_row_inline = display_summary_row_inline
-        if hide_unlinked_rows is not None:
-            self.hide_unlinked_rows = hide_unlinked_rows
+        self.display_full_table = display_full_table
+        self.display_summary_row_inline = display_summary_row_inline
+        self.hide_unlinked_rows = hide_unlinked_rows
         if target is not None:
             self.target = target
-        if tabular_columns is not None:
-            self.tabular_columns = tabular_columns
+        self.tabular_columns = tabular_columns
 
     @property
     def type(self) -> "str":
@@ -190,6 +190,10 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         display_full_table: bool
             The display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        if display_full_table is None:
+            raise ValueError(
+                "Invalid value for 'display_full_table', must not be 'None'"
+            )
         self._display_full_table = display_full_table
 
     @property
@@ -212,6 +216,10 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         display_summary_row_inline: bool
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        if display_summary_row_inline is None:
+            raise ValueError(
+                "Invalid value for 'display_summary_row_inline', must not be 'None'"
+            )
         self._display_summary_row_inline = display_summary_row_inline
 
     @property
@@ -234,6 +242,10 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         hide_unlinked_rows: bool
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        if hide_unlinked_rows is None:
+            raise ValueError(
+                "Invalid value for 'hide_unlinked_rows', must not be 'None'"
+            )
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
@@ -284,9 +296,12 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         tabular_columns: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        if tabular_columns is None:
+            raise ValueError("Invalid value for 'tabular_columns', must not be 'None'")
         self._tabular_columns = tabular_columns
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -40,6 +40,8 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "created_date": "datetime",
@@ -52,6 +54,8 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
         super().__init__()
         self._property_name = None
         self._created_date = None
-        self.discriminator = None
+
         self.property_name = property_name
         if created_date is not None:
             self.created_date = created_date
@@ -120,7 +124,8 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
         """
         self._created_date = created_date
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

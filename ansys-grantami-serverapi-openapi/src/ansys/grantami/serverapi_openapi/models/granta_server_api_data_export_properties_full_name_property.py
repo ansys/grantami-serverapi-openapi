@@ -40,6 +40,8 @@ class GrantaServerApiDataExportPropertiesFullNameProperty(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "full_name": "str",
@@ -52,6 +54,8 @@ class GrantaServerApiDataExportPropertiesFullNameProperty(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiDataExportPropertiesFullNameProperty(
         super().__init__()
         self._property_name = None
         self._full_name = None
-        self.discriminator = None
+
         self.property_name = property_name
         if full_name is not None:
             self.full_name = full_name
@@ -120,7 +124,8 @@ class GrantaServerApiDataExportPropertiesFullNameProperty(
         """
         self._full_name = full_name
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
@@ -60,41 +62,38 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         "units": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        constants: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        units: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimUnit]]" = None,
+        attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        constants: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        expressions: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        units: "List[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitUsage - a model defined in Swagger
 
         Parameters
         ----------
-            attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            constants: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit], optional
+            attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            constants: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit]
         """
         self._attributes = None
         self._parameters = None
         self._constants = None
         self._expressions = None
         self._units = None
-        self.discriminator = None
-        if attributes is not None:
-            self.attributes = attributes
-        if parameters is not None:
-            self.parameters = parameters
-        if constants is not None:
-            self.constants = constants
-        if expressions is not None:
-            self.expressions = expressions
-        if units is not None:
-            self.units = units
+
+        self.attributes = attributes
+        self.parameters = parameters
+        self.constants = constants
+        self.expressions = expressions
+        self.units = units
 
     @property
     def attributes(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
@@ -118,6 +117,8 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attributes of this GrantaServerApiSchemaUnitsUnitUsage.
         """
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
         self._attributes = attributes
 
     @property
@@ -142,6 +143,8 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameters of this GrantaServerApiSchemaUnitsUnitUsage.
         """
+        if parameters is None:
+            raise ValueError("Invalid value for 'parameters', must not be 'None'")
         self._parameters = parameters
 
     @property
@@ -166,6 +169,8 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         constants: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The constants of this GrantaServerApiSchemaUnitsUnitUsage.
         """
+        if constants is None:
+            raise ValueError("Invalid value for 'constants', must not be 'None'")
         self._constants = constants
 
     @property
@@ -190,6 +195,8 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         expressions: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The expressions of this GrantaServerApiSchemaUnitsUnitUsage.
         """
+        if expressions is None:
+            raise ValueError("Invalid value for 'expressions', must not be 'None'")
         self._expressions = expressions
 
     @property
@@ -212,9 +219,12 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         units: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
             The units of this GrantaServerApiSchemaUnitsUnitUsage.
         """
+        if units is None:
+            raise ValueError("Invalid value for 'units', must not be 'None'")
         self._units = units
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

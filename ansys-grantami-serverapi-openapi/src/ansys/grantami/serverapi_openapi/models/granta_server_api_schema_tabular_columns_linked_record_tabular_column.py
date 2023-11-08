@@ -40,9 +40,10 @@ class GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "column_type": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
@@ -51,10 +52,10 @@ class GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn(
         "summary_row_enabled": "bool",
         "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "summary_row_text": "str",
+        "column_type": "str",
     }
 
     attribute_map = {
-        "column_type": "columnType",
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
@@ -63,36 +64,39 @@ class GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn(
         "summary_row_enabled": "summaryRowEnabled",
         "summary_row_roll_up_type": "summaryRowRollUpType",
         "summary_row_text": "summaryRowText",
+        "column_type": "columnType",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        show_as_link: "bool",
+        summary_row_enabled: "bool",
+        summary_row_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        summary_row_text: "str",
         column_type: "str" = "linkedRecord",
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        show_as_link: "Optional[bool]" = None,
-        summary_row_enabled: "Optional[bool]" = None,
-        summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_row_text: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn - a model defined in Swagger
 
         Parameters
         ----------
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            show_as_link: bool
+            summary_row_enabled: bool
+            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            summary_row_text: str
             column_type: str
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            show_as_link: bool, optional
-            summary_row_enabled: bool, optional
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_row_text: str, optional
         """
         super().__init__(
             display_names=display_names,
@@ -105,7 +109,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn(
             summary_row_text=summary_row_text,
         )
         self._column_type = None
-        self.discriminator = None
+
         self.column_type = column_type
 
     @property
@@ -132,7 +136,8 @@ class GrantaServerApiSchemaTabularColumnsLinkedRecordTabularColumn(
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
         self._column_type = column_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -112,7 +112,7 @@ class SchemaUnitsApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnitSystem]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
     ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
         """Create a new unit system.
 
@@ -121,7 +121,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUnitsUnitSystem
+        body: GrantaServerApiSchemaUnitsCreateUnitSystem
 
         Returns
         -------
@@ -135,7 +135,7 @@ class SchemaUnitsApi(ApiBase):
     def _v1alpha_databases_database_key_unit_systems_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnitSystem]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
         **kwargs,
     ):
         all_params = [
@@ -192,7 +192,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitSystem",
+            201: "GrantaServerApiSchemaUnitsUnitSystem",
             400: None,
             403: None,
             404: None,
@@ -602,7 +602,7 @@ class SchemaUnitsApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None,
     ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
         """Create a new unit.
 
@@ -611,7 +611,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUnitsUnit
+        body: GrantaServerApiSchemaUnitsCreateUnit
 
         Returns
         -------
@@ -625,7 +625,7 @@ class SchemaUnitsApi(ApiBase):
     def _v1alpha_databases_database_key_units_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None,
         **kwargs,
     ):
         all_params = [
@@ -682,8 +682,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnit",
-            201: None,
+            201: "GrantaServerApiSchemaUnitsUnit",
             400: None,
             403: None,
             404: None,
@@ -1111,7 +1110,7 @@ class SchemaUnitsApi(ApiBase):
         *,
         database_key: "str",
         unit_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnit]" = None,
     ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
         """Update unit.
 
@@ -1121,7 +1120,7 @@ class SchemaUnitsApi(ApiBase):
         ----------
         database_key: str
         unit_guid: str
-        body: GrantaServerApiSchemaUnitsUnit
+        body: GrantaServerApiSchemaUnitsUpdateUnit
 
         Returns
         -------
@@ -1138,7 +1137,7 @@ class SchemaUnitsApi(ApiBase):
         self,
         database_key: "str",
         unit_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUnit]" = None,
+        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnit]" = None,
         **kwargs,
     ):
         all_params = [

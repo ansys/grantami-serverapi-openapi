@@ -40,9 +40,10 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "column_type": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "display_names": "dict(str, str)",
@@ -53,10 +54,10 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         "summary_row_enabled": "bool",
         "summary_row_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "summary_row_text": "str",
+        "column_type": "str",
     }
 
     attribute_map = {
-        "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
         "display_names": "displayNames",
@@ -67,6 +68,7 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         "summary_row_enabled": "summaryRowEnabled",
         "summary_row_roll_up_type": "summaryRowRollUpType",
         "summary_row_text": "summaryRowText",
+        "column_type": "columnType",
     }
 
     subtype_mapping = {
@@ -74,36 +76,38 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        show_as_link: "bool",
+        summary_row_enabled: "bool",
+        summary_row_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        summary_row_text: "str",
         column_type: "str" = "localDiscrete",
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        show_as_link: "Optional[bool]" = None,
-        summary_row_enabled: "Optional[bool]" = None,
-        summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_row_text: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn - a model defined in Swagger
 
         Parameters
         ----------
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            show_as_link: bool
+            summary_row_enabled: bool
+            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            summary_row_text: str
             column_type: str
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            show_as_link: bool, optional
-            summary_row_enabled: bool, optional
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_row_text: str, optional
         """
         super().__init__(
             display_names=display_names,
@@ -118,12 +122,10 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         self._column_type = None
         self._default_threshold_type = None
         self._discrete_type = None
-        self.discriminator = None
+
         self.column_type = column_type
-        if default_threshold_type is not None:
-            self.default_threshold_type = default_threshold_type
-        if discrete_type is not None:
-            self.discrete_type = discrete_type
+        self.default_threshold_type = default_threshold_type
+        self.discrete_type = discrete_type
 
     @property
     def column_type(self) -> "str":
@@ -174,6 +176,10 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
             The default_threshold_type of this GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn.
         """
+        if default_threshold_type is None:
+            raise ValueError(
+                "Invalid value for 'default_threshold_type', must not be 'None'"
+            )
         self._default_threshold_type = default_threshold_type
 
     @property
@@ -198,9 +204,12 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The discrete_type of this GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn.
         """
+        if discrete_type is None:
+            raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         self._discrete_type = discrete_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -40,6 +40,8 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "last_modified_by_user": "str",
@@ -52,6 +54,8 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         super().__init__()
         self._property_name = None
         self._last_modified_by_user = None
-        self.discriminator = None
+
         self.property_name = property_name
         if last_modified_by_user is not None:
             self.last_modified_by_user = last_modified_by_user
@@ -120,7 +124,8 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         """
         self._last_modified_by_user = last_modified_by_user
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

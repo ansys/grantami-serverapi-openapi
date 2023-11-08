@@ -40,6 +40,8 @@ class GrantaServerApiAggregationsRangeHistogramAggregationDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "maximum_number_of_buckets": "int",
@@ -52,6 +54,8 @@ class GrantaServerApiAggregationsRangeHistogramAggregationDatumCriterion(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiAggregationsRangeHistogramAggregationDatumCriterion(
         super().__init__()
         self._maximum_number_of_buckets = None
         self._type = None
-        self.discriminator = None
+
         if maximum_number_of_buckets is not None:
             self.maximum_number_of_buckets = maximum_number_of_buckets
         self.type = type
@@ -120,7 +124,8 @@ class GrantaServerApiAggregationsRangeHistogramAggregationDatumCriterion(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

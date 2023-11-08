@@ -35,6 +35,8 @@ class GrantaServerApiAggregationsDateTimeHistogram(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "buckets": "list[GrantaServerApiAggregationsDateTimeHistogramBucket]",
@@ -48,6 +50,8 @@ class GrantaServerApiAggregationsDateTimeHistogram(ModelBase):
         "buckets": "GrantaServerApiAggregationsDateTimeHistogramBucket",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -60,7 +64,7 @@ class GrantaServerApiAggregationsDateTimeHistogram(ModelBase):
             buckets: List[GrantaServerApiAggregationsDateTimeHistogramBucket], optional
         """
         self._buckets = None
-        self.discriminator = None
+
         if buckets is not None:
             self.buckets = buckets
 
@@ -88,7 +92,8 @@ class GrantaServerApiAggregationsDateTimeHistogram(ModelBase):
         """
         self._buckets = buckets
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

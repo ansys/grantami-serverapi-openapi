@@ -40,29 +40,33 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "forwards": "bool",
         "guid": "str",
-        "item_type": "str",
         "link_type": "GrantaServerApiSchemaLayoutsLayoutItemLinkType",
         "name": "str",
-        "next_link": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
-        "target_database": "str",
         "target_table": "str",
         "underlying_entity_guid": "str",
+        "item_type": "str",
+        "next_link": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
+        "target_database": "str",
+        "target_database_version": "str",
     }
 
     attribute_map = {
         "forwards": "forwards",
         "guid": "guid",
-        "item_type": "itemType",
         "link_type": "linkType",
         "name": "name",
-        "next_link": "nextLink",
-        "target_database": "targetDatabase",
         "target_table": "targetTable",
         "underlying_entity_guid": "underlyingEntityGuid",
+        "item_type": "itemType",
+        "next_link": "nextLink",
+        "target_database": "targetDatabase",
+        "target_database_version": "targetDatabaseVersion",
     }
 
     subtype_mapping = {
@@ -70,32 +74,36 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         "nextLink": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        forwards: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
+        forwards: "bool",
+        guid: "str",
+        link_type: "GrantaServerApiSchemaLayoutsLayoutItemLinkType",
+        name: "str",
+        target_table: "str",
+        underlying_entity_guid: "str",
         item_type: "str" = "link",
-        link_type: "Optional[GrantaServerApiSchemaLayoutsLayoutItemLinkType]" = None,
-        name: "Optional[str]" = None,
         next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]" = None,
         target_database: "Optional[str]" = None,
-        target_table: "Optional[str]" = None,
-        underlying_entity_guid: "Optional[str]" = None,
+        target_database_version: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutLinkItem - a model defined in Swagger
 
         Parameters
         ----------
-            forwards: bool, optional
-            guid: str, optional
+            forwards: bool
+            guid: str
+            link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
+            name: str
+            target_table: str
+            underlying_entity_guid: str
             item_type: str
-            link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType, optional
-            name: str, optional
             next_link: GrantaServerApiSchemaLayoutsLayoutLinkItem, optional
             target_database: str, optional
-            target_table: str, optional
-            underlying_entity_guid: str, optional
+            target_database_version: str, optional
         """
         super().__init__(
             guid=guid, name=name, underlying_entity_guid=underlying_entity_guid
@@ -103,19 +111,19 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         self._item_type = None
         self._link_type = None
         self._target_database = None
+        self._target_database_version = None
         self._target_table = None
         self._forwards = None
         self._next_link = None
-        self.discriminator = None
+
         self.item_type = item_type
-        if link_type is not None:
-            self.link_type = link_type
+        self.link_type = link_type
         if target_database is not None:
             self.target_database = target_database
-        if target_table is not None:
-            self.target_table = target_table
-        if forwards is not None:
-            self.forwards = forwards
+        if target_database_version is not None:
+            self.target_database_version = target_database_version
+        self.target_table = target_table
+        self.forwards = forwards
         if next_link is not None:
             self.next_link = next_link
 
@@ -165,6 +173,8 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
             The link_type of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        if link_type is None:
+            raise ValueError("Invalid value for 'link_type', must not be 'None'")
         self._link_type = link_type
 
     @property
@@ -190,6 +200,28 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         self._target_database = target_database
 
     @property
+    def target_database_version(self) -> "str":
+        """Gets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
+
+        Returns
+        -------
+        str
+            The target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
+        """
+        return self._target_database_version
+
+    @target_database_version.setter
+    def target_database_version(self, target_database_version: "str") -> None:
+        """Sets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
+
+        Parameters
+        ----------
+        target_database_version: str
+            The target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
+        """
+        self._target_database_version = target_database_version
+
+    @property
     def target_table(self) -> "str":
         """Gets the target_table of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
@@ -209,6 +241,8 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         target_table: str
             The target_table of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        if target_table is None:
+            raise ValueError("Invalid value for 'target_table', must not be 'None'")
         self._target_table = target_table
 
     @property
@@ -231,6 +265,8 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         forwards: bool
             The forwards of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        if forwards is None:
+            raise ValueError("Invalid value for 'forwards', must not be 'None'")
         self._forwards = forwards
 
     @property
@@ -257,7 +293,8 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         """
         self._next_link = next_link
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

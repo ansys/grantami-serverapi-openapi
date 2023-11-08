@@ -36,6 +36,8 @@ class GrantaServerApiSchemaParametersParameterContent(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -54,21 +56,22 @@ class GrantaServerApiSchemaParametersParameterContent(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersNumericParameterContent",
     }
 
+    discriminator = "type"
+
     def __init__(
         self,
         *,
-        parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        parameter: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     ) -> None:
         """GrantaServerApiSchemaParametersParameterContent - a model defined in Swagger
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
         """
         self._parameter = None
-        self.discriminator = "type"
-        if parameter is not None:
-            self.parameter = parameter
+
+        self.parameter = parameter
 
     @property
     def parameter(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
@@ -92,9 +95,12 @@ class GrantaServerApiSchemaParametersParameterContent(ModelBase):
         parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The parameter of this GrantaServerApiSchemaParametersParameterContent.
         """
+        if parameter is None:
+            raise ValueError("Invalid value for 'parameter', must not be 'None'")
         self._parameter = parameter
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -102,15 +108,16 @@ class GrantaServerApiSchemaParametersParameterContent(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

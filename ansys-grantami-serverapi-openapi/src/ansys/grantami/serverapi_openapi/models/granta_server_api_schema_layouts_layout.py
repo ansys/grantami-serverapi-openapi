@@ -35,6 +35,8 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -54,36 +56,34 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         "sections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        sections: "Optional[List[GrantaServerApiSchemaLayoutsLayoutSection]]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        sections: "List[GrantaServerApiSchemaLayoutsLayoutSection]",
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayout - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            sections: List[GrantaServerApiSchemaLayoutsLayoutSection], optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            sections: List[GrantaServerApiSchemaLayoutsLayoutSection]
         """
         self._sections = None
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if sections is not None:
-            self.sections = sections
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.sections = sections
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def sections(self) -> "list[GrantaServerApiSchemaLayoutsLayoutSection]":
@@ -107,6 +107,8 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         sections: list[GrantaServerApiSchemaLayoutsLayoutSection]
             The sections of this GrantaServerApiSchemaLayoutsLayout.
         """
+        if sections is None:
+            raise ValueError("Invalid value for 'sections', must not be 'None'")
         self._sections = sections
 
     @property
@@ -129,6 +131,8 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaLayoutsLayout.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -151,6 +155,8 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaLayoutsLayout.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -173,9 +179,12 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaLayoutsLayout.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

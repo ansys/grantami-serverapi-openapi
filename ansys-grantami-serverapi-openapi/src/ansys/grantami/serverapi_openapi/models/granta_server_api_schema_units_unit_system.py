@@ -35,6 +35,8 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -54,36 +56,34 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         "unitMappings": "GrantaServerApiSchemaUnitsUnitMapping",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        unit_mappings: "Optional[List[GrantaServerApiSchemaUnitsUnitMapping]]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        unit_mappings: "List[GrantaServerApiSchemaUnitsUnitMapping]",
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitSystem - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            unit_mappings: List[GrantaServerApiSchemaUnitsUnitMapping], optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            unit_mappings: List[GrantaServerApiSchemaUnitsUnitMapping]
         """
         self._unit_mappings = None
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if unit_mappings is not None:
-            self.unit_mappings = unit_mappings
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.unit_mappings = unit_mappings
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def unit_mappings(self) -> "list[GrantaServerApiSchemaUnitsUnitMapping]":
@@ -107,6 +107,8 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         unit_mappings: list[GrantaServerApiSchemaUnitsUnitMapping]
             The unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
         """
+        if unit_mappings is None:
+            raise ValueError("Invalid value for 'unit_mappings', must not be 'None'")
         self._unit_mappings = unit_mappings
 
     @property
@@ -129,6 +131,8 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaUnitsUnitSystem.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -151,6 +155,8 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaUnitsUnitSystem.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -173,9 +179,12 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaUnitsUnitSystem.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

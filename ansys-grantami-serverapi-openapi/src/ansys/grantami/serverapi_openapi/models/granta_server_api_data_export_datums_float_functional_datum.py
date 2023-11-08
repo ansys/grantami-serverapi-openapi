@@ -41,6 +41,8 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -48,7 +50,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "datum_type": "str",
         "is_estimated": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
         "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
         "unit_symbol": "str",
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
@@ -76,6 +78,8 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "series".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsFunctionalSeriesDatum",
     }
 
+    discriminator = "graph_type"
+
     def __init__(
         self,
         *,
@@ -84,7 +88,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         datum_type: "str" = "floatFunctional",
         is_estimated: "Optional[bool]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
         parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
         unit_symbol: "Optional[str]" = None,
         x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,
@@ -98,7 +102,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             datum_type: str
             is_estimated: bool, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
             parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
             unit_symbol: str, optional
             x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
@@ -114,7 +118,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         self._x_axis_parameter = None
         self._parameters = None
         self._is_estimated = None
-        self.discriminator = "graph_type"
+
         self.datum_type = datum_type
         if unit_symbol is not None:
             self.unit_symbol = unit_symbol
@@ -241,7 +245,8 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         """
         self._is_estimated = is_estimated
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -249,15 +254,16 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

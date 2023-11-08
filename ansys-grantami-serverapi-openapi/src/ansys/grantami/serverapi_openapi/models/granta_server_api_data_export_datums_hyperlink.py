@@ -35,6 +35,8 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "address": "str",
@@ -49,6 +51,8 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -68,7 +72,7 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
         self._address = None
         self._formatted_address = None
         self._description = None
-        self.discriminator = None
+
         if address is not None:
             self.address = address
         if formatted_address is not None:
@@ -142,7 +146,8 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
         """
         self._description = description
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

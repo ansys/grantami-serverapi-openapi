@@ -35,6 +35,8 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attributes": "list[GrantaServerApiDataExportAttributeToExport]",
@@ -52,6 +54,8 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         "attributes": "GrantaServerApiDataExportAttributeToExport",
         "recordProperties": "GrantaServerApiRecordProperty",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -71,7 +75,7 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         self._attributes = None
         self._record_properties = None
         self._record_history_identities = None
-        self.discriminator = None
+
         if attributes is not None:
             self.attributes = attributes
         if record_properties is not None:
@@ -149,7 +153,8 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         """
         self._record_history_identities = record_history_identities
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

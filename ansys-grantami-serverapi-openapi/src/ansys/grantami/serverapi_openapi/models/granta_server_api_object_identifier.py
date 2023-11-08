@@ -35,6 +35,8 @@ class GrantaServerApiObjectIdentifier(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "guid": "str",
@@ -49,6 +51,8 @@ class GrantaServerApiObjectIdentifier(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -68,7 +72,7 @@ class GrantaServerApiObjectIdentifier(ModelBase):
         self._guid = None
         self._name = None
         self._identity = None
-        self.discriminator = None
+
         if guid is not None:
             self.guid = guid
         if name is not None:
@@ -148,7 +152,8 @@ class GrantaServerApiObjectIdentifier(ModelBase):
         """
         self._identity = identity
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

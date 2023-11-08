@@ -35,6 +35,8 @@ class GrantaServerApiSchemaFilesFolder(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "guid": "str",
@@ -50,31 +52,31 @@ class GrantaServerApiSchemaFilesFolder(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        guid: "str",
+        name: "str",
         parent_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaFilesFolder - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            name: str, optional
+            guid: str
+            name: str
             parent_guid: str, optional
         """
         self._parent_guid = None
         self._name = None
         self._guid = None
-        self.discriminator = None
+
         if parent_guid is not None:
             self.parent_guid = parent_guid
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def parent_guid(self) -> "str":
@@ -118,6 +120,8 @@ class GrantaServerApiSchemaFilesFolder(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaFilesFolder.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -140,9 +144,12 @@ class GrantaServerApiSchemaFilesFolder(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaFilesFolder.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -38,11 +38,15 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "indirect_links": "GrantaServerApiIndirectLinks",
         "inner_criterion": "GrantaServerApiSearchCriterion",
         "link_datum_type": "GrantaServerApiLinkAttributeType",
         "local_criterion": "GrantaServerApiSearchCriterion",
+        "local_rows_behaviour": "GrantaServerApiSearchLocalRowsBehaviour",
         "search_in_reversed_direction": "bool",
         "target_attribute_guid": "str",
         "target_attribute_identity": "int",
@@ -53,9 +57,11 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     }
 
     attribute_map = {
+        "indirect_links": "indirectLinks",
         "inner_criterion": "innerCriterion",
         "link_datum_type": "linkDatumType",
         "local_criterion": "localCriterion",
+        "local_rows_behaviour": "localRowsBehaviour",
         "search_in_reversed_direction": "searchInReversedDirection",
         "target_attribute_guid": "targetAttributeGuid",
         "target_attribute_identity": "targetAttributeIdentity",
@@ -68,15 +74,21 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     subtype_mapping = {
         "localCriterion": "GrantaServerApiSearchCriterion",
         "linkDatumType": "GrantaServerApiLinkAttributeType",
+        "indirectLinks": "GrantaServerApiIndirectLinks",
         "innerCriterion": "GrantaServerApiSearchCriterion",
+        "localRowsBehaviour": "GrantaServerApiSearchLocalRowsBehaviour",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
+        indirect_links: "Optional[GrantaServerApiIndirectLinks]" = None,
         inner_criterion: "Optional[GrantaServerApiSearchCriterion]" = None,
         link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None,
         local_criterion: "Optional[GrantaServerApiSearchCriterion]" = None,
+        local_rows_behaviour: "Optional[GrantaServerApiSearchLocalRowsBehaviour]" = None,
         search_in_reversed_direction: "Optional[bool]" = None,
         target_attribute_guid: "Optional[str]" = None,
         target_attribute_identity: "Optional[int]" = None,
@@ -89,9 +101,11 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
         Parameters
         ----------
+            indirect_links: GrantaServerApiIndirectLinks, optional
             inner_criterion: GrantaServerApiSearchCriterion, optional
             link_datum_type: GrantaServerApiLinkAttributeType, optional
             local_criterion: GrantaServerApiSearchCriterion, optional
+            local_rows_behaviour: GrantaServerApiSearchLocalRowsBehaviour, optional
             search_in_reversed_direction: bool, optional
             target_attribute_guid: str, optional
             target_attribute_identity: int, optional
@@ -106,12 +120,14 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         self._target_database_key = None
         self._local_criterion = None
         self._link_datum_type = None
+        self._indirect_links = None
         self._search_in_reversed_direction = None
         self._target_attribute_identity = None
         self._target_attribute_guid = None
         self._inner_criterion = None
         self._type = None
-        self.discriminator = None
+        self._local_rows_behaviour = None
+
         if target_table_identity is not None:
             self.target_table_identity = target_table_identity
         if target_table_guid is not None:
@@ -122,6 +138,8 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
             self.local_criterion = local_criterion
         if link_datum_type is not None:
             self.link_datum_type = link_datum_type
+        if indirect_links is not None:
+            self.indirect_links = indirect_links
         if search_in_reversed_direction is not None:
             self.search_in_reversed_direction = search_in_reversed_direction
         if target_attribute_identity is not None:
@@ -131,11 +149,13 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
         self.type = type
+        if local_rows_behaviour is not None:
+            self.local_rows_behaviour = local_rows_behaviour
 
     @property
     def target_table_identity(self) -> "int":
         """Gets the target_table_identity of this GrantaServerApiSearchLinkDatumCriterion.
-        Table containing the linked records
+        Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
         Returns
         -------
@@ -147,7 +167,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @target_table_identity.setter
     def target_table_identity(self, target_table_identity: "int") -> None:
         """Sets the target_table_identity of this GrantaServerApiSearchLinkDatumCriterion.
-        Table containing the linked records
+        Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
         Parameters
         ----------
@@ -159,7 +179,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @property
     def target_table_guid(self) -> "str":
         """Gets the target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.
-        Table containing the linked records
+        Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
         Returns
         -------
@@ -171,7 +191,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @target_table_guid.setter
     def target_table_guid(self, target_table_guid: "str") -> None:
         """Sets the target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.
-        Table containing the linked records
+        Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
         Parameters
         ----------
@@ -253,6 +273,28 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         self._link_datum_type = link_datum_type
 
     @property
+    def indirect_links(self) -> "GrantaServerApiIndirectLinks":
+        """Gets the indirect_links of this GrantaServerApiSearchLinkDatumCriterion.
+
+        Returns
+        -------
+        GrantaServerApiIndirectLinks
+            The indirect_links of this GrantaServerApiSearchLinkDatumCriterion.
+        """
+        return self._indirect_links
+
+    @indirect_links.setter
+    def indirect_links(self, indirect_links: "GrantaServerApiIndirectLinks") -> None:
+        """Sets the indirect_links of this GrantaServerApiSearchLinkDatumCriterion.
+
+        Parameters
+        ----------
+        indirect_links: GrantaServerApiIndirectLinks
+            The indirect_links of this GrantaServerApiSearchLinkDatumCriterion.
+        """
+        self._indirect_links = indirect_links
+
+    @property
     def search_in_reversed_direction(self) -> "bool":
         """Gets the search_in_reversed_direction of this GrantaServerApiSearchLinkDatumCriterion.
 
@@ -279,7 +321,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @property
     def target_attribute_identity(self) -> "int":
         """Gets the target_attribute_identity of this GrantaServerApiSearchLinkDatumCriterion.
-        For tabular searching: this is the identity of the short-text linking attribute.  Otherwise null.
+        For tabular searching: this is the identity of the short-text linking attribute.  The target attribute and table can both be omitted; it is likely to improve performance if they are included.  If either the target attribute or the target table is provided, they should both be provided.  Otherwise null.
 
         Returns
         -------
@@ -291,7 +333,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @target_attribute_identity.setter
     def target_attribute_identity(self, target_attribute_identity: "int") -> None:
         """Sets the target_attribute_identity of this GrantaServerApiSearchLinkDatumCriterion.
-        For tabular searching: this is the identity of the short-text linking attribute.  Otherwise null.
+        For tabular searching: this is the identity of the short-text linking attribute.  The target attribute and table can both be omitted; it is likely to improve performance if they are included.  If either the target attribute or the target table is provided, they should both be provided.  Otherwise null.
 
         Parameters
         ----------
@@ -303,7 +345,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @property
     def target_attribute_guid(self) -> "str":
         """Gets the target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.
-        For tabular searching: this is the GUID of the short-text linking attribute.  Otherwise null.
+        For tabular searching: this is the GUID of the short-text linking attribute.  /// The target attribute and table can both be omitted; it is likely to improve performance if they are included.  If either the target attribute or the target table is provided, they should both be provided.  Otherwise null.
 
         Returns
         -------
@@ -315,7 +357,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
     @target_attribute_guid.setter
     def target_attribute_guid(self, target_attribute_guid: "str") -> None:
         """Sets the target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.
-        For tabular searching: this is the GUID of the short-text linking attribute.  Otherwise null.
+        For tabular searching: this is the GUID of the short-text linking attribute.  /// The target attribute and table can both be omitted; it is likely to improve performance if they are included.  If either the target attribute or the target table is provided, they should both be provided.  Otherwise null.
 
         Parameters
         ----------
@@ -372,7 +414,32 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def local_rows_behaviour(self) -> "GrantaServerApiSearchLocalRowsBehaviour":
+        """Gets the local_rows_behaviour of this GrantaServerApiSearchLinkDatumCriterion.
+
+        Returns
+        -------
+        GrantaServerApiSearchLocalRowsBehaviour
+            The local_rows_behaviour of this GrantaServerApiSearchLinkDatumCriterion.
+        """
+        return self._local_rows_behaviour
+
+    @local_rows_behaviour.setter
+    def local_rows_behaviour(
+        self, local_rows_behaviour: "GrantaServerApiSearchLocalRowsBehaviour"
+    ) -> None:
+        """Sets the local_rows_behaviour of this GrantaServerApiSearchLinkDatumCriterion.
+
+        Parameters
+        ----------
+        local_rows_behaviour: GrantaServerApiSearchLocalRowsBehaviour
+            The local_rows_behaviour of this GrantaServerApiSearchLinkDatumCriterion.
+        """
+        self._local_rows_behaviour = local_rows_behaviour
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

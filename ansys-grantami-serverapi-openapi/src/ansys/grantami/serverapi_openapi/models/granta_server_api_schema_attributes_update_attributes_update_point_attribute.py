@@ -40,10 +40,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -51,7 +53,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         "is_multi_valued": "bool",
         "name": "str",
         "type": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
     attribute_map = {
@@ -68,15 +70,17 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     }
 
     subtype_mapping = {
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
@@ -84,14 +88,14 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         is_multi_valued: "Optional[bool]" = None,
         name: "Optional[str]" = None,
         type: "str" = "point",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
@@ -99,7 +103,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
             is_multi_valued: bool, optional
             name: str, optional
             type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -113,7 +117,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         self._unit = None
         self._is_multi_valued = None
         self._attribute_parameters = None
-        self.discriminator = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
@@ -147,23 +151,23 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         self._unit = unit
@@ -193,31 +197,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

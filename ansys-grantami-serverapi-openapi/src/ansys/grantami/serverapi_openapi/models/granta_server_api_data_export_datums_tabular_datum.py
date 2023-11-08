@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsTabularDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -48,7 +50,8 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         "datum_type": "str",
         "link_datum_type": "str",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
+        "summary_row": "list[GrantaServerApiDataExportDatumsRollupRollupDatum]",
         "tabular_rows": "list[GrantaServerApiDataExportDatumsTabularRow]",
     }
 
@@ -60,12 +63,16 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         "link_datum_type": "linkDatumType",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
+        "summary_row": "summaryRow",
         "tabular_rows": "tabularRows",
     }
 
     subtype_mapping = {
         "tabularRows": "GrantaServerApiDataExportDatumsTabularRow",
+        "summaryRow": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -76,7 +83,8 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         datum_type: "str" = "link",
         link_datum_type: "str" = "tabular",
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
+        summary_row: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]" = None,
         tabular_rows: "Optional[List[GrantaServerApiDataExportDatumsTabularRow]]" = None,
     ) -> None:
         """GrantaServerApiDataExportDatumsTabularDatum - a model defined in Swagger
@@ -89,7 +97,8 @@ class GrantaServerApiDataExportDatumsTabularDatum(
             datum_type: str
             link_datum_type: str
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
+            summary_row: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
             tabular_rows: List[GrantaServerApiDataExportDatumsTabularRow], optional
         """
         super().__init__(
@@ -101,12 +110,15 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         )
         self._attribute_name = None
         self._tabular_rows = None
+        self._summary_row = None
         self._link_datum_type = None
-        self.discriminator = None
+
         if attribute_name is not None:
             self.attribute_name = attribute_name
         if tabular_rows is not None:
             self.tabular_rows = tabular_rows
+        if summary_row is not None:
+            self.summary_row = summary_row
         self.link_datum_type = link_datum_type
 
     @property
@@ -156,6 +168,30 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         self._tabular_rows = tabular_rows
 
     @property
+    def summary_row(self) -> "list[GrantaServerApiDataExportDatumsRollupRollupDatum]":
+        """Gets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
+
+        Returns
+        -------
+        list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
+        """
+        return self._summary_row
+
+    @summary_row.setter
+    def summary_row(
+        self, summary_row: "list[GrantaServerApiDataExportDatumsRollupRollupDatum]"
+    ) -> None:
+        """Sets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
+
+        Parameters
+        ----------
+        summary_row: list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
+        """
+        self._summary_row = summary_row
+
+    @property
     def link_datum_type(self) -> "str":
         """Gets the link_datum_type of this GrantaServerApiDataExportDatumsTabularDatum.
 
@@ -179,7 +215,8 @@ class GrantaServerApiDataExportDatumsTabularDatum(
             raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
         self._link_datum_type = link_datum_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

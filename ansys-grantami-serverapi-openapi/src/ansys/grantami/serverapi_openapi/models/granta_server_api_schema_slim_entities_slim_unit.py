@@ -35,6 +35,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "guid": "str",
@@ -48,26 +50,26 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        symbol: "Optional[str]" = None,
+        guid: "str",
+        symbol: "str",
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimUnit - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            symbol: str, optional
+            guid: str
+            symbol: str
         """
         self._symbol = None
         self._guid = None
-        self.discriminator = None
-        if symbol is not None:
-            self.symbol = symbol
-        if guid is not None:
-            self.guid = guid
+
+        self.symbol = symbol
+        self.guid = guid
 
     @property
     def symbol(self) -> "str":
@@ -89,6 +91,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
         symbol: str
             The symbol of this GrantaServerApiSchemaSlimEntitiesSlimUnit.
         """
+        if symbol is None:
+            raise ValueError("Invalid value for 'symbol', must not be 'None'")
         self._symbol = symbol
 
     @property
@@ -111,9 +115,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaSlimEntitiesSlimUnit.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

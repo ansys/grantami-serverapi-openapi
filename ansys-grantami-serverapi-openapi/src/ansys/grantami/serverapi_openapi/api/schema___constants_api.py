@@ -506,8 +506,7 @@ class SchemaConstantsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaConstantsConstant",
-            201: None,
+            201: "GrantaServerApiSchemaConstantsConstant",
             400: None,
             403: None,
             404: None,

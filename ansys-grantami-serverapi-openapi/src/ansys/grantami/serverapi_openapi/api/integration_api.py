@@ -90,19 +90,19 @@ class IntegrationApi(ApiBase):
     def v1alpha_integration_schemas_post(
         self,
         *,
-        body: "Optional[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
-    ) -> "None":
+        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
+    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Add an integration schema. Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
+        body: GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier
 
         Returns
         -------
-        None
+        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_integration_schemas_post_with_http_info(
             body, _return_http_data_only=True
@@ -111,7 +111,7 @@ class IntegrationApi(ApiBase):
 
     def _v1alpha_integration_schemas_post_with_http_info(
         self,
-        body: "Optional[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
+        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
         **kwargs,
     ):
         all_params = [
@@ -144,6 +144,11 @@ class IntegrationApi(ApiBase):
         body_params = None
         if "body" in params and body is not None:
             body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
             [
@@ -155,8 +160,9 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map = {
-            200: None,
-            201: None,
+            201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            400: None,
+            403: None,
             422: None,
         }
 
@@ -282,6 +288,7 @@ class IntegrationApi(ApiBase):
         Parameters
         ----------
         schema: str
+            Schema to be deleted
 
         Returns
         -------
@@ -331,7 +338,8 @@ class IntegrationApi(ApiBase):
 
         body_params = None
         response_type_map = {
-            200: None,
+            204: None,
+            403: None,
             404: None,
         }
 
@@ -453,8 +461,8 @@ class IntegrationApi(ApiBase):
         self,
         *,
         schema: "str",
-        body: "Optional[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
-    ) -> "None":
+        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
+    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Updates an integration schema, or adds a new one if there is not one with the same key already.  Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.
 
         This method makes a synchronous HTTP request.
@@ -462,11 +470,11 @@ class IntegrationApi(ApiBase):
         Parameters
         ----------
         schema: str
-        body: GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier
+        body: GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier
 
         Returns
         -------
-        None
+        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_integration_schemas_schema_put_with_http_info(
             schema, body, _return_http_data_only=True
@@ -476,7 +484,7 @@ class IntegrationApi(ApiBase):
     def _v1alpha_integration_schemas_schema_put_with_http_info(
         self,
         schema: "str",
-        body: "Optional[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
+        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
         **kwargs,
     ):
         all_params = [
@@ -517,6 +525,11 @@ class IntegrationApi(ApiBase):
         body_params = None
         if "body" in params and body is not None:
             body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
             [
@@ -528,7 +541,9 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map = {
-            200: None,
+            201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            400: None,
+            403: None,
             422: None,
         }
 

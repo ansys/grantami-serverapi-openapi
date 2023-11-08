@@ -35,6 +35,8 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "link_source": "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
@@ -51,26 +53,26 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         "linkTarget": "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        link_source: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None,
-        link_target: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkTarget]" = None,
+        link_source: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
+        link_target: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsLinkInfo - a model defined in Swagger
 
         Parameters
         ----------
-            link_source: GrantaServerApiSchemaRecordLinkGroupsLinkTarget, optional
-            link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget, optional
+            link_source: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
+            link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
         """
         self._link_source = None
         self._link_target = None
-        self.discriminator = None
-        if link_source is not None:
-            self.link_source = link_source
-        if link_target is not None:
-            self.link_target = link_target
+
+        self.link_source = link_source
+        self.link_target = link_target
 
     @property
     def link_source(self) -> "GrantaServerApiSchemaRecordLinkGroupsLinkTarget":
@@ -94,6 +96,8 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         link_source: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
             The link_source of this GrantaServerApiSchemaRecordLinkGroupsLinkInfo.
         """
+        if link_source is None:
+            raise ValueError("Invalid value for 'link_source', must not be 'None'")
         self._link_source = link_source
 
     @property
@@ -118,9 +122,12 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
             The link_target of this GrantaServerApiSchemaRecordLinkGroupsLinkInfo.
         """
+        if link_target is None:
+            raise ValueError("Invalid value for 'link_target', must not be 'None'")
         self._link_target = link_target
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

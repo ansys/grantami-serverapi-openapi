@@ -35,61 +35,65 @@ class GrantaServerApiSearchBoostByIdentity(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "attribute_identity": "int",
         "boost_factor": "float",
+        "identity": "int",
     }
 
     attribute_map = {
-        "attribute_identity": "attributeIdentity",
         "boost_factor": "boostFactor",
+        "identity": "identity",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_identity: "Optional[int]" = None,
         boost_factor: "Optional[float]" = None,
+        identity: "Optional[int]" = None,
     ) -> None:
         """GrantaServerApiSearchBoostByIdentity - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_identity: int, optional
             boost_factor: float, optional
+            identity: int, optional
         """
-        self._attribute_identity = None
+        self._identity = None
         self._boost_factor = None
-        self.discriminator = None
-        if attribute_identity is not None:
-            self.attribute_identity = attribute_identity
+
+        if identity is not None:
+            self.identity = identity
         if boost_factor is not None:
             self.boost_factor = boost_factor
 
     @property
-    def attribute_identity(self) -> "int":
-        """Gets the attribute_identity of this GrantaServerApiSearchBoostByIdentity.
+    def identity(self) -> "int":
+        """Gets the identity of this GrantaServerApiSearchBoostByIdentity.
 
         Returns
         -------
         int
-            The attribute_identity of this GrantaServerApiSearchBoostByIdentity.
+            The identity of this GrantaServerApiSearchBoostByIdentity.
         """
-        return self._attribute_identity
+        return self._identity
 
-    @attribute_identity.setter
-    def attribute_identity(self, attribute_identity: "int") -> None:
-        """Sets the attribute_identity of this GrantaServerApiSearchBoostByIdentity.
+    @identity.setter
+    def identity(self, identity: "int") -> None:
+        """Sets the identity of this GrantaServerApiSearchBoostByIdentity.
 
         Parameters
         ----------
-        attribute_identity: int
-            The attribute_identity of this GrantaServerApiSearchBoostByIdentity.
+        identity: int
+            The identity of this GrantaServerApiSearchBoostByIdentity.
         """
-        self._attribute_identity = attribute_identity
+        self._identity = identity
 
     @property
     def boost_factor(self) -> "float":
@@ -113,7 +117,8 @@ class GrantaServerApiSearchBoostByIdentity(ModelBase):
         """
         self._boost_factor = boost_factor
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

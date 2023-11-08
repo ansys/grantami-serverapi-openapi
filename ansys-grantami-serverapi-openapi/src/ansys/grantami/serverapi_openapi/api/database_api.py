@@ -26,7 +26,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_standard_namesgenerate_integration_schema_post(
         self, *, database_key: "str", body: "Optional[List[str]]" = None
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema with attributes for each provided standard name in the given database. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -38,7 +38,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_standard_namesgenerate_integration_schema_post_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -102,7 +102,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -125,7 +125,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_identity_layout_layout_identitygenerate_integration_schema_get(
         self, *, database_key: "str", table_identity: "int", layout_identity: "int"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -138,7 +138,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_identity_layout_layout_identitygenerate_integration_schema_get_with_http_info(
             database_key, table_identity, layout_identity, _return_http_data_only=True
@@ -209,7 +209,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -232,7 +232,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_identity_layout_layout_namegenerate_integration_schema_get(
         self, *, database_key: "str", table_identity: "int", layout_name: "str"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -245,7 +245,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_identity_layout_layout_namegenerate_integration_schema_get_with_http_info(
             database_key, table_identity, layout_name, _return_http_data_only=True
@@ -312,7 +312,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -335,7 +335,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_identitygenerate_integration_schema_get(
         self, *, database_key: "str", table_identity: "int"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given table. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -347,7 +347,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_identitygenerate_integration_schema_get_with_http_info(
             database_key, table_identity, _return_http_data_only=True
@@ -406,7 +406,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -429,7 +429,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_name_layout_layout_identitygenerate_integration_schema_get(
         self, *, database_key: "str", table_name: "str", layout_identity: "int"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -442,7 +442,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_name_layout_layout_identitygenerate_integration_schema_get_with_http_info(
             database_key, table_name, layout_identity, _return_http_data_only=True
@@ -509,7 +509,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -532,7 +532,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_name_layout_layout_namegenerate_integration_schema_get(
         self, *, database_key: "str", table_name: "str", layout_name: "str"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given layout. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -545,7 +545,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_name_layout_layout_namegenerate_integration_schema_get_with_http_info(
             database_key, table_name, layout_name, _return_http_data_only=True
@@ -612,7 +612,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -635,7 +635,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_namegenerate_integration_schema_get(
         self, *, database_key: "str", table_name: "str"
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema from the attributes in the given table. The user must be an Admin user for the database.
 
         This method makes a synchronous HTTP request.
@@ -647,7 +647,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_namegenerate_integration_schema_get_with_http_info(
             database_key, table_name, _return_http_data_only=True
@@ -706,7 +706,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }
@@ -729,8 +729,8 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_databases_database_keysearch_index_status_get(
         self, *, database_key: "str", include_diagnostics: "Optional[bool]" = None
-    ) -> "GrantaServerApiSearchIndexStatus":
-        """v1alpha_databases_database_keysearch_index_status_get
+    ) -> "Union[GrantaServerApiSearchIndexStatus, None]":
+        """Get Search Index Status for a given database
 
         This method makes a synchronous HTTP request.
 
@@ -741,7 +741,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiSearchIndexStatus
+        Union[GrantaServerApiSearchIndexStatus, None]
         """
         data = (
             self._v1alpha_databases_database_keysearch_index_status_get_with_http_info(
@@ -801,6 +801,8 @@ class DatabaseApi(ApiBase):
 
         response_type_map = {
             200: "GrantaServerApiSearchIndexStatus",
+            403: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -821,7 +823,7 @@ class DatabaseApi(ApiBase):
 
     def v1alpha_standard_namesgenerate_integration_schema_post(
         self, *, body: "Optional[List[str]]" = None
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema with attributes for each provided standard name. This will include attribute from all loaded databases for which the user is an Admin.
 
         This method makes a synchronous HTTP request.
@@ -832,7 +834,7 @@ class DatabaseApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
         data = (
             self._v1alpha_standard_namesgenerate_integration_schema_post_with_http_info(
@@ -890,7 +892,7 @@ class DatabaseApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
         }

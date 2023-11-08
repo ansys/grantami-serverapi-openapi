@@ -35,6 +35,8 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_identities": "list[int]",
@@ -50,26 +52,26 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         "recordReferences": "GrantaServerApiIntegrationDataExportRecordReference",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_identities: "Optional[List[int]]" = None,
-        record_references: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None,
+        attribute_identities: "List[int]",
+        record_references: "List[GrantaServerApiIntegrationDataExportRecordReference]",
     ) -> None:
         """GrantaServerApiIntegrationDataExportIntegrationDataExportRequest - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_identities: List[int], optional
-            record_references: List[GrantaServerApiIntegrationDataExportRecordReference], optional
+            attribute_identities: List[int]
+            record_references: List[GrantaServerApiIntegrationDataExportRecordReference]
         """
         self._record_references = None
         self._attribute_identities = None
-        self.discriminator = None
-        if record_references is not None:
-            self.record_references = record_references
-        if attribute_identities is not None:
-            self.attribute_identities = attribute_identities
+
+        self.record_references = record_references
+        self.attribute_identities = attribute_identities
 
     @property
     def record_references(
@@ -98,6 +100,10 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         record_references: list[GrantaServerApiIntegrationDataExportRecordReference]
             The record_references of this GrantaServerApiIntegrationDataExportIntegrationDataExportRequest.
         """
+        if record_references is None:
+            raise ValueError(
+                "Invalid value for 'record_references', must not be 'None'"
+            )
         self._record_references = record_references
 
     @property
@@ -122,9 +128,14 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         attribute_identities: list[int]
             The attribute_identities of this GrantaServerApiIntegrationDataExportIntegrationDataExportRequest.
         """
+        if attribute_identities is None:
+            raise ValueError(
+                "Invalid value for 'attribute_identities', must not be 'None'"
+            )
         self._attribute_identities = attribute_identities
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

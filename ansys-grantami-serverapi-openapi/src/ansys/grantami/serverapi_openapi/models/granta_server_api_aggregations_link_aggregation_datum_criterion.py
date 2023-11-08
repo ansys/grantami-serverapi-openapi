@@ -40,9 +40,11 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "local_aggregation_criteria": "list[GrantaServerApiAggregationsAggregationCriterion]",
+        "local_aggregation_criteria": "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]",
         "type": "str",
     }
 
@@ -52,26 +54,28 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     }
 
     subtype_mapping = {
-        "localAggregationCriteria": "GrantaServerApiAggregationsAggregationCriterion",
+        "localAggregationCriteria": "GrantaServerApiAggregationsLocalColumnAggregationCriterion",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsAggregationCriterion]]" = None,
+        local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]" = None,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiAggregationsLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            local_aggregation_criteria: List[GrantaServerApiAggregationsAggregationCriterion], optional
+            local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], optional
             type: str
         """
         super().__init__()
         self._type = None
         self._local_aggregation_criteria = None
-        self.discriminator = None
+
         self.type = type
         if local_aggregation_criteria is not None:
             self.local_aggregation_criteria = local_aggregation_criteria
@@ -103,12 +107,12 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @property
     def local_aggregation_criteria(
         self,
-    ) -> "list[GrantaServerApiAggregationsAggregationCriterion]":
+    ) -> "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]":
         """Gets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Returns
         -------
-        list[GrantaServerApiAggregationsAggregationCriterion]
+        list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         return self._local_aggregation_criteria
@@ -116,18 +120,19 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @local_aggregation_criteria.setter
     def local_aggregation_criteria(
         self,
-        local_aggregation_criteria: "list[GrantaServerApiAggregationsAggregationCriterion]",
+        local_aggregation_criteria: "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]",
     ) -> None:
         """Sets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Parameters
         ----------
-        local_aggregation_criteria: list[GrantaServerApiAggregationsAggregationCriterion]
+        local_aggregation_criteria: list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         self._local_aggregation_criteria = local_aggregation_criteria
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

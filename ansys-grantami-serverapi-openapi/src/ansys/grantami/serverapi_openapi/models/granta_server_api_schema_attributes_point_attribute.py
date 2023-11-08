@@ -40,33 +40,35 @@ class GrantaServerApiSchemaAttributesPointAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_multi_valued": "bool",
         "name": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_multi_valued": "isMultiValued",
         "name": "name",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "type": "type",
         "unit": "unit",
     }
@@ -76,19 +78,21 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        is_multi_valued: "bool",
+        name: "str",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
         axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        is_multi_valued: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "point",
         unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
     ) -> None:
@@ -96,41 +100,39 @@ class GrantaServerApiSchemaAttributesPointAttribute(
 
         Parameters
         ----------
+            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            display_names: Dict[str, str]
+            guid: str
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            is_multi_valued: bool
+            name: str
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
             axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_names: Dict[str, str], optional
-            guid: str, optional
             help_path: str, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            is_multi_valued: bool, optional
-            name: str, optional
             type: str
             unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._unit = None
         self._is_multi_valued = None
         self._attribute_parameters = None
-        self.discriminator = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
-        if is_multi_valued is not None:
-            self.is_multi_valued = is_multi_valued
-        if attribute_parameters is not None:
-            self.attribute_parameters = attribute_parameters
+        self.is_multi_valued = is_multi_valued
+        self.attribute_parameters = attribute_parameters
 
     @property
     def type(self) -> "str":
@@ -198,6 +200,8 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         is_multi_valued: bool
             The is_multi_valued of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        if is_multi_valued is None:
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         self._is_multi_valued = is_multi_valued
 
     @property
@@ -225,9 +229,14 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        if attribute_parameters is None:
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'None'"
+            )
         self._attribute_parameters = attribute_parameters
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

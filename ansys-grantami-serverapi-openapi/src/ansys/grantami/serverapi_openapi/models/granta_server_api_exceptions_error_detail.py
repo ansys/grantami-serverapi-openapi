@@ -35,6 +35,8 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "message": "str",
@@ -47,6 +49,8 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -63,7 +67,7 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
         """
         self._message = None
         self._reason = None
-        self.discriminator = None
+
         if message is not None:
             self.message = message
         if reason is not None:
@@ -113,7 +117,8 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
         """
         self._reason = reason
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

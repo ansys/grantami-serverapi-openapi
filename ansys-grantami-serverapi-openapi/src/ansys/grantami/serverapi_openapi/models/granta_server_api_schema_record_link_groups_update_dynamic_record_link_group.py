@@ -40,9 +40,11 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
         "forbid_orphans": "bool",
         "guid": "str",
         "name": "str",
@@ -63,13 +65,15 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
 
     subtype_mapping = {
         "referentialIntegrityModel": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
-        "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair",
+        "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None,
+        attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]]" = None,
         forbid_orphans: "Optional[bool]" = None,
         guid: "Optional[str]" = None,
         name: "Optional[str]" = None,
@@ -81,7 +85,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
 
         Parameters
         ----------
-            attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair], optional
+            attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], optional
             forbid_orphans: bool, optional
             guid: str, optional
             name: str, optional
@@ -94,7 +98,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
         self._referential_integrity_model = None
         self._attribute_pairs = None
         self._type = None
-        self.discriminator = None
+
         if forbid_orphans is not None:
             self.forbid_orphans = forbid_orphans
         if referential_integrity_model is not None:
@@ -155,12 +159,12 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     @property
     def attribute_pairs(
         self,
-    ) -> "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]":
+    ) -> "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]":
         """Gets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Returns
         -------
-        list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
+        list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
         return self._attribute_pairs
@@ -168,13 +172,13 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     @attribute_pairs.setter
     def attribute_pairs(
         self,
-        attribute_pairs: "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        attribute_pairs: "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
+        attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
         self._attribute_pairs = attribute_pairs
@@ -203,7 +207,8 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

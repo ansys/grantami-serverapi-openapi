@@ -34,7 +34,10 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         The key is attribute name and the value is json key in definition.
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-
+    discriminator_class_map: Dict[str, str]
+        They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -51,6 +54,14 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
     subtype_mapping = {
         "metaDatums": "GrantaServerApiDataExportDatumsDatum",
     }
+
+    discriminator_value_class_map = {
+        "notApplicable".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsNotApplicableDatum",
+        "applicable".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsApplicableDatum",
+        "unknown".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsUnknownDatum",
+    }
+
+    discriminator = "notApplicable"
 
     def __init__(
         self,
@@ -70,7 +81,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         self._attribute_identity = None
         self._attribute_guid = None
         self._meta_datums = None
-        self.discriminator = None
+
         if attribute_identity is not None:
             self.attribute_identity = attribute_identity
         if attribute_guid is not None:
@@ -146,20 +157,27 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         """
         self._meta_datums = meta_datums
 
-    def get_real_child_model(self, data: ModelBase) -> str:
-        """Raises a NotImplementedError for a type without a discriminator defined.
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
+        """Returns the real base class as determined by the discriminator
 
         Parameters
         ----------
         data: ModelBase
             Object representing a subclass of this class
-
-        Raises
-        ------
-        NotImplementedError
-            This class has no discriminator, and hence no subclasses
         """
-        raise NotImplementedError()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
+        # The actual class name is not available in swagger-codegen,
+        # so we have to extract it from the JSON reference
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
+            "/", 1
+        )[-1]
+
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def to_dict(self) -> Dict:
         """Returns the model properties as a dict

@@ -35,22 +35,29 @@ class GrantaServerApiIntegrationSchemaLayout(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "attribute_guids": "list[str]",
         "attribute_identities": "list[int]",
         "name": "str",
     }
 
     attribute_map = {
+        "attribute_guids": "attributeGuids",
         "attribute_identities": "attributeIdentities",
         "name": "name",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        attribute_guids: "Optional[List[str]]" = None,
         attribute_identities: "Optional[List[int]]" = None,
         name: "Optional[str]" = None,
     ) -> None:
@@ -58,16 +65,20 @@ class GrantaServerApiIntegrationSchemaLayout(ModelBase):
 
         Parameters
         ----------
+            attribute_guids: List[str], optional
             attribute_identities: List[int], optional
             name: str, optional
         """
         self._name = None
         self._attribute_identities = None
-        self.discriminator = None
+        self._attribute_guids = None
+
         if name is not None:
             self.name = name
         if attribute_identities is not None:
             self.attribute_identities = attribute_identities
+        if attribute_guids is not None:
+            self.attribute_guids = attribute_guids
 
     @property
     def name(self) -> "str":
@@ -113,7 +124,30 @@ class GrantaServerApiIntegrationSchemaLayout(ModelBase):
         """
         self._attribute_identities = attribute_identities
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def attribute_guids(self) -> "list[str]":
+        """Gets the attribute_guids of this GrantaServerApiIntegrationSchemaLayout.
+
+        Returns
+        -------
+        list[str]
+            The attribute_guids of this GrantaServerApiIntegrationSchemaLayout.
+        """
+        return self._attribute_guids
+
+    @attribute_guids.setter
+    def attribute_guids(self, attribute_guids: "list[str]") -> None:
+        """Sets the attribute_guids of this GrantaServerApiIntegrationSchemaLayout.
+
+        Parameters
+        ----------
+        attribute_guids: list[str]
+            The attribute_guids of this GrantaServerApiIntegrationSchemaLayout.
+        """
+        self._attribute_guids = attribute_guids
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

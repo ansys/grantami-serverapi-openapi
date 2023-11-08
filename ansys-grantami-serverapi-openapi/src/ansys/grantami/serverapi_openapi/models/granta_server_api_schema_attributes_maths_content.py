@@ -35,23 +35,25 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "curve_label": "str",
-        "expression": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
-        "free_parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameter_contents": "list[GrantaServerApiSchemaParametersParameterContent]",
         "transpose_axes": "bool",
         "use_logarithmic_scale": "bool",
+        "curve_label": "str",
+        "expression": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
+        "free_parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
     attribute_map = {
-        "curve_label": "curveLabel",
-        "expression": "expression",
-        "free_parameter": "freeParameter",
         "parameter_contents": "parameterContents",
         "transpose_axes": "transposeAxes",
         "use_logarithmic_scale": "useLogarithmicScale",
+        "curve_label": "curveLabel",
+        "expression": "expression",
+        "free_parameter": "freeParameter",
     }
 
     subtype_mapping = {
@@ -60,26 +62,28 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         "parameterContents": "GrantaServerApiSchemaParametersParameterContent",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        parameter_contents: "List[GrantaServerApiSchemaParametersParameterContent]",
+        transpose_axes: "bool",
+        use_logarithmic_scale: "bool",
         curve_label: "Optional[str]" = None,
         expression: "Optional[GrantaServerApiSchemaSlimEntitiesSlimExpression]" = None,
         free_parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        parameter_contents: "Optional[List[GrantaServerApiSchemaParametersParameterContent]]" = None,
-        transpose_axes: "Optional[bool]" = None,
-        use_logarithmic_scale: "Optional[bool]" = None,
     ) -> None:
         """GrantaServerApiSchemaAttributesMathsContent - a model defined in Swagger
 
         Parameters
         ----------
+            parameter_contents: List[GrantaServerApiSchemaParametersParameterContent]
+            transpose_axes: bool
+            use_logarithmic_scale: bool
             curve_label: str, optional
             expression: GrantaServerApiSchemaSlimEntitiesSlimExpression, optional
             free_parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            parameter_contents: List[GrantaServerApiSchemaParametersParameterContent], optional
-            transpose_axes: bool, optional
-            use_logarithmic_scale: bool, optional
         """
         self._curve_label = None
         self._transpose_axes = None
@@ -87,19 +91,16 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._expression = None
         self._free_parameter = None
         self._parameter_contents = None
-        self.discriminator = None
+
         if curve_label is not None:
             self.curve_label = curve_label
-        if transpose_axes is not None:
-            self.transpose_axes = transpose_axes
-        if use_logarithmic_scale is not None:
-            self.use_logarithmic_scale = use_logarithmic_scale
+        self.transpose_axes = transpose_axes
+        self.use_logarithmic_scale = use_logarithmic_scale
         if expression is not None:
             self.expression = expression
         if free_parameter is not None:
             self.free_parameter = free_parameter
-        if parameter_contents is not None:
-            self.parameter_contents = parameter_contents
+        self.parameter_contents = parameter_contents
 
     @property
     def curve_label(self) -> "str":
@@ -143,6 +144,8 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         transpose_axes: bool
             The transpose_axes of this GrantaServerApiSchemaAttributesMathsContent.
         """
+        if transpose_axes is None:
+            raise ValueError("Invalid value for 'transpose_axes', must not be 'None'")
         self._transpose_axes = transpose_axes
 
     @property
@@ -165,6 +168,10 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         use_logarithmic_scale: bool
             The use_logarithmic_scale of this GrantaServerApiSchemaAttributesMathsContent.
         """
+        if use_logarithmic_scale is None:
+            raise ValueError(
+                "Invalid value for 'use_logarithmic_scale', must not be 'None'"
+            )
         self._use_logarithmic_scale = use_logarithmic_scale
 
     @property
@@ -240,9 +247,14 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         parameter_contents: list[GrantaServerApiSchemaParametersParameterContent]
             The parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
         """
+        if parameter_contents is None:
+            raise ValueError(
+                "Invalid value for 'parameter_contents', must not be 'None'"
+            )
         self._parameter_contents = parameter_contents
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

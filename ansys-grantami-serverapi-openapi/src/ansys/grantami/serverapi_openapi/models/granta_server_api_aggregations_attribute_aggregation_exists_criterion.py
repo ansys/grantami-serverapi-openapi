@@ -40,6 +40,8 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_aggregation_criterion_type": "str",
@@ -62,6 +64,8 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
     subtype_mapping = {
         "innerCriterion": "GrantaServerApiAggregationsAggregationDatumExistsCriterion",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -89,7 +93,7 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
         )
         self._attribute_aggregation_criterion_type = None
         self._inner_criterion = None
-        self.discriminator = None
+
         self.attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
@@ -151,7 +155,8 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
         """
         self._inner_criterion = inner_criterion
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

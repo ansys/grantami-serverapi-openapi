@@ -680,8 +680,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaConfigurationsConfiguration",
-            201: None,
+            201: "GrantaServerApiSchemaConfigurationsConfiguration",
             400: None,
             403: None,
             404: None,

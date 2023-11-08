@@ -40,6 +40,8 @@ class GrantaServerApiDataExportPropertiesRecordGuidProperty(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "property_name": "str",
@@ -52,6 +54,8 @@ class GrantaServerApiDataExportPropertiesRecordGuidProperty(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiDataExportPropertiesRecordGuidProperty(
         super().__init__()
         self._property_name = None
         self._record_guid = None
-        self.discriminator = None
+
         self.property_name = property_name
         if record_guid is not None:
             self.record_guid = record_guid
@@ -120,7 +124,8 @@ class GrantaServerApiDataExportPropertiesRecordGuidProperty(
         """
         self._record_guid = record_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

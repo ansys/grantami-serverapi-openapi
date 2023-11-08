@@ -35,51 +35,53 @@ class GrantaServerApiSchemaConstantsCreateConstant(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "guid": "str",
         "name": "str",
-        "unit_guid": "str",
         "value": "float",
+        "guid": "str",
+        "unit_guid": "str",
     }
 
     attribute_map = {
-        "guid": "guid",
         "name": "name",
-        "unit_guid": "unitGuid",
         "value": "value",
+        "guid": "guid",
+        "unit_guid": "unitGuid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        name: "str",
+        value: "float",
         guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
         unit_guid: "Optional[str]" = None,
-        value: "Optional[float]" = None,
     ) -> None:
         """GrantaServerApiSchemaConstantsCreateConstant - a model defined in Swagger
 
         Parameters
         ----------
+            name: str
+            value: float
             guid: str, optional
-            name: str, optional
             unit_guid: str, optional
-            value: float, optional
         """
         self._unit_guid = None
         self._value = None
         self._name = None
         self._guid = None
-        self.discriminator = None
+
         if unit_guid is not None:
             self.unit_guid = unit_guid
-        if value is not None:
-            self.value = value
-        if name is not None:
-            self.name = name
+        self.value = value
+        self.name = name
         if guid is not None:
             self.guid = guid
 
@@ -125,6 +127,8 @@ class GrantaServerApiSchemaConstantsCreateConstant(ModelBase):
         value: float
             The value of this GrantaServerApiSchemaConstantsCreateConstant.
         """
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
         self._value = value
 
     @property
@@ -147,6 +151,8 @@ class GrantaServerApiSchemaConstantsCreateConstant(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaConstantsCreateConstant.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -171,7 +177,8 @@ class GrantaServerApiSchemaConstantsCreateConstant(ModelBase):
         """
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

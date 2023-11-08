@@ -760,7 +760,7 @@ class SchemaAttributesApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaAttributesAttribute]" = None,
+        body: "Optional[GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute]" = None,
     ) -> "Union[GrantaServerApiSchemaAttributesAttribute, None]":
         """Create a new attribute.
 
@@ -770,7 +770,7 @@ class SchemaAttributesApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaAttributesAttribute
+        body: GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute
 
         Returns
         -------
@@ -785,7 +785,7 @@ class SchemaAttributesApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaAttributesAttribute]" = None,
+        body: "Optional[GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute]" = None,
         **kwargs,
     ):
         all_params = [
@@ -850,8 +850,7 @@ class SchemaAttributesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaAttributesAttribute",
-            201: None,
+            201: "GrantaServerApiSchemaAttributesAttribute",
             400: None,
             403: None,
             404: None,

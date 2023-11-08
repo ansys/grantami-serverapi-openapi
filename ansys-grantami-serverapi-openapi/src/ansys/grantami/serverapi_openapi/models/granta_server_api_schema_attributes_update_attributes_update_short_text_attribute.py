@@ -40,11 +40,13 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
-        "data_rule": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "data_rule": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -66,15 +68,17 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     }
 
     subtype_mapping = {
-        "dataRule": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "dataRule": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
-        data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
@@ -86,9 +90,9 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
-            data_rule: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            data_rule: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
             help_path: str, optional
@@ -107,7 +111,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
         self._type = None
         self._is_unique = None
         self._data_rule = None
-        self.discriminator = None
+
         self.type = type
         if is_unique is not None:
             self.is_unique = is_unique
@@ -141,6 +145,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     @property
     def is_unique(self) -> "bool":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Returns
         -------
@@ -152,6 +157,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     @is_unique.setter
     def is_unique(self, is_unique: "bool") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Parameters
         ----------
@@ -161,30 +167,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
         self._is_unique = is_unique
 
     @property
-    def data_rule(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
+    def data_rule(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
         return self._data_rule
 
     @data_rule.setter
     def data_rule(
-        self, data_rule: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity"
+        self, data_rule: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
         Parameters
         ----------
-        data_rule: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        data_rule: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
         self._data_rule = data_rule
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

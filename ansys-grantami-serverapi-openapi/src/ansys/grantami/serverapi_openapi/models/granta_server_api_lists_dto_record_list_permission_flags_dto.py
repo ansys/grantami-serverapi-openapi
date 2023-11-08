@@ -35,6 +35,8 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "is_administrator": "bool",
@@ -53,6 +55,8 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -78,7 +82,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
         self._is_curator = None
         self._is_administrator = None
         self._is_publisher = None
-        self.discriminator = None
+
         if is_owner is not None:
             self.is_owner = is_owner
         if is_subscribed is not None:
@@ -210,7 +214,8 @@ class GrantaServerApiListsDtoRecordListPermissionFlagsDto(ModelBase):
         """
         self._is_publisher = is_publisher
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

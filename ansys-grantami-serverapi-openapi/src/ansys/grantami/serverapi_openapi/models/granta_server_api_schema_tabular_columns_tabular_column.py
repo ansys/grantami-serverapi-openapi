@@ -36,6 +36,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -82,30 +84,32 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         "unavailable".lower(): "#/components/schemas/GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn",
     }
 
+    discriminator = "columnType"
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        show_as_link: "Optional[bool]" = None,
-        summary_row_enabled: "Optional[bool]" = None,
-        summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_row_text: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        show_as_link: "bool",
+        summary_row_enabled: "bool",
+        summary_row_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        summary_row_text: "str",
     ) -> None:
         """GrantaServerApiSchemaTabularColumnsTabularColumn - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            show_as_link: bool, optional
-            summary_row_enabled: bool, optional
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_row_text: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            show_as_link: bool
+            summary_row_enabled: bool
+            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+            summary_row_text: str
         """
         self._show_as_link = None
         self._summary_row_enabled = None
@@ -115,23 +119,15 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = "columnType"
-        if show_as_link is not None:
-            self.show_as_link = show_as_link
-        if summary_row_enabled is not None:
-            self.summary_row_enabled = summary_row_enabled
-        if summary_row_text is not None:
-            self.summary_row_text = summary_row_text
-        if roll_up_type is not None:
-            self.roll_up_type = roll_up_type
-        if summary_row_roll_up_type is not None:
-            self.summary_row_roll_up_type = summary_row_roll_up_type
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.show_as_link = show_as_link
+        self.summary_row_enabled = summary_row_enabled
+        self.summary_row_text = summary_row_text
+        self.roll_up_type = roll_up_type
+        self.summary_row_roll_up_type = summary_row_roll_up_type
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def show_as_link(self) -> "bool":
@@ -153,6 +149,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         show_as_link: bool
             The show_as_link of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if show_as_link is None:
+            raise ValueError("Invalid value for 'show_as_link', must not be 'None'")
         self._show_as_link = show_as_link
 
     @property
@@ -175,6 +173,10 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         summary_row_enabled: bool
             The summary_row_enabled of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if summary_row_enabled is None:
+            raise ValueError(
+                "Invalid value for 'summary_row_enabled', must not be 'None'"
+            )
         self._summary_row_enabled = summary_row_enabled
 
     @property
@@ -197,6 +199,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         summary_row_text: str
             The summary_row_text of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if summary_row_text is None:
+            raise ValueError("Invalid value for 'summary_row_text', must not be 'None'")
         self._summary_row_text = summary_row_text
 
     @property
@@ -223,6 +227,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
             The roll_up_type of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if roll_up_type is None:
+            raise ValueError("Invalid value for 'roll_up_type', must not be 'None'")
         self._roll_up_type = roll_up_type
 
     @property
@@ -250,6 +256,10 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
             The summary_row_roll_up_type of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if summary_row_roll_up_type is None:
+            raise ValueError(
+                "Invalid value for 'summary_row_roll_up_type', must not be 'None'"
+            )
         self._summary_row_roll_up_type = summary_row_roll_up_type
 
     @property
@@ -272,6 +282,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -294,6 +306,8 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -316,9 +330,12 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaTabularColumnsTabularColumn.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -326,15 +343,16 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

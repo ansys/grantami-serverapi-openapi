@@ -40,9 +40,13 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "indirect_links": "GrantaServerApiIndirectLinks",
         "link_datum_type": "GrantaServerApiLinkAttributeType",
+        "local_rows_behaviour": "GrantaServerApiSearchLocalRowsBehaviour",
         "search_in_reversed_direction": "bool",
         "target_attribute_guid": "str",
         "target_attribute_identity": "int",
@@ -53,7 +57,9 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
     }
 
     attribute_map = {
+        "indirect_links": "indirectLinks",
         "link_datum_type": "linkDatumType",
+        "local_rows_behaviour": "localRowsBehaviour",
         "search_in_reversed_direction": "searchInReversedDirection",
         "target_attribute_guid": "targetAttributeGuid",
         "target_attribute_identity": "targetAttributeIdentity",
@@ -65,12 +71,18 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
 
     subtype_mapping = {
         "linkDatumType": "GrantaServerApiLinkAttributeType",
+        "indirectLinks": "GrantaServerApiIndirectLinks",
+        "localRowsBehaviour": "GrantaServerApiSearchLocalRowsBehaviour",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
+        indirect_links: "Optional[GrantaServerApiIndirectLinks]" = None,
         link_datum_type: "Optional[GrantaServerApiLinkAttributeType]" = None,
+        local_rows_behaviour: "Optional[GrantaServerApiSearchLocalRowsBehaviour]" = None,
         search_in_reversed_direction: "Optional[bool]" = None,
         target_attribute_guid: "Optional[str]" = None,
         target_attribute_identity: "Optional[int]" = None,
@@ -83,7 +95,9 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
 
         Parameters
         ----------
+            indirect_links: GrantaServerApiIndirectLinks, optional
             link_datum_type: GrantaServerApiLinkAttributeType, optional
+            local_rows_behaviour: GrantaServerApiSearchLocalRowsBehaviour, optional
             search_in_reversed_direction: bool, optional
             target_attribute_guid: str, optional
             target_attribute_identity: int, optional
@@ -97,11 +111,13 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         self._target_table_guid = None
         self._target_database_key = None
         self._link_datum_type = None
+        self._indirect_links = None
         self._search_in_reversed_direction = None
+        self._local_rows_behaviour = None
         self._target_attribute_identity = None
         self._target_attribute_guid = None
         self._type = None
-        self.discriminator = None
+
         if target_table_identity is not None:
             self.target_table_identity = target_table_identity
         if target_table_guid is not None:
@@ -110,8 +126,12 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
             self.target_database_key = target_database_key
         if link_datum_type is not None:
             self.link_datum_type = link_datum_type
+        if indirect_links is not None:
+            self.indirect_links = indirect_links
         if search_in_reversed_direction is not None:
             self.search_in_reversed_direction = search_in_reversed_direction
+        if local_rows_behaviour is not None:
+            self.local_rows_behaviour = local_rows_behaviour
         if target_attribute_identity is not None:
             self.target_attribute_identity = target_attribute_identity
         if target_attribute_guid is not None:
@@ -215,6 +235,28 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         self._link_datum_type = link_datum_type
 
     @property
+    def indirect_links(self) -> "GrantaServerApiIndirectLinks":
+        """Gets the indirect_links of this GrantaServerApiSearchLinkExistsDatumCriterion.
+
+        Returns
+        -------
+        GrantaServerApiIndirectLinks
+            The indirect_links of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        """
+        return self._indirect_links
+
+    @indirect_links.setter
+    def indirect_links(self, indirect_links: "GrantaServerApiIndirectLinks") -> None:
+        """Sets the indirect_links of this GrantaServerApiSearchLinkExistsDatumCriterion.
+
+        Parameters
+        ----------
+        indirect_links: GrantaServerApiIndirectLinks
+            The indirect_links of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        """
+        self._indirect_links = indirect_links
+
+    @property
     def search_in_reversed_direction(self) -> "bool":
         """Gets the search_in_reversed_direction of this GrantaServerApiSearchLinkExistsDatumCriterion.
 
@@ -237,6 +279,30 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
             The search_in_reversed_direction of this GrantaServerApiSearchLinkExistsDatumCriterion.
         """
         self._search_in_reversed_direction = search_in_reversed_direction
+
+    @property
+    def local_rows_behaviour(self) -> "GrantaServerApiSearchLocalRowsBehaviour":
+        """Gets the local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+
+        Returns
+        -------
+        GrantaServerApiSearchLocalRowsBehaviour
+            The local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        """
+        return self._local_rows_behaviour
+
+    @local_rows_behaviour.setter
+    def local_rows_behaviour(
+        self, local_rows_behaviour: "GrantaServerApiSearchLocalRowsBehaviour"
+    ) -> None:
+        """Sets the local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+
+        Parameters
+        ----------
+        local_rows_behaviour: GrantaServerApiSearchLocalRowsBehaviour
+            The local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        """
+        self._local_rows_behaviour = local_rows_behaviour
 
     @property
     def target_attribute_identity(self) -> "int":
@@ -310,7 +376,8 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

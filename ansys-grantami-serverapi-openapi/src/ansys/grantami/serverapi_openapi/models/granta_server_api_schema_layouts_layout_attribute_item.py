@@ -40,29 +40,31 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_type": "GrantaServerApiAttributeType",
         "guid": "str",
-        "item_type": "str",
-        "meta_attributes": "list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]",
         "name": "str",
         "read_only": "bool",
         "required": "bool",
-        "tabular_columns": "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]",
         "underlying_entity_guid": "str",
+        "item_type": "str",
+        "meta_attributes": "list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]",
+        "tabular_columns": "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]",
     }
 
     attribute_map = {
         "attribute_type": "attributeType",
         "guid": "guid",
-        "item_type": "itemType",
-        "meta_attributes": "metaAttributes",
         "name": "name",
         "read_only": "readOnly",
         "required": "required",
-        "tabular_columns": "tabularColumns",
         "underlying_entity_guid": "underlyingEntityGuid",
+        "item_type": "itemType",
+        "meta_attributes": "metaAttributes",
+        "tabular_columns": "tabularColumns",
     }
 
     subtype_mapping = {
@@ -71,32 +73,34 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         "tabularColumns": "GrantaServerApiSchemaLayoutsLayoutTabularColumn",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_type: "Optional[GrantaServerApiAttributeType]" = None,
-        guid: "Optional[str]" = None,
+        attribute_type: "GrantaServerApiAttributeType",
+        guid: "str",
+        name: "str",
+        read_only: "bool",
+        required: "bool",
+        underlying_entity_guid: "str",
         item_type: "str" = "attribute",
         meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]]" = None,
-        name: "Optional[str]" = None,
-        read_only: "Optional[bool]" = None,
-        required: "Optional[bool]" = None,
         tabular_columns: "Optional[List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]]" = None,
-        underlying_entity_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutAttributeItem - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_type: GrantaServerApiAttributeType, optional
-            guid: str, optional
+            attribute_type: GrantaServerApiAttributeType
+            guid: str
+            name: str
+            read_only: bool
+            required: bool
+            underlying_entity_guid: str
             item_type: str
             meta_attributes: List[GrantaServerApiSchemaLayoutsLayoutAttributeItem], optional
-            name: str, optional
-            read_only: bool, optional
-            required: bool, optional
             tabular_columns: List[GrantaServerApiSchemaLayoutsLayoutTabularColumn], optional
-            underlying_entity_guid: str, optional
         """
         super().__init__(
             guid=guid, name=name, underlying_entity_guid=underlying_entity_guid
@@ -107,14 +111,11 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         self._read_only = None
         self._meta_attributes = None
         self._tabular_columns = None
-        self.discriminator = None
+
         self.item_type = item_type
-        if attribute_type is not None:
-            self.attribute_type = attribute_type
-        if required is not None:
-            self.required = required
-        if read_only is not None:
-            self.read_only = read_only
+        self.attribute_type = attribute_type
+        self.required = required
+        self.read_only = read_only
         if meta_attributes is not None:
             self.meta_attributes = meta_attributes
         if tabular_columns is not None:
@@ -164,6 +165,8 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         attribute_type: GrantaServerApiAttributeType
             The attribute_type of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
         """
+        if attribute_type is None:
+            raise ValueError("Invalid value for 'attribute_type', must not be 'None'")
         self._attribute_type = attribute_type
 
     @property
@@ -186,6 +189,8 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         required: bool
             The required of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
         """
+        if required is None:
+            raise ValueError("Invalid value for 'required', must not be 'None'")
         self._required = required
 
     @property
@@ -208,6 +213,8 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         read_only: bool
             The read_only of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
         """
+        if read_only is None:
+            raise ValueError("Invalid value for 'read_only', must not be 'None'")
         self._read_only = read_only
 
     @property
@@ -262,7 +269,8 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         """
         self._tabular_columns = tabular_columns
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

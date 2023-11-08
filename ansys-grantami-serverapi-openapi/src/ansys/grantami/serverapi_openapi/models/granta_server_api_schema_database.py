@@ -35,38 +35,44 @@ class GrantaServerApiSchemaDatabase(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "author": "str",
-        "company": "str",
-        "currency_code": "str",
         "guid": "str",
-        "index_in_sync": "bool",
-        "is_access_controlled": "bool",
         "is_locked": "bool",
         "is_read_only": "bool",
         "key": "str",
         "name": "str",
+        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "author": "str",
+        "company": "str",
+        "currency_code": "str",
+        "index_in_sync": "bool",
+        "index_out_of_date_duration": "str",
+        "index_up_to_date": "bool",
+        "is_access_controlled": "bool",
         "notes": "str",
         "schema_version": "str",
-        "status": "GrantaServerApiSchemaDatabaseStatus",
         "version_guid": "str",
     }
 
     attribute_map = {
-        "author": "author",
-        "company": "company",
-        "currency_code": "currencyCode",
         "guid": "guid",
-        "index_in_sync": "indexInSync",
-        "is_access_controlled": "isAccessControlled",
         "is_locked": "isLocked",
         "is_read_only": "isReadOnly",
         "key": "key",
         "name": "name",
+        "status": "status",
+        "author": "author",
+        "company": "company",
+        "currency_code": "currencyCode",
+        "index_in_sync": "indexInSync",
+        "index_out_of_date_duration": "indexOutOfDateDuration",
+        "index_up_to_date": "indexUpToDate",
+        "is_access_controlled": "isAccessControlled",
         "notes": "notes",
         "schema_version": "schemaVersion",
-        "status": "status",
         "version_guid": "versionGuid",
     }
 
@@ -74,41 +80,47 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         "status": "GrantaServerApiSchemaDatabaseStatus",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        guid: "str",
+        is_locked: "bool",
+        is_read_only: "bool",
+        key: "str",
+        name: "str",
+        status: "GrantaServerApiSchemaDatabaseStatus",
         author: "Optional[str]" = None,
         company: "Optional[str]" = None,
         currency_code: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
         index_in_sync: "Optional[bool]" = None,
+        index_out_of_date_duration: "Optional[str]" = None,
+        index_up_to_date: "Optional[bool]" = None,
         is_access_controlled: "Optional[bool]" = None,
-        is_locked: "Optional[bool]" = None,
-        is_read_only: "Optional[bool]" = None,
-        key: "Optional[str]" = None,
-        name: "Optional[str]" = None,
         notes: "Optional[str]" = None,
         schema_version: "Optional[str]" = None,
-        status: "Optional[GrantaServerApiSchemaDatabaseStatus]" = None,
         version_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaDatabase - a model defined in Swagger
 
         Parameters
         ----------
+            guid: str
+            is_locked: bool
+            is_read_only: bool
+            key: str
+            name: str
+            status: GrantaServerApiSchemaDatabaseStatus
             author: str, optional
             company: str, optional
             currency_code: str, optional
-            guid: str, optional
             index_in_sync: bool, optional
+            index_out_of_date_duration: str, optional
+            index_up_to_date: bool, optional
             is_access_controlled: bool, optional
-            is_locked: bool, optional
-            is_read_only: bool, optional
-            key: str, optional
-            name: str, optional
             notes: str, optional
             schema_version: str, optional
-            status: GrantaServerApiSchemaDatabaseStatus, optional
             version_guid: str, optional
         """
         self._author = None
@@ -122,10 +134,12 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         self._is_read_only = None
         self._is_locked = None
         self._index_in_sync = None
+        self._index_up_to_date = None
+        self._index_out_of_date_duration = None
         self._schema_version = None
         self._name = None
         self._guid = None
-        self.discriminator = None
+
         if author is not None:
             self.author = author
         if company is not None:
@@ -136,24 +150,22 @@ class GrantaServerApiSchemaDatabase(ModelBase):
             self.currency_code = currency_code
         if is_access_controlled is not None:
             self.is_access_controlled = is_access_controlled
-        if key is not None:
-            self.key = key
+        self.key = key
         if version_guid is not None:
             self.version_guid = version_guid
-        if status is not None:
-            self.status = status
-        if is_read_only is not None:
-            self.is_read_only = is_read_only
-        if is_locked is not None:
-            self.is_locked = is_locked
+        self.status = status
+        self.is_read_only = is_read_only
+        self.is_locked = is_locked
         if index_in_sync is not None:
             self.index_in_sync = index_in_sync
+        if index_up_to_date is not None:
+            self.index_up_to_date = index_up_to_date
+        if index_out_of_date_duration is not None:
+            self.index_out_of_date_duration = index_out_of_date_duration
         if schema_version is not None:
             self.schema_version = schema_version
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def author(self) -> "str":
@@ -285,6 +297,8 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         key: str
             The key of this GrantaServerApiSchemaDatabase.
         """
+        if key is None:
+            raise ValueError("Invalid value for 'key', must not be 'None'")
         self._key = key
 
     @property
@@ -329,6 +343,8 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         status: GrantaServerApiSchemaDatabaseStatus
             The status of this GrantaServerApiSchemaDatabase.
         """
+        if status is None:
+            raise ValueError("Invalid value for 'status', must not be 'None'")
         self._status = status
 
     @property
@@ -351,6 +367,8 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         is_read_only: bool
             The is_read_only of this GrantaServerApiSchemaDatabase.
         """
+        if is_read_only is None:
+            raise ValueError("Invalid value for 'is_read_only', must not be 'None'")
         self._is_read_only = is_read_only
 
     @property
@@ -373,6 +391,8 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         is_locked: bool
             The is_locked of this GrantaServerApiSchemaDatabase.
         """
+        if is_locked is None:
+            raise ValueError("Invalid value for 'is_locked', must not be 'None'")
         self._is_locked = is_locked
 
     @property
@@ -396,6 +416,50 @@ class GrantaServerApiSchemaDatabase(ModelBase):
             The index_in_sync of this GrantaServerApiSchemaDatabase.
         """
         self._index_in_sync = index_in_sync
+
+    @property
+    def index_up_to_date(self) -> "bool":
+        """Gets the index_up_to_date of this GrantaServerApiSchemaDatabase.
+
+        Returns
+        -------
+        bool
+            The index_up_to_date of this GrantaServerApiSchemaDatabase.
+        """
+        return self._index_up_to_date
+
+    @index_up_to_date.setter
+    def index_up_to_date(self, index_up_to_date: "bool") -> None:
+        """Sets the index_up_to_date of this GrantaServerApiSchemaDatabase.
+
+        Parameters
+        ----------
+        index_up_to_date: bool
+            The index_up_to_date of this GrantaServerApiSchemaDatabase.
+        """
+        self._index_up_to_date = index_up_to_date
+
+    @property
+    def index_out_of_date_duration(self) -> "str":
+        """Gets the index_out_of_date_duration of this GrantaServerApiSchemaDatabase.
+
+        Returns
+        -------
+        str
+            The index_out_of_date_duration of this GrantaServerApiSchemaDatabase.
+        """
+        return self._index_out_of_date_duration
+
+    @index_out_of_date_duration.setter
+    def index_out_of_date_duration(self, index_out_of_date_duration: "str") -> None:
+        """Sets the index_out_of_date_duration of this GrantaServerApiSchemaDatabase.
+
+        Parameters
+        ----------
+        index_out_of_date_duration: str
+            The index_out_of_date_duration of this GrantaServerApiSchemaDatabase.
+        """
+        self._index_out_of_date_duration = index_out_of_date_duration
 
     @property
     def schema_version(self) -> "str":
@@ -439,6 +503,8 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaDatabase.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -461,9 +527,12 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaDatabase.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

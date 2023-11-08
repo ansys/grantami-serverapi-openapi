@@ -35,6 +35,8 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "target_attribute_guid": "str",
@@ -51,6 +53,8 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -73,7 +77,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         self._target_database_version_guid = None
         self._target_table_guid = None
         self._target_attribute_guid = None
-        self.discriminator = None
+
         if target_database_guid is not None:
             self.target_database_guid = target_database_guid
         if target_database_version_guid is not None:
@@ -171,7 +175,8 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         """
         self._target_attribute_guid = target_attribute_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

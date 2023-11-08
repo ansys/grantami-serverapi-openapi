@@ -35,6 +35,8 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "folders": "list[GrantaServerApiSchemaFilesFolder]",
@@ -48,6 +50,8 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
         "folders": "GrantaServerApiSchemaFilesFolder",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -60,7 +64,7 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
             folders: List[GrantaServerApiSchemaFilesFolder], optional
         """
         self._folders = None
-        self.discriminator = None
+
         if folders is not None:
             self.folders = folders
 
@@ -86,7 +90,8 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
         """
         self._folders = folders
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

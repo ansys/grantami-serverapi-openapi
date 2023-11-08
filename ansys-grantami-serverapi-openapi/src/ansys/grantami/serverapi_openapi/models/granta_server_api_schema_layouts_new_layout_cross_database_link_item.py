@@ -40,57 +40,58 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "guid": "str",
-        "item_type": "str",
         "link_group_guid": "str",
         "source_database_guid": "str",
         "source_table_guid": "str",
+        "guid": "str",
+        "item_type": "str",
     }
 
     attribute_map = {
-        "guid": "guid",
-        "item_type": "itemType",
         "link_group_guid": "linkGroupGuid",
         "source_database_guid": "sourceDatabaseGuid",
         "source_table_guid": "sourceTableGuid",
+        "guid": "guid",
+        "item_type": "itemType",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        link_group_guid: "str",
+        source_database_guid: "str",
+        source_table_guid: "str",
         guid: "Optional[str]" = None,
         item_type: "str" = "crossDatabaseLink",
-        link_group_guid: "Optional[str]" = None,
-        source_database_guid: "Optional[str]" = None,
-        source_table_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem - a model defined in Swagger
 
         Parameters
         ----------
+            link_group_guid: str
+            source_database_guid: str
+            source_table_guid: str
             guid: str, optional
             item_type: str
-            link_group_guid: str, optional
-            source_database_guid: str, optional
-            source_table_guid: str, optional
         """
         super().__init__(guid=guid)
         self._item_type = None
         self._source_database_guid = None
         self._source_table_guid = None
         self._link_group_guid = None
-        self.discriminator = None
+
         self.item_type = item_type
-        if source_database_guid is not None:
-            self.source_database_guid = source_database_guid
-        if source_table_guid is not None:
-            self.source_table_guid = source_table_guid
-        if link_group_guid is not None:
-            self.link_group_guid = link_group_guid
+        self.source_database_guid = source_database_guid
+        self.source_table_guid = source_table_guid
+        self.link_group_guid = link_group_guid
 
     @property
     def item_type(self) -> "str":
@@ -136,6 +137,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         source_database_guid: str
             The source_database_guid of this GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem.
         """
+        if source_database_guid is None:
+            raise ValueError(
+                "Invalid value for 'source_database_guid', must not be 'None'"
+            )
         self._source_database_guid = source_database_guid
 
     @property
@@ -158,6 +163,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         source_table_guid: str
             The source_table_guid of this GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem.
         """
+        if source_table_guid is None:
+            raise ValueError(
+                "Invalid value for 'source_table_guid', must not be 'None'"
+            )
         self._source_table_guid = source_table_guid
 
     @property
@@ -180,9 +189,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         link_group_guid: str
             The link_group_guid of this GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem.
         """
+        if link_group_guid is None:
+            raise ValueError("Invalid value for 'link_group_guid', must not be 'None'")
         self._link_group_guid = link_group_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

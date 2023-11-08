@@ -40,6 +40,8 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "property_name": "str",
@@ -54,6 +56,8 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
     subtype_mapping = {
         "versionState": "GrantaServerApiVersionState",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -71,7 +75,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
         super().__init__()
         self._property_name = None
         self._version_state = None
-        self.discriminator = None
+
         self.property_name = property_name
         if version_state is not None:
             self.version_state = version_state
@@ -122,7 +126,8 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
         """
         self._version_state = version_state
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

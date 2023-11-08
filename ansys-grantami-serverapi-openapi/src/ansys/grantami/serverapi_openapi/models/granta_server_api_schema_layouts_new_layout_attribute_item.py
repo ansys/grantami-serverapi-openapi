@@ -40,6 +40,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -65,10 +67,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         "metaAttributes": "GrantaServerApiSchemaLayoutsNewLayoutAttributeItem",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
+        attribute_guid: "str",
         guid: "Optional[str]" = None,
         item_type: "str" = "attribute",
         meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]" = None,
@@ -80,7 +84,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
 
         Parameters
         ----------
-            attribute_guid: str, optional
+            attribute_guid: str
             guid: str, optional
             item_type: str
             meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], optional
@@ -95,10 +99,9 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         self._read_only = None
         self._meta_attributes = None
         self._tabular_column_guids = None
-        self.discriminator = None
+
         self.item_type = item_type
-        if attribute_guid is not None:
-            self.attribute_guid = attribute_guid
+        self.attribute_guid = attribute_guid
         if required is not None:
             self.required = required
         if read_only is not None:
@@ -152,6 +155,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         attribute_guid: str
             The attribute_guid of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
+        if attribute_guid is None:
+            raise ValueError("Invalid value for 'attribute_guid', must not be 'None'")
         self._attribute_guid = attribute_guid
 
     @property
@@ -247,7 +252,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         """
         self._tabular_column_guids = tabular_column_guids
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

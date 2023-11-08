@@ -894,8 +894,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
-            201: None,
+            201: "GrantaServerApiSchemaFilesFileHeader",
             400: None,
             403: None,
             404: None,
@@ -1505,8 +1504,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaFilesFolder",
-            201: None,
+            201: "GrantaServerApiSchemaFilesFolder",
             400: None,
             403: None,
             404: None,

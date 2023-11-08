@@ -35,6 +35,8 @@ class GrantaServerApiAggregationsValueWithCountOfSystemGuid(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "count": "int",
@@ -47,6 +49,8 @@ class GrantaServerApiAggregationsValueWithCountOfSystemGuid(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -63,7 +67,7 @@ class GrantaServerApiAggregationsValueWithCountOfSystemGuid(ModelBase):
         """
         self._value = None
         self._count = None
-        self.discriminator = None
+
         if value is not None:
             self.value = value
         if count is not None:
@@ -113,7 +117,8 @@ class GrantaServerApiAggregationsValueWithCountOfSystemGuid(ModelBase):
         """
         self._count = count
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "disk_status": "GrantaServerApiDiskStatus",
@@ -43,6 +45,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "search_index_in_sync": "bool",
         "search_index_is_read_only": "bool",
         "search_index_location": "str",
+        "search_index_out_of_date_duration": "str",
         "search_index_unavailable": "bool",
         "search_index_up_to_date": "bool",
     }
@@ -54,6 +57,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "search_index_in_sync": "searchIndexInSync",
         "search_index_is_read_only": "searchIndexIsReadOnly",
         "search_index_location": "searchIndexLocation",
+        "search_index_out_of_date_duration": "searchIndexOutOfDateDuration",
         "search_index_unavailable": "searchIndexUnavailable",
         "search_index_up_to_date": "searchIndexUpToDate",
     }
@@ -62,6 +66,8 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "diskStatus": "GrantaServerApiDiskStatus",
         "recordsThatFailedToIndex": "GrantaServerApiIndexRecordFailure",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -72,6 +78,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         search_index_in_sync: "Optional[bool]" = None,
         search_index_is_read_only: "Optional[bool]" = None,
         search_index_location: "Optional[str]" = None,
+        search_index_out_of_date_duration: "Optional[str]" = None,
         search_index_unavailable: "Optional[bool]" = None,
         search_index_up_to_date: "Optional[bool]" = None,
     ) -> None:
@@ -85,10 +92,12 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
             search_index_in_sync: bool, optional
             search_index_is_read_only: bool, optional
             search_index_location: str, optional
+            search_index_out_of_date_duration: str, optional
             search_index_unavailable: bool, optional
             search_index_up_to_date: bool, optional
         """
         self._search_index_up_to_date = None
+        self._search_index_out_of_date_duration = None
         self._search_index_in_sync = None
         self._search_index_location = None
         self._search_index_is_read_only = None
@@ -96,9 +105,11 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         self._disk_threshold = None
         self._search_index_unavailable = None
         self._records_that_failed_to_index = None
-        self.discriminator = None
+
         if search_index_up_to_date is not None:
             self.search_index_up_to_date = search_index_up_to_date
+        if search_index_out_of_date_duration is not None:
+            self.search_index_out_of_date_duration = search_index_out_of_date_duration
         if search_index_in_sync is not None:
             self.search_index_in_sync = search_index_in_sync
         if search_index_location is not None:
@@ -137,6 +148,32 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
             The search_index_up_to_date of this GrantaServerApiSearchIndexStatus.
         """
         self._search_index_up_to_date = search_index_up_to_date
+
+    @property
+    def search_index_out_of_date_duration(self) -> "str":
+        """Gets the search_index_out_of_date_duration of this GrantaServerApiSearchIndexStatus.
+        How long has the index been out of date.  Specifically the duration between the first non-indexed revision and the current time.
+
+        Returns
+        -------
+        str
+            The search_index_out_of_date_duration of this GrantaServerApiSearchIndexStatus.
+        """
+        return self._search_index_out_of_date_duration
+
+    @search_index_out_of_date_duration.setter
+    def search_index_out_of_date_duration(
+        self, search_index_out_of_date_duration: "str"
+    ) -> None:
+        """Sets the search_index_out_of_date_duration of this GrantaServerApiSearchIndexStatus.
+        How long has the index been out of date.  Specifically the duration between the first non-indexed revision and the current time.
+
+        Parameters
+        ----------
+        search_index_out_of_date_duration: str
+            The search_index_out_of_date_duration of this GrantaServerApiSearchIndexStatus.
+        """
+        self._search_index_out_of_date_duration = search_index_out_of_date_duration
 
     @property
     def search_index_in_sync(self) -> "bool":
@@ -306,7 +343,8 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         """
         self._records_that_failed_to_index = records_that_failed_to_index
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
