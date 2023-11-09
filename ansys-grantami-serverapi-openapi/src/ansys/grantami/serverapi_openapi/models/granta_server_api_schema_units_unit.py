@@ -35,53 +35,54 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "equation": "str",
         "guid": "str",
         "name": "str",
         "symbol": "str",
+        "equation": "str",
     }
 
     attribute_map = {
-        "equation": "equation",
         "guid": "guid",
         "name": "name",
         "symbol": "symbol",
+        "equation": "equation",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        guid: "str",
+        name: "str",
+        symbol: "str",
         equation: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        symbol: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaUnitsUnit - a model defined in Swagger
 
         Parameters
         ----------
+            guid: str
+            name: str
+            symbol: str
             equation: str, optional
-            guid: str, optional
-            name: str, optional
-            symbol: str, optional
         """
         self._name = None
         self._equation = None
         self._symbol = None
         self._guid = None
-        self.discriminator = None
-        if name is not None:
-            self.name = name
+
+        self.name = name
         if equation is not None:
             self.equation = equation
-        if symbol is not None:
-            self.symbol = symbol
-        if guid is not None:
-            self.guid = guid
+        self.symbol = symbol
+        self.guid = guid
 
     @property
     def name(self) -> "str":
@@ -103,6 +104,8 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaUnitsUnit.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -147,6 +150,8 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         symbol: str
             The symbol of this GrantaServerApiSchemaUnitsUnit.
         """
+        if symbol is None:
+            raise ValueError("Invalid value for 'symbol', must not be 'None'")
         self._symbol = symbol
 
     @property
@@ -169,9 +174,12 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaUnitsUnit.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

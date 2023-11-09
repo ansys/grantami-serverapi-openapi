@@ -35,6 +35,8 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "units": "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
@@ -48,6 +50,8 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
         "units": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -60,7 +64,7 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
             units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit], optional
         """
         self._units = None
-        self.discriminator = None
+
         if units is not None:
             self.units = units
 
@@ -86,7 +90,8 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
         """
         self._units = units
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -40,53 +40,56 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "section_detail_type": "str",
         "section_items": "list[GrantaServerApiSchemaLayoutsLayoutItem]",
+        "section_detail_type": "str",
     }
 
     attribute_map = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "section_detail_type": "sectionDetailType",
         "section_items": "sectionItems",
+        "section_detail_type": "sectionDetailType",
     }
 
     subtype_mapping = {
         "sectionItems": "GrantaServerApiSchemaLayoutsLayoutItem",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        section_items: "List[GrantaServerApiSchemaLayoutsLayoutItem]",
         section_detail_type: "str" = "full",
-        section_items: "Optional[List[GrantaServerApiSchemaLayoutsLayoutItem]]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsFullLayoutSection - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
             section_detail_type: str
-            section_items: List[GrantaServerApiSchemaLayoutsLayoutItem], optional
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
         self._section_detail_type = None
         self._section_items = None
-        self.discriminator = None
+
         self.section_detail_type = section_detail_type
-        if section_items is not None:
-            self.section_items = section_items
+        self.section_items = section_items
 
     @property
     def section_detail_type(self) -> "str":
@@ -136,9 +139,12 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         section_items: list[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
+        if section_items is None:
+            raise ValueError("Invalid value for 'section_items', must not be 'None'")
         self._section_items = section_items
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiSchemaParametersContinuousRange(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "high_value": "float",
@@ -47,6 +49,8 @@ class GrantaServerApiSchemaParametersContinuousRange(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -63,7 +67,7 @@ class GrantaServerApiSchemaParametersContinuousRange(ModelBase):
         """
         self._low_value = None
         self._high_value = None
-        self.discriminator = None
+
         if low_value is not None:
             self.low_value = low_value
         if high_value is not None:
@@ -113,7 +117,8 @@ class GrantaServerApiSchemaParametersContinuousRange(ModelBase):
         """
         self._high_value = high_value
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

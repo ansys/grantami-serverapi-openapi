@@ -31,7 +31,7 @@ class SchemaSubsetsApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubsetsInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaSubsetsSubsetsInfo, None]":
         """Get all subsets for table
 
         This method makes a synchronous HTTP request.
@@ -47,7 +47,7 @@ class SchemaSubsetsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubsetsInfo, None]
+        Union[GrantaServerApiSchemaSubsetsSubsetsInfo, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_subsets_get_with_http_info(
             database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -117,7 +117,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSubsetsInfo",
+            200: "GrantaServerApiSchemaSubsetsSubsetsInfo",
             404: None,
         }
 
@@ -142,8 +142,8 @@ class SchemaSubsetsApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateSubset]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubset, None]":
+        body: "Optional[GrantaServerApiSchemaSubsetsCreateSubset]" = None,
+    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
         """Create a new subset.
 
         This method makes a synchronous HTTP request.
@@ -152,11 +152,11 @@ class SchemaSubsetsApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaUpdateSubset
+        body: GrantaServerApiSchemaSubsetsCreateSubset
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubset, None]
+        Union[GrantaServerApiSchemaSubsetsSubset, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_subsets_post_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -167,7 +167,7 @@ class SchemaSubsetsApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateSubset]" = None,
+        body: "Optional[GrantaServerApiSchemaSubsetsCreateSubset]" = None,
         **kwargs,
     ):
         all_params = [
@@ -232,8 +232,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSubset",
-            201: None,
+            201: "GrantaServerApiSchemaSubsetsSubset",
             400: None,
             403: None,
             404: None,
@@ -362,7 +361,7 @@ class SchemaSubsetsApi(ApiBase):
         subset_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubset, None]":
+    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
         """Get a subset with a specified guid for a given database and table.
 
         This method makes a synchronous HTTP request.
@@ -379,7 +378,7 @@ class SchemaSubsetsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubset, None]
+        Union[GrantaServerApiSchemaSubsetsSubset, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_subsets_subset_guid_get_with_http_info(
             database_key,
@@ -463,7 +462,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSubset",
+            200: "GrantaServerApiSchemaSubsetsSubset",
             404: None,
         }
 
@@ -489,8 +488,8 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateSubset]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubset, None]":
+        body: "Optional[GrantaServerApiSchemaSubsetsUpdateSubset]" = None,
+    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
         """Update a subset.
 
         This method makes a synchronous HTTP request.
@@ -500,11 +499,11 @@ class SchemaSubsetsApi(ApiBase):
         database_key: str
         table_guid: str
         subset_guid: str
-        body: GrantaServerApiSchemaUpdateSubset
+        body: GrantaServerApiSchemaSubsetsUpdateSubset
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubset, None]
+        Union[GrantaServerApiSchemaSubsetsSubset, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_subsets_subset_guid_patch_with_http_info(
             database_key, table_guid, subset_guid, body, _return_http_data_only=True
@@ -516,7 +515,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateSubset]" = None,
+        body: "Optional[GrantaServerApiSchemaSubsetsUpdateSubset]" = None,
         **kwargs,
     ):
         all_params = [
@@ -589,7 +588,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSubset",
+            200: "GrantaServerApiSchemaSubsetsSubset",
             400: None,
             403: None,
             404: None,

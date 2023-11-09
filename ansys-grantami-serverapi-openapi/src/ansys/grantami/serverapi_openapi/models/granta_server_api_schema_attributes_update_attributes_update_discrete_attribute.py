@@ -40,9 +40,11 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -65,10 +67,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
@@ -81,7 +85,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
@@ -100,7 +104,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
         )
         self._type = None
         self._is_multi_valued = None
-        self.discriminator = None
+
         self.type = type
         if is_multi_valued is not None:
             self.is_multi_valued = is_multi_valued
@@ -151,7 +155,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
         """
         self._is_multi_valued = is_multi_valued
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

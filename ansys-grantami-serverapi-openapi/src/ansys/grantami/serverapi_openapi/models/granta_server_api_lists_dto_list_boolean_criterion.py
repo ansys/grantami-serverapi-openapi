@@ -38,6 +38,8 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "match_all": "list[GrantaServerApiListsDtoListCriterion]",
@@ -55,6 +57,8 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         "matchAny": "GrantaServerApiListsDtoListCriterion",
         "matchAll": "GrantaServerApiListsDtoListCriterion",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -75,7 +79,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self._match_any = None
         self._match_all = None
         self._type = None
-        self.discriminator = None
+
         if match_any is not None:
             self.match_any = match_any
         if match_all is not None:
@@ -154,7 +158,8 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

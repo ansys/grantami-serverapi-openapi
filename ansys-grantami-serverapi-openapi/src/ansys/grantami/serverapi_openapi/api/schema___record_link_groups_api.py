@@ -142,7 +142,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup]" = None,
+        body: "Optional[GrantaServerApiSchemaRecordLinkGroupsCreateRecordLinkGroup]" = None,
     ) -> "Union[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup, None]":
         """Create a new record link group.
 
@@ -152,7 +152,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup
+        body: GrantaServerApiSchemaRecordLinkGroupsCreateRecordLinkGroup
 
         Returns
         -------
@@ -167,7 +167,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup]" = None,
+        body: "Optional[GrantaServerApiSchemaRecordLinkGroupsCreateRecordLinkGroup]" = None,
         **kwargs,
     ):
         all_params = [
@@ -232,8 +232,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
-            201: None,
+            201: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
             400: None,
             403: None,
             404: None,

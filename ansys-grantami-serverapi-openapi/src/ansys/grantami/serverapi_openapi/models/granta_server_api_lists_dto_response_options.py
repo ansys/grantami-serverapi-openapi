@@ -35,6 +35,8 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "include_record_list_items": "bool",
@@ -49,6 +51,8 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -68,7 +72,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         self._include_user_actions = None
         self._include_user_permissions = None
         self._include_record_list_items = None
-        self.discriminator = None
+
         if include_user_actions is not None:
             self.include_user_actions = include_user_actions
         if include_user_permissions is not None:
@@ -142,7 +146,8 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         """
         self._include_record_list_items = include_record_list_items
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "layout_sections": "list[GrantaServerApiSchemaLayoutsLayoutSection]",
@@ -48,6 +50,8 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
         "layoutSections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -60,7 +64,7 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
             layout_sections: List[GrantaServerApiSchemaLayoutsLayoutSection], optional
         """
         self._layout_sections = None
-        self.discriminator = None
+
         if layout_sections is not None:
             self.layout_sections = layout_sections
 
@@ -88,7 +92,8 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
         """
         self._layout_sections = layout_sections
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

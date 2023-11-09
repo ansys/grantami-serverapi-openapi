@@ -40,6 +40,8 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "number_of_parameter_values": "int",
@@ -52,6 +54,8 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -69,7 +73,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
         super().__init__()
         self._number_of_parameter_values = None
         self._type = None
-        self.discriminator = None
+
         if number_of_parameter_values is not None:
             self.number_of_parameter_values = number_of_parameter_values
         self.type = type
@@ -122,7 +126,8 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

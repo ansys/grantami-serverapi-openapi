@@ -35,6 +35,8 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "header": "GrantaServerApiListsDtoRecordListHeader",
@@ -51,6 +53,8 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         "items": "GrantaServerApiListsDtoListItem",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -66,7 +70,7 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         """
         self._header = None
         self._items = None
-        self.discriminator = None
+
         if header is not None:
             self.header = header
         if items is not None:
@@ -116,7 +120,8 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         """
         self._items = items
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

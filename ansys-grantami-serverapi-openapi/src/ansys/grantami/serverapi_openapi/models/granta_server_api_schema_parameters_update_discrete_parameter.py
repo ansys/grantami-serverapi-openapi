@@ -40,9 +40,11 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "display_names": "dict(str, str)",
+        "default_parameter_value_guid": "str",
         "guid": "str",
         "help_path": "str",
         "name": "str",
@@ -50,7 +52,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
     }
 
     attribute_map = {
-        "display_names": "displayNames",
+        "default_parameter_value_guid": "defaultParameterValueGuid",
         "guid": "guid",
         "help_path": "helpPath",
         "name": "name",
@@ -59,10 +61,12 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
+        default_parameter_value_guid: "Optional[str]" = None,
         guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
         name: "Optional[str]" = None,
@@ -72,17 +76,20 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
+            default_parameter_value_guid: str, optional
             guid: str, optional
             help_path: str, optional
             name: str, optional
             type: str
         """
         super().__init__(
-            display_names=display_names, guid=guid, help_path=help_path, name=name
+            default_parameter_value_guid=default_parameter_value_guid,
+            guid=guid,
+            help_path=help_path,
+            name=name,
         )
         self._type = None
-        self.discriminator = None
+
         self.type = type
 
     @property
@@ -109,7 +116,8 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,61 +35,65 @@ class GrantaServerApiSearchBoostByGuid(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "attribute_guid": "str",
         "boost_factor": "float",
+        "guid": "str",
     }
 
     attribute_map = {
-        "attribute_guid": "attributeGuid",
         "boost_factor": "boostFactor",
+        "guid": "guid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
         boost_factor: "Optional[float]" = None,
+        guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSearchBoostByGuid - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
             boost_factor: float, optional
+            guid: str, optional
         """
-        self._attribute_guid = None
+        self._guid = None
         self._boost_factor = None
-        self.discriminator = None
-        if attribute_guid is not None:
-            self.attribute_guid = attribute_guid
+
+        if guid is not None:
+            self.guid = guid
         if boost_factor is not None:
             self.boost_factor = boost_factor
 
     @property
-    def attribute_guid(self) -> "str":
-        """Gets the attribute_guid of this GrantaServerApiSearchBoostByGuid.
+    def guid(self) -> "str":
+        """Gets the guid of this GrantaServerApiSearchBoostByGuid.
 
         Returns
         -------
         str
-            The attribute_guid of this GrantaServerApiSearchBoostByGuid.
+            The guid of this GrantaServerApiSearchBoostByGuid.
         """
-        return self._attribute_guid
+        return self._guid
 
-    @attribute_guid.setter
-    def attribute_guid(self, attribute_guid: "str") -> None:
-        """Sets the attribute_guid of this GrantaServerApiSearchBoostByGuid.
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GrantaServerApiSearchBoostByGuid.
 
         Parameters
         ----------
-        attribute_guid: str
-            The attribute_guid of this GrantaServerApiSearchBoostByGuid.
+        guid: str
+            The guid of this GrantaServerApiSearchBoostByGuid.
         """
-        self._attribute_guid = attribute_guid
+        self._guid = guid
 
     @property
     def boost_factor(self) -> "float":
@@ -113,7 +117,8 @@ class GrantaServerApiSearchBoostByGuid(ModelBase):
         """
         self._boost_factor = boost_factor
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

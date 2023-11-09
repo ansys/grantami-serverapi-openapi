@@ -35,6 +35,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -56,26 +58,28 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        is_hidden_from_browse: "Optional[bool]" = None,
-        is_hidden_from_search: "Optional[bool]" = None,
-        is_versioned: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        is_hidden_from_browse: "bool",
+        is_hidden_from_search: "bool",
+        is_versioned: "bool",
+        name: "str",
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimTable - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            is_hidden_from_browse: bool, optional
-            is_hidden_from_search: bool, optional
-            is_versioned: bool, optional
-            name: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            is_hidden_from_browse: bool
+            is_hidden_from_search: bool
+            is_versioned: bool
+            name: str
         """
         self._is_hidden_from_browse = None
         self._is_hidden_from_search = None
@@ -83,19 +87,13 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if is_hidden_from_browse is not None:
-            self.is_hidden_from_browse = is_hidden_from_browse
-        if is_hidden_from_search is not None:
-            self.is_hidden_from_search = is_hidden_from_search
-        if is_versioned is not None:
-            self.is_versioned = is_versioned
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.is_hidden_from_browse = is_hidden_from_browse
+        self.is_hidden_from_search = is_hidden_from_search
+        self.is_versioned = is_versioned
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def is_hidden_from_browse(self) -> "bool":
@@ -117,6 +115,10 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         is_hidden_from_browse: bool
             The is_hidden_from_browse of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if is_hidden_from_browse is None:
+            raise ValueError(
+                "Invalid value for 'is_hidden_from_browse', must not be 'None'"
+            )
         self._is_hidden_from_browse = is_hidden_from_browse
 
     @property
@@ -139,6 +141,10 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         is_hidden_from_search: bool
             The is_hidden_from_search of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if is_hidden_from_search is None:
+            raise ValueError(
+                "Invalid value for 'is_hidden_from_search', must not be 'None'"
+            )
         self._is_hidden_from_search = is_hidden_from_search
 
     @property
@@ -161,6 +167,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         is_versioned: bool
             The is_versioned of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if is_versioned is None:
+            raise ValueError("Invalid value for 'is_versioned', must not be 'None'")
         self._is_versioned = is_versioned
 
     @property
@@ -183,6 +191,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -205,6 +215,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -227,9 +239,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaSlimEntitiesSlimTable.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

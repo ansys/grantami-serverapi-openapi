@@ -41,6 +41,8 @@ class GrantaServerApiAggregationsAttributeAggregation(
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -62,6 +64,8 @@ class GrantaServerApiAggregationsAttributeAggregation(
         "value".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeValueAggregation",
         "exists".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeExistsAggregation",
     }
+
+    discriminator = "attribute_aggregation_type"
 
     def __init__(
         self,
@@ -85,7 +89,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         self._attribute_guid = None
         self._type = None
         self._count = None
-        self.discriminator = "attribute_aggregation_type"
+
         if attribute_identity is not None:
             self.attribute_identity = attribute_identity
         if attribute_guid is not None:
@@ -190,7 +194,8 @@ class GrantaServerApiAggregationsAttributeAggregation(
         """
         self._count = count
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -198,15 +203,16 @@ class GrantaServerApiAggregationsAttributeAggregation(
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

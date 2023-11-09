@@ -30,7 +30,7 @@ class SchemaTablesApi(ApiBase):
         database_key: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaTablesTablesInfo, None]":
         """Get all tables
 
         This method makes a synchronous HTTP request.
@@ -45,7 +45,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesInfo, None]
+        Union[GrantaServerApiSchemaTablesTablesInfo, None]
         """
         data = self._v1alpha_databases_database_key_tables_get_with_http_info(
             database_key, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -106,7 +106,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaTablesInfo",
+            200: "GrantaServerApiSchemaTablesTablesInfo",
             404: None,
         }
 
@@ -130,8 +130,8 @@ class SchemaTablesApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaTable, None]":
+        body: "Optional[GrantaServerApiSchemaTablesCreateTable]" = None,
+    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
         """Create a new table.
 
         This method makes a synchronous HTTP request.
@@ -139,11 +139,11 @@ class SchemaTablesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUpdateTable
+        body: GrantaServerApiSchemaTablesCreateTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTable, None]
+        Union[GrantaServerApiSchemaTablesTable, None]
         """
         data = self._v1alpha_databases_database_key_tables_post_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -153,7 +153,7 @@ class SchemaTablesApi(ApiBase):
     def _v1alpha_databases_database_key_tables_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateTable]" = None,
+        body: "Optional[GrantaServerApiSchemaTablesCreateTable]" = None,
         **kwargs,
     ):
         all_params = [
@@ -210,8 +210,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaTable",
-            201: None,
+            201: "GrantaServerApiSchemaTablesTable",
             400: None,
             403: None,
             404: None,
@@ -335,7 +334,7 @@ class SchemaTablesApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaTable, None]":
+    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
         """Get a table with a specified guid for a given database.
 
         This method makes a synchronous HTTP request.
@@ -351,7 +350,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTable, None]
+        Union[GrantaServerApiSchemaTablesTable, None]
         """
         data = (
             self._v1alpha_databases_database_key_tables_table_guid_get_with_http_info(
@@ -427,7 +426,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaTable",
+            200: "GrantaServerApiSchemaTablesTable",
             404: None,
         }
 
@@ -452,8 +451,8 @@ class SchemaTablesApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaTable, None]":
+        body: "Optional[GrantaServerApiSchemaTablesUpdateTable]" = None,
+    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
         """Update a table.
 
         This method makes a synchronous HTTP request.
@@ -462,11 +461,11 @@ class SchemaTablesApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaUpdateTable
+        body: GrantaServerApiSchemaTablesUpdateTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTable, None]
+        Union[GrantaServerApiSchemaTablesTable, None]
         """
         data = (
             self._v1alpha_databases_database_key_tables_table_guid_patch_with_http_info(
@@ -479,7 +478,7 @@ class SchemaTablesApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateTable]" = None,
+        body: "Optional[GrantaServerApiSchemaTablesUpdateTable]" = None,
         **kwargs,
     ):
         all_params = [
@@ -544,7 +543,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaTable",
+            200: "GrantaServerApiSchemaTablesTable",
             400: None,
             403: None,
             404: None,

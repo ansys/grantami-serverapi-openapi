@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsRangeDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -48,7 +50,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         "datum_value": "GrantaServerApiDataExportDatumsRange",
         "is_estimated": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
         "unit": "str",
     }
 
@@ -67,6 +69,8 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         "datumValue": "GrantaServerApiDataExportDatumsRange",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -76,7 +80,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         datum_value: "Optional[GrantaServerApiDataExportDatumsRange]" = None,
         is_estimated: "Optional[bool]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
         unit: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiDataExportDatumsRangeDatum - a model defined in Swagger
@@ -89,7 +93,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(
             datum_value: GrantaServerApiDataExportDatumsRange, optional
             is_estimated: bool, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
             unit: str, optional
         """
         super().__init__(
@@ -102,7 +106,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         self._datum_value = None
         self._is_estimated = None
         self._unit = None
-        self.discriminator = None
+
         self.datum_type = datum_type
         if datum_value is not None:
             self.datum_value = datum_value
@@ -201,7 +205,8 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         """
         self._unit = unit
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,19 +35,25 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "linked_data": "list[GrantaServerApiDataExportRecordWithData]",
         "linked_records": "list[GrantaServerApiIntegrationDataExportRecordReference]",
         "linking_value": "str",
         "local_data": "list[GrantaServerApiDataExportDatumsDatum]",
+        "rolled_up_data": "list[GrantaServerApiDataExportDatumsRollupRollupDatum]",
         "row_guid": "str",
         "row_number": "int",
     }
 
     attribute_map = {
+        "linked_data": "linkedData",
         "linked_records": "linkedRecords",
         "linking_value": "linkingValue",
         "local_data": "localData",
+        "rolled_up_data": "rolledUpData",
         "row_guid": "rowGuid",
         "row_number": "rowNumber",
     }
@@ -55,14 +61,20 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     subtype_mapping = {
         "localData": "GrantaServerApiDataExportDatumsDatum",
         "linkedRecords": "GrantaServerApiIntegrationDataExportRecordReference",
+        "linkedData": "GrantaServerApiDataExportRecordWithData",
+        "rolledUpData": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
+        linked_data: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None,
         linked_records: "Optional[List[GrantaServerApiIntegrationDataExportRecordReference]]" = None,
         linking_value: "Optional[str]" = None,
         local_data: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        rolled_up_data: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]" = None,
         row_guid: "Optional[str]" = None,
         row_number: "Optional[int]" = None,
     ) -> None:
@@ -70,9 +82,11 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
 
         Parameters
         ----------
+            linked_data: List[GrantaServerApiDataExportRecordWithData], optional
             linked_records: List[GrantaServerApiIntegrationDataExportRecordReference], optional
             linking_value: str, optional
             local_data: List[GrantaServerApiDataExportDatumsDatum], optional
+            rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
             row_guid: str, optional
             row_number: int, optional
         """
@@ -81,7 +95,9 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         self._row_number = None
         self._local_data = None
         self._linked_records = None
-        self.discriminator = None
+        self._linked_data = None
+        self._rolled_up_data = None
+
         if row_guid is not None:
             self.row_guid = row_guid
         if linking_value is not None:
@@ -92,6 +108,10 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
             self.local_data = local_data
         if linked_records is not None:
             self.linked_records = linked_records
+        if linked_data is not None:
+            self.linked_data = linked_data
+        if rolled_up_data is not None:
+            self.rolled_up_data = rolled_up_data
 
     @property
     def row_guid(self) -> "str":
@@ -188,6 +208,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         self,
     ) -> "list[GrantaServerApiIntegrationDataExportRecordReference]":
         """Gets the linked_records of this GrantaServerApiDataExportDatumsTabularRow.
+        Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Returns
         -------
@@ -202,6 +223,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         linked_records: "list[GrantaServerApiIntegrationDataExportRecordReference]",
     ) -> None:
         """Sets the linked_records of this GrantaServerApiDataExportDatumsTabularRow.
+        Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Parameters
         ----------
@@ -210,7 +232,60 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         """
         self._linked_records = linked_records
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def linked_data(self) -> "list[GrantaServerApiDataExportRecordWithData]":
+        """Gets the linked_data of this GrantaServerApiDataExportDatumsTabularRow.
+        Data for the linked records, if the request included linked data to export
+
+        Returns
+        -------
+        list[GrantaServerApiDataExportRecordWithData]
+            The linked_data of this GrantaServerApiDataExportDatumsTabularRow.
+        """
+        return self._linked_data
+
+    @linked_data.setter
+    def linked_data(
+        self, linked_data: "list[GrantaServerApiDataExportRecordWithData]"
+    ) -> None:
+        """Sets the linked_data of this GrantaServerApiDataExportDatumsTabularRow.
+        Data for the linked records, if the request included linked data to export
+
+        Parameters
+        ----------
+        linked_data: list[GrantaServerApiDataExportRecordWithData]
+            The linked_data of this GrantaServerApiDataExportDatumsTabularRow.
+        """
+        self._linked_data = linked_data
+
+    @property
+    def rolled_up_data(
+        self,
+    ) -> "list[GrantaServerApiDataExportDatumsRollupRollupDatum]":
+        """Gets the rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
+
+        Returns
+        -------
+        list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
+        """
+        return self._rolled_up_data
+
+    @rolled_up_data.setter
+    def rolled_up_data(
+        self, rolled_up_data: "list[GrantaServerApiDataExportDatumsRollupRollupDatum]"
+    ) -> None:
+        """Sets the rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
+
+        Parameters
+        ----------
+        rolled_up_data: list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+            The rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
+        """
+        self._rolled_up_data = rolled_up_data
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,53 +35,57 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
         "guid": "str",
-        "identity": "int",
         "name": "str",
-        "reverse_display_names": "dict(str, str)",
         "reverse_name": "str",
         "type": "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
+        "identity": "int",
+        "reverse_display_names": "dict(str, str)",
     }
 
     attribute_map = {
         "display_names": "displayNames",
         "guid": "guid",
-        "identity": "identity",
         "name": "name",
-        "reverse_display_names": "reverseDisplayNames",
         "reverse_name": "reverseName",
         "type": "type",
+        "identity": "identity",
+        "reverse_display_names": "reverseDisplayNames",
     }
 
     subtype_mapping = {
         "type": "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        reverse_name: "str",
+        type: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType",
         identity: "Optional[int]" = None,
-        name: "Optional[str]" = None,
         reverse_display_names: "Optional[Dict[str, str]]" = None,
-        reverse_name: "Optional[str]" = None,
-        type: "Optional[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType]" = None,
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            reverse_name: str
+            type: GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType
             identity: int, optional
-            name: str, optional
             reverse_display_names: Dict[str, str], optional
-            reverse_name: str, optional
-            type: GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType, optional
         """
         self._identity = None
         self._type = None
@@ -90,21 +94,16 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
+
         if identity is not None:
             self.identity = identity
-        if type is not None:
-            self.type = type
-        if reverse_name is not None:
-            self.reverse_name = reverse_name
+        self.type = type
+        self.reverse_name = reverse_name
         if reverse_display_names is not None:
             self.reverse_display_names = reverse_display_names
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def identity(self) -> "int":
@@ -150,6 +149,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         type: GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType
             The type of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
         """
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
     @property
@@ -172,6 +173,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         reverse_name: str
             The reverse_name of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
         """
+        if reverse_name is None:
+            raise ValueError("Invalid value for 'reverse_name', must not be 'None'")
         self._reverse_name = reverse_name
 
     @property
@@ -216,6 +219,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -238,6 +243,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -260,9 +267,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -40,31 +40,35 @@ class GrantaServerApiSchemaParametersNumericParameter(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "is_restricted": "bool",
         "name": "str",
         "scale_type": "GrantaServerApiSchemaParametersParameterScaleType",
+        "values": "list[GrantaServerApiSchemaParametersNumericParameterValue]",
+        "help_path": "str",
         "type": "str",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "values": "list[GrantaServerApiSchemaParametersNumericParameterValue]",
     }
 
     attribute_map = {
+        "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "interpolation_type": "interpolationType",
         "is_restricted": "isRestricted",
         "name": "name",
         "scale_type": "scaleType",
+        "values": "values",
+        "help_path": "helpPath",
         "type": "type",
         "unit": "unit",
-        "values": "values",
     }
 
     subtype_mapping = {
@@ -74,37 +78,45 @@ class GrantaServerApiSchemaParametersNumericParameter(
         "scaleType": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        default_parameter_value_guid: "str",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        interpolation_type: "GrantaServerApiSchemaParametersParameterInterpolationType",
+        is_restricted: "bool",
+        name: "str",
+        scale_type: "GrantaServerApiSchemaParametersParameterScaleType",
+        values: "List[GrantaServerApiSchemaParametersNumericParameterValue]",
         help_path: "Optional[str]" = None,
-        interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]" = None,
-        is_restricted: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
-        scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]" = None,
         type: "str" = "numeric",
         unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
-        values: "Optional[List[GrantaServerApiSchemaParametersNumericParameterValue]]" = None,
     ) -> None:
         """GrantaServerApiSchemaParametersNumericParameter - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            default_parameter_value_guid: str
+            display_names: Dict[str, str]
+            guid: str
+            interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
+            is_restricted: bool
+            name: str
+            scale_type: GrantaServerApiSchemaParametersParameterScaleType
+            values: List[GrantaServerApiSchemaParametersNumericParameterValue]
             help_path: str, optional
-            interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType, optional
-            is_restricted: bool, optional
-            name: str, optional
-            scale_type: GrantaServerApiSchemaParametersParameterScaleType, optional
             type: str
             unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
-            values: List[GrantaServerApiSchemaParametersNumericParameterValue], optional
         """
         super().__init__(
-            display_names=display_names, guid=guid, help_path=help_path, name=name
+            default_parameter_value_guid=default_parameter_value_guid,
+            display_names=display_names,
+            guid=guid,
+            name=name,
+            help_path=help_path,
         )
         self._type = None
         self._is_restricted = None
@@ -112,18 +124,14 @@ class GrantaServerApiSchemaParametersNumericParameter(
         self._values = None
         self._interpolation_type = None
         self._scale_type = None
-        self.discriminator = None
+
         self.type = type
-        if is_restricted is not None:
-            self.is_restricted = is_restricted
+        self.is_restricted = is_restricted
         if unit is not None:
             self.unit = unit
-        if values is not None:
-            self.values = values
-        if interpolation_type is not None:
-            self.interpolation_type = interpolation_type
-        if scale_type is not None:
-            self.scale_type = scale_type
+        self.values = values
+        self.interpolation_type = interpolation_type
+        self.scale_type = scale_type
 
     @property
     def type(self) -> "str":
@@ -169,6 +177,8 @@ class GrantaServerApiSchemaParametersNumericParameter(
         is_restricted: bool
             The is_restricted of this GrantaServerApiSchemaParametersNumericParameter.
         """
+        if is_restricted is None:
+            raise ValueError("Invalid value for 'is_restricted', must not be 'None'")
         self._is_restricted = is_restricted
 
     @property
@@ -215,6 +225,8 @@ class GrantaServerApiSchemaParametersNumericParameter(
         values: list[GrantaServerApiSchemaParametersNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersNumericParameter.
         """
+        if values is None:
+            raise ValueError("Invalid value for 'values', must not be 'None'")
         self._values = values
 
     @property
@@ -242,6 +254,10 @@ class GrantaServerApiSchemaParametersNumericParameter(
         interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
             The interpolation_type of this GrantaServerApiSchemaParametersNumericParameter.
         """
+        if interpolation_type is None:
+            raise ValueError(
+                "Invalid value for 'interpolation_type', must not be 'None'"
+            )
         self._interpolation_type = interpolation_type
 
     @property
@@ -266,9 +282,12 @@ class GrantaServerApiSchemaParametersNumericParameter(
         scale_type: GrantaServerApiSchemaParametersParameterScaleType
             The scale_type of this GrantaServerApiSchemaParametersNumericParameter.
         """
+        if scale_type is None:
+            raise ValueError("Invalid value for 'scale_type', must not be 'None'")
         self._scale_type = scale_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

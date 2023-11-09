@@ -40,73 +40,53 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "guid": "str",
-        "is_default": "bool",
+        "value": "float",
         "name": "str",
         "type": "str",
-        "value": "float",
     }
 
     attribute_map = {
         "guid": "guid",
-        "is_default": "isDefault",
+        "value": "value",
         "name": "name",
         "type": "type",
-        "value": "value",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        is_default: "Optional[bool]" = None,
+        guid: "str",
+        value: "float",
         name: "Optional[str]" = None,
         type: "str" = "numeric",
-        value: "Optional[float]" = None,
     ) -> None:
         """GrantaServerApiSchemaParametersNumericParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            is_default: bool, optional
+            guid: str
+            value: float
             name: str, optional
             type: str
-            value: float, optional
         """
-        super().__init__(guid=guid, is_default=is_default, name=name)
-        self._value = None
+        super().__init__(guid=guid)
         self._type = None
-        self.discriminator = None
-        if value is not None:
-            self.value = value
+        self._value = None
+        self._name = None
+
         self.type = type
-
-    @property
-    def value(self) -> "float":
-        """Gets the value of this GrantaServerApiSchemaParametersNumericParameterValue.
-
-        Returns
-        -------
-        float
-            The value of this GrantaServerApiSchemaParametersNumericParameterValue.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "float") -> None:
-        """Sets the value of this GrantaServerApiSchemaParametersNumericParameterValue.
-
-        Parameters
-        ----------
-        value: float
-            The value of this GrantaServerApiSchemaParametersNumericParameterValue.
-        """
-        self._value = value
+        self.value = value
+        if name is not None:
+            self.name = name
 
     @property
     def type(self) -> "str":
@@ -132,7 +112,54 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def value(self) -> "float":
+        """Gets the value of this GrantaServerApiSchemaParametersNumericParameterValue.
+
+        Returns
+        -------
+        float
+            The value of this GrantaServerApiSchemaParametersNumericParameterValue.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "float") -> None:
+        """Sets the value of this GrantaServerApiSchemaParametersNumericParameterValue.
+
+        Parameters
+        ----------
+        value: float
+            The value of this GrantaServerApiSchemaParametersNumericParameterValue.
+        """
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        self._value = value
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
+
+        Returns
+        -------
+        str
+            The name of this GrantaServerApiSchemaParametersNumericParameterValue.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GrantaServerApiSchemaParametersNumericParameterValue.
+        """
+        self._name = name
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

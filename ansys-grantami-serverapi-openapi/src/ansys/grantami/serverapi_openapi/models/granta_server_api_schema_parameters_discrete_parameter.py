@@ -40,83 +40,70 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "name": "str",
-        "type": "str",
         "values": "list[GrantaServerApiSchemaParametersDiscreteParameterValue]",
+        "help_path": "str",
+        "type": "str",
     }
 
     attribute_map = {
+        "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "name": "name",
-        "type": "type",
         "values": "values",
+        "help_path": "helpPath",
+        "type": "type",
     }
 
     subtype_mapping = {
         "values": "GrantaServerApiSchemaParametersDiscreteParameterValue",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        default_parameter_value_guid: "str",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        values: "List[GrantaServerApiSchemaParametersDiscreteParameterValue]",
         help_path: "Optional[str]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "discrete",
-        values: "Optional[List[GrantaServerApiSchemaParametersDiscreteParameterValue]]" = None,
     ) -> None:
         """GrantaServerApiSchemaParametersDiscreteParameter - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            default_parameter_value_guid: str
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
             help_path: str, optional
-            name: str, optional
             type: str
-            values: List[GrantaServerApiSchemaParametersDiscreteParameterValue], optional
         """
         super().__init__(
-            display_names=display_names, guid=guid, help_path=help_path, name=name
+            default_parameter_value_guid=default_parameter_value_guid,
+            display_names=display_names,
+            guid=guid,
+            name=name,
+            help_path=help_path,
         )
-        self._values = None
         self._type = None
-        self.discriminator = None
-        if values is not None:
-            self.values = values
+        self._values = None
+
         self.type = type
-
-    @property
-    def values(self) -> "list[GrantaServerApiSchemaParametersDiscreteParameterValue]":
-        """Gets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
-
-        Returns
-        -------
-        list[GrantaServerApiSchemaParametersDiscreteParameterValue]
-            The values of this GrantaServerApiSchemaParametersDiscreteParameter.
-        """
-        return self._values
-
-    @values.setter
-    def values(
-        self, values: "list[GrantaServerApiSchemaParametersDiscreteParameterValue]"
-    ) -> None:
-        """Sets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
-
-        Parameters
-        ----------
-        values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
-            The values of this GrantaServerApiSchemaParametersDiscreteParameter.
-        """
-        self._values = values
+        self.values = values
 
     @property
     def type(self) -> "str":
@@ -142,7 +129,34 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def values(self) -> "list[GrantaServerApiSchemaParametersDiscreteParameterValue]":
+        """Gets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
+
+        Returns
+        -------
+        list[GrantaServerApiSchemaParametersDiscreteParameterValue]
+            The values of this GrantaServerApiSchemaParametersDiscreteParameter.
+        """
+        return self._values
+
+    @values.setter
+    def values(
+        self, values: "list[GrantaServerApiSchemaParametersDiscreteParameterValue]"
+    ) -> None:
+        """Sets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
+
+        Parameters
+        ----------
+        values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
+            The values of this GrantaServerApiSchemaParametersDiscreteParameter.
+        """
+        if values is None:
+            raise ValueError("Invalid value for 'values', must not be 'None'")
+        self._values = values
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

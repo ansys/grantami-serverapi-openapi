@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsPictureDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -47,7 +49,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(
         "datum_type": "str",
         "datum_value": "GrantaServerApiDataExportDatumsBinaryData",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
     }
 
     attribute_map = {
@@ -63,6 +65,8 @@ class GrantaServerApiDataExportDatumsPictureDatum(
         "datumValue": "GrantaServerApiDataExportDatumsBinaryData",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -71,7 +75,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(
         datum_type: "str" = "picture",
         datum_value: "Optional[GrantaServerApiDataExportDatumsBinaryData]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsPictureDatum - a model defined in Swagger
 
@@ -82,7 +86,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(
             datum_type: str
             datum_value: GrantaServerApiDataExportDatumsBinaryData, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -92,7 +96,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(
         )
         self._datum_type = None
         self._datum_value = None
-        self.discriminator = None
+
         self.datum_type = datum_type
         if datum_value is not None:
             self.datum_value = datum_value
@@ -145,7 +149,8 @@ class GrantaServerApiDataExportDatumsPictureDatum(
         """
         self._datum_value = datum_value
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

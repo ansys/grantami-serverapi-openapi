@@ -35,20 +35,22 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "chartable": "bool",
         "expressionable": "bool",
         "extended_name": "str",
         "foreign_data_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "foreign_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "is_meta_attribute": "bool",
         "linkable": "bool",
-        "ordered_meta_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "primary_data_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        "primary_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "standard_names": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "type_code": "str",
+        "foreign_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "ordered_meta_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "primary_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     }
 
     attribute_map = {
@@ -56,14 +58,14 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         "expressionable": "expressionable",
         "extended_name": "extendedName",
         "foreign_data_link_groups": "foreignDataLinkGroups",
-        "foreign_dynamic_link_groups": "foreignDynamicLinkGroups",
         "is_meta_attribute": "isMetaAttribute",
         "linkable": "linkable",
-        "ordered_meta_attributes": "orderedMetaAttributes",
         "primary_data_link_groups": "primaryDataLinkGroups",
-        "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
         "standard_names": "standardNames",
         "type_code": "typeCode",
+        "foreign_dynamic_link_groups": "foreignDynamicLinkGroups",
+        "ordered_meta_attributes": "orderedMetaAttributes",
+        "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
     }
 
     subtype_mapping = {
@@ -75,38 +77,40 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         "foreignDynamicLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        chartable: "Optional[bool]" = None,
-        expressionable: "Optional[bool]" = None,
-        extended_name: "Optional[str]" = None,
-        foreign_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
+        chartable: "bool",
+        expressionable: "bool",
+        extended_name: "str",
+        foreign_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        is_meta_attribute: "bool",
+        linkable: "bool",
+        primary_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        standard_names: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        type_code: "str",
         foreign_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        is_meta_attribute: "Optional[bool]" = None,
-        linkable: "Optional[bool]" = None,
         ordered_meta_attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        primary_data_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
         primary_dynamic_link_groups: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        standard_names: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        type_code: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaAttributesAttributeAttributeInfo - a model defined in Swagger
 
         Parameters
         ----------
-            chartable: bool, optional
-            expressionable: bool, optional
-            extended_name: str, optional
-            foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+            chartable: bool
+            expressionable: bool
+            extended_name: str
+            foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            is_meta_attribute: bool
+            linkable: bool
+            primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+            type_code: str
             foreign_dynamic_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            is_meta_attribute: bool, optional
-            linkable: bool, optional
             ordered_meta_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
             primary_dynamic_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            type_code: str, optional
         """
         self._type_code = None
         self._chartable = None
@@ -120,27 +124,18 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._foreign_data_link_groups = None
         self._primary_dynamic_link_groups = None
         self._foreign_dynamic_link_groups = None
-        self.discriminator = None
-        if type_code is not None:
-            self.type_code = type_code
-        if chartable is not None:
-            self.chartable = chartable
-        if expressionable is not None:
-            self.expressionable = expressionable
-        if linkable is not None:
-            self.linkable = linkable
-        if extended_name is not None:
-            self.extended_name = extended_name
-        if is_meta_attribute is not None:
-            self.is_meta_attribute = is_meta_attribute
+
+        self.type_code = type_code
+        self.chartable = chartable
+        self.expressionable = expressionable
+        self.linkable = linkable
+        self.extended_name = extended_name
+        self.is_meta_attribute = is_meta_attribute
         if ordered_meta_attributes is not None:
             self.ordered_meta_attributes = ordered_meta_attributes
-        if standard_names is not None:
-            self.standard_names = standard_names
-        if primary_data_link_groups is not None:
-            self.primary_data_link_groups = primary_data_link_groups
-        if foreign_data_link_groups is not None:
-            self.foreign_data_link_groups = foreign_data_link_groups
+        self.standard_names = standard_names
+        self.primary_data_link_groups = primary_data_link_groups
+        self.foreign_data_link_groups = foreign_data_link_groups
         if primary_dynamic_link_groups is not None:
             self.primary_dynamic_link_groups = primary_dynamic_link_groups
         if foreign_dynamic_link_groups is not None:
@@ -166,6 +161,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         type_code: str
             The type_code of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if type_code is None:
+            raise ValueError("Invalid value for 'type_code', must not be 'None'")
         self._type_code = type_code
 
     @property
@@ -188,6 +185,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         chartable: bool
             The chartable of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if chartable is None:
+            raise ValueError("Invalid value for 'chartable', must not be 'None'")
         self._chartable = chartable
 
     @property
@@ -210,6 +209,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         expressionable: bool
             The expressionable of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if expressionable is None:
+            raise ValueError("Invalid value for 'expressionable', must not be 'None'")
         self._expressionable = expressionable
 
     @property
@@ -232,6 +233,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         linkable: bool
             The linkable of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if linkable is None:
+            raise ValueError("Invalid value for 'linkable', must not be 'None'")
         self._linkable = linkable
 
     @property
@@ -254,6 +257,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         extended_name: str
             The extended_name of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if extended_name is None:
+            raise ValueError("Invalid value for 'extended_name', must not be 'None'")
         self._extended_name = extended_name
 
     @property
@@ -276,6 +281,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         is_meta_attribute: bool
             The is_meta_attribute of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if is_meta_attribute is None:
+            raise ValueError(
+                "Invalid value for 'is_meta_attribute', must not be 'None'"
+            )
         self._is_meta_attribute = is_meta_attribute
 
     @property
@@ -329,6 +338,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         standard_names: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if standard_names is None:
+            raise ValueError("Invalid value for 'standard_names', must not be 'None'")
         self._standard_names = standard_names
 
     @property
@@ -356,6 +367,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         primary_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if primary_data_link_groups is None:
+            raise ValueError(
+                "Invalid value for 'primary_data_link_groups', must not be 'None'"
+            )
         self._primary_data_link_groups = primary_data_link_groups
 
     @property
@@ -383,6 +398,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         foreign_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
+        if foreign_data_link_groups is None:
+            raise ValueError(
+                "Invalid value for 'foreign_data_link_groups', must not be 'None'"
+            )
         self._foreign_data_link_groups = foreign_data_link_groups
 
     @property
@@ -439,7 +458,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         """
         self._foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

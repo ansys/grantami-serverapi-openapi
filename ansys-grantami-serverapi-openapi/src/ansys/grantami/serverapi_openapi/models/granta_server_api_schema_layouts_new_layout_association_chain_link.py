@@ -35,39 +35,48 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "forwards": "bool",
+        "source_database_version_guid": "str",
         "tabular_attribute_guid": "str",
+        "forwards": "bool",
     }
 
     attribute_map = {
-        "forwards": "forwards",
+        "source_database_version_guid": "sourceDatabaseVersionGuid",
         "tabular_attribute_guid": "tabularAttributeGuid",
+        "forwards": "forwards",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        source_database_version_guid: "str",
+        tabular_attribute_guid: "str",
         forwards: "Optional[bool]" = None,
-        tabular_attribute_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink - a model defined in Swagger
 
         Parameters
         ----------
+            source_database_version_guid: str
+            tabular_attribute_guid: str
             forwards: bool, optional
-            tabular_attribute_guid: str, optional
         """
         self._forwards = None
+        self._source_database_version_guid = None
         self._tabular_attribute_guid = None
-        self.discriminator = None
+
         if forwards is not None:
             self.forwards = forwards
-        if tabular_attribute_guid is not None:
-            self.tabular_attribute_guid = tabular_attribute_guid
+        self.source_database_version_guid = source_database_version_guid
+        self.tabular_attribute_guid = tabular_attribute_guid
 
     @property
     def forwards(self) -> "bool":
@@ -92,6 +101,32 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
         self._forwards = forwards
 
     @property
+    def source_database_version_guid(self) -> "str":
+        """Gets the source_database_version_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
+
+        Returns
+        -------
+        str
+            The source_database_version_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
+        """
+        return self._source_database_version_guid
+
+    @source_database_version_guid.setter
+    def source_database_version_guid(self, source_database_version_guid: "str") -> None:
+        """Sets the source_database_version_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
+
+        Parameters
+        ----------
+        source_database_version_guid: str
+            The source_database_version_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
+        """
+        if source_database_version_guid is None:
+            raise ValueError(
+                "Invalid value for 'source_database_version_guid', must not be 'None'"
+            )
+        self._source_database_version_guid = source_database_version_guid
+
+    @property
     def tabular_attribute_guid(self) -> "str":
         """Gets the tabular_attribute_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
 
@@ -111,9 +146,14 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
         tabular_attribute_guid: str
             The tabular_attribute_guid of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink.
         """
+        if tabular_attribute_guid is None:
+            raise ValueError(
+                "Invalid value for 'tabular_attribute_guid', must not be 'None'"
+            )
         self._tabular_attribute_guid = tabular_attribute_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

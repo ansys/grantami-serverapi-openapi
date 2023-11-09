@@ -39,10 +39,12 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
         The key is attribute name and the value is json key in definition.
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
-        They key is discriminator value and the value is associated subtype.
+
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "aggregation_datum": "GrantaServerApiAggregationsAggregationDatum",
         "attribute_aggregation_type": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -51,6 +53,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
     }
 
     attribute_map = {
+        "aggregation_datum": "aggregationDatum",
         "attribute_aggregation_type": "attributeAggregationType",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -58,27 +61,16 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
         "type": "type",
     }
 
-    subtype_mapping = {}
-
-    discriminator_value_class_map = {
-        "integer".lower(): "#/components/schemas/GrantaServerApiAggregationsIntegerAttributeAggregation",
-        "point".lower(): "#/components/schemas/GrantaServerApiAggregationsPointAttributeAggregation",
-        "range".lower(): "#/components/schemas/GrantaServerApiAggregationsRangeAttributeAggregation",
-        "integerHistogram".lower(): "#/components/schemas/GrantaServerApiAggregationsIntegerAttributeHistogramAggregation",
-        "pointHistogram".lower(): "#/components/schemas/GrantaServerApiAggregationsPointAttributeHistogramAggregation",
-        "rangeHistogram".lower(): "#/components/schemas/GrantaServerApiAggregationsRangeAttributeHistogramAggregation",
-        "dateTime".lower(): "#/components/schemas/GrantaServerApiAggregationsDateTimeAttributeAggregation",
-        "dateTimeHistogram".lower(): "#/components/schemas/GrantaServerApiAggregationsDateTimeAttributeHistogramAggregation",
-        "shortText".lower(): "#/components/schemas/GrantaServerApiAggregationsShortTextAttributeAggregation",
-        "discreteText".lower(): "#/components/schemas/GrantaServerApiAggregationsDiscreteTextAttributeAggregation",
-        "link".lower(): "#/components/schemas/GrantaServerApiAggregationsLinkAttributeAggregation",
-        "logical".lower(): "#/components/schemas/GrantaServerApiAggregationsLogicalAttributeAggregation",
-        "floatFunctionalGraph".lower(): "#/components/schemas/GrantaServerApiAggregationsFloatFunctionalAttributeAggregation",
+    subtype_mapping = {
+        "aggregationDatum": "GrantaServerApiAggregationsAggregationDatum",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
+        aggregation_datum: "Optional[GrantaServerApiAggregationsAggregationDatum]" = None,
         attribute_aggregation_type: "str" = "value",
         attribute_guid: "Optional[str]" = None,
         attribute_identity: "Optional[int]" = None,
@@ -89,6 +81,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
 
         Parameters
         ----------
+            aggregation_datum: GrantaServerApiAggregationsAggregationDatum, optional
             attribute_aggregation_type: str
             attribute_guid: str, optional
             attribute_identity: int, optional
@@ -102,8 +95,11 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
             type=type,
         )
         self._attribute_aggregation_type = None
-        self.discriminator = "datum_type"
+        self._aggregation_datum = None
+
         self.attribute_aggregation_type = attribute_aggregation_type
+        if aggregation_datum is not None:
+            self.aggregation_datum = aggregation_datum
 
     @property
     def attribute_aggregation_type(self) -> "str":
@@ -131,25 +127,45 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
             )
         self._attribute_aggregation_type = attribute_aggregation_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
-        """Returns the real base class as determined by the discriminator
+    @property
+    def aggregation_datum(self) -> "GrantaServerApiAggregationsAggregationDatum":
+        """Gets the aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
+
+        Returns
+        -------
+        GrantaServerApiAggregationsAggregationDatum
+            The aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
+        """
+        return self._aggregation_datum
+
+    @aggregation_datum.setter
+    def aggregation_datum(
+        self, aggregation_datum: "GrantaServerApiAggregationsAggregationDatum"
+    ) -> None:
+        """Sets the aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
+
+        Parameters
+        ----------
+        aggregation_datum: GrantaServerApiAggregationsAggregationDatum
+            The aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
+        """
+        self._aggregation_datum = aggregation_datum
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
+        """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
         ----------
         data: ModelBase
             Object representing a subclass of this class
-        """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
-        # The actual class name is not available in swagger-codegen,
-        # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
-            "/", 1
-        )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
-        later_tokens = [element.capitalize() for element in name_tokens[1:]]
-        return "".join([name_tokens[0], *later_tokens])
+        Raises
+        ------
+        NotImplementedError
+            This class has no discriminator, and hence no subclasses
+        """
+        raise NotImplementedError()
 
     def to_dict(self) -> Dict:
         """Returns the model properties as a dict

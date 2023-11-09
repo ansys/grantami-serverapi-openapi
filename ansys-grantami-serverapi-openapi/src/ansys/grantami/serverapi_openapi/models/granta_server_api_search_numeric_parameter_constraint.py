@@ -40,6 +40,8 @@ class GrantaServerApiSearchNumericParameterConstraint(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "gte": "float",
@@ -49,7 +51,6 @@ class GrantaServerApiSearchNumericParameterConstraint(
         "scale_type": "str",
         "significant_figures": "int",
         "type": "str",
-        "unit": "str",
     }
 
     attribute_map = {
@@ -60,10 +61,11 @@ class GrantaServerApiSearchNumericParameterConstraint(
         "scale_type": "scaleType",
         "significant_figures": "significantFigures",
         "type": "type",
-        "unit": "unit",
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -75,7 +77,6 @@ class GrantaServerApiSearchNumericParameterConstraint(
         scale_type: "Optional[str]" = None,
         significant_figures: "Optional[int]" = None,
         type: "str" = "numeric",
-        unit: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSearchNumericParameterConstraint - a model defined in Swagger
 
@@ -88,23 +89,19 @@ class GrantaServerApiSearchNumericParameterConstraint(
             scale_type: str, optional
             significant_figures: int, optional
             type: str
-            unit: str, optional
         """
         super().__init__(parameter=parameter)
         self._gte = None
         self._lte = None
-        self._unit = None
         self._scale_type = None
         self._interpolation_type = None
         self._significant_figures = None
         self._type = None
-        self.discriminator = None
+
         if gte is not None:
             self.gte = gte
         if lte is not None:
             self.lte = lte
-        if unit is not None:
-            self.unit = unit
         if scale_type is not None:
             self.scale_type = scale_type
         if interpolation_type is not None:
@@ -156,28 +153,6 @@ class GrantaServerApiSearchNumericParameterConstraint(
             The lte of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._lte = lte
-
-    @property
-    def unit(self) -> "str":
-        """Gets the unit of this GrantaServerApiSearchNumericParameterConstraint.
-
-        Returns
-        -------
-        str
-            The unit of this GrantaServerApiSearchNumericParameterConstraint.
-        """
-        return self._unit
-
-    @unit.setter
-    def unit(self, unit: "str") -> None:
-        """Sets the unit of this GrantaServerApiSearchNumericParameterConstraint.
-
-        Parameters
-        ----------
-        unit: str
-            The unit of this GrantaServerApiSearchNumericParameterConstraint.
-        """
-        self._unit = unit
 
     @property
     def scale_type(self) -> "str":
@@ -273,7 +248,8 @@ class GrantaServerApiSearchNumericParameterConstraint(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiSchemaAttributesAttributesInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimAttribute]",
@@ -48,21 +50,22 @@ class GrantaServerApiSchemaAttributesAttributesInfo(ModelBase):
         "attributes": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attributes: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimAttribute]]" = None,
+        attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimAttribute]",
     ) -> None:
         """GrantaServerApiSchemaAttributesAttributesInfo - a model defined in Swagger
 
         Parameters
         ----------
-            attributes: List[GrantaServerApiSchemaSlimEntitiesSlimAttribute], optional
+            attributes: List[GrantaServerApiSchemaSlimEntitiesSlimAttribute]
         """
         self._attributes = None
-        self.discriminator = None
-        if attributes is not None:
-            self.attributes = attributes
+
+        self.attributes = attributes
 
     @property
     def attributes(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimAttribute]":
@@ -86,9 +89,12 @@ class GrantaServerApiSchemaAttributesAttributesInfo(ModelBase):
         attributes: list[GrantaServerApiSchemaSlimEntitiesSlimAttribute]
             The attributes of this GrantaServerApiSchemaAttributesAttributesInfo.
         """
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
         self._attributes = attributes
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

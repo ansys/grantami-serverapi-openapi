@@ -35,6 +35,8 @@ class FolderguidFilesBody(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "content_disposition": "str",
@@ -57,6 +59,8 @@ class FolderguidFilesBody(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -88,7 +92,7 @@ class FolderguidFilesBody(ModelBase):
         self._name = None
         self._file_name = None
         self._description = None
-        self.discriminator = None
+
         if content_type is not None:
             self.content_type = content_type
         if content_disposition is not None:
@@ -258,7 +262,8 @@ class FolderguidFilesBody(ModelBase):
         """
         self._description = description
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

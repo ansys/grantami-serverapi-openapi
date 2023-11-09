@@ -35,6 +35,8 @@ class GrantaServerApiListsDtoUserPermissionDto(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "flags": "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
@@ -51,6 +53,8 @@ class GrantaServerApiListsDtoUserPermissionDto(ModelBase):
     subtype_mapping = {
         "flags": "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -70,7 +74,7 @@ class GrantaServerApiListsDtoUserPermissionDto(ModelBase):
         self._user_or_group_name = None
         self._user_or_group_identifier = None
         self._flags = None
-        self.discriminator = None
+
         if user_or_group_name is not None:
             self.user_or_group_name = user_or_group_name
         if user_or_group_identifier is not None:
@@ -150,7 +154,8 @@ class GrantaServerApiListsDtoUserPermissionDto(ModelBase):
         """
         self._flags = flags
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

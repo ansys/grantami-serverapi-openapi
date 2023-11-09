@@ -35,6 +35,8 @@ class GrantaServerApiDataExportDatumsDiscreteSeriesPoint(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "x": "float",
@@ -51,6 +53,8 @@ class GrantaServerApiDataExportDatumsDiscreteSeriesPoint(ModelBase):
     subtype_mapping = {
         "y": "GrantaServerApiDiscreteValue",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -70,7 +74,7 @@ class GrantaServerApiDataExportDatumsDiscreteSeriesPoint(ModelBase):
         self._x = None
         self._x_name = None
         self._y = None
-        self.discriminator = None
+
         if x is not None:
             self.x = x
         if x_name is not None:
@@ -144,7 +148,8 @@ class GrantaServerApiDataExportDatumsDiscreteSeriesPoint(ModelBase):
         """
         self._y = y
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

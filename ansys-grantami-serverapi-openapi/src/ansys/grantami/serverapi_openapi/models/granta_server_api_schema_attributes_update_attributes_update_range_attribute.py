@@ -40,16 +40,18 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
         "name": "str",
         "type": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
     attribute_map = {
@@ -64,33 +66,35 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute(
     }
 
     subtype_mapping = {
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
         name: "Optional[str]" = None,
         type: "str" = "range",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
             help_path: str, optional
             name: str, optional
             type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -102,7 +106,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute(
         )
         self._type = None
         self._unit = None
-        self.discriminator = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
@@ -132,28 +136,29 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute(
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateRangeAttribute.
         """
         self._unit = unit
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

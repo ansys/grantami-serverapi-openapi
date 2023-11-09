@@ -40,10 +40,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "attribute_parameters": "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "attribute_parameters": "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -64,14 +66,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
     }
 
     subtype_mapping = {
-        "attributeParameters": "GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter",
+        "attributeParameters": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
@@ -83,8 +87,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter], optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+            attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter], optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
@@ -102,7 +106,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
         )
         self._type = None
         self._attribute_parameters = None
-        self.discriminator = None
+
         self.type = type
         if attribute_parameters is not None:
             self.attribute_parameters = attribute_parameters
@@ -134,12 +138,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
     @property
     def attribute_parameters(
         self,
-    ) -> "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]":
+    ) -> "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+        list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -147,18 +151,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

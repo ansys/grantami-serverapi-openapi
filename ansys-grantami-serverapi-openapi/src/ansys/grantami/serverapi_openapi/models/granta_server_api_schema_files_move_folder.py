@@ -35,6 +35,8 @@ class GrantaServerApiSchemaFilesMoveFolder(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "parent_guid": "str",
@@ -46,21 +48,22 @@ class GrantaServerApiSchemaFilesMoveFolder(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        parent_guid: "Optional[str]" = None,
+        parent_guid: "str",
     ) -> None:
         """GrantaServerApiSchemaFilesMoveFolder - a model defined in Swagger
 
         Parameters
         ----------
-            parent_guid: str, optional
+            parent_guid: str
         """
         self._parent_guid = None
-        self.discriminator = None
-        if parent_guid is not None:
-            self.parent_guid = parent_guid
+
+        self.parent_guid = parent_guid
 
     @property
     def parent_guid(self) -> "str":
@@ -82,9 +85,12 @@ class GrantaServerApiSchemaFilesMoveFolder(ModelBase):
         parent_guid: str
             The parent_guid of this GrantaServerApiSchemaFilesMoveFolder.
         """
+        if parent_guid is None:
+            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
         self._parent_guid = parent_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

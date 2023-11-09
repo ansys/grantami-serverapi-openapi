@@ -40,18 +40,20 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
         "display_names": "dict(str, str)",
         "forbid_orphans": "bool",
         "guid": "str",
-        "identity": "int",
         "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
         "name": "str",
         "referential_integrity_model": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
-        "reverse_display_names": "dict(str, str)",
         "reverse_name": "str",
+        "identity": "int",
+        "reverse_display_names": "dict(str, str)",
         "type": "str",
     }
 
@@ -60,12 +62,12 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         "display_names": "displayNames",
         "forbid_orphans": "forbidOrphans",
         "guid": "guid",
-        "identity": "identity",
         "link_info": "linkInfo",
         "name": "name",
         "referential_integrity_model": "referentialIntegrityModel",
-        "reverse_display_names": "reverseDisplayNames",
         "reverse_name": "reverseName",
+        "identity": "identity",
+        "reverse_display_names": "reverseDisplayNames",
         "type": "type",
     }
 
@@ -74,58 +76,81 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        forbid_orphans: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
+        attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        display_names: "Dict[str, str]",
+        forbid_orphans: "bool",
+        guid: "str",
+        link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        name: "str",
+        referential_integrity_model: "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
+        reverse_name: "str",
         identity: "Optional[int]" = None,
-        link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None,
-        name: "Optional[str]" = None,
-        referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None,
         reverse_display_names: "Optional[Dict[str, str]]" = None,
-        reverse_name: "Optional[str]" = None,
         type: "str" = "dynamic",
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair], optional
-            display_names: Dict[str, str], optional
-            forbid_orphans: bool, optional
-            guid: str, optional
+            attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
+            display_names: Dict[str, str]
+            forbid_orphans: bool
+            guid: str
+            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
+            name: str
+            referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel
+            reverse_name: str
             identity: int, optional
-            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo, optional
-            name: str, optional
-            referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, optional
             reverse_display_names: Dict[str, str], optional
-            reverse_name: str, optional
             type: str
         """
         super().__init__(
             display_names=display_names,
             guid=guid,
-            identity=identity,
             link_info=link_info,
             name=name,
-            reverse_display_names=reverse_display_names,
             reverse_name=reverse_name,
+            identity=identity,
+            reverse_display_names=reverse_display_names,
         )
+        self._type = None
         self._forbid_orphans = None
         self._referential_integrity_model = None
         self._attribute_pairs = None
-        self._type = None
-        self.discriminator = None
-        if forbid_orphans is not None:
-            self.forbid_orphans = forbid_orphans
-        if referential_integrity_model is not None:
-            self.referential_integrity_model = referential_integrity_model
-        if attribute_pairs is not None:
-            self.attribute_pairs = attribute_pairs
+
         self.type = type
+        self.forbid_orphans = forbid_orphans
+        self.referential_integrity_model = referential_integrity_model
+        self.attribute_pairs = attribute_pairs
+
+    @property
+    def type(self) -> "str":
+        """Gets the type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
+
+        Returns
+        -------
+        str
+            The type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: "str") -> None:
+        """Sets the type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
+
+        Parameters
+        ----------
+        type: str
+            The type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
+        """
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
+        self._type = type
 
     @property
     def forbid_orphans(self) -> "bool":
@@ -147,6 +172,8 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         forbid_orphans: bool
             The forbid_orphans of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
         """
+        if forbid_orphans is None:
+            raise ValueError("Invalid value for 'forbid_orphans', must not be 'None'")
         self._forbid_orphans = forbid_orphans
 
     @property
@@ -174,6 +201,10 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel
             The referential_integrity_model of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
         """
+        if referential_integrity_model is None:
+            raise ValueError(
+                "Invalid value for 'referential_integrity_model', must not be 'None'"
+            )
         self._referential_integrity_model = referential_integrity_model
 
     @property
@@ -201,33 +232,12 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
         """
+        if attribute_pairs is None:
+            raise ValueError("Invalid value for 'attribute_pairs', must not be 'None'")
         self._attribute_pairs = attribute_pairs
 
-    @property
-    def type(self) -> "str":
-        """Gets the type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
-
-        Returns
-        -------
-        str
-            The type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type: "str") -> None:
-        """Sets the type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
-
-        Parameters
-        ----------
-        type: str
-            The type of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
-        """
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        self._type = type
-
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,6 +35,8 @@ class GrantaServerApiIntegrationSchemaSecurityGroups(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "admin_group": "str",
@@ -47,6 +49,8 @@ class GrantaServerApiIntegrationSchemaSecurityGroups(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -63,7 +67,7 @@ class GrantaServerApiIntegrationSchemaSecurityGroups(ModelBase):
         """
         self._read_group = None
         self._admin_group = None
-        self.discriminator = None
+
         if read_group is not None:
             self.read_group = read_group
         if admin_group is not None:
@@ -117,7 +121,8 @@ class GrantaServerApiIntegrationSchemaSecurityGroups(ModelBase):
         """
         self._admin_group = admin_group
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

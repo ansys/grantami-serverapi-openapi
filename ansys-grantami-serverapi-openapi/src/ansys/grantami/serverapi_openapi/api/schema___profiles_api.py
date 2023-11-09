@@ -26,14 +26,14 @@ class SchemaProfilesApi(ApiBase):
 
     def v1alpha_profiles_get(
         self,
-    ) -> "Union[GrantaServerApiSchemaAllProfilesInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
         """Get AllProfilesInfo
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        Union[GrantaServerApiSchemaAllProfilesInfo, None]
+        Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]
         """
         data = self._v1alpha_profiles_get_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[return-value]
@@ -68,7 +68,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaAllProfilesInfo",
+            200: "GrantaServerApiSchemaProfilesAllProfilesInfo",
             403: None,
         }
 
@@ -89,19 +89,21 @@ class SchemaProfilesApi(ApiBase):
         )
 
     def v1alpha_profiles_patch(
-        self, *, body: "Optional[GrantaServerApiSchemaAllProfilesInfo]" = None
-    ) -> "Union[GrantaServerApiSchemaAllProfilesInfo, None]":
+        self,
+        *,
+        body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
+    ) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
         """Update AllProfilesInfo
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiSchemaAllProfilesInfo
+        body: GrantaServerApiSchemaProfilesUpdateAllProfilesInfo
 
         Returns
         -------
-        Union[GrantaServerApiSchemaAllProfilesInfo, None]
+        Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]
         """
         data = self._v1alpha_profiles_patch_with_http_info(
             body, _return_http_data_only=True
@@ -109,7 +111,9 @@ class SchemaProfilesApi(ApiBase):
         return data  # type: ignore[return-value]
 
     def _v1alpha_profiles_patch_with_http_info(
-        self, body: "Optional[GrantaServerApiSchemaAllProfilesInfo]" = None, **kwargs
+        self,
+        body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
+        **kwargs,
     ):
         all_params = [
             "body",
@@ -157,7 +161,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaAllProfilesInfo",
+            200: "GrantaServerApiSchemaProfilesAllProfilesInfo",
             400: None,
             403: None,
             404: None,
@@ -180,19 +184,19 @@ class SchemaProfilesApi(ApiBase):
         )
 
     def v1alpha_profiles_post(
-        self, *, body: "Optional[GrantaServerApiSchemaProfile]" = None
-    ) -> "Union[GrantaServerApiSchemaProfile, None]":
+        self, *, body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None
+    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
         """Create a new profile
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiSchemaProfile
+        body: GrantaServerApiSchemaProfilesCreateProfile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfile, None]
+        Union[GrantaServerApiSchemaProfilesProfile, None]
         """
         data = self._v1alpha_profiles_post_with_http_info(
             body, _return_http_data_only=True
@@ -200,7 +204,9 @@ class SchemaProfilesApi(ApiBase):
         return data  # type: ignore[return-value]
 
     def _v1alpha_profiles_post_with_http_info(
-        self, body: "Optional[GrantaServerApiSchemaProfile]" = None, **kwargs
+        self,
+        body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None,
+        **kwargs,
     ):
         all_params = [
             "body",
@@ -248,8 +254,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaProfile",
-            201: None,
+            201: "GrantaServerApiSchemaProfilesProfile",
             400: None,
             403: None,
         }
@@ -351,7 +356,7 @@ class SchemaProfilesApi(ApiBase):
 
     def v1alpha_profiles_profile_guid_get(
         self, *, profile_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaProfile, None]":
+    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
         """Get individual profile
 
         This method makes a synchronous HTTP request.
@@ -362,7 +367,7 @@ class SchemaProfilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfile, None]
+        Union[GrantaServerApiSchemaProfilesProfile, None]
         """
         data = self._v1alpha_profiles_profile_guid_get_with_http_info(
             profile_guid, _return_http_data_only=True
@@ -413,7 +418,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaProfile",
+            200: "GrantaServerApiSchemaProfilesProfile",
             403: None,
             404: None,
         }
@@ -438,8 +443,8 @@ class SchemaProfilesApi(ApiBase):
         self,
         *,
         profile_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateProfile]" = None,
-    ) -> "Union[GrantaServerApiSchemaProfile, None]":
+        body: "Optional[GrantaServerApiSchemaProfilesUpdateProfile]" = None,
+    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
         """Update a profile
 
         This method makes a synchronous HTTP request.
@@ -447,11 +452,11 @@ class SchemaProfilesApi(ApiBase):
         Parameters
         ----------
         profile_guid: str
-        body: GrantaServerApiSchemaUpdateProfile
+        body: GrantaServerApiSchemaProfilesUpdateProfile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfile, None]
+        Union[GrantaServerApiSchemaProfilesProfile, None]
         """
         data = self._v1alpha_profiles_profile_guid_patch_with_http_info(
             profile_guid, body, _return_http_data_only=True
@@ -461,7 +466,7 @@ class SchemaProfilesApi(ApiBase):
     def _v1alpha_profiles_profile_guid_patch_with_http_info(
         self,
         profile_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateProfile]" = None,
+        body: "Optional[GrantaServerApiSchemaProfilesUpdateProfile]" = None,
         **kwargs,
     ):
         all_params = [
@@ -518,7 +523,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaProfile",
+            200: "GrantaServerApiSchemaProfilesProfile",
             400: None,
             403: None,
             404: None,

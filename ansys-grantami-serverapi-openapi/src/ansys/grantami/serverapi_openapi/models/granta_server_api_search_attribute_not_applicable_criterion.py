@@ -40,6 +40,8 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_criterion_type": "str",
@@ -58,6 +60,8 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -82,7 +86,7 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(
             guid=guid, identity=identity, is_meta_attribute=is_meta_attribute, type=type
         )
         self._attribute_criterion_type = None
-        self.discriminator = None
+
         self.attribute_criterion_type = attribute_criterion_type
 
     @property
@@ -111,7 +115,8 @@ class GrantaServerApiSearchAttributeNotApplicableCriterion(
             )
         self._attribute_criterion_type = attribute_criterion_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

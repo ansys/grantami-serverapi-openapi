@@ -36,6 +36,8 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
@@ -56,31 +58,30 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         "full".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsFullLayoutSection",
     }
 
+    discriminator = "sectionDetailType"
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutSection - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
         """
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = "sectionDetailType"
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def display_names(self) -> "dict(str, str)":
@@ -102,6 +103,8 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaLayoutsLayoutSection.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -124,6 +127,8 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaLayoutsLayoutSection.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -146,9 +151,12 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaLayoutsLayoutSection.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -156,15 +164,16 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

@@ -35,44 +35,46 @@ class GrantaServerApiSchemaFilesCreateFolder(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "guid": "str",
         "name": "str",
         "parent_guid": "str",
+        "guid": "str",
     }
 
     attribute_map = {
-        "guid": "guid",
         "name": "name",
         "parent_guid": "parentGuid",
+        "guid": "guid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        name: "str",
+        parent_guid: "str",
         guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        parent_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaFilesCreateFolder - a model defined in Swagger
 
         Parameters
         ----------
+            name: str
+            parent_guid: str
             guid: str, optional
-            name: str, optional
-            parent_guid: str, optional
         """
         self._parent_guid = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if parent_guid is not None:
-            self.parent_guid = parent_guid
-        if name is not None:
-            self.name = name
+
+        self.parent_guid = parent_guid
+        self.name = name
         if guid is not None:
             self.guid = guid
 
@@ -96,6 +98,8 @@ class GrantaServerApiSchemaFilesCreateFolder(ModelBase):
         parent_guid: str
             The parent_guid of this GrantaServerApiSchemaFilesCreateFolder.
         """
+        if parent_guid is None:
+            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
         self._parent_guid = parent_guid
 
     @property
@@ -118,6 +122,8 @@ class GrantaServerApiSchemaFilesCreateFolder(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaFilesCreateFolder.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -142,7 +148,8 @@ class GrantaServerApiSchemaFilesCreateFolder(ModelBase):
         """
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

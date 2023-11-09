@@ -38,10 +38,13 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "database_key": "str",
         "record_guid": "str",
+        "record_history_guid": "str",
         "record_history_identity": "int",
         "record_identity": "int",
         "type": "str",
@@ -50,6 +53,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     attribute_map = {
         "database_key": "databaseKey",
         "record_guid": "recordGuid",
+        "record_history_guid": "recordHistoryGuid",
         "record_history_identity": "recordHistoryIdentity",
         "record_identity": "recordIdentity",
         "type": "type",
@@ -57,11 +61,14 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
         database_key: "Optional[str]" = None,
         record_guid: "Optional[str]" = None,
+        record_history_guid: "Optional[str]" = None,
         record_history_identity: "Optional[int]" = None,
         record_identity: "Optional[int]" = None,
         type: "str" = "reference",
@@ -72,6 +79,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         ----------
             database_key: str, optional
             record_guid: str, optional
+            record_history_guid: str, optional
             record_history_identity: int, optional
             record_identity: int, optional
             type: str
@@ -80,15 +88,18 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._database_key = None
         self._record_identity = None
         self._record_history_identity = None
+        self._record_history_guid = None
         self._record_guid = None
         self._type = None
-        self.discriminator = None
+
         if database_key is not None:
             self.database_key = database_key
         if record_identity is not None:
             self.record_identity = record_identity
         if record_history_identity is not None:
             self.record_history_identity = record_history_identity
+        if record_history_guid is not None:
+            self.record_history_guid = record_history_guid
         if record_guid is not None:
             self.record_guid = record_guid
         self.type = type
@@ -160,6 +171,28 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._record_history_identity = record_history_identity
 
     @property
+    def record_history_guid(self) -> "str":
+        """Gets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
+
+        Returns
+        -------
+        str
+            The record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
+        """
+        return self._record_history_guid
+
+    @record_history_guid.setter
+    def record_history_guid(self, record_history_guid: "str") -> None:
+        """Sets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
+
+        Parameters
+        ----------
+        record_history_guid: str
+            The record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
+        """
+        self._record_history_guid = record_history_guid
+
+    @property
     def record_guid(self) -> "str":
         """Gets the record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
@@ -205,7 +238,8 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -121,7 +121,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_get(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteType, None]":
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
         """Gets a single discrete type.
 
         This method makes a synchronous HTTP request.
@@ -133,7 +133,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteType, None]
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_get_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -192,7 +192,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteType",
+            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             404: None,
         }
 
@@ -217,8 +217,8 @@ class SchemaDiscreteTypesApi(ApiBase):
         *,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteType]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteType, None]":
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
         """Update discrete type.
 
         This method makes a synchronous HTTP request.
@@ -227,11 +227,11 @@ class SchemaDiscreteTypesApi(ApiBase):
         ----------
         database_key: str
         discrete_type_guid: str
-        body: GrantaServerApiSchemaDiscreteType
+        body: GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteType, None]
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -242,7 +242,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         self,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteType]" = None,
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
         **kwargs,
     ):
         all_params = [
@@ -307,7 +307,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteType",
+            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             400: None,
             403: None,
             404: None,
@@ -425,7 +425,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def v1alpha_databases_database_key_discrete_types_get(
         self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]":
         """Gets all discrete types for a given database.
 
         This method makes a synchronous HTTP request.
@@ -436,7 +436,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteTypesInfo, None]
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_get_with_http_info(
             database_key, _return_http_data_only=True
@@ -487,7 +487,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteTypesInfo",
+            200: "GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo",
             400: None,
             404: None,
         }
@@ -512,8 +512,8 @@ class SchemaDiscreteTypesApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteType]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteType, None]":
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
         """Create a new discrete type.
 
         This method makes a synchronous HTTP request.
@@ -521,11 +521,11 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaDiscreteType
+        body: GrantaServerApiSchemaDiscreteTypesCreateDiscreteType
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteType, None]
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_post_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -535,7 +535,7 @@ class SchemaDiscreteTypesApi(ApiBase):
     def _v1alpha_databases_database_key_discrete_types_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteType]" = None,
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
         **kwargs,
     ):
         all_params = [
@@ -592,8 +592,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteType",
-            201: None,
+            201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             400: None,
             403: None,
             404: None,

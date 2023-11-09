@@ -35,6 +35,8 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "parameter_values": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
@@ -48,21 +50,22 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         "parameterValues": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        parameter_values: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
+        parameter_values: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     ) -> None:
         """GrantaServerApiSchemaParametersDiscreteRange - a model defined in Swagger
 
         Parameters
         ----------
-            parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+            parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._parameter_values = None
-        self.discriminator = None
-        if parameter_values is not None:
-            self.parameter_values = parameter_values
+
+        self.parameter_values = parameter_values
 
     @property
     def parameter_values(
@@ -88,9 +91,12 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
         """
+        if parameter_values is None:
+            raise ValueError("Invalid value for 'parameter_values', must not be 'None'")
         self._parameter_values = parameter_values
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

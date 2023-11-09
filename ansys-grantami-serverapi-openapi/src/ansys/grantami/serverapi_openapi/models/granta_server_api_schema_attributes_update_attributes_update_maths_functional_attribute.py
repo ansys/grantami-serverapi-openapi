@@ -40,27 +40,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "allow_all_compatible_expressions": "bool",
+        "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
-        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
         "axis_name": "str",
-        "default_content": "GrantaServerApiSchemaAttributesMathsContent",
+        "default_content": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]",
+        "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
         "guid": "str",
         "help_path": "str",
         "is_range": "bool",
         "name": "str",
         "type": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
     attribute_map = {
         "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
+        "allow_anonymous_expressions": "allowAnonymousExpressions",
         "allow_extrapolation": "allowExtrapolation",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
@@ -76,48 +80,52 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     }
 
     subtype_mapping = {
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
-        "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "expressions": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
-        "defaultContent": "GrantaServerApiSchemaAttributesMathsContent",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "expressions": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
+        "defaultContent": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         allow_all_compatible_expressions: "Optional[bool]" = None,
+        allow_anonymous_expressions: "Optional[bool]" = None,
         allow_extrapolation: "Optional[bool]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
+        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
         axis_name: "Optional[str]" = None,
-        default_content: "Optional[GrantaServerApiSchemaAttributesMathsContent]" = None,
+        default_content: "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimExpression]]" = None,
+        expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
         guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
         is_range: "Optional[bool]" = None,
         name: "Optional[str]" = None,
         type: "str" = "mathsFunctional",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             allow_all_compatible_expressions: bool, optional
+            allow_anonymous_expressions: bool, optional
             allow_extrapolation: bool, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
             axis_name: str, optional
-            default_content: GrantaServerApiSchemaAttributesMathsContent, optional
+            default_content: GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression], optional
+            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
             guid: str, optional
             help_path: str, optional
             is_range: bool, optional
             name: str, optional
             type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -135,7 +143,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._is_range = None
         self._default_content = None
         self._allow_all_compatible_expressions = None
-        self.discriminator = None
+        self._allow_anonymous_expressions = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
@@ -151,6 +160,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
             self.default_content = default_content
         if allow_all_compatible_expressions is not None:
             self.allow_all_compatible_expressions = allow_all_compatible_expressions
+        if allow_anonymous_expressions is not None:
+            self.allow_anonymous_expressions = allow_anonymous_expressions
 
     @property
     def type(self) -> "str":
@@ -177,23 +188,23 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._unit = unit
@@ -201,50 +212,49 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]":
+    def expressions(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._expressions
 
     @expressions.setter
     def expressions(
-        self, expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimExpression]"
+        self, expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._expressions = expressions
@@ -294,25 +304,28 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._is_range = is_range
 
     @property
-    def default_content(self) -> "GrantaServerApiSchemaAttributesMathsContent":
+    def default_content(
+        self,
+    ) -> "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent":
         """Gets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaAttributesMathsContent
+        GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent
             The default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._default_content
 
     @default_content.setter
     def default_content(
-        self, default_content: "GrantaServerApiSchemaAttributesMathsContent"
+        self,
+        default_content: "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent",
     ) -> None:
         """Sets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        default_content: GrantaServerApiSchemaAttributesMathsContent
+        default_content: GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent
             The default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._default_content = default_content
@@ -341,7 +354,30 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         """
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def allow_anonymous_expressions(self) -> "bool":
+        """Gets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
+
+        Returns
+        -------
+        bool
+            The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
+        """
+        return self._allow_anonymous_expressions
+
+    @allow_anonymous_expressions.setter
+    def allow_anonymous_expressions(self, allow_anonymous_expressions: "bool") -> None:
+        """Sets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
+
+        Parameters
+        ----------
+        allow_anonymous_expressions: bool
+            The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
+        """
+        self._allow_anonymous_expressions = allow_anonymous_expressions
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

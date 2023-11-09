@@ -36,9 +36,11 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -57,7 +59,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
 
     subtype_mapping = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        "aboutAttribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "aboutAttribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
     discriminator_value_class_map = {
@@ -78,10 +80,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         "mathsFunctional".lower(): "#/components/schemas/GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute",
     }
 
+    discriminator = "type"
+
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
@@ -92,7 +96,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
@@ -105,7 +109,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         self._about_attribute = None
         self._name = None
         self._guid = None
-        self.discriminator = "type"
+
         if default_threshold_type is not None:
             self.default_threshold_type = default_threshold_type
         if axis_name is not None:
@@ -191,25 +195,25 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         self._help_path = help_path
 
     @property
-    def about_attribute(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
+    def about_attribute(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
         """
         return self._about_attribute
 
     @about_attribute.setter
     def about_attribute(
-        self, about_attribute: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity"
+        self, about_attribute: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
     ) -> None:
         """Sets the about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
 
         Parameters
         ----------
-        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
         """
         self._about_attribute = about_attribute
@@ -258,7 +262,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         """
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -266,15 +271,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

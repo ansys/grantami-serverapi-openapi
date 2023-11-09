@@ -40,6 +40,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "association_chain_links": "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
@@ -59,11 +61,13 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         "associationChainLinks": "GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        association_chain_links: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]]" = None,
-        association_chain_name: "Optional[str]" = None,
+        association_chain_links: "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
+        association_chain_name: "str",
         guid: "Optional[str]" = None,
         item_type: "str" = "associationChain",
     ) -> None:
@@ -71,8 +75,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
         Parameters
         ----------
-            association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink], optional
-            association_chain_name: str, optional
+            association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+            association_chain_name: str
             guid: str, optional
             item_type: str
         """
@@ -80,12 +84,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         self._item_type = None
         self._association_chain_name = None
         self._association_chain_links = None
-        self.discriminator = None
+
         self.item_type = item_type
-        if association_chain_name is not None:
-            self.association_chain_name = association_chain_name
-        if association_chain_links is not None:
-            self.association_chain_links = association_chain_links
+        self.association_chain_name = association_chain_name
+        self.association_chain_links = association_chain_links
 
     @property
     def item_type(self) -> "str":
@@ -131,6 +133,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         association_chain_name: str
             The association_chain_name of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
+        if association_chain_name is None:
+            raise ValueError(
+                "Invalid value for 'association_chain_name', must not be 'None'"
+            )
         self._association_chain_name = association_chain_name
 
     @property
@@ -158,9 +164,14 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         association_chain_links: list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
+        if association_chain_links is None:
+            raise ValueError(
+                "Invalid value for 'association_chain_links', must not be 'None'"
+            )
         self._association_chain_links = association_chain_links
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

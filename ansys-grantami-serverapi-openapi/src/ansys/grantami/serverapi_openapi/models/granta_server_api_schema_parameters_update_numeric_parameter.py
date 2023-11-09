@@ -40,20 +40,22 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "display_names": "dict(str, str)",
+        "default_parameter_value_guid": "str",
         "guid": "str",
         "help_path": "str",
         "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "name": "str",
         "scale_type": "GrantaServerApiSchemaParametersParameterScaleType",
         "type": "str",
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
     attribute_map = {
-        "display_names": "displayNames",
+        "default_parameter_value_guid": "defaultParameterValueGuid",
         "guid": "guid",
         "help_path": "helpPath",
         "interpolation_type": "interpolationType",
@@ -64,44 +66,49 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     }
 
     subtype_mapping = {
-        "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
+        "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "interpolationType": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "scaleType": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
+        default_parameter_value_guid: "Optional[str]" = None,
         guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
         interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]" = None,
         name: "Optional[str]" = None,
         scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]" = None,
         type: "str" = "numeric",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateNumericParameter - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
+            default_parameter_value_guid: str, optional
             guid: str, optional
             help_path: str, optional
             interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType, optional
             name: str, optional
             scale_type: GrantaServerApiSchemaParametersParameterScaleType, optional
             type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
-            display_names=display_names, guid=guid, help_path=help_path, name=name
+            default_parameter_value_guid=default_parameter_value_guid,
+            guid=guid,
+            help_path=help_path,
+            name=name,
         )
         self._type = None
         self._unit = None
         self._interpolation_type = None
         self._scale_type = None
-        self.discriminator = None
+
         self.type = type
         if unit is not None:
             self.unit = unit
@@ -135,23 +142,23 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
             The unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
         self._unit = unit
@@ -207,7 +214,8 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         """
         self._scale_type = scale_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

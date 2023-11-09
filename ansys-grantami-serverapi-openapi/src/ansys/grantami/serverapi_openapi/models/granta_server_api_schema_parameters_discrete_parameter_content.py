@@ -40,6 +40,8 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -60,11 +62,13 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         "parameterRange": "GrantaServerApiSchemaParametersDiscreteRange",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        parameter: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        parameter_range: "Optional[GrantaServerApiSchemaParametersDiscreteRange]" = None,
+        parameter: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        parameter_range: "GrantaServerApiSchemaParametersDiscreteRange",
         parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
         type: "str" = "discrete",
     ) -> None:
@@ -72,8 +76,8 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            parameter_range: GrantaServerApiSchemaParametersDiscreteRange, optional
+            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            parameter_range: GrantaServerApiSchemaParametersDiscreteRange
             parameter_value: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
             type: str
         """
@@ -81,12 +85,11 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         self._type = None
         self._parameter_value = None
         self._parameter_range = None
-        self.discriminator = None
+
         self.type = type
         if parameter_value is not None:
             self.parameter_value = parameter_value
-        if parameter_range is not None:
-            self.parameter_range = parameter_range
+        self.parameter_range = parameter_range
 
     @property
     def type(self) -> "str":
@@ -158,9 +161,12 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         parameter_range: GrantaServerApiSchemaParametersDiscreteRange
             The parameter_range of this GrantaServerApiSchemaParametersDiscreteParameterContent.
         """
+        if parameter_range is None:
+            raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
         self._parameter_range = parameter_range
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

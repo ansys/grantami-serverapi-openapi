@@ -40,9 +40,11 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_full_table": "bool",
@@ -51,7 +53,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         "help_path": "str",
         "hide_unlinked_rows": "bool",
         "name": "str",
-        "tabular_columns": "list[GrantaServerApiSchemaTabularColumnsTabularColumn]",
+        "tabular_columns": "list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]",
         "type": "str",
     }
 
@@ -70,13 +72,15 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     }
 
     subtype_mapping = {
-        "tabularColumns": "GrantaServerApiSchemaTabularColumnsTabularColumn",
+        "tabularColumns": "GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         display_full_table: "Optional[bool]" = None,
@@ -85,14 +89,14 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         help_path: "Optional[str]" = None,
         hide_unlinked_rows: "Optional[bool]" = None,
         name: "Optional[str]" = None,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsTabularColumn]]" = None,
+        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]]" = None,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             display_full_table: bool, optional
@@ -101,7 +105,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
             help_path: str, optional
             hide_unlinked_rows: bool, optional
             name: str, optional
-            tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn], optional
+            tabular_columns: List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], optional
             type: str
         """
         super().__init__(
@@ -117,7 +121,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         self._display_summary_row_inline = None
         self._hide_unlinked_rows = None
         self._tabular_columns = None
-        self.discriminator = None
+
         self.type = type
         if display_full_table is not None:
             self.display_full_table = display_full_table
@@ -221,30 +225,32 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     @property
     def tabular_columns(
         self,
-    ) -> "list[GrantaServerApiSchemaTabularColumnsTabularColumn]":
+    ) -> "list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "list[GrantaServerApiSchemaTabularColumnsTabularColumn]"
+        self,
+        tabular_columns: "list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]",
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        tabular_columns: list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -35,12 +35,15 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
         "type": "GrantaServerApiAttributeType",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
     attribute_map = {
@@ -48,42 +51,47 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
         "guid": "guid",
         "name": "name",
         "type": "type",
+        "about_attribute": "aboutAttribute",
     }
 
     subtype_mapping = {
         "type": "GrantaServerApiAttributeType",
+        "aboutAttribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        type: "Optional[GrantaServerApiAttributeType]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
+        type: "GrantaServerApiAttributeType",
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
-            type: GrantaServerApiAttributeType, optional
+            display_names: Dict[str, str]
+            guid: str
+            name: str
+            type: GrantaServerApiAttributeType
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
         """
         self._type = None
+        self._about_attribute = None
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if type is not None:
-            self.type = type
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+
+        self.type = type
+        if about_attribute is not None:
+            self.about_attribute = about_attribute
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def type(self) -> "GrantaServerApiAttributeType":
@@ -105,7 +113,33 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
         type: GrantaServerApiAttributeType
             The type of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
         """
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
+
+    @property
+    def about_attribute(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
+        """Gets the about_attribute of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
+
+        Returns
+        -------
+        GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            The about_attribute of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
+        """
+        return self._about_attribute
+
+    @about_attribute.setter
+    def about_attribute(
+        self, about_attribute: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity"
+    ) -> None:
+        """Sets the about_attribute of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
+
+        Parameters
+        ----------
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            The about_attribute of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
+        """
+        self._about_attribute = about_attribute
 
     @property
     def display_names(self) -> "dict(str, str)":
@@ -127,6 +161,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -149,6 +185,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -171,9 +209,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -40,32 +40,34 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
-        "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "name": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "type": "str",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "name": "name",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "type": "type",
     }
 
@@ -74,56 +76,56 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         "attributeParameters": "GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        attribute_parameters: "List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        name: "str",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]]" = None,
         axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "discreteFunctional",
     ) -> None:
         """GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
+            attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            display_names: Dict[str, str]
+            guid: str
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            name: str
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter], optional
             axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            display_names: Dict[str, str], optional
-            guid: str, optional
             help_path: str, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            name: str, optional
             type: str
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._discrete_type = None
         self._attribute_parameters = None
-        self.discriminator = None
+
         self.type = type
-        if discrete_type is not None:
-            self.discrete_type = discrete_type
-        if attribute_parameters is not None:
-            self.attribute_parameters = attribute_parameters
+        self.discrete_type = discrete_type
+        self.attribute_parameters = attribute_parameters
 
     @property
     def type(self) -> "str":
@@ -171,6 +173,8 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The discrete_type of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
+        if discrete_type is None:
+            raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         self._discrete_type = discrete_type
 
     @property
@@ -198,9 +202,14 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         attribute_parameters: list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
+        if attribute_parameters is None:
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'None'"
+            )
         self._attribute_parameters = attribute_parameters
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

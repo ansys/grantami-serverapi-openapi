@@ -505,7 +505,7 @@ class SchemaLayoutsApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayout]" = None,
     ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, None]":
         """Create a new layout.
 
@@ -515,7 +515,7 @@ class SchemaLayoutsApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaSlimEntitiesSlimLayout
+        body: GrantaServerApiSchemaLayoutsCreateLayout
 
         Returns
         -------
@@ -530,7 +530,7 @@ class SchemaLayoutsApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None,
+        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayout]" = None,
         **kwargs,
     ):
         all_params = [
@@ -595,8 +595,7 @@ class SchemaLayoutsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaSlimEntitiesSlimLayout",
-            201: None,
+            201: "GrantaServerApiSchemaSlimEntitiesSlimLayout",
             400: None,
             403: None,
             404: None,

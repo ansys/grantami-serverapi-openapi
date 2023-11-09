@@ -35,60 +35,61 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfile(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "group_name": "str",
-        "guid": "str",
         "is_implicit": "bool",
         "key": "str",
         "name": "str",
+        "group_name": "str",
+        "guid": "str",
     }
 
     attribute_map = {
-        "group_name": "groupName",
-        "guid": "guid",
         "is_implicit": "isImplicit",
         "key": "key",
         "name": "name",
+        "group_name": "groupName",
+        "guid": "guid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        is_implicit: "bool",
+        key: "str",
+        name: "str",
         group_name: "Optional[str]" = None,
         guid: "Optional[str]" = None,
-        is_implicit: "Optional[bool]" = None,
-        key: "Optional[str]" = None,
-        name: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimProfile - a model defined in Swagger
 
         Parameters
         ----------
+            is_implicit: bool
+            key: str
+            name: str
             group_name: str, optional
             guid: str, optional
-            is_implicit: bool, optional
-            key: str, optional
-            name: str, optional
         """
         self._key = None
         self._guid = None
         self._group_name = None
         self._is_implicit = None
         self._name = None
-        self.discriminator = None
-        if key is not None:
-            self.key = key
+
+        self.key = key
         if guid is not None:
             self.guid = guid
         if group_name is not None:
             self.group_name = group_name
-        if is_implicit is not None:
-            self.is_implicit = is_implicit
-        if name is not None:
-            self.name = name
+        self.is_implicit = is_implicit
+        self.name = name
 
     @property
     def key(self) -> "str":
@@ -112,6 +113,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfile(ModelBase):
         key: str
             The key of this GrantaServerApiSchemaSlimEntitiesSlimProfile.
         """
+        if key is None:
+            raise ValueError("Invalid value for 'key', must not be 'None'")
         self._key = key
 
     @property
@@ -180,6 +183,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfile(ModelBase):
         is_implicit: bool
             The is_implicit of this GrantaServerApiSchemaSlimEntitiesSlimProfile.
         """
+        if is_implicit is None:
+            raise ValueError("Invalid value for 'is_implicit', must not be 'None'")
         self._is_implicit = is_implicit
 
     @property
@@ -202,9 +207,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfile(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaSlimEntitiesSlimProfile.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

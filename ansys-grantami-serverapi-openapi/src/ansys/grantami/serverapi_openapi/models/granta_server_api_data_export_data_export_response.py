@@ -35,9 +35,11 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "failures": "list[GrantaServerApiDataExportExportFailure]",
+        "failures": "list[GrantaServerApiDataExportExportFailuresExportFailure]",
         "results": "list[GrantaServerApiDataExportRecordWithData]",
     }
 
@@ -48,29 +50,29 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
 
     subtype_mapping = {
         "results": "GrantaServerApiDataExportRecordWithData",
-        "failures": "GrantaServerApiDataExportExportFailure",
+        "failures": "GrantaServerApiDataExportExportFailuresExportFailure",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
-        failures: "Optional[List[GrantaServerApiDataExportExportFailure]]" = None,
-        results: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None,
+        failures: "List[GrantaServerApiDataExportExportFailuresExportFailure]",
+        results: "List[GrantaServerApiDataExportRecordWithData]",
     ) -> None:
         """GrantaServerApiDataExportDataExportResponse - a model defined in Swagger
 
         Parameters
         ----------
-            failures: List[GrantaServerApiDataExportExportFailure], optional
-            results: List[GrantaServerApiDataExportRecordWithData], optional
+            failures: List[GrantaServerApiDataExportExportFailuresExportFailure]
+            results: List[GrantaServerApiDataExportRecordWithData]
         """
         self._results = None
         self._failures = None
-        self.discriminator = None
-        if results is not None:
-            self.results = results
-        if failures is not None:
-            self.failures = failures
+
+        self.results = results
+        self.failures = failures
 
     @property
     def results(self) -> "list[GrantaServerApiDataExportRecordWithData]":
@@ -92,35 +94,40 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         results: list[GrantaServerApiDataExportRecordWithData]
             The results of this GrantaServerApiDataExportDataExportResponse.
         """
+        if results is None:
+            raise ValueError("Invalid value for 'results', must not be 'None'")
         self._results = results
 
     @property
-    def failures(self) -> "list[GrantaServerApiDataExportExportFailure]":
+    def failures(self) -> "list[GrantaServerApiDataExportExportFailuresExportFailure]":
         """Gets the failures of this GrantaServerApiDataExportDataExportResponse.
         List the records that were requested, but that we failed to export any data for.
 
         Returns
         -------
-        list[GrantaServerApiDataExportExportFailure]
+        list[GrantaServerApiDataExportExportFailuresExportFailure]
             The failures of this GrantaServerApiDataExportDataExportResponse.
         """
         return self._failures
 
     @failures.setter
     def failures(
-        self, failures: "list[GrantaServerApiDataExportExportFailure]"
+        self, failures: "list[GrantaServerApiDataExportExportFailuresExportFailure]"
     ) -> None:
         """Sets the failures of this GrantaServerApiDataExportDataExportResponse.
         List the records that were requested, but that we failed to export any data for.
 
         Parameters
         ----------
-        failures: list[GrantaServerApiDataExportExportFailure]
+        failures: list[GrantaServerApiDataExportExportFailuresExportFailure]
             The failures of this GrantaServerApiDataExportDataExportResponse.
         """
+        if failures is None:
+            raise ValueError("Invalid value for 'failures', must not be 'None'")
         self._failures = failures
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

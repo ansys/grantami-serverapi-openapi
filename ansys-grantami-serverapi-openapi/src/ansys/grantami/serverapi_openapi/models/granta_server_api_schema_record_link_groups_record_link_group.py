@@ -36,25 +36,27 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
         "guid": "str",
-        "identity": "int",
         "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
         "name": "str",
-        "reverse_display_names": "dict(str, str)",
         "reverse_name": "str",
+        "identity": "int",
+        "reverse_display_names": "dict(str, str)",
     }
 
     attribute_map = {
         "display_names": "displayNames",
         "guid": "guid",
-        "identity": "identity",
         "link_info": "linkInfo",
         "name": "name",
-        "reverse_display_names": "reverseDisplayNames",
         "reverse_name": "reverseName",
+        "identity": "identity",
+        "reverse_display_names": "reverseDisplayNames",
     }
 
     subtype_mapping = {
@@ -67,28 +69,30 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         "crossDatabase".lower(): "#/components/schemas/GrantaServerApiSchemaRecordLinkGroupsCrossDatabaseRecordLinkGroup",
     }
 
+    discriminator = "type"
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        name: "str",
+        reverse_name: "str",
         identity: "Optional[int]" = None,
-        link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None,
-        name: "Optional[str]" = None,
         reverse_display_names: "Optional[Dict[str, str]]" = None,
-        reverse_name: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
+            name: str
+            reverse_name: str
             identity: int, optional
-            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo, optional
-            name: str, optional
             reverse_display_names: Dict[str, str], optional
-            reverse_name: str, optional
         """
         self._link_info = None
         self._identity = None
@@ -97,21 +101,16 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = "type"
-        if link_info is not None:
-            self.link_info = link_info
+
+        self.link_info = link_info
         if identity is not None:
             self.identity = identity
-        if reverse_name is not None:
-            self.reverse_name = reverse_name
+        self.reverse_name = reverse_name
         if reverse_display_names is not None:
             self.reverse_display_names = reverse_display_names
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def link_info(self) -> "GrantaServerApiSchemaRecordLinkGroupsLinkInfo":
@@ -135,6 +134,8 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
             The link_info of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
+        if link_info is None:
+            raise ValueError("Invalid value for 'link_info', must not be 'None'")
         self._link_info = link_info
 
     @property
@@ -179,6 +180,8 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         reverse_name: str
             The reverse_name of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
+        if reverse_name is None:
+            raise ValueError("Invalid value for 'reverse_name', must not be 'None'")
         self._reverse_name = reverse_name
 
     @property
@@ -223,6 +226,8 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -245,6 +250,8 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -267,9 +274,12 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -277,15 +287,16 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

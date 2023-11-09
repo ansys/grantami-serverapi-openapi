@@ -35,14 +35,18 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "guid": "str",
         "identity": "int",
         "name": "str",
         "values": "list[str]",
     }
 
     attribute_map = {
+        "guid": "guid",
         "identity": "identity",
         "name": "name",
         "values": "values",
@@ -50,9 +54,12 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        guid: "Optional[str]" = None,
         identity: "Optional[int]" = None,
         name: "Optional[str]" = None,
         values: "Optional[List[str]]" = None,
@@ -61,16 +68,20 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
 
         Parameters
         ----------
+            guid: str, optional
             identity: int, optional
             name: str, optional
             values: List[str], optional
         """
         self._identity = None
+        self._guid = None
         self._name = None
         self._values = None
-        self.discriminator = None
+
         if identity is not None:
             self.identity = identity
+        if guid is not None:
+            self.guid = guid
         if name is not None:
             self.name = name
         if values is not None:
@@ -97,6 +108,28 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
             The identity of this GrantaServerApiIntegrationSchemaDiscreteType.
         """
         self._identity = identity
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GrantaServerApiIntegrationSchemaDiscreteType.
+
+        Returns
+        -------
+        str
+            The guid of this GrantaServerApiIntegrationSchemaDiscreteType.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GrantaServerApiIntegrationSchemaDiscreteType.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GrantaServerApiIntegrationSchemaDiscreteType.
+        """
+        self._guid = guid
 
     @property
     def name(self) -> "str":
@@ -142,7 +175,8 @@ class GrantaServerApiIntegrationSchemaDiscreteType(ModelBase):
         """
         self._values = values
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

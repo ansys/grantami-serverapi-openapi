@@ -35,6 +35,8 @@ class GrantaServerApiListsDtoPagingOptions(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "page_size": "int",
@@ -47,6 +49,8 @@ class GrantaServerApiListsDtoPagingOptions(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -63,7 +67,7 @@ class GrantaServerApiListsDtoPagingOptions(ModelBase):
         """
         self._start_index = None
         self._page_size = None
-        self.discriminator = None
+
         if start_index is not None:
             self.start_index = start_index
         if page_size is not None:
@@ -117,7 +121,8 @@ class GrantaServerApiListsDtoPagingOptions(ModelBase):
         """
         self._page_size = page_size
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

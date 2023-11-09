@@ -35,53 +35,55 @@ class GrantaServerApiSchemaConfigurationsConfiguration(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "description": "str",
         "guid": "str",
         "name": "str",
+        "description": "str",
         "value": "str",
     }
 
     attribute_map = {
-        "description": "description",
         "guid": "guid",
         "name": "name",
+        "description": "description",
         "value": "value",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        guid: "str",
+        name: "str",
         description: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
         value: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaConfigurationsConfiguration - a model defined in Swagger
 
         Parameters
         ----------
+            guid: str
+            name: str
             description: str, optional
-            guid: str, optional
-            name: str, optional
             value: str, optional
         """
         self._description = None
         self._value = None
         self._name = None
         self._guid = None
-        self.discriminator = None
+
         if description is not None:
             self.description = description
         if value is not None:
             self.value = value
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def description(self) -> "str":
@@ -147,6 +149,8 @@ class GrantaServerApiSchemaConfigurationsConfiguration(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaConfigurationsConfiguration.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -169,9 +173,12 @@ class GrantaServerApiSchemaConfigurationsConfiguration(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaConfigurationsConfiguration.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

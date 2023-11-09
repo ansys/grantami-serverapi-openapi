@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -50,7 +52,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         "is_logarithmic": "bool",
         "is_range": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
         "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
         "series": "list[GrantaServerApiDataExportDatumsSeries]",
         "show_as_table": "bool",
@@ -79,6 +81,8 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         "series": "GrantaServerApiDataExportDatumsSeries",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -90,7 +94,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         is_logarithmic: "Optional[bool]" = None,
         is_range: "Optional[bool]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
         parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
         series: "Optional[List[GrantaServerApiDataExportDatumsSeries]]" = None,
         show_as_table: "Optional[bool]" = None,
@@ -109,7 +113,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             is_logarithmic: bool, optional
             is_range: bool, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
             parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
             series: List[GrantaServerApiDataExportDatumsSeries], optional
             show_as_table: bool, optional
@@ -132,7 +136,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         self._is_logarithmic = None
         self._is_range = None
         self._show_as_table = None
-        self.discriminator = None
+
         self.graph_type = graph_type
         if series is not None:
             self.series = series
@@ -255,7 +259,8 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         """
         self._show_as_table = show_as_table
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

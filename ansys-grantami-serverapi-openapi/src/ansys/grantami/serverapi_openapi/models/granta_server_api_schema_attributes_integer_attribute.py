@@ -40,80 +40,83 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_unique": "bool",
         "name": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "type": "str",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_unique": "isUnique",
         "name": "name",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "type": "type",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        is_unique: "bool",
+        name: "str",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
         axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        is_unique: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "integer",
     ) -> None:
         """GrantaServerApiSchemaAttributesIntegerAttribute - a model defined in Swagger
 
         Parameters
         ----------
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            display_names: Dict[str, str]
+            guid: str
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            is_unique: bool
+            name: str
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
             axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_names: Dict[str, str], optional
-            guid: str, optional
             help_path: str, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            is_unique: bool, optional
-            name: str, optional
             type: str
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._is_unique = None
-        self.discriminator = None
+
         self.type = type
-        if is_unique is not None:
-            self.is_unique = is_unique
+        self.is_unique = is_unique
 
     @property
     def type(self) -> "str":
@@ -142,6 +145,7 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(
     @property
     def is_unique(self) -> "bool":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesIntegerAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Returns
         -------
@@ -153,15 +157,19 @@ class GrantaServerApiSchemaAttributesIntegerAttribute(
     @is_unique.setter
     def is_unique(self, is_unique: "bool") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesIntegerAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Parameters
         ----------
         is_unique: bool
             The is_unique of this GrantaServerApiSchemaAttributesIntegerAttribute.
         """
+        if is_unique is None:
+            raise ValueError("Invalid value for 'is_unique', must not be 'None'")
         self._is_unique = is_unique
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

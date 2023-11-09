@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -47,7 +49,7 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
         "datum_type": "str",
         "datum_value": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
     }
 
     attribute_map = {
@@ -61,6 +63,8 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -69,7 +73,7 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
         datum_type: "str" = "logical",
         datum_value: "Optional[bool]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsBooleanDatum - a model defined in Swagger
 
@@ -80,7 +84,7 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
             datum_type: str
             datum_value: bool, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -90,7 +94,7 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
         )
         self._datum_type = None
         self._datum_value = None
-        self.discriminator = None
+
         self.datum_type = datum_type
         if datum_value is not None:
             self.datum_value = datum_value
@@ -141,7 +145,8 @@ class GrantaServerApiDataExportDatumsBooleanDatum(
         """
         self._datum_value = datum_value
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

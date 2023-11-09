@@ -37,6 +37,8 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "database": "GrantaServerApiObjectIdentifier",
@@ -57,6 +59,8 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(
         "table": "GrantaServerApiObjectIdentifier",
         "mappings": "GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +83,7 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(
         self._database_key = None
         self._table = None
         self._mappings = None
-        self.discriminator = None
+
         if database is not None:
             self.database = database
         if database_key is not None:
@@ -186,7 +190,8 @@ class GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier(
         """
         self._mappings = mappings
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

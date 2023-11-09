@@ -40,6 +40,8 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_guid": "str",
@@ -48,7 +50,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "graph_type": "str",
         "is_estimated": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
-        "not_applicable": "bool",
+        "not_applicable": "str",
         "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
         "points": "list[GrantaServerApiDataExportDatumsGridPoint]",
         "unit_symbol": "str",
@@ -73,6 +75,8 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "points": "GrantaServerApiDataExportDatumsGridPoint",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -82,7 +86,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         graph_type: "str" = "grid",
         is_estimated: "Optional[bool]" = None,
         meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
-        not_applicable: "Optional[bool]" = None,
+        not_applicable: "str" = "applicable",
         parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
         points: "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]" = None,
         unit_symbol: "Optional[str]" = None,
@@ -98,7 +102,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
             graph_type: str
             is_estimated: bool, optional
             meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: bool, optional
+            not_applicable: str
             parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
             points: List[GrantaServerApiDataExportDatumsGridPoint], optional
             unit_symbol: str, optional
@@ -117,7 +121,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         )
         self._graph_type = None
         self._points = None
-        self.discriminator = None
+
         self.graph_type = graph_type
         if points is not None:
             self.points = points
@@ -168,7 +172,8 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         """
         self._points = points
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

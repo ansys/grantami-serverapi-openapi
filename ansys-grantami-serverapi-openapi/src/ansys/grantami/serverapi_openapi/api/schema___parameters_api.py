@@ -410,13 +410,125 @@ class SchemaParametersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get(
+        self, *, database_key: "str", parameter_guid: "str", parameter_value_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
+        """Get a parameter value with a specified guid for a given database for a given parameter.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        parameter_guid: str
+        parameter_value_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaParametersParameterValue, None]
+        """
+        data = self._v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get_with_http_info(
+            database_key,
+            parameter_guid,
+            parameter_value_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[return-value]
+
+    def _v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get_with_http_info(
+        self,
+        database_key: "str",
+        parameter_guid: "str",
+        parameter_value_guid: "str",
+        **kwargs,
+    ):
+        all_params = [
+            "database_key",
+            "parameter_guid",
+            "parameter_value_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get'"
+            )
+        # verify the required parameter "parameter_guid" is set
+        if "parameter_guid" not in params or params["parameter_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'parameter_guid' when calling 'v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get'"
+            )
+        # verify the required parameter "parameter_value_guid" is set
+        if (
+            "parameter_value_guid" not in params
+            or params["parameter_value_guid"] is None
+        ):
+            raise ValueError(
+                "Missing the required parameter 'parameter_value_guid' when calling 'v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_get'"
+            )
+
+        collection_formats = {}
+
+        path_params = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "parameter_guid" in params and parameter_guid is not None:
+            path_params["parameter-guid"] = params["parameter_guid"]
+        if "parameter_value_guid" in params and parameter_value_guid is not None:
+            path_params["parameter-value-guid"] = params["parameter_value_guid"]
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaParametersParameterValue",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values/{parameter-value-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_patch(
         self,
         *,
         database_key: "str",
         parameter_guid: "str",
         parameter_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValue]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersUpdateParameterValue]" = None,
     ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
         """Update a parameter value.
 
@@ -427,7 +539,7 @@ class SchemaParametersApi(ApiBase):
         database_key: str
         parameter_guid: str
         parameter_value_guid: str
-        body: GrantaServerApiSchemaParametersParameterValue
+        body: GrantaServerApiSchemaParametersUpdateParameterValue
 
         Returns
         -------
@@ -447,7 +559,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         parameter_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValue]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersUpdateParameterValue]" = None,
         **kwargs,
     ):
         all_params = [
@@ -550,7 +662,7 @@ class SchemaParametersApi(ApiBase):
         *,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValue]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersCreateParameterValue]" = None,
     ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
         """Create a new parameter value.
 
@@ -560,7 +672,7 @@ class SchemaParametersApi(ApiBase):
         ----------
         database_key: str
         parameter_guid: str
-        body: GrantaServerApiSchemaParametersParameterValue
+        body: GrantaServerApiSchemaParametersCreateParameterValue
 
         Returns
         -------
@@ -575,7 +687,7 @@ class SchemaParametersApi(ApiBase):
         self,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValue]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersCreateParameterValue]" = None,
         **kwargs,
     ):
         all_params = [
@@ -640,8 +752,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaParametersParameterValue",
-            201: None,
+            201: "GrantaServerApiSchemaParametersParameterValue",
             400: None,
             403: None,
             404: None,
@@ -650,123 +761,6 @@ class SchemaParametersApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values",
             "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put(
-        self,
-        *,
-        database_key: "str",
-        parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValuesInfo]" = None,
-    ) -> "Union[GrantaServerApiSchemaParametersParameterValuesInfo, None]":
-        """Replace the whole parameter value collection for a given parameter.  This will result in adding, modifying and deleting parameter values. If any of those operations fail, the whole operation fails.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        parameter_guid: str
-        body: GrantaServerApiSchemaParametersParameterValuesInfo
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaParametersParameterValuesInfo, None]
-        """
-        data = self._v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put_with_http_info(
-            database_key, parameter_guid, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[return-value]
-
-    def _v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put_with_http_info(
-        self,
-        database_key: "str",
-        parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameterValuesInfo]" = None,
-        **kwargs,
-    ):
-        all_params = [
-            "database_key",
-            "parameter_guid",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put'"
-            )
-        # verify the required parameter "parameter_guid" is set
-        if "parameter_guid" not in params or params["parameter_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'parameter_guid' when calling 'v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_put'"
-            )
-
-        collection_formats = {}
-
-        path_params = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "parameter_guid" in params and parameter_guid is not None:
-            path_params["parameter-guid"] = params["parameter_guid"]
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaParametersParameterValuesInfo",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/parameters/{parameter-guid}/parameter-values",
-            "PUT",
             path_params,
             query_params,
             header_params,
@@ -994,7 +988,7 @@ class SchemaParametersApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameter]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersCreateParameter]" = None,
     ) -> "Union[GrantaServerApiSchemaParametersParameter, None]":
         """Create a new parameter.
 
@@ -1003,7 +997,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaParametersParameter
+        body: GrantaServerApiSchemaParametersCreateParameter
 
         Returns
         -------
@@ -1017,7 +1011,7 @@ class SchemaParametersApi(ApiBase):
     def _v1alpha_databases_database_key_parameters_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaParametersParameter]" = None,
+        body: "Optional[GrantaServerApiSchemaParametersCreateParameter]" = None,
         **kwargs,
     ):
         all_params = [
@@ -1074,7 +1068,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaParametersParameter",
+            201: "GrantaServerApiSchemaParametersParameter",
             400: None,
             403: None,
             404: None,

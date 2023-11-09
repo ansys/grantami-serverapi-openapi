@@ -40,50 +40,53 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "link_group_guid": "str",
         "forwards": "bool",
         "guid": "str",
         "item_type": "str",
-        "link_group_guid": "str",
     }
 
     attribute_map = {
+        "link_group_guid": "linkGroupGuid",
         "forwards": "forwards",
         "guid": "guid",
         "item_type": "itemType",
-        "link_group_guid": "linkGroupGuid",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        link_group_guid: "str",
         forwards: "Optional[bool]" = None,
         guid: "Optional[str]" = None,
         item_type: "str" = "smartLink",
-        link_group_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem - a model defined in Swagger
 
         Parameters
         ----------
+            link_group_guid: str
             forwards: bool, optional
             guid: str, optional
             item_type: str
-            link_group_guid: str, optional
         """
         super().__init__(guid=guid)
         self._item_type = None
         self._forwards = None
         self._link_group_guid = None
-        self.discriminator = None
+
         self.item_type = item_type
         if forwards is not None:
             self.forwards = forwards
-        if link_group_guid is not None:
-            self.link_group_guid = link_group_guid
+        self.link_group_guid = link_group_guid
 
     @property
     def item_type(self) -> "str":
@@ -151,9 +154,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
         link_group_guid: str
             The link_group_guid of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
         """
+        if link_group_guid is None:
+            raise ValueError("Invalid value for 'link_group_guid', must not be 'None'")
         self._link_group_guid = link_group_guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

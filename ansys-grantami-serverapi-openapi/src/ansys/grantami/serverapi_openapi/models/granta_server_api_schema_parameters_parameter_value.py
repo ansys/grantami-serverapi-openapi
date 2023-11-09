@@ -36,17 +36,15 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "guid": "str",
-        "is_default": "bool",
-        "name": "str",
     }
 
     attribute_map = {
         "guid": "guid",
-        "is_default": "isDefault",
-        "name": "name",
     }
 
     subtype_mapping = {}
@@ -56,75 +54,22 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersNumericParameterValue",
     }
 
+    discriminator = "type"
+
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        is_default: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        guid: "str",
     ) -> None:
         """GrantaServerApiSchemaParametersParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            is_default: bool, optional
-            name: str, optional
+            guid: str
         """
-        self._is_default = None
-        self._name = None
         self._guid = None
-        self.discriminator = "type"
-        if is_default is not None:
-            self.is_default = is_default
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
 
-    @property
-    def is_default(self) -> "bool":
-        """Gets the is_default of this GrantaServerApiSchemaParametersParameterValue.
-
-        Returns
-        -------
-        bool
-            The is_default of this GrantaServerApiSchemaParametersParameterValue.
-        """
-        return self._is_default
-
-    @is_default.setter
-    def is_default(self, is_default: "bool") -> None:
-        """Sets the is_default of this GrantaServerApiSchemaParametersParameterValue.
-
-        Parameters
-        ----------
-        is_default: bool
-            The is_default of this GrantaServerApiSchemaParametersParameterValue.
-        """
-        self._is_default = is_default
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GrantaServerApiSchemaParametersParameterValue.
-
-        Returns
-        -------
-        str
-            The name of this GrantaServerApiSchemaParametersParameterValue.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GrantaServerApiSchemaParametersParameterValue.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GrantaServerApiSchemaParametersParameterValue.
-        """
-        self._name = name
+        self.guid = guid
 
     @property
     def guid(self) -> "str":
@@ -146,9 +91,12 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaParametersParameterValue.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -156,15 +104,16 @@ class GrantaServerApiSchemaParametersParameterValue(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

@@ -35,68 +35,41 @@ class GrantaServerApiSchemaSlimEntitiesSlimExpression(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
     }
 
     attribute_map = {
-        "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        guid: "str",
+        name: "str",
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimExpression - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
-            name: str, optional
+            guid: str
+            name: str
         """
-        self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = None
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
 
-    @property
-    def display_names(self) -> "dict(str, str)":
-        """Gets the display_names of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
-
-        Returns
-        -------
-        dict(str, str)
-            The display_names of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict(str, str)") -> None:
-        """Sets the display_names of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
-
-        Parameters
-        ----------
-        display_names: dict(str, str)
-            The display_names of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
-        """
-        self._display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def name(self) -> "str":
@@ -118,6 +91,8 @@ class GrantaServerApiSchemaSlimEntitiesSlimExpression(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -140,9 +115,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimExpression(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaSlimEntitiesSlimExpression.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

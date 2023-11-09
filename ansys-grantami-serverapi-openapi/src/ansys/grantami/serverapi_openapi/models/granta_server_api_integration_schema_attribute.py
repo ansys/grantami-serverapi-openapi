@@ -35,15 +35,19 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "type": "GrantaServerApiAttributeType",
+        "discrete_type_guid": "str",
         "discrete_type_identity": "int",
         "graph_type": "str",
+        "guid": "str",
         "identity": "int",
         "is_unitted": "bool",
         "name": "str",
-        "parameters": "list[GrantaServerApiParameterInfo]",
+        "parameters": "list[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]",
         "target_database": "GrantaServerApiObjectIdentifier",
         "target_table": "GrantaServerApiObjectIdentifier",
         "unit_symbol": "str",
@@ -52,8 +56,10 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
 
     attribute_map = {
         "type": "type",
+        "discrete_type_guid": "discreteTypeGuid",
         "discrete_type_identity": "discreteTypeIdentity",
         "graph_type": "graphType",
+        "guid": "guid",
         "identity": "identity",
         "is_unitted": "isUnitted",
         "name": "name",
@@ -66,21 +72,25 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
 
     subtype_mapping = {
         "type": "GrantaServerApiAttributeType",
-        "parameters": "GrantaServerApiParameterInfo",
+        "parameters": "GrantaServerApiIntegrationSchemaIntegrationParameterInfo",
         "targetDatabase": "GrantaServerApiObjectIdentifier",
         "targetTable": "GrantaServerApiObjectIdentifier",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
         type: "GrantaServerApiAttributeType",
+        discrete_type_guid: "Optional[str]" = None,
         discrete_type_identity: "Optional[int]" = None,
         graph_type: "Optional[str]" = None,
+        guid: "Optional[str]" = None,
         identity: "Optional[int]" = None,
         is_unitted: "Optional[bool]" = None,
         name: "Optional[str]" = None,
-        parameters: "Optional[List[GrantaServerApiParameterInfo]]" = None,
+        parameters: "Optional[List[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]]" = None,
         target_database: "Optional[GrantaServerApiObjectIdentifier]" = None,
         target_table: "Optional[GrantaServerApiObjectIdentifier]" = None,
         unit_symbol: "Optional[str]" = None,
@@ -91,12 +101,14 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         Parameters
         ----------
             type: GrantaServerApiAttributeType
+            discrete_type_guid: str, optional
             discrete_type_identity: int, optional
             graph_type: str, optional
+            guid: str, optional
             identity: int, optional
             is_unitted: bool, optional
             name: str, optional
-            parameters: List[GrantaServerApiParameterInfo], optional
+            parameters: List[GrantaServerApiIntegrationSchemaIntegrationParameterInfo], optional
             target_database: GrantaServerApiObjectIdentifier, optional
             target_table: GrantaServerApiObjectIdentifier, optional
             unit_symbol: str, optional
@@ -104,20 +116,24 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         """
         self._name = None
         self._identity = None
+        self._guid = None
         self._type = None
         self._unit_symbol = None
         self._is_unitted = None
         self._discrete_type_identity = None
+        self._discrete_type_guid = None
         self._parameters = None
         self._target_database = None
         self._target_table = None
         self._graph_type = None
         self._x_axis_parameter = None
-        self.discriminator = None
+
         if name is not None:
             self.name = name
         if identity is not None:
             self.identity = identity
+        if guid is not None:
+            self.guid = guid
         self.type = type
         if unit_symbol is not None:
             self.unit_symbol = unit_symbol
@@ -125,6 +141,8 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
             self.is_unitted = is_unitted
         if discrete_type_identity is not None:
             self.discrete_type_identity = discrete_type_identity
+        if discrete_type_guid is not None:
+            self.discrete_type_guid = discrete_type_guid
         if parameters is not None:
             self.parameters = parameters
         if target_database is not None:
@@ -179,6 +197,30 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
             The identity of this GrantaServerApiIntegrationSchemaAttribute.
         """
         self._identity = identity
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GrantaServerApiIntegrationSchemaAttribute.
+        Set as nullable for older schema compatibility,  but we expect it to be set almost everywhere,  except during loading from disk.
+
+        Returns
+        -------
+        str
+            The guid of this GrantaServerApiIntegrationSchemaAttribute.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GrantaServerApiIntegrationSchemaAttribute.
+        Set as nullable for older schema compatibility,  but we expect it to be set almost everywhere,  except during loading from disk.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GrantaServerApiIntegrationSchemaAttribute.
+        """
+        self._guid = guid
 
     @property
     def type(self) -> "GrantaServerApiAttributeType":
@@ -253,7 +295,6 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
     @property
     def discrete_type_identity(self) -> "int":
         """Gets the discrete_type_identity of this GrantaServerApiIntegrationSchemaAttribute.
-        A discrete attribute must define the identity of its discrete type (i.e. list of possible values)
 
         Returns
         -------
@@ -265,7 +306,6 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
     @discrete_type_identity.setter
     def discrete_type_identity(self, discrete_type_identity: "int") -> None:
         """Sets the discrete_type_identity of this GrantaServerApiIntegrationSchemaAttribute.
-        A discrete attribute must define the identity of its discrete type (i.e. list of possible values)
 
         Parameters
         ----------
@@ -275,25 +315,54 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         self._discrete_type_identity = discrete_type_identity
 
     @property
-    def parameters(self) -> "list[GrantaServerApiParameterInfo]":
+    def discrete_type_guid(self) -> "str":
+        """Gets the discrete_type_guid of this GrantaServerApiIntegrationSchemaAttribute.
+        A discrete attribute must define the guid of its discrete type (i.e. list of possible values)
+
+        Returns
+        -------
+        str
+            The discrete_type_guid of this GrantaServerApiIntegrationSchemaAttribute.
+        """
+        return self._discrete_type_guid
+
+    @discrete_type_guid.setter
+    def discrete_type_guid(self, discrete_type_guid: "str") -> None:
+        """Sets the discrete_type_guid of this GrantaServerApiIntegrationSchemaAttribute.
+        A discrete attribute must define the guid of its discrete type (i.e. list of possible values)
+
+        Parameters
+        ----------
+        discrete_type_guid: str
+            The discrete_type_guid of this GrantaServerApiIntegrationSchemaAttribute.
+        """
+        self._discrete_type_guid = discrete_type_guid
+
+    @property
+    def parameters(
+        self,
+    ) -> "list[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]":
         """Gets the parameters of this GrantaServerApiIntegrationSchemaAttribute.
         A float functional attribute must define a list of parameters.
 
         Returns
         -------
-        list[GrantaServerApiParameterInfo]
+        list[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]
             The parameters of this GrantaServerApiIntegrationSchemaAttribute.
         """
         return self._parameters
 
     @parameters.setter
-    def parameters(self, parameters: "list[GrantaServerApiParameterInfo]") -> None:
+    def parameters(
+        self,
+        parameters: "list[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]",
+    ) -> None:
         """Sets the parameters of this GrantaServerApiIntegrationSchemaAttribute.
         A float functional attribute must define a list of parameters.
 
         Parameters
         ----------
-        parameters: list[GrantaServerApiParameterInfo]
+        parameters: list[GrantaServerApiIntegrationSchemaIntegrationParameterInfo]
             The parameters of this GrantaServerApiIntegrationSchemaAttribute.
         """
         self._parameters = parameters
@@ -392,7 +461,8 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         """
         self._x_axis_parameter = x_axis_parameter
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

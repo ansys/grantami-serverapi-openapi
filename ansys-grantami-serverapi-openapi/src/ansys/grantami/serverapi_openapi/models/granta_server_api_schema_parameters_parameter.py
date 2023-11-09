@@ -36,19 +36,23 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         The key is the unmangled property name and the value is the corresponding type.
     discriminator_class_map: Dict[str, str]
         They key is discriminator value and the value is associated subtype.
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "name": "str",
+        "help_path": "str",
     }
 
     attribute_map = {
+        "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "name": "name",
+        "help_path": "helpPath",
     }
 
     subtype_mapping = {}
@@ -58,36 +62,39 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         "numeric".lower(): "#/components/schemas/GrantaServerApiSchemaParametersNumericParameter",
     }
 
+    discriminator = "type"
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        default_parameter_value_guid: "str",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        name: "str",
         help_path: "Optional[str]" = None,
-        name: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiSchemaParametersParameter - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            default_parameter_value_guid: str
+            display_names: Dict[str, str]
+            guid: str
+            name: str
             help_path: str, optional
-            name: str, optional
         """
         self._help_path = None
+        self._default_parameter_value_guid = None
         self._display_names = None
         self._name = None
         self._guid = None
-        self.discriminator = "type"
+
         if help_path is not None:
             self.help_path = help_path
-        if display_names is not None:
-            self.display_names = display_names
-        if name is not None:
-            self.name = name
-        if guid is not None:
-            self.guid = guid
+        self.default_parameter_value_guid = default_parameter_value_guid
+        self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
     def help_path(self) -> "str":
@@ -112,6 +119,32 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         self._help_path = help_path
 
     @property
+    def default_parameter_value_guid(self) -> "str":
+        """Gets the default_parameter_value_guid of this GrantaServerApiSchemaParametersParameter.
+
+        Returns
+        -------
+        str
+            The default_parameter_value_guid of this GrantaServerApiSchemaParametersParameter.
+        """
+        return self._default_parameter_value_guid
+
+    @default_parameter_value_guid.setter
+    def default_parameter_value_guid(self, default_parameter_value_guid: "str") -> None:
+        """Sets the default_parameter_value_guid of this GrantaServerApiSchemaParametersParameter.
+
+        Parameters
+        ----------
+        default_parameter_value_guid: str
+            The default_parameter_value_guid of this GrantaServerApiSchemaParametersParameter.
+        """
+        if default_parameter_value_guid is None:
+            raise ValueError(
+                "Invalid value for 'default_parameter_value_guid', must not be 'None'"
+            )
+        self._default_parameter_value_guid = default_parameter_value_guid
+
+    @property
     def display_names(self) -> "dict(str, str)":
         """Gets the display_names of this GrantaServerApiSchemaParametersParameter.
 
@@ -131,6 +164,8 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         display_names: dict(str, str)
             The display_names of this GrantaServerApiSchemaParametersParameter.
         """
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
         self._display_names = display_names
 
     @property
@@ -153,6 +188,8 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         name: str
             The name of this GrantaServerApiSchemaParametersParameter.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -175,9 +212,12 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         guid: str
             The guid of this GrantaServerApiSchemaParametersParameter.
         """
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -185,15 +225,16 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[self._get_discriminator_field_name()]).lower()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return self.discriminator_value_class_map.get(discriminator_value).rsplit(
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
             "/", 1
         )[-1]
 
-    def _get_discriminator_field_name(self) -> str:
-        name_tokens = self.discriminator.split("_")
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 

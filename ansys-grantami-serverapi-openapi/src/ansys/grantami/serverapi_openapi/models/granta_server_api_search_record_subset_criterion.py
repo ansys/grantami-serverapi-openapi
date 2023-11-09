@@ -38,6 +38,8 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "subset_guid": "str",
@@ -52,6 +54,8 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -72,7 +76,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         self._subset_identity = None
         self._subset_guid = None
         self._type = None
-        self.discriminator = None
+
         if subset_identity is not None:
             self.subset_identity = subset_identity
         if subset_guid is not None:
@@ -147,7 +151,8 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

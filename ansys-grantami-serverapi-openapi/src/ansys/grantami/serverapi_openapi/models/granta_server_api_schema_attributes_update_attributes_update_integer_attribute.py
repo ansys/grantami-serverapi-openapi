@@ -40,9 +40,11 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -65,10 +67,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
         axis_name: "Optional[str]" = None,
         default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
         guid: "Optional[str]" = None,
@@ -81,7 +85,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
             axis_name: str, optional
             default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
             guid: str, optional
@@ -100,7 +104,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
         )
         self._type = None
         self._is_unique = None
-        self.discriminator = None
+
         self.type = type
         if is_unique is not None:
             self.is_unique = is_unique
@@ -132,6 +136,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
     @property
     def is_unique(self) -> "bool":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Returns
         -------
@@ -143,6 +148,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
     @is_unique.setter
     def is_unique(self, is_unique: "bool") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute.
+        Whether or not the attribute is constrained to contain a unique value
 
         Parameters
         ----------
@@ -151,7 +157,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateIntegerAttribute(
         """
         self._is_unique = is_unique
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

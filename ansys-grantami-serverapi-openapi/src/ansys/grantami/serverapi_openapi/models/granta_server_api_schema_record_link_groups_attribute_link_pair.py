@@ -35,6 +35,8 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "attribute_source": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
@@ -51,6 +53,8 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
         "attributeTarget": "GrantaServerApiSchemaSlimEntitiesSlimAttribute",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
@@ -66,7 +70,7 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
         """
         self._attribute_source = None
         self._attribute_target = None
-        self.discriminator = None
+
         if attribute_source is not None:
             self.attribute_source = attribute_source
         if attribute_target is not None:
@@ -120,7 +124,8 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
         """
         self._attribute_target = attribute_target
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

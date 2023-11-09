@@ -116,7 +116,7 @@ class SchemaDataRulesApi(ApiBase):
 
     def v1alpha_databases_database_key_data_rules_data_rule_guid_get(
         self, *, database_key: "str", data_rule_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDataRule, None]":
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
         """Gets a data rule for a given database and guid.
 
         This method makes a synchronous HTTP request.
@@ -128,7 +128,7 @@ class SchemaDataRulesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRule, None]
+        Union[GrantaServerApiSchemaDataRulesDataRule, None]
         """
         data = self._v1alpha_databases_database_key_data_rules_data_rule_guid_get_with_http_info(
             database_key, data_rule_guid, _return_http_data_only=True
@@ -187,7 +187,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDataRule",
+            200: "GrantaServerApiSchemaDataRulesDataRule",
             404: None,
         }
 
@@ -212,8 +212,8 @@ class SchemaDataRulesApi(ApiBase):
         *,
         database_key: "str",
         data_rule_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateDataRule]" = None,
-    ) -> "Union[GrantaServerApiSchemaDataRule, None]":
+        body: "Optional[GrantaServerApiSchemaDataRulesUpdateDataRule]" = None,
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
         """Edit a data rule
 
         This method makes a synchronous HTTP request.
@@ -222,11 +222,11 @@ class SchemaDataRulesApi(ApiBase):
         ----------
         database_key: str
         data_rule_guid: str
-        body: GrantaServerApiSchemaUpdateDataRule
+        body: GrantaServerApiSchemaDataRulesUpdateDataRule
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRule, None]
+        Union[GrantaServerApiSchemaDataRulesDataRule, None]
         """
         data = self._v1alpha_databases_database_key_data_rules_data_rule_guid_patch_with_http_info(
             database_key, data_rule_guid, body, _return_http_data_only=True
@@ -237,7 +237,7 @@ class SchemaDataRulesApi(ApiBase):
         self,
         database_key: "str",
         data_rule_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateDataRule]" = None,
+        body: "Optional[GrantaServerApiSchemaDataRulesUpdateDataRule]" = None,
         **kwargs,
     ):
         all_params = [
@@ -302,7 +302,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDataRule",
+            200: "GrantaServerApiSchemaDataRulesDataRule",
             400: None,
             403: None,
             404: None,
@@ -326,7 +326,7 @@ class SchemaDataRulesApi(ApiBase):
 
     def v1alpha_databases_database_key_data_rules_get(
         self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDataRulesInfo, None]":
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]":
         """Gets all data rules for a given database.
 
         This method makes a synchronous HTTP request.
@@ -337,7 +337,7 @@ class SchemaDataRulesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRulesInfo, None]
+        Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]
         """
         data = self._v1alpha_databases_database_key_data_rules_get_with_http_info(
             database_key, _return_http_data_only=True
@@ -388,7 +388,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDataRulesInfo",
+            200: "GrantaServerApiSchemaDataRulesDataRulesInfo",
             404: None,
         }
 
@@ -412,8 +412,8 @@ class SchemaDataRulesApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRule]" = None,
-    ) -> "Union[GrantaServerApiSchemaDataRule, None]":
+        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
         """Create a new data rule
 
         This method makes a synchronous HTTP request.
@@ -421,11 +421,11 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaDataRule
+        body: GrantaServerApiSchemaDataRulesCreateDataRule
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRule, None]
+        Union[GrantaServerApiSchemaDataRulesDataRule, None]
         """
         data = self._v1alpha_databases_database_key_data_rules_post_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -435,7 +435,7 @@ class SchemaDataRulesApi(ApiBase):
     def _v1alpha_databases_database_key_data_rules_post_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRule]" = None,
+        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
         **kwargs,
     ):
         all_params = [
@@ -492,7 +492,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaDataRule",
+            201: "GrantaServerApiSchemaDataRulesDataRule",
             400: None,
             403: None,
             404: None,

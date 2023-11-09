@@ -35,6 +35,8 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "keep_alive_in_minutes": "int",
@@ -49,6 +51,8 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
     }
 
     subtype_mapping = {}
+
+    discriminator = None
 
     def __init__(
         self,
@@ -68,7 +72,7 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
         self._page_size = None
         self._keep_alive_in_minutes = None
         self._page_number = None
-        self.discriminator = None
+
         if page_size is not None:
             self.page_size = page_size
         if keep_alive_in_minutes is not None:
@@ -148,7 +152,8 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
         """
         self._page_number = page_number
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

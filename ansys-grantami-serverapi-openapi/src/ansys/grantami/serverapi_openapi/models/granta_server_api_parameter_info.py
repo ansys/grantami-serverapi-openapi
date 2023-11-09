@@ -35,14 +35,16 @@ class GrantaServerApiParameterInfo(ModelBase):
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "default_value": "GrantaServerApiDataExportDatumsParameterValue",
         "identity": "int",
-        "interpolation_type": "str",
+        "interpolation_type": "GrantaServerApiParameterInfoInterpolationType",
         "name": "str",
-        "parameter_type": "str",
-        "scale_type": "str",
+        "parameter_type": "GrantaServerApiParameterInfoParameterType",
+        "scale_type": "GrantaServerApiParameterInfoScaleType",
         "unit_symbol": "str",
     }
 
@@ -57,18 +59,23 @@ class GrantaServerApiParameterInfo(ModelBase):
     }
 
     subtype_mapping = {
+        "scaleType": "GrantaServerApiParameterInfoScaleType",
+        "interpolationType": "GrantaServerApiParameterInfoInterpolationType",
+        "parameterType": "GrantaServerApiParameterInfoParameterType",
         "defaultValue": "GrantaServerApiDataExportDatumsParameterValue",
     }
+
+    discriminator = None
 
     def __init__(
         self,
         *,
         default_value: "Optional[GrantaServerApiDataExportDatumsParameterValue]" = None,
         identity: "Optional[int]" = None,
-        interpolation_type: "Optional[str]" = None,
+        interpolation_type: "Optional[GrantaServerApiParameterInfoInterpolationType]" = None,
         name: "Optional[str]" = None,
-        parameter_type: "Optional[str]" = None,
-        scale_type: "Optional[str]" = None,
+        parameter_type: "Optional[GrantaServerApiParameterInfoParameterType]" = None,
+        scale_type: "Optional[GrantaServerApiParameterInfoScaleType]" = None,
         unit_symbol: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiParameterInfo - a model defined in Swagger
@@ -77,10 +84,10 @@ class GrantaServerApiParameterInfo(ModelBase):
         ----------
             default_value: GrantaServerApiDataExportDatumsParameterValue, optional
             identity: int, optional
-            interpolation_type: str, optional
+            interpolation_type: GrantaServerApiParameterInfoInterpolationType, optional
             name: str, optional
-            parameter_type: str, optional
-            scale_type: str, optional
+            parameter_type: GrantaServerApiParameterInfoParameterType, optional
+            scale_type: GrantaServerApiParameterInfoScaleType, optional
             unit_symbol: str, optional
         """
         self._name = None
@@ -90,7 +97,7 @@ class GrantaServerApiParameterInfo(ModelBase):
         self._interpolation_type = None
         self._parameter_type = None
         self._default_value = None
-        self.discriminator = None
+
         if name is not None:
             self.name = name
         if identity is not None:
@@ -173,71 +180,71 @@ class GrantaServerApiParameterInfo(ModelBase):
         self._unit_symbol = unit_symbol
 
     @property
-    def scale_type(self) -> "str":
+    def scale_type(self) -> "GrantaServerApiParameterInfoScaleType":
         """Gets the scale_type of this GrantaServerApiParameterInfo.
-        Linear or Log
 
         Returns
         -------
-        str
+        GrantaServerApiParameterInfoScaleType
             The scale_type of this GrantaServerApiParameterInfo.
         """
         return self._scale_type
 
     @scale_type.setter
-    def scale_type(self, scale_type: "str") -> None:
+    def scale_type(self, scale_type: "GrantaServerApiParameterInfoScaleType") -> None:
         """Sets the scale_type of this GrantaServerApiParameterInfo.
-        Linear or Log
 
         Parameters
         ----------
-        scale_type: str
+        scale_type: GrantaServerApiParameterInfoScaleType
             The scale_type of this GrantaServerApiParameterInfo.
         """
         self._scale_type = scale_type
 
     @property
-    def interpolation_type(self) -> "str":
+    def interpolation_type(self) -> "GrantaServerApiParameterInfoInterpolationType":
         """Gets the interpolation_type of this GrantaServerApiParameterInfo.
-        Auto, None, Linear or CubicSpline
 
         Returns
         -------
-        str
+        GrantaServerApiParameterInfoInterpolationType
             The interpolation_type of this GrantaServerApiParameterInfo.
         """
         return self._interpolation_type
 
     @interpolation_type.setter
-    def interpolation_type(self, interpolation_type: "str") -> None:
+    def interpolation_type(
+        self, interpolation_type: "GrantaServerApiParameterInfoInterpolationType"
+    ) -> None:
         """Sets the interpolation_type of this GrantaServerApiParameterInfo.
-        Auto, None, Linear or CubicSpline
 
         Parameters
         ----------
-        interpolation_type: str
+        interpolation_type: GrantaServerApiParameterInfoInterpolationType
             The interpolation_type of this GrantaServerApiParameterInfo.
         """
         self._interpolation_type = interpolation_type
 
     @property
-    def parameter_type(self) -> "str":
+    def parameter_type(self) -> "GrantaServerApiParameterInfoParameterType":
         """Gets the parameter_type of this GrantaServerApiParameterInfo.
 
         Returns
         -------
-        str
+        GrantaServerApiParameterInfoParameterType
             The parameter_type of this GrantaServerApiParameterInfo.
         """
         return self._parameter_type
 
     @parameter_type.setter
-    def parameter_type(self, parameter_type: "str") -> None:
+    def parameter_type(
+        self, parameter_type: "GrantaServerApiParameterInfoParameterType"
+    ) -> None:
         """Sets the parameter_type of this GrantaServerApiParameterInfo.
 
         Parameters
         ----------
-        parameter_type: str
+        parameter_type: GrantaServerApiParameterInfoParameterType
             The parameter_type of this GrantaServerApiParameterInfo.
         """
         self._parameter_type = parameter_type
@@ -266,7 +273,8 @@ class GrantaServerApiParameterInfo(ModelBase):
         """
         self._default_value = default_value
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

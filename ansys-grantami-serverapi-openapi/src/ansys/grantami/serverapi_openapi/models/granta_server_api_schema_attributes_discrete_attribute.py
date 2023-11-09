@@ -40,32 +40,34 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
-        "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "display_names": "dict(str, str)",
         "guid": "str",
-        "help_path": "str",
         "info": "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         "is_multi_valued": "bool",
         "name": "str",
+        "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        "axis_name": "str",
+        "help_path": "str",
         "type": "str",
     }
 
     attribute_map = {
-        "about_attribute": "aboutAttribute",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
         "display_names": "displayNames",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_multi_valued": "isMultiValued",
         "name": "name",
+        "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
+        "help_path": "helpPath",
         "type": "type",
     }
 
@@ -73,56 +75,56 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
+        display_names: "Dict[str, str]",
+        guid: "str",
+        info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
+        is_multi_valued: "bool",
+        name: "str",
         about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
         axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
         help_path: "Optional[str]" = None,
-        info: "Optional[GrantaServerApiSchemaAttributesAttributeAttributeInfo]" = None,
-        is_multi_valued: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaAttributesDiscreteAttribute - a model defined in Swagger
 
         Parameters
         ----------
+            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+            display_names: Dict[str, str]
+            guid: str
+            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+            is_multi_valued: bool
+            name: str
             about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
             axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            display_names: Dict[str, str], optional
-            guid: str, optional
             help_path: str, optional
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo, optional
-            is_multi_valued: bool, optional
-            name: str, optional
             type: str
         """
         super().__init__(
-            about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
-            help_path=help_path,
             info=info,
             name=name,
+            about_attribute=about_attribute,
+            axis_name=axis_name,
+            help_path=help_path,
         )
         self._type = None
         self._discrete_type = None
         self._is_multi_valued = None
-        self.discriminator = None
+
         self.type = type
-        if discrete_type is not None:
-            self.discrete_type = discrete_type
-        if is_multi_valued is not None:
-            self.is_multi_valued = is_multi_valued
+        self.discrete_type = discrete_type
+        self.is_multi_valued = is_multi_valued
 
     @property
     def type(self) -> "str":
@@ -170,6 +172,8 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The discrete_type of this GrantaServerApiSchemaAttributesDiscreteAttribute.
         """
+        if discrete_type is None:
+            raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         self._discrete_type = discrete_type
 
     @property
@@ -192,9 +196,12 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         is_multi_valued: bool
             The is_multi_valued of this GrantaServerApiSchemaAttributesDiscreteAttribute.
         """
+        if is_multi_valued is None:
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         self._is_multi_valued = is_multi_valued
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

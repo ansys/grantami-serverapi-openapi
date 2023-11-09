@@ -37,11 +37,14 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "link_source_type": "GrantaServerApiIntegrationSchemaLinkSourceType",
         "parameter_mappings": "list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]",
         "source": "GrantaServerApiObjectIdentifier",
+        "target_guid": "str",
         "target_identity": "int",
     }
 
@@ -49,6 +52,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
         "link_source_type": "linkSourceType",
         "parameter_mappings": "parameterMappings",
         "source": "source",
+        "target_guid": "targetGuid",
         "target_identity": "targetIdentity",
     }
 
@@ -58,12 +62,15 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
         "linkSourceType": "GrantaServerApiIntegrationSchemaLinkSourceType",
     }
 
+    discriminator = None
+
     def __init__(
         self,
         *,
         link_source_type: "Optional[GrantaServerApiIntegrationSchemaLinkSourceType]" = None,
         parameter_mappings: "Optional[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]]" = None,
         source: "Optional[GrantaServerApiObjectIdentifier]" = None,
+        target_guid: "Optional[str]" = None,
         target_identity: "Optional[int]" = None,
     ) -> None:
         """GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier - a model defined in Swagger
@@ -73,17 +80,21 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
             link_source_type: GrantaServerApiIntegrationSchemaLinkSourceType, optional
             parameter_mappings: List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], optional
             source: GrantaServerApiObjectIdentifier, optional
+            target_guid: str, optional
             target_identity: int, optional
         """
         self._source = None
         self._target_identity = None
+        self._target_guid = None
         self._parameter_mappings = None
         self._link_source_type = None
-        self.discriminator = None
+
         if source is not None:
             self.source = source
         if target_identity is not None:
             self.target_identity = target_identity
+        if target_guid is not None:
+            self.target_guid = target_guid
         if parameter_mappings is not None:
             self.parameter_mappings = parameter_mappings
         if link_source_type is not None:
@@ -134,6 +145,30 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
             The target_identity of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
         """
         self._target_identity = target_identity
+
+    @property
+    def target_guid(self) -> "str":
+        """Gets the target_guid of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
+        The guid of the integration schema attribute
+
+        Returns
+        -------
+        str
+            The target_guid of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
+        """
+        return self._target_guid
+
+    @target_guid.setter
+    def target_guid(self, target_guid: "str") -> None:
+        """Sets the target_guid of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
+        The guid of the integration schema attribute
+
+        Parameters
+        ----------
+        target_guid: str
+            The target_guid of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
+        """
+        self._target_guid = target_guid
 
     @property
     def parameter_mappings(
@@ -190,7 +225,8 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(
         """
         self._link_source_type = link_source_type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

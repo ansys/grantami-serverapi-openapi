@@ -40,6 +40,8 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "any_guids": "list[str]",
@@ -58,6 +60,8 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     subtype_mapping = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
+
+    discriminator = None
 
     def __init__(
         self,
@@ -81,7 +85,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         self._any_guids = None
         self._type = None
         self._constraints = None
-        self.discriminator = None
+
         if any_identities is not None:
             self.any_identities = any_identities
         if any_guids is not None:
@@ -188,7 +192,8 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         """
         self._constraints = constraints
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

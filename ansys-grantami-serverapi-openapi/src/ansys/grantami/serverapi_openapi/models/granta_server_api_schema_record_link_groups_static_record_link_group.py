@@ -40,97 +40,78 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
     subtype_mapping: Dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
 
+    discriminator: Optional[str]
+        Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
         "display_names": "dict(str, str)",
         "guid": "str",
-        "identity": "int",
         "include_indirect_links": "bool",
         "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
         "name": "str",
-        "reverse_display_names": "dict(str, str)",
         "reverse_name": "str",
+        "identity": "int",
+        "reverse_display_names": "dict(str, str)",
         "type": "str",
     }
 
     attribute_map = {
         "display_names": "displayNames",
         "guid": "guid",
-        "identity": "identity",
         "include_indirect_links": "includeIndirectLinks",
         "link_info": "linkInfo",
         "name": "name",
-        "reverse_display_names": "reverseDisplayNames",
         "reverse_name": "reverseName",
+        "identity": "identity",
+        "reverse_display_names": "reverseDisplayNames",
         "type": "type",
     }
 
     subtype_mapping = {}
 
+    discriminator = None
+
     def __init__(
         self,
         *,
-        display_names: "Optional[Dict[str, str]]" = None,
-        guid: "Optional[str]" = None,
+        display_names: "Dict[str, str]",
+        guid: "str",
+        include_indirect_links: "bool",
+        link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
+        name: "str",
+        reverse_name: "str",
         identity: "Optional[int]" = None,
-        include_indirect_links: "Optional[bool]" = None,
-        link_info: "Optional[GrantaServerApiSchemaRecordLinkGroupsLinkInfo]" = None,
-        name: "Optional[str]" = None,
         reverse_display_names: "Optional[Dict[str, str]]" = None,
-        reverse_name: "Optional[str]" = None,
         type: "str" = "static",
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            display_names: Dict[str, str], optional
-            guid: str, optional
+            display_names: Dict[str, str]
+            guid: str
+            include_indirect_links: bool
+            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
+            name: str
+            reverse_name: str
             identity: int, optional
-            include_indirect_links: bool, optional
-            link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo, optional
-            name: str, optional
             reverse_display_names: Dict[str, str], optional
-            reverse_name: str, optional
             type: str
         """
         super().__init__(
             display_names=display_names,
             guid=guid,
-            identity=identity,
             link_info=link_info,
             name=name,
-            reverse_display_names=reverse_display_names,
             reverse_name=reverse_name,
+            identity=identity,
+            reverse_display_names=reverse_display_names,
         )
-        self._include_indirect_links = None
         self._type = None
-        self.discriminator = None
-        if include_indirect_links is not None:
-            self.include_indirect_links = include_indirect_links
+        self._include_indirect_links = None
+
         self.type = type
-
-    @property
-    def include_indirect_links(self) -> "bool":
-        """Gets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
-
-        Returns
-        -------
-        bool
-            The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
-        """
-        return self._include_indirect_links
-
-    @include_indirect_links.setter
-    def include_indirect_links(self, include_indirect_links: "bool") -> None:
-        """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
-
-        Parameters
-        ----------
-        include_indirect_links: bool
-            The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
-        """
-        self._include_indirect_links = include_indirect_links
+        self.include_indirect_links = include_indirect_links
 
     @property
     def type(self) -> "str":
@@ -156,7 +137,34 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
             raise ValueError("Invalid value for 'type', must not be 'None'")
         self._type = type
 
-    def get_real_child_model(self, data: ModelBase) -> str:
+    @property
+    def include_indirect_links(self) -> "bool":
+        """Gets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
+
+        Returns
+        -------
+        bool
+            The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
+        """
+        return self._include_indirect_links
+
+    @include_indirect_links.setter
+    def include_indirect_links(self, include_indirect_links: "bool") -> None:
+        """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
+
+        Parameters
+        ----------
+        include_indirect_links: bool
+            The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup.
+        """
+        if include_indirect_links is None:
+            raise ValueError(
+                "Invalid value for 'include_indirect_links', must not be 'None'"
+            )
+        self._include_indirect_links = include_indirect_links
+
+    @classmethod
+    def get_real_child_model(cls, data: ModelBase) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
