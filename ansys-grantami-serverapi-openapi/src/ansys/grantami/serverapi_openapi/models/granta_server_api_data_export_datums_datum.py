@@ -61,7 +61,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         "unknown".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsUnknownDatum",
     }
 
-    discriminator = "not_applicable"
+    discriminator = "notApplicable"
 
     def __init__(
         self,

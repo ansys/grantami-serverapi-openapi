@@ -58,7 +58,7 @@ class GrantaServerApiSchemaLayoutsLayoutItem(ModelBase):
         "link".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsLayoutLinkItem",
     }
 
-    discriminator = "item_type"
+    discriminator = "itemType"
 
     def __init__(
         self,

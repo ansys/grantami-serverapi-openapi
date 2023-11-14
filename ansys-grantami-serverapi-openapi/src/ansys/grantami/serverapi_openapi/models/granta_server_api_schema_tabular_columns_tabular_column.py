@@ -84,7 +84,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         "unavailable".lower(): "#/components/schemas/GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn",
     }
 
-    discriminator = "column_type"
+    discriminator = "columnType"
 
     def __init__(
         self,
