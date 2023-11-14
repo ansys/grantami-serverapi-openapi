@@ -27,7 +27,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Set up Python ${{ matrix.python-version }}"
         uses: actions/setup-python@v4
@@ -52,7 +52,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Set up Python ${{ matrix.python-version }}"
         uses: actions/setup-python@v4
@@ -89,7 +89,7 @@ jobs:
     steps:
 
       - name: "Checkout the project"
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: "Set up Python ${{ env.MAIN_PYTHON_VERSION }}"
         uses: actions/setup-python@v4
