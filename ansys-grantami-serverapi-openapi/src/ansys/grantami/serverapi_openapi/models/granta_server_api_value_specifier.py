@@ -52,7 +52,7 @@ class GrantaServerApiValueSpecifier(ModelBase):
         "none".lower(): "#/components/schemas/GrantaServerApiNoValuesSpecifier",
     }
 
-    discriminator = "filterOn"
+    discriminator = "filter_on"
 
     def __init__(
         self,

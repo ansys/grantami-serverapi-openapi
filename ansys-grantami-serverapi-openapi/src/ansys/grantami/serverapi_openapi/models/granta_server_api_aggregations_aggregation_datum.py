@@ -61,7 +61,7 @@ class GrantaServerApiAggregationsAggregationDatum(ModelBase):
         "floatFunctionalGraph".lower(): "#/components/schemas/GrantaServerApiAggregationsFloatFunctionalAggregation",
     }
 
-    discriminator = "datumType"
+    discriminator = "datum_type"
 
     def __init__(
         self,
