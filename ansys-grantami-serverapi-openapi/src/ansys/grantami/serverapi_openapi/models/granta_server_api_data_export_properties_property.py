@@ -67,7 +67,7 @@ class GrantaServerApiDataExportPropertiesProperty(ModelBase):
         "versionState".lower(): "#/components/schemas/GrantaServerApiDataExportPropertiesVersionStateProperty",
     }
 
-    discriminator = "propertyName"
+    discriminator = "property_name"
 
     def __init__(
         self,

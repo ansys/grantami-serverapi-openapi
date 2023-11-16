@@ -58,7 +58,7 @@ class GrantaServerApiSchemaLayoutsLayoutSection(ModelBase):
         "full".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsFullLayoutSection",
     }
 
-    discriminator = "sectionDetailType"
+    discriminator = "section_detail_type"
 
     def __init__(
         self,

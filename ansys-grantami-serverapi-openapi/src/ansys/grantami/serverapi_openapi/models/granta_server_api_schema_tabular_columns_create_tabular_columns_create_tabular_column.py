@@ -83,7 +83,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn
         "localPicture".lower(): "#/components/schemas/GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalPictureTabularColumn",
     }
 
-    discriminator = "columnType"
+    discriminator = "column_type"
 
     def __init__(
         self,
