@@ -57,7 +57,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutItem(ModelBase):
         "associationChain".lower(): "#/components/schemas/GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem",
     }
 
-    discriminator = "itemType"
+    discriminator = "item_type"
 
     def __init__(
         self,

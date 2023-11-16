@@ -56,7 +56,7 @@ class GrantaServerApiDataExportAttributeToExport(ModelBase):
         "simple".lower(): "#/components/schemas/GrantaServerApiDataExportSimpleAttributeToExport",
     }
 
-    discriminator = "attributeType"
+    discriminator = "attribute_type"
 
     def __init__(
         self,
