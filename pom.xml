@@ -8,8 +8,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <swagger-codegen-version>3.0.50</swagger-codegen-version>
-    <swagger-codegen-generators-version>1.0.44</swagger-codegen-generators-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <base-package-version>0.1.0</base-package-version>
     <yaml-filename>server-api.json</yaml-filename>
@@ -52,18 +50,6 @@
           </execution>
         </executions>
         <dependencies>
-          <dependency>
-            <groupId>io.swagger.codegen.v3</groupId>
-            <artifactId>swagger-codegen-generators</artifactId>
-            <version>${swagger-codegen-generators-version}</version>
-            <scope>compile</scope>
-          </dependency>
-          <dependency>
-            <groupId>io.swagger.codegen.v3</groupId>
-            <artifactId>swagger-codegen</artifactId>
-            <version>${swagger-codegen-version}</version>
-            <scope>compile</scope>
-          </dependency>
           <dependency>
             <groupId>com.ansys</groupId>
             <artifactId>pyansys-swagger-codegen</artifactId>
