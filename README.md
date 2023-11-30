@@ -56,7 +56,15 @@ is not exposed via an idiomatic python library. To that extent, the following se
 get started with the library.
 
 ### Requirements
-The `ansys.grantami.serverapi_openapi` package requires Granta MI 2023 R2.
+The `ansys-grantami-serverapi-openapi` package requires Granta MI. The following table details compatibility between 
+Granta MI releases and versions of the Python package.
+
+| Granta MI | ansys-grantami-serverapi-openapi |
+|-----------|----------------------------------|
+| 2024R1    | v2.0.0                           |
+| 2023R2    | v1.0.0                           |
+
+
 
 ### Installation
 
