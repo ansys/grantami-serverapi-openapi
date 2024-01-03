@@ -97,7 +97,7 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
       - name: "Download distribution artifacts"
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ansys-grantami-serverapi-openapi-wheel
           path: ~/dist
