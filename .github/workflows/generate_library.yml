@@ -42,7 +42,7 @@ jobs:
       working-directory: ansys-grantami-serverapi-openapi
 
     - name: "Build client library"
-      run: mvn -Dbuild-id=${{ github.run_number }} ${{ env.IS_RELEASE_BRANCH && '-Dis-release' || '' }} -s .m2/settings.xml compile
+      run: mvn -Dbuild-id=${{ github.run_number }} ${{ env.IS_RELEASE_BRANCH == 'true' && '-Dis-release' || '' }} -s .m2/settings.xml compile
       env:
         MAVEN_OPTS: "-Dlog4j2.formatMsgNoLookups=true"
         SERVER_USERNAME: ${{ secrets.REPO_USER }}
