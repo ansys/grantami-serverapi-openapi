@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'pyansys-bot[bot]' }}
     env:
-      IS_RELEASE_BRANCH: ${{ startsWith(github.ref_name, 'release/') }}
+      IS_RELEASE_BRANCH: ${{ (github.event_name == 'pull_request' && startsWith(github.event.pull_request.base.ref, 'release/')) || (github.event_name == 'workflow_dispatch' && startsWith(github.ref_name, 'release/')) }}
     steps:
     - name: "Get Bot Application Token"
       id: get_workflow_token
