@@ -14,6 +14,8 @@ jobs:
     name: "Generate and update client library"
     runs-on: ubuntu-latest
     if: ${{ github.actor != 'pyansys-bot[bot]' }}
+    env:
+      IS_RELEASE_BRANCH: ${{ startsWith(github.ref_name, 'release/') }}
     steps:
     - name: "Get Bot Application Token"
       id: get_workflow_token
@@ -40,7 +42,7 @@ jobs:
       working-directory: ansys-grantami-serverapi-openapi
 
     - name: "Build client library"
-      run: mvn -Dbuild-id=${{ github.run_number }} -s .m2/settings.xml compile
+      run: mvn -Dbuild-id=${{ github.run_number }} ${{ env.IS_RELEASE_BRANCH == 'true' && '-Dis-release' || '' }} -s .m2/settings.xml compile
       env:
         MAVEN_OPTS: "-Dlog4j2.formatMsgNoLookups=true"
         SERVER_USERNAME: ${{ secrets.REPO_USER }}

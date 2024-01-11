@@ -10,6 +10,7 @@ license = "MIT"
 authors = ["ANSYS, Inc. <pyansys.core@ansys.com>"]
 maintainers = ["ANSYS, Inc. <pyansys.core@ansys.com>"]
 homepage = "https://github.com/ansys/grantami-serverapi-openapi"
+documentation = "https://grantami.docs.pyansys.com"
 readme = "README.md"
 keywords = ["Ansys", "OpenAPI"]
 classifiers = [
@@ -30,7 +31,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.9.0"
-ansys-openapi-common = "^1.4.0rc0"
+ansys-openapi-common = "^1.4.0"
 requests = "^2.26.0"
 python-dateutil = "^2.8.2"
 
