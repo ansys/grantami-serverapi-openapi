@@ -33,11 +33,12 @@ This package follows [Semantic Versioning](https://semver.org/). Release candida
 The release process follows the standard [PyAnsys release guidelines](https://dev.docs.pyansys.com/how-to/releasing.html).
 
 1. Ensure the ``main`` branch build status is green, which indicates that the most recent run of the ``CI`` workflow was successful.
-2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR``, .
-3. Make the following changes in ``ansys-grantami-serverapi-openapi/pyproject.toml``:
-    - Set the ``version`` to ``MAJOR.MINOR.0rc0``.
-    - Set the ``Development Status`` classifier to ``Development Status :: 5 - Production/Stable``.
-4. Commit this file. Push the branch to GitHub. Tag the release:
+2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` and push the branch to GitHub.
+3. Do one of the following two steps to generate a 'release' `pyproject.toml` file:
+   * To change the version number, modify the ``<version>`` XML element in the ``pom.xml`` file and open a Pull Request.
+   * If the version number is correct, manually run the 'Generate client library' GitHub action on the release branch.
+5. Pull the branch and check that the most recent commit includes the 'release' `pyproject.toml` file.
+4. Tag the release:
    ```console
    git tag v<MAJOR.MINOR.0rc0>
    git push origin --tags
