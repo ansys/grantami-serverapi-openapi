@@ -37,8 +37,8 @@ The release process follows the standard [PyAnsys release guidelines](https://de
 3. Do one of the following two steps to generate a 'release' `pyproject.toml` file:
    * To change the version number, modify the ``<version>`` XML element in the ``pom.xml`` file and open a Pull Request.
    * If the version number is correct, manually run the 'Generate client library' GitHub action on the release branch.
-5. Pull the branch and check that the most recent commit includes the 'release' `pyproject.toml` file.
-4. Tag the release:
+4. Pull the branch and check that the most recent commit includes the 'release' `pyproject.toml` file.
+5. Tag the release:
    ```console
    git tag v<MAJOR.MINOR.0rc0>
    git push origin --tags
