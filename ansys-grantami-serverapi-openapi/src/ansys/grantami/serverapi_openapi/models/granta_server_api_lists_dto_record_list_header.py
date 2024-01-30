@@ -40,7 +40,6 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         "awaiting_approval": "bool",
         "created_timestamp": "datetime",
         "created_user": "GrantaServerApiListsDtoUserOrGroup",
-        "description": "str",
         "identifier": "str",
         "internal_use": "bool",
         "is_revision": "bool",
@@ -48,9 +47,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         "last_modified_user": "GrantaServerApiListsDtoUserOrGroup",
         "metadata": "dict(str, dict(str, object))",
         "name": "str",
+        "published": "bool",
+        "description": "str",
         "notes": "str",
         "parent_record_list_identifier": "str",
-        "published": "bool",
         "published_timestamp": "datetime",
         "published_user": "GrantaServerApiListsDtoUserOrGroup",
     }
@@ -59,7 +59,6 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         "awaiting_approval": "awaitingApproval",
         "created_timestamp": "createdTimestamp",
         "created_user": "createdUser",
-        "description": "description",
         "identifier": "identifier",
         "internal_use": "internalUse",
         "is_revision": "isRevision",
@@ -67,9 +66,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         "last_modified_user": "lastModifiedUser",
         "metadata": "metadata",
         "name": "name",
+        "published": "published",
+        "description": "description",
         "notes": "notes",
         "parent_record_list_identifier": "parentRecordListIdentifier",
-        "published": "published",
         "published_timestamp": "publishedTimestamp",
         "published_user": "publishedUser",
     }
@@ -85,20 +85,20 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
     def __init__(
         self,
         *,
-        awaiting_approval: "Optional[bool]" = None,
-        created_timestamp: "Optional[datetime]" = None,
-        created_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None,
+        awaiting_approval: "bool",
+        created_timestamp: "datetime",
+        created_user: "GrantaServerApiListsDtoUserOrGroup",
+        identifier: "str",
+        internal_use: "bool",
+        is_revision: "bool",
+        last_modified_timestamp: "datetime",
+        last_modified_user: "GrantaServerApiListsDtoUserOrGroup",
+        metadata: "Dict[str, Dict[str, object]]",
+        name: "str",
+        published: "bool",
         description: "Optional[str]" = None,
-        identifier: "Optional[str]" = None,
-        internal_use: "Optional[bool]" = None,
-        is_revision: "Optional[bool]" = None,
-        last_modified_timestamp: "Optional[datetime]" = None,
-        last_modified_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None,
-        metadata: "Optional[Dict[str, Dict[str, object]]]" = None,
-        name: "Optional[str]" = None,
         notes: "Optional[str]" = None,
         parent_record_list_identifier: "Optional[str]" = None,
-        published: "Optional[bool]" = None,
         published_timestamp: "Optional[datetime]" = None,
         published_user: "Optional[GrantaServerApiListsDtoUserOrGroup]" = None,
     ) -> None:
@@ -106,20 +106,20 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
 
         Parameters
         ----------
-            awaiting_approval: bool, optional
-            created_timestamp: datetime, optional
-            created_user: GrantaServerApiListsDtoUserOrGroup, optional
+            awaiting_approval: bool
+            created_timestamp: datetime
+            created_user: GrantaServerApiListsDtoUserOrGroup
+            identifier: str
+            internal_use: bool
+            is_revision: bool
+            last_modified_timestamp: datetime
+            last_modified_user: GrantaServerApiListsDtoUserOrGroup
+            metadata: Dict[str, Dict[str, object]]
+            name: str
+            published: bool
             description: str, optional
-            identifier: str, optional
-            internal_use: bool, optional
-            is_revision: bool, optional
-            last_modified_timestamp: datetime, optional
-            last_modified_user: GrantaServerApiListsDtoUserOrGroup, optional
-            metadata: Dict[str, Dict[str, object]], optional
-            name: str, optional
             notes: str, optional
             parent_record_list_identifier: str, optional
-            published: bool, optional
             published_timestamp: datetime, optional
             published_user: GrantaServerApiListsDtoUserOrGroup, optional
         """
@@ -140,38 +140,27 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         self._awaiting_approval = None
         self._internal_use = None
 
-        if identifier is not None:
-            self.identifier = identifier
-        if metadata is not None:
-            self.metadata = metadata
+        self.identifier = identifier
+        self.metadata = metadata
         if parent_record_list_identifier is not None:
             self.parent_record_list_identifier = parent_record_list_identifier
-        if created_timestamp is not None:
-            self.created_timestamp = created_timestamp
-        if created_user is not None:
-            self.created_user = created_user
-        if last_modified_timestamp is not None:
-            self.last_modified_timestamp = last_modified_timestamp
-        if last_modified_user is not None:
-            self.last_modified_user = last_modified_user
+        self.created_timestamp = created_timestamp
+        self.created_user = created_user
+        self.last_modified_timestamp = last_modified_timestamp
+        self.last_modified_user = last_modified_user
         if published_timestamp is not None:
             self.published_timestamp = published_timestamp
         if published_user is not None:
             self.published_user = published_user
-        if is_revision is not None:
-            self.is_revision = is_revision
-        if name is not None:
-            self.name = name
+        self.is_revision = is_revision
+        self.name = name
         if description is not None:
             self.description = description
         if notes is not None:
             self.notes = notes
-        if published is not None:
-            self.published = published
-        if awaiting_approval is not None:
-            self.awaiting_approval = awaiting_approval
-        if internal_use is not None:
-            self.internal_use = internal_use
+        self.published = published
+        self.awaiting_approval = awaiting_approval
+        self.internal_use = internal_use
 
     @property
     def identifier(self) -> "str":
@@ -193,6 +182,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         identifier: str
             The identifier of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if identifier is None:
+            raise ValueError("Invalid value for 'identifier', must not be 'None'")
         self._identifier = identifier
 
     @property
@@ -215,6 +206,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         metadata: dict(str, dict(str, object))
             The metadata of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if metadata is None:
+            raise ValueError("Invalid value for 'metadata', must not be 'None'")
         self._metadata = metadata
 
     @property
@@ -261,6 +254,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         created_timestamp: datetime
             The created_timestamp of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if created_timestamp is None:
+            raise ValueError(
+                "Invalid value for 'created_timestamp', must not be 'None'"
+            )
         self._created_timestamp = created_timestamp
 
     @property
@@ -283,6 +280,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         created_user: GrantaServerApiListsDtoUserOrGroup
             The created_user of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if created_user is None:
+            raise ValueError("Invalid value for 'created_user', must not be 'None'")
         self._created_user = created_user
 
     @property
@@ -305,6 +304,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         last_modified_timestamp: datetime
             The last_modified_timestamp of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if last_modified_timestamp is None:
+            raise ValueError(
+                "Invalid value for 'last_modified_timestamp', must not be 'None'"
+            )
         self._last_modified_timestamp = last_modified_timestamp
 
     @property
@@ -329,6 +332,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         last_modified_user: GrantaServerApiListsDtoUserOrGroup
             The last_modified_user of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if last_modified_user is None:
+            raise ValueError(
+                "Invalid value for 'last_modified_user', must not be 'None'"
+            )
         self._last_modified_user = last_modified_user
 
     @property
@@ -397,6 +404,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         is_revision: bool
             The is_revision of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if is_revision is None:
+            raise ValueError("Invalid value for 'is_revision', must not be 'None'")
         self._is_revision = is_revision
 
     @property
@@ -419,6 +428,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         name: str
             The name of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @property
@@ -485,6 +496,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         published: bool
             The published of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if published is None:
+            raise ValueError("Invalid value for 'published', must not be 'None'")
         self._published = published
 
     @property
@@ -507,6 +520,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         awaiting_approval: bool
             The awaiting_approval of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if awaiting_approval is None:
+            raise ValueError(
+                "Invalid value for 'awaiting_approval', must not be 'None'"
+            )
         self._awaiting_approval = awaiting_approval
 
     @property
@@ -529,6 +546,8 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         internal_use: bool
             The internal_use of this GrantaServerApiListsDtoRecordListHeader.
         """
+        if internal_use is None:
+            raise ValueError("Invalid value for 'internal_use', must not be 'None'")
         self._internal_use = internal_use
 
     @classmethod

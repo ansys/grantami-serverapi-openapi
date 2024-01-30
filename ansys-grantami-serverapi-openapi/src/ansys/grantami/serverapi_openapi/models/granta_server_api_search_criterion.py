@@ -55,6 +55,7 @@ class GrantaServerApiSearchCriterion(ModelBase):
         "subset".lower(): "#/components/schemas/GrantaServerApiSearchRecordSubsetCriterion",
         "tabularLinkingValue".lower(): "#/components/schemas/GrantaServerApiSearchTabularLinkingValueCriterion",
         "attribute".lower(): "#/components/schemas/GrantaServerApiSearchAttributeCriterion",
+        "localColumn".lower(): "#/components/schemas/GrantaServerApiSearchLocalColumnCriterion",
     }
 
     discriminator = "type"

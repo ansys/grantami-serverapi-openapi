@@ -38,18 +38,18 @@ class GrantaServerApiListsDtoListItem(ModelBase):
     """
     swagger_types = {
         "database_guid": "str",
-        "record_guid": "str",
         "record_history_guid": "str",
-        "record_version": "int",
         "table_guid": "str",
+        "record_guid": "str",
+        "record_version": "int",
     }
 
     attribute_map = {
         "database_guid": "databaseGuid",
-        "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
-        "record_version": "recordVersion",
         "table_guid": "tableGuid",
+        "record_guid": "recordGuid",
+        "record_version": "recordVersion",
     }
 
     subtype_mapping = {}
@@ -59,21 +59,21 @@ class GrantaServerApiListsDtoListItem(ModelBase):
     def __init__(
         self,
         *,
-        database_guid: "Optional[str]" = None,
+        database_guid: "str",
+        record_history_guid: "str",
+        table_guid: "str",
         record_guid: "Optional[str]" = None,
-        record_history_guid: "Optional[str]" = None,
         record_version: "Optional[int]" = None,
-        table_guid: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiListsDtoListItem - a model defined in Swagger
 
         Parameters
         ----------
-            database_guid: str, optional
+            database_guid: str
+            record_history_guid: str
+            table_guid: str
             record_guid: str, optional
-            record_history_guid: str, optional
             record_version: int, optional
-            table_guid: str, optional
         """
         self._database_guid = None
         self._record_history_guid = None
@@ -81,16 +81,13 @@ class GrantaServerApiListsDtoListItem(ModelBase):
         self._record_version = None
         self._table_guid = None
 
-        if database_guid is not None:
-            self.database_guid = database_guid
-        if record_history_guid is not None:
-            self.record_history_guid = record_history_guid
+        self.database_guid = database_guid
+        self.record_history_guid = record_history_guid
         if record_guid is not None:
             self.record_guid = record_guid
         if record_version is not None:
             self.record_version = record_version
-        if table_guid is not None:
-            self.table_guid = table_guid
+        self.table_guid = table_guid
 
     @property
     def database_guid(self) -> "str":
@@ -112,6 +109,8 @@ class GrantaServerApiListsDtoListItem(ModelBase):
         database_guid: str
             The database_guid of this GrantaServerApiListsDtoListItem.
         """
+        if database_guid is None:
+            raise ValueError("Invalid value for 'database_guid', must not be 'None'")
         self._database_guid = database_guid
 
     @property
@@ -134,6 +133,10 @@ class GrantaServerApiListsDtoListItem(ModelBase):
         record_history_guid: str
             The record_history_guid of this GrantaServerApiListsDtoListItem.
         """
+        if record_history_guid is None:
+            raise ValueError(
+                "Invalid value for 'record_history_guid', must not be 'None'"
+            )
         self._record_history_guid = record_history_guid
 
     @property
@@ -200,6 +203,8 @@ class GrantaServerApiListsDtoListItem(ModelBase):
         table_guid: str
             The table_guid of this GrantaServerApiListsDtoListItem.
         """
+        if table_guid is None:
+            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
         self._table_guid = table_guid
 
     @classmethod

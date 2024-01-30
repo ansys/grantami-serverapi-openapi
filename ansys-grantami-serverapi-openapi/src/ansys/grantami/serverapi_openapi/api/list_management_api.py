@@ -26,14 +26,14 @@ class ListManagementApi(ApiBase):
 
     def api_v1_lists_get(
         self,
-    ) -> "Union[List[GrantaServerApiListsDtoRecordListHeader], None]":
+    ) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
         """Returns all lists visible to the calling user
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoRecordListHeader], None]
+        Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]
         """
         data = self._api_v1_lists_get_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[return-value]
@@ -68,7 +68,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map = {
-            200: "list[GrantaServerApiListsDtoRecordListHeader]",
+            200: "GrantaServerApiListsDtoRecordListHeadersInfo",
             403: None,
         }
 
@@ -342,16 +342,16 @@ class ListManagementApi(ApiBase):
         self,
         *,
         list_identifier: "str",
-        body: "Optional[List[JsonPatchDocument]]" = None,
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
-        """Performs a partial update on the properties of a list. Only replace operations on name, description or notes are supported.
+        """Performs a partial update on the properties of a list.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         list_identifier: str
-        body: List[JsonPatchDocument]
+        body: GrantaServerApiListsDtoUpdateRecordListProperties
 
         Returns
         -------
@@ -365,7 +365,7 @@ class ListManagementApi(ApiBase):
     def _api_v1_lists_list_list_identifier_patch_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[List[JsonPatchDocument]]" = None,
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
         **kwargs,
     ):
         all_params = [
@@ -517,112 +517,6 @@ class ListManagementApi(ApiBase):
         return self.api_client.call_api(
             "/api/v1/lists/list/{listIdentifier}/publish",
             "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def api_v1_lists_list_list_identifier_put(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoRecordListProperties]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
-        """If the list exists, updates the properties of the list. This will overwrite all current properties, but not the contents of the list.  If the list does not exist, returns '404 not found' response
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        list_identifier: str
-        body: GrantaServerApiListsDtoRecordListProperties
-
-        Returns
-        -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
-        """
-        data = self._api_v1_lists_list_list_identifier_put_with_http_info(
-            list_identifier, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[return-value]
-
-    def _api_v1_lists_list_list_identifier_put_with_http_info(
-        self,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoRecordListProperties]" = None,
-        **kwargs,
-    ):
-        all_params = [
-            "list_identifier",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_put"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "list_identifier" is set
-        if "list_identifier" not in params or params["list_identifier"] is None:
-            raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_put'"
-            )
-
-        collection_formats = {}
-
-        path_params = {}
-        if "list_identifier" in params and list_identifier is not None:
-            path_params["listIdentifier"] = params["list_identifier"]
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/api/v1/lists/list/{listIdentifier}",
-            "PUT",
             path_params,
             query_params,
             header_params,
@@ -981,7 +875,7 @@ class ListManagementApi(ApiBase):
         )
 
     def api_v1_lists_post(
-        self, *, body: "Optional[GrantaServerApiListsDtoRecordListCreate]" = None
+        self, *, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Creates a new list with the specified properties and items.
 
@@ -989,7 +883,7 @@ class ListManagementApi(ApiBase):
 
         Parameters
         ----------
-        body: GrantaServerApiListsDtoRecordListCreate
+        body: GrantaServerApiListsDtoCreateRecordList
 
         Returns
         -------
@@ -999,7 +893,7 @@ class ListManagementApi(ApiBase):
         return data  # type: ignore[return-value]
 
     def _api_v1_lists_post_with_http_info(
-        self, body: "Optional[GrantaServerApiListsDtoRecordListCreate]" = None, **kwargs
+        self, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None, **kwargs
     ):
         all_params = [
             "body",
@@ -1162,7 +1056,7 @@ class ListManagementApi(ApiBase):
 
     def api_v1_lists_search_results_result_resource_identifier_get(
         self, *, result_resource_identifier: "str"
-    ) -> "Union[List[GrantaServerApiListsDtoRecordListSearchResult], None]":
+    ) -> "Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]":
         """Returns the search results found in the specified resource
 
         This method makes a synchronous HTTP request.
@@ -1173,7 +1067,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoRecordListSearchResult], None]
+        Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]
         """
         data = self._api_v1_lists_search_results_result_resource_identifier_get_with_http_info(
             result_resource_identifier, _return_http_data_only=True
@@ -1232,7 +1126,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map = {
-            200: "list[GrantaServerApiListsDtoRecordListSearchResult]",
+            200: "GrantaServerApiListsDtoRecordListSearchResultsInfo",
             403: None,
             404: None,
             410: None,

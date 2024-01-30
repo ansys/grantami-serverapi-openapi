@@ -26,7 +26,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDiscreteTypeDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]":
         """Delete discrete type, including all of its discrete values.
 
         This method makes a synchronous HTTP request.
@@ -38,7 +38,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDiscreteTypeDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -97,7 +97,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsDiscreteTypeDeletionException",
+            400: "GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException",
             200: None,
             403: None,
             404: None,

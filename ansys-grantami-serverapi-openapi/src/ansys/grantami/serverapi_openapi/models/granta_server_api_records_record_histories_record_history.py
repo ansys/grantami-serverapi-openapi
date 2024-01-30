@@ -40,6 +40,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         "guid": "str",
         "is_folder": "bool",
         "record_versions": "list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
+        "subsets": "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
         "table": "GrantaServerApiSchemaSlimEntitiesSlimTable",
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
     }
@@ -48,6 +49,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         "guid": "guid",
         "is_folder": "isFolder",
         "record_versions": "recordVersions",
+        "subsets": "subsets",
         "table": "table",
         "parent": "parent",
     }
@@ -56,6 +58,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         "table": "GrantaServerApiSchemaSlimEntitiesSlimTable",
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
         "recordVersions": "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",
+        "subsets": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
     }
 
     discriminator = None
@@ -66,6 +69,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         guid: "str",
         is_folder: "bool",
         record_versions: "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
+        subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
         table: "GrantaServerApiSchemaSlimEntitiesSlimTable",
         parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]" = None,
     ) -> None:
@@ -76,6 +80,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
             guid: str
             is_folder: bool
             record_versions: List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
+            subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
             table: GrantaServerApiSchemaSlimEntitiesSlimTable
             parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
         """
@@ -83,6 +88,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._table = None
         self._parent = None
         self._record_versions = None
+        self._subsets = None
         self._guid = None
 
         self.is_folder = is_folder
@@ -90,6 +96,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if parent is not None:
             self.parent = parent
         self.record_versions = record_versions
+        self.subsets = subsets
         self.guid = guid
 
     @property
@@ -192,6 +199,32 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if record_versions is None:
             raise ValueError("Invalid value for 'record_versions', must not be 'None'")
         self._record_versions = record_versions
+
+    @property
+    def subsets(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]":
+        """Gets the subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
+
+        Returns
+        -------
+        list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+            The subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
+        """
+        return self._subsets
+
+    @subsets.setter
+    def subsets(
+        self, subsets: "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]"
+    ) -> None:
+        """Sets the subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
+
+        Parameters
+        ----------
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+            The subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
+        """
+        if subsets is None:
+            raise ValueError("Invalid value for 'subsets', must not be 'None'")
+        self._subsets = subsets
 
     @property
     def guid(self) -> "str":
