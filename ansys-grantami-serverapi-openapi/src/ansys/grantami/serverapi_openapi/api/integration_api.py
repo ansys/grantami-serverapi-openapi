@@ -163,7 +163,6 @@ class IntegrationApi(ApiBase):
             201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             400: None,
             403: None,
-            422: None,
         }
 
         return self.api_client.call_api(
@@ -544,7 +543,6 @@ class IntegrationApi(ApiBase):
             201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             400: None,
             403: None,
-            422: None,
         }
 
         return self.api_client.call_api(

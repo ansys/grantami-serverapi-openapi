@@ -56,23 +56,21 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
     def __init__(
         self,
         *,
-        header: "Optional[GrantaServerApiListsDtoRecordListHeader]" = None,
-        items: "Optional[List[GrantaServerApiListsDtoListItem]]" = None,
+        header: "GrantaServerApiListsDtoRecordListHeader",
+        items: "List[GrantaServerApiListsDtoListItem]",
     ) -> None:
         """GrantaServerApiListsDtoRecordListSearchResult - a model defined in Swagger
 
         Parameters
         ----------
-            header: GrantaServerApiListsDtoRecordListHeader, optional
-            items: List[GrantaServerApiListsDtoListItem], optional
+            header: GrantaServerApiListsDtoRecordListHeader
+            items: List[GrantaServerApiListsDtoListItem]
         """
         self._header = None
         self._items = None
 
-        if header is not None:
-            self.header = header
-        if items is not None:
-            self.items = items
+        self.header = header
+        self.items = items
 
     @property
     def header(self) -> "GrantaServerApiListsDtoRecordListHeader":
@@ -94,6 +92,8 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         header: GrantaServerApiListsDtoRecordListHeader
             The header of this GrantaServerApiListsDtoRecordListSearchResult.
         """
+        if header is None:
+            raise ValueError("Invalid value for 'header', must not be 'None'")
         self._header = header
 
     @property
@@ -116,6 +116,8 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         items: list[GrantaServerApiListsDtoListItem]
             The items of this GrantaServerApiListsDtoRecordListSearchResult.
         """
+        if items is None:
+            raise ValueError("Invalid value for 'items', must not be 'None'")
         self._items = items
 
     @classmethod

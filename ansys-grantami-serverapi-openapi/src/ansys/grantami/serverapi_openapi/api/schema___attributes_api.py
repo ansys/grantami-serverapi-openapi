@@ -26,7 +26,7 @@ class SchemaAttributesApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_guid_attributes_attribute_guid_delete(
         self, *, database_key: "str", table_guid: "str", attribute_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsAttributeDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionAttributeDeletionException, None]":
         """Delete an attribute.
 
         This method makes a synchronous HTTP request.
@@ -39,7 +39,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsAttributeDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionAttributeDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_attributes_attribute_guid_delete_with_http_info(
             database_key, table_guid, attribute_guid, _return_http_data_only=True
@@ -106,7 +106,7 @@ class SchemaAttributesApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsAttributeDeletionException",
+            400: "GrantaServerApiExceptionsDeletionAttributeDeletionException",
             200: None,
             403: None,
             404: None,
@@ -987,7 +987,7 @@ class SchemaAttributesApi(ApiBase):
 
     def v1alpha_databases_database_key_tables_table_guid_meta_attributes_meta_attribute_guid_delete(
         self, *, database_key: "str", table_guid: "str", meta_attribute_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsAttributeDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionAttributeDeletionException, None]":
         """Delete a meta-attribute.
 
         This method makes a synchronous HTTP request.
@@ -1000,7 +1000,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsAttributeDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionAttributeDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_tables_table_guid_meta_attributes_meta_attribute_guid_delete_with_http_info(
             database_key, table_guid, meta_attribute_guid, _return_http_data_only=True
@@ -1071,7 +1071,7 @@ class SchemaAttributesApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsAttributeDeletionException",
+            400: "GrantaServerApiExceptionsDeletionAttributeDeletionException",
             200: None,
             403: None,
             404: None,

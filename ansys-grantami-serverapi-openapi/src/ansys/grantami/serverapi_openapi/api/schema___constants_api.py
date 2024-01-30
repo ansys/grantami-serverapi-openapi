@@ -26,7 +26,7 @@ class SchemaConstantsApi(ApiBase):
 
     def v1alpha_databases_database_key_constants_constant_guid_delete(
         self, *, database_key: "str", constant_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsConstantDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionConstantDeletionException, None]":
         """Delete a constant
 
         This method makes a synchronous HTTP request.
@@ -40,7 +40,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsConstantDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionConstantDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_constants_constant_guid_delete_with_http_info(
             database_key, constant_guid, _return_http_data_only=True
@@ -99,7 +99,7 @@ class SchemaConstantsApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsConstantDeletionException",
+            400: "GrantaServerApiExceptionsDeletionConstantDeletionException",
             200: None,
             403: None,
             404: None,

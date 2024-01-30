@@ -45,6 +45,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         "layouts": "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
         "name": "str",
         "subsets": "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
+        "version_state": "GrantaServerApiVersionState",
         "default_layout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
         "default_subset": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
     }
@@ -58,6 +59,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         "layouts": "layouts",
         "name": "name",
         "subsets": "subsets",
+        "version_state": "versionState",
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
     }
@@ -67,6 +69,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         "subsets": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
         "defaultLayout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
         "layouts": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
+        "versionState": "GrantaServerApiVersionState",
     }
 
     discriminator = None
@@ -82,6 +85,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         layouts: "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
         name: "str",
         subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
+        version_state: "GrantaServerApiVersionState",
         default_layout: "Optional[GrantaServerApiSchemaSlimEntitiesSlimLayout]" = None,
         default_subset: "Optional[GrantaServerApiSchemaSlimEntitiesSlimSubset]" = None,
     ) -> None:
@@ -97,6 +101,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
             layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
             name: str
             subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+            version_state: GrantaServerApiVersionState
             default_layout: GrantaServerApiSchemaSlimEntitiesSlimLayout, optional
             default_subset: GrantaServerApiSchemaSlimEntitiesSlimSubset, optional
         """
@@ -104,6 +109,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._subsets = None
         self._default_layout = None
         self._layouts = None
+        self._version_state = None
         self._is_hidden_from_browse = None
         self._is_hidden_from_search = None
         self._is_versioned = None
@@ -117,6 +123,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if default_layout is not None:
             self.default_layout = default_layout
         self.layouts = layouts
+        self.version_state = version_state
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
         self.is_versioned = is_versioned
@@ -223,6 +230,30 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if layouts is None:
             raise ValueError("Invalid value for 'layouts', must not be 'None'")
         self._layouts = layouts
+
+    @property
+    def version_state(self) -> "GrantaServerApiVersionState":
+        """Gets the version_state of this GrantaServerApiSchemaTablesTable.
+
+        Returns
+        -------
+        GrantaServerApiVersionState
+            The version_state of this GrantaServerApiSchemaTablesTable.
+        """
+        return self._version_state
+
+    @version_state.setter
+    def version_state(self, version_state: "GrantaServerApiVersionState") -> None:
+        """Sets the version_state of this GrantaServerApiSchemaTablesTable.
+
+        Parameters
+        ----------
+        version_state: GrantaServerApiVersionState
+            The version_state of this GrantaServerApiSchemaTablesTable.
+        """
+        if version_state is None:
+            raise ValueError("Invalid value for 'version_state', must not be 'None'")
+        self._version_state = version_state
 
     @property
     def is_hidden_from_browse(self) -> "bool":

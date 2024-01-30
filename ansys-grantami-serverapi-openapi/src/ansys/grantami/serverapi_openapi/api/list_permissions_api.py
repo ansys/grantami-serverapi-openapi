@@ -26,7 +26,7 @@ class ListPermissionsApi(ApiBase):
 
     def api_v1_lists_list_list_identifier_permissions_get(
         self, *, list_identifier: "str"
-    ) -> "Union[List[GrantaServerApiListsDtoUserPermissionDto], None]":
+    ) -> "Union[GrantaServerApiListsDtoUserPermissionsInfo, None]":
         """Gets all permissions associated with the specified list.
 
         This method makes a synchronous HTTP request.
@@ -37,7 +37,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoUserPermissionDto], None]
+        Union[GrantaServerApiListsDtoUserPermissionsInfo, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_get_with_http_info(
             list_identifier, _return_http_data_only=True
@@ -88,7 +88,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "list[GrantaServerApiListsDtoUserPermissionDto]",
+            200: "GrantaServerApiListsDtoUserPermissionsInfo",
             403: None,
             404: None,
         }
@@ -113,8 +113,8 @@ class ListPermissionsApi(ApiBase):
         self,
         *,
         list_identifier: "str",
-        body: "Optional[List[GrantaServerApiListsDtoUserPermissionInputDto]]" = None,
-    ) -> "Union[List[GrantaServerApiListsDtoUserPermissionDto], None]":
+        body: "Optional[GrantaServerApiListsDtoUpdateUserPermissionsInfo]" = None,
+    ) -> "Union[GrantaServerApiListsDtoUserPermissionsInfo, None]":
         """Sets permissions for the specified list. Returns a collection of the created/updated permissions.
 
         This method makes a synchronous HTTP request.
@@ -122,11 +122,11 @@ class ListPermissionsApi(ApiBase):
         Parameters
         ----------
         list_identifier: str
-        body: List[GrantaServerApiListsDtoUserPermissionInputDto]
+        body: GrantaServerApiListsDtoUpdateUserPermissionsInfo
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoUserPermissionDto], None]
+        Union[GrantaServerApiListsDtoUserPermissionsInfo, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_post_with_http_info(
             list_identifier, body, _return_http_data_only=True
@@ -136,7 +136,7 @@ class ListPermissionsApi(ApiBase):
     def _api_v1_lists_list_list_identifier_permissions_post_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[List[GrantaServerApiListsDtoUserPermissionInputDto]]" = None,
+        body: "Optional[GrantaServerApiListsDtoUpdateUserPermissionsInfo]" = None,
         **kwargs,
     ):
         all_params = [
@@ -193,7 +193,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            202: "list[GrantaServerApiListsDtoUserPermissionDto]",
+            202: "GrantaServerApiListsDtoUserPermissionsInfo",
             400: None,
             403: None,
             404: None,
@@ -217,7 +217,7 @@ class ListPermissionsApi(ApiBase):
 
     def api_v1_lists_list_list_identifier_permissions_subscribe_post(
         self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoUserPermissionDto, None]":
+    ) -> "Union[GrantaServerApiListsDtoUserPermission, None]":
         """Subscribes the calling user to the specified list.
 
         This method makes a synchronous HTTP request.
@@ -228,7 +228,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermissionDto, None]
+        Union[GrantaServerApiListsDtoUserPermission, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_subscribe_post_with_http_info(
             list_identifier, _return_http_data_only=True
@@ -279,7 +279,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            202: "GrantaServerApiListsDtoUserPermissionDto",
+            202: "GrantaServerApiListsDtoUserPermission",
             400: None,
             403: None,
             404: None,
@@ -303,7 +303,7 @@ class ListPermissionsApi(ApiBase):
 
     def api_v1_lists_list_list_identifier_permissions_unsubscribe_post(
         self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoUserPermissionDto, None]":
+    ) -> "Union[GrantaServerApiListsDtoUserPermission, None]":
         """Unsubscribes the calling user from the specified list.
 
         This method makes a synchronous HTTP request.
@@ -314,7 +314,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermissionDto, None]
+        Union[GrantaServerApiListsDtoUserPermission, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_unsubscribe_post_with_http_info(
             list_identifier, _return_http_data_only=True
@@ -365,7 +365,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            202: "GrantaServerApiListsDtoUserPermissionDto",
+            202: "GrantaServerApiListsDtoUserPermission",
             400: None,
             403: None,
             404: None,
@@ -389,7 +389,7 @@ class ListPermissionsApi(ApiBase):
 
     def api_v1_lists_list_list_identifier_permissions_user_user_identifier_get(
         self, *, list_identifier: "str", user_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlagsDto, None]":
+    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]":
         """Gets the permission flags of the permission associating the specified list with the specified user.
 
         This method makes a synchronous HTTP request.
@@ -401,7 +401,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListPermissionFlagsDto, None]
+        Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_user_user_identifier_get_with_http_info(
             list_identifier, user_identifier, _return_http_data_only=True
@@ -460,7 +460,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
+            200: "GrantaServerApiListsDtoRecordListPermissionFlags",
             403: None,
             404: None,
         }
@@ -486,8 +486,8 @@ class ListPermissionsApi(ApiBase):
         *,
         list_identifier: "str",
         user_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoRecordListPermissionFlagsDto]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlagsDto, None]":
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListPermissionFlags]" = None,
+    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]":
         """Sets the permission flags of the permission associating the specified list with the specified user.
 
         This method makes a synchronous HTTP request.
@@ -496,11 +496,11 @@ class ListPermissionsApi(ApiBase):
         ----------
         list_identifier: str
         user_identifier: str
-        body: GrantaServerApiListsDtoRecordListPermissionFlagsDto
+        body: GrantaServerApiListsDtoUpdateRecordListPermissionFlags
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListPermissionFlagsDto, None]
+        Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]
         """
         data = self._api_v1_lists_list_list_identifier_permissions_user_user_identifier_put_with_http_info(
             list_identifier, user_identifier, body, _return_http_data_only=True
@@ -511,7 +511,7 @@ class ListPermissionsApi(ApiBase):
         self,
         list_identifier: "str",
         user_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoRecordListPermissionFlagsDto]" = None,
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListPermissionFlags]" = None,
         **kwargs,
     ):
         all_params = [
@@ -576,7 +576,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map = {
-            201: "GrantaServerApiListsDtoRecordListPermissionFlagsDto",
+            201: "GrantaServerApiListsDtoRecordListPermissionFlags",
             400: None,
             403: None,
             404: None,

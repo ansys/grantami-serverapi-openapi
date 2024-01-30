@@ -51,18 +51,17 @@ class GrantaServerApiListsDtoRecordListSearchInfo(ModelBase):
     def __init__(
         self,
         *,
-        search_result_identifier: "Optional[str]" = None,
+        search_result_identifier: "str",
     ) -> None:
         """GrantaServerApiListsDtoRecordListSearchInfo - a model defined in Swagger
 
         Parameters
         ----------
-            search_result_identifier: str, optional
+            search_result_identifier: str
         """
         self._search_result_identifier = None
 
-        if search_result_identifier is not None:
-            self.search_result_identifier = search_result_identifier
+        self.search_result_identifier = search_result_identifier
 
     @property
     def search_result_identifier(self) -> "str":
@@ -84,6 +83,10 @@ class GrantaServerApiListsDtoRecordListSearchInfo(ModelBase):
         search_result_identifier: str
             The search_result_identifier of this GrantaServerApiListsDtoRecordListSearchInfo.
         """
+        if search_result_identifier is None:
+            raise ValueError(
+                "Invalid value for 'search_result_identifier', must not be 'None'"
+            )
         self._search_result_identifier = search_result_identifier
 
     @classmethod

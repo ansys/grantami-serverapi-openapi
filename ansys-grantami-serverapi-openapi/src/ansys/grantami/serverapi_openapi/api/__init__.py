@@ -5,6 +5,7 @@ from ansys.openapi.common import ApiBase
 
 # import apis into api package
 from .aggregation_api import AggregationApi
+from .data_api import DataApi
 from .data_export_api import DataExportApi
 from .database_api import DatabaseApi
 from .integration_api import IntegrationApi
