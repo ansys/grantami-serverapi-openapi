@@ -24,6 +24,127 @@ class RecordsRecordVersionsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+    ) -> "None":
+        """Deletes the record version.  If the table is version controlled, only the current unreleased record version can be deleted.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        record_version_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            record_version_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[return-value]
+
+    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+        **kwargs,
+    ):
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "record_version_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete'"
+            )
+        # verify the required parameter "record_version_guid" is set
+        if "record_version_guid" not in params or params["record_version_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_version_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_delete'"
+            )
+
+        collection_formats = {}
+
+        path_params = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "record_version_guid" in params and record_version_guid is not None:
+            path_params["record-version-guid"] = params["record_version_guid"]
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        response_type_map = {
+            200: None,
+            400: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/record-versions/{record-version-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guid_get(
         self,
         *,
@@ -152,6 +273,386 @@ class RecordsRecordVersionsApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/record-versions/{record-version-guid}",
             "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+    ) -> "Union[GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+        """Create a new record version. The record version must be the latest version, and must be either released or withdrawn.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        record_version_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        """
+        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            record_version_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[return-value]
+
+    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+        **kwargs,
+    ):
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "record_version_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post'"
+            )
+        # verify the required parameter "record_version_guid" is set
+        if "record_version_guid" not in params or params["record_version_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_version_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidcreate_new_version_post'"
+            )
+
+        collection_formats = {}
+
+        path_params = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "record_version_guid" in params and record_version_guid is not None:
+            path_params["record-version-guid"] = params["record_version_guid"]
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            400: "GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/record-versions/{record-version-guid}:create-new-version",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+    ) -> "Union[GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+        """Releases the record version.  Must be an unreleased record version.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        record_version_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        """
+        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            record_version_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[return-value]
+
+    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+        **kwargs,
+    ):
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "record_version_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post'"
+            )
+        # verify the required parameter "record_version_guid" is set
+        if "record_version_guid" not in params or params["record_version_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_version_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidrelease_post'"
+            )
+
+        collection_formats = {}
+
+        path_params = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "record_version_guid" in params and record_version_guid is not None:
+            path_params["record-version-guid"] = params["record_version_guid"]
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            400: "GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/record-versions/{record-version-guid}:release",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+    ) -> "Union[GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+        """Withdraws the record version.  Must be a released record version.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        record_version_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        """
+        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            record_version_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[return-value]
+
+    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        record_version_guid: "str",
+        **kwargs,
+    ):
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "record_version_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post'"
+            )
+        # verify the required parameter "record_version_guid" is set
+        if "record_version_guid" not in params or params["record_version_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_version_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_record_versions_record_version_guidwithdraw_post'"
+            )
+
+        collection_formats = {}
+
+        path_params = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "record_version_guid" in params and record_version_guid is not None:
+            path_params["record-version-guid"] = params["record_version_guid"]
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            400: "GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/record-versions/{record-version-guid}:withdraw",
+            "POST",
             path_params,
             query_params,
             header_params,

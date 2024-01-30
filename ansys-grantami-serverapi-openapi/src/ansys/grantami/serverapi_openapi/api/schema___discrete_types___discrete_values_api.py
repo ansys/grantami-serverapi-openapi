@@ -30,7 +30,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         discrete_value_guid: "str",
-    ) -> "Union[GrantaServerApiExceptionsDiscreteValueDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]":
         """Delete a single discrete value. It must not be used by any data, or the operation will fail.
 
         This method makes a synchronous HTTP request.
@@ -43,7 +43,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDiscreteValueDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_discrete_values_discrete_value_guid_delete_with_http_info(
             database_key,
@@ -117,7 +117,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsDiscreteValueDeletionException",
+            400: "GrantaServerApiExceptionsDeletionDiscreteValueDeletionException",
             200: None,
             403: None,
             404: None,

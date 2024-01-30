@@ -223,6 +223,9 @@ from .granta_server_api_app_name_license_checkout_result import (
 from .granta_server_api_async_jobs_create_job_request import (
     GrantaServerApiAsyncJobsCreateJobRequest,
 )
+from .granta_server_api_async_jobs_current_user import (
+    GrantaServerApiAsyncJobsCurrentUser,
+)
 from .granta_server_api_async_jobs_get_jobs_response import (
     GrantaServerApiAsyncJobsGetJobsResponse,
 )
@@ -238,6 +241,11 @@ from .granta_server_api_async_jobs_update_job_request import (
     GrantaServerApiAsyncJobsUpdateJobRequest,
 )
 from .granta_server_api_attribute_type import GrantaServerApiAttributeType
+from .granta_server_api_data_applicable_datum import GrantaServerApiDataApplicableDatum
+from .granta_server_api_data_date_time_datum import GrantaServerApiDataDateTimeDatum
+from .granta_server_api_data_datum import GrantaServerApiDataDatum
+from .granta_server_api_data_datum_type import GrantaServerApiDataDatumType
+from .granta_server_api_data_discrete_datum import GrantaServerApiDataDiscreteDatum
 from .granta_server_api_data_export_attribute_to_export import (
     GrantaServerApiDataExportAttributeToExport,
 )
@@ -484,31 +492,88 @@ from .granta_server_api_data_export_simple_attribute_to_export import (
 from .granta_server_api_data_export_tabular_row_export_behaviour import (
     GrantaServerApiDataExportTabularRowExportBehaviour,
 )
+from .granta_server_api_data_hyperlink_datum import GrantaServerApiDataHyperlinkDatum
+from .granta_server_api_data_hyperlink_target import GrantaServerApiDataHyperlinkTarget
+from .granta_server_api_data_integer_datum import GrantaServerApiDataIntegerDatum
+from .granta_server_api_data_logical_datum import GrantaServerApiDataLogicalDatum
+from .granta_server_api_data_long_text_datum import GrantaServerApiDataLongTextDatum
+from .granta_server_api_data_not_applicable_datum import (
+    GrantaServerApiDataNotApplicableDatum,
+)
+from .granta_server_api_data_range_datum import GrantaServerApiDataRangeDatum
+from .granta_server_api_data_rich_text_type import GrantaServerApiDataRichTextType
+from .granta_server_api_data_rich_text_value import GrantaServerApiDataRichTextValue
+from .granta_server_api_data_short_text_datum import GrantaServerApiDataShortTextDatum
+from .granta_server_api_data_significant_figures_info import (
+    GrantaServerApiDataSignificantFiguresInfo,
+)
 from .granta_server_api_discrete_value import GrantaServerApiDiscreteValue
 from .granta_server_api_disk_status import GrantaServerApiDiskStatus
-from .granta_server_api_exceptions_attribute_deletion_exception import (
-    GrantaServerApiExceptionsAttributeDeletionException,
+from .granta_server_api_exceptions_data_modification_data_modification_error_detail import (
+    GrantaServerApiExceptionsDataModificationDataModificationErrorDetail,
 )
-from .granta_server_api_exceptions_constant_deletion_exception import (
-    GrantaServerApiExceptionsConstantDeletionException,
+from .granta_server_api_exceptions_data_modification_in_use_data_modification_error_detail import (
+    GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail,
 )
-from .granta_server_api_exceptions_discrete_type_deletion_exception import (
-    GrantaServerApiExceptionsDiscreteTypeDeletionException,
+from .granta_server_api_exceptions_data_modification_referenced_by_type import (
+    GrantaServerApiExceptionsDataModificationReferencedByType,
 )
-from .granta_server_api_exceptions_discrete_value_deletion_exception import (
-    GrantaServerApiExceptionsDiscreteValueDeletionException,
+from .granta_server_api_exceptions_deletion_attribute_deletion_exception import (
+    GrantaServerApiExceptionsDeletionAttributeDeletionException,
+)
+from .granta_server_api_exceptions_deletion_constant_deletion_exception import (
+    GrantaServerApiExceptionsDeletionConstantDeletionException,
+)
+from .granta_server_api_exceptions_deletion_discrete_type_deletion_exception import (
+    GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException,
+)
+from .granta_server_api_exceptions_deletion_discrete_value_deletion_exception import (
+    GrantaServerApiExceptionsDeletionDiscreteValueDeletionException,
+)
+from .granta_server_api_exceptions_deletion_parameter_deletion_exception import (
+    GrantaServerApiExceptionsDeletionParameterDeletionException,
+)
+from .granta_server_api_exceptions_deletion_parameter_value_deletion_exception import (
+    GrantaServerApiExceptionsDeletionParameterValueDeletionException,
+)
+from .granta_server_api_exceptions_deletion_table_deletion_exception import (
+    GrantaServerApiExceptionsDeletionTableDeletionException,
 )
 from .granta_server_api_exceptions_error_detail import (
     GrantaServerApiExceptionsErrorDetail,
 )
-from .granta_server_api_exceptions_parameter_deletion_exception import (
-    GrantaServerApiExceptionsParameterDeletionException,
+from .granta_server_api_exceptions_record_history_record_history_copy_exception import (
+    GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException,
 )
-from .granta_server_api_exceptions_parameter_value_deletion_exception import (
-    GrantaServerApiExceptionsParameterValueDeletionException,
+from .granta_server_api_exceptions_record_history_record_history_move_exception import (
+    GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException,
 )
-from .granta_server_api_exceptions_table_deletion_exception import (
-    GrantaServerApiExceptionsTableDeletionException,
+from .granta_server_api_exceptions_version_control_create_record_version_control_exception import (
+    GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException,
+)
+from .granta_server_api_exceptions_version_control_invalid_parent_state_error_detail import (
+    GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail,
+)
+from .granta_server_api_exceptions_version_control_invalid_version_state_error_detail import (
+    GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail,
+)
+from .granta_server_api_exceptions_version_control_not_the_latest_version_error_detail import (
+    GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail,
+)
+from .granta_server_api_exceptions_version_control_not_versioned_error_detail import (
+    GrantaServerApiExceptionsVersionControlNotVersionedErrorDetail,
+)
+from .granta_server_api_exceptions_version_control_release_record_version_control_exception import (
+    GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException,
+)
+from .granta_server_api_exceptions_version_control_release_table_version_control_exception import (
+    GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException,
+)
+from .granta_server_api_exceptions_version_control_version_control_error_detail import (
+    GrantaServerApiExceptionsVersionControlVersionControlErrorDetail,
+)
+from .granta_server_api_exceptions_version_control_withdraw_record_version_control_exception import (
+    GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException,
 )
 from .granta_server_api_exclude_values_specifier import (
     GrantaServerApiExcludeValuesSpecifier,
@@ -576,6 +641,21 @@ from .granta_server_api_integration_schema_source_of_granta_server_api_object_id
     GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier,
 )
 from .granta_server_api_link_attribute_type import GrantaServerApiLinkAttributeType
+from .granta_server_api_lists_dto_create_list_item import (
+    GrantaServerApiListsDtoCreateListItem,
+)
+from .granta_server_api_lists_dto_create_record_list import (
+    GrantaServerApiListsDtoCreateRecordList,
+)
+from .granta_server_api_lists_dto_create_record_list_items_info import (
+    GrantaServerApiListsDtoCreateRecordListItemsInfo,
+)
+from .granta_server_api_lists_dto_delete_record_list_item import (
+    GrantaServerApiListsDtoDeleteRecordListItem,
+)
+from .granta_server_api_lists_dto_delete_record_list_items import (
+    GrantaServerApiListsDtoDeleteRecordListItems,
+)
 from .granta_server_api_lists_dto_list_boolean_criterion import (
     GrantaServerApiListsDtoListBooleanCriterion,
 )
@@ -586,20 +666,17 @@ from .granta_server_api_lists_dto_list_item import GrantaServerApiListsDtoListIt
 from .granta_server_api_lists_dto_paging_options import (
     GrantaServerApiListsDtoPagingOptions,
 )
-from .granta_server_api_lists_dto_record_list_create import (
-    GrantaServerApiListsDtoRecordListCreate,
-)
 from .granta_server_api_lists_dto_record_list_header import (
     GrantaServerApiListsDtoRecordListHeader,
 )
-from .granta_server_api_lists_dto_record_list_items import (
-    GrantaServerApiListsDtoRecordListItems,
+from .granta_server_api_lists_dto_record_list_headers_info import (
+    GrantaServerApiListsDtoRecordListHeadersInfo,
 )
-from .granta_server_api_lists_dto_record_list_permission_flags_dto import (
-    GrantaServerApiListsDtoRecordListPermissionFlagsDto,
+from .granta_server_api_lists_dto_record_list_items_info import (
+    GrantaServerApiListsDtoRecordListItemsInfo,
 )
-from .granta_server_api_lists_dto_record_list_properties import (
-    GrantaServerApiListsDtoRecordListProperties,
+from .granta_server_api_lists_dto_record_list_permission_flags import (
+    GrantaServerApiListsDtoRecordListPermissionFlags,
 )
 from .granta_server_api_lists_dto_record_list_search_criterion import (
     GrantaServerApiListsDtoRecordListSearchCriterion,
@@ -613,17 +690,32 @@ from .granta_server_api_lists_dto_record_list_search_request import (
 from .granta_server_api_lists_dto_record_list_search_result import (
     GrantaServerApiListsDtoRecordListSearchResult,
 )
+from .granta_server_api_lists_dto_record_list_search_results_info import (
+    GrantaServerApiListsDtoRecordListSearchResultsInfo,
+)
 from .granta_server_api_lists_dto_response_options import (
     GrantaServerApiListsDtoResponseOptions,
+)
+from .granta_server_api_lists_dto_update_record_list_permission_flags import (
+    GrantaServerApiListsDtoUpdateRecordListPermissionFlags,
+)
+from .granta_server_api_lists_dto_update_record_list_properties import (
+    GrantaServerApiListsDtoUpdateRecordListProperties,
+)
+from .granta_server_api_lists_dto_update_user_permission import (
+    GrantaServerApiListsDtoUpdateUserPermission,
+)
+from .granta_server_api_lists_dto_update_user_permissions_info import (
+    GrantaServerApiListsDtoUpdateUserPermissionsInfo,
 )
 from .granta_server_api_lists_dto_user_or_group import (
     GrantaServerApiListsDtoUserOrGroup,
 )
-from .granta_server_api_lists_dto_user_permission_dto import (
-    GrantaServerApiListsDtoUserPermissionDto,
+from .granta_server_api_lists_dto_user_permission import (
+    GrantaServerApiListsDtoUserPermission,
 )
-from .granta_server_api_lists_dto_user_permission_input_dto import (
-    GrantaServerApiListsDtoUserPermissionInputDto,
+from .granta_server_api_lists_dto_user_permissions_info import (
+    GrantaServerApiListsDtoUserPermissionsInfo,
 )
 from .granta_server_api_lists_dto_user_role import GrantaServerApiListsDtoUserRole
 from .granta_server_api_no_values_specifier import GrantaServerApiNoValuesSpecifier
@@ -641,6 +733,15 @@ from .granta_server_api_parameter_info_scale_type import (
 from .granta_server_api_record_color import GrantaServerApiRecordColor
 from .granta_server_api_record_property import GrantaServerApiRecordProperty
 from .granta_server_api_record_type import GrantaServerApiRecordType
+from .granta_server_api_records_record_histories_copy_record_history import (
+    GrantaServerApiRecordsRecordHistoriesCopyRecordHistory,
+)
+from .granta_server_api_records_record_histories_create_record_history import (
+    GrantaServerApiRecordsRecordHistoriesCreateRecordHistory,
+)
+from .granta_server_api_records_record_histories_move_record_history import (
+    GrantaServerApiRecordsRecordHistoriesMoveRecordHistory,
+)
 from .granta_server_api_records_record_histories_record_history import (
     GrantaServerApiRecordsRecordHistoriesRecordHistory,
 )
@@ -1273,8 +1374,14 @@ from .granta_server_api_schema_standard_names_standard_names_info import (
 from .granta_server_api_schema_standard_names_update_standard_name import (
     GrantaServerApiSchemaStandardNamesUpdateStandardName,
 )
+from .granta_server_api_schema_subsets_add_record_history_to_subset import (
+    GrantaServerApiSchemaSubsetsAddRecordHistoryToSubset,
+)
 from .granta_server_api_schema_subsets_create_subset import (
     GrantaServerApiSchemaSubsetsCreateSubset,
+)
+from .granta_server_api_schema_subsets_remove_record_history_from_subset import (
+    GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset,
 )
 from .granta_server_api_schema_subsets_subset import GrantaServerApiSchemaSubsetsSubset
 from .granta_server_api_schema_subsets_subsets_info import (
@@ -1590,6 +1697,18 @@ from .granta_server_api_search_link_exists_datum_criterion import (
 )
 from .granta_server_api_search_linking_value_match_behaviour import (
     GrantaServerApiSearchLinkingValueMatchBehaviour,
+)
+from .granta_server_api_search_local_column_criterion import (
+    GrantaServerApiSearchLocalColumnCriterion,
+)
+from .granta_server_api_search_local_column_exists_criterion import (
+    GrantaServerApiSearchLocalColumnExistsCriterion,
+)
+from .granta_server_api_search_local_column_matches_criterion import (
+    GrantaServerApiSearchLocalColumnMatchesCriterion,
+)
+from .granta_server_api_search_local_column_not_applicable_criterion import (
+    GrantaServerApiSearchLocalColumnNotApplicableCriterion,
 )
 from .granta_server_api_search_local_rows_behaviour import (
     GrantaServerApiSearchLocalRowsBehaviour,

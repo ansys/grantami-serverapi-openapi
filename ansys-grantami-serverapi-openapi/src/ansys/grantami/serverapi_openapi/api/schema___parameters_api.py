@@ -110,7 +110,7 @@ class SchemaParametersApi(ApiBase):
 
     def v1alpha_databases_database_key_parameters_parameter_guid_delete(
         self, *, database_key: "str", parameter_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsParameterDeletionException, None]":
+    ) -> "Union[GrantaServerApiExceptionsDeletionParameterDeletionException, None]":
         """Delete a parameter.
 
         This method makes a synchronous HTTP request.
@@ -122,7 +122,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsParameterDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionParameterDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_parameters_parameter_guid_delete_with_http_info(
             database_key, parameter_guid, _return_http_data_only=True
@@ -181,7 +181,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsParameterDeletionException",
+            400: "GrantaServerApiExceptionsDeletionParameterDeletionException",
             200: None,
             403: None,
             404: None,
@@ -298,7 +298,9 @@ class SchemaParametersApi(ApiBase):
 
     def v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_delete(
         self, *, database_key: "str", parameter_guid: "str", parameter_value_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsParameterValueDeletionException, None]":
+    ) -> (
+        "Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]"
+    ):
         """Delete a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -311,7 +313,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsParameterValueDeletionException, None]
+        Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]
         """
         data = self._v1alpha_databases_database_key_parameters_parameter_guid_parameter_values_parameter_value_guid_delete_with_http_info(
             database_key,
@@ -388,7 +390,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map = {
-            400: "GrantaServerApiExceptionsParameterValueDeletionException",
+            400: "GrantaServerApiExceptionsDeletionParameterValueDeletionException",
             200: None,
             403: None,
             404: None,

@@ -55,28 +55,25 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
     def __init__(
         self,
         *,
-        display_name: "Optional[str]" = None,
-        identifier: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        display_name: "str",
+        identifier: "str",
+        name: "str",
     ) -> None:
         """GrantaServerApiListsDtoUserOrGroup - a model defined in Swagger
 
         Parameters
         ----------
-            display_name: str, optional
-            identifier: str, optional
-            name: str, optional
+            display_name: str
+            identifier: str
+            name: str
         """
         self._identifier = None
         self._display_name = None
         self._name = None
 
-        if identifier is not None:
-            self.identifier = identifier
-        if display_name is not None:
-            self.display_name = display_name
-        if name is not None:
-            self.name = name
+        self.identifier = identifier
+        self.display_name = display_name
+        self.name = name
 
     @property
     def identifier(self) -> "str":
@@ -98,6 +95,8 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         identifier: str
             The identifier of this GrantaServerApiListsDtoUserOrGroup.
         """
+        if identifier is None:
+            raise ValueError("Invalid value for 'identifier', must not be 'None'")
         self._identifier = identifier
 
     @property
@@ -120,6 +119,8 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         display_name: str
             The display_name of this GrantaServerApiListsDtoUserOrGroup.
         """
+        if display_name is None:
+            raise ValueError("Invalid value for 'display_name', must not be 'None'")
         self._display_name = display_name
 
     @property
@@ -142,6 +143,8 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         name: str
             The name of this GrantaServerApiListsDtoUserOrGroup.
         """
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
 
     @classmethod

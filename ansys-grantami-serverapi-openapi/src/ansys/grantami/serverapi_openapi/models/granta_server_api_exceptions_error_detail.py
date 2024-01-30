@@ -53,23 +53,21 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
     def __init__(
         self,
         *,
-        message: "Optional[str]" = None,
-        reason: "Optional[str]" = None,
+        message: "str",
+        reason: "str",
     ) -> None:
         """GrantaServerApiExceptionsErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-            message: str, optional
-            reason: str, optional
+            message: str
+            reason: str
         """
         self._message = None
         self._reason = None
 
-        if message is not None:
-            self.message = message
-        if reason is not None:
-            self.reason = reason
+        self.message = message
+        self.reason = reason
 
     @property
     def message(self) -> "str":
@@ -91,6 +89,8 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
         message: str
             The message of this GrantaServerApiExceptionsErrorDetail.
         """
+        if message is None:
+            raise ValueError("Invalid value for 'message', must not be 'None'")
         self._message = message
 
     @property
@@ -113,6 +113,8 @@ class GrantaServerApiExceptionsErrorDetail(ModelBase):
         reason: str
             The reason of this GrantaServerApiExceptionsErrorDetail.
         """
+        if reason is None:
+            raise ValueError("Invalid value for 'reason', must not be 'None'")
         self._reason = reason
 
     @classmethod

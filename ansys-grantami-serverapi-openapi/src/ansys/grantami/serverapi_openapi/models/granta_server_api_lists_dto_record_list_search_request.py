@@ -37,15 +37,15 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
+        "search_criterion": "GrantaServerApiListsDtoListCriterion",
         "paging_options": "GrantaServerApiListsDtoPagingOptions",
         "response_options": "GrantaServerApiListsDtoResponseOptions",
-        "search_criterion": "GrantaServerApiListsDtoListCriterion",
     }
 
     attribute_map = {
+        "search_criterion": "searchCriterion",
         "paging_options": "pagingOptions",
         "response_options": "responseOptions",
-        "search_criterion": "searchCriterion",
     }
 
     subtype_mapping = {
@@ -59,24 +59,23 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
     def __init__(
         self,
         *,
+        search_criterion: "GrantaServerApiListsDtoListCriterion",
         paging_options: "Optional[GrantaServerApiListsDtoPagingOptions]" = None,
         response_options: "Optional[GrantaServerApiListsDtoResponseOptions]" = None,
-        search_criterion: "Optional[GrantaServerApiListsDtoListCriterion]" = None,
     ) -> None:
         """GrantaServerApiListsDtoRecordListSearchRequest - a model defined in Swagger
 
         Parameters
         ----------
+            search_criterion: GrantaServerApiListsDtoListCriterion
             paging_options: GrantaServerApiListsDtoPagingOptions, optional
             response_options: GrantaServerApiListsDtoResponseOptions, optional
-            search_criterion: GrantaServerApiListsDtoListCriterion, optional
         """
         self._search_criterion = None
         self._paging_options = None
         self._response_options = None
 
-        if search_criterion is not None:
-            self.search_criterion = search_criterion
+        self.search_criterion = search_criterion
         if paging_options is not None:
             self.paging_options = paging_options
         if response_options is not None:
@@ -104,6 +103,8 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         search_criterion: GrantaServerApiListsDtoListCriterion
             The search_criterion of this GrantaServerApiListsDtoRecordListSearchRequest.
         """
+        if search_criterion is None:
+            raise ValueError("Invalid value for 'search_criterion', must not be 'None'")
         self._search_criterion = search_criterion
 
     @property
