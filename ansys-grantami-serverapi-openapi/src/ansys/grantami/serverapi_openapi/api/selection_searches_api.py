@@ -9,11 +9,12 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Dict, IO, List, Optional, Union  # noqa: F401
 from . import ApiBase
 
 
 if TYPE_CHECKING:
+    import pathlib
     from ..models import *
 
 
@@ -161,6 +162,8 @@ class SelectionSearchesApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiSelectionSearchesSelectionSearch",
@@ -255,6 +258,8 @@ class SelectionSearchesApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiSelectionSearchesSelectionSearch",
@@ -521,6 +526,8 @@ class SelectionSearchesApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: None,

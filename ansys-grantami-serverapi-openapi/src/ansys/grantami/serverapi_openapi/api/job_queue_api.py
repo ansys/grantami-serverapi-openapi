@@ -9,11 +9,12 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Dict, IO, List, Optional, Union  # noqa: F401
 from . import ApiBase
 
 
 if TYPE_CHECKING:
+    import pathlib
     from ..models import *
 
 
@@ -187,10 +188,8 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["multipart/form-data"]
-        )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "str",
@@ -279,6 +278,8 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "list[str]",
@@ -846,6 +847,8 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
@@ -1027,6 +1030,8 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
@@ -1202,6 +1207,8 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
