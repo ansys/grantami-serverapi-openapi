@@ -61,6 +61,7 @@ class StatusApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
         }

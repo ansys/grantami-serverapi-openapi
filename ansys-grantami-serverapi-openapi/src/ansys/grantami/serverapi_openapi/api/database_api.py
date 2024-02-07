@@ -101,8 +101,6 @@ class DatabaseApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
@@ -893,8 +891,6 @@ class DatabaseApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",

@@ -232,6 +232,7 @@ class ListManagementApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             403: None,
@@ -421,8 +422,6 @@ class ListManagementApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiListsDtoRecordListHeader",
@@ -942,8 +941,6 @@ class ListManagementApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiListsDtoRecordListHeader",
@@ -1036,8 +1033,6 @@ class ListManagementApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiListsDtoRecordListSearchInfo",

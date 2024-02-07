@@ -91,14 +91,7 @@ class JobQueueApi(ApiBase):
         )
 
     def v1alpha_job_queue_files_post(
-        self,
-        *,
-        content_type: "Optional[str]" = None,
-        content_disposition: "Optional[str]" = None,
-        headers: "Optional[Dict[str, List[str]]]" = None,
-        length: "Optional[int]" = None,
-        name: "Optional[str]" = None,
-        file_name: "Optional[str]" = None,
+        self, *, file: "Optional[Union[IO, pathlib.Path]]" = None
     ) -> "str":
         """Uploads an ephemeral file and returns an ID which can subsequently be used to refer to that file in a job creation request. Ephemeral files have a short lifespan  and should be used to provide file data to jobs only. They should not be used as file storage.
 
@@ -106,45 +99,22 @@ class JobQueueApi(ApiBase):
 
         Parameters
         ----------
-        content_type: str
-        content_disposition: str
-        headers: Dict[str, List[str]]
-        length: int
-        name: str
-        file_name: str
+        file: Union[IO, pathlib.Path]
 
         Returns
         -------
         str
         """
         data = self._v1alpha_job_queue_files_post_with_http_info(
-            content_type,
-            content_disposition,
-            headers,
-            length,
-            name,
-            file_name,
-            _return_http_data_only=True,
+            file, _return_http_data_only=True
         )
         return data  # type: ignore[return-value]
 
     def _v1alpha_job_queue_files_post_with_http_info(
-        self,
-        content_type: "Optional[str]" = None,
-        content_disposition: "Optional[str]" = None,
-        headers: "Optional[Dict[str, List[str]]]" = None,
-        length: "Optional[int]" = None,
-        name: "Optional[str]" = None,
-        file_name: "Optional[str]" = None,
-        **kwargs,
+        self, file: "Optional[Union[IO, pathlib.Path]]" = None, **kwargs
     ):
         all_params = [
-            "content_type",
-            "content_disposition",
-            "headers",
-            "length",
-            "name",
-            "file_name",
+            "file",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -169,18 +139,8 @@ class JobQueueApi(ApiBase):
 
         form_params = []
         local_var_files = {}
-        if "content_type" in params and content_type is not None:
-            form_params.append(("ContentType", params["content_type"]))
-        if "content_disposition" in params and content_disposition is not None:
-            form_params.append(("ContentDisposition", params["content_disposition"]))
-        if "headers" in params and headers is not None:
-            form_params.append(("Headers", params["headers"]))
-        if "length" in params and length is not None:
-            form_params.append(("Length", params["length"]))
-        if "name" in params and name is not None:
-            form_params.append(("Name", params["name"]))
-        if "file_name" in params and file_name is not None:
-            form_params.append(("FileName", params["file_name"]))
+        if "file" in params and file is not None:
+            local_var_files["file"] = params["file"]
 
         body_params = None
         # HTTP header 'Accept'
@@ -278,8 +238,6 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "list[str]",
@@ -484,6 +442,7 @@ class JobQueueApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             204: None,
@@ -674,7 +633,7 @@ class JobQueueApi(ApiBase):
 
     def v1alpha_job_queue_jobs_id_outputsexport_get(
         self, *, id: "str", file_name: "str"
-    ) -> "Union[None, SystemIOStream]":
+    ) -> "Union[None, str]":
         """Retrieve a job output file.
 
         This method makes a synchronous HTTP request.
@@ -686,7 +645,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        Union[None, SystemIOStream]
+        Union[None, str]
         """
         data = self._v1alpha_job_queue_jobs_id_outputsexport_get_with_http_info(
             id, file_name, _return_http_data_only=True
@@ -741,11 +700,11 @@ class JobQueueApi(ApiBase):
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
+            ["application/octet-stream"]
         )
 
         response_type_map = {
-            200: "SystemIOStream",
+            200: "file",
             404: None,
         }
 
@@ -847,8 +806,6 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
@@ -927,6 +884,7 @@ class JobQueueApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             404: None,
@@ -1030,8 +988,6 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
@@ -1140,7 +1096,7 @@ class JobQueueApi(ApiBase):
 
     def v1alpha_job_queue_jobs_post(
         self, *, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None
-    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
+    ) -> "GrantaServerApiAsyncJobsJob":
         """Create a new job.
 
         This method makes a synchronous HTTP request.
@@ -1151,7 +1107,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsJob, None]
+        GrantaServerApiAsyncJobsJob
         """
         data = self._v1alpha_job_queue_jobs_post_with_http_info(
             body, _return_http_data_only=True
@@ -1207,12 +1163,10 @@ class JobQueueApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiAsyncJobsJob",
-            201: None,
+            201: "GrantaServerApiAsyncJobsJob",
         }
 
         return self.api_client.call_api(

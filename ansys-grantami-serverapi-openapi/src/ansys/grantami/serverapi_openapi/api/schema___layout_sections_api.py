@@ -265,8 +265,6 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiSchemaSlimEntitiesSlimLayoutSection",
@@ -395,8 +393,6 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
@@ -520,6 +516,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             400: None,
@@ -802,6 +799,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             400: None,
@@ -945,8 +943,6 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiSchemaLayoutsNewLayoutItem",

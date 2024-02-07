@@ -306,8 +306,6 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
@@ -593,8 +591,6 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "application/*+json",
             ]
         )
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
 
         response_type_map = {
             201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
