@@ -37,62 +37,65 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types = {
-        "parent_guid": "str",
+        "new_parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
         "new_short_name": "str",
     }
 
     attribute_map = {
-        "parent_guid": "parentGuid",
+        "new_parent": "newParent",
         "new_short_name": "newShortName",
     }
 
-    subtype_mapping = {}
+    subtype_mapping = {
+        "newParent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
+    }
 
     discriminator = None
 
     def __init__(
         self,
         *,
-        parent_guid: "str",
+        new_parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]" = None,
         new_short_name: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiRecordsRecordHistoriesCopyRecordHistory - a model defined in Swagger
 
         Parameters
         ----------
-            parent_guid: str
+            new_parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
             new_short_name: str, optional
         """
-        self._parent_guid = None
+        self._new_parent = None
         self._new_short_name = None
 
-        self.parent_guid = parent_guid
+        if new_parent is not None:
+            self.new_parent = new_parent
         if new_short_name is not None:
             self.new_short_name = new_short_name
 
     @property
-    def parent_guid(self) -> "str":
-        """Gets the parent_guid of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+    def new_parent(self) -> "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory":
+        """Gets the new_parent of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
 
         Returns
         -------
-        str
-            The parent_guid of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+        GrantaServerApiRecordsRecordHistoriesSlimRecordHistory
+            The new_parent of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
         """
-        return self._parent_guid
+        return self._new_parent
 
-    @parent_guid.setter
-    def parent_guid(self, parent_guid: "str") -> None:
-        """Sets the parent_guid of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+    @new_parent.setter
+    def new_parent(
+        self, new_parent: "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory"
+    ) -> None:
+        """Sets the new_parent of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
 
         Parameters
         ----------
-        parent_guid: str
-            The parent_guid of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+        new_parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory
+            The new_parent of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
         """
-        if parent_guid is None:
-            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
-        self._parent_guid = parent_guid
+        self._new_parent = new_parent
 
     @property
     def new_short_name(self) -> "str":

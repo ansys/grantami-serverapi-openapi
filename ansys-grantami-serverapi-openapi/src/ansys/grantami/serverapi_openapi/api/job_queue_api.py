@@ -1165,7 +1165,6 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map = {
-            200: "GrantaServerApiAsyncJobsJob",
             201: "GrantaServerApiAsyncJobsJob",
         }
 

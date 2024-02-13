@@ -768,12 +768,7 @@ class SchemaExportersApi(ApiBase):
         *,
         database_key: "str",
         folder_guid: "str",
-        content_type: "Optional[str]" = None,
-        content_disposition: "Optional[str]" = None,
-        headers: "Optional[Dict[str, List[str]]]" = None,
-        length: "Optional[int]" = None,
-        name: "Optional[str]" = None,
-        file_name: "Optional[str]" = None,
+        file: "Optional[Union[IO, pathlib.Path]]" = None,
         description: "Optional[str]" = None,
     ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
         """Create a new Exporter File.
@@ -784,12 +779,7 @@ class SchemaExportersApi(ApiBase):
         ----------
         database_key: str
         folder_guid: str
-        content_type: str
-        content_disposition: str
-        headers: Dict[str, List[str]]
-        length: int
-        name: str
-        file_name: str
+        file: Union[IO, pathlib.Path]
         description: str
 
         Returns
@@ -797,16 +787,7 @@ class SchemaExportersApi(ApiBase):
         Union[GrantaServerApiSchemaFilesFileHeader, None]
         """
         data = self._v1alpha_databases_database_key_exporters_folder_guid_files_post_with_http_info(
-            database_key,
-            folder_guid,
-            content_type,
-            content_disposition,
-            headers,
-            length,
-            name,
-            file_name,
-            description,
-            _return_http_data_only=True,
+            database_key, folder_guid, file, description, _return_http_data_only=True
         )
         return data  # type: ignore[return-value]
 
@@ -814,24 +795,14 @@ class SchemaExportersApi(ApiBase):
         self,
         database_key: "str",
         folder_guid: "str",
-        content_type: "Optional[str]" = None,
-        content_disposition: "Optional[str]" = None,
-        headers: "Optional[Dict[str, List[str]]]" = None,
-        length: "Optional[int]" = None,
-        name: "Optional[str]" = None,
-        file_name: "Optional[str]" = None,
+        file: "Optional[Union[IO, pathlib.Path]]" = None,
         description: "Optional[str]" = None,
         **kwargs,
     ):
         all_params = [
             "database_key",
             "folder_guid",
-            "content_type",
-            "content_disposition",
-            "headers",
-            "length",
-            "name",
-            "file_name",
+            "file",
             "description",
             "_return_http_data_only",
             "_preload_content",
@@ -871,18 +842,8 @@ class SchemaExportersApi(ApiBase):
 
         form_params = []
         local_var_files = {}
-        if "content_type" in params and content_type is not None:
-            form_params.append(("ContentType", params["content_type"]))
-        if "content_disposition" in params and content_disposition is not None:
-            form_params.append(("ContentDisposition", params["content_disposition"]))
-        if "headers" in params and headers is not None:
-            form_params.append(("Headers", params["headers"]))
-        if "length" in params and length is not None:
-            form_params.append(("Length", params["length"]))
-        if "name" in params and name is not None:
-            form_params.append(("Name", params["name"]))
-        if "file_name" in params and file_name is not None:
-            form_params.append(("FileName", params["file_name"]))
+        if "file" in params and file is not None:
+            local_var_files["file"] = params["file"]
         if "description" in params and description is not None:
             form_params.append(("description", params["description"]))
 
