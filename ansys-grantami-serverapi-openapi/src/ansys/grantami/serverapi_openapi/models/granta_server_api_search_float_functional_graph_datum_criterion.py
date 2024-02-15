@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "default_x_axis_parameter_guid": "str",
         "default_x_axis_parameter_identity": "int",
         "is_series_graph": "bool",
@@ -55,7 +65,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         "x_axis_parameter_identity": "int",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "default_x_axis_parameter_guid": "defaultXAxisParameterGuid",
         "default_x_axis_parameter_identity": "defaultXAxisParameterIdentity",
         "is_series_graph": "isSeriesGraph",
@@ -69,9 +79,9 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         "x_axis_parameter_identity": "xAxisParameterIdentity",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -105,7 +115,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
             x_axis_parameter_identity: int, optional
         """
         super().__init__()
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._x_axis_parameter_identity = None
         self._x_axis_parameter_guid = None
         self._number_of_series_lte = None
@@ -164,7 +174,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._type = type
 
     @property
-    def x_axis_parameter_identity(self) -> "int":
+    def x_axis_parameter_identity(self) -> "Optional[int]":
         """Gets the x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
@@ -176,7 +186,9 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._x_axis_parameter_identity
 
     @x_axis_parameter_identity.setter
-    def x_axis_parameter_identity(self, x_axis_parameter_identity: "int") -> None:
+    def x_axis_parameter_identity(
+        self, x_axis_parameter_identity: "Optional[int]"
+    ) -> None:
         """Sets the x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
@@ -188,7 +200,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._x_axis_parameter_identity = x_axis_parameter_identity
 
     @property
-    def x_axis_parameter_guid(self) -> "str":
+    def x_axis_parameter_guid(self) -> "Optional[str]":
         """Gets the x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
@@ -200,7 +212,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._x_axis_parameter_guid
 
     @x_axis_parameter_guid.setter
-    def x_axis_parameter_guid(self, x_axis_parameter_guid: "str") -> None:
+    def x_axis_parameter_guid(self, x_axis_parameter_guid: "Optional[str]") -> None:
         """Sets the x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
@@ -212,7 +224,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._x_axis_parameter_guid = x_axis_parameter_guid
 
     @property
-    def number_of_series_lte(self) -> "int":
+    def number_of_series_lte(self) -> "Optional[int]":
         """Gets the number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
@@ -224,7 +236,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._number_of_series_lte
 
     @number_of_series_lte.setter
-    def number_of_series_lte(self, number_of_series_lte: "int") -> None:
+    def number_of_series_lte(self, number_of_series_lte: "Optional[int]") -> None:
         """Sets the number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
@@ -236,7 +248,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._number_of_series_lte = number_of_series_lte
 
     @property
-    def number_of_series_gte(self) -> "int":
+    def number_of_series_gte(self) -> "Optional[int]":
         """Gets the number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
@@ -248,7 +260,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._number_of_series_gte
 
     @number_of_series_gte.setter
-    def number_of_series_gte(self, number_of_series_gte: "int") -> None:
+    def number_of_series_gte(self, number_of_series_gte: "Optional[int]") -> None:
         """Sets the number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
@@ -260,7 +272,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._number_of_series_gte = number_of_series_gte
 
     @property
-    def show_as_table(self) -> "bool":
+    def show_as_table(self) -> "Optional[bool]":
         """Gets the show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the \"Show as table\" property
 
@@ -272,7 +284,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._show_as_table
 
     @show_as_table.setter
-    def show_as_table(self, show_as_table: "bool") -> None:
+    def show_as_table(self, show_as_table: "Optional[bool]") -> None:
         """Sets the show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the \"Show as table\" property
 
@@ -284,7 +296,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._show_as_table = show_as_table
 
     @property
-    def default_x_axis_parameter_identity(self) -> "int":
+    def default_x_axis_parameter_identity(self) -> "Optional[int]":
         """Gets the default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional default x axis parameter filter. Only grid graphs have a default x axis.
 
@@ -297,7 +309,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
 
     @default_x_axis_parameter_identity.setter
     def default_x_axis_parameter_identity(
-        self, default_x_axis_parameter_identity: "int"
+        self, default_x_axis_parameter_identity: "Optional[int]"
     ) -> None:
         """Sets the default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional default x axis parameter filter. Only grid graphs have a default x axis.
@@ -310,7 +322,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._default_x_axis_parameter_identity = default_x_axis_parameter_identity
 
     @property
-    def default_x_axis_parameter_guid(self) -> "str":
+    def default_x_axis_parameter_guid(self) -> "Optional[str]":
         """Gets the default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only grid graphs have a default x axis..
 
@@ -323,7 +335,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
 
     @default_x_axis_parameter_guid.setter
     def default_x_axis_parameter_guid(
-        self, default_x_axis_parameter_guid: "str"
+        self, default_x_axis_parameter_guid: "Optional[str]"
     ) -> None:
         """Sets the default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only grid graphs have a default x axis..
@@ -336,7 +348,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._default_x_axis_parameter_guid = default_x_axis_parameter_guid
 
     @property
-    def number_of_points_lte(self) -> "int":
+    def number_of_points_lte(self) -> "Optional[int]":
         """Gets the number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
@@ -348,7 +360,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._number_of_points_lte
 
     @number_of_points_lte.setter
-    def number_of_points_lte(self, number_of_points_lte: "int") -> None:
+    def number_of_points_lte(self, number_of_points_lte: "Optional[int]") -> None:
         """Sets the number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
@@ -360,7 +372,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._number_of_points_lte = number_of_points_lte
 
     @property
-    def number_of_points_gte(self) -> "int":
+    def number_of_points_gte(self) -> "Optional[int]":
         """Gets the number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
@@ -372,7 +384,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._number_of_points_gte
 
     @number_of_points_gte.setter
-    def number_of_points_gte(self, number_of_points_gte: "int") -> None:
+    def number_of_points_gte(self, number_of_points_gte: "Optional[int]") -> None:
         """Sets the number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
@@ -384,7 +396,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         self._number_of_points_gte = number_of_points_gte
 
     @property
-    def is_series_graph(self) -> "bool":
+    def is_series_graph(self) -> "Optional[bool]":
         """Gets the is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the type of graph
 
@@ -396,7 +408,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         return self._is_series_graph
 
     @is_series_graph.setter
-    def is_series_graph(self, is_series_graph: "bool") -> None:
+    def is_series_graph(self, is_series_graph: "Optional[bool]") -> None:
         """Sets the is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the type of graph
 
@@ -425,7 +437,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

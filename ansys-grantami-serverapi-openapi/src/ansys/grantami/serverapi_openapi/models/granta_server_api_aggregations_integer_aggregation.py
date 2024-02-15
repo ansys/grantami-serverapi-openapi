@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,21 +51,21 @@ class GrantaServerApiAggregationsIntegerAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "datum_type": "str",
         "maximum": "int",
         "minimum": "int",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "datum_type": "datumType",
         "maximum": "maximum",
         "minimum": "minimum",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -75,7 +85,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
         super().__init__()
         self._minimum = None
         self._maximum = None
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
 
         if minimum is not None:
             self.minimum = minimum
@@ -84,7 +94,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
         self.datum_type = datum_type
 
     @property
-    def minimum(self) -> "int":
+    def minimum(self) -> "Optional[int]":
         """Gets the minimum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Returns
@@ -95,7 +105,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
         return self._minimum
 
     @minimum.setter
-    def minimum(self, minimum: "int") -> None:
+    def minimum(self, minimum: "Optional[int]") -> None:
         """Sets the minimum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Parameters
@@ -106,7 +116,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
         self._minimum = minimum
 
     @property
-    def maximum(self) -> "int":
+    def maximum(self) -> "Optional[int]":
         """Gets the maximum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Returns
@@ -117,7 +127,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
         return self._maximum
 
     @maximum.setter
-    def maximum(self, maximum: "int") -> None:
+    def maximum(self, maximum: "Optional[int]") -> None:
         """Sets the maximum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Parameters
@@ -169,7 +179,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

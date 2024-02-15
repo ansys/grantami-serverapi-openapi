@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "allow_all_compatible_expressions": "bool",
@@ -58,7 +68,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
@@ -75,13 +85,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         "unit": "unit",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "expressions": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -127,7 +137,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
             guid=guid,
             help_path=help_path,
         )
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._unit = None
         self._attribute_parameters = None
         self._expressions = None
@@ -180,7 +190,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
+    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -191,7 +201,9 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
+    def unit(
+        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -204,7 +216,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -216,19 +228,22 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self,
+        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def expressions(
+        self,
+    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
         """Gets the expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -240,19 +255,19 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
 
     @expressions.setter
     def expressions(
-        self, expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]"
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         self._expressions = expressions
 
     @property
-    def allow_extrapolation(self) -> "bool":
+    def allow_extrapolation(self) -> "Optional[bool]":
         """Gets the allow_extrapolation of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -263,7 +278,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._allow_extrapolation
 
     @allow_extrapolation.setter
-    def allow_extrapolation(self, allow_extrapolation: "bool") -> None:
+    def allow_extrapolation(self, allow_extrapolation: "Optional[bool]") -> None:
         """Sets the allow_extrapolation of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -274,7 +289,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._allow_extrapolation = allow_extrapolation
 
     @property
-    def axis_name(self) -> "str":
+    def axis_name(self) -> "Optional[str]":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -285,7 +300,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "str") -> None:
+    def axis_name(self, axis_name: "Optional[str]") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -296,7 +311,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._axis_name = axis_name
 
     @property
-    def is_range(self) -> "bool":
+    def is_range(self) -> "Optional[bool]":
         """Gets the is_range of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -307,7 +322,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "bool") -> None:
+    def is_range(self, is_range: "Optional[bool]") -> None:
         """Sets the is_range of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -318,7 +333,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._is_range = is_range
 
     @property
-    def allow_all_compatible_expressions(self) -> "bool":
+    def allow_all_compatible_expressions(self) -> "Optional[bool]":
         """Gets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -330,7 +345,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
 
     @allow_all_compatible_expressions.setter
     def allow_all_compatible_expressions(
-        self, allow_all_compatible_expressions: "bool"
+        self, allow_all_compatible_expressions: "Optional[bool]"
     ) -> None:
         """Sets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
@@ -342,7 +357,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
 
     @property
-    def allow_anonymous_expressions(self) -> "bool":
+    def allow_anonymous_expressions(self) -> "Optional[bool]":
         """Gets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
@@ -353,7 +368,9 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._allow_anonymous_expressions
 
     @allow_anonymous_expressions.setter
-    def allow_anonymous_expressions(self, allow_anonymous_expressions: "bool") -> None:
+    def allow_anonymous_expressions(
+        self, allow_anonymous_expressions: "Optional[bool]"
+    ) -> None:
         """Sets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -381,7 +398,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

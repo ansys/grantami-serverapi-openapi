@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_expor
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,25 +51,25 @@ class GrantaServerApiDataExportExportFailuresRollupExportFailure(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "failed_rollup": "GrantaServerApiDataExportExportFailuresRollupReference",
         "failure_details": "str",
         "failure_reason": "str",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "failed_rollup": "failedRollup",
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "failedRollup": "GrantaServerApiDataExportExportFailuresRollupReference",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -79,8 +89,8 @@ class GrantaServerApiDataExportExportFailuresRollupExportFailure(
             type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_rollup = None
-        self._type = None
+        self._failed_rollup: GrantaServerApiDataExportExportFailuresRollupReference = None  # type: ignore[assignment]
+        self._type: str = None  # type: ignore[assignment]
 
         self.failed_rollup = failed_rollup
         self.type = type
@@ -153,7 +163,7 @@ class GrantaServerApiDataExportExportFailuresRollupExportFailure(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

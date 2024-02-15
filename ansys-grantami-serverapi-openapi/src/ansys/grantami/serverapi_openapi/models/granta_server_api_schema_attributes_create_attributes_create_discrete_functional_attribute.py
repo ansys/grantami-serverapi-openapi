@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "name": "str",
@@ -52,7 +62,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "discrete_type": "discreteType",
         "name": "name",
@@ -63,12 +73,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -102,9 +112,9 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
             guid=guid,
             help_path=help_path,
         )
-        self._type = None
-        self._discrete_type = None
-        self._attribute_parameters = None
+        self._type: str = None  # type: ignore[assignment]
+        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimEntity = None  # type: ignore[assignment]
+        self._attribute_parameters: List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter] = None  # type: ignore[assignment]
 
         self.type = type
         self.discrete_type = discrete_type
@@ -163,7 +173,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     @property
     def attribute_parameters(
         self,
-    ) -> "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]":
+    ) -> "List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
 
         Returns
@@ -176,13 +186,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
+        attribute_parameters: List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
         """
         if attribute_parameters is None:
@@ -209,7 +219,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

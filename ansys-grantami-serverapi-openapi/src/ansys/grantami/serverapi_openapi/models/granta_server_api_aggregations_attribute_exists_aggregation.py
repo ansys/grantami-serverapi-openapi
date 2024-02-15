@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attribute_aggregation import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_aggregation_type": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -49,7 +59,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_aggregation_type": "attributeAggregationType",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -57,9 +67,9 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -86,7 +96,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
             count=count,
             type=type,
         )
-        self._attribute_aggregation_type = None
+        self._attribute_aggregation_type: str = None  # type: ignore[assignment]
 
         self.attribute_aggregation_type = attribute_aggregation_type
 
@@ -134,7 +144,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

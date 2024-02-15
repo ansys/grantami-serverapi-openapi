@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "interval": "GrantaServerApiAggregationsCalendarInterval",
         "offset": "str",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "interval": "interval",
         "offset": "offset",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "interval": "GrantaServerApiAggregationsCalendarInterval",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -77,7 +87,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         super().__init__()
         self._interval = None
         self._offset = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if interval is not None:
             self.interval = interval
@@ -86,7 +96,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         self.type = type
 
     @property
-    def interval(self) -> "GrantaServerApiAggregationsCalendarInterval":
+    def interval(self) -> "Optional[GrantaServerApiAggregationsCalendarInterval]":
         """Gets the interval of this GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion.
 
         Returns
@@ -97,7 +107,9 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         return self._interval
 
     @interval.setter
-    def interval(self, interval: "GrantaServerApiAggregationsCalendarInterval") -> None:
+    def interval(
+        self, interval: "Optional[GrantaServerApiAggregationsCalendarInterval]"
+    ) -> None:
         """Sets the interval of this GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion.
 
         Parameters
@@ -108,7 +120,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         self._interval = interval
 
     @property
-    def offset(self) -> "str":
+    def offset(self) -> "Optional[str]":
         """Gets the offset of this GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion.
         Optional offset of the lowest bucket boundary, in SI time units. Must be an integer followed by one of the following units: ms (milliseconds), s (seconds), m (minutes), h (hours), d (days). Defaults to 0. Must be less than the interval. Negative offsets (e.g. \"-6h\") are supported
 
@@ -120,7 +132,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         return self._offset
 
     @offset.setter
-    def offset(self, offset: "str") -> None:
+    def offset(self, offset: "Optional[str]") -> None:
         """Sets the offset of this GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion.
         Optional offset of the lowest bucket boundary, in SI time units. Must be an integer followed by one of the following units: ms (milliseconds), s (seconds), m (minutes), h (hours), d (days). Defaults to 0. Must be less than the interval. Negative offsets (e.g. \"-6h\") are supported
 
@@ -173,7 +185,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

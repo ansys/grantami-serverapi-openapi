@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_update_tabular_columns_update_tabular_column import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_co
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "column_type": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "guid": "str",
@@ -54,7 +64,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -67,12 +77,12 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         "unit": "unit",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -112,7 +122,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type = None
+        self._column_type: str = None  # type: ignore[assignment]
         self._default_threshold_type = None
         self._unit = None
 
@@ -149,7 +159,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
     @property
     def default_threshold_type(
         self,
-    ) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
+    ) -> "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]":
         """Gets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTabularColumn.
 
         Returns
@@ -162,7 +172,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
     @default_threshold_type.setter
     def default_threshold_type(
         self,
-        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]",
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTabularColumn.
 
@@ -174,7 +184,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         self._default_threshold_type = default_threshold_type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
+    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the unit of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTabularColumn.
 
         Returns
@@ -185,7 +195,9 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
+    def unit(
+        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTabularColumn.
 
         Parameters
@@ -213,7 +225,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,25 +51,25 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "gte": "float",
         "lte": "float",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -79,7 +89,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
             type: str
         """
         super().__init__()
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._gte = None
         self._lte = None
         self._constraints = None
@@ -117,7 +127,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
         self._type = type
 
     @property
-    def gte(self) -> "float":
+    def gte(self) -> "Optional[float]":
         """Gets the gte of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Greater than or equal to
 
@@ -129,7 +139,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
         return self._gte
 
     @gte.setter
-    def gte(self, gte: "float") -> None:
+    def gte(self, gte: "Optional[float]") -> None:
         """Sets the gte of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Greater than or equal to
 
@@ -141,7 +151,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
         self._gte = gte
 
     @property
-    def lte(self) -> "float":
+    def lte(self) -> "Optional[float]":
         """Gets the lte of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Less than or equal to
 
@@ -153,7 +163,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
         return self._lte
 
     @lte.setter
-    def lte(self, lte: "float") -> None:
+    def lte(self, lte: "Optional[float]") -> None:
         """Sets the lte of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Less than or equal to
 
@@ -165,7 +175,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
         self._lte = lte
 
     @property
-    def constraints(self) -> "list[GrantaServerApiSearchParameterConstraint]":
+    def constraints(self) -> "Optional[List[GrantaServerApiSearchParameterConstraint]]":
         """Gets the constraints of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
@@ -178,14 +188,14 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
 
     @constraints.setter
     def constraints(
-        self, constraints: "list[GrantaServerApiSearchParameterConstraint]"
+        self, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Parameters
         ----------
-        constraints: list[GrantaServerApiSearchParameterConstraint]
+        constraints: List[GrantaServerApiSearchParameterConstraint]
             The constraints of this GrantaServerApiSearchMathsFunctionalDatumCriterion.
         """
         self._constraints = constraints
@@ -208,7 +218,7 @@ class GrantaServerApiSearchMathsFunctionalDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

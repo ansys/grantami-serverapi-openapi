@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -50,7 +60,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -59,11 +69,11 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "datumValue": "GrantaServerApiDataExportDatumsHyperlink",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -92,7 +102,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
         self._datum_value = None
 
         self.datum_type = datum_type
@@ -124,7 +134,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "GrantaServerApiDataExportDatumsHyperlink":
+    def datum_value(self) -> "Optional[GrantaServerApiDataExportDatumsHyperlink]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsHyperlinkDatum.
 
         Returns
@@ -136,7 +146,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
 
     @datum_value.setter
     def datum_value(
-        self, datum_value: "GrantaServerApiDataExportDatumsHyperlink"
+        self, datum_value: "Optional[GrantaServerApiDataExportDatumsHyperlink]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsHyperlinkDatum.
 
@@ -165,7 +175,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "_none": "list[str]",
         "all": "list[str]",
         "any": "list[str]",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "_none": "none",
         "all": "all",
         "any": "any",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -80,7 +90,7 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         self._all = None
         self._any = None
         self.__none = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if all is not None:
             self.all = all
@@ -91,7 +101,7 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         self.type = type
 
     @property
-    def all(self) -> "list[str]":
+    def all(self) -> "Optional[List[str]]":
         """Gets the all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
@@ -103,19 +113,19 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         return self._all
 
     @all.setter
-    def all(self, all: "list[str]") -> None:
+    def all(self, all: "Optional[List[str]]") -> None:
         """Sets the all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
         Parameters
         ----------
-        all: list[str]
+        all: List[str]
             The all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "list[str]":
+    def any(self) -> "Optional[List[str]]":
         """Gets the any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
@@ -127,19 +137,19 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         return self._any
 
     @any.setter
-    def any(self, any: "list[str]") -> None:
+    def any(self, any: "Optional[List[str]]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any: list[str]
+        any: List[str]
             The any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "list[str]":
+    def _none(self) -> "Optional[List[str]]":
         """Gets the _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
@@ -151,13 +161,13 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "list[str]") -> None:
+    def _none(self, _none: "Optional[List[str]]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
         Parameters
         ----------
-        _none: list[str]
+        _none: List[str]
             The _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self.__none = _none
@@ -204,7 +214,7 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

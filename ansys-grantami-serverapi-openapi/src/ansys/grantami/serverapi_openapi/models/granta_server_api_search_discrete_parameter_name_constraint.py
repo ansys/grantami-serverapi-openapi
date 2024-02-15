@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_constraint import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "_none": "list[str]",
         "any": "list[str]",
         "parameter": "GrantaServerApiObjectIdentifier",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "_none": "none",
         "any": "any",
         "parameter": "parameter",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -79,7 +89,7 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
         super().__init__(parameter=parameter)
         self._any = None
         self.__none = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if any is not None:
             self.any = any
@@ -88,7 +98,7 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
         self.type = type
 
     @property
-    def any(self) -> "list[str]":
+    def any(self) -> "Optional[List[str]]":
         """Gets the any of this GrantaServerApiSearchDiscreteParameterNameConstraint.
 
         Returns
@@ -99,18 +109,18 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
         return self._any
 
     @any.setter
-    def any(self, any: "list[str]") -> None:
+    def any(self, any: "Optional[List[str]]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        any: list[str]
+        any: List[str]
             The any of this GrantaServerApiSearchDiscreteParameterNameConstraint.
         """
         self._any = any
 
     @property
-    def _none(self) -> "list[str]":
+    def _none(self) -> "Optional[List[str]]":
         """Gets the _none of this GrantaServerApiSearchDiscreteParameterNameConstraint.
 
         Returns
@@ -121,12 +131,12 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "list[str]") -> None:
+    def _none(self, _none: "Optional[List[str]]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        _none: list[str]
+        _none: List[str]
             The _none of this GrantaServerApiSearchDiscreteParameterNameConstraint.
         """
         self.__none = _none
@@ -173,7 +183,7 @@ class GrantaServerApiSearchDiscreteParameterNameConstraint(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

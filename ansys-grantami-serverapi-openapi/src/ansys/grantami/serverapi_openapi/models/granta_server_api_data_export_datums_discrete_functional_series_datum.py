@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_discrete_functional_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -53,7 +63,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -65,11 +75,11 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "series": "GrantaServerApiDataExportDatumsDiscreteSeries",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -107,7 +117,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
             parameters=parameters,
             x_axis_parameter=x_axis_parameter,
         )
-        self._graph_type = None
+        self._graph_type: str = None  # type: ignore[assignment]
         self._series = None
 
         self.graph_type = graph_type
@@ -139,7 +149,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         self._graph_type = graph_type
 
     @property
-    def series(self) -> "list[GrantaServerApiDataExportDatumsDiscreteSeries]":
+    def series(self) -> "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeries]]":
         """Gets the series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
 
         Returns
@@ -151,13 +161,13 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
 
     @series.setter
     def series(
-        self, series: "list[GrantaServerApiDataExportDatumsDiscreteSeries]"
+        self, series: "Optional[List[GrantaServerApiDataExportDatumsDiscreteSeries]]"
     ) -> None:
         """Sets the series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
 
         Parameters
         ----------
-        series: list[GrantaServerApiDataExportDatumsDiscreteSeries]
+        series: List[GrantaServerApiDataExportDatumsDiscreteSeries]
             The series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
         """
         self._series = series
@@ -180,7 +190,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

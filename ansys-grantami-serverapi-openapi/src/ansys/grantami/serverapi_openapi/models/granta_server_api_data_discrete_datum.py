@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_d
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,23 +49,23 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "discrete_values": "list[GrantaServerApiSchemaDiscreteValuesDiscreteValue]",
         "datum_type": "str",
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "discrete_values": "discreteValues",
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "discreteValues": "GrantaServerApiSchemaDiscreteValuesDiscreteValue",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -73,8 +83,8 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
             not_applicable: str
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type = None
-        self._discrete_values = None
+        self._datum_type: str = None  # type: ignore[assignment]
+        self._discrete_values: List[GrantaServerApiSchemaDiscreteValuesDiscreteValue] = None  # type: ignore[assignment]
 
         self.datum_type = datum_type
         self.discrete_values = discrete_values
@@ -106,7 +116,7 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
     @property
     def discrete_values(
         self,
-    ) -> "list[GrantaServerApiSchemaDiscreteValuesDiscreteValue]":
+    ) -> "List[GrantaServerApiSchemaDiscreteValuesDiscreteValue]":
         """Gets the discrete_values of this GrantaServerApiDataDiscreteDatum.
 
         Returns
@@ -118,13 +128,13 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
 
     @discrete_values.setter
     def discrete_values(
-        self, discrete_values: "list[GrantaServerApiSchemaDiscreteValuesDiscreteValue]"
+        self, discrete_values: "List[GrantaServerApiSchemaDiscreteValuesDiscreteValue]"
     ) -> None:
         """Sets the discrete_values of this GrantaServerApiDataDiscreteDatum.
 
         Parameters
         ----------
-        discrete_values: list[GrantaServerApiSchemaDiscreteValuesDiscreteValue]
+        discrete_values: List[GrantaServerApiSchemaDiscreteValuesDiscreteValue]
             The discrete_values of this GrantaServerApiDataDiscreteDatum.
         """
         if discrete_values is None:
@@ -149,7 +159,7 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

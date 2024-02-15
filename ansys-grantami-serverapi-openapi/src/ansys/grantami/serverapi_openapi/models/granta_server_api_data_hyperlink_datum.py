@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_d
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,7 +49,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "address": "str",
         "description": "str",
         "target": "GrantaServerApiDataHyperlinkTarget",
@@ -47,7 +57,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "address": "address",
         "description": "description",
         "target": "target",
@@ -55,11 +65,11 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "target": "GrantaServerApiDataHyperlinkTarget",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -81,10 +91,10 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
             not_applicable: str
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type = None
-        self._address = None
-        self._description = None
-        self._target = None
+        self._datum_type: str = None  # type: ignore[assignment]
+        self._address: str = None  # type: ignore[assignment]
+        self._description: str = None  # type: ignore[assignment]
+        self._target: GrantaServerApiDataHyperlinkTarget = None  # type: ignore[assignment]
 
         self.datum_type = datum_type
         self.address = address
@@ -205,7 +215,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

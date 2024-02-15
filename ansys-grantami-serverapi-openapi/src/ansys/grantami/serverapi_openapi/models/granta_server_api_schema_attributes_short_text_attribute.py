@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -55,7 +65,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -69,11 +79,11 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "dataRule": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -116,8 +126,8 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type = None
-        self._is_unique = None
+        self._type: str = None  # type: ignore[assignment]
+        self._is_unique: bool = None  # type: ignore[assignment]
         self._data_rule = None
 
         self.type = type
@@ -176,7 +186,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         self._is_unique = is_unique
 
     @property
-    def data_rule(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
+    def data_rule(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 
         Returns
@@ -188,7 +198,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
 
     @data_rule.setter
     def data_rule(
-        self, data_rule: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity"
+        self, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 
@@ -217,7 +227,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
