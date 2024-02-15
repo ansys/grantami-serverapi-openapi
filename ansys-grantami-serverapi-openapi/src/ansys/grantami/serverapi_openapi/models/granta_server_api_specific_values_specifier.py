@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier i
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,21 +39,21 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "filter_on": "str",
         "guids": "list[str]",
         "identities": "list[int]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "filter_on": "filterOn",
         "guids": "guids",
         "identities": "identities",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -83,7 +73,7 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         super().__init__()
         self._identities = None
         self._guids = None
-        self._filter_on: str = None  # type: ignore[assignment]
+        self._filter_on = None
 
         if identities is not None:
             self.identities = identities
@@ -92,7 +82,7 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         self.filter_on = filter_on
 
     @property
-    def identities(self) -> "Optional[List[int]]":
+    def identities(self) -> "list[int]":
         """Gets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
@@ -103,18 +93,18 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         return self._identities
 
     @identities.setter
-    def identities(self, identities: "Optional[List[int]]") -> None:
+    def identities(self, identities: "list[int]") -> None:
         """Sets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        identities: List[int]
+        identities: list[int]
             The identities of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._identities = identities
 
     @property
-    def guids(self) -> "Optional[List[str]]":
+    def guids(self) -> "list[str]":
         """Gets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
@@ -125,12 +115,12 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         return self._guids
 
     @guids.setter
-    def guids(self, guids: "Optional[List[str]]") -> None:
+    def guids(self, guids: "list[str]") -> None:
         """Sets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        guids: List[str]
+        guids: list[str]
             The guids of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._guids = guids
@@ -177,7 +167,7 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

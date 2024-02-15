@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_ne
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,25 +41,25 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "association_chain_links": "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
         "association_chain_name": "str",
         "guid": "str",
         "item_type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "association_chain_links": "associationChainLinks",
         "association_chain_name": "associationChainName",
         "guid": "guid",
         "item_type": "itemType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "associationChainLinks": "GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -89,9 +79,9 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
             item_type: str
         """
         super().__init__(guid=guid)
-        self._item_type: str = None  # type: ignore[assignment]
-        self._association_chain_name: str = None  # type: ignore[assignment]
-        self._association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink] = None  # type: ignore[assignment]
+        self._item_type = None
+        self._association_chain_name = None
+        self._association_chain_links = None
 
         self.item_type = item_type
         self.association_chain_name = association_chain_name
@@ -150,7 +140,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     @property
     def association_chain_links(
         self,
-    ) -> "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]":
+    ) -> "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]":
         """Gets the association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
 
         Returns
@@ -163,13 +153,13 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     @association_chain_links.setter
     def association_chain_links(
         self,
-        association_chain_links: "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
+        association_chain_links: "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
     ) -> None:
         """Sets the association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
 
         Parameters
         ----------
-        association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        association_chain_links: list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
         if association_chain_links is None:
@@ -196,7 +186,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

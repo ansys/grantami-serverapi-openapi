@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_item import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_la
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_type": "GrantaServerApiAttributeType",
         "guid": "str",
         "name": "str",
@@ -63,7 +53,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         "tabular_columns": "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_type": "attributeType",
         "guid": "guid",
         "name": "name",
@@ -75,13 +65,13 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         "tabular_columns": "tabularColumns",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "attributeType": "GrantaServerApiAttributeType",
         "metaAttributes": "GrantaServerApiSchemaLayoutsLayoutAttributeItem",
         "tabularColumns": "GrantaServerApiSchemaLayoutsLayoutTabularColumn",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -113,10 +103,10 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         super().__init__(
             guid=guid, name=name, underlying_entity_guid=underlying_entity_guid
         )
-        self._item_type: str = None  # type: ignore[assignment]
-        self._attribute_type: GrantaServerApiAttributeType = None  # type: ignore[assignment]
-        self._required: bool = None  # type: ignore[assignment]
-        self._read_only: bool = None  # type: ignore[assignment]
+        self._item_type = None
+        self._attribute_type = None
+        self._required = None
+        self._read_only = None
         self._meta_attributes = None
         self._tabular_columns = None
 
@@ -228,7 +218,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
     @property
     def meta_attributes(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]]":
+    ) -> "list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]":
         """Gets the meta_attributes of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
 
         Returns
@@ -240,14 +230,13 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
 
     @meta_attributes.setter
     def meta_attributes(
-        self,
-        meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]]",
+        self, meta_attributes: "list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]"
     ) -> None:
         """Sets the meta_attributes of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
 
         Parameters
         ----------
-        meta_attributes: List[GrantaServerApiSchemaLayoutsLayoutAttributeItem]
+        meta_attributes: list[GrantaServerApiSchemaLayoutsLayoutAttributeItem]
             The meta_attributes of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
         """
         self._meta_attributes = meta_attributes
@@ -255,7 +244,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
     @property
     def tabular_columns(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]]":
+    ) -> "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]":
         """Gets the tabular_columns of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
 
         Returns
@@ -267,14 +256,13 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
 
     @tabular_columns.setter
     def tabular_columns(
-        self,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]]",
+        self, tabular_columns: "list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]"
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
 
         Parameters
         ----------
-        tabular_columns: List[GrantaServerApiSchemaLayoutsLayoutTabularColumn]
+        tabular_columns: list[GrantaServerApiSchemaLayoutsLayoutTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaLayoutsLayoutAttributeItem.
         """
         self._tabular_columns = tabular_columns
@@ -297,7 +285,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

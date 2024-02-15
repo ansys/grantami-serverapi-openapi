@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "free_text_criterion_type": "str",
         "guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
         "guids_to_exclude": "list[str]",
@@ -61,7 +51,7 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         "value": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "free_text_criterion_type": "freeTextCriterionType",
         "guids_to_boost": "guidsToBoost",
         "guids_to_exclude": "guidsToExclude",
@@ -71,12 +61,12 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "identitiesToBoost": "GrantaServerApiSearchBoostByIdentity",
         "guidsToBoost": "GrantaServerApiSearchBoostByGuid",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -106,7 +96,7 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         self._identities_to_exclude = None
         self._guids_to_boost = None
         self._guids_to_exclude = None
-        self._free_text_criterion_type: str = None  # type: ignore[assignment]
+        self._free_text_criterion_type = None
 
         if identities_to_boost is not None:
             self.identities_to_boost = identities_to_boost
@@ -119,9 +109,7 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         self.free_text_criterion_type = free_text_criterion_type
 
     @property
-    def identities_to_boost(
-        self,
-    ) -> "Optional[List[GrantaServerApiSearchBoostByIdentity]]":
+    def identities_to_boost(self) -> "list[GrantaServerApiSearchBoostByIdentity]":
         """Gets the identities_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Returns
@@ -133,20 +121,19 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
 
     @identities_to_boost.setter
     def identities_to_boost(
-        self,
-        identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]",
+        self, identities_to_boost: "list[GrantaServerApiSearchBoostByIdentity]"
     ) -> None:
         """Sets the identities_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Parameters
         ----------
-        identities_to_boost: List[GrantaServerApiSearchBoostByIdentity]
+        identities_to_boost: list[GrantaServerApiSearchBoostByIdentity]
             The identities_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
         """
         self._identities_to_boost = identities_to_boost
 
     @property
-    def identities_to_exclude(self) -> "Optional[List[int]]":
+    def identities_to_exclude(self) -> "list[int]":
         """Gets the identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Returns
@@ -157,20 +144,18 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         return self._identities_to_exclude
 
     @identities_to_exclude.setter
-    def identities_to_exclude(
-        self, identities_to_exclude: "Optional[List[int]]"
-    ) -> None:
+    def identities_to_exclude(self, identities_to_exclude: "list[int]") -> None:
         """Sets the identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Parameters
         ----------
-        identities_to_exclude: List[int]
+        identities_to_exclude: list[int]
             The identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
         """
         self._identities_to_exclude = identities_to_exclude
 
     @property
-    def guids_to_boost(self) -> "Optional[List[GrantaServerApiSearchBoostByGuid]]":
+    def guids_to_boost(self) -> "list[GrantaServerApiSearchBoostByGuid]":
         """Gets the guids_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Returns
@@ -182,19 +167,19 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
 
     @guids_to_boost.setter
     def guids_to_boost(
-        self, guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]"
+        self, guids_to_boost: "list[GrantaServerApiSearchBoostByGuid]"
     ) -> None:
         """Sets the guids_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Parameters
         ----------
-        guids_to_boost: List[GrantaServerApiSearchBoostByGuid]
+        guids_to_boost: list[GrantaServerApiSearchBoostByGuid]
             The guids_to_boost of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
         """
         self._guids_to_boost = guids_to_boost
 
     @property
-    def guids_to_exclude(self) -> "Optional[List[str]]":
+    def guids_to_exclude(self) -> "list[str]":
         """Gets the guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Returns
@@ -205,12 +190,12 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
         return self._guids_to_exclude
 
     @guids_to_exclude.setter
-    def guids_to_exclude(self, guids_to_exclude: "Optional[List[str]]") -> None:
+    def guids_to_exclude(self, guids_to_exclude: "list[str]") -> None:
         """Sets the guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
 
         Parameters
         ----------
-        guids_to_exclude: List[str]
+        guids_to_exclude: list[str]
             The guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingAttributesCriterion.
         """
         self._guids_to_exclude = guids_to_exclude
@@ -259,7 +244,7 @@ class GrantaServerApiSearchFreeTextExcludingAttributesCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

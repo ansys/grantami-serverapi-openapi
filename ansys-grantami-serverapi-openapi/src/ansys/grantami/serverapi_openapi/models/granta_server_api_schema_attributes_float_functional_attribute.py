@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -66,7 +56,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -81,12 +71,12 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "attributeParameters": "GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -131,10 +121,10 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._unit = None
-        self._attribute_parameters: List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter] = None  # type: ignore[assignment]
-        self._is_range: bool = None  # type: ignore[assignment]
+        self._attribute_parameters = None
+        self._is_range = None
 
         self.type = type
         if unit is not None:
@@ -167,7 +157,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
         """Gets the unit of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Returns
@@ -178,7 +168,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Parameters
@@ -191,7 +181,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]":
+    ) -> "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Returns
@@ -204,13 +194,13 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
         """
         if attribute_parameters is None:
@@ -261,7 +251,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

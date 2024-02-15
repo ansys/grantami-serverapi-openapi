@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -53,28 +43,28 @@ class GrantaServerApiAggregationsAttributeAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "count": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "count": "count",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
     discriminator_value_class_map = {
         "value".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeValueAggregation",
         "exists".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeExistsAggregation",
     }
 
-    discriminator: Optional[str] = "attribute_aggregation_type"
+    discriminator = "attribute_aggregation_type"
 
     def __init__(
         self,
@@ -96,7 +86,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         super().__init__()
         self._attribute_identity = None
         self._attribute_guid = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._count = None
 
         if attribute_identity is not None:
@@ -108,7 +98,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
             self.count = count
 
     @property
-    def attribute_identity(self) -> "Optional[int]":
+    def attribute_identity(self) -> "int":
         """Gets the attribute_identity of this GrantaServerApiAggregationsAttributeAggregation.
         The identity of the attribute that was aggregated over.
 
@@ -120,7 +110,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         return self._attribute_identity
 
     @attribute_identity.setter
-    def attribute_identity(self, attribute_identity: "Optional[int]") -> None:
+    def attribute_identity(self, attribute_identity: "int") -> None:
         """Sets the attribute_identity of this GrantaServerApiAggregationsAttributeAggregation.
         The identity of the attribute that was aggregated over.
 
@@ -132,7 +122,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         self._attribute_identity = attribute_identity
 
     @property
-    def attribute_guid(self) -> "Optional[str]":
+    def attribute_guid(self) -> "str":
         """Gets the attribute_guid of this GrantaServerApiAggregationsAttributeAggregation.
         The GUID of the attribute that was aggregated over.
 
@@ -144,7 +134,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         return self._attribute_guid
 
     @attribute_guid.setter
-    def attribute_guid(self, attribute_guid: "Optional[str]") -> None:
+    def attribute_guid(self, attribute_guid: "str") -> None:
         """Sets the attribute_guid of this GrantaServerApiAggregationsAttributeAggregation.
         The GUID of the attribute that was aggregated over.
 
@@ -180,7 +170,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         self._type = type
 
     @property
-    def count(self) -> "Optional[int]":
+    def count(self) -> "int":
         """Gets the count of this GrantaServerApiAggregationsAttributeAggregation.
         The number of records that have a populated (applicable) value for this attribute.  (For multi-valued attributes: the number of records that have one or more populated  (applicable) values for this attribute.)                For a tabular attribute, this will be the number of records that have at least one  tabular row in this attribute, even if those rows might be filtered out from users'  views in some clients.
 
@@ -192,7 +182,7 @@ class GrantaServerApiAggregationsAttributeAggregation(
         return self._count
 
     @count.setter
-    def count(self, count: "Optional[int]") -> None:
+    def count(self, count: "int") -> None:
         """Sets the count of this GrantaServerApiAggregationsAttributeAggregation.
         The number of records that have a populated (applicable) value for this attribute.  (For multi-valued attributes: the number of records that have one or more populated  (applicable) values for this attribute.)                For a tabular attribute, this will be the number of records that have at least one  tabular row in this attribute, even if those rows might be filtered out from users'  views in some clients.
 
@@ -215,18 +205,19 @@ class GrantaServerApiAggregationsAttributeAggregation(
         discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
+            "/", 1
+        )[-1]
 
     @classmethod
     def _get_discriminator_field_name(cls) -> str:
-        assert cls.discriminator
         name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

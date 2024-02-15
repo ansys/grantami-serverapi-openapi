@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_rollup_rollup_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "database_key": "str",
@@ -61,7 +51,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         "values": "list[object]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "database_key": "databaseKey",
@@ -71,9 +61,9 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -106,7 +96,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         )
         self._values = None
         self._unit = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if values is not None:
             self.values = values
@@ -115,7 +105,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         self.type = type
 
     @property
-    def values(self) -> "Optional[List[object]]":
+    def values(self) -> "list[object]":
         """Gets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Returns
@@ -126,18 +116,18 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         return self._values
 
     @values.setter
-    def values(self, values: "Optional[List[object]]") -> None:
+    def values(self, values: "list[object]") -> None:
         """Sets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Parameters
         ----------
-        values: List[object]
+        values: list[object]
             The values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         self._values = values
 
     @property
-    def unit(self) -> "Optional[str]":
+    def unit(self) -> "str":
         """Gets the unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Returns
@@ -148,7 +138,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[str]") -> None:
+    def unit(self, unit: "str") -> None:
         """Sets the unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Parameters
@@ -200,7 +190,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

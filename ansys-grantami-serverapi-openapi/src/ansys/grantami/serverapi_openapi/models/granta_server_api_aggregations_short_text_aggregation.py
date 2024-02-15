@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,21 +41,21 @@ class GrantaServerApiAggregationsShortTextAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "datum_type": "str",
         "terms": "list[GrantaServerApiAggregationsTermWithCount]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "datum_type": "datumType",
         "terms": "terms",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "terms": "GrantaServerApiAggregationsTermWithCount",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -82,14 +72,14 @@ class GrantaServerApiAggregationsShortTextAggregation(
         """
         super().__init__()
         self._terms = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._datum_type = None
 
         if terms is not None:
             self.terms = terms
         self.datum_type = datum_type
 
     @property
-    def terms(self) -> "Optional[List[GrantaServerApiAggregationsTermWithCount]]":
+    def terms(self) -> "list[GrantaServerApiAggregationsTermWithCount]":
         """Gets the terms of this GrantaServerApiAggregationsShortTextAggregation.
 
         Returns
@@ -100,14 +90,12 @@ class GrantaServerApiAggregationsShortTextAggregation(
         return self._terms
 
     @terms.setter
-    def terms(
-        self, terms: "Optional[List[GrantaServerApiAggregationsTermWithCount]]"
-    ) -> None:
+    def terms(self, terms: "list[GrantaServerApiAggregationsTermWithCount]") -> None:
         """Sets the terms of this GrantaServerApiAggregationsShortTextAggregation.
 
         Parameters
         ----------
-        terms: List[GrantaServerApiAggregationsTermWithCount]
+        terms: list[GrantaServerApiAggregationsTermWithCount]
             The terms of this GrantaServerApiAggregationsShortTextAggregation.
         """
         self._terms = terms
@@ -154,7 +142,7 @@ class GrantaServerApiAggregationsShortTextAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

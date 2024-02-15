@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "free_text_criterion_type": "str",
         "guids": "list[str]",
         "guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
@@ -61,7 +51,7 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         "value": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "free_text_criterion_type": "freeTextCriterionType",
         "guids": "guids",
         "guids_to_boost": "guidsToBoost",
@@ -71,12 +61,12 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "identitiesToBoost": "GrantaServerApiSearchBoostByIdentity",
         "guidsToBoost": "GrantaServerApiSearchBoostByGuid",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -106,7 +96,7 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         self._identities_to_boost = None
         self._guids = None
         self._guids_to_boost = None
-        self._free_text_criterion_type: str = None  # type: ignore[assignment]
+        self._free_text_criterion_type = None
 
         if identities is not None:
             self.identities = identities
@@ -119,7 +109,7 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         self.free_text_criterion_type = free_text_criterion_type
 
     @property
-    def identities(self) -> "Optional[List[int]]":
+    def identities(self) -> "list[int]":
         """Gets the identities of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Returns
@@ -130,20 +120,18 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         return self._identities
 
     @identities.setter
-    def identities(self, identities: "Optional[List[int]]") -> None:
+    def identities(self, identities: "list[int]") -> None:
         """Sets the identities of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Parameters
         ----------
-        identities: List[int]
+        identities: list[int]
             The identities of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
         """
         self._identities = identities
 
     @property
-    def identities_to_boost(
-        self,
-    ) -> "Optional[List[GrantaServerApiSearchBoostByIdentity]]":
+    def identities_to_boost(self) -> "list[GrantaServerApiSearchBoostByIdentity]":
         """Gets the identities_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Returns
@@ -155,20 +143,19 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
 
     @identities_to_boost.setter
     def identities_to_boost(
-        self,
-        identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]",
+        self, identities_to_boost: "list[GrantaServerApiSearchBoostByIdentity]"
     ) -> None:
         """Sets the identities_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Parameters
         ----------
-        identities_to_boost: List[GrantaServerApiSearchBoostByIdentity]
+        identities_to_boost: list[GrantaServerApiSearchBoostByIdentity]
             The identities_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
         """
         self._identities_to_boost = identities_to_boost
 
     @property
-    def guids(self) -> "Optional[List[str]]":
+    def guids(self) -> "list[str]":
         """Gets the guids of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Returns
@@ -179,18 +166,18 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
         return self._guids
 
     @guids.setter
-    def guids(self, guids: "Optional[List[str]]") -> None:
+    def guids(self, guids: "list[str]") -> None:
         """Sets the guids of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Parameters
         ----------
-        guids: List[str]
+        guids: list[str]
             The guids of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
         """
         self._guids = guids
 
     @property
-    def guids_to_boost(self) -> "Optional[List[GrantaServerApiSearchBoostByGuid]]":
+    def guids_to_boost(self) -> "list[GrantaServerApiSearchBoostByGuid]":
         """Gets the guids_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Returns
@@ -202,13 +189,13 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
 
     @guids_to_boost.setter
     def guids_to_boost(
-        self, guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]"
+        self, guids_to_boost: "list[GrantaServerApiSearchBoostByGuid]"
     ) -> None:
         """Sets the guids_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
 
         Parameters
         ----------
-        guids_to_boost: List[GrantaServerApiSearchBoostByGuid]
+        guids_to_boost: list[GrantaServerApiSearchBoostByGuid]
             The guids_to_boost of this GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion.
         """
         self._guids_to_boost = guids_to_boost
@@ -257,7 +244,7 @@ class GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

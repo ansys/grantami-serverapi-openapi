@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_local_column_aggregation_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_loca
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,25 +41,25 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "guid": "str",
         "identity": "int",
         "inner_criterion": "GrantaServerApiAggregationsAggregationDatumCriterion",
         "local_column_aggregation_criterion_type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "guid": "guid",
         "identity": "identity",
         "inner_criterion": "innerCriterion",
         "local_column_aggregation_criterion_type": "localColumnAggregationCriterionType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "innerCriterion": "GrantaServerApiAggregationsAggregationDatumCriterion",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -89,7 +79,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
             local_column_aggregation_criterion_type: str
         """
         super().__init__(guid=guid, identity=identity)
-        self._local_column_aggregation_criterion_type: str = None  # type: ignore[assignment]
+        self._local_column_aggregation_criterion_type = None
         self._inner_criterion = None
 
         self.local_column_aggregation_criterion_type = (
@@ -129,9 +119,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
         )
 
     @property
-    def inner_criterion(
-        self,
-    ) -> "Optional[GrantaServerApiAggregationsAggregationDatumCriterion]":
+    def inner_criterion(self) -> "GrantaServerApiAggregationsAggregationDatumCriterion":
         """Gets the inner_criterion of this GrantaServerApiAggregationsLocalColumnAggregationValueCriterion.
 
         Returns
@@ -143,8 +131,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
 
     @inner_criterion.setter
     def inner_criterion(
-        self,
-        inner_criterion: "Optional[GrantaServerApiAggregationsAggregationDatumCriterion]",
+        self, inner_criterion: "GrantaServerApiAggregationsAggregationDatumCriterion"
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiAggregationsLocalColumnAggregationValueCriterion.
 
@@ -173,7 +160,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

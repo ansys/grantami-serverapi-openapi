@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,23 +41,23 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "_none": "list[int]",
         "all": "list[int]",
         "any": "list[int]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "_none": "none",
         "all": "all",
         "any": "any",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -90,7 +80,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         self._all = None
         self._any = None
         self.__none = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if all is not None:
             self.all = all
@@ -101,7 +91,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         self.type = type
 
     @property
-    def all(self) -> "Optional[List[int]]":
+    def all(self) -> "list[int]":
         """Gets the all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
@@ -113,19 +103,19 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         return self._all
 
     @all.setter
-    def all(self, all: "Optional[List[int]]") -> None:
+    def all(self, all: "list[int]") -> None:
         """Sets the all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Parameters
         ----------
-        all: List[int]
+        all: list[int]
             The all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "Optional[List[int]]":
+    def any(self) -> "list[int]":
         """Gets the any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
@@ -137,19 +127,19 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         return self._any
 
     @any.setter
-    def any(self, any: "Optional[List[int]]") -> None:
+    def any(self, any: "list[int]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any: List[int]
+        any: list[int]
             The any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Optional[List[int]]":
+    def _none(self) -> "list[int]":
         """Gets the _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
@@ -161,13 +151,13 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Optional[List[int]]") -> None:
+    def _none(self, _none: "list[int]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Parameters
         ----------
-        _none: List[int]
+        _none: list[int]
             The _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self.__none = _none
@@ -214,7 +204,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
@@ -62,7 +52,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
@@ -73,9 +63,9 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -109,7 +99,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._is_unique = None
         self._axis_name = None
 
@@ -144,7 +134,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         self._type = type
 
     @property
-    def is_unique(self) -> "Optional[bool]":
+    def is_unique(self) -> "bool":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
@@ -156,7 +146,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         return self._is_unique
 
     @is_unique.setter
-    def is_unique(self, is_unique: "Optional[bool]") -> None:
+    def is_unique(self, is_unique: "bool") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
@@ -168,7 +158,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         self._is_unique = is_unique
 
     @property
-    def axis_name(self) -> "Optional[str]":
+    def axis_name(self) -> "str":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
 
         Returns
@@ -179,7 +169,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Optional[str]") -> None:
+    def axis_name(self, axis_name: "str") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
 
         Parameters
@@ -207,7 +197,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

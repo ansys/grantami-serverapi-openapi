@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
@@ -61,7 +51,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
@@ -71,9 +61,9 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -106,7 +96,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         self.type = type
 
@@ -152,7 +142,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateLongTextAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

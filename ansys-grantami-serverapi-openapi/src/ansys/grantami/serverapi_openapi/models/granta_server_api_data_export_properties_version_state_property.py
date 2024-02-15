@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,21 +41,21 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "property_name": "str",
         "version_state": "GrantaServerApiVersionState",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "property_name": "propertyName",
         "version_state": "versionState",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "versionState": "GrantaServerApiVersionState",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -81,7 +71,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
             version_state: GrantaServerApiVersionState, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._version_state = None
 
         self.property_name = property_name
@@ -113,7 +103,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
         self._property_name = property_name
 
     @property
-    def version_state(self) -> "Optional[GrantaServerApiVersionState]":
+    def version_state(self) -> "GrantaServerApiVersionState":
         """Gets the version_state of this GrantaServerApiDataExportPropertiesVersionStateProperty.
 
         Returns
@@ -124,9 +114,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
         return self._version_state
 
     @version_state.setter
-    def version_state(
-        self, version_state: "Optional[GrantaServerApiVersionState]"
-    ) -> None:
+    def version_state(self, version_state: "GrantaServerApiVersionState") -> None:
         """Sets the version_state of this GrantaServerApiDataExportPropertiesVersionStateProperty.
 
         Parameters
@@ -154,7 +142,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

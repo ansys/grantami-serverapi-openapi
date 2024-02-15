@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_discrete_functional_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -63,7 +53,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -75,11 +65,11 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "values": "GrantaServerApiDataExportDatumsDiscreteGridPoint",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -117,7 +107,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
             parameters=parameters,
             x_axis_parameter=x_axis_parameter,
         )
-        self._graph_type: str = None  # type: ignore[assignment]
+        self._graph_type = None
         self._values = None
 
         self.graph_type = graph_type
@@ -149,9 +139,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
         self._graph_type = graph_type
 
     @property
-    def values(
-        self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsDiscreteGridPoint]]":
+    def values(self) -> "list[GrantaServerApiDataExportDatumsDiscreteGridPoint]":
         """Gets the values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
 
         Returns
@@ -163,13 +151,13 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
 
     @values.setter
     def values(
-        self, values: "Optional[List[GrantaServerApiDataExportDatumsDiscreteGridPoint]]"
+        self, values: "list[GrantaServerApiDataExportDatumsDiscreteGridPoint]"
     ) -> None:
         """Sets the values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
 
         Parameters
         ----------
-        values: List[GrantaServerApiDataExportDatumsDiscreteGridPoint]
+        values: list[GrantaServerApiDataExportDatumsDiscreteGridPoint]
             The values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
         """
         self._values = values
@@ -192,7 +180,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

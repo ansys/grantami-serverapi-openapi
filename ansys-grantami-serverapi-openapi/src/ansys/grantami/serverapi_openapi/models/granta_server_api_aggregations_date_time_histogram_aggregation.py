@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,21 +41,21 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "datum_type": "str",
         "histogram": "GrantaServerApiAggregationsDateTimeHistogram",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "datum_type": "datumType",
         "histogram": "histogram",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "histogram": "GrantaServerApiAggregationsDateTimeHistogram",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -82,14 +72,14 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
         """
         super().__init__()
         self._histogram = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._datum_type = None
 
         if histogram is not None:
             self.histogram = histogram
         self.datum_type = datum_type
 
     @property
-    def histogram(self) -> "Optional[GrantaServerApiAggregationsDateTimeHistogram]":
+    def histogram(self) -> "GrantaServerApiAggregationsDateTimeHistogram":
         """Gets the histogram of this GrantaServerApiAggregationsDateTimeHistogramAggregation.
 
         Returns
@@ -101,7 +91,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
 
     @histogram.setter
     def histogram(
-        self, histogram: "Optional[GrantaServerApiAggregationsDateTimeHistogram]"
+        self, histogram: "GrantaServerApiAggregationsDateTimeHistogram"
     ) -> None:
         """Sets the histogram of this GrantaServerApiAggregationsDateTimeHistogramAggregation.
 
@@ -154,7 +144,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

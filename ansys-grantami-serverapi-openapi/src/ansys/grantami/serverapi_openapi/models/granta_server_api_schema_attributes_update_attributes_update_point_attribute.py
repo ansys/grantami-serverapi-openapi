@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
         "axis_name": "str",
@@ -64,7 +54,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
@@ -77,12 +67,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -121,7 +111,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._unit = None
         self._is_multi_valued = None
         self._attribute_parameters = None
@@ -159,7 +149,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
@@ -170,9 +160,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
-    ) -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
@@ -183,7 +171,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         self._unit = unit
 
     @property
-    def is_multi_valued(self) -> "Optional[bool]":
+    def is_multi_valued(self) -> "bool":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
@@ -194,7 +182,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
+    def is_multi_valued(self, is_multi_valued: "bool") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
@@ -207,7 +195,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
@@ -219,14 +207,13 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
@@ -249,7 +236,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

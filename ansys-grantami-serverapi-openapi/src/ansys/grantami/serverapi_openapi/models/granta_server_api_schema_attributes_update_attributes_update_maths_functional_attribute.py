@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "allow_all_compatible_expressions": "bool",
         "allow_anonymous_expressions": "bool",
@@ -69,7 +59,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
         "allow_anonymous_expressions": "allowAnonymousExpressions",
@@ -87,14 +77,14 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "expressions": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "defaultContent": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -143,7 +133,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._unit = None
         self._attribute_parameters = None
         self._expressions = None
@@ -196,7 +186,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -207,9 +197,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
-    ) -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
@@ -222,7 +210,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -234,22 +222,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(
-        self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    def expressions(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -261,19 +246,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
 
     @expressions.setter
     def expressions(
-        self, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]"
+        self, expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._expressions = expressions
 
     @property
-    def allow_extrapolation(self) -> "Optional[bool]":
+    def allow_extrapolation(self) -> "bool":
         """Gets the allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -284,7 +269,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         return self._allow_extrapolation
 
     @allow_extrapolation.setter
-    def allow_extrapolation(self, allow_extrapolation: "Optional[bool]") -> None:
+    def allow_extrapolation(self, allow_extrapolation: "bool") -> None:
         """Sets the allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
@@ -295,7 +280,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._allow_extrapolation = allow_extrapolation
 
     @property
-    def is_range(self) -> "Optional[bool]":
+    def is_range(self) -> "bool":
         """Gets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -306,7 +291,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "Optional[bool]") -> None:
+    def is_range(self, is_range: "bool") -> None:
         """Sets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
@@ -319,7 +304,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @property
     def default_content(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]":
+    ) -> "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent":
         """Gets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -332,7 +317,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @default_content.setter
     def default_content(
         self,
-        default_content: "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]",
+        default_content: "GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent",
     ) -> None:
         """Sets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
@@ -344,7 +329,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._default_content = default_content
 
     @property
-    def allow_all_compatible_expressions(self) -> "Optional[bool]":
+    def allow_all_compatible_expressions(self) -> "bool":
         """Gets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -356,7 +341,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
 
     @allow_all_compatible_expressions.setter
     def allow_all_compatible_expressions(
-        self, allow_all_compatible_expressions: "Optional[bool]"
+        self, allow_all_compatible_expressions: "bool"
     ) -> None:
         """Sets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
@@ -368,7 +353,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
 
     @property
-    def allow_anonymous_expressions(self) -> "Optional[bool]":
+    def allow_anonymous_expressions(self) -> "bool":
         """Gets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
@@ -379,9 +364,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         return self._allow_anonymous_expressions
 
     @allow_anonymous_expressions.setter
-    def allow_anonymous_expressions(
-        self, allow_anonymous_expressions: "Optional[bool]"
-    ) -> None:
+    def allow_anonymous_expressions(self, allow_anonymous_expressions: "bool") -> None:
         """Sets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
@@ -409,7 +392,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

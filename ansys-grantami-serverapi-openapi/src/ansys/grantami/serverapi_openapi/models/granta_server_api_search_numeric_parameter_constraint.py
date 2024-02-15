@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_constraint import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "gte": "float",
         "interpolation_type": "str",
         "lte": "float",
@@ -61,7 +51,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "gte": "gte",
         "interpolation_type": "interpolationType",
         "lte": "lte",
@@ -71,9 +61,9 @@ class GrantaServerApiSearchNumericParameterConstraint(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -104,7 +94,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self._scale_type = None
         self._interpolation_type = None
         self._significant_figures = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if gte is not None:
             self.gte = gte
@@ -119,7 +109,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self.type = type
 
     @property
-    def gte(self) -> "Optional[float]":
+    def gte(self) -> "float":
         """Gets the gte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
@@ -130,7 +120,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         return self._gte
 
     @gte.setter
-    def gte(self, gte: "Optional[float]") -> None:
+    def gte(self, gte: "float") -> None:
         """Sets the gte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
@@ -141,7 +131,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self._gte = gte
 
     @property
-    def lte(self) -> "Optional[float]":
+    def lte(self) -> "float":
         """Gets the lte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
@@ -152,7 +142,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         return self._lte
 
     @lte.setter
-    def lte(self, lte: "Optional[float]") -> None:
+    def lte(self, lte: "float") -> None:
         """Sets the lte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
@@ -163,7 +153,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self._lte = lte
 
     @property
-    def scale_type(self) -> "Optional[str]":
+    def scale_type(self) -> "str":
         """Gets the scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the scale type of the parameter. Can be Linear or Log
 
@@ -175,7 +165,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         return self._scale_type
 
     @scale_type.setter
-    def scale_type(self, scale_type: "Optional[str]") -> None:
+    def scale_type(self, scale_type: "str") -> None:
         """Sets the scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the scale type of the parameter. Can be Linear or Log
 
@@ -187,7 +177,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self._scale_type = scale_type
 
     @property
-    def interpolation_type(self) -> "Optional[str]":
+    def interpolation_type(self) -> "str":
         """Gets the interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
 
@@ -199,7 +189,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         return self._interpolation_type
 
     @interpolation_type.setter
-    def interpolation_type(self, interpolation_type: "Optional[str]") -> None:
+    def interpolation_type(self, interpolation_type: "str") -> None:
         """Sets the interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
 
@@ -211,7 +201,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         self._interpolation_type = interpolation_type
 
     @property
-    def significant_figures(self) -> "Optional[int]":
+    def significant_figures(self) -> "int":
         """Gets the significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
@@ -222,7 +212,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
         return self._significant_figures
 
     @significant_figures.setter
-    def significant_figures(self, significant_figures: "Optional[int]") -> None:
+    def significant_figures(self, significant_figures: "int") -> None:
         """Sets the significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
@@ -274,7 +264,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

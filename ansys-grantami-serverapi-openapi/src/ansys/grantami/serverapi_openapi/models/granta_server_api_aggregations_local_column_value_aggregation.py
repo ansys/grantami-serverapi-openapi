@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_local_column_aggregation import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_loca
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "aggregation_datum": "GrantaServerApiAggregationsAggregationDatum",
         "count": "int",
         "local_column_aggregation_type": "str",
@@ -59,7 +49,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         "local_column_identity": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "aggregation_datum": "aggregationDatum",
         "count": "count",
         "local_column_aggregation_type": "localColumnAggregationType",
@@ -67,11 +57,11 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         "local_column_identity": "localColumnIdentity",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "aggregationDatum": "GrantaServerApiAggregationsAggregationDatum",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -98,16 +88,14 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
             local_column_identity=local_column_identity,
         )
         self._aggregation_datum = None
-        self._local_column_aggregation_type: str = None  # type: ignore[assignment]
+        self._local_column_aggregation_type = None
 
         if aggregation_datum is not None:
             self.aggregation_datum = aggregation_datum
         self.local_column_aggregation_type = local_column_aggregation_type
 
     @property
-    def aggregation_datum(
-        self,
-    ) -> "Optional[GrantaServerApiAggregationsAggregationDatum]":
+    def aggregation_datum(self) -> "GrantaServerApiAggregationsAggregationDatum":
         """Gets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
         Returns
@@ -119,7 +107,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
 
     @aggregation_datum.setter
     def aggregation_datum(
-        self, aggregation_datum: "Optional[GrantaServerApiAggregationsAggregationDatum]"
+        self, aggregation_datum: "GrantaServerApiAggregationsAggregationDatum"
     ) -> None:
         """Sets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
@@ -176,7 +164,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

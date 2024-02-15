@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -65,7 +55,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
@@ -79,12 +69,12 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "attributeParameters": "GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -127,9 +117,9 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity = None  # type: ignore[assignment]
-        self._attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter] = None  # type: ignore[assignment]
+        self._type = None
+        self._discrete_type = None
+        self._attribute_parameters = None
 
         self.type = type
         self.discrete_type = discrete_type
@@ -188,7 +178,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]":
+    ) -> "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
 
         Returns
@@ -201,13 +191,13 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
         if attribute_parameters is None:
@@ -234,7 +224,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,21 +39,21 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "gte": "int",
         "lte": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "gte": "gte",
         "lte": "lte",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -83,7 +73,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
         super().__init__()
         self._gte = None
         self._lte = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if gte is not None:
             self.gte = gte
@@ -92,7 +82,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
         self.type = type
 
     @property
-    def gte(self) -> "Optional[int]":
+    def gte(self) -> "int":
         """Gets the gte of this GrantaServerApiSearchIntegerDatumCriterion.
         Greater than or equal to
 
@@ -104,7 +94,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
         return self._gte
 
     @gte.setter
-    def gte(self, gte: "Optional[int]") -> None:
+    def gte(self, gte: "int") -> None:
         """Sets the gte of this GrantaServerApiSearchIntegerDatumCriterion.
         Greater than or equal to
 
@@ -116,7 +106,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
         self._gte = gte
 
     @property
-    def lte(self) -> "Optional[int]":
+    def lte(self) -> "int":
         """Gets the lte of this GrantaServerApiSearchIntegerDatumCriterion.
         Less than or equal to
 
@@ -128,7 +118,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
         return self._lte
 
     @lte.setter
-    def lte(self, lte: "Optional[int]") -> None:
+    def lte(self, lte: "int") -> None:
         """Sets the lte of this GrantaServerApiSearchIntegerDatumCriterion.
         Less than or equal to
 
@@ -181,7 +171,7 @@ class GrantaServerApiSearchIntegerDatumCriterion(GrantaServerApiSearchDatumCrite
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

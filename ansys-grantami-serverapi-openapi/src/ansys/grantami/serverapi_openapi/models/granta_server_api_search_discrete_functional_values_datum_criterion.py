@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,25 +41,25 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "any_guids": "list[str]",
         "any_identities": "list[int]",
         "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "any_guids": "anyGuids",
         "any_identities": "anyIdentities",
         "constraints": "constraints",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -91,7 +81,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         super().__init__()
         self._any_identities = None
         self._any_guids = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._constraints = None
 
         if any_identities is not None:
@@ -103,7 +93,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
             self.constraints = constraints
 
     @property
-    def any_identities(self) -> "Optional[List[int]]":
+    def any_identities(self) -> "list[int]":
         """Gets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
@@ -115,19 +105,19 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         return self._any_identities
 
     @any_identities.setter
-    def any_identities(self, any_identities: "Optional[List[int]]") -> None:
+    def any_identities(self, any_identities: "list[int]") -> None:
         """Sets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any_identities: List[int]
+        any_identities: list[int]
             The any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_identities = any_identities
 
     @property
-    def any_guids(self) -> "Optional[List[str]]":
+    def any_guids(self) -> "list[str]":
         """Gets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
@@ -139,13 +129,13 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         return self._any_guids
 
     @any_guids.setter
-    def any_guids(self, any_guids: "Optional[List[str]]") -> None:
+    def any_guids(self, any_guids: "list[str]") -> None:
         """Sets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any_guids: List[str]
+        any_guids: list[str]
             The any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_guids = any_guids
@@ -175,7 +165,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         self._type = type
 
     @property
-    def constraints(self) -> "Optional[List[GrantaServerApiSearchParameterConstraint]]":
+    def constraints(self) -> "list[GrantaServerApiSearchParameterConstraint]":
         """Gets the constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
@@ -188,14 +178,14 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
 
     @constraints.setter
     def constraints(
-        self, constraints: "Optional[List[GrantaServerApiSearchParameterConstraint]]"
+        self, constraints: "list[GrantaServerApiSearchParameterConstraint]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Parameters
         ----------
-        constraints: List[GrantaServerApiSearchParameterConstraint]
+        constraints: list[GrantaServerApiSearchParameterConstraint]
             The constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._constraints = constraints
@@ -218,7 +208,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

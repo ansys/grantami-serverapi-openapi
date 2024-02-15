@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_attribute_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_attribute_
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_criterion_type": "str",
         "guid": "str",
         "identity": "int",
@@ -60,7 +50,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_criterion_type": "attributeCriterionType",
         "guid": "guid",
         "identity": "identity",
@@ -69,11 +59,11 @@ class GrantaServerApiSearchAttributeExistsCriterion(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "innerCriterion": "GrantaServerApiSearchDatumExistsCriterion",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -100,14 +90,14 @@ class GrantaServerApiSearchAttributeExistsCriterion(
             guid=guid, identity=identity, is_meta_attribute=is_meta_attribute, type=type
         )
         self._inner_criterion = None
-        self._attribute_criterion_type: str = None  # type: ignore[assignment]
+        self._attribute_criterion_type = None
 
         if inner_criterion is not None:
             self.inner_criterion = inner_criterion
         self.attribute_criterion_type = attribute_criterion_type
 
     @property
-    def inner_criterion(self) -> "Optional[GrantaServerApiSearchDatumExistsCriterion]":
+    def inner_criterion(self) -> "GrantaServerApiSearchDatumExistsCriterion":
         """Gets the inner_criterion of this GrantaServerApiSearchAttributeExistsCriterion.
 
         Returns
@@ -119,7 +109,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(
 
     @inner_criterion.setter
     def inner_criterion(
-        self, inner_criterion: "Optional[GrantaServerApiSearchDatumExistsCriterion]"
+        self, inner_criterion: "GrantaServerApiSearchDatumExistsCriterion"
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiSearchAttributeExistsCriterion.
 
@@ -174,7 +164,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

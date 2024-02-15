@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier i
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,17 +39,17 @@ class GrantaServerApiAllValuesSpecifier(GrantaServerApiValueSpecifier):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "filter_on": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "filter_on": "filterOn",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -73,7 +63,7 @@ class GrantaServerApiAllValuesSpecifier(GrantaServerApiValueSpecifier):
             filter_on: str
         """
         super().__init__()
-        self._filter_on: str = None  # type: ignore[assignment]
+        self._filter_on = None
 
         self.filter_on = filter_on
 
@@ -119,7 +109,7 @@ class GrantaServerApiAllValuesSpecifier(GrantaServerApiValueSpecifier):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

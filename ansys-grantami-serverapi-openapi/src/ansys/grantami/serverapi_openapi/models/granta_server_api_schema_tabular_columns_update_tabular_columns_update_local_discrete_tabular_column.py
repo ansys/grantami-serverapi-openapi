@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_update_tabular_columns_update_tabular_column import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_co
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "column_type": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -64,7 +54,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         "summary_row_text": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
@@ -77,12 +67,12 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         "summary_row_text": "summaryRowText",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -122,7 +112,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
+        self._column_type = None
         self._default_threshold_type = None
         self._discrete_type = None
 
@@ -159,7 +149,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
     @property
     def default_threshold_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]":
+    ) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
         """Gets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 
         Returns
@@ -172,7 +162,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
     @default_threshold_type.setter
     def default_threshold_type(
         self,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]",
+        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 
@@ -184,7 +174,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         self._default_threshold_type = default_threshold_type
 
     @property
-    def discrete_type(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def discrete_type(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the discrete_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 
         Returns
@@ -196,7 +186,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
 
     @discrete_type.setter
     def discrete_type(
-        self, discrete_type: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
     ) -> None:
         """Sets the discrete_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 
@@ -225,7 +215,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

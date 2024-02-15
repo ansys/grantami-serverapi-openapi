@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_rollup_rollup_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "database_key": "str",
@@ -60,7 +50,7 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
         "value": "object",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "database_key": "databaseKey",
@@ -69,9 +59,9 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -101,14 +91,14 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
             roll_up_type=roll_up_type,
         )
         self._value = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if value is not None:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "Optional[object]":
+    def value(self) -> "object":
         """Gets the value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
 
         Returns
@@ -119,7 +109,7 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[object]") -> None:
+    def value(self, value: "object") -> None:
         """Sets the value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
 
         Parameters
@@ -171,7 +161,7 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

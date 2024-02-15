@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_local_column_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_local_colu
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,23 +41,23 @@ class GrantaServerApiSearchLocalColumnNotApplicableCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "guid": "str",
         "identity": "int",
         "local_column_criterion_type": "str",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "guid": "guid",
         "identity": "identity",
         "local_column_criterion_type": "localColumnCriterionType",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -87,7 +77,7 @@ class GrantaServerApiSearchLocalColumnNotApplicableCriterion(
             type: str
         """
         super().__init__(guid=guid, identity=identity, type=type)
-        self._local_column_criterion_type: str = None  # type: ignore[assignment]
+        self._local_column_criterion_type = None
 
         self.local_column_criterion_type = local_column_criterion_type
 
@@ -135,7 +125,7 @@ class GrantaServerApiSearchLocalColumnNotApplicableCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

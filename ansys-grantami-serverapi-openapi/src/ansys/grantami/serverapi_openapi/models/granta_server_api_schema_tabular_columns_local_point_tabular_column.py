@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_tabular_column import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_co
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -65,7 +55,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -79,12 +69,12 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -127,8 +117,8 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
-        self._default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType = None  # type: ignore[assignment]
+        self._column_type = None
+        self._default_threshold_type = None
         self._unit = None
 
         self.column_type = column_type
@@ -192,7 +182,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         self._default_threshold_type = default_threshold_type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
         """Gets the unit of this GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn.
 
         Returns
@@ -203,7 +193,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
         """Sets the unit of this GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn.
 
         Parameters
@@ -231,7 +221,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

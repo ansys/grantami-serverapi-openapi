@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_expor
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,25 +41,25 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "failed_records": "list[GrantaServerApiIntegrationDataExportRecordReference]",
         "failure_details": "str",
         "failure_reason": "str",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "failed_records": "failedRecords",
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "failedRecords": "GrantaServerApiIntegrationDataExportRecordReference",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -89,8 +79,8 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
             type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_records: List[GrantaServerApiIntegrationDataExportRecordReference] = None  # type: ignore[assignment]
-        self._type: str = None  # type: ignore[assignment]
+        self._failed_records = None
+        self._type = None
 
         self.failed_records = failed_records
         self.type = type
@@ -98,7 +88,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
     @property
     def failed_records(
         self,
-    ) -> "List[GrantaServerApiIntegrationDataExportRecordReference]":
+    ) -> "list[GrantaServerApiIntegrationDataExportRecordReference]":
         """Gets the failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
 
         Returns
@@ -111,13 +101,13 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
     @failed_records.setter
     def failed_records(
         self,
-        failed_records: "List[GrantaServerApiIntegrationDataExportRecordReference]",
+        failed_records: "list[GrantaServerApiIntegrationDataExportRecordReference]",
     ) -> None:
         """Sets the failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
 
         Parameters
         ----------
-        failed_records: List[GrantaServerApiIntegrationDataExportRecordReference]
+        failed_records: list[GrantaServerApiIntegrationDataExportRecordReference]
             The failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
         """
         if failed_records is None:
@@ -166,7 +156,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "database_key": "str",
         "property_name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "database_key": "databaseKey",
         "property_name": "propertyName",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
             property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._database_key = None
 
         self.property_name = property_name
@@ -111,7 +101,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
         self._property_name = property_name
 
     @property
-    def database_key(self) -> "Optional[str]":
+    def database_key(self) -> "str":
         """Gets the database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
 
         Returns
@@ -122,7 +112,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Optional[str]") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
 
         Parameters
@@ -150,7 +140,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

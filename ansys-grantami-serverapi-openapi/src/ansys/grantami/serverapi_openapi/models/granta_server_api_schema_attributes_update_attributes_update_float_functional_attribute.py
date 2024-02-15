@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]",
         "axis_name": "str",
@@ -64,7 +54,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
@@ -77,12 +67,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -121,7 +111,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._unit = None
         self._attribute_parameters = None
         self._is_range = None
@@ -159,7 +149,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
@@ -170,9 +160,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
-    ) -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
@@ -185,7 +173,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]]":
+    ) -> "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
@@ -198,19 +186,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def is_range(self) -> "Optional[bool]":
+    def is_range(self) -> "bool":
         """Gets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
@@ -221,7 +209,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "Optional[bool]") -> None:
+    def is_range(self, is_range: "bool") -> None:
         """Sets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
@@ -249,7 +237,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

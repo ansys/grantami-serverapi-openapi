@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,21 +41,21 @@ class GrantaServerApiAggregationsFreeTextAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "guid": "str",
         "terms": "list[str]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "guid": "guid",
         "terms": "terms",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -85,7 +75,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         super().__init__()
         self._guid = None
         self._terms = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if guid is not None:
             self.guid = guid
@@ -94,7 +84,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         self.type = type
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "str":
         """Gets the guid of this GrantaServerApiAggregationsFreeTextAggregation.
         The GUID of the input aggregation criterion.
 
@@ -106,7 +96,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "str") -> None:
         """Sets the guid of this GrantaServerApiAggregationsFreeTextAggregation.
         The GUID of the input aggregation criterion.
 
@@ -118,7 +108,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         self._guid = guid
 
     @property
-    def terms(self) -> "Optional[List[str]]":
+    def terms(self) -> "list[str]":
         """Gets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
@@ -130,13 +120,13 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         return self._terms
 
     @terms.setter
-    def terms(self, terms: "Optional[List[str]]") -> None:
+    def terms(self, terms: "list[str]") -> None:
         """Sets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Parameters
         ----------
-        terms: List[str]
+        terms: list[str]
             The terms of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         self._terms = terms
@@ -183,7 +173,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

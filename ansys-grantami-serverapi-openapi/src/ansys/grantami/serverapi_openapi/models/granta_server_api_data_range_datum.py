@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_d
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,7 +39,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "estimated": "bool",
         "high_value": "float",
         "high_value_is_inclusive": "bool",
@@ -62,7 +52,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "estimated": "estimated",
         "high_value": "highValue",
         "high_value_is_inclusive": "highValueIsInclusive",
@@ -75,13 +65,13 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "lowValueSignificantFiguresInfo": "GrantaServerApiDataSignificantFiguresInfo",
         "highValueSignificantFiguresInfo": "GrantaServerApiDataSignificantFiguresInfo",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -113,14 +103,14 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
             unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._low_value: float = None  # type: ignore[assignment]
-        self._high_value: float = None  # type: ignore[assignment]
-        self._low_value_is_inclusive: bool = None  # type: ignore[assignment]
-        self._high_value_is_inclusive: bool = None  # type: ignore[assignment]
+        self._datum_type = None
+        self._low_value = None
+        self._high_value = None
+        self._low_value_is_inclusive = None
+        self._high_value_is_inclusive = None
         self._low_value_significant_figures_info = None
         self._high_value_significant_figures_info = None
-        self._estimated: bool = None  # type: ignore[assignment]
+        self._estimated = None
         self._unit = None
 
         self.datum_type = datum_type
@@ -265,7 +255,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @property
     def low_value_significant_figures_info(
         self,
-    ) -> "Optional[GrantaServerApiDataSignificantFiguresInfo]":
+    ) -> "GrantaServerApiDataSignificantFiguresInfo":
         """Gets the low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Returns
@@ -278,7 +268,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @low_value_significant_figures_info.setter
     def low_value_significant_figures_info(
         self,
-        low_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]",
+        low_value_significant_figures_info: "GrantaServerApiDataSignificantFiguresInfo",
     ) -> None:
         """Sets the low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
@@ -292,7 +282,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @property
     def high_value_significant_figures_info(
         self,
-    ) -> "Optional[GrantaServerApiDataSignificantFiguresInfo]":
+    ) -> "GrantaServerApiDataSignificantFiguresInfo":
         """Gets the high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Returns
@@ -305,7 +295,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @high_value_significant_figures_info.setter
     def high_value_significant_figures_info(
         self,
-        high_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]",
+        high_value_significant_figures_info: "GrantaServerApiDataSignificantFiguresInfo",
     ) -> None:
         """Sets the high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
@@ -341,7 +331,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         self._estimated = estimated
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
         """Gets the unit of this GrantaServerApiDataRangeDatum.
 
         Returns
@@ -352,7 +342,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
         """Sets the unit of this GrantaServerApiDataRangeDatum.
 
         Parameters
@@ -380,7 +370,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_link_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "attribute_name": "str",
@@ -63,7 +53,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         "tabular_rows": "list[GrantaServerApiDataExportDatumsTabularRow]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "attribute_name": "attributeName",
@@ -75,12 +65,12 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         "tabular_rows": "tabularRows",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "tabularRows": "GrantaServerApiDataExportDatumsTabularRow",
         "summaryRow": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -119,7 +109,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         self._attribute_name = None
         self._tabular_rows = None
         self._summary_row = None
-        self._link_datum_type: str = None  # type: ignore[assignment]
+        self._link_datum_type = None
 
         if attribute_name is not None:
             self.attribute_name = attribute_name
@@ -130,7 +120,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         self.link_datum_type = link_datum_type
 
     @property
-    def attribute_name(self) -> "Optional[str]":
+    def attribute_name(self) -> "str":
         """Gets the attribute_name of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Returns
@@ -141,7 +131,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         return self._attribute_name
 
     @attribute_name.setter
-    def attribute_name(self, attribute_name: "Optional[str]") -> None:
+    def attribute_name(self, attribute_name: "str") -> None:
         """Sets the attribute_name of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Parameters
@@ -152,9 +142,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
         self._attribute_name = attribute_name
 
     @property
-    def tabular_rows(
-        self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsTabularRow]]":
+    def tabular_rows(self) -> "list[GrantaServerApiDataExportDatumsTabularRow]":
         """Gets the tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Returns
@@ -166,21 +154,19 @@ class GrantaServerApiDataExportDatumsTabularDatum(
 
     @tabular_rows.setter
     def tabular_rows(
-        self, tabular_rows: "Optional[List[GrantaServerApiDataExportDatumsTabularRow]]"
+        self, tabular_rows: "list[GrantaServerApiDataExportDatumsTabularRow]"
     ) -> None:
         """Sets the tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Parameters
         ----------
-        tabular_rows: List[GrantaServerApiDataExportDatumsTabularRow]
+        tabular_rows: list[GrantaServerApiDataExportDatumsTabularRow]
             The tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         self._tabular_rows = tabular_rows
 
     @property
-    def summary_row(
-        self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]":
+    def summary_row(self) -> "list[GrantaServerApiDataExportDatumsRollupRollupDatum]":
         """Gets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Returns
@@ -192,14 +178,13 @@ class GrantaServerApiDataExportDatumsTabularDatum(
 
     @summary_row.setter
     def summary_row(
-        self,
-        summary_row: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]",
+        self, summary_row: "list[GrantaServerApiDataExportDatumsRollupRollupDatum]"
     ) -> None:
         """Sets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Parameters
         ----------
-        summary_row: List[GrantaServerApiDataExportDatumsRollupRollupDatum]
+        summary_row: list[GrantaServerApiDataExportDatumsRollupRollupDatum]
             The summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         self._summary_row = summary_row
@@ -246,7 +231,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

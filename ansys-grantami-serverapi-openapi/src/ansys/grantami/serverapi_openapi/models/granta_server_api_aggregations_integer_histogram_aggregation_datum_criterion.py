@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "maximum_number_of_buckets": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "maximum_number_of_buckets": "maximumNumberOfBuckets",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -80,14 +70,14 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
         """
         super().__init__()
         self._maximum_number_of_buckets = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if maximum_number_of_buckets is not None:
             self.maximum_number_of_buckets = maximum_number_of_buckets
         self.type = type
 
     @property
-    def maximum_number_of_buckets(self) -> "Optional[int]":
+    def maximum_number_of_buckets(self) -> "int":
         """Gets the maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
 
         Returns
@@ -98,9 +88,7 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
         return self._maximum_number_of_buckets
 
     @maximum_number_of_buckets.setter
-    def maximum_number_of_buckets(
-        self, maximum_number_of_buckets: "Optional[int]"
-    ) -> None:
+    def maximum_number_of_buckets(self, maximum_number_of_buckets: "int") -> None:
         """Sets the maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
 
         Parameters
@@ -152,7 +140,7 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

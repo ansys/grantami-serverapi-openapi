@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
@@ -64,7 +54,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
@@ -77,12 +67,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -120,7 +110,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._is_multi_valued = None
         self._unit = None
         self._axis_name = None
@@ -161,7 +151,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         self._type = type
 
     @property
-    def is_multi_valued(self) -> "Optional[bool]":
+    def is_multi_valued(self) -> "bool":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
@@ -172,7 +162,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
+    def is_multi_valued(self, is_multi_valued: "bool") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
@@ -183,7 +173,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         self._is_multi_valued = is_multi_valued
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
@@ -194,9 +184,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
-    ) -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
@@ -207,7 +195,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         self._unit = unit
 
     @property
-    def axis_name(self) -> "Optional[str]":
+    def axis_name(self) -> "str":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
@@ -218,7 +206,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Optional[str]") -> None:
+    def axis_name(self, axis_name: "str") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
@@ -231,7 +219,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
@@ -243,14 +231,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
@@ -273,7 +260,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

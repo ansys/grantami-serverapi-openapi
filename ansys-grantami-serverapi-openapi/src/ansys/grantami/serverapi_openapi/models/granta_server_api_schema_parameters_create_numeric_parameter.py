@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "default_parameter_value_index": "int",
         "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "is_restricted": "bool",
@@ -64,7 +54,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "interpolation_type": "interpolationType",
         "is_restricted": "isRestricted",
@@ -77,14 +67,14 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "values": "GrantaServerApiSchemaParametersCreateNumericParameterValue",
         "interpolationType": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "scaleType": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -121,12 +111,12 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_restricted: bool = None  # type: ignore[assignment]
+        self._type = None
+        self._is_restricted = None
         self._unit = None
-        self._values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue] = None  # type: ignore[assignment]
-        self._interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType = None  # type: ignore[assignment]
-        self._scale_type: GrantaServerApiSchemaParametersParameterScaleType = None  # type: ignore[assignment]
+        self._values = None
+        self._interpolation_type = None
+        self._scale_type = None
 
         self.type = type
         self.is_restricted = is_restricted
@@ -185,7 +175,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._is_restricted = is_restricted
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
@@ -196,9 +186,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
-    ) -> None:
+    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters
@@ -211,7 +199,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
     @property
     def values(
         self,
-    ) -> "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
+    ) -> "list[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
@@ -223,13 +211,13 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
 
     @values.setter
     def values(
-        self, values: "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]"
+        self, values: "list[GrantaServerApiSchemaParametersCreateNumericParameterValue]"
     ) -> None:
         """Sets the values of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters
         ----------
-        values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        values: list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
         if values is None:
@@ -311,7 +299,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

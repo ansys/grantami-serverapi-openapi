@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "last_modified_by_user": "str",
         "property_name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "last_modified_by_user": "lastModifiedByUser",
         "property_name": "propertyName",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
             property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._last_modified_by_user = None
 
         self.property_name = property_name
@@ -111,7 +101,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         self._property_name = property_name
 
     @property
-    def last_modified_by_user(self) -> "Optional[str]":
+    def last_modified_by_user(self) -> "str":
         """Gets the last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
 
         Returns
@@ -122,7 +112,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         return self._last_modified_by_user
 
     @last_modified_by_user.setter
-    def last_modified_by_user(self, last_modified_by_user: "Optional[str]") -> None:
+    def last_modified_by_user(self, last_modified_by_user: "str") -> None:
         """Sets the last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
 
         Parameters
@@ -150,7 +140,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

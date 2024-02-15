@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "number_of_parameter_values": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "number_of_parameter_values": "numberOfParameterValues",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -80,14 +70,14 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
         """
         super().__init__()
         self._number_of_parameter_values = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if number_of_parameter_values is not None:
             self.number_of_parameter_values = number_of_parameter_values
         self.type = type
 
     @property
-    def number_of_parameter_values(self) -> "Optional[int]":
+    def number_of_parameter_values(self) -> "int":
         """Gets the number_of_parameter_values of this GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion.
         The maximum number of values to return in this aggregation.
 
@@ -99,9 +89,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
         return self._number_of_parameter_values
 
     @number_of_parameter_values.setter
-    def number_of_parameter_values(
-        self, number_of_parameter_values: "Optional[int]"
-    ) -> None:
+    def number_of_parameter_values(self, number_of_parameter_values: "int") -> None:
         """Sets the number_of_parameter_values of this GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion.
         The maximum number of values to return in this aggregation.
 
@@ -154,7 +142,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

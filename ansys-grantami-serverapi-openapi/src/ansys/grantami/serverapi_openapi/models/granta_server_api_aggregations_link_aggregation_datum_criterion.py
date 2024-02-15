@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,21 +41,21 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "local_aggregation_criteria": "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "local_aggregation_criteria": "localAggregationCriteria",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "localAggregationCriteria": "GrantaServerApiAggregationsLocalColumnAggregationCriterion",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -81,7 +71,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
             type: str
         """
         super().__init__()
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._local_aggregation_criteria = None
 
         self.type = type
@@ -115,7 +105,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @property
     def local_aggregation_criteria(
         self,
-    ) -> "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]":
+    ) -> "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]":
         """Gets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Returns
@@ -128,13 +118,13 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @local_aggregation_criteria.setter
     def local_aggregation_criteria(
         self,
-        local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]",
+        local_aggregation_criteria: "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]",
     ) -> None:
         """Sets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Parameters
         ----------
-        local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
+        local_aggregation_criteria: list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         self._local_aggregation_criteria = local_aggregation_criteria
@@ -157,7 +147,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

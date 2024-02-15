@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier i
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,21 +39,21 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "excluded_guids": "list[str]",
         "excluded_identities": "list[int]",
         "filter_on": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "excluded_guids": "excludedGuids",
         "excluded_identities": "excludedIdentities",
         "filter_on": "filterOn",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -83,7 +73,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         super().__init__()
         self._excluded_identities = None
         self._excluded_guids = None
-        self._filter_on: str = None  # type: ignore[assignment]
+        self._filter_on = None
 
         if excluded_identities is not None:
             self.excluded_identities = excluded_identities
@@ -92,7 +82,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         self.filter_on = filter_on
 
     @property
-    def excluded_identities(self) -> "Optional[List[int]]":
+    def excluded_identities(self) -> "list[int]":
         """Gets the excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
 
         Returns
@@ -103,18 +93,18 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         return self._excluded_identities
 
     @excluded_identities.setter
-    def excluded_identities(self, excluded_identities: "Optional[List[int]]") -> None:
+    def excluded_identities(self, excluded_identities: "list[int]") -> None:
         """Sets the excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
 
         Parameters
         ----------
-        excluded_identities: List[int]
+        excluded_identities: list[int]
             The excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
         """
         self._excluded_identities = excluded_identities
 
     @property
-    def excluded_guids(self) -> "Optional[List[str]]":
+    def excluded_guids(self) -> "list[str]":
         """Gets the excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
 
         Returns
@@ -125,12 +115,12 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         return self._excluded_guids
 
     @excluded_guids.setter
-    def excluded_guids(self, excluded_guids: "Optional[List[str]]") -> None:
+    def excluded_guids(self, excluded_guids: "list[str]") -> None:
         """Sets the excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
 
         Parameters
         ----------
-        excluded_guids: List[str]
+        excluded_guids: list[str]
             The excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
         """
         self._excluded_guids = excluded_guids
@@ -177,7 +167,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

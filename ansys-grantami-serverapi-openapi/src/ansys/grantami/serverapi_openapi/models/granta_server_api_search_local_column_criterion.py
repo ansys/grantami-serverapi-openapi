@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "guid": "str",
         "identity": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "guid": "guid",
         "identity": "identity",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
     discriminator_value_class_map = {
         "matches".lower(): "#/components/schemas/GrantaServerApiSearchLocalColumnMatchesCriterion",
@@ -71,7 +61,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         "notApplicable".lower(): "#/components/schemas/GrantaServerApiSearchLocalColumnNotApplicableCriterion",
     }
 
-    discriminator: Optional[str] = "local_column_criterion_type"
+    discriminator = "local_column_criterion_type"
 
     def __init__(
         self,
@@ -91,7 +81,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         super().__init__()
         self._identity = None
         self._guid = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if identity is not None:
             self.identity = identity
@@ -100,7 +90,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         self.type = type
 
     @property
-    def identity(self) -> "Optional[int]":
+    def identity(self) -> "int":
         """Gets the identity of this GrantaServerApiSearchLocalColumnCriterion.
 
         Returns
@@ -111,7 +101,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "Optional[int]") -> None:
+    def identity(self, identity: "int") -> None:
         """Sets the identity of this GrantaServerApiSearchLocalColumnCriterion.
 
         Parameters
@@ -122,7 +112,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         self._identity = identity
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "str":
         """Gets the guid of this GrantaServerApiSearchLocalColumnCriterion.
 
         Returns
@@ -133,7 +123,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "str") -> None:
         """Sets the guid of this GrantaServerApiSearchLocalColumnCriterion.
 
         Parameters
@@ -179,18 +169,19 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
+            "/", 1
+        )[-1]
 
     @classmethod
     def _get_discriminator_field_name(cls) -> str:
-        assert cls.discriminator
         name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

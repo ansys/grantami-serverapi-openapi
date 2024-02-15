@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "data_rule": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -62,7 +52,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "data_rule": "dataRule",
@@ -73,11 +63,11 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "dataRule": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -111,7 +101,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
         self._is_unique = None
         self._data_rule = None
 
@@ -146,7 +136,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         self._type = type
 
     @property
-    def is_unique(self) -> "Optional[bool]":
+    def is_unique(self) -> "bool":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
@@ -158,7 +148,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         return self._is_unique
 
     @is_unique.setter
-    def is_unique(self, is_unique: "Optional[bool]") -> None:
+    def is_unique(self, is_unique: "bool") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
@@ -170,7 +160,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         self._is_unique = is_unique
 
     @property
-    def data_rule(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def data_rule(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute.
 
         Returns
@@ -182,7 +172,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
 
     @data_rule.setter
     def data_rule(
-        self, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, data_rule: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute.
 
@@ -211,7 +201,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

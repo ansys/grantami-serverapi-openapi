@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,23 +39,23 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "text_match_behaviour": "GrantaServerApiSearchTextMatchBehaviour",
         "type": "str",
         "value": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "text_match_behaviour": "textMatchBehaviour",
         "type": "type",
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "textMatchBehaviour": "GrantaServerApiSearchTextMatchBehaviour",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -85,7 +75,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         super().__init__()
         self._value = None
         self._text_match_behaviour = None
-        self._type: str = None  # type: ignore[assignment]
+        self._type = None
 
         if value is not None:
             self.value = value
@@ -94,7 +84,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         self.type = type
 
     @property
-    def value(self) -> "Optional[str]":
+    def value(self) -> "str":
         """Gets the value of this GrantaServerApiSearchShortTextDatumCriterion.
 
         Returns
@@ -105,7 +95,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[str]") -> None:
+    def value(self, value: "str") -> None:
         """Sets the value of this GrantaServerApiSearchShortTextDatumCriterion.
 
         Parameters
@@ -116,9 +106,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         self._value = value
 
     @property
-    def text_match_behaviour(
-        self,
-    ) -> "Optional[GrantaServerApiSearchTextMatchBehaviour]":
+    def text_match_behaviour(self) -> "GrantaServerApiSearchTextMatchBehaviour":
         """Gets the text_match_behaviour of this GrantaServerApiSearchShortTextDatumCriterion.
 
         Returns
@@ -130,7 +118,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
 
     @text_match_behaviour.setter
     def text_match_behaviour(
-        self, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]"
+        self, text_match_behaviour: "GrantaServerApiSearchTextMatchBehaviour"
     ) -> None:
         """Sets the text_match_behaviour of this GrantaServerApiSearchShortTextDatumCriterion.
 
@@ -183,7 +171,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

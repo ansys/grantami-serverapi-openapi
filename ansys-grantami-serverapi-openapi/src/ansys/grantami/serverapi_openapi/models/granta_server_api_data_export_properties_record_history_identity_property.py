@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "property_name": "str",
         "record_history_identity": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "property_name": "propertyName",
         "record_history_identity": "recordHistoryIdentity",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
             record_history_identity: int, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._record_history_identity = None
 
         self.property_name = property_name
@@ -111,7 +101,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
         self._property_name = property_name
 
     @property
-    def record_history_identity(self) -> "Optional[int]":
+    def record_history_identity(self) -> "int":
         """Gets the record_history_identity of this GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty.
 
         Returns
@@ -122,7 +112,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(self, record_history_identity: "Optional[int]") -> None:
+    def record_history_identity(self, record_history_identity: "int") -> None:
         """Sets the record_history_identity of this GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty.
 
         Parameters
@@ -150,7 +140,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

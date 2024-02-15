@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_attribute_to_export import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_attri
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_type": "str",
         "guid": "str",
         "identity": "int",
@@ -59,7 +49,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         "summary_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_type": "attributeType",
         "guid": "guid",
         "identity": "identity",
@@ -67,12 +57,12 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         "summary_roll_up_type": "summaryRollUpType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "rollUpType": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "summaryRollUpType": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -96,7 +86,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         super().__init__(guid=guid, identity=identity)
         self._roll_up_type = None
         self._summary_roll_up_type = None
-        self._attribute_type: str = None  # type: ignore[assignment]
+        self._attribute_type = None
 
         if roll_up_type is not None:
             self.roll_up_type = roll_up_type
@@ -107,7 +97,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     @property
     def roll_up_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]":
+    ) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
         """Gets the roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Returns
@@ -119,8 +109,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
 
     @roll_up_type.setter
     def roll_up_type(
-        self,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]",
+        self, roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType"
     ) -> None:
         """Sets the roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
@@ -134,7 +123,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     @property
     def summary_roll_up_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]":
+    ) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
         """Gets the summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Returns
@@ -147,7 +136,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     @summary_roll_up_type.setter
     def summary_roll_up_type(
         self,
-        summary_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]",
+        summary_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
     ) -> None:
         """Sets the summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
@@ -200,7 +189,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

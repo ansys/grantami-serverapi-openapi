@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "property_name": "str",
         "table_identity": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "property_name": "propertyName",
         "table_identity": "tableIdentity",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
             table_identity: int, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._table_identity = None
 
         self.property_name = property_name
@@ -111,7 +101,7 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
         self._property_name = property_name
 
     @property
-    def table_identity(self) -> "Optional[int]":
+    def table_identity(self) -> "int":
         """Gets the table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
 
         Returns
@@ -122,7 +112,7 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
         return self._table_identity
 
     @table_identity.setter
-    def table_identity(self, table_identity: "Optional[int]") -> None:
+    def table_identity(self, table_identity: "int") -> None:
         """Sets the table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
 
         Parameters
@@ -150,7 +140,7 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

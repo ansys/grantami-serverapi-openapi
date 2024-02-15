@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "property_name": "str",
         "released_date": "datetime",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "property_name": "propertyName",
         "released_date": "releasedDate",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
             released_date: datetime, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
+        self._property_name = None
         self._released_date = None
 
         self.property_name = property_name
@@ -111,7 +101,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
         self._property_name = property_name
 
     @property
-    def released_date(self) -> "Optional[datetime]":
+    def released_date(self) -> "datetime":
         """Gets the released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
 
         Returns
@@ -122,7 +112,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
         return self._released_date
 
     @released_date.setter
-    def released_date(self, released_date: "Optional[datetime]") -> None:
+    def released_date(self, released_date: "datetime") -> None:
         """Sets the released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
 
         Parameters
@@ -150,7 +140,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

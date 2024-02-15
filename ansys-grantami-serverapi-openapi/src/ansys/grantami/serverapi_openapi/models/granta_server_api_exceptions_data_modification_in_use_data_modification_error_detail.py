@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_data_modification_data_modification_error_detail import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_data_m
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,26 +41,26 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "message": "str",
         "reason": "str",
         "referenced_by": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "referenced_by_type": "GrantaServerApiExceptionsDataModificationReferencedByType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "message": "message",
         "reason": "reason",
         "referenced_by": "referencedBy",
         "referenced_by_type": "referencedByType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "referencedByType": "GrantaServerApiExceptionsDataModificationReferencedByType",
         "referencedBy": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -92,7 +82,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         super().__init__(message=message)
         self._referenced_by_type = None
         self._referenced_by = None
-        self._reason: str = None  # type: ignore[assignment]
+        self._reason = None
 
         if referenced_by_type is not None:
             self.referenced_by_type = referenced_by_type
@@ -103,7 +93,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @property
     def referenced_by_type(
         self,
-    ) -> "Optional[GrantaServerApiExceptionsDataModificationReferencedByType]":
+    ) -> "GrantaServerApiExceptionsDataModificationReferencedByType":
         """Gets the referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Returns
@@ -116,7 +106,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @referenced_by_type.setter
     def referenced_by_type(
         self,
-        referenced_by_type: "Optional[GrantaServerApiExceptionsDataModificationReferencedByType]",
+        referenced_by_type: "GrantaServerApiExceptionsDataModificationReferencedByType",
     ) -> None:
         """Sets the referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
@@ -128,9 +118,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         self._referenced_by_type = referenced_by_type
 
     @property
-    def referenced_by(
-        self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]":
+    def referenced_by(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Returns
@@ -142,14 +130,13 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
 
     @referenced_by.setter
     def referenced_by(
-        self,
-        referenced_by: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]",
+        self, referenced_by: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        referenced_by: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         self._referenced_by = referenced_by
@@ -196,7 +183,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

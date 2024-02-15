@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_link_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,7 +41,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -68,7 +58,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         "target_database_guid": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -85,13 +75,13 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         "target_database_guid": "targetDatabaseGuid",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping = {
         "linkAttributeType": "GrantaServerApiLinkAttributeType",
         "linkedRecords": "GrantaServerApiDataExportRecordWithData",
         "rolledUpData": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -145,7 +135,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._link_group_names_by_database_key = None
         self._link_group_identities_by_database_key = None
         self._rolled_up_data = None
-        self._link_datum_type: str = None  # type: ignore[assignment]
+        self._link_datum_type = None
 
         if link_group_name is not None:
             self.link_group_name = link_group_name
@@ -168,7 +158,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self.link_datum_type = link_datum_type
 
     @property
-    def link_group_name(self) -> "Optional[str]":
+    def link_group_name(self) -> "str":
         """Gets the link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -179,7 +169,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         return self._link_group_name
 
     @link_group_name.setter
-    def link_group_name(self, link_group_name: "Optional[str]") -> None:
+    def link_group_name(self, link_group_name: "str") -> None:
         """Sets the link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
@@ -190,7 +180,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._link_group_name = link_group_name
 
     @property
-    def link_attribute_type(self) -> "Optional[GrantaServerApiLinkAttributeType]":
+    def link_attribute_type(self) -> "GrantaServerApiLinkAttributeType":
         """Gets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -202,7 +192,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @link_attribute_type.setter
     def link_attribute_type(
-        self, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]"
+        self, link_attribute_type: "GrantaServerApiLinkAttributeType"
     ) -> None:
         """Sets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
@@ -214,7 +204,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._link_attribute_type = link_attribute_type
 
     @property
-    def export_in_reversed_direction(self) -> "Optional[bool]":
+    def export_in_reversed_direction(self) -> "bool":
         """Gets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -226,7 +216,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @export_in_reversed_direction.setter
     def export_in_reversed_direction(
-        self, export_in_reversed_direction: "Optional[bool]"
+        self, export_in_reversed_direction: "bool"
     ) -> None:
         """Sets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
@@ -238,7 +228,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._export_in_reversed_direction = export_in_reversed_direction
 
     @property
-    def target_database_guid(self) -> "Optional[str]":
+    def target_database_guid(self) -> "str":
         """Gets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -249,7 +239,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         return self._target_database_guid
 
     @target_database_guid.setter
-    def target_database_guid(self, target_database_guid: "Optional[str]") -> None:
+    def target_database_guid(self, target_database_guid: "str") -> None:
         """Sets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
@@ -260,9 +250,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         self._target_database_guid = target_database_guid
 
     @property
-    def linked_records(
-        self,
-    ) -> "Optional[List[GrantaServerApiDataExportRecordWithData]]":
+    def linked_records(self) -> "list[GrantaServerApiDataExportRecordWithData]":
         """Gets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -274,19 +262,19 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @linked_records.setter
     def linked_records(
-        self, linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]"
+        self, linked_records: "list[GrantaServerApiDataExportRecordWithData]"
     ) -> None:
         """Sets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        linked_records: List[GrantaServerApiDataExportRecordWithData]
+        linked_records: list[GrantaServerApiDataExportRecordWithData]
             The linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._linked_records = linked_records
 
     @property
-    def link_group_names_by_database_key(self) -> "Optional[Dict[str, str]]":
+    def link_group_names_by_database_key(self) -> "dict(str, str)":
         """Gets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -298,19 +286,19 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @link_group_names_by_database_key.setter
     def link_group_names_by_database_key(
-        self, link_group_names_by_database_key: "Optional[Dict[str, str]]"
+        self, link_group_names_by_database_key: "dict(str, str)"
     ) -> None:
         """Sets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_group_names_by_database_key: Dict[str, str]
+        link_group_names_by_database_key: dict(str, str)
             The link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._link_group_names_by_database_key = link_group_names_by_database_key
 
     @property
-    def link_group_identities_by_database_key(self) -> "Optional[Dict[str, int]]":
+    def link_group_identities_by_database_key(self) -> "dict(str, int)":
         """Gets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -322,13 +310,13 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @link_group_identities_by_database_key.setter
     def link_group_identities_by_database_key(
-        self, link_group_identities_by_database_key: "Optional[Dict[str, int]]"
+        self, link_group_identities_by_database_key: "dict(str, int)"
     ) -> None:
         """Sets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_group_identities_by_database_key: Dict[str, int]
+        link_group_identities_by_database_key: dict(str, int)
             The link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._link_group_identities_by_database_key = (
@@ -338,7 +326,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     @property
     def rolled_up_data(
         self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]":
+    ) -> "list[GrantaServerApiDataExportDatumsRollupRollupDatum]":
         """Gets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -350,14 +338,13 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     @rolled_up_data.setter
     def rolled_up_data(
-        self,
-        rolled_up_data: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]",
+        self, rolled_up_data: "list[GrantaServerApiDataExportDatumsRollupRollupDatum]"
     ) -> None:
         """Sets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum]
+        rolled_up_data: list[GrantaServerApiDataExportDatumsRollupRollupDatum]
             The rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._rolled_up_data = rolled_up_data
@@ -404,7 +391,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

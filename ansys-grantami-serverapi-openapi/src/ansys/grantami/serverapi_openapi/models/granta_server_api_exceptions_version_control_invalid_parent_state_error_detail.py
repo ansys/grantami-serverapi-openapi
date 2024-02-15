@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_versio
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -51,19 +41,19 @@ class GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "message": "str",
         "reason": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "message": "message",
         "reason": "reason",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -79,7 +69,7 @@ class GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail(
             reason: str
         """
         super().__init__(message=message)
-        self._reason: str = None  # type: ignore[assignment]
+        self._reason = None
 
         self.reason = reason
 
@@ -125,7 +115,7 @@ class GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

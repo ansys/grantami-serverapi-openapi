@@ -9,15 +9,7 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    List,
-    BinaryIO,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_datum import (
@@ -26,8 +18,6 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
-    from datetime import datetime
-    import pathlib
     from . import *
 
 
@@ -49,23 +39,23 @@ class GrantaServerApiDataExportDatumsUnknownDatum(GrantaServerApiDataExportDatum
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
         "not_applicable": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping = {}
 
-    discriminator: Optional[str] = None
+    discriminator = None
 
     def __init__(
         self,
@@ -89,7 +79,7 @@ class GrantaServerApiDataExportDatumsUnknownDatum(GrantaServerApiDataExportDatum
             attribute_identity=attribute_identity,
             meta_datums=meta_datums,
         )
-        self._not_applicable: str = None  # type: ignore[assignment]
+        self._not_applicable = None
 
         self.not_applicable = not_applicable
 
@@ -135,7 +125,7 @@ class GrantaServerApiDataExportDatumsUnknownDatum(GrantaServerApiDataExportDatum
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
