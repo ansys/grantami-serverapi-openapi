@@ -2466,6 +2466,5 @@ __all__ = [
     "GrantaServerApiVersionState",
     "JobqueueFilesBody",
     "JsonPatchDocument",
-    "SystemIOStream",
     "SystemNetHttpStatusCode",
 ]

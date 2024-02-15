@@ -47,23 +47,13 @@ class FolderguidFilesBody2(ModelBase):  # type: ignore[misc]
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "content_disposition": "str",
-        "content_type": "str",
         "description": "str",
-        "file_name": "str",
-        "headers": "dict(str, list[str])",
-        "length": "int",
-        "name": "str",
+        "file": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "content_disposition": "ContentDisposition",
-        "content_type": "ContentType",
         "description": "description",
-        "file_name": "FileName",
-        "headers": "Headers",
-        "length": "Length",
-        "name": "Name",
+        "file": "file",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -73,180 +63,45 @@ class FolderguidFilesBody2(ModelBase):  # type: ignore[misc]
     def __init__(
         self,
         *,
-        content_disposition: "Optional[str]" = None,
-        content_type: "Optional[str]" = None,
         description: "Optional[str]" = None,
-        file_name: "Optional[str]" = None,
-        headers: "Optional[Dict[str, List[str]]]" = None,
-        length: "Optional[int]" = None,
-        name: "Optional[str]" = None,
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
     ) -> None:
         """FolderguidFilesBody2 - a model defined in Swagger
 
         Parameters
         ----------
-            content_disposition: str, optional
-            content_type: str, optional
             description: str, optional
-            file_name: str, optional
-            headers: Dict[str, List[str]], optional
-            length: int, optional
-            name: str, optional
+            file: Union[BinaryIO, pathlib.Path], optional
         """
-        self._content_type = None
-        self._content_disposition = None
-        self._headers = None
-        self._length = None
-        self._name = None
-        self._file_name = None
+        self._file = None
         self._description = None
 
-        if content_type is not None:
-            self.content_type = content_type
-        if content_disposition is not None:
-            self.content_disposition = content_disposition
-        if headers is not None:
-            self.headers = headers
-        if length is not None:
-            self.length = length
-        if name is not None:
-            self.name = name
-        if file_name is not None:
-            self.file_name = file_name
+        if file is not None:
+            self.file = file
         if description is not None:
             self.description = description
 
     @property
-    def content_type(self) -> "Optional[str]":
-        """Gets the content_type of this FolderguidFilesBody2.
+    def file(self) -> "Optional[Union[BinaryIO, pathlib.Path]]":
+        """Gets the file of this FolderguidFilesBody2.
 
         Returns
         -------
         str
-            The content_type of this FolderguidFilesBody2.
+            The file of this FolderguidFilesBody2.
         """
-        return self._content_type
+        return self._file
 
-    @content_type.setter
-    def content_type(self, content_type: "Optional[str]") -> None:
-        """Sets the content_type of this FolderguidFilesBody2.
+    @file.setter
+    def file(self, file: "Optional[Union[BinaryIO, pathlib.Path]]") -> None:
+        """Sets the file of this FolderguidFilesBody2.
 
         Parameters
         ----------
-        content_type: str
-            The content_type of this FolderguidFilesBody2.
+        file: Union[BinaryIO, pathlib.Path]
+            The file of this FolderguidFilesBody2.
         """
-        self._content_type = content_type
-
-    @property
-    def content_disposition(self) -> "Optional[str]":
-        """Gets the content_disposition of this FolderguidFilesBody2.
-
-        Returns
-        -------
-        str
-            The content_disposition of this FolderguidFilesBody2.
-        """
-        return self._content_disposition
-
-    @content_disposition.setter
-    def content_disposition(self, content_disposition: "Optional[str]") -> None:
-        """Sets the content_disposition of this FolderguidFilesBody2.
-
-        Parameters
-        ----------
-        content_disposition: str
-            The content_disposition of this FolderguidFilesBody2.
-        """
-        self._content_disposition = content_disposition
-
-    @property
-    def headers(self) -> "Optional[Dict[str, List[str]]]":
-        """Gets the headers of this FolderguidFilesBody2.
-
-        Returns
-        -------
-        dict(str, list[str])
-            The headers of this FolderguidFilesBody2.
-        """
-        return self._headers
-
-    @headers.setter
-    def headers(self, headers: "Optional[Dict[str, List[str]]]") -> None:
-        """Sets the headers of this FolderguidFilesBody2.
-
-        Parameters
-        ----------
-        headers: Dict[str, List[str]]
-            The headers of this FolderguidFilesBody2.
-        """
-        self._headers = headers
-
-    @property
-    def length(self) -> "Optional[int]":
-        """Gets the length of this FolderguidFilesBody2.
-
-        Returns
-        -------
-        int
-            The length of this FolderguidFilesBody2.
-        """
-        return self._length
-
-    @length.setter
-    def length(self, length: "Optional[int]") -> None:
-        """Sets the length of this FolderguidFilesBody2.
-
-        Parameters
-        ----------
-        length: int
-            The length of this FolderguidFilesBody2.
-        """
-        self._length = length
-
-    @property
-    def name(self) -> "Optional[str]":
-        """Gets the name of this FolderguidFilesBody2.
-
-        Returns
-        -------
-        str
-            The name of this FolderguidFilesBody2.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "Optional[str]") -> None:
-        """Sets the name of this FolderguidFilesBody2.
-
-        Parameters
-        ----------
-        name: str
-            The name of this FolderguidFilesBody2.
-        """
-        self._name = name
-
-    @property
-    def file_name(self) -> "Optional[str]":
-        """Gets the file_name of this FolderguidFilesBody2.
-
-        Returns
-        -------
-        str
-            The file_name of this FolderguidFilesBody2.
-        """
-        return self._file_name
-
-    @file_name.setter
-    def file_name(self, file_name: "Optional[str]") -> None:
-        """Sets the file_name of this FolderguidFilesBody2.
-
-        Parameters
-        ----------
-        file_name: str
-            The file_name of this FolderguidFilesBody2.
-        """
-        self._file_name = file_name
+        self._file = file
 
     @property
     def description(self) -> "Optional[str]":

@@ -47,55 +47,61 @@ class GrantaServerApiRecordsRecordHistoriesMoveRecordHistory(ModelBase):  # type
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "parent_guid": "str",
+        "new_parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
     }
 
     attribute_map: Dict[str, str] = {
-        "parent_guid": "parentGuid",
+        "new_parent": "newParent",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: Dict[str, str] = {
+        "newParent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        parent_guid: "str",
+        new_parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]" = None,
     ) -> None:
         """GrantaServerApiRecordsRecordHistoriesMoveRecordHistory - a model defined in Swagger
 
         Parameters
         ----------
-            parent_guid: str
+            new_parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
         """
-        self._parent_guid: str = None  # type: ignore[assignment]
+        self._new_parent = None
 
-        self.parent_guid = parent_guid
+        if new_parent is not None:
+            self.new_parent = new_parent
 
     @property
-    def parent_guid(self) -> "str":
-        """Gets the parent_guid of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
+    def new_parent(
+        self,
+    ) -> "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]":
+        """Gets the new_parent of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
 
         Returns
         -------
-        str
-            The parent_guid of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
+        GrantaServerApiRecordsRecordHistoriesSlimRecordHistory
+            The new_parent of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
         """
-        return self._parent_guid
+        return self._new_parent
 
-    @parent_guid.setter
-    def parent_guid(self, parent_guid: "str") -> None:
-        """Sets the parent_guid of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
+    @new_parent.setter
+    def new_parent(
+        self,
+        new_parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]",
+    ) -> None:
+        """Sets the new_parent of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
 
         Parameters
         ----------
-        parent_guid: str
-            The parent_guid of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
+        new_parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory
+            The new_parent of this GrantaServerApiRecordsRecordHistoriesMoveRecordHistory.
         """
-        if parent_guid is None:
-            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
-        self._parent_guid = parent_guid
+        self._new_parent = new_parent
 
     @classmethod
     def get_real_child_model(cls, data: ModelBase) -> str:
