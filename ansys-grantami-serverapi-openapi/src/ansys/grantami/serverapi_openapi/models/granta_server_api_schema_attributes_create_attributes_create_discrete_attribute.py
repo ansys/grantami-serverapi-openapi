@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -52,7 +62,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "discrete_type": "discreteType",
         "name": "name",
         "about_attribute": "aboutAttribute",
@@ -63,11 +73,11 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -101,8 +111,8 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type = None
-        self._discrete_type = None
+        self._type: str = None  # type: ignore[assignment]
+        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimEntity = None  # type: ignore[assignment]
         self._is_multi_valued = None
 
         self.type = type
@@ -161,7 +171,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
         self._discrete_type = discrete_type
 
     @property
-    def is_multi_valued(self) -> "bool":
+    def is_multi_valued(self) -> "Optional[bool]":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute.
 
         Returns
@@ -172,7 +182,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "bool") -> None:
+    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute.
 
         Parameters
@@ -200,7 +210,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

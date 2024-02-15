@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_float_functional_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -58,7 +68,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -75,11 +85,11 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "series": "GrantaServerApiDataExportDatumsSeries",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -129,7 +139,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             unit_symbol=unit_symbol,
             x_axis_parameter=x_axis_parameter,
         )
-        self._graph_type = None
+        self._graph_type: str = None  # type: ignore[assignment]
         self._series = None
         self._is_logarithmic = None
         self._is_range = None
@@ -170,7 +180,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         self._graph_type = graph_type
 
     @property
-    def series(self) -> "list[GrantaServerApiDataExportDatumsSeries]":
+    def series(self) -> "Optional[List[GrantaServerApiDataExportDatumsSeries]]":
         """Gets the series of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Returns
@@ -181,18 +191,20 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         return self._series
 
     @series.setter
-    def series(self, series: "list[GrantaServerApiDataExportDatumsSeries]") -> None:
+    def series(
+        self, series: "Optional[List[GrantaServerApiDataExportDatumsSeries]]"
+    ) -> None:
         """Sets the series of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Parameters
         ----------
-        series: list[GrantaServerApiDataExportDatumsSeries]
+        series: List[GrantaServerApiDataExportDatumsSeries]
             The series of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
         """
         self._series = series
 
     @property
-    def is_logarithmic(self) -> "bool":
+    def is_logarithmic(self) -> "Optional[bool]":
         """Gets the is_logarithmic of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Returns
@@ -203,7 +215,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         return self._is_logarithmic
 
     @is_logarithmic.setter
-    def is_logarithmic(self, is_logarithmic: "bool") -> None:
+    def is_logarithmic(self, is_logarithmic: "Optional[bool]") -> None:
         """Sets the is_logarithmic of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Parameters
@@ -214,7 +226,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         self._is_logarithmic = is_logarithmic
 
     @property
-    def is_range(self) -> "bool":
+    def is_range(self) -> "Optional[bool]":
         """Gets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Returns
@@ -225,7 +237,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "bool") -> None:
+    def is_range(self, is_range: "Optional[bool]") -> None:
         """Sets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Parameters
@@ -236,7 +248,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         self._is_range = is_range
 
     @property
-    def show_as_table(self) -> "bool":
+    def show_as_table(self) -> "Optional[bool]":
         """Gets the show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Returns
@@ -247,7 +259,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         return self._show_as_table
 
     @show_as_table.setter
-    def show_as_table(self, show_as_table: "bool") -> None:
+    def show_as_table(self, show_as_table: "Optional[bool]") -> None:
         """Sets the show_as_table of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Parameters
@@ -275,7 +287,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

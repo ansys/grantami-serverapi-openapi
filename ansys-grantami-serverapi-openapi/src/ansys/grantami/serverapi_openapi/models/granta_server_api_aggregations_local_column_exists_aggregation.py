@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_local_column_aggregation import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_loca
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "count": "int",
         "local_column_aggregation_type": "str",
         "local_column_guid": "str",
         "local_column_identity": "int",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "count": "count",
         "local_column_aggregation_type": "localColumnAggregationType",
         "local_column_guid": "localColumnGuid",
         "local_column_identity": "localColumnIdentity",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -81,7 +91,7 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
             local_column_guid=local_column_guid,
             local_column_identity=local_column_identity,
         )
-        self._local_column_aggregation_type = None
+        self._local_column_aggregation_type: str = None  # type: ignore[assignment]
 
         self.local_column_aggregation_type = local_column_aggregation_type
 
@@ -131,7 +141,7 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

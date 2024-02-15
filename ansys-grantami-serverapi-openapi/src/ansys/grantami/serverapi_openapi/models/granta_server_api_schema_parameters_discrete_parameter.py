@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -51,7 +61,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
@@ -61,11 +71,11 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "values": "GrantaServerApiSchemaParametersDiscreteParameterValue",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -97,8 +107,8 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
             name=name,
             help_path=help_path,
         )
-        self._type = None
-        self._values = None
+        self._type: str = None  # type: ignore[assignment]
+        self._values: List[GrantaServerApiSchemaParametersDiscreteParameterValue] = None  # type: ignore[assignment]
 
         self.type = type
         self.values = values
@@ -128,7 +138,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         self._type = type
 
     @property
-    def values(self) -> "list[GrantaServerApiSchemaParametersDiscreteParameterValue]":
+    def values(self) -> "List[GrantaServerApiSchemaParametersDiscreteParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
 
         Returns
@@ -140,13 +150,13 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
 
     @values.setter
     def values(
-        self, values: "list[GrantaServerApiSchemaParametersDiscreteParameterValue]"
+        self, values: "List[GrantaServerApiSchemaParametersDiscreteParameterValue]"
     ) -> None:
         """Sets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
 
         Parameters
         ----------
-        values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
         if values is None:
@@ -171,7 +181,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

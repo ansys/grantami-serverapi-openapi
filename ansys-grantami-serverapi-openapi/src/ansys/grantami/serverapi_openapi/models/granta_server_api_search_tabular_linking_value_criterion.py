@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,23 +49,23 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "linking_value_match_behaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
         "type": "str",
         "values": "list[str]",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "linking_value_match_behaviour": "linkingValueMatchBehaviour",
         "type": "type",
         "values": "values",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "linkingValueMatchBehaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -75,7 +85,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         super().__init__()
         self._values = None
         self._linking_value_match_behaviour = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if values is not None:
             self.values = values
@@ -84,7 +94,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         self.type = type
 
     @property
-    def values(self) -> "list[str]":
+    def values(self) -> "Optional[List[str]]":
         """Gets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
@@ -95,12 +105,12 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         return self._values
 
     @values.setter
-    def values(self, values: "list[str]") -> None:
+    def values(self, values: "Optional[List[str]]") -> None:
         """Sets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        values: list[str]
+        values: List[str]
             The values of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         self._values = values
@@ -108,7 +118,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     @property
     def linking_value_match_behaviour(
         self,
-    ) -> "GrantaServerApiSearchLinkingValueMatchBehaviour":
+    ) -> "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]":
         """Gets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
@@ -121,7 +131,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     @linking_value_match_behaviour.setter
     def linking_value_match_behaviour(
         self,
-        linking_value_match_behaviour: "GrantaServerApiSearchLinkingValueMatchBehaviour",
+        linking_value_match_behaviour: "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]",
     ) -> None:
         """Sets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
@@ -174,7 +184,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

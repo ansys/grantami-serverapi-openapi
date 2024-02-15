@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_create_tabular_columns_create_tabular_column import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_co
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "name": "str",
         "column_type": "str",
@@ -54,7 +64,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
         "summary_row_text": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "discrete_type": "discreteType",
         "name": "name",
         "column_type": "columnType",
@@ -67,12 +77,12 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
         "summary_row_text": "summaryRowText",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "defaultThresholdType": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -112,9 +122,9 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type = None
+        self._column_type: str = None  # type: ignore[assignment]
         self._default_threshold_type = None
-        self._discrete_type = None
+        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimEntity = None  # type: ignore[assignment]
 
         self.column_type = column_type
         if default_threshold_type is not None:
@@ -148,7 +158,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
     @property
     def default_threshold_type(
         self,
-    ) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
+    ) -> "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]":
         """Gets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscreteTabularColumn.
 
         Returns
@@ -161,7 +171,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
     @default_threshold_type.setter
     def default_threshold_type(
         self,
-        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]",
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscreteTabularColumn.
 
@@ -216,7 +226,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,19 +51,19 @@ class GrantaServerApiSearchDiscreteIdentityDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "type": "str",
         "value": "int",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "type": "type",
         "value": "value",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -70,14 +80,14 @@ class GrantaServerApiSearchDiscreteIdentityDatumCriterion(
         """
         super().__init__()
         self._value = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if value is not None:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "int":
+    def value(self) -> "Optional[int]":
         """Gets the value of this GrantaServerApiSearchDiscreteIdentityDatumCriterion.
 
         Returns
@@ -88,7 +98,7 @@ class GrantaServerApiSearchDiscreteIdentityDatumCriterion(
         return self._value
 
     @value.setter
-    def value(self, value: "int") -> None:
+    def value(self, value: "Optional[int]") -> None:
         """Sets the value of this GrantaServerApiSearchDiscreteIdentityDatumCriterion.
 
         Parameters
@@ -140,7 +150,7 @@ class GrantaServerApiSearchDiscreteIdentityDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
