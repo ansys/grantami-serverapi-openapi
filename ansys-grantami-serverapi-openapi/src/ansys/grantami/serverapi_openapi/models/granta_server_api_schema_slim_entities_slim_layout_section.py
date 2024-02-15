@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_section import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_la
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
         "section_detail_type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
         "section_detail_type": "sectionDetailType",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -77,7 +87,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
             section_detail_type: str
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
-        self._section_detail_type = None
+        self._section_detail_type: str = None  # type: ignore[assignment]
 
         self.section_detail_type = section_detail_type
 
@@ -125,7 +135,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

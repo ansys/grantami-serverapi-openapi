@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_versio
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "message": "str",
         "reason": "str",
         "version_state": "GrantaServerApiVersionState",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "message": "message",
         "reason": "reason",
         "version_state": "versionState",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "versionState": "GrantaServerApiVersionState",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -76,14 +86,14 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
         """
         super().__init__(message=message)
         self._version_state = None
-        self._reason = None
+        self._reason: str = None  # type: ignore[assignment]
 
         if version_state is not None:
             self.version_state = version_state
         self.reason = reason
 
     @property
-    def version_state(self) -> "GrantaServerApiVersionState":
+    def version_state(self) -> "Optional[GrantaServerApiVersionState]":
         """Gets the version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
 
         Returns
@@ -94,7 +104,9 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
         return self._version_state
 
     @version_state.setter
-    def version_state(self, version_state: "GrantaServerApiVersionState") -> None:
+    def version_state(
+        self, version_state: "Optional[GrantaServerApiVersionState]"
+    ) -> None:
         """Sets the version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
 
         Parameters
@@ -146,7 +158,7 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,21 +51,21 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "ancestor_history_identities": "list[int]",
         "database_key": "str",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "ancestor_history_identities": "ancestorHistoryIdentities",
         "database_key": "databaseKey",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -75,7 +85,7 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
         super().__init__()
         self._ancestor_history_identities = None
         self._database_key = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if ancestor_history_identities is not None:
             self.ancestor_history_identities = ancestor_history_identities
@@ -84,7 +94,7 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
         self.type = type
 
     @property
-    def ancestor_history_identities(self) -> "list[int]":
+    def ancestor_history_identities(self) -> "Optional[List[int]]":
         """Gets the ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Returns
@@ -96,19 +106,19 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
 
     @ancestor_history_identities.setter
     def ancestor_history_identities(
-        self, ancestor_history_identities: "list[int]"
+        self, ancestor_history_identities: "Optional[List[int]]"
     ) -> None:
         """Sets the ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Parameters
         ----------
-        ancestor_history_identities: list[int]
+        ancestor_history_identities: List[int]
             The ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
         self._ancestor_history_identities = ancestor_history_identities
 
     @property
-    def database_key(self) -> "str":
+    def database_key(self) -> "Optional[str]":
         """Gets the database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Returns
@@ -119,7 +129,7 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "str") -> None:
+    def database_key(self, database_key: "Optional[str]") -> None:
         """Sets the database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Parameters
@@ -171,7 +181,7 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

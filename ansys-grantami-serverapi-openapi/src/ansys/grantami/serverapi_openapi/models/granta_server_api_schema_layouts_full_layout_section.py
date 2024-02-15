@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_section import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_la
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
@@ -49,7 +59,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         "section_detail_type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
@@ -57,11 +67,11 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         "section_detail_type": "sectionDetailType",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "sectionItems": "GrantaServerApiSchemaLayoutsLayoutItem",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -83,8 +93,8 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
             section_detail_type: str
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
-        self._section_detail_type = None
-        self._section_items = None
+        self._section_detail_type: str = None  # type: ignore[assignment]
+        self._section_items: List[GrantaServerApiSchemaLayoutsLayoutItem] = None  # type: ignore[assignment]
 
         self.section_detail_type = section_detail_type
         self.section_items = section_items
@@ -116,7 +126,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         self._section_detail_type = section_detail_type
 
     @property
-    def section_items(self) -> "list[GrantaServerApiSchemaLayoutsLayoutItem]":
+    def section_items(self) -> "List[GrantaServerApiSchemaLayoutsLayoutItem]":
         """Gets the section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
 
         Returns
@@ -128,13 +138,13 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
 
     @section_items.setter
     def section_items(
-        self, section_items: "list[GrantaServerApiSchemaLayoutsLayoutItem]"
+        self, section_items: "List[GrantaServerApiSchemaLayoutsLayoutItem]"
     ) -> None:
         """Sets the section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
 
         Parameters
         ----------
-        section_items: list[GrantaServerApiSchemaLayoutsLayoutItem]
+        section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
         if section_items is None:
@@ -159,7 +169,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

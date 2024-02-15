@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,24 +51,24 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "datum_type": "str",
         "grid_graphs": "GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation",
         "series_graphs": "GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "datum_type": "datumType",
         "grid_graphs": "gridGraphs",
         "series_graphs": "seriesGraphs",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "seriesGraphs": "GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation",
         "gridGraphs": "GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -78,7 +88,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
         super().__init__()
         self._series_graphs = None
         self._grid_graphs = None
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
 
         if series_graphs is not None:
             self.series_graphs = series_graphs
@@ -89,7 +99,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @property
     def series_graphs(
         self,
-    ) -> "GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation":
+    ) -> "Optional[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation]":
         """Gets the series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Returns
@@ -102,7 +112,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @series_graphs.setter
     def series_graphs(
         self,
-        series_graphs: "GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation",
+        series_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation]",
     ) -> None:
         """Sets the series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
@@ -116,7 +126,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @property
     def grid_graphs(
         self,
-    ) -> "GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation":
+    ) -> "Optional[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation]":
         """Gets the grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Returns
@@ -129,7 +139,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @grid_graphs.setter
     def grid_graphs(
         self,
-        grid_graphs: "GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation",
+        grid_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation]",
     ) -> None:
         """Sets the grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
@@ -182,7 +192,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

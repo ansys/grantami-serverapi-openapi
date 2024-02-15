@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_crite
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,26 +51,26 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "_property": "GrantaServerApiSearchSearchableRecordProperty",
         "sort_direction": "GrantaServerApiSearchSortDirection",
         "sort_type": "GrantaServerApiSearchSortType",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "_property": "property",
         "sort_direction": "sortDirection",
         "sort_type": "sortType",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "property": "GrantaServerApiSearchSearchableRecordProperty",
         "sortType": "GrantaServerApiSearchSortType",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -82,7 +92,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
         super().__init__(sort_direction=sort_direction)
         self.__property = None
         self._sort_type = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if _property is not None:
             self._property = _property
@@ -91,7 +101,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
         self.type = type
 
     @property
-    def _property(self) -> "GrantaServerApiSearchSearchableRecordProperty":
+    def _property(self) -> "Optional[GrantaServerApiSearchSearchableRecordProperty]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Returns
@@ -103,7 +113,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
 
     @_property.setter
     def _property(
-        self, _property: "GrantaServerApiSearchSearchableRecordProperty"
+        self, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]"
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 
@@ -115,7 +125,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
         self.__property = _property
 
     @property
-    def sort_type(self) -> "GrantaServerApiSearchSortType":
+    def sort_type(self) -> "Optional[GrantaServerApiSearchSortType]":
         """Gets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Returns
@@ -126,7 +136,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
         return self._sort_type
 
     @sort_type.setter
-    def sort_type(self, sort_type: "GrantaServerApiSearchSortType") -> None:
+    def sort_type(self, sort_type: "Optional[GrantaServerApiSearchSortType]") -> None:
         """Sets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Parameters
@@ -178,7 +188,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

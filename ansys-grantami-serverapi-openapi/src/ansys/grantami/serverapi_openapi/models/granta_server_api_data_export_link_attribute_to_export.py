@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_attribute_to_export import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_attri
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_type": "str",
         "attributes": "list[GrantaServerApiDataExportAttributeToExport]",
         "export_in_reversed_direction": "bool",
@@ -57,7 +67,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         "target_table_guid": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_type": "attributeType",
         "attributes": "attributes",
         "export_in_reversed_direction": "exportInReversedDirection",
@@ -73,7 +83,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         "target_table_guid": "targetTableGuid",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "localData": "GrantaServerApiDataExportSimpleAttributeToExport",
         "linkAttributeType": "GrantaServerApiLinkAttributeType",
         "recordProperties": "GrantaServerApiRecordProperty",
@@ -82,7 +92,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         "indirectLinksBehavior": "GrantaServerApiIndirectLinks",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -124,7 +134,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._target_table_guid = None
         self._target_database_guid = None
         self._target_attribute_guid = None
-        self._attribute_type = None
+        self._attribute_type: str = None  # type: ignore[assignment]
         self._link_attribute_type = None
         self._export_in_reversed_direction = None
         self._record_properties = None
@@ -155,7 +165,9 @@ class GrantaServerApiDataExportLinkAttributeToExport(
             self.indirect_links_behavior = indirect_links_behavior
 
     @property
-    def local_data(self) -> "list[GrantaServerApiDataExportSimpleAttributeToExport]":
+    def local_data(
+        self,
+    ) -> "Optional[List[GrantaServerApiDataExportSimpleAttributeToExport]]":
         """Gets the local_data of this GrantaServerApiDataExportLinkAttributeToExport.
         The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
 
@@ -168,20 +180,21 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @local_data.setter
     def local_data(
-        self, local_data: "list[GrantaServerApiDataExportSimpleAttributeToExport]"
+        self,
+        local_data: "Optional[List[GrantaServerApiDataExportSimpleAttributeToExport]]",
     ) -> None:
         """Sets the local_data of this GrantaServerApiDataExportLinkAttributeToExport.
         The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
 
         Parameters
         ----------
-        local_data: list[GrantaServerApiDataExportSimpleAttributeToExport]
+        local_data: List[GrantaServerApiDataExportSimpleAttributeToExport]
             The local_data of this GrantaServerApiDataExportLinkAttributeToExport.
         """
         self._local_data = local_data
 
     @property
-    def target_table_guid(self) -> "str":
+    def target_table_guid(self) -> "Optional[str]":
         """Gets the target_table_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         Table containing the linked records
 
@@ -193,7 +206,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         return self._target_table_guid
 
     @target_table_guid.setter
-    def target_table_guid(self, target_table_guid: "str") -> None:
+    def target_table_guid(self, target_table_guid: "Optional[str]") -> None:
         """Sets the target_table_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         Table containing the linked records
 
@@ -205,7 +218,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._target_table_guid = target_table_guid
 
     @property
-    def target_database_guid(self) -> "str":
+    def target_database_guid(self) -> "Optional[str]":
         """Gets the target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         Database containing the linked records. For reverse cross database links, this is the database where the link is defined.  This is not required for cross-database link groups that don't have a target database.
 
@@ -217,7 +230,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         return self._target_database_guid
 
     @target_database_guid.setter
-    def target_database_guid(self, target_database_guid: "str") -> None:
+    def target_database_guid(self, target_database_guid: "Optional[str]") -> None:
         """Sets the target_database_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         Database containing the linked records. For reverse cross database links, this is the database where the link is defined.  This is not required for cross-database link groups that don't have a target database.
 
@@ -229,7 +242,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._target_database_guid = target_database_guid
 
     @property
-    def target_attribute_guid(self) -> "str":
+    def target_attribute_guid(self) -> "Optional[str]":
         """Gets the target_attribute_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         For tabular searching: this is the identifier of the short-text linking attribute.  Otherwise null.
 
@@ -241,7 +254,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         return self._target_attribute_guid
 
     @target_attribute_guid.setter
-    def target_attribute_guid(self, target_attribute_guid: "str") -> None:
+    def target_attribute_guid(self, target_attribute_guid: "Optional[str]") -> None:
         """Sets the target_attribute_guid of this GrantaServerApiDataExportLinkAttributeToExport.
         For tabular searching: this is the identifier of the short-text linking attribute.  Otherwise null.
 
@@ -277,7 +290,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._attribute_type = attribute_type
 
     @property
-    def link_attribute_type(self) -> "GrantaServerApiLinkAttributeType":
+    def link_attribute_type(self) -> "Optional[GrantaServerApiLinkAttributeType]":
         """Gets the link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns
@@ -289,7 +302,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @link_attribute_type.setter
     def link_attribute_type(
-        self, link_attribute_type: "GrantaServerApiLinkAttributeType"
+        self, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]"
     ) -> None:
         """Sets the link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.
 
@@ -301,7 +314,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._link_attribute_type = link_attribute_type
 
     @property
-    def export_in_reversed_direction(self) -> "bool":
+    def export_in_reversed_direction(self) -> "Optional[bool]":
         """Gets the export_in_reversed_direction of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns
@@ -313,7 +326,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @export_in_reversed_direction.setter
     def export_in_reversed_direction(
-        self, export_in_reversed_direction: "bool"
+        self, export_in_reversed_direction: "Optional[bool]"
     ) -> None:
         """Sets the export_in_reversed_direction of this GrantaServerApiDataExportLinkAttributeToExport.
 
@@ -325,7 +338,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._export_in_reversed_direction = export_in_reversed_direction
 
     @property
-    def record_properties(self) -> "list[GrantaServerApiRecordProperty]":
+    def record_properties(self) -> "Optional[List[GrantaServerApiRecordProperty]]":
         """Gets the record_properties of this GrantaServerApiDataExportLinkAttributeToExport.
         The properties to export on any linked records.
 
@@ -338,20 +351,22 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @record_properties.setter
     def record_properties(
-        self, record_properties: "list[GrantaServerApiRecordProperty]"
+        self, record_properties: "Optional[List[GrantaServerApiRecordProperty]]"
     ) -> None:
         """Sets the record_properties of this GrantaServerApiDataExportLinkAttributeToExport.
         The properties to export on any linked records.
 
         Parameters
         ----------
-        record_properties: list[GrantaServerApiRecordProperty]
+        record_properties: List[GrantaServerApiRecordProperty]
             The record_properties of this GrantaServerApiDataExportLinkAttributeToExport.
         """
         self._record_properties = record_properties
 
     @property
-    def attributes(self) -> "list[GrantaServerApiDataExportAttributeToExport]":
+    def attributes(
+        self,
+    ) -> "Optional[List[GrantaServerApiDataExportAttributeToExport]]":
         """Gets the attributes of this GrantaServerApiDataExportLinkAttributeToExport.
         The attributes to export on any linked records.
 
@@ -364,14 +379,14 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @attributes.setter
     def attributes(
-        self, attributes: "list[GrantaServerApiDataExportAttributeToExport]"
+        self, attributes: "Optional[List[GrantaServerApiDataExportAttributeToExport]]"
     ) -> None:
         """Sets the attributes of this GrantaServerApiDataExportLinkAttributeToExport.
         The attributes to export on any linked records.
 
         Parameters
         ----------
-        attributes: list[GrantaServerApiDataExportAttributeToExport]
+        attributes: List[GrantaServerApiDataExportAttributeToExport]
             The attributes of this GrantaServerApiDataExportLinkAttributeToExport.
         """
         self._attributes = attributes
@@ -379,7 +394,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
     @property
     def linked_records_export_behavior(
         self,
-    ) -> "GrantaServerApiDataExportLinkedRecordExportBehavior":
+    ) -> "Optional[GrantaServerApiDataExportLinkedRecordExportBehavior]":
         """Gets the linked_records_export_behavior of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns
@@ -392,7 +407,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
     @linked_records_export_behavior.setter
     def linked_records_export_behavior(
         self,
-        linked_records_export_behavior: "GrantaServerApiDataExportLinkedRecordExportBehavior",
+        linked_records_export_behavior: "Optional[GrantaServerApiDataExportLinkedRecordExportBehavior]",
     ) -> None:
         """Sets the linked_records_export_behavior of this GrantaServerApiDataExportLinkAttributeToExport.
 
@@ -404,7 +419,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
         self._linked_records_export_behavior = linked_records_export_behavior
 
     @property
-    def indirect_links_behavior(self) -> "GrantaServerApiIndirectLinks":
+    def indirect_links_behavior(self) -> "Optional[GrantaServerApiIndirectLinks]":
         """Gets the indirect_links_behavior of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns
@@ -416,7 +431,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     @indirect_links_behavior.setter
     def indirect_links_behavior(
-        self, indirect_links_behavior: "GrantaServerApiIndirectLinks"
+        self, indirect_links_behavior: "Optional[GrantaServerApiIndirectLinks]"
     ) -> None:
         """Sets the indirect_links_behavior of this GrantaServerApiDataExportLinkAttributeToExport.
 
@@ -445,7 +460,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

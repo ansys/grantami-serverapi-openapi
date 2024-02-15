@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_record_link_group import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_lin
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
         "display_names": "dict(str, str)",
         "forbid_orphans": "bool",
@@ -55,7 +65,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_pairs": "attributePairs",
         "display_names": "displayNames",
         "forbid_orphans": "forbidOrphans",
@@ -69,12 +79,12 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "referentialIntegrityModel": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
         "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -116,10 +126,10 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
             identity=identity,
             reverse_display_names=reverse_display_names,
         )
-        self._type = None
-        self._forbid_orphans = None
-        self._referential_integrity_model = None
-        self._attribute_pairs = None
+        self._type: str = None  # type: ignore[assignment]
+        self._forbid_orphans: bool = None  # type: ignore[assignment]
+        self._referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel = None  # type: ignore[assignment]
+        self._attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair] = None  # type: ignore[assignment]
 
         self.type = type
         self.forbid_orphans = forbid_orphans
@@ -208,7 +218,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
     @property
     def attribute_pairs(
         self,
-    ) -> "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]":
+    ) -> "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]":
         """Gets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
 
         Returns
@@ -221,13 +231,13 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
     @attribute_pairs.setter
     def attribute_pairs(
         self,
-        attribute_pairs: "list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
+        attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
         """
         if attribute_pairs is None:
@@ -252,7 +262,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

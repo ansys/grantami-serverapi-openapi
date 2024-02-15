@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_datum import
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,17 +49,17 @@ class GrantaServerApiDataNotApplicableDatum(GrantaServerApiDataDatum):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -63,7 +73,7 @@ class GrantaServerApiDataNotApplicableDatum(GrantaServerApiDataDatum):
             not_applicable: str
         """
         super().__init__()
-        self._not_applicable = None
+        self._not_applicable: str = None  # type: ignore[assignment]
 
         self.not_applicable = not_applicable
 
@@ -109,7 +119,7 @@ class GrantaServerApiDataNotApplicableDatum(GrantaServerApiDataDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

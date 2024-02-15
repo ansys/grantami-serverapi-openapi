@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_ne
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,21 +51,21 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "link_group_guid": "str",
         "guid": "str",
         "item_type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "link_group_guid": "linkGroupGuid",
         "guid": "guid",
         "item_type": "itemType",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -73,8 +83,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(
             item_type: str
         """
         super().__init__(guid=guid)
-        self._item_type = None
-        self._link_group_guid = None
+        self._item_type: str = None  # type: ignore[assignment]
+        self._link_group_guid: str = None  # type: ignore[assignment]
 
         self.item_type = item_type
         self.link_group_guid = link_group_guid
@@ -145,7 +155,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

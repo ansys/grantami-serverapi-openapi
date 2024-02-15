@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -50,7 +60,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -59,9 +69,9 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -90,7 +100,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
         self._datum_value = None
 
         self.datum_type = datum_type
@@ -122,7 +132,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "str":
+    def datum_value(self) -> "Optional[str]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsLongTextDatum.
 
         Returns
@@ -133,7 +143,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
         return self._datum_value
 
     @datum_value.setter
-    def datum_value(self, datum_value: "str") -> None:
+    def datum_value(self, datum_value: "Optional[str]") -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsLongTextDatum.
 
         Parameters
@@ -161,7 +171,7 @@ class GrantaServerApiDataExportDatumsLongTextDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

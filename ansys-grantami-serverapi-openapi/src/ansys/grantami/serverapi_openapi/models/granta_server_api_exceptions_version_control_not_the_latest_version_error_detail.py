@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_versio
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "message": "str",
         "newer_version": "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",
         "reason": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "message": "message",
         "newer_version": "newerVersion",
         "reason": "reason",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "newerVersion": "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -76,14 +86,16 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
         """
         super().__init__(message=message)
         self._newer_version = None
-        self._reason = None
+        self._reason: str = None  # type: ignore[assignment]
 
         if newer_version is not None:
             self.newer_version = newer_version
         self.reason = reason
 
     @property
-    def newer_version(self) -> "GrantaServerApiRecordsRecordVersionsSlimRecordVersion":
+    def newer_version(
+        self,
+    ) -> "Optional[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
         """Gets the newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
 
         Returns
@@ -95,7 +107,8 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
 
     @newer_version.setter
     def newer_version(
-        self, newer_version: "GrantaServerApiRecordsRecordVersionsSlimRecordVersion"
+        self,
+        newer_version: "Optional[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
     ) -> None:
         """Sets the newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
 
@@ -148,7 +161,7 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
