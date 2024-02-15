@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter_content import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,25 +51,25 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "parameter_range": "GrantaServerApiSchemaParametersUpdateContinuousRange",
         "type": "str",
         "value": "float",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "parameter": "parameter",
         "parameter_range": "parameterRange",
         "type": "type",
         "value": "value",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "parameterRange": "GrantaServerApiSchemaParametersUpdateContinuousRange",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -79,7 +89,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
             value: float, optional
         """
         super().__init__(parameter=parameter)
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._value = None
         self._parameter_range = None
 
@@ -114,7 +124,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
         self._type = type
 
     @property
-    def value(self) -> "float":
+    def value(self) -> "Optional[float]":
         """Gets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Returns
@@ -125,7 +135,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
         return self._value
 
     @value.setter
-    def value(self, value: "float") -> None:
+    def value(self, value: "Optional[float]") -> None:
         """Sets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Parameters
@@ -136,7 +146,9 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
         self._value = value
 
     @property
-    def parameter_range(self) -> "GrantaServerApiSchemaParametersUpdateContinuousRange":
+    def parameter_range(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaParametersUpdateContinuousRange]":
         """Gets the parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Returns
@@ -148,7 +160,8 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
 
     @parameter_range.setter
     def parameter_range(
-        self, parameter_range: "GrantaServerApiSchemaParametersUpdateContinuousRange"
+        self,
+        parameter_range: "Optional[GrantaServerApiSchemaParametersUpdateContinuousRange]",
     ) -> None:
         """Sets the parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
@@ -177,7 +190,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

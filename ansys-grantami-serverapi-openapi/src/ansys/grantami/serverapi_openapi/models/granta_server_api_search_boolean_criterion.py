@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,27 +49,27 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "_none": "list[GrantaServerApiSearchCriterion]",
         "all": "list[GrantaServerApiSearchCriterion]",
         "any": "list[GrantaServerApiSearchCriterion]",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "_none": "none",
         "all": "all",
         "any": "any",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "all": "GrantaServerApiSearchCriterion",
         "any": "GrantaServerApiSearchCriterion",
         "none": "GrantaServerApiSearchCriterion",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -82,7 +92,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         self._all = None
         self._any = None
         self.__none = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if all is not None:
             self.all = all
@@ -93,7 +103,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         self.type = type
 
     @property
-    def all(self) -> "list[GrantaServerApiSearchCriterion]":
+    def all(self) -> "Optional[List[GrantaServerApiSearchCriterion]]":
         """Gets the all of this GrantaServerApiSearchBooleanCriterion.
         Only records that match all of these criteria are returned.
 
@@ -105,19 +115,19 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self._all
 
     @all.setter
-    def all(self, all: "list[GrantaServerApiSearchCriterion]") -> None:
+    def all(self, all: "Optional[List[GrantaServerApiSearchCriterion]]") -> None:
         """Sets the all of this GrantaServerApiSearchBooleanCriterion.
         Only records that match all of these criteria are returned.
 
         Parameters
         ----------
-        all: list[GrantaServerApiSearchCriterion]
+        all: List[GrantaServerApiSearchCriterion]
             The all of this GrantaServerApiSearchBooleanCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "list[GrantaServerApiSearchCriterion]":
+    def any(self) -> "Optional[List[GrantaServerApiSearchCriterion]]":
         """Gets the any of this GrantaServerApiSearchBooleanCriterion.
         Only results that match any of these criteria are returned.
 
@@ -129,19 +139,19 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self._any
 
     @any.setter
-    def any(self, any: "list[GrantaServerApiSearchCriterion]") -> None:
+    def any(self, any: "Optional[List[GrantaServerApiSearchCriterion]]") -> None:
         """Sets the any of this GrantaServerApiSearchBooleanCriterion.
         Only results that match any of these criteria are returned.
 
         Parameters
         ----------
-        any: list[GrantaServerApiSearchCriterion]
+        any: List[GrantaServerApiSearchCriterion]
             The any of this GrantaServerApiSearchBooleanCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "list[GrantaServerApiSearchCriterion]":
+    def _none(self) -> "Optional[List[GrantaServerApiSearchCriterion]]":
         """Gets the _none of this GrantaServerApiSearchBooleanCriterion.
         Only results that match none of these criteria are returned.
 
@@ -153,13 +163,13 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "list[GrantaServerApiSearchCriterion]") -> None:
+    def _none(self, _none: "Optional[List[GrantaServerApiSearchCriterion]]") -> None:
         """Sets the _none of this GrantaServerApiSearchBooleanCriterion.
         Only results that match none of these criteria are returned.
 
         Parameters
         ----------
-        _none: list[GrantaServerApiSearchCriterion]
+        _none: List[GrantaServerApiSearchCriterion]
             The _none of this GrantaServerApiSearchBooleanCriterion.
         """
         self.__none = _none
@@ -206,7 +216,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

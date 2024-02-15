@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_local_column_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_local_colu
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSearchLocalColumnMatchesCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "inner_criterion": "GrantaServerApiSearchDatumCriterion",
         "guid": "str",
         "identity": "int",
@@ -49,7 +59,7 @@ class GrantaServerApiSearchLocalColumnMatchesCriterion(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "inner_criterion": "innerCriterion",
         "guid": "guid",
         "identity": "identity",
@@ -57,11 +67,11 @@ class GrantaServerApiSearchLocalColumnMatchesCriterion(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "innerCriterion": "GrantaServerApiSearchDatumCriterion",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -83,8 +93,8 @@ class GrantaServerApiSearchLocalColumnMatchesCriterion(
             type: str
         """
         super().__init__(guid=guid, identity=identity, type=type)
-        self._inner_criterion = None
-        self._local_column_criterion_type = None
+        self._inner_criterion: GrantaServerApiSearchDatumCriterion = None  # type: ignore[assignment]
+        self._local_column_criterion_type: str = None  # type: ignore[assignment]
 
         self.inner_criterion = inner_criterion
         self.local_column_criterion_type = local_column_criterion_type
@@ -159,7 +169,7 @@ class GrantaServerApiSearchLocalColumnMatchesCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_crite
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,7 +49,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_type": "GrantaServerApiAttributeType",
         "guid": "str",
         "identity": "int",
@@ -48,7 +58,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_type": "attributeType",
         "guid": "guid",
         "identity": "identity",
@@ -57,12 +67,12 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "attributeType": "GrantaServerApiAttributeType",
         "sortType": "GrantaServerApiSearchSortType",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -90,7 +100,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self._guid = None
         self._attribute_type = None
         self._sort_type = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if identity is not None:
             self.identity = identity
@@ -103,7 +113,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self.type = type
 
     @property
-    def identity(self) -> "int":
+    def identity(self) -> "Optional[int]":
         """Gets the identity of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
@@ -114,7 +124,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "int") -> None:
+    def identity(self, identity: "Optional[int]") -> None:
         """Sets the identity of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
@@ -125,7 +135,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self._identity = identity
 
     @property
-    def guid(self) -> "str":
+    def guid(self) -> "Optional[str]":
         """Gets the guid of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
@@ -136,7 +146,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "str") -> None:
+    def guid(self, guid: "Optional[str]") -> None:
         """Sets the guid of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
@@ -147,7 +157,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self._guid = guid
 
     @property
-    def attribute_type(self) -> "GrantaServerApiAttributeType":
+    def attribute_type(self) -> "Optional[GrantaServerApiAttributeType]":
         """Gets the attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
@@ -158,7 +168,9 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         return self._attribute_type
 
     @attribute_type.setter
-    def attribute_type(self, attribute_type: "GrantaServerApiAttributeType") -> None:
+    def attribute_type(
+        self, attribute_type: "Optional[GrantaServerApiAttributeType]"
+    ) -> None:
         """Sets the attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
@@ -169,7 +181,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         self._attribute_type = attribute_type
 
     @property
-    def sort_type(self) -> "GrantaServerApiSearchSortType":
+    def sort_type(self) -> "Optional[GrantaServerApiSearchSortType]":
         """Gets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
@@ -180,7 +192,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         return self._sort_type
 
     @sort_type.setter
-    def sort_type(self, sort_type: "GrantaServerApiSearchSortType") -> None:
+    def sort_type(self, sort_type: "Optional[GrantaServerApiSearchSortType]") -> None:
         """Sets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
@@ -232,7 +244,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

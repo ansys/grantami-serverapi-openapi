@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attributes": "GrantaServerApiValueSpecifier",
         "criterion_guid": "str",
         "local_columns": "GrantaServerApiValueSpecifier",
@@ -50,7 +60,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attributes": "attributes",
         "criterion_guid": "criterionGuid",
         "local_columns": "localColumns",
@@ -59,12 +69,12 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "attributes": "GrantaServerApiValueSpecifier",
         "localColumns": "GrantaServerApiValueSpecifier",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -93,7 +103,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._prefix = None
         self._attributes = None
         self._local_columns = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if criterion_guid is not None:
             self.criterion_guid = criterion_guid
@@ -108,7 +118,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self.type = type
 
     @property
-    def criterion_guid(self) -> "str":
+    def criterion_guid(self) -> "Optional[str]":
         """Gets the criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         A GUID to identify this free-text criterion, so that its results can be determined in the output.  For each input free-text aggregation criterion, there will be a free-text aggregation in the output  with a matching GUID.
 
@@ -120,7 +130,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._criterion_guid
 
     @criterion_guid.setter
-    def criterion_guid(self, criterion_guid: "str") -> None:
+    def criterion_guid(self, criterion_guid: "Optional[str]") -> None:
         """Sets the criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         A GUID to identify this free-text criterion, so that its results can be determined in the output.  For each input free-text aggregation criterion, there will be a free-text aggregation in the output  with a matching GUID.
 
@@ -132,7 +142,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._criterion_guid = criterion_guid
 
     @property
-    def number_of_terms(self) -> "int":
+    def number_of_terms(self) -> "Optional[int]":
         """Gets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         The number of terms that should be returned
 
@@ -144,7 +154,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._number_of_terms
 
     @number_of_terms.setter
-    def number_of_terms(self, number_of_terms: "int") -> None:
+    def number_of_terms(self, number_of_terms: "Optional[int]") -> None:
         """Sets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         The number of terms that should be returned
 
@@ -156,7 +166,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._number_of_terms = number_of_terms
 
     @property
-    def prefix(self) -> "str":
+    def prefix(self) -> "Optional[str]":
         """Gets the prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
@@ -167,7 +177,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._prefix
 
     @prefix.setter
-    def prefix(self, prefix: "str") -> None:
+    def prefix(self, prefix: "Optional[str]") -> None:
         """Sets the prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
@@ -178,7 +188,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._prefix = prefix
 
     @property
-    def attributes(self) -> "GrantaServerApiValueSpecifier":
+    def attributes(self) -> "Optional[GrantaServerApiValueSpecifier]":
         """Gets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
@@ -189,7 +199,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "GrantaServerApiValueSpecifier") -> None:
+    def attributes(self, attributes: "Optional[GrantaServerApiValueSpecifier]") -> None:
         """Sets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
@@ -200,7 +210,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         self._attributes = attributes
 
     @property
-    def local_columns(self) -> "GrantaServerApiValueSpecifier":
+    def local_columns(self) -> "Optional[GrantaServerApiValueSpecifier]":
         """Gets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
@@ -211,7 +221,9 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._local_columns
 
     @local_columns.setter
-    def local_columns(self, local_columns: "GrantaServerApiValueSpecifier") -> None:
+    def local_columns(
+        self, local_columns: "Optional[GrantaServerApiValueSpecifier]"
+    ) -> None:
         """Sets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
@@ -263,7 +275,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

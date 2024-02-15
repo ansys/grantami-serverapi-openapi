@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -52,7 +62,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
         "unit": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -63,11 +73,11 @@ class GrantaServerApiDataExportDatumsPointDatum(
         "unit": "unit",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "datumValue": "GrantaServerApiDataExportDatumsPoint",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -100,7 +110,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
         self._datum_value = None
         self._is_estimated = None
         self._unit = None
@@ -138,7 +148,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "list[GrantaServerApiDataExportDatumsPoint]":
+    def datum_value(self) -> "Optional[List[GrantaServerApiDataExportDatumsPoint]]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.
 
         Returns
@@ -150,19 +160,19 @@ class GrantaServerApiDataExportDatumsPointDatum(
 
     @datum_value.setter
     def datum_value(
-        self, datum_value: "list[GrantaServerApiDataExportDatumsPoint]"
+        self, datum_value: "Optional[List[GrantaServerApiDataExportDatumsPoint]]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.
 
         Parameters
         ----------
-        datum_value: list[GrantaServerApiDataExportDatumsPoint]
+        datum_value: List[GrantaServerApiDataExportDatumsPoint]
             The datum_value of this GrantaServerApiDataExportDatumsPointDatum.
         """
         self._datum_value = datum_value
 
     @property
-    def is_estimated(self) -> "bool":
+    def is_estimated(self) -> "Optional[bool]":
         """Gets the is_estimated of this GrantaServerApiDataExportDatumsPointDatum.
 
         Returns
@@ -173,7 +183,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
         return self._is_estimated
 
     @is_estimated.setter
-    def is_estimated(self, is_estimated: "bool") -> None:
+    def is_estimated(self, is_estimated: "Optional[bool]") -> None:
         """Sets the is_estimated of this GrantaServerApiDataExportDatumsPointDatum.
 
         Parameters
@@ -184,7 +194,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
         self._is_estimated = is_estimated
 
     @property
-    def unit(self) -> "str":
+    def unit(self) -> "Optional[str]":
         """Gets the unit of this GrantaServerApiDataExportDatumsPointDatum.
 
         Returns
@@ -195,7 +205,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "str") -> None:
+    def unit(self, unit: "Optional[str]") -> None:
         """Sets the unit of this GrantaServerApiDataExportDatumsPointDatum.
 
         Parameters
@@ -223,7 +233,7 @@ class GrantaServerApiDataExportDatumsPointDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

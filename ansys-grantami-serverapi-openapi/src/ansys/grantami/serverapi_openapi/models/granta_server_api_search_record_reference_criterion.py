@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,7 +49,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "database_key": "str",
         "record_guid": "str",
         "record_history_guid": "str",
@@ -48,7 +58,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "database_key": "databaseKey",
         "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
@@ -57,9 +67,9 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -88,7 +98,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._record_history_identity = None
         self._record_history_guid = None
         self._record_guid = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if database_key is not None:
             self.database_key = database_key
@@ -103,7 +113,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self.type = type
 
     @property
-    def database_key(self) -> "str":
+    def database_key(self) -> "Optional[str]":
         """Gets the database_key of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
@@ -114,7 +124,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "str") -> None:
+    def database_key(self, database_key: "Optional[str]") -> None:
         """Sets the database_key of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
@@ -125,7 +135,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._database_key = database_key
 
     @property
-    def record_identity(self) -> "int":
+    def record_identity(self) -> "Optional[int]":
         """Gets the record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
@@ -136,7 +146,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._record_identity
 
     @record_identity.setter
-    def record_identity(self, record_identity: "int") -> None:
+    def record_identity(self, record_identity: "Optional[int]") -> None:
         """Sets the record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
@@ -147,7 +157,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._record_identity = record_identity
 
     @property
-    def record_history_identity(self) -> "int":
+    def record_history_identity(self) -> "Optional[int]":
         """Gets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
@@ -158,7 +168,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(self, record_history_identity: "int") -> None:
+    def record_history_identity(self, record_history_identity: "Optional[int]") -> None:
         """Sets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
@@ -169,7 +179,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._record_history_identity = record_history_identity
 
     @property
-    def record_history_guid(self) -> "str":
+    def record_history_guid(self) -> "Optional[str]":
         """Gets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
@@ -180,7 +190,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "str") -> None:
+    def record_history_guid(self, record_history_guid: "Optional[str]") -> None:
         """Sets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
@@ -191,7 +201,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         self._record_history_guid = record_history_guid
 
     @property
-    def record_guid(self) -> "str":
+    def record_guid(self) -> "Optional[str]":
         """Gets the record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
@@ -202,7 +212,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._record_guid
 
     @record_guid.setter
-    def record_guid(self, record_guid: "str") -> None:
+    def record_guid(self, record_guid: "Optional[str]") -> None:
         """Sets the record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
@@ -254,7 +264,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

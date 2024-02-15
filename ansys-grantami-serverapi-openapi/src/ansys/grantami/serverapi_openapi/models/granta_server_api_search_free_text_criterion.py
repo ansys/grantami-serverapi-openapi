@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,17 +51,17 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "type": "str",
         "value": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "type": "type",
         "value": "value",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
     discriminator_value_class_map = {
         "all".lower(): "#/components/schemas/GrantaServerApiSearchFreeTextAllCriterion",
@@ -63,7 +73,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         "specifiedLocalColumns".lower(): "#/components/schemas/GrantaServerApiSearchFreeTextSpecifiedLocalColumnsCriterion",
     }
 
-    discriminator = "free_text_criterion_type"
+    discriminator: Optional[str] = "free_text_criterion_type"
 
     def __init__(
         self,
@@ -80,14 +90,14 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         """
         super().__init__()
         self._value = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if value is not None:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "str":
+    def value(self) -> "Optional[str]":
         """Gets the value of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
@@ -98,7 +108,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         return self._value
 
     @value.setter
-    def value(self, value: "str") -> None:
+    def value(self, value: "Optional[str]") -> None:
         """Sets the value of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
@@ -144,19 +154,18 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
-            "/", 1
-        )[-1]
+        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
 
     @classmethod
     def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
         name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

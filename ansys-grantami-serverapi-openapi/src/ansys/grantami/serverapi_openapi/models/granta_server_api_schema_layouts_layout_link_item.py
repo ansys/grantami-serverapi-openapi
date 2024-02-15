@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_item import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_la
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "forwards": "bool",
         "guid": "str",
         "link_type": "GrantaServerApiSchemaLayoutsLayoutItemLinkType",
@@ -54,7 +64,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         "target_database_version": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "forwards": "forwards",
         "guid": "guid",
         "link_type": "linkType",
@@ -67,12 +77,12 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         "target_database_version": "targetDatabaseVersion",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "linkType": "GrantaServerApiSchemaLayoutsLayoutItemLinkType",
         "nextLink": "GrantaServerApiSchemaLayoutsLayoutLinkItem",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -106,12 +116,12 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         super().__init__(
             guid=guid, name=name, underlying_entity_guid=underlying_entity_guid
         )
-        self._item_type = None
-        self._link_type = None
+        self._item_type: str = None  # type: ignore[assignment]
+        self._link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType = None  # type: ignore[assignment]
         self._target_database = None
         self._target_database_version = None
-        self._target_table = None
-        self._forwards = None
+        self._target_table: str = None  # type: ignore[assignment]
+        self._forwards: bool = None  # type: ignore[assignment]
         self._next_link = None
 
         self.item_type = item_type
@@ -176,7 +186,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         self._link_type = link_type
 
     @property
-    def target_database(self) -> "str":
+    def target_database(self) -> "Optional[str]":
         """Gets the target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
@@ -187,7 +197,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         return self._target_database
 
     @target_database.setter
-    def target_database(self, target_database: "str") -> None:
+    def target_database(self, target_database: "Optional[str]") -> None:
         """Sets the target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Parameters
@@ -198,7 +208,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         self._target_database = target_database
 
     @property
-    def target_database_version(self) -> "str":
+    def target_database_version(self) -> "Optional[str]":
         """Gets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
@@ -209,7 +219,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         return self._target_database_version
 
     @target_database_version.setter
-    def target_database_version(self, target_database_version: "str") -> None:
+    def target_database_version(self, target_database_version: "Optional[str]") -> None:
         """Sets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Parameters
@@ -268,7 +278,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         self._forwards = forwards
 
     @property
-    def next_link(self) -> "GrantaServerApiSchemaLayoutsLayoutLinkItem":
+    def next_link(self) -> "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]":
         """Gets the next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
@@ -280,7 +290,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
 
     @next_link.setter
     def next_link(
-        self, next_link: "GrantaServerApiSchemaLayoutsLayoutLinkItem"
+        self, next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]"
     ) -> None:
         """Sets the next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
@@ -309,7 +319,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

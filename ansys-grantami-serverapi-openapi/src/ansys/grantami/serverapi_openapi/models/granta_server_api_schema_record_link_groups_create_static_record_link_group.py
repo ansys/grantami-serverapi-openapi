@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_create_record_link_group import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_lin
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "link_target": "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
         "name": "str",
         "reverse_name": "str",
@@ -50,7 +60,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "link_target": "linkTarget",
         "name": "name",
         "reverse_name": "reverseName",
@@ -59,9 +69,9 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -87,7 +97,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         super().__init__(
             link_target=link_target, name=name, reverse_name=reverse_name, guid=guid
         )
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._include_indirect_links = None
 
         self.type = type
@@ -119,7 +129,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         self._type = type
 
     @property
-    def include_indirect_links(self) -> "bool":
+    def include_indirect_links(self) -> "Optional[bool]":
         """Gets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
 
         Returns
@@ -130,7 +140,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         return self._include_indirect_links
 
     @include_indirect_links.setter
-    def include_indirect_links(self, include_indirect_links: "bool") -> None:
+    def include_indirect_links(self, include_indirect_links: "Optional[bool]") -> None:
         """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
 
         Parameters
@@ -158,7 +168,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

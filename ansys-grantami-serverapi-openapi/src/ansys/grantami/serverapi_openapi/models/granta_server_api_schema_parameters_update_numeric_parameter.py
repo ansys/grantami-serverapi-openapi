@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "default_parameter_value_guid": "str",
         "guid": "str",
         "help_path": "str",
@@ -52,7 +62,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "guid": "guid",
         "help_path": "helpPath",
@@ -63,13 +73,13 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         "unit": "unit",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "interpolationType": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "scaleType": "GrantaServerApiSchemaParametersParameterScaleType",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -102,7 +112,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
             help_path=help_path,
             name=name,
         )
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._unit = None
         self._interpolation_type = None
         self._scale_type = None
@@ -140,7 +150,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
+    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
@@ -151,7 +161,9 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
+    def unit(
+        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
@@ -164,7 +176,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     @property
     def interpolation_type(
         self,
-    ) -> "GrantaServerApiSchemaParametersParameterInterpolationType":
+    ) -> "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]":
         """Gets the interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
@@ -177,7 +189,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     @interpolation_type.setter
     def interpolation_type(
         self,
-        interpolation_type: "GrantaServerApiSchemaParametersParameterInterpolationType",
+        interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]",
     ) -> None:
         """Sets the interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
@@ -189,7 +201,9 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         self._interpolation_type = interpolation_type
 
     @property
-    def scale_type(self) -> "GrantaServerApiSchemaParametersParameterScaleType":
+    def scale_type(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaParametersParameterScaleType]":
         """Gets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
@@ -201,7 +215,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
 
     @scale_type.setter
     def scale_type(
-        self, scale_type: "GrantaServerApiSchemaParametersParameterScaleType"
+        self, scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]"
     ) -> None:
         """Sets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
@@ -230,7 +244,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

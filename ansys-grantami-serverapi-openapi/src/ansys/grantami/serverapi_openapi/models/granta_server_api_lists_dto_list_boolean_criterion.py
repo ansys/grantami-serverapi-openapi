@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_cr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,24 +49,24 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "match_all": "list[GrantaServerApiListsDtoListCriterion]",
         "match_any": "list[GrantaServerApiListsDtoListCriterion]",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "match_all": "matchAll",
         "match_any": "matchAny",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "matchAny": "GrantaServerApiListsDtoListCriterion",
         "matchAll": "GrantaServerApiListsDtoListCriterion",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -76,7 +86,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         super().__init__()
         self._match_any = None
         self._match_all = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if match_any is not None:
             self.match_any = match_any
@@ -85,7 +95,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self.type = type
 
     @property
-    def match_any(self) -> "list[GrantaServerApiListsDtoListCriterion]":
+    def match_any(self) -> "Optional[List[GrantaServerApiListsDtoListCriterion]]":
         """Gets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
@@ -97,19 +107,19 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     @match_any.setter
     def match_any(
-        self, match_any: "list[GrantaServerApiListsDtoListCriterion]"
+        self, match_any: "Optional[List[GrantaServerApiListsDtoListCriterion]]"
     ) -> None:
         """Sets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_any: list[GrantaServerApiListsDtoListCriterion]
+        match_any: List[GrantaServerApiListsDtoListCriterion]
             The match_any of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_any = match_any
 
     @property
-    def match_all(self) -> "list[GrantaServerApiListsDtoListCriterion]":
+    def match_all(self) -> "Optional[List[GrantaServerApiListsDtoListCriterion]]":
         """Gets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
@@ -121,13 +131,13 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     @match_all.setter
     def match_all(
-        self, match_all: "list[GrantaServerApiListsDtoListCriterion]"
+        self, match_all: "Optional[List[GrantaServerApiListsDtoListCriterion]]"
     ) -> None:
         """Sets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_all: list[GrantaServerApiListsDtoListCriterion]
+        match_all: List[GrantaServerApiListsDtoListCriterion]
             The match_all of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_all = match_all
@@ -174,7 +184,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

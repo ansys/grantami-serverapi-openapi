@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter_value import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "guid": "str",
         "value": "float",
         "name": "str",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "guid": "guid",
         "value": "value",
         "name": "name",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -77,8 +87,8 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
             type: str
         """
         super().__init__(guid=guid)
-        self._type = None
-        self._value = None
+        self._type: str = None  # type: ignore[assignment]
+        self._value: float = None  # type: ignore[assignment]
         self._name = None
 
         self.type = type
@@ -135,7 +145,7 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
         self._value = value
 
     @property
-    def name(self) -> "str":
+    def name(self) -> "Optional[str]":
         """Gets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
 
         Returns
@@ -146,7 +156,7 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
         return self._name
 
     @name.setter
-    def name(self, name: "str") -> None:
+    def name(self, name: "Optional[str]") -> None:
         """Sets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
 
         Parameters
@@ -174,7 +184,7 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

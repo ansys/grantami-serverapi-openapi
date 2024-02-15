@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_ne
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "guid": "str",
         "item_type": "str",
@@ -51,7 +61,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         "tabular_column_guids": "list[str]",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "guid": "guid",
         "item_type": "itemType",
@@ -61,11 +71,11 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         "tabular_column_guids": "tabularColumnGuids",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "metaAttributes": "GrantaServerApiSchemaLayoutsNewLayoutAttributeItem",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -91,8 +101,8 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
             tabular_column_guids: List[str], optional
         """
         super().__init__(guid=guid)
-        self._item_type = None
-        self._attribute_guid = None
+        self._item_type: str = None  # type: ignore[assignment]
+        self._attribute_guid: str = None  # type: ignore[assignment]
         self._required = None
         self._read_only = None
         self._meta_attributes = None
@@ -158,7 +168,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         self._attribute_guid = attribute_guid
 
     @property
-    def required(self) -> "bool":
+    def required(self) -> "Optional[bool]":
         """Gets the required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
@@ -169,7 +179,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         return self._required
 
     @required.setter
-    def required(self, required: "bool") -> None:
+    def required(self, required: "Optional[bool]") -> None:
         """Sets the required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
@@ -180,7 +190,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         self._required = required
 
     @property
-    def read_only(self) -> "bool":
+    def read_only(self) -> "Optional[bool]":
         """Gets the read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
@@ -191,7 +201,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         return self._read_only
 
     @read_only.setter
-    def read_only(self, read_only: "bool") -> None:
+    def read_only(self, read_only: "Optional[bool]") -> None:
         """Sets the read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
@@ -204,7 +214,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
     @property
     def meta_attributes(
         self,
-    ) -> "list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]":
+    ) -> "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]":
         """Gets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
@@ -217,19 +227,19 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
     @meta_attributes.setter
     def meta_attributes(
         self,
-        meta_attributes: "list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]",
+        meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]",
     ) -> None:
         """Sets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        meta_attributes: list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]
+        meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]
             The meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._meta_attributes = meta_attributes
 
     @property
-    def tabular_column_guids(self) -> "list[str]":
+    def tabular_column_guids(self) -> "Optional[List[str]]":
         """Gets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
@@ -240,12 +250,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         return self._tabular_column_guids
 
     @tabular_column_guids.setter
-    def tabular_column_guids(self, tabular_column_guids: "list[str]") -> None:
+    def tabular_column_guids(self, tabular_column_guids: "Optional[List[str]]") -> None:
         """Sets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        tabular_column_guids: list[str]
+        tabular_column_guids: List[str]
             The tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._tabular_column_guids = tabular_column_guids
@@ -268,7 +278,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
