@@ -9,11 +9,12 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Dict, IO, List, Optional, Union  # noqa: F401
 from . import ApiBase
 
 
 if TYPE_CHECKING:
+    import pathlib
     from ..models import *
 
 
@@ -100,6 +101,7 @@ class SchemaExpressionsApi(ApiBase):
         local_var_files = {}
 
         body_params = None
+
         response_type_map = {
             200: None,
             400: None,
