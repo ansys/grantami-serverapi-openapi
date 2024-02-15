@@ -1,7 +1,7 @@
 # flake8: noqa
 
 # import API ABC
-from ansys.openapi.common import ApiBase
+from ansys.openapi.common import ApiBase  # type: ignore[import-untyped]
 
 # import apis into api package
 from .aggregation_api import AggregationApi
@@ -43,3 +43,44 @@ from .schema___units_api import SchemaUnitsApi
 from .search_api import SearchApi
 from .selection_searches_api import SelectionSearchesApi
 from .status_api import StatusApi
+
+__all__ = [
+    "ApiBase",
+    "AggregationApi",
+    "DataApi",
+    "DataExportApi",
+    "DatabaseApi",
+    "IntegrationApi",
+    "JobQueueApi",
+    "LicenseApi",
+    "ListItemApi",
+    "ListManagementApi",
+    "ListPermissionsApi",
+    "RecordsRecordHistoriesApi",
+    "RecordsRecordVersionsApi",
+    "SchemaApi",
+    "SchemaAttributesApi",
+    "SchemaConfigurationsApi",
+    "SchemaConstantsApi",
+    "SchemaDataRulesApi",
+    "SchemaDatabasesApi",
+    "SchemaDiscreteTypesDiscreteValuesApi",
+    "SchemaDiscreteTypesApi",
+    "SchemaExportersApi",
+    "SchemaExpressionsApi",
+    "SchemaHelpFilesApi",
+    "SchemaHomePagesApi",
+    "SchemaLayoutSectionsApi",
+    "SchemaLayoutsApi",
+    "SchemaParametersApi",
+    "SchemaProfileTablesApi",
+    "SchemaProfilesApi",
+    "SchemaRecordLinkGroupsApi",
+    "SchemaStandardNamesApi",
+    "SchemaSubsetsApi",
+    "SchemaTablesApi",
+    "SchemaUnitsApi",
+    "SearchApi",
+    "SelectionSearchesApi",
+    "StatusApi",
+]

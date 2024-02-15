@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter_content import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,26 +51,26 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameter_range": "GrantaServerApiSchemaParametersDiscreteRange",
         "parameter_value": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "parameter": "parameter",
         "parameter_range": "parameterRange",
         "parameter_value": "parameterValue",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "parameterValue": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameterRange": "GrantaServerApiSchemaParametersDiscreteRange",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -80,9 +90,9 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
             type: str
         """
         super().__init__(parameter=parameter)
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._parameter_value = None
-        self._parameter_range = None
+        self._parameter_range: GrantaServerApiSchemaParametersDiscreteRange = None  # type: ignore[assignment]
 
         self.type = type
         if parameter_value is not None:
@@ -114,7 +124,9 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         self._type = type
 
     @property
-    def parameter_value(self) -> "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity":
+    def parameter_value(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
 
         Returns
@@ -126,7 +138,8 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
 
     @parameter_value.setter
     def parameter_value(
-        self, parameter_value: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity"
+        self,
+        parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     ) -> None:
         """Sets the parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
 
@@ -181,7 +194,7 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

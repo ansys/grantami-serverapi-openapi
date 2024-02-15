@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_prope
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,21 +51,21 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "property_name": "str",
         "record_type": "GrantaServerApiRecordType",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "property_name": "propertyName",
         "record_type": "recordType",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "recordType": "GrantaServerApiRecordType",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -71,7 +81,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
             record_type: GrantaServerApiRecordType, optional
         """
         super().__init__()
-        self._property_name = None
+        self._property_name: str = None  # type: ignore[assignment]
         self._record_type = None
 
         self.property_name = property_name
@@ -103,7 +113,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
         self._property_name = property_name
 
     @property
-    def record_type(self) -> "GrantaServerApiRecordType":
+    def record_type(self) -> "Optional[GrantaServerApiRecordType]":
         """Gets the record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
 
         Returns
@@ -114,7 +124,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
         return self._record_type
 
     @record_type.setter
-    def record_type(self, record_type: "GrantaServerApiRecordType") -> None:
+    def record_type(self, record_type: "Optional[GrantaServerApiRecordType]") -> None:
         """Sets the record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
 
         Parameters
@@ -142,7 +152,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

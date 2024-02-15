@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -43,7 +53,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -55,7 +65,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -67,7 +77,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "xAxisParameter": "GrantaServerApiFunctionalDatumParameterInfo",
         "parameters": "GrantaServerApiFunctionalDatumParameterInfo",
     }
@@ -77,7 +87,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "series".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsFunctionalSeriesDatum",
     }
 
-    discriminator = "graph_type"
+    discriminator: Optional[str] = "graph_type"
 
     def __init__(
         self,
@@ -112,7 +122,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
         self._unit_symbol = None
         self._x_axis_parameter = None
         self._parameters = None
@@ -153,7 +163,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         self._datum_type = datum_type
 
     @property
-    def unit_symbol(self) -> "str":
+    def unit_symbol(self) -> "Optional[str]":
         """Gets the unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
@@ -164,7 +174,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         return self._unit_symbol
 
     @unit_symbol.setter
-    def unit_symbol(self, unit_symbol: "str") -> None:
+    def unit_symbol(self, unit_symbol: "Optional[str]") -> None:
         """Sets the unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
@@ -175,7 +185,9 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         self._unit_symbol = unit_symbol
 
     @property
-    def x_axis_parameter(self) -> "GrantaServerApiFunctionalDatumParameterInfo":
+    def x_axis_parameter(
+        self,
+    ) -> "Optional[GrantaServerApiFunctionalDatumParameterInfo]":
         """Gets the x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
@@ -187,7 +199,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
 
     @x_axis_parameter.setter
     def x_axis_parameter(
-        self, x_axis_parameter: "GrantaServerApiFunctionalDatumParameterInfo"
+        self, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]"
     ) -> None:
         """Sets the x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
@@ -199,7 +211,9 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         self._x_axis_parameter = x_axis_parameter
 
     @property
-    def parameters(self) -> "list[GrantaServerApiFunctionalDatumParameterInfo]":
+    def parameters(
+        self,
+    ) -> "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]":
         """Gets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
@@ -211,19 +225,19 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
 
     @parameters.setter
     def parameters(
-        self, parameters: "list[GrantaServerApiFunctionalDatumParameterInfo]"
+        self, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]"
     ) -> None:
         """Sets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        parameters: list[GrantaServerApiFunctionalDatumParameterInfo]
+        parameters: List[GrantaServerApiFunctionalDatumParameterInfo]
             The parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         self._parameters = parameters
 
     @property
-    def is_estimated(self) -> "bool":
+    def is_estimated(self) -> "Optional[bool]":
         """Gets the is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
@@ -234,7 +248,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         return self._is_estimated
 
     @is_estimated.setter
-    def is_estimated(self, is_estimated: "bool") -> None:
+    def is_estimated(self, is_estimated: "Optional[bool]") -> None:
         """Sets the is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
@@ -256,19 +270,18 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
-            "/", 1
-        )[-1]
+        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
 
     @classmethod
     def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
         name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

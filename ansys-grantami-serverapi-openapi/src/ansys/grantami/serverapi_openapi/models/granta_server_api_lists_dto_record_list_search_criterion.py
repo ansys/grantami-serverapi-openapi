@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_cr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "contains_records": "list[str]",
         "contains_records_in_databases": "list[str]",
         "contains_records_in_integration_schemas": "list[str]",
@@ -56,7 +66,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         "user_role": "GrantaServerApiListsDtoUserRole",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "contains_records": "containsRecords",
         "contains_records_in_databases": "containsRecordsInDatabases",
         "contains_records_in_integration_schemas": "containsRecordsInIntegrationSchemas",
@@ -71,11 +81,11 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         "user_role": "userRole",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "userRole": "GrantaServerApiListsDtoUserRole",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -122,7 +132,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._contains_records_in_tables = None
         self._contains_records = None
         self._user_can_add_or_remove_items = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if name_contains is not None:
             self.name_contains = name_contains
@@ -151,7 +161,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self.type = type
 
     @property
-    def name_contains(self) -> "str":
+    def name_contains(self) -> "Optional[str]":
         """Gets the name_contains of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Returns
@@ -162,7 +172,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._name_contains
 
     @name_contains.setter
-    def name_contains(self, name_contains: "str") -> None:
+    def name_contains(self, name_contains: "Optional[str]") -> None:
         """Sets the name_contains of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Parameters
@@ -173,7 +183,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._name_contains = name_contains
 
     @property
-    def user_role(self) -> "GrantaServerApiListsDtoUserRole":
+    def user_role(self) -> "Optional[GrantaServerApiListsDtoUserRole]":
         """Gets the user_role of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Returns
@@ -184,7 +194,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._user_role
 
     @user_role.setter
-    def user_role(self, user_role: "GrantaServerApiListsDtoUserRole") -> None:
+    def user_role(self, user_role: "Optional[GrantaServerApiListsDtoUserRole]") -> None:
         """Sets the user_role of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Parameters
@@ -195,7 +205,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._user_role = user_role
 
     @property
-    def is_published(self) -> "bool":
+    def is_published(self) -> "Optional[bool]":
         """Gets the is_published of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Returns
@@ -206,7 +216,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._is_published
 
     @is_published.setter
-    def is_published(self, is_published: "bool") -> None:
+    def is_published(self, is_published: "Optional[bool]") -> None:
         """Sets the is_published of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Parameters
@@ -217,7 +227,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._is_published = is_published
 
     @property
-    def is_awaiting_approval(self) -> "bool":
+    def is_awaiting_approval(self) -> "Optional[bool]":
         """Gets the is_awaiting_approval of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Returns
@@ -228,7 +238,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._is_awaiting_approval
 
     @is_awaiting_approval.setter
-    def is_awaiting_approval(self, is_awaiting_approval: "bool") -> None:
+    def is_awaiting_approval(self, is_awaiting_approval: "Optional[bool]") -> None:
         """Sets the is_awaiting_approval of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Parameters
@@ -239,7 +249,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._is_awaiting_approval = is_awaiting_approval
 
     @property
-    def is_internal_use(self) -> "bool":
+    def is_internal_use(self) -> "Optional[bool]":
         """Gets the is_internal_use of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Returns
@@ -250,7 +260,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._is_internal_use
 
     @is_internal_use.setter
-    def is_internal_use(self, is_internal_use: "bool") -> None:
+    def is_internal_use(self, is_internal_use: "Optional[bool]") -> None:
         """Sets the is_internal_use of this GrantaServerApiListsDtoRecordListSearchCriterion.
 
         Parameters
@@ -261,7 +271,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._is_internal_use = is_internal_use
 
     @property
-    def is_revision(self) -> "bool":
+    def is_revision(self) -> "Optional[bool]":
         """Gets the is_revision of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Restrict to record lists that are (non discarded) revisions.
 
@@ -273,7 +283,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._is_revision
 
     @is_revision.setter
-    def is_revision(self, is_revision: "bool") -> None:
+    def is_revision(self, is_revision: "Optional[bool]") -> None:
         """Sets the is_revision of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Restrict to record lists that are (non discarded) revisions.
 
@@ -285,7 +295,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         self._is_revision = is_revision
 
     @property
-    def contains_records_in_databases(self) -> "list[str]":
+    def contains_records_in_databases(self) -> "Optional[List[str]]":
         """Gets the contains_records_in_databases of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of of the specified databases
 
@@ -298,20 +308,20 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
 
     @contains_records_in_databases.setter
     def contains_records_in_databases(
-        self, contains_records_in_databases: "list[str]"
+        self, contains_records_in_databases: "Optional[List[str]]"
     ) -> None:
         """Sets the contains_records_in_databases of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of of the specified databases
 
         Parameters
         ----------
-        contains_records_in_databases: list[str]
+        contains_records_in_databases: List[str]
             The contains_records_in_databases of this GrantaServerApiListsDtoRecordListSearchCriterion.
         """
         self._contains_records_in_databases = contains_records_in_databases
 
     @property
-    def contains_records_in_integration_schemas(self) -> "list[str]":
+    def contains_records_in_integration_schemas(self) -> "Optional[List[str]]":
         """Gets the contains_records_in_integration_schemas of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas
 
@@ -324,14 +334,14 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
 
     @contains_records_in_integration_schemas.setter
     def contains_records_in_integration_schemas(
-        self, contains_records_in_integration_schemas: "list[str]"
+        self, contains_records_in_integration_schemas: "Optional[List[str]]"
     ) -> None:
         """Sets the contains_records_in_integration_schemas of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas
 
         Parameters
         ----------
-        contains_records_in_integration_schemas: list[str]
+        contains_records_in_integration_schemas: List[str]
             The contains_records_in_integration_schemas of this GrantaServerApiListsDtoRecordListSearchCriterion.
         """
         self._contains_records_in_integration_schemas = (
@@ -339,7 +349,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         )
 
     @property
-    def contains_records_in_tables(self) -> "list[str]":
+    def contains_records_in_tables(self) -> "Optional[List[str]]":
         """Gets the contains_records_in_tables of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified tables
 
@@ -352,20 +362,20 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
 
     @contains_records_in_tables.setter
     def contains_records_in_tables(
-        self, contains_records_in_tables: "list[str]"
+        self, contains_records_in_tables: "Optional[List[str]]"
     ) -> None:
         """Sets the contains_records_in_tables of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified tables
 
         Parameters
         ----------
-        contains_records_in_tables: list[str]
+        contains_records_in_tables: List[str]
             The contains_records_in_tables of this GrantaServerApiListsDtoRecordListSearchCriterion.
         """
         self._contains_records_in_tables = contains_records_in_tables
 
     @property
-    def contains_records(self) -> "list[str]":
+    def contains_records(self) -> "Optional[List[str]]":
         """Gets the contains_records of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing any of the given records
 
@@ -377,19 +387,19 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
         return self._contains_records
 
     @contains_records.setter
-    def contains_records(self, contains_records: "list[str]") -> None:
+    def contains_records(self, contains_records: "Optional[List[str]]") -> None:
         """Sets the contains_records of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing any of the given records
 
         Parameters
         ----------
-        contains_records: list[str]
+        contains_records: List[str]
             The contains_records of this GrantaServerApiListsDtoRecordListSearchCriterion.
         """
         self._contains_records = contains_records
 
     @property
-    def user_can_add_or_remove_items(self) -> "bool":
+    def user_can_add_or_remove_items(self) -> "Optional[bool]":
         """Gets the user_can_add_or_remove_items of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists where the current user can add or remove items.
 
@@ -402,7 +412,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
 
     @user_can_add_or_remove_items.setter
     def user_can_add_or_remove_items(
-        self, user_can_add_or_remove_items: "bool"
+        self, user_can_add_or_remove_items: "Optional[bool]"
     ) -> None:
         """Sets the user_can_add_or_remove_items of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists where the current user can add or remove items.
@@ -456,7 +466,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

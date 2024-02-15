@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter_content import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,26 +51,26 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "parameter": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "parameter_range": "GrantaServerApiSchemaParametersUpdateDiscreteRange",
         "parameter_value": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "parameter": "parameter",
         "parameter_range": "parameterRange",
         "parameter_value": "parameterValue",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "parameterValue": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "parameterRange": "GrantaServerApiSchemaParametersUpdateDiscreteRange",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -80,7 +90,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
             type: str
         """
         super().__init__(parameter=parameter)
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._parameter_value = None
         self._parameter_range = None
 
@@ -115,7 +125,9 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
         self._type = type
 
     @property
-    def parameter_value(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
+    def parameter_value(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the parameter_value of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 
         Returns
@@ -127,7 +139,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
 
     @parameter_value.setter
     def parameter_value(
-        self, parameter_value: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
+        self, parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the parameter_value of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 
@@ -139,7 +151,9 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
         self._parameter_value = parameter_value
 
     @property
-    def parameter_range(self) -> "GrantaServerApiSchemaParametersUpdateDiscreteRange":
+    def parameter_range(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaParametersUpdateDiscreteRange]":
         """Gets the parameter_range of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 
         Returns
@@ -151,7 +165,8 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
 
     @parameter_range.setter
     def parameter_range(
-        self, parameter_range: "GrantaServerApiSchemaParametersUpdateDiscreteRange"
+        self,
+        parameter_range: "Optional[GrantaServerApiSchemaParametersUpdateDiscreteRange]",
     ) -> None:
         """Sets the parameter_range of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 
@@ -180,7 +195,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
