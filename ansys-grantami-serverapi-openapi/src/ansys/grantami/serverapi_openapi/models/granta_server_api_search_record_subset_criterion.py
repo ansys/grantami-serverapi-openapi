@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,21 +49,21 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "subset_guid": "str",
         "subset_identity": "int",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "subset_guid": "subsetGuid",
         "subset_identity": "subsetIdentity",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -73,7 +83,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         super().__init__()
         self._subset_identity = None
         self._subset_guid = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if subset_identity is not None:
             self.subset_identity = subset_identity
@@ -82,7 +92,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         self.type = type
 
     @property
-    def subset_identity(self) -> "int":
+    def subset_identity(self) -> "Optional[int]":
         """Gets the subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Returns
@@ -93,7 +103,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         return self._subset_identity
 
     @subset_identity.setter
-    def subset_identity(self, subset_identity: "int") -> None:
+    def subset_identity(self, subset_identity: "Optional[int]") -> None:
         """Sets the subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Parameters
@@ -104,7 +114,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         self._subset_identity = subset_identity
 
     @property
-    def subset_guid(self) -> "str":
+    def subset_guid(self) -> "Optional[str]":
         """Gets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Returns
@@ -115,7 +125,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         return self._subset_guid
 
     @subset_guid.setter
-    def subset_guid(self, subset_guid: "str") -> None:
+    def subset_guid(self, subset_guid: "Optional[str]") -> None:
         """Sets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Parameters
@@ -167,7 +177,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

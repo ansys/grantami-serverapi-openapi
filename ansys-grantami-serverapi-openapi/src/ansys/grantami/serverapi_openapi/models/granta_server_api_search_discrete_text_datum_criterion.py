@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_crit
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,23 +51,23 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "text_match_behaviour": "GrantaServerApiSearchTextMatchBehaviour",
         "type": "str",
         "value": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "text_match_behaviour": "textMatchBehaviour",
         "type": "type",
         "value": "value",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "textMatchBehaviour": "GrantaServerApiSearchTextMatchBehaviour",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -77,7 +87,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         super().__init__()
         self._value = None
         self._text_match_behaviour = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if value is not None:
             self.value = value
@@ -86,7 +96,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         self.type = type
 
     @property
-    def value(self) -> "str":
+    def value(self) -> "Optional[str]":
         """Gets the value of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
         Returns
@@ -97,7 +107,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         return self._value
 
     @value.setter
-    def value(self, value: "str") -> None:
+    def value(self, value: "Optional[str]") -> None:
         """Sets the value of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
         Parameters
@@ -108,7 +118,9 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         self._value = value
 
     @property
-    def text_match_behaviour(self) -> "GrantaServerApiSearchTextMatchBehaviour":
+    def text_match_behaviour(
+        self,
+    ) -> "Optional[GrantaServerApiSearchTextMatchBehaviour]":
         """Gets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
         Returns
@@ -120,7 +132,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
 
     @text_match_behaviour.setter
     def text_match_behaviour(
-        self, text_match_behaviour: "GrantaServerApiSearchTextMatchBehaviour"
+        self, text_match_behaviour: "Optional[GrantaServerApiSearchTextMatchBehaviour]"
     ) -> None:
         """Sets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
@@ -173,7 +185,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

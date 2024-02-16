@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,24 +49,24 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "_property": "GrantaServerApiSearchSearchableRecordProperty",
         "inner_criterion": "GrantaServerApiSearchDatumCriterion",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "_property": "property",
         "inner_criterion": "innerCriterion",
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "property": "GrantaServerApiSearchSearchableRecordProperty",
         "innerCriterion": "GrantaServerApiSearchDatumCriterion",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -76,7 +86,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         super().__init__()
         self.__property = None
         self._inner_criterion = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if _property is not None:
             self._property = _property
@@ -85,7 +95,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         self.type = type
 
     @property
-    def _property(self) -> "GrantaServerApiSearchSearchableRecordProperty":
+    def _property(self) -> "Optional[GrantaServerApiSearchSearchableRecordProperty]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns
@@ -97,7 +107,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
 
     @_property.setter
     def _property(
-        self, _property: "GrantaServerApiSearchSearchableRecordProperty"
+        self, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]"
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
@@ -109,7 +119,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         self.__property = _property
 
     @property
-    def inner_criterion(self) -> "GrantaServerApiSearchDatumCriterion":
+    def inner_criterion(self) -> "Optional[GrantaServerApiSearchDatumCriterion]":
         """Gets the inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns
@@ -121,7 +131,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
 
     @inner_criterion.setter
     def inner_criterion(
-        self, inner_criterion: "GrantaServerApiSearchDatumCriterion"
+        self, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]"
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
 
@@ -174,7 +184,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

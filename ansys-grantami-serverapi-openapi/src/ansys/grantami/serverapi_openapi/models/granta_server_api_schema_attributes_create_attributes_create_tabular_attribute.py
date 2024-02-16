@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
@@ -55,7 +65,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
@@ -69,12 +79,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         "type": "type",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "tabularColumns": "GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn",
         "target": "GrantaServerApiSchemaAttributesTabularAttributeTarget",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -114,7 +124,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._display_full_table = None
         self._display_summary_row_inline = None
         self._hide_unlinked_rows = None
@@ -158,7 +168,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         self._type = type
 
     @property
-    def display_full_table(self) -> "bool":
+    def display_full_table(self) -> "Optional[bool]":
         """Gets the display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -169,7 +179,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         return self._display_full_table
 
     @display_full_table.setter
-    def display_full_table(self, display_full_table: "bool") -> None:
+    def display_full_table(self, display_full_table: "Optional[bool]") -> None:
         """Sets the display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
@@ -180,7 +190,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         self._display_full_table = display_full_table
 
     @property
-    def display_summary_row_inline(self) -> "bool":
+    def display_summary_row_inline(self) -> "Optional[bool]":
         """Gets the display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -191,7 +201,9 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         return self._display_summary_row_inline
 
     @display_summary_row_inline.setter
-    def display_summary_row_inline(self, display_summary_row_inline: "bool") -> None:
+    def display_summary_row_inline(
+        self, display_summary_row_inline: "Optional[bool]"
+    ) -> None:
         """Sets the display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
@@ -202,7 +214,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         self._display_summary_row_inline = display_summary_row_inline
 
     @property
-    def hide_unlinked_rows(self) -> "bool":
+    def hide_unlinked_rows(self) -> "Optional[bool]":
         """Gets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -213,7 +225,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         return self._hide_unlinked_rows
 
     @hide_unlinked_rows.setter
-    def hide_unlinked_rows(self, hide_unlinked_rows: "bool") -> None:
+    def hide_unlinked_rows(self, hide_unlinked_rows: "Optional[bool]") -> None:
         """Sets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
@@ -226,7 +238,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
     @property
     def tabular_columns(
         self,
-    ) -> "list[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]":
+    ) -> "Optional[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -239,19 +251,21 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
     @tabular_columns.setter
     def tabular_columns(
         self,
-        tabular_columns: "list[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]",
+        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]]",
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: list[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]
+        tabular_columns: List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
 
     @property
-    def target(self) -> "GrantaServerApiSchemaAttributesTabularAttributeTarget":
+    def target(
+        self,
+    ) -> "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]":
         """Gets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -263,7 +277,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
 
     @target.setter
     def target(
-        self, target: "GrantaServerApiSchemaAttributesTabularAttributeTarget"
+        self, target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]"
     ) -> None:
         """Sets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
@@ -292,7 +306,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

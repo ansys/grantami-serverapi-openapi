@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datum
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -50,7 +60,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
         "not_applicable": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -59,11 +69,11 @@ class GrantaServerApiDataExportDatumsFileDatum(
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "datumValue": "GrantaServerApiDataExportDatumsBinaryData",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -92,7 +102,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type = None
+        self._datum_type: str = None  # type: ignore[assignment]
         self._datum_value = None
 
         self.datum_type = datum_type
@@ -124,7 +134,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "GrantaServerApiDataExportDatumsBinaryData":
+    def datum_value(self) -> "Optional[GrantaServerApiDataExportDatumsBinaryData]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsFileDatum.
 
         Returns
@@ -136,7 +146,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
 
     @datum_value.setter
     def datum_value(
-        self, datum_value: "GrantaServerApiDataExportDatumsBinaryData"
+        self, datum_value: "Optional[GrantaServerApiDataExportDatumsBinaryData]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsFileDatum.
 
@@ -165,7 +175,7 @@ class GrantaServerApiDataExportDatumsFileDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

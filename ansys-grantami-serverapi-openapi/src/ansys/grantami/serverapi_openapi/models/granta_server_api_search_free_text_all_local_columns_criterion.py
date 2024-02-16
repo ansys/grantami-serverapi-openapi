@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "column_guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
         "column_identities_to_boost": "list[GrantaServerApiSearchBoostByIdentity]",
         "free_text_criterion_type": "str",
@@ -49,7 +59,7 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
         "value": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "column_guids_to_boost": "columnGuidsToBoost",
         "column_identities_to_boost": "columnIdentitiesToBoost",
         "free_text_criterion_type": "freeTextCriterionType",
@@ -57,12 +67,12 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
         "value": "value",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "columnIdentitiesToBoost": "GrantaServerApiSearchBoostByIdentity",
         "columnGuidsToBoost": "GrantaServerApiSearchBoostByGuid",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -86,7 +96,7 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
         super().__init__(type=type, value=value)
         self._column_identities_to_boost = None
         self._column_guids_to_boost = None
-        self._free_text_criterion_type = None
+        self._free_text_criterion_type: str = None  # type: ignore[assignment]
 
         if column_identities_to_boost is not None:
             self.column_identities_to_boost = column_identities_to_boost
@@ -97,7 +107,7 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
     @property
     def column_identities_to_boost(
         self,
-    ) -> "list[GrantaServerApiSearchBoostByIdentity]":
+    ) -> "Optional[List[GrantaServerApiSearchBoostByIdentity]]":
         """Gets the column_identities_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
 
         Returns
@@ -109,19 +119,22 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
 
     @column_identities_to_boost.setter
     def column_identities_to_boost(
-        self, column_identities_to_boost: "list[GrantaServerApiSearchBoostByIdentity]"
+        self,
+        column_identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]",
     ) -> None:
         """Sets the column_identities_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_identities_to_boost: list[GrantaServerApiSearchBoostByIdentity]
+        column_identities_to_boost: List[GrantaServerApiSearchBoostByIdentity]
             The column_identities_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
         """
         self._column_identities_to_boost = column_identities_to_boost
 
     @property
-    def column_guids_to_boost(self) -> "list[GrantaServerApiSearchBoostByGuid]":
+    def column_guids_to_boost(
+        self,
+    ) -> "Optional[List[GrantaServerApiSearchBoostByGuid]]":
         """Gets the column_guids_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
 
         Returns
@@ -133,13 +146,13 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
 
     @column_guids_to_boost.setter
     def column_guids_to_boost(
-        self, column_guids_to_boost: "list[GrantaServerApiSearchBoostByGuid]"
+        self, column_guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]"
     ) -> None:
         """Sets the column_guids_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_guids_to_boost: list[GrantaServerApiSearchBoostByGuid]
+        column_guids_to_boost: List[GrantaServerApiSearchBoostByGuid]
             The column_guids_to_boost of this GrantaServerApiSearchFreeTextAllLocalColumnsCriterion.
         """
         self._column_guids_to_boost = column_guids_to_boost
@@ -188,7 +201,7 @@ class GrantaServerApiSearchFreeTextAllLocalColumnsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_update_record_link_group import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_lin
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "guid": "str",
         "include_indirect_links": "bool",
         "name": "str",
@@ -49,7 +59,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "guid": "guid",
         "include_indirect_links": "includeIndirectLinks",
         "name": "name",
@@ -57,9 +67,9 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -82,14 +92,14 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
         """
         super().__init__(guid=guid, name=name, reverse_name=reverse_name)
         self._include_indirect_links = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if include_indirect_links is not None:
             self.include_indirect_links = include_indirect_links
         self.type = type
 
     @property
-    def include_indirect_links(self) -> "bool":
+    def include_indirect_links(self) -> "Optional[bool]":
         """Gets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup.
 
         Returns
@@ -100,7 +110,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
         return self._include_indirect_links
 
     @include_indirect_links.setter
-    def include_indirect_links(self, include_indirect_links: "bool") -> None:
+    def include_indirect_links(self, include_indirect_links: "Optional[bool]") -> None:
         """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup.
 
         Parameters
@@ -152,7 +162,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateStaticRecordLinkGroup(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

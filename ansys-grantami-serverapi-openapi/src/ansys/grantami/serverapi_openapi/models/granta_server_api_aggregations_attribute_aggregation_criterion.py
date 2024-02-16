@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggr
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -43,28 +53,28 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "guid": "str",
         "identity": "int",
         "is_meta_attribute": "bool",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "guid": "guid",
         "identity": "identity",
         "is_meta_attribute": "isMetaAttribute",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
     discriminator_value_class_map = {
         "value".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeAggregationValueCriterion",
         "exists".lower(): "#/components/schemas/GrantaServerApiAggregationsAttributeAggregationExistsCriterion",
     }
 
-    discriminator = "attribute_aggregation_criterion_type"
+    discriminator: Optional[str] = "attribute_aggregation_criterion_type"
 
     def __init__(
         self,
@@ -87,7 +97,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         self._identity = None
         self._guid = None
         self._is_meta_attribute = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if identity is not None:
             self.identity = identity
@@ -98,7 +108,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         self.type = type
 
     @property
-    def identity(self) -> "int":
+    def identity(self) -> "Optional[int]":
         """Gets the identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
@@ -109,7 +119,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "int") -> None:
+    def identity(self, identity: "Optional[int]") -> None:
         """Sets the identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
@@ -120,7 +130,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         self._identity = identity
 
     @property
-    def guid(self) -> "str":
+    def guid(self) -> "Optional[str]":
         """Gets the guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
@@ -131,7 +141,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "str") -> None:
+    def guid(self, guid: "Optional[str]") -> None:
         """Sets the guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
@@ -142,7 +152,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         self._guid = guid
 
     @property
-    def is_meta_attribute(self) -> "bool":
+    def is_meta_attribute(self) -> "Optional[bool]":
         """Gets the is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
@@ -153,7 +163,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         return self._is_meta_attribute
 
     @is_meta_attribute.setter
-    def is_meta_attribute(self, is_meta_attribute: "bool") -> None:
+    def is_meta_attribute(self, is_meta_attribute: "Optional[bool]") -> None:
         """Sets the is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
@@ -199,19 +209,18 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
-        return cls.discriminator_value_class_map.get(discriminator_value).rsplit(
-            "/", 1
-        )[-1]
+        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
 
     @classmethod
     def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
         name_tokens = cls.discriminator.split("_")
         later_tokens = [element.capitalize() for element in name_tokens[1:]]
         return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

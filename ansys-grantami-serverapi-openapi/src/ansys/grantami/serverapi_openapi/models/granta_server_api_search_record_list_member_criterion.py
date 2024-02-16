@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion 
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -39,19 +49,19 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "record_list_identifiers": "list[str]",
         "type": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "record_list_identifiers": "recordListIdentifiers",
         "type": "type",
     }
 
-    subtype_mapping = {}
+    subtype_mapping: Dict[str, str] = {}
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -68,14 +78,14 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         """
         super().__init__()
         self._record_list_identifiers = None
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
 
         if record_list_identifiers is not None:
             self.record_list_identifiers = record_list_identifiers
         self.type = type
 
     @property
-    def record_list_identifiers(self) -> "list[str]":
+    def record_list_identifiers(self) -> "Optional[List[str]]":
         """Gets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Returns
@@ -86,12 +96,14 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         return self._record_list_identifiers
 
     @record_list_identifiers.setter
-    def record_list_identifiers(self, record_list_identifiers: "list[str]") -> None:
+    def record_list_identifiers(
+        self, record_list_identifiers: "Optional[List[str]]"
+    ) -> None:
         """Sets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Parameters
         ----------
-        record_list_identifiers: list[str]
+        record_list_identifiers: List[str]
             The record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
         """
         self._record_list_identifiers = record_list_identifiers
@@ -138,7 +150,7 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

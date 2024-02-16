@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_criterion import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_search_free_text_
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "column_guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
         "column_guids_to_exclude": "list[str]",
         "column_identities_to_boost": "list[GrantaServerApiSearchBoostByIdentity]",
@@ -51,7 +61,7 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
         "value": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "column_guids_to_boost": "columnGuidsToBoost",
         "column_guids_to_exclude": "columnGuidsToExclude",
         "column_identities_to_boost": "columnIdentitiesToBoost",
@@ -61,12 +71,12 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
         "value": "value",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "columnIdentitiesToBoost": "GrantaServerApiSearchBoostByIdentity",
         "columnGuidsToBoost": "GrantaServerApiSearchBoostByGuid",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -96,7 +106,7 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
         self._column_identities_to_exclude = None
         self._column_guids_to_boost = None
         self._column_guids_to_exclude = None
-        self._free_text_criterion_type = None
+        self._free_text_criterion_type: str = None  # type: ignore[assignment]
 
         if column_identities_to_boost is not None:
             self.column_identities_to_boost = column_identities_to_boost
@@ -111,7 +121,7 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
     @property
     def column_identities_to_boost(
         self,
-    ) -> "list[GrantaServerApiSearchBoostByIdentity]":
+    ) -> "Optional[List[GrantaServerApiSearchBoostByIdentity]]":
         """Gets the column_identities_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Returns
@@ -123,19 +133,20 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
 
     @column_identities_to_boost.setter
     def column_identities_to_boost(
-        self, column_identities_to_boost: "list[GrantaServerApiSearchBoostByIdentity]"
+        self,
+        column_identities_to_boost: "Optional[List[GrantaServerApiSearchBoostByIdentity]]",
     ) -> None:
         """Sets the column_identities_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_identities_to_boost: list[GrantaServerApiSearchBoostByIdentity]
+        column_identities_to_boost: List[GrantaServerApiSearchBoostByIdentity]
             The column_identities_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
         """
         self._column_identities_to_boost = column_identities_to_boost
 
     @property
-    def column_identities_to_exclude(self) -> "list[int]":
+    def column_identities_to_exclude(self) -> "Optional[List[int]]":
         """Gets the column_identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Returns
@@ -147,19 +158,21 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
 
     @column_identities_to_exclude.setter
     def column_identities_to_exclude(
-        self, column_identities_to_exclude: "list[int]"
+        self, column_identities_to_exclude: "Optional[List[int]]"
     ) -> None:
         """Sets the column_identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_identities_to_exclude: list[int]
+        column_identities_to_exclude: List[int]
             The column_identities_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
         """
         self._column_identities_to_exclude = column_identities_to_exclude
 
     @property
-    def column_guids_to_boost(self) -> "list[GrantaServerApiSearchBoostByGuid]":
+    def column_guids_to_boost(
+        self,
+    ) -> "Optional[List[GrantaServerApiSearchBoostByGuid]]":
         """Gets the column_guids_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Returns
@@ -171,19 +184,19 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
 
     @column_guids_to_boost.setter
     def column_guids_to_boost(
-        self, column_guids_to_boost: "list[GrantaServerApiSearchBoostByGuid]"
+        self, column_guids_to_boost: "Optional[List[GrantaServerApiSearchBoostByGuid]]"
     ) -> None:
         """Sets the column_guids_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_guids_to_boost: list[GrantaServerApiSearchBoostByGuid]
+        column_guids_to_boost: List[GrantaServerApiSearchBoostByGuid]
             The column_guids_to_boost of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
         """
         self._column_guids_to_boost = column_guids_to_boost
 
     @property
-    def column_guids_to_exclude(self) -> "list[str]":
+    def column_guids_to_exclude(self) -> "Optional[List[str]]":
         """Gets the column_guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Returns
@@ -194,12 +207,14 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
         return self._column_guids_to_exclude
 
     @column_guids_to_exclude.setter
-    def column_guids_to_exclude(self, column_guids_to_exclude: "list[str]") -> None:
+    def column_guids_to_exclude(
+        self, column_guids_to_exclude: "Optional[List[str]]"
+    ) -> None:
         """Sets the column_guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
 
         Parameters
         ----------
-        column_guids_to_exclude: list[str]
+        column_guids_to_exclude: List[str]
             The column_guids_to_exclude of this GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion.
         """
         self._column_guids_to_exclude = column_guids_to_exclude
@@ -248,7 +263,7 @@ class GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

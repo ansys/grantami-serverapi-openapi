@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_update_tabular_columns_update_tabular_column import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_co
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "column_type": "str",
         "guid": "str",
         "linked_column": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -53,7 +63,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
         "summary_row_text": "str",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "column_type": "columnType",
         "guid": "guid",
         "linked_column": "linkedColumn",
@@ -65,11 +75,11 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
         "summary_row_text": "summaryRowText",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "linkedColumn": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -107,7 +117,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type = None
+        self._column_type: str = None  # type: ignore[assignment]
         self._linked_column = None
 
         self.column_type = column_type
@@ -139,7 +149,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
         self._column_type = column_type
 
     @property
-    def linked_column(self) -> "GrantaServerApiSchemaSlimEntitiesSlimEntity":
+    def linked_column(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the linked_column of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnTabularColumn.
 
         Returns
@@ -151,7 +161,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
 
     @linked_column.setter
     def linked_column(
-        self, linked_column: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
+        self, linked_column: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the linked_column of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnTabularColumn.
 
@@ -180,7 +190,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedColumnT
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

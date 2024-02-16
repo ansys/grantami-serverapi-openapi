@@ -9,7 +9,15 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, Dict, List, Optional  # noqa: F401
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Dict,
+    List,
+    BinaryIO,
+    Optional,
+    Union,
+)  # noqa: F401
 
 from . import ModelBase
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
@@ -18,6 +26,8 @@ from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes
 
 
 if TYPE_CHECKING:
+    from datetime import datetime
+    import pathlib
     from . import *
 
 
@@ -41,7 +51,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types = {
+    swagger_types: Dict[str, str] = {
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -54,7 +64,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map = {
+    attribute_map: Dict[str, str] = {
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -67,11 +77,11 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping = {
+    subtype_mapping: Dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    discriminator = None
+    discriminator: Optional[str] = None
 
     def __init__(
         self,
@@ -112,7 +122,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type = None
+        self._type: str = None  # type: ignore[assignment]
         self._unit = None
 
         self.type = type
@@ -144,7 +154,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
         self._type = type
 
     @property
-    def unit(self) -> "GrantaServerApiSchemaSlimEntitiesSlimUnit":
+    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
         """Gets the unit of this GrantaServerApiSchemaAttributesRangeAttribute.
 
         Returns
@@ -155,7 +165,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
+    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesRangeAttribute.
 
         Parameters
@@ -183,7 +193,7 @@ class GrantaServerApiSchemaAttributesRangeAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()
+        return self.to_str()  # type: ignore[no-any-return]
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
