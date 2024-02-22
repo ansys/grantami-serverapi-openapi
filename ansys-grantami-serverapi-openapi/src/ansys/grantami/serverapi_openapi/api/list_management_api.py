@@ -33,71 +33,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def api_v1_lists_get(
-        self,
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
-        """Returns all lists visible to the calling user
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]
-        """
-        data = self._api_v1_lists_get_with_http_info(_return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _api_v1_lists_get_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListHeadersInfo",
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/api/v1/lists",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def api_v1_lists_list_list_identifier_copy_post(
+    def copy_list(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Creates a copy of the list and its items
@@ -112,14 +48,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_copy_post_with_http_info(
+        data = self._copy_list_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_copy_post_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _copy_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -131,14 +65,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_copy_post"
+                    f"Got an unexpected keyword argument '{key}' to method copy_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_copy_post'"
+                "Missing the required parameter 'list_identifier' when calling 'copy_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -182,9 +116,97 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_delete(
-        self, *, list_identifier: "str"
-    ) -> "None":
+    def create_list(
+        self, *, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None
+    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+        """Creates a new list with the specified properties and items.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GrantaServerApiListsDtoCreateRecordList
+
+        Returns
+        -------
+        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        """
+        data = self._create_list_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _create_list_with_http_info(
+        self,
+        body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_list"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiListsDtoRecordListHeader",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/api/v1/lists",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_list(self, *, list_identifier: "str") -> "None":
         """Delete an existing list.
 
         This method makes a synchronous HTTP request.
@@ -197,14 +219,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._api_v1_lists_list_list_identifier_delete_with_http_info(
+        data = self._delete_list_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_delete_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _delete_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -216,14 +236,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_delete'"
+                "Missing the required parameter 'list_identifier' when calling 'delete_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -263,7 +283,71 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_get(
+    def get_all_lists(
+        self,
+    ) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
+        """Returns all lists visible to the calling user
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]
+        """
+        data = self._get_all_lists_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_lists_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all_lists"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiListsDtoRecordListHeadersInfo",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/api/v1/lists",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_list(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Returns the given list if it exists and the calling user has read access to it
@@ -278,14 +362,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_get_with_http_info(
+        data = self._get_list_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_get_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _get_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -297,14 +379,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_get'"
+                "Missing the required parameter 'list_identifier' when calling 'get_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -348,39 +430,31 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_patch(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
-        """Performs a partial update on the properties of a list.
+    def get_record_list_search_results(
+        self, *, result_resource_identifier: "str"
+    ) -> "Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]":
+        """Returns the search results found in the specified resource
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        list_identifier: str
-        body: GrantaServerApiListsDtoUpdateRecordListProperties
+        result_resource_identifier: str
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]
         """
-        data = self._api_v1_lists_list_list_identifier_patch_with_http_info(
-            list_identifier, body, _return_http_data_only=True
+        data = self._get_record_list_search_results_with_http_info(
+            result_resource_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_patch_with_http_info(
-        self,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
-        **kwargs: Any,
+    def _get_record_list_search_results_with_http_info(
+        self, result_resource_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "list_identifier",
-            "body",
+            "result_resource_identifier",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -390,21 +464,29 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_patch"
+                    f"Got an unexpected keyword argument '{key}' to method get_record_list_search_results"
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "list_identifier" is set
-        if "list_identifier" not in params or params["list_identifier"] is None:
+        # verify the required parameter "result_resource_identifier" is set
+        if (
+            "result_resource_identifier" not in params
+            or params["result_resource_identifier"] is None
+        ):
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_patch'"
+                "Missing the required parameter 'result_resource_identifier' when calling 'get_record_list_search_results'"
             )
 
         collection_formats: Dict[str, Any] = {}
 
         path_params: Dict[str, Any] = {}
-        if "list_identifier" in params and list_identifier is not None:
-            path_params["listIdentifier"] = params["list_identifier"]
+        if (
+            "result_resource_identifier" in params
+            and result_resource_identifier is not None
+        ):
+            path_params["resultResourceIdentifier"] = params[
+                "result_resource_identifier"
+            ]
 
         query_params: List[Any] = []
 
@@ -414,33 +496,21 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         local_var_files: Dict[str, Any] = {}
 
         body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
             ["text/plain", "application/json", "text/json"]
         )
 
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
         response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
-            400: None,
+            200: "GrantaServerApiListsDtoRecordListSearchResultsInfo",
             403: None,
             404: None,
+            410: None,
         }
 
         return self.api_client.call_api(
-            "/api/v1/lists/list/{listIdentifier}",
-            "PATCH",
+            "/api/v1/lists/search/results/{resultResourceIdentifier}",
+            "GET",
             path_params,
             query_params,
             header_params,
@@ -454,7 +524,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_publish_post(
+    def publish_list(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Update the status of an existing list to \"published\". The list must be awaiting approval, and not already published.  The \"awaiting approval\" flag will be reset to false.
@@ -469,12 +539,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_publish_post_with_http_info(
+        data = self._publish_list_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_publish_post_with_http_info(
+    def _publish_list_with_http_info(
         self, list_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -488,14 +558,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_publish_post"
+                    f"Got an unexpected keyword argument '{key}' to method publish_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_publish_post'"
+                "Missing the required parameter 'list_identifier' when calling 'publish_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -540,7 +610,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_request_approval_post(
+    def request_approval(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Update the status of an existing list to \"awaiting approval\".
@@ -555,12 +625,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_request_approval_post_with_http_info(
+        data = self._request_approval_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_request_approval_post_with_http_info(
+    def _request_approval_with_http_info(
         self, list_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -574,14 +644,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_request_approval_post"
+                    f"Got an unexpected keyword argument '{key}' to method request_approval"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_request_approval_post'"
+                "Missing the required parameter 'list_identifier' when calling 'request_approval'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -626,7 +696,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_reset_post(
+    def reset_awaiting_approval(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Update the status of an existing list to not be \"awaiting approval\".
@@ -641,12 +711,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_reset_post_with_http_info(
+        data = self._reset_awaiting_approval_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_reset_post_with_http_info(
+    def _reset_awaiting_approval_with_http_info(
         self, list_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -660,14 +730,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_reset_post"
+                    f"Got an unexpected keyword argument '{key}' to method reset_awaiting_approval"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_reset_post'"
+                "Missing the required parameter 'list_identifier' when calling 'reset_awaiting_approval'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -712,7 +782,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_revise_post(
+    def revise_list(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
         """Creates a private copy of a list that can be revised.
@@ -727,14 +797,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_list_list_identifier_revise_post_with_http_info(
+        data = self._revise_list_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_revise_post_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _revise_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -746,14 +814,14 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_revise_post"
+                    f"Got an unexpected keyword argument '{key}' to method revise_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_revise_post'"
+                "Missing the required parameter 'list_identifier' when calling 'revise_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -798,183 +866,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_unpublish_post(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
-        """Update the status of an existing list to \"unpublished\". The list must be published, and awaiting approval.  The \"awaiting approval\" flag will be reset to false.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        list_identifier: str
-
-        Returns
-        -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
-        """
-        data = self._api_v1_lists_list_list_identifier_unpublish_post_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _api_v1_lists_list_list_identifier_unpublish_post_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "list_identifier",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_unpublish_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "list_identifier" is set
-        if "list_identifier" not in params or params["list_identifier"] is None:
-            raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_unpublish_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "list_identifier" in params and list_identifier is not None:
-            path_params["listIdentifier"] = params["list_identifier"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/api/v1/lists/list/{listIdentifier}/unpublish",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def api_v1_lists_post(
-        self, *, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
-        """Creates a new list with the specified properties and items.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GrantaServerApiListsDtoCreateRecordList
-
-        Returns
-        -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
-        """
-        data = self._api_v1_lists_post_with_http_info(body, _return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _api_v1_lists_post_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            201: "GrantaServerApiListsDtoRecordListHeader",
-            400: None,
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/api/v1/lists",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def api_v1_lists_search_post(
+    def run_record_lists_search(
         self, *, body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None
     ) -> "Union[GrantaServerApiListsDtoRecordListSearchInfo, None]":
         """Posts a search request, and returns an object containing search result identifier
@@ -989,12 +881,12 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListSearchInfo, None]
         """
-        data = self._api_v1_lists_search_post_with_http_info(
+        data = self._run_record_lists_search_with_http_info(
             body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_search_post_with_http_info(
+    def _run_record_lists_search_with_http_info(
         self,
         body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None,
         **kwargs: Any,
@@ -1010,7 +902,7 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_search_post"
+                    f"Got an unexpected keyword argument '{key}' to method run_record_lists_search"
                 )
             params[key] = val
         del params["kwargs"]
@@ -1066,31 +958,31 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_search_results_result_resource_identifier_get(
-        self, *, result_resource_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]":
-        """Returns the search results found in the specified resource
+    def unpublish_list(
+        self, *, list_identifier: "str"
+    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+        """Update the status of an existing list to \"unpublished\". The list must be published, and awaiting approval.  The \"awaiting approval\" flag will be reset to false.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        result_resource_identifier: str
+        list_identifier: str
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]
+        Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._api_v1_lists_search_results_result_resource_identifier_get_with_http_info(
-            result_resource_identifier, _return_http_data_only=True
+        data = self._unpublish_list_with_http_info(
+            list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_search_results_result_resource_identifier_get_with_http_info(
-        self, result_resource_identifier: "str", **kwargs: Any
+    def _unpublish_list_with_http_info(
+        self, list_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "result_resource_identifier",
+            "list_identifier",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -1100,29 +992,21 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_search_results_result_resource_identifier_get"
+                    f"Got an unexpected keyword argument '{key}' to method unpublish_list"
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "result_resource_identifier" is set
-        if (
-            "result_resource_identifier" not in params
-            or params["result_resource_identifier"] is None
-        ):
+        # verify the required parameter "list_identifier" is set
+        if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'result_resource_identifier' when calling 'api_v1_lists_search_results_result_resource_identifier_get'"
+                "Missing the required parameter 'list_identifier' when calling 'unpublish_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
 
         path_params: Dict[str, Any] = {}
-        if (
-            "result_resource_identifier" in params
-            and result_resource_identifier is not None
-        ):
-            path_params["resultResourceIdentifier"] = params[
-                "result_resource_identifier"
-            ]
+        if "list_identifier" in params and list_identifier is not None:
+            path_params["listIdentifier"] = params["list_identifier"]
 
         query_params: List[Any] = []
 
@@ -1138,15 +1022,121 @@ class ListManagementApi(ApiBase):  # type: ignore[misc]
         )
 
         response_type_map = {
-            200: "GrantaServerApiListsDtoRecordListSearchResultsInfo",
+            200: "GrantaServerApiListsDtoRecordListHeader",
+            400: None,
             403: None,
             404: None,
-            410: None,
         }
 
         return self.api_client.call_api(
-            "/api/v1/lists/search/results/{resultResourceIdentifier}",
-            "GET",
+            "/api/v1/lists/list/{listIdentifier}/unpublish",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def update_list(
+        self,
+        *,
+        list_identifier: "str",
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
+    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+        """Performs a partial update on the properties of a list.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        list_identifier: str
+        body: GrantaServerApiListsDtoUpdateRecordListProperties
+
+        Returns
+        -------
+        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        """
+        data = self._update_list_with_http_info(
+            list_identifier, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _update_list_with_http_info(
+        self,
+        list_identifier: "str",
+        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "list_identifier",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method update_list"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "list_identifier" is set
+        if "list_identifier" not in params or params["list_identifier"] is None:
+            raise ValueError(
+                "Missing the required parameter 'list_identifier' when calling 'update_list'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "list_identifier" in params and list_identifier is not None:
+            path_params["listIdentifier"] = params["list_identifier"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiListsDtoRecordListHeader",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/api/v1/lists/list/{listIdentifier}",
+            "PATCH",
             path_params,
             query_params,
             header_params,

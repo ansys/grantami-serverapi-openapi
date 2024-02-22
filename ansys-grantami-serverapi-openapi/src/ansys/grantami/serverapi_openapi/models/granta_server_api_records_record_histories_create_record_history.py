@@ -47,24 +47,27 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):  # ty
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "full_name": "str",
+        "name": "str",
         "record_type": "GrantaServerApiRecordType",
         "guid": "str",
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
-        "tree_name": "str",
+        "record_color": "GrantaServerApiRecordColor",
+        "short_name": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "full_name": "fullName",
+        "name": "name",
         "record_type": "recordType",
         "guid": "guid",
         "parent": "parent",
-        "tree_name": "treeName",
+        "record_color": "recordColor",
+        "short_name": "shortName",
     }
 
     subtype_mapping: Dict[str, str] = {
         "recordType": "GrantaServerApiRecordType",
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
+        "recordColor": "GrantaServerApiRecordColor",
     }
 
     discriminator: Optional[str] = None
@@ -72,34 +75,39 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):  # ty
     def __init__(
         self,
         *,
-        full_name: "str",
+        name: "str",
         record_type: "GrantaServerApiRecordType",
         guid: "Optional[str]" = None,
         parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]" = None,
-        tree_name: "Optional[str]" = None,
+        record_color: "Optional[GrantaServerApiRecordColor]" = None,
+        short_name: "Optional[str]" = None,
     ) -> None:
         """GrantaServerApiRecordsRecordHistoriesCreateRecordHistory - a model defined in Swagger
 
         Parameters
         ----------
-            full_name: str
+            name: str
             record_type: GrantaServerApiRecordType
             guid: str, optional
             parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
-            tree_name: str, optional
+            record_color: GrantaServerApiRecordColor, optional
+            short_name: str, optional
         """
         self._record_type: GrantaServerApiRecordType = None  # type: ignore[assignment]
-        self._full_name: str = None  # type: ignore[assignment]
-        self._tree_name = None
+        self._name: str = None  # type: ignore[assignment]
+        self._short_name = None
         self._parent = None
+        self._record_color = None
         self._guid = None
 
         self.record_type = record_type
-        self.full_name = full_name
-        if tree_name is not None:
-            self.tree_name = tree_name
+        self.name = name
+        if short_name is not None:
+            self.short_name = short_name
         if parent is not None:
             self.parent = parent
+        if record_color is not None:
+            self.record_color = record_color
         if guid is not None:
             self.guid = guid
 
@@ -128,50 +136,50 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):  # ty
         self._record_type = record_type
 
     @property
-    def full_name(self) -> "str":
-        """Gets the full_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+    def name(self) -> "str":
+        """Gets the name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Returns
         -------
         str
-            The full_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+            The name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
         """
-        return self._full_name
+        return self._name
 
-    @full_name.setter
-    def full_name(self, full_name: "str") -> None:
-        """Sets the full_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Parameters
         ----------
-        full_name: str
-            The full_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+        name: str
+            The name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
         """
-        if full_name is None:
-            raise ValueError("Invalid value for 'full_name', must not be 'None'")
-        self._full_name = full_name
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
 
     @property
-    def tree_name(self) -> "Optional[str]":
-        """Gets the tree_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+    def short_name(self) -> "Optional[str]":
+        """Gets the short_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Returns
         -------
         str
-            The tree_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+            The short_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
         """
-        return self._tree_name
+        return self._short_name
 
-    @tree_name.setter
-    def tree_name(self, tree_name: "Optional[str]") -> None:
-        """Sets the tree_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+    @short_name.setter
+    def short_name(self, short_name: "Optional[str]") -> None:
+        """Sets the short_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Parameters
         ----------
-        tree_name: str
-            The tree_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+        short_name: str
+            The short_name of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
         """
-        self._tree_name = tree_name
+        self._short_name = short_name
 
     @property
     def parent(
@@ -198,6 +206,30 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):  # ty
             The parent of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
         """
         self._parent = parent
+
+    @property
+    def record_color(self) -> "Optional[GrantaServerApiRecordColor]":
+        """Gets the record_color of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+
+        Returns
+        -------
+        GrantaServerApiRecordColor
+            The record_color of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+        """
+        return self._record_color
+
+    @record_color.setter
+    def record_color(
+        self, record_color: "Optional[GrantaServerApiRecordColor]"
+    ) -> None:
+        """Sets the record_color of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+
+        Parameters
+        ----------
+        record_color: GrantaServerApiRecordColor
+            The record_color of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
+        """
+        self._record_color = record_color
 
     @property
     def guid(self) -> "Optional[str]":

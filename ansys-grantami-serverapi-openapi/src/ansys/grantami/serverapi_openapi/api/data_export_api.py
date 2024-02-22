@@ -33,7 +33,7 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_keyexport_post(
+    def export_data(
         self,
         *,
         database_key: "str",
@@ -58,12 +58,12 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiDataExportDataExportResponse, None]
         """
-        data = self._v1alpha_databases_database_keyexport_post_with_http_info(
+        data = self._export_data_with_http_info(
             database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_keyexport_post_with_http_info(
+    def _export_data_with_http_info(
         self,
         database_key: "str",
         body: "Optional[GrantaServerApiDataExportDataExportRequest]" = None,
@@ -85,14 +85,14 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_keyexport_post"
+                    f"Got an unexpected keyword argument '{key}' to method export_data"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_keyexport_post'"
+                "Missing the required parameter 'database_key' when calling 'export_data'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -132,8 +132,8 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
 
         response_type_map = {
             200: "GrantaServerApiDataExportDataExportResponse",
-            404: None,
             403: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -152,7 +152,7 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_integration_schemas_schemaexport_post(
+    def export_data_from_integration_schema(
         self,
         *,
         schema: "str",
@@ -171,12 +171,12 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiDataExportDataExportResponse, None]
         """
-        data = self._v1alpha_integration_schemas_schemaexport_post_with_http_info(
+        data = self._export_data_from_integration_schema_with_http_info(
             schema, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_integration_schemas_schemaexport_post_with_http_info(
+    def _export_data_from_integration_schema_with_http_info(
         self,
         schema: "str",
         body: "Optional[GrantaServerApiIntegrationDataExportIntegrationDataExportRequest]" = None,
@@ -194,14 +194,14 @@ class DataExportApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_integration_schemas_schemaexport_post"
+                    f"Got an unexpected keyword argument '{key}' to method export_data_from_integration_schema"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
             raise ValueError(
-                "Missing the required parameter 'schema' when calling 'v1alpha_integration_schemas_schemaexport_post'"
+                "Missing the required parameter 'schema' when calling 'export_data_from_integration_schema'"
             )
 
         collection_formats: Dict[str, Any] = {}

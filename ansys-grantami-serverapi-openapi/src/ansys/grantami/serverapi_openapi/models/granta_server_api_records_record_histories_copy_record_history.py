@@ -47,17 +47,20 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):  # type
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "subset_option": "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
         "new_parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
         "new_short_name": "str",
     }
 
     attribute_map: Dict[str, str] = {
+        "subset_option": "subsetOption",
         "new_parent": "newParent",
         "new_short_name": "newShortName",
     }
 
     subtype_mapping: Dict[str, str] = {
         "newParent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
+        "subsetOption": "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
     }
 
     discriminator: Optional[str] = None
@@ -65,6 +68,7 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):  # type
     def __init__(
         self,
         *,
+        subset_option: "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
         new_parent: "Optional[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory]" = None,
         new_short_name: "Optional[str]" = None,
     ) -> None:
@@ -72,14 +76,17 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):  # type
 
         Parameters
         ----------
+            subset_option: GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType
             new_parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
             new_short_name: str, optional
         """
         self._new_parent = None
+        self._subset_option: GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType = None  # type: ignore[assignment]
         self._new_short_name = None
 
         if new_parent is not None:
             self.new_parent = new_parent
+        self.subset_option = subset_option
         if new_short_name is not None:
             self.new_short_name = new_short_name
 
@@ -109,6 +116,35 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):  # type
             The new_parent of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
         """
         self._new_parent = new_parent
+
+    @property
+    def subset_option(
+        self,
+    ) -> "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType":
+        """Gets the subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+
+        Returns
+        -------
+        GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType
+            The subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+        """
+        return self._subset_option
+
+    @subset_option.setter
+    def subset_option(
+        self,
+        subset_option: "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
+    ) -> None:
+        """Sets the subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+
+        Parameters
+        ----------
+        subset_option: GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType
+            The subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
+        """
+        if subset_option is None:
+            raise ValueError("Invalid value for 'subset_option', must not be 'None'")
+        self._subset_option = subset_option
 
     @property
     def new_short_name(self) -> "Optional[str]":

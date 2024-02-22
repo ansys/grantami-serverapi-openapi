@@ -33,7 +33,125 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_tables_table_guidaggregations_post(
+    def database_aggregation(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
+        """Runs an aggregation against the database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        body: GrantaServerApiAggregationsAggregationsRequest
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+
+        Returns
+        -------
+        Union[GrantaServerApiAggregationsAggregationsResponse, None]
+        """
+        data = self._database_aggregation_with_http_info(
+            database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _database_aggregation_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "x_ansys_vc_mode",
+            "mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method database_aggregation"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'database_aggregation'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiAggregationsAggregationsResponse",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}:aggregations",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def database_aggregation_for_table_with_guid(
         self,
         *,
         database_key: "str",
@@ -60,7 +178,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiAggregationsAggregationsResponse, None]
         """
-        data = self._v1alpha_databases_database_key_tables_table_guidaggregations_post_with_http_info(
+        data = self._database_aggregation_for_table_with_guid_with_http_info(
             database_key,
             table_guid,
             body,
@@ -70,7 +188,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guidaggregations_post_with_http_info(
+    def _database_aggregation_for_table_with_guid_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -94,19 +212,19 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guidaggregations_post"
+                    f"Got an unexpected keyword argument '{key}' to method database_aggregation_for_table_with_guid"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guidaggregations_post'"
+                "Missing the required parameter 'database_key' when calling 'database_aggregation_for_table_with_guid'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guidaggregations_post'"
+                "Missing the required parameter 'table_guid' when calling 'database_aggregation_for_table_with_guid'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -167,7 +285,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_identityaggregations_post(
+    def database_aggregation_for_table_with_identity(
         self,
         *,
         database_key: "str",
@@ -194,7 +312,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiAggregationsAggregationsResponse, None]
         """
-        data = self._v1alpha_databases_database_key_tables_table_identityaggregations_post_with_http_info(
+        data = self._database_aggregation_for_table_with_identity_with_http_info(
             database_key,
             table_identity,
             body,
@@ -204,7 +322,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_identityaggregations_post_with_http_info(
+    def _database_aggregation_for_table_with_identity_with_http_info(
         self,
         database_key: "str",
         table_identity: "int",
@@ -228,19 +346,19 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_identityaggregations_post"
+                    f"Got an unexpected keyword argument '{key}' to method database_aggregation_for_table_with_identity"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_identityaggregations_post'"
+                "Missing the required parameter 'database_key' when calling 'database_aggregation_for_table_with_identity'"
             )
         # verify the required parameter "table_identity" is set
         if "table_identity" not in params or params["table_identity"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_identity' when calling 'v1alpha_databases_database_key_tables_table_identityaggregations_post'"
+                "Missing the required parameter 'table_identity' when calling 'database_aggregation_for_table_with_identity'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -301,125 +419,7 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_keyaggregations_post(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
-        """Runs an aggregation against the database.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        body: GrantaServerApiAggregationsAggregationsRequest
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-
-        Returns
-        -------
-        Union[GrantaServerApiAggregationsAggregationsResponse, None]
-        """
-        data = self._v1alpha_databases_database_keyaggregations_post_with_http_info(
-            database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_keyaggregations_post_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "x_ansys_vc_mode",
-            "mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_keyaggregations_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_keyaggregations_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiAggregationsAggregationsResponse",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}:aggregations",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_integration_schemas_schemaaggregations_post(
+    def integration_aggregation(
         self,
         *,
         schema: "str",
@@ -438,12 +438,12 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiAggregationsAggregationsResponse, None]
         """
-        data = self._v1alpha_integration_schemas_schemaaggregations_post_with_http_info(
+        data = self._integration_aggregation_with_http_info(
             schema, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_integration_schemas_schemaaggregations_post_with_http_info(
+    def _integration_aggregation_with_http_info(
         self,
         schema: "str",
         body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
@@ -461,14 +461,14 @@ class AggregationApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_integration_schemas_schemaaggregations_post"
+                    f"Got an unexpected keyword argument '{key}' to method integration_aggregation"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
             raise ValueError(
-                "Missing the required parameter 'schema' when calling 'v1alpha_integration_schemas_schemaaggregations_post'"
+                "Missing the required parameter 'schema' when calling 'integration_aggregation'"
             )
 
         collection_formats: Dict[str, Any] = {}

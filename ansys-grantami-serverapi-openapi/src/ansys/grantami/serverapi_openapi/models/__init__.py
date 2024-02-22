@@ -745,6 +745,9 @@ from .granta_server_api_records_record_histories_move_record_history import (
 from .granta_server_api_records_record_histories_record_history import (
     GrantaServerApiRecordsRecordHistoriesRecordHistory,
 )
+from .granta_server_api_records_record_histories_record_property_inheritance_type import (
+    GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType,
+)
 from .granta_server_api_records_record_histories_slim_record_history import (
     GrantaServerApiRecordsRecordHistoriesSlimRecordHistory,
 )
@@ -2092,6 +2095,7 @@ __all__ = [
     "GrantaServerApiRecordsRecordHistoriesCreateRecordHistory",
     "GrantaServerApiRecordsRecordHistoriesMoveRecordHistory",
     "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+    "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
     "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
     "GrantaServerApiRecordsRecordVersionsRecordVersion",
     "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",

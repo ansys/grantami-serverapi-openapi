@@ -33,96 +33,31 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_job_queue_current_user_get(
-        self,
-    ) -> "GrantaServerApiAsyncJobsCurrentUser":
-        """Get the current user.
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        GrantaServerApiAsyncJobsCurrentUser
-        """
-        data = self._v1alpha_job_queue_current_user_get_with_http_info(
-            _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_job_queue_current_user_get_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_current_user_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiAsyncJobsCurrentUser",
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/job-queue/current-user",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_job_queue_files_post(
-        self, *, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None
-    ) -> "str":
-        """Uploads an ephemeral file and returns an ID which can subsequently be used to refer to that file in a job creation request. Ephemeral files have a short lifespan  and should be used to provide file data to jobs only. They should not be used as file storage.
+    def create_job(
+        self, *, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None
+    ) -> "GrantaServerApiAsyncJobsJob":
+        """Create a new job.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        file: Union[BinaryIO, pathlib.Path]
+        body: GrantaServerApiAsyncJobsCreateJobRequest
 
         Returns
         -------
-        str
+        GrantaServerApiAsyncJobsJob
         """
-        data = self._v1alpha_job_queue_files_post_with_http_info(
-            file, _return_http_data_only=True
-        )
+        data = self._create_job_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_files_post_with_http_info(
-        self, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None, **kwargs: Any
+    def _create_job_with_http_info(
+        self,
+        body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None,
+        **kwargs: Any,
     ) -> Any:
         all_params = [
-            "file",
+            "body",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -132,7 +67,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_files_post"
+                    f"Got an unexpected keyword argument '{key}' to method create_job"
                 )
             params[key] = val
         del params["kwargs"]
@@ -147,24 +82,31 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
 
         form_params: List[Any] = []
         local_var_files: Dict[str, Any] = {}
-        if "file" in params and file is not None:
-            local_var_files["file"] = params["file"]
 
         body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
             ["text/plain", "application/json", "text/json"]
         )
 
-        # multipart/form-data request detected. Content-Type header will be
-        # populated by openapi-common based on request content.
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
 
         response_type_map = {
-            200: "str",
+            201: "GrantaServerApiAsyncJobsJob",
         }
 
         return self.api_client.call_api(
-            "/v1alpha/job-queue/files",
+            "/v1alpha/job-queue/jobs",
             "POST",
             path_params,
             query_params,
@@ -179,7 +121,82 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_delete(
+    def delete_job(self, *, id: "str") -> "None":
+        """Delete a job.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        id: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_job_with_http_info(id, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _delete_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "id",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_job"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "id" is set
+        if "id" not in params or params["id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'id' when calling 'delete_job'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "id" in params and id is not None:
+            path_params["id"] = params["id"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map = {
+            200: None,
+            204: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/job-queue/jobs/{id}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_jobs(
         self, *, body: "Optional[List[str]]" = None
     ) -> "Union[List[str], None]":
         """Delete specified jobs.
@@ -194,12 +211,10 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         -------
         Union[List[str], None]
         """
-        data = self._v1alpha_job_queue_jobs_delete_with_http_info(
-            body, _return_http_data_only=True
-        )
+        data = self._delete_jobs_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_delete_with_http_info(
+    def _delete_jobs_with_http_info(
         self, body: "Optional[List[str]]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
@@ -213,7 +228,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_jobs"
                 )
             params[key] = val
         del params["kwargs"]
@@ -269,7 +284,237 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_get(
+    def get_current_user(self) -> "GrantaServerApiAsyncJobsCurrentUser":
+        """Get the current user.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GrantaServerApiAsyncJobsCurrentUser
+        """
+        data = self._get_current_user_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_current_user_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_current_user"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiAsyncJobsCurrentUser",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/job-queue/current-user",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_job(self, *, id: "str") -> "Union[GrantaServerApiAsyncJobsJob, None]":
+        """Get job by ID.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        id: str
+
+        Returns
+        -------
+        Union[GrantaServerApiAsyncJobsJob, None]
+        """
+        data = self._get_job_with_http_info(id, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "id",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_job"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "id" is set
+        if "id" not in params or params["id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'id' when calling 'get_job'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "id" in params and id is not None:
+            path_params["id"] = params["id"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiAsyncJobsJob",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/job-queue/jobs/{id}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_job_output_file(self, *, id: "str", file_name: "str") -> "Union[None, str]":
+        """Retrieve a job output file.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        id: str
+        file_name: str
+
+        Returns
+        -------
+        Union[None, str]
+        """
+        data = self._get_job_output_file_with_http_info(
+            id, file_name, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_job_output_file_with_http_info(
+        self, id: "str", file_name: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "id",
+            "file_name",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_job_output_file"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "id" is set
+        if "id" not in params or params["id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'id' when calling 'get_job_output_file'"
+            )
+        # verify the required parameter "file_name" is set
+        if "file_name" not in params or params["file_name"] is None:
+            raise ValueError(
+                "Missing the required parameter 'file_name' when calling 'get_job_output_file'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "id" in params and id is not None:
+            path_params["id"] = params["id"]
+
+        query_params: List[Any] = []
+        if "file_name" in params and file_name is not None:
+            query_params.append(("fileName", params["file_name"]))
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/octet-stream"]
+        )
+
+        response_type_map = {
+            200: "file",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/job-queue/jobs/{id}/outputs:export",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_jobs(
         self,
         *,
         job_type: "Optional[str]" = None,
@@ -298,7 +543,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         -------
         GrantaServerApiAsyncJobsGetJobsResponse
         """
-        data = self._v1alpha_job_queue_jobs_get_with_http_info(
+        data = self._get_jobs_with_http_info(
             job_type,
             status,
             name_filter,
@@ -310,7 +555,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_get_with_http_info(
+    def _get_jobs_with_http_info(
         self,
         job_type: "Optional[str]" = None,
         status: "Optional[str]" = None,
@@ -338,7 +583,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_jobs"
                 )
             params[key] = val
         del params["kwargs"]
@@ -396,172 +641,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_id_delete(self, *, id: "str") -> "None":
-        """Delete a job.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        id: str
-
-        Returns
-        -------
-        None
-        """
-        data = self._v1alpha_job_queue_jobs_id_delete_with_http_info(
-            id, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_job_queue_jobs_id_delete_with_http_info(
-        self, id: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_id_delete"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_id_delete'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-
-        response_type_map = {
-            200: None,
-            204: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs/{id}",
-            "DELETE",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_job_queue_jobs_id_get(
-        self, *, id: "str"
-    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
-        """Get job by ID.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        id: str
-
-        Returns
-        -------
-        Union[GrantaServerApiAsyncJobsJob, None]
-        """
-        data = self._v1alpha_job_queue_jobs_id_get_with_http_info(
-            id, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_job_queue_jobs_id_get_with_http_info(
-        self, id: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_id_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_id_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiAsyncJobsJob",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs/{id}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_job_queue_jobs_id_outputs_get(
-        self, *, id: "str"
-    ) -> "Union[List[str], None]":
+    def get_output_filenames(self, *, id: "str") -> "Union[List[str], None]":
         """Get a job's output filenames.
 
         This method makes a synchronous HTTP request.
@@ -574,14 +654,12 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         -------
         Union[List[str], None]
         """
-        data = self._v1alpha_job_queue_jobs_id_outputs_get_with_http_info(
+        data = self._get_output_filenames_with_http_info(
             id, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_id_outputs_get_with_http_info(
-        self, id: "str", **kwargs: Any
-    ) -> Any:
+    def _get_output_filenames_with_http_info(self, id: "str", **kwargs: Any) -> Any:
         all_params = [
             "id",
             "_return_http_data_only",
@@ -593,14 +671,14 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_id_outputs_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_output_filenames"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_id_outputs_get'"
+                "Missing the required parameter 'id' when calling 'get_output_filenames'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -643,66 +721,35 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_id_outputsexport_get(
-        self, *, id: "str", file_name: "str"
-    ) -> "Union[None, str]":
-        """Retrieve a job output file.
+    def get_processing_config(self) -> "GrantaServerApiAsyncJobsProcessingConfig":
+        """Get the processing configuration.
 
         This method makes a synchronous HTTP request.
 
-        Parameters
-        ----------
-        id: str
-        file_name: str
-
         Returns
         -------
-        Union[None, str]
+        GrantaServerApiAsyncJobsProcessingConfig
         """
-        data = self._v1alpha_job_queue_jobs_id_outputsexport_get_with_http_info(
-            id, file_name, _return_http_data_only=True
-        )
+        data = self._get_processing_config_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_id_outputsexport_get_with_http_info(
-        self, id: "str", file_name: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "id",
-            "file_name",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+    def _get_processing_config_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_id_outputsexport_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_processing_config"
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_id_outputsexport_get'"
-            )
-        # verify the required parameter "file_name" is set
-        if "file_name" not in params or params["file_name"] is None:
-            raise ValueError(
-                "Missing the required parameter 'file_name' when calling 'v1alpha_job_queue_jobs_id_outputsexport_get'"
-            )
 
         collection_formats: Dict[str, Any] = {}
 
         path_params: Dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
 
         query_params: List[Any] = []
-        if "file_name" in params and file_name is not None:
-            query_params.append(("fileName", params["file_name"]))
 
         header_params: Dict[str, Any] = {}
 
@@ -712,16 +759,15 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/octet-stream"]
+            ["text/plain", "application/json", "text/json"]
         )
 
         response_type_map = {
-            200: "file",
-            404: None,
+            200: "GrantaServerApiAsyncJobsProcessingConfig",
         }
 
         return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs/{id}/outputs:export",
+            "/v1alpha/job-queue/processing-configuration",
             "GET",
             path_params,
             query_params,
@@ -736,111 +782,7 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_id_patch(
-        self,
-        *,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
-    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
-        """Update a job.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        id: str
-        body: GrantaServerApiAsyncJobsUpdateJobRequest
-
-        Returns
-        -------
-        Union[GrantaServerApiAsyncJobsJob, None]
-        """
-        data = self._v1alpha_job_queue_jobs_id_patch_with_http_info(
-            id, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_job_queue_jobs_id_patch_with_http_info(
-        self,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "id",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_id_patch"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_id_patch'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiAsyncJobsJob",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs/{id}",
-            "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_job_queue_jobs_idmove_to_top_post(self, *, id: "str") -> "None":
+    def move_to_top(self, *, id: "str") -> "None":
         """Move a job to the top of the queue (actually sets the scheduled execution date to now, could be done with patch method).
 
         This method makes a synchronous HTTP request.
@@ -853,14 +795,10 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_job_queue_jobs_idmove_to_top_post_with_http_info(
-            id, _return_http_data_only=True
-        )
+        data = self._move_to_top_with_http_info(id, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_idmove_to_top_post_with_http_info(
-        self, id: "str", **kwargs: Any
-    ) -> Any:
+    def _move_to_top_with_http_info(self, id: "str", **kwargs: Any) -> Any:
         all_params = [
             "id",
             "_return_http_data_only",
@@ -872,14 +810,14 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_idmove_to_top_post"
+                    f"Got an unexpected keyword argument '{key}' to method move_to_top"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_idmove_to_top_post'"
+                "Missing the required parameter 'id' when calling 'move_to_top'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -918,7 +856,87 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_idresubmit_post(
+    def restore_job(
+        self, *, id: "str"
+    ) -> "Union[GrantaServerApiAsyncJobsCreateJobRequest, None]":
+        """Get a job creation object based on an existing job.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        id: str
+
+        Returns
+        -------
+        Union[GrantaServerApiAsyncJobsCreateJobRequest, None]
+        """
+        data = self._restore_job_with_http_info(id, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _restore_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "id",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method restore_job"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "id" is set
+        if "id" not in params or params["id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'id' when calling 'restore_job'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "id" in params and id is not None:
+            path_params["id"] = params["id"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiAsyncJobsCreateJobRequest",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/job-queue/jobs/{id}:retrieve-definition",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def resubmit(
         self,
         *,
         id: "str",
@@ -937,12 +955,10 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiAsyncJobsJob, None]
         """
-        data = self._v1alpha_job_queue_jobs_idresubmit_post_with_http_info(
-            id, body, _return_http_data_only=True
-        )
+        data = self._resubmit_with_http_info(id, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_idresubmit_post_with_http_info(
+    def _resubmit_with_http_info(
         self,
         id: "str",
         body: "Optional[GrantaServerApiAsyncJobsResubmitJobRequest]" = None,
@@ -960,14 +976,14 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_idresubmit_post"
+                    f"Got an unexpected keyword argument '{key}' to method resubmit"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
             raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_idresubmit_post'"
+                "Missing the required parameter 'id' when calling 'resubmit'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -1022,116 +1038,36 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_jobs_idretrieve_definition_get(
-        self, *, id: "str"
-    ) -> "Union[GrantaServerApiAsyncJobsCreateJobRequest, None]":
-        """Get a job creation object based on an existing job.
+    def update_job(
+        self,
+        *,
+        id: "str",
+        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
+    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
+        """Update a job.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         id: str
+        body: GrantaServerApiAsyncJobsUpdateJobRequest
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsCreateJobRequest, None]
+        Union[GrantaServerApiAsyncJobsJob, None]
         """
-        data = self._v1alpha_job_queue_jobs_idretrieve_definition_get_with_http_info(
-            id, _return_http_data_only=True
-        )
+        data = self._update_job_with_http_info(id, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_jobs_idretrieve_definition_get_with_http_info(
-        self, id: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_idretrieve_definition_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'v1alpha_job_queue_jobs_idretrieve_definition_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiAsyncJobsCreateJobRequest",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs/{id}:retrieve-definition",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_job_queue_jobs_post(
-        self, *, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None
-    ) -> "GrantaServerApiAsyncJobsJob":
-        """Create a new job.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GrantaServerApiAsyncJobsCreateJobRequest
-
-        Returns
-        -------
-        GrantaServerApiAsyncJobsJob
-        """
-        data = self._v1alpha_job_queue_jobs_post_with_http_info(
-            body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_job_queue_jobs_post_with_http_info(
+    def _update_job_with_http_info(
         self,
-        body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None,
+        id: "str",
+        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
+            "id",
             "body",
             "_return_http_data_only",
             "_preload_content",
@@ -1142,14 +1078,21 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_jobs_post"
+                    f"Got an unexpected keyword argument '{key}' to method update_job"
                 )
             params[key] = val
         del params["kwargs"]
+        # verify the required parameter "id" is set
+        if "id" not in params or params["id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'id' when calling 'update_job'"
+            )
 
         collection_formats: Dict[str, Any] = {}
 
         path_params: Dict[str, Any] = {}
+        if "id" in params and id is not None:
+            path_params["id"] = params["id"]
 
         query_params: List[Any] = []
 
@@ -1177,12 +1120,13 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
         )
 
         response_type_map = {
-            201: "GrantaServerApiAsyncJobsJob",
+            200: "GrantaServerApiAsyncJobsJob",
+            404: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/job-queue/jobs",
-            "POST",
+            "/v1alpha/job-queue/jobs/{id}",
+            "PATCH",
             path_params,
             query_params,
             header_params,
@@ -1196,32 +1140,39 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_job_queue_processing_configuration_get(
-        self,
-    ) -> "GrantaServerApiAsyncJobsProcessingConfig":
-        """Get the processing configuration.
+    def upload_file(
+        self, *, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None
+    ) -> "str":
+        """Uploads an ephemeral file and returns an ID which can subsequently be used to refer to that file in a job creation request. Ephemeral files have a short lifespan  and should be used to provide file data to jobs only. They should not be used as file storage.
 
         This method makes a synchronous HTTP request.
 
+        Parameters
+        ----------
+        file: Union[BinaryIO, pathlib.Path]
+
         Returns
         -------
-        GrantaServerApiAsyncJobsProcessingConfig
+        str
         """
-        data = self._v1alpha_job_queue_processing_configuration_get_with_http_info(
-            _return_http_data_only=True
-        )
+        data = self._upload_file_with_http_info(file, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_job_queue_processing_configuration_get_with_http_info(
-        self, **kwargs: Any
+    def _upload_file_with_http_info(
+        self, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None, **kwargs: Any
     ) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+        all_params = [
+            "file",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_job_queue_processing_configuration_get"
+                    f"Got an unexpected keyword argument '{key}' to method upload_file"
                 )
             params[key] = val
         del params["kwargs"]
@@ -1236,6 +1187,8 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
 
         form_params: List[Any] = []
         local_var_files: Dict[str, Any] = {}
+        if "file" in params and file is not None:
+            local_var_files["file"] = params["file"]
 
         body_params = None
         # HTTP header 'Accept'
@@ -1243,13 +1196,16 @@ class JobQueueApi(ApiBase):  # type: ignore[misc]
             ["text/plain", "application/json", "text/json"]
         )
 
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
         response_type_map = {
-            200: "GrantaServerApiAsyncJobsProcessingConfig",
+            200: "str",
         }
 
         return self.api_client.call_api(
-            "/v1alpha/job-queue/processing-configuration",
-            "GET",
+            "/v1alpha/job-queue/files",
+            "POST",
             path_params,
             query_params,
             header_params,
