@@ -39,8 +39,8 @@
                 <packageName>${package-import-path}</packageName>
                 <projectName>${package-name}</projectName>
                 <projectDescription>${package-description}</projectDescription>
-                <pythonicPackageName>ansys-grantami-recordlists</pythonicPackageName>
-                <pythonicPackageUrl>https://github.com/ansys/grantami-recordlists</pythonicPackageUrl>
+                <pythonicPackageName>the PyGranta meta-package</pythonicPackageName>
+                <pythonicPackageUrl>https://grantami.docs.pyansys.com</pythonicPackageUrl>
                 <homepageUrl>https://github.com/ansys/grantami-serverapi-openapi</homepageUrl>
                 <documentationUrl>https://grantami.docs.pyansys.com</documentationUrl>
                 <packageVersion>${project.version}</packageVersion>
