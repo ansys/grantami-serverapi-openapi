@@ -33,9 +33,113 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_data_rules_data_rule_guid_delete(
-        self, *, database_key: "str", data_rule_guid: "str"
-    ) -> "None":
+    def create_data_rule(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
+        """Create a new data rule
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        body: GrantaServerApiSchemaDataRulesCreateDataRule
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaDataRulesDataRule, None]
+        """
+        data = self._create_data_rule_with_http_info(
+            database_key, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_data_rule_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_data_rule"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_data_rule'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiSchemaDataRulesDataRule",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/data-rules",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_data_rule(self, *, database_key: "str", data_rule_guid: "str") -> "None":
         """Delete a data rule.
 
         This method makes a synchronous HTTP request.
@@ -49,12 +153,12 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_databases_database_key_data_rules_data_rule_guid_delete_with_http_info(
+        data = self._delete_data_rule_with_http_info(
             database_key, data_rule_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_data_rules_data_rule_guid_delete_with_http_info(
+    def _delete_data_rule_with_http_info(
         self, database_key: "str", data_rule_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -69,19 +173,19 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_data_rules_data_rule_guid_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_data_rule"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_delete'"
+                "Missing the required parameter 'database_key' when calling 'delete_data_rule'"
             )
         # verify the required parameter "data_rule_guid" is set
         if "data_rule_guid" not in params or params["data_rule_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'data_rule_guid' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_delete'"
+                "Missing the required parameter 'data_rule_guid' when calling 'delete_data_rule'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -124,7 +228,7 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_data_rules_data_rule_guid_get(
+    def get_data_rule(
         self, *, database_key: "str", data_rule_guid: "str"
     ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
         """Gets a data rule for a given database and guid.
@@ -140,12 +244,12 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaDataRulesDataRule, None]
         """
-        data = self._v1alpha_databases_database_key_data_rules_data_rule_guid_get_with_http_info(
+        data = self._get_data_rule_with_http_info(
             database_key, data_rule_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_data_rules_data_rule_guid_get_with_http_info(
+    def _get_data_rule_with_http_info(
         self, database_key: "str", data_rule_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -160,19 +264,19 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_data_rules_data_rule_guid_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_data_rule"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_get'"
+                "Missing the required parameter 'database_key' when calling 'get_data_rule'"
             )
         # verify the required parameter "data_rule_guid" is set
         if "data_rule_guid" not in params or params["data_rule_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'data_rule_guid' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_get'"
+                "Missing the required parameter 'data_rule_guid' when calling 'get_data_rule'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -217,7 +321,89 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_data_rules_data_rule_guid_patch(
+    def get_data_rules(
+        self, *, database_key: "str"
+    ) -> "Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]":
+        """Gets all data rules for a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]
+        """
+        data = self._get_data_rules_with_http_info(
+            database_key, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_data_rules_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_data_rules"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_data_rules'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaDataRulesDataRulesInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/data-rules",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def update_data_rule(
         self,
         *,
         database_key: "str",
@@ -238,12 +424,12 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaDataRulesDataRule, None]
         """
-        data = self._v1alpha_databases_database_key_data_rules_data_rule_guid_patch_with_http_info(
+        data = self._update_data_rule_with_http_info(
             database_key, data_rule_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_data_rules_data_rule_guid_patch_with_http_info(
+    def _update_data_rule_with_http_info(
         self,
         database_key: "str",
         data_rule_guid: "str",
@@ -263,19 +449,19 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_data_rules_data_rule_guid_patch"
+                    f"Got an unexpected keyword argument '{key}' to method update_data_rule"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_patch'"
+                "Missing the required parameter 'database_key' when calling 'update_data_rule'"
             )
         # verify the required parameter "data_rule_guid" is set
         if "data_rule_guid" not in params or params["data_rule_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'data_rule_guid' when calling 'v1alpha_databases_database_key_data_rules_data_rule_guid_patch'"
+                "Missing the required parameter 'data_rule_guid' when calling 'update_data_rule'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -321,196 +507,6 @@ class SchemaDataRulesApi(ApiBase):  # type: ignore[misc]
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/data-rules/{data-rule-guid}",
             "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_data_rules_get(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]":
-        """Gets all data rules for a given database.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]
-        """
-        data = self._v1alpha_databases_database_key_data_rules_get_with_http_info(
-            database_key, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_data_rules_get_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_data_rules_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_data_rules_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaDataRulesDataRulesInfo",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/data-rules",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_data_rules_post(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
-        """Create a new data rule
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        body: GrantaServerApiSchemaDataRulesCreateDataRule
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaDataRulesDataRule, None]
-        """
-        data = self._v1alpha_databases_database_key_data_rules_post_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_data_rules_post_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_data_rules_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_data_rules_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            201: "GrantaServerApiSchemaDataRulesDataRule",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/data-rules",
-            "POST",
             path_params,
             query_params,
             header_params,

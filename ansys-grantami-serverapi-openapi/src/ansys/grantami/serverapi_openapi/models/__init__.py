@@ -246,6 +246,9 @@ from .granta_server_api_data_date_time_datum import GrantaServerApiDataDateTimeD
 from .granta_server_api_data_datum import GrantaServerApiDataDatum
 from .granta_server_api_data_datum_type import GrantaServerApiDataDatumType
 from .granta_server_api_data_discrete_datum import GrantaServerApiDataDiscreteDatum
+from .granta_server_api_data_discrete_parameter_with_value import (
+    GrantaServerApiDataDiscreteParameterWithValue,
+)
 from .granta_server_api_data_export_attribute_to_export import (
     GrantaServerApiDataExportAttributeToExport,
 )
@@ -500,6 +503,14 @@ from .granta_server_api_data_long_text_datum import GrantaServerApiDataLongTextD
 from .granta_server_api_data_not_applicable_datum import (
     GrantaServerApiDataNotApplicableDatum,
 )
+from .granta_server_api_data_numeric_parameter_with_value import (
+    GrantaServerApiDataNumericParameterWithValue,
+)
+from .granta_server_api_data_parameter_with_value import (
+    GrantaServerApiDataParameterWithValue,
+)
+from .granta_server_api_data_point_data_value import GrantaServerApiDataPointDataValue
+from .granta_server_api_data_point_datum import GrantaServerApiDataPointDatum
 from .granta_server_api_data_range_datum import GrantaServerApiDataRangeDatum
 from .granta_server_api_data_rich_text_type import GrantaServerApiDataRichTextType
 from .granta_server_api_data_rich_text_value import GrantaServerApiDataRichTextValue
@@ -548,8 +559,8 @@ from .granta_server_api_exceptions_record_history_record_history_copy_exception 
 from .granta_server_api_exceptions_record_history_record_history_move_exception import (
     GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException,
 )
-from .granta_server_api_exceptions_version_control_create_record_version_control_exception import (
-    GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException,
+from .granta_server_api_exceptions_version_control_get_modifiable_record_version_control_exception import (
+    GrantaServerApiExceptionsVersionControlGetModifiableRecordVersionControlException,
 )
 from .granta_server_api_exceptions_version_control_invalid_parent_state_error_detail import (
     GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail,
@@ -744,6 +755,9 @@ from .granta_server_api_records_record_histories_move_record_history import (
 )
 from .granta_server_api_records_record_histories_record_history import (
     GrantaServerApiRecordsRecordHistoriesRecordHistory,
+)
+from .granta_server_api_records_record_histories_record_property_inheritance_type import (
+    GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType,
 )
 from .granta_server_api_records_record_histories_slim_record_history import (
     GrantaServerApiRecordsRecordHistoriesSlimRecordHistory,
@@ -1658,29 +1672,8 @@ from .granta_server_api_search_float_functional_datum_criterion import (
 from .granta_server_api_search_float_functional_graph_datum_criterion import (
     GrantaServerApiSearchFloatFunctionalGraphDatumCriterion,
 )
-from .granta_server_api_search_free_text_all_attributes_criterion import (
-    GrantaServerApiSearchFreeTextAllAttributesCriterion,
-)
-from .granta_server_api_search_free_text_all_criterion import (
-    GrantaServerApiSearchFreeTextAllCriterion,
-)
-from .granta_server_api_search_free_text_all_local_columns_criterion import (
-    GrantaServerApiSearchFreeTextAllLocalColumnsCriterion,
-)
 from .granta_server_api_search_free_text_criterion import (
     GrantaServerApiSearchFreeTextCriterion,
-)
-from .granta_server_api_search_free_text_excluding_attributes_criterion import (
-    GrantaServerApiSearchFreeTextExcludingAttributesCriterion,
-)
-from .granta_server_api_search_free_text_excluding_local_columns_criterion import (
-    GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion,
-)
-from .granta_server_api_search_free_text_specified_attributes_criterion import (
-    GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion,
-)
-from .granta_server_api_search_free_text_specified_local_columns_criterion import (
-    GrantaServerApiSearchFreeTextSpecifiedLocalColumnsCriterion,
 )
 from .granta_server_api_search_hyperlink_datum_criterion import (
     GrantaServerApiSearchHyperlinkDatumCriterion,
@@ -1911,6 +1904,7 @@ __all__ = [
     "GrantaServerApiDataDatum",
     "GrantaServerApiDataDatumType",
     "GrantaServerApiDataDiscreteDatum",
+    "GrantaServerApiDataDiscreteParameterWithValue",
     "GrantaServerApiDataExportAttributeToExport",
     "GrantaServerApiDataExportDataExportRequest",
     "GrantaServerApiDataExportDataExportResponse",
@@ -1999,6 +1993,10 @@ __all__ = [
     "GrantaServerApiDataLogicalDatum",
     "GrantaServerApiDataLongTextDatum",
     "GrantaServerApiDataNotApplicableDatum",
+    "GrantaServerApiDataNumericParameterWithValue",
+    "GrantaServerApiDataParameterWithValue",
+    "GrantaServerApiDataPointDataValue",
+    "GrantaServerApiDataPointDatum",
     "GrantaServerApiDataRangeDatum",
     "GrantaServerApiDataRichTextType",
     "GrantaServerApiDataRichTextValue",
@@ -2019,7 +2017,7 @@ __all__ = [
     "GrantaServerApiExceptionsErrorDetail",
     "GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException",
     "GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException",
-    "GrantaServerApiExceptionsVersionControlCreateRecordVersionControlException",
+    "GrantaServerApiExceptionsVersionControlGetModifiableRecordVersionControlException",
     "GrantaServerApiExceptionsVersionControlInvalidParentStateErrorDetail",
     "GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail",
     "GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail",
@@ -2092,6 +2090,7 @@ __all__ = [
     "GrantaServerApiRecordsRecordHistoriesCreateRecordHistory",
     "GrantaServerApiRecordsRecordHistoriesMoveRecordHistory",
     "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+    "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
     "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
     "GrantaServerApiRecordsRecordVersionsRecordVersion",
     "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",
@@ -2403,14 +2402,7 @@ __all__ = [
     "GrantaServerApiSearchFileDatumCriterion",
     "GrantaServerApiSearchFloatFunctionalDatumCriterion",
     "GrantaServerApiSearchFloatFunctionalGraphDatumCriterion",
-    "GrantaServerApiSearchFreeTextAllAttributesCriterion",
-    "GrantaServerApiSearchFreeTextAllCriterion",
-    "GrantaServerApiSearchFreeTextAllLocalColumnsCriterion",
     "GrantaServerApiSearchFreeTextCriterion",
-    "GrantaServerApiSearchFreeTextExcludingAttributesCriterion",
-    "GrantaServerApiSearchFreeTextExcludingLocalColumnsCriterion",
-    "GrantaServerApiSearchFreeTextSpecifiedAttributesCriterion",
-    "GrantaServerApiSearchFreeTextSpecifiedLocalColumnsCriterion",
     "GrantaServerApiSearchHyperlinkDatumCriterion",
     "GrantaServerApiSearchIndexStatus",
     "GrantaServerApiSearchIntegerDatumCriterion",

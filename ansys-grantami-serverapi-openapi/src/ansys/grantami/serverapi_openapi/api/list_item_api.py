@@ -33,7 +33,7 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def api_v1_lists_list_list_identifier_items_add_post(
+    def add_items_to_list(
         self,
         *,
         list_identifier: "str",
@@ -52,12 +52,12 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
         """
-        data = self._api_v1_lists_list_list_identifier_items_add_post_with_http_info(
+        data = self._add_items_to_list_with_http_info(
             list_identifier, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_items_add_post_with_http_info(
+    def _add_items_to_list_with_http_info(
         self,
         list_identifier: "str",
         body: "Optional[GrantaServerApiListsDtoCreateRecordListItemsInfo]" = None,
@@ -75,14 +75,14 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_items_add_post"
+                    f"Got an unexpected keyword argument '{key}' to method add_items_to_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_items_add_post'"
+                "Missing the required parameter 'list_identifier' when calling 'add_items_to_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -139,7 +139,7 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_items_get(
+    def get_list_items(
         self, *, list_identifier: "str"
     ) -> "Union[GrantaServerApiListsDtoRecordListItemsInfo, None]":
         """Returns the items in the given list
@@ -154,12 +154,12 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
         """
-        data = self._api_v1_lists_list_list_identifier_items_get_with_http_info(
+        data = self._get_list_items_with_http_info(
             list_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_items_get_with_http_info(
+    def _get_list_items_with_http_info(
         self, list_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -173,14 +173,14 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_items_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_list_items"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_items_get'"
+                "Missing the required parameter 'list_identifier' when calling 'get_list_items'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -224,7 +224,7 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def api_v1_lists_list_list_identifier_items_remove_post(
+    def remove_items_from_list(
         self,
         *,
         list_identifier: "str",
@@ -243,12 +243,12 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
         """
-        data = self._api_v1_lists_list_list_identifier_items_remove_post_with_http_info(
+        data = self._remove_items_from_list_with_http_info(
             list_identifier, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _api_v1_lists_list_list_identifier_items_remove_post_with_http_info(
+    def _remove_items_from_list_with_http_info(
         self,
         list_identifier: "str",
         body: "Optional[GrantaServerApiListsDtoDeleteRecordListItems]" = None,
@@ -266,14 +266,14 @@ class ListItemApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method api_v1_lists_list_list_identifier_items_remove_post"
+                    f"Got an unexpected keyword argument '{key}' to method remove_items_from_list"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
         if "list_identifier" not in params or params["list_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'list_identifier' when calling 'api_v1_lists_list_list_identifier_items_remove_post'"
+                "Missing the required parameter 'list_identifier' when calling 'remove_items_from_list'"
             )
 
         collection_formats: Dict[str, Any] = {}
