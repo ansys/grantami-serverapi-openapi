@@ -110,7 +110,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         if parameter is None:
             raise ValueError("Invalid value for 'parameter', must not be 'None'")
         # Field is required
-        if parameter is Unset:  # type: ignore[comparison-overlap]
+        if parameter is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'parameter', must not be 'Unset'")
         self._parameter = parameter
 

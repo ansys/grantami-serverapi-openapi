@@ -106,7 +106,7 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         if results is None:
             raise ValueError("Invalid value for 'results', must not be 'None'")
         # Field is required
-        if results is Unset:  # type: ignore[comparison-overlap]
+        if results is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'results', must not be 'Unset'")
         self._results = results
 
@@ -138,7 +138,7 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         if failures is None:
             raise ValueError("Invalid value for 'failures', must not be 'None'")
         # Field is required
-        if failures is Unset:  # type: ignore[comparison-overlap]
+        if failures is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'failures', must not be 'Unset'")
         self._failures = failures
 

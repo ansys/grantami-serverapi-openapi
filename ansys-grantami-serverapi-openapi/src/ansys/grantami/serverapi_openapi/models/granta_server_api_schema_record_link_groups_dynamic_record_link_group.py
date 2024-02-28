@@ -164,7 +164,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -192,7 +192,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         if forbid_orphans is None:
             raise ValueError("Invalid value for 'forbid_orphans', must not be 'None'")
         # Field is required
-        if forbid_orphans is Unset:  # type: ignore[comparison-overlap]
+        if forbid_orphans is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'forbid_orphans', must not be 'Unset'")
         self._forbid_orphans = forbid_orphans
 
@@ -227,7 +227,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
                 "Invalid value for 'referential_integrity_model', must not be 'None'"
             )
         # Field is required
-        if referential_integrity_model is Unset:  # type: ignore[comparison-overlap]
+        if referential_integrity_model is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'referential_integrity_model', must not be 'Unset'"
             )
@@ -262,7 +262,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         if attribute_pairs is None:
             raise ValueError("Invalid value for 'attribute_pairs', must not be 'None'")
         # Field is required
-        if attribute_pairs is Unset:  # type: ignore[comparison-overlap]
+        if attribute_pairs is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_pairs', must not be 'Unset'")
         self._attribute_pairs = attribute_pairs
 

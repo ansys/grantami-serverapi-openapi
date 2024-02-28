@@ -193,7 +193,7 @@ class GrantaServerApiSchemaProfilesProfile(ModelBase):
         if profile_tables is None:
             raise ValueError("Invalid value for 'profile_tables', must not be 'None'")
         # Field is required
-        if profile_tables is Unset:  # type: ignore[comparison-overlap]
+        if profile_tables is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'profile_tables', must not be 'Unset'")
         self._profile_tables = profile_tables
 
@@ -223,7 +223,7 @@ class GrantaServerApiSchemaProfilesProfile(ModelBase):
         if key is None:
             raise ValueError("Invalid value for 'key', must not be 'None'")
         # Field is required
-        if key is Unset:  # type: ignore[comparison-overlap]
+        if key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'key', must not be 'Unset'")
         self._key = key
 
@@ -297,7 +297,7 @@ class GrantaServerApiSchemaProfilesProfile(ModelBase):
         if is_implicit is None:
             raise ValueError("Invalid value for 'is_implicit', must not be 'None'")
         # Field is required
-        if is_implicit is Unset:  # type: ignore[comparison-overlap]
+        if is_implicit is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_implicit', must not be 'Unset'")
         self._is_implicit = is_implicit
 
@@ -325,7 +325,7 @@ class GrantaServerApiSchemaProfilesProfile(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 

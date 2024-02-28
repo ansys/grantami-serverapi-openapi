@@ -164,7 +164,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if show_as_link is None:
             raise ValueError("Invalid value for 'show_as_link', must not be 'None'")
         # Field is required
-        if show_as_link is Unset:  # type: ignore[comparison-overlap]
+        if show_as_link is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'show_as_link', must not be 'Unset'")
         self._show_as_link = show_as_link
 
@@ -194,7 +194,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
                 "Invalid value for 'summary_row_enabled', must not be 'None'"
             )
         # Field is required
-        if summary_row_enabled is Unset:  # type: ignore[comparison-overlap]
+        if summary_row_enabled is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'summary_row_enabled', must not be 'Unset'"
             )
@@ -224,7 +224,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if summary_row_text is None:
             raise ValueError("Invalid value for 'summary_row_text', must not be 'None'")
         # Field is required
-        if summary_row_text is Unset:  # type: ignore[comparison-overlap]
+        if summary_row_text is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'summary_row_text', must not be 'Unset'"
             )
@@ -258,7 +258,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if roll_up_type is None:
             raise ValueError("Invalid value for 'roll_up_type', must not be 'None'")
         # Field is required
-        if roll_up_type is Unset:  # type: ignore[comparison-overlap]
+        if roll_up_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'roll_up_type', must not be 'Unset'")
         self._roll_up_type = roll_up_type
 
@@ -293,7 +293,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
                 "Invalid value for 'summary_row_roll_up_type', must not be 'None'"
             )
         # Field is required
-        if summary_row_roll_up_type is Unset:  # type: ignore[comparison-overlap]
+        if summary_row_roll_up_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'summary_row_roll_up_type', must not be 'Unset'"
             )
@@ -323,7 +323,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if display_names is None:
             raise ValueError("Invalid value for 'display_names', must not be 'None'")
         # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap]
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
 
@@ -351,7 +351,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -379,7 +379,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

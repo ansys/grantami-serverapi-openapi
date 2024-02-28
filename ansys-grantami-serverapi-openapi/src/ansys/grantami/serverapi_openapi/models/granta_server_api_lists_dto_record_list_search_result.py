@@ -106,7 +106,7 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         if header is None:
             raise ValueError("Invalid value for 'header', must not be 'None'")
         # Field is required
-        if header is Unset:  # type: ignore[comparison-overlap]
+        if header is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'header', must not be 'Unset'")
         self._header = header
 
@@ -134,7 +134,7 @@ class GrantaServerApiListsDtoRecordListSearchResult(ModelBase):
         if items is None:
             raise ValueError("Invalid value for 'items', must not be 'None'")
         # Field is required
-        if items is Unset:  # type: ignore[comparison-overlap]
+        if items is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'items', must not be 'Unset'")
         self._items = items
 

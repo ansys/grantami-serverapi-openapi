@@ -129,7 +129,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
                 "Invalid value for 'is_hidden_from_browse', must not be 'None'"
             )
         # Field is required
-        if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap]
+        if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_hidden_from_browse', must not be 'Unset'"
             )
@@ -161,7 +161,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
                 "Invalid value for 'is_hidden_from_search', must not be 'None'"
             )
         # Field is required
-        if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap]
+        if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_hidden_from_search', must not be 'Unset'"
             )
@@ -191,7 +191,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         if is_versioned is None:
             raise ValueError("Invalid value for 'is_versioned', must not be 'None'")
         # Field is required
-        if is_versioned is Unset:  # type: ignore[comparison-overlap]
+        if is_versioned is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_versioned', must not be 'Unset'")
         self._is_versioned = is_versioned
 
@@ -219,7 +219,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         if display_names is None:
             raise ValueError("Invalid value for 'display_names', must not be 'None'")
         # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap]
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
 
@@ -247,7 +247,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -275,7 +275,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

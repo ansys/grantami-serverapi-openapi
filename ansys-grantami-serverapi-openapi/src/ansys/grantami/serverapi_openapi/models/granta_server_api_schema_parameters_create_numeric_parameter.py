@@ -164,7 +164,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -192,7 +192,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         if is_restricted is None:
             raise ValueError("Invalid value for 'is_restricted', must not be 'None'")
         # Field is required
-        if is_restricted is Unset:  # type: ignore[comparison-overlap]
+        if is_restricted is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_restricted', must not be 'Unset'")
         self._is_restricted = is_restricted
 
@@ -251,7 +251,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
         # Field is required
-        if values is Unset:  # type: ignore[comparison-overlap]
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
@@ -286,7 +286,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
                 "Invalid value for 'interpolation_type', must not be 'None'"
             )
         # Field is required
-        if interpolation_type is Unset:  # type: ignore[comparison-overlap]
+        if interpolation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'interpolation_type', must not be 'Unset'"
             )
@@ -318,7 +318,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         if scale_type is None:
             raise ValueError("Invalid value for 'scale_type', must not be 'None'")
         # Field is required
-        if scale_type is Unset:  # type: ignore[comparison-overlap]
+        if scale_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'scale_type', must not be 'Unset'")
         self._scale_type = scale_type
 

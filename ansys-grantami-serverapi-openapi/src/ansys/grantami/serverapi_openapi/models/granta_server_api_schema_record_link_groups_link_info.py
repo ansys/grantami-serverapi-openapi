@@ -108,7 +108,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         if link_source is None:
             raise ValueError("Invalid value for 'link_source', must not be 'None'")
         # Field is required
-        if link_source is Unset:  # type: ignore[comparison-overlap]
+        if link_source is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_source', must not be 'Unset'")
         self._link_source = link_source
 
@@ -138,7 +138,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         if link_target is None:
             raise ValueError("Invalid value for 'link_target', must not be 'None'")
         # Field is required
-        if link_target is Unset:  # type: ignore[comparison-overlap]
+        if link_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_target', must not be 'Unset'")
         self._link_target = link_target
 

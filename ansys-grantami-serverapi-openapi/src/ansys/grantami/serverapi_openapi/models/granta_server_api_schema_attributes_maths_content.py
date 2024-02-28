@@ -160,7 +160,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         if transpose_axes is None:
             raise ValueError("Invalid value for 'transpose_axes', must not be 'None'")
         # Field is required
-        if transpose_axes is Unset:  # type: ignore[comparison-overlap]
+        if transpose_axes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'transpose_axes', must not be 'Unset'")
         self._transpose_axes = transpose_axes
 
@@ -190,7 +190,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
                 "Invalid value for 'use_logarithmic_scale', must not be 'None'"
             )
         # Field is required
-        if use_logarithmic_scale is Unset:  # type: ignore[comparison-overlap]
+        if use_logarithmic_scale is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'use_logarithmic_scale', must not be 'Unset'"
             )
@@ -287,7 +287,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
                 "Invalid value for 'parameter_contents', must not be 'None'"
             )
         # Field is required
-        if parameter_contents is Unset:  # type: ignore[comparison-overlap]
+        if parameter_contents is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'parameter_contents', must not be 'Unset'"
             )

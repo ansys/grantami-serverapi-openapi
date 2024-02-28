@@ -117,7 +117,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimLayoutSection(
                 "Invalid value for 'section_detail_type', must not be 'None'"
             )
         # Field is required
-        if section_detail_type is Unset:  # type: ignore[comparison-overlap]
+        if section_detail_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'section_detail_type', must not be 'Unset'"
             )

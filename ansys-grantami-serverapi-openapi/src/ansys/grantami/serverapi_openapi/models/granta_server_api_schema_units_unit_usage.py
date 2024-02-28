@@ -129,7 +129,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         if attributes is None:
             raise ValueError("Invalid value for 'attributes', must not be 'None'")
         # Field is required
-        if attributes is Unset:  # type: ignore[comparison-overlap]
+        if attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attributes', must not be 'Unset'")
         self._attributes = attributes
 
@@ -159,7 +159,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         if parameters is None:
             raise ValueError("Invalid value for 'parameters', must not be 'None'")
         # Field is required
-        if parameters is Unset:  # type: ignore[comparison-overlap]
+        if parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'parameters', must not be 'Unset'")
         self._parameters = parameters
 
@@ -189,7 +189,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         if constants is None:
             raise ValueError("Invalid value for 'constants', must not be 'None'")
         # Field is required
-        if constants is Unset:  # type: ignore[comparison-overlap]
+        if constants is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'constants', must not be 'Unset'")
         self._constants = constants
 
@@ -219,7 +219,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         if expressions is None:
             raise ValueError("Invalid value for 'expressions', must not be 'None'")
         # Field is required
-        if expressions is Unset:  # type: ignore[comparison-overlap]
+        if expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'expressions', must not be 'Unset'")
         self._expressions = expressions
 
@@ -247,7 +247,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         if units is None:
             raise ValueError("Invalid value for 'units', must not be 'None'")
         # Field is required
-        if units is Unset:  # type: ignore[comparison-overlap]
+        if units is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'units', must not be 'Unset'")
         self._units = units
 

@@ -160,7 +160,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         if graph_type is None:
             raise ValueError("Invalid value for 'graph_type', must not be 'None'")
         # Field is required
-        if graph_type is Unset:  # type: ignore[comparison-overlap]
+        if graph_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'graph_type', must not be 'Unset'")
         self._graph_type = graph_type
 

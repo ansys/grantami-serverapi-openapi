@@ -103,7 +103,7 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
         if configurations is None:
             raise ValueError("Invalid value for 'configurations', must not be 'None'")
         # Field is required
-        if configurations is Unset:  # type: ignore[comparison-overlap]
+        if configurations is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'configurations', must not be 'Unset'")
         self._configurations = configurations
 

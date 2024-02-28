@@ -116,7 +116,7 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
                 "Invalid value for 'significant_figures', must not be 'None'"
             )
         # Field is required
-        if significant_figures is Unset:  # type: ignore[comparison-overlap]
+        if significant_figures is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'significant_figures', must not be 'Unset'"
             )
@@ -146,7 +146,7 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
         if entered_value is None:
             raise ValueError("Invalid value for 'entered_value', must not be 'None'")
         # Field is required
-        if entered_value is Unset:  # type: ignore[comparison-overlap]
+        if entered_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'entered_value', must not be 'Unset'")
         self._entered_value = entered_value
 

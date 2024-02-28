@@ -145,7 +145,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -173,7 +173,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         if attribute_guid is None:
             raise ValueError("Invalid value for 'attribute_guid', must not be 'None'")
         # Field is required
-        if attribute_guid is Unset:  # type: ignore[comparison-overlap]
+        if attribute_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_guid', must not be 'Unset'")
         self._attribute_guid = attribute_guid
 

@@ -125,7 +125,7 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
         # Field is required
-        if inner_criterion is Unset:  # type: ignore[comparison-overlap]
+        if inner_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'inner_criterion', must not be 'Unset'")
         self._inner_criterion = inner_criterion
 
@@ -155,7 +155,7 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
                 "Invalid value for 'local_column_criterion_type', must not be 'None'"
             )
         # Field is required
-        if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap]
+        if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'local_column_criterion_type', must not be 'Unset'"
             )

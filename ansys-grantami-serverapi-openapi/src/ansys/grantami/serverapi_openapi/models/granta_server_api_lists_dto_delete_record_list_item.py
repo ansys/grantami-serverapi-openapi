@@ -110,7 +110,7 @@ class GrantaServerApiListsDtoDeleteRecordListItem(ModelBase):
         if database_guid is None:
             raise ValueError("Invalid value for 'database_guid', must not be 'None'")
         # Field is required
-        if database_guid is Unset:  # type: ignore[comparison-overlap]
+        if database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_guid', must not be 'Unset'")
         self._database_guid = database_guid
 
@@ -140,7 +140,7 @@ class GrantaServerApiListsDtoDeleteRecordListItem(ModelBase):
                 "Invalid value for 'record_history_guid', must not be 'None'"
             )
         # Field is required
-        if record_history_guid is Unset:  # type: ignore[comparison-overlap]
+        if record_history_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'record_history_guid', must not be 'Unset'"
             )

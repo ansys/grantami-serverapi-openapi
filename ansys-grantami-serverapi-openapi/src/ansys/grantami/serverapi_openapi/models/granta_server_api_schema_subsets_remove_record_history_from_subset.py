@@ -99,7 +99,7 @@ class GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset(ModelBase):
                 "Invalid value for 'record_history_guid', must not be 'None'"
             )
         # Field is required
-        if record_history_guid is Unset:  # type: ignore[comparison-overlap]
+        if record_history_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'record_history_guid', must not be 'Unset'"
             )

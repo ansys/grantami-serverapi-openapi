@@ -266,7 +266,7 @@ class GrantaServerApiSchemaProfileTablesProfileTable(ModelBase):
         if database_guid is None:
             raise ValueError("Invalid value for 'database_guid', must not be 'None'")
         # Field is required
-        if database_guid is Unset:  # type: ignore[comparison-overlap]
+        if database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_guid', must not be 'Unset'")
         self._database_guid = database_guid
 
@@ -318,7 +318,7 @@ class GrantaServerApiSchemaProfileTablesProfileTable(ModelBase):
         if table_guid is None:
             raise ValueError("Invalid value for 'table_guid', must not be 'None'")
         # Field is required
-        if table_guid is Unset:  # type: ignore[comparison-overlap]
+        if table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'table_guid', must not be 'Unset'")
         self._table_guid = table_guid
 

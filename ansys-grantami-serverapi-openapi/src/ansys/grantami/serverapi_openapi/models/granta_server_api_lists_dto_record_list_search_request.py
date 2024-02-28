@@ -121,7 +121,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         if search_criterion is None:
             raise ValueError("Invalid value for 'search_criterion', must not be 'None'")
         # Field is required
-        if search_criterion is Unset:  # type: ignore[comparison-overlap]
+        if search_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'search_criterion', must not be 'Unset'"
             )

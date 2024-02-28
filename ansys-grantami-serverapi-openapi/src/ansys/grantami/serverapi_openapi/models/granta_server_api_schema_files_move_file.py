@@ -97,7 +97,7 @@ class GrantaServerApiSchemaFilesMoveFile(ModelBase):
         if folder_guid is None:
             raise ValueError("Invalid value for 'folder_guid', must not be 'None'")
         # Field is required
-        if folder_guid is Unset:  # type: ignore[comparison-overlap]
+        if folder_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'folder_guid', must not be 'Unset'")
         self._folder_guid = folder_guid
 

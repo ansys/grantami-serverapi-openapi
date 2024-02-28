@@ -125,7 +125,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -155,7 +155,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
                 "Invalid value for 'source_database_guid', must not be 'None'"
             )
         # Field is required
-        if source_database_guid is Unset:  # type: ignore[comparison-overlap]
+        if source_database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'source_database_guid', must not be 'Unset'"
             )
@@ -187,7 +187,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
                 "Invalid value for 'source_table_guid', must not be 'None'"
             )
         # Field is required
-        if source_table_guid is Unset:  # type: ignore[comparison-overlap]
+        if source_table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'source_table_guid', must not be 'Unset'"
             )
@@ -217,7 +217,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         if link_group_guid is None:
             raise ValueError("Invalid value for 'link_group_guid', must not be 'None'")
         # Field is required
-        if link_group_guid is Unset:  # type: ignore[comparison-overlap]
+        if link_group_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_group_guid', must not be 'Unset'")
         self._link_group_guid = link_group_guid
 

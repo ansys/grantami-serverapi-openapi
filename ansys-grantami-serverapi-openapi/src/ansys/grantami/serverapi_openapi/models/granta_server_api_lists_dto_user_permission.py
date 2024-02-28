@@ -115,7 +115,7 @@ class GrantaServerApiListsDtoUserPermission(ModelBase):
                 "Invalid value for 'user_or_group_name', must not be 'None'"
             )
         # Field is required
-        if user_or_group_name is Unset:  # type: ignore[comparison-overlap]
+        if user_or_group_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'user_or_group_name', must not be 'Unset'"
             )
@@ -149,7 +149,7 @@ class GrantaServerApiListsDtoUserPermission(ModelBase):
                 "Invalid value for 'user_or_group_identifier', must not be 'None'"
             )
         # Field is required
-        if user_or_group_identifier is Unset:  # type: ignore[comparison-overlap]
+        if user_or_group_identifier is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'user_or_group_identifier', must not be 'Unset'"
             )
@@ -179,7 +179,7 @@ class GrantaServerApiListsDtoUserPermission(ModelBase):
         if flags is None:
             raise ValueError("Invalid value for 'flags', must not be 'None'")
         # Field is required
-        if flags is Unset:  # type: ignore[comparison-overlap]
+        if flags is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'flags', must not be 'Unset'")
         self._flags = flags
 

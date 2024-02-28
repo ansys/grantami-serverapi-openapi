@@ -125,7 +125,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
                 "Invalid value for 'section_detail_type', must not be 'None'"
             )
         # Field is required
-        if section_detail_type is Unset:  # type: ignore[comparison-overlap]
+        if section_detail_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'section_detail_type', must not be 'Unset'"
             )
@@ -157,7 +157,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         if section_items is None:
             raise ValueError("Invalid value for 'section_items', must not be 'None'")
         # Field is required
-        if section_items is Unset:  # type: ignore[comparison-overlap]
+        if section_items is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'section_items', must not be 'Unset'")
         self._section_items = section_items
 

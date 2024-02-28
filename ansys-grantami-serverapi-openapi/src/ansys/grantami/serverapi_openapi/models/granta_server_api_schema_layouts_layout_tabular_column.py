@@ -119,7 +119,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
         # Field is required
-        if column_type is Unset:  # type: ignore[comparison-overlap]
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
@@ -149,7 +149,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
                 "Invalid value for 'tabular_column_guid', must not be 'None'"
             )
         # Field is required
-        if tabular_column_guid is Unset:  # type: ignore[comparison-overlap]
+        if tabular_column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'tabular_column_guid', must not be 'Unset'"
             )
@@ -179,7 +179,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -207,7 +207,7 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

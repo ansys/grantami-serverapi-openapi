@@ -180,7 +180,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -210,7 +210,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
                 "Invalid value for 'display_full_table', must not be 'None'"
             )
         # Field is required
-        if display_full_table is Unset:  # type: ignore[comparison-overlap]
+        if display_full_table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'display_full_table', must not be 'Unset'"
             )
@@ -242,7 +242,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
                 "Invalid value for 'display_summary_row_inline', must not be 'None'"
             )
         # Field is required
-        if display_summary_row_inline is Unset:  # type: ignore[comparison-overlap]
+        if display_summary_row_inline is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'display_summary_row_inline', must not be 'Unset'"
             )
@@ -274,7 +274,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
                 "Invalid value for 'hide_unlinked_rows', must not be 'None'"
             )
         # Field is required
-        if hide_unlinked_rows is Unset:  # type: ignore[comparison-overlap]
+        if hide_unlinked_rows is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'hide_unlinked_rows', must not be 'Unset'"
             )
@@ -338,7 +338,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         if tabular_columns is None:
             raise ValueError("Invalid value for 'tabular_columns', must not be 'None'")
         # Field is required
-        if tabular_columns is Unset:  # type: ignore[comparison-overlap]
+        if tabular_columns is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'tabular_columns', must not be 'Unset'")
         self._tabular_columns = tabular_columns
 

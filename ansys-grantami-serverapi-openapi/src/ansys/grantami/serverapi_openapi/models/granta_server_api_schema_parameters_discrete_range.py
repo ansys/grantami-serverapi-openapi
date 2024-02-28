@@ -103,7 +103,7 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         if parameter_values is None:
             raise ValueError("Invalid value for 'parameter_values', must not be 'None'")
         # Field is required
-        if parameter_values is Unset:  # type: ignore[comparison-overlap]
+        if parameter_values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'parameter_values', must not be 'Unset'"
             )

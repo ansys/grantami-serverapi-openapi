@@ -145,7 +145,7 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -175,7 +175,7 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
                 "Invalid value for 'include_indirect_links', must not be 'None'"
             )
         # Field is required
-        if include_indirect_links is Unset:  # type: ignore[comparison-overlap]
+        if include_indirect_links is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'include_indirect_links', must not be 'Unset'"
             )

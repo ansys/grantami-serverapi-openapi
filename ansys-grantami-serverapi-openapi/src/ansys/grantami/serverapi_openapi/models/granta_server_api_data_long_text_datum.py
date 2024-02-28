@@ -113,7 +113,7 @@ class GrantaServerApiDataLongTextDatum(GrantaServerApiDataApplicableDatum):
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
         # Field is required
-        if datum_type is Unset:  # type: ignore[comparison-overlap]
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
@@ -143,7 +143,7 @@ class GrantaServerApiDataLongTextDatum(GrantaServerApiDataApplicableDatum):
         if rich_text_value is None:
             raise ValueError("Invalid value for 'rich_text_value', must not be 'None'")
         # Field is required
-        if rich_text_value is Unset:  # type: ignore[comparison-overlap]
+        if rich_text_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'rich_text_value', must not be 'Unset'")
         self._rich_text_value = rich_text_value
 

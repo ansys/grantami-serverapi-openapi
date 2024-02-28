@@ -101,7 +101,7 @@ class GrantaServerApiSchemaAttributesAttributesInfo(ModelBase):
         if attributes is None:
             raise ValueError("Invalid value for 'attributes', must not be 'None'")
         # Field is required
-        if attributes is Unset:  # type: ignore[comparison-overlap]
+        if attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attributes', must not be 'Unset'")
         self._attributes = attributes
 

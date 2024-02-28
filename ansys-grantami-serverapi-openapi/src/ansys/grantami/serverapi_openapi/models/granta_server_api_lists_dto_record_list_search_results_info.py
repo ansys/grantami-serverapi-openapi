@@ -101,7 +101,7 @@ class GrantaServerApiListsDtoRecordListSearchResultsInfo(ModelBase):
         if search_results is None:
             raise ValueError("Invalid value for 'search_results', must not be 'None'")
         # Field is required
-        if search_results is Unset:  # type: ignore[comparison-overlap]
+        if search_results is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'search_results', must not be 'Unset'")
         self._search_results = search_results
 

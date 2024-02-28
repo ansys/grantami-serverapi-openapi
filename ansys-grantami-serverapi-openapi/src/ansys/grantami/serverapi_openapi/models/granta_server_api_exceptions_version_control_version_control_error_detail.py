@@ -106,7 +106,7 @@ class GrantaServerApiExceptionsVersionControlVersionControlErrorDetail(ModelBase
         if message is None:
             raise ValueError("Invalid value for 'message', must not be 'None'")
         # Field is required
-        if message is Unset:  # type: ignore[comparison-overlap]
+        if message is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'message', must not be 'Unset'")
         self._message = message
 

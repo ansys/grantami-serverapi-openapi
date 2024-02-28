@@ -137,7 +137,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -167,7 +167,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
         # Field is required
-        if values is Unset:  # type: ignore[comparison-overlap]
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 

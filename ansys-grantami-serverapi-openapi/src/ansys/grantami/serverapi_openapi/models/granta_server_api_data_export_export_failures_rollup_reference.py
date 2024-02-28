@@ -119,7 +119,7 @@ class GrantaServerApiDataExportExportFailuresRollupReference(ModelBase):
         if database_key is None:
             raise ValueError("Invalid value for 'database_key', must not be 'None'")
         # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap]
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
@@ -197,7 +197,7 @@ class GrantaServerApiDataExportExportFailuresRollupReference(ModelBase):
         if rollup_type is None:
             raise ValueError("Invalid value for 'rollup_type', must not be 'None'")
         # Field is required
-        if rollup_type is Unset:  # type: ignore[comparison-overlap]
+        if rollup_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'rollup_type', must not be 'Unset'")
         self._rollup_type = rollup_type
 

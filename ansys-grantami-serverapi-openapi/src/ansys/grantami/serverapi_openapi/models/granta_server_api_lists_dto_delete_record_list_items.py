@@ -99,7 +99,7 @@ class GrantaServerApiListsDtoDeleteRecordListItems(ModelBase):
         if items is None:
             raise ValueError("Invalid value for 'items', must not be 'None'")
         # Field is required
-        if items is Unset:  # type: ignore[comparison-overlap]
+        if items is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'items', must not be 'Unset'")
         self._items = items
 

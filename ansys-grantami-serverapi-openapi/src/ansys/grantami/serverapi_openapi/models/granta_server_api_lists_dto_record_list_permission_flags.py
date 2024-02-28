@@ -123,7 +123,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
         if is_owner is None:
             raise ValueError("Invalid value for 'is_owner', must not be 'None'")
         # Field is required
-        if is_owner is Unset:  # type: ignore[comparison-overlap]
+        if is_owner is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_owner', must not be 'Unset'")
         self._is_owner = is_owner
 
@@ -153,7 +153,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
         if is_subscribed is None:
             raise ValueError("Invalid value for 'is_subscribed', must not be 'None'")
         # Field is required
-        if is_subscribed is Unset:  # type: ignore[comparison-overlap]
+        if is_subscribed is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_subscribed', must not be 'Unset'")
         self._is_subscribed = is_subscribed
 
@@ -183,7 +183,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
         if is_curator is None:
             raise ValueError("Invalid value for 'is_curator', must not be 'None'")
         # Field is required
-        if is_curator is Unset:  # type: ignore[comparison-overlap]
+        if is_curator is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_curator', must not be 'Unset'")
         self._is_curator = is_curator
 
@@ -213,7 +213,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
         if is_administrator is None:
             raise ValueError("Invalid value for 'is_administrator', must not be 'None'")
         # Field is required
-        if is_administrator is Unset:  # type: ignore[comparison-overlap]
+        if is_administrator is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_administrator', must not be 'Unset'"
             )
@@ -245,7 +245,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
         if is_publisher is None:
             raise ValueError("Invalid value for 'is_publisher', must not be 'None'")
         # Field is required
-        if is_publisher is Unset:  # type: ignore[comparison-overlap]
+        if is_publisher is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_publisher', must not be 'Unset'")
         self._is_publisher = is_publisher
 

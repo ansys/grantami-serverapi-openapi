@@ -124,7 +124,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
         if failed_records is None:
             raise ValueError("Invalid value for 'failed_records', must not be 'None'")
         # Field is required
-        if failed_records is Unset:  # type: ignore[comparison-overlap]
+        if failed_records is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'failed_records', must not be 'Unset'")
         self._failed_records = failed_records
 
@@ -152,7 +152,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 

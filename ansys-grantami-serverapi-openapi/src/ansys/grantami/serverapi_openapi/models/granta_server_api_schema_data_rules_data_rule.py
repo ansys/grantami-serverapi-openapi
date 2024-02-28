@@ -123,7 +123,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         if description is None:
             raise ValueError("Invalid value for 'description', must not be 'None'")
         # Field is required
-        if description is Unset:  # type: ignore[comparison-overlap]
+        if description is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'description', must not be 'Unset'")
         self._description = description
 
@@ -153,7 +153,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
                 "Invalid value for 'regular_expression', must not be 'None'"
             )
         # Field is required
-        if regular_expression is Unset:  # type: ignore[comparison-overlap]
+        if regular_expression is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'regular_expression', must not be 'Unset'"
             )
@@ -190,7 +190,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
                 "Invalid value for 'used_by_attributes', must not be 'None'"
             )
         # Field is required
-        if used_by_attributes is Unset:  # type: ignore[comparison-overlap]
+        if used_by_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'used_by_attributes', must not be 'Unset'"
             )
@@ -220,7 +220,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -248,7 +248,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

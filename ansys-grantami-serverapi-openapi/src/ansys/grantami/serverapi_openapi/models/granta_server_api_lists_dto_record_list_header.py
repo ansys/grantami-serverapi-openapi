@@ -198,7 +198,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if identifier is None:
             raise ValueError("Invalid value for 'identifier', must not be 'None'")
         # Field is required
-        if identifier is Unset:  # type: ignore[comparison-overlap]
+        if identifier is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'identifier', must not be 'Unset'")
         self._identifier = identifier
 
@@ -226,7 +226,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if metadata is None:
             raise ValueError("Invalid value for 'metadata', must not be 'None'")
         # Field is required
-        if metadata is Unset:  # type: ignore[comparison-overlap]
+        if metadata is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'metadata', must not be 'Unset'")
         self._metadata = metadata
 
@@ -280,7 +280,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
                 "Invalid value for 'created_timestamp', must not be 'None'"
             )
         # Field is required
-        if created_timestamp is Unset:  # type: ignore[comparison-overlap]
+        if created_timestamp is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'created_timestamp', must not be 'Unset'"
             )
@@ -310,7 +310,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if created_user is None:
             raise ValueError("Invalid value for 'created_user', must not be 'None'")
         # Field is required
-        if created_user is Unset:  # type: ignore[comparison-overlap]
+        if created_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'created_user', must not be 'Unset'")
         self._created_user = created_user
 
@@ -340,7 +340,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
                 "Invalid value for 'last_modified_timestamp', must not be 'None'"
             )
         # Field is required
-        if last_modified_timestamp is Unset:  # type: ignore[comparison-overlap]
+        if last_modified_timestamp is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'last_modified_timestamp', must not be 'Unset'"
             )
@@ -374,7 +374,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
                 "Invalid value for 'last_modified_user', must not be 'None'"
             )
         # Field is required
-        if last_modified_user is Unset:  # type: ignore[comparison-overlap]
+        if last_modified_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'last_modified_user', must not be 'Unset'"
             )
@@ -455,7 +455,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if is_revision is None:
             raise ValueError("Invalid value for 'is_revision', must not be 'None'")
         # Field is required
-        if is_revision is Unset:  # type: ignore[comparison-overlap]
+        if is_revision is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_revision', must not be 'Unset'")
         self._is_revision = is_revision
 
@@ -483,7 +483,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -555,7 +555,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if published is None:
             raise ValueError("Invalid value for 'published', must not be 'None'")
         # Field is required
-        if published is Unset:  # type: ignore[comparison-overlap]
+        if published is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'published', must not be 'Unset'")
         self._published = published
 
@@ -585,7 +585,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
                 "Invalid value for 'awaiting_approval', must not be 'None'"
             )
         # Field is required
-        if awaiting_approval is Unset:  # type: ignore[comparison-overlap]
+        if awaiting_approval is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'awaiting_approval', must not be 'Unset'"
             )
@@ -615,7 +615,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         if internal_use is None:
             raise ValueError("Invalid value for 'internal_use', must not be 'None'")
         # Field is required
-        if internal_use is Unset:  # type: ignore[comparison-overlap]
+        if internal_use is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'internal_use', must not be 'Unset'")
         self._internal_use = internal_use
 

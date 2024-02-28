@@ -116,7 +116,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
                 "Invalid value for 'record_references', must not be 'None'"
             )
         # Field is required
-        if record_references is Unset:  # type: ignore[comparison-overlap]
+        if record_references is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'record_references', must not be 'Unset'"
             )
@@ -150,7 +150,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
                 "Invalid value for 'attribute_identities', must not be 'None'"
             )
         # Field is required
-        if attribute_identities is Unset:  # type: ignore[comparison-overlap]
+        if attribute_identities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_identities', must not be 'Unset'"
             )

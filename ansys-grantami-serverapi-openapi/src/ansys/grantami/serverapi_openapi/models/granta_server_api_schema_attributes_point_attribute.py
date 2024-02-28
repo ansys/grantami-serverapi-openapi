@@ -168,7 +168,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -223,7 +223,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         if is_multi_valued is None:
             raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         # Field is required
-        if is_multi_valued is Unset:  # type: ignore[comparison-overlap]
+        if is_multi_valued is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_multi_valued', must not be 'Unset'")
         self._is_multi_valued = is_multi_valued
 
@@ -258,7 +258,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
         # Field is required
-        if attribute_parameters is Unset:  # type: ignore[comparison-overlap]
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'Unset'"
             )

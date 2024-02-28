@@ -188,7 +188,7 @@ class GrantaServerApiSearchFreeTextAllAttributesCriterion(
                 "Invalid value for 'free_text_criterion_type', must not be 'None'"
             )
         # Field is required
-        if free_text_criterion_type is Unset:  # type: ignore[comparison-overlap]
+        if free_text_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'free_text_criterion_type', must not be 'Unset'"
             )

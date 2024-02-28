@@ -111,7 +111,7 @@ class GrantaServerApiDataExportExportFailuresAttributeReference(ModelBase):
         if database_key is None:
             raise ValueError("Invalid value for 'database_key', must not be 'None'")
         # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap]
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 

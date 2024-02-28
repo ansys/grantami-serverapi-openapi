@@ -109,7 +109,7 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         if identifier is None:
             raise ValueError("Invalid value for 'identifier', must not be 'None'")
         # Field is required
-        if identifier is Unset:  # type: ignore[comparison-overlap]
+        if identifier is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'identifier', must not be 'Unset'")
         self._identifier = identifier
 
@@ -137,7 +137,7 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         if display_name is None:
             raise ValueError("Invalid value for 'display_name', must not be 'None'")
         # Field is required
-        if display_name is Unset:  # type: ignore[comparison-overlap]
+        if display_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_name', must not be 'Unset'")
         self._display_name = display_name
 
@@ -165,7 +165,7 @@ class GrantaServerApiListsDtoUserOrGroup(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 

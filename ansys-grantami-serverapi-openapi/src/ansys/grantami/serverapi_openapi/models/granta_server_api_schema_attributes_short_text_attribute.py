@@ -161,7 +161,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -191,7 +191,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         if is_unique is None:
             raise ValueError("Invalid value for 'is_unique', must not be 'None'")
         # Field is required
-        if is_unique is Unset:  # type: ignore[comparison-overlap]
+        if is_unique is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_unique', must not be 'Unset'")
         self._is_unique = is_unique
 

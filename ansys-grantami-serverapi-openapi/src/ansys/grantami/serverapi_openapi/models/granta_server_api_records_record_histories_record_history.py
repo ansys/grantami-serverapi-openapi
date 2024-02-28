@@ -137,7 +137,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if is_folder is None:
             raise ValueError("Invalid value for 'is_folder', must not be 'None'")
         # Field is required
-        if is_folder is Unset:  # type: ignore[comparison-overlap]
+        if is_folder is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_folder', must not be 'Unset'")
         self._is_folder = is_folder
 
@@ -165,7 +165,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if table is None:
             raise ValueError("Invalid value for 'table', must not be 'None'")
         # Field is required
-        if table is Unset:  # type: ignore[comparison-overlap]
+        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'table', must not be 'Unset'")
         self._table = table
 
@@ -228,7 +228,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if record_versions is None:
             raise ValueError("Invalid value for 'record_versions', must not be 'None'")
         # Field is required
-        if record_versions is Unset:  # type: ignore[comparison-overlap]
+        if record_versions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_versions', must not be 'Unset'")
         self._record_versions = record_versions
 
@@ -258,7 +258,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if subsets is None:
             raise ValueError("Invalid value for 'subsets', must not be 'None'")
         # Field is required
-        if subsets is Unset:  # type: ignore[comparison-overlap]
+        if subsets is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'subsets', must not be 'Unset'")
         self._subsets = subsets
 
@@ -286,7 +286,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

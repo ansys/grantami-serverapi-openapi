@@ -143,7 +143,7 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
         # Field is required
-        if reason is Unset:  # type: ignore[comparison-overlap]
+        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 

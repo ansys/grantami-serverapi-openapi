@@ -136,7 +136,7 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(
                 "Invalid value for 'attribute_aggregation_criterion_type', must not be 'None'"
             )
         # Field is required
-        if attribute_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap]
+        if attribute_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
             )

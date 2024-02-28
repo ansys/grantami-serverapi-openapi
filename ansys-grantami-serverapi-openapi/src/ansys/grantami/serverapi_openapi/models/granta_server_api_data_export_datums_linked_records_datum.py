@@ -417,7 +417,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         if link_datum_type is None:
             raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
         # Field is required
-        if link_datum_type is Unset:  # type: ignore[comparison-overlap]
+        if link_datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_datum_type', must not be 'Unset'")
         self._link_datum_type = link_datum_type
 

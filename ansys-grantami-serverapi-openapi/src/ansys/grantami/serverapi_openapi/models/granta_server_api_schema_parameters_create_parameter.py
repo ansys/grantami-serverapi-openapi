@@ -150,7 +150,7 @@ class GrantaServerApiSchemaParametersCreateParameter(ModelBase):
                 "Invalid value for 'default_parameter_value_index', must not be 'None'"
             )
         # Field is required
-        if default_parameter_value_index is Unset:  # type: ignore[comparison-overlap]
+        if default_parameter_value_index is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'default_parameter_value_index', must not be 'Unset'"
             )
@@ -180,7 +180,7 @@ class GrantaServerApiSchemaParametersCreateParameter(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 

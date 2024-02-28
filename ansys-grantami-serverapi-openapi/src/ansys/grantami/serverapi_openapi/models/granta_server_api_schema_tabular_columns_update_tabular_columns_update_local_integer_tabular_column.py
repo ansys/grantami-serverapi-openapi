@@ -150,7 +150,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalIntegerT
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
         # Field is required
-        if column_type is Unset:  # type: ignore[comparison-overlap]
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 

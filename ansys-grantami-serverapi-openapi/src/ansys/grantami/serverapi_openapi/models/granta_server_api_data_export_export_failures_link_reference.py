@@ -188,7 +188,7 @@ class GrantaServerApiDataExportExportFailuresLinkReference(ModelBase):
         if link_type is None:
             raise ValueError("Invalid value for 'link_type', must not be 'None'")
         # Field is required
-        if link_type is Unset:  # type: ignore[comparison-overlap]
+        if link_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_type', must not be 'Unset'")
         self._link_type = link_type
 

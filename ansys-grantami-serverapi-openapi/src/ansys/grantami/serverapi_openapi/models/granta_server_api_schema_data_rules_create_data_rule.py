@@ -116,7 +116,7 @@ class GrantaServerApiSchemaDataRulesCreateDataRule(ModelBase):
         if description is None:
             raise ValueError("Invalid value for 'description', must not be 'None'")
         # Field is required
-        if description is Unset:  # type: ignore[comparison-overlap]
+        if description is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'description', must not be 'Unset'")
         self._description = description
 
@@ -146,7 +146,7 @@ class GrantaServerApiSchemaDataRulesCreateDataRule(ModelBase):
                 "Invalid value for 'regular_expression', must not be 'None'"
             )
         # Field is required
-        if regular_expression is Unset:  # type: ignore[comparison-overlap]
+        if regular_expression is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'regular_expression', must not be 'Unset'"
             )
@@ -176,7 +176,7 @@ class GrantaServerApiSchemaDataRulesCreateDataRule(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 

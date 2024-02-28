@@ -129,7 +129,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
         if record_type is None:
             raise ValueError("Invalid value for 'record_type', must not be 'None'")
         # Field is required
-        if record_type is Unset:  # type: ignore[comparison-overlap]
+        if record_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_type', must not be 'Unset'")
         self._record_type = record_type
 
@@ -157,7 +157,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
         if full_name is None:
             raise ValueError("Invalid value for 'full_name', must not be 'None'")
         # Field is required
-        if full_name is Unset:  # type: ignore[comparison-overlap]
+        if full_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'full_name', must not be 'Unset'")
         self._full_name = full_name
 

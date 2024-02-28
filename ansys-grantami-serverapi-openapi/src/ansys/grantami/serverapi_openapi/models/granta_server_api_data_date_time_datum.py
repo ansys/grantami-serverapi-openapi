@@ -111,7 +111,7 @@ class GrantaServerApiDataDateTimeDatum(GrantaServerApiDataApplicableDatum):
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
         # Field is required
-        if datum_type is Unset:  # type: ignore[comparison-overlap]
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
@@ -139,7 +139,7 @@ class GrantaServerApiDataDateTimeDatum(GrantaServerApiDataApplicableDatum):
         if date_time is None:
             raise ValueError("Invalid value for 'date_time', must not be 'None'")
         # Field is required
-        if date_time is Unset:  # type: ignore[comparison-overlap]
+        if date_time is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'date_time', must not be 'Unset'")
         self._date_time = date_time
 

@@ -192,7 +192,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if record_history is None:
             raise ValueError("Invalid value for 'record_history', must not be 'None'")
         # Field is required
-        if record_history is Unset:  # type: ignore[comparison-overlap]
+        if record_history is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_history', must not be 'Unset'")
         self._record_history = record_history
 
@@ -220,7 +220,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if table is None:
             raise ValueError("Invalid value for 'table', must not be 'None'")
         # Field is required
-        if table is Unset:  # type: ignore[comparison-overlap]
+        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'table', must not be 'Unset'")
         self._table = table
 
@@ -248,7 +248,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if database_key is None:
             raise ValueError("Invalid value for 'database_key', must not be 'None'")
         # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap]
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
@@ -276,7 +276,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if created_by_user is None:
             raise ValueError("Invalid value for 'created_by_user', must not be 'None'")
         # Field is required
-        if created_by_user is Unset:  # type: ignore[comparison-overlap]
+        if created_by_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'created_by_user', must not be 'Unset'")
         self._created_by_user = created_by_user
 
@@ -304,7 +304,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if created_date is None:
             raise ValueError("Invalid value for 'created_date', must not be 'None'")
         # Field is required
-        if created_date is Unset:  # type: ignore[comparison-overlap]
+        if created_date is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'created_date', must not be 'Unset'")
         self._created_date = created_date
 
@@ -334,7 +334,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
                 "Invalid value for 'last_modified_by_user', must not be 'None'"
             )
         # Field is required
-        if last_modified_by_user is Unset:  # type: ignore[comparison-overlap]
+        if last_modified_by_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'last_modified_by_user', must not be 'Unset'"
             )
@@ -366,7 +366,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
                 "Invalid value for 'last_modified_date', must not be 'None'"
             )
         # Field is required
-        if last_modified_date is Unset:  # type: ignore[comparison-overlap]
+        if last_modified_date is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'last_modified_date', must not be 'Unset'"
             )
@@ -396,7 +396,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if record_type is None:
             raise ValueError("Invalid value for 'record_type', must not be 'None'")
         # Field is required
-        if record_type is Unset:  # type: ignore[comparison-overlap]
+        if record_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_type', must not be 'Unset'")
         self._record_type = record_type
 
@@ -446,7 +446,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if short_name is None:
             raise ValueError("Invalid value for 'short_name', must not be 'None'")
         # Field is required
-        if short_name is Unset:  # type: ignore[comparison-overlap]
+        if short_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'short_name', must not be 'Unset'")
         self._short_name = short_name
 
@@ -474,7 +474,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if record_color is None:
             raise ValueError("Invalid value for 'record_color', must not be 'None'")
         # Field is required
-        if record_color is Unset:  # type: ignore[comparison-overlap]
+        if record_color is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_color', must not be 'Unset'")
         self._record_color = record_color
 
@@ -502,7 +502,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if version_number is None:
             raise ValueError("Invalid value for 'version_number', must not be 'None'")
         # Field is required
-        if version_number is Unset:  # type: ignore[comparison-overlap]
+        if version_number is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_number', must not be 'Unset'")
         self._version_number = version_number
 
@@ -530,7 +530,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if version_state is None:
             raise ValueError("Invalid value for 'version_state', must not be 'None'")
         # Field is required
-        if version_state is Unset:  # type: ignore[comparison-overlap]
+        if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
 
@@ -558,7 +558,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -586,7 +586,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

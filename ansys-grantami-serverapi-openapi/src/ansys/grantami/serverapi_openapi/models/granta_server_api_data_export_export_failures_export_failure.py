@@ -113,7 +113,7 @@ class GrantaServerApiDataExportExportFailuresExportFailure(ModelBase):
         if failure_details is None:
             raise ValueError("Invalid value for 'failure_details', must not be 'None'")
         # Field is required
-        if failure_details is Unset:  # type: ignore[comparison-overlap]
+        if failure_details is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'failure_details', must not be 'Unset'")
         self._failure_details = failure_details
 
@@ -141,7 +141,7 @@ class GrantaServerApiDataExportExportFailuresExportFailure(ModelBase):
         if failure_reason is None:
             raise ValueError("Invalid value for 'failure_reason', must not be 'None'")
         # Field is required
-        if failure_reason is Unset:  # type: ignore[comparison-overlap]
+        if failure_reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'failure_reason', must not be 'Unset'")
         self._failure_reason = failure_reason
 

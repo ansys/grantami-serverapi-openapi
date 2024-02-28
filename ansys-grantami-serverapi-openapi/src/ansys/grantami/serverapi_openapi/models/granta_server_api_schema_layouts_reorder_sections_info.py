@@ -101,7 +101,7 @@ class GrantaServerApiSchemaLayoutsReorderSectionsInfo(ModelBase):
         if layout_sections is None:
             raise ValueError("Invalid value for 'layout_sections', must not be 'None'")
         # Field is required
-        if layout_sections is Unset:  # type: ignore[comparison-overlap]
+        if layout_sections is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'layout_sections', must not be 'Unset'")
         self._layout_sections = layout_sections
 

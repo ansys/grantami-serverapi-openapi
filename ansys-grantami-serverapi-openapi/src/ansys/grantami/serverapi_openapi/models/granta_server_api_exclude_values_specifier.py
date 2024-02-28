@@ -163,7 +163,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         if filter_on is None:
             raise ValueError("Invalid value for 'filter_on', must not be 'None'")
         # Field is required
-        if filter_on is Unset:  # type: ignore[comparison-overlap]
+        if filter_on is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'filter_on', must not be 'Unset'")
         self._filter_on = filter_on
 

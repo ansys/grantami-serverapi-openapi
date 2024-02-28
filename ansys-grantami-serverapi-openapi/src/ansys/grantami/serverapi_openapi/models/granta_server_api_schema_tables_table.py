@@ -201,7 +201,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if subsets is None:
             raise ValueError("Invalid value for 'subsets', must not be 'None'")
         # Field is required
-        if subsets is Unset:  # type: ignore[comparison-overlap]
+        if subsets is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'subsets', must not be 'Unset'")
         self._subsets = subsets
 
@@ -261,7 +261,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if layouts is None:
             raise ValueError("Invalid value for 'layouts', must not be 'None'")
         # Field is required
-        if layouts is Unset:  # type: ignore[comparison-overlap]
+        if layouts is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'layouts', must not be 'Unset'")
         self._layouts = layouts
 
@@ -289,7 +289,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if version_state is None:
             raise ValueError("Invalid value for 'version_state', must not be 'None'")
         # Field is required
-        if version_state is Unset:  # type: ignore[comparison-overlap]
+        if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
 
@@ -319,7 +319,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
                 "Invalid value for 'is_hidden_from_browse', must not be 'None'"
             )
         # Field is required
-        if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap]
+        if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_hidden_from_browse', must not be 'Unset'"
             )
@@ -351,7 +351,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
                 "Invalid value for 'is_hidden_from_search', must not be 'None'"
             )
         # Field is required
-        if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap]
+        if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_hidden_from_search', must not be 'Unset'"
             )
@@ -381,7 +381,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if is_versioned is None:
             raise ValueError("Invalid value for 'is_versioned', must not be 'None'")
         # Field is required
-        if is_versioned is Unset:  # type: ignore[comparison-overlap]
+        if is_versioned is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_versioned', must not be 'Unset'")
         self._is_versioned = is_versioned
 
@@ -409,7 +409,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if display_names is None:
             raise ValueError("Invalid value for 'display_names', must not be 'None'")
         # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap]
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
 
@@ -437,7 +437,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -465,7 +465,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

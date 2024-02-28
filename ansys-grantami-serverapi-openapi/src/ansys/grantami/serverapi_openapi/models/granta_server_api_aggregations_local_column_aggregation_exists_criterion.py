@@ -128,7 +128,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationExistsCriterion(
                 "Invalid value for 'local_column_aggregation_criterion_type', must not be 'None'"
             )
         # Field is required
-        if local_column_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap]
+        if local_column_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'local_column_aggregation_criterion_type', must not be 'Unset'"
             )

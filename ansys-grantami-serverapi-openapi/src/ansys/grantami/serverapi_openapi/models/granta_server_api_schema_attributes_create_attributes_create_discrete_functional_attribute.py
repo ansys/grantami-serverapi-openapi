@@ -146,7 +146,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -176,7 +176,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         if discrete_type is None:
             raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         # Field is required
-        if discrete_type is Unset:  # type: ignore[comparison-overlap]
+        if discrete_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'discrete_type', must not be 'Unset'")
         self._discrete_type = discrete_type
 
@@ -211,7 +211,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
         # Field is required
-        if attribute_parameters is Unset:  # type: ignore[comparison-overlap]
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'Unset'"
             )

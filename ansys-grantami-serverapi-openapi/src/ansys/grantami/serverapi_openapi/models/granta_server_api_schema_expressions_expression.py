@@ -145,7 +145,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
         # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap]
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
@@ -207,7 +207,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
                 "Invalid value for 'attribute_dependencies', must not be 'None'"
             )
         # Field is required
-        if attribute_dependencies is Unset:  # type: ignore[comparison-overlap]
+        if attribute_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_dependencies', must not be 'Unset'"
             )
@@ -244,7 +244,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
                 "Invalid value for 'constant_dependencies', must not be 'None'"
             )
         # Field is required
-        if constant_dependencies is Unset:  # type: ignore[comparison-overlap]
+        if constant_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'constant_dependencies', must not be 'Unset'"
             )
@@ -281,7 +281,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
                 "Invalid value for 'parameter_dependencies', must not be 'None'"
             )
         # Field is required
-        if parameter_dependencies is Unset:  # type: ignore[comparison-overlap]
+        if parameter_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'parameter_dependencies', must not be 'Unset'"
             )
@@ -311,7 +311,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -339,7 +339,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

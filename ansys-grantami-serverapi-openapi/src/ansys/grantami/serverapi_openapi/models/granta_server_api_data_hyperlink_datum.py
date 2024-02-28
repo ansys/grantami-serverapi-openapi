@@ -125,7 +125,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
         # Field is required
-        if datum_type is Unset:  # type: ignore[comparison-overlap]
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
@@ -153,7 +153,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         if address is None:
             raise ValueError("Invalid value for 'address', must not be 'None'")
         # Field is required
-        if address is Unset:  # type: ignore[comparison-overlap]
+        if address is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'address', must not be 'Unset'")
         self._address = address
 
@@ -181,7 +181,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         if description is None:
             raise ValueError("Invalid value for 'description', must not be 'None'")
         # Field is required
-        if description is Unset:  # type: ignore[comparison-overlap]
+        if description is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'description', must not be 'Unset'")
         self._description = description
 
@@ -209,7 +209,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         if target is None:
             raise ValueError("Invalid value for 'target', must not be 'None'")
         # Field is required
-        if target is Unset:  # type: ignore[comparison-overlap]
+        if target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'target', must not be 'Unset'")
         self._target = target
 

@@ -200,7 +200,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -262,7 +262,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
         # Field is required
-        if attribute_parameters is Unset:  # type: ignore[comparison-overlap]
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'Unset'"
             )
@@ -294,7 +294,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         if expressions is None:
             raise ValueError("Invalid value for 'expressions', must not be 'None'")
         # Field is required
-        if expressions is Unset:  # type: ignore[comparison-overlap]
+        if expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'expressions', must not be 'Unset'")
         self._expressions = expressions
 
@@ -324,7 +324,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
                 "Invalid value for 'allow_extrapolation', must not be 'None'"
             )
         # Field is required
-        if allow_extrapolation is Unset:  # type: ignore[comparison-overlap]
+        if allow_extrapolation is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'allow_extrapolation', must not be 'Unset'"
             )
@@ -354,7 +354,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         if is_range is None:
             raise ValueError("Invalid value for 'is_range', must not be 'None'")
         # Field is required
-        if is_range is Unset:  # type: ignore[comparison-overlap]
+        if is_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_range', must not be 'Unset'")
         self._is_range = is_range
 
@@ -386,7 +386,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
                 "Invalid value for 'allow_all_compatible_expressions', must not be 'None'"
             )
         # Field is required
-        if allow_all_compatible_expressions is Unset:  # type: ignore[comparison-overlap]
+        if allow_all_compatible_expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'allow_all_compatible_expressions', must not be 'Unset'"
             )
@@ -418,7 +418,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
                 "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
             )
         # Field is required
-        if allow_anonymous_expressions is Unset:  # type: ignore[comparison-overlap]
+        if allow_anonymous_expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'allow_anonymous_expressions', must not be 'Unset'"
             )
@@ -450,7 +450,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         if default_content is None:
             raise ValueError("Invalid value for 'default_content', must not be 'None'")
         # Field is required
-        if default_content is Unset:  # type: ignore[comparison-overlap]
+        if default_content is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'default_content', must not be 'Unset'")
         self._default_content = default_content
 

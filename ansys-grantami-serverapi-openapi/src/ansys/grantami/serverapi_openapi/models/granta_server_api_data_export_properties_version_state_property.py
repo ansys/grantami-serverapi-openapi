@@ -112,7 +112,7 @@ class GrantaServerApiDataExportPropertiesVersionStateProperty(
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
         # Field is required
-        if property_name is Unset:  # type: ignore[comparison-overlap]
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 

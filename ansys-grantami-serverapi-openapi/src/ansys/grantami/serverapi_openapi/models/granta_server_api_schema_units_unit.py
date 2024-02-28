@@ -116,7 +116,7 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -166,7 +166,7 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         if symbol is None:
             raise ValueError("Invalid value for 'symbol', must not be 'None'")
         # Field is required
-        if symbol is Unset:  # type: ignore[comparison-overlap]
+        if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
         self._symbol = symbol
 
@@ -194,7 +194,7 @@ class GrantaServerApiSchemaUnitsUnit(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

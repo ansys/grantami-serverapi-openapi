@@ -198,7 +198,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         if attribute_type is None:
             raise ValueError("Invalid value for 'attribute_type', must not be 'None'")
         # Field is required
-        if attribute_type is Unset:  # type: ignore[comparison-overlap]
+        if attribute_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_type', must not be 'Unset'")
         self._attribute_type = attribute_type
 

@@ -161,7 +161,7 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
         # Field is required
-        if column_type is Unset:  # type: ignore[comparison-overlap]
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
@@ -196,7 +196,7 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
                 "Invalid value for 'default_threshold_type', must not be 'None'"
             )
         # Field is required
-        if default_threshold_type is Unset:  # type: ignore[comparison-overlap]
+        if default_threshold_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'default_threshold_type', must not be 'Unset'"
             )
@@ -228,7 +228,7 @@ class GrantaServerApiSchemaTabularColumnsLocalDiscreteTabularColumn(
         if discrete_type is None:
             raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         # Field is required
-        if discrete_type is Unset:  # type: ignore[comparison-overlap]
+        if discrete_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'discrete_type', must not be 'Unset'")
         self._discrete_type = discrete_type
 

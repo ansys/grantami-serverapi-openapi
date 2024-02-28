@@ -117,7 +117,7 @@ class GrantaServerApiDataExportDatumsUnknownDatum(GrantaServerApiDataExportDatum
         if not_applicable is None:
             raise ValueError("Invalid value for 'not_applicable', must not be 'None'")
         # Field is required
-        if not_applicable is Unset:  # type: ignore[comparison-overlap]
+        if not_applicable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'not_applicable', must not be 'Unset'")
         self._not_applicable = not_applicable
 

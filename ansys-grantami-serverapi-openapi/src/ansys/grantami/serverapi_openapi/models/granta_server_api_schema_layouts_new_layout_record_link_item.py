@@ -113,7 +113,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -141,7 +141,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutRecordLinkItem(
         if link_group_guid is None:
             raise ValueError("Invalid value for 'link_group_guid', must not be 'None'")
         # Field is required
-        if link_group_guid is Unset:  # type: ignore[comparison-overlap]
+        if link_group_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_group_guid', must not be 'Unset'")
         self._link_group_guid = link_group_guid
 

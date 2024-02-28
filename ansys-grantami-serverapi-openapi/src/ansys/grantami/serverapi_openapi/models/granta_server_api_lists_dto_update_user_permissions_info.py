@@ -101,7 +101,7 @@ class GrantaServerApiListsDtoUpdateUserPermissionsInfo(ModelBase):
         if user_permissions is None:
             raise ValueError("Invalid value for 'user_permissions', must not be 'None'")
         # Field is required
-        if user_permissions is Unset:  # type: ignore[comparison-overlap]
+        if user_permissions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'user_permissions', must not be 'Unset'"
             )

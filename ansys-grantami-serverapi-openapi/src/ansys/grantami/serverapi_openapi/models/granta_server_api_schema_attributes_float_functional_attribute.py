@@ -168,7 +168,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -230,7 +230,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
         # Field is required
-        if attribute_parameters is Unset:  # type: ignore[comparison-overlap]
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'Unset'"
             )
@@ -260,7 +260,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         if is_range is None:
             raise ValueError("Invalid value for 'is_range', must not be 'None'")
         # Field is required
-        if is_range is Unset:  # type: ignore[comparison-overlap]
+        if is_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_range', must not be 'Unset'")
         self._is_range = is_range
 

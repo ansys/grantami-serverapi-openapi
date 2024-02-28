@@ -147,7 +147,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         if link_info is None:
             raise ValueError("Invalid value for 'link_info', must not be 'None'")
         # Field is required
-        if link_info is Unset:  # type: ignore[comparison-overlap]
+        if link_info is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_info', must not be 'Unset'")
         self._link_info = link_info
 
@@ -197,7 +197,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         if reverse_name is None:
             raise ValueError("Invalid value for 'reverse_name', must not be 'None'")
         # Field is required
-        if reverse_name is Unset:  # type: ignore[comparison-overlap]
+        if reverse_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'reverse_name', must not be 'Unset'")
         self._reverse_name = reverse_name
 
@@ -249,7 +249,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         if display_names is None:
             raise ValueError("Invalid value for 'display_names', must not be 'None'")
         # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap]
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
 
@@ -277,7 +277,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -305,7 +305,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

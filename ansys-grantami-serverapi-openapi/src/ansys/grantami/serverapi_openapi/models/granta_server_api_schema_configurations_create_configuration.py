@@ -139,7 +139,7 @@ class GrantaServerApiSchemaConfigurationsCreateConfiguration(ModelBase):
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
         # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap]
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
@@ -167,7 +167,7 @@ class GrantaServerApiSchemaConfigurationsCreateConfiguration(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 

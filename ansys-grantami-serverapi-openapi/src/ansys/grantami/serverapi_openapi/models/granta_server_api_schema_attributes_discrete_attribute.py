@@ -158,7 +158,7 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -188,7 +188,7 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         if discrete_type is None:
             raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
         # Field is required
-        if discrete_type is Unset:  # type: ignore[comparison-overlap]
+        if discrete_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'discrete_type', must not be 'Unset'")
         self._discrete_type = discrete_type
 
@@ -216,7 +216,7 @@ class GrantaServerApiSchemaAttributesDiscreteAttribute(
         if is_multi_valued is None:
             raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         # Field is required
-        if is_multi_valued is Unset:  # type: ignore[comparison-overlap]
+        if is_multi_valued is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_multi_valued', must not be 'Unset'")
         self._is_multi_valued = is_multi_valued
 

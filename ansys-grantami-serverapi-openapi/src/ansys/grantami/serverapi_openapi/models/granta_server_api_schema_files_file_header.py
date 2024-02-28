@@ -133,7 +133,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if folder_guid is None:
             raise ValueError("Invalid value for 'folder_guid', must not be 'None'")
         # Field is required
-        if folder_guid is Unset:  # type: ignore[comparison-overlap]
+        if folder_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'folder_guid', must not be 'Unset'")
         self._folder_guid = folder_guid
 
@@ -161,7 +161,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if description is None:
             raise ValueError("Invalid value for 'description', must not be 'None'")
         # Field is required
-        if description is Unset:  # type: ignore[comparison-overlap]
+        if description is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'description', must not be 'Unset'")
         self._description = description
 
@@ -189,7 +189,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if extension is None:
             raise ValueError("Invalid value for 'extension', must not be 'None'")
         # Field is required
-        if extension is Unset:  # type: ignore[comparison-overlap]
+        if extension is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'extension', must not be 'Unset'")
         self._extension = extension
 
@@ -217,7 +217,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if data_length is None:
             raise ValueError("Invalid value for 'data_length', must not be 'None'")
         # Field is required
-        if data_length is Unset:  # type: ignore[comparison-overlap]
+        if data_length is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'data_length', must not be 'Unset'")
         self._data_length = data_length
 
@@ -245,7 +245,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if path is None:
             raise ValueError("Invalid value for 'path', must not be 'None'")
         # Field is required
-        if path is Unset:  # type: ignore[comparison-overlap]
+        if path is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'path', must not be 'Unset'")
         self._path = path
 
@@ -273,7 +273,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -301,7 +301,7 @@ class GrantaServerApiSchemaFilesFileHeader(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

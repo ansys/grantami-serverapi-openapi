@@ -161,7 +161,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -191,7 +191,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         if link_type is None:
             raise ValueError("Invalid value for 'link_type', must not be 'None'")
         # Field is required
-        if link_type is Unset:  # type: ignore[comparison-overlap]
+        if link_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'link_type', must not be 'Unset'")
         self._link_type = link_type
 
@@ -265,7 +265,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         if target_table is None:
             raise ValueError("Invalid value for 'target_table', must not be 'None'")
         # Field is required
-        if target_table is Unset:  # type: ignore[comparison-overlap]
+        if target_table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'target_table', must not be 'Unset'")
         self._target_table = target_table
 
@@ -293,7 +293,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         if forwards is None:
             raise ValueError("Invalid value for 'forwards', must not be 'None'")
         # Field is required
-        if forwards is Unset:  # type: ignore[comparison-overlap]
+        if forwards is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'forwards', must not be 'Unset'")
         self._forwards = forwards
 

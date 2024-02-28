@@ -105,7 +105,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair(ModelBase):
                 "Invalid value for 'attribute_source_guid', must not be 'None'"
             )
         # Field is required
-        if attribute_source_guid is Unset:  # type: ignore[comparison-overlap]
+        if attribute_source_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_source_guid', must not be 'Unset'"
             )
@@ -137,7 +137,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair(ModelBase):
                 "Invalid value for 'attribute_target_guid', must not be 'None'"
             )
         # Field is required
-        if attribute_target_guid is Unset:  # type: ignore[comparison-overlap]
+        if attribute_target_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'attribute_target_guid', must not be 'Unset'"
             )

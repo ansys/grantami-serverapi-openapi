@@ -103,7 +103,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
         if symbol is None:
             raise ValueError("Invalid value for 'symbol', must not be 'None'")
         # Field is required
-        if symbol is Unset:  # type: ignore[comparison-overlap]
+        if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
         self._symbol = symbol
 
@@ -131,7 +131,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimUnit(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

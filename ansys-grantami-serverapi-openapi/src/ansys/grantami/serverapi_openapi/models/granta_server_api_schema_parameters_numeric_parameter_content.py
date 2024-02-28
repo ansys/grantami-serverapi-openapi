@@ -122,7 +122,7 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -174,7 +174,7 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
         if parameter_range is None:
             raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
         # Field is required
-        if parameter_range is Unset:  # type: ignore[comparison-overlap]
+        if parameter_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'parameter_range', must not be 'Unset'")
         self._parameter_range = parameter_range
 

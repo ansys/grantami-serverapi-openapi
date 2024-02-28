@@ -137,7 +137,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
                 "Invalid value for 'source_database_version_guid', must not be 'None'"
             )
         # Field is required
-        if source_database_version_guid is Unset:  # type: ignore[comparison-overlap]
+        if source_database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'source_database_version_guid', must not be 'Unset'"
             )
@@ -169,7 +169,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
                 "Invalid value for 'tabular_attribute_guid', must not be 'None'"
             )
         # Field is required
-        if tabular_attribute_guid is Unset:  # type: ignore[comparison-overlap]
+        if tabular_attribute_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'tabular_attribute_guid', must not be 'Unset'"
             )

@@ -148,7 +148,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
@@ -238,7 +238,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         if attribute_pairs is None:
             raise ValueError("Invalid value for 'attribute_pairs', must not be 'None'")
         # Field is required
-        if attribute_pairs is Unset:  # type: ignore[comparison-overlap]
+        if attribute_pairs is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_pairs', must not be 'Unset'")
         self._attribute_pairs = attribute_pairs
 

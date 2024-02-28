@@ -121,7 +121,7 @@ class GrantaServerApiDataExportExportFailuresRollupExportFailure(
         if failed_rollup is None:
             raise ValueError("Invalid value for 'failed_rollup', must not be 'None'")
         # Field is required
-        if failed_rollup is Unset:  # type: ignore[comparison-overlap]
+        if failed_rollup is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'failed_rollup', must not be 'Unset'")
         self._failed_rollup = failed_rollup
 
@@ -149,7 +149,7 @@ class GrantaServerApiDataExportExportFailuresRollupExportFailure(
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap]
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 

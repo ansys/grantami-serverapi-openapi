@@ -183,7 +183,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if type_code is None:
             raise ValueError("Invalid value for 'type_code', must not be 'None'")
         # Field is required
-        if type_code is Unset:  # type: ignore[comparison-overlap]
+        if type_code is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type_code', must not be 'Unset'")
         self._type_code = type_code
 
@@ -211,7 +211,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if chartable is None:
             raise ValueError("Invalid value for 'chartable', must not be 'None'")
         # Field is required
-        if chartable is Unset:  # type: ignore[comparison-overlap]
+        if chartable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'chartable', must not be 'Unset'")
         self._chartable = chartable
 
@@ -239,7 +239,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if expressionable is None:
             raise ValueError("Invalid value for 'expressionable', must not be 'None'")
         # Field is required
-        if expressionable is Unset:  # type: ignore[comparison-overlap]
+        if expressionable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'expressionable', must not be 'Unset'")
         self._expressionable = expressionable
 
@@ -267,7 +267,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if linkable is None:
             raise ValueError("Invalid value for 'linkable', must not be 'None'")
         # Field is required
-        if linkable is Unset:  # type: ignore[comparison-overlap]
+        if linkable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'linkable', must not be 'Unset'")
         self._linkable = linkable
 
@@ -295,7 +295,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if extended_name is None:
             raise ValueError("Invalid value for 'extended_name', must not be 'None'")
         # Field is required
-        if extended_name is Unset:  # type: ignore[comparison-overlap]
+        if extended_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'extended_name', must not be 'Unset'")
         self._extended_name = extended_name
 
@@ -325,7 +325,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
                 "Invalid value for 'is_meta_attribute', must not be 'None'"
             )
         # Field is required
-        if is_meta_attribute is Unset:  # type: ignore[comparison-overlap]
+        if is_meta_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'is_meta_attribute', must not be 'Unset'"
             )
@@ -386,7 +386,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         if standard_names is None:
             raise ValueError("Invalid value for 'standard_names', must not be 'None'")
         # Field is required
-        if standard_names is Unset:  # type: ignore[comparison-overlap]
+        if standard_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'standard_names', must not be 'Unset'")
         self._standard_names = standard_names
 
@@ -421,7 +421,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
                 "Invalid value for 'primary_data_link_groups', must not be 'None'"
             )
         # Field is required
-        if primary_data_link_groups is Unset:  # type: ignore[comparison-overlap]
+        if primary_data_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'primary_data_link_groups', must not be 'Unset'"
             )
@@ -458,7 +458,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
                 "Invalid value for 'foreign_data_link_groups', must not be 'None'"
             )
         # Field is required
-        if foreign_data_link_groups is Unset:  # type: ignore[comparison-overlap]
+        if foreign_data_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'foreign_data_link_groups', must not be 'Unset'"
             )

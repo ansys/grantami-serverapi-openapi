@@ -123,7 +123,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -153,7 +153,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
                 "Invalid value for 'association_chain_name', must not be 'None'"
             )
         # Field is required
-        if association_chain_name is Unset:  # type: ignore[comparison-overlap]
+        if association_chain_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'association_chain_name', must not be 'Unset'"
             )
@@ -190,7 +190,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
                 "Invalid value for 'association_chain_links', must not be 'None'"
             )
         # Field is required
-        if association_chain_links is Unset:  # type: ignore[comparison-overlap]
+        if association_chain_links is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'association_chain_links', must not be 'Unset'"
             )

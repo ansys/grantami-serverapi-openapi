@@ -159,7 +159,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
         # Field is required
-        if column_type is Unset:  # type: ignore[comparison-overlap]
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
@@ -189,7 +189,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         if linked_attribute is None:
             raise ValueError("Invalid value for 'linked_attribute', must not be 'None'")
         # Field is required
-        if linked_attribute is Unset:  # type: ignore[comparison-overlap]
+        if linked_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'linked_attribute', must not be 'Unset'"
             )
@@ -221,7 +221,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         if linked_column is None:
             raise ValueError("Invalid value for 'linked_column', must not be 'None'")
         # Field is required
-        if linked_column is Unset:  # type: ignore[comparison-overlap]
+        if linked_column is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'linked_column', must not be 'Unset'")
         self._linked_column = linked_column
 

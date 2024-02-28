@@ -145,7 +145,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
                 "Invalid value for 'mapped_attributes', must not be 'None'"
             )
         # Field is required
-        if mapped_attributes is Unset:  # type: ignore[comparison-overlap]
+        if mapped_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'mapped_attributes', must not be 'Unset'"
             )
@@ -182,7 +182,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
                 "Invalid value for 'mapped_parameters', must not be 'None'"
             )
         # Field is required
-        if mapped_parameters is Unset:  # type: ignore[comparison-overlap]
+        if mapped_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'mapped_parameters', must not be 'Unset'"
             )
@@ -219,7 +219,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
                 "Invalid value for 'mapped_record_link_groups', must not be 'None'"
             )
         # Field is required
-        if mapped_record_link_groups is Unset:  # type: ignore[comparison-overlap]
+        if mapped_record_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'mapped_record_link_groups', must not be 'Unset'"
             )
@@ -256,7 +256,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
                 "Invalid value for 'mapped_cross_database_record_link_groups', must not be 'None'"
             )
         # Field is required
-        if mapped_cross_database_record_link_groups is Unset:  # type: ignore[comparison-overlap]
+        if mapped_cross_database_record_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'mapped_cross_database_record_link_groups', must not be 'Unset'"
             )
@@ -288,7 +288,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap]
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
@@ -316,7 +316,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap]
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 

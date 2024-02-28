@@ -157,7 +157,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap]
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
@@ -185,7 +185,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         if attribute_type is None:
             raise ValueError("Invalid value for 'attribute_type', must not be 'None'")
         # Field is required
-        if attribute_type is Unset:  # type: ignore[comparison-overlap]
+        if attribute_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_type', must not be 'Unset'")
         self._attribute_type = attribute_type
 
@@ -213,7 +213,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         if required is None:
             raise ValueError("Invalid value for 'required', must not be 'None'")
         # Field is required
-        if required is Unset:  # type: ignore[comparison-overlap]
+        if required is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'required', must not be 'Unset'")
         self._required = required
 
@@ -241,7 +241,7 @@ class GrantaServerApiSchemaLayoutsLayoutAttributeItem(
         if read_only is None:
             raise ValueError("Invalid value for 'read_only', must not be 'None'")
         # Field is required
-        if read_only is Unset:  # type: ignore[comparison-overlap]
+        if read_only is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'read_only', must not be 'Unset'")
         self._read_only = read_only
 

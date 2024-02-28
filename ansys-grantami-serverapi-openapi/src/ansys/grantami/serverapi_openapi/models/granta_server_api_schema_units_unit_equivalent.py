@@ -113,7 +113,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         if unit is None:
             raise ValueError("Invalid value for 'unit', must not be 'None'")
         # Field is required
-        if unit is Unset:  # type: ignore[comparison-overlap]
+        if unit is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'unit', must not be 'Unset'")
         self._unit = unit
 
@@ -141,7 +141,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         if unit_system is None:
             raise ValueError("Invalid value for 'unit_system', must not be 'None'")
         # Field is required
-        if unit_system is Unset:  # type: ignore[comparison-overlap]
+        if unit_system is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'unit_system', must not be 'Unset'")
         self._unit_system = unit_system
 
@@ -171,7 +171,7 @@ class GrantaServerApiSchemaUnitsUnitEquivalent(ModelBase):
         if equivalent_unit is None:
             raise ValueError("Invalid value for 'equivalent_unit', must not be 'None'")
         # Field is required
-        if equivalent_unit is Unset:  # type: ignore[comparison-overlap]
+        if equivalent_unit is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'equivalent_unit', must not be 'Unset'")
         self._equivalent_unit = equivalent_unit
 

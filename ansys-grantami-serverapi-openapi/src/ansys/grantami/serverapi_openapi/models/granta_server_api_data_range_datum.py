@@ -166,7 +166,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
         # Field is required
-        if datum_type is Unset:  # type: ignore[comparison-overlap]
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
@@ -194,7 +194,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         if low_value is None:
             raise ValueError("Invalid value for 'low_value', must not be 'None'")
         # Field is required
-        if low_value is Unset:  # type: ignore[comparison-overlap]
+        if low_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'low_value', must not be 'Unset'")
         self._low_value = low_value
 
@@ -222,7 +222,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         if high_value is None:
             raise ValueError("Invalid value for 'high_value', must not be 'None'")
         # Field is required
-        if high_value is Unset:  # type: ignore[comparison-overlap]
+        if high_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'high_value', must not be 'Unset'")
         self._high_value = high_value
 
@@ -252,7 +252,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
                 "Invalid value for 'low_value_is_inclusive', must not be 'None'"
             )
         # Field is required
-        if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap]
+        if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'low_value_is_inclusive', must not be 'Unset'"
             )
@@ -284,7 +284,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
                 "Invalid value for 'high_value_is_inclusive', must not be 'None'"
             )
         # Field is required
-        if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap]
+        if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
                 "Invalid value for 'high_value_is_inclusive', must not be 'Unset'"
             )
@@ -378,7 +378,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         if estimated is None:
             raise ValueError("Invalid value for 'estimated', must not be 'None'")
         # Field is required
-        if estimated is Unset:  # type: ignore[comparison-overlap]
+        if estimated is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'estimated', must not be 'Unset'")
         self._estimated = estimated
 
