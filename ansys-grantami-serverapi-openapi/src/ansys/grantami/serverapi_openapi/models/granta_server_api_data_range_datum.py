@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
     GrantaServerApiDataApplicableDatum,
 )  # noqa: F401
@@ -92,50 +92,54 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         low_value: "float",
         low_value_is_inclusive: "bool",
         datum_type: "str" = "range",
-        high_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]" = None,
-        low_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]" = None,
+        high_value_significant_figures_info: "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]" = Unset,
+        low_value_significant_figures_info: "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataRangeDatum - a model defined in Swagger
 
         Parameters
         ----------
-            estimated: bool
-            high_value: float
-            high_value_is_inclusive: bool
-            low_value: float
-            low_value_is_inclusive: bool
-            datum_type: str
-            high_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo, optional
-            low_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo, optional
-            not_applicable: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+        estimated: bool
+        high_value: float
+        high_value_is_inclusive: bool
+        low_value: float
+        low_value_is_inclusive: bool
+        datum_type: str
+        high_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo, optional
+        low_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo, optional
+        not_applicable: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._low_value: float = None  # type: ignore[assignment]
-        self._high_value: float = None  # type: ignore[assignment]
-        self._low_value_is_inclusive: bool = None  # type: ignore[assignment]
-        self._high_value_is_inclusive: bool = None  # type: ignore[assignment]
-        self._low_value_significant_figures_info = None
-        self._high_value_significant_figures_info = None
-        self._estimated: bool = None  # type: ignore[assignment]
-        self._unit = None
+        self._datum_type: str
+        self._low_value: float
+        self._high_value: float
+        self._low_value_is_inclusive: bool
+        self._high_value_is_inclusive: bool
+        self._low_value_significant_figures_info: Union[
+            GrantaServerApiDataSignificantFiguresInfo, Unset_Type
+        ] = Unset
+        self._high_value_significant_figures_info: Union[
+            GrantaServerApiDataSignificantFiguresInfo, Unset_Type
+        ] = Unset
+        self._estimated: bool
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
 
         self.datum_type = datum_type
         self.low_value = low_value
         self.high_value = high_value
         self.low_value_is_inclusive = low_value_is_inclusive
         self.high_value_is_inclusive = high_value_is_inclusive
-        if low_value_significant_figures_info is not None:
+        if low_value_significant_figures_info is not Unset:
             self.low_value_significant_figures_info = low_value_significant_figures_info
-        if high_value_significant_figures_info is not None:
+        if high_value_significant_figures_info is not Unset:
             self.high_value_significant_figures_info = (
                 high_value_significant_figures_info
             )
         self.estimated = estimated
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
 
     @property
@@ -158,8 +162,12 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         datum_type: str
             The datum_type of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
@@ -182,8 +190,12 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         low_value: float
             The low_value of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if low_value is None:
             raise ValueError("Invalid value for 'low_value', must not be 'None'")
+        # Field is required
+        if low_value is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'low_value', must not be 'Unset'")
         self._low_value = low_value
 
     @property
@@ -206,8 +218,12 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         high_value: float
             The high_value of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if high_value is None:
             raise ValueError("Invalid value for 'high_value', must not be 'None'")
+        # Field is required
+        if high_value is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'high_value', must not be 'Unset'")
         self._high_value = high_value
 
     @property
@@ -230,9 +246,15 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         low_value_is_inclusive: bool
             The low_value_is_inclusive of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if low_value_is_inclusive is None:
             raise ValueError(
                 "Invalid value for 'low_value_is_inclusive', must not be 'None'"
+            )
+        # Field is required
+        if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'low_value_is_inclusive', must not be 'Unset'"
             )
         self._low_value_is_inclusive = low_value_is_inclusive
 
@@ -256,21 +278,27 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         high_value_is_inclusive: bool
             The high_value_is_inclusive of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if high_value_is_inclusive is None:
             raise ValueError(
                 "Invalid value for 'high_value_is_inclusive', must not be 'None'"
+            )
+        # Field is required
+        if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'high_value_is_inclusive', must not be 'Unset'"
             )
         self._high_value_is_inclusive = high_value_is_inclusive
 
     @property
     def low_value_significant_figures_info(
         self,
-    ) -> "Optional[GrantaServerApiDataSignificantFiguresInfo]":
+    ) -> "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]":
         """Gets the low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Returns
         -------
-        GrantaServerApiDataSignificantFiguresInfo
+        Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]
             The low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
         """
         return self._low_value_significant_figures_info
@@ -278,26 +306,31 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @low_value_significant_figures_info.setter
     def low_value_significant_figures_info(
         self,
-        low_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]",
+        low_value_significant_figures_info: "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]",
     ) -> None:
         """Sets the low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Parameters
         ----------
-        low_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo
+        low_value_significant_figures_info: Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]
             The low_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
+        if low_value_significant_figures_info is None:
+            raise ValueError(
+                "Invalid value for 'low_value_significant_figures_info', must not be 'None'"
+            )
         self._low_value_significant_figures_info = low_value_significant_figures_info
 
     @property
     def high_value_significant_figures_info(
         self,
-    ) -> "Optional[GrantaServerApiDataSignificantFiguresInfo]":
+    ) -> "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]":
         """Gets the high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Returns
         -------
-        GrantaServerApiDataSignificantFiguresInfo
+        Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]
             The high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
         """
         return self._high_value_significant_figures_info
@@ -305,15 +338,20 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
     @high_value_significant_figures_info.setter
     def high_value_significant_figures_info(
         self,
-        high_value_significant_figures_info: "Optional[GrantaServerApiDataSignificantFiguresInfo]",
+        high_value_significant_figures_info: "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]",
     ) -> None:
         """Sets the high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
 
         Parameters
         ----------
-        high_value_significant_figures_info: GrantaServerApiDataSignificantFiguresInfo
+        high_value_significant_figures_info: Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]
             The high_value_significant_figures_info of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
+        if high_value_significant_figures_info is None:
+            raise ValueError(
+                "Invalid value for 'high_value_significant_figures_info', must not be 'None'"
+            )
         self._high_value_significant_figures_info = high_value_significant_figures_info
 
     @property
@@ -336,34 +374,43 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         estimated: bool
             The estimated of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
         if estimated is None:
             raise ValueError("Invalid value for 'estimated', must not be 'None'")
+        # Field is required
+        if estimated is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'estimated', must not be 'Unset'")
         self._estimated = estimated
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
         """Gets the unit of this GrantaServerApiDataRangeDatum.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiDataRangeDatum.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiDataRangeDatum.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiDataRangeDatum.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -380,7 +427,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

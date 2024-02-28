@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -88,33 +88,33 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_full_table: "Optional[bool]" = None,
-        display_summary_row_inline: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        hide_unlinked_rows: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        display_full_table: "Union[bool, Unset_Type]" = Unset,
+        display_summary_row_inline: "Union[bool, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        hide_unlinked_rows: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
+        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_full_table: bool, optional
-            display_summary_row_inline: bool, optional
-            guid: str, optional
-            help_path: str, optional
-            hide_unlinked_rows: bool, optional
-            name: str, optional
-            tabular_columns: List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], optional
-            type: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        display_full_table: bool, optional
+        display_summary_row_inline: bool, optional
+        guid: str, optional
+        help_path: str, optional
+        hide_unlinked_rows: bool, optional
+        name: str, optional
+        tabular_columns: List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], optional
+        type: str
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -124,20 +124,26 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._display_full_table = None
-        self._display_summary_row_inline = None
-        self._hide_unlinked_rows = None
-        self._tabular_columns = None
+        self._type: str
+        self._display_full_table: Union[bool, Unset_Type] = Unset
+        self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
+        self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
+        self._tabular_columns: Union[
+            List[
+                GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn
+            ],
+            None,
+            Unset_Type,
+        ] = Unset
 
         self.type = type
-        if display_full_table is not None:
+        if display_full_table is not Unset:
             self.display_full_table = display_full_table
-        if display_summary_row_inline is not None:
+        if display_summary_row_inline is not Unset:
             self.display_summary_row_inline = display_summary_row_inline
-        if hide_unlinked_rows is not None:
+        if hide_unlinked_rows is not Unset:
             self.hide_unlinked_rows = hide_unlinked_rows
-        if tabular_columns is not None:
+        if tabular_columns is not Unset:
             self.tabular_columns = tabular_columns
 
     @property
@@ -160,87 +166,106 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def display_full_table(self) -> "Optional[bool]":
+    def display_full_table(self) -> "Union[bool, Unset_Type]":
         """Gets the display_full_table of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The display_full_table of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._display_full_table
 
     @display_full_table.setter
-    def display_full_table(self, display_full_table: "Optional[bool]") -> None:
+    def display_full_table(self, display_full_table: "Union[bool, Unset_Type]") -> None:
         """Sets the display_full_table of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        display_full_table: bool
+        display_full_table: Union[bool, Unset_Type]
             The display_full_table of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
+        # Field is not nullable
+        if display_full_table is None:
+            raise ValueError(
+                "Invalid value for 'display_full_table', must not be 'None'"
+            )
         self._display_full_table = display_full_table
 
     @property
-    def display_summary_row_inline(self) -> "Optional[bool]":
+    def display_summary_row_inline(self) -> "Union[bool, Unset_Type]":
         """Gets the display_summary_row_inline of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._display_summary_row_inline
 
     @display_summary_row_inline.setter
     def display_summary_row_inline(
-        self, display_summary_row_inline: "Optional[bool]"
+        self, display_summary_row_inline: "Union[bool, Unset_Type]"
     ) -> None:
         """Sets the display_summary_row_inline of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        display_summary_row_inline: bool
+        display_summary_row_inline: Union[bool, Unset_Type]
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
+        # Field is not nullable
+        if display_summary_row_inline is None:
+            raise ValueError(
+                "Invalid value for 'display_summary_row_inline', must not be 'None'"
+            )
         self._display_summary_row_inline = display_summary_row_inline
 
     @property
-    def hide_unlinked_rows(self) -> "Optional[bool]":
+    def hide_unlinked_rows(self) -> "Union[bool, Unset_Type]":
         """Gets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._hide_unlinked_rows
 
     @hide_unlinked_rows.setter
-    def hide_unlinked_rows(self, hide_unlinked_rows: "Optional[bool]") -> None:
+    def hide_unlinked_rows(self, hide_unlinked_rows: "Union[bool, Unset_Type]") -> None:
         """Sets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        hide_unlinked_rows: bool
+        hide_unlinked_rows: Union[bool, Unset_Type]
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
+        # Field is not nullable
+        if hide_unlinked_rows is None:
+            raise ValueError(
+                "Invalid value for 'hide_unlinked_rows', must not be 'None'"
+            )
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
     def tabular_columns(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]]":
+    ) -> "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]
+        Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._tabular_columns
@@ -248,19 +273,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     @tabular_columns.setter
     def tabular_columns(
         self,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]]",
+        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]",
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn]
+        tabular_columns: Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -277,7 +302,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

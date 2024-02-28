@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_update_record_link_group import (
     GrantaServerApiSchemaRecordLinkGroupsUpdateRecordLinkGroup,
 )  # noqa: F401
@@ -81,71 +81,79 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     def __init__(
         self,
         *,
-        attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]]" = None,
-        forbid_orphans: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]" = None,
-        reverse_name: "Optional[str]" = None,
+        attribute_pairs: "Union[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type]" = Unset,
+        forbid_orphans: "Union[bool, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
+        referential_integrity_model: "Union[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type]" = Unset,
+        reverse_name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "dynamic",
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], optional
-            forbid_orphans: bool, optional
-            guid: str, optional
-            name: str, optional
-            referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, optional
-            reverse_name: str, optional
-            type: str
+        attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], optional
+        forbid_orphans: bool, optional
+        guid: str, optional
+        name: str, optional
+        referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, optional
+        reverse_name: str, optional
+        type: str
         """
         super().__init__(guid=guid, name=name, reverse_name=reverse_name)
-        self._forbid_orphans = None
-        self._referential_integrity_model = None
-        self._attribute_pairs = None
-        self._type: str = None  # type: ignore[assignment]
+        self._forbid_orphans: Union[bool, Unset_Type] = Unset
+        self._referential_integrity_model: Union[
+            GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type
+        ] = Unset
+        self._attribute_pairs: Union[
+            List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair],
+            Unset_Type,
+        ] = Unset
+        self._type: str
 
-        if forbid_orphans is not None:
+        if forbid_orphans is not Unset:
             self.forbid_orphans = forbid_orphans
-        if referential_integrity_model is not None:
+        if referential_integrity_model is not Unset:
             self.referential_integrity_model = referential_integrity_model
-        if attribute_pairs is not None:
+        if attribute_pairs is not Unset:
             self.attribute_pairs = attribute_pairs
         self.type = type
 
     @property
-    def forbid_orphans(self) -> "Optional[bool]":
+    def forbid_orphans(self) -> "Union[bool, Unset_Type]":
         """Gets the forbid_orphans of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The forbid_orphans of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
         return self._forbid_orphans
 
     @forbid_orphans.setter
-    def forbid_orphans(self, forbid_orphans: "Optional[bool]") -> None:
+    def forbid_orphans(self, forbid_orphans: "Union[bool, Unset_Type]") -> None:
         """Sets the forbid_orphans of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        forbid_orphans: bool
+        forbid_orphans: Union[bool, Unset_Type]
             The forbid_orphans of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
+        # Field is not nullable
+        if forbid_orphans is None:
+            raise ValueError("Invalid value for 'forbid_orphans', must not be 'None'")
         self._forbid_orphans = forbid_orphans
 
     @property
     def referential_integrity_model(
         self,
-    ) -> "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]":
+    ) -> "Union[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type]":
         """Gets the referential_integrity_model of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Returns
         -------
-        GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel
+        Union[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type]
             The referential_integrity_model of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
         return self._referential_integrity_model
@@ -153,26 +161,31 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     @referential_integrity_model.setter
     def referential_integrity_model(
         self,
-        referential_integrity_model: "Optional[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel]",
+        referential_integrity_model: "Union[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type]",
     ) -> None:
         """Sets the referential_integrity_model of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel
+        referential_integrity_model: Union[GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type]
             The referential_integrity_model of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
+        # Field is not nullable
+        if referential_integrity_model is None:
+            raise ValueError(
+                "Invalid value for 'referential_integrity_model', must not be 'None'"
+            )
         self._referential_integrity_model = referential_integrity_model
 
     @property
     def attribute_pairs(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]]":
+    ) -> "Union[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type]":
         """Gets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Returns
         -------
-        list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        Union[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
         return self._attribute_pairs
@@ -180,15 +193,18 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
     @attribute_pairs.setter
     def attribute_pairs(
         self,
-        attribute_pairs: "Optional[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]]",
+        attribute_pairs: "Union[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type]",
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        attribute_pairs: Union[List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
+        # Field is not nullable
+        if attribute_pairs is None:
+            raise ValueError("Invalid value for 'attribute_pairs', must not be 'None'")
         self._attribute_pairs = attribute_pairs
 
     @property
@@ -211,12 +227,16 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
         type: str
             The type of this GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -233,7 +253,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

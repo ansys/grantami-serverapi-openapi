@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
     GrantaServerApiAggregationsAggregationDatum,
 )  # noqa: F401
@@ -71,43 +71,48 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         self,
         *,
         datum_type: "str" = "discreteText",
-        terms: "Optional[List[GrantaServerApiAggregationsTermWithCount]]" = None,
+        terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsDiscreteTextAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            datum_type: str
-            terms: List[GrantaServerApiAggregationsTermWithCount], optional
+        datum_type: str
+        terms: List[GrantaServerApiAggregationsTermWithCount], optional
         """
         super().__init__()
-        self._terms = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._terms: Union[
+            List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type
+        ] = Unset
+        self._datum_type: str
 
-        if terms is not None:
+        if terms is not Unset:
             self.terms = terms
         self.datum_type = datum_type
 
     @property
-    def terms(self) -> "Optional[List[GrantaServerApiAggregationsTermWithCount]]":
+    def terms(
+        self,
+    ) -> "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]":
         """Gets the terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
 
         Returns
         -------
-        list[GrantaServerApiAggregationsTermWithCount]
+        Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
         """
         return self._terms
 
     @terms.setter
     def terms(
-        self, terms: "Optional[List[GrantaServerApiAggregationsTermWithCount]]"
+        self,
+        terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]",
     ) -> None:
         """Sets the terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
 
         Parameters
         ----------
-        terms: List[GrantaServerApiAggregationsTermWithCount]
+        terms: Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
         """
         self._terms = terms
@@ -132,12 +137,16 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         datum_type: str
             The datum_type of this GrantaServerApiAggregationsDiscreteTextAggregation.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -154,7 +163,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

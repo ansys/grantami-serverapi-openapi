@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attribute_aggregation import (
     GrantaServerApiAggregationsAttributeAggregation,
 )  # noqa: F401
@@ -75,20 +75,20 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
         self,
         *,
         attribute_aggregation_type: "str" = "exists",
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
-        count: "Optional[int]" = None,
+        attribute_guid: "Union[str, None, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, None, Unset_Type]" = Unset,
+        count: "Union[int, Unset_Type]" = Unset,
         type: "str" = "attribute",
     ) -> None:
         """GrantaServerApiAggregationsAttributeExistsAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_aggregation_type: str
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            count: int, optional
-            type: str
+        attribute_aggregation_type: str
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        count: int, optional
+        type: str
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -96,7 +96,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
             count=count,
             type=type,
         )
-        self._attribute_aggregation_type: str = None  # type: ignore[assignment]
+        self._attribute_aggregation_type: str
 
         self.attribute_aggregation_type = attribute_aggregation_type
 
@@ -120,14 +120,20 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
         attribute_aggregation_type: str
             The attribute_aggregation_type of this GrantaServerApiAggregationsAttributeExistsAggregation.
         """
+        # Field is not nullable
         if attribute_aggregation_type is None:
             raise ValueError(
                 "Invalid value for 'attribute_aggregation_type', must not be 'None'"
             )
+        # Field is required
+        if attribute_aggregation_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'attribute_aggregation_type', must not be 'Unset'"
+            )
         self._attribute_aggregation_type = attribute_aggregation_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -144,7 +150,7 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

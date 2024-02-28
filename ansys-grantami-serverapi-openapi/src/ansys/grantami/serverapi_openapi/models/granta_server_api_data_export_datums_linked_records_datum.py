@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_link_datum import (
     GrantaServerApiDataExportDatumsLinkDatum,
 )  # noqa: F401
@@ -96,39 +96,39 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "link",
-        export_in_reversed_direction: "Optional[bool]" = None,
-        link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]" = None,
+        export_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
+        link_attribute_type: "Union[GrantaServerApiLinkAttributeType, Unset_Type]" = Unset,
         link_datum_type: "str" = "linkGroup",
-        link_group_identities_by_database_key: "Optional[Dict[str, int]]" = None,
-        link_group_name: "Optional[str]" = None,
-        link_group_names_by_database_key: "Optional[Dict[str, str]]" = None,
-        linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        link_group_identities_by_database_key: "Union[Dict[str, int], None, Unset_Type]" = Unset,
+        link_group_name: "Union[str, None, Unset_Type]" = Unset,
+        link_group_names_by_database_key: "Union[Dict[str, str], None, Unset_Type]" = Unset,
+        linked_records: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        rolled_up_data: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]" = None,
-        target_database_guid: "Optional[str]" = None,
+        rolled_up_data: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]" = Unset,
+        target_database_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsLinkedRecordsDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            export_in_reversed_direction: bool, optional
-            link_attribute_type: GrantaServerApiLinkAttributeType, optional
-            link_datum_type: str
-            link_group_identities_by_database_key: Dict[str, int], optional
-            link_group_name: str, optional
-            link_group_names_by_database_key: Dict[str, str], optional
-            linked_records: List[GrantaServerApiDataExportRecordWithData], optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
-            target_database_guid: str, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        export_in_reversed_direction: bool, optional
+        link_attribute_type: GrantaServerApiLinkAttributeType, optional
+        link_datum_type: str
+        link_group_identities_by_database_key: Dict[str, int], optional
+        link_group_name: str, optional
+        link_group_names_by_database_key: Dict[str, str], optional
+        linked_records: List[GrantaServerApiDataExportRecordWithData], optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
+        target_database_guid: str, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -137,124 +137,148 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._link_group_name = None
-        self._link_attribute_type = None
-        self._export_in_reversed_direction = None
-        self._target_database_guid = None
-        self._linked_records = None
-        self._link_group_names_by_database_key = None
-        self._link_group_identities_by_database_key = None
-        self._rolled_up_data = None
-        self._link_datum_type: str = None  # type: ignore[assignment]
+        self._link_group_name: Union[str, None, Unset_Type] = Unset
+        self._link_attribute_type: Union[
+            GrantaServerApiLinkAttributeType, Unset_Type
+        ] = Unset
+        self._export_in_reversed_direction: Union[bool, Unset_Type] = Unset
+        self._target_database_guid: Union[str, None, Unset_Type] = Unset
+        self._linked_records: Union[
+            List[GrantaServerApiDataExportRecordWithData], None, Unset_Type
+        ] = Unset
+        self._link_group_names_by_database_key: Union[
+            Dict[str, str], None, Unset_Type
+        ] = Unset
+        self._link_group_identities_by_database_key: Union[
+            Dict[str, int], None, Unset_Type
+        ] = Unset
+        self._rolled_up_data: Union[
+            List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type
+        ] = Unset
+        self._link_datum_type: str
 
-        if link_group_name is not None:
+        if link_group_name is not Unset:
             self.link_group_name = link_group_name
-        if link_attribute_type is not None:
+        if link_attribute_type is not Unset:
             self.link_attribute_type = link_attribute_type
-        if export_in_reversed_direction is not None:
+        if export_in_reversed_direction is not Unset:
             self.export_in_reversed_direction = export_in_reversed_direction
-        if target_database_guid is not None:
+        if target_database_guid is not Unset:
             self.target_database_guid = target_database_guid
-        if linked_records is not None:
+        if linked_records is not Unset:
             self.linked_records = linked_records
-        if link_group_names_by_database_key is not None:
+        if link_group_names_by_database_key is not Unset:
             self.link_group_names_by_database_key = link_group_names_by_database_key
-        if link_group_identities_by_database_key is not None:
+        if link_group_identities_by_database_key is not Unset:
             self.link_group_identities_by_database_key = (
                 link_group_identities_by_database_key
             )
-        if rolled_up_data is not None:
+        if rolled_up_data is not Unset:
             self.rolled_up_data = rolled_up_data
         self.link_datum_type = link_datum_type
 
     @property
-    def link_group_name(self) -> "Optional[str]":
+    def link_group_name(self) -> "Union[str, None, Unset_Type]":
         """Gets the link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._link_group_name
 
     @link_group_name.setter
-    def link_group_name(self, link_group_name: "Optional[str]") -> None:
+    def link_group_name(self, link_group_name: "Union[str, None, Unset_Type]") -> None:
         """Sets the link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_group_name: str
+        link_group_name: Union[str, None, Unset_Type]
             The link_group_name of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._link_group_name = link_group_name
 
     @property
-    def link_attribute_type(self) -> "Optional[GrantaServerApiLinkAttributeType]":
+    def link_attribute_type(
+        self,
+    ) -> "Union[GrantaServerApiLinkAttributeType, Unset_Type]":
         """Gets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        GrantaServerApiLinkAttributeType
+        Union[GrantaServerApiLinkAttributeType, Unset_Type]
             The link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._link_attribute_type
 
     @link_attribute_type.setter
     def link_attribute_type(
-        self, link_attribute_type: "Optional[GrantaServerApiLinkAttributeType]"
+        self, link_attribute_type: "Union[GrantaServerApiLinkAttributeType, Unset_Type]"
     ) -> None:
         """Sets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_attribute_type: GrantaServerApiLinkAttributeType
+        link_attribute_type: Union[GrantaServerApiLinkAttributeType, Unset_Type]
             The link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
+        # Field is not nullable
+        if link_attribute_type is None:
+            raise ValueError(
+                "Invalid value for 'link_attribute_type', must not be 'None'"
+            )
         self._link_attribute_type = link_attribute_type
 
     @property
-    def export_in_reversed_direction(self) -> "Optional[bool]":
+    def export_in_reversed_direction(self) -> "Union[bool, Unset_Type]":
         """Gets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._export_in_reversed_direction
 
     @export_in_reversed_direction.setter
     def export_in_reversed_direction(
-        self, export_in_reversed_direction: "Optional[bool]"
+        self, export_in_reversed_direction: "Union[bool, Unset_Type]"
     ) -> None:
         """Sets the export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        export_in_reversed_direction: bool
+        export_in_reversed_direction: Union[bool, Unset_Type]
             The export_in_reversed_direction of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
+        # Field is not nullable
+        if export_in_reversed_direction is None:
+            raise ValueError(
+                "Invalid value for 'export_in_reversed_direction', must not be 'None'"
+            )
         self._export_in_reversed_direction = export_in_reversed_direction
 
     @property
-    def target_database_guid(self) -> "Optional[str]":
+    def target_database_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._target_database_guid
 
     @target_database_guid.setter
-    def target_database_guid(self, target_database_guid: "Optional[str]") -> None:
+    def target_database_guid(
+        self, target_database_guid: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        target_database_guid: str
+        target_database_guid: Union[str, None, Unset_Type]
             The target_database_guid of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._target_database_guid = target_database_guid
@@ -262,73 +286,80 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     @property
     def linked_records(
         self,
-    ) -> "Optional[List[GrantaServerApiDataExportRecordWithData]]":
+    ) -> "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]":
         """Gets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        list[GrantaServerApiDataExportRecordWithData]
+        Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
             The linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._linked_records
 
     @linked_records.setter
     def linked_records(
-        self, linked_records: "Optional[List[GrantaServerApiDataExportRecordWithData]]"
+        self,
+        linked_records: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]",
     ) -> None:
         """Sets the linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        linked_records: List[GrantaServerApiDataExportRecordWithData]
+        linked_records: Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
             The linked_records of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._linked_records = linked_records
 
     @property
-    def link_group_names_by_database_key(self) -> "Optional[Dict[str, str]]":
+    def link_group_names_by_database_key(
+        self,
+    ) -> "Union[Dict[str, str], None, Unset_Type]":
         """Gets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        dict(str, str)
+        Union[Dict[str, str], None, Unset_Type]
             The link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._link_group_names_by_database_key
 
     @link_group_names_by_database_key.setter
     def link_group_names_by_database_key(
-        self, link_group_names_by_database_key: "Optional[Dict[str, str]]"
+        self,
+        link_group_names_by_database_key: "Union[Dict[str, str], None, Unset_Type]",
     ) -> None:
         """Sets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_group_names_by_database_key: Dict[str, str]
+        link_group_names_by_database_key: Union[Dict[str, str], None, Unset_Type]
             The link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._link_group_names_by_database_key = link_group_names_by_database_key
 
     @property
-    def link_group_identities_by_database_key(self) -> "Optional[Dict[str, int]]":
+    def link_group_identities_by_database_key(
+        self,
+    ) -> "Union[Dict[str, int], None, Unset_Type]":
         """Gets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        dict(str, int)
+        Union[Dict[str, int], None, Unset_Type]
             The link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._link_group_identities_by_database_key
 
     @link_group_identities_by_database_key.setter
     def link_group_identities_by_database_key(
-        self, link_group_identities_by_database_key: "Optional[Dict[str, int]]"
+        self,
+        link_group_identities_by_database_key: "Union[Dict[str, int], None, Unset_Type]",
     ) -> None:
         """Sets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        link_group_identities_by_database_key: Dict[str, int]
+        link_group_identities_by_database_key: Union[Dict[str, int], None, Unset_Type]
             The link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._link_group_identities_by_database_key = (
@@ -338,12 +369,12 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     @property
     def rolled_up_data(
         self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]":
+    ) -> "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]":
         """Gets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
         -------
-        list[GrantaServerApiDataExportDatumsRollupRollupDatum]
+        Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         return self._rolled_up_data
@@ -351,13 +382,13 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
     @rolled_up_data.setter
     def rolled_up_data(
         self,
-        rolled_up_data: "Optional[List[GrantaServerApiDataExportDatumsRollupRollupDatum]]",
+        rolled_up_data: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]",
     ) -> None:
         """Sets the rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Parameters
         ----------
-        rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum]
+        rolled_up_data: Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The rolled_up_data of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
         self._rolled_up_data = rolled_up_data
@@ -382,12 +413,16 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
         link_datum_type: str
             The link_datum_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
         """
+        # Field is not nullable
         if link_datum_type is None:
             raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
+        # Field is required
+        if link_datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'link_datum_type', must not be 'Unset'")
         self._link_datum_type = link_datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -404,7 +439,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

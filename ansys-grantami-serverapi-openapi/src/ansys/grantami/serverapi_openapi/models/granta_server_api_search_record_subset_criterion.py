@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -68,69 +68,69 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
     def __init__(
         self,
         *,
-        subset_guid: "Optional[str]" = None,
-        subset_identity: "Optional[int]" = None,
+        subset_guid: "Union[str, None, Unset_Type]" = Unset,
+        subset_identity: "Union[int, None, Unset_Type]" = Unset,
         type: "str" = "subset",
     ) -> None:
         """GrantaServerApiSearchRecordSubsetCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            subset_guid: str, optional
-            subset_identity: int, optional
-            type: str
+        subset_guid: str, optional
+        subset_identity: int, optional
+        type: str
         """
         super().__init__()
-        self._subset_identity = None
-        self._subset_guid = None
-        self._type: str = None  # type: ignore[assignment]
+        self._subset_identity: Union[int, None, Unset_Type] = Unset
+        self._subset_guid: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if subset_identity is not None:
+        if subset_identity is not Unset:
             self.subset_identity = subset_identity
-        if subset_guid is not None:
+        if subset_guid is not Unset:
             self.subset_guid = subset_guid
         self.type = type
 
     @property
-    def subset_identity(self) -> "Optional[int]":
+    def subset_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
         """
         return self._subset_identity
 
     @subset_identity.setter
-    def subset_identity(self, subset_identity: "Optional[int]") -> None:
+    def subset_identity(self, subset_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Parameters
         ----------
-        subset_identity: int
+        subset_identity: Union[int, None, Unset_Type]
             The subset_identity of this GrantaServerApiSearchRecordSubsetCriterion.
         """
         self._subset_identity = subset_identity
 
     @property
-    def subset_guid(self) -> "Optional[str]":
+    def subset_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
         """
         return self._subset_guid
 
     @subset_guid.setter
-    def subset_guid(self, subset_guid: "Optional[str]") -> None:
+    def subset_guid(self, subset_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
 
         Parameters
         ----------
-        subset_guid: str
+        subset_guid: Union[str, None, Unset_Type]
             The subset_guid of this GrantaServerApiSearchRecordSubsetCriterion.
         """
         self._subset_guid = subset_guid
@@ -155,12 +155,16 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
         type: str
             The type of this GrantaServerApiSearchRecordSubsetCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -177,7 +181,7 @@ class GrantaServerApiSearchRecordSubsetCriterion(GrantaServerApiSearchCriterion)
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter_content import (
     GrantaServerApiSchemaParametersParameterContent,
 )  # noqa: F401
@@ -77,24 +77,24 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
         parameter: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         parameter_range: "GrantaServerApiSchemaParametersContinuousRange",
         type: "str" = "numeric",
-        value: "Optional[float]" = None,
+        value: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersNumericParameterContent - a model defined in Swagger
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-            parameter_range: GrantaServerApiSchemaParametersContinuousRange
-            type: str
-            value: float, optional
+        parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        parameter_range: GrantaServerApiSchemaParametersContinuousRange
+        type: str
+        value: float, optional
         """
         super().__init__(parameter=parameter)
-        self._type: str = None  # type: ignore[assignment]
-        self._value = None
-        self._parameter_range: GrantaServerApiSchemaParametersContinuousRange = None  # type: ignore[assignment]
+        self._type: str
+        self._value: Union[float, None, Unset_Type] = Unset
+        self._parameter_range: GrantaServerApiSchemaParametersContinuousRange
 
         self.type = type
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.parameter_range = parameter_range
 
@@ -118,28 +118,32 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
         type: str
             The type of this GrantaServerApiSchemaParametersNumericParameterContent.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def value(self) -> "Optional[float]":
+    def value(self) -> "Union[float, None, Unset_Type]":
         """Gets the value of this GrantaServerApiSchemaParametersNumericParameterContent.
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The value of this GrantaServerApiSchemaParametersNumericParameterContent.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[float]") -> None:
+    def value(self, value: "Union[float, None, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSchemaParametersNumericParameterContent.
 
         Parameters
         ----------
-        value: float
+        value: Union[float, None, Unset_Type]
             The value of this GrantaServerApiSchemaParametersNumericParameterContent.
         """
         self._value = value
@@ -166,12 +170,16 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
         parameter_range: GrantaServerApiSchemaParametersContinuousRange
             The parameter_range of this GrantaServerApiSchemaParametersNumericParameterContent.
         """
+        # Field is not nullable
         if parameter_range is None:
             raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
+        # Field is required
+        if parameter_range is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'parameter_range', must not be 'Unset'")
         self._parameter_range = parameter_range
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -188,7 +196,7 @@ class GrantaServerApiSchemaParametersNumericParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

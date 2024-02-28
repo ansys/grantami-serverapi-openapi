@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (
     GrantaServerApiValueSpecifier,
 )  # noqa: F401
@@ -68,69 +68,73 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
     def __init__(
         self,
         *,
-        excluded_guids: "Optional[List[str]]" = None,
-        excluded_identities: "Optional[List[int]]" = None,
+        excluded_guids: "Union[List[str], None, Unset_Type]" = Unset,
+        excluded_identities: "Union[List[int], None, Unset_Type]" = Unset,
         filter_on: "str" = "exclude",
     ) -> None:
         """GrantaServerApiExcludeValuesSpecifier - a model defined in Swagger
 
         Parameters
         ----------
-            excluded_guids: List[str], optional
-            excluded_identities: List[int], optional
-            filter_on: str
+        excluded_guids: List[str], optional
+        excluded_identities: List[int], optional
+        filter_on: str
         """
         super().__init__()
-        self._excluded_identities = None
-        self._excluded_guids = None
-        self._filter_on: str = None  # type: ignore[assignment]
+        self._excluded_identities: Union[List[int], None, Unset_Type] = Unset
+        self._excluded_guids: Union[List[str], None, Unset_Type] = Unset
+        self._filter_on: str
 
-        if excluded_identities is not None:
+        if excluded_identities is not Unset:
             self.excluded_identities = excluded_identities
-        if excluded_guids is not None:
+        if excluded_guids is not Unset:
             self.excluded_guids = excluded_guids
         self.filter_on = filter_on
 
     @property
-    def excluded_identities(self) -> "Optional[List[int]]":
+    def excluded_identities(self) -> "Union[List[int], None, Unset_Type]":
         """Gets the excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
 
         Returns
         -------
-        list[int]
+        Union[List[int], None, Unset_Type]
             The excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
         """
         return self._excluded_identities
 
     @excluded_identities.setter
-    def excluded_identities(self, excluded_identities: "Optional[List[int]]") -> None:
+    def excluded_identities(
+        self, excluded_identities: "Union[List[int], None, Unset_Type]"
+    ) -> None:
         """Sets the excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
 
         Parameters
         ----------
-        excluded_identities: List[int]
+        excluded_identities: Union[List[int], None, Unset_Type]
             The excluded_identities of this GrantaServerApiExcludeValuesSpecifier.
         """
         self._excluded_identities = excluded_identities
 
     @property
-    def excluded_guids(self) -> "Optional[List[str]]":
+    def excluded_guids(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
         """
         return self._excluded_guids
 
     @excluded_guids.setter
-    def excluded_guids(self, excluded_guids: "Optional[List[str]]") -> None:
+    def excluded_guids(
+        self, excluded_guids: "Union[List[str], None, Unset_Type]"
+    ) -> None:
         """Sets the excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
 
         Parameters
         ----------
-        excluded_guids: List[str]
+        excluded_guids: Union[List[str], None, Unset_Type]
             The excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
         """
         self._excluded_guids = excluded_guids
@@ -155,12 +159,16 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         filter_on: str
             The filter_on of this GrantaServerApiExcludeValuesSpecifier.
         """
+        # Field is not nullable
         if filter_on is None:
             raise ValueError("Invalid value for 'filter_on', must not be 'None'")
+        # Field is required
+        if filter_on is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'filter_on', must not be 'Unset'")
         self._filter_on = filter_on
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -177,7 +185,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

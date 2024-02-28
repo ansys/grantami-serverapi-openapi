@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sorting_value import (
     GrantaServerApiSearchSortingValue,
 )  # noqa: F401
@@ -67,43 +67,46 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
         self,
         *,
         type: "str" = "double",
-        value: "Optional[float]" = None,
+        value: "Union[float, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchDoubleSortingValue - a model defined in Swagger
 
         Parameters
         ----------
-            type: str
-            value: float, optional
+        type: str
+        value: float, optional
         """
         super().__init__()
-        self._value = None
-        self._type: str = None  # type: ignore[assignment]
+        self._value: Union[float, Unset_Type] = Unset
+        self._type: str
 
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "Optional[float]":
+    def value(self) -> "Union[float, Unset_Type]":
         """Gets the value of this GrantaServerApiSearchDoubleSortingValue.
 
         Returns
         -------
-        float
+        Union[float, Unset_Type]
             The value of this GrantaServerApiSearchDoubleSortingValue.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[float]") -> None:
+    def value(self, value: "Union[float, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSearchDoubleSortingValue.
 
         Parameters
         ----------
-        value: float
+        value: Union[float, Unset_Type]
             The value of this GrantaServerApiSearchDoubleSortingValue.
         """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
         self._value = value
 
     @property
@@ -126,12 +129,16 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
         type: str
             The type of this GrantaServerApiSearchDoubleSortingValue.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -148,7 +155,7 @@ class GrantaServerApiSearchDoubleSortingValue(GrantaServerApiSearchSortingValue)
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

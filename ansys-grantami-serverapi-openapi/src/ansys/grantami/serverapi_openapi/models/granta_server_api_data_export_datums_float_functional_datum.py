@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
     GrantaServerApiDataExportDatumsApplicableDatum,
 )  # noqa: F401
@@ -92,29 +92,29 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "floatFunctional",
-        is_estimated: "Optional[bool]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        is_estimated: "Union[bool, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
-        unit_symbol: "Optional[str]" = None,
-        x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        unit_symbol: "Union[str, None, Unset_Type]" = Unset,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsFloatFunctionalDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            is_estimated: bool, optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-            unit_symbol: str, optional
-            x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        is_estimated: bool, optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
+        unit_symbol: str, optional
+        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -122,20 +122,24 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._unit_symbol = None
-        self._x_axis_parameter = None
-        self._parameters = None
-        self._is_estimated = None
+        self._datum_type: str
+        self._unit_symbol: Union[str, None, Unset_Type] = Unset
+        self._x_axis_parameter: Union[
+            GrantaServerApiFunctionalDatumParameterInfo, Unset_Type
+        ] = Unset
+        self._parameters: Union[
+            List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
+        ] = Unset
+        self._is_estimated: Union[bool, Unset_Type] = Unset
 
         self.datum_type = datum_type
-        if unit_symbol is not None:
+        if unit_symbol is not Unset:
             self.unit_symbol = unit_symbol
-        if x_axis_parameter is not None:
+        if x_axis_parameter is not Unset:
             self.x_axis_parameter = x_axis_parameter
-        if parameters is not None:
+        if parameters is not Unset:
             self.parameters = parameters
-        if is_estimated is not None:
+        if is_estimated is not Unset:
             self.is_estimated = is_estimated
 
     @property
@@ -158,28 +162,32 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         datum_type: str
             The datum_type of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
-    def unit_symbol(self) -> "Optional[str]":
+    def unit_symbol(self) -> "Union[str, None, Unset_Type]":
         """Gets the unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         return self._unit_symbol
 
     @unit_symbol.setter
-    def unit_symbol(self, unit_symbol: "Optional[str]") -> None:
+    def unit_symbol(self, unit_symbol: "Union[str, None, Unset_Type]") -> None:
         """Sets the unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        unit_symbol: str
+        unit_symbol: Union[str, None, Unset_Type]
             The unit_symbol of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         self._unit_symbol = unit_symbol
@@ -187,79 +195,87 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     @property
     def x_axis_parameter(
         self,
-    ) -> "Optional[GrantaServerApiFunctionalDatumParameterInfo]":
+    ) -> "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]":
         """Gets the x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
         -------
-        GrantaServerApiFunctionalDatumParameterInfo
+        Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]
             The x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         return self._x_axis_parameter
 
     @x_axis_parameter.setter
     def x_axis_parameter(
-        self, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]"
+        self,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]",
     ) -> None:
         """Sets the x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo
+        x_axis_parameter: Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]
             The x_axis_parameter of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
+        # Field is not nullable
+        if x_axis_parameter is None:
+            raise ValueError("Invalid value for 'x_axis_parameter', must not be 'None'")
         self._x_axis_parameter = x_axis_parameter
 
     @property
     def parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]":
+    ) -> "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
         -------
-        list[GrantaServerApiFunctionalDatumParameterInfo]
+        Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]"
+        self,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]",
     ) -> None:
         """Sets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        parameters: List[GrantaServerApiFunctionalDatumParameterInfo]
+        parameters: Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         self._parameters = parameters
 
     @property
-    def is_estimated(self) -> "Optional[bool]":
+    def is_estimated(self) -> "Union[bool, Unset_Type]":
         """Gets the is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         return self._is_estimated
 
     @is_estimated.setter
-    def is_estimated(self, is_estimated: "Optional[bool]") -> None:
+    def is_estimated(self, is_estimated: "Union[bool, Unset_Type]") -> None:
         """Sets the is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        is_estimated: bool
+        is_estimated: Union[bool, Unset_Type]
             The is_estimated of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
         self._is_estimated = is_estimated
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -281,7 +297,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

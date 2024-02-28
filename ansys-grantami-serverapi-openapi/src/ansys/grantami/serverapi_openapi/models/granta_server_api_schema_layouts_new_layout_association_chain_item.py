@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
     GrantaServerApiSchemaLayoutsNewLayoutItem,
 )  # noqa: F401
@@ -76,22 +76,24 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         *,
         association_chain_links: "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
         association_chain_name: "str",
-        guid: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
         item_type: "str" = "associationChain",
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem - a model defined in Swagger
 
         Parameters
         ----------
-            association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
-            association_chain_name: str
-            guid: str, optional
-            item_type: str
+        association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        association_chain_name: str
+        guid: str, optional
+        item_type: str
         """
         super().__init__(guid=guid)
-        self._item_type: str = None  # type: ignore[assignment]
-        self._association_chain_name: str = None  # type: ignore[assignment]
-        self._association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink] = None  # type: ignore[assignment]
+        self._item_type: str
+        self._association_chain_name: str
+        self._association_chain_links: List[
+            GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink
+        ]
 
         self.item_type = item_type
         self.association_chain_name = association_chain_name
@@ -117,8 +119,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         item_type: str
             The item_type of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
+        # Field is not nullable
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
     @property
@@ -141,9 +147,15 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         association_chain_name: str
             The association_chain_name of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
+        # Field is not nullable
         if association_chain_name is None:
             raise ValueError(
                 "Invalid value for 'association_chain_name', must not be 'None'"
+            )
+        # Field is required
+        if association_chain_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'association_chain_name', must not be 'Unset'"
             )
         self._association_chain_name = association_chain_name
 
@@ -155,7 +167,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
         Returns
         -------
-        list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
         return self._association_chain_links
@@ -172,14 +184,20 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
+        # Field is not nullable
         if association_chain_links is None:
             raise ValueError(
                 "Invalid value for 'association_chain_links', must not be 'None'"
             )
+        # Field is required
+        if association_chain_links is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'association_chain_links', must not be 'Unset'"
+            )
         self._association_chain_links = association_chain_links
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -196,7 +214,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

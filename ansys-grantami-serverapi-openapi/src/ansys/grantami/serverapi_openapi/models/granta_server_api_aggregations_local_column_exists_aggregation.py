@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_local_column_aggregation import (
     GrantaServerApiAggregationsLocalColumnAggregation,
 )  # noqa: F401
@@ -72,26 +72,26 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
     def __init__(
         self,
         *,
-        count: "Optional[int]" = None,
+        count: "Union[int, Unset_Type]" = Unset,
         local_column_aggregation_type: "str" = "exists",
-        local_column_guid: "Optional[str]" = None,
-        local_column_identity: "Optional[int]" = None,
+        local_column_guid: "Union[str, None, Unset_Type]" = Unset,
+        local_column_identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsLocalColumnExistsAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            count: int, optional
-            local_column_aggregation_type: str
-            local_column_guid: str, optional
-            local_column_identity: int, optional
+        count: int, optional
+        local_column_aggregation_type: str
+        local_column_guid: str, optional
+        local_column_identity: int, optional
         """
         super().__init__(
             count=count,
             local_column_guid=local_column_guid,
             local_column_identity=local_column_identity,
         )
-        self._local_column_aggregation_type: str = None  # type: ignore[assignment]
+        self._local_column_aggregation_type: str
 
         self.local_column_aggregation_type = local_column_aggregation_type
 
@@ -117,14 +117,20 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
         local_column_aggregation_type: str
             The local_column_aggregation_type of this GrantaServerApiAggregationsLocalColumnExistsAggregation.
         """
+        # Field is not nullable
         if local_column_aggregation_type is None:
             raise ValueError(
                 "Invalid value for 'local_column_aggregation_type', must not be 'None'"
             )
+        # Field is required
+        if local_column_aggregation_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'local_column_aggregation_type', must not be 'Unset'"
+            )
         self._local_column_aggregation_type = local_column_aggregation_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -141,7 +147,7 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

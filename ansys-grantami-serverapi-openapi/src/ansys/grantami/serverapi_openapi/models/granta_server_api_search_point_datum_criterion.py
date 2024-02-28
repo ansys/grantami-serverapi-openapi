@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
     GrantaServerApiSearchDatumCriterion,
 )  # noqa: F401
@@ -68,73 +68,73 @@ class GrantaServerApiSearchPointDatumCriterion(GrantaServerApiSearchDatumCriteri
     def __init__(
         self,
         *,
-        gte: "Optional[float]" = None,
-        lte: "Optional[float]" = None,
+        gte: "Union[float, None, Unset_Type]" = Unset,
+        lte: "Union[float, None, Unset_Type]" = Unset,
         type: "str" = "point",
     ) -> None:
         """GrantaServerApiSearchPointDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            gte: float, optional
-            lte: float, optional
-            type: str
+        gte: float, optional
+        lte: float, optional
+        type: str
         """
         super().__init__()
-        self._gte = None
-        self._lte = None
-        self._type: str = None  # type: ignore[assignment]
+        self._gte: Union[float, None, Unset_Type] = Unset
+        self._lte: Union[float, None, Unset_Type] = Unset
+        self._type: str
 
-        if gte is not None:
+        if gte is not Unset:
             self.gte = gte
-        if lte is not None:
+        if lte is not Unset:
             self.lte = lte
         self.type = type
 
     @property
-    def gte(self) -> "Optional[float]":
+    def gte(self) -> "Union[float, None, Unset_Type]":
         """Gets the gte of this GrantaServerApiSearchPointDatumCriterion.
         Greater than or equal
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The gte of this GrantaServerApiSearchPointDatumCriterion.
         """
         return self._gte
 
     @gte.setter
-    def gte(self, gte: "Optional[float]") -> None:
+    def gte(self, gte: "Union[float, None, Unset_Type]") -> None:
         """Sets the gte of this GrantaServerApiSearchPointDatumCriterion.
         Greater than or equal
 
         Parameters
         ----------
-        gte: float
+        gte: Union[float, None, Unset_Type]
             The gte of this GrantaServerApiSearchPointDatumCriterion.
         """
         self._gte = gte
 
     @property
-    def lte(self) -> "Optional[float]":
+    def lte(self) -> "Union[float, None, Unset_Type]":
         """Gets the lte of this GrantaServerApiSearchPointDatumCriterion.
         Less than or equal
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The lte of this GrantaServerApiSearchPointDatumCriterion.
         """
         return self._lte
 
     @lte.setter
-    def lte(self, lte: "Optional[float]") -> None:
+    def lte(self, lte: "Union[float, None, Unset_Type]") -> None:
         """Sets the lte of this GrantaServerApiSearchPointDatumCriterion.
         Less than or equal
 
         Parameters
         ----------
-        lte: float
+        lte: Union[float, None, Unset_Type]
             The lte of this GrantaServerApiSearchPointDatumCriterion.
         """
         self._lte = lte
@@ -159,12 +159,16 @@ class GrantaServerApiSearchPointDatumCriterion(GrantaServerApiSearchDatumCriteri
         type: str
             The type of this GrantaServerApiSearchPointDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -181,7 +185,7 @@ class GrantaServerApiSearchPointDatumCriterion(GrantaServerApiSearchDatumCriteri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

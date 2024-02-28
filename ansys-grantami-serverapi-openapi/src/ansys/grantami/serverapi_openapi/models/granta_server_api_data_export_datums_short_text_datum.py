@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
     GrantaServerApiDataExportDatumsApplicableDatum,
 )  # noqa: F401
@@ -76,23 +76,23 @@ class GrantaServerApiDataExportDatumsShortTextDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "shortText",
-        datum_value: "Optional[str]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        datum_value: "Union[str, None, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsShortTextDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            datum_value: str, optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        datum_value: str, optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -100,11 +100,11 @@ class GrantaServerApiDataExportDatumsShortTextDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._datum_value = None
+        self._datum_type: str
+        self._datum_value: Union[str, None, Unset_Type] = Unset
 
         self.datum_type = datum_type
-        if datum_value is not None:
+        if datum_value is not Unset:
             self.datum_value = datum_value
 
     @property
@@ -127,34 +127,38 @@ class GrantaServerApiDataExportDatumsShortTextDatum(
         datum_type: str
             The datum_type of this GrantaServerApiDataExportDatumsShortTextDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "Optional[str]":
+    def datum_value(self) -> "Union[str, None, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsShortTextDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsShortTextDatum.
         """
         return self._datum_value
 
     @datum_value.setter
-    def datum_value(self, datum_value: "Optional[str]") -> None:
+    def datum_value(self, datum_value: "Union[str, None, Unset_Type]") -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsShortTextDatum.
 
         Parameters
         ----------
-        datum_value: str
+        datum_value: Union[str, None, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsShortTextDatum.
         """
         self._datum_value = datum_value
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -171,7 +175,7 @@ class GrantaServerApiDataExportDatumsShortTextDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

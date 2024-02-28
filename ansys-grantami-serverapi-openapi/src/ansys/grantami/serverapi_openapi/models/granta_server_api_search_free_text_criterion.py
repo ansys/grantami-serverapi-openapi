@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -79,41 +79,41 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         self,
         *,
         type: "str" = "text",
-        value: "Optional[str]" = None,
+        value: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchFreeTextCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            type: str
-            value: str, optional
+        type: str
+        value: str, optional
         """
         super().__init__()
-        self._value = None
-        self._type: str = None  # type: ignore[assignment]
+        self._value: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "Optional[str]":
+    def value(self) -> "Union[str, None, Unset_Type]":
         """Gets the value of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The value of this GrantaServerApiSearchFreeTextCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[str]") -> None:
+    def value(self, value: "Union[str, None, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
         ----------
-        value: str
+        value: Union[str, None, Unset_Type]
             The value of this GrantaServerApiSearchFreeTextCriterion.
         """
         self._value = value
@@ -138,12 +138,16 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         type: str
             The type of this GrantaServerApiSearchFreeTextCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -165,7 +169,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

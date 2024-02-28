@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attribute_aggregation_criterion import (
     GrantaServerApiAggregationsAttributeAggregationCriterion,
 )  # noqa: F401
@@ -79,31 +79,33 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
         self,
         *,
         attribute_aggregation_criterion_type: "str" = "exists",
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
-        inner_criterion: "Optional[GrantaServerApiAggregationsAggregationDatumExistsCriterion]" = None,
-        is_meta_attribute: "Optional[bool]" = None,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
+        inner_criterion: "Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]" = Unset,
+        is_meta_attribute: "Union[bool, Unset_Type]" = Unset,
         type: "str" = "attribute",
     ) -> None:
         """GrantaServerApiAggregationsAttributeAggregationExistsCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_aggregation_criterion_type: str
-            guid: str, optional
-            identity: int, optional
-            inner_criterion: GrantaServerApiAggregationsAggregationDatumExistsCriterion, optional
-            is_meta_attribute: bool, optional
-            type: str
+        attribute_aggregation_criterion_type: str
+        guid: str, optional
+        identity: int, optional
+        inner_criterion: GrantaServerApiAggregationsAggregationDatumExistsCriterion, optional
+        is_meta_attribute: bool, optional
+        type: str
         """
         super().__init__(
             guid=guid, identity=identity, is_meta_attribute=is_meta_attribute, type=type
         )
-        self._attribute_aggregation_criterion_type: str = None  # type: ignore[assignment]
-        self._inner_criterion = None
+        self._attribute_aggregation_criterion_type: str
+        self._inner_criterion: Union[
+            GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type
+        ] = Unset
 
         self.attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
-        if inner_criterion is not None:
+        if inner_criterion is not Unset:
             self.inner_criterion = inner_criterion
 
     @property
@@ -128,9 +130,15 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
         attribute_aggregation_criterion_type: str
             The attribute_aggregation_criterion_type of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
         """
+        # Field is not nullable
         if attribute_aggregation_criterion_type is None:
             raise ValueError(
                 "Invalid value for 'attribute_aggregation_criterion_type', must not be 'None'"
+            )
+        # Field is required
+        if attribute_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
             )
         self._attribute_aggregation_criterion_type = (
             attribute_aggregation_criterion_type
@@ -139,12 +147,14 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
     @property
     def inner_criterion(
         self,
-    ) -> "Optional[GrantaServerApiAggregationsAggregationDatumExistsCriterion]":
+    ) -> (
+        "Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]"
+    ):
         """Gets the inner_criterion of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
 
         Returns
         -------
-        GrantaServerApiAggregationsAggregationDatumExistsCriterion
+        Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]
             The inner_criterion of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
         """
         return self._inner_criterion
@@ -152,19 +162,22 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
     @inner_criterion.setter
     def inner_criterion(
         self,
-        inner_criterion: "Optional[GrantaServerApiAggregationsAggregationDatumExistsCriterion]",
+        inner_criterion: "Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]",
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
 
         Parameters
         ----------
-        inner_criterion: GrantaServerApiAggregationsAggregationDatumExistsCriterion
+        inner_criterion: Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]
             The inner_criterion of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
         """
+        # Field is not nullable
+        if inner_criterion is None:
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
         self._inner_criterion = inner_criterion
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -181,7 +194,7 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

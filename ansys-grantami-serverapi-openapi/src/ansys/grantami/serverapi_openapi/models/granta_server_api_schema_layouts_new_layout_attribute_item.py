@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
     GrantaServerApiSchemaLayoutsNewLayoutItem,
 )  # noqa: F401
@@ -81,42 +81,44 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         self,
         *,
         attribute_guid: "str",
-        guid: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
         item_type: "str" = "attribute",
-        meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]" = None,
-        read_only: "Optional[bool]" = None,
-        required: "Optional[bool]" = None,
-        tabular_column_guids: "Optional[List[str]]" = None,
+        meta_attributes: "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]" = Unset,
+        read_only: "Union[bool, Unset_Type]" = Unset,
+        required: "Union[bool, Unset_Type]" = Unset,
+        tabular_column_guids: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAttributeItem - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str
-            guid: str, optional
-            item_type: str
-            meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], optional
-            read_only: bool, optional
-            required: bool, optional
-            tabular_column_guids: List[str], optional
+        attribute_guid: str
+        guid: str, optional
+        item_type: str
+        meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], optional
+        read_only: bool, optional
+        required: bool, optional
+        tabular_column_guids: List[str], optional
         """
         super().__init__(guid=guid)
-        self._item_type: str = None  # type: ignore[assignment]
-        self._attribute_guid: str = None  # type: ignore[assignment]
-        self._required = None
-        self._read_only = None
-        self._meta_attributes = None
-        self._tabular_column_guids = None
+        self._item_type: str
+        self._attribute_guid: str
+        self._required: Union[bool, Unset_Type] = Unset
+        self._read_only: Union[bool, Unset_Type] = Unset
+        self._meta_attributes: Union[
+            List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type
+        ] = Unset
+        self._tabular_column_guids: Union[List[str], None, Unset_Type] = Unset
 
         self.item_type = item_type
         self.attribute_guid = attribute_guid
-        if required is not None:
+        if required is not Unset:
             self.required = required
-        if read_only is not None:
+        if read_only is not Unset:
             self.read_only = read_only
-        if meta_attributes is not None:
+        if meta_attributes is not Unset:
             self.meta_attributes = meta_attributes
-        if tabular_column_guids is not None:
+        if tabular_column_guids is not Unset:
             self.tabular_column_guids = tabular_column_guids
 
     @property
@@ -139,8 +141,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         item_type: str
             The item_type of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
+        # Field is not nullable
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
     @property
@@ -163,63 +169,73 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
         attribute_guid: str
             The attribute_guid of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
+        # Field is not nullable
         if attribute_guid is None:
             raise ValueError("Invalid value for 'attribute_guid', must not be 'None'")
+        # Field is required
+        if attribute_guid is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'attribute_guid', must not be 'Unset'")
         self._attribute_guid = attribute_guid
 
     @property
-    def required(self) -> "Optional[bool]":
+    def required(self) -> "Union[bool, Unset_Type]":
         """Gets the required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._required
 
     @required.setter
-    def required(self, required: "Optional[bool]") -> None:
+    def required(self, required: "Union[bool, Unset_Type]") -> None:
         """Sets the required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        required: bool
+        required: Union[bool, Unset_Type]
             The required of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
+        # Field is not nullable
+        if required is None:
+            raise ValueError("Invalid value for 'required', must not be 'None'")
         self._required = required
 
     @property
-    def read_only(self) -> "Optional[bool]":
+    def read_only(self) -> "Union[bool, Unset_Type]":
         """Gets the read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._read_only
 
     @read_only.setter
-    def read_only(self, read_only: "Optional[bool]") -> None:
+    def read_only(self, read_only: "Union[bool, Unset_Type]") -> None:
         """Sets the read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        read_only: bool
+        read_only: Union[bool, Unset_Type]
             The read_only of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
+        # Field is not nullable
+        if read_only is None:
+            raise ValueError("Invalid value for 'read_only', must not be 'None'")
         self._read_only = read_only
 
     @property
     def meta_attributes(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]":
+    ) -> "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]":
         """Gets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]
+        Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._meta_attributes
@@ -227,41 +243,43 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
     @meta_attributes.setter
     def meta_attributes(
         self,
-        meta_attributes: "Optional[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]]",
+        meta_attributes: "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]",
     ) -> None:
         """Sets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem]
+        meta_attributes: Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._meta_attributes = meta_attributes
 
     @property
-    def tabular_column_guids(self) -> "Optional[List[str]]":
+    def tabular_column_guids(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._tabular_column_guids
 
     @tabular_column_guids.setter
-    def tabular_column_guids(self, tabular_column_guids: "Optional[List[str]]") -> None:
+    def tabular_column_guids(
+        self, tabular_column_guids: "Union[List[str], None, Unset_Type]"
+    ) -> None:
         """Sets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        tabular_column_guids: List[str]
+        tabular_column_guids: Union[List[str], None, Unset_Type]
             The tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._tabular_column_guids = tabular_column_guids
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -278,7 +296,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_rollup_rollup_datum import (
     GrantaServerApiDataExportDatumsRollupRollupDatum,
 )  # noqa: F401
@@ -76,23 +76,23 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
-        database_key: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
+        attribute_guid: "Union[str, None, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, None, Unset_Type]" = Unset,
+        database_key: "Union[str, None, Unset_Type]" = Unset,
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
         type: "str" = "valueRollup",
-        value: "Optional[object]" = None,
+        value: "Union[object, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsRollupValueRollupDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            database_key: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            type: str
-            value: object, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        database_key: str, optional
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        type: str
+        value: object, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -100,31 +100,31 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
             database_key=database_key,
             roll_up_type=roll_up_type,
         )
-        self._value = None
-        self._type: str = None  # type: ignore[assignment]
+        self._value: Union[object, None, Unset_Type] = Unset
+        self._type: str
 
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "Optional[object]":
+    def value(self) -> "Union[object, None, Unset_Type]":
         """Gets the value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
 
         Returns
         -------
-        object
+        Union[object, None, Unset_Type]
             The value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[object]") -> None:
+    def value(self, value: "Union[object, None, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
 
         Parameters
         ----------
-        value: object
+        value: Union[object, None, Unset_Type]
             The value of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
         """
         self._value = value
@@ -149,12 +149,16 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
         type: str
             The type of this GrantaServerApiDataExportDatumsRollupValueRollupDatum.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -171,7 +175,7 @@ class GrantaServerApiDataExportDatumsRollupValueRollupDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

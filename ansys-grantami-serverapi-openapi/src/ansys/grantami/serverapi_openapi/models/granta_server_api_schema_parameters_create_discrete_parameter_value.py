@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter_value import (
     GrantaServerApiSchemaParametersCreateParameterValue,
 )  # noqa: F401
@@ -71,20 +71,20 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameterValue(
         self,
         *,
         name: "str",
-        guid: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaParametersCreateDiscreteParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-            name: str
-            guid: str, optional
-            type: str
+        name: str
+        guid: str, optional
+        type: str
         """
         super().__init__(guid=guid)
-        self._type: str = None  # type: ignore[assignment]
-        self._name: str = None  # type: ignore[assignment]
+        self._type: str
+        self._name: str
 
         self.type = type
         self.name = name
@@ -109,8 +109,12 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameterValue(
         type: str
             The type of this GrantaServerApiSchemaParametersCreateDiscreteParameterValue.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -133,12 +137,16 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameterValue(
         name: str
             The name of this GrantaServerApiSchemaParametersCreateDiscreteParameterValue.
         """
+        # Field is not nullable
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -155,7 +163,7 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameterValue(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

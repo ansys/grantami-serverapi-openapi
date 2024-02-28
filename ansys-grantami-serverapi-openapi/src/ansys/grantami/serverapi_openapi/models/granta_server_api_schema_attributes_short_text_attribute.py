@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
     GrantaServerApiSchemaAttributesAttribute,
 )  # noqa: F401
@@ -94,27 +94,27 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         is_unique: "bool",
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        help_path: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "shortText",
     ) -> None:
         """GrantaServerApiSchemaAttributesShortTextAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-            display_names: Dict[str, str]
-            guid: str
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
-            is_unique: bool
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            axis_name: str, optional
-            data_rule: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            help_path: str, optional
-            type: str
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        display_names: Dict[str, str]
+        guid: str
+        info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+        is_unique: bool
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        axis_name: str, optional
+        data_rule: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        help_path: str, optional
+        type: str
         """
         super().__init__(
             default_threshold_type=default_threshold_type,
@@ -126,13 +126,15 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_unique: bool = None  # type: ignore[assignment]
-        self._data_rule = None
+        self._type: str
+        self._is_unique: bool
+        self._data_rule: Union[
+            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
+        ] = Unset
 
         self.type = type
         self.is_unique = is_unique
-        if data_rule is not None:
+        if data_rule is not Unset:
             self.data_rule = data_rule
 
     @property
@@ -155,8 +157,12 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesShortTextAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -181,36 +187,46 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
         is_unique: bool
             The is_unique of this GrantaServerApiSchemaAttributesShortTextAttribute.
         """
+        # Field is not nullable
         if is_unique is None:
             raise ValueError("Invalid value for 'is_unique', must not be 'None'")
+        # Field is required
+        if is_unique is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'is_unique', must not be 'Unset'")
         self._is_unique = is_unique
 
     @property
-    def data_rule(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def data_rule(
+        self,
+    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]
             The data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
         """
         return self._data_rule
 
     @data_rule.setter
     def data_rule(
-        self, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self,
+        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 
         Parameters
         ----------
-        data_rule: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        data_rule: Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]
             The data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
         """
+        # Field is not nullable
+        if data_rule is None:
+            raise ValueError("Invalid value for 'data_rule', must not be 'None'")
         self._data_rule = data_rule
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -227,7 +243,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

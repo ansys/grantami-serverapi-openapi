@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
 )  # noqa: F401
@@ -88,30 +88,30 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         self,
         *,
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_multi_valued: "Optional[bool]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_multi_valued: "Union[bool, Unset_Type]" = Unset,
         type: "str" = "point",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_multi_valued: bool, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_multi_valued: bool, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             name=name,
@@ -120,20 +120,24 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_multi_valued = None
-        self._unit = None
-        self._axis_name = None
-        self._attribute_parameters = None
+        self._type: str
+        self._is_multi_valued: Union[bool, Unset_Type] = Unset
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._attribute_parameters: Union[
+            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+        ] = Unset
 
         self.type = type
-        if is_multi_valued is not None:
+        if is_multi_valued is not Unset:
             self.is_multi_valued = is_multi_valued
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if axis_name is not None:
+        if axis_name is not Unset:
             self.axis_name = axis_name
-        if attribute_parameters is not None:
+        if attribute_parameters is not Unset:
             self.attribute_parameters = attribute_parameters
 
     @property
@@ -156,74 +160,84 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def is_multi_valued(self) -> "Optional[bool]":
+    def is_multi_valued(self) -> "Union[bool, Unset_Type]":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
+    def is_multi_valued(self, is_multi_valued: "Union[bool, Unset_Type]") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        is_multi_valued: bool
+        is_multi_valued: Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
+        # Field is not nullable
+        if is_multi_valued is None:
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         self._is_multi_valued = is_multi_valued
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
-    def axis_name(self) -> "Optional[str]":
+    def axis_name(self) -> "Union[str, None, Unset_Type]":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Optional[str]") -> None:
+    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        axis_name: str
+        axis_name: Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         self._axis_name = axis_name
@@ -231,12 +245,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         return self._attribute_parameters
@@ -244,19 +258,19 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -273,7 +287,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

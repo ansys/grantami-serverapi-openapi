@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
 )  # noqa: F401
@@ -83,26 +83,26 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
         self,
         *,
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "range",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             name=name,
@@ -111,14 +111,16 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._axis_name = None
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._axis_name: Union[str, None, Unset_Type] = Unset
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if axis_name is not None:
+        if axis_name is not Unset:
             self.axis_name = axis_name
 
     @property
@@ -141,58 +143,65 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
-    def axis_name(self) -> "Optional[str]":
+    def axis_name(self) -> "Union[str, None, Unset_Type]":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Optional[str]") -> None:
+    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
 
         Parameters
         ----------
-        axis_name: str
+        axis_name: Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
         """
         self._axis_name = axis_name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -209,7 +218,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

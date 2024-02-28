@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -69,21 +69,21 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
         self,
         *,
         property_name: "str" = "tableIdentity",
-        table_identity: "Optional[int]" = None,
+        table_identity: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesTableIdentityProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            table_identity: int, optional
+        property_name: str
+        table_identity: int, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._table_identity = None
+        self._property_name: str
+        self._table_identity: Union[int, Unset_Type] = Unset
 
         self.property_name = property_name
-        if table_identity is not None:
+        if table_identity is not Unset:
             self.table_identity = table_identity
 
     @property
@@ -106,34 +106,41 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def table_identity(self) -> "Optional[int]":
+    def table_identity(self) -> "Union[int, Unset_Type]":
         """Gets the table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
 
         Returns
         -------
-        int
+        Union[int, Unset_Type]
             The table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
         """
         return self._table_identity
 
     @table_identity.setter
-    def table_identity(self, table_identity: "Optional[int]") -> None:
+    def table_identity(self, table_identity: "Union[int, Unset_Type]") -> None:
         """Sets the table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
 
         Parameters
         ----------
-        table_identity: int
+        table_identity: Union[int, Unset_Type]
             The table_identity of this GrantaServerApiDataExportPropertiesTableIdentityProperty.
         """
+        # Field is not nullable
+        if table_identity is None:
+            raise ValueError("Invalid value for 'table_identity', must not be 'None'")
         self._table_identity = table_identity
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +157,7 @@ class GrantaServerApiDataExportPropertiesTableIdentityProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

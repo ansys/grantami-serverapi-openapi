@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
     GrantaServerApiAggregationsAggregationDatumCriterion,
 )  # noqa: F401
@@ -68,46 +68,51 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
     def __init__(
         self,
         *,
-        maximum_number_of_buckets: "Optional[int]" = None,
+        maximum_number_of_buckets: "Union[int, Unset_Type]" = Unset,
         type: "str" = "integerHistogram",
     ) -> None:
         """GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            maximum_number_of_buckets: int, optional
-            type: str
+        maximum_number_of_buckets: int, optional
+        type: str
         """
         super().__init__()
-        self._maximum_number_of_buckets = None
-        self._type: str = None  # type: ignore[assignment]
+        self._maximum_number_of_buckets: Union[int, Unset_Type] = Unset
+        self._type: str
 
-        if maximum_number_of_buckets is not None:
+        if maximum_number_of_buckets is not Unset:
             self.maximum_number_of_buckets = maximum_number_of_buckets
         self.type = type
 
     @property
-    def maximum_number_of_buckets(self) -> "Optional[int]":
+    def maximum_number_of_buckets(self) -> "Union[int, Unset_Type]":
         """Gets the maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
 
         Returns
         -------
-        int
+        Union[int, Unset_Type]
             The maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
         """
         return self._maximum_number_of_buckets
 
     @maximum_number_of_buckets.setter
     def maximum_number_of_buckets(
-        self, maximum_number_of_buckets: "Optional[int]"
+        self, maximum_number_of_buckets: "Union[int, Unset_Type]"
     ) -> None:
         """Sets the maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
 
         Parameters
         ----------
-        maximum_number_of_buckets: int
+        maximum_number_of_buckets: Union[int, Unset_Type]
             The maximum_number_of_buckets of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
         """
+        # Field is not nullable
+        if maximum_number_of_buckets is None:
+            raise ValueError(
+                "Invalid value for 'maximum_number_of_buckets', must not be 'None'"
+            )
         self._maximum_number_of_buckets = maximum_number_of_buckets
 
     @property
@@ -130,12 +135,16 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
         type: str
             The type of this GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -152,7 +161,7 @@ class GrantaServerApiAggregationsIntegerHistogramAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

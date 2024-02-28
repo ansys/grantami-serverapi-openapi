@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (
     GrantaServerApiSchemaLayoutsNewLayoutItem,
 )  # noqa: F401
@@ -73,26 +73,26 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
         self,
         *,
         link_group_guid: "str",
-        forwards: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
+        forwards: "Union[bool, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
         item_type: "str" = "smartLink",
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem - a model defined in Swagger
 
         Parameters
         ----------
-            link_group_guid: str
-            forwards: bool, optional
-            guid: str, optional
-            item_type: str
+        link_group_guid: str
+        forwards: bool, optional
+        guid: str, optional
+        item_type: str
         """
         super().__init__(guid=guid)
-        self._item_type: str = None  # type: ignore[assignment]
-        self._forwards = None
-        self._link_group_guid: str = None  # type: ignore[assignment]
+        self._item_type: str
+        self._forwards: Union[bool, Unset_Type] = Unset
+        self._link_group_guid: str
 
         self.item_type = item_type
-        if forwards is not None:
+        if forwards is not Unset:
             self.forwards = forwards
         self.link_group_guid = link_group_guid
 
@@ -116,30 +116,37 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
         item_type: str
             The item_type of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
         """
+        # Field is not nullable
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
     @property
-    def forwards(self) -> "Optional[bool]":
+    def forwards(self) -> "Union[bool, Unset_Type]":
         """Gets the forwards of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The forwards of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
         """
         return self._forwards
 
     @forwards.setter
-    def forwards(self, forwards: "Optional[bool]") -> None:
+    def forwards(self, forwards: "Union[bool, Unset_Type]") -> None:
         """Sets the forwards of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
 
         Parameters
         ----------
-        forwards: bool
+        forwards: Union[bool, Unset_Type]
             The forwards of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
         """
+        # Field is not nullable
+        if forwards is None:
+            raise ValueError("Invalid value for 'forwards', must not be 'None'")
         self._forwards = forwards
 
     @property
@@ -162,12 +169,16 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
         link_group_guid: str
             The link_group_guid of this GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem.
         """
+        # Field is not nullable
         if link_group_guid is None:
             raise ValueError("Invalid value for 'link_group_guid', must not be 'None'")
+        # Field is required
+        if link_group_guid is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'link_group_guid', must not be 'Unset'")
         self._link_group_guid = link_group_guid
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -184,7 +195,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutSmartLinkItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

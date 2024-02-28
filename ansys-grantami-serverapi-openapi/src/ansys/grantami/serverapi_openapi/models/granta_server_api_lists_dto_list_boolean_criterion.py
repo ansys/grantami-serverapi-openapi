@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_criterion import (
     GrantaServerApiListsDtoListCriterion,
 )  # noqa: F401
@@ -71,73 +71,83 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
     def __init__(
         self,
         *,
-        match_all: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None,
-        match_any: "Optional[List[GrantaServerApiListsDtoListCriterion]]" = None,
+        match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
+        match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
         type: "str" = "listBoolean",
     ) -> None:
         """GrantaServerApiListsDtoListBooleanCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            match_all: List[GrantaServerApiListsDtoListCriterion], optional
-            match_any: List[GrantaServerApiListsDtoListCriterion], optional
-            type: str
+        match_all: List[GrantaServerApiListsDtoListCriterion], optional
+        match_any: List[GrantaServerApiListsDtoListCriterion], optional
+        type: str
         """
         super().__init__()
-        self._match_any = None
-        self._match_all = None
-        self._type: str = None  # type: ignore[assignment]
+        self._match_any: Union[
+            List[GrantaServerApiListsDtoListCriterion], None, Unset_Type
+        ] = Unset
+        self._match_all: Union[
+            List[GrantaServerApiListsDtoListCriterion], None, Unset_Type
+        ] = Unset
+        self._type: str
 
-        if match_any is not None:
+        if match_any is not Unset:
             self.match_any = match_any
-        if match_all is not None:
+        if match_all is not Unset:
             self.match_all = match_all
         self.type = type
 
     @property
-    def match_any(self) -> "Optional[List[GrantaServerApiListsDtoListCriterion]]":
+    def match_any(
+        self,
+    ) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
         -------
-        list[GrantaServerApiListsDtoListCriterion]
+        Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_any of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         return self._match_any
 
     @match_any.setter
     def match_any(
-        self, match_any: "Optional[List[GrantaServerApiListsDtoListCriterion]]"
+        self,
+        match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_any: List[GrantaServerApiListsDtoListCriterion]
+        match_any: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_any of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_any = match_any
 
     @property
-    def match_all(self) -> "Optional[List[GrantaServerApiListsDtoListCriterion]]":
+    def match_all(
+        self,
+    ) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
         -------
-        list[GrantaServerApiListsDtoListCriterion]
+        Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_all of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         return self._match_all
 
     @match_all.setter
     def match_all(
-        self, match_all: "Optional[List[GrantaServerApiListsDtoListCriterion]]"
+        self,
+        match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_all: List[GrantaServerApiListsDtoListCriterion]
+        match_all: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_all of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_all = match_all
@@ -162,12 +172,16 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         type: str
             The type of this GrantaServerApiListsDtoListBooleanCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -184,7 +198,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

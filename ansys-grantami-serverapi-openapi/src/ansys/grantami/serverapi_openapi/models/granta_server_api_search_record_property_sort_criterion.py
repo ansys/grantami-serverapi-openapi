@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_criterion import (
     GrantaServerApiSearchSortCriterion,
 )  # noqa: F401
@@ -75,75 +75,88 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
     def __init__(
         self,
         *,
-        _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None,
-        sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None,
-        sort_type: "Optional[GrantaServerApiSearchSortType]" = None,
+        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]" = Unset,
+        sort_direction: "Union[GrantaServerApiSearchSortDirection, Unset_Type]" = Unset,
+        sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]" = Unset,
         type: "str" = "recordProperty",
     ) -> None:
         """GrantaServerApiSearchRecordPropertySortCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            _property: GrantaServerApiSearchSearchableRecordProperty, optional
-            sort_direction: GrantaServerApiSearchSortDirection, optional
-            sort_type: GrantaServerApiSearchSortType, optional
-            type: str
+        _property: GrantaServerApiSearchSearchableRecordProperty, optional
+        sort_direction: GrantaServerApiSearchSortDirection, optional
+        sort_type: GrantaServerApiSearchSortType, optional
+        type: str
         """
         super().__init__(sort_direction=sort_direction)
-        self.__property = None
-        self._sort_type = None
-        self._type: str = None  # type: ignore[assignment]
+        self.__property: Union[
+            GrantaServerApiSearchSearchableRecordProperty, Unset_Type
+        ] = Unset
+        self._sort_type: Union[GrantaServerApiSearchSortType, Unset_Type] = Unset
+        self._type: str
 
-        if _property is not None:
+        if _property is not Unset:
             self._property = _property
-        if sort_type is not None:
+        if sort_type is not Unset:
             self.sort_type = sort_type
         self.type = type
 
     @property
-    def _property(self) -> "Optional[GrantaServerApiSearchSearchableRecordProperty]":
+    def _property(
+        self,
+    ) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchSearchableRecordProperty
+        Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]
             The _property of this GrantaServerApiSearchRecordPropertySortCriterion.
         """
         return self.__property
 
     @_property.setter
     def _property(
-        self, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]"
+        self,
+        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]",
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Parameters
         ----------
-        _property: GrantaServerApiSearchSearchableRecordProperty
+        _property: Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]
             The _property of this GrantaServerApiSearchRecordPropertySortCriterion.
         """
+        # Field is not nullable
+        if _property is None:
+            raise ValueError("Invalid value for '_property', must not be 'None'")
         self.__property = _property
 
     @property
-    def sort_type(self) -> "Optional[GrantaServerApiSearchSortType]":
+    def sort_type(self) -> "Union[GrantaServerApiSearchSortType, Unset_Type]":
         """Gets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchSortType
+        Union[GrantaServerApiSearchSortType, Unset_Type]
             The sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
         """
         return self._sort_type
 
     @sort_type.setter
-    def sort_type(self, sort_type: "Optional[GrantaServerApiSearchSortType]") -> None:
+    def sort_type(
+        self, sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]"
+    ) -> None:
         """Sets the sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Parameters
         ----------
-        sort_type: GrantaServerApiSearchSortType
+        sort_type: Union[GrantaServerApiSearchSortType, Unset_Type]
             The sort_type of this GrantaServerApiSearchRecordPropertySortCriterion.
         """
+        # Field is not nullable
+        if sort_type is None:
+            raise ValueError("Invalid value for 'sort_type', must not be 'None'")
         self._sort_type = sort_type
 
     @property
@@ -166,12 +179,16 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
         type: str
             The type of this GrantaServerApiSearchRecordPropertySortCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -188,7 +205,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

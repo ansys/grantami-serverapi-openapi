@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_float_functional_datum import (
     GrantaServerApiDataExportDatumsFloatFunctionalDatum,
 )  # noqa: F401
@@ -88,33 +88,33 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "floatFunctional",
         graph_type: "str" = "grid",
-        is_estimated: "Optional[bool]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        is_estimated: "Union[bool, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
-        points: "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]" = None,
-        unit_symbol: "Optional[str]" = None,
-        x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]" = Unset,
+        unit_symbol: "Union[str, None, Unset_Type]" = Unset,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsFunctionalGridDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            graph_type: str
-            is_estimated: bool, optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-            points: List[GrantaServerApiDataExportDatumsGridPoint], optional
-            unit_symbol: str, optional
-            x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        graph_type: str
+        is_estimated: bool, optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
+        points: List[GrantaServerApiDataExportDatumsGridPoint], optional
+        unit_symbol: str, optional
+        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -127,11 +127,13 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
             unit_symbol=unit_symbol,
             x_axis_parameter=x_axis_parameter,
         )
-        self._graph_type: str = None  # type: ignore[assignment]
-        self._points = None
+        self._graph_type: str
+        self._points: Union[
+            List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type
+        ] = Unset
 
         self.graph_type = graph_type
-        if points is not None:
+        if points is not Unset:
             self.points = points
 
     @property
@@ -154,36 +156,43 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         graph_type: str
             The graph_type of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
         """
+        # Field is not nullable
         if graph_type is None:
             raise ValueError("Invalid value for 'graph_type', must not be 'None'")
+        # Field is required
+        if graph_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'graph_type', must not be 'Unset'")
         self._graph_type = graph_type
 
     @property
-    def points(self) -> "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]":
+    def points(
+        self,
+    ) -> "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]":
         """Gets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 
         Returns
         -------
-        list[GrantaServerApiDataExportDatumsGridPoint]
+        Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
             The points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
         """
         return self._points
 
     @points.setter
     def points(
-        self, points: "Optional[List[GrantaServerApiDataExportDatumsGridPoint]]"
+        self,
+        points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]",
     ) -> None:
         """Sets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 
         Parameters
         ----------
-        points: List[GrantaServerApiDataExportDatumsGridPoint]
+        points: Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
             The points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
         """
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -200,7 +209,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_exists_criterion import (
     GrantaServerApiSearchDatumExistsCriterion,
 )  # noqa: F401
@@ -72,10 +72,10 @@ class GrantaServerApiSearchSimpleDatumExistsCriterion(
 
         Parameters
         ----------
-            type: str
+        type: str
         """
         super().__init__()
-        self._type: str = None  # type: ignore[assignment]
+        self._type: str
 
         self.type = type
 
@@ -99,12 +99,16 @@ class GrantaServerApiSearchSimpleDatumExistsCriterion(
         type: str
             The type of this GrantaServerApiSearchSimpleDatumExistsCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -121,7 +125,7 @@ class GrantaServerApiSearchSimpleDatumExistsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

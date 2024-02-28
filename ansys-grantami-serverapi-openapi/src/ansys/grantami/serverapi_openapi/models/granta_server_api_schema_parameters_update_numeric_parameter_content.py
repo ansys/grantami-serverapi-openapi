@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter_content import (
     GrantaServerApiSchemaParametersUpdateParameterContent,
 )  # noqa: F401
@@ -75,28 +75,30 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
         self,
         *,
         parameter: "GrantaServerApiSchemaSlimEntitiesSlimEntity",
-        parameter_range: "Optional[GrantaServerApiSchemaParametersUpdateContinuousRange]" = None,
+        parameter_range: "Union[GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type]" = Unset,
         type: "str" = "numeric",
-        value: "Optional[float]" = None,
+        value: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateNumericParameterContent - a model defined in Swagger
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimEntity
-            parameter_range: GrantaServerApiSchemaParametersUpdateContinuousRange, optional
-            type: str
-            value: float, optional
+        parameter: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        parameter_range: GrantaServerApiSchemaParametersUpdateContinuousRange, optional
+        type: str
+        value: float, optional
         """
         super().__init__(parameter=parameter)
-        self._type: str = None  # type: ignore[assignment]
-        self._value = None
-        self._parameter_range = None
+        self._type: str
+        self._value: Union[float, None, Unset_Type] = Unset
+        self._parameter_range: Union[
+            GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type
+        ] = Unset
 
         self.type = type
-        if value is not None:
+        if value is not Unset:
             self.value = value
-        if parameter_range is not None:
+        if parameter_range is not Unset:
             self.parameter_range = parameter_range
 
     @property
@@ -119,28 +121,32 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
         type: str
             The type of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def value(self) -> "Optional[float]":
+    def value(self) -> "Union[float, None, Unset_Type]":
         """Gets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[float]") -> None:
+    def value(self, value: "Union[float, None, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Parameters
         ----------
-        value: float
+        value: Union[float, None, Unset_Type]
             The value of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
         """
         self._value = value
@@ -148,12 +154,12 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
     @property
     def parameter_range(
         self,
-    ) -> "Optional[GrantaServerApiSchemaParametersUpdateContinuousRange]":
+    ) -> "Union[GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type]":
         """Gets the parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Returns
         -------
-        GrantaServerApiSchemaParametersUpdateContinuousRange
+        Union[GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type]
             The parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
         """
         return self._parameter_range
@@ -161,19 +167,22 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
     @parameter_range.setter
     def parameter_range(
         self,
-        parameter_range: "Optional[GrantaServerApiSchemaParametersUpdateContinuousRange]",
+        parameter_range: "Union[GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type]",
     ) -> None:
         """Sets the parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
 
         Parameters
         ----------
-        parameter_range: GrantaServerApiSchemaParametersUpdateContinuousRange
+        parameter_range: Union[GrantaServerApiSchemaParametersUpdateContinuousRange, Unset_Type]
             The parameter_range of this GrantaServerApiSchemaParametersUpdateNumericParameterContent.
         """
+        # Field is not nullable
+        if parameter_range is None:
+            raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
         self._parameter_range = parameter_range
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -190,7 +199,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

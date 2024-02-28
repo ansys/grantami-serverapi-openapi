@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -70,71 +70,71 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
     def __init__(
         self,
         *,
-        ancestor_history_identities: "Optional[List[int]]" = None,
-        database_key: "Optional[str]" = None,
+        ancestor_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
+        database_key: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "recordAncestorIdentities",
     ) -> None:
         """GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            ancestor_history_identities: List[int], optional
-            database_key: str, optional
-            type: str
+        ancestor_history_identities: List[int], optional
+        database_key: str, optional
+        type: str
         """
         super().__init__()
-        self._ancestor_history_identities = None
-        self._database_key = None
-        self._type: str = None  # type: ignore[assignment]
+        self._ancestor_history_identities: Union[List[int], None, Unset_Type] = Unset
+        self._database_key: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if ancestor_history_identities is not None:
+        if ancestor_history_identities is not Unset:
             self.ancestor_history_identities = ancestor_history_identities
-        if database_key is not None:
+        if database_key is not Unset:
             self.database_key = database_key
         self.type = type
 
     @property
-    def ancestor_history_identities(self) -> "Optional[List[int]]":
+    def ancestor_history_identities(self) -> "Union[List[int], None, Unset_Type]":
         """Gets the ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Returns
         -------
-        list[int]
+        Union[List[int], None, Unset_Type]
             The ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
         return self._ancestor_history_identities
 
     @ancestor_history_identities.setter
     def ancestor_history_identities(
-        self, ancestor_history_identities: "Optional[List[int]]"
+        self, ancestor_history_identities: "Union[List[int], None, Unset_Type]"
     ) -> None:
         """Sets the ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Parameters
         ----------
-        ancestor_history_identities: List[int]
+        ancestor_history_identities: Union[List[int], None, Unset_Type]
             The ancestor_history_identities of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
         self._ancestor_history_identities = ancestor_history_identities
 
     @property
-    def database_key(self) -> "Optional[str]":
+    def database_key(self) -> "Union[str, None, Unset_Type]":
         """Gets the database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Optional[str]") -> None:
+    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
         """Sets the database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
 
         Parameters
         ----------
-        database_key: str
+        database_key: Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
         self._database_key = database_key
@@ -159,12 +159,16 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
         type: str
             The type of this GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -181,7 +185,7 @@ class GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

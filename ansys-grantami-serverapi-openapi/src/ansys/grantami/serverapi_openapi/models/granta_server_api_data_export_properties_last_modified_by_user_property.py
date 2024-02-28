@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -68,22 +68,22 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
     def __init__(
         self,
         *,
-        last_modified_by_user: "Optional[str]" = None,
+        last_modified_by_user: "Union[str, None, Unset_Type]" = Unset,
         property_name: "str" = "lastModifiedByUser",
     ) -> None:
         """GrantaServerApiDataExportPropertiesLastModifiedByUserProperty - a model defined in Swagger
 
         Parameters
         ----------
-            last_modified_by_user: str, optional
-            property_name: str
+        last_modified_by_user: str, optional
+        property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._last_modified_by_user = None
+        self._property_name: str
+        self._last_modified_by_user: Union[str, None, Unset_Type] = Unset
 
         self.property_name = property_name
-        if last_modified_by_user is not None:
+        if last_modified_by_user is not Unset:
             self.last_modified_by_user = last_modified_by_user
 
     @property
@@ -106,34 +106,40 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def last_modified_by_user(self) -> "Optional[str]":
+    def last_modified_by_user(self) -> "Union[str, None, Unset_Type]":
         """Gets the last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
         """
         return self._last_modified_by_user
 
     @last_modified_by_user.setter
-    def last_modified_by_user(self, last_modified_by_user: "Optional[str]") -> None:
+    def last_modified_by_user(
+        self, last_modified_by_user: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
 
         Parameters
         ----------
-        last_modified_by_user: str
+        last_modified_by_user: Union[str, None, Unset_Type]
             The last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
         """
         self._last_modified_by_user = last_modified_by_user
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +156,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

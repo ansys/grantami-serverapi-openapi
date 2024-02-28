@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_constraint import (
     GrantaServerApiSearchParameterConstraint,
 )  # noqa: F401
@@ -72,71 +72,71 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
     def __init__(
         self,
         *,
-        _none: "Optional[List[float]]" = None,
-        any: "Optional[List[float]]" = None,
-        parameter: "Optional[GrantaServerApiObjectIdentifier]" = None,
+        _none: "Union[List[float], None, Unset_Type]" = Unset,
+        any: "Union[List[float], None, Unset_Type]" = Unset,
+        parameter: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         type: "str" = "discreteValue",
     ) -> None:
         """GrantaServerApiSearchDiscreteParameterValueConstraint - a model defined in Swagger
 
         Parameters
         ----------
-            _none: List[float], optional
-            any: List[float], optional
-            parameter: GrantaServerApiObjectIdentifier, optional
-            type: str
+        _none: List[float], optional
+        any: List[float], optional
+        parameter: GrantaServerApiObjectIdentifier, optional
+        type: str
         """
         super().__init__(parameter=parameter)
-        self._any = None
-        self.__none = None
-        self._type: str = None  # type: ignore[assignment]
+        self._any: Union[List[float], None, Unset_Type] = Unset
+        self.__none: Union[List[float], None, Unset_Type] = Unset
+        self._type: str
 
-        if any is not None:
+        if any is not Unset:
             self.any = any
-        if _none is not None:
+        if _none is not Unset:
             self._none = _none
         self.type = type
 
     @property
-    def any(self) -> "Optional[List[float]]":
+    def any(self) -> "Union[List[float], None, Unset_Type]":
         """Gets the any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Returns
         -------
-        list[float]
+        Union[List[float], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Optional[List[float]]") -> None:
+    def any(self, any: "Union[List[float], None, Unset_Type]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        any: List[float]
+        any: Union[List[float], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Optional[List[float]]":
+    def _none(self) -> "Union[List[float], None, Unset_Type]":
         """Gets the _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Returns
         -------
-        list[float]
+        Union[List[float], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Optional[List[float]]") -> None:
+    def _none(self, _none: "Union[List[float], None, Unset_Type]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        _none: List[float]
+        _none: Union[List[float], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         self.__none = _none
@@ -161,12 +161,16 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
         type: str
             The type of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -183,7 +187,7 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

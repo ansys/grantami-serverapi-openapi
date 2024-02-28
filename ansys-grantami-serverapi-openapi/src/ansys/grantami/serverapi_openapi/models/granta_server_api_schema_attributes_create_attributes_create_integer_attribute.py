@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
 )  # noqa: F401
@@ -81,26 +81,26 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         self,
         *,
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_unique: "Optional[bool]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_unique: "Union[bool, Unset_Type]" = Unset,
         type: "str" = "integer",
     ) -> None:
         """GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_unique: bool, optional
-            type: str
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_unique: bool, optional
+        type: str
         """
         super().__init__(
             name=name,
@@ -109,14 +109,14 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_unique = None
-        self._axis_name = None
+        self._type: str
+        self._is_unique: Union[bool, Unset_Type] = Unset
+        self._axis_name: Union[str, None, Unset_Type] = Unset
 
         self.type = type
-        if is_unique is not None:
+        if is_unique is not Unset:
             self.is_unique = is_unique
-        if axis_name is not None:
+        if axis_name is not Unset:
             self.axis_name = axis_name
 
     @property
@@ -139,58 +139,65 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def is_unique(self) -> "Optional[bool]":
+    def is_unique(self) -> "Union[bool, Unset_Type]":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         """
         return self._is_unique
 
     @is_unique.setter
-    def is_unique(self, is_unique: "Optional[bool]") -> None:
+    def is_unique(self, is_unique: "Union[bool, Unset_Type]") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
         Parameters
         ----------
-        is_unique: bool
+        is_unique: Union[bool, Unset_Type]
             The is_unique of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         """
+        # Field is not nullable
+        if is_unique is None:
+            raise ValueError("Invalid value for 'is_unique', must not be 'None'")
         self._is_unique = is_unique
 
     @property
-    def axis_name(self) -> "Optional[str]":
+    def axis_name(self) -> "Union[str, None, Unset_Type]":
         """Gets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Optional[str]") -> None:
+    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
         """Sets the axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
 
         Parameters
         ----------
-        axis_name: str
+        axis_name: Union[str, None, Unset_Type]
             The axis_name of this GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute.
         """
         self._axis_name = axis_name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -207,7 +214,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateIntegerAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

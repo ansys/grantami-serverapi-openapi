@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
     GrantaServerApiAggregationsAggregationDatum,
 )  # noqa: F401
@@ -74,37 +74,41 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
         self,
         *,
         datum_type: "str" = "floatFunctionalGraph",
-        grid_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation]" = None,
-        series_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation]" = None,
+        grid_graphs: "Union[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type]" = Unset,
+        series_graphs: "Union[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsFloatFunctionalAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            datum_type: str
-            grid_graphs: GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, optional
-            series_graphs: GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, optional
+        datum_type: str
+        grid_graphs: GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, optional
+        series_graphs: GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, optional
         """
         super().__init__()
-        self._series_graphs = None
-        self._grid_graphs = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._series_graphs: Union[
+            GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type
+        ] = Unset
+        self._grid_graphs: Union[
+            GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type
+        ] = Unset
+        self._datum_type: str
 
-        if series_graphs is not None:
+        if series_graphs is not Unset:
             self.series_graphs = series_graphs
-        if grid_graphs is not None:
+        if grid_graphs is not Unset:
             self.grid_graphs = grid_graphs
         self.datum_type = datum_type
 
     @property
     def series_graphs(
         self,
-    ) -> "Optional[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation]":
+    ) -> "Union[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type]":
         """Gets the series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Returns
         -------
-        GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation
+        Union[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type]
             The series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
         """
         return self._series_graphs
@@ -112,26 +116,29 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @series_graphs.setter
     def series_graphs(
         self,
-        series_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation]",
+        series_graphs: "Union[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type]",
     ) -> None:
         """Sets the series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Parameters
         ----------
-        series_graphs: GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation
+        series_graphs: Union[GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation, Unset_Type]
             The series_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
         """
+        # Field is not nullable
+        if series_graphs is None:
+            raise ValueError("Invalid value for 'series_graphs', must not be 'None'")
         self._series_graphs = series_graphs
 
     @property
     def grid_graphs(
         self,
-    ) -> "Optional[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation]":
+    ) -> "Union[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type]":
         """Gets the grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Returns
         -------
-        GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation
+        Union[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type]
             The grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
         """
         return self._grid_graphs
@@ -139,15 +146,18 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
     @grid_graphs.setter
     def grid_graphs(
         self,
-        grid_graphs: "Optional[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation]",
+        grid_graphs: "Union[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type]",
     ) -> None:
         """Sets the grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
 
         Parameters
         ----------
-        grid_graphs: GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation
+        grid_graphs: Union[GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation, Unset_Type]
             The grid_graphs of this GrantaServerApiAggregationsFloatFunctionalAggregation.
         """
+        # Field is not nullable
+        if grid_graphs is None:
+            raise ValueError("Invalid value for 'grid_graphs', must not be 'None'")
         self._grid_graphs = grid_graphs
 
     @property
@@ -170,12 +180,16 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
         datum_type: str
             The datum_type of this GrantaServerApiAggregationsFloatFunctionalAggregation.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -192,7 +206,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

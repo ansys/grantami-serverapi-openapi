@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -76,69 +76,69 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
         type: "str" = "localColumn",
     ) -> None:
         """GrantaServerApiSearchLocalColumnCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            identity: int, optional
-            type: str
+        guid: str, optional
+        identity: int, optional
+        type: str
         """
         super().__init__()
-        self._identity = None
-        self._guid = None
-        self._type: str = None  # type: ignore[assignment]
+        self._identity: Union[int, None, Unset_Type] = Unset
+        self._guid: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if identity is not None:
+        if identity is not Unset:
             self.identity = identity
-        if guid is not None:
+        if guid is not Unset:
             self.guid = guid
         self.type = type
 
     @property
-    def identity(self) -> "Optional[int]":
+    def identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the identity of this GrantaServerApiSearchLocalColumnCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The identity of this GrantaServerApiSearchLocalColumnCriterion.
         """
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "Optional[int]") -> None:
+    def identity(self, identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the identity of this GrantaServerApiSearchLocalColumnCriterion.
 
         Parameters
         ----------
-        identity: int
+        identity: Union[int, None, Unset_Type]
             The identity of this GrantaServerApiSearchLocalColumnCriterion.
         """
         self._identity = identity
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the guid of this GrantaServerApiSearchLocalColumnCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The guid of this GrantaServerApiSearchLocalColumnCriterion.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the guid of this GrantaServerApiSearchLocalColumnCriterion.
 
         Parameters
         ----------
-        guid: str
+        guid: Union[str, None, Unset_Type]
             The guid of this GrantaServerApiSearchLocalColumnCriterion.
         """
         self._guid = guid
@@ -163,12 +163,16 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
         type: str
             The type of this GrantaServerApiSearchLocalColumnCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -190,7 +194,7 @@ class GrantaServerApiSearchLocalColumnCriterion(GrantaServerApiSearchCriterion):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

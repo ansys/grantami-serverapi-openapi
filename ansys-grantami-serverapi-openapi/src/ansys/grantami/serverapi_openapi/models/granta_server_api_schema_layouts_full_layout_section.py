@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_section import (
     GrantaServerApiSchemaLayoutsLayoutSection,
 )  # noqa: F401
@@ -86,15 +86,15 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
 
         Parameters
         ----------
-            display_names: Dict[str, str]
-            guid: str
-            name: str
-            section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
-            section_detail_type: str
+        display_names: Dict[str, str]
+        guid: str
+        name: str
+        section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
+        section_detail_type: str
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
-        self._section_detail_type: str = None  # type: ignore[assignment]
-        self._section_items: List[GrantaServerApiSchemaLayoutsLayoutItem] = None  # type: ignore[assignment]
+        self._section_detail_type: str
+        self._section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
 
         self.section_detail_type = section_detail_type
         self.section_items = section_items
@@ -119,9 +119,15 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         section_detail_type: str
             The section_detail_type of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
+        # Field is not nullable
         if section_detail_type is None:
             raise ValueError(
                 "Invalid value for 'section_detail_type', must not be 'None'"
+            )
+        # Field is required
+        if section_detail_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'section_detail_type', must not be 'Unset'"
             )
         self._section_detail_type = section_detail_type
 
@@ -131,7 +137,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
 
         Returns
         -------
-        list[GrantaServerApiSchemaLayoutsLayoutItem]
+        List[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
         return self._section_items
@@ -147,12 +153,16 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
         section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
+        # Field is not nullable
         if section_items is None:
             raise ValueError("Invalid value for 'section_items', must not be 'None'")
+        # Field is required
+        if section_items is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'section_items', must not be 'Unset'")
         self._section_items = section_items
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -169,7 +179,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

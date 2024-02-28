@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -68,22 +68,22 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
     def __init__(
         self,
         *,
-        last_modified_date: "Optional[datetime]" = None,
+        last_modified_date: "Union[datetime, Unset_Type]" = Unset,
         property_name: "str" = "lastModifiedDate",
     ) -> None:
         """GrantaServerApiDataExportPropertiesLastModifiedDateProperty - a model defined in Swagger
 
         Parameters
         ----------
-            last_modified_date: datetime, optional
-            property_name: str
+        last_modified_date: datetime, optional
+        property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._last_modified_date = None
+        self._property_name: str
+        self._last_modified_date: Union[datetime, Unset_Type] = Unset
 
         self.property_name = property_name
-        if last_modified_date is not None:
+        if last_modified_date is not Unset:
             self.last_modified_date = last_modified_date
 
     @property
@@ -106,34 +106,45 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def last_modified_date(self) -> "Optional[datetime]":
+    def last_modified_date(self) -> "Union[datetime, Unset_Type]":
         """Gets the last_modified_date of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
 
         Returns
         -------
-        datetime
+        Union[datetime, Unset_Type]
             The last_modified_date of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
         """
         return self._last_modified_date
 
     @last_modified_date.setter
-    def last_modified_date(self, last_modified_date: "Optional[datetime]") -> None:
+    def last_modified_date(
+        self, last_modified_date: "Union[datetime, Unset_Type]"
+    ) -> None:
         """Sets the last_modified_date of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
 
         Parameters
         ----------
-        last_modified_date: datetime
+        last_modified_date: Union[datetime, Unset_Type]
             The last_modified_date of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
         """
+        # Field is not nullable
+        if last_modified_date is None:
+            raise ValueError(
+                "Invalid value for 'last_modified_date', must not be 'None'"
+            )
         self._last_modified_date = last_modified_date
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +161,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

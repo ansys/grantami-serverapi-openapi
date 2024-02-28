@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_tabular_column import (
     GrantaServerApiSchemaTabularColumnsTabularColumn,
 )  # noqa: F401
@@ -96,15 +96,15 @@ class GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn(
 
         Parameters
         ----------
-            display_names: Dict[str, str]
-            guid: str
-            name: str
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-            show_as_link: bool
-            summary_row_enabled: bool
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-            summary_row_text: str
-            column_type: str
+        display_names: Dict[str, str]
+        guid: str
+        name: str
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        show_as_link: bool
+        summary_row_enabled: bool
+        summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        summary_row_text: str
+        column_type: str
         """
         super().__init__(
             display_names=display_names,
@@ -116,7 +116,7 @@ class GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn(
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
+        self._column_type: str
 
         self.column_type = column_type
 
@@ -140,12 +140,16 @@ class GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn(
         column_type: str
             The column_type of this GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn.
         """
+        # Field is not nullable
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
+        # Field is required
+        if column_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -162,7 +166,7 @@ class GrantaServerApiSchemaTabularColumnsUnavailableTabularColumn(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

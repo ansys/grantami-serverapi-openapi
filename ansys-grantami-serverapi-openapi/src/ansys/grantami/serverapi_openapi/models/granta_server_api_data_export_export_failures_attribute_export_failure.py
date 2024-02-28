@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (
     GrantaServerApiDataExportExportFailuresExportFailure,
 )  # noqa: F401
@@ -83,14 +83,16 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
         Parameters
         ----------
-            failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
-            failure_details: str
-            failure_reason: str
-            type: str
+        failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
+        failure_details: str
+        failure_reason: str
+        type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference] = None  # type: ignore[assignment]
-        self._type: str = None  # type: ignore[assignment]
+        self._failed_attributes: List[
+            GrantaServerApiDataExportExportFailuresAttributeReference
+        ]
+        self._type: str
 
         self.failed_attributes = failed_attributes
         self.type = type
@@ -103,7 +105,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
         Returns
         -------
-        list[GrantaServerApiDataExportExportFailuresAttributeReference]
+        List[GrantaServerApiDataExportExportFailuresAttributeReference]
             The failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
         """
         return self._failed_attributes
@@ -120,9 +122,15 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
         failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
             The failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
         """
+        # Field is not nullable
         if failed_attributes is None:
             raise ValueError(
                 "Invalid value for 'failed_attributes', must not be 'None'"
+            )
+        # Field is required
+        if failed_attributes is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'failed_attributes', must not be 'Unset'"
             )
         self._failed_attributes = failed_attributes
 
@@ -146,12 +154,16 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
         type: str
             The type of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -168,7 +180,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
     GrantaServerApiSchemaAttributesAttribute,
 )  # noqa: F401
@@ -98,28 +98,28 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         is_multi_valued: "bool",
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "point",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesPointAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-            display_names: Dict[str, str]
-            guid: str
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
-            is_multi_valued: bool
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            axis_name: str, optional
-            help_path: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        display_names: Dict[str, str]
+        guid: str
+        info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+        is_multi_valued: bool
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        axis_name: str, optional
+        help_path: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(
             default_threshold_type=default_threshold_type,
@@ -131,13 +131,15 @@ class GrantaServerApiSchemaAttributesPointAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._is_multi_valued: bool = None  # type: ignore[assignment]
-        self._attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity] = None  # type: ignore[assignment]
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
+        self._is_multi_valued: bool
+        self._attribute_parameters: List[
+            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        ]
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
         self.is_multi_valued = is_multi_valued
         self.attribute_parameters = attribute_parameters
@@ -162,30 +164,39 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesPointAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesPointAttribute.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesPointAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
@@ -208,8 +219,12 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         is_multi_valued: bool
             The is_multi_valued of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        # Field is not nullable
         if is_multi_valued is None:
             raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
+        # Field is required
+        if is_multi_valued is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'Unset'")
         self._is_multi_valued = is_multi_valued
 
     @property
@@ -220,7 +235,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
         """
         return self._attribute_parameters
@@ -237,14 +252,20 @@ class GrantaServerApiSchemaAttributesPointAttribute(
         attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
         """
+        # Field is not nullable
         if attribute_parameters is None:
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
+        # Field is required
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'Unset'"
+            )
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -261,7 +282,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

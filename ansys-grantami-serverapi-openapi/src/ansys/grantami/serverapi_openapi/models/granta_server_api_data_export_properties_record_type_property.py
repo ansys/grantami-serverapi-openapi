@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -71,21 +71,21 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
         self,
         *,
         property_name: "str" = "recordType",
-        record_type: "Optional[GrantaServerApiRecordType]" = None,
+        record_type: "Union[GrantaServerApiRecordType, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesRecordTypeProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            record_type: GrantaServerApiRecordType, optional
+        property_name: str
+        record_type: GrantaServerApiRecordType, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._record_type = None
+        self._property_name: str
+        self._record_type: Union[GrantaServerApiRecordType, Unset_Type] = Unset
 
         self.property_name = property_name
-        if record_type is not None:
+        if record_type is not Unset:
             self.record_type = record_type
 
     @property
@@ -108,34 +108,43 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def record_type(self) -> "Optional[GrantaServerApiRecordType]":
+    def record_type(self) -> "Union[GrantaServerApiRecordType, Unset_Type]":
         """Gets the record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
 
         Returns
         -------
-        GrantaServerApiRecordType
+        Union[GrantaServerApiRecordType, Unset_Type]
             The record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
         """
         return self._record_type
 
     @record_type.setter
-    def record_type(self, record_type: "Optional[GrantaServerApiRecordType]") -> None:
+    def record_type(
+        self, record_type: "Union[GrantaServerApiRecordType, Unset_Type]"
+    ) -> None:
         """Sets the record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
 
         Parameters
         ----------
-        record_type: GrantaServerApiRecordType
+        record_type: Union[GrantaServerApiRecordType, Unset_Type]
             The record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
         """
+        # Field is not nullable
+        if record_type is None:
+            raise ValueError("Invalid value for 'record_type', must not be 'None'")
         self._record_type = record_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -152,7 +161,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

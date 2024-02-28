@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_data_modification_data_modification_error_detail import (
     GrantaServerApiExceptionsDataModificationDataModificationErrorDetail,
 )  # noqa: F401
@@ -77,38 +77,42 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         *,
         message: "str",
         reason: "str" = "inUse",
-        referenced_by: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]" = None,
-        referenced_by_type: "Optional[GrantaServerApiExceptionsDataModificationReferencedByType]" = None,
+        referenced_by: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        referenced_by_type: "Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-            message: str
-            reason: str
-            referenced_by: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-            referenced_by_type: GrantaServerApiExceptionsDataModificationReferencedByType, optional
+        message: str
+        reason: str
+        referenced_by: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        referenced_by_type: GrantaServerApiExceptionsDataModificationReferencedByType, optional
         """
         super().__init__(message=message)
-        self._referenced_by_type = None
-        self._referenced_by = None
-        self._reason: str = None  # type: ignore[assignment]
+        self._referenced_by_type: Union[
+            GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type
+        ] = Unset
+        self._referenced_by: Union[
+            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+        ] = Unset
+        self._reason: str
 
-        if referenced_by_type is not None:
+        if referenced_by_type is not Unset:
             self.referenced_by_type = referenced_by_type
-        if referenced_by is not None:
+        if referenced_by is not Unset:
             self.referenced_by = referenced_by
         self.reason = reason
 
     @property
     def referenced_by_type(
         self,
-    ) -> "Optional[GrantaServerApiExceptionsDataModificationReferencedByType]":
+    ) -> "Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]":
         """Gets the referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Returns
         -------
-        GrantaServerApiExceptionsDataModificationReferencedByType
+        Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]
             The referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         return self._referenced_by_type
@@ -116,26 +120,31 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @referenced_by_type.setter
     def referenced_by_type(
         self,
-        referenced_by_type: "Optional[GrantaServerApiExceptionsDataModificationReferencedByType]",
+        referenced_by_type: "Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]",
     ) -> None:
         """Sets the referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by_type: GrantaServerApiExceptionsDataModificationReferencedByType
+        referenced_by_type: Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]
             The referenced_by_type of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
+        # Field is not nullable
+        if referenced_by_type is None:
+            raise ValueError(
+                "Invalid value for 'referenced_by_type', must not be 'None'"
+            )
         self._referenced_by_type = referenced_by_type
 
     @property
     def referenced_by(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]":
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         return self._referenced_by
@@ -143,13 +152,13 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @referenced_by.setter
     def referenced_by(
         self,
-        referenced_by: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]]",
+        referenced_by: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        referenced_by: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         self._referenced_by = referenced_by
@@ -174,12 +183,16 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         reason: str
             The reason of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
+        # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -196,7 +209,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

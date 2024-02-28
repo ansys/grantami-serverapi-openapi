@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_item import (
     GrantaServerApiSchemaLayoutsLayoutItem,
 )  # noqa: F401
@@ -94,45 +94,47 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         target_table: "str",
         underlying_entity_guid: "str",
         item_type: "str" = "link",
-        next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]" = None,
-        target_database: "Optional[str]" = None,
-        target_database_version: "Optional[str]" = None,
+        next_link: "Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]" = Unset,
+        target_database: "Union[str, None, Unset_Type]" = Unset,
+        target_database_version: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutLinkItem - a model defined in Swagger
 
         Parameters
         ----------
-            forwards: bool
-            guid: str
-            link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
-            name: str
-            target_table: str
-            underlying_entity_guid: str
-            item_type: str
-            next_link: GrantaServerApiSchemaLayoutsLayoutLinkItem, optional
-            target_database: str, optional
-            target_database_version: str, optional
+        forwards: bool
+        guid: str
+        link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
+        name: str
+        target_table: str
+        underlying_entity_guid: str
+        item_type: str
+        next_link: GrantaServerApiSchemaLayoutsLayoutLinkItem, optional
+        target_database: str, optional
+        target_database_version: str, optional
         """
         super().__init__(
             guid=guid, name=name, underlying_entity_guid=underlying_entity_guid
         )
-        self._item_type: str = None  # type: ignore[assignment]
-        self._link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType = None  # type: ignore[assignment]
-        self._target_database = None
-        self._target_database_version = None
-        self._target_table: str = None  # type: ignore[assignment]
-        self._forwards: bool = None  # type: ignore[assignment]
-        self._next_link = None
+        self._item_type: str
+        self._link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
+        self._target_database: Union[str, None, Unset_Type] = Unset
+        self._target_database_version: Union[str, None, Unset_Type] = Unset
+        self._target_table: str
+        self._forwards: bool
+        self._next_link: Union[
+            GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type
+        ] = Unset
 
         self.item_type = item_type
         self.link_type = link_type
-        if target_database is not None:
+        if target_database is not Unset:
             self.target_database = target_database
-        if target_database_version is not None:
+        if target_database_version is not Unset:
             self.target_database_version = target_database_version
         self.target_table = target_table
         self.forwards = forwards
-        if next_link is not None:
+        if next_link is not Unset:
             self.next_link = next_link
 
     @property
@@ -155,8 +157,12 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         item_type: str
             The item_type of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        # Field is not nullable
         if item_type is None:
             raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
 
     @property
@@ -181,50 +187,56 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         link_type: GrantaServerApiSchemaLayoutsLayoutItemLinkType
             The link_type of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        # Field is not nullable
         if link_type is None:
             raise ValueError("Invalid value for 'link_type', must not be 'None'")
+        # Field is required
+        if link_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'link_type', must not be 'Unset'")
         self._link_type = link_type
 
     @property
-    def target_database(self) -> "Optional[str]":
+    def target_database(self) -> "Union[str, None, Unset_Type]":
         """Gets the target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
         return self._target_database
 
     @target_database.setter
-    def target_database(self, target_database: "Optional[str]") -> None:
+    def target_database(self, target_database: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Parameters
         ----------
-        target_database: str
+        target_database: Union[str, None, Unset_Type]
             The target_database of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
         self._target_database = target_database
 
     @property
-    def target_database_version(self) -> "Optional[str]":
+    def target_database_version(self) -> "Union[str, None, Unset_Type]":
         """Gets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
         return self._target_database_version
 
     @target_database_version.setter
-    def target_database_version(self, target_database_version: "Optional[str]") -> None:
+    def target_database_version(
+        self, target_database_version: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Parameters
         ----------
-        target_database_version: str
+        target_database_version: Union[str, None, Unset_Type]
             The target_database_version of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
         self._target_database_version = target_database_version
@@ -249,8 +261,12 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         target_table: str
             The target_table of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        # Field is not nullable
         if target_table is None:
             raise ValueError("Invalid value for 'target_table', must not be 'None'")
+        # Field is required
+        if target_table is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'target_table', must not be 'Unset'")
         self._target_table = target_table
 
     @property
@@ -273,36 +289,45 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
         forwards: bool
             The forwards of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        # Field is not nullable
         if forwards is None:
             raise ValueError("Invalid value for 'forwards', must not be 'None'")
+        # Field is required
+        if forwards is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'forwards', must not be 'Unset'")
         self._forwards = forwards
 
     @property
-    def next_link(self) -> "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]":
+    def next_link(
+        self,
+    ) -> "Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]":
         """Gets the next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns
         -------
-        GrantaServerApiSchemaLayoutsLayoutLinkItem
+        Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]
             The next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
         return self._next_link
 
     @next_link.setter
     def next_link(
-        self, next_link: "Optional[GrantaServerApiSchemaLayoutsLayoutLinkItem]"
+        self, next_link: "Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]"
     ) -> None:
         """Sets the next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Parameters
         ----------
-        next_link: GrantaServerApiSchemaLayoutsLayoutLinkItem
+        next_link: Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]
             The next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
         """
+        # Field is not nullable
+        if next_link is None:
+            raise ValueError("Invalid value for 'next_link', must not be 'None'")
         self._next_link = next_link
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -319,7 +344,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

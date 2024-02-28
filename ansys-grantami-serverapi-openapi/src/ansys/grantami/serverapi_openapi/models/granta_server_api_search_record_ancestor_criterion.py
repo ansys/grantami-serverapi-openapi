@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -68,69 +68,73 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
     def __init__(
         self,
         *,
-        ancestor_identity: "Optional[int]" = None,
-        direct_parent_only: "Optional[bool]" = None,
+        ancestor_identity: "Union[int, None, Unset_Type]" = Unset,
+        direct_parent_only: "Union[bool, None, Unset_Type]" = Unset,
         type: "str" = "recordAncestor",
     ) -> None:
         """GrantaServerApiSearchRecordAncestorCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            ancestor_identity: int, optional
-            direct_parent_only: bool, optional
-            type: str
+        ancestor_identity: int, optional
+        direct_parent_only: bool, optional
+        type: str
         """
         super().__init__()
-        self._ancestor_identity = None
-        self._direct_parent_only = None
-        self._type: str = None  # type: ignore[assignment]
+        self._ancestor_identity: Union[int, None, Unset_Type] = Unset
+        self._direct_parent_only: Union[bool, None, Unset_Type] = Unset
+        self._type: str
 
-        if ancestor_identity is not None:
+        if ancestor_identity is not Unset:
             self.ancestor_identity = ancestor_identity
-        if direct_parent_only is not None:
+        if direct_parent_only is not Unset:
             self.direct_parent_only = direct_parent_only
         self.type = type
 
     @property
-    def ancestor_identity(self) -> "Optional[int]":
+    def ancestor_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the ancestor_identity of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The ancestor_identity of this GrantaServerApiSearchRecordAncestorCriterion.
         """
         return self._ancestor_identity
 
     @ancestor_identity.setter
-    def ancestor_identity(self, ancestor_identity: "Optional[int]") -> None:
+    def ancestor_identity(
+        self, ancestor_identity: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the ancestor_identity of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Parameters
         ----------
-        ancestor_identity: int
+        ancestor_identity: Union[int, None, Unset_Type]
             The ancestor_identity of this GrantaServerApiSearchRecordAncestorCriterion.
         """
         self._ancestor_identity = ancestor_identity
 
     @property
-    def direct_parent_only(self) -> "Optional[bool]":
+    def direct_parent_only(self) -> "Union[bool, None, Unset_Type]":
         """Gets the direct_parent_only of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Returns
         -------
-        bool
+        Union[bool, None, Unset_Type]
             The direct_parent_only of this GrantaServerApiSearchRecordAncestorCriterion.
         """
         return self._direct_parent_only
 
     @direct_parent_only.setter
-    def direct_parent_only(self, direct_parent_only: "Optional[bool]") -> None:
+    def direct_parent_only(
+        self, direct_parent_only: "Union[bool, None, Unset_Type]"
+    ) -> None:
         """Sets the direct_parent_only of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Parameters
         ----------
-        direct_parent_only: bool
+        direct_parent_only: Union[bool, None, Unset_Type]
             The direct_parent_only of this GrantaServerApiSearchRecordAncestorCriterion.
         """
         self._direct_parent_only = direct_parent_only
@@ -155,12 +159,16 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
         type: str
             The type of this GrantaServerApiSearchRecordAncestorCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -177,7 +185,7 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

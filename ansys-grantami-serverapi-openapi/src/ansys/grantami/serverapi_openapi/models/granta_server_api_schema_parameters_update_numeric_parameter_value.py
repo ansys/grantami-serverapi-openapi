@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter_value import (
     GrantaServerApiSchemaParametersUpdateParameterValue,
 )  # noqa: F401
@@ -72,51 +72,54 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterValue(
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        name: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
-        value: "Optional[float]" = None,
+        value: "Union[float, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateNumericParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            name: str, optional
-            type: str
-            value: float, optional
+        guid: str, optional
+        name: str, optional
+        type: str
+        value: float, optional
         """
         super().__init__(guid=guid)
-        self._value = None
-        self._type: str = None  # type: ignore[assignment]
-        self._name = None
+        self._value: Union[float, Unset_Type] = Unset
+        self._type: str
+        self._name: Union[str, None, Unset_Type] = Unset
 
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.type = type
-        if name is not None:
+        if name is not Unset:
             self.name = name
 
     @property
-    def value(self) -> "Optional[float]":
+    def value(self) -> "Union[float, Unset_Type]":
         """Gets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
 
         Returns
         -------
-        float
+        Union[float, Unset_Type]
             The value of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[float]") -> None:
+    def value(self, value: "Union[float, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
 
         Parameters
         ----------
-        value: float
+        value: Union[float, Unset_Type]
             The value of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
         """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
         self._value = value
 
     @property
@@ -139,34 +142,38 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterValue(
         type: str
             The type of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def name(self) -> "Optional[str]":
+    def name(self) -> "Union[str, None, Unset_Type]":
         """Gets the name of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The name of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "Optional[str]") -> None:
+    def name(self, name: "Union[str, None, Unset_Type]") -> None:
         """Sets the name of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
 
         Parameters
         ----------
-        name: str
+        name: Union[str, None, Unset_Type]
             The name of this GrantaServerApiSchemaParametersUpdateNumericParameterValue.
         """
         self._name = name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -183,7 +190,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameterValue(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -71,21 +71,21 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(
         self,
         *,
         property_name: "str" = "recordColor",
-        record_color: "Optional[GrantaServerApiRecordColor]" = None,
+        record_color: "Union[GrantaServerApiRecordColor, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesRecordColorProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            record_color: GrantaServerApiRecordColor, optional
+        property_name: str
+        record_color: GrantaServerApiRecordColor, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._record_color = None
+        self._property_name: str
+        self._record_color: Union[GrantaServerApiRecordColor, Unset_Type] = Unset
 
         self.property_name = property_name
-        if record_color is not None:
+        if record_color is not Unset:
             self.record_color = record_color
 
     @property
@@ -108,36 +108,43 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesRecordColorProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def record_color(self) -> "Optional[GrantaServerApiRecordColor]":
+    def record_color(self) -> "Union[GrantaServerApiRecordColor, Unset_Type]":
         """Gets the record_color of this GrantaServerApiDataExportPropertiesRecordColorProperty.
 
         Returns
         -------
-        GrantaServerApiRecordColor
+        Union[GrantaServerApiRecordColor, Unset_Type]
             The record_color of this GrantaServerApiDataExportPropertiesRecordColorProperty.
         """
         return self._record_color
 
     @record_color.setter
     def record_color(
-        self, record_color: "Optional[GrantaServerApiRecordColor]"
+        self, record_color: "Union[GrantaServerApiRecordColor, Unset_Type]"
     ) -> None:
         """Sets the record_color of this GrantaServerApiDataExportPropertiesRecordColorProperty.
 
         Parameters
         ----------
-        record_color: GrantaServerApiRecordColor
+        record_color: Union[GrantaServerApiRecordColor, Unset_Type]
             The record_color of this GrantaServerApiDataExportPropertiesRecordColorProperty.
         """
+        # Field is not nullable
+        if record_color is None:
+            raise ValueError("Invalid value for 'record_color', must not be 'None'")
         self._record_color = record_color
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -154,7 +161,7 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

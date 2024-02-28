@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_discrete_functional_datum import (
     GrantaServerApiDataExportDatumsDiscreteFunctionalDatum,
 )  # noqa: F401
@@ -84,29 +84,29 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "discreteFunctional",
         graph_type: "str" = "grid",
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
-        values: "Optional[List[GrantaServerApiDataExportDatumsDiscreteGridPoint]]" = None,
-        x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        values: "Union[List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type]" = Unset,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            graph_type: str
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-            values: List[GrantaServerApiDataExportDatumsDiscreteGridPoint], optional
-            x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        graph_type: str
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
+        values: List[GrantaServerApiDataExportDatumsDiscreteGridPoint], optional
+        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -117,11 +117,13 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
             parameters=parameters,
             x_axis_parameter=x_axis_parameter,
         )
-        self._graph_type: str = None  # type: ignore[assignment]
-        self._values = None
+        self._graph_type: str
+        self._values: Union[
+            List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type
+        ] = Unset
 
         self.graph_type = graph_type
-        if values is not None:
+        if values is not Unset:
             self.values = values
 
     @property
@@ -144,38 +146,43 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
         graph_type: str
             The graph_type of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
         """
+        # Field is not nullable
         if graph_type is None:
             raise ValueError("Invalid value for 'graph_type', must not be 'None'")
+        # Field is required
+        if graph_type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'graph_type', must not be 'Unset'")
         self._graph_type = graph_type
 
     @property
     def values(
         self,
-    ) -> "Optional[List[GrantaServerApiDataExportDatumsDiscreteGridPoint]]":
+    ) -> "Union[List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type]":
         """Gets the values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
 
         Returns
         -------
-        list[GrantaServerApiDataExportDatumsDiscreteGridPoint]
+        Union[List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
         """
         return self._values
 
     @values.setter
     def values(
-        self, values: "Optional[List[GrantaServerApiDataExportDatumsDiscreteGridPoint]]"
+        self,
+        values: "Union[List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type]",
     ) -> None:
         """Sets the values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
 
         Parameters
         ----------
-        values: List[GrantaServerApiDataExportDatumsDiscreteGridPoint]
+        values: Union[List[GrantaServerApiDataExportDatumsDiscreteGridPoint], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum.
         """
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -192,7 +199,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalGridDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

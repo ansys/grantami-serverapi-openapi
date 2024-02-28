@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_rollup_rollup_datum import (
     GrantaServerApiDataExportDatumsRollupRollupDatum,
 )  # noqa: F401
@@ -78,25 +78,25 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
-        database_key: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
+        attribute_guid: "Union[str, None, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, None, Unset_Type]" = Unset,
+        database_key: "Union[str, None, Unset_Type]" = Unset,
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
         type: "str" = "valuesRollup",
-        unit: "Optional[str]" = None,
-        values: "Optional[List[object]]" = None,
+        unit: "Union[str, None, Unset_Type]" = Unset,
+        values: "Union[List[object], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsRollupValuesRollupDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            database_key: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            type: str
-            unit: str, optional
-            values: List[object], optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        database_key: str, optional
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        type: str
+        unit: str, optional
+        values: List[object], optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -104,56 +104,56 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
             database_key=database_key,
             roll_up_type=roll_up_type,
         )
-        self._values = None
-        self._unit = None
-        self._type: str = None  # type: ignore[assignment]
+        self._values: Union[List[object], None, Unset_Type] = Unset
+        self._unit: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if values is not None:
+        if values is not Unset:
             self.values = values
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
         self.type = type
 
     @property
-    def values(self) -> "Optional[List[object]]":
+    def values(self) -> "Union[List[object], None, Unset_Type]":
         """Gets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Returns
         -------
-        list[object]
+        Union[List[object], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Optional[List[object]]") -> None:
+    def values(self, values: "Union[List[object], None, Unset_Type]") -> None:
         """Sets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Parameters
         ----------
-        values: List[object]
+        values: Union[List[object], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         self._values = values
 
     @property
-    def unit(self) -> "Optional[str]":
+    def unit(self) -> "Union[str, None, Unset_Type]":
         """Gets the unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[str]") -> None:
+    def unit(self, unit: "Union[str, None, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Parameters
         ----------
-        unit: str
+        unit: Union[str, None, Unset_Type]
             The unit of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         self._unit = unit
@@ -178,12 +178,16 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         type: str
             The type of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -200,7 +204,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

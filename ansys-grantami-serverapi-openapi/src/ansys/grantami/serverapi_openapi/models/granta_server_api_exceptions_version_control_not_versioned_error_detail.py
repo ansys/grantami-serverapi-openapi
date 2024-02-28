@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
     GrantaServerApiExceptionsVersionControlVersionControlErrorDetail,
 )  # noqa: F401
@@ -75,11 +75,11 @@ class GrantaServerApiExceptionsVersionControlNotVersionedErrorDetail(
 
         Parameters
         ----------
-            message: str
-            reason: str
+        message: str
+        reason: str
         """
         super().__init__(message=message)
-        self._reason: str = None  # type: ignore[assignment]
+        self._reason: str
 
         self.reason = reason
 
@@ -103,12 +103,16 @@ class GrantaServerApiExceptionsVersionControlNotVersionedErrorDetail(
         reason: str
             The reason of this GrantaServerApiExceptionsVersionControlNotVersionedErrorDetail.
         """
+        # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -125,7 +129,7 @@ class GrantaServerApiExceptionsVersionControlNotVersionedErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

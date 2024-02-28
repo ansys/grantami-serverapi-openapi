@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_create_record_link_group import (
     GrantaServerApiSchemaRecordLinkGroupsCreateRecordLinkGroup,
 )  # noqa: F401
@@ -79,29 +79,29 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         link_target: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
         name: "str",
         reverse_name: "str",
-        guid: "Optional[str]" = None,
-        include_indirect_links: "Optional[bool]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        include_indirect_links: "Union[bool, Unset_Type]" = Unset,
         type: "str" = "static",
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-            link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
-            name: str
-            reverse_name: str
-            guid: str, optional
-            include_indirect_links: bool, optional
-            type: str
+        link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
+        name: str
+        reverse_name: str
+        guid: str, optional
+        include_indirect_links: bool, optional
+        type: str
         """
         super().__init__(
             link_target=link_target, name=name, reverse_name=reverse_name, guid=guid
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._include_indirect_links = None
+        self._type: str
+        self._include_indirect_links: Union[bool, Unset_Type] = Unset
 
         self.type = type
-        if include_indirect_links is not None:
+        if include_indirect_links is not Unset:
             self.include_indirect_links = include_indirect_links
 
     @property
@@ -124,34 +124,45 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         type: str
             The type of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def include_indirect_links(self) -> "Optional[bool]":
+    def include_indirect_links(self) -> "Union[bool, Unset_Type]":
         """Gets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
         """
         return self._include_indirect_links
 
     @include_indirect_links.setter
-    def include_indirect_links(self, include_indirect_links: "Optional[bool]") -> None:
+    def include_indirect_links(
+        self, include_indirect_links: "Union[bool, Unset_Type]"
+    ) -> None:
         """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
 
         Parameters
         ----------
-        include_indirect_links: bool
+        include_indirect_links: Union[bool, Unset_Type]
             The include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
         """
+        # Field is not nullable
+        if include_indirect_links is None:
+            raise ValueError(
+                "Invalid value for 'include_indirect_links', must not be 'None'"
+            )
         self._include_indirect_links = include_indirect_links
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -168,7 +179,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

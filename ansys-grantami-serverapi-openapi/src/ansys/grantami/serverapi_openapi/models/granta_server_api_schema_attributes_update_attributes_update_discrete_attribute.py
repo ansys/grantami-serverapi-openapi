@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -80,27 +80,27 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_multi_valued: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_multi_valued: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_multi_valued: bool, optional
-            name: str, optional
-            type: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_multi_valued: bool, optional
+        name: str, optional
+        type: str
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -110,11 +110,11 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_multi_valued = None
+        self._type: str
+        self._is_multi_valued: Union[bool, Unset_Type] = Unset
 
         self.type = type
-        if is_multi_valued is not None:
+        if is_multi_valued is not Unset:
             self.is_multi_valued = is_multi_valued
 
     @property
@@ -137,34 +137,41 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def is_multi_valued(self) -> "Optional[bool]":
+    def is_multi_valued(self) -> "Union[bool, Unset_Type]":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute.
         """
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
+    def is_multi_valued(self, is_multi_valued: "Union[bool, Unset_Type]") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute.
 
         Parameters
         ----------
-        is_multi_valued: bool
+        is_multi_valued: Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute.
         """
+        # Field is not nullable
+        if is_multi_valued is None:
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         self._is_multi_valued = is_multi_valued
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -181,7 +188,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

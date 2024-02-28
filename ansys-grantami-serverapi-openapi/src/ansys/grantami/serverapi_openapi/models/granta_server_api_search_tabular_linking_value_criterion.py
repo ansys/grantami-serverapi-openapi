@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -70,47 +70,49 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     def __init__(
         self,
         *,
-        linking_value_match_behaviour: "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]" = None,
+        linking_value_match_behaviour: "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]" = Unset,
         type: "str" = "tabularLinkingValue",
-        values: "Optional[List[str]]" = None,
+        values: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchTabularLinkingValueCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            linking_value_match_behaviour: GrantaServerApiSearchLinkingValueMatchBehaviour, optional
-            type: str
-            values: List[str], optional
+        linking_value_match_behaviour: GrantaServerApiSearchLinkingValueMatchBehaviour, optional
+        type: str
+        values: List[str], optional
         """
         super().__init__()
-        self._values = None
-        self._linking_value_match_behaviour = None
-        self._type: str = None  # type: ignore[assignment]
+        self._values: Union[List[str], None, Unset_Type] = Unset
+        self._linking_value_match_behaviour: Union[
+            GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type
+        ] = Unset
+        self._type: str
 
-        if values is not None:
+        if values is not Unset:
             self.values = values
-        if linking_value_match_behaviour is not None:
+        if linking_value_match_behaviour is not Unset:
             self.linking_value_match_behaviour = linking_value_match_behaviour
         self.type = type
 
     @property
-    def values(self) -> "Optional[List[str]]":
+    def values(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The values of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Optional[List[str]]") -> None:
+    def values(self, values: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        values: List[str]
+        values: Union[List[str], None, Unset_Type]
             The values of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         self._values = values
@@ -118,12 +120,12 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     @property
     def linking_value_match_behaviour(
         self,
-    ) -> "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]":
+    ) -> "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]":
         """Gets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchLinkingValueMatchBehaviour
+        Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]
             The linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         return self._linking_value_match_behaviour
@@ -131,15 +133,20 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     @linking_value_match_behaviour.setter
     def linking_value_match_behaviour(
         self,
-        linking_value_match_behaviour: "Optional[GrantaServerApiSearchLinkingValueMatchBehaviour]",
+        linking_value_match_behaviour: "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]",
     ) -> None:
         """Sets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        linking_value_match_behaviour: GrantaServerApiSearchLinkingValueMatchBehaviour
+        linking_value_match_behaviour: Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]
             The linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
+        # Field is not nullable
+        if linking_value_match_behaviour is None:
+            raise ValueError(
+                "Invalid value for 'linking_value_match_behaviour', must not be 'None'"
+            )
         self._linking_value_match_behaviour = linking_value_match_behaviour
 
     @property
@@ -162,12 +169,16 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         type: str
             The type of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -184,7 +195,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
