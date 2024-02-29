@@ -33,73 +33,7 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_selection_searches_get(
-        self,
-    ) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
-        """Returns all searches visible to the calling user.
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]
-        """
-        data = self._v1alpha_selection_searches_get_with_http_info(
-            _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_selection_searches_get_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map = {
-            200: "list[GrantaServerApiSelectionSearchesSelectionSearch]",
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/selection-searches",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_selection_searches_post(
+    def create_search(
         self,
         *,
         body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None,
@@ -116,12 +50,10 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
         """
-        data = self._v1alpha_selection_searches_post_with_http_info(
-            body, _return_http_data_only=True
-        )
+        data = self._create_search_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_selection_searches_post_with_http_info(
+    def _create_search_with_http_info(
         self,
         body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None,
         **kwargs: Any,
@@ -137,7 +69,7 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_post"
+                    f"Got an unexpected keyword argument '{key}' to method create_search"
                 )
             params[key] = val
         del params["kwargs"]
@@ -193,103 +125,7 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_selection_searches_search_post(
-        self,
-        *,
-        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
-    ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
-        """Retrieves a collection of searches that match the specified criteria.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GrantaServerApiSelectionSearchesFindSearchRequest
-
-        Returns
-        -------
-        Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
-        """
-        data = self._v1alpha_selection_searches_search_post_with_http_info(
-            body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_selection_searches_search_post_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_search_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSelectionSearchesSelectionSearch",
-            400: None,
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/selection-searches/search",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_selection_searches_search_search_identifier_delete(
-        self, *, search_identifier: "str"
-    ) -> "None":
+    def delete_search(self, *, search_identifier: "str") -> "None":
         """Delete an existing selection search.
 
         This method makes a synchronous HTTP request.
@@ -302,12 +138,12 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_selection_searches_search_search_identifier_delete_with_http_info(
+        data = self._delete_search_with_http_info(
             search_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_selection_searches_search_search_identifier_delete_with_http_info(
+    def _delete_search_with_http_info(
         self, search_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -321,14 +157,14 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_search_search_identifier_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_search"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
         if "search_identifier" not in params or params["search_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'search_identifier' when calling 'v1alpha_selection_searches_search_search_identifier_delete'"
+                "Missing the required parameter 'search_identifier' when calling 'delete_search'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -368,7 +204,71 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_selection_searches_search_search_identifier_get(
+    def get_all(
+        self,
+    ) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
+        """Returns all searches visible to the calling user.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]
+        """
+        data = self._get_all_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map = {
+            200: "list[GrantaServerApiSelectionSearchesSelectionSearch]",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/selection-searches",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_search(
         self, *, search_identifier: "str"
     ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
         """Returns the given search if it exists and the calling user has access to it
@@ -383,12 +283,12 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
         """
-        data = self._v1alpha_selection_searches_search_search_identifier_get_with_http_info(
+        data = self._get_search_with_http_info(
             search_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_selection_searches_search_search_identifier_get_with_http_info(
+    def _get_search_with_http_info(
         self, search_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -402,14 +302,14 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_search_search_identifier_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_search"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
         if "search_identifier" not in params or params["search_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'search_identifier' when calling 'v1alpha_selection_searches_search_search_identifier_get'"
+                "Missing the required parameter 'search_identifier' when calling 'get_search'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -454,7 +354,7 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_selection_searches_search_search_identifier_put(
+    def save_search(
         self,
         *,
         search_identifier: "str",
@@ -473,12 +373,12 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_selection_searches_search_search_identifier_put_with_http_info(
+        data = self._save_search_with_http_info(
             search_identifier, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_selection_searches_search_search_identifier_put_with_http_info(
+    def _save_search_with_http_info(
         self,
         search_identifier: "str",
         body: "Optional[GrantaServerApiSelectionSearchesSaveSearchRequest]" = None,
@@ -496,14 +396,14 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_selection_searches_search_search_identifier_put"
+                    f"Got an unexpected keyword argument '{key}' to method save_search"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
         if "search_identifier" not in params or params["search_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'search_identifier' when calling 'v1alpha_selection_searches_search_search_identifier_put'"
+                "Missing the required parameter 'search_identifier' when calling 'save_search'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -542,6 +442,98 @@ class SelectionSearchesApi(ApiBase):  # type: ignore[misc]
         return self.api_client.call_api(
             "/v1alpha/selection-searches/search/{searchIdentifier}",
             "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def search(
+        self,
+        *,
+        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
+    ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
+        """Retrieves a collection of searches that match the specified criteria.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GrantaServerApiSelectionSearchesFindSearchRequest
+
+        Returns
+        -------
+        Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
+        """
+        data = self._search_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _search_with_http_info(
+        self,
+        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method search"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSelectionSearchesSelectionSearch",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/selection-searches/search",
+            "POST",
             path_params,
             query_params,
             header_params,

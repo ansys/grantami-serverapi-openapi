@@ -33,582 +33,7 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_unit_systems_get(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]":
-        """Get all unit systems in the database
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]
-        """
-        data = self._v1alpha_databases_database_key_unit_systems_get_with_http_info(
-            database_key, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_unit_systems_get_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_unit_systems_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_unit_systems_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitSystemsInfo",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/unit-systems",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_unit_systems_post(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
-        """Create a new unit system.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        body: GrantaServerApiSchemaUnitsCreateUnitSystem
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
-        """
-        data = self._v1alpha_databases_database_key_unit_systems_post_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_unit_systems_post_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_unit_systems_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_unit_systems_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            201: "GrantaServerApiSchemaUnitsUnitSystem",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/unit-systems",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_unit_systems_unit_system_guid_delete(
-        self, *, database_key: "str", unit_system_guid: "str"
-    ) -> "None":
-        """Delete a unit system.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        unit_system_guid: str
-
-        Returns
-        -------
-        None
-        """
-        data = self._v1alpha_databases_database_key_unit_systems_unit_system_guid_delete_with_http_info(
-            database_key, unit_system_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_unit_systems_unit_system_guid_delete_with_http_info(
-        self, database_key: "str", unit_system_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "unit_system_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_unit_systems_unit_system_guid_delete"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_delete'"
-            )
-        # verify the required parameter "unit_system_guid" is set
-        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_system_guid' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_delete'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "unit_system_guid" in params and unit_system_guid is not None:
-            path_params["unit-system-guid"] = params["unit_system_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-
-        response_type_map = {
-            200: None,
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
-            "DELETE",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_unit_systems_unit_system_guid_get(
-        self, *, database_key: "str", unit_system_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
-        """Get an individual unit system
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        unit_system_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
-        """
-        data = self._v1alpha_databases_database_key_unit_systems_unit_system_guid_get_with_http_info(
-            database_key, unit_system_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_unit_systems_unit_system_guid_get_with_http_info(
-        self, database_key: "str", unit_system_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "unit_system_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_unit_systems_unit_system_guid_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_get'"
-            )
-        # verify the required parameter "unit_system_guid" is set
-        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_system_guid' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "unit_system_guid" in params and unit_system_guid is not None:
-            path_params["unit-system-guid"] = params["unit_system_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitSystem",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_unit_systems_unit_system_guid_patch(
-        self,
-        *,
-        database_key: "str",
-        unit_system_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
-        """Update a unit system.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        unit_system_guid: str
-        body: GrantaServerApiSchemaUnitsUpdateUnitSystem
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
-        """
-        data = self._v1alpha_databases_database_key_unit_systems_unit_system_guid_patch_with_http_info(
-            database_key, unit_system_guid, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_unit_systems_unit_system_guid_patch_with_http_info(
-        self,
-        database_key: "str",
-        unit_system_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "unit_system_guid",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_unit_systems_unit_system_guid_patch"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_patch'"
-            )
-        # verify the required parameter "unit_system_guid" is set
-        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_system_guid' when calling 'v1alpha_databases_database_key_unit_systems_unit_system_guid_patch'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "unit_system_guid" in params and unit_system_guid is not None:
-            path_params["unit-system-guid"] = params["unit_system_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitSystem",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
-            "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_units_get(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
-        """Get all units
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
-        """
-        data = self._v1alpha_databases_database_key_units_get_with_http_info(
-            database_key, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_units_get_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitsInfo",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_units_post(
+    def create_unit(
         self,
         *,
         database_key: "str",
@@ -627,12 +52,12 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaUnitsUnit, None]
         """
-        data = self._v1alpha_databases_database_key_units_post_with_http_info(
+        data = self._create_unit_with_http_info(
             database_key, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_post_with_http_info(
+    def _create_unit_with_http_info(
         self,
         database_key: "str",
         body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None,
@@ -650,14 +75,14 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_post"
+                    f"Got an unexpected keyword argument '{key}' to method create_unit"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_post'"
+                "Missing the required parameter 'database_key' when calling 'create_unit'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -714,9 +139,113 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_units_unit_guid_delete(
-        self, *, database_key: "str", unit_guid: "str"
-    ) -> "None":
+    def create_unit_system(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+        """Create a new unit system.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        body: GrantaServerApiSchemaUnitsCreateUnitSystem
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
+        """
+        data = self._create_unit_system_with_http_info(
+            database_key, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_unit_system_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_unit_system"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_unit_system'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiSchemaUnitsUnitSystem",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/unit-systems",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_unit(self, *, database_key: "str", unit_guid: "str") -> "None":
         """Delete unit.
 
         This method makes a synchronous HTTP request.
@@ -730,14 +259,12 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = (
-            self._v1alpha_databases_database_key_units_unit_guid_delete_with_http_info(
-                database_key, unit_guid, _return_http_data_only=True
-            )
+        data = self._delete_unit_with_http_info(
+            database_key, unit_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_unit_guid_delete_with_http_info(
+    def _delete_unit_with_http_info(
         self, database_key: "str", unit_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -752,19 +279,19 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guid_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_unit"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guid_delete'"
+                "Missing the required parameter 'database_key' when calling 'delete_unit'"
             )
         # verify the required parameter "unit_guid" is set
         if "unit_guid" not in params or params["unit_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_delete'"
+                "Missing the required parameter 'unit_guid' when calling 'delete_unit'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -807,10 +334,101 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_units_unit_guid_equivalent_units_get(
+    def delete_unit_system(
+        self, *, database_key: "str", unit_system_guid: "str"
+    ) -> "None":
+        """Delete a unit system.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_system_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_unit_system_with_http_info(
+            database_key, unit_system_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_unit_system_with_http_info(
+        self, database_key: "str", unit_system_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_system_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_unit_system"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'delete_unit_system'"
+            )
+        # verify the required parameter "unit_system_guid" is set
+        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_system_guid' when calling 'delete_unit_system'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            path_params["unit-system-guid"] = params["unit_system_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_compatible_units(
         self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]":
-        """Get equivalent units (one per unit system)
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
+        """Get compatible units for unit
 
         This method makes a synchronous HTTP request.
 
@@ -821,14 +439,14 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]
+        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
         """
-        data = self._v1alpha_databases_database_key_units_unit_guid_equivalent_units_get_with_http_info(
+        data = self._get_compatible_units_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_unit_guid_equivalent_units_get_with_http_info(
+    def _get_compatible_units_with_http_info(
         self, database_key: "str", unit_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -843,19 +461,19 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guid_equivalent_units_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_compatible_units"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_get'"
+                "Missing the required parameter 'database_key' when calling 'get_compatible_units'"
             )
         # verify the required parameter "unit_guid" is set
         if "unit_guid" not in params or params["unit_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_get'"
+                "Missing the required parameter 'unit_guid' when calling 'get_compatible_units'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -880,12 +498,12 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         )
 
         response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitEquivalentsInfo",
+            200: "GrantaServerApiSchemaUnitsUnitsInfo",
             404: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units",
+            "/v1alpha/databases/{database-key}/units/{unit-guid}:compatible-units",
             "GET",
             path_params,
             query_params,
@@ -900,131 +518,7 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post(
-        self,
-        *,
-        database_key: "str",
-        unit_guid: "str",
-        unit_system_guid: "str",
-        equivalent_unit_guid: "str",
-    ) -> "None":
-        """Set the equivalent unit for a given unit system
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        unit_guid: str
-        unit_system_guid: str
-        equivalent_unit_guid: str
-
-        Returns
-        -------
-        None
-        """
-        data = self._v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post_with_http_info(
-            database_key,
-            unit_guid,
-            unit_system_guid,
-            equivalent_unit_guid,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post_with_http_info(
-        self,
-        database_key: "str",
-        unit_guid: "str",
-        unit_system_guid: "str",
-        equivalent_unit_guid: "str",
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "unit_guid",
-            "unit_system_guid",
-            "equivalent_unit_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post'"
-            )
-        # verify the required parameter "unit_guid" is set
-        if "unit_guid" not in params or params["unit_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post'"
-            )
-        # verify the required parameter "unit_system_guid" is set
-        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_system_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post'"
-            )
-        # verify the required parameter "equivalent_unit_guid" is set
-        if (
-            "equivalent_unit_guid" not in params
-            or params["equivalent_unit_guid"] is None
-        ):
-            raise ValueError(
-                "Missing the required parameter 'equivalent_unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_equivalent_units_unit_system_unit_system_guid_equivalent_unit_equivalent_unit_guidset_equivalent_unit_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "unit_guid" in params and unit_guid is not None:
-            path_params["unit-guid"] = params["unit_guid"]
-        if "unit_system_guid" in params and unit_system_guid is not None:
-            path_params["unit-system-guid"] = params["unit_system_guid"]
-        if "equivalent_unit_guid" in params and equivalent_unit_guid is not None:
-            path_params["equivalent-unit-guid"] = params["equivalent_unit_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-
-        response_type_map = {
-            200: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units/unit-system/{unit-system-guid}/equivalent-unit/{equivalent-unit-guid}:set-equivalent-unit",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_units_unit_guid_get(
+    def get_unit(
         self, *, database_key: "str", unit_guid: "str"
     ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
         """Get individual units
@@ -1040,12 +534,12 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaUnitsUnit, None]
         """
-        data = self._v1alpha_databases_database_key_units_unit_guid_get_with_http_info(
+        data = self._get_unit_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_unit_guid_get_with_http_info(
+    def _get_unit_with_http_info(
         self, database_key: "str", unit_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -1060,19 +554,19 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guid_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_unit"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guid_get'"
+                "Missing the required parameter 'database_key' when calling 'get_unit'"
             )
         # verify the required parameter "unit_guid" is set
         if "unit_guid" not in params or params["unit_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_get'"
+                "Missing the required parameter 'unit_guid' when calling 'get_unit'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -1117,7 +611,574 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_units_unit_guid_patch(
+    def get_unit_equivalents(
+        self, *, database_key: "str", unit_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]":
+        """Get equivalent units (one per unit system)
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]
+        """
+        data = self._get_unit_equivalents_with_http_info(
+            database_key, unit_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_unit_equivalents_with_http_info(
+        self, database_key: "str", unit_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_unit_equivalents"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_unit_equivalents'"
+            )
+        # verify the required parameter "unit_guid" is set
+        if "unit_guid" not in params or params["unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_guid' when calling 'get_unit_equivalents'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_guid" in params and unit_guid is not None:
+            path_params["unit-guid"] = params["unit_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaUnitsUnitEquivalentsInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_unit_system(
+        self, *, database_key: "str", unit_system_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+        """Get an individual unit system
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_system_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
+        """
+        data = self._get_unit_system_with_http_info(
+            database_key, unit_system_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_unit_system_with_http_info(
+        self, database_key: "str", unit_system_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_system_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_unit_system"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_unit_system'"
+            )
+        # verify the required parameter "unit_system_guid" is set
+        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_system_guid' when calling 'get_unit_system'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            path_params["unit-system-guid"] = params["unit_system_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaUnitsUnitSystem",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_unit_systems(
+        self, *, database_key: "str"
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]":
+        """Get all unit systems in the database
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]
+        """
+        data = self._get_unit_systems_with_http_info(
+            database_key, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_unit_systems_with_http_info(
+        self, database_key: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_unit_systems"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_unit_systems'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaUnitsUnitSystemsInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/unit-systems",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_unit_usages(
+        self, *, database_key: "str", unit_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitUsage, None]":
+        """Get all usages of unit
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitUsage, None]
+        """
+        data = self._get_unit_usages_with_http_info(
+            database_key, unit_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_unit_usages_with_http_info(
+        self, database_key: "str", unit_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_unit_usages"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_unit_usages'"
+            )
+        # verify the required parameter "unit_guid" is set
+        if "unit_guid" not in params or params["unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_guid' when calling 'get_unit_usages'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_guid" in params and unit_guid is not None:
+            path_params["unit-guid"] = params["unit_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaUnitsUnitUsage",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units/{unit-guid}:usages",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_units(
+        self, *, database_key: "str"
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
+        """Get all units
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
+        """
+        data = self._get_units_with_http_info(database_key, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_units_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_units"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_units'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaUnitsUnitsInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_unit_equivalent(
+        self,
+        *,
+        database_key: "str",
+        unit_guid: "str",
+        unit_system_guid: "str",
+        equivalent_unit_guid: "str",
+    ) -> "None":
+        """Set the equivalent unit for a given unit system
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_guid: str
+        unit_system_guid: str
+        equivalent_unit_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._set_unit_equivalent_with_http_info(
+            database_key,
+            unit_guid,
+            unit_system_guid,
+            equivalent_unit_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_unit_equivalent_with_http_info(
+        self,
+        database_key: "str",
+        unit_guid: "str",
+        unit_system_guid: "str",
+        equivalent_unit_guid: "str",
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_guid",
+            "unit_system_guid",
+            "equivalent_unit_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_unit_equivalent"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "unit_guid" is set
+        if "unit_guid" not in params or params["unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_guid' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "unit_system_guid" is set
+        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_system_guid' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "equivalent_unit_guid" is set
+        if (
+            "equivalent_unit_guid" not in params
+            or params["equivalent_unit_guid"] is None
+        ):
+            raise ValueError(
+                "Missing the required parameter 'equivalent_unit_guid' when calling 'set_unit_equivalent'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_guid" in params and unit_guid is not None:
+            path_params["unit-guid"] = params["unit_guid"]
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            path_params["unit-system-guid"] = params["unit_system_guid"]
+        if "equivalent_unit_guid" in params and equivalent_unit_guid is not None:
+            path_params["equivalent-unit-guid"] = params["equivalent_unit_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map = {
+            200: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units/unit-system/{unit-system-guid}/equivalent-unit/{equivalent-unit-guid}:set-equivalent-unit",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def update_unit(
         self,
         *,
         database_key: "str",
@@ -1138,14 +1199,12 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaUnitsUnit, None]
         """
-        data = (
-            self._v1alpha_databases_database_key_units_unit_guid_patch_with_http_info(
-                database_key, unit_guid, body, _return_http_data_only=True
-            )
+        data = self._update_unit_with_http_info(
+            database_key, unit_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_unit_guid_patch_with_http_info(
+    def _update_unit_with_http_info(
         self,
         database_key: "str",
         unit_guid: "str",
@@ -1165,19 +1224,19 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guid_patch"
+                    f"Got an unexpected keyword argument '{key}' to method update_unit"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guid_patch'"
+                "Missing the required parameter 'database_key' when calling 'update_unit'"
             )
         # verify the required parameter "unit_guid" is set
         if "unit_guid" not in params or params["unit_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guid_patch'"
+                "Missing the required parameter 'unit_guid' when calling 'update_unit'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -1236,33 +1295,43 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_units_unit_guidcompatible_units_get(
-        self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
-        """Get compatible units for unit
+    def update_unit_system(
+        self,
+        *,
+        database_key: "str",
+        unit_system_guid: "str",
+        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
+    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+        """Update a unit system.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         database_key: str
-        unit_guid: str
+        unit_system_guid: str
+        body: GrantaServerApiSchemaUnitsUpdateUnitSystem
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
+        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
         """
-        data = self._v1alpha_databases_database_key_units_unit_guidcompatible_units_get_with_http_info(
-            database_key, unit_guid, _return_http_data_only=True
+        data = self._update_unit_system_with_http_info(
+            database_key, unit_system_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_units_unit_guidcompatible_units_get_with_http_info(
-        self, database_key: "str", unit_guid: "str", **kwargs: Any
+    def _update_unit_system_with_http_info(
+        self,
+        database_key: "str",
+        unit_system_guid: "str",
+        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
+        **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
-            "unit_guid",
+            "unit_system_guid",
+            "body",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -1272,19 +1341,19 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guidcompatible_units_get"
+                    f"Got an unexpected keyword argument '{key}' to method update_unit_system"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guidcompatible_units_get'"
+                "Missing the required parameter 'database_key' when calling 'update_unit_system'"
             )
-        # verify the required parameter "unit_guid" is set
-        if "unit_guid" not in params or params["unit_guid"] is None:
+        # verify the required parameter "unit_system_guid" is set
+        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guidcompatible_units_get'"
+                "Missing the required parameter 'unit_system_guid' when calling 'update_unit_system'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -1292,8 +1361,8 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         path_params: Dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
-        if "unit_guid" in params and unit_guid is not None:
-            path_params["unit-guid"] = params["unit_guid"]
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            path_params["unit-system-guid"] = params["unit_system_guid"]
 
         query_params: List[Any] = []
 
@@ -1303,112 +1372,33 @@ class SchemaUnitsApi(ApiBase):  # type: ignore[misc]
         local_var_files: Dict[str, Any] = {}
 
         body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
             ["application/json"]
         )
 
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
         response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitsInfo",
+            200: "GrantaServerApiSchemaUnitsUnitSystem",
+            400: None,
+            403: None,
             404: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units/{unit-guid}:compatible-units",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_units_unit_guidusages_get(
-        self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitUsage, None]":
-        """Get all usages of unit
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        unit_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaUnitsUnitUsage, None]
-        """
-        data = self._v1alpha_databases_database_key_units_unit_guidusages_get_with_http_info(
-            database_key, unit_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_units_unit_guidusages_get_with_http_info(
-        self, database_key: "str", unit_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "unit_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_units_unit_guidusages_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_units_unit_guidusages_get'"
-            )
-        # verify the required parameter "unit_guid" is set
-        if "unit_guid" not in params or params["unit_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'v1alpha_databases_database_key_units_unit_guidusages_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "unit_guid" in params and unit_guid is not None:
-            path_params["unit-guid"] = params["unit_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaUnitsUnitUsage",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units/{unit-guid}:usages",
-            "GET",
+            "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
+            "PATCH",
             path_params,
             query_params,
             header_params,

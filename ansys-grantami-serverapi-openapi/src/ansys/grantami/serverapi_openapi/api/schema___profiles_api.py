@@ -33,7 +33,258 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_profiles_get(
+    def create_profile(
+        self, *, body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None
+    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
+        """Create a new profile
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GrantaServerApiSchemaProfilesCreateProfile
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaProfilesProfile, None]
+        """
+        data = self._create_profile_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _create_profile_with_http_info(
+        self,
+        body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_profile"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiSchemaProfilesProfile",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/profiles",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_profile(self, *, profile_guid: "str") -> "None":
+        """Delete a profile
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        profile_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_profile_with_http_info(
+            profile_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_profile_with_http_info(self, profile_guid: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "profile_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_profile"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "profile_guid" is set
+        if "profile_guid" not in params or params["profile_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'profile_guid' when calling 'delete_profile'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "profile_guid" in params and profile_guid is not None:
+            path_params["profile-guid"] = params["profile_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/profiles/{profile-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_profile(
+        self, *, profile_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
+        """Get individual profile
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        profile_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaProfilesProfile, None]
+        """
+        data = self._get_profile_with_http_info(
+            profile_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_profile_with_http_info(self, profile_guid: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "profile_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_profile"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "profile_guid" is set
+        if "profile_guid" not in params or params["profile_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'profile_guid' when calling 'get_profile'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "profile_guid" in params and profile_guid is not None:
+            path_params["profile-guid"] = params["profile_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaProfilesProfile",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/profiles/{profile-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_profiles(
         self,
     ) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
         """Get AllProfilesInfo
@@ -44,17 +295,17 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]
         """
-        data = self._v1alpha_profiles_get_with_http_info(_return_http_data_only=True)
+        data = self._get_profiles_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_profiles_get_with_http_info(self, **kwargs: Any) -> Any:
+    def _get_profiles_with_http_info(self, **kwargs: Any) -> Any:
         all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_profiles"
                 )
             params[key] = val
         del params["kwargs"]
@@ -97,7 +348,7 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_profiles_patch(
+    def update_all_profiles_info(
         self,
         *,
         body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
@@ -114,12 +365,12 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]
         """
-        data = self._v1alpha_profiles_patch_with_http_info(
+        data = self._update_all_profiles_info_with_http_info(
             body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_profiles_patch_with_http_info(
+    def _update_all_profiles_info_with_http_info(
         self,
         body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
         **kwargs: Any,
@@ -135,7 +386,7 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_patch"
+                    f"Got an unexpected keyword argument '{key}' to method update_all_profiles_info"
                 )
             params[key] = val
         del params["kwargs"]
@@ -192,264 +443,7 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_profiles_post(
-        self, *, body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None
-    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
-        """Create a new profile
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GrantaServerApiSchemaProfilesCreateProfile
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaProfilesProfile, None]
-        """
-        data = self._v1alpha_profiles_post_with_http_info(
-            body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_profiles_post_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            201: "GrantaServerApiSchemaProfilesProfile",
-            400: None,
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/profiles",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_profiles_profile_guid_delete(self, *, profile_guid: "str") -> "None":
-        """Delete a profile
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        profile_guid: str
-
-        Returns
-        -------
-        None
-        """
-        data = self._v1alpha_profiles_profile_guid_delete_with_http_info(
-            profile_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_profiles_profile_guid_delete_with_http_info(
-        self, profile_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "profile_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_profile_guid_delete"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "profile_guid" is set
-        if "profile_guid" not in params or params["profile_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'profile_guid' when calling 'v1alpha_profiles_profile_guid_delete'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "profile_guid" in params and profile_guid is not None:
-            path_params["profile-guid"] = params["profile_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-
-        response_type_map = {
-            200: None,
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/profiles/{profile-guid}",
-            "DELETE",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_profiles_profile_guid_get(
-        self, *, profile_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaProfilesProfile, None]":
-        """Get individual profile
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        profile_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaProfilesProfile, None]
-        """
-        data = self._v1alpha_profiles_profile_guid_get_with_http_info(
-            profile_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_profiles_profile_guid_get_with_http_info(
-        self, profile_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "profile_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_profile_guid_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "profile_guid" is set
-        if "profile_guid" not in params or params["profile_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'profile_guid' when calling 'v1alpha_profiles_profile_guid_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "profile_guid" in params and profile_guid is not None:
-            path_params["profile-guid"] = params["profile_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaProfilesProfile",
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/profiles/{profile-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_profiles_profile_guid_patch(
+    def update_profile(
         self,
         *,
         profile_guid: "str",
@@ -468,12 +462,12 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaProfilesProfile, None]
         """
-        data = self._v1alpha_profiles_profile_guid_patch_with_http_info(
+        data = self._update_profile_with_http_info(
             profile_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_profiles_profile_guid_patch_with_http_info(
+    def _update_profile_with_http_info(
         self,
         profile_guid: "str",
         body: "Optional[GrantaServerApiSchemaProfilesUpdateProfile]" = None,
@@ -491,14 +485,14 @@ class SchemaProfilesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_profiles_profile_guid_patch"
+                    f"Got an unexpected keyword argument '{key}' to method update_profile"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "profile_guid" is set
         if "profile_guid" not in params or params["profile_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'profile_guid' when calling 'v1alpha_profiles_profile_guid_patch'"
+                "Missing the required parameter 'profile_guid' when calling 'update_profile'"
             )
 
         collection_formats: Dict[str, Any] = {}

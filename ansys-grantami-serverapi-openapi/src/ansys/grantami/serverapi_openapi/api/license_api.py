@@ -33,7 +33,7 @@ class LicenseApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_license_server_licensesensure_checked_out_post(
+    def checkout_app_license(
         self, *, body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None
     ) -> "GrantaServerApiAppNameLicenseCheckoutResponse":
         """Checks out server wide licenses and returns a bool for each provided app name indicating if  the relevant license(s) required have been checked out.
@@ -48,14 +48,12 @@ class LicenseApi(ApiBase):  # type: ignore[misc]
         -------
         GrantaServerApiAppNameLicenseCheckoutResponse
         """
-        data = (
-            self._v1alpha_license_server_licensesensure_checked_out_post_with_http_info(
-                body, _return_http_data_only=True
-            )
+        data = self._checkout_app_license_with_http_info(
+            body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_license_server_licensesensure_checked_out_post_with_http_info(
+    def _checkout_app_license_with_http_info(
         self,
         body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None,
         **kwargs: Any,
@@ -71,7 +69,7 @@ class LicenseApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_license_server_licensesensure_checked_out_post"
+                    f"Got an unexpected keyword argument '{key}' to method checkout_app_license"
                 )
             params[key] = val
         del params["kwargs"]
