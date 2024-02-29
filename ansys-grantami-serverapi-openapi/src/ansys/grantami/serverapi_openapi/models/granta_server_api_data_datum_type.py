@@ -28,3 +28,4 @@ class GrantaServerApiDataDatumType(Enum):
     DATETIME = "dateTime"
     DISCRETE = "discrete"
     RANGE = "range"
+    POINT = "point"

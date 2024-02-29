@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -68,22 +68,22 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
     def __init__(
         self,
         *,
-        database_key: "Optional[str]" = None,
+        database_key: "Union[str, None, Unset_Type]" = Unset,
         property_name: "str" = "databaseKey",
     ) -> None:
         """GrantaServerApiDataExportPropertiesDatabaseKeyProperty - a model defined in Swagger
 
         Parameters
         ----------
-            database_key: str, optional
-            property_name: str
+        database_key: str, optional
+        property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._database_key = None
+        self._property_name: str
+        self._database_key: Union[str, None, Unset_Type] = Unset
 
         self.property_name = property_name
-        if database_key is not None:
+        if database_key is not Unset:
             self.database_key = database_key
 
     @property
@@ -106,34 +106,38 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def database_key(self) -> "Optional[str]":
+    def database_key(self) -> "Union[str, None, Unset_Type]":
         """Gets the database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Optional[str]") -> None:
+    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
         """Sets the database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
 
         Parameters
         ----------
-        database_key: str
+        database_key: Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiDataExportPropertiesDatabaseKeyProperty.
         """
         self._database_key = database_key
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +154,7 @@ class GrantaServerApiDataExportPropertiesDatabaseKeyProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

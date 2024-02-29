@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -71,75 +71,90 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
     def __init__(
         self,
         *,
-        _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]" = None,
-        inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]" = None,
+        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]" = Unset,
+        inner_criterion: "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]" = Unset,
         type: "str" = "recordProperty",
     ) -> None:
         """GrantaServerApiSearchRecordPropertyCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            _property: GrantaServerApiSearchSearchableRecordProperty, optional
-            inner_criterion: GrantaServerApiSearchDatumCriterion, optional
-            type: str
+        _property: GrantaServerApiSearchSearchableRecordProperty, optional
+        inner_criterion: GrantaServerApiSearchDatumCriterion, optional
+        type: str
         """
         super().__init__()
-        self.__property = None
-        self._inner_criterion = None
-        self._type: str = None  # type: ignore[assignment]
+        self.__property: Union[
+            GrantaServerApiSearchSearchableRecordProperty, Unset_Type
+        ] = Unset
+        self._inner_criterion: Union[
+            GrantaServerApiSearchDatumCriterion, Unset_Type
+        ] = Unset
+        self._type: str
 
-        if _property is not None:
+        if _property is not Unset:
             self._property = _property
-        if inner_criterion is not None:
+        if inner_criterion is not Unset:
             self.inner_criterion = inner_criterion
         self.type = type
 
     @property
-    def _property(self) -> "Optional[GrantaServerApiSearchSearchableRecordProperty]":
+    def _property(
+        self,
+    ) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchSearchableRecordProperty
+        Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]
             The _property of this GrantaServerApiSearchRecordPropertyCriterion.
         """
         return self.__property
 
     @_property.setter
     def _property(
-        self, _property: "Optional[GrantaServerApiSearchSearchableRecordProperty]"
+        self,
+        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]",
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Parameters
         ----------
-        _property: GrantaServerApiSearchSearchableRecordProperty
+        _property: Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]
             The _property of this GrantaServerApiSearchRecordPropertyCriterion.
         """
+        # Field is not nullable
+        if _property is None:
+            raise ValueError("Invalid value for '_property', must not be 'None'")
         self.__property = _property
 
     @property
-    def inner_criterion(self) -> "Optional[GrantaServerApiSearchDatumCriterion]":
+    def inner_criterion(
+        self,
+    ) -> "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]":
         """Gets the inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchDatumCriterion
+        Union[GrantaServerApiSearchDatumCriterion, Unset_Type]
             The inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
         """
         return self._inner_criterion
 
     @inner_criterion.setter
     def inner_criterion(
-        self, inner_criterion: "Optional[GrantaServerApiSearchDatumCriterion]"
+        self, inner_criterion: "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]"
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Parameters
         ----------
-        inner_criterion: GrantaServerApiSearchDatumCriterion
+        inner_criterion: Union[GrantaServerApiSearchDatumCriterion, Unset_Type]
             The inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
         """
+        # Field is not nullable
+        if inner_criterion is None:
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
         self._inner_criterion = inner_criterion
 
     @property
@@ -162,12 +177,16 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         type: str
             The type of this GrantaServerApiSearchRecordPropertyCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -184,7 +203,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

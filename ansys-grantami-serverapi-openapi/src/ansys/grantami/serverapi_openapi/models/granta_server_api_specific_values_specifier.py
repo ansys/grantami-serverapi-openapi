@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (
     GrantaServerApiValueSpecifier,
 )  # noqa: F401
@@ -69,68 +69,68 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         self,
         *,
         filter_on: "str" = "specific",
-        guids: "Optional[List[str]]" = None,
-        identities: "Optional[List[int]]" = None,
+        guids: "Union[List[str], None, Unset_Type]" = Unset,
+        identities: "Union[List[int], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSpecificValuesSpecifier - a model defined in Swagger
 
         Parameters
         ----------
-            filter_on: str
-            guids: List[str], optional
-            identities: List[int], optional
+        filter_on: str
+        guids: List[str], optional
+        identities: List[int], optional
         """
         super().__init__()
-        self._identities = None
-        self._guids = None
-        self._filter_on: str = None  # type: ignore[assignment]
+        self._identities: Union[List[int], None, Unset_Type] = Unset
+        self._guids: Union[List[str], None, Unset_Type] = Unset
+        self._filter_on: str
 
-        if identities is not None:
+        if identities is not Unset:
             self.identities = identities
-        if guids is not None:
+        if guids is not Unset:
             self.guids = guids
         self.filter_on = filter_on
 
     @property
-    def identities(self) -> "Optional[List[int]]":
+    def identities(self) -> "Union[List[int], None, Unset_Type]":
         """Gets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
         -------
-        list[int]
+        Union[List[int], None, Unset_Type]
             The identities of this GrantaServerApiSpecificValuesSpecifier.
         """
         return self._identities
 
     @identities.setter
-    def identities(self, identities: "Optional[List[int]]") -> None:
+    def identities(self, identities: "Union[List[int], None, Unset_Type]") -> None:
         """Sets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        identities: List[int]
+        identities: Union[List[int], None, Unset_Type]
             The identities of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._identities = identities
 
     @property
-    def guids(self) -> "Optional[List[str]]":
+    def guids(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The guids of this GrantaServerApiSpecificValuesSpecifier.
         """
         return self._guids
 
     @guids.setter
-    def guids(self, guids: "Optional[List[str]]") -> None:
+    def guids(self, guids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        guids: List[str]
+        guids: Union[List[str], None, Unset_Type]
             The guids of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._guids = guids
@@ -155,12 +155,16 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         filter_on: str
             The filter_on of this GrantaServerApiSpecificValuesSpecifier.
         """
+        # Field is not nullable
         if filter_on is None:
             raise ValueError("Invalid value for 'filter_on', must not be 'None'")
+        # Field is required
+        if filter_on is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'filter_on', must not be 'Unset'")
         self._filter_on = filter_on
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -177,7 +181,7 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

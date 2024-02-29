@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -66,44 +66,44 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
     def __init__(
         self,
         *,
-        record_list_identifiers: "Optional[List[str]]" = None,
+        record_list_identifiers: "Union[List[str], None, Unset_Type]" = Unset,
         type: "str" = "recordListMember",
     ) -> None:
         """GrantaServerApiSearchRecordListMemberCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            record_list_identifiers: List[str], optional
-            type: str
+        record_list_identifiers: List[str], optional
+        type: str
         """
         super().__init__()
-        self._record_list_identifiers = None
-        self._type: str = None  # type: ignore[assignment]
+        self._record_list_identifiers: Union[List[str], None, Unset_Type] = Unset
+        self._type: str
 
-        if record_list_identifiers is not None:
+        if record_list_identifiers is not Unset:
             self.record_list_identifiers = record_list_identifiers
         self.type = type
 
     @property
-    def record_list_identifiers(self) -> "Optional[List[str]]":
+    def record_list_identifiers(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
         """
         return self._record_list_identifiers
 
     @record_list_identifiers.setter
     def record_list_identifiers(
-        self, record_list_identifiers: "Optional[List[str]]"
+        self, record_list_identifiers: "Union[List[str], None, Unset_Type]"
     ) -> None:
         """Sets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Parameters
         ----------
-        record_list_identifiers: List[str]
+        record_list_identifiers: Union[List[str], None, Unset_Type]
             The record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
         """
         self._record_list_identifiers = record_list_identifiers
@@ -128,12 +128,16 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         type: str
             The type of this GrantaServerApiSearchRecordListMemberCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +154,7 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
     GrantaServerApiSearchDatumCriterion,
 )  # noqa: F401
@@ -86,67 +86,67 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
     def __init__(
         self,
         *,
-        default_x_axis_parameter_guid: "Optional[str]" = None,
-        default_x_axis_parameter_identity: "Optional[int]" = None,
-        is_series_graph: "Optional[bool]" = None,
-        number_of_points_gte: "Optional[int]" = None,
-        number_of_points_lte: "Optional[int]" = None,
-        number_of_series_gte: "Optional[int]" = None,
-        number_of_series_lte: "Optional[int]" = None,
-        show_as_table: "Optional[bool]" = None,
+        default_x_axis_parameter_guid: "Union[str, None, Unset_Type]" = Unset,
+        default_x_axis_parameter_identity: "Union[int, None, Unset_Type]" = Unset,
+        is_series_graph: "Union[bool, None, Unset_Type]" = Unset,
+        number_of_points_gte: "Union[int, None, Unset_Type]" = Unset,
+        number_of_points_lte: "Union[int, None, Unset_Type]" = Unset,
+        number_of_series_gte: "Union[int, None, Unset_Type]" = Unset,
+        number_of_series_lte: "Union[int, None, Unset_Type]" = Unset,
+        show_as_table: "Union[bool, None, Unset_Type]" = Unset,
         type: "str" = "floatFunctionalGraph",
-        x_axis_parameter_guid: "Optional[str]" = None,
-        x_axis_parameter_identity: "Optional[int]" = None,
+        x_axis_parameter_guid: "Union[str, None, Unset_Type]" = Unset,
+        x_axis_parameter_identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchFloatFunctionalGraphDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            default_x_axis_parameter_guid: str, optional
-            default_x_axis_parameter_identity: int, optional
-            is_series_graph: bool, optional
-            number_of_points_gte: int, optional
-            number_of_points_lte: int, optional
-            number_of_series_gte: int, optional
-            number_of_series_lte: int, optional
-            show_as_table: bool, optional
-            type: str
-            x_axis_parameter_guid: str, optional
-            x_axis_parameter_identity: int, optional
+        default_x_axis_parameter_guid: str, optional
+        default_x_axis_parameter_identity: int, optional
+        is_series_graph: bool, optional
+        number_of_points_gte: int, optional
+        number_of_points_lte: int, optional
+        number_of_series_gte: int, optional
+        number_of_series_lte: int, optional
+        show_as_table: bool, optional
+        type: str
+        x_axis_parameter_guid: str, optional
+        x_axis_parameter_identity: int, optional
         """
         super().__init__()
-        self._type: str = None  # type: ignore[assignment]
-        self._x_axis_parameter_identity = None
-        self._x_axis_parameter_guid = None
-        self._number_of_series_lte = None
-        self._number_of_series_gte = None
-        self._show_as_table = None
-        self._default_x_axis_parameter_identity = None
-        self._default_x_axis_parameter_guid = None
-        self._number_of_points_lte = None
-        self._number_of_points_gte = None
-        self._is_series_graph = None
+        self._type: str
+        self._x_axis_parameter_identity: Union[int, None, Unset_Type] = Unset
+        self._x_axis_parameter_guid: Union[str, None, Unset_Type] = Unset
+        self._number_of_series_lte: Union[int, None, Unset_Type] = Unset
+        self._number_of_series_gte: Union[int, None, Unset_Type] = Unset
+        self._show_as_table: Union[bool, None, Unset_Type] = Unset
+        self._default_x_axis_parameter_identity: Union[int, None, Unset_Type] = Unset
+        self._default_x_axis_parameter_guid: Union[str, None, Unset_Type] = Unset
+        self._number_of_points_lte: Union[int, None, Unset_Type] = Unset
+        self._number_of_points_gte: Union[int, None, Unset_Type] = Unset
+        self._is_series_graph: Union[bool, None, Unset_Type] = Unset
 
         self.type = type
-        if x_axis_parameter_identity is not None:
+        if x_axis_parameter_identity is not Unset:
             self.x_axis_parameter_identity = x_axis_parameter_identity
-        if x_axis_parameter_guid is not None:
+        if x_axis_parameter_guid is not Unset:
             self.x_axis_parameter_guid = x_axis_parameter_guid
-        if number_of_series_lte is not None:
+        if number_of_series_lte is not Unset:
             self.number_of_series_lte = number_of_series_lte
-        if number_of_series_gte is not None:
+        if number_of_series_gte is not Unset:
             self.number_of_series_gte = number_of_series_gte
-        if show_as_table is not None:
+        if show_as_table is not Unset:
             self.show_as_table = show_as_table
-        if default_x_axis_parameter_identity is not None:
+        if default_x_axis_parameter_identity is not Unset:
             self.default_x_axis_parameter_identity = default_x_axis_parameter_identity
-        if default_x_axis_parameter_guid is not None:
+        if default_x_axis_parameter_guid is not Unset:
             self.default_x_axis_parameter_guid = default_x_axis_parameter_guid
-        if number_of_points_lte is not None:
+        if number_of_points_lte is not Unset:
             self.number_of_points_lte = number_of_points_lte
-        if number_of_points_gte is not None:
+        if number_of_points_gte is not Unset:
             self.number_of_points_gte = number_of_points_gte
-        if is_series_graph is not None:
+        if is_series_graph is not Unset:
             self.is_series_graph = is_series_graph
 
     @property
@@ -169,258 +169,272 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
         type: str
             The type of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def x_axis_parameter_identity(self) -> "Optional[int]":
+    def x_axis_parameter_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._x_axis_parameter_identity
 
     @x_axis_parameter_identity.setter
     def x_axis_parameter_identity(
-        self, x_axis_parameter_identity: "Optional[int]"
+        self, x_axis_parameter_identity: "Union[int, None, Unset_Type]"
     ) -> None:
         """Sets the x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
         Parameters
         ----------
-        x_axis_parameter_identity: int
+        x_axis_parameter_identity: Union[int, None, Unset_Type]
             The x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._x_axis_parameter_identity = x_axis_parameter_identity
 
     @property
-    def x_axis_parameter_guid(self) -> "Optional[str]":
+    def x_axis_parameter_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._x_axis_parameter_guid
 
     @x_axis_parameter_guid.setter
-    def x_axis_parameter_guid(self, x_axis_parameter_guid: "Optional[str]") -> None:
+    def x_axis_parameter_guid(
+        self, x_axis_parameter_guid: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only series graphs have an x axis.
 
         Parameters
         ----------
-        x_axis_parameter_guid: str
+        x_axis_parameter_guid: Union[str, None, Unset_Type]
             The x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._x_axis_parameter_guid = x_axis_parameter_guid
 
     @property
-    def number_of_series_lte(self) -> "Optional[int]":
+    def number_of_series_lte(self) -> "Union[int, None, Unset_Type]":
         """Gets the number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._number_of_series_lte
 
     @number_of_series_lte.setter
-    def number_of_series_lte(self, number_of_series_lte: "Optional[int]") -> None:
+    def number_of_series_lte(
+        self, number_of_series_lte: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
         Parameters
         ----------
-        number_of_series_lte: int
+        number_of_series_lte: Union[int, None, Unset_Type]
             The number_of_series_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._number_of_series_lte = number_of_series_lte
 
     @property
-    def number_of_series_gte(self) -> "Optional[int]":
+    def number_of_series_gte(self) -> "Union[int, None, Unset_Type]":
         """Gets the number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._number_of_series_gte
 
     @number_of_series_gte.setter
-    def number_of_series_gte(self, number_of_series_gte: "Optional[int]") -> None:
+    def number_of_series_gte(
+        self, number_of_series_gte: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of series.
 
         Parameters
         ----------
-        number_of_series_gte: int
+        number_of_series_gte: Union[int, None, Unset_Type]
             The number_of_series_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._number_of_series_gte = number_of_series_gte
 
     @property
-    def show_as_table(self) -> "Optional[bool]":
+    def show_as_table(self) -> "Union[bool, None, Unset_Type]":
         """Gets the show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the \"Show as table\" property
 
         Returns
         -------
-        bool
+        Union[bool, None, Unset_Type]
             The show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._show_as_table
 
     @show_as_table.setter
-    def show_as_table(self, show_as_table: "Optional[bool]") -> None:
+    def show_as_table(self, show_as_table: "Union[bool, None, Unset_Type]") -> None:
         """Sets the show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the \"Show as table\" property
 
         Parameters
         ----------
-        show_as_table: bool
+        show_as_table: Union[bool, None, Unset_Type]
             The show_as_table of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._show_as_table = show_as_table
 
     @property
-    def default_x_axis_parameter_identity(self) -> "Optional[int]":
+    def default_x_axis_parameter_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional default x axis parameter filter. Only grid graphs have a default x axis.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._default_x_axis_parameter_identity
 
     @default_x_axis_parameter_identity.setter
     def default_x_axis_parameter_identity(
-        self, default_x_axis_parameter_identity: "Optional[int]"
+        self, default_x_axis_parameter_identity: "Union[int, None, Unset_Type]"
     ) -> None:
         """Sets the default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional default x axis parameter filter. Only grid graphs have a default x axis.
 
         Parameters
         ----------
-        default_x_axis_parameter_identity: int
+        default_x_axis_parameter_identity: Union[int, None, Unset_Type]
             The default_x_axis_parameter_identity of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._default_x_axis_parameter_identity = default_x_axis_parameter_identity
 
     @property
-    def default_x_axis_parameter_guid(self) -> "Optional[str]":
+    def default_x_axis_parameter_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only grid graphs have a default x axis..
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._default_x_axis_parameter_guid
 
     @default_x_axis_parameter_guid.setter
     def default_x_axis_parameter_guid(
-        self, default_x_axis_parameter_guid: "Optional[str]"
+        self, default_x_axis_parameter_guid: "Union[str, None, Unset_Type]"
     ) -> None:
         """Sets the default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional x axis parameter filter. Only grid graphs have a default x axis..
 
         Parameters
         ----------
-        default_x_axis_parameter_guid: str
+        default_x_axis_parameter_guid: Union[str, None, Unset_Type]
             The default_x_axis_parameter_guid of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._default_x_axis_parameter_guid = default_x_axis_parameter_guid
 
     @property
-    def number_of_points_lte(self) -> "Optional[int]":
+    def number_of_points_lte(self) -> "Union[int, None, Unset_Type]":
         """Gets the number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._number_of_points_lte
 
     @number_of_points_lte.setter
-    def number_of_points_lte(self, number_of_points_lte: "Optional[int]") -> None:
+    def number_of_points_lte(
+        self, number_of_points_lte: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
         Parameters
         ----------
-        number_of_points_lte: int
+        number_of_points_lte: Union[int, None, Unset_Type]
             The number_of_points_lte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._number_of_points_lte = number_of_points_lte
 
     @property
-    def number_of_points_gte(self) -> "Optional[int]":
+    def number_of_points_gte(self) -> "Union[int, None, Unset_Type]":
         """Gets the number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._number_of_points_gte
 
     @number_of_points_gte.setter
-    def number_of_points_gte(self, number_of_points_gte: "Optional[int]") -> None:
+    def number_of_points_gte(
+        self, number_of_points_gte: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for the number of points in a grid graph.
 
         Parameters
         ----------
-        number_of_points_gte: int
+        number_of_points_gte: Union[int, None, Unset_Type]
             The number_of_points_gte of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._number_of_points_gte = number_of_points_gte
 
     @property
-    def is_series_graph(self) -> "Optional[bool]":
+    def is_series_graph(self) -> "Union[bool, None, Unset_Type]":
         """Gets the is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the type of graph
 
         Returns
         -------
-        bool
+        Union[bool, None, Unset_Type]
             The is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         return self._is_series_graph
 
     @is_series_graph.setter
-    def is_series_graph(self, is_series_graph: "Optional[bool]") -> None:
+    def is_series_graph(self, is_series_graph: "Union[bool, None, Unset_Type]") -> None:
         """Sets the is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         Optional filter for data on the type of graph
 
         Parameters
         ----------
-        is_series_graph: bool
+        is_series_graph: Union[bool, None, Unset_Type]
             The is_series_graph of this GrantaServerApiSearchFloatFunctionalGraphDatumCriterion.
         """
         self._is_series_graph = is_series_graph
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -437,7 +451,7 @@ class GrantaServerApiSearchFloatFunctionalGraphDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

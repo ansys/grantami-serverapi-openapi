@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -69,21 +69,21 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(
         self,
         *,
         property_name: "str" = "versionNumber",
-        version_number: "Optional[int]" = None,
+        version_number: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesVersionNumberProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            version_number: int, optional
+        property_name: str
+        version_number: int, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._version_number = None
+        self._property_name: str
+        self._version_number: Union[int, Unset_Type] = Unset
 
         self.property_name = property_name
-        if version_number is not None:
+        if version_number is not Unset:
             self.version_number = version_number
 
     @property
@@ -106,34 +106,41 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesVersionNumberProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def version_number(self) -> "Optional[int]":
+    def version_number(self) -> "Union[int, Unset_Type]":
         """Gets the version_number of this GrantaServerApiDataExportPropertiesVersionNumberProperty.
 
         Returns
         -------
-        int
+        Union[int, Unset_Type]
             The version_number of this GrantaServerApiDataExportPropertiesVersionNumberProperty.
         """
         return self._version_number
 
     @version_number.setter
-    def version_number(self, version_number: "Optional[int]") -> None:
+    def version_number(self, version_number: "Union[int, Unset_Type]") -> None:
         """Sets the version_number of this GrantaServerApiDataExportPropertiesVersionNumberProperty.
 
         Parameters
         ----------
-        version_number: int
+        version_number: Union[int, Unset_Type]
             The version_number of this GrantaServerApiDataExportPropertiesVersionNumberProperty.
         """
+        # Field is not nullable
+        if version_number is None:
+            raise ValueError("Invalid value for 'version_number', must not be 'None'")
         self._version_number = version_number
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +157,7 @@ class GrantaServerApiDataExportPropertiesVersionNumberProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_local_column_criterion import (
     GrantaServerApiSearchLocalColumnCriterion,
 )  # noqa: F401
@@ -77,8 +77,8 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
         self,
         *,
         inner_criterion: "GrantaServerApiSearchDatumExistsCriterion",
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
         local_column_criterion_type: "str" = "exists",
         type: "str" = "localColumn",
     ) -> None:
@@ -86,15 +86,15 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
 
         Parameters
         ----------
-            inner_criterion: GrantaServerApiSearchDatumExistsCriterion
-            guid: str, optional
-            identity: int, optional
-            local_column_criterion_type: str
-            type: str
+        inner_criterion: GrantaServerApiSearchDatumExistsCriterion
+        guid: str, optional
+        identity: int, optional
+        local_column_criterion_type: str
+        type: str
         """
         super().__init__(guid=guid, identity=identity, type=type)
-        self._inner_criterion: GrantaServerApiSearchDatumExistsCriterion = None  # type: ignore[assignment]
-        self._local_column_criterion_type: str = None  # type: ignore[assignment]
+        self._inner_criterion: GrantaServerApiSearchDatumExistsCriterion
+        self._local_column_criterion_type: str
 
         self.inner_criterion = inner_criterion
         self.local_column_criterion_type = local_column_criterion_type
@@ -121,8 +121,12 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
         inner_criterion: GrantaServerApiSearchDatumExistsCriterion
             The inner_criterion of this GrantaServerApiSearchLocalColumnExistsCriterion.
         """
+        # Field is not nullable
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
+        # Field is required
+        if inner_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'Unset'")
         self._inner_criterion = inner_criterion
 
     @property
@@ -145,14 +149,20 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
         local_column_criterion_type: str
             The local_column_criterion_type of this GrantaServerApiSearchLocalColumnExistsCriterion.
         """
+        # Field is not nullable
         if local_column_criterion_type is None:
             raise ValueError(
                 "Invalid value for 'local_column_criterion_type', must not be 'None'"
             )
+        # Field is required
+        if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'local_column_criterion_type', must not be 'Unset'"
+            )
         self._local_column_criterion_type = local_column_criterion_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -169,7 +179,7 @@ class GrantaServerApiSearchLocalColumnExistsCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

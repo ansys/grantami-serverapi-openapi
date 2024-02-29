@@ -7,7 +7,9 @@ import ansys.grantami.serverapi_openapi.models as models
 ALL_MODELS = {
     k: v
     for k, v in models.__dict__.items()
-    if isinstance(v, type) and k != "ModelBase" and not issubclass(v, Enum)
+    if isinstance(v, type)
+    and k not in ("ModelBase", "Unset_Type")
+    and not issubclass(v, Enum)
 }
 POLYMORPHIC_MODELS = {
     k: v for k, v in ALL_MODELS.items() if "discriminator_value_class_map" in v.__dict__

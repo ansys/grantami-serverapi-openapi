@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter import (
     GrantaServerApiSchemaParametersParameter,
 )  # noqa: F401
@@ -85,20 +85,20 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         guid: "str",
         name: "str",
         values: "List[GrantaServerApiSchemaParametersDiscreteParameterValue]",
-        help_path: "Optional[str]" = None,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaParametersDiscreteParameter - a model defined in Swagger
 
         Parameters
         ----------
-            default_parameter_value_guid: str
-            display_names: Dict[str, str]
-            guid: str
-            name: str
-            values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
-            help_path: str, optional
-            type: str
+        default_parameter_value_guid: str
+        display_names: Dict[str, str]
+        guid: str
+        name: str
+        values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        help_path: str, optional
+        type: str
         """
         super().__init__(
             default_parameter_value_guid=default_parameter_value_guid,
@@ -107,8 +107,8 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
             name=name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._values: List[GrantaServerApiSchemaParametersDiscreteParameterValue] = None  # type: ignore[assignment]
+        self._type: str
+        self._values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
 
         self.type = type
         self.values = values
@@ -133,8 +133,12 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         type: str
             The type of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -143,7 +147,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
 
         Returns
         -------
-        list[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        List[GrantaServerApiSchemaParametersDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
         return self._values
@@ -159,12 +163,16 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
         values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
+        # Field is not nullable
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
+        # Field is required
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -181,7 +189,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

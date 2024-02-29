@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -87,31 +87,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_multi_valued: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_multi_valued: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "point",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_multi_valued: bool, optional
-            name: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_multi_valued: bool, optional
+        name: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -121,17 +121,21 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._is_multi_valued = None
-        self._attribute_parameters = None
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._is_multi_valued: Union[bool, Unset_Type] = Unset
+        self._attribute_parameters: Union[
+            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+        ] = Unset
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if is_multi_valued is not None:
+        if is_multi_valued is not Unset:
             self.is_multi_valued = is_multi_valued
-        if attribute_parameters is not None:
+        if attribute_parameters is not Unset:
             self.attribute_parameters = attribute_parameters
 
     @property
@@ -154,65 +158,75 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
-    def is_multi_valued(self) -> "Optional[bool]":
+    def is_multi_valued(self) -> "Union[bool, Unset_Type]":
         """Gets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         return self._is_multi_valued
 
     @is_multi_valued.setter
-    def is_multi_valued(self, is_multi_valued: "Optional[bool]") -> None:
+    def is_multi_valued(self, is_multi_valued: "Union[bool, Unset_Type]") -> None:
         """Sets the is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        is_multi_valued: bool
+        is_multi_valued: Union[bool, Unset_Type]
             The is_multi_valued of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
+        # Field is not nullable
+        if is_multi_valued is None:
+            raise ValueError("Invalid value for 'is_multi_valued', must not be 'None'")
         self._is_multi_valued = is_multi_valued
 
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         return self._attribute_parameters
@@ -220,19 +234,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -249,7 +263,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

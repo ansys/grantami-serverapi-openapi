@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
     GrantaServerApiSchemaAttributesAttribute,
 )  # noqa: F401
@@ -104,30 +104,30 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         name: "str",
         tabular_columns: "List[GrantaServerApiSchemaTabularColumnsTabularColumn]",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiSchemaAttributesTabularAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-            display_full_table: bool
-            display_names: Dict[str, str]
-            display_summary_row_inline: bool
-            guid: str
-            hide_unlinked_rows: bool
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
-            name: str
-            tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            axis_name: str, optional
-            help_path: str, optional
-            target: GrantaServerApiSchemaAttributesTabularAttributeTarget, optional
-            type: str
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        display_full_table: bool
+        display_names: Dict[str, str]
+        display_summary_row_inline: bool
+        guid: str
+        hide_unlinked_rows: bool
+        info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+        name: str
+        tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        axis_name: str, optional
+        help_path: str, optional
+        target: GrantaServerApiSchemaAttributesTabularAttributeTarget, optional
+        type: str
         """
         super().__init__(
             default_threshold_type=default_threshold_type,
@@ -139,18 +139,20 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._display_full_table: bool = None  # type: ignore[assignment]
-        self._display_summary_row_inline: bool = None  # type: ignore[assignment]
-        self._hide_unlinked_rows: bool = None  # type: ignore[assignment]
-        self._target = None
-        self._tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn] = None  # type: ignore[assignment]
+        self._type: str
+        self._display_full_table: bool
+        self._display_summary_row_inline: bool
+        self._hide_unlinked_rows: bool
+        self._target: Union[
+            GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type
+        ] = Unset
+        self._tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
 
         self.type = type
         self.display_full_table = display_full_table
         self.display_summary_row_inline = display_summary_row_inline
         self.hide_unlinked_rows = hide_unlinked_rows
-        if target is not None:
+        if target is not Unset:
             self.target = target
         self.tabular_columns = tabular_columns
 
@@ -174,8 +176,12 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -198,9 +204,15 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         display_full_table: bool
             The display_full_table of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
         if display_full_table is None:
             raise ValueError(
                 "Invalid value for 'display_full_table', must not be 'None'"
+            )
+        # Field is required
+        if display_full_table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'display_full_table', must not be 'Unset'"
             )
         self._display_full_table = display_full_table
 
@@ -224,9 +236,15 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         display_summary_row_inline: bool
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
         if display_summary_row_inline is None:
             raise ValueError(
                 "Invalid value for 'display_summary_row_inline', must not be 'None'"
+            )
+        # Field is required
+        if display_summary_row_inline is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'display_summary_row_inline', must not be 'Unset'"
             )
         self._display_summary_row_inline = display_summary_row_inline
 
@@ -250,36 +268,46 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         hide_unlinked_rows: bool
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
         if hide_unlinked_rows is None:
             raise ValueError(
                 "Invalid value for 'hide_unlinked_rows', must not be 'None'"
+            )
+        # Field is required
+        if hide_unlinked_rows is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'hide_unlinked_rows', must not be 'Unset'"
             )
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
     def target(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]":
+    ) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
         """Gets the target of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaAttributesTabularAttributeTarget
+        Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]
             The target of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
         return self._target
 
     @target.setter
     def target(
-        self, target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]"
+        self,
+        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]",
     ) -> None:
         """Sets the target of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Parameters
         ----------
-        target: GrantaServerApiSchemaAttributesTabularAttributeTarget
+        target: Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]
             The target of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
+        if target is None:
+            raise ValueError("Invalid value for 'target', must not be 'None'")
         self._target = target
 
     @property
@@ -290,7 +318,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
 
         Returns
         -------
-        list[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        List[GrantaServerApiSchemaTabularColumnsTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
         return self._tabular_columns
@@ -306,12 +334,16 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
         tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
+        # Field is not nullable
         if tabular_columns is None:
             raise ValueError("Invalid value for 'tabular_columns', must not be 'None'")
+        # Field is required
+        if tabular_columns is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'tabular_columns', must not be 'Unset'")
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -328,7 +360,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

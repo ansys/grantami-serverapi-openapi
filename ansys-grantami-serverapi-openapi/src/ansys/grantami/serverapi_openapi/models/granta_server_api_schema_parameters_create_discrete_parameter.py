@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter import (
     GrantaServerApiSchemaParametersCreateParameter,
 )  # noqa: F401
@@ -81,20 +81,20 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
         default_parameter_value_index: "int",
         name: "str",
         values: "List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]",
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaParametersCreateDiscreteParameter - a model defined in Swagger
 
         Parameters
         ----------
-            default_parameter_value_index: int
-            name: str
-            values: List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
-            guid: str, optional
-            help_path: str, optional
-            type: str
+        default_parameter_value_index: int
+        name: str
+        values: List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
+        guid: str, optional
+        help_path: str, optional
+        type: str
         """
         super().__init__(
             default_parameter_value_index=default_parameter_value_index,
@@ -102,8 +102,8 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
             guid=guid,
             help_path=help_path,
         )
-        self._values: List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue] = None  # type: ignore[assignment]
-        self._type: str = None  # type: ignore[assignment]
+        self._values: List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
+        self._type: str
 
         self.values = values
         self.type = type
@@ -116,7 +116,7 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
 
         Returns
         -------
-        list[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
+        List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateDiscreteParameter.
         """
         return self._values
@@ -133,8 +133,12 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
         values: List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateDiscreteParameter.
         """
+        # Field is not nullable
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
+        # Field is required
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
     @property
@@ -157,12 +161,16 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
         type: str
             The type of this GrantaServerApiSchemaParametersCreateDiscreteParameter.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -179,7 +187,7 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

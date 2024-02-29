@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter_value import (
     GrantaServerApiSchemaParametersParameterValue,
 )  # noqa: F401
@@ -74,26 +74,26 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
         *,
         guid: "str",
         value: "float",
-        name: "Optional[str]" = None,
+        name: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
     ) -> None:
         """GrantaServerApiSchemaParametersNumericParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str
-            value: float
-            name: str, optional
-            type: str
+        guid: str
+        value: float
+        name: str, optional
+        type: str
         """
         super().__init__(guid=guid)
-        self._type: str = None  # type: ignore[assignment]
-        self._value: float = None  # type: ignore[assignment]
-        self._name = None
+        self._type: str
+        self._value: float
+        self._name: Union[str, None, Unset_Type] = Unset
 
         self.type = type
         self.value = value
-        if name is not None:
+        if name is not Unset:
             self.name = name
 
     @property
@@ -116,8 +116,12 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
         type: str
             The type of this GrantaServerApiSchemaParametersNumericParameterValue.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -140,34 +144,38 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
         value: float
             The value of this GrantaServerApiSchemaParametersNumericParameterValue.
         """
+        # Field is not nullable
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
     @property
-    def name(self) -> "Optional[str]":
+    def name(self) -> "Union[str, None, Unset_Type]":
         """Gets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The name of this GrantaServerApiSchemaParametersNumericParameterValue.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "Optional[str]") -> None:
+    def name(self, name: "Union[str, None, Unset_Type]") -> None:
         """Sets the name of this GrantaServerApiSchemaParametersNumericParameterValue.
 
         Parameters
         ----------
-        name: str
+        name: Union[str, None, Unset_Type]
             The name of this GrantaServerApiSchemaParametersNumericParameterValue.
         """
         self._name = name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -184,7 +192,7 @@ class GrantaServerApiSchemaParametersNumericParameterValue(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

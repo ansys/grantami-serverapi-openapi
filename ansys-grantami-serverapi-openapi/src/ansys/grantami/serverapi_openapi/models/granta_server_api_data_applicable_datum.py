@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_datum import (
     GrantaServerApiDataDatum,
 )  # noqa: F401
@@ -70,6 +70,7 @@ class GrantaServerApiDataApplicableDatum(GrantaServerApiDataDatum):
         "dateTime".lower(): "#/components/schemas/GrantaServerApiDataDateTimeDatum",
         "discrete".lower(): "#/components/schemas/GrantaServerApiDataDiscreteDatum",
         "range".lower(): "#/components/schemas/GrantaServerApiDataRangeDatum",
+        "point".lower(): "#/components/schemas/GrantaServerApiDataPointDatum",
     }
 
     discriminator: Optional[str] = "datum_type"
@@ -83,10 +84,10 @@ class GrantaServerApiDataApplicableDatum(GrantaServerApiDataDatum):
 
         Parameters
         ----------
-            not_applicable: str
+        not_applicable: str
         """
         super().__init__()
-        self._not_applicable: str = None  # type: ignore[assignment]
+        self._not_applicable: str
 
         self.not_applicable = not_applicable
 
@@ -110,12 +111,16 @@ class GrantaServerApiDataApplicableDatum(GrantaServerApiDataDatum):
         not_applicable: str
             The not_applicable of this GrantaServerApiDataApplicableDatum.
         """
+        # Field is not nullable
         if not_applicable is None:
             raise ValueError("Invalid value for 'not_applicable', must not be 'None'")
+        # Field is required
+        if not_applicable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'not_applicable', must not be 'Unset'")
         self._not_applicable = not_applicable
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -137,7 +142,7 @@ class GrantaServerApiDataApplicableDatum(GrantaServerApiDataDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

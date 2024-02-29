@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter import (
     GrantaServerApiSchemaParametersUpdateParameter,
 )  # noqa: F401
@@ -84,27 +84,27 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     def __init__(
         self,
         *,
-        default_parameter_value_guid: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]" = None,
-        name: "Optional[str]" = None,
-        scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]" = None,
+        default_parameter_value_guid: "Union[str, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        interpolation_type: "Union[GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
+        scale_type: "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]" = Unset,
         type: "str" = "numeric",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateNumericParameter - a model defined in Swagger
 
         Parameters
         ----------
-            default_parameter_value_guid: str, optional
-            guid: str, optional
-            help_path: str, optional
-            interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType, optional
-            name: str, optional
-            scale_type: GrantaServerApiSchemaParametersParameterScaleType, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        default_parameter_value_guid: str, optional
+        guid: str, optional
+        help_path: str, optional
+        interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType, optional
+        name: str, optional
+        scale_type: GrantaServerApiSchemaParametersParameterScaleType, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             default_parameter_value_guid=default_parameter_value_guid,
@@ -112,17 +112,23 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._interpolation_type = None
-        self._scale_type = None
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._interpolation_type: Union[
+            GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type
+        ] = Unset
+        self._scale_type: Union[
+            GrantaServerApiSchemaParametersParameterScaleType, Unset_Type
+        ] = Unset
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if interpolation_type is not None:
+        if interpolation_type is not Unset:
             self.interpolation_type = interpolation_type
-        if scale_type is not None:
+        if scale_type is not Unset:
             self.scale_type = scale_type
 
     @property
@@ -145,43 +151,50 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         type: str
             The type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
     def interpolation_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]":
+    ) -> "Union[GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type]":
         """Gets the interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
         -------
-        GrantaServerApiSchemaParametersParameterInterpolationType
+        Union[GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type]
             The interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
         return self._interpolation_type
@@ -189,45 +202,54 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
     @interpolation_type.setter
     def interpolation_type(
         self,
-        interpolation_type: "Optional[GrantaServerApiSchemaParametersParameterInterpolationType]",
+        interpolation_type: "Union[GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type]",
     ) -> None:
         """Sets the interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
         ----------
-        interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
+        interpolation_type: Union[GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type]
             The interpolation_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
+        # Field is not nullable
+        if interpolation_type is None:
+            raise ValueError(
+                "Invalid value for 'interpolation_type', must not be 'None'"
+            )
         self._interpolation_type = interpolation_type
 
     @property
     def scale_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaParametersParameterScaleType]":
+    ) -> "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]":
         """Gets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
         -------
-        GrantaServerApiSchemaParametersParameterScaleType
+        Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]
             The scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
         return self._scale_type
 
     @scale_type.setter
     def scale_type(
-        self, scale_type: "Optional[GrantaServerApiSchemaParametersParameterScaleType]"
+        self,
+        scale_type: "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]",
     ) -> None:
         """Sets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
         ----------
-        scale_type: GrantaServerApiSchemaParametersParameterScaleType
+        scale_type: Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]
             The scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
         """
+        # Field is not nullable
+        if scale_type is None:
+            raise ValueError("Invalid value for 'scale_type', must not be 'None'")
         self._scale_type = scale_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -244,7 +266,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

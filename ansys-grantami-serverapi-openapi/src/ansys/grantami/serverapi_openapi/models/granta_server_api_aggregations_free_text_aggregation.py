@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation import (
     GrantaServerApiAggregationsAggregation,
 )  # noqa: F401
@@ -70,73 +70,76 @@ class GrantaServerApiAggregationsFreeTextAggregation(
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        terms: "Optional[List[str]]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        terms: "Union[List[str], None, Unset_Type]" = Unset,
         type: "str" = "text",
     ) -> None:
         """GrantaServerApiAggregationsFreeTextAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            terms: List[str], optional
-            type: str
+        guid: str, optional
+        terms: List[str], optional
+        type: str
         """
         super().__init__()
-        self._guid = None
-        self._terms = None
-        self._type: str = None  # type: ignore[assignment]
+        self._guid: Union[str, Unset_Type] = Unset
+        self._terms: Union[List[str], None, Unset_Type] = Unset
+        self._type: str
 
-        if guid is not None:
+        if guid is not Unset:
             self.guid = guid
-        if terms is not None:
+        if terms is not Unset:
             self.terms = terms
         self.type = type
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "Union[str, Unset_Type]":
         """Gets the guid of this GrantaServerApiAggregationsFreeTextAggregation.
         The GUID of the input aggregation criterion.
 
         Returns
         -------
-        str
+        Union[str, Unset_Type]
             The guid of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "Union[str, Unset_Type]") -> None:
         """Sets the guid of this GrantaServerApiAggregationsFreeTextAggregation.
         The GUID of the input aggregation criterion.
 
         Parameters
         ----------
-        guid: str
+        guid: Union[str, Unset_Type]
             The guid of this GrantaServerApiAggregationsFreeTextAggregation.
         """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
     @property
-    def terms(self) -> "Optional[List[str]]":
+    def terms(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         return self._terms
 
     @terms.setter
-    def terms(self, terms: "Optional[List[str]]") -> None:
+    def terms(self, terms: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Parameters
         ----------
-        terms: List[str]
+        terms: Union[List[str], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         self._terms = terms
@@ -161,12 +164,16 @@ class GrantaServerApiAggregationsFreeTextAggregation(
         type: str
             The type of this GrantaServerApiAggregationsFreeTextAggregation.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -183,7 +190,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
