@@ -33,7 +33,113 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete(
+    def create_discrete_type(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
+        """Create a new discrete type.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        body: GrantaServerApiSchemaDiscreteTypesCreateDiscreteType
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
+        """
+        data = self._create_discrete_type_with_http_info(
+            database_key, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_discrete_type_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_discrete_type"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_discrete_type'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/discrete-types",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_discrete_type(
         self, *, database_key: "str", discrete_type_guid: "str"
     ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]":
         """Delete discrete type, including all of its discrete values.
@@ -49,12 +155,12 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]
         """
-        data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete_with_http_info(
+        data = self._delete_discrete_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete_with_http_info(
+    def _delete_discrete_type_with_http_info(
         self, database_key: "str", discrete_type_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -69,19 +175,19 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_discrete_type"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete'"
+                "Missing the required parameter 'database_key' when calling 'delete_discrete_type'"
             )
         # verify the required parameter "discrete_type_guid" is set
         if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'discrete_type_guid' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_delete'"
+                "Missing the required parameter 'discrete_type_guid' when calling 'delete_discrete_type'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -128,217 +234,7 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_discrete_types_discrete_type_guid_get(
-        self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
-        """Gets a single discrete type.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        discrete_type_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
-        """
-        data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_get_with_http_info(
-            database_key, discrete_type_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_discrete_types_discrete_type_guid_get_with_http_info(
-        self, database_key: "str", discrete_type_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "discrete_type_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_discrete_type_guid_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_get'"
-            )
-        # verify the required parameter "discrete_type_guid" is set
-        if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'discrete_type_guid' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "discrete_type_guid" in params and discrete_type_guid is not None:
-            path_params["discrete-type-guid"] = params["discrete_type_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch(
-        self,
-        *,
-        database_key: "str",
-        discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
-        """Update discrete type.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        discrete_type_guid: str
-        body: GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
-        """
-        data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch_with_http_info(
-            database_key, discrete_type_guid, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch_with_http_info(
-        self,
-        database_key: "str",
-        discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "discrete_type_guid",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch'"
-            )
-        # verify the required parameter "discrete_type_guid" is set
-        if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'discrete_type_guid' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guid_patch'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "discrete_type_guid" in params and discrete_type_guid is not None:
-            path_params["discrete-type-guid"] = params["discrete_type_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}",
-            "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get(
+    def get_attributes_for_type(
         self, *, database_key: "str", discrete_type_guid: "str"
     ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]":
         """Gets objects that are using this discrete type.
@@ -354,12 +250,12 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]
         """
-        data = self._v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get_with_http_info(
+        data = self._get_attributes_for_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get_with_http_info(
+    def _get_attributes_for_type_with_http_info(
         self, database_key: "str", discrete_type_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -374,19 +270,19 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_attributes_for_type"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get'"
+                "Missing the required parameter 'database_key' when calling 'get_attributes_for_type'"
             )
         # verify the required parameter "discrete_type_guid" is set
         if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'discrete_type_guid' when calling 'v1alpha_databases_database_key_discrete_types_discrete_type_guidusages_get'"
+                "Missing the required parameter 'discrete_type_guid' when calling 'get_attributes_for_type'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -432,7 +328,100 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_discrete_types_get(
+    def get_discrete_type(
+        self, *, database_key: "str", discrete_type_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
+        """Gets a single discrete type.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        discrete_type_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
+        """
+        data = self._get_discrete_type_with_http_info(
+            database_key, discrete_type_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_discrete_type_with_http_info(
+        self, database_key: "str", discrete_type_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "discrete_type_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_discrete_type"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_discrete_type'"
+            )
+        # verify the required parameter "discrete_type_guid" is set
+        if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'discrete_type_guid' when calling 'get_discrete_type'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "discrete_type_guid" in params and discrete_type_guid is not None:
+            path_params["discrete-type-guid"] = params["discrete_type_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_discrete_types(
         self, *, database_key: "str"
     ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]":
         """Gets all discrete types for a given database.
@@ -447,12 +436,12 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]
         """
-        data = self._v1alpha_databases_database_key_discrete_types_get_with_http_info(
+        data = self._get_discrete_types_with_http_info(
             database_key, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_discrete_types_get_with_http_info(
+    def _get_discrete_types_with_http_info(
         self, database_key: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -466,14 +455,14 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_discrete_types"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_get'"
+                "Missing the required parameter 'database_key' when calling 'get_discrete_types'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -517,38 +506,42 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_discrete_types_post(
+    def update_discrete_type(
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
+        discrete_type_guid: "str",
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
     ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
-        """Create a new discrete type.
+        """Update discrete type.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaDiscreteTypesCreateDiscreteType
+        discrete_type_guid: str
+        body: GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType
 
         Returns
         -------
         Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
         """
-        data = self._v1alpha_databases_database_key_discrete_types_post_with_http_info(
-            database_key, body, _return_http_data_only=True
+        data = self._update_discrete_type_with_http_info(
+            database_key, discrete_type_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_discrete_types_post_with_http_info(
+    def _update_discrete_type_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
+        discrete_type_guid: "str",
+        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
+            "discrete_type_guid",
             "body",
             "_return_http_data_only",
             "_preload_content",
@@ -559,14 +552,19 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_discrete_types_post"
+                    f"Got an unexpected keyword argument '{key}' to method update_discrete_type"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_discrete_types_post'"
+                "Missing the required parameter 'database_key' when calling 'update_discrete_type'"
+            )
+        # verify the required parameter "discrete_type_guid" is set
+        if "discrete_type_guid" not in params or params["discrete_type_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'discrete_type_guid' when calling 'update_discrete_type'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -574,6 +572,8 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         path_params: Dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
+        if "discrete_type_guid" in params and discrete_type_guid is not None:
+            path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
         query_params: List[Any] = []
 
@@ -601,15 +601,15 @@ class SchemaDiscreteTypesApi(ApiBase):  # type: ignore[misc]
         )
 
         response_type_map = {
-            201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             400: None,
             403: None,
             404: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/discrete-types",
-            "POST",
+            "/v1alpha/databases/{database-key}/discrete-types/{discrete-type-guid}",
+            "PATCH",
             path_params,
             query_params,
             header_params,

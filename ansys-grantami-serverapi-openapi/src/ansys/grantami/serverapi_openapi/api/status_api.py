@@ -33,7 +33,7 @@ class StatusApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_status_get(self) -> "None":
+    def get(self) -> "None":
         """Check whether the API is available
 
         This method makes a synchronous HTTP request.
@@ -42,17 +42,17 @@ class StatusApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_status_get_with_http_info(_return_http_data_only=True)
+        data = self._get_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_status_get_with_http_info(self, **kwargs: Any) -> Any:
+    def _get_with_http_info(self, **kwargs: Any) -> Any:
         all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_status_get"
+                    f"Got an unexpected keyword argument '{key}' to method get"
                 )
             params[key] = val
         del params["kwargs"]

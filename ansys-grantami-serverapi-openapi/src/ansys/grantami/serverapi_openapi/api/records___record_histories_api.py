@@ -33,241 +33,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_record_histories_record_history_guid_get(
-        self,
-        *,
-        database_key: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
-        """Get a record history with a specified guid for a given database.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        record_history_guid: str
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
-        """
-        data = self._v1alpha_databases_database_key_record_histories_record_history_guid_get_with_http_info(
-            database_key,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_record_histories_record_history_guid_get_with_http_info(
-        self,
-        database_key: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "record_history_guid",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_record_histories_record_history_guid_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_record_histories_record_history_guid_get'"
-            )
-        # verify the required parameter "record_history_guid" is set
-        if "record_history_guid" not in params or params["record_history_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_record_histories_record_history_guid_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "record_history_guid" in params and record_history_guid is not None:
-            path_params["record-history-guid"] = params["record_history_guid"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_record_histories_record_history_guid_latest_get(
-        self,
-        *,
-        database_key: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
-        """Get the latest record version for a record history for a given database.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        record_history_guid: str
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
-        """
-        data = self._v1alpha_databases_database_key_record_histories_record_history_guid_latest_get_with_http_info(
-            database_key,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_record_histories_record_history_guid_latest_get_with_http_info(
-        self,
-        database_key: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "record_history_guid",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_record_histories_record_history_guid_latest_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_record_histories_record_history_guid_latest_get'"
-            )
-        # verify the required parameter "record_history_guid" is set
-        if "record_history_guid" not in params or params["record_history_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_record_histories_record_history_guid_latest_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "record_history_guid" in params and record_history_guid is not None:
-            path_params["record-history-guid"] = params["record_history_guid"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/latest",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_record_histories_record_history_guidcopy_post(
+    def copy_record_history(
         self,
         *,
         database_key: "str",
@@ -288,12 +54,12 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
-        data = self._v1alpha_databases_database_key_record_histories_record_history_guidcopy_post_with_http_info(
+        data = self._copy_record_history_with_http_info(
             database_key, record_history_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_record_histories_record_history_guidcopy_post_with_http_info(
+    def _copy_record_history_with_http_info(
         self,
         database_key: "str",
         record_history_guid: "str",
@@ -313,19 +79,19 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_record_histories_record_history_guidcopy_post"
+                    f"Got an unexpected keyword argument '{key}' to method copy_record_history"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_record_histories_record_history_guidcopy_post'"
+                "Missing the required parameter 'database_key' when calling 'copy_record_history'"
             )
         # verify the required parameter "record_history_guid" is set
         if "record_history_guid" not in params or params["record_history_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_record_histories_record_history_guidcopy_post'"
+                "Missing the required parameter 'record_history_guid' when calling 'copy_record_history'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -384,499 +150,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_record_histories_record_history_guidmove_post(
-        self,
-        *,
-        database_key: "str",
-        record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
-        """Move a record history to be under a new parent.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        record_history_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesMoveRecordHistory
-
-        Returns
-        -------
-        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
-        """
-        data = self._v1alpha_databases_database_key_record_histories_record_history_guidmove_post_with_http_info(
-            database_key, record_history_guid, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_record_histories_record_history_guidmove_post_with_http_info(
-        self,
-        database_key: "str",
-        record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "record_history_guid",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_record_histories_record_history_guidmove_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_record_histories_record_history_guidmove_post'"
-            )
-        # verify the required parameter "record_history_guid" is set
-        if "record_history_guid" not in params or params["record_history_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_record_histories_record_history_guidmove_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "record_history_guid" in params and record_history_guid is not None:
-            path_params["record-history-guid"] = params["record_history_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException",
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}:move",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guid_record_histories_post(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
-        """Create a new record history.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        table_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesCreateRecordHistory
-
-        Returns
-        -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_post_with_http_info(
-            database_key, table_guid, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_table_guid_record_histories_post_with_http_info(
-        self,
-        database_key: "str",
-        table_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "table_guid",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_post'"
-            )
-        # verify the required parameter "table_guid" is set
-        if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "table_guid" in params and table_guid is not None:
-            path_params["table-guid"] = params["table_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            201: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
-        """Get a record history with a specified guid for a given database and table.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        table_guid: str
-        record_history_guid: str
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get_with_http_info(
-            database_key,
-            table_guid,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get_with_http_info(
-        self,
-        database_key: "str",
-        table_guid: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "table_guid",
-            "record_history_guid",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get'"
-            )
-        # verify the required parameter "table_guid" is set
-        if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get'"
-            )
-        # verify the required parameter "record_history_guid" is set
-        if "record_history_guid" not in params or params["record_history_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "table_guid" in params and table_guid is not None:
-            path_params["table-guid"] = params["table_guid"]
-        if "record_history_guid" in params and record_history_guid is not None:
-            path_params["record-history-guid"] = params["record_history_guid"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
-        """Get the latest record version for a record history for a given database and table.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        table_guid: str
-        record_history_guid: str
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get_with_http_info(
-            database_key,
-            table_guid,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get_with_http_info(
-        self,
-        database_key: "str",
-        table_guid: "str",
-        record_history_guid: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "table_guid",
-            "record_history_guid",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get'"
-            )
-        # verify the required parameter "table_guid" is set
-        if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get'"
-            )
-        # verify the required parameter "record_history_guid" is set
-        if "record_history_guid" not in params or params["record_history_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guid_latest_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "table_guid" in params and table_guid is not None:
-            path_params["table-guid"] = params["table_guid"]
-        if "record_history_guid" in params and record_history_guid is not None:
-            path_params["record-history-guid"] = params["record_history_guid"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/latest",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post(
+    def copy_record_history_in_table(
         self,
         *,
         database_key: "str",
@@ -899,7 +173,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
-        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post_with_http_info(
+        data = self._copy_record_history_in_table_with_http_info(
             database_key,
             table_guid,
             record_history_guid,
@@ -908,7 +182,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post_with_http_info(
+    def _copy_record_history_in_table_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -930,24 +204,24 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post"
+                    f"Got an unexpected keyword argument '{key}' to method copy_record_history_in_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post'"
+                "Missing the required parameter 'database_key' when calling 'copy_record_history_in_table'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post'"
+                "Missing the required parameter 'table_guid' when calling 'copy_record_history_in_table'"
             )
         # verify the required parameter "record_history_guid" is set
         if "record_history_guid" not in params or params["record_history_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidcopy_post'"
+                "Missing the required parameter 'record_history_guid' when calling 'copy_record_history_in_table'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -1008,7 +282,733 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post(
+    def create_record_history(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
+    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        """Create a new record history.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        body: GrantaServerApiRecordsRecordHistoriesCreateRecordHistory
+
+        Returns
+        -------
+        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        """
+        data = self._create_record_history_with_http_info(
+            database_key, table_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_record_history_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_record_history"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_record_history'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'create_record_history'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            201: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_latest_record_version(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+        """Get the latest record version for a record history for a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        """
+        data = self._get_latest_record_version_with_http_info(
+            database_key,
+            record_history_guid,
+            mode,
+            x_ansys_vc_mode,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_latest_record_version_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_latest_record_version"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_latest_record_version'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'get_latest_record_version'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/latest",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_latest_record_version_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+        """Get the latest record version for a record history for a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        """
+        data = self._get_latest_record_version_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            mode,
+            x_ansys_vc_mode,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_latest_record_version_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_latest_record_version_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_latest_record_version_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'get_latest_record_version_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'get_latest_record_version_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/latest",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_record_history(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        """Get a record history with a specified guid for a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        """
+        data = self._get_record_history_with_http_info(
+            database_key,
+            record_history_guid,
+            mode,
+            x_ansys_vc_mode,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_record_history_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_record_history"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_record_history'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'get_record_history'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_record_history_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        """Get a record history with a specified guid for a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        """
+        data = self._get_record_history_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            mode,
+            x_ansys_vc_mode,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_record_history_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_record_history_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_record_history_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'get_record_history_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'get_record_history_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def move_record_history(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
+    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        """Move a record history to be under a new parent.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        body: GrantaServerApiRecordsRecordHistoriesMoveRecordHistory
+
+        Returns
+        -------
+        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        """
+        data = self._move_record_history_with_http_info(
+            database_key, record_history_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _move_record_history_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method move_record_history"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'move_record_history'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'move_record_history'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}:move",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def move_record_history_in_table(
         self,
         *,
         database_key: "str",
@@ -1031,7 +1031,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
-        data = self._v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post_with_http_info(
+        data = self._move_record_history_in_table_with_http_info(
             database_key,
             table_guid,
             record_history_guid,
@@ -1040,7 +1040,7 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post_with_http_info(
+    def _move_record_history_in_table_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -1062,24 +1062,24 @@ class RecordsRecordHistoriesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post"
+                    f"Got an unexpected keyword argument '{key}' to method move_record_history_in_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post'"
+                "Missing the required parameter 'database_key' when calling 'move_record_history_in_table'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post'"
+                "Missing the required parameter 'table_guid' when calling 'move_record_history_in_table'"
             )
         # verify the required parameter "record_history_guid" is set
         if "record_history_guid" not in params or params["record_history_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'record_history_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_record_histories_record_history_guidmove_post'"
+                "Missing the required parameter 'record_history_guid' when calling 'move_record_history_in_table'"
             )
 
         collection_formats: Dict[str, Any] = {}

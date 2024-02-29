@@ -33,109 +33,7 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_tables_get(
-        self,
-        *,
-        database_key: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesTablesInfo, None]":
-        """Get all tables
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaTablesTablesInfo, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_get_with_http_info(
-            database_key, mode, x_ansys_vc_mode, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_get_with_http_info(
-        self,
-        database_key: "str",
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_get"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_get'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaTablesTablesInfo",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_post(
+    def create_table(
         self,
         *,
         database_key: "str",
@@ -154,12 +52,12 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaTablesTable, None]
         """
-        data = self._v1alpha_databases_database_key_tables_post_with_http_info(
+        data = self._create_table_with_http_info(
             database_key, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_post_with_http_info(
+    def _create_table_with_http_info(
         self,
         database_key: "str",
         body: "Optional[GrantaServerApiSchemaTablesCreateTable]" = None,
@@ -177,14 +75,14 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_post"
+                    f"Got an unexpected keyword argument '{key}' to method create_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_post'"
+                "Missing the required parameter 'database_key' when calling 'create_table'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -241,7 +139,7 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_guid_delete(
+    def delete_table(
         self, *, database_key: "str", table_guid: "str"
     ) -> "Union[GrantaServerApiExceptionsDeletionTableDeletionException, None]":
         """Delete a table.
@@ -257,12 +155,12 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiExceptionsDeletionTableDeletionException, None]
         """
-        data = self._v1alpha_databases_database_key_tables_table_guid_delete_with_http_info(
+        data = self._delete_table_with_http_info(
             database_key, table_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guid_delete_with_http_info(
+    def _delete_table_with_http_info(
         self, database_key: "str", table_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -277,19 +175,19 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_delete'"
+                "Missing the required parameter 'database_key' when calling 'delete_table'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_delete'"
+                "Missing the required parameter 'table_guid' when calling 'delete_table'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -336,7 +234,102 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_guid_get(
+    def enable_version_control(
+        self, *, database_key: "str", table_guid: "str"
+    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
+        """Enable version control on the table.  This cannot be undone.  After this method has been called all records and data in the table are in an unreleased state.  This means that read users will not be able to see any records unless they are subsequently released.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaTablesTable, None]
+        """
+        data = self._enable_version_control_with_http_info(
+            database_key, table_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _enable_version_control_with_http_info(
+        self, database_key: "str", table_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method enable_version_control"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'enable_version_control'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'enable_version_control'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaTablesTable",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}:enable-version-control",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_table(
         self,
         *,
         database_key: "str",
@@ -361,18 +354,12 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaTablesTable, None]
         """
-        data = (
-            self._v1alpha_databases_database_key_tables_table_guid_get_with_http_info(
-                database_key,
-                table_guid,
-                mode,
-                x_ansys_vc_mode,
-                _return_http_data_only=True,
-            )
+        data = self._get_table_with_http_info(
+            database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guid_get_with_http_info(
+    def _get_table_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -394,19 +381,19 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_get"
+                    f"Got an unexpected keyword argument '{key}' to method get_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_get'"
+                "Missing the required parameter 'database_key' when calling 'get_table'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_get'"
+                "Missing the required parameter 'table_guid' when calling 'get_table'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -455,7 +442,204 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_guid_patch(
+    def get_tables(
+        self,
+        *,
+        database_key: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GrantaServerApiSchemaTablesTablesInfo, None]":
+        """Get all tables
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GrantaServerApiSchemaTablesTablesInfo, None]
+        """
+        data = self._get_tables_with_http_info(
+            database_key, mode, x_ansys_vc_mode, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_tables_with_http_info(
+        self,
+        database_key: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_tables"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_tables'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaTablesTablesInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def release_table(
+        self, *, database_key: "str", table_guid: "str"
+    ) -> "Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]":
+        """Releases the table.  Table must be version-controlled and unreleased.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+
+        Returns
+        -------
+        Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]
+        """
+        data = self._release_table_with_http_info(
+            database_key, table_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _release_table_with_http_info(
+        self, database_key: "str", table_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method release_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'release_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'release_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSchemaTablesTable",
+            400: "GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}:release",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def update_table(
         self,
         *,
         database_key: "str",
@@ -476,14 +660,12 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSchemaTablesTable, None]
         """
-        data = (
-            self._v1alpha_databases_database_key_tables_table_guid_patch_with_http_info(
-                database_key, table_guid, body, _return_http_data_only=True
-            )
+        data = self._update_table_with_http_info(
+            database_key, table_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guid_patch_with_http_info(
+    def _update_table_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -503,19 +685,19 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guid_patch"
+                    f"Got an unexpected keyword argument '{key}' to method update_table"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guid_patch'"
+                "Missing the required parameter 'database_key' when calling 'update_table'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guid_patch'"
+                "Missing the required parameter 'table_guid' when calling 'update_table'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -561,196 +743,6 @@ class SchemaTablesApi(ApiBase):  # type: ignore[misc]
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/tables/{table-guid}",
             "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guidenable_version_control_post(
-        self, *, database_key: "str", table_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
-        """Enable version control on the table.  This cannot be undone.  After this method has been called all records and data in the table are in an unreleased state.  This means that read users will not be able to see any records unless they are subsequently released.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        table_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiSchemaTablesTable, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_table_guidenable_version_control_post_with_http_info(
-            database_key, table_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_table_guidenable_version_control_post_with_http_info(
-        self, database_key: "str", table_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "table_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guidenable_version_control_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guidenable_version_control_post'"
-            )
-        # verify the required parameter "table_guid" is set
-        if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guidenable_version_control_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "table_guid" in params and table_guid is not None:
-            path_params["table-guid"] = params["table_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaTablesTable",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}:enable-version-control",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_databases_database_key_tables_table_guidrelease_post(
-        self, *, database_key: "str", table_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]":
-        """Releases the table.  Table must be version-controlled and unreleased.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        table_guid: str
-
-        Returns
-        -------
-        Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]
-        """
-        data = self._v1alpha_databases_database_key_tables_table_guidrelease_post_with_http_info(
-            database_key, table_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_key_tables_table_guidrelease_post_with_http_info(
-        self, database_key: "str", table_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "table_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guidrelease_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guidrelease_post'"
-            )
-        # verify the required parameter "table_guid" is set
-        if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guidrelease_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "table_guid" in params and table_guid is not None:
-            path_params["table-guid"] = params["table_guid"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSchemaTablesTable",
-            400: "GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException",
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}:release",
-            "POST",
             path_params,
             query_params,
             header_params,

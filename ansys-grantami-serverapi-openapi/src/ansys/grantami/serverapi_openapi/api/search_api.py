@@ -33,7 +33,124 @@ class SearchApi(ApiBase):  # type: ignore[misc]
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def v1alpha_databases_database_key_tables_table_guidsearch_post(
+    def database_search(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        mode: "Optional[str]" = None,
+    ) -> "GrantaServerApiSearchSearchResponse":
+        """database_search
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        body: GrantaServerApiSearchSearchRequest
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+
+        Returns
+        -------
+        GrantaServerApiSearchSearchResponse
+        """
+        data = self._database_search_with_http_info(
+            database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _database_search_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "x_ansys_vc_mode",
+            "mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method database_search"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'database_search'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSearchSearchResponse",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}:search",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def database_search_in_table_with_guid(
         self,
         *,
         database_key: "str",
@@ -42,7 +159,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "GrantaServerApiSearchSearchResponse":
-        """v1alpha_databases_database_key_tables_table_guidsearch_post
+        """database_search_in_table_with_guid
 
         This method makes a synchronous HTTP request.
 
@@ -60,7 +177,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         -------
         GrantaServerApiSearchSearchResponse
         """
-        data = self._v1alpha_databases_database_key_tables_table_guidsearch_post_with_http_info(
+        data = self._database_search_in_table_with_guid_with_http_info(
             database_key,
             table_guid,
             body,
@@ -70,7 +187,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_guidsearch_post_with_http_info(
+    def _database_search_in_table_with_guid_with_http_info(
         self,
         database_key: "str",
         table_guid: "str",
@@ -94,19 +211,19 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_guidsearch_post"
+                    f"Got an unexpected keyword argument '{key}' to method database_search_in_table_with_guid"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_guidsearch_post'"
+                "Missing the required parameter 'database_key' when calling 'database_search_in_table_with_guid'"
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'v1alpha_databases_database_key_tables_table_guidsearch_post'"
+                "Missing the required parameter 'table_guid' when calling 'database_search_in_table_with_guid'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -166,7 +283,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_key_tables_table_identitysearch_post(
+    def database_search_in_table_with_identity(
         self,
         *,
         database_key: "str",
@@ -175,7 +292,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "GrantaServerApiSearchSearchResponse":
-        """v1alpha_databases_database_key_tables_table_identitysearch_post
+        """database_search_in_table_with_identity
 
         This method makes a synchronous HTTP request.
 
@@ -193,7 +310,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         -------
         GrantaServerApiSearchSearchResponse
         """
-        data = self._v1alpha_databases_database_key_tables_table_identitysearch_post_with_http_info(
+        data = self._database_search_in_table_with_identity_with_http_info(
             database_key,
             table_identity,
             body,
@@ -203,7 +320,7 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_databases_database_key_tables_table_identitysearch_post_with_http_info(
+    def _database_search_in_table_with_identity_with_http_info(
         self,
         database_key: "str",
         table_identity: "int",
@@ -227,19 +344,19 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_key_tables_table_identitysearch_post"
+                    f"Got an unexpected keyword argument '{key}' to method database_search_in_table_with_identity"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_key_tables_table_identitysearch_post'"
+                "Missing the required parameter 'database_key' when calling 'database_search_in_table_with_identity'"
             )
         # verify the required parameter "table_identity" is set
         if "table_identity" not in params or params["table_identity"] is None:
             raise ValueError(
-                "Missing the required parameter 'table_identity' when calling 'v1alpha_databases_database_key_tables_table_identitysearch_post'"
+                "Missing the required parameter 'table_identity' when calling 'database_search_in_table_with_identity'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -299,231 +416,8 @@ class SearchApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_databases_database_keysearch_post(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        mode: "Optional[str]" = None,
-    ) -> "GrantaServerApiSearchSearchResponse":
-        """v1alpha_databases_database_keysearch_post
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-        body: GrantaServerApiSearchSearchRequest
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-
-        Returns
-        -------
-        GrantaServerApiSearchSearchResponse
-        """
-        data = self._v1alpha_databases_database_keysearch_post_with_http_info(
-            database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_databases_database_keysearch_post_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "x_ansys_vc_mode",
-            "mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_databases_database_keysearch_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'v1alpha_databases_database_keysearch_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: List[Any] = []
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: Dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSearchSearchResponse",
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}:search",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_integration_schemas_schemasearch_post(
-        self,
-        *,
-        schema: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
-    ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
-        """Runs a search against the integration schema.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        schema: str
-        body: GrantaServerApiSearchSearchRequest
-
-        Returns
-        -------
-        Union[GrantaServerApiSearchSearchResponse, None]
-        """
-        data = self._v1alpha_integration_schemas_schemasearch_post_with_http_info(
-            schema, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _v1alpha_integration_schemas_schemasearch_post_with_http_info(
-        self,
-        schema: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "schema",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_integration_schemas_schemasearch_post"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "schema" is set
-        if "schema" not in params or params["schema"] is None:
-            raise ValueError(
-                "Missing the required parameter 'schema' when calling 'v1alpha_integration_schemas_schemasearch_post'"
-            )
-
-        collection_formats: Dict[str, Any] = {}
-
-        path_params: Dict[str, Any] = {}
-        if "schema" in params and schema is not None:
-            path_params["schema"] = params["schema"]
-
-        query_params: List[Any] = []
-
-        header_params: Dict[str, Any] = {}
-
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map = {
-            200: "GrantaServerApiSearchSearchResponse",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/integration-schemas/{schema}:search",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def v1alpha_searches_search_identifier_delete(
-        self, *, search_identifier: "str"
-    ) -> "None":
-        """v1alpha_searches_search_identifier_delete
+    def delete_search_results(self, *, search_identifier: "str") -> "None":
+        """delete_search_results
 
         This method makes a synchronous HTTP request.
 
@@ -535,12 +429,12 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         -------
         None
         """
-        data = self._v1alpha_searches_search_identifier_delete_with_http_info(
+        data = self._delete_search_results_with_http_info(
             search_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_searches_search_identifier_delete_with_http_info(
+    def _delete_search_results_with_http_info(
         self, search_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -554,14 +448,14 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_searches_search_identifier_delete"
+                    f"Got an unexpected keyword argument '{key}' to method delete_search_results"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
         if "search_identifier" not in params or params["search_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'search_identifier' when calling 'v1alpha_searches_search_identifier_delete'"
+                "Missing the required parameter 'search_identifier' when calling 'delete_search_results'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -600,13 +494,13 @@ class SearchApi(ApiBase):  # type: ignore[misc]
             response_type_map=response_type_map,
         )
 
-    def v1alpha_searches_search_identifier_results_post(
+    def get_search_results(
         self,
         *,
         search_identifier: "str",
         body: "Optional[GrantaServerApiSearchSearchResultsRequest]" = None,
     ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
-        """v1alpha_searches_search_identifier_results_post
+        """get_search_results
 
         This method makes a synchronous HTTP request.
 
@@ -619,12 +513,12 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         -------
         Union[GrantaServerApiSearchSearchResponse, None]
         """
-        data = self._v1alpha_searches_search_identifier_results_post_with_http_info(
+        data = self._get_search_results_with_http_info(
             search_identifier, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _v1alpha_searches_search_identifier_results_post_with_http_info(
+    def _get_search_results_with_http_info(
         self,
         search_identifier: "str",
         body: "Optional[GrantaServerApiSearchSearchResultsRequest]" = None,
@@ -642,14 +536,14 @@ class SearchApi(ApiBase):  # type: ignore[misc]
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method v1alpha_searches_search_identifier_results_post"
+                    f"Got an unexpected keyword argument '{key}' to method get_search_results"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
         if "search_identifier" not in params or params["search_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'search_identifier' when calling 'v1alpha_searches_search_identifier_results_post'"
+                "Missing the required parameter 'search_identifier' when calling 'get_search_results'"
             )
 
         collection_formats: Dict[str, Any] = {}
@@ -690,6 +584,110 @@ class SearchApi(ApiBase):  # type: ignore[misc]
 
         return self.api_client.call_api(
             "/v1alpha/searches/{searchIdentifier}/results",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def integration_search(
+        self,
+        *,
+        schema: "str",
+        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+    ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
+        """Runs a search against the integration schema.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        schema: str
+        body: GrantaServerApiSearchSearchRequest
+
+        Returns
+        -------
+        Union[GrantaServerApiSearchSearchResponse, None]
+        """
+        data = self._integration_search_with_http_info(
+            schema, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _integration_search_with_http_info(
+        self,
+        schema: "str",
+        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "schema",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method integration_search"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "schema" is set
+        if "schema" not in params or params["schema"] is None:
+            raise ValueError(
+                "Missing the required parameter 'schema' when calling 'integration_search'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "schema" in params and schema is not None:
+            path_params["schema"] = params["schema"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map = {
+            200: "GrantaServerApiSearchSearchResponse",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/integration-schemas/{schema}:search",
             "POST",
             path_params,
             query_params,
