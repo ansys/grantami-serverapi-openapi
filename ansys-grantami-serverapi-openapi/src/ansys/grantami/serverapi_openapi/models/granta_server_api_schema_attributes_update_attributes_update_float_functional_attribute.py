@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -87,31 +87,31 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]]" = None,
-        axis_name: "Optional[str]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_range: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        attribute_parameters: "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_range: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "floatFunctional",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], optional
-            axis_name: str, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_range: bool, optional
-            name: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], optional
+        axis_name: str, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_range: bool, optional
+        name: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -121,17 +121,24 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._attribute_parameters = None
-        self._is_range = None
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._attribute_parameters: Union[
+            List[
+                GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter
+            ],
+            Unset_Type,
+        ] = Unset
+        self._is_range: Union[bool, Unset_Type] = Unset
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if attribute_parameters is not None:
+        if attribute_parameters is not Unset:
             self.attribute_parameters = attribute_parameters
-        if is_range is not None:
+        if is_range is not Unset:
             self.is_range = is_range
 
     @property
@@ -154,43 +161,50 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]]":
+    ) -> "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]
+        Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -198,41 +212,49 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]]",
+        attribute_parameters: "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]
+        attribute_parameters: Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
+        # Field is not nullable
+        if attribute_parameters is None:
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'None'"
+            )
         self._attribute_parameters = attribute_parameters
 
     @property
-    def is_range(self) -> "Optional[bool]":
+    def is_range(self) -> "Union[bool, Unset_Type]":
         """Gets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "Optional[bool]") -> None:
+    def is_range(self, is_range: "Union[bool, Unset_Type]") -> None:
         """Sets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        is_range: bool
+        is_range: Union[bool, Unset_Type]
             The is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
+        # Field is not nullable
+        if is_range is None:
+            raise ValueError("Invalid value for 'is_range', must not be 'None'")
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -249,7 +271,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

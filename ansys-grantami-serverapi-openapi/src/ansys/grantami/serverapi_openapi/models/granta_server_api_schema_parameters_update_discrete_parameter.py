@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_update_parameter import (
     GrantaServerApiSchemaParametersUpdateParameter,
 )  # noqa: F401
@@ -74,21 +74,21 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
     def __init__(
         self,
         *,
-        default_parameter_value_guid: "Optional[str]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        name: "Optional[str]" = None,
+        default_parameter_value_guid: "Union[str, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateDiscreteParameter - a model defined in Swagger
 
         Parameters
         ----------
-            default_parameter_value_guid: str, optional
-            guid: str, optional
-            help_path: str, optional
-            name: str, optional
-            type: str
+        default_parameter_value_guid: str, optional
+        guid: str, optional
+        help_path: str, optional
+        name: str, optional
+        type: str
         """
         super().__init__(
             default_parameter_value_guid=default_parameter_value_guid,
@@ -96,7 +96,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
+        self._type: str
 
         self.type = type
 
@@ -120,12 +120,16 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
         type: str
             The type of this GrantaServerApiSchemaParametersUpdateDiscreteParameter.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -142,7 +146,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

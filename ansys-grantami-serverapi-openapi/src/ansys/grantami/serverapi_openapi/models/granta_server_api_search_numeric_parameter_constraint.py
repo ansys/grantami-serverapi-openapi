@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_constraint import (
     GrantaServerApiSearchParameterConstraint,
 )  # noqa: F401
@@ -78,156 +78,160 @@ class GrantaServerApiSearchNumericParameterConstraint(
     def __init__(
         self,
         *,
-        gte: "Optional[float]" = None,
-        interpolation_type: "Optional[str]" = None,
-        lte: "Optional[float]" = None,
-        parameter: "Optional[GrantaServerApiObjectIdentifier]" = None,
-        scale_type: "Optional[str]" = None,
-        significant_figures: "Optional[int]" = None,
+        gte: "Union[float, None, Unset_Type]" = Unset,
+        interpolation_type: "Union[str, None, Unset_Type]" = Unset,
+        lte: "Union[float, None, Unset_Type]" = Unset,
+        parameter: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
+        scale_type: "Union[str, None, Unset_Type]" = Unset,
+        significant_figures: "Union[int, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
     ) -> None:
         """GrantaServerApiSearchNumericParameterConstraint - a model defined in Swagger
 
         Parameters
         ----------
-            gte: float, optional
-            interpolation_type: str, optional
-            lte: float, optional
-            parameter: GrantaServerApiObjectIdentifier, optional
-            scale_type: str, optional
-            significant_figures: int, optional
-            type: str
+        gte: float, optional
+        interpolation_type: str, optional
+        lte: float, optional
+        parameter: GrantaServerApiObjectIdentifier, optional
+        scale_type: str, optional
+        significant_figures: int, optional
+        type: str
         """
         super().__init__(parameter=parameter)
-        self._gte = None
-        self._lte = None
-        self._scale_type = None
-        self._interpolation_type = None
-        self._significant_figures = None
-        self._type: str = None  # type: ignore[assignment]
+        self._gte: Union[float, None, Unset_Type] = Unset
+        self._lte: Union[float, None, Unset_Type] = Unset
+        self._scale_type: Union[str, None, Unset_Type] = Unset
+        self._interpolation_type: Union[str, None, Unset_Type] = Unset
+        self._significant_figures: Union[int, None, Unset_Type] = Unset
+        self._type: str
 
-        if gte is not None:
+        if gte is not Unset:
             self.gte = gte
-        if lte is not None:
+        if lte is not Unset:
             self.lte = lte
-        if scale_type is not None:
+        if scale_type is not Unset:
             self.scale_type = scale_type
-        if interpolation_type is not None:
+        if interpolation_type is not Unset:
             self.interpolation_type = interpolation_type
-        if significant_figures is not None:
+        if significant_figures is not Unset:
             self.significant_figures = significant_figures
         self.type = type
 
     @property
-    def gte(self) -> "Optional[float]":
+    def gte(self) -> "Union[float, None, Unset_Type]":
         """Gets the gte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The gte of this GrantaServerApiSearchNumericParameterConstraint.
         """
         return self._gte
 
     @gte.setter
-    def gte(self, gte: "Optional[float]") -> None:
+    def gte(self, gte: "Union[float, None, Unset_Type]") -> None:
         """Sets the gte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
         ----------
-        gte: float
+        gte: Union[float, None, Unset_Type]
             The gte of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._gte = gte
 
     @property
-    def lte(self) -> "Optional[float]":
+    def lte(self) -> "Union[float, None, Unset_Type]":
         """Gets the lte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
         -------
-        float
+        Union[float, None, Unset_Type]
             The lte of this GrantaServerApiSearchNumericParameterConstraint.
         """
         return self._lte
 
     @lte.setter
-    def lte(self, lte: "Optional[float]") -> None:
+    def lte(self, lte: "Union[float, None, Unset_Type]") -> None:
         """Sets the lte of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
         ----------
-        lte: float
+        lte: Union[float, None, Unset_Type]
             The lte of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._lte = lte
 
     @property
-    def scale_type(self) -> "Optional[str]":
+    def scale_type(self) -> "Union[str, None, Unset_Type]":
         """Gets the scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the scale type of the parameter. Can be Linear or Log
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         """
         return self._scale_type
 
     @scale_type.setter
-    def scale_type(self, scale_type: "Optional[str]") -> None:
+    def scale_type(self, scale_type: "Union[str, None, Unset_Type]") -> None:
         """Sets the scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the scale type of the parameter. Can be Linear or Log
 
         Parameters
         ----------
-        scale_type: str
+        scale_type: Union[str, None, Unset_Type]
             The scale_type of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._scale_type = scale_type
 
     @property
-    def interpolation_type(self) -> "Optional[str]":
+    def interpolation_type(self) -> "Union[str, None, Unset_Type]":
         """Gets the interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         """
         return self._interpolation_type
 
     @interpolation_type.setter
-    def interpolation_type(self, interpolation_type: "Optional[str]") -> None:
+    def interpolation_type(
+        self, interpolation_type: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
 
         Parameters
         ----------
-        interpolation_type: str
+        interpolation_type: Union[str, None, Unset_Type]
             The interpolation_type of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._interpolation_type = interpolation_type
 
     @property
-    def significant_figures(self) -> "Optional[int]":
+    def significant_figures(self) -> "Union[int, None, Unset_Type]":
         """Gets the significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
         """
         return self._significant_figures
 
     @significant_figures.setter
-    def significant_figures(self, significant_figures: "Optional[int]") -> None:
+    def significant_figures(
+        self, significant_figures: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
 
         Parameters
         ----------
-        significant_figures: int
+        significant_figures: Union[int, None, Unset_Type]
             The significant_figures of this GrantaServerApiSearchNumericParameterConstraint.
         """
         self._significant_figures = significant_figures
@@ -252,12 +256,16 @@ class GrantaServerApiSearchNumericParameterConstraint(
         type: str
             The type of this GrantaServerApiSearchNumericParameterConstraint.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -274,7 +282,7 @@ class GrantaServerApiSearchNumericParameterConstraint(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

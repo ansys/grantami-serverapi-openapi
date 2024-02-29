@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_local_column_aggregation import (
     GrantaServerApiAggregationsLocalColumnAggregation,
 )  # noqa: F401
@@ -76,58 +76,66 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
     def __init__(
         self,
         *,
-        aggregation_datum: "Optional[GrantaServerApiAggregationsAggregationDatum]" = None,
-        count: "Optional[int]" = None,
+        aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]" = Unset,
+        count: "Union[int, Unset_Type]" = Unset,
         local_column_aggregation_type: "str" = "value",
-        local_column_guid: "Optional[str]" = None,
-        local_column_identity: "Optional[int]" = None,
+        local_column_guid: "Union[str, None, Unset_Type]" = Unset,
+        local_column_identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsLocalColumnValueAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            aggregation_datum: GrantaServerApiAggregationsAggregationDatum, optional
-            count: int, optional
-            local_column_aggregation_type: str
-            local_column_guid: str, optional
-            local_column_identity: int, optional
+        aggregation_datum: GrantaServerApiAggregationsAggregationDatum, optional
+        count: int, optional
+        local_column_aggregation_type: str
+        local_column_guid: str, optional
+        local_column_identity: int, optional
         """
         super().__init__(
             count=count,
             local_column_guid=local_column_guid,
             local_column_identity=local_column_identity,
         )
-        self._aggregation_datum = None
-        self._local_column_aggregation_type: str = None  # type: ignore[assignment]
+        self._aggregation_datum: Union[
+            GrantaServerApiAggregationsAggregationDatum, Unset_Type
+        ] = Unset
+        self._local_column_aggregation_type: str
 
-        if aggregation_datum is not None:
+        if aggregation_datum is not Unset:
             self.aggregation_datum = aggregation_datum
         self.local_column_aggregation_type = local_column_aggregation_type
 
     @property
     def aggregation_datum(
         self,
-    ) -> "Optional[GrantaServerApiAggregationsAggregationDatum]":
+    ) -> "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]":
         """Gets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
         Returns
         -------
-        GrantaServerApiAggregationsAggregationDatum
+        Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]
             The aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
         """
         return self._aggregation_datum
 
     @aggregation_datum.setter
     def aggregation_datum(
-        self, aggregation_datum: "Optional[GrantaServerApiAggregationsAggregationDatum]"
+        self,
+        aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]",
     ) -> None:
         """Sets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
         Parameters
         ----------
-        aggregation_datum: GrantaServerApiAggregationsAggregationDatum
+        aggregation_datum: Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]
             The aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
         """
+        # Field is not nullable
+        if aggregation_datum is None:
+            raise ValueError(
+                "Invalid value for 'aggregation_datum', must not be 'None'"
+            )
         self._aggregation_datum = aggregation_datum
 
     @property
@@ -152,14 +160,20 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         local_column_aggregation_type: str
             The local_column_aggregation_type of this GrantaServerApiAggregationsLocalColumnValueAggregation.
         """
+        # Field is not nullable
         if local_column_aggregation_type is None:
             raise ValueError(
                 "Invalid value for 'local_column_aggregation_type', must not be 'None'"
             )
+        # Field is required
+        if local_column_aggregation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'local_column_aggregation_type', must not be 'Unset'"
+            )
         self._local_column_aggregation_type = local_column_aggregation_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -176,7 +190,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

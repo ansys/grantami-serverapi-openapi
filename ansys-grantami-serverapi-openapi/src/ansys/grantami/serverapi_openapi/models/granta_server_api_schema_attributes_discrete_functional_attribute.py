@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
     GrantaServerApiSchemaAttributesAttribute,
 )  # noqa: F401
@@ -96,26 +96,26 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         guid: "str",
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "discreteFunctional",
     ) -> None:
         """GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-            discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-            display_names: Dict[str, str]
-            guid: str
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            axis_name: str, optional
-            help_path: str, optional
-            type: str
+        attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        display_names: Dict[str, str]
+        guid: str
+        info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        axis_name: str, optional
+        help_path: str, optional
+        type: str
         """
         super().__init__(
             default_threshold_type=default_threshold_type,
@@ -127,9 +127,11 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity = None  # type: ignore[assignment]
-        self._attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter] = None  # type: ignore[assignment]
+        self._type: str
+        self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        self._attribute_parameters: List[
+            GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter
+        ]
 
         self.type = type
         self.discrete_type = discrete_type
@@ -155,8 +157,12 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -181,8 +187,12 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         discrete_type: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The discrete_type of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
+        # Field is not nullable
         if discrete_type is None:
             raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
+        # Field is required
+        if discrete_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'discrete_type', must not be 'Unset'")
         self._discrete_type = discrete_type
 
     @property
@@ -193,7 +203,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
 
         Returns
         -------
-        list[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
+        List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -210,14 +220,20 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         attribute_parameters: List[GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute.
         """
+        # Field is not nullable
         if attribute_parameters is None:
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
             )
+        # Field is required
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'Unset'"
+            )
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -234,7 +250,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

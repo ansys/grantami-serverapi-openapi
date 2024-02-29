@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
     GrantaServerApiSearchDatumCriterion,
 )  # noqa: F401
@@ -72,102 +72,102 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
     def __init__(
         self,
         *,
-        _none: "Optional[List[str]]" = None,
-        all: "Optional[List[str]]" = None,
-        any: "Optional[List[str]]" = None,
+        _none: "Union[List[str], None, Unset_Type]" = Unset,
+        all: "Union[List[str], None, Unset_Type]" = Unset,
+        any: "Union[List[str], None, Unset_Type]" = Unset,
         type: "str" = "discreteGuidValues",
     ) -> None:
         """GrantaServerApiSearchDiscreteGuidValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            _none: List[str], optional
-            all: List[str], optional
-            any: List[str], optional
-            type: str
+        _none: List[str], optional
+        all: List[str], optional
+        any: List[str], optional
+        type: str
         """
         super().__init__()
-        self._all = None
-        self._any = None
-        self.__none = None
-        self._type: str = None  # type: ignore[assignment]
+        self._all: Union[List[str], None, Unset_Type] = Unset
+        self._any: Union[List[str], None, Unset_Type] = Unset
+        self.__none: Union[List[str], None, Unset_Type] = Unset
+        self._type: str
 
-        if all is not None:
+        if all is not Unset:
             self.all = all
-        if any is not None:
+        if any is not Unset:
             self.any = any
-        if _none is not None:
+        if _none is not Unset:
             self._none = _none
         self.type = type
 
     @property
-    def all(self) -> "Optional[List[str]]":
+    def all(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         return self._all
 
     @all.setter
-    def all(self, all: "Optional[List[str]]") -> None:
+    def all(self, all: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
         Parameters
         ----------
-        all: List[str]
+        all: Union[List[str], None, Unset_Type]
             The all of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "Optional[List[str]]":
+    def any(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Optional[List[str]]") -> None:
+    def any(self, any: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any: List[str]
+        any: Union[List[str], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Optional[List[str]]":
+    def _none(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
         Returns
         -------
-        list[str]
+        Union[List[str], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Optional[List[str]]") -> None:
+    def _none(self, _none: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
         Parameters
         ----------
-        _none: List[str]
+        _none: Union[List[str], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
         self.__none = _none
@@ -192,12 +192,16 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
         type: str
             The type of this GrantaServerApiSearchDiscreteGuidValuesDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -214,7 +218,7 @@ class GrantaServerApiSearchDiscreteGuidValuesDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
     GrantaServerApiAggregationsAggregationDatumCriterion,
 )  # noqa: F401
@@ -70,22 +70,26 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     def __init__(
         self,
         *,
-        local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]" = None,
+        local_aggregation_criteria: "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiAggregationsLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], optional
-            type: str
+        local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], optional
+        type: str
         """
         super().__init__()
-        self._type: str = None  # type: ignore[assignment]
-        self._local_aggregation_criteria = None
+        self._type: str
+        self._local_aggregation_criteria: Union[
+            List[GrantaServerApiAggregationsLocalColumnAggregationCriterion],
+            None,
+            Unset_Type,
+        ] = Unset
 
         self.type = type
-        if local_aggregation_criteria is not None:
+        if local_aggregation_criteria is not Unset:
             self.local_aggregation_criteria = local_aggregation_criteria
 
     @property
@@ -108,19 +112,23 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
         type: str
             The type of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
     def local_aggregation_criteria(
         self,
-    ) -> "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]":
+    ) -> "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]":
         """Gets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Returns
         -------
-        list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
+        Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         return self._local_aggregation_criteria
@@ -128,19 +136,19 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @local_aggregation_criteria.setter
     def local_aggregation_criteria(
         self,
-        local_aggregation_criteria: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]]",
+        local_aggregation_criteria: "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Parameters
         ----------
-        local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion]
+        local_aggregation_criteria: Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         self._local_aggregation_criteria = local_aggregation_criteria
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -157,7 +165,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

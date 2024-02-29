@@ -11,7 +11,7 @@
 """
 
 # import Model ABC
-from ansys.openapi.common import ModelBase  # type: ignore[import-untyped]
+from ansys.openapi.common import ModelBase, Unset, Unset_Type
 
 # import models into model package
 from .folderguid_files_body import FolderguidFilesBody
@@ -1816,8 +1816,11 @@ from .jobqueue_files_body import JobqueueFilesBody
 from .json_patch_document import JsonPatchDocument
 from .system_net_http_status_code import SystemNetHttpStatusCode
 
+
 __all__ = [
     "ModelBase",
+    "Unset",
+    "Unset_Type",
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",

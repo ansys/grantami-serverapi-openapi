@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_datum import (
     GrantaServerApiDataExportDatumsDatum,
 )  # noqa: F401
@@ -76,54 +76,59 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
-        datum_type: "Optional[GrantaServerApiAttributeType]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
+        datum_type: "Union[GrantaServerApiAttributeType, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "notApplicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsNotApplicableDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: GrantaServerApiAttributeType, optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: GrantaServerApiAttributeType, optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
         """
         super().__init__(
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             meta_datums=meta_datums,
         )
-        self._datum_type = None
-        self._not_applicable: str = None  # type: ignore[assignment]
+        self._datum_type: Union[GrantaServerApiAttributeType, Unset_Type] = Unset
+        self._not_applicable: str
 
-        if datum_type is not None:
+        if datum_type is not Unset:
             self.datum_type = datum_type
         self.not_applicable = not_applicable
 
     @property
-    def datum_type(self) -> "Optional[GrantaServerApiAttributeType]":
+    def datum_type(self) -> "Union[GrantaServerApiAttributeType, Unset_Type]":
         """Gets the datum_type of this GrantaServerApiDataExportDatumsNotApplicableDatum.
 
         Returns
         -------
-        GrantaServerApiAttributeType
+        Union[GrantaServerApiAttributeType, Unset_Type]
             The datum_type of this GrantaServerApiDataExportDatumsNotApplicableDatum.
         """
         return self._datum_type
 
     @datum_type.setter
-    def datum_type(self, datum_type: "Optional[GrantaServerApiAttributeType]") -> None:
+    def datum_type(
+        self, datum_type: "Union[GrantaServerApiAttributeType, Unset_Type]"
+    ) -> None:
         """Sets the datum_type of this GrantaServerApiDataExportDatumsNotApplicableDatum.
 
         Parameters
         ----------
-        datum_type: GrantaServerApiAttributeType
+        datum_type: Union[GrantaServerApiAttributeType, Unset_Type]
             The datum_type of this GrantaServerApiDataExportDatumsNotApplicableDatum.
         """
+        # Field is not nullable
+        if datum_type is None:
+            raise ValueError("Invalid value for 'datum_type', must not be 'None'")
         self._datum_type = datum_type
 
     @property
@@ -146,12 +151,16 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(
         not_applicable: str
             The not_applicable of this GrantaServerApiDataExportDatumsNotApplicableDatum.
         """
+        # Field is not nullable
         if not_applicable is None:
             raise ValueError("Invalid value for 'not_applicable', must not be 'None'")
+        # Field is required
+        if not_applicable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'not_applicable', must not be 'Unset'")
         self._not_applicable = not_applicable
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -168,7 +177,7 @@ class GrantaServerApiDataExportDatumsNotApplicableDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

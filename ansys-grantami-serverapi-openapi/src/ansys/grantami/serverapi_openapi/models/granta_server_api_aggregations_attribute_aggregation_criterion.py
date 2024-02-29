@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_criterion import (
     GrantaServerApiAggregationsAggregationCriterion,
 )  # noqa: F401
@@ -79,98 +79,103 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
     def __init__(
         self,
         *,
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
-        is_meta_attribute: "Optional[bool]" = None,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
+        is_meta_attribute: "Union[bool, Unset_Type]" = Unset,
         type: "str" = "attribute",
     ) -> None:
         """GrantaServerApiAggregationsAttributeAggregationCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            guid: str, optional
-            identity: int, optional
-            is_meta_attribute: bool, optional
-            type: str
+        guid: str, optional
+        identity: int, optional
+        is_meta_attribute: bool, optional
+        type: str
         """
         super().__init__()
-        self._identity = None
-        self._guid = None
-        self._is_meta_attribute = None
-        self._type: str = None  # type: ignore[assignment]
+        self._identity: Union[int, None, Unset_Type] = Unset
+        self._guid: Union[str, None, Unset_Type] = Unset
+        self._is_meta_attribute: Union[bool, Unset_Type] = Unset
+        self._type: str
 
-        if identity is not None:
+        if identity is not Unset:
             self.identity = identity
-        if guid is not None:
+        if guid is not Unset:
             self.guid = guid
-        if is_meta_attribute is not None:
+        if is_meta_attribute is not Unset:
             self.is_meta_attribute = is_meta_attribute
         self.type = type
 
     @property
-    def identity(self) -> "Optional[int]":
+    def identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "Optional[int]") -> None:
+    def identity(self, identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
         ----------
-        identity: int
+        identity: Union[int, None, Unset_Type]
             The identity of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
         self._identity = identity
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
         ----------
-        guid: str
+        guid: Union[str, None, Unset_Type]
             The guid of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
         self._guid = guid
 
     @property
-    def is_meta_attribute(self) -> "Optional[bool]":
+    def is_meta_attribute(self) -> "Union[bool, Unset_Type]":
         """Gets the is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
         return self._is_meta_attribute
 
     @is_meta_attribute.setter
-    def is_meta_attribute(self, is_meta_attribute: "Optional[bool]") -> None:
+    def is_meta_attribute(self, is_meta_attribute: "Union[bool, Unset_Type]") -> None:
         """Sets the is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
 
         Parameters
         ----------
-        is_meta_attribute: bool
+        is_meta_attribute: Union[bool, Unset_Type]
             The is_meta_attribute of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
+        # Field is not nullable
+        if is_meta_attribute is None:
+            raise ValueError(
+                "Invalid value for 'is_meta_attribute', must not be 'None'"
+            )
         self._is_meta_attribute = is_meta_attribute
 
     @property
@@ -193,12 +198,16 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         type: str
             The type of this GrantaServerApiAggregationsAttributeAggregationCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -220,7 +229,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

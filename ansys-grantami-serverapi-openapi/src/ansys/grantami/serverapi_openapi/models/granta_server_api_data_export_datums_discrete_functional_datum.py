@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
     GrantaServerApiDataExportDatumsApplicableDatum,
 )  # noqa: F401
@@ -88,25 +88,25 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "discreteFunctional",
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]" = None,
-        x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]" = None,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsDiscreteFunctionalDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-            x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
+        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -114,14 +114,18 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._x_axis_parameter = None
-        self._parameters = None
+        self._datum_type: str
+        self._x_axis_parameter: Union[
+            GrantaServerApiFunctionalDatumParameterInfo, Unset_Type
+        ] = Unset
+        self._parameters: Union[
+            List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
+        ] = Unset
 
         self.datum_type = datum_type
-        if x_axis_parameter is not None:
+        if x_axis_parameter is not Unset:
             self.x_axis_parameter = x_axis_parameter
-        if parameters is not None:
+        if parameters is not Unset:
             self.parameters = parameters
 
     @property
@@ -144,64 +148,73 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
         datum_type: str
             The datum_type of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
     def x_axis_parameter(
         self,
-    ) -> "Optional[GrantaServerApiFunctionalDatumParameterInfo]":
+    ) -> "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]":
         """Gets the x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 
         Returns
         -------
-        GrantaServerApiFunctionalDatumParameterInfo
+        Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]
             The x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
         """
         return self._x_axis_parameter
 
     @x_axis_parameter.setter
     def x_axis_parameter(
-        self, x_axis_parameter: "Optional[GrantaServerApiFunctionalDatumParameterInfo]"
+        self,
+        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]",
     ) -> None:
         """Sets the x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 
         Parameters
         ----------
-        x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo
+        x_axis_parameter: Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]
             The x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
         """
+        # Field is not nullable
+        if x_axis_parameter is None:
+            raise ValueError("Invalid value for 'x_axis_parameter', must not be 'None'")
         self._x_axis_parameter = x_axis_parameter
 
     @property
     def parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]":
+    ) -> "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 
         Returns
         -------
-        list[GrantaServerApiFunctionalDatumParameterInfo]
+        Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "Optional[List[GrantaServerApiFunctionalDatumParameterInfo]]"
+        self,
+        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]",
     ) -> None:
         """Sets the parameters of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 
         Parameters
         ----------
-        parameters: List[GrantaServerApiFunctionalDatumParameterInfo]
+        parameters: Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
         """
         self._parameters = parameters
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
@@ -223,7 +236,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

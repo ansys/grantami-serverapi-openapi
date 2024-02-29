@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
     GrantaServerApiDataApplicableDatum,
 )  # noqa: F401
@@ -81,15 +81,15 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
 
         Parameters
         ----------
-            estimated: bool
-            values: List[GrantaServerApiDataPointDataValue]
-            datum_type: str
-            not_applicable: str
+        estimated: bool
+        values: List[GrantaServerApiDataPointDataValue]
+        datum_type: str
+        not_applicable: str
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._estimated: bool = None  # type: ignore[assignment]
-        self._values: List[GrantaServerApiDataPointDataValue] = None  # type: ignore[assignment]
+        self._datum_type: str
+        self._estimated: bool
+        self._values: List[GrantaServerApiDataPointDataValue]
 
         self.datum_type = datum_type
         self.estimated = estimated
@@ -115,8 +115,12 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         datum_type: str
             The datum_type of this GrantaServerApiDataPointDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
@@ -139,8 +143,12 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         estimated: bool
             The estimated of this GrantaServerApiDataPointDatum.
         """
+        # Field is not nullable
         if estimated is None:
             raise ValueError("Invalid value for 'estimated', must not be 'None'")
+        # Field is required
+        if estimated is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'estimated', must not be 'Unset'")
         self._estimated = estimated
 
     @property
@@ -149,7 +157,7 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
 
         Returns
         -------
-        list[GrantaServerApiDataPointDataValue]
+        List[GrantaServerApiDataPointDataValue]
             The values of this GrantaServerApiDataPointDatum.
         """
         return self._values
@@ -163,12 +171,16 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         values: List[GrantaServerApiDataPointDataValue]
             The values of this GrantaServerApiDataPointDatum.
         """
+        # Field is not nullable
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
+        # Field is required
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -185,7 +197,7 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

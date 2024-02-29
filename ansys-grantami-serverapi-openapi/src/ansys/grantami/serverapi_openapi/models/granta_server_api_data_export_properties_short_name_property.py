@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -69,21 +69,21 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(
         self,
         *,
         property_name: "str" = "shortName",
-        short_name: "Optional[str]" = None,
+        short_name: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesShortNameProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            short_name: str, optional
+        property_name: str
+        short_name: str, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._short_name = None
+        self._property_name: str
+        self._short_name: Union[str, None, Unset_Type] = Unset
 
         self.property_name = property_name
-        if short_name is not None:
+        if short_name is not Unset:
             self.short_name = short_name
 
     @property
@@ -106,34 +106,38 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesShortNameProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def short_name(self) -> "Optional[str]":
+    def short_name(self) -> "Union[str, None, Unset_Type]":
         """Gets the short_name of this GrantaServerApiDataExportPropertiesShortNameProperty.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The short_name of this GrantaServerApiDataExportPropertiesShortNameProperty.
         """
         return self._short_name
 
     @short_name.setter
-    def short_name(self, short_name: "Optional[str]") -> None:
+    def short_name(self, short_name: "Union[str, None, Unset_Type]") -> None:
         """Sets the short_name of this GrantaServerApiDataExportPropertiesShortNameProperty.
 
         Parameters
         ----------
-        short_name: str
+        short_name: Union[str, None, Unset_Type]
             The short_name of this GrantaServerApiDataExportPropertiesShortNameProperty.
         """
         self._short_name = short_name
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +154,7 @@ class GrantaServerApiDataExportPropertiesShortNameProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

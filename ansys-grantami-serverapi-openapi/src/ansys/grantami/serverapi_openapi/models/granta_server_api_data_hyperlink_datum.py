@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (
     GrantaServerApiDataApplicableDatum,
 )  # noqa: F401
@@ -84,17 +84,17 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
 
         Parameters
         ----------
-            address: str
-            description: str
-            target: GrantaServerApiDataHyperlinkTarget
-            datum_type: str
-            not_applicable: str
+        address: str
+        description: str
+        target: GrantaServerApiDataHyperlinkTarget
+        datum_type: str
+        not_applicable: str
         """
         super().__init__(not_applicable=not_applicable)
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._address: str = None  # type: ignore[assignment]
-        self._description: str = None  # type: ignore[assignment]
-        self._target: GrantaServerApiDataHyperlinkTarget = None  # type: ignore[assignment]
+        self._datum_type: str
+        self._address: str
+        self._description: str
+        self._target: GrantaServerApiDataHyperlinkTarget
 
         self.datum_type = datum_type
         self.address = address
@@ -121,8 +121,12 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         datum_type: str
             The datum_type of this GrantaServerApiDataHyperlinkDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
@@ -145,8 +149,12 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         address: str
             The address of this GrantaServerApiDataHyperlinkDatum.
         """
+        # Field is not nullable
         if address is None:
             raise ValueError("Invalid value for 'address', must not be 'None'")
+        # Field is required
+        if address is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'address', must not be 'Unset'")
         self._address = address
 
     @property
@@ -169,8 +177,12 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         description: str
             The description of this GrantaServerApiDataHyperlinkDatum.
         """
+        # Field is not nullable
         if description is None:
             raise ValueError("Invalid value for 'description', must not be 'None'")
+        # Field is required
+        if description is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'description', must not be 'Unset'")
         self._description = description
 
     @property
@@ -193,12 +205,16 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
         target: GrantaServerApiDataHyperlinkTarget
             The target of this GrantaServerApiDataHyperlinkDatum.
         """
+        # Field is not nullable
         if target is None:
             raise ValueError("Invalid value for 'target', must not be 'None'")
+        # Field is required
+        if target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'target', must not be 'Unset'")
         self._target = target
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -215,7 +231,7 @@ class GrantaServerApiDataHyperlinkDatum(GrantaServerApiDataApplicableDatum):
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_attribute_to_export import (
     GrantaServerApiDataExportAttributeToExport,
 )  # noqa: F401
@@ -78,41 +78,47 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         self,
         *,
         attribute_type: "str" = "simple",
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
+        summary_roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportSimpleAttributeToExport - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_type: str
-            guid: str, optional
-            identity: int, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        attribute_type: str
+        guid: str, optional
+        identity: int, optional
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        summary_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
         """
         super().__init__(guid=guid, identity=identity)
-        self._roll_up_type = None
-        self._summary_roll_up_type = None
-        self._attribute_type: str = None  # type: ignore[assignment]
+        self._roll_up_type: Union[
+            GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type
+        ] = Unset
+        self._summary_roll_up_type: Union[
+            GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type
+        ] = Unset
+        self._attribute_type: str
 
-        if roll_up_type is not None:
+        if roll_up_type is not Unset:
             self.roll_up_type = roll_up_type
-        if summary_roll_up_type is not None:
+        if summary_roll_up_type is not Unset:
             self.summary_roll_up_type = summary_roll_up_type
         self.attribute_type = attribute_type
 
     @property
     def roll_up_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]":
+    ) -> (
+        "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]"
+    ):
         """Gets the roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Returns
         -------
-        GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]
             The roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
         """
         return self._roll_up_type
@@ -120,26 +126,31 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     @roll_up_type.setter
     def roll_up_type(
         self,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]",
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]",
     ) -> None:
         """Sets the roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Parameters
         ----------
-        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        roll_up_type: Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]
             The roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
         """
+        # Field is not nullable
+        if roll_up_type is None:
+            raise ValueError("Invalid value for 'roll_up_type', must not be 'None'")
         self._roll_up_type = roll_up_type
 
     @property
     def summary_roll_up_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]":
+    ) -> (
+        "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]"
+    ):
         """Gets the summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Returns
         -------
-        GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]
             The summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
         """
         return self._summary_roll_up_type
@@ -147,15 +158,20 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
     @summary_roll_up_type.setter
     def summary_roll_up_type(
         self,
-        summary_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]",
+        summary_roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]",
     ) -> None:
         """Sets the summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
 
         Parameters
         ----------
-        summary_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        summary_roll_up_type: Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]
             The summary_roll_up_type of this GrantaServerApiDataExportSimpleAttributeToExport.
         """
+        # Field is not nullable
+        if summary_roll_up_type is None:
+            raise ValueError(
+                "Invalid value for 'summary_roll_up_type', must not be 'None'"
+            )
         self._summary_roll_up_type = summary_roll_up_type
 
     @property
@@ -178,12 +194,16 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
         attribute_type: str
             The attribute_type of this GrantaServerApiDataExportSimpleAttributeToExport.
         """
+        # Field is not nullable
         if attribute_type is None:
             raise ValueError("Invalid value for 'attribute_type', must not be 'None'")
+        # Field is required
+        if attribute_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_type', must not be 'Unset'")
         self._attribute_type = attribute_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -200,7 +220,7 @@ class GrantaServerApiDataExportSimpleAttributeToExport(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
