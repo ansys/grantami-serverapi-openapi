@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (
     GrantaServerApiSchemaAttributesAttribute,
 )  # noqa: F401
@@ -115,33 +115,33 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         is_range: "bool",
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "mathsFunctional",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesMathsFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            allow_all_compatible_expressions: bool
-            allow_anonymous_expressions: bool
-            allow_extrapolation: bool
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-            default_content: GrantaServerApiSchemaAttributesMathsContent
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-            display_names: Dict[str, str]
-            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
-            guid: str
-            info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
-            is_range: bool
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            axis_name: str, optional
-            help_path: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+        allow_all_compatible_expressions: bool
+        allow_anonymous_expressions: bool
+        allow_extrapolation: bool
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        default_content: GrantaServerApiSchemaAttributesMathsContent
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        display_names: Dict[str, str]
+        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        guid: str
+        info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
+        is_range: bool
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        axis_name: str, optional
+        help_path: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(
             default_threshold_type=default_threshold_type,
@@ -153,18 +153,20 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
             axis_name=axis_name,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity] = None  # type: ignore[assignment]
-        self._expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression] = None  # type: ignore[assignment]
-        self._allow_extrapolation: bool = None  # type: ignore[assignment]
-        self._is_range: bool = None  # type: ignore[assignment]
-        self._allow_all_compatible_expressions: bool = None  # type: ignore[assignment]
-        self._allow_anonymous_expressions: bool = None  # type: ignore[assignment]
-        self._default_content: GrantaServerApiSchemaAttributesMathsContent = None  # type: ignore[assignment]
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
+        self._attribute_parameters: List[
+            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        ]
+        self._expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        self._allow_extrapolation: bool
+        self._is_range: bool
+        self._allow_all_compatible_expressions: bool
+        self._allow_anonymous_expressions: bool
+        self._default_content: GrantaServerApiSchemaAttributesMathsContent
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
         self.attribute_parameters = attribute_parameters
         self.expressions = expressions
@@ -194,30 +196,39 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
@@ -228,7 +239,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -245,9 +256,15 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if attribute_parameters is None:
             raise ValueError(
                 "Invalid value for 'attribute_parameters', must not be 'None'"
+            )
+        # Field is required
+        if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'attribute_parameters', must not be 'Unset'"
             )
         self._attribute_parameters = attribute_parameters
 
@@ -257,7 +274,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimExpression]
+        List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
             The expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
         return self._expressions
@@ -273,8 +290,12 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
             The expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if expressions is None:
             raise ValueError("Invalid value for 'expressions', must not be 'None'")
+        # Field is required
+        if expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'expressions', must not be 'Unset'")
         self._expressions = expressions
 
     @property
@@ -297,9 +318,15 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         allow_extrapolation: bool
             The allow_extrapolation of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if allow_extrapolation is None:
             raise ValueError(
                 "Invalid value for 'allow_extrapolation', must not be 'None'"
+            )
+        # Field is required
+        if allow_extrapolation is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'allow_extrapolation', must not be 'Unset'"
             )
         self._allow_extrapolation = allow_extrapolation
 
@@ -323,8 +350,12 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         is_range: bool
             The is_range of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if is_range is None:
             raise ValueError("Invalid value for 'is_range', must not be 'None'")
+        # Field is required
+        if is_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_range', must not be 'Unset'")
         self._is_range = is_range
 
     @property
@@ -349,9 +380,15 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         allow_all_compatible_expressions: bool
             The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if allow_all_compatible_expressions is None:
             raise ValueError(
                 "Invalid value for 'allow_all_compatible_expressions', must not be 'None'"
+            )
+        # Field is required
+        if allow_all_compatible_expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'allow_all_compatible_expressions', must not be 'Unset'"
             )
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
 
@@ -375,9 +412,15 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         allow_anonymous_expressions: bool
             The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if allow_anonymous_expressions is None:
             raise ValueError(
                 "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
+            )
+        # Field is required
+        if allow_anonymous_expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'allow_anonymous_expressions', must not be 'Unset'"
             )
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
@@ -403,12 +446,16 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         default_content: GrantaServerApiSchemaAttributesMathsContent
             The default_content of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if default_content is None:
             raise ValueError("Invalid value for 'default_content', must not be 'None'")
+        # Field is required
+        if default_content is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'default_content', must not be 'Unset'")
         self._default_content = default_content
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -425,7 +472,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

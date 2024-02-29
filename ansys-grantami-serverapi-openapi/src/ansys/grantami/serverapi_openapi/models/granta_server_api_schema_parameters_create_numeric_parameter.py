@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter import (
     GrantaServerApiSchemaParametersCreateParameter,
 )  # noqa: F401
@@ -95,25 +95,25 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         name: "str",
         scale_type: "GrantaServerApiSchemaParametersParameterScaleType",
         values: "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]",
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersCreateNumericParameter - a model defined in Swagger
 
         Parameters
         ----------
-            default_parameter_value_index: int
-            interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
-            is_restricted: bool
-            name: str
-            scale_type: GrantaServerApiSchemaParametersParameterScaleType
-            values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
-            guid: str, optional
-            help_path: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        default_parameter_value_index: int
+        interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
+        is_restricted: bool
+        name: str
+        scale_type: GrantaServerApiSchemaParametersParameterScaleType
+        values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        guid: str, optional
+        help_path: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             default_parameter_value_index=default_parameter_value_index,
@@ -121,16 +121,20 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_restricted: bool = None  # type: ignore[assignment]
-        self._unit = None
-        self._values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue] = None  # type: ignore[assignment]
-        self._interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType = None  # type: ignore[assignment]
-        self._scale_type: GrantaServerApiSchemaParametersParameterScaleType = None  # type: ignore[assignment]
+        self._type: str
+        self._is_restricted: bool
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        self._interpolation_type: (
+            GrantaServerApiSchemaParametersParameterInterpolationType
+        )
+        self._scale_type: GrantaServerApiSchemaParametersParameterScaleType
 
         self.type = type
         self.is_restricted = is_restricted
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
         self.values = values
         self.interpolation_type = interpolation_type
@@ -156,8 +160,12 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         type: str
             The type of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -180,32 +188,39 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         is_restricted: bool
             The is_restricted of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
         if is_restricted is None:
             raise ValueError("Invalid value for 'is_restricted', must not be 'None'")
+        # Field is required
+        if is_restricted is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_restricted', must not be 'Unset'")
         self._is_restricted = is_restricted
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
@@ -216,7 +231,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
 
         Returns
         -------
-        list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
         return self._values
@@ -232,8 +247,12 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
         if values is None:
             raise ValueError("Invalid value for 'values', must not be 'None'")
+        # Field is required
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
     @property
@@ -261,9 +280,15 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
             The interpolation_type of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
         if interpolation_type is None:
             raise ValueError(
                 "Invalid value for 'interpolation_type', must not be 'None'"
+            )
+        # Field is required
+        if interpolation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'interpolation_type', must not be 'Unset'"
             )
         self._interpolation_type = interpolation_type
 
@@ -289,12 +314,16 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         scale_type: GrantaServerApiSchemaParametersParameterScaleType
             The scale_type of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
+        # Field is not nullable
         if scale_type is None:
             raise ValueError("Invalid value for 'scale_type', must not be 'None'")
+        # Field is required
+        if scale_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'scale_type', must not be 'Unset'")
         self._scale_type = scale_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -311,7 +340,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_criterion import (
     GrantaServerApiSearchSortCriterion,
 )  # noqa: F401
@@ -66,18 +66,18 @@ class GrantaServerApiSearchRelevanceSortCriterion(GrantaServerApiSearchSortCrite
     def __init__(
         self,
         *,
-        sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None,
+        sort_direction: "Union[GrantaServerApiSearchSortDirection, Unset_Type]" = Unset,
         type: "str" = "relevance",
     ) -> None:
         """GrantaServerApiSearchRelevanceSortCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            sort_direction: GrantaServerApiSearchSortDirection, optional
-            type: str
+        sort_direction: GrantaServerApiSearchSortDirection, optional
+        type: str
         """
         super().__init__(sort_direction=sort_direction)
-        self._type: str = None  # type: ignore[assignment]
+        self._type: str
 
         self.type = type
 
@@ -101,12 +101,16 @@ class GrantaServerApiSearchRelevanceSortCriterion(GrantaServerApiSearchSortCrite
         type: str
             The type of this GrantaServerApiSearchRelevanceSortCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -123,7 +127,7 @@ class GrantaServerApiSearchRelevanceSortCriterion(GrantaServerApiSearchSortCrite
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

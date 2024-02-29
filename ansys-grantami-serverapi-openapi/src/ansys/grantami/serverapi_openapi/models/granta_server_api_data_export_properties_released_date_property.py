@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -69,21 +69,21 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
         self,
         *,
         property_name: "str" = "releasedDate",
-        released_date: "Optional[datetime]" = None,
+        released_date: "Union[datetime, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportPropertiesReleasedDateProperty - a model defined in Swagger
 
         Parameters
         ----------
-            property_name: str
-            released_date: datetime, optional
+        property_name: str
+        released_date: datetime, optional
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._released_date = None
+        self._property_name: str
+        self._released_date: Union[datetime, None, Unset_Type] = Unset
 
         self.property_name = property_name
-        if released_date is not None:
+        if released_date is not Unset:
             self.released_date = released_date
 
     @property
@@ -106,34 +106,38 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def released_date(self) -> "Optional[datetime]":
+    def released_date(self) -> "Union[datetime, None, Unset_Type]":
         """Gets the released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
 
         Returns
         -------
-        datetime
+        Union[datetime, None, Unset_Type]
             The released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
         """
         return self._released_date
 
     @released_date.setter
-    def released_date(self, released_date: "Optional[datetime]") -> None:
+    def released_date(self, released_date: "Union[datetime, None, Unset_Type]") -> None:
         """Sets the released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
 
         Parameters
         ----------
-        released_date: datetime
+        released_date: Union[datetime, None, Unset_Type]
             The released_date of this GrantaServerApiDataExportPropertiesReleasedDateProperty.
         """
         self._released_date = released_date
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +154,7 @@ class GrantaServerApiDataExportPropertiesReleasedDateProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

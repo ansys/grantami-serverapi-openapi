@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (
     GrantaServerApiSearchCriterion,
 )  # noqa: F401
@@ -74,150 +74,154 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
     def __init__(
         self,
         *,
-        database_key: "Optional[str]" = None,
-        record_guid: "Optional[str]" = None,
-        record_history_guid: "Optional[str]" = None,
-        record_history_identity: "Optional[int]" = None,
-        record_identity: "Optional[int]" = None,
+        database_key: "Union[str, None, Unset_Type]" = Unset,
+        record_guid: "Union[str, None, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
+        record_history_identity: "Union[int, None, Unset_Type]" = Unset,
+        record_identity: "Union[int, None, Unset_Type]" = Unset,
         type: "str" = "reference",
     ) -> None:
         """GrantaServerApiSearchRecordReferenceCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            database_key: str, optional
-            record_guid: str, optional
-            record_history_guid: str, optional
-            record_history_identity: int, optional
-            record_identity: int, optional
-            type: str
+        database_key: str, optional
+        record_guid: str, optional
+        record_history_guid: str, optional
+        record_history_identity: int, optional
+        record_identity: int, optional
+        type: str
         """
         super().__init__()
-        self._database_key = None
-        self._record_identity = None
-        self._record_history_identity = None
-        self._record_history_guid = None
-        self._record_guid = None
-        self._type: str = None  # type: ignore[assignment]
+        self._database_key: Union[str, None, Unset_Type] = Unset
+        self._record_identity: Union[int, None, Unset_Type] = Unset
+        self._record_history_identity: Union[int, None, Unset_Type] = Unset
+        self._record_history_guid: Union[str, None, Unset_Type] = Unset
+        self._record_guid: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if database_key is not None:
+        if database_key is not Unset:
             self.database_key = database_key
-        if record_identity is not None:
+        if record_identity is not Unset:
             self.record_identity = record_identity
-        if record_history_identity is not None:
+        if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
-        if record_history_guid is not None:
+        if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
-        if record_guid is not None:
+        if record_guid is not Unset:
             self.record_guid = record_guid
         self.type = type
 
     @property
-    def database_key(self) -> "Optional[str]":
+    def database_key(self) -> "Union[str, None, Unset_Type]":
         """Gets the database_key of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Optional[str]") -> None:
+    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
         """Sets the database_key of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
         ----------
-        database_key: str
+        database_key: Union[str, None, Unset_Type]
             The database_key of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         self._database_key = database_key
 
     @property
-    def record_identity(self) -> "Optional[int]":
+    def record_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         return self._record_identity
 
     @record_identity.setter
-    def record_identity(self, record_identity: "Optional[int]") -> None:
+    def record_identity(self, record_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
         ----------
-        record_identity: int
+        record_identity: Union[int, None, Unset_Type]
             The record_identity of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         self._record_identity = record_identity
 
     @property
-    def record_history_identity(self) -> "Optional[int]":
+    def record_history_identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(self, record_history_identity: "Optional[int]") -> None:
+    def record_history_identity(
+        self, record_history_identity: "Union[int, None, Unset_Type]"
+    ) -> None:
         """Sets the record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
         ----------
-        record_history_identity: int
+        record_history_identity: Union[int, None, Unset_Type]
             The record_history_identity of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         self._record_history_identity = record_history_identity
 
     @property
-    def record_history_guid(self) -> "Optional[str]":
+    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Optional[str]") -> None:
+    def record_history_guid(
+        self, record_history_guid: "Union[str, None, Unset_Type]"
+    ) -> None:
         """Sets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
         ----------
-        record_history_guid: str
+        record_history_guid: Union[str, None, Unset_Type]
             The record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         self._record_history_guid = record_history_guid
 
     @property
-    def record_guid(self) -> "Optional[str]":
+    def record_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         return self._record_guid
 
     @record_guid.setter
-    def record_guid(self, record_guid: "Optional[str]") -> None:
+    def record_guid(self, record_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters
         ----------
-        record_guid: str
+        record_guid: Union[str, None, Unset_Type]
             The record_guid of this GrantaServerApiSearchRecordReferenceCriterion.
         """
         self._record_guid = record_guid
@@ -242,12 +246,16 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         type: str
             The type of this GrantaServerApiSearchRecordReferenceCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -264,7 +272,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

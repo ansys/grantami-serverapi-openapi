@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (
     GrantaServerApiAggregationsAggregationDatumCriterion,
 )  # noqa: F401
@@ -70,73 +70,76 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
     def __init__(
         self,
         *,
-        number_of_terms: "Optional[int]" = None,
-        prefix: "Optional[str]" = None,
+        number_of_terms: "Union[int, Unset_Type]" = Unset,
+        prefix: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "shortText",
     ) -> None:
         """GrantaServerApiAggregationsShortTextAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            number_of_terms: int, optional
-            prefix: str, optional
-            type: str
+        number_of_terms: int, optional
+        prefix: str, optional
+        type: str
         """
         super().__init__()
-        self._number_of_terms = None
-        self._prefix = None
-        self._type: str = None  # type: ignore[assignment]
+        self._number_of_terms: Union[int, Unset_Type] = Unset
+        self._prefix: Union[str, None, Unset_Type] = Unset
+        self._type: str
 
-        if number_of_terms is not None:
+        if number_of_terms is not Unset:
             self.number_of_terms = number_of_terms
-        if prefix is not None:
+        if prefix is not Unset:
             self.prefix = prefix
         self.type = type
 
     @property
-    def number_of_terms(self) -> "Optional[int]":
+    def number_of_terms(self) -> "Union[int, Unset_Type]":
         """Gets the number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         The maximum number of terms to return in this aggregation.
 
         Returns
         -------
-        int
+        Union[int, Unset_Type]
             The number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         """
         return self._number_of_terms
 
     @number_of_terms.setter
-    def number_of_terms(self, number_of_terms: "Optional[int]") -> None:
+    def number_of_terms(self, number_of_terms: "Union[int, Unset_Type]") -> None:
         """Sets the number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         The maximum number of terms to return in this aggregation.
 
         Parameters
         ----------
-        number_of_terms: int
+        number_of_terms: Union[int, Unset_Type]
             The number_of_terms of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         """
+        # Field is not nullable
+        if number_of_terms is None:
+            raise ValueError("Invalid value for 'number_of_terms', must not be 'None'")
         self._number_of_terms = number_of_terms
 
     @property
-    def prefix(self) -> "Optional[str]":
+    def prefix(self) -> "Union[str, None, Unset_Type]":
         """Gets the prefix of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         An optional textual prefix. If provided, only terms that start with this prefix will be  considered in the aggregation.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The prefix of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         """
         return self._prefix
 
     @prefix.setter
-    def prefix(self, prefix: "Optional[str]") -> None:
+    def prefix(self, prefix: "Union[str, None, Unset_Type]") -> None:
         """Sets the prefix of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         An optional textual prefix. If provided, only terms that start with this prefix will be  considered in the aggregation.
 
         Parameters
         ----------
-        prefix: str
+        prefix: Union[str, None, Unset_Type]
             The prefix of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         """
         self._prefix = prefix
@@ -161,12 +164,16 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
         type: str
             The type of this GrantaServerApiAggregationsShortTextAggregationDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -183,7 +190,7 @@ class GrantaServerApiAggregationsShortTextAggregationDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter_content import (
     GrantaServerApiSchemaParametersParameterContent,
 )  # noqa: F401
@@ -77,25 +77,27 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         *,
         parameter: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         parameter_range: "GrantaServerApiSchemaParametersDiscreteRange",
-        parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]" = None,
+        parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
         """GrantaServerApiSchemaParametersDiscreteParameterContent - a model defined in Swagger
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-            parameter_range: GrantaServerApiSchemaParametersDiscreteRange
-            parameter_value: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
-            type: str
+        parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        parameter_range: GrantaServerApiSchemaParametersDiscreteRange
+        parameter_value: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
+        type: str
         """
         super().__init__(parameter=parameter)
-        self._type: str = None  # type: ignore[assignment]
-        self._parameter_value = None
-        self._parameter_range: GrantaServerApiSchemaParametersDiscreteRange = None  # type: ignore[assignment]
+        self._type: str
+        self._parameter_value: Union[
+            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
+        ] = Unset
+        self._parameter_range: GrantaServerApiSchemaParametersDiscreteRange
 
         self.type = type
-        if parameter_value is not None:
+        if parameter_value is not Unset:
             self.parameter_value = parameter_value
         self.parameter_range = parameter_range
 
@@ -119,19 +121,23 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         type: str
             The type of this GrantaServerApiSchemaParametersDiscreteParameterContent.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
     def parameter_value(
         self,
-    ) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
         """Gets the parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]
             The parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
         """
         return self._parameter_value
@@ -139,15 +145,18 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
     @parameter_value.setter
     def parameter_value(
         self,
-        parameter_value: "Optional[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
     ) -> None:
         """Sets the parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
 
         Parameters
         ----------
-        parameter_value: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        parameter_value: Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]
             The parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
         """
+        # Field is not nullable
+        if parameter_value is None:
+            raise ValueError("Invalid value for 'parameter_value', must not be 'None'")
         self._parameter_value = parameter_value
 
     @property
@@ -172,12 +181,16 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
         parameter_range: GrantaServerApiSchemaParametersDiscreteRange
             The parameter_range of this GrantaServerApiSchemaParametersDiscreteParameterContent.
         """
+        # Field is not nullable
         if parameter_range is None:
             raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
+        # Field is required
+        if parameter_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'parameter_range', must not be 'Unset'")
         self._parameter_range = parameter_range
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -194,7 +207,7 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

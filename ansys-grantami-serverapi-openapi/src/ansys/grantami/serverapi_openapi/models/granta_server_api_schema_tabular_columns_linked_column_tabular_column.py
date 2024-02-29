@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_tabular_column import (
     GrantaServerApiSchemaTabularColumnsTabularColumn,
 )  # noqa: F401
@@ -105,17 +105,17 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
 
         Parameters
         ----------
-            display_names: Dict[str, str]
-            guid: str
-            linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimAttribute
-            linked_column: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-            name: str
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-            show_as_link: bool
-            summary_row_enabled: bool
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-            summary_row_text: str
-            column_type: str
+        display_names: Dict[str, str]
+        guid: str
+        linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimAttribute
+        linked_column: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        name: str
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        show_as_link: bool
+        summary_row_enabled: bool
+        summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
+        summary_row_text: str
+        column_type: str
         """
         super().__init__(
             display_names=display_names,
@@ -127,9 +127,9 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
-        self._linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimAttribute = None  # type: ignore[assignment]
-        self._linked_column: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity = None  # type: ignore[assignment]
+        self._column_type: str
+        self._linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimAttribute
+        self._linked_column: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
 
         self.column_type = column_type
         self.linked_attribute = linked_attribute
@@ -155,8 +155,12 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         column_type: str
             The column_type of this GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn.
         """
+        # Field is not nullable
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
+        # Field is required
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
     @property
@@ -181,8 +185,14 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimAttribute
             The linked_attribute of this GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn.
         """
+        # Field is not nullable
         if linked_attribute is None:
             raise ValueError("Invalid value for 'linked_attribute', must not be 'None'")
+        # Field is required
+        if linked_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'linked_attribute', must not be 'Unset'"
+            )
         self._linked_attribute = linked_attribute
 
     @property
@@ -207,12 +217,16 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
         linked_column: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
             The linked_column of this GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn.
         """
+        # Field is not nullable
         if linked_column is None:
             raise ValueError("Invalid value for 'linked_column', must not be 'None'")
+        # Field is required
+        if linked_column is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'linked_column', must not be 'Unset'")
         self._linked_column = linked_column
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -229,7 +243,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

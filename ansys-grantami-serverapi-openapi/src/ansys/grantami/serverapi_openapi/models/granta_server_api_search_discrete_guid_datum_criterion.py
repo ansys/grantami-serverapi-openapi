@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (
     GrantaServerApiSearchDatumCriterion,
 )  # noqa: F401
@@ -69,43 +69,46 @@ class GrantaServerApiSearchDiscreteGuidDatumCriterion(
         self,
         *,
         type: "str" = "discreteGuid",
-        value: "Optional[str]" = None,
+        value: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchDiscreteGuidDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            type: str
-            value: str, optional
+        type: str
+        value: str, optional
         """
         super().__init__()
-        self._value = None
-        self._type: str = None  # type: ignore[assignment]
+        self._value: Union[str, Unset_Type] = Unset
+        self._type: str
 
-        if value is not None:
+        if value is not Unset:
             self.value = value
         self.type = type
 
     @property
-    def value(self) -> "Optional[str]":
+    def value(self) -> "Union[str, Unset_Type]":
         """Gets the value of this GrantaServerApiSearchDiscreteGuidDatumCriterion.
 
         Returns
         -------
-        str
+        Union[str, Unset_Type]
             The value of this GrantaServerApiSearchDiscreteGuidDatumCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Optional[str]") -> None:
+    def value(self, value: "Union[str, Unset_Type]") -> None:
         """Sets the value of this GrantaServerApiSearchDiscreteGuidDatumCriterion.
 
         Parameters
         ----------
-        value: str
+        value: Union[str, Unset_Type]
             The value of this GrantaServerApiSearchDiscreteGuidDatumCriterion.
         """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
         self._value = value
 
     @property
@@ -128,12 +131,16 @@ class GrantaServerApiSearchDiscreteGuidDatumCriterion(
         type: str
             The type of this GrantaServerApiSearchDiscreteGuidDatumCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +157,7 @@ class GrantaServerApiSearchDiscreteGuidDatumCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_update_tabular_columns_update_tabular_column import (
     GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn,
 )  # noqa: F401
@@ -85,28 +85,28 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
         self,
         *,
         column_type: "str" = "linkedAttribute",
-        guid: "Optional[str]" = None,
-        linked_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        name: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        show_as_link: "Optional[bool]" = None,
-        summary_row_enabled: "Optional[bool]" = None,
-        summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_row_text: "Optional[str]" = None,
+        guid: "Union[str, Unset_Type]" = Unset,
+        linked_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
+        show_as_link: "Union[bool, Unset_Type]" = Unset,
+        summary_row_enabled: "Union[bool, Unset_Type]" = Unset,
+        summary_row_roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
+        summary_row_text: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn - a model defined in Swagger
 
         Parameters
         ----------
-            column_type: str
-            guid: str, optional
-            linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            name: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            show_as_link: bool, optional
-            summary_row_enabled: bool, optional
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_row_text: str, optional
+        column_type: str
+        guid: str, optional
+        linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        name: str, optional
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        show_as_link: bool, optional
+        summary_row_enabled: bool, optional
+        summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        summary_row_text: str, optional
         """
         super().__init__(
             guid=guid,
@@ -117,11 +117,13 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
-        self._linked_attribute = None
+        self._column_type: str
+        self._linked_attribute: Union[
+            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
+        ] = Unset
 
         self.column_type = column_type
-        if linked_attribute is not None:
+        if linked_attribute is not Unset:
             self.linked_attribute = linked_attribute
 
     @property
@@ -144,38 +146,46 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
         column_type: str
             The column_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
         """
+        # Field is not nullable
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
+        # Field is required
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
     @property
     def linked_attribute(
         self,
-    ) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
         """
         return self._linked_attribute
 
     @linked_attribute.setter
     def linked_attribute(
-        self, linked_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self,
+        linked_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
     ) -> None:
         """Sets the linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
 
         Parameters
         ----------
-        linked_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        linked_attribute: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
         """
+        # Field is not nullable
+        if linked_attribute is None:
+            raise ValueError("Invalid value for 'linked_attribute', must not be 'None'")
         self._linked_attribute = linked_attribute
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -192,7 +202,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

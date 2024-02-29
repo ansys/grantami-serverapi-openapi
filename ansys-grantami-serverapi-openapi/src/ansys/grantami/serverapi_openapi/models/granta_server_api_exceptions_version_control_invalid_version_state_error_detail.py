@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
     GrantaServerApiExceptionsVersionControlVersionControlErrorDetail,
 )  # noqa: F401
@@ -74,46 +74,49 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
         *,
         message: "str",
         reason: "str" = "invalidVersionState",
-        version_state: "Optional[GrantaServerApiVersionState]" = None,
+        version_state: "Union[GrantaServerApiVersionState, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-            message: str
-            reason: str
-            version_state: GrantaServerApiVersionState, optional
+        message: str
+        reason: str
+        version_state: GrantaServerApiVersionState, optional
         """
         super().__init__(message=message)
-        self._version_state = None
-        self._reason: str = None  # type: ignore[assignment]
+        self._version_state: Union[GrantaServerApiVersionState, Unset_Type] = Unset
+        self._reason: str
 
-        if version_state is not None:
+        if version_state is not Unset:
             self.version_state = version_state
         self.reason = reason
 
     @property
-    def version_state(self) -> "Optional[GrantaServerApiVersionState]":
+    def version_state(self) -> "Union[GrantaServerApiVersionState, Unset_Type]":
         """Gets the version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
 
         Returns
         -------
-        GrantaServerApiVersionState
+        Union[GrantaServerApiVersionState, Unset_Type]
             The version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
         """
         return self._version_state
 
     @version_state.setter
     def version_state(
-        self, version_state: "Optional[GrantaServerApiVersionState]"
+        self, version_state: "Union[GrantaServerApiVersionState, Unset_Type]"
     ) -> None:
         """Sets the version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
 
         Parameters
         ----------
-        version_state: GrantaServerApiVersionState
+        version_state: Union[GrantaServerApiVersionState, Unset_Type]
             The version_state of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
         """
+        # Field is not nullable
+        if version_state is None:
+            raise ValueError("Invalid value for 'version_state', must not be 'None'")
         self._version_state = version_state
 
     @property
@@ -136,12 +139,16 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
         reason: str
             The reason of this GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail.
         """
+        # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -158,7 +165,7 @@ class GrantaServerApiExceptionsVersionControlInvalidVersionStateErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

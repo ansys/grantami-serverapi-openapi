@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
 )  # noqa: F401
@@ -90,32 +90,32 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         self,
         *,
         name: "str",
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        display_full_table: "Optional[bool]" = None,
-        display_summary_row_inline: "Optional[bool]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        hide_unlinked_rows: "Optional[bool]" = None,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]]" = None,
-        target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        display_full_table: "Union[bool, Unset_Type]" = Unset,
+        display_summary_row_inline: "Union[bool, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        hide_unlinked_rows: "Union[bool, Unset_Type]" = Unset,
+        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], None, Unset_Type]" = Unset,
+        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            name: str
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            display_full_table: bool, optional
-            display_summary_row_inline: bool, optional
-            guid: str, optional
-            help_path: str, optional
-            hide_unlinked_rows: bool, optional
-            tabular_columns: List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], optional
-            target: GrantaServerApiSchemaAttributesTabularAttributeTarget, optional
-            type: str
+        name: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        display_full_table: bool, optional
+        display_summary_row_inline: bool, optional
+        guid: str, optional
+        help_path: str, optional
+        hide_unlinked_rows: bool, optional
+        tabular_columns: List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], optional
+        target: GrantaServerApiSchemaAttributesTabularAttributeTarget, optional
+        type: str
         """
         super().__init__(
             name=name,
@@ -124,23 +124,31 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
             guid=guid,
             help_path=help_path,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._display_full_table = None
-        self._display_summary_row_inline = None
-        self._hide_unlinked_rows = None
-        self._tabular_columns = None
-        self._target = None
+        self._type: str
+        self._display_full_table: Union[bool, Unset_Type] = Unset
+        self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
+        self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
+        self._tabular_columns: Union[
+            List[
+                GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn
+            ],
+            None,
+            Unset_Type,
+        ] = Unset
+        self._target: Union[
+            GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type
+        ] = Unset
 
         self.type = type
-        if display_full_table is not None:
+        if display_full_table is not Unset:
             self.display_full_table = display_full_table
-        if display_summary_row_inline is not None:
+        if display_summary_row_inline is not Unset:
             self.display_summary_row_inline = display_summary_row_inline
-        if hide_unlinked_rows is not None:
+        if hide_unlinked_rows is not Unset:
             self.hide_unlinked_rows = hide_unlinked_rows
-        if tabular_columns is not None:
+        if tabular_columns is not Unset:
             self.tabular_columns = tabular_columns
-        if target is not None:
+        if target is not Unset:
             self.target = target
 
     @property
@@ -163,87 +171,106 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def display_full_table(self) -> "Optional[bool]":
+    def display_full_table(self) -> "Union[bool, Unset_Type]":
         """Gets the display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         return self._display_full_table
 
     @display_full_table.setter
-    def display_full_table(self, display_full_table: "Optional[bool]") -> None:
+    def display_full_table(self, display_full_table: "Union[bool, Unset_Type]") -> None:
         """Sets the display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        display_full_table: bool
+        display_full_table: Union[bool, Unset_Type]
             The display_full_table of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
+        # Field is not nullable
+        if display_full_table is None:
+            raise ValueError(
+                "Invalid value for 'display_full_table', must not be 'None'"
+            )
         self._display_full_table = display_full_table
 
     @property
-    def display_summary_row_inline(self) -> "Optional[bool]":
+    def display_summary_row_inline(self) -> "Union[bool, Unset_Type]":
         """Gets the display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         return self._display_summary_row_inline
 
     @display_summary_row_inline.setter
     def display_summary_row_inline(
-        self, display_summary_row_inline: "Optional[bool]"
+        self, display_summary_row_inline: "Union[bool, Unset_Type]"
     ) -> None:
         """Sets the display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        display_summary_row_inline: bool
+        display_summary_row_inline: Union[bool, Unset_Type]
             The display_summary_row_inline of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
+        # Field is not nullable
+        if display_summary_row_inline is None:
+            raise ValueError(
+                "Invalid value for 'display_summary_row_inline', must not be 'None'"
+            )
         self._display_summary_row_inline = display_summary_row_inline
 
     @property
-    def hide_unlinked_rows(self) -> "Optional[bool]":
+    def hide_unlinked_rows(self) -> "Union[bool, Unset_Type]":
         """Gets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         return self._hide_unlinked_rows
 
     @hide_unlinked_rows.setter
-    def hide_unlinked_rows(self, hide_unlinked_rows: "Optional[bool]") -> None:
+    def hide_unlinked_rows(self, hide_unlinked_rows: "Union[bool, Unset_Type]") -> None:
         """Sets the hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        hide_unlinked_rows: bool
+        hide_unlinked_rows: Union[bool, Unset_Type]
             The hide_unlinked_rows of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
+        # Field is not nullable
+        if hide_unlinked_rows is None:
+            raise ValueError(
+                "Invalid value for 'hide_unlinked_rows', must not be 'None'"
+            )
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
     def tabular_columns(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]]":
+    ) -> "Union[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]
+        Union[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         return self._tabular_columns
@@ -251,13 +278,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
     @tabular_columns.setter
     def tabular_columns(
         self,
-        tabular_columns: "Optional[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]]",
+        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], None, Unset_Type]",
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn]
+        tabular_columns: Union[List[GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
@@ -265,31 +292,35 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
     @property
     def target(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]":
+    ) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
         """Gets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaAttributesTabularAttributeTarget
+        Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]
             The target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
         return self._target
 
     @target.setter
     def target(
-        self, target: "Optional[GrantaServerApiSchemaAttributesTabularAttributeTarget]"
+        self,
+        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]",
     ) -> None:
         """Sets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Parameters
         ----------
-        target: GrantaServerApiSchemaAttributesTabularAttributeTarget
+        target: Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]
             The target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
         """
+        # Field is not nullable
+        if target is None:
+            raise ValueError("Invalid value for 'target', must not be 'None'")
         self._target = target
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -306,7 +337,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

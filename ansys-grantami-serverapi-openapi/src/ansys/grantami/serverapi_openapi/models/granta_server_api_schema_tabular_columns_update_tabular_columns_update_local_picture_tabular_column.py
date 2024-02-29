@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_update_tabular_columns_update_tabular_column import (
     GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn,
 )  # noqa: F401
@@ -85,28 +85,28 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureT
         self,
         *,
         column_type: "str" = "localPicture",
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        name: "Optional[str]" = None,
-        roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        show_as_link: "Optional[bool]" = None,
-        summary_row_enabled: "Optional[bool]" = None,
-        summary_row_roll_up_type: "Optional[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType]" = None,
-        summary_row_text: "Optional[str]" = None,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
+        roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
+        show_as_link: "Union[bool, Unset_Type]" = Unset,
+        summary_row_enabled: "Union[bool, Unset_Type]" = Unset,
+        summary_row_roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
+        summary_row_text: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn - a model defined in Swagger
 
         Parameters
         ----------
-            column_type: str
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            name: str, optional
-            roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            show_as_link: bool, optional
-            summary_row_enabled: bool, optional
-            summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-            summary_row_text: str, optional
+        column_type: str
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        name: str, optional
+        roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        show_as_link: bool, optional
+        summary_row_enabled: bool, optional
+        summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
+        summary_row_text: str, optional
         """
         super().__init__(
             guid=guid,
@@ -117,11 +117,13 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureT
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
         )
-        self._column_type: str = None  # type: ignore[assignment]
-        self._default_threshold_type = None
+        self._column_type: str
+        self._default_threshold_type: Union[
+            GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type
+        ] = Unset
 
         self.column_type = column_type
-        if default_threshold_type is not None:
+        if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
 
     @property
@@ -144,19 +146,23 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureT
         column_type: str
             The column_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn.
         """
+        # Field is not nullable
         if column_type is None:
             raise ValueError("Invalid value for 'column_type', must not be 'None'")
+        # Field is required
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
         self._column_type = column_type
 
     @property
     def default_threshold_type(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]":
+    ) -> "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]":
         """Gets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn.
 
         Returns
         -------
-        GrantaServerApiSchemaAttributesAttributeThresholdType
+        Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]
             The default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn.
         """
         return self._default_threshold_type
@@ -164,19 +170,24 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureT
     @default_threshold_type.setter
     def default_threshold_type(
         self,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]",
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]",
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn.
 
         Parameters
         ----------
-        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
+        default_threshold_type: Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]
             The default_threshold_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureTabularColumn.
         """
+        # Field is not nullable
+        if default_threshold_type is None:
+            raise ValueError(
+                "Invalid value for 'default_threshold_type', must not be 'None'"
+            )
         self._default_threshold_type = default_threshold_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -193,7 +204,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalPictureT
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

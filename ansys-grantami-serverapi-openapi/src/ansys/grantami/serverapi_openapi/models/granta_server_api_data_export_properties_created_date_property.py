@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_properties_property import (
     GrantaServerApiDataExportPropertiesProperty,
 )  # noqa: F401
@@ -68,22 +68,22 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
     def __init__(
         self,
         *,
-        created_date: "Optional[datetime]" = None,
+        created_date: "Union[datetime, Unset_Type]" = Unset,
         property_name: "str" = "createdDate",
     ) -> None:
         """GrantaServerApiDataExportPropertiesCreatedDateProperty - a model defined in Swagger
 
         Parameters
         ----------
-            created_date: datetime, optional
-            property_name: str
+        created_date: datetime, optional
+        property_name: str
         """
         super().__init__()
-        self._property_name: str = None  # type: ignore[assignment]
-        self._created_date = None
+        self._property_name: str
+        self._created_date: Union[datetime, Unset_Type] = Unset
 
         self.property_name = property_name
-        if created_date is not None:
+        if created_date is not Unset:
             self.created_date = created_date
 
     @property
@@ -106,34 +106,41 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
         property_name: str
             The property_name of this GrantaServerApiDataExportPropertiesCreatedDateProperty.
         """
+        # Field is not nullable
         if property_name is None:
             raise ValueError("Invalid value for 'property_name', must not be 'None'")
+        # Field is required
+        if property_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'property_name', must not be 'Unset'")
         self._property_name = property_name
 
     @property
-    def created_date(self) -> "Optional[datetime]":
+    def created_date(self) -> "Union[datetime, Unset_Type]":
         """Gets the created_date of this GrantaServerApiDataExportPropertiesCreatedDateProperty.
 
         Returns
         -------
-        datetime
+        Union[datetime, Unset_Type]
             The created_date of this GrantaServerApiDataExportPropertiesCreatedDateProperty.
         """
         return self._created_date
 
     @created_date.setter
-    def created_date(self, created_date: "Optional[datetime]") -> None:
+    def created_date(self, created_date: "Union[datetime, Unset_Type]") -> None:
         """Sets the created_date of this GrantaServerApiDataExportPropertiesCreatedDateProperty.
 
         Parameters
         ----------
-        created_date: datetime
+        created_date: Union[datetime, Unset_Type]
             The created_date of this GrantaServerApiDataExportPropertiesCreatedDateProperty.
         """
+        # Field is not nullable
+        if created_date is None:
+            raise ValueError("Invalid value for 'created_date', must not be 'None'")
         self._created_date = created_date
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -150,7 +157,7 @@ class GrantaServerApiDataExportPropertiesCreatedDateProperty(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
