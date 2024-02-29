@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
     GrantaServerApiAggregationsAggregationDatum,
 )  # noqa: F401
@@ -71,32 +71,34 @@ class GrantaServerApiAggregationsLinkAggregation(
         self,
         *,
         datum_type: "str" = "link",
-        local_aggregations: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregation]]" = None,
+        local_aggregations: "Union[List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsLinkAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            datum_type: str
-            local_aggregations: List[GrantaServerApiAggregationsLocalColumnAggregation], optional
+        datum_type: str
+        local_aggregations: List[GrantaServerApiAggregationsLocalColumnAggregation], optional
         """
         super().__init__()
-        self._local_aggregations = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._local_aggregations: Union[
+            List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type
+        ] = Unset
+        self._datum_type: str
 
-        if local_aggregations is not None:
+        if local_aggregations is not Unset:
             self.local_aggregations = local_aggregations
         self.datum_type = datum_type
 
     @property
     def local_aggregations(
         self,
-    ) -> "Optional[List[GrantaServerApiAggregationsLocalColumnAggregation]]":
+    ) -> "Union[List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type]":
         """Gets the local_aggregations of this GrantaServerApiAggregationsLinkAggregation.
 
         Returns
         -------
-        list[GrantaServerApiAggregationsLocalColumnAggregation]
+        Union[List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type]
             The local_aggregations of this GrantaServerApiAggregationsLinkAggregation.
         """
         return self._local_aggregations
@@ -104,13 +106,13 @@ class GrantaServerApiAggregationsLinkAggregation(
     @local_aggregations.setter
     def local_aggregations(
         self,
-        local_aggregations: "Optional[List[GrantaServerApiAggregationsLocalColumnAggregation]]",
+        local_aggregations: "Union[List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type]",
     ) -> None:
         """Sets the local_aggregations of this GrantaServerApiAggregationsLinkAggregation.
 
         Parameters
         ----------
-        local_aggregations: List[GrantaServerApiAggregationsLocalColumnAggregation]
+        local_aggregations: Union[List[GrantaServerApiAggregationsLocalColumnAggregation], None, Unset_Type]
             The local_aggregations of this GrantaServerApiAggregationsLinkAggregation.
         """
         self._local_aggregations = local_aggregations
@@ -135,12 +137,16 @@ class GrantaServerApiAggregationsLinkAggregation(
         datum_type: str
             The datum_type of this GrantaServerApiAggregationsLinkAggregation.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -157,7 +163,7 @@ class GrantaServerApiAggregationsLinkAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

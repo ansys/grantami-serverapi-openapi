@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -84,29 +84,29 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        axis_name: "Optional[str]" = None,
-        data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_unique: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_unique: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "shortText",
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            axis_name: str, optional
-            data_rule: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            guid: str, optional
-            help_path: str, optional
-            is_unique: bool, optional
-            name: str, optional
-            type: str
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        axis_name: str, optional
+        data_rule: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        guid: str, optional
+        help_path: str, optional
+        is_unique: bool, optional
+        name: str, optional
+        type: str
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -116,14 +116,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._is_unique = None
-        self._data_rule = None
+        self._type: str
+        self._is_unique: Union[bool, Unset_Type] = Unset
+        self._data_rule: Union[
+            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
+        ] = Unset
 
         self.type = type
-        if is_unique is not None:
+        if is_unique is not Unset:
             self.is_unique = is_unique
-        if data_rule is not None:
+        if data_rule is not Unset:
             self.data_rule = data_rule
 
     @property
@@ -146,60 +148,73 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def is_unique(self) -> "Optional[bool]":
+    def is_unique(self) -> "Union[bool, Unset_Type]":
         """Gets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
         return self._is_unique
 
     @is_unique.setter
-    def is_unique(self, is_unique: "Optional[bool]") -> None:
+    def is_unique(self, is_unique: "Union[bool, Unset_Type]") -> None:
         """Sets the is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         Whether or not the attribute is constrained to contain a unique value
 
         Parameters
         ----------
-        is_unique: bool
+        is_unique: Union[bool, Unset_Type]
             The is_unique of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
+        # Field is not nullable
+        if is_unique is None:
+            raise ValueError("Invalid value for 'is_unique', must not be 'None'")
         self._is_unique = is_unique
 
     @property
-    def data_rule(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def data_rule(
+        self,
+    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
         return self._data_rule
 
     @data_rule.setter
     def data_rule(
-        self, data_rule: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self,
+        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
         Parameters
         ----------
-        data_rule: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        data_rule: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
         """
+        # Field is not nullable
+        if data_rule is None:
+            raise ValueError("Invalid value for 'data_rule', must not be 'None'")
         self._data_rule = data_rule
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -216,7 +231,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

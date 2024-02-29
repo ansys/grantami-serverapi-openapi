@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (
     GrantaServerApiDataExportExportFailuresExportFailure,
 )  # noqa: F401
@@ -83,14 +83,14 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
 
         Parameters
         ----------
-            failed_records: List[GrantaServerApiIntegrationDataExportRecordReference]
-            failure_details: str
-            failure_reason: str
-            type: str
+        failed_records: List[GrantaServerApiIntegrationDataExportRecordReference]
+        failure_details: str
+        failure_reason: str
+        type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_records: List[GrantaServerApiIntegrationDataExportRecordReference] = None  # type: ignore[assignment]
-        self._type: str = None  # type: ignore[assignment]
+        self._failed_records: List[GrantaServerApiIntegrationDataExportRecordReference]
+        self._type: str
 
         self.failed_records = failed_records
         self.type = type
@@ -103,7 +103,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
 
         Returns
         -------
-        list[GrantaServerApiIntegrationDataExportRecordReference]
+        List[GrantaServerApiIntegrationDataExportRecordReference]
             The failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
         """
         return self._failed_records
@@ -120,8 +120,12 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
         failed_records: List[GrantaServerApiIntegrationDataExportRecordReference]
             The failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
         """
+        # Field is not nullable
         if failed_records is None:
             raise ValueError("Invalid value for 'failed_records', must not be 'None'")
+        # Field is required
+        if failed_records is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'failed_records', must not be 'Unset'")
         self._failed_records = failed_records
 
     @property
@@ -144,12 +148,16 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
         type: str
             The type of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -166,7 +174,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

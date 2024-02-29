@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_sort_criterion import (
     GrantaServerApiSearchSortCriterion,
 )  # noqa: F401
@@ -77,129 +77,137 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
     def __init__(
         self,
         *,
-        attribute_type: "Optional[GrantaServerApiAttributeType]" = None,
-        guid: "Optional[str]" = None,
-        identity: "Optional[int]" = None,
-        sort_direction: "Optional[GrantaServerApiSearchSortDirection]" = None,
-        sort_type: "Optional[GrantaServerApiSearchSortType]" = None,
+        attribute_type: "Union[GrantaServerApiAttributeType, Unset_Type]" = Unset,
+        guid: "Union[str, None, Unset_Type]" = Unset,
+        identity: "Union[int, None, Unset_Type]" = Unset,
+        sort_direction: "Union[GrantaServerApiSearchSortDirection, Unset_Type]" = Unset,
+        sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]" = Unset,
         type: "str" = "attribute",
     ) -> None:
         """GrantaServerApiSearchAttributeSortCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_type: GrantaServerApiAttributeType, optional
-            guid: str, optional
-            identity: int, optional
-            sort_direction: GrantaServerApiSearchSortDirection, optional
-            sort_type: GrantaServerApiSearchSortType, optional
-            type: str
+        attribute_type: GrantaServerApiAttributeType, optional
+        guid: str, optional
+        identity: int, optional
+        sort_direction: GrantaServerApiSearchSortDirection, optional
+        sort_type: GrantaServerApiSearchSortType, optional
+        type: str
         """
         super().__init__(sort_direction=sort_direction)
-        self._identity = None
-        self._guid = None
-        self._attribute_type = None
-        self._sort_type = None
-        self._type: str = None  # type: ignore[assignment]
+        self._identity: Union[int, None, Unset_Type] = Unset
+        self._guid: Union[str, None, Unset_Type] = Unset
+        self._attribute_type: Union[GrantaServerApiAttributeType, Unset_Type] = Unset
+        self._sort_type: Union[GrantaServerApiSearchSortType, Unset_Type] = Unset
+        self._type: str
 
-        if identity is not None:
+        if identity is not Unset:
             self.identity = identity
-        if guid is not None:
+        if guid is not Unset:
             self.guid = guid
-        if attribute_type is not None:
+        if attribute_type is not Unset:
             self.attribute_type = attribute_type
-        if sort_type is not None:
+        if sort_type is not Unset:
             self.sort_type = sort_type
         self.type = type
 
     @property
-    def identity(self) -> "Optional[int]":
+    def identity(self) -> "Union[int, None, Unset_Type]":
         """Gets the identity of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The identity of this GrantaServerApiSearchAttributeSortCriterion.
         """
         return self._identity
 
     @identity.setter
-    def identity(self, identity: "Optional[int]") -> None:
+    def identity(self, identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the identity of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
         ----------
-        identity: int
+        identity: Union[int, None, Unset_Type]
             The identity of this GrantaServerApiSearchAttributeSortCriterion.
         """
         self._identity = identity
 
     @property
-    def guid(self) -> "Optional[str]":
+    def guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the guid of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The guid of this GrantaServerApiSearchAttributeSortCriterion.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Optional[str]") -> None:
+    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the guid of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
         ----------
-        guid: str
+        guid: Union[str, None, Unset_Type]
             The guid of this GrantaServerApiSearchAttributeSortCriterion.
         """
         self._guid = guid
 
     @property
-    def attribute_type(self) -> "Optional[GrantaServerApiAttributeType]":
+    def attribute_type(self) -> "Union[GrantaServerApiAttributeType, Unset_Type]":
         """Gets the attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
         -------
-        GrantaServerApiAttributeType
+        Union[GrantaServerApiAttributeType, Unset_Type]
             The attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
         """
         return self._attribute_type
 
     @attribute_type.setter
     def attribute_type(
-        self, attribute_type: "Optional[GrantaServerApiAttributeType]"
+        self, attribute_type: "Union[GrantaServerApiAttributeType, Unset_Type]"
     ) -> None:
         """Sets the attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
         ----------
-        attribute_type: GrantaServerApiAttributeType
+        attribute_type: Union[GrantaServerApiAttributeType, Unset_Type]
             The attribute_type of this GrantaServerApiSearchAttributeSortCriterion.
         """
+        # Field is not nullable
+        if attribute_type is None:
+            raise ValueError("Invalid value for 'attribute_type', must not be 'None'")
         self._attribute_type = attribute_type
 
     @property
-    def sort_type(self) -> "Optional[GrantaServerApiSearchSortType]":
+    def sort_type(self) -> "Union[GrantaServerApiSearchSortType, Unset_Type]":
         """Gets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Returns
         -------
-        GrantaServerApiSearchSortType
+        Union[GrantaServerApiSearchSortType, Unset_Type]
             The sort_type of this GrantaServerApiSearchAttributeSortCriterion.
         """
         return self._sort_type
 
     @sort_type.setter
-    def sort_type(self, sort_type: "Optional[GrantaServerApiSearchSortType]") -> None:
+    def sort_type(
+        self, sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]"
+    ) -> None:
         """Sets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters
         ----------
-        sort_type: GrantaServerApiSearchSortType
+        sort_type: Union[GrantaServerApiSearchSortType, Unset_Type]
             The sort_type of this GrantaServerApiSearchAttributeSortCriterion.
         """
+        # Field is not nullable
+        if sort_type is None:
+            raise ValueError("Invalid value for 'sort_type', must not be 'None'")
         self._sort_type = sort_type
 
     @property
@@ -222,12 +230,16 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         type: str
             The type of this GrantaServerApiSearchAttributeSortCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -244,7 +256,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

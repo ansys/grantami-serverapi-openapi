@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (
     GrantaServerApiDataExportExportFailuresExportFailure,
 )  # noqa: F401
@@ -83,14 +83,14 @@ class GrantaServerApiDataExportExportFailuresDatumExportFailure(
 
         Parameters
         ----------
-            failed_datum: GrantaServerApiDataExportExportFailuresDatumReference
-            failure_details: str
-            failure_reason: str
-            type: str
+        failed_datum: GrantaServerApiDataExportExportFailuresDatumReference
+        failure_details: str
+        failure_reason: str
+        type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_datum: GrantaServerApiDataExportExportFailuresDatumReference = None  # type: ignore[assignment]
-        self._type: str = None  # type: ignore[assignment]
+        self._failed_datum: GrantaServerApiDataExportExportFailuresDatumReference
+        self._type: str
 
         self.failed_datum = failed_datum
         self.type = type
@@ -117,8 +117,12 @@ class GrantaServerApiDataExportExportFailuresDatumExportFailure(
         failed_datum: GrantaServerApiDataExportExportFailuresDatumReference
             The failed_datum of this GrantaServerApiDataExportExportFailuresDatumExportFailure.
         """
+        # Field is not nullable
         if failed_datum is None:
             raise ValueError("Invalid value for 'failed_datum', must not be 'None'")
+        # Field is required
+        if failed_datum is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'failed_datum', must not be 'Unset'")
         self._failed_datum = failed_datum
 
     @property
@@ -141,12 +145,16 @@ class GrantaServerApiDataExportExportFailuresDatumExportFailure(
         type: str
             The type of this GrantaServerApiDataExportExportFailuresDatumExportFailure.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -163,7 +171,7 @@ class GrantaServerApiDataExportExportFailuresDatumExportFailure(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

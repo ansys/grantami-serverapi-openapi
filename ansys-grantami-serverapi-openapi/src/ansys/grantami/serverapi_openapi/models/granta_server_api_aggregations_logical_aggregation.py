@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
     GrantaServerApiAggregationsAggregationDatum,
 )  # noqa: F401
@@ -71,32 +71,36 @@ class GrantaServerApiAggregationsLogicalAggregation(
         self,
         *,
         datum_type: "str" = "logical",
-        values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]" = None,
+        values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsLogicalAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            datum_type: str
-            values: List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], optional
+        datum_type: str
+        values: List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], optional
         """
         super().__init__()
-        self._values = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._values: Union[
+            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean],
+            None,
+            Unset_Type,
+        ] = Unset
+        self._datum_type: str
 
-        if values is not None:
+        if values is not Unset:
             self.values = values
         self.datum_type = datum_type
 
     @property
     def values(
         self,
-    ) -> "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]":
+    ) -> "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]":
         """Gets the values of this GrantaServerApiAggregationsLogicalAggregation.
 
         Returns
         -------
-        list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]
+        Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
             The values of this GrantaServerApiAggregationsLogicalAggregation.
         """
         return self._values
@@ -104,13 +108,13 @@ class GrantaServerApiAggregationsLogicalAggregation(
     @values.setter
     def values(
         self,
-        values: "Optional[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]]",
+        values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]",
     ) -> None:
         """Sets the values of this GrantaServerApiAggregationsLogicalAggregation.
 
         Parameters
         ----------
-        values: List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean]
+        values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
             The values of this GrantaServerApiAggregationsLogicalAggregation.
         """
         self._values = values
@@ -135,12 +139,16 @@ class GrantaServerApiAggregationsLogicalAggregation(
         datum_type: str
             The datum_type of this GrantaServerApiAggregationsLogicalAggregation.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -157,7 +165,7 @@ class GrantaServerApiAggregationsLogicalAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

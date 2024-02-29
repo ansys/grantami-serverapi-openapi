@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_criterion import (
     GrantaServerApiAggregationsAggregationCriterion,
 )  # noqa: F401
@@ -79,158 +79,172 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
     def __init__(
         self,
         *,
-        attributes: "Optional[GrantaServerApiValueSpecifier]" = None,
-        criterion_guid: "Optional[str]" = None,
-        local_columns: "Optional[GrantaServerApiValueSpecifier]" = None,
-        number_of_terms: "Optional[int]" = None,
-        prefix: "Optional[str]" = None,
+        attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]" = Unset,
+        criterion_guid: "Union[str, Unset_Type]" = Unset,
+        local_columns: "Union[GrantaServerApiValueSpecifier, Unset_Type]" = Unset,
+        number_of_terms: "Union[int, Unset_Type]" = Unset,
+        prefix: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "text",
     ) -> None:
         """GrantaServerApiAggregationsFreeTextAggregationCriterion - a model defined in Swagger
 
         Parameters
         ----------
-            attributes: GrantaServerApiValueSpecifier, optional
-            criterion_guid: str, optional
-            local_columns: GrantaServerApiValueSpecifier, optional
-            number_of_terms: int, optional
-            prefix: str, optional
-            type: str
+        attributes: GrantaServerApiValueSpecifier, optional
+        criterion_guid: str, optional
+        local_columns: GrantaServerApiValueSpecifier, optional
+        number_of_terms: int, optional
+        prefix: str, optional
+        type: str
         """
         super().__init__()
-        self._criterion_guid = None
-        self._number_of_terms = None
-        self._prefix = None
-        self._attributes = None
-        self._local_columns = None
-        self._type: str = None  # type: ignore[assignment]
+        self._criterion_guid: Union[str, Unset_Type] = Unset
+        self._number_of_terms: Union[int, Unset_Type] = Unset
+        self._prefix: Union[str, None, Unset_Type] = Unset
+        self._attributes: Union[GrantaServerApiValueSpecifier, Unset_Type] = Unset
+        self._local_columns: Union[GrantaServerApiValueSpecifier, Unset_Type] = Unset
+        self._type: str
 
-        if criterion_guid is not None:
+        if criterion_guid is not Unset:
             self.criterion_guid = criterion_guid
-        if number_of_terms is not None:
+        if number_of_terms is not Unset:
             self.number_of_terms = number_of_terms
-        if prefix is not None:
+        if prefix is not Unset:
             self.prefix = prefix
-        if attributes is not None:
+        if attributes is not Unset:
             self.attributes = attributes
-        if local_columns is not None:
+        if local_columns is not Unset:
             self.local_columns = local_columns
         self.type = type
 
     @property
-    def criterion_guid(self) -> "Optional[str]":
+    def criterion_guid(self) -> "Union[str, Unset_Type]":
         """Gets the criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         A GUID to identify this free-text criterion, so that its results can be determined in the output.  For each input free-text aggregation criterion, there will be a free-text aggregation in the output  with a matching GUID.
 
         Returns
         -------
-        str
+        Union[str, Unset_Type]
             The criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         return self._criterion_guid
 
     @criterion_guid.setter
-    def criterion_guid(self, criterion_guid: "Optional[str]") -> None:
+    def criterion_guid(self, criterion_guid: "Union[str, Unset_Type]") -> None:
         """Sets the criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         A GUID to identify this free-text criterion, so that its results can be determined in the output.  For each input free-text aggregation criterion, there will be a free-text aggregation in the output  with a matching GUID.
 
         Parameters
         ----------
-        criterion_guid: str
+        criterion_guid: Union[str, Unset_Type]
             The criterion_guid of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
+        # Field is not nullable
+        if criterion_guid is None:
+            raise ValueError("Invalid value for 'criterion_guid', must not be 'None'")
         self._criterion_guid = criterion_guid
 
     @property
-    def number_of_terms(self) -> "Optional[int]":
+    def number_of_terms(self) -> "Union[int, Unset_Type]":
         """Gets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         The number of terms that should be returned
 
         Returns
         -------
-        int
+        Union[int, Unset_Type]
             The number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         return self._number_of_terms
 
     @number_of_terms.setter
-    def number_of_terms(self, number_of_terms: "Optional[int]") -> None:
+    def number_of_terms(self, number_of_terms: "Union[int, Unset_Type]") -> None:
         """Sets the number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         The number of terms that should be returned
 
         Parameters
         ----------
-        number_of_terms: int
+        number_of_terms: Union[int, Unset_Type]
             The number_of_terms of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
+        # Field is not nullable
+        if number_of_terms is None:
+            raise ValueError("Invalid value for 'number_of_terms', must not be 'None'")
         self._number_of_terms = number_of_terms
 
     @property
-    def prefix(self) -> "Optional[str]":
+    def prefix(self) -> "Union[str, None, Unset_Type]":
         """Gets the prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         return self._prefix
 
     @prefix.setter
-    def prefix(self, prefix: "Optional[str]") -> None:
+    def prefix(self, prefix: "Union[str, None, Unset_Type]") -> None:
         """Sets the prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
         ----------
-        prefix: str
+        prefix: Union[str, None, Unset_Type]
             The prefix of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         self._prefix = prefix
 
     @property
-    def attributes(self) -> "Optional[GrantaServerApiValueSpecifier]":
+    def attributes(self) -> "Union[GrantaServerApiValueSpecifier, Unset_Type]":
         """Gets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
         -------
-        GrantaServerApiValueSpecifier
+        Union[GrantaServerApiValueSpecifier, Unset_Type]
             The attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "Optional[GrantaServerApiValueSpecifier]") -> None:
+    def attributes(
+        self, attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]"
+    ) -> None:
         """Sets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
         ----------
-        attributes: GrantaServerApiValueSpecifier
+        attributes: Union[GrantaServerApiValueSpecifier, Unset_Type]
             The attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
+        # Field is not nullable
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
         self._attributes = attributes
 
     @property
-    def local_columns(self) -> "Optional[GrantaServerApiValueSpecifier]":
+    def local_columns(self) -> "Union[GrantaServerApiValueSpecifier, Unset_Type]":
         """Gets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Returns
         -------
-        GrantaServerApiValueSpecifier
+        Union[GrantaServerApiValueSpecifier, Unset_Type]
             The local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
         return self._local_columns
 
     @local_columns.setter
     def local_columns(
-        self, local_columns: "Optional[GrantaServerApiValueSpecifier]"
+        self, local_columns: "Union[GrantaServerApiValueSpecifier, Unset_Type]"
     ) -> None:
         """Sets the local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
         ----------
-        local_columns: GrantaServerApiValueSpecifier
+        local_columns: Union[GrantaServerApiValueSpecifier, Unset_Type]
             The local_columns of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
+        # Field is not nullable
+        if local_columns is None:
+            raise ValueError("Invalid value for 'local_columns', must not be 'None'")
         self._local_columns = local_columns
 
     @property
@@ -253,12 +267,16 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         type: str
             The type of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -275,7 +293,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

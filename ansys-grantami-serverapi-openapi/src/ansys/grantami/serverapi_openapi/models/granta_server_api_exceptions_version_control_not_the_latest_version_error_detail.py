@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_version_control_version_control_error_detail import (
     GrantaServerApiExceptionsVersionControlVersionControlErrorDetail,
 )  # noqa: F401
@@ -73,34 +73,36 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
         self,
         *,
         message: "str",
-        newer_version: "Optional[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]" = None,
+        newer_version: "Union[GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type]" = Unset,
         reason: "str" = "notTheLatestVersion",
     ) -> None:
         """GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-            message: str
-            newer_version: GrantaServerApiRecordsRecordVersionsSlimRecordVersion, optional
-            reason: str
+        message: str
+        newer_version: GrantaServerApiRecordsRecordVersionsSlimRecordVersion, optional
+        reason: str
         """
         super().__init__(message=message)
-        self._newer_version = None
-        self._reason: str = None  # type: ignore[assignment]
+        self._newer_version: Union[
+            GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type
+        ] = Unset
+        self._reason: str
 
-        if newer_version is not None:
+        if newer_version is not Unset:
             self.newer_version = newer_version
         self.reason = reason
 
     @property
     def newer_version(
         self,
-    ) -> "Optional[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
+    ) -> "Union[GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type]":
         """Gets the newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
 
         Returns
         -------
-        GrantaServerApiRecordsRecordVersionsSlimRecordVersion
+        Union[GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type]
             The newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
         """
         return self._newer_version
@@ -108,15 +110,18 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
     @newer_version.setter
     def newer_version(
         self,
-        newer_version: "Optional[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
+        newer_version: "Union[GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type]",
     ) -> None:
         """Sets the newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
 
         Parameters
         ----------
-        newer_version: GrantaServerApiRecordsRecordVersionsSlimRecordVersion
+        newer_version: Union[GrantaServerApiRecordsRecordVersionsSlimRecordVersion, Unset_Type]
             The newer_version of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
         """
+        # Field is not nullable
+        if newer_version is None:
+            raise ValueError("Invalid value for 'newer_version', must not be 'None'")
         self._newer_version = newer_version
 
     @property
@@ -139,12 +144,16 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
         reason: str
             The reason of this GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail.
         """
+        # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -161,7 +170,7 @@ class GrantaServerApiExceptionsVersionControlNotTheLatestVersionErrorDetail(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

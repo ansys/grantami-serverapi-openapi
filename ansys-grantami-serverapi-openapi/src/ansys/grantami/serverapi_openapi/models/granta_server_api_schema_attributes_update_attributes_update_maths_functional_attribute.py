@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
 )  # noqa: F401
@@ -99,41 +99,41 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     def __init__(
         self,
         *,
-        about_attribute: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
-        allow_all_compatible_expressions: "Optional[bool]" = None,
-        allow_anonymous_expressions: "Optional[bool]" = None,
-        allow_extrapolation: "Optional[bool]" = None,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
-        axis_name: "Optional[str]" = None,
-        default_content: "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]" = None,
-        default_threshold_type: "Optional[GrantaServerApiSchemaAttributesAttributeThresholdType]" = None,
-        expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]" = None,
-        guid: "Optional[str]" = None,
-        help_path: "Optional[str]" = None,
-        is_range: "Optional[bool]" = None,
-        name: "Optional[str]" = None,
+        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
+        allow_all_compatible_expressions: "Union[bool, Unset_Type]" = Unset,
+        allow_anonymous_expressions: "Union[bool, Unset_Type]" = Unset,
+        allow_extrapolation: "Union[bool, Unset_Type]" = Unset,
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        default_content: "Union[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type]" = Unset,
+        default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
+        expressions: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
+        help_path: "Union[str, None, Unset_Type]" = Unset,
+        is_range: "Union[bool, Unset_Type]" = Unset,
+        name: "Union[str, Unset_Type]" = Unset,
         type: "str" = "mathsFunctional",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute - a model defined in Swagger
 
         Parameters
         ----------
-            about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-            allow_all_compatible_expressions: bool, optional
-            allow_anonymous_expressions: bool, optional
-            allow_extrapolation: bool, optional
-            attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
-            axis_name: str, optional
-            default_content: GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, optional
-            default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-            expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
-            guid: str, optional
-            help_path: str, optional
-            is_range: bool, optional
-            name: str, optional
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
+        allow_all_compatible_expressions: bool, optional
+        allow_anonymous_expressions: bool, optional
+        allow_extrapolation: bool, optional
+        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        axis_name: str, optional
+        default_content: GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, optional
+        default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
+        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        guid: str, optional
+        help_path: str, optional
+        is_range: bool, optional
+        name: str, optional
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         super().__init__(
             about_attribute=about_attribute,
@@ -143,32 +143,41 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
             help_path=help_path,
             name=name,
         )
-        self._type: str = None  # type: ignore[assignment]
-        self._unit = None
-        self._attribute_parameters = None
-        self._expressions = None
-        self._allow_extrapolation = None
-        self._is_range = None
-        self._default_content = None
-        self._allow_all_compatible_expressions = None
-        self._allow_anonymous_expressions = None
+        self._type: str
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
+        self._attribute_parameters: Union[
+            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+        ] = Unset
+        self._expressions: Union[
+            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+        ] = Unset
+        self._allow_extrapolation: Union[bool, Unset_Type] = Unset
+        self._is_range: Union[bool, Unset_Type] = Unset
+        self._default_content: Union[
+            GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent,
+            Unset_Type,
+        ] = Unset
+        self._allow_all_compatible_expressions: Union[bool, Unset_Type] = Unset
+        self._allow_anonymous_expressions: Union[bool, Unset_Type] = Unset
 
         self.type = type
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
-        if attribute_parameters is not None:
+        if attribute_parameters is not Unset:
             self.attribute_parameters = attribute_parameters
-        if expressions is not None:
+        if expressions is not Unset:
             self.expressions = expressions
-        if allow_extrapolation is not None:
+        if allow_extrapolation is not Unset:
             self.allow_extrapolation = allow_extrapolation
-        if is_range is not None:
+        if is_range is not Unset:
             self.is_range = is_range
-        if default_content is not None:
+        if default_content is not Unset:
             self.default_content = default_content
-        if allow_all_compatible_expressions is not None:
+        if allow_all_compatible_expressions is not Unset:
             self.allow_all_compatible_expressions = allow_all_compatible_expressions
-        if allow_anonymous_expressions is not None:
+        if allow_anonymous_expressions is not Unset:
             self.allow_anonymous_expressions = allow_anonymous_expressions
 
     @property
@@ -191,43 +200,50 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         type: str
             The type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimEntity
+        Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._unit
 
     @unit.setter
     def unit(
-        self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimEntity
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]
             The unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @property
     def attribute_parameters(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -235,13 +251,13 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]",
+        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        attribute_parameters: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
@@ -249,82 +265,93 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @property
     def expressions(
         self,
-    ) -> "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]":
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._expressions
 
     @expressions.setter
     def expressions(
-        self, expressions: "Optional[List[GrantaServerApiSchemaSlimEntitiesSlimEntity]]"
+        self,
+        expressions: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        expressions: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         self._expressions = expressions
 
     @property
-    def allow_extrapolation(self) -> "Optional[bool]":
+    def allow_extrapolation(self) -> "Union[bool, Unset_Type]":
         """Gets the allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._allow_extrapolation
 
     @allow_extrapolation.setter
-    def allow_extrapolation(self, allow_extrapolation: "Optional[bool]") -> None:
+    def allow_extrapolation(
+        self, allow_extrapolation: "Union[bool, Unset_Type]"
+    ) -> None:
         """Sets the allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        allow_extrapolation: bool
+        allow_extrapolation: Union[bool, Unset_Type]
             The allow_extrapolation of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if allow_extrapolation is None:
+            raise ValueError(
+                "Invalid value for 'allow_extrapolation', must not be 'None'"
+            )
         self._allow_extrapolation = allow_extrapolation
 
     @property
-    def is_range(self) -> "Optional[bool]":
+    def is_range(self) -> "Union[bool, Unset_Type]":
         """Gets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._is_range
 
     @is_range.setter
-    def is_range(self, is_range: "Optional[bool]") -> None:
+    def is_range(self, is_range: "Union[bool, Unset_Type]") -> None:
         """Sets the is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        is_range: bool
+        is_range: Union[bool, Unset_Type]
             The is_range of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if is_range is None:
+            raise ValueError("Invalid value for 'is_range', must not be 'None'")
         self._is_range = is_range
 
     @property
     def default_content(
         self,
-    ) -> "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]":
+    ) -> "Union[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type]":
         """Gets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent
+        Union[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type]
             The default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._default_content
@@ -332,67 +359,80 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     @default_content.setter
     def default_content(
         self,
-        default_content: "Optional[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent]",
+        default_content: "Union[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type]",
     ) -> None:
         """Sets the default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        default_content: GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent
+        default_content: Union[GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type]
             The default_content of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if default_content is None:
+            raise ValueError("Invalid value for 'default_content', must not be 'None'")
         self._default_content = default_content
 
     @property
-    def allow_all_compatible_expressions(self) -> "Optional[bool]":
+    def allow_all_compatible_expressions(self) -> "Union[bool, Unset_Type]":
         """Gets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._allow_all_compatible_expressions
 
     @allow_all_compatible_expressions.setter
     def allow_all_compatible_expressions(
-        self, allow_all_compatible_expressions: "Optional[bool]"
+        self, allow_all_compatible_expressions: "Union[bool, Unset_Type]"
     ) -> None:
         """Sets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        allow_all_compatible_expressions: bool
+        allow_all_compatible_expressions: Union[bool, Unset_Type]
             The allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if allow_all_compatible_expressions is None:
+            raise ValueError(
+                "Invalid value for 'allow_all_compatible_expressions', must not be 'None'"
+            )
         self._allow_all_compatible_expressions = allow_all_compatible_expressions
 
     @property
-    def allow_anonymous_expressions(self) -> "Optional[bool]":
+    def allow_anonymous_expressions(self) -> "Union[bool, Unset_Type]":
         """Gets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
         return self._allow_anonymous_expressions
 
     @allow_anonymous_expressions.setter
     def allow_anonymous_expressions(
-        self, allow_anonymous_expressions: "Optional[bool]"
+        self, allow_anonymous_expressions: "Union[bool, Unset_Type]"
     ) -> None:
         """Sets the allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        allow_anonymous_expressions: bool
+        allow_anonymous_expressions: Union[bool, Unset_Type]
             The allow_anonymous_expressions of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if allow_anonymous_expressions is None:
+            raise ValueError(
+                "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
+            )
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -409,7 +449,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

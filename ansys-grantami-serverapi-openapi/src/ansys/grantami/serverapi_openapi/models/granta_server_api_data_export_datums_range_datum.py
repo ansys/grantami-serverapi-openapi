@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (
     GrantaServerApiDataExportDatumsApplicableDatum,
 )  # noqa: F401
@@ -82,27 +82,27 @@ class GrantaServerApiDataExportDatumsRangeDatum(
     def __init__(
         self,
         *,
-        attribute_guid: "Optional[str]" = None,
-        attribute_identity: "Optional[int]" = None,
+        attribute_guid: "Union[str, Unset_Type]" = Unset,
+        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "range",
-        datum_value: "Optional[GrantaServerApiDataExportDatumsRange]" = None,
-        is_estimated: "Optional[bool]" = None,
-        meta_datums: "Optional[List[GrantaServerApiDataExportDatumsDatum]]" = None,
+        datum_value: "Union[GrantaServerApiDataExportDatumsRange, Unset_Type]" = Unset,
+        is_estimated: "Union[bool, Unset_Type]" = Unset,
+        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        unit: "Optional[str]" = None,
+        unit: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsRangeDatum - a model defined in Swagger
 
         Parameters
         ----------
-            attribute_guid: str, optional
-            attribute_identity: int, optional
-            datum_type: str
-            datum_value: GrantaServerApiDataExportDatumsRange, optional
-            is_estimated: bool, optional
-            meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
-            not_applicable: str
-            unit: str, optional
+        attribute_guid: str, optional
+        attribute_identity: int, optional
+        datum_type: str
+        datum_value: GrantaServerApiDataExportDatumsRange, optional
+        is_estimated: bool, optional
+        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        not_applicable: str
+        unit: str, optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -110,17 +110,19 @@ class GrantaServerApiDataExportDatumsRangeDatum(
             meta_datums=meta_datums,
             not_applicable=not_applicable,
         )
-        self._datum_type: str = None  # type: ignore[assignment]
-        self._datum_value = None
-        self._is_estimated = None
-        self._unit = None
+        self._datum_type: str
+        self._datum_value: Union[GrantaServerApiDataExportDatumsRange, Unset_Type] = (
+            Unset
+        )
+        self._is_estimated: Union[bool, Unset_Type] = Unset
+        self._unit: Union[str, None, Unset_Type] = Unset
 
         self.datum_type = datum_type
-        if datum_value is not None:
+        if datum_value is not Unset:
             self.datum_value = datum_value
-        if is_estimated is not None:
+        if is_estimated is not Unset:
             self.is_estimated = is_estimated
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
 
     @property
@@ -143,80 +145,90 @@ class GrantaServerApiDataExportDatumsRangeDatum(
         datum_type: str
             The datum_type of this GrantaServerApiDataExportDatumsRangeDatum.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "Optional[GrantaServerApiDataExportDatumsRange]":
+    def datum_value(self) -> "Union[GrantaServerApiDataExportDatumsRange, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Returns
         -------
-        GrantaServerApiDataExportDatumsRange
+        Union[GrantaServerApiDataExportDatumsRange, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsRangeDatum.
         """
         return self._datum_value
 
     @datum_value.setter
     def datum_value(
-        self, datum_value: "Optional[GrantaServerApiDataExportDatumsRange]"
+        self, datum_value: "Union[GrantaServerApiDataExportDatumsRange, Unset_Type]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Parameters
         ----------
-        datum_value: GrantaServerApiDataExportDatumsRange
+        datum_value: Union[GrantaServerApiDataExportDatumsRange, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsRangeDatum.
         """
+        # Field is not nullable
+        if datum_value is None:
+            raise ValueError("Invalid value for 'datum_value', must not be 'None'")
         self._datum_value = datum_value
 
     @property
-    def is_estimated(self) -> "Optional[bool]":
+    def is_estimated(self) -> "Union[bool, Unset_Type]":
         """Gets the is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Returns
         -------
-        bool
+        Union[bool, Unset_Type]
             The is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.
         """
         return self._is_estimated
 
     @is_estimated.setter
-    def is_estimated(self, is_estimated: "Optional[bool]") -> None:
+    def is_estimated(self, is_estimated: "Union[bool, Unset_Type]") -> None:
         """Sets the is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Parameters
         ----------
-        is_estimated: bool
+        is_estimated: Union[bool, Unset_Type]
             The is_estimated of this GrantaServerApiDataExportDatumsRangeDatum.
         """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
         self._is_estimated = is_estimated
 
     @property
-    def unit(self) -> "Optional[str]":
+    def unit(self) -> "Union[str, None, Unset_Type]":
         """Gets the unit of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Returns
         -------
-        str
+        Union[str, None, Unset_Type]
             The unit of this GrantaServerApiDataExportDatumsRangeDatum.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[str]") -> None:
+    def unit(self, unit: "Union[str, None, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiDataExportDatumsRangeDatum.
 
         Parameters
         ----------
-        unit: str
+        unit: Union[str, None, Unset_Type]
             The unit of this GrantaServerApiDataExportDatumsRangeDatum.
         """
         self._unit = unit
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -233,7 +245,7 @@ class GrantaServerApiDataExportDatumsRangeDatum(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

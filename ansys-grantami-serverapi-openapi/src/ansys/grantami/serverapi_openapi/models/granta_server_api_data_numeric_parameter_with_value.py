@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_parameter_with_value import (
     GrantaServerApiDataParameterWithValue,
 )  # noqa: F401
@@ -77,25 +77,25 @@ class GrantaServerApiDataNumericParameterWithValue(
         parameter: "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         parameter_value: "float",
         type: "str" = "numeric",
-        unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]" = None,
+        unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataNumericParameterWithValue - a model defined in Swagger
 
         Parameters
         ----------
-            parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-            parameter_value: float
-            type: str
-            unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
+        parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
+        parameter_value: float
+        type: str
+        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         super().__init__(parameter=parameter)
-        self._type: str = None  # type: ignore[assignment]
-        self._parameter_value: float = None  # type: ignore[assignment]
-        self._unit = None
+        self._type: str
+        self._parameter_value: float
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
 
         self.type = type
         self.parameter_value = parameter_value
-        if unit is not None:
+        if unit is not Unset:
             self.unit = unit
 
     @property
@@ -118,8 +118,12 @@ class GrantaServerApiDataNumericParameterWithValue(
         type: str
             The type of this GrantaServerApiDataNumericParameterWithValue.
         """
+        # Field is not nullable
         if type is None:
             raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
 
     @property
@@ -142,34 +146,43 @@ class GrantaServerApiDataNumericParameterWithValue(
         parameter_value: float
             The parameter_value of this GrantaServerApiDataNumericParameterWithValue.
         """
+        # Field is not nullable
         if parameter_value is None:
             raise ValueError("Invalid value for 'parameter_value', must not be 'None'")
+        # Field is required
+        if parameter_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'parameter_value', must not be 'Unset'")
         self._parameter_value = parameter_value
 
     @property
-    def unit(self) -> "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
         """Gets the unit of this GrantaServerApiDataNumericParameterWithValue.
 
         Returns
         -------
-        GrantaServerApiSchemaSlimEntitiesSlimUnit
+        Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiDataNumericParameterWithValue.
         """
         return self._unit
 
     @unit.setter
-    def unit(self, unit: "Optional[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def unit(
+        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
+    ) -> None:
         """Sets the unit of this GrantaServerApiDataNumericParameterWithValue.
 
         Parameters
         ----------
-        unit: GrantaServerApiSchemaSlimEntitiesSlimUnit
+        unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]
             The unit of this GrantaServerApiDataNumericParameterWithValue.
         """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -186,7 +199,7 @@ class GrantaServerApiDataNumericParameterWithValue(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

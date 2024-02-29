@@ -12,14 +12,14 @@ import re  # noqa: F401
 from typing import (
     TYPE_CHECKING,
     Any,
+    BinaryIO,
     Dict,
     List,
-    BinaryIO,
     Optional,
     Union,
 )  # noqa: F401
 
-from . import ModelBase
+from . import ModelBase, Unset, Unset_Type
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (
     GrantaServerApiAggregationsAggregationDatum,
 )  # noqa: F401
@@ -71,68 +71,68 @@ class GrantaServerApiAggregationsIntegerAggregation(
         self,
         *,
         datum_type: "str" = "integer",
-        maximum: "Optional[int]" = None,
-        minimum: "Optional[int]" = None,
+        maximum: "Union[int, None, Unset_Type]" = Unset,
+        minimum: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsIntegerAggregation - a model defined in Swagger
 
         Parameters
         ----------
-            datum_type: str
-            maximum: int, optional
-            minimum: int, optional
+        datum_type: str
+        maximum: int, optional
+        minimum: int, optional
         """
         super().__init__()
-        self._minimum = None
-        self._maximum = None
-        self._datum_type: str = None  # type: ignore[assignment]
+        self._minimum: Union[int, None, Unset_Type] = Unset
+        self._maximum: Union[int, None, Unset_Type] = Unset
+        self._datum_type: str
 
-        if minimum is not None:
+        if minimum is not Unset:
             self.minimum = minimum
-        if maximum is not None:
+        if maximum is not Unset:
             self.maximum = maximum
         self.datum_type = datum_type
 
     @property
-    def minimum(self) -> "Optional[int]":
+    def minimum(self) -> "Union[int, None, Unset_Type]":
         """Gets the minimum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The minimum of this GrantaServerApiAggregationsIntegerAggregation.
         """
         return self._minimum
 
     @minimum.setter
-    def minimum(self, minimum: "Optional[int]") -> None:
+    def minimum(self, minimum: "Union[int, None, Unset_Type]") -> None:
         """Sets the minimum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Parameters
         ----------
-        minimum: int
+        minimum: Union[int, None, Unset_Type]
             The minimum of this GrantaServerApiAggregationsIntegerAggregation.
         """
         self._minimum = minimum
 
     @property
-    def maximum(self) -> "Optional[int]":
+    def maximum(self) -> "Union[int, None, Unset_Type]":
         """Gets the maximum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Returns
         -------
-        int
+        Union[int, None, Unset_Type]
             The maximum of this GrantaServerApiAggregationsIntegerAggregation.
         """
         return self._maximum
 
     @maximum.setter
-    def maximum(self, maximum: "Optional[int]") -> None:
+    def maximum(self, maximum: "Union[int, None, Unset_Type]") -> None:
         """Sets the maximum of this GrantaServerApiAggregationsIntegerAggregation.
 
         Parameters
         ----------
-        maximum: int
+        maximum: Union[int, None, Unset_Type]
             The maximum of this GrantaServerApiAggregationsIntegerAggregation.
         """
         self._maximum = maximum
@@ -157,12 +157,16 @@ class GrantaServerApiAggregationsIntegerAggregation(
         datum_type: str
             The datum_type of this GrantaServerApiAggregationsIntegerAggregation.
         """
+        # Field is not nullable
         if datum_type is None:
             raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: ModelBase) -> str:
+    def get_real_child_model(cls, data: Dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
@@ -179,7 +183,7 @@ class GrantaServerApiAggregationsIntegerAggregation(
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
-        return self.to_str()  # type: ignore[no-any-return]
+        return self.to_str()
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""

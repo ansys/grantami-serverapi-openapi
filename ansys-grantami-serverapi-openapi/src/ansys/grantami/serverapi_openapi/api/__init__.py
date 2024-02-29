@@ -1,7 +1,7 @@
 # flake8: noqa
 
 # import API ABC
-from ansys.openapi.common import ApiBase  # type: ignore[import-untyped]
+from ansys.openapi.common import ApiBase
 
 # import apis into api package
 from .aggregation_api import AggregationApi
