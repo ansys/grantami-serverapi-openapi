@@ -71,6 +71,8 @@ class GrantaServerApiDataApplicableDatum(GrantaServerApiDataDatum):
         "discrete".lower(): "#/components/schemas/GrantaServerApiDataDiscreteDatum",
         "range".lower(): "#/components/schemas/GrantaServerApiDataRangeDatum",
         "point".lower(): "#/components/schemas/GrantaServerApiDataPointDatum",
+        "picture".lower(): "#/components/schemas/GrantaServerApiDataPictureDatum",
+        "file".lower(): "#/components/schemas/GrantaServerApiDataFileDatum",
     }
 
     discriminator: Optional[str] = "datum_type"

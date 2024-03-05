@@ -543,6 +543,7 @@ from .models.granta_server_api_data_export_simple_attribute_to_export import (
 from .models.granta_server_api_data_export_tabular_row_export_behaviour import (
     GrantaServerApiDataExportTabularRowExportBehaviour,
 )
+from .models.granta_server_api_data_file_datum import GrantaServerApiDataFileDatum
 from .models.granta_server_api_data_hyperlink_datum import (
     GrantaServerApiDataHyperlinkDatum,
 )
@@ -563,6 +564,7 @@ from .models.granta_server_api_data_numeric_parameter_with_value import (
 from .models.granta_server_api_data_parameter_with_value import (
     GrantaServerApiDataParameterWithValue,
 )
+from .models.granta_server_api_data_picture_datum import GrantaServerApiDataPictureDatum
 from .models.granta_server_api_data_point_data_value import (
     GrantaServerApiDataPointDataValue,
 )
@@ -2125,6 +2127,7 @@ __all__ = [
     "GrantaServerApiDataExportRecordWithData",
     "GrantaServerApiDataExportSimpleAttributeToExport",
     "GrantaServerApiDataExportTabularRowExportBehaviour",
+    "GrantaServerApiDataFileDatum",
     "GrantaServerApiDataHyperlinkDatum",
     "GrantaServerApiDataHyperlinkTarget",
     "GrantaServerApiDataIntegerDatum",
@@ -2133,6 +2136,7 @@ __all__ = [
     "GrantaServerApiDataNotApplicableDatum",
     "GrantaServerApiDataNumericParameterWithValue",
     "GrantaServerApiDataParameterWithValue",
+    "GrantaServerApiDataPictureDatum",
     "GrantaServerApiDataPointDataValue",
     "GrantaServerApiDataPointDatum",
     "GrantaServerApiDataRangeDatum",
