@@ -29,3 +29,5 @@ class GrantaServerApiDataDatumType(Enum):
     DISCRETE = "discrete"
     RANGE = "range"
     POINT = "point"
+    PICTURE = "picture"
+    FILE = "file"
