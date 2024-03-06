@@ -99,7 +99,7 @@ from ansys.openapi.common import (
 )
 from ansys.grantami.serverapi_openapi import models
 
-SERVICE_PATH = "/proxy/v1.svc"
+SERVICE_PATH = "/proxy/v1.svc/mi"  # "/proxy/v1.svc" for Granta MI 2024 R1 and older
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
 GRANTA_APPLICATION_NAME_HEADER = "PyGranta ServerAPI"
 
