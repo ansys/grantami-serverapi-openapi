@@ -8,12 +8,14 @@ from .aggregation_api import AggregationApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
 from .database_api import DatabaseApi
+from .help_location_api import HelpLocationApi
 from .integration_api import IntegrationApi
 from .job_queue_api import JobQueueApi
 from .license_api import LicenseApi
 from .list_item_api import ListItemApi
 from .list_management_api import ListManagementApi
 from .list_permissions_api import ListPermissionsApi
+from .metrics_api import MetricsApi
 from .records___record_histories_api import RecordsRecordHistoriesApi
 from .records___record_versions_api import RecordsRecordVersionsApi
 from .schema_api import SchemaApi
@@ -50,12 +52,14 @@ __all__ = [
     "DataApi",
     "DataExportApi",
     "DatabaseApi",
+    "HelpLocationApi",
     "IntegrationApi",
     "JobQueueApi",
     "LicenseApi",
     "ListItemApi",
     "ListManagementApi",
     "ListPermissionsApi",
+    "MetricsApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
     "SchemaApi",

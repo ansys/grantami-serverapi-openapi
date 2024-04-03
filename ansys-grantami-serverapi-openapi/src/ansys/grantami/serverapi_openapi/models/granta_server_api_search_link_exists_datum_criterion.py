@@ -54,7 +54,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
     swagger_types: Dict[str, str] = {
         "indirect_links": "GrantaServerApiIndirectLinks",
         "link_datum_type": "GrantaServerApiLinkAttributeType",
-        "local_rows_behaviour": "GrantaServerApiSearchLocalRowsBehaviour",
+        "local_rows_behavior": "GrantaServerApiSearchLocalRowsBehavior",
         "search_in_reversed_direction": "bool",
         "target_attribute_guid": "str",
         "target_attribute_identity": "int",
@@ -67,7 +67,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
     attribute_map: Dict[str, str] = {
         "indirect_links": "indirectLinks",
         "link_datum_type": "linkDatumType",
-        "local_rows_behaviour": "localRowsBehaviour",
+        "local_rows_behavior": "localRowsBehavior",
         "search_in_reversed_direction": "searchInReversedDirection",
         "target_attribute_guid": "targetAttributeGuid",
         "target_attribute_identity": "targetAttributeIdentity",
@@ -80,7 +80,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
     subtype_mapping: Dict[str, str] = {
         "linkDatumType": "GrantaServerApiLinkAttributeType",
         "indirectLinks": "GrantaServerApiIndirectLinks",
-        "localRowsBehaviour": "GrantaServerApiSearchLocalRowsBehaviour",
+        "localRowsBehavior": "GrantaServerApiSearchLocalRowsBehavior",
     }
 
     discriminator: Optional[str] = None
@@ -90,7 +90,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         *,
         indirect_links: "Union[GrantaServerApiIndirectLinks, Unset_Type]" = Unset,
         link_datum_type: "Union[GrantaServerApiLinkAttributeType, Unset_Type]" = Unset,
-        local_rows_behaviour: "Union[GrantaServerApiSearchLocalRowsBehaviour, Unset_Type]" = Unset,
+        local_rows_behavior: "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]" = Unset,
         search_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
         target_attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         target_attribute_identity: "Union[int, None, Unset_Type]" = Unset,
@@ -105,7 +105,7 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         ----------
         indirect_links: GrantaServerApiIndirectLinks, optional
         link_datum_type: GrantaServerApiLinkAttributeType, optional
-        local_rows_behaviour: GrantaServerApiSearchLocalRowsBehaviour, optional
+        local_rows_behavior: GrantaServerApiSearchLocalRowsBehavior, optional
         search_in_reversed_direction: bool, optional
         target_attribute_guid: str, optional
         target_attribute_identity: int, optional
@@ -123,8 +123,8 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         )
         self._indirect_links: Union[GrantaServerApiIndirectLinks, Unset_Type] = Unset
         self._search_in_reversed_direction: Union[bool, Unset_Type] = Unset
-        self._local_rows_behaviour: Union[
-            GrantaServerApiSearchLocalRowsBehaviour, Unset_Type
+        self._local_rows_behavior: Union[
+            GrantaServerApiSearchLocalRowsBehavior, Unset_Type
         ] = Unset
         self._target_attribute_identity: Union[int, None, Unset_Type] = Unset
         self._target_attribute_guid: Union[str, None, Unset_Type] = Unset
@@ -142,8 +142,8 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
             self.indirect_links = indirect_links
         if search_in_reversed_direction is not Unset:
             self.search_in_reversed_direction = search_in_reversed_direction
-        if local_rows_behaviour is not Unset:
-            self.local_rows_behaviour = local_rows_behaviour
+        if local_rows_behavior is not Unset:
+            self.local_rows_behavior = local_rows_behavior
         if target_attribute_identity is not Unset:
             self.target_attribute_identity = target_attribute_identity
         if target_attribute_guid is not Unset:
@@ -312,36 +312,36 @@ class GrantaServerApiSearchLinkExistsDatumCriterion(
         self._search_in_reversed_direction = search_in_reversed_direction
 
     @property
-    def local_rows_behaviour(
+    def local_rows_behavior(
         self,
-    ) -> "Union[GrantaServerApiSearchLocalRowsBehaviour, Unset_Type]":
-        """Gets the local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+    ) -> "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]":
+        """Gets the local_rows_behavior of this GrantaServerApiSearchLinkExistsDatumCriterion.
 
         Returns
         -------
-        Union[GrantaServerApiSearchLocalRowsBehaviour, Unset_Type]
-            The local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]
+            The local_rows_behavior of this GrantaServerApiSearchLinkExistsDatumCriterion.
         """
-        return self._local_rows_behaviour
+        return self._local_rows_behavior
 
-    @local_rows_behaviour.setter
-    def local_rows_behaviour(
+    @local_rows_behavior.setter
+    def local_rows_behavior(
         self,
-        local_rows_behaviour: "Union[GrantaServerApiSearchLocalRowsBehaviour, Unset_Type]",
+        local_rows_behavior: "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]",
     ) -> None:
-        """Sets the local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        """Sets the local_rows_behavior of this GrantaServerApiSearchLinkExistsDatumCriterion.
 
         Parameters
         ----------
-        local_rows_behaviour: Union[GrantaServerApiSearchLocalRowsBehaviour, Unset_Type]
-            The local_rows_behaviour of this GrantaServerApiSearchLinkExistsDatumCriterion.
+        local_rows_behavior: Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]
+            The local_rows_behavior of this GrantaServerApiSearchLinkExistsDatumCriterion.
         """
         # Field is not nullable
-        if local_rows_behaviour is None:
+        if local_rows_behavior is None:
             raise ValueError(
-                "Invalid value for 'local_rows_behaviour', must not be 'None'"
+                "Invalid value for 'local_rows_behavior', must not be 'None'"
             )
-        self._local_rows_behaviour = local_rows_behaviour
+        self._local_rows_behavior = local_rows_behavior
 
     @property
     def target_attribute_identity(self) -> "Union[int, None, Unset_Type]":

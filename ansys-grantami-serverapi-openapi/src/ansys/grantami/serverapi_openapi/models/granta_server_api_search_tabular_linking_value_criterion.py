@@ -50,19 +50,19 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "linking_value_match_behaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
+        "linking_value_match_behavior": "GrantaServerApiSearchLinkingValueMatchBehavior",
         "type": "str",
         "values": "list[str]",
     }
 
     attribute_map: Dict[str, str] = {
-        "linking_value_match_behaviour": "linkingValueMatchBehaviour",
+        "linking_value_match_behavior": "linkingValueMatchBehavior",
         "type": "type",
         "values": "values",
     }
 
     subtype_mapping: Dict[str, str] = {
-        "linkingValueMatchBehaviour": "GrantaServerApiSearchLinkingValueMatchBehaviour",
+        "linkingValueMatchBehavior": "GrantaServerApiSearchLinkingValueMatchBehavior",
     }
 
     discriminator: Optional[str] = None
@@ -70,7 +70,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     def __init__(
         self,
         *,
-        linking_value_match_behaviour: "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]" = Unset,
+        linking_value_match_behavior: "Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]" = Unset,
         type: "str" = "tabularLinkingValue",
         values: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:
@@ -78,21 +78,21 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
 
         Parameters
         ----------
-        linking_value_match_behaviour: GrantaServerApiSearchLinkingValueMatchBehaviour, optional
+        linking_value_match_behavior: GrantaServerApiSearchLinkingValueMatchBehavior, optional
         type: str
         values: List[str], optional
         """
         super().__init__()
         self._values: Union[List[str], None, Unset_Type] = Unset
-        self._linking_value_match_behaviour: Union[
-            GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type
+        self._linking_value_match_behavior: Union[
+            GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type
         ] = Unset
         self._type: str
 
         if values is not Unset:
             self.values = values
-        if linking_value_match_behaviour is not Unset:
-            self.linking_value_match_behaviour = linking_value_match_behaviour
+        if linking_value_match_behavior is not Unset:
+            self.linking_value_match_behavior = linking_value_match_behavior
         self.type = type
 
     @property
@@ -118,36 +118,36 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         self._values = values
 
     @property
-    def linking_value_match_behaviour(
+    def linking_value_match_behavior(
         self,
-    ) -> "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]":
-        """Gets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
+    ) -> "Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]":
+        """Gets the linking_value_match_behavior of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
         -------
-        Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]
-            The linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
+        Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]
+            The linking_value_match_behavior of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
-        return self._linking_value_match_behaviour
+        return self._linking_value_match_behavior
 
-    @linking_value_match_behaviour.setter
-    def linking_value_match_behaviour(
+    @linking_value_match_behavior.setter
+    def linking_value_match_behavior(
         self,
-        linking_value_match_behaviour: "Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]",
+        linking_value_match_behavior: "Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]",
     ) -> None:
-        """Sets the linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
+        """Sets the linking_value_match_behavior of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        linking_value_match_behaviour: Union[GrantaServerApiSearchLinkingValueMatchBehaviour, Unset_Type]
-            The linking_value_match_behaviour of this GrantaServerApiSearchTabularLinkingValueCriterion.
+        linking_value_match_behavior: Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]
+            The linking_value_match_behavior of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         # Field is not nullable
-        if linking_value_match_behaviour is None:
+        if linking_value_match_behavior is None:
             raise ValueError(
-                "Invalid value for 'linking_value_match_behaviour', must not be 'None'"
+                "Invalid value for 'linking_value_match_behavior', must not be 'None'"
             )
-        self._linking_value_match_behaviour = linking_value_match_behaviour
+        self._linking_value_match_behavior = linking_value_match_behavior
 
     @property
     def type(self) -> "str":

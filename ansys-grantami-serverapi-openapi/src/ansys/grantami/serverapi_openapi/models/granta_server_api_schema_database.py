@@ -52,7 +52,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         "is_read_only": "bool",
         "key": "str",
         "name": "str",
-        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "status": "GrantaServerApiDatabaseStatus",
         "author": "str",
         "company": "str",
         "currency_code": "str",
@@ -85,7 +85,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "status": "GrantaServerApiDatabaseStatus",
     }
 
     discriminator: Optional[str] = None
@@ -98,7 +98,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         is_read_only: "bool",
         key: "str",
         name: "str",
-        status: "GrantaServerApiSchemaDatabaseStatus",
+        status: "GrantaServerApiDatabaseStatus",
         author: "Union[str, None, Unset_Type]" = Unset,
         company: "Union[str, None, Unset_Type]" = Unset,
         currency_code: "Union[str, None, Unset_Type]" = Unset,
@@ -119,7 +119,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         is_read_only: bool
         key: str
         name: str
-        status: GrantaServerApiSchemaDatabaseStatus
+        status: GrantaServerApiDatabaseStatus
         author: str, optional
         company: str, optional
         currency_code: str, optional
@@ -138,7 +138,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         self._is_access_controlled: Union[bool, None, Unset_Type] = Unset
         self._key: str
         self._version_guid: Union[str, None, Unset_Type] = Unset
-        self._status: GrantaServerApiSchemaDatabaseStatus
+        self._status: GrantaServerApiDatabaseStatus
         self._is_read_only: bool
         self._is_locked: bool
         self._index_in_sync: Union[bool, None, Unset_Type] = Unset
@@ -338,23 +338,23 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         self._version_guid = version_guid
 
     @property
-    def status(self) -> "GrantaServerApiSchemaDatabaseStatus":
+    def status(self) -> "GrantaServerApiDatabaseStatus":
         """Gets the status of this GrantaServerApiSchemaDatabase.
 
         Returns
         -------
-        GrantaServerApiSchemaDatabaseStatus
+        GrantaServerApiDatabaseStatus
             The status of this GrantaServerApiSchemaDatabase.
         """
         return self._status
 
     @status.setter
-    def status(self, status: "GrantaServerApiSchemaDatabaseStatus") -> None:
+    def status(self, status: "GrantaServerApiDatabaseStatus") -> None:
         """Sets the status of this GrantaServerApiSchemaDatabase.
 
         Parameters
         ----------
-        status: GrantaServerApiSchemaDatabaseStatus
+        status: GrantaServerApiDatabaseStatus
             The status of this GrantaServerApiSchemaDatabase.
         """
         # Field is not nullable
