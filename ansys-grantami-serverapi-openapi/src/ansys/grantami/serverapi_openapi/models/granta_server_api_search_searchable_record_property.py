@@ -25,7 +25,7 @@ class GrantaServerApiSearchSearchableRecordProperty(Enum):
     LASTMODIFIEDDATE = "lastModifiedDate"
     LASTMODIFIER = "lastModifier"
     RECORDTYPE = "recordType"
-    COLOUR = "colour"
+    COLOR = "color"
     VERSIONSTATE = "versionState"
     VERSIONNUMBER = "versionNumber"
     RECORDNAME = "recordName"

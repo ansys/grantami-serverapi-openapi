@@ -52,19 +52,19 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "text_match_behaviour": "GrantaServerApiSearchTextMatchBehaviour",
+        "text_match_behavior": "GrantaServerApiSearchTextMatchBehavior",
         "type": "str",
         "value": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "text_match_behaviour": "textMatchBehaviour",
+        "text_match_behavior": "textMatchBehavior",
         "type": "type",
         "value": "value",
     }
 
     subtype_mapping: Dict[str, str] = {
-        "textMatchBehaviour": "GrantaServerApiSearchTextMatchBehaviour",
+        "textMatchBehavior": "GrantaServerApiSearchTextMatchBehavior",
     }
 
     discriminator: Optional[str] = None
@@ -72,7 +72,7 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
     def __init__(
         self,
         *,
-        text_match_behaviour: "Union[GrantaServerApiSearchTextMatchBehaviour, Unset_Type]" = Unset,
+        text_match_behavior: "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]" = Unset,
         type: "str" = "discreteText",
         value: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -80,21 +80,21 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
 
         Parameters
         ----------
-        text_match_behaviour: GrantaServerApiSearchTextMatchBehaviour, optional
+        text_match_behavior: GrantaServerApiSearchTextMatchBehavior, optional
         type: str
         value: str, optional
         """
         super().__init__()
         self._value: Union[str, None, Unset_Type] = Unset
-        self._text_match_behaviour: Union[
-            GrantaServerApiSearchTextMatchBehaviour, Unset_Type
+        self._text_match_behavior: Union[
+            GrantaServerApiSearchTextMatchBehavior, Unset_Type
         ] = Unset
         self._type: str
 
         if value is not Unset:
             self.value = value
-        if text_match_behaviour is not Unset:
-            self.text_match_behaviour = text_match_behaviour
+        if text_match_behavior is not Unset:
+            self.text_match_behavior = text_match_behavior
         self.type = type
 
     @property
@@ -120,36 +120,36 @@ class GrantaServerApiSearchDiscreteTextDatumCriterion(
         self._value = value
 
     @property
-    def text_match_behaviour(
+    def text_match_behavior(
         self,
-    ) -> "Union[GrantaServerApiSearchTextMatchBehaviour, Unset_Type]":
-        """Gets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+    ) -> "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]":
+        """Gets the text_match_behavior of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
         Returns
         -------
-        Union[GrantaServerApiSearchTextMatchBehaviour, Unset_Type]
-            The text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+        Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]
+            The text_match_behavior of this GrantaServerApiSearchDiscreteTextDatumCriterion.
         """
-        return self._text_match_behaviour
+        return self._text_match_behavior
 
-    @text_match_behaviour.setter
-    def text_match_behaviour(
+    @text_match_behavior.setter
+    def text_match_behavior(
         self,
-        text_match_behaviour: "Union[GrantaServerApiSearchTextMatchBehaviour, Unset_Type]",
+        text_match_behavior: "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]",
     ) -> None:
-        """Sets the text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+        """Sets the text_match_behavior of this GrantaServerApiSearchDiscreteTextDatumCriterion.
 
         Parameters
         ----------
-        text_match_behaviour: Union[GrantaServerApiSearchTextMatchBehaviour, Unset_Type]
-            The text_match_behaviour of this GrantaServerApiSearchDiscreteTextDatumCriterion.
+        text_match_behavior: Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]
+            The text_match_behavior of this GrantaServerApiSearchDiscreteTextDatumCriterion.
         """
         # Field is not nullable
-        if text_match_behaviour is None:
+        if text_match_behavior is None:
             raise ValueError(
-                "Invalid value for 'text_match_behaviour', must not be 'None'"
+                "Invalid value for 'text_match_behavior', must not be 'None'"
             )
-        self._text_match_behaviour = text_match_behaviour
+        self._text_match_behavior = text_match_behavior
 
     @property
     def type(self) -> "str":
