@@ -52,7 +52,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         "is_read_only": "bool",
         "key": "str",
         "name": "str",
-        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "status": "GrantaServerApiDatabaseStatus",
         "index_in_sync": "bool",
         "index_out_of_date_duration": "str",
         "index_up_to_date": "bool",
@@ -75,7 +75,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "status": "GrantaServerApiSchemaDatabaseStatus",
+        "status": "GrantaServerApiDatabaseStatus",
     }
 
     discriminator: Optional[str] = None
@@ -88,7 +88,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         is_read_only: "bool",
         key: "str",
         name: "str",
-        status: "GrantaServerApiSchemaDatabaseStatus",
+        status: "GrantaServerApiDatabaseStatus",
         index_in_sync: "Union[bool, None, Unset_Type]" = Unset,
         index_out_of_date_duration: "Union[str, None, Unset_Type]" = Unset,
         index_up_to_date: "Union[bool, None, Unset_Type]" = Unset,
@@ -104,7 +104,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         is_read_only: bool
         key: str
         name: str
-        status: GrantaServerApiSchemaDatabaseStatus
+        status: GrantaServerApiDatabaseStatus
         index_in_sync: bool, optional
         index_out_of_date_duration: str, optional
         index_up_to_date: bool, optional
@@ -113,7 +113,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         """
         self._key: str
         self._version_guid: Union[str, None, Unset_Type] = Unset
-        self._status: GrantaServerApiSchemaDatabaseStatus
+        self._status: GrantaServerApiDatabaseStatus
         self._is_read_only: bool
         self._is_locked: bool
         self._index_in_sync: Union[bool, None, Unset_Type] = Unset
@@ -191,23 +191,23 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         self._version_guid = version_guid
 
     @property
-    def status(self) -> "GrantaServerApiSchemaDatabaseStatus":
+    def status(self) -> "GrantaServerApiDatabaseStatus":
         """Gets the status of this GrantaServerApiSchemaSlimEntitiesSlimDatabase.
 
         Returns
         -------
-        GrantaServerApiSchemaDatabaseStatus
+        GrantaServerApiDatabaseStatus
             The status of this GrantaServerApiSchemaSlimEntitiesSlimDatabase.
         """
         return self._status
 
     @status.setter
-    def status(self, status: "GrantaServerApiSchemaDatabaseStatus") -> None:
+    def status(self, status: "GrantaServerApiDatabaseStatus") -> None:
         """Sets the status of this GrantaServerApiSchemaSlimEntitiesSlimDatabase.
 
         Parameters
         ----------
-        status: GrantaServerApiSchemaDatabaseStatus
+        status: GrantaServerApiDatabaseStatus
             The status of this GrantaServerApiSchemaSlimEntitiesSlimDatabase.
         """
         # Field is not nullable

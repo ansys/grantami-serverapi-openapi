@@ -49,7 +49,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
     swagger_types: Dict[str, str] = {
         "linked_records_criterion": "GrantaServerApiSearchCriterion",
         "summary_roll_up_type": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
-        "tabular_row_behavior": "GrantaServerApiDataExportTabularRowExportBehaviour",
+        "tabular_row_behavior": "GrantaServerApiDataExportTabularRowExportBehavior",
     }
 
     attribute_map: Dict[str, str] = {
@@ -59,7 +59,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "tabularRowBehavior": "GrantaServerApiDataExportTabularRowExportBehaviour",
+        "tabularRowBehavior": "GrantaServerApiDataExportTabularRowExportBehavior",
         "summaryRollUpType": "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
         "linkedRecordsCriterion": "GrantaServerApiSearchCriterion",
     }
@@ -71,7 +71,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         *,
         linked_records_criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]" = Unset,
         summary_roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
-        tabular_row_behavior: "Union[GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type]" = Unset,
+        tabular_row_behavior: "Union[GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportLinkedRecordExportBehavior - a model defined in Swagger
 
@@ -79,10 +79,10 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         ----------
         linked_records_criterion: GrantaServerApiSearchCriterion, optional
         summary_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
-        tabular_row_behavior: GrantaServerApiDataExportTabularRowExportBehaviour, optional
+        tabular_row_behavior: GrantaServerApiDataExportTabularRowExportBehavior, optional
         """
         self._tabular_row_behavior: Union[
-            GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type
+            GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type
         ] = Unset
         self._summary_roll_up_type: Union[
             GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type
@@ -101,12 +101,12 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
     @property
     def tabular_row_behavior(
         self,
-    ) -> "Union[GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type]":
+    ) -> "Union[GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type]":
         """Gets the tabular_row_behavior of this GrantaServerApiDataExportLinkedRecordExportBehavior.
 
         Returns
         -------
-        Union[GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type]
+        Union[GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type]
             The tabular_row_behavior of this GrantaServerApiDataExportLinkedRecordExportBehavior.
         """
         return self._tabular_row_behavior
@@ -114,13 +114,13 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
     @tabular_row_behavior.setter
     def tabular_row_behavior(
         self,
-        tabular_row_behavior: "Union[GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type]",
+        tabular_row_behavior: "Union[GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type]",
     ) -> None:
         """Sets the tabular_row_behavior of this GrantaServerApiDataExportLinkedRecordExportBehavior.
 
         Parameters
         ----------
-        tabular_row_behavior: Union[GrantaServerApiDataExportTabularRowExportBehaviour, Unset_Type]
+        tabular_row_behavior: Union[GrantaServerApiDataExportTabularRowExportBehavior, Unset_Type]
             The tabular_row_behavior of this GrantaServerApiDataExportLinkedRecordExportBehavior.
         """
         # Field is not nullable

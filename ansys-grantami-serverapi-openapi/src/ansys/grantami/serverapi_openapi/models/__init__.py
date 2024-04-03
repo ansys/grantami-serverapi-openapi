@@ -17,8 +17,8 @@ from ansys.openapi.common import ModelBase, Unset, Unset_Type
 from .folderguid_files_body import FolderguidFilesBody
 from .folderguid_files_body1 import FolderguidFilesBody1
 from .folderguid_files_body2 import FolderguidFilesBody2
-from .granta_mi_search_record_property_fake_attribute_numbers import (
-    GrantaMISearchRecordPropertyFakeAttributeNumbers,
+from .granta_mi_record_property_fake_attribute_identities import (
+    GrantaMIRecordPropertyFakeAttributeIdentities,
 )
 from .granta_server_api_admin_mi_version import GrantaServerApiAdminMiVersion
 from .granta_server_api_aggregations_aggregation import (
@@ -492,8 +492,8 @@ from .granta_server_api_data_export_record_with_data import (
 from .granta_server_api_data_export_simple_attribute_to_export import (
     GrantaServerApiDataExportSimpleAttributeToExport,
 )
-from .granta_server_api_data_export_tabular_row_export_behaviour import (
-    GrantaServerApiDataExportTabularRowExportBehaviour,
+from .granta_server_api_data_export_tabular_row_export_behavior import (
+    GrantaServerApiDataExportTabularRowExportBehavior,
 )
 from .granta_server_api_data_file_datum import GrantaServerApiDataFileDatum
 from .granta_server_api_data_hyperlink_datum import GrantaServerApiDataHyperlinkDatum
@@ -519,6 +519,10 @@ from .granta_server_api_data_rich_text_value import GrantaServerApiDataRichTextV
 from .granta_server_api_data_short_text_datum import GrantaServerApiDataShortTextDatum
 from .granta_server_api_data_significant_figures_info import (
     GrantaServerApiDataSignificantFiguresInfo,
+)
+from .granta_server_api_database_status import GrantaServerApiDatabaseStatus
+from .granta_server_api_database_status_information import (
+    GrantaServerApiDatabaseStatusInformation,
 )
 from .granta_server_api_discrete_value import GrantaServerApiDiscreteValue
 from .granta_server_api_disk_status import GrantaServerApiDiskStatus
@@ -611,6 +615,9 @@ from .granta_server_api_integration_schema_attribute import (
 from .granta_server_api_integration_schema_discrete_type import (
     GrantaServerApiIntegrationSchemaDiscreteType,
 )
+from .granta_server_api_integration_schema_generated_integration_schema_of_granta_server_api_object_identifier import (
+    GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier,
+)
 from .granta_server_api_integration_schema_guid_only_schema_guid_only_attribute import (
     GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute,
 )
@@ -634,6 +641,9 @@ from .granta_server_api_integration_schema_guid_only_schema_guid_only_source_of_
 )
 from .granta_server_api_integration_schema_integration_parameter_info import (
     GrantaServerApiIntegrationSchemaIntegrationParameterInfo,
+)
+from .granta_server_api_integration_schema_integration_schema_generation_error_detail import (
+    GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail,
 )
 from .granta_server_api_integration_schema_integration_schema_of_granta_server_api_object_identifier import (
     GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier,
@@ -731,6 +741,12 @@ from .granta_server_api_lists_dto_user_permissions_info import (
     GrantaServerApiListsDtoUserPermissionsInfo,
 )
 from .granta_server_api_lists_dto_user_role import GrantaServerApiListsDtoUserRole
+from .granta_server_api_metrics_get_jobs_summary_response import (
+    GrantaServerApiMetricsGetJobsSummaryResponse,
+)
+from .granta_server_api_metrics_job_type_and_status import (
+    GrantaServerApiMetricsJobTypeAndStatus,
+)
 from .granta_server_api_no_values_specifier import GrantaServerApiNoValuesSpecifier
 from .granta_server_api_object_identifier import GrantaServerApiObjectIdentifier
 from .granta_server_api_parameter_info import GrantaServerApiParameterInfo
@@ -999,9 +1015,6 @@ from .granta_server_api_schema_data_rules_update_data_rule import (
     GrantaServerApiSchemaDataRulesUpdateDataRule,
 )
 from .granta_server_api_schema_database import GrantaServerApiSchemaDatabase
-from .granta_server_api_schema_database_status import (
-    GrantaServerApiSchemaDatabaseStatus,
-)
 from .granta_server_api_schema_databases_info import GrantaServerApiSchemaDatabasesInfo
 from .granta_server_api_schema_discrete_types_create_discrete_type import (
     GrantaServerApiSchemaDiscreteTypesCreateDiscreteType,
@@ -1690,8 +1703,8 @@ from .granta_server_api_search_link_datum_criterion import (
 from .granta_server_api_search_link_exists_datum_criterion import (
     GrantaServerApiSearchLinkExistsDatumCriterion,
 )
-from .granta_server_api_search_linking_value_match_behaviour import (
-    GrantaServerApiSearchLinkingValueMatchBehaviour,
+from .granta_server_api_search_linking_value_match_behavior import (
+    GrantaServerApiSearchLinkingValueMatchBehavior,
 )
 from .granta_server_api_search_local_column_criterion import (
     GrantaServerApiSearchLocalColumnCriterion,
@@ -1705,8 +1718,8 @@ from .granta_server_api_search_local_column_matches_criterion import (
 from .granta_server_api_search_local_column_not_applicable_criterion import (
     GrantaServerApiSearchLocalColumnNotApplicableCriterion,
 )
-from .granta_server_api_search_local_rows_behaviour import (
-    GrantaServerApiSearchLocalRowsBehaviour,
+from .granta_server_api_search_local_rows_behavior import (
+    GrantaServerApiSearchLocalRowsBehavior,
 )
 from .granta_server_api_search_logical_datum_criterion import (
     GrantaServerApiSearchLogicalDatumCriterion,
@@ -1787,8 +1800,8 @@ from .granta_server_api_search_string_sorting_value import (
 from .granta_server_api_search_tabular_linking_value_criterion import (
     GrantaServerApiSearchTabularLinkingValueCriterion,
 )
-from .granta_server_api_search_text_match_behaviour import (
-    GrantaServerApiSearchTextMatchBehaviour,
+from .granta_server_api_search_text_match_behavior import (
+    GrantaServerApiSearchTextMatchBehavior,
 )
 from .granta_server_api_selection_searches_create_search_request import (
     GrantaServerApiSelectionSearchesCreateSearchRequest,
@@ -1816,6 +1829,10 @@ from .granta_server_api_value_specifier_type import GrantaServerApiValueSpecifie
 from .granta_server_api_version_state import GrantaServerApiVersionState
 from .jobqueue_files_body import JobqueueFilesBody
 from .json_patch_document import JsonPatchDocument
+from .microsoft_asp_net_core_mvc_formatters_i_output_formatter import (
+    MicrosoftAspNetCoreMvcFormattersIOutputFormatter,
+)
+from .microsoft_asp_net_core_mvc_object_result import MicrosoftAspNetCoreMvcObjectResult
 from .system_net_http_status_code import SystemNetHttpStatusCode
 
 
@@ -1826,7 +1843,7 @@ __all__ = [
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
-    "GrantaMISearchRecordPropertyFakeAttributeNumbers",
+    "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GrantaServerApiAdminMiVersion",
     "GrantaServerApiAggregationsAggregation",
     "GrantaServerApiAggregationsAggregationCriterion",
@@ -1991,7 +2008,7 @@ __all__ = [
     "GrantaServerApiDataExportPropertiesVersionStateProperty",
     "GrantaServerApiDataExportRecordWithData",
     "GrantaServerApiDataExportSimpleAttributeToExport",
-    "GrantaServerApiDataExportTabularRowExportBehaviour",
+    "GrantaServerApiDataExportTabularRowExportBehavior",
     "GrantaServerApiDataFileDatum",
     "GrantaServerApiDataHyperlinkDatum",
     "GrantaServerApiDataHyperlinkTarget",
@@ -2009,6 +2026,8 @@ __all__ = [
     "GrantaServerApiDataRichTextValue",
     "GrantaServerApiDataShortTextDatum",
     "GrantaServerApiDataSignificantFiguresInfo",
+    "GrantaServerApiDatabaseStatus",
+    "GrantaServerApiDatabaseStatusInformation",
     "GrantaServerApiDiscreteValue",
     "GrantaServerApiDiskStatus",
     "GrantaServerApiExceptionsDataModificationDataModificationErrorDetail",
@@ -2042,6 +2061,7 @@ __all__ = [
     "GrantaServerApiIntegrationIntegrationSchemaStatus",
     "GrantaServerApiIntegrationSchemaAttribute",
     "GrantaServerApiIntegrationSchemaDiscreteType",
+    "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
     "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute",
     "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType",
     "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo",
@@ -2050,6 +2070,7 @@ __all__ = [
     "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier",
     "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier",
     "GrantaServerApiIntegrationSchemaIntegrationParameterInfo",
+    "GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail",
     "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
     "GrantaServerApiIntegrationSchemaLayout",
     "GrantaServerApiIntegrationSchemaLinkSourceType",
@@ -2084,6 +2105,8 @@ __all__ = [
     "GrantaServerApiListsDtoUserPermission",
     "GrantaServerApiListsDtoUserPermissionsInfo",
     "GrantaServerApiListsDtoUserRole",
+    "GrantaServerApiMetricsGetJobsSummaryResponse",
+    "GrantaServerApiMetricsJobTypeAndStatus",
     "GrantaServerApiNoValuesSpecifier",
     "GrantaServerApiObjectIdentifier",
     "GrantaServerApiParameterInfo",
@@ -2178,7 +2201,6 @@ __all__ = [
     "GrantaServerApiSchemaDataRulesDataRulesInfo",
     "GrantaServerApiSchemaDataRulesUpdateDataRule",
     "GrantaServerApiSchemaDatabase",
-    "GrantaServerApiSchemaDatabaseStatus",
     "GrantaServerApiSchemaDatabasesInfo",
     "GrantaServerApiSchemaDiscreteTypesCreateDiscreteType",
     "GrantaServerApiSchemaDiscreteTypesDiscreteType",
@@ -2415,12 +2437,12 @@ __all__ = [
     "GrantaServerApiSearchIntegerDatumCriterion",
     "GrantaServerApiSearchLinkDatumCriterion",
     "GrantaServerApiSearchLinkExistsDatumCriterion",
-    "GrantaServerApiSearchLinkingValueMatchBehaviour",
+    "GrantaServerApiSearchLinkingValueMatchBehavior",
     "GrantaServerApiSearchLocalColumnCriterion",
     "GrantaServerApiSearchLocalColumnExistsCriterion",
     "GrantaServerApiSearchLocalColumnMatchesCriterion",
     "GrantaServerApiSearchLocalColumnNotApplicableCriterion",
-    "GrantaServerApiSearchLocalRowsBehaviour",
+    "GrantaServerApiSearchLocalRowsBehavior",
     "GrantaServerApiSearchLogicalDatumCriterion",
     "GrantaServerApiSearchLongSortingValue",
     "GrantaServerApiSearchLongTextDatumCriterion",
@@ -2452,7 +2474,7 @@ __all__ = [
     "GrantaServerApiSearchSortingValue",
     "GrantaServerApiSearchStringSortingValue",
     "GrantaServerApiSearchTabularLinkingValueCriterion",
-    "GrantaServerApiSearchTextMatchBehaviour",
+    "GrantaServerApiSearchTextMatchBehavior",
     "GrantaServerApiSelectionSearchesCreateSearchRequest",
     "GrantaServerApiSelectionSearchesFindSearchRequest",
     "GrantaServerApiSelectionSearchesSaveSearchRequest",
@@ -2465,5 +2487,7 @@ __all__ = [
     "GrantaServerApiVersionState",
     "JobqueueFilesBody",
     "JsonPatchDocument",
+    "MicrosoftAspNetCoreMvcFormattersIOutputFormatter",
+    "MicrosoftAspNetCoreMvcObjectResult",
     "SystemNetHttpStatusCode",
 ]
