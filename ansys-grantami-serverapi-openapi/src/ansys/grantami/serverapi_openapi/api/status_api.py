@@ -89,3 +89,147 @@ class StatusApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map,
         )
+
+    def get_database_status(
+        self, *, database_key: "str"
+    ) -> "GrantaServerApiDatabaseStatusInformation":
+        """get_database_status
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        GrantaServerApiDatabaseStatusInformation
+        """
+        data = self._get_database_status_with_http_info(
+            database_key, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_database_status_with_http_info(
+        self, database_key: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_database_status"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_database_status'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GrantaServerApiDatabaseStatusInformation",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/status/databases/{database-key}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_status(self) -> "List[GrantaServerApiDatabaseStatusInformation]":
+        """get_status
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        List[GrantaServerApiDatabaseStatusInformation]
+        """
+        data = self._get_status_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_status_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_status"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "list[GrantaServerApiDatabaseStatusInformation]",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/status/databases",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )

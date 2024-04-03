@@ -53,6 +53,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         "is_hidden_from_search": "bool",
         "is_versioned": "bool",
         "name": "str",
+        "table_types": "list[str]",
     }
 
     attribute_map: Dict[str, str] = {
@@ -62,6 +63,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         "is_hidden_from_search": "isHiddenFromSearch",
         "is_versioned": "isVersioned",
         "name": "name",
+        "table_types": "tableTypes",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -77,6 +79,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         is_hidden_from_search: "bool",
         is_versioned: "bool",
         name: "str",
+        table_types: "List[str]",
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimTable - a model defined in Swagger
 
@@ -88,10 +91,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         is_hidden_from_search: bool
         is_versioned: bool
         name: str
+        table_types: List[str]
         """
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
+        self._table_types: List[str]
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -99,6 +104,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
         self.is_versioned = is_versioned
+        self.table_types = table_types
         self.display_names = display_names
         self.name = name
         self.guid = guid
@@ -194,6 +200,34 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         if is_versioned is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_versioned', must not be 'Unset'")
         self._is_versioned = is_versioned
+
+    @property
+    def table_types(self) -> "List[str]":
+        """Gets the table_types of this GrantaServerApiSchemaSlimEntitiesSlimTable.
+
+        Returns
+        -------
+        List[str]
+            The table_types of this GrantaServerApiSchemaSlimEntitiesSlimTable.
+        """
+        return self._table_types
+
+    @table_types.setter
+    def table_types(self, table_types: "List[str]") -> None:
+        """Sets the table_types of this GrantaServerApiSchemaSlimEntitiesSlimTable.
+
+        Parameters
+        ----------
+        table_types: List[str]
+            The table_types of this GrantaServerApiSchemaSlimEntitiesSlimTable.
+        """
+        # Field is not nullable
+        if table_types is None:
+            raise ValueError("Invalid value for 'table_types', must not be 'None'")
+        # Field is required
+        if table_types is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'table_types', must not be 'Unset'")
+        self._table_types = table_types
 
     @property
     def display_names(self) -> "Dict[str, str]":
