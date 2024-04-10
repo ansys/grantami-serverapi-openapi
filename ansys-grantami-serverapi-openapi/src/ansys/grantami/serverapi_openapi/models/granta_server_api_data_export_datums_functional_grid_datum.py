@@ -57,6 +57,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "datum_type": "str",
         "graph_type": "str",
         "is_estimated": "bool",
+        "is_range": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
         "not_applicable": "str",
         "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
@@ -71,6 +72,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "datum_type": "datumType",
         "graph_type": "graphType",
         "is_estimated": "isEstimated",
+        "is_range": "isRange",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
         "parameters": "parameters",
@@ -93,6 +95,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         datum_type: "str" = "floatFunctional",
         graph_type: "str" = "grid",
         is_estimated: "Union[bool, Unset_Type]" = Unset,
+        is_range: "Union[bool, Unset_Type]" = Unset,
         meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
         parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
@@ -109,6 +112,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         datum_type: str
         graph_type: str
         is_estimated: bool, optional
+        is_range: bool, optional
         meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
         parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
@@ -121,6 +125,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
             attribute_identity=attribute_identity,
             datum_type=datum_type,
             is_estimated=is_estimated,
+            is_range=is_range,
             meta_datums=meta_datums,
             not_applicable=not_applicable,
             parameters=parameters,

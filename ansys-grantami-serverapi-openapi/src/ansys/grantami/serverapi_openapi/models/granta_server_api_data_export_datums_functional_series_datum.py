@@ -133,6 +133,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             attribute_identity=attribute_identity,
             datum_type=datum_type,
             is_estimated=is_estimated,
+            is_range=is_range,
             meta_datums=meta_datums,
             not_applicable=not_applicable,
             parameters=parameters,
@@ -144,7 +145,6 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type
         ] = Unset
         self._is_logarithmic: Union[bool, Unset_Type] = Unset
-        self._is_range: Union[bool, Unset_Type] = Unset
         self._show_as_table: Union[bool, Unset_Type] = Unset
 
         self.graph_type = graph_type
@@ -152,8 +152,6 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             self.series = series
         if is_logarithmic is not Unset:
             self.is_logarithmic = is_logarithmic
-        if is_range is not Unset:
-            self.is_range = is_range
         if show_as_table is not Unset:
             self.show_as_table = show_as_table
 
@@ -236,31 +234,6 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         if is_logarithmic is None:
             raise ValueError("Invalid value for 'is_logarithmic', must not be 'None'")
         self._is_logarithmic = is_logarithmic
-
-    @property
-    def is_range(self) -> "Union[bool, Unset_Type]":
-        """Gets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
-
-        Returns
-        -------
-        Union[bool, Unset_Type]
-            The is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
-        """
-        return self._is_range
-
-    @is_range.setter
-    def is_range(self, is_range: "Union[bool, Unset_Type]") -> None:
-        """Sets the is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
-
-        Parameters
-        ----------
-        is_range: Union[bool, Unset_Type]
-            The is_range of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
-        """
-        # Field is not nullable
-        if is_range is None:
-            raise ValueError("Invalid value for 'is_range', must not be 'None'")
-        self._is_range = is_range
 
     @property
     def show_as_table(self) -> "Union[bool, Unset_Type]":
