@@ -58,6 +58,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "attribute_identity": "int",
         "datum_type": "str",
         "is_estimated": "bool",
+        "is_range": "bool",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
         "not_applicable": "str",
         "parameters": "list[GrantaServerApiFunctionalDatumParameterInfo]",
@@ -70,6 +71,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "is_estimated": "isEstimated",
+        "is_range": "isRange",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
         "parameters": "parameters",
@@ -96,6 +98,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "floatFunctional",
         is_estimated: "Union[bool, Unset_Type]" = Unset,
+        is_range: "Union[bool, Unset_Type]" = Unset,
         meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
         parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
@@ -110,6 +113,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         attribute_identity: int, optional
         datum_type: str
         is_estimated: bool, optional
+        is_range: bool, optional
         meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
         parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
@@ -131,6 +135,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
         ] = Unset
         self._is_estimated: Union[bool, Unset_Type] = Unset
+        self._is_range: Union[bool, Unset_Type] = Unset
 
         self.datum_type = datum_type
         if unit_symbol is not Unset:
@@ -141,6 +146,8 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             self.parameters = parameters
         if is_estimated is not Unset:
             self.is_estimated = is_estimated
+        if is_range is not Unset:
+            self.is_range = is_range
 
     @property
     def datum_type(self) -> "str":
@@ -273,6 +280,31 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         if is_estimated is None:
             raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
         self._is_estimated = is_estimated
+
+    @property
+    def is_range(self) -> "Union[bool, Unset_Type]":
+        """Gets the is_range of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
+
+        Returns
+        -------
+        Union[bool, Unset_Type]
+            The is_range of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
+        """
+        return self._is_range
+
+    @is_range.setter
+    def is_range(self, is_range: "Union[bool, Unset_Type]") -> None:
+        """Sets the is_range of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
+
+        Parameters
+        ----------
+        is_range: Union[bool, Unset_Type]
+            The is_range of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
+        """
+        # Field is not nullable
+        if is_range is None:
+            raise ValueError("Invalid value for 'is_range', must not be 'None'")
+        self._is_range = is_range
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:
