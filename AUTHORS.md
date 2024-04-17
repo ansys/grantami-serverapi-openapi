@@ -1,10 +1,16 @@
-# Authors
-
-## Project Lead or Owner
-
-* [Andy Grigg](https://github.com/Andy-Grigg)
-
-## Contributors
-
-* [Doug Addy](https://github.com/da1910)
-* [Ludovic Steinbach](https://github.com/ludovicsteinbach)
+# This is the list of GRANTA MI RecordLists API significant contributors.
+#
+# This file does not necessarily list everyone who has contributed code,
+# especially since many employees of one corporation may be contributing.
+# To see the full list of contributors, see the revision history in
+# source control.
+#
+# For contributions made under a Corporate CLA, then the copyright
+# belongs to that organization.
+#
+# If a contribution was made under an Individual CLA, the submitter
+# has indicated that they own the copyright. If that is your case, and
+# you want to be added to this file, please submit a request.
+#
+#
+ANSYS, Inc.
