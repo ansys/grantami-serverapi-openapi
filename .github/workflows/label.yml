@@ -24,13 +24,6 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-    - uses: actions-ecosystem/action-add-labels@v1
-      if: |
-        startsWith(github.event.pull_request.head.ref, 'fix') ||
-        startsWith(github.event.pull_request.head.ref, 'patch')
-      with:
-        labels: bug
-
   commenter:
     runs-on: ubuntu-latest
     steps:
