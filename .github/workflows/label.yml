@@ -38,3 +38,4 @@ jobs:
           - [code-gen](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Acode-gen+)
           - [enhancement](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Aenhancement+)
           - [maintenance](https://github.com/ansys/ggrantami-serverapi-openapi/pulls?q=label%3Amaintenance+)
+          - [bug](https://github.com/ansys/ggrantami-serverapi-openapi/pulls?q=label%3Abug+)
