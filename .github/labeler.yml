@@ -1,0 +1,12 @@
+api-definition:
+- changed-files:
+  - any-glob-to-any-file: ['yaml/*']
+documentation:
+- changed-files:
+  - any-glob-to-any-file: ['doc/source/**/*', 'examples/**/*']
+maintenance:
+- changed-files:
+  - any-glob-to-any-file: ['.github/**/*', '.flake8', 'pyproject.toml']
+dependencies:
+- changed-files:
+  - any-glob-to-any-file: ['poetry.lock']
