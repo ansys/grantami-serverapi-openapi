@@ -52,12 +52,12 @@ Once the tag is pushed to GitHub, a workflow will build and publish the release.
 As stated above, direct use of this package is unsupported. The recommended approach is to use the idiomatic
 libraries written for specific API areas.
 
-We do understand that internal or external users might want to experiment with Granta MI Server API functionality that 
+We do understand that internal or external users might want to experiment with Granta MI Server API functionality that
 is not exposed via an idiomatic python library. To that extent, the following sections demonstrate how to install and
 get started with the library.
 
 ### Requirements
-The `ansys-grantami-serverapi-openapi` package requires Granta MI. The following table details compatibility between 
+The `ansys-grantami-serverapi-openapi` package requires Granta MI. The following table details compatibility between
 Granta MI releases and versions of the Python package.
 
 | Granta MI | ansys-grantami-serverapi-openapi |
@@ -69,8 +69,8 @@ Granta MI releases and versions of the Python package.
 
 ### Installation
 
-During active development phases of Granta MI, this repository is kept up to date with new versions of the API 
-documentation. To use the most up-to-date version of this package in another project, add a dependency on the 
+During active development phases of Granta MI, this repository is kept up to date with new versions of the API
+documentation. To use the most up-to-date version of this package in another project, add a dependency on the
 repository's main branch, e.g. with poetry:
 
 ```console
@@ -84,7 +84,7 @@ Or with pip:
 ```
 
 ### Minimal setup
-The following code snippet demonstrates how to perform the minimal setup required to interact with the API using this 
+The following code snippet demonstrates how to perform the minimal setup required to interact with the API using this
 library.
 
 ```python
@@ -130,11 +130,11 @@ class Connection(ApiClientFactory):
 
 if __name__ == '__main__':
     from ansys.grantami.serverapi_openapi import api
-    
+
     # Update URL and connection method for your system
     URL = "http://my_server_name/mi_servicelayer"
     api_client = Connection(api_url=URL).with_autologon().connect()
-    
+
     schema_api = api.SchemaApi(api_client)
     server_version = schema_api.v1alpha_schema_mi_version_get()
     print(server_version.version)
