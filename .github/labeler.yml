@@ -1,6 +1,9 @@
 api-definition:
 - changed-files:
   - any-glob-to-any-file: ['yaml/*']
+code-gen:
+- changed-files:
+  - any-glob-to-any-file: ['pom.xml']
 documentation:
 - changed-files:
   - any-glob-to-any-file: ['doc/source/**/*', 'examples/**/*']
