@@ -31,25 +31,18 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    BinaryIO,
-    Dict,
-    List,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+
+from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_create_tabular_columns_create_tabular_column import (  # noqa: F401
+    GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn,
+)
 
 from . import ModelBase, Unset, Unset_Type
-from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_create_tabular_columns_create_tabular_column import (
-    GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn,
-)  # noqa: F401
-
 
 if TYPE_CHECKING:
     from datetime import datetime
     import pathlib
+
     from . import *
 
 

@@ -31,20 +31,13 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    Dict,
-    BinaryIO,
-    List,
-    Optional,
-    Union,
-)  # noqa: F401
-from . import ApiBase
+from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from . import ApiBase
 
 if TYPE_CHECKING:
     import pathlib
+
     from ..models import *
 
 

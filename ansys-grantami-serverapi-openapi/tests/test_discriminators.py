@@ -22,9 +22,9 @@
 
 from enum import Enum
 import types
-import pytest
-import ansys.grantami.serverapi_openapi.models as models
 
+import ansys.grantami.serverapi_openapi.models as models
+import pytest
 
 ALL_MODELS = {
     k: v

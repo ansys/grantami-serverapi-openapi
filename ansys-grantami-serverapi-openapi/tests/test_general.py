@@ -20,8 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import py_compile
 from pathlib import Path
+import py_compile
+
 import pytest
 
 src_folder = Path(__file__) / "../../src"

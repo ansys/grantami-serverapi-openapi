@@ -31,25 +31,18 @@
 """
 
 import re  # noqa: F401
-from typing import (
-    TYPE_CHECKING,
-    Any,
-    BinaryIO,
-    Dict,
-    List,
-    Optional,
-    Union,
-)  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+
+from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attribute_aggregation_criterion import (  # noqa: F401
+    GrantaServerApiAggregationsAttributeAggregationCriterion,
+)
 
 from . import ModelBase, Unset, Unset_Type
-from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_attribute_aggregation_criterion import (
-    GrantaServerApiAggregationsAttributeAggregationCriterion,
-)  # noqa: F401
-
 
 if TYPE_CHECKING:
     from datetime import datetime
     import pathlib
+
     from . import *
 
 
