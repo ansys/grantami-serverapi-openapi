@@ -7,9 +7,14 @@ code-gen:
 documentation:
 - changed-files:
   - any-glob-to-any-file: ['doc/source/**/*', 'examples/**/*']
+enhancement:
+- head-branch: ['^feat/']
+bug:
+- head-branch: ['^fix/', '^patch/']
 maintenance:
 - changed-files:
   - any-glob-to-any-file: ['.github/**/*', '.flake8', 'pyproject.toml']
+- head-branch: ['^maint/', '^ci/', '^no-ci/']
 dependencies:
 - changed-files:
   - any-glob-to-any-file: ['poetry.lock']
