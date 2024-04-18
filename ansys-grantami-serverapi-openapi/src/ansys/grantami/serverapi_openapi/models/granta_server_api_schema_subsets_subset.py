@@ -97,9 +97,9 @@ class GrantaServerApiSchemaSubsetsSubset(ModelBase):
         name: str
         associated_layout: GrantaServerApiSchemaSlimEntitiesSlimLayout, optional
         """
-        self._associated_layout: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type
-        ] = Unset
+        self._associated_layout: Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type] = (
+            Unset
+        )
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -137,9 +137,7 @@ class GrantaServerApiSchemaSubsetsSubset(ModelBase):
         """
         # Field is not nullable
         if associated_layout is None:
-            raise ValueError(
-                "Invalid value for 'associated_layout', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'associated_layout', must not be 'None'")
         self._associated_layout = associated_layout
 
     @property

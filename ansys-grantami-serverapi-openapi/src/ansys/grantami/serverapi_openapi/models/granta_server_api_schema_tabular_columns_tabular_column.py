@@ -138,9 +138,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         self._summary_row_enabled: bool
         self._summary_row_text: str
         self._roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-        self._summary_row_roll_up_type: (
-            GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
-        )
+        self._summary_row_roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -204,14 +202,10 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         """
         # Field is not nullable
         if summary_row_enabled is None:
-            raise ValueError(
-                "Invalid value for 'summary_row_enabled', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'summary_row_enabled', must not be 'None'")
         # Field is required
         if summary_row_enabled is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'summary_row_enabled', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'summary_row_enabled', must not be 'Unset'")
         self._summary_row_enabled = summary_row_enabled
 
     @property
@@ -239,9 +233,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
             raise ValueError("Invalid value for 'summary_row_text', must not be 'None'")
         # Field is required
         if summary_row_text is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'summary_row_text', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'summary_row_text', must not be 'Unset'")
         self._summary_row_text = summary_row_text
 
     @property
@@ -303,14 +295,10 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         """
         # Field is not nullable
         if summary_row_roll_up_type is None:
-            raise ValueError(
-                "Invalid value for 'summary_row_roll_up_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'summary_row_roll_up_type', must not be 'None'")
         # Field is required
         if summary_row_roll_up_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'summary_row_roll_up_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'summary_row_roll_up_type', must not be 'Unset'")
         self._summary_row_roll_up_type = summary_row_roll_up_type
 
     @property

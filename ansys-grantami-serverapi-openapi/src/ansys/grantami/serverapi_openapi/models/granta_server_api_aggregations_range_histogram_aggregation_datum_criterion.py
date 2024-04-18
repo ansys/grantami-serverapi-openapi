@@ -125,9 +125,7 @@ class GrantaServerApiAggregationsRangeHistogramAggregationDatumCriterion(
         """
         # Field is not nullable
         if maximum_number_of_buckets is None:
-            raise ValueError(
-                "Invalid value for 'maximum_number_of_buckets', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'maximum_number_of_buckets', must not be 'None'")
         self._maximum_number_of_buckets = maximum_number_of_buckets
 
     @property

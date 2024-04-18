@@ -344,14 +344,10 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         """
         # Field is not nullable
         if last_modified_by_user is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_by_user', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_by_user', must not be 'None'")
         # Field is required
         if last_modified_by_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'last_modified_by_user', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'last_modified_by_user', must not be 'Unset'")
         self._last_modified_by_user = last_modified_by_user
 
     @property
@@ -376,14 +372,10 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         """
         # Field is not nullable
         if last_modified_date is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_date', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_date', must not be 'None'")
         # Field is required
         if last_modified_date is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'last_modified_date', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'last_modified_date', must not be 'Unset'")
         self._last_modified_date = last_modified_date
 
     @property

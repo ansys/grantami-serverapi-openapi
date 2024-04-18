@@ -93,9 +93,9 @@ class GrantaServerApiSchemaProfilesAllProfilesInfo(ModelBase):
         self._profiles: Union[
             List[GrantaServerApiSchemaSlimEntitiesSlimProfile], None, Unset_Type
         ] = Unset
-        self._default_profile: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type
-        ] = Unset
+        self._default_profile: Union[GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type] = (
+            Unset
+        )
 
         if profiles is not Unset:
             self.profiles = profiles

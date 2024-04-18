@@ -150,9 +150,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         if low_value_significant_figures_info is not Unset:
             self.low_value_significant_figures_info = low_value_significant_figures_info
         if high_value_significant_figures_info is not Unset:
-            self.high_value_significant_figures_info = (
-                high_value_significant_figures_info
-            )
+            self.high_value_significant_figures_info = high_value_significant_figures_info
         self.estimated = estimated
         if unit is not Unset:
             self.unit = unit
@@ -263,14 +261,10 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         """
         # Field is not nullable
         if low_value_is_inclusive is None:
-            raise ValueError(
-                "Invalid value for 'low_value_is_inclusive', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'None'")
         # Field is required
         if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'low_value_is_inclusive', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'Unset'")
         self._low_value_is_inclusive = low_value_is_inclusive
 
     @property
@@ -295,14 +289,10 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         """
         # Field is not nullable
         if high_value_is_inclusive is None:
-            raise ValueError(
-                "Invalid value for 'high_value_is_inclusive', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'None'")
         # Field is required
         if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'high_value_is_inclusive', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'Unset'")
         self._high_value_is_inclusive = high_value_is_inclusive
 
     @property
@@ -409,9 +399,7 @@ class GrantaServerApiDataRangeDatum(GrantaServerApiDataApplicableDatum):
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiDataRangeDatum.
 
         Parameters

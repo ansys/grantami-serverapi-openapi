@@ -148,12 +148,10 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfG
             None,
             Unset_Type,
         ] = Unset
-        self._access_control_category_values: Union[
-            Dict[str, List[str]], None, Unset_Type
-        ] = Unset
-        self._security_groups: Union[
-            GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type
-        ] = Unset
+        self._access_control_category_values: Union[Dict[str, List[str]], None, Unset_Type] = Unset
+        self._security_groups: Union[GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type] = (
+            Unset
+        )
 
         if key is not Unset:
             self.key = key

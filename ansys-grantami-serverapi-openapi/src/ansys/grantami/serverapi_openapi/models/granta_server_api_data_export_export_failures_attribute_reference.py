@@ -141,9 +141,7 @@ class GrantaServerApiDataExportExportFailuresAttributeReference(ModelBase):
         return self._attribute_identity
 
     @attribute_identity.setter
-    def attribute_identity(
-        self, attribute_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def attribute_identity(self, attribute_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the attribute_identity of this GrantaServerApiDataExportExportFailuresAttributeReference.
 
         Parameters
@@ -197,9 +195,7 @@ class GrantaServerApiDataExportExportFailuresAttributeReference(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportExportFailuresAttributeReference
-        ):
+        if not isinstance(other, GrantaServerApiDataExportExportFailuresAttributeReference):
             return False
 
         return self.__dict__ == other.__dict__

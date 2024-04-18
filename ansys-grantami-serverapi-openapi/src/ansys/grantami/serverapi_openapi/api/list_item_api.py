@@ -169,14 +169,10 @@ class ListItemApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
         """
-        data = self._get_list_items_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._get_list_items_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_list_items_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _get_list_items_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",

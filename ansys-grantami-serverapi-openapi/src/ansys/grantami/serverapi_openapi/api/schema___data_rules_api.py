@@ -117,9 +117,7 @@ class SchemaDataRulesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -311,9 +309,7 @@ class SchemaDataRulesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDataRulesDataRule",
@@ -351,9 +347,7 @@ class SchemaDataRulesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]
         """
-        data = self._get_data_rules_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_data_rules_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_data_rules_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
@@ -393,9 +387,7 @@ class SchemaDataRulesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDataRulesDataRulesInfo",
@@ -498,9 +490,7 @@ class SchemaDataRulesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

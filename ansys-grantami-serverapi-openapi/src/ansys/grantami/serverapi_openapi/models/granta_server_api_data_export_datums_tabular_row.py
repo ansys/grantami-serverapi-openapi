@@ -115,9 +115,9 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         self._row_guid: Union[str, Unset_Type] = Unset
         self._linking_value: Union[str, None, Unset_Type] = Unset
         self._row_number: Union[int, Unset_Type] = Unset
-        self._local_data: Union[
-            List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type
-        ] = Unset
+        self._local_data: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
+            Unset
+        )
         self._linked_records: Union[
             List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type
         ] = Unset

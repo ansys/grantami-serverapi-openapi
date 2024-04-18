@@ -156,14 +156,10 @@ class GrantaServerApiSchemaDataRulesCreateDataRule(ModelBase):
         """
         # Field is not nullable
         if regular_expression is None:
-            raise ValueError(
-                "Invalid value for 'regular_expression', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
         # Field is required
         if regular_expression is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'regular_expression', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'regular_expression', must not be 'Unset'")
         self._regular_expression = regular_expression
 
     @property

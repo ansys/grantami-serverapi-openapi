@@ -951,14 +951,10 @@ class SchemaHelpFilesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaFilesFoldersInfo, None]
         """
-        data = self._get_help_folders_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_help_folders_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_help_folders_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_help_folders_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -1035,14 +1031,10 @@ class SchemaHelpFilesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaFilesFolder, None]
         """
-        data = self._get_help_root_folder_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_help_root_folder_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_help_root_folder_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_help_root_folder_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",

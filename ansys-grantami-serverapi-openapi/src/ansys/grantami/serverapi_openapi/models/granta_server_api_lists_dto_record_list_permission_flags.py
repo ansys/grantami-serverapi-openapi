@@ -228,9 +228,7 @@ class GrantaServerApiListsDtoRecordListPermissionFlags(ModelBase):
             raise ValueError("Invalid value for 'is_administrator', must not be 'None'")
         # Field is required
         if is_administrator is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_administrator', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_administrator', must not be 'Unset'")
         self._is_administrator = is_administrator
 
     @property

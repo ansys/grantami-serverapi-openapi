@@ -85,9 +85,9 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
         ----------
         files: List[GrantaServerApiSchemaSlimEntitiesSlimFile], optional
         """
-        self._files: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type
-        ] = Unset
+        self._files: Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type] = (
+            Unset
+        )
 
         if files is not Unset:
             self.files = files

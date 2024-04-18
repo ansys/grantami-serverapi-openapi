@@ -148,9 +148,7 @@ class GrantaServerApiSchemaParametersCreateParameter(ModelBase):
         return self._default_parameter_value_index
 
     @default_parameter_value_index.setter
-    def default_parameter_value_index(
-        self, default_parameter_value_index: "int"
-    ) -> None:
+    def default_parameter_value_index(self, default_parameter_value_index: "int") -> None:
         """Sets the default_parameter_value_index of this GrantaServerApiSchemaParametersCreateParameter.
 
         Parameters

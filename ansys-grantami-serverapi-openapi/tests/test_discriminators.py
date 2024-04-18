@@ -29,16 +29,12 @@ import pytest
 ALL_MODELS = {
     k: v
     for k, v in models.__dict__.items()
-    if isinstance(v, type)
-    and k not in ("ModelBase", "Unset_Type")
-    and not issubclass(v, Enum)
+    if isinstance(v, type) and k not in ("ModelBase", "Unset_Type") and not issubclass(v, Enum)
 }
 POLYMORPHIC_MODELS = {
     k: v for k, v in ALL_MODELS.items() if "discriminator_value_class_map" in v.__dict__
 }
-MONOMORPHIC_MODELS = {
-    k: v for k, v in ALL_MODELS.items() if k not in POLYMORPHIC_MODELS.keys()
-}
+MONOMORPHIC_MODELS = {k: v for k, v in ALL_MODELS.items() if k not in POLYMORPHIC_MODELS.keys()}
 
 
 @pytest.mark.parametrize("cls", ALL_MODELS.values())

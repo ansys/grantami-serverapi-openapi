@@ -95,9 +95,7 @@ class GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo(ModelBase):
     @property
     def discrete_types(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]":
         """Gets the discrete_types of this GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo.
 
         Returns

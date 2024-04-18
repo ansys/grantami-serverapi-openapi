@@ -162,9 +162,7 @@ class GrantaServerApiSchemaParametersUpdateParameter(ModelBase):
         """
         # Field is not nullable
         if default_parameter_value_guid is None:
-            raise ValueError(
-                "Invalid value for 'default_parameter_value_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_parameter_value_guid', must not be 'None'")
         self._default_parameter_value_guid = default_parameter_value_guid
 
     @property

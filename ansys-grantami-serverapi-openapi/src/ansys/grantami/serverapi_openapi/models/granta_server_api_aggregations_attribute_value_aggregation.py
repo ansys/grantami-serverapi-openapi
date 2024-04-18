@@ -118,9 +118,9 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
             type=type,
         )
         self._attribute_aggregation_type: str
-        self._aggregation_datum: Union[
-            GrantaServerApiAggregationsAggregationDatum, Unset_Type
-        ] = Unset
+        self._aggregation_datum: Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type] = (
+            Unset
+        )
 
         self.attribute_aggregation_type = attribute_aggregation_type
         if aggregation_datum is not Unset:
@@ -148,14 +148,10 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
         """
         # Field is not nullable
         if attribute_aggregation_type is None:
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_aggregation_type', must not be 'None'")
         # Field is required
         if attribute_aggregation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_aggregation_type', must not be 'Unset'")
         self._attribute_aggregation_type = attribute_aggregation_type
 
     @property
@@ -185,9 +181,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
         """
         # Field is not nullable
         if aggregation_datum is None:
-            raise ValueError(
-                "Invalid value for 'aggregation_datum', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'aggregation_datum', must not be 'None'")
         self._aggregation_datum = aggregation_datum
 
     @classmethod

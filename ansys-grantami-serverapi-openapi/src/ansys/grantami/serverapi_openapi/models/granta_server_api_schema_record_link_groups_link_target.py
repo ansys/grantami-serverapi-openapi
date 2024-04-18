@@ -136,9 +136,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkTarget(ModelBase):
         return self._database_version_guid
 
     @database_version_guid.setter
-    def database_version_guid(
-        self, database_version_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def database_version_guid(self, database_version_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the database_version_guid of this GrantaServerApiSchemaRecordLinkGroupsLinkTarget.
 
         Parameters

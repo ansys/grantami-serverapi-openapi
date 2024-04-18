@@ -103,9 +103,9 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         """
         self._attribute_identity: Union[int, Unset_Type] = Unset
         self._attribute_guid: Union[str, Unset_Type] = Unset
-        self._meta_datums: Union[
-            List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type
-        ] = Unset
+        self._meta_datums: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
+            Unset
+        )
 
         if attribute_identity is not Unset:
             self.attribute_identity = attribute_identity
@@ -136,9 +136,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         """
         # Field is not nullable
         if attribute_identity is None:
-            raise ValueError(
-                "Invalid value for 'attribute_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_identity', must not be 'None'")
         self._attribute_identity = attribute_identity
 
     @property

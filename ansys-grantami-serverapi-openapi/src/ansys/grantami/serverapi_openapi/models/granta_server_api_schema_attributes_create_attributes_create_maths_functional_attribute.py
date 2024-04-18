@@ -153,9 +153,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
             help_path=help_path,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._attribute_parameters: Union[
             List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
         ] = Unset
@@ -226,9 +224,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -307,9 +303,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         return self._allow_extrapolation
 
     @allow_extrapolation.setter
-    def allow_extrapolation(
-        self, allow_extrapolation: "Union[bool, Unset_Type]"
-    ) -> None:
+    def allow_extrapolation(self, allow_extrapolation: "Union[bool, Unset_Type]") -> None:
         """Sets the allow_extrapolation of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
@@ -319,9 +313,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         """
         # Field is not nullable
         if allow_extrapolation is None:
-            raise ValueError(
-                "Invalid value for 'allow_extrapolation', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'allow_extrapolation', must not be 'None'")
         self._allow_extrapolation = allow_extrapolation
 
     @property
@@ -424,9 +416,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         """
         # Field is not nullable
         if allow_anonymous_expressions is None:
-            raise ValueError(
-                "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'allow_anonymous_expressions', must not be 'None'")
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @classmethod

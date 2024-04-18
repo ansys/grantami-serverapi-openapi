@@ -85,9 +85,9 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
         ----------
         units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit], optional
         """
-        self._units: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type
-        ] = Unset
+        self._units: Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type] = (
+            Unset
+        )
 
         if units is not Unset:
             self.units = units

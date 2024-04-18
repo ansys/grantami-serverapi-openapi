@@ -99,12 +99,8 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         type: str
         """
         super().__init__()
-        self.__property: Union[
-            GrantaServerApiSearchSearchableRecordProperty, Unset_Type
-        ] = Unset
-        self._inner_criterion: Union[
-            GrantaServerApiSearchDatumCriterion, Unset_Type
-        ] = Unset
+        self.__property: Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type] = Unset
+        self._inner_criterion: Union[GrantaServerApiSearchDatumCriterion, Unset_Type] = Unset
         self._type: str
 
         if _property is not Unset:

@@ -166,14 +166,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         """
         # Field is not nullable
         if source_database_guid is None:
-            raise ValueError(
-                "Invalid value for 'source_database_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'source_database_guid', must not be 'None'")
         # Field is required
         if source_database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'source_database_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'source_database_guid', must not be 'Unset'")
         self._source_database_guid = source_database_guid
 
     @property
@@ -198,14 +194,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
         """
         # Field is not nullable
         if source_table_guid is None:
-            raise ValueError(
-                "Invalid value for 'source_table_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'source_table_guid', must not be 'None'")
         # Field is required
         if source_table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'source_table_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'source_table_guid', must not be 'Unset'")
         self._source_table_guid = source_table_guid
 
     @property
@@ -258,9 +250,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem
-        ):
+        if not isinstance(other, GrantaServerApiSchemaLayoutsNewLayoutCrossDatabaseLinkItem):
             return False
 
         return self.__dict__ == other.__dict__

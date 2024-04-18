@@ -110,9 +110,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._curve_label: Union[str, None, Unset_Type] = Unset
         self._transpose_axes: bool
         self._use_logarithmic_scale: bool
-        self._expression: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type
-        ] = Unset
+        self._expression: Union[GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type] = Unset
         self._free_parameter: Union[
             GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
         ] = Unset
@@ -200,14 +198,10 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         """
         # Field is not nullable
         if use_logarithmic_scale is None:
-            raise ValueError(
-                "Invalid value for 'use_logarithmic_scale', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'use_logarithmic_scale', must not be 'None'")
         # Field is required
         if use_logarithmic_scale is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'use_logarithmic_scale', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'use_logarithmic_scale', must not be 'Unset'")
         self._use_logarithmic_scale = use_logarithmic_scale
 
     @property
@@ -297,14 +291,10 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         """
         # Field is not nullable
         if parameter_contents is None:
-            raise ValueError(
-                "Invalid value for 'parameter_contents', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'parameter_contents', must not be 'None'")
         # Field is required
         if parameter_contents is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'parameter_contents', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'parameter_contents', must not be 'Unset'")
         self._parameter_contents = parameter_contents
 
     @classmethod

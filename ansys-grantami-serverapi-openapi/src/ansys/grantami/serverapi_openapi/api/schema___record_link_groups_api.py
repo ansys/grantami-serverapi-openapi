@@ -128,9 +128,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -235,18 +233,12 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'delete_record_link_group'"
             )
         # verify the required parameter "record_link_group_guid" is set
-        if (
-            "record_link_group_guid" not in params
-            or params["record_link_group_guid"] is None
-        ):
+        if "record_link_group_guid" not in params or params["record_link_group_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'record_link_group_guid' when calling 'delete_record_link_group'"
             )
         # verify the required parameter "record_link_group_type" is set
-        if (
-            "record_link_group_type" not in params
-            or params["record_link_group_type"] is None
-        ):
+        if "record_link_group_type" not in params or params["record_link_group_type"] is None:
             raise ValueError(
                 "Missing the required parameter 'record_link_group_type' when calling 'delete_record_link_group'"
             )
@@ -382,9 +374,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo",
@@ -489,18 +479,12 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'get_record_link_group'"
             )
         # verify the required parameter "record_link_group_guid" is set
-        if (
-            "record_link_group_guid" not in params
-            or params["record_link_group_guid"] is None
-        ):
+        if "record_link_group_guid" not in params or params["record_link_group_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'record_link_group_guid' when calling 'get_record_link_group'"
             )
         # verify the required parameter "record_link_group_type" is set
-        if (
-            "record_link_group_type" not in params
-            or params["record_link_group_type"] is None
-        ):
+        if "record_link_group_type" not in params or params["record_link_group_type"] is None:
             raise ValueError(
                 "Missing the required parameter 'record_link_group_type' when calling 'get_record_link_group'"
             )
@@ -530,9 +514,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
@@ -643,9 +625,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo",
@@ -737,10 +717,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'update_record_link_group'"
             )
         # verify the required parameter "record_link_group_guid" is set
-        if (
-            "record_link_group_guid" not in params
-            or params["record_link_group_guid"] is None
-        ):
+        if "record_link_group_guid" not in params or params["record_link_group_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'record_link_group_guid' when calling 'update_record_link_group'"
             )
@@ -766,9 +743,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

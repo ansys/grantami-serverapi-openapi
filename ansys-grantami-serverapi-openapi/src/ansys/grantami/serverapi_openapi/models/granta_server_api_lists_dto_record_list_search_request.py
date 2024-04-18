@@ -96,12 +96,8 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         response_options: GrantaServerApiListsDtoResponseOptions, optional
         """
         self._search_criterion: GrantaServerApiListsDtoListCriterion
-        self._paging_options: Union[
-            GrantaServerApiListsDtoPagingOptions, Unset_Type
-        ] = Unset
-        self._response_options: Union[
-            GrantaServerApiListsDtoResponseOptions, Unset_Type
-        ] = Unset
+        self._paging_options: Union[GrantaServerApiListsDtoPagingOptions, Unset_Type] = Unset
+        self._response_options: Union[GrantaServerApiListsDtoResponseOptions, Unset_Type] = Unset
 
         self.search_criterion = search_criterion
         if paging_options is not Unset:
@@ -121,9 +117,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         return self._search_criterion
 
     @search_criterion.setter
-    def search_criterion(
-        self, search_criterion: "GrantaServerApiListsDtoListCriterion"
-    ) -> None:
+    def search_criterion(self, search_criterion: "GrantaServerApiListsDtoListCriterion") -> None:
         """Sets the search_criterion of this GrantaServerApiListsDtoRecordListSearchRequest.
 
         Parameters
@@ -136,9 +130,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
             raise ValueError("Invalid value for 'search_criterion', must not be 'None'")
         # Field is required
         if search_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'search_criterion', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'search_criterion', must not be 'Unset'")
         self._search_criterion = search_criterion
 
     @property

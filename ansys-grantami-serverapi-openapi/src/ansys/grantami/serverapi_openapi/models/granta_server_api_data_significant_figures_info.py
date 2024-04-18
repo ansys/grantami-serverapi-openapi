@@ -95,9 +95,7 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
         """
         self._significant_figures: int
         self._entered_value: float
-        self._entered_unit: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type
-        ] = Unset
+        self._entered_unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
 
         self.significant_figures = significant_figures
         self.entered_value = entered_value
@@ -126,14 +124,10 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
         """
         # Field is not nullable
         if significant_figures is None:
-            raise ValueError(
-                "Invalid value for 'significant_figures', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'significant_figures', must not be 'None'")
         # Field is required
         if significant_figures is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'significant_figures', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'significant_figures', must not be 'Unset'")
         self._significant_figures = significant_figures
 
     @property

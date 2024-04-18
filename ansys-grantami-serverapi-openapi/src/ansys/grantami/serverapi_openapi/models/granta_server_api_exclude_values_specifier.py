@@ -142,9 +142,7 @@ class GrantaServerApiExcludeValuesSpecifier(GrantaServerApiValueSpecifier):
         return self._excluded_guids
 
     @excluded_guids.setter
-    def excluded_guids(
-        self, excluded_guids: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def excluded_guids(self, excluded_guids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the excluded_guids of this GrantaServerApiExcludeValuesSpecifier.
 
         Parameters

@@ -128,14 +128,10 @@ class GrantaServerApiSearchLocalColumnNotApplicableCriterion(
         """
         # Field is not nullable
         if local_column_criterion_type is None:
-            raise ValueError(
-                "Invalid value for 'local_column_criterion_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'None'")
         # Field is required
         if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'local_column_criterion_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'Unset'")
         self._local_column_criterion_type = local_column_criterion_type
 
     @classmethod
@@ -160,9 +156,7 @@ class GrantaServerApiSearchLocalColumnNotApplicableCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSearchLocalColumnNotApplicableCriterion
-        ):
+        if not isinstance(other, GrantaServerApiSearchLocalColumnNotApplicableCriterion):
             return False
 
         return self.__dict__ == other.__dict__

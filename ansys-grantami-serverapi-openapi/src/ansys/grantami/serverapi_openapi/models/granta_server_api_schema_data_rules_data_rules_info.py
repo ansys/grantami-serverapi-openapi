@@ -85,9 +85,9 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
         ----------
         data_rules: List[GrantaServerApiSchemaDataRulesDataRule], optional
         """
-        self._data_rules: Union[
-            List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type
-        ] = Unset
+        self._data_rules: Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type] = (
+            Unset
+        )
 
         if data_rules is not Unset:
             self.data_rules = data_rules

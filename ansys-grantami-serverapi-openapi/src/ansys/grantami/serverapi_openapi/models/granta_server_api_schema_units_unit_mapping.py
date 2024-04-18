@@ -136,9 +136,7 @@ class GrantaServerApiSchemaUnitsUnitMapping(ModelBase):
         return self._equivalent_unit
 
     @equivalent_unit.setter
-    def equivalent_unit(
-        self, equivalent_unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit"
-    ) -> None:
+    def equivalent_unit(self, equivalent_unit: "GrantaServerApiSchemaSlimEntitiesSlimUnit") -> None:
         """Sets the equivalent_unit of this GrantaServerApiSchemaUnitsUnitMapping.
 
         Parameters

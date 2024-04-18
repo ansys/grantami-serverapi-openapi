@@ -191,9 +191,7 @@ class GrantaServerApiAsyncJobsUpdateJobRequest(ModelBase):
         return self._status
 
     @status.setter
-    def status(
-        self, status: "Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type]"
-    ) -> None:
+    def status(self, status: "Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type]") -> None:
         """Sets the status of this GrantaServerApiAsyncJobsUpdateJobRequest.
 
         Parameters

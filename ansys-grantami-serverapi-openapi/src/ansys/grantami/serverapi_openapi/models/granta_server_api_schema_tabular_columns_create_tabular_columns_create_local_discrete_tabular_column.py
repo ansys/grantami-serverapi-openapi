@@ -203,9 +203,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         self._default_threshold_type = default_threshold_type
 
     @property
@@ -220,9 +218,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscrete
         return self._discrete_type
 
     @discrete_type.setter
-    def discrete_type(
-        self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
-    ) -> None:
+    def discrete_type(self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the discrete_type of this GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLocalDiscreteTabularColumn.
 
         Parameters

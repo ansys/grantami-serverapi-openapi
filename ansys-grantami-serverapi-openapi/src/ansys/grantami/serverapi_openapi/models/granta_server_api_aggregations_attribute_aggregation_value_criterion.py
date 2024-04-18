@@ -155,9 +155,7 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(
             raise ValueError(
                 "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
             )
-        self._attribute_aggregation_criterion_type = (
-            attribute_aggregation_criterion_type
-        )
+        self._attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
 
     @property
     def inner_criterion(
@@ -211,9 +209,7 @@ class GrantaServerApiAggregationsAttributeAggregationValueCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsAttributeAggregationValueCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsAttributeAggregationValueCriterion):
             return False
 
         return self.__dict__ == other.__dict__

@@ -188,9 +188,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
         """
         # Field is not nullable
         if is_meta_attribute is None:
-            raise ValueError(
-                "Invalid value for 'is_meta_attribute', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
         self._is_meta_attribute = is_meta_attribute
 
     @property
@@ -248,9 +246,7 @@ class GrantaServerApiAggregationsAttributeAggregationCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsAttributeAggregationCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsAttributeAggregationCriterion):
             return False
 
         return self.__dict__ == other.__dict__

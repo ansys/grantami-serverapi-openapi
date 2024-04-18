@@ -104,9 +104,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
         type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_attributes: List[
-            GrantaServerApiDataExportExportFailuresAttributeReference
-        ]
+        self._failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
         self._type: str
 
         self.failed_attributes = failed_attributes
@@ -139,14 +137,10 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
         """
         # Field is not nullable
         if failed_attributes is None:
-            raise ValueError(
-                "Invalid value for 'failed_attributes', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'failed_attributes', must not be 'None'")
         # Field is required
         if failed_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'failed_attributes', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'failed_attributes', must not be 'Unset'")
         self._failed_attributes = failed_attributes
 
     @property
@@ -199,9 +193,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportExportFailuresAttributeExportFailure
-        ):
+        if not isinstance(other, GrantaServerApiDataExportExportFailuresAttributeExportFailure):
             return False
 
         return self.__dict__ == other.__dict__

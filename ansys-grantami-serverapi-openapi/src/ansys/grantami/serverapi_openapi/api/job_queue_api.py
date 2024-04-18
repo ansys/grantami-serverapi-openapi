@@ -81,9 +81,7 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method create_job"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method create_job")
             params[key] = val
         del params["kwargs"]
 
@@ -163,16 +161,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method delete_job"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_job")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'delete_job'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'delete_job'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -211,9 +205,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_jobs(
-        self, *, body: "Optional[List[str]]" = None
-    ) -> "Union[List[str], None]":
+    def delete_jobs(self, *, body: "Optional[List[str]]" = None) -> "Union[List[str], None]":
         """Delete specified jobs.
 
         This method makes a synchronous HTTP request.
@@ -229,9 +221,7 @@ class JobQueueApi(ApiBase):
         data = self._delete_jobs_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _delete_jobs_with_http_info(
-        self, body: "Optional[List[str]]" = None, **kwargs: Any
-    ) -> Any:
+    def _delete_jobs_with_http_info(self, body: "Optional[List[str]]" = None, **kwargs: Any) -> Any:
         all_params = [
             "body",
             "_return_http_data_only",
@@ -242,9 +232,7 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method delete_jobs"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_jobs")
             params[key] = val
         del params["kwargs"]
 
@@ -387,16 +375,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_job"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_job")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'get_job'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'get_job'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -452,9 +436,7 @@ class JobQueueApi(ApiBase):
         -------
         Union[None, str]
         """
-        data = self._get_job_output_file_with_http_info(
-            id, file_name, _return_http_data_only=True
-        )
+        data = self._get_job_output_file_with_http_info(id, file_name, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_job_output_file_with_http_info(
@@ -504,9 +486,7 @@ class JobQueueApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/octet-stream"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/octet-stream"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
@@ -597,9 +577,7 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_jobs"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_jobs")
             params[key] = val
         del params["kwargs"]
 
@@ -617,9 +595,7 @@ class JobQueueApi(ApiBase):
         if "description_filter" in params and description_filter is not None:
             query_params.append(("descriptionFilter", params["description_filter"]))
         if "submitter_name_filter" in params and submitter_name_filter is not None:
-            query_params.append(
-                ("submitterNameFilter", params["submitter_name_filter"])
-            )
+            query_params.append(("submitterNameFilter", params["submitter_name_filter"]))
         if "page_size" in params and page_size is not None:
             query_params.append(("pageSize", params["page_size"]))
         if "page_number" in params and page_number is not None:
@@ -669,9 +645,7 @@ class JobQueueApi(ApiBase):
         -------
         Union[List[str], None]
         """
-        data = self._get_output_filenames_with_http_info(
-            id, _return_http_data_only=True
-        )
+        data = self._get_output_filenames_with_http_info(id, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_output_filenames_with_http_info(self, id: "str", **kwargs: Any) -> Any:
@@ -824,16 +798,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method move_to_top"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method move_to_top")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'move_to_top'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'move_to_top'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -871,9 +841,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def restore_job(
-        self, *, id: "str"
-    ) -> "Union[GrantaServerApiAsyncJobsCreateJobRequest, None]":
+    def restore_job(self, *, id: "str") -> "Union[GrantaServerApiAsyncJobsCreateJobRequest, None]":
         """Get a job creation object based on an existing job.
 
         This method makes a synchronous HTTP request.
@@ -900,16 +868,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method restore_job"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method restore_job")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'restore_job'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'restore_job'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -990,16 +954,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method resubmit"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method resubmit")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'resubmit'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'resubmit'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -1092,16 +1052,12 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_job"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method update_job")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "id" is set
         if "id" not in params or params["id"] is None:
-            raise ValueError(
-                "Missing the required parameter 'id' when calling 'update_job'"
-            )
+            raise ValueError("Missing the required parameter 'id' when calling 'update_job'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -1155,9 +1111,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def upload_file(
-        self, *, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None
-    ) -> "str":
+    def upload_file(self, *, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None) -> "str":
         """Uploads an ephemeral file and returns an ID which can subsequently be used to refer to that file in a job creation request. Ephemeral files have a short lifespan  and should be used to provide file data to jobs only. They should not be used as file storage.
 
         This method makes a synchronous HTTP request.
@@ -1186,9 +1140,7 @@ class JobQueueApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method upload_file"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method upload_file")
             params[key] = val
         del params["kwargs"]
 

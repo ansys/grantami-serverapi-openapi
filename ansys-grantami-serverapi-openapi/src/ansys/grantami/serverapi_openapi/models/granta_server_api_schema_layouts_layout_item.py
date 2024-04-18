@@ -128,14 +128,10 @@ class GrantaServerApiSchemaLayoutsLayoutItem(ModelBase):
         """
         # Field is not nullable
         if underlying_entity_guid is None:
-            raise ValueError(
-                "Invalid value for 'underlying_entity_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'None'")
         # Field is required
         if underlying_entity_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'underlying_entity_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'Unset'")
         self._underlying_entity_guid = underlying_entity_guid
 
     @property

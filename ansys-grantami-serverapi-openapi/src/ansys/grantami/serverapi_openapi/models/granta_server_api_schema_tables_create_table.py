@@ -120,9 +120,7 @@ class GrantaServerApiSchemaTablesCreateTable(ModelBase):
         return self._is_hidden_from_browse
 
     @is_hidden_from_browse.setter
-    def is_hidden_from_browse(
-        self, is_hidden_from_browse: "Union[bool, Unset_Type]"
-    ) -> None:
+    def is_hidden_from_browse(self, is_hidden_from_browse: "Union[bool, Unset_Type]") -> None:
         """Sets the is_hidden_from_browse of this GrantaServerApiSchemaTablesCreateTable.
 
         Parameters
@@ -132,9 +130,7 @@ class GrantaServerApiSchemaTablesCreateTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_browse is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
         self._is_hidden_from_browse = is_hidden_from_browse
 
     @property
@@ -149,9 +145,7 @@ class GrantaServerApiSchemaTablesCreateTable(ModelBase):
         return self._is_hidden_from_search
 
     @is_hidden_from_search.setter
-    def is_hidden_from_search(
-        self, is_hidden_from_search: "Union[bool, Unset_Type]"
-    ) -> None:
+    def is_hidden_from_search(self, is_hidden_from_search: "Union[bool, Unset_Type]") -> None:
         """Sets the is_hidden_from_search of this GrantaServerApiSchemaTablesCreateTable.
 
         Parameters
@@ -161,9 +155,7 @@ class GrantaServerApiSchemaTablesCreateTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_search is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
         self._is_hidden_from_search = is_hidden_from_search
 
     @property

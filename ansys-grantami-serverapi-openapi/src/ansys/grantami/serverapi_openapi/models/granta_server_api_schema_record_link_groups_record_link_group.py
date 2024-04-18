@@ -147,9 +147,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         return self._link_info
 
     @link_info.setter
-    def link_info(
-        self, link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo"
-    ) -> None:
+    def link_info(self, link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo") -> None:
         """Sets the link_info of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
 
         Parameters

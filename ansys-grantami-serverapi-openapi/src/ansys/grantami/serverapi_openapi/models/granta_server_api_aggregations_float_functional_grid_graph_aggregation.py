@@ -127,13 +127,9 @@ class GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation(ModelBase):
         self._count: Union[int, Unset_Type] = Unset
 
         if default_x_axis_parameter_identity_values is not Unset:
-            self.default_x_axis_parameter_identity_values = (
-                default_x_axis_parameter_identity_values
-            )
+            self.default_x_axis_parameter_identity_values = default_x_axis_parameter_identity_values
         if default_x_axis_parameter_guid_values is not Unset:
-            self.default_x_axis_parameter_guid_values = (
-                default_x_axis_parameter_guid_values
-            )
+            self.default_x_axis_parameter_guid_values = default_x_axis_parameter_guid_values
         if show_as_table_values is not Unset:
             self.show_as_table_values = show_as_table_values
         if minimum_number_of_points is not Unset:
@@ -168,9 +164,7 @@ class GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation(ModelBase):
         default_x_axis_parameter_identity_values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]
             The default_x_axis_parameter_identity_values of this GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation.
         """
-        self._default_x_axis_parameter_identity_values = (
-            default_x_axis_parameter_identity_values
-        )
+        self._default_x_axis_parameter_identity_values = default_x_axis_parameter_identity_values
 
     @property
     def default_x_axis_parameter_guid_values(
@@ -197,9 +191,7 @@ class GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation(ModelBase):
         default_x_axis_parameter_guid_values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]
             The default_x_axis_parameter_guid_values of this GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation.
         """
-        self._default_x_axis_parameter_guid_values = (
-            default_x_axis_parameter_guid_values
-        )
+        self._default_x_axis_parameter_guid_values = default_x_axis_parameter_guid_values
 
     @property
     def show_as_table_values(
@@ -325,9 +317,7 @@ class GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsFloatFunctionalGridGraphAggregation):
             return False
 
         return self.__dict__ == other.__dict__

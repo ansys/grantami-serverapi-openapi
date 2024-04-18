@@ -85,9 +85,7 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
         ----------
         results: List[GrantaServerApiAggregationsAggregation], optional
         """
-        self._results: Union[
-            List[GrantaServerApiAggregationsAggregation], None, Unset_Type
-        ] = Unset
+        self._results: Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type] = Unset
 
         if results is not Unset:
             self.results = results

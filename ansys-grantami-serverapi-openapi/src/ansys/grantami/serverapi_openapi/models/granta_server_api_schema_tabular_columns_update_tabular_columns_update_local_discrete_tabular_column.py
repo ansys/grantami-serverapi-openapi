@@ -141,9 +141,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         self._default_threshold_type: Union[
             GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type
         ] = Unset
-        self._discrete_type: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
+        self._discrete_type: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
 
         self.column_type = column_type
         if default_threshold_type is not Unset:
@@ -206,9 +204,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         self._default_threshold_type = default_threshold_type
 
     @property

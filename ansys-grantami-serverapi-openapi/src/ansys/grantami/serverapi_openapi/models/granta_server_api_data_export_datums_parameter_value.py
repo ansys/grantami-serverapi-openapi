@@ -116,9 +116,7 @@ class GrantaServerApiDataExportDatumsParameterValue(ModelBase):
         return self._parameter
 
     @parameter.setter
-    def parameter(
-        self, parameter: "Union[GrantaServerApiParameterInfo, Unset_Type]"
-    ) -> None:
+    def parameter(self, parameter: "Union[GrantaServerApiParameterInfo, Unset_Type]") -> None:
         """Sets the parameter of this GrantaServerApiDataExportDatumsParameterValue.
 
         Parameters

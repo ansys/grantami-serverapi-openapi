@@ -110,12 +110,8 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         self._curve_label: Union[str, None, Unset_Type] = Unset
         self._transpose_axes: Union[bool, Unset_Type] = Unset
         self._use_logarithmic_scale: Union[bool, Unset_Type] = Unset
-        self._expression: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
-        self._free_parameter: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
+        self._expression: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
+        self._free_parameter: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._parameter_contents: Union[
             List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type
         ] = Unset
@@ -192,9 +188,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         return self._use_logarithmic_scale
 
     @use_logarithmic_scale.setter
-    def use_logarithmic_scale(
-        self, use_logarithmic_scale: "Union[bool, Unset_Type]"
-    ) -> None:
+    def use_logarithmic_scale(self, use_logarithmic_scale: "Union[bool, Unset_Type]") -> None:
         """Sets the use_logarithmic_scale of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Parameters
@@ -204,9 +198,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         """
         # Field is not nullable
         if use_logarithmic_scale is None:
-            raise ValueError(
-                "Invalid value for 'use_logarithmic_scale', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'use_logarithmic_scale', must not be 'None'")
         self._use_logarithmic_scale = use_logarithmic_scale
 
     @property
@@ -272,9 +264,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
     @property
     def parameter_contents(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]":
         """Gets the parameter_contents of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Returns
@@ -298,9 +288,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         """
         # Field is not nullable
         if parameter_contents is None:
-            raise ValueError(
-                "Invalid value for 'parameter_contents', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'parameter_contents', must not be 'None'")
         self._parameter_contents = parameter_contents
 
     @classmethod
@@ -325,9 +313,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent):
             return False
 
         return self.__dict__ == other.__dict__

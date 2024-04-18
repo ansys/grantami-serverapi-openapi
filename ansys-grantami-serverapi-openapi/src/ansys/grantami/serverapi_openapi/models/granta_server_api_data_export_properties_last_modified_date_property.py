@@ -141,9 +141,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
         return self._last_modified_date
 
     @last_modified_date.setter
-    def last_modified_date(
-        self, last_modified_date: "Union[datetime, Unset_Type]"
-    ) -> None:
+    def last_modified_date(self, last_modified_date: "Union[datetime, Unset_Type]") -> None:
         """Sets the last_modified_date of this GrantaServerApiDataExportPropertiesLastModifiedDateProperty.
 
         Parameters
@@ -153,9 +151,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
         """
         # Field is not nullable
         if last_modified_date is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_date', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_date', must not be 'None'")
         self._last_modified_date = last_modified_date
 
     @classmethod
@@ -180,9 +176,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedDateProperty(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportPropertiesLastModifiedDateProperty
-        ):
+        if not isinstance(other, GrantaServerApiDataExportPropertiesLastModifiedDateProperty):
             return False
 
         return self.__dict__ == other.__dict__

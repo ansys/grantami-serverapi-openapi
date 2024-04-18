@@ -162,9 +162,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         return self._search_index_up_to_date
 
     @search_index_up_to_date.setter
-    def search_index_up_to_date(
-        self, search_index_up_to_date: "Union[bool, Unset_Type]"
-    ) -> None:
+    def search_index_up_to_date(self, search_index_up_to_date: "Union[bool, Unset_Type]") -> None:
         """Sets the search_index_up_to_date of this GrantaServerApiSearchIndexStatus.
         Whether all changes up to and including the most recent database revision have been sent to the search index. This will return true  even if some of those revisions could not be indexed
 
@@ -175,9 +173,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         """
         # Field is not nullable
         if search_index_up_to_date is None:
-            raise ValueError(
-                "Invalid value for 'search_index_up_to_date', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_index_up_to_date', must not be 'None'")
         self._search_index_up_to_date = search_index_up_to_date
 
     @property
@@ -219,9 +215,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         return self._search_index_in_sync
 
     @search_index_in_sync.setter
-    def search_index_in_sync(
-        self, search_index_in_sync: "Union[bool, Unset_Type]"
-    ) -> None:
+    def search_index_in_sync(self, search_index_in_sync: "Union[bool, Unset_Type]") -> None:
         """Sets the search_index_in_sync of this GrantaServerApiSearchIndexStatus.
         Returns false if the search index is out of sync with the database (i.e. because changes were made that could not be indexed)
 
@@ -232,9 +226,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         """
         # Field is not nullable
         if search_index_in_sync is None:
-            raise ValueError(
-                "Invalid value for 'search_index_in_sync', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_index_in_sync', must not be 'None'")
         self._search_index_in_sync = search_index_in_sync
 
     @property
@@ -250,9 +242,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         return self._search_index_location
 
     @search_index_location.setter
-    def search_index_location(
-        self, search_index_location: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def search_index_location(self, search_index_location: "Union[str, None, Unset_Type]") -> None:
         """Sets the search_index_location of this GrantaServerApiSearchIndexStatus.
         The location of the index.
 
@@ -301,9 +291,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         return self._disk_status
 
     @disk_status.setter
-    def disk_status(
-        self, disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]"
-    ) -> None:
+    def disk_status(self, disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]") -> None:
         """Sets the disk_status of this GrantaServerApiSearchIndexStatus.
 
         Parameters

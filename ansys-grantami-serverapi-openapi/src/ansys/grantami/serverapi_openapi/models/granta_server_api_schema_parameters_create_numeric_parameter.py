@@ -138,13 +138,9 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         )
         self._type: str
         self._is_restricted: bool
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
-        self._interpolation_type: (
-            GrantaServerApiSchemaParametersParameterInterpolationType
-        )
+        self._interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
         self._scale_type: GrantaServerApiSchemaParametersParameterScaleType
 
         self.type = type
@@ -223,9 +219,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters
@@ -297,14 +291,10 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         """
         # Field is not nullable
         if interpolation_type is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_type', must not be 'None'")
         # Field is required
         if interpolation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'interpolation_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'interpolation_type', must not be 'Unset'")
         self._interpolation_type = interpolation_type
 
     @property
@@ -319,9 +309,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         return self._scale_type
 
     @scale_type.setter
-    def scale_type(
-        self, scale_type: "GrantaServerApiSchemaParametersParameterScaleType"
-    ) -> None:
+    def scale_type(self, scale_type: "GrantaServerApiSchemaParametersParameterScaleType") -> None:
         """Sets the scale_type of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters

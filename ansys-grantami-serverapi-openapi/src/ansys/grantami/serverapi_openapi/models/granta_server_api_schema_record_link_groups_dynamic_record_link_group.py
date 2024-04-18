@@ -146,9 +146,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         self._referential_integrity_model: (
             GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel
         )
-        self._attribute_pairs: List[
-            GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair
-        ]
+        self._attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]
 
         self.type = type
         self.forbid_orphans = forbid_orphans
@@ -238,14 +236,10 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         """
         # Field is not nullable
         if referential_integrity_model is None:
-            raise ValueError(
-                "Invalid value for 'referential_integrity_model', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'referential_integrity_model', must not be 'None'")
         # Field is required
         if referential_integrity_model is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'referential_integrity_model', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'referential_integrity_model', must not be 'Unset'")
         self._referential_integrity_model = referential_integrity_model
 
     @property
@@ -303,9 +297,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup):
             return False
 
         return self.__dict__ == other.__dict__

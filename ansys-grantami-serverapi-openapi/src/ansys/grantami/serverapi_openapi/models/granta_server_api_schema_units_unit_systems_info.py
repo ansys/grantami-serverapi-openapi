@@ -95,9 +95,7 @@ class GrantaServerApiSchemaUnitsUnitSystemsInfo(ModelBase):
     @property
     def unit_systems(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnitSystem], None, Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnitSystem], None, Unset_Type]":
         """Gets the unit_systems of this GrantaServerApiSchemaUnitsUnitSystemsInfo.
 
         Returns

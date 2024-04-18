@@ -112,9 +112,7 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
         return self._criterion
 
     @criterion.setter
-    def criterion(
-        self, criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]"
-    ) -> None:
+    def criterion(self, criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]") -> None:
         """Sets the criterion of this GrantaServerApiAggregationsAggregationsRequest.
 
         Parameters
@@ -130,9 +128,7 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
     @property
     def aggregation_criteria(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]":
         """Gets the aggregation_criteria of this GrantaServerApiAggregationsAggregationsRequest.
         The aggregations you wish to perform.
 

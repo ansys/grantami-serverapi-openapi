@@ -146,9 +146,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         """
         # Field is not nullable
         if referenced_by_type is None:
-            raise ValueError(
-                "Invalid value for 'referenced_by_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'referenced_by_type', must not be 'None'")
         self._referenced_by_type = referenced_by_type
 
     @property

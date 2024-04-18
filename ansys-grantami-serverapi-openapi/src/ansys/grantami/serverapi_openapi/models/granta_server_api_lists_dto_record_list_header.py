@@ -155,9 +155,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         self._last_modified_timestamp: datetime
         self._last_modified_user: GrantaServerApiListsDtoUserOrGroup
         self._published_timestamp: Union[datetime, None, Unset_Type] = Unset
-        self._published_user: Union[GrantaServerApiListsDtoUserOrGroup, Unset_Type] = (
-            Unset
-        )
+        self._published_user: Union[GrantaServerApiListsDtoUserOrGroup, Unset_Type] = Unset
         self._is_revision: bool
         self._name: str
         self._description: Union[str, None, Unset_Type] = Unset
@@ -290,14 +288,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         """
         # Field is not nullable
         if created_timestamp is None:
-            raise ValueError(
-                "Invalid value for 'created_timestamp', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'created_timestamp', must not be 'None'")
         # Field is required
         if created_timestamp is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'created_timestamp', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'created_timestamp', must not be 'Unset'")
         self._created_timestamp = created_timestamp
 
     @property
@@ -350,14 +344,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         """
         # Field is not nullable
         if last_modified_timestamp is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_timestamp', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_timestamp', must not be 'None'")
         # Field is required
         if last_modified_timestamp is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'last_modified_timestamp', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'last_modified_timestamp', must not be 'Unset'")
         self._last_modified_timestamp = last_modified_timestamp
 
     @property
@@ -372,9 +362,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         return self._last_modified_user
 
     @last_modified_user.setter
-    def last_modified_user(
-        self, last_modified_user: "GrantaServerApiListsDtoUserOrGroup"
-    ) -> None:
+    def last_modified_user(self, last_modified_user: "GrantaServerApiListsDtoUserOrGroup") -> None:
         """Sets the last_modified_user of this GrantaServerApiListsDtoRecordListHeader.
 
         Parameters
@@ -384,14 +372,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         """
         # Field is not nullable
         if last_modified_user is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_user', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_user', must not be 'None'")
         # Field is required
         if last_modified_user is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'last_modified_user', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'last_modified_user', must not be 'Unset'")
         self._last_modified_user = last_modified_user
 
     @property
@@ -406,9 +390,7 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         return self._published_timestamp
 
     @published_timestamp.setter
-    def published_timestamp(
-        self, published_timestamp: "Union[datetime, None, Unset_Type]"
-    ) -> None:
+    def published_timestamp(self, published_timestamp: "Union[datetime, None, Unset_Type]") -> None:
         """Sets the published_timestamp of this GrantaServerApiListsDtoRecordListHeader.
 
         Parameters
@@ -595,14 +577,10 @@ class GrantaServerApiListsDtoRecordListHeader(ModelBase):
         """
         # Field is not nullable
         if awaiting_approval is None:
-            raise ValueError(
-                "Invalid value for 'awaiting_approval', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'awaiting_approval', must not be 'None'")
         # Field is required
         if awaiting_approval is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'awaiting_approval', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'awaiting_approval', must not be 'Unset'")
         self._awaiting_approval = awaiting_approval
 
     @property

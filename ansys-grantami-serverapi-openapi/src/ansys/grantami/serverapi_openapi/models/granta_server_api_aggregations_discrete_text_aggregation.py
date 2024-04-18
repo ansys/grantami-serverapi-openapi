@@ -96,9 +96,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         terms: List[GrantaServerApiAggregationsTermWithCount], optional
         """
         super().__init__()
-        self._terms: Union[
-            List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type
-        ] = Unset
+        self._terms: Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type] = Unset
         self._datum_type: str
 
         if terms is not Unset:

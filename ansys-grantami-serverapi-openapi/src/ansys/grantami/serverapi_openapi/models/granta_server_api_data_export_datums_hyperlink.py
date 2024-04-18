@@ -136,9 +136,7 @@ class GrantaServerApiDataExportDatumsHyperlink(ModelBase):
         return self._formatted_address
 
     @formatted_address.setter
-    def formatted_address(
-        self, formatted_address: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def formatted_address(self, formatted_address: "Union[str, None, Unset_Type]") -> None:
         """Sets the formatted_address of this GrantaServerApiDataExportDatumsHyperlink.
 
         Parameters

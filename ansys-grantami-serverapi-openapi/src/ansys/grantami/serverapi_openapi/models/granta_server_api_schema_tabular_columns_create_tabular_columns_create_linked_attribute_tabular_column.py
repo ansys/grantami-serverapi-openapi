@@ -193,9 +193,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLinkedAttribu
             raise ValueError("Invalid value for 'linked_attribute', must not be 'None'")
         # Field is required
         if linked_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'linked_attribute', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'linked_attribute', must not be 'Unset'")
         self._linked_attribute = linked_attribute
 
     @classmethod

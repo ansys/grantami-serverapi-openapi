@@ -137,9 +137,7 @@ class GrantaServerApiAggregationsAggregationDatumExistsCriterion(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsAggregationDatumExistsCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsAggregationDatumExistsCriterion):
             return False
 
         return self.__dict__ == other.__dict__

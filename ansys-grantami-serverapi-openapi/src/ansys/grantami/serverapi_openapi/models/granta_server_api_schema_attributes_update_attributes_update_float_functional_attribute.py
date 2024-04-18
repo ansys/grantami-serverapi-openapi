@@ -137,9 +137,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
             name=name,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._attribute_parameters: Union[
             List[
                 GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter
@@ -196,9 +194,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
@@ -238,9 +234,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         self._attribute_parameters = attribute_parameters
 
     @property

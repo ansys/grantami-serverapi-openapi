@@ -228,9 +228,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimProfileTable(ModelBase):
         return self._table_fallback_hint
 
     @table_fallback_hint.setter
-    def table_fallback_hint(
-        self, table_fallback_hint: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def table_fallback_hint(self, table_fallback_hint: "Union[str, None, Unset_Type]") -> None:
         """Sets the table_fallback_hint of this GrantaServerApiSchemaSlimEntitiesSlimProfileTable.
 
         Parameters

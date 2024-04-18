@@ -135,9 +135,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         return self._is_hidden_from_browse
 
     @is_hidden_from_browse.setter
-    def is_hidden_from_browse(
-        self, is_hidden_from_browse: "Union[bool, Unset_Type]"
-    ) -> None:
+    def is_hidden_from_browse(self, is_hidden_from_browse: "Union[bool, Unset_Type]") -> None:
         """Sets the is_hidden_from_browse of this GrantaServerApiSchemaTablesUpdateTable.
 
         Parameters
@@ -147,9 +145,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_browse is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
         self._is_hidden_from_browse = is_hidden_from_browse
 
     @property
@@ -164,9 +160,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         return self._is_hidden_from_search
 
     @is_hidden_from_search.setter
-    def is_hidden_from_search(
-        self, is_hidden_from_search: "Union[bool, Unset_Type]"
-    ) -> None:
+    def is_hidden_from_search(self, is_hidden_from_search: "Union[bool, Unset_Type]") -> None:
         """Sets the is_hidden_from_search of this GrantaServerApiSchemaTablesUpdateTable.
 
         Parameters
@@ -176,9 +170,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_search is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
         self._is_hidden_from_search = is_hidden_from_search
 
     @property
@@ -193,9 +185,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         return self._default_subset_guid
 
     @default_subset_guid.setter
-    def default_subset_guid(
-        self, default_subset_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def default_subset_guid(self, default_subset_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the default_subset_guid of this GrantaServerApiSchemaTablesUpdateTable.
 
         Parameters
@@ -217,9 +207,7 @@ class GrantaServerApiSchemaTablesUpdateTable(ModelBase):
         return self._default_layout_guid
 
     @default_layout_guid.setter
-    def default_layout_guid(
-        self, default_layout_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def default_layout_guid(self, default_layout_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the default_layout_guid of this GrantaServerApiSchemaTablesUpdateTable.
 
         Parameters

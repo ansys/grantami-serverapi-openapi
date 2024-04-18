@@ -128,9 +128,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -253,9 +251,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionDiscreteValueDeletionException",
@@ -348,9 +344,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo",
@@ -462,9 +456,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteValuesDiscreteValue",
@@ -555,9 +547,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo",
@@ -660,9 +650,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -792,9 +780,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

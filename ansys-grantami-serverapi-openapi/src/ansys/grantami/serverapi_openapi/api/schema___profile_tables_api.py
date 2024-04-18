@@ -117,9 +117,7 @@ class SchemaProfileTablesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -154,9 +152,7 @@ class SchemaProfileTablesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_profile_table(
-        self, *, profile_guid: "str", profile_table_guid: "str"
-    ) -> "None":
+    def delete_profile_table(self, *, profile_guid: "str", profile_table_guid: "str") -> "None":
         """Delete a profile table
 
         This method makes a synchronous HTTP request.
@@ -312,9 +308,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaProfileTablesProfileTable",
@@ -353,14 +347,10 @@ class SchemaProfileTablesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaProfileTablesProfileTablesInfo, None]
         """
-        data = self._get_profile_tables_with_http_info(
-            profile_guid, _return_http_data_only=True
-        )
+        data = self._get_profile_tables_with_http_info(profile_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_profile_tables_with_http_info(
-        self, profile_guid: "str", **kwargs: Any
-    ) -> Any:
+    def _get_profile_tables_with_http_info(self, profile_guid: "str", **kwargs: Any) -> Any:
         all_params = [
             "profile_guid",
             "_return_http_data_only",
@@ -397,9 +387,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaProfileTablesProfileTablesInfo",
@@ -503,9 +491,7 @@ class SchemaProfileTablesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

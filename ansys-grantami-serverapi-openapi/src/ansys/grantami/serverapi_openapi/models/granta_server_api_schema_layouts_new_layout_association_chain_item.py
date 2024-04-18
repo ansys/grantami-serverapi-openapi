@@ -164,14 +164,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         """
         # Field is not nullable
         if association_chain_name is None:
-            raise ValueError(
-                "Invalid value for 'association_chain_name', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'association_chain_name', must not be 'None'")
         # Field is required
         if association_chain_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'association_chain_name', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'association_chain_name', must not be 'Unset'")
         self._association_chain_name = association_chain_name
 
     @property
@@ -201,14 +197,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         """
         # Field is not nullable
         if association_chain_links is None:
-            raise ValueError(
-                "Invalid value for 'association_chain_links', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'association_chain_links', must not be 'None'")
         # Field is required
         if association_chain_links is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'association_chain_links', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'association_chain_links', must not be 'Unset'")
         self._association_chain_links = association_chain_links
 
     @classmethod
@@ -233,9 +225,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem
-        ):
+        if not isinstance(other, GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem):
             return False
 
         return self.__dict__ == other.__dict__

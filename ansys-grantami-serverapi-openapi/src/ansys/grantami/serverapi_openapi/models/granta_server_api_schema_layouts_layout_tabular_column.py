@@ -159,14 +159,10 @@ class GrantaServerApiSchemaLayoutsLayoutTabularColumn(ModelBase):
         """
         # Field is not nullable
         if tabular_column_guid is None:
-            raise ValueError(
-                "Invalid value for 'tabular_column_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'None'")
         # Field is required
         if tabular_column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'tabular_column_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'Unset'")
         self._tabular_column_guid = tabular_column_guid
 
     @property

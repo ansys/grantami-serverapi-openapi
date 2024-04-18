@@ -127,9 +127,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
             help_path=help_path,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
 
         self.type = type
@@ -178,9 +176,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateRangeAttribute.
 
         Parameters

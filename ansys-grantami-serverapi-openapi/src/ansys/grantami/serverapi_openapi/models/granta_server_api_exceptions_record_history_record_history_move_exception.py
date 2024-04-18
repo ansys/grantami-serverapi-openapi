@@ -96,9 +96,7 @@ class GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException(ModelBase
         """
         self._message: Union[str, None, Unset_Type] = Unset
         self._code: Union[SystemNetHttpStatusCode, Unset_Type] = Unset
-        self._errors: Union[
-            List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type
-        ] = Unset
+        self._errors: Union[List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type] = Unset
 
         if message is not Unset:
             self.message = message
@@ -203,9 +201,7 @@ class GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException(ModelBase
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException
-        ):
+        if not isinstance(other, GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException):
             return False
 
         return self.__dict__ == other.__dict__

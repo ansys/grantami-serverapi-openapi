@@ -66,9 +66,7 @@ class StatusApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get")
             params[key] = val
         del params["kwargs"]
 
@@ -120,14 +118,10 @@ class StatusApi(ApiBase):
         -------
         GrantaServerApiDatabaseStatusInformation
         """
-        data = self._get_database_status_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_database_status_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_database_status_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_database_status_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -206,9 +200,7 @@ class StatusApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_status"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_status")
             params[key] = val
         del params["kwargs"]
 

@@ -108,9 +108,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         return self._link_source
 
     @link_source.setter
-    def link_source(
-        self, link_source: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget"
-    ) -> None:
+    def link_source(self, link_source: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget") -> None:
         """Sets the link_source of this GrantaServerApiSchemaRecordLinkGroupsLinkInfo.
 
         Parameters
@@ -138,9 +136,7 @@ class GrantaServerApiSchemaRecordLinkGroupsLinkInfo(ModelBase):
         return self._link_target
 
     @link_target.setter
-    def link_target(
-        self, link_target: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget"
-    ) -> None:
+    def link_target(self, link_target: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget") -> None:
         """Sets the link_target of this GrantaServerApiSchemaRecordLinkGroupsLinkInfo.
 
         Parameters

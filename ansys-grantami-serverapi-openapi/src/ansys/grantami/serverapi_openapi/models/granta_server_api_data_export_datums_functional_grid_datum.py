@@ -148,9 +148,9 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
             x_axis_parameter=x_axis_parameter,
         )
         self._graph_type: str
-        self._points: Union[
-            List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type
-        ] = Unset
+        self._points: Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type] = (
+            Unset
+        )
 
         self.graph_type = graph_type
         if points is not Unset:

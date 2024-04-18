@@ -95,9 +95,7 @@ class GrantaServerApiSchemaStandardNamesStandardNamesInfo(ModelBase):
     @property
     def standard_names(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiSchemaStandardNamesStandardName], None, Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiSchemaStandardNamesStandardName], None, Unset_Type]":
         """Gets the standard_names of this GrantaServerApiSchemaStandardNamesStandardNamesInfo.
 
         Returns

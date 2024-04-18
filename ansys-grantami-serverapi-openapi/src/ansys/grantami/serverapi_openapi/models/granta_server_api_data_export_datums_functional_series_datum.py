@@ -156,9 +156,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
             x_axis_parameter=x_axis_parameter,
         )
         self._graph_type: str
-        self._series: Union[
-            List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type
-        ] = Unset
+        self._series: Union[List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type] = Unset
         self._is_logarithmic: Union[bool, Unset_Type] = Unset
         self._show_as_table: Union[bool, Unset_Type] = Unset
 

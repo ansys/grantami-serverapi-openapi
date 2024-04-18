@@ -97,9 +97,9 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         self._attributes: Union[
             List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type
         ] = Unset
-        self._record_properties: Union[
-            List[GrantaServerApiRecordProperty], None, Unset_Type
-        ] = Unset
+        self._record_properties: Union[List[GrantaServerApiRecordProperty], None, Unset_Type] = (
+            Unset
+        )
         self._record_history_identities: Union[List[int], None, Unset_Type] = Unset
 
         if attributes is not Unset:

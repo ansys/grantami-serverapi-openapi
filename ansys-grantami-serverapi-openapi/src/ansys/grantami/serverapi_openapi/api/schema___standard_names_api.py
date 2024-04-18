@@ -117,9 +117,7 @@ class SchemaStandardNamesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -154,9 +152,7 @@ class SchemaStandardNamesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_standard_name(
-        self, *, database_key: "str", standard_name_guid: "str"
-    ) -> "None":
+    def delete_standard_name(self, *, database_key: "str", standard_name_guid: "str") -> "None":
         """Delete a standard name.
 
         This method makes a synchronous HTTP request.
@@ -313,9 +309,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaStandardNamesStandardName",
@@ -353,14 +347,10 @@ class SchemaStandardNamesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaStandardNamesStandardNamesInfo, None]
         """
-        data = self._get_standard_names_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_standard_names_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_standard_names_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_standard_names_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -397,9 +387,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaStandardNamesStandardNamesInfo",
@@ -502,9 +490,7 @@ class SchemaStandardNamesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

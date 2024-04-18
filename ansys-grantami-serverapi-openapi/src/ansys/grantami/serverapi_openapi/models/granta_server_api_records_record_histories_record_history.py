@@ -110,12 +110,10 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         """
         self._is_folder: bool
         self._table: GrantaServerApiSchemaSlimEntitiesSlimTable
-        self._parent: Union[
-            GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type
-        ] = Unset
-        self._record_versions: List[
-            GrantaServerApiRecordsRecordVersionsSlimRecordVersion
-        ]
+        self._parent: Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type] = (
+            Unset
+        )
+        self._record_versions: List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
         self._subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
         self._guid: str
 
@@ -258,9 +256,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         return self._subsets
 
     @subsets.setter
-    def subsets(
-        self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]"
-    ) -> None:
+    def subsets(self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
         """Sets the subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Parameters

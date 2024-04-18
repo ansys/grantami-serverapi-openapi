@@ -63,14 +63,10 @@ class ListPermissionsApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoUserPermissionsInfo, None]
         """
-        data = self._get_permissions_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._get_permissions_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_permissions_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _get_permissions_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -465,9 +461,7 @@ class ListPermissionsApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoUserPermission, None]
         """
-        data = self._subscribe_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._subscribe_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _subscribe_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
@@ -481,9 +475,7 @@ class ListPermissionsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method subscribe"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method subscribe")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
@@ -549,9 +541,7 @@ class ListPermissionsApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoUserPermission, None]
         """
-        data = self._unsubscribe_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._unsubscribe_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _unsubscribe_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
@@ -565,9 +555,7 @@ class ListPermissionsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method unsubscribe"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method unsubscribe")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set

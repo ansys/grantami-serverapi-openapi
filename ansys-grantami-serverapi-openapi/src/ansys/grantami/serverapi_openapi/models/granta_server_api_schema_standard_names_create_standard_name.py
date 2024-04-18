@@ -130,9 +130,7 @@ class GrantaServerApiSchemaStandardNamesCreateStandardName(ModelBase):
         if mapped_record_link_groups is not Unset:
             self.mapped_record_link_groups = mapped_record_link_groups
         if mapped_cross_database_record_link_groups is not Unset:
-            self.mapped_cross_database_record_link_groups = (
-                mapped_cross_database_record_link_groups
-            )
+            self.mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
         self.name = name
         if guid is not Unset:
             self.guid = guid
@@ -243,9 +241,7 @@ class GrantaServerApiSchemaStandardNamesCreateStandardName(ModelBase):
         mapped_cross_database_record_link_groups: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The mapped_cross_database_record_link_groups of this GrantaServerApiSchemaStandardNamesCreateStandardName.
         """
-        self._mapped_cross_database_record_link_groups = (
-            mapped_cross_database_record_link_groups
-        )
+        self._mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
 
     @property
     def name(self) -> "str":

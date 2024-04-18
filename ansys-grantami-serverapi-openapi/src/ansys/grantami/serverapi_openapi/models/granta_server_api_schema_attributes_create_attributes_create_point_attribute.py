@@ -137,9 +137,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         )
         self._type: str
         self._is_multi_valued: Union[bool, Unset_Type] = Unset
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
         self._attribute_parameters: Union[
             List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
@@ -220,9 +218,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters

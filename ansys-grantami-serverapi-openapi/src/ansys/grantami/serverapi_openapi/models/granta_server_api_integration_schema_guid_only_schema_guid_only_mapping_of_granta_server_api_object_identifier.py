@@ -135,9 +135,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServe
         return self._source
 
     @source.setter
-    def source(
-        self, source: "Union[GrantaServerApiObjectIdentifier, Unset_Type]"
-    ) -> None:
+    def source(self, source: "Union[GrantaServerApiObjectIdentifier, Unset_Type]") -> None:
         """Sets the source of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier.
 
         Parameters

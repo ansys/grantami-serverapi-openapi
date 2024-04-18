@@ -137,9 +137,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
             name=name,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._is_multi_valued: Union[bool, Unset_Type] = Unset
         self._attribute_parameters: Union[
             List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
@@ -193,9 +191,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesUpdateAttributesUpdatePointAttribute.
 
         Parameters

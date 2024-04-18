@@ -149,9 +149,7 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
             None,
             Unset_Type,
         ] = Unset
-        self._target_database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = (
-            Unset
-        )
+        self._target_database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._target_table: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._graph_type: Union[str, None, Unset_Type] = Unset
         self._x_axis_parameter: Union[str, None, Unset_Type] = Unset
@@ -364,9 +362,7 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         return self._discrete_type_guid
 
     @discrete_type_guid.setter
-    def discrete_type_guid(
-        self, discrete_type_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def discrete_type_guid(self, discrete_type_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the discrete_type_guid of this GrantaServerApiIntegrationSchemaAttribute.
         A discrete attribute must define the guid of its discrete type (i.e. list of possible values)
 
@@ -497,9 +493,7 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         return self._x_axis_parameter
 
     @x_axis_parameter.setter
-    def x_axis_parameter(
-        self, x_axis_parameter: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def x_axis_parameter(self, x_axis_parameter: "Union[str, None, Unset_Type]") -> None:
         """Sets the x_axis_parameter of this GrantaServerApiIntegrationSchemaAttribute.
         A float functional attribute must define an x-axis. This will be one of the parameters listed in parameters
 

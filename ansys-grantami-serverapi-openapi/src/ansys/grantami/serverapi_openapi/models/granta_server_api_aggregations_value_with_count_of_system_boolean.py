@@ -167,9 +167,7 @@ class GrantaServerApiAggregationsValueWithCountOfSystemBoolean(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsValueWithCountOfSystemBoolean
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsValueWithCountOfSystemBoolean):
             return False
 
         return self.__dict__ == other.__dict__

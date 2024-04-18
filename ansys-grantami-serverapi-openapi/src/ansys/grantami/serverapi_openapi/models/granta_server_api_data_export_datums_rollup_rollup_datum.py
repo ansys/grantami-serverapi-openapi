@@ -159,9 +159,7 @@ class GrantaServerApiDataExportDatumsRollupRollupDatum(ModelBase):
         return self._attribute_identity
 
     @attribute_identity.setter
-    def attribute_identity(
-        self, attribute_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def attribute_identity(self, attribute_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the attribute_identity of this GrantaServerApiDataExportDatumsRollupRollupDatum.
         The attribute identity of the rolled up data.  If the data came from a local column, this is the column identity.  If the data came from linked records, this is the identity of the tabular attribute
 
@@ -199,9 +197,7 @@ class GrantaServerApiDataExportDatumsRollupRollupDatum(ModelBase):
     @property
     def roll_up_type(
         self,
-    ) -> (
-        "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]"
-    ):
+    ) -> "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]":
         """Gets the roll_up_type of this GrantaServerApiDataExportDatumsRollupRollupDatum.
 
         Returns

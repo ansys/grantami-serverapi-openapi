@@ -136,9 +136,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateFloatFunctionalAttrib
             help_path=help_path,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
         self._attribute_parameters: List[
             GrantaServerApiSchemaAttributesCreateAttributesCreateFloatFunctionalAttributeParameter
@@ -194,9 +192,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateFloatFunctionalAttrib
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesCreateAttributesCreateFloatFunctionalAttribute.
 
         Parameters
@@ -258,14 +254,10 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateFloatFunctionalAttrib
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         # Field is required
         if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'Unset'")
         self._attribute_parameters = attribute_parameters
 
     @property

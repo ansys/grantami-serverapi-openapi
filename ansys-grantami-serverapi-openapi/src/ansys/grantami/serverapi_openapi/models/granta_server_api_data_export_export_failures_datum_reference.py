@@ -156,14 +156,10 @@ class GrantaServerApiDataExportExportFailuresDatumReference(ModelBase):
         """
         # Field is not nullable
         if record_history_identity is None:
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         # Field is required
         if record_history_identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'Unset'")
         self._record_history_identity = record_history_identity
 
     @property
@@ -188,14 +184,10 @@ class GrantaServerApiDataExportExportFailuresDatumReference(ModelBase):
         """
         # Field is not nullable
         if attribute_identity is None:
-            raise ValueError(
-                "Invalid value for 'attribute_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_identity', must not be 'None'")
         # Field is required
         if attribute_identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_identity', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_identity', must not be 'Unset'")
         self._attribute_identity = attribute_identity
 
     @property

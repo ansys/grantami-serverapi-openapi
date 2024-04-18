@@ -132,9 +132,7 @@ class GrantaServerApiSchemaAttributesValidateAttributeRequest(ModelBase):
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(
-        self, record_history_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the record_history_guid of this GrantaServerApiSchemaAttributesValidateAttributeRequest.
         The record you want to check the value against to see if the value has changed as well as being valid
 
@@ -167,9 +165,7 @@ class GrantaServerApiSchemaAttributesValidateAttributeRequest(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesValidateAttributeRequest
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesValidateAttributeRequest):
             return False
 
         return self.__dict__ == other.__dict__

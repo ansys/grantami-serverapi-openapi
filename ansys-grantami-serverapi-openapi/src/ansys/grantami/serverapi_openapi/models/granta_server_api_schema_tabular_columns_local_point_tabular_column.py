@@ -143,9 +143,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
             summary_row_text=summary_row_text,
         )
         self._column_type: str
-        self._default_threshold_type: (
-            GrantaServerApiSchemaAttributesAttributeThresholdType
-        )
+        self._default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
 
         self.column_type = column_type
@@ -208,14 +206,10 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         # Field is required
         if default_threshold_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'Unset'")
         self._default_threshold_type = default_threshold_type
 
     @property
@@ -230,9 +224,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn.
 
         Parameters
@@ -267,9 +259,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn
-        ):
+        if not isinstance(other, GrantaServerApiSchemaTabularColumnsLocalPointTabularColumn):
             return False
 
         return self.__dict__ == other.__dict__

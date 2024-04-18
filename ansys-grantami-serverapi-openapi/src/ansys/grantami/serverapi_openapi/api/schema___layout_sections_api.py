@@ -155,9 +155,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -283,9 +281,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -378,9 +374,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method delete_item"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_item")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -701,9 +695,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaLayoutsLayoutSection",
@@ -837,9 +829,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
@@ -953,9 +943,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

@@ -106,9 +106,9 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
         """
         super().__init__(parameter=parameter)
         self._type: str
-        self._parameter_value: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
+        self._parameter_value: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
         self._parameter_range: Union[
             GrantaServerApiSchemaParametersUpdateDiscreteRange, Unset_Type
         ] = Unset
@@ -229,9 +229,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaParametersUpdateDiscreteParameterContent
-        ):
+        if not isinstance(other, GrantaServerApiSchemaParametersUpdateDiscreteParameterContent):
             return False
 
         return self.__dict__ == other.__dict__

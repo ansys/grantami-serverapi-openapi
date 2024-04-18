@@ -133,13 +133,9 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         default_layout: GrantaServerApiSchemaSlimEntitiesSlimLayout, optional
         default_subset: GrantaServerApiSchemaSlimEntitiesSlimSubset, optional
         """
-        self._default_subset: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type
-        ] = Unset
+        self._default_subset: Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type] = Unset
         self._subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
-        self._default_layout: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type
-        ] = Unset
+        self._default_layout: Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type] = Unset
         self._layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
         self._version_state: GrantaServerApiVersionState
         self._is_hidden_from_browse: bool
@@ -207,9 +203,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         return self._subsets
 
     @subsets.setter
-    def subsets(
-        self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]"
-    ) -> None:
+    def subsets(self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
         """Sets the subsets of this GrantaServerApiSchemaTablesTable.
 
         Parameters
@@ -267,9 +261,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         return self._layouts
 
     @layouts.setter
-    def layouts(
-        self, layouts: "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]"
-    ) -> None:
+    def layouts(self, layouts: "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]") -> None:
         """Sets the layouts of this GrantaServerApiSchemaTablesTable.
 
         Parameters
@@ -335,14 +327,10 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_browse is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
         # Field is required
         if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'Unset'")
         self._is_hidden_from_browse = is_hidden_from_browse
 
     @property
@@ -367,14 +355,10 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_search is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
         # Field is required
         if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'Unset'")
         self._is_hidden_from_search = is_hidden_from_search
 
     @property

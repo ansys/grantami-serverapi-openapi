@@ -96,12 +96,10 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         sort_criteria: List[GrantaServerApiSearchSortCriterion], optional
         """
         self._criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
-        self._sort_criteria: Union[
-            List[GrantaServerApiSearchSortCriterion], None, Unset_Type
-        ] = Unset
-        self._paging_options: Union[GrantaServerApiSearchPagingOptions, Unset_Type] = (
+        self._sort_criteria: Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type] = (
             Unset
         )
+        self._paging_options: Union[GrantaServerApiSearchPagingOptions, Unset_Type] = Unset
 
         if criterion is not Unset:
             self.criterion = criterion
@@ -122,9 +120,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         return self._criterion
 
     @criterion.setter
-    def criterion(
-        self, criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]"
-    ) -> None:
+    def criterion(self, criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]") -> None:
         """Sets the criterion of this GrantaServerApiSearchSearchRequest.
 
         Parameters

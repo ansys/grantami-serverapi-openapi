@@ -97,9 +97,7 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):
         self._new_parent: Union[
             GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type
         ] = Unset
-        self._subset_option: (
-            GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType
-        )
+        self._subset_option: GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType
         self._new_short_name: Union[str, None, Unset_Type] = Unset
 
         if new_parent is not Unset:
@@ -215,9 +213,7 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiRecordsRecordHistoriesCopyRecordHistory
-        ):
+        if not isinstance(other, GrantaServerApiRecordsRecordHistoriesCopyRecordHistory):
             return False
 
         return self.__dict__ == other.__dict__

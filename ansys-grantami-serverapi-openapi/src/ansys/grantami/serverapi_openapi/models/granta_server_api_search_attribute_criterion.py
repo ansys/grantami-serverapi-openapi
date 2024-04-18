@@ -187,9 +187,7 @@ class GrantaServerApiSearchAttributeCriterion(GrantaServerApiSearchCriterion):
         """
         # Field is not nullable
         if is_meta_attribute is None:
-            raise ValueError(
-                "Invalid value for 'is_meta_attribute', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
         self._is_meta_attribute = is_meta_attribute
 
     @property

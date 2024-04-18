@@ -110,9 +110,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         """
         self._mapped_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._mapped_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._mapped_record_link_groups: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
+        self._mapped_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._mapped_cross_database_record_link_groups: List[
             GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
         ]
@@ -122,9 +120,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self.mapped_attributes = mapped_attributes
         self.mapped_parameters = mapped_parameters
         self.mapped_record_link_groups = mapped_record_link_groups
-        self.mapped_cross_database_record_link_groups = (
-            mapped_cross_database_record_link_groups
-        )
+        self.mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
         self.name = name
         self.guid = guid
 
@@ -155,14 +151,10 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         """
         # Field is not nullable
         if mapped_attributes is None:
-            raise ValueError(
-                "Invalid value for 'mapped_attributes', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'mapped_attributes', must not be 'None'")
         # Field is required
         if mapped_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'mapped_attributes', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'mapped_attributes', must not be 'Unset'")
         self._mapped_attributes = mapped_attributes
 
     @property
@@ -192,14 +184,10 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         """
         # Field is not nullable
         if mapped_parameters is None:
-            raise ValueError(
-                "Invalid value for 'mapped_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'mapped_parameters', must not be 'None'")
         # Field is required
         if mapped_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'mapped_parameters', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'mapped_parameters', must not be 'Unset'")
         self._mapped_parameters = mapped_parameters
 
     @property
@@ -229,14 +217,10 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         """
         # Field is not nullable
         if mapped_record_link_groups is None:
-            raise ValueError(
-                "Invalid value for 'mapped_record_link_groups', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'mapped_record_link_groups', must not be 'None'")
         # Field is required
         if mapped_record_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'mapped_record_link_groups', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'mapped_record_link_groups', must not be 'Unset'")
         self._mapped_record_link_groups = mapped_record_link_groups
 
     @property
@@ -274,9 +258,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
             raise ValueError(
                 "Invalid value for 'mapped_cross_database_record_link_groups', must not be 'Unset'"
             )
-        self._mapped_cross_database_record_link_groups = (
-            mapped_cross_database_record_link_groups
-        )
+        self._mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
 
     @property
     def name(self) -> "str":

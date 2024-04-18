@@ -141,9 +141,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
         return self._last_modified_by_user
 
     @last_modified_by_user.setter
-    def last_modified_by_user(
-        self, last_modified_by_user: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def last_modified_by_user(self, last_modified_by_user: "Union[str, None, Unset_Type]") -> None:
         """Sets the last_modified_by_user of this GrantaServerApiDataExportPropertiesLastModifiedByUserProperty.
 
         Parameters
@@ -175,9 +173,7 @@ class GrantaServerApiDataExportPropertiesLastModifiedByUserProperty(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportPropertiesLastModifiedByUserProperty
-        ):
+        if not isinstance(other, GrantaServerApiDataExportPropertiesLastModifiedByUserProperty):
             return False
 
         return self.__dict__ == other.__dict__

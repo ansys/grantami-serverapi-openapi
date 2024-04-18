@@ -288,14 +288,10 @@ class GrantaServerApiDataFileDatum(GrantaServerApiDataApplicableDatum):
         """
         # Field is not nullable
         if content_is_in_search_index is None:
-            raise ValueError(
-                "Invalid value for 'content_is_in_search_index', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'content_is_in_search_index', must not be 'None'")
         # Field is required
         if content_is_in_search_index is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'content_is_in_search_index', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'content_is_in_search_index', must not be 'Unset'")
         self._content_is_in_search_index = content_is_in_search_index
 
     @classmethod

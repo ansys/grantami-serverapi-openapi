@@ -177,9 +177,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         return self._discrete_type
 
     @discrete_type.setter
-    def discrete_type(
-        self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
-    ) -> None:
+    def discrete_type(self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the discrete_type of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
 
         Parameters
@@ -222,14 +220,10 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         # Field is required
         if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'Unset'")
         self._attribute_parameters = attribute_parameters
 
     @classmethod

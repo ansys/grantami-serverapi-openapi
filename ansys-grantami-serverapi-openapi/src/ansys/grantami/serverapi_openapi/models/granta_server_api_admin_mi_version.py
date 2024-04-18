@@ -126,9 +126,7 @@ class GrantaServerApiAdminMiVersion(ModelBase):
         """
         # Field is not nullable
         if binary_compatibility_version is None:
-            raise ValueError(
-                "Invalid value for 'binary_compatibility_version', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'binary_compatibility_version', must not be 'None'")
         self._binary_compatibility_version = binary_compatibility_version
 
     @property
@@ -168,9 +166,7 @@ class GrantaServerApiAdminMiVersion(ModelBase):
         return self._major_minor_version
 
     @major_minor_version.setter
-    def major_minor_version(
-        self, major_minor_version: "Union[str, Unset_Type]"
-    ) -> None:
+    def major_minor_version(self, major_minor_version: "Union[str, Unset_Type]") -> None:
         """Sets the major_minor_version of this GrantaServerApiAdminMiVersion.
 
         Parameters
@@ -180,9 +176,7 @@ class GrantaServerApiAdminMiVersion(ModelBase):
         """
         # Field is not nullable
         if major_minor_version is None:
-            raise ValueError(
-                "Invalid value for 'major_minor_version', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'major_minor_version', must not be 'None'")
         self._major_minor_version = major_minor_version
 
     @classmethod

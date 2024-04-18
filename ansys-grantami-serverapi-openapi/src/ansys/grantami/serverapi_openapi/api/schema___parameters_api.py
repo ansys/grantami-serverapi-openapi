@@ -117,9 +117,7 @@ class SchemaParametersApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -234,9 +232,7 @@ class SchemaParametersApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -339,9 +335,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionParameterDeletionException",
@@ -368,9 +362,7 @@ class SchemaParametersApi(ApiBase):
 
     def delete_parameter_value(
         self, *, database_key: "str", parameter_guid: "str", parameter_value_guid: "str"
-    ) -> (
-        "Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]"
-    ):
+    ) -> "Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]":
         """Delete a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -428,10 +420,7 @@ class SchemaParametersApi(ApiBase):
                 "Missing the required parameter 'parameter_guid' when calling 'delete_parameter_value'"
             )
         # verify the required parameter "parameter_value_guid" is set
-        if (
-            "parameter_value_guid" not in params
-            or params["parameter_value_guid"] is None
-        ):
+        if "parameter_value_guid" not in params or params["parameter_value_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'parameter_value_guid' when calling 'delete_parameter_value'"
             )
@@ -455,9 +444,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionParameterValueDeletionException",
@@ -550,9 +537,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaSlimEntitiesSlimObjects",
@@ -643,9 +628,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaParametersParameter",
@@ -728,10 +711,7 @@ class SchemaParametersApi(ApiBase):
                 "Missing the required parameter 'parameter_guid' when calling 'get_parameter_value'"
             )
         # verify the required parameter "parameter_value_guid" is set
-        if (
-            "parameter_value_guid" not in params
-            or params["parameter_value_guid"] is None
-        ):
+        if "parameter_value_guid" not in params or params["parameter_value_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'parameter_value_guid' when calling 'get_parameter_value'"
             )
@@ -755,9 +735,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaParametersParameterValue",
@@ -795,9 +773,7 @@ class SchemaParametersApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaParametersParametersInfo, None]
         """
-        data = self._get_parameters_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_parameters_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_parameters_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
@@ -837,9 +813,7 @@ class SchemaParametersApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaParametersParametersInfo",
@@ -942,9 +916,7 @@ class SchemaParametersApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -1048,10 +1020,7 @@ class SchemaParametersApi(ApiBase):
                 "Missing the required parameter 'parameter_guid' when calling 'update_parameter_value'"
             )
         # verify the required parameter "parameter_value_guid" is set
-        if (
-            "parameter_value_guid" not in params
-            or params["parameter_value_guid"] is None
-        ):
+        if "parameter_value_guid" not in params or params["parameter_value_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'parameter_value_guid' when calling 'update_parameter_value'"
             )
@@ -1077,9 +1046,7 @@ class SchemaParametersApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

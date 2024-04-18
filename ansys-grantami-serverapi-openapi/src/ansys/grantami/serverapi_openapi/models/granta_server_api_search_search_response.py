@@ -95,9 +95,7 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
         """
         self._search_identifier: Union[str, None, Unset_Type] = Unset
         self._total_result_count: Union[int, Unset_Type] = Unset
-        self._results: Union[
-            List[GrantaServerApiSearchSearchResult], None, Unset_Type
-        ] = Unset
+        self._results: Union[List[GrantaServerApiSearchSearchResult], None, Unset_Type] = Unset
 
         if search_identifier is not Unset:
             self.search_identifier = search_identifier
@@ -119,9 +117,7 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
         return self._search_identifier
 
     @search_identifier.setter
-    def search_identifier(
-        self, search_identifier: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def search_identifier(self, search_identifier: "Union[str, None, Unset_Type]") -> None:
         """Sets the search_identifier of this GrantaServerApiSearchSearchResponse.
         If the search request had paging options specified, this will return an identifier that can be used to get the rest of the results
 
@@ -154,9 +150,7 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
         """
         # Field is not nullable
         if total_result_count is None:
-            raise ValueError(
-                "Invalid value for 'total_result_count', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'total_result_count', must not be 'None'")
         self._total_result_count = total_result_count
 
     @property

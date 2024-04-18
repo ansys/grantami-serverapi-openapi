@@ -127,9 +127,7 @@ class GrantaServerApiAggregationsFloatFunctionalAggregationDatumCriterion(
         """
         # Field is not nullable
         if number_of_parameter_values is None:
-            raise ValueError(
-                "Invalid value for 'number_of_parameter_values', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'number_of_parameter_values', must not be 'None'")
         self._number_of_parameter_values = number_of_parameter_values
 
     @property

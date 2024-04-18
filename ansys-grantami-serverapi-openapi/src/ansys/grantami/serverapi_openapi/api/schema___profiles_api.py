@@ -102,9 +102,7 @@ class SchemaProfilesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -151,9 +149,7 @@ class SchemaProfilesApi(ApiBase):
         -------
         None
         """
-        data = self._delete_profile_with_http_info(
-            profile_guid, _return_http_data_only=True
-        )
+        data = self._delete_profile_with_http_info(profile_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _delete_profile_with_http_info(self, profile_guid: "str", **kwargs: Any) -> Any:
@@ -231,9 +227,7 @@ class SchemaProfilesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaProfilesProfile, None]
         """
-        data = self._get_profile_with_http_info(
-            profile_guid, _return_http_data_only=True
-        )
+        data = self._get_profile_with_http_info(profile_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_profile_with_http_info(self, profile_guid: "str", **kwargs: Any) -> Any:
@@ -247,9 +241,7 @@ class SchemaProfilesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_profile"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_profile")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "profile_guid" is set
@@ -273,9 +265,7 @@ class SchemaProfilesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaProfilesProfile",
@@ -338,9 +328,7 @@ class SchemaProfilesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaProfilesAllProfilesInfo",
@@ -380,9 +368,7 @@ class SchemaProfilesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]
         """
-        data = self._update_all_profiles_info_with_http_info(
-            body, _return_http_data_only=True
-        )
+        data = self._update_all_profiles_info_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_all_profiles_info_with_http_info(
@@ -421,9 +407,7 @@ class SchemaProfilesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -477,9 +461,7 @@ class SchemaProfilesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaProfilesProfile, None]
         """
-        data = self._update_profile_with_http_info(
-            profile_guid, body, _return_http_data_only=True
-        )
+        data = self._update_profile_with_http_info(profile_guid, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_profile_with_http_info(
@@ -527,9 +509,7 @@ class SchemaProfilesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

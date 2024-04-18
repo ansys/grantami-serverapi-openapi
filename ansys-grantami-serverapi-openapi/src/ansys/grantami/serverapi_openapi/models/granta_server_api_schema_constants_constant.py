@@ -120,9 +120,7 @@ class GrantaServerApiSchemaConstantsConstant(ModelBase):
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaConstantsConstant.
 
         Parameters

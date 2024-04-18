@@ -192,9 +192,7 @@ class GrantaServerApiListsDtoUpdateRecordListPermissionFlags(ModelBase):
             raise ValueError("Invalid value for 'is_administrator', must not be 'None'")
         # Field is required
         if is_administrator is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_administrator', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_administrator', must not be 'Unset'")
         self._is_administrator = is_administrator
 
     @property
@@ -249,9 +247,7 @@ class GrantaServerApiListsDtoUpdateRecordListPermissionFlags(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiListsDtoUpdateRecordListPermissionFlags
-        ):
+        if not isinstance(other, GrantaServerApiListsDtoUpdateRecordListPermissionFlags):
             return False
 
         return self.__dict__ == other.__dict__

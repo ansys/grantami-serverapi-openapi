@@ -190,9 +190,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         return self._attributes
 
     @attributes.setter
-    def attributes(
-        self, attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]"
-    ) -> None:
+    def attributes(self, attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]") -> None:
         """Sets the attributes of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters

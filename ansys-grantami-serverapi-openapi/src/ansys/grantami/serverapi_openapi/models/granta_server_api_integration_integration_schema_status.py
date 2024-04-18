@@ -200,9 +200,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._loaded_databases
 
     @loaded_databases.setter
-    def loaded_databases(
-        self, loaded_databases: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def loaded_databases(self, loaded_databases: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Loaded databases have been successfully indexed into the integration schema.
 
@@ -226,9 +224,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._loading_databases
 
     @loading_databases.setter
-    def loading_databases(
-        self, loading_databases: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def loading_databases(self, loading_databases: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the loading_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases which are in the process of loading.
 
@@ -333,9 +329,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._search_index_up_to_date
 
     @search_index_up_to_date.setter
-    def search_index_up_to_date(
-        self, search_index_up_to_date: "Union[bool, Unset_Type]"
-    ) -> None:
+    def search_index_up_to_date(self, search_index_up_to_date: "Union[bool, Unset_Type]") -> None:
         """Sets the search_index_up_to_date of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Whether all changes up to and including the most recent database revision have been sent to the search index. This will return true  even if some of those revisions could not be indexed
 
@@ -346,9 +340,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         """
         # Field is not nullable
         if search_index_up_to_date is None:
-            raise ValueError(
-                "Invalid value for 'search_index_up_to_date', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_index_up_to_date', must not be 'None'")
         self._search_index_up_to_date = search_index_up_to_date
 
     @property
@@ -390,9 +382,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._search_index_in_sync
 
     @search_index_in_sync.setter
-    def search_index_in_sync(
-        self, search_index_in_sync: "Union[bool, Unset_Type]"
-    ) -> None:
+    def search_index_in_sync(self, search_index_in_sync: "Union[bool, Unset_Type]") -> None:
         """Sets the search_index_in_sync of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Returns false if the search index is out of sync with the database (i.e. because changes were made that could not be indexed)
 
@@ -403,9 +393,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         """
         # Field is not nullable
         if search_index_in_sync is None:
-            raise ValueError(
-                "Invalid value for 'search_index_in_sync', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_index_in_sync', must not be 'None'")
         self._search_index_in_sync = search_index_in_sync
 
     @property
@@ -421,9 +409,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._search_index_location
 
     @search_index_location.setter
-    def search_index_location(
-        self, search_index_location: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def search_index_location(self, search_index_location: "Union[str, None, Unset_Type]") -> None:
         """Sets the search_index_location of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         The location of the index.
 
@@ -472,9 +458,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         return self._disk_status
 
     @disk_status.setter
-    def disk_status(
-        self, disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]"
-    ) -> None:
+    def disk_status(self, disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]") -> None:
         """Sets the disk_status of this GrantaServerApiIntegrationIntegrationSchemaStatus.
 
         Parameters

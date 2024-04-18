@@ -105,9 +105,9 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self._interpolation_method: Union[
             GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type
         ] = Unset
-        self._scale_type: Union[
-            GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type
-        ] = Unset
+        self._scale_type: Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type] = (
+            Unset
+        )
 
         if parameter_guid is not Unset:
             self.parameter_guid = parameter_guid
@@ -168,9 +168,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @property
     def interpolation_method(
         self,
-    ) -> (
-        "Union[GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type]"
-    ):
+    ) -> "Union[GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type]":
         """Gets the interpolation_method of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter.
 
         Returns
@@ -194,9 +192,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         """
         # Field is not nullable
         if interpolation_method is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_method', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_method', must not be 'None'")
         self._interpolation_method = interpolation_method
 
     @property

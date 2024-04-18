@@ -121,9 +121,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         return self._target_database_guid
 
     @target_database_guid.setter
-    def target_database_guid(
-        self, target_database_guid: "Union[str, Unset_Type]"
-    ) -> None:
+    def target_database_guid(self, target_database_guid: "Union[str, Unset_Type]") -> None:
         """Sets the target_database_guid of this GrantaServerApiSchemaAttributesTabularAttributeTarget.
 
         Parameters
@@ -133,9 +131,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         """
         # Field is not nullable
         if target_database_guid is None:
-            raise ValueError(
-                "Invalid value for 'target_database_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'target_database_guid', must not be 'None'")
         self._target_database_guid = target_database_guid
 
     @property
@@ -162,9 +158,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         """
         # Field is not nullable
         if target_database_version_guid is None:
-            raise ValueError(
-                "Invalid value for 'target_database_version_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'target_database_version_guid', must not be 'None'")
         self._target_database_version_guid = target_database_version_guid
 
     @property
@@ -189,9 +183,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         """
         # Field is not nullable
         if target_table_guid is None:
-            raise ValueError(
-                "Invalid value for 'target_table_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'target_table_guid', must not be 'None'")
         self._target_table_guid = target_table_guid
 
     @property
@@ -206,9 +198,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         return self._target_attribute_guid
 
     @target_attribute_guid.setter
-    def target_attribute_guid(
-        self, target_attribute_guid: "Union[str, Unset_Type]"
-    ) -> None:
+    def target_attribute_guid(self, target_attribute_guid: "Union[str, Unset_Type]") -> None:
         """Sets the target_attribute_guid of this GrantaServerApiSchemaAttributesTabularAttributeTarget.
 
         Parameters
@@ -218,9 +208,7 @@ class GrantaServerApiSchemaAttributesTabularAttributeTarget(ModelBase):
         """
         # Field is not nullable
         if target_attribute_guid is None:
-            raise ValueError(
-                "Invalid value for 'target_attribute_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'target_attribute_guid', must not be 'None'")
         self._target_attribute_guid = target_attribute_guid
 
     @classmethod

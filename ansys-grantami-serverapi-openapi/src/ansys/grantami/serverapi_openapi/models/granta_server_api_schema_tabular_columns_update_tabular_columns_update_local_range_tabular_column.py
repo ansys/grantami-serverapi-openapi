@@ -141,9 +141,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         self._default_threshold_type: Union[
             GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type
         ] = Unset
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
 
         self.column_type = column_type
         if default_threshold_type is not Unset:
@@ -206,9 +204,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         self._default_threshold_type = default_threshold_type
 
     @property
@@ -223,9 +219,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTab
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalRangeTabularColumn.
 
         Parameters

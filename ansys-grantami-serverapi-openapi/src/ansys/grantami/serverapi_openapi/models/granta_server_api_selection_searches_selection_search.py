@@ -130,9 +130,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         self._name: Union[str, None, Unset_Type] = Unset
         self._description: Union[str, None, Unset_Type] = Unset
         self._notes: Union[str, None, Unset_Type] = Unset
-        self._current_user_access_info: Union[
-            Dict[str, Dict[str, bool]], None, Unset_Type
-        ] = Unset
+        self._current_user_access_info: Union[Dict[str, Dict[str, bool]], None, Unset_Type] = Unset
         self._criteria: Union[str, None, Unset_Type] = Unset
         self._explore_config: Union[str, None, Unset_Type] = Unset
         self._created_timestamp: Union[datetime, Unset_Type] = Unset
@@ -189,9 +187,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         """
         # Field is not nullable
         if search_identifier is None:
-            raise ValueError(
-                "Invalid value for 'search_identifier', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_identifier', must not be 'None'")
         self._search_identifier = search_identifier
 
     @property
@@ -343,9 +339,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         return self._created_timestamp
 
     @created_timestamp.setter
-    def created_timestamp(
-        self, created_timestamp: "Union[datetime, Unset_Type]"
-    ) -> None:
+    def created_timestamp(self, created_timestamp: "Union[datetime, Unset_Type]") -> None:
         """Sets the created_timestamp of this GrantaServerApiSelectionSearchesSelectionSearch.
 
         Parameters
@@ -355,9 +349,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         """
         # Field is not nullable
         if created_timestamp is None:
-            raise ValueError(
-                "Invalid value for 'created_timestamp', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'created_timestamp', must not be 'None'")
         self._created_timestamp = created_timestamp
 
     @property
@@ -387,9 +379,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         """
         # Field is not nullable
         if created_user_or_group is None:
-            raise ValueError(
-                "Invalid value for 'created_user_or_group', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'created_user_or_group', must not be 'None'")
         self._created_user_or_group = created_user_or_group
 
     @property
@@ -416,9 +406,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         """
         # Field is not nullable
         if last_modified_timestamp is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_timestamp', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_timestamp', must not be 'None'")
         self._last_modified_timestamp = last_modified_timestamp
 
     @property
@@ -448,9 +436,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         """
         # Field is not nullable
         if last_modified_user_or_group is None:
-            raise ValueError(
-                "Invalid value for 'last_modified_user_or_group', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'last_modified_user_or_group', must not be 'None'")
         self._last_modified_user_or_group = last_modified_user_or_group
 
     @classmethod

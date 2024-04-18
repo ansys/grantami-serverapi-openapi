@@ -163,14 +163,10 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         """
         # Field is not nullable
         if regular_expression is None:
-            raise ValueError(
-                "Invalid value for 'regular_expression', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
         # Field is required
         if regular_expression is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'regular_expression', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'regular_expression', must not be 'Unset'")
         self._regular_expression = regular_expression
 
     @property
@@ -200,14 +196,10 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         """
         # Field is not nullable
         if used_by_attributes is None:
-            raise ValueError(
-                "Invalid value for 'used_by_attributes', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'used_by_attributes', must not be 'None'")
         # Field is required
         if used_by_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'used_by_attributes', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'used_by_attributes', must not be 'Unset'")
         self._used_by_attributes = used_by_attributes
 
     @property

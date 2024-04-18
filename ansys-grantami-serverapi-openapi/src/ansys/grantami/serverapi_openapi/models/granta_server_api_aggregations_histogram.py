@@ -85,9 +85,9 @@ class GrantaServerApiAggregationsHistogram(ModelBase):
         ----------
         buckets: List[GrantaServerApiAggregationsHistogramBucket], optional
         """
-        self._buckets: Union[
-            List[GrantaServerApiAggregationsHistogramBucket], None, Unset_Type
-        ] = Unset
+        self._buckets: Union[List[GrantaServerApiAggregationsHistogramBucket], None, Unset_Type] = (
+            Unset
+        )
 
         if buckets is not Unset:
             self.buckets = buckets

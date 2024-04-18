@@ -125,9 +125,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateCrossDatabaseRecordLinkGroup(
         return self._include_indirect_links
 
     @include_indirect_links.setter
-    def include_indirect_links(
-        self, include_indirect_links: "Union[bool, Unset_Type]"
-    ) -> None:
+    def include_indirect_links(self, include_indirect_links: "Union[bool, Unset_Type]") -> None:
         """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsUpdateCrossDatabaseRecordLinkGroup.
 
         Parameters
@@ -137,9 +135,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateCrossDatabaseRecordLinkGroup(
         """
         # Field is not nullable
         if include_indirect_links is None:
-            raise ValueError(
-                "Invalid value for 'include_indirect_links', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_indirect_links', must not be 'None'")
         self._include_indirect_links = include_indirect_links
 
     @property

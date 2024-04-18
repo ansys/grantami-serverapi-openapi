@@ -98,9 +98,7 @@ class GrantaServerApiSchemaExpressionsCreateExpression(ModelBase):
         unit: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         """
         self._value: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._name: str
         self._guid: Union[str, Unset_Type] = Unset
 
@@ -151,9 +149,7 @@ class GrantaServerApiSchemaExpressionsCreateExpression(ModelBase):
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaExpressionsCreateExpression.
 
         Parameters

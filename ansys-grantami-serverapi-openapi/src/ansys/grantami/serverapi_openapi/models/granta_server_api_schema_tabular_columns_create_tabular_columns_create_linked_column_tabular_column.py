@@ -178,9 +178,7 @@ class GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLinkedColumnT
         return self._linked_column
 
     @linked_column.setter
-    def linked_column(
-        self, linked_column: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
-    ) -> None:
+    def linked_column(self, linked_column: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the linked_column of this GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateLinkedColumnTabularColumn.
 
         Parameters

@@ -118,9 +118,7 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
         return self._ancestor_identity
 
     @ancestor_identity.setter
-    def ancestor_identity(
-        self, ancestor_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def ancestor_identity(self, ancestor_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the ancestor_identity of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Parameters
@@ -142,9 +140,7 @@ class GrantaServerApiSearchRecordAncestorCriterion(GrantaServerApiSearchCriterio
         return self._direct_parent_only
 
     @direct_parent_only.setter
-    def direct_parent_only(
-        self, direct_parent_only: "Union[bool, None, Unset_Type]"
-    ) -> None:
+    def direct_parent_only(self, direct_parent_only: "Union[bool, None, Unset_Type]") -> None:
         """Sets the direct_parent_only of this GrantaServerApiSearchRecordAncestorCriterion.
 
         Parameters

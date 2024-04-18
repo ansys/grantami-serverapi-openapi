@@ -115,14 +115,10 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair(ModelBase):
         """
         # Field is not nullable
         if attribute_source_guid is None:
-            raise ValueError(
-                "Invalid value for 'attribute_source_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_source_guid', must not be 'None'")
         # Field is required
         if attribute_source_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_source_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_source_guid', must not be 'Unset'")
         self._attribute_source_guid = attribute_source_guid
 
     @property
@@ -147,14 +143,10 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair(ModelBase):
         """
         # Field is not nullable
         if attribute_target_guid is None:
-            raise ValueError(
-                "Invalid value for 'attribute_target_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_target_guid', must not be 'None'")
         # Field is required
         if attribute_target_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_target_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_target_guid', must not be 'Unset'")
         self._attribute_target_guid = attribute_target_guid
 
     @classmethod
@@ -179,9 +171,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair):
             return False
 
         return self.__dict__ == other.__dict__

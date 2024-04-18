@@ -67,9 +67,7 @@ class SchemaUnitsApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaUnitsUnit, None]
         """
-        data = self._create_unit_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
+        data = self._create_unit_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_unit_with_http_info(
@@ -89,9 +87,7 @@ class SchemaUnitsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method create_unit"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method create_unit")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -117,9 +113,7 @@ class SchemaUnitsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -223,9 +217,7 @@ class SchemaUnitsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -293,9 +285,7 @@ class SchemaUnitsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method delete_unit"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_unit")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -349,9 +339,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_unit_system(
-        self, *, database_key: "str", unit_system_guid: "str"
-    ) -> "None":
+    def delete_unit_system(self, *, database_key: "str", unit_system_guid: "str") -> "None":
         """Delete a unit system.
 
         This method makes a synchronous HTTP request.
@@ -508,9 +496,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitsInfo",
@@ -549,14 +535,10 @@ class SchemaUnitsApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaUnitsUnit, None]
         """
-        data = self._get_unit_with_http_info(
-            database_key, unit_guid, _return_http_data_only=True
-        )
+        data = self._get_unit_with_http_info(database_key, unit_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_unit_with_http_info(
-        self, database_key: "str", unit_guid: "str", **kwargs: Any
-    ) -> Any:
+    def _get_unit_with_http_info(self, database_key: "str", unit_guid: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "unit_guid",
@@ -568,9 +550,7 @@ class SchemaUnitsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_unit"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_unit")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -580,9 +560,7 @@ class SchemaUnitsApi(ApiBase):
             )
         # verify the required parameter "unit_guid" is set
         if "unit_guid" not in params or params["unit_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'unit_guid' when calling 'get_unit'"
-            )
+            raise ValueError("Missing the required parameter 'unit_guid' when calling 'get_unit'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -601,9 +579,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnit",
@@ -694,9 +670,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitEquivalentsInfo",
@@ -787,9 +761,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitSystem",
@@ -827,14 +799,10 @@ class SchemaUnitsApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]
         """
-        data = self._get_unit_systems_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_unit_systems_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_unit_systems_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_unit_systems_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -871,9 +839,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitSystemsInfo",
@@ -964,9 +930,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitUsage",
@@ -1018,9 +982,7 @@ class SchemaUnitsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_units"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_units")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -1044,9 +1006,7 @@ class SchemaUnitsApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaUnitsUnitsInfo",
@@ -1143,10 +1103,7 @@ class SchemaUnitsApi(ApiBase):
                 "Missing the required parameter 'unit_system_guid' when calling 'set_unit_equivalent'"
             )
         # verify the required parameter "equivalent_unit_guid" is set
-        if (
-            "equivalent_unit_guid" not in params
-            or params["equivalent_unit_guid"] is None
-        ):
+        if "equivalent_unit_guid" not in params or params["equivalent_unit_guid"] is None:
             raise ValueError(
                 "Missing the required parameter 'equivalent_unit_guid' when calling 'set_unit_equivalent'"
             )
@@ -1238,9 +1195,7 @@ class SchemaUnitsApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_unit"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method update_unit")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -1273,9 +1228,7 @@ class SchemaUnitsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -1390,9 +1343,7 @@ class SchemaUnitsApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

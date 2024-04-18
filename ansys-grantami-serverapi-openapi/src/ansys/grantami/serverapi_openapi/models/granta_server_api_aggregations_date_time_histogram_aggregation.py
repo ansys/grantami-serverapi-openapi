@@ -96,9 +96,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
         histogram: GrantaServerApiAggregationsDateTimeHistogram, optional
         """
         super().__init__()
-        self._histogram: Union[
-            GrantaServerApiAggregationsDateTimeHistogram, Unset_Type
-        ] = Unset
+        self._histogram: Union[GrantaServerApiAggregationsDateTimeHistogram, Unset_Type] = Unset
         self._datum_type: str
 
         if histogram is not Unset:
@@ -185,9 +183,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsDateTimeHistogramAggregation
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsDateTimeHistogramAggregation):
             return False
 
         return self.__dict__ == other.__dict__

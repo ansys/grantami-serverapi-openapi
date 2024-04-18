@@ -99,16 +99,14 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
         parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
         scale_type: GrantaServerApiSchemaAttributesAttributeScaleType, optional
         """
-        self._parameter: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
-        ] = Unset
+        self._parameter: Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type] = Unset
         self._default_value: Union[float, None, Unset_Type] = Unset
         self._interpolation_method: Union[
             GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type
         ] = Unset
-        self._scale_type: Union[
-            GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type
-        ] = Unset
+        self._scale_type: Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type] = (
+            Unset
+        )
 
         if parameter is not Unset:
             self.parameter = parameter
@@ -174,9 +172,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
     @property
     def interpolation_method(
         self,
-    ) -> (
-        "Union[GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type]"
-    ):
+    ) -> "Union[GrantaServerApiSchemaAttributesAttributeInterpolationMethod, Unset_Type]":
         """Gets the interpolation_method of this GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter.
 
         Returns
@@ -200,9 +196,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
         """
         # Field is not nullable
         if interpolation_method is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_method', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_method', must not be 'None'")
         self._interpolation_method = interpolation_method
 
     @property
@@ -257,9 +251,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter):
             return False
 
         return self.__dict__ == other.__dict__

@@ -210,9 +210,7 @@ class GrantaServerApiSearchAttributeSortCriterion(GrantaServerApiSearchSortCrite
         return self._sort_type
 
     @sort_type.setter
-    def sort_type(
-        self, sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]"
-    ) -> None:
+    def sort_type(self, sort_type: "Union[GrantaServerApiSearchSortType, Unset_Type]") -> None:
         """Sets the sort_type of this GrantaServerApiSearchAttributeSortCriterion.
 
         Parameters

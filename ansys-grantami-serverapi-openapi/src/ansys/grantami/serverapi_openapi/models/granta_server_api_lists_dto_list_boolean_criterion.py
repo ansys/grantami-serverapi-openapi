@@ -99,12 +99,8 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         type: str
         """
         super().__init__()
-        self._match_any: Union[
-            List[GrantaServerApiListsDtoListCriterion], None, Unset_Type
-        ] = Unset
-        self._match_all: Union[
-            List[GrantaServerApiListsDtoListCriterion], None, Unset_Type
-        ] = Unset
+        self._match_any: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
+        self._match_all: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
         self._type: str
 
         if match_any is not Unset:

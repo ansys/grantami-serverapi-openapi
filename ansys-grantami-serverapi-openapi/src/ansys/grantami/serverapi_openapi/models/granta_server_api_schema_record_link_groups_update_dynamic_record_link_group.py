@@ -187,9 +187,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
         """
         # Field is not nullable
         if referential_integrity_model is None:
-            raise ValueError(
-                "Invalid value for 'referential_integrity_model', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'referential_integrity_model', must not be 'None'")
         self._referential_integrity_model = referential_integrity_model
 
     @property
@@ -272,9 +270,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup):
             return False
 
         return self.__dict__ == other.__dict__

@@ -113,9 +113,7 @@ class GrantaServerApiListsDtoCreateRecordList(ModelBase):
         notes: str, optional
         published: bool, optional
         """
-        self._items: Union[
-            GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type
-        ] = Unset
+        self._items: Union[GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type] = Unset
         self._identifier: Union[str, None, Unset_Type] = Unset
         self._name: str
         self._description: Union[str, None, Unset_Type] = Unset
@@ -311,9 +309,7 @@ class GrantaServerApiListsDtoCreateRecordList(ModelBase):
         """
         # Field is not nullable
         if awaiting_approval is None:
-            raise ValueError(
-                "Invalid value for 'awaiting_approval', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'awaiting_approval', must not be 'None'")
         self._awaiting_approval = awaiting_approval
 
     @property

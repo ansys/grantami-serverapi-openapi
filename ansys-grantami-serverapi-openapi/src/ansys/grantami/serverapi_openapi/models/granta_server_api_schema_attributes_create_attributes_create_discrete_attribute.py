@@ -175,9 +175,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute(
         return self._discrete_type
 
     @discrete_type.setter
-    def discrete_type(
-        self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
-    ) -> None:
+    def discrete_type(self, discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the discrete_type of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteAttribute.
 
         Parameters

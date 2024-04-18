@@ -155,16 +155,12 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
             raise ValueError(
                 "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
             )
-        self._attribute_aggregation_criterion_type = (
-            attribute_aggregation_criterion_type
-        )
+        self._attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
 
     @property
     def inner_criterion(
         self,
-    ) -> (
-        "Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]"
-    ):
+    ) -> "Union[GrantaServerApiAggregationsAggregationDatumExistsCriterion, Unset_Type]":
         """Gets the inner_criterion of this GrantaServerApiAggregationsAttributeAggregationExistsCriterion.
 
         Returns
@@ -213,9 +209,7 @@ class GrantaServerApiAggregationsAttributeAggregationExistsCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsAttributeAggregationExistsCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsAttributeAggregationExistsCriterion):
             return False
 
         return self.__dict__ == other.__dict__

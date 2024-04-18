@@ -135,9 +135,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         axis_name: str, optional
         help_path: str, optional
         """
-        self._default_threshold_type: (
-            GrantaServerApiSchemaAttributesAttributeThresholdType
-        )
+        self._default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
         self._axis_name: Union[str, None, Unset_Type] = Unset
         self._help_path: Union[str, None, Unset_Type] = Unset
         self._about_attribute: Union[
@@ -187,14 +185,10 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         # Field is required
         if default_threshold_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'Unset'")
         self._default_threshold_type = default_threshold_type
 
     @property
@@ -283,9 +277,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         return self._info
 
     @info.setter
-    def info(
-        self, info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo"
-    ) -> None:
+    def info(self, info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo") -> None:
         """Sets the info of this GrantaServerApiSchemaAttributesAttribute.
 
         Parameters

@@ -89,9 +89,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter(ModelB
         default_value: float, optional
         parameter: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
         """
-        self._parameter: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
-        ] = Unset
+        self._parameter: Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type] = Unset
         self._default_value: Union[float, None, Unset_Type] = Unset
 
         if parameter is not Unset:

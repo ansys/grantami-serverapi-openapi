@@ -100,9 +100,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         type: str
         """
         super().__init__()
-        self._interval: Union[
-            GrantaServerApiAggregationsCalendarInterval, Unset_Type
-        ] = Unset
+        self._interval: Union[GrantaServerApiAggregationsCalendarInterval, Unset_Type] = Unset
         self._offset: Union[str, None, Unset_Type] = Unset
         self._type: str
 

@@ -135,15 +135,11 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         self._is_unitted: Union[bool, None, Unset_Type] = Unset
         self._discrete_type_guid: Union[str, None, Unset_Type] = Unset
         self._parameters: Union[
-            List[
-                GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo
-            ],
+            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo],
             None,
             Unset_Type,
         ] = Unset
-        self._target_database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = (
-            Unset
-        )
+        self._target_database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._target_table: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._graph_type: Union[str, None, Unset_Type] = Unset
         self._x_axis_parameter: Union[str, None, Unset_Type] = Unset
@@ -304,9 +300,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         return self._discrete_type_guid
 
     @discrete_type_guid.setter
-    def discrete_type_guid(
-        self, discrete_type_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def discrete_type_guid(self, discrete_type_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the discrete_type_guid of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         A discrete attribute must define the guid of its discrete type (i.e. list of possible values)
 
@@ -437,9 +431,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         return self._x_axis_parameter
 
     @x_axis_parameter.setter
-    def x_axis_parameter(
-        self, x_axis_parameter: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def x_axis_parameter(self, x_axis_parameter: "Union[str, None, Unset_Type]") -> None:
         """Sets the x_axis_parameter of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         A float functional attribute must define an x-axis. This will be one of the parameters listed in parameters
 
@@ -472,9 +464,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute
-        ):
+        if not isinstance(other, GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute):
             return False
 
         return self.__dict__ == other.__dict__

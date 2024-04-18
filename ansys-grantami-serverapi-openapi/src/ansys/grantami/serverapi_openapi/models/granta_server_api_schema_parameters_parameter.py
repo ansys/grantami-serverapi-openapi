@@ -163,9 +163,7 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         """
         # Field is not nullable
         if default_parameter_value_guid is None:
-            raise ValueError(
-                "Invalid value for 'default_parameter_value_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_parameter_value_guid', must not be 'None'")
         # Field is required
         if default_parameter_value_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(

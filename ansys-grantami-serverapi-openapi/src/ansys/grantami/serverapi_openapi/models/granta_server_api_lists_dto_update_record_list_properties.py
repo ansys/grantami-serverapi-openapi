@@ -236,9 +236,7 @@ class GrantaServerApiListsDtoUpdateRecordListProperties(ModelBase):
         """
         # Field is not nullable
         if awaiting_approval is None:
-            raise ValueError(
-                "Invalid value for 'awaiting_approval', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'awaiting_approval', must not be 'None'")
         self._awaiting_approval = awaiting_approval
 
     @property

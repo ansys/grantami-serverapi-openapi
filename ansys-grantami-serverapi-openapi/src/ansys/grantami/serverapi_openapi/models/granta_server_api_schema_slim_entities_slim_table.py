@@ -145,14 +145,10 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_browse is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
         # Field is required
         if is_hidden_from_browse is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_browse', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'Unset'")
         self._is_hidden_from_browse = is_hidden_from_browse
 
     @property
@@ -177,14 +173,10 @@ class GrantaServerApiSchemaSlimEntitiesSlimTable(ModelBase):
         """
         # Field is not nullable
         if is_hidden_from_search is None:
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
         # Field is required
         if is_hidden_from_search is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_hidden_from_search', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'Unset'")
         self._is_hidden_from_search = is_hidden_from_search
 
     @property

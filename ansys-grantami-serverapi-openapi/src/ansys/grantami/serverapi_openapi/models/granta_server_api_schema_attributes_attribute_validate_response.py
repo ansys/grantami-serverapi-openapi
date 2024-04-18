@@ -142,9 +142,7 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
         return self._has_validation_rules
 
     @has_validation_rules.setter
-    def has_validation_rules(
-        self, has_validation_rules: "Union[bool, Unset_Type]"
-    ) -> None:
+    def has_validation_rules(self, has_validation_rules: "Union[bool, Unset_Type]") -> None:
         """Sets the has_validation_rules of this GrantaServerApiSchemaAttributesAttributeValidateResponse.
         Gets whether the attribute has any validation rules that were checked.
 
@@ -155,9 +153,7 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
         """
         # Field is not nullable
         if has_validation_rules is None:
-            raise ValueError(
-                "Invalid value for 'has_validation_rules', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'has_validation_rules', must not be 'None'")
         self._has_validation_rules = has_validation_rules
 
     @property
@@ -206,9 +202,7 @@ class GrantaServerApiSchemaAttributesAttributeValidateResponse(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesAttributeValidateResponse
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesAttributeValidateResponse):
             return False
 
         return self.__dict__ == other.__dict__

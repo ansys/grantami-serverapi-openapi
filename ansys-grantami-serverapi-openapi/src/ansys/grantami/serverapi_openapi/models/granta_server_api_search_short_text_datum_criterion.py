@@ -99,9 +99,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         """
         super().__init__()
         self._value: Union[str, None, Unset_Type] = Unset
-        self._text_match_behavior: Union[
-            GrantaServerApiSearchTextMatchBehavior, Unset_Type
-        ] = Unset
+        self._text_match_behavior: Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type] = Unset
         self._type: str
 
         if value is not Unset:
@@ -159,9 +157,7 @@ class GrantaServerApiSearchShortTextDatumCriterion(GrantaServerApiSearchDatumCri
         """
         # Field is not nullable
         if text_match_behavior is None:
-            raise ValueError(
-                "Invalid value for 'text_match_behavior', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'text_match_behavior', must not be 'None'")
         self._text_match_behavior = text_match_behavior
 
     @property

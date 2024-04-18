@@ -237,14 +237,10 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         # Field is required
         if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'Unset'")
         self._attribute_parameters = attribute_parameters
 
     @classmethod
@@ -269,9 +265,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesDiscreteFunctionalAttribute):
             return False
 
         return self.__dict__ == other.__dict__

@@ -153,14 +153,10 @@ class SelectionSearchesApi(ApiBase):
         -------
         None
         """
-        data = self._delete_search_with_http_info(
-            search_identifier, _return_http_data_only=True
-        )
+        data = self._delete_search_with_http_info(search_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _delete_search_with_http_info(
-        self, search_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _delete_search_with_http_info(self, search_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "search_identifier",
             "_return_http_data_only",
@@ -239,9 +235,7 @@ class SelectionSearchesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_all"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_all")
             params[key] = val
         del params["kwargs"]
 
@@ -298,14 +292,10 @@ class SelectionSearchesApi(ApiBase):
         -------
         Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
         """
-        data = self._get_search_with_http_info(
-            search_identifier, _return_http_data_only=True
-        )
+        data = self._get_search_with_http_info(search_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_search_with_http_info(
-        self, search_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _get_search_with_http_info(self, search_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "search_identifier",
             "_return_http_data_only",
@@ -316,9 +306,7 @@ class SelectionSearchesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_search"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_search")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
@@ -410,9 +398,7 @@ class SelectionSearchesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method save_search"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method save_search")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "search_identifier" is set
@@ -505,9 +491,7 @@ class SelectionSearchesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method search"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method search")
             params[key] = val
         del params["kwargs"]
 

@@ -143,9 +143,9 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         )
         self._datum_type: str
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
-        self._x_axis_parameter: Union[
-            GrantaServerApiFunctionalDatumParameterInfo, Unset_Type
-        ] = Unset
+        self._x_axis_parameter: Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type] = (
+            Unset
+        )
         self._parameters: Union[
             List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
         ] = Unset

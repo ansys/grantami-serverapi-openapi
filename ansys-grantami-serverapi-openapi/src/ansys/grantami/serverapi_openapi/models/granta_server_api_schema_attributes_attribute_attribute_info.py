@@ -144,12 +144,8 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
             List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
         self._standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._primary_data_link_groups: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
-        self._foreign_data_link_groups: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
+        self._primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._primary_dynamic_link_groups: Union[
             List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
@@ -335,14 +331,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         """
         # Field is not nullable
         if is_meta_attribute is None:
-            raise ValueError(
-                "Invalid value for 'is_meta_attribute', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
         # Field is required
         if is_meta_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'is_meta_attribute', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'is_meta_attribute', must not be 'Unset'")
         self._is_meta_attribute = is_meta_attribute
 
     @property
@@ -431,14 +423,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         """
         # Field is not nullable
         if primary_data_link_groups is None:
-            raise ValueError(
-                "Invalid value for 'primary_data_link_groups', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'primary_data_link_groups', must not be 'None'")
         # Field is required
         if primary_data_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'primary_data_link_groups', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'primary_data_link_groups', must not be 'Unset'")
         self._primary_data_link_groups = primary_data_link_groups
 
     @property
@@ -468,14 +456,10 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         """
         # Field is not nullable
         if foreign_data_link_groups is None:
-            raise ValueError(
-                "Invalid value for 'foreign_data_link_groups', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'foreign_data_link_groups', must not be 'None'")
         # Field is required
         if foreign_data_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'foreign_data_link_groups', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'foreign_data_link_groups', must not be 'Unset'")
         self._foreign_data_link_groups = foreign_data_link_groups
 
     @property

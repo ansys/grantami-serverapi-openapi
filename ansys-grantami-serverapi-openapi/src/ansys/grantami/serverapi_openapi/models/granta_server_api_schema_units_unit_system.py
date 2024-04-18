@@ -119,9 +119,7 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         return self._unit_mappings
 
     @unit_mappings.setter
-    def unit_mappings(
-        self, unit_mappings: "List[GrantaServerApiSchemaUnitsUnitMapping]"
-    ) -> None:
+    def unit_mappings(self, unit_mappings: "List[GrantaServerApiSchemaUnitsUnitMapping]") -> None:
         """Sets the unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
 
         Parameters

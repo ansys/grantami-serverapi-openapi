@@ -93,9 +93,7 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
         warnings: List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], optional
         """
         self._warnings: Union[
-            List[
-                GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail
-            ],
+            List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail],
             None,
             Unset_Type,
         ] = Unset

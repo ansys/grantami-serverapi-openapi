@@ -160,9 +160,7 @@ class GrantaServerApiIntegrationSchemaLayout(ModelBase):
         return self._attribute_guids
 
     @attribute_guids.setter
-    def attribute_guids(
-        self, attribute_guids: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def attribute_guids(self, attribute_guids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the attribute_guids of this GrantaServerApiIntegrationSchemaLayout.
 
         Parameters

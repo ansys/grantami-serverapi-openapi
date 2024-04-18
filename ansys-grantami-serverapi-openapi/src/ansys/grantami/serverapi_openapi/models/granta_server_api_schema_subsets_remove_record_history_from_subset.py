@@ -109,14 +109,10 @@ class GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset(ModelBase):
         """
         # Field is not nullable
         if record_history_guid is None:
-            raise ValueError(
-                "Invalid value for 'record_history_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
         # Field is required
         if record_history_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'record_history_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'Unset'")
         self._record_history_guid = record_history_guid
 
     @classmethod
@@ -141,9 +137,7 @@ class GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset
-        ):
+        if not isinstance(other, GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset):
             return False
 
         return self.__dict__ == other.__dict__

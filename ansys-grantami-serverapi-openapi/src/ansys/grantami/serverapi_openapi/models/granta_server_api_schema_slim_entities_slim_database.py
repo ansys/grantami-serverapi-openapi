@@ -322,9 +322,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimDatabase(ModelBase):
         return self._index_up_to_date
 
     @index_up_to_date.setter
-    def index_up_to_date(
-        self, index_up_to_date: "Union[bool, None, Unset_Type]"
-    ) -> None:
+    def index_up_to_date(self, index_up_to_date: "Union[bool, None, Unset_Type]") -> None:
         """Sets the index_up_to_date of this GrantaServerApiSchemaSlimEntitiesSlimDatabase.
 
         Parameters

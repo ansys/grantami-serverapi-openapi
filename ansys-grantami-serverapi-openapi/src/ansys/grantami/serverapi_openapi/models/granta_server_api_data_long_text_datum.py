@@ -144,9 +144,7 @@ class GrantaServerApiDataLongTextDatum(GrantaServerApiDataApplicableDatum):
         return self._rich_text_value
 
     @rich_text_value.setter
-    def rich_text_value(
-        self, rich_text_value: "GrantaServerApiDataRichTextValue"
-    ) -> None:
+    def rich_text_value(self, rich_text_value: "GrantaServerApiDataRichTextValue") -> None:
         """Sets the rich_text_value of this GrantaServerApiDataLongTextDatum.
 
         Parameters

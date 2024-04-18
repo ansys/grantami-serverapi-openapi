@@ -132,9 +132,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
         return self._any_identities
 
     @any_identities.setter
-    def any_identities(
-        self, any_identities: "Union[List[int], None, Unset_Type]"
-    ) -> None:
+    def any_identities(self, any_identities: "Union[List[int], None, Unset_Type]") -> None:
         """Sets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
@@ -248,9 +246,7 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion
-        ):
+        if not isinstance(other, GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion):
             return False
 
         return self.__dict__ == other.__dict__

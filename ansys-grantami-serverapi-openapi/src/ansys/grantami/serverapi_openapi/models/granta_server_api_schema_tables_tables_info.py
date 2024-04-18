@@ -85,9 +85,9 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
         ----------
         tables: List[GrantaServerApiSchemaSlimEntitiesSlimTable], optional
         """
-        self._tables: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type
-        ] = Unset
+        self._tables: Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type] = (
+            Unset
+        )
 
         if tables is not Unset:
             self.tables = tables

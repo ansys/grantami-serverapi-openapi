@@ -109,9 +109,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         include_indirect_links: bool, optional
         type: str
         """
-        super().__init__(
-            link_target=link_target, name=name, reverse_name=reverse_name, guid=guid
-        )
+        super().__init__(link_target=link_target, name=name, reverse_name=reverse_name, guid=guid)
         self._type: str
         self._include_indirect_links: Union[bool, Unset_Type] = Unset
 
@@ -159,9 +157,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         return self._include_indirect_links
 
     @include_indirect_links.setter
-    def include_indirect_links(
-        self, include_indirect_links: "Union[bool, Unset_Type]"
-    ) -> None:
+    def include_indirect_links(self, include_indirect_links: "Union[bool, Unset_Type]") -> None:
         """Sets the include_indirect_links of this GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup.
 
         Parameters
@@ -171,9 +167,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
         """
         # Field is not nullable
         if include_indirect_links is None:
-            raise ValueError(
-                "Invalid value for 'include_indirect_links', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_indirect_links', must not be 'None'")
         self._include_indirect_links = include_indirect_links
 
     @classmethod
@@ -198,9 +192,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsCreateStaticRecordLinkGroup):
             return False
 
         return self.__dict__ == other.__dict__

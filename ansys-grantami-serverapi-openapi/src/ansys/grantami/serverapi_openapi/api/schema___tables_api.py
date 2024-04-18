@@ -67,9 +67,7 @@ class SchemaTablesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaTablesTable, None]
         """
-        data = self._create_table_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
+        data = self._create_table_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_table_with_http_info(
@@ -117,9 +115,7 @@ class SchemaTablesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
@@ -222,9 +218,7 @@ class SchemaTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionTableDeletionException",
@@ -317,9 +311,7 @@ class SchemaTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaTablesTable",
@@ -395,9 +387,7 @@ class SchemaTablesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_table"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_table")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -407,9 +397,7 @@ class SchemaTablesApi(ApiBase):
             )
         # verify the required parameter "table_guid" is set
         if "table_guid" not in params or params["table_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'table_guid' when calling 'get_table'"
-            )
+            raise ValueError("Missing the required parameter 'table_guid' when calling 'get_table'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -432,9 +420,7 @@ class SchemaTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaTablesTable",
@@ -504,9 +490,7 @@ class SchemaTablesApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_tables"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_tables")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
@@ -534,9 +518,7 @@ class SchemaTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaTablesTablesInfo",
@@ -627,9 +609,7 @@ class SchemaTablesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaTablesTable",
@@ -734,9 +714,7 @@ class SchemaTablesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

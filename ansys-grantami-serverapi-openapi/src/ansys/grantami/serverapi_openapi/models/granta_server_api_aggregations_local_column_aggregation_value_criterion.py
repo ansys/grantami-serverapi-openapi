@@ -109,9 +109,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
             GrantaServerApiAggregationsAggregationDatumCriterion, Unset_Type
         ] = Unset
 
-        self.local_column_aggregation_criterion_type = (
-            local_column_aggregation_criterion_type
-        )
+        self.local_column_aggregation_criterion_type = local_column_aggregation_criterion_type
         if inner_criterion is not Unset:
             self.inner_criterion = inner_criterion
 
@@ -147,9 +145,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
             raise ValueError(
                 "Invalid value for 'local_column_aggregation_criterion_type', must not be 'Unset'"
             )
-        self._local_column_aggregation_criterion_type = (
-            local_column_aggregation_criterion_type
-        )
+        self._local_column_aggregation_criterion_type = local_column_aggregation_criterion_type
 
     @property
     def inner_criterion(
@@ -203,9 +199,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationValueCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsLocalColumnAggregationValueCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsLocalColumnAggregationValueCriterion):
             return False
 
         return self.__dict__ == other.__dict__

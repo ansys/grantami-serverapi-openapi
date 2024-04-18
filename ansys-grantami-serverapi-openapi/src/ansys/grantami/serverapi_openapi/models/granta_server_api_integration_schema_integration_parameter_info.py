@@ -120,18 +120,14 @@ class GrantaServerApiIntegrationSchemaIntegrationParameterInfo(ModelBase):
         self._identity: Union[int, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
-        self._scale_type: Union[GrantaServerApiParameterInfoScaleType, Unset_Type] = (
-            Unset
-        )
+        self._scale_type: Union[GrantaServerApiParameterInfoScaleType, Unset_Type] = Unset
         self._interpolation_type: Union[
             GrantaServerApiParameterInfoInterpolationType, Unset_Type
         ] = Unset
-        self._parameter_type: Union[
-            GrantaServerApiParameterInfoParameterType, Unset_Type
-        ] = Unset
-        self._default_value: Union[
-            GrantaServerApiDataExportDatumsParameterValue, Unset_Type
-        ] = Unset
+        self._parameter_type: Union[GrantaServerApiParameterInfoParameterType, Unset_Type] = Unset
+        self._default_value: Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type] = (
+            Unset
+        )
 
         if name is not Unset:
             self.name = name
@@ -295,9 +291,7 @@ class GrantaServerApiIntegrationSchemaIntegrationParameterInfo(ModelBase):
         """
         # Field is not nullable
         if interpolation_type is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_type', must not be 'None'")
         self._interpolation_type = interpolation_type
 
     @property
@@ -382,9 +376,7 @@ class GrantaServerApiIntegrationSchemaIntegrationParameterInfo(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiIntegrationSchemaIntegrationParameterInfo
-        ):
+        if not isinstance(other, GrantaServerApiIntegrationSchemaIntegrationParameterInfo):
             return False
 
         return self.__dict__ == other.__dict__

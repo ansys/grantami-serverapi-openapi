@@ -66,9 +66,7 @@ class SchemaApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_version"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_version")
             params[key] = val
         del params["kwargs"]
 
@@ -85,9 +83,7 @@ class SchemaApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiAdminMiVersion",

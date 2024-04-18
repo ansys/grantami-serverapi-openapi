@@ -109,14 +109,10 @@ class GrantaServerApiListsDtoRecordListSearchInfo(ModelBase):
         """
         # Field is not nullable
         if search_result_identifier is None:
-            raise ValueError(
-                "Invalid value for 'search_result_identifier', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_result_identifier', must not be 'None'")
         # Field is required
         if search_result_identifier is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'search_result_identifier', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'search_result_identifier', must not be 'Unset'")
         self._search_result_identifier = search_result_identifier
 
     @classmethod

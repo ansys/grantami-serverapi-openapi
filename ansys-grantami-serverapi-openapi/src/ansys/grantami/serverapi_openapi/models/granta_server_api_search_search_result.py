@@ -166,9 +166,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         self._parent_identity: Union[int, None, Unset_Type] = Unset
         self._type: Union[GrantaServerApiRecordType, Unset_Type] = Unset
         self._score: Union[float, None, Unset_Type] = Unset
-        self._sorting_value: Union[GrantaServerApiSearchSortingValue, Unset_Type] = (
-            Unset
-        )
+        self._sorting_value: Union[GrantaServerApiSearchSortingValue, Unset_Type] = Unset
 
         if database_key is not Unset:
             self.database_key = database_key
@@ -239,9 +237,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, Unset_Type]"
-    ) -> None:
+    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
         """Sets the record_history_identity of this GrantaServerApiSearchSearchResult.
 
         Parameters
@@ -251,9 +247,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         """
         # Field is not nullable
         if record_history_identity is None:
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
 
     @property
@@ -293,9 +287,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(
-        self, record_history_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the record_history_guid of this GrantaServerApiSearchSearchResult.
 
         Parameters
@@ -455,9 +447,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         return self._cubic_spline_status
 
     @cubic_spline_status.setter
-    def cubic_spline_status(
-        self, cubic_spline_status: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def cubic_spline_status(self, cubic_spline_status: "Union[str, None, Unset_Type]") -> None:
         """Sets the cubic_spline_status of this GrantaServerApiSearchSearchResult.
 
         Parameters
@@ -479,9 +469,7 @@ class GrantaServerApiSearchSearchResult(ModelBase):
         return self._version_control_state
 
     @version_control_state.setter
-    def version_control_state(
-        self, version_control_state: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def version_control_state(self, version_control_state: "Union[str, None, Unset_Type]") -> None:
         """Sets the version_control_state of this GrantaServerApiSearchSearchResult.
 
         Parameters

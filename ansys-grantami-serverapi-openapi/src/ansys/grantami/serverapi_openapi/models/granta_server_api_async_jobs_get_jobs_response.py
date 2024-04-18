@@ -90,9 +90,7 @@ class GrantaServerApiAsyncJobsGetJobsResponse(ModelBase):
         total_result_count: int, optional
         """
         self._total_result_count: Union[int, Unset_Type] = Unset
-        self._results: Union[List[GrantaServerApiAsyncJobsJob], None, Unset_Type] = (
-            Unset
-        )
+        self._results: Union[List[GrantaServerApiAsyncJobsJob], None, Unset_Type] = Unset
 
         if total_result_count is not Unset:
             self.total_result_count = total_result_count
@@ -121,9 +119,7 @@ class GrantaServerApiAsyncJobsGetJobsResponse(ModelBase):
         """
         # Field is not nullable
         if total_result_count is None:
-            raise ValueError(
-                "Invalid value for 'total_result_count', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'total_result_count', must not be 'None'")
         self._total_result_count = total_result_count
 
     @property

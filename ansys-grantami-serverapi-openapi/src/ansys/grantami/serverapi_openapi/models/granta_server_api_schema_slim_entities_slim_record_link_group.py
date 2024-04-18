@@ -161,9 +161,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup(ModelBase):
         return self._type
 
     @type.setter
-    def type(
-        self, type: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType"
-    ) -> None:
+    def type(self, type: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupType") -> None:
         """Sets the type of this GrantaServerApiSchemaSlimEntitiesSlimRecordLinkGroup.
 
         Parameters

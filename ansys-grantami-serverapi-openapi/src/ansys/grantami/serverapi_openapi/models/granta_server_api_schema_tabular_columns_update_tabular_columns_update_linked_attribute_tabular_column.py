@@ -133,9 +133,9 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
             summary_row_text=summary_row_text,
         )
         self._column_type: str
-        self._linked_attribute: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
+        self._linked_attribute: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
+            Unset
+        )
 
         self.column_type = column_type
         if linked_attribute is not Unset:

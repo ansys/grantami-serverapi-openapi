@@ -119,14 +119,10 @@ class GrantaServerApiListsDtoUpdateUserPermission(ModelBase):
         """
         # Field is not nullable
         if user_or_group_identifier is None:
-            raise ValueError(
-                "Invalid value for 'user_or_group_identifier', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'user_or_group_identifier', must not be 'None'")
         # Field is required
         if user_or_group_identifier is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'user_or_group_identifier', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'user_or_group_identifier', must not be 'Unset'")
         self._user_or_group_identifier = user_or_group_identifier
 
     @property
@@ -141,9 +137,7 @@ class GrantaServerApiListsDtoUpdateUserPermission(ModelBase):
         return self._flags
 
     @flags.setter
-    def flags(
-        self, flags: "GrantaServerApiListsDtoUpdateRecordListPermissionFlags"
-    ) -> None:
+    def flags(self, flags: "GrantaServerApiListsDtoUpdateRecordListPermissionFlags") -> None:
         """Sets the flags of this GrantaServerApiListsDtoUpdateUserPermission.
 
         Parameters

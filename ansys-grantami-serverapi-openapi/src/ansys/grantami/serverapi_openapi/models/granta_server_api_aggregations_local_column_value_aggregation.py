@@ -112,9 +112,9 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
             local_column_guid=local_column_guid,
             local_column_identity=local_column_identity,
         )
-        self._aggregation_datum: Union[
-            GrantaServerApiAggregationsAggregationDatum, Unset_Type
-        ] = Unset
+        self._aggregation_datum: Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type] = (
+            Unset
+        )
         self._local_column_aggregation_type: str
 
         if aggregation_datum is not Unset:
@@ -148,9 +148,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         """
         # Field is not nullable
         if aggregation_datum is None:
-            raise ValueError(
-                "Invalid value for 'aggregation_datum', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'aggregation_datum', must not be 'None'")
         self._aggregation_datum = aggregation_datum
 
     @property
@@ -165,9 +163,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         return self._local_column_aggregation_type
 
     @local_column_aggregation_type.setter
-    def local_column_aggregation_type(
-        self, local_column_aggregation_type: "str"
-    ) -> None:
+    def local_column_aggregation_type(self, local_column_aggregation_type: "str") -> None:
         """Sets the local_column_aggregation_type of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
         Parameters
@@ -209,9 +205,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsLocalColumnValueAggregation
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsLocalColumnValueAggregation):
             return False
 
         return self.__dict__ == other.__dict__

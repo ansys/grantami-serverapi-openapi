@@ -85,9 +85,7 @@ class GrantaServerApiMetricsGetJobsSummaryResponse(ModelBase):
         ----------
         jobs: List[GrantaServerApiMetricsJobTypeAndStatus], optional
         """
-        self._jobs: Union[
-            List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type
-        ] = Unset
+        self._jobs: Union[List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type] = Unset
 
         if jobs is not Unset:
             self.jobs = jobs

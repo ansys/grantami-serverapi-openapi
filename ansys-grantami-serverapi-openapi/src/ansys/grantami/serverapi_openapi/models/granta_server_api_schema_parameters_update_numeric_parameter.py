@@ -128,15 +128,13 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
             name=name,
         )
         self._type: str
-        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = (
-            Unset
-        )
+        self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._interpolation_type: Union[
             GrantaServerApiSchemaParametersParameterInterpolationType, Unset_Type
         ] = Unset
-        self._scale_type: Union[
-            GrantaServerApiSchemaParametersParameterScaleType, Unset_Type
-        ] = Unset
+        self._scale_type: Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type] = (
+            Unset
+        )
 
         self.type = type
         if unit is not Unset:
@@ -186,9 +184,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Parameters
@@ -228,9 +224,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         """
         # Field is not nullable
         if interpolation_type is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_type', must not be 'None'")
         self._interpolation_type = interpolation_type
 
     @property

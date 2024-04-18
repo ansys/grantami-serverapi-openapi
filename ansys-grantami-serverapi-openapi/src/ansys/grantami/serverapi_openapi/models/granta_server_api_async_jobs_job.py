@@ -313,9 +313,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._submitter_roles
 
     @submitter_roles.setter
-    def submitter_roles(
-        self, submitter_roles: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def submitter_roles(self, submitter_roles: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the submitter_roles of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -337,9 +335,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._submission_date
 
     @submission_date.setter
-    def submission_date(
-        self, submission_date: "Union[datetime, None, Unset_Type]"
-    ) -> None:
+    def submission_date(self, submission_date: "Union[datetime, None, Unset_Type]") -> None:
         """Sets the submission_date of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -385,9 +381,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._execution_date
 
     @execution_date.setter
-    def execution_date(
-        self, execution_date: "Union[datetime, None, Unset_Type]"
-    ) -> None:
+    def execution_date(self, execution_date: "Union[datetime, None, Unset_Type]") -> None:
         """Sets the execution_date of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -409,9 +403,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._completion_date
 
     @completion_date.setter
-    def completion_date(
-        self, completion_date: "Union[datetime, None, Unset_Type]"
-    ) -> None:
+    def completion_date(self, completion_date: "Union[datetime, None, Unset_Type]") -> None:
         """Sets the completion_date of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -433,9 +425,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._status
 
     @status.setter
-    def status(
-        self, status: "Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type]"
-    ) -> None:
+    def status(self, status: "Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type]") -> None:
         """Sets the status of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -460,9 +450,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._input_file_ids
 
     @input_file_ids.setter
-    def input_file_ids(
-        self, input_file_ids: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def input_file_ids(self, input_file_ids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the input_file_ids of this GrantaServerApiAsyncJobsJob.
 
         Parameters
@@ -484,9 +472,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         return self._output_file_names
 
     @output_file_names.setter
-    def output_file_names(
-        self, output_file_names: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def output_file_names(self, output_file_names: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the output_file_names of this GrantaServerApiAsyncJobsJob.
 
         Parameters

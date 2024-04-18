@@ -165,9 +165,7 @@ class GrantaServerApiDataExportDatumsRange(ModelBase):
         return self._high_value_is_inclusive
 
     @high_value_is_inclusive.setter
-    def high_value_is_inclusive(
-        self, high_value_is_inclusive: "Union[bool, Unset_Type]"
-    ) -> None:
+    def high_value_is_inclusive(self, high_value_is_inclusive: "Union[bool, Unset_Type]") -> None:
         """Sets the high_value_is_inclusive of this GrantaServerApiDataExportDatumsRange.
 
         Parameters
@@ -177,9 +175,7 @@ class GrantaServerApiDataExportDatumsRange(ModelBase):
         """
         # Field is not nullable
         if high_value_is_inclusive is None:
-            raise ValueError(
-                "Invalid value for 'high_value_is_inclusive', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'None'")
         self._high_value_is_inclusive = high_value_is_inclusive
 
     @property
@@ -194,9 +190,7 @@ class GrantaServerApiDataExportDatumsRange(ModelBase):
         return self._low_value_is_inclusive
 
     @low_value_is_inclusive.setter
-    def low_value_is_inclusive(
-        self, low_value_is_inclusive: "Union[bool, Unset_Type]"
-    ) -> None:
+    def low_value_is_inclusive(self, low_value_is_inclusive: "Union[bool, Unset_Type]") -> None:
         """Sets the low_value_is_inclusive of this GrantaServerApiDataExportDatumsRange.
 
         Parameters
@@ -206,9 +200,7 @@ class GrantaServerApiDataExportDatumsRange(ModelBase):
         """
         # Field is not nullable
         if low_value_is_inclusive is None:
-            raise ValueError(
-                "Invalid value for 'low_value_is_inclusive', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'None'")
         self._low_value_is_inclusive = low_value_is_inclusive
 
     @classmethod

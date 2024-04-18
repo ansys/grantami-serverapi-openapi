@@ -170,9 +170,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         )
         self._type: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
-        self._attribute_parameters: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
+        self._attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._expressions: List[GrantaServerApiSchemaSlimEntitiesSlimExpression]
         self._allow_extrapolation: bool
         self._is_range: bool
@@ -231,9 +229,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
         Parameters
@@ -273,14 +269,10 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         # Field is required
         if attribute_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'Unset'")
         self._attribute_parameters = attribute_parameters
 
     @property
@@ -335,14 +327,10 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         """
         # Field is not nullable
         if allow_extrapolation is None:
-            raise ValueError(
-                "Invalid value for 'allow_extrapolation', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'allow_extrapolation', must not be 'None'")
         # Field is required
         if allow_extrapolation is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'allow_extrapolation', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'allow_extrapolation', must not be 'Unset'")
         self._allow_extrapolation = allow_extrapolation
 
     @property
@@ -385,9 +373,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         return self._allow_all_compatible_expressions
 
     @allow_all_compatible_expressions.setter
-    def allow_all_compatible_expressions(
-        self, allow_all_compatible_expressions: "bool"
-    ) -> None:
+    def allow_all_compatible_expressions(self, allow_all_compatible_expressions: "bool") -> None:
         """Sets the allow_all_compatible_expressions of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
         Parameters
@@ -429,14 +415,10 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         """
         # Field is not nullable
         if allow_anonymous_expressions is None:
-            raise ValueError(
-                "Invalid value for 'allow_anonymous_expressions', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'allow_anonymous_expressions', must not be 'None'")
         # Field is required
         if allow_anonymous_expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'allow_anonymous_expressions', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'allow_anonymous_expressions', must not be 'Unset'")
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @property
@@ -491,9 +473,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaAttributesMathsFunctionalAttribute
-        ):
+        if not isinstance(other, GrantaServerApiSchemaAttributesMathsFunctionalAttribute):
             return False
 
         return self.__dict__ == other.__dict__

@@ -138,9 +138,7 @@ class GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn(
             summary_row_text=summary_row_text,
         )
         self._column_type: str
-        self._default_threshold_type: (
-            GrantaServerApiSchemaAttributesAttributeThresholdType
-        )
+        self._default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
 
         self.column_type = column_type
         self.default_threshold_type = default_threshold_type
@@ -200,14 +198,10 @@ class GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn(
         """
         # Field is not nullable
         if default_threshold_type is None:
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         # Field is required
         if default_threshold_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'default_threshold_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'default_threshold_type', must not be 'Unset'")
         self._default_threshold_type = default_threshold_type
 
     @classmethod
@@ -232,9 +226,7 @@ class GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn
-        ):
+        if not isinstance(other, GrantaServerApiSchemaTabularColumnsLocalIntegerTabularColumn):
             return False
 
         return self.__dict__ == other.__dict__

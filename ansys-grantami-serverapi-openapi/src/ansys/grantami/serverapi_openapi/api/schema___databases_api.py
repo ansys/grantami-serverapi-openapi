@@ -85,9 +85,7 @@ class SchemaDatabasesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabasesInfo",
@@ -109,9 +107,7 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_database(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDatabase, None]":
+    def get_database(self, *, database_key: "str") -> "Union[GrantaServerApiSchemaDatabase, None]":
         """Returns details for a given database.
 
         This method makes a synchronous HTTP request.
@@ -124,9 +120,7 @@ class SchemaDatabasesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaDatabase, None]
         """
-        data = self._get_database_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
@@ -166,9 +160,7 @@ class SchemaDatabasesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
@@ -191,9 +183,7 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def lock_database(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDatabase, None]":
+    def lock_database(self, *, database_key: "str") -> "Union[GrantaServerApiSchemaDatabase, None]":
         """Lock database
 
         This method makes a synchronous HTTP request.
@@ -207,9 +197,7 @@ class SchemaDatabasesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaDatabase, None]
         """
-        data = self._lock_database_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._lock_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _lock_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
@@ -249,9 +237,7 @@ class SchemaDatabasesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
@@ -292,14 +278,10 @@ class SchemaDatabasesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaDatabase, None]
         """
-        data = self._unlock_database_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._unlock_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _unlock_database_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _unlock_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -336,9 +318,7 @@ class SchemaDatabasesApi(ApiBase):
 
         body_params = None
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
@@ -382,9 +362,7 @@ class SchemaDatabasesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaDatabase, None]
         """
-        data = self._update_database_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
+        data = self._update_database_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_database_with_http_info(
@@ -432,9 +410,7 @@ class SchemaDatabasesApi(ApiBase):
         if "body" in params and body is not None:
             body_params = params["body"]
         # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
-        )
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(

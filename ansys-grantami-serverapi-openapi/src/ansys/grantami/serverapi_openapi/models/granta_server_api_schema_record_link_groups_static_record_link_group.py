@@ -186,14 +186,10 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
         """
         # Field is not nullable
         if include_indirect_links is None:
-            raise ValueError(
-                "Invalid value for 'include_indirect_links', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_indirect_links', must not be 'None'")
         # Field is required
         if include_indirect_links is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'include_indirect_links', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'include_indirect_links', must not be 'Unset'")
         self._include_indirect_links = include_indirect_links
 
     @classmethod
@@ -218,9 +214,7 @@ class GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsStaticRecordLinkGroup):
             return False
 
         return self.__dict__ == other.__dict__

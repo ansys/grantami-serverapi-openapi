@@ -181,9 +181,7 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
         return self._content_types
 
     @content_types.setter
-    def content_types(
-        self, content_types: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def content_types(self, content_types: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the content_types of this MicrosoftAspNetCoreMvcObjectResult.
 
         Parameters

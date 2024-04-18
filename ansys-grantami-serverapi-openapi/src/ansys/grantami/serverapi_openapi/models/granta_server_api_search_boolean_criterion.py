@@ -106,9 +106,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         super().__init__()
         self._all: Union[List[GrantaServerApiSearchCriterion], None, Unset_Type] = Unset
         self._any: Union[List[GrantaServerApiSearchCriterion], None, Unset_Type] = Unset
-        self.__none: Union[List[GrantaServerApiSearchCriterion], None, Unset_Type] = (
-            Unset
-        )
+        self.__none: Union[List[GrantaServerApiSearchCriterion], None, Unset_Type] = Unset
         self._type: str
 
         if all is not Unset:
@@ -132,9 +130,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self._all
 
     @all.setter
-    def all(
-        self, all: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]"
-    ) -> None:
+    def all(self, all: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]") -> None:
         """Sets the all of this GrantaServerApiSearchBooleanCriterion.
         Only records that match all of these criteria are returned.
 
@@ -158,9 +154,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self._any
 
     @any.setter
-    def any(
-        self, any: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]"
-    ) -> None:
+    def any(self, any: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]") -> None:
         """Sets the any of this GrantaServerApiSearchBooleanCriterion.
         Only results that match any of these criteria are returned.
 
@@ -184,9 +178,7 @@ class GrantaServerApiSearchBooleanCriterion(GrantaServerApiSearchCriterion):
         return self.__none
 
     @_none.setter
-    def _none(
-        self, _none: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]"
-    ) -> None:
+    def _none(self, _none: "Union[List[GrantaServerApiSearchCriterion], None, Unset_Type]") -> None:
         """Sets the _none of this GrantaServerApiSearchBooleanCriterion.
         Only results that match none of these criteria are returned.
 

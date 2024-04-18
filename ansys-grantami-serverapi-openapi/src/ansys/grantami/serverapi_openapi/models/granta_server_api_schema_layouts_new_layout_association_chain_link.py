@@ -147,9 +147,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
         """
         # Field is not nullable
         if source_database_version_guid is None:
-            raise ValueError(
-                "Invalid value for 'source_database_version_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'source_database_version_guid', must not be 'None'")
         # Field is required
         if source_database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
@@ -179,14 +177,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
         """
         # Field is not nullable
         if tabular_attribute_guid is None:
-            raise ValueError(
-                "Invalid value for 'tabular_attribute_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'tabular_attribute_guid', must not be 'None'")
         # Field is required
         if tabular_attribute_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'tabular_attribute_guid', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'tabular_attribute_guid', must not be 'Unset'")
         self._tabular_attribute_guid = tabular_attribute_guid
 
     @classmethod
@@ -211,9 +205,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink
-        ):
+        if not isinstance(other, GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink):
             return False
 
         return self.__dict__ == other.__dict__

@@ -142,9 +142,7 @@ class GrantaServerApiSearchPagingOptions(ModelBase):
         return self._keep_alive_in_minutes
 
     @keep_alive_in_minutes.setter
-    def keep_alive_in_minutes(
-        self, keep_alive_in_minutes: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def keep_alive_in_minutes(self, keep_alive_in_minutes: "Union[int, None, Unset_Type]") -> None:
         """Sets the keep_alive_in_minutes of this GrantaServerApiSearchPagingOptions.
         The length of time that the paginated search should be kept in memory
 

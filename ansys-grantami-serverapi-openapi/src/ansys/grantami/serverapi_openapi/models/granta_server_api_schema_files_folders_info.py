@@ -85,9 +85,7 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
         ----------
         folders: List[GrantaServerApiSchemaFilesFolder], optional
         """
-        self._folders: Union[
-            List[GrantaServerApiSchemaFilesFolder], None, Unset_Type
-        ] = Unset
+        self._folders: Union[List[GrantaServerApiSchemaFilesFolder], None, Unset_Type] = Unset
 
         if folders is not Unset:
             self.folders = folders

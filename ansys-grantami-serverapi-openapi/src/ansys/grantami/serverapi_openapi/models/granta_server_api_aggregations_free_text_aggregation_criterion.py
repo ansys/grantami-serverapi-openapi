@@ -220,9 +220,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
         return self._attributes
 
     @attributes.setter
-    def attributes(
-        self, attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]"
-    ) -> None:
+    def attributes(self, attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]") -> None:
         """Sets the attributes of this GrantaServerApiAggregationsFreeTextAggregationCriterion.
 
         Parameters
@@ -312,9 +310,7 @@ class GrantaServerApiAggregationsFreeTextAggregationCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsFreeTextAggregationCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsFreeTextAggregationCriterion):
             return False
 
         return self.__dict__ == other.__dict__

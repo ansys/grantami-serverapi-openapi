@@ -194,9 +194,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
         """
         # Field is not nullable
         if attribute_parameters is None:
-            raise ValueError(
-                "Invalid value for 'attribute_parameters', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_parameters', must not be 'None'")
         self._attribute_parameters = attribute_parameters
 
     @classmethod

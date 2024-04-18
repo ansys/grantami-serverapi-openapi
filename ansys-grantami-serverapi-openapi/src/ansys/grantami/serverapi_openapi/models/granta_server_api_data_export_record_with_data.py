@@ -100,9 +100,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
         """
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._record_history_identity: Union[int, Unset_Type] = Unset
-        self._data: Union[
-            List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type
-        ] = Unset
+        self._data: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = Unset
         self._properties: Union[
             List[GrantaServerApiDataExportPropertiesProperty], None, Unset_Type
         ] = Unset
@@ -150,9 +148,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, Unset_Type]"
-    ) -> None:
+    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
         """Sets the record_history_identity of this GrantaServerApiDataExportRecordWithData.
 
         Parameters
@@ -162,9 +158,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
         """
         # Field is not nullable
         if record_history_identity is None:
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
 
     @property

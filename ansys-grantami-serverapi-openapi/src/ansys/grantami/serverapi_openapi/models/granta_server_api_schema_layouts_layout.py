@@ -119,9 +119,7 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         return self._sections
 
     @sections.setter
-    def sections(
-        self, sections: "List[GrantaServerApiSchemaLayoutsLayoutSection]"
-    ) -> None:
+    def sections(self, sections: "List[GrantaServerApiSchemaLayoutsLayoutSection]") -> None:
         """Sets the sections of this GrantaServerApiSchemaLayoutsLayout.
 
         Parameters

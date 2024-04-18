@@ -176,9 +176,7 @@ class GrantaServerApiSchemaProfileTablesProfileTable(ModelBase):
         return self._subset_fallback_hint
 
     @subset_fallback_hint.setter
-    def subset_fallback_hint(
-        self, subset_fallback_hint: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def subset_fallback_hint(self, subset_fallback_hint: "Union[str, None, Unset_Type]") -> None:
         """Sets the subset_fallback_hint of this GrantaServerApiSchemaProfileTablesProfileTable.
 
         Parameters
@@ -222,9 +220,7 @@ class GrantaServerApiSchemaProfileTablesProfileTable(ModelBase):
         return self._layout_fallback_hint
 
     @layout_fallback_hint.setter
-    def layout_fallback_hint(
-        self, layout_fallback_hint: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def layout_fallback_hint(self, layout_fallback_hint: "Union[str, None, Unset_Type]") -> None:
         """Sets the layout_fallback_hint of this GrantaServerApiSchemaProfileTablesProfileTable.
 
         Parameters
@@ -348,9 +344,7 @@ class GrantaServerApiSchemaProfileTablesProfileTable(ModelBase):
         return self._table_fallback_hint
 
     @table_fallback_hint.setter
-    def table_fallback_hint(
-        self, table_fallback_hint: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def table_fallback_hint(self, table_fallback_hint: "Union[str, None, Unset_Type]") -> None:
         """Sets the table_fallback_hint of this GrantaServerApiSchemaProfileTablesProfileTable.
 
         Parameters

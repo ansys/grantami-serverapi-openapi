@@ -129,9 +129,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout(ModelBase):
         return self._attribute_guids
 
     @attribute_guids.setter
-    def attribute_guids(
-        self, attribute_guids: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def attribute_guids(self, attribute_guids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the attribute_guids of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout.
 
         Parameters
@@ -163,9 +161,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout
-        ):
+        if not isinstance(other, GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout):
             return False
 
         return self.__dict__ == other.__dict__

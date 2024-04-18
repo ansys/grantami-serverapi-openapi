@@ -120,17 +120,13 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         referential_integrity_model: GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, optional
         type: str
         """
-        super().__init__(
-            link_target=link_target, name=name, reverse_name=reverse_name, guid=guid
-        )
+        super().__init__(link_target=link_target, name=name, reverse_name=reverse_name, guid=guid)
         self._type: str
         self._forbid_orphans: Union[bool, Unset_Type] = Unset
         self._referential_integrity_model: Union[
             GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type
         ] = Unset
-        self._attribute_pairs: List[
-            GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair
-        ]
+        self._attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
 
         self.type = type
         if forbid_orphans is not Unset:
@@ -219,9 +215,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         """
         # Field is not nullable
         if referential_integrity_model is None:
-            raise ValueError(
-                "Invalid value for 'referential_integrity_model', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'referential_integrity_model', must not be 'None'")
         self._referential_integrity_model = referential_integrity_model
 
     @property
@@ -279,9 +273,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup
-        ):
+        if not isinstance(other, GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup):
             return False
 
         return self.__dict__ == other.__dict__

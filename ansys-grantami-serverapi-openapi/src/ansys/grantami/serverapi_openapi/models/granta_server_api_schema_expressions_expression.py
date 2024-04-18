@@ -114,15 +114,9 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         """
         self._value: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
-        self._attribute_dependencies: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
-        self._constant_dependencies: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
-        self._parameter_dependencies: List[
-            GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
-        ]
+        self._attribute_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._constant_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._parameter_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._name: str
         self._guid: str
 
@@ -175,9 +169,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiSchemaExpressionsExpression.
 
         Parameters
@@ -217,14 +209,10 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         """
         # Field is not nullable
         if attribute_dependencies is None:
-            raise ValueError(
-                "Invalid value for 'attribute_dependencies', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_dependencies', must not be 'None'")
         # Field is required
         if attribute_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_dependencies', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_dependencies', must not be 'Unset'")
         self._attribute_dependencies = attribute_dependencies
 
     @property
@@ -254,14 +242,10 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         """
         # Field is not nullable
         if constant_dependencies is None:
-            raise ValueError(
-                "Invalid value for 'constant_dependencies', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'constant_dependencies', must not be 'None'")
         # Field is required
         if constant_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'constant_dependencies', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'constant_dependencies', must not be 'Unset'")
         self._constant_dependencies = constant_dependencies
 
     @property
@@ -291,14 +275,10 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         """
         # Field is not nullable
         if parameter_dependencies is None:
-            raise ValueError(
-                "Invalid value for 'parameter_dependencies', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'parameter_dependencies', must not be 'None'")
         # Field is required
         if parameter_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'parameter_dependencies', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'parameter_dependencies', must not be 'Unset'")
         self._parameter_dependencies = parameter_dependencies
 
     @property

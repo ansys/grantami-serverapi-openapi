@@ -162,9 +162,7 @@ class GrantaServerApiDatabaseStatusInformation(ModelBase):
         return self._database_is_read_only
 
     @database_is_read_only.setter
-    def database_is_read_only(
-        self, database_is_read_only: "Union[bool, Unset_Type]"
-    ) -> None:
+    def database_is_read_only(self, database_is_read_only: "Union[bool, Unset_Type]") -> None:
         """Sets the database_is_read_only of this GrantaServerApiDatabaseStatusInformation.
         Gets a value indicating whether the database is read only.
 
@@ -175,9 +173,7 @@ class GrantaServerApiDatabaseStatusInformation(ModelBase):
         """
         # Field is not nullable
         if database_is_read_only is None:
-            raise ValueError(
-                "Invalid value for 'database_is_read_only', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'database_is_read_only', must not be 'None'")
         self._database_is_read_only = database_is_read_only
 
     @property
@@ -269,9 +265,7 @@ class GrantaServerApiDatabaseStatusInformation(ModelBase):
         return self._search_index_in_sync
 
     @search_index_in_sync.setter
-    def search_index_in_sync(
-        self, search_index_in_sync: "Union[bool, Unset_Type]"
-    ) -> None:
+    def search_index_in_sync(self, search_index_in_sync: "Union[bool, Unset_Type]") -> None:
         """Sets the search_index_in_sync of this GrantaServerApiDatabaseStatusInformation.
         Whether the search indexes for this database are in sync with the database changes
 
@@ -282,9 +276,7 @@ class GrantaServerApiDatabaseStatusInformation(ModelBase):
         """
         # Field is not nullable
         if search_index_in_sync is None:
-            raise ValueError(
-                "Invalid value for 'search_index_in_sync', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_index_in_sync', must not be 'None'")
         self._search_index_in_sync = search_index_in_sync
 
     @classmethod

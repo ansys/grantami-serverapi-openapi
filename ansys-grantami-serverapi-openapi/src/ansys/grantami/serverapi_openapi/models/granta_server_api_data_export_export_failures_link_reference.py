@@ -122,9 +122,7 @@ class GrantaServerApiDataExportExportFailuresLinkReference(ModelBase):
         return self._target_database_guid
 
     @target_database_guid.setter
-    def target_database_guid(
-        self, target_database_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def target_database_guid(self, target_database_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_database_guid of this GrantaServerApiDataExportExportFailuresLinkReference.
 
         Parameters

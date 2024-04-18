@@ -143,9 +143,7 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(
         return self._record_color
 
     @record_color.setter
-    def record_color(
-        self, record_color: "Union[GrantaServerApiRecordColor, Unset_Type]"
-    ) -> None:
+    def record_color(self, record_color: "Union[GrantaServerApiRecordColor, Unset_Type]") -> None:
         """Sets the record_color of this GrantaServerApiDataExportPropertiesRecordColorProperty.
 
         Parameters
@@ -180,9 +178,7 @@ class GrantaServerApiDataExportPropertiesRecordColorProperty(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportPropertiesRecordColorProperty
-        ):
+        if not isinstance(other, GrantaServerApiDataExportPropertiesRecordColorProperty):
             return False
 
         return self.__dict__ == other.__dict__

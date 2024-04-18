@@ -130,9 +130,9 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
             not_applicable=not_applicable,
         )
         self._datum_type: str
-        self._x_axis_parameter: Union[
-            GrantaServerApiFunctionalDatumParameterInfo, Unset_Type
-        ] = Unset
+        self._x_axis_parameter: Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type] = (
+            Unset
+        )
         self._parameters: Union[
             List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
         ] = Unset
@@ -255,9 +255,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportDatumsDiscreteFunctionalDatum
-        ):
+        if not isinstance(other, GrantaServerApiDataExportDatumsDiscreteFunctionalDatum):
             return False
 
         return self.__dict__ == other.__dict__

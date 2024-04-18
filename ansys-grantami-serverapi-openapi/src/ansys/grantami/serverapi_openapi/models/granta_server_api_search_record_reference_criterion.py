@@ -207,9 +207,7 @@ class GrantaServerApiSearchRecordReferenceCriterion(GrantaServerApiSearchCriteri
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(
-        self, record_history_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the record_history_guid of this GrantaServerApiSearchRecordReferenceCriterion.
 
         Parameters

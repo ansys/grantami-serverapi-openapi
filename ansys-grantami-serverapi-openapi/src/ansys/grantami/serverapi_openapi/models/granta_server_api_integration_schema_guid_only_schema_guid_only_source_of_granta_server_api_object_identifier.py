@@ -133,9 +133,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
         return self._database
 
     @database.setter
-    def database(
-        self, database: "Union[GrantaServerApiObjectIdentifier, Unset_Type]"
-    ) -> None:
+    def database(self, database: "Union[GrantaServerApiObjectIdentifier, Unset_Type]") -> None:
         """Sets the database of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
 
         Parameters
@@ -182,9 +180,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
         return self._table
 
     @table.setter
-    def table(
-        self, table: "Union[GrantaServerApiObjectIdentifier, Unset_Type]"
-    ) -> None:
+    def table(self, table: "Union[GrantaServerApiObjectIdentifier, Unset_Type]") -> None:
         """Sets the table of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
 
         Parameters

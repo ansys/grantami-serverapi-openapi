@@ -141,9 +141,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty(
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(
-        self, record_history_guid: "Union[str, Unset_Type]"
-    ) -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
         """Sets the record_history_guid of this GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty.
 
         Parameters
@@ -153,9 +151,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty(
         """
         # Field is not nullable
         if record_history_guid is None:
-            raise ValueError(
-                "Invalid value for 'record_history_guid', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
         self._record_history_guid = record_history_guid
 
     @classmethod
@@ -180,9 +176,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty
-        ):
+        if not isinstance(other, GrantaServerApiDataExportPropertiesRecordHistoryGuidProperty):
             return False
 
         return self.__dict__ == other.__dict__

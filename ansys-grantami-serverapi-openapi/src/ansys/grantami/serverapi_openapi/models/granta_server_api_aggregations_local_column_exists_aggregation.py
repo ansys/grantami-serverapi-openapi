@@ -122,9 +122,7 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
         return self._local_column_aggregation_type
 
     @local_column_aggregation_type.setter
-    def local_column_aggregation_type(
-        self, local_column_aggregation_type: "str"
-    ) -> None:
+    def local_column_aggregation_type(self, local_column_aggregation_type: "str") -> None:
         """Sets the local_column_aggregation_type of this GrantaServerApiAggregationsLocalColumnExistsAggregation.
 
         Parameters
@@ -166,9 +164,7 @@ class GrantaServerApiAggregationsLocalColumnExistsAggregation(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsLocalColumnExistsAggregation
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsLocalColumnExistsAggregation):
             return False
 
         return self.__dict__ == other.__dict__

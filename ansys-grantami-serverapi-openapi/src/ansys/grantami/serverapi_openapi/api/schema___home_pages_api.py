@@ -369,9 +369,7 @@ class SchemaHomePagesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_home_page_folder(
-        self, *, database_key: "str", folder_guid: "str"
-    ) -> "None":
+    def delete_home_page_folder(self, *, database_key: "str", folder_guid: "str") -> "None":
         """Delete a Home Page Folder.
 
         This method makes a synchronous HTTP request.
@@ -953,14 +951,10 @@ class SchemaHomePagesApi(ApiBase):
         -------
         Union[GrantaServerApiSchemaFilesFoldersInfo, None]
         """
-        data = self._get_home_page_folders_with_http_info(
-            database_key, _return_http_data_only=True
-        )
+        data = self._get_home_page_folders_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_home_page_folders_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_home_page_folders_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -1042,9 +1036,7 @@ class SchemaHomePagesApi(ApiBase):
         )
         return data  # type: ignore[no-any-return]
 
-    def _get_home_page_root_folder_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_home_page_root_folder_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",

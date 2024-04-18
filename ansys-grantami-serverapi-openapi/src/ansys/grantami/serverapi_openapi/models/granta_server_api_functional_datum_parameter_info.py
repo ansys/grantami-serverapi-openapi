@@ -139,18 +139,14 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
         self._name: Union[str, None, Unset_Type] = Unset
         self._identity: Union[int, Unset_Type] = Unset
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
-        self._scale_type: Union[GrantaServerApiParameterInfoScaleType, Unset_Type] = (
-            Unset
-        )
+        self._scale_type: Union[GrantaServerApiParameterInfoScaleType, Unset_Type] = Unset
         self._interpolation_type: Union[
             GrantaServerApiParameterInfoInterpolationType, Unset_Type
         ] = Unset
-        self._parameter_type: Union[
-            GrantaServerApiParameterInfoParameterType, Unset_Type
-        ] = Unset
-        self._default_value: Union[
-            GrantaServerApiDataExportDatumsParameterValue, Unset_Type
-        ] = Unset
+        self._parameter_type: Union[GrantaServerApiParameterInfoParameterType, Unset_Type] = Unset
+        self._default_value: Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type] = (
+            Unset
+        )
 
         if scale_type_defined_at is not Unset:
             self.scale_type_defined_at = scale_type_defined_at
@@ -200,9 +196,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
         """
         # Field is not nullable
         if scale_type_defined_at is None:
-            raise ValueError(
-                "Invalid value for 'scale_type_defined_at', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'scale_type_defined_at', must not be 'None'")
         self._scale_type_defined_at = scale_type_defined_at
 
     @property
@@ -264,9 +258,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
         """
         # Field is not nullable
         if default_value_defined_at is None:
-            raise ValueError(
-                "Invalid value for 'default_value_defined_at', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'default_value_defined_at', must not be 'None'")
         self._default_value_defined_at = default_value_defined_at
 
     @property
@@ -392,9 +384,7 @@ class GrantaServerApiFunctionalDatumParameterInfo(ModelBase):
         """
         # Field is not nullable
         if interpolation_type is None:
-            raise ValueError(
-                "Invalid value for 'interpolation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'interpolation_type', must not be 'None'")
         self._interpolation_type = interpolation_type
 
     @property

@@ -110,9 +110,9 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
         self._record_type: GrantaServerApiRecordType
         self._name: str
         self._short_name: Union[str, None, Unset_Type] = Unset
-        self._parent: Union[
-            GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type
-        ] = Unset
+        self._parent: Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type] = (
+            Unset
+        )
         self._record_color: Union[GrantaServerApiRecordColor, Unset_Type] = Unset
         self._guid: Union[str, Unset_Type] = Unset
 
@@ -247,9 +247,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
         return self._record_color
 
     @record_color.setter
-    def record_color(
-        self, record_color: "Union[GrantaServerApiRecordColor, Unset_Type]"
-    ) -> None:
+    def record_color(self, record_color: "Union[GrantaServerApiRecordColor, Unset_Type]") -> None:
         """Sets the record_color of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Parameters
@@ -309,9 +307,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiRecordsRecordHistoriesCreateRecordHistory
-        ):
+        if not isinstance(other, GrantaServerApiRecordsRecordHistoriesCreateRecordHistory):
             return False
 
         return self.__dict__ == other.__dict__

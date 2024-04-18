@@ -89,9 +89,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         attribute_identities: List[int]
         record_references: List[GrantaServerApiIntegrationDataExportRecordReference]
         """
-        self._record_references: List[
-            GrantaServerApiIntegrationDataExportRecordReference
-        ]
+        self._record_references: List[GrantaServerApiIntegrationDataExportRecordReference]
         self._attribute_identities: List[int]
 
         self.record_references = record_references
@@ -126,14 +124,10 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         """
         # Field is not nullable
         if record_references is None:
-            raise ValueError(
-                "Invalid value for 'record_references', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_references', must not be 'None'")
         # Field is required
         if record_references is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'record_references', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'record_references', must not be 'Unset'")
         self._record_references = record_references
 
     @property
@@ -160,14 +154,10 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         """
         # Field is not nullable
         if attribute_identities is None:
-            raise ValueError(
-                "Invalid value for 'attribute_identities', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_identities', must not be 'None'")
         # Field is required
         if attribute_identities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_identities', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_identities', must not be 'Unset'")
         self._attribute_identities = attribute_identities
 
     @classmethod
@@ -192,9 +182,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiIntegrationDataExportIntegrationDataExportRequest
-        ):
+        if not isinstance(other, GrantaServerApiIntegrationDataExportIntegrationDataExportRequest):
             return False
 
         return self.__dict__ == other.__dict__

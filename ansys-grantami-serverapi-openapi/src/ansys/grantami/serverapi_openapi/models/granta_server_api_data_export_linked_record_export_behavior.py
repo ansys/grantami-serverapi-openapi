@@ -101,9 +101,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         self._summary_roll_up_type: Union[
             GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type
         ] = Unset
-        self._linked_records_criterion: Union[
-            GrantaServerApiSearchCriterion, Unset_Type
-        ] = Unset
+        self._linked_records_criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
 
         if tabular_row_behavior is not Unset:
             self.tabular_row_behavior = tabular_row_behavior
@@ -139,17 +137,13 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         """
         # Field is not nullable
         if tabular_row_behavior is None:
-            raise ValueError(
-                "Invalid value for 'tabular_row_behavior', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'tabular_row_behavior', must not be 'None'")
         self._tabular_row_behavior = tabular_row_behavior
 
     @property
     def summary_roll_up_type(
         self,
-    ) -> (
-        "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]"
-    ):
+    ) -> "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]":
         """Gets the summary_roll_up_type of this GrantaServerApiDataExportLinkedRecordExportBehavior.
 
         Returns
@@ -173,9 +167,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         """
         # Field is not nullable
         if summary_roll_up_type is None:
-            raise ValueError(
-                "Invalid value for 'summary_roll_up_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'summary_roll_up_type', must not be 'None'")
         self._summary_roll_up_type = summary_roll_up_type
 
     @property
@@ -205,9 +197,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         """
         # Field is not nullable
         if linked_records_criterion is None:
-            raise ValueError(
-                "Invalid value for 'linked_records_criterion', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'linked_records_criterion', must not be 'None'")
         self._linked_records_criterion = linked_records_criterion
 
     @classmethod

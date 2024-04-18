@@ -108,9 +108,7 @@ class GrantaServerApiSchemaParametersUpdateParameterContent(ModelBase):
         return self._parameter
 
     @parameter.setter
-    def parameter(
-        self, parameter: "GrantaServerApiSchemaSlimEntitiesSlimEntity"
-    ) -> None:
+    def parameter(self, parameter: "GrantaServerApiSchemaSlimEntitiesSlimEntity") -> None:
         """Sets the parameter of this GrantaServerApiSchemaParametersUpdateParameterContent.
 
         Parameters

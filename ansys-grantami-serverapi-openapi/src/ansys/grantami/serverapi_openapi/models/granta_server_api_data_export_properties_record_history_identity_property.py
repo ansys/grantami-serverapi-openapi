@@ -141,9 +141,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, Unset_Type]"
-    ) -> None:
+    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
         """Sets the record_history_identity of this GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty.
 
         Parameters
@@ -153,9 +151,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
         """
         # Field is not nullable
         if record_history_identity is None:
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
 
     @classmethod
@@ -180,9 +176,7 @@ class GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty
-        ):
+        if not isinstance(other, GrantaServerApiDataExportPropertiesRecordHistoryIdentityProperty):
             return False
 
         return self.__dict__ == other.__dict__

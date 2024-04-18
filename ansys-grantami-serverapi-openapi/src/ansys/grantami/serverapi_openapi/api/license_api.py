@@ -63,9 +63,7 @@ class LicenseApi(ApiBase):
         -------
         GrantaServerApiAppNameLicenseCheckoutResponse
         """
-        data = self._checkout_app_license_with_http_info(
-            body, _return_http_data_only=True
-        )
+        data = self._checkout_app_license_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _checkout_app_license_with_http_info(
@@ -149,9 +147,7 @@ class LicenseApi(ApiBase):
         -------
         Union[MicrosoftAspNetCoreMvcObjectResult, None]
         """
-        data = self._ensure_user_license_available_with_http_info(
-            _return_http_data_only=True
-        )
+        data = self._ensure_user_license_available_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _ensure_user_license_available_with_http_info(self, **kwargs: Any) -> Any:

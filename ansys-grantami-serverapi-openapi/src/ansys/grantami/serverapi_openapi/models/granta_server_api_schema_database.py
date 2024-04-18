@@ -289,9 +289,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         return self._is_access_controlled
 
     @is_access_controlled.setter
-    def is_access_controlled(
-        self, is_access_controlled: "Union[bool, None, Unset_Type]"
-    ) -> None:
+    def is_access_controlled(self, is_access_controlled: "Union[bool, None, Unset_Type]") -> None:
         """Sets the is_access_controlled of this GrantaServerApiSchemaDatabase.
 
         Parameters
@@ -469,9 +467,7 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         return self._index_up_to_date
 
     @index_up_to_date.setter
-    def index_up_to_date(
-        self, index_up_to_date: "Union[bool, None, Unset_Type]"
-    ) -> None:
+    def index_up_to_date(self, index_up_to_date: "Union[bool, None, Unset_Type]") -> None:
         """Sets the index_up_to_date of this GrantaServerApiSchemaDatabase.
 
         Parameters

@@ -128,9 +128,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateShortTextAttribute(
         )
         self._type: str
         self._is_unique: Union[bool, Unset_Type] = Unset
-        self._data_rule: Union[
-            GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type
-        ] = Unset
+        self._data_rule: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
 
         self.type = type
         if is_unique is not Unset:

@@ -142,18 +142,14 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         self._target_table_guid: Union[str, None, Unset_Type] = Unset
         self._target_database_key: Union[str, None, Unset_Type] = Unset
         self._local_criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
-        self._link_datum_type: Union[GrantaServerApiLinkAttributeType, Unset_Type] = (
-            Unset
-        )
+        self._link_datum_type: Union[GrantaServerApiLinkAttributeType, Unset_Type] = Unset
         self._indirect_links: Union[GrantaServerApiIndirectLinks, Unset_Type] = Unset
         self._search_in_reversed_direction: Union[bool, Unset_Type] = Unset
         self._target_attribute_identity: Union[int, None, Unset_Type] = Unset
         self._target_attribute_guid: Union[str, None, Unset_Type] = Unset
         self._inner_criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
         self._type: str
-        self._local_rows_behavior: Union[
-            GrantaServerApiSearchLocalRowsBehavior, Unset_Type
-        ] = Unset
+        self._local_rows_behavior: Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type] = Unset
 
         if target_table_identity is not Unset:
             self.target_table_identity = target_table_identity
@@ -192,9 +188,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         return self._target_table_identity
 
     @target_table_identity.setter
-    def target_table_identity(
-        self, target_table_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def target_table_identity(self, target_table_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the target_table_identity of this GrantaServerApiSearchLinkDatumCriterion.
         Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
@@ -218,9 +212,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         return self._target_table_guid
 
     @target_table_guid.setter
-    def target_table_guid(
-        self, target_table_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def target_table_guid(self, target_table_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_table_guid of this GrantaServerApiSearchLinkDatumCriterion.
         Table containing the linked records.  The target table can be omitted; it is likely to improve performance if it is included.  For tabular search, if either the target attribute or the target table is provided, they should both be provided.
 
@@ -244,9 +236,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         return self._target_database_key
 
     @target_database_key.setter
-    def target_database_key(
-        self, target_database_key: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def target_database_key(self, target_database_key: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_database_key of this GrantaServerApiSearchLinkDatumCriterion.
         Database containing the linked records. For reverse cross database links, this is the database where the link is defined
 
@@ -362,9 +352,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         """
         # Field is not nullable
         if search_in_reversed_direction is None:
-            raise ValueError(
-                "Invalid value for 'search_in_reversed_direction', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'search_in_reversed_direction', must not be 'None'")
         self._search_in_reversed_direction = search_in_reversed_direction
 
     @property
@@ -406,9 +394,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         return self._target_attribute_guid
 
     @target_attribute_guid.setter
-    def target_attribute_guid(
-        self, target_attribute_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def target_attribute_guid(self, target_attribute_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_attribute_guid of this GrantaServerApiSearchLinkDatumCriterion.
         For tabular searching: this is the GUID of the short-text linking attribute.  /// The target attribute and table can both be omitted; it is likely to improve performance if they are included.  If either the target attribute or the target table is provided, they should both be provided.  Otherwise null.
 
@@ -501,9 +487,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         """
         # Field is not nullable
         if local_rows_behavior is None:
-            raise ValueError(
-                "Invalid value for 'local_rows_behavior', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'local_rows_behavior', must not be 'None'")
         self._local_rows_behavior = local_rows_behavior
 
     @classmethod

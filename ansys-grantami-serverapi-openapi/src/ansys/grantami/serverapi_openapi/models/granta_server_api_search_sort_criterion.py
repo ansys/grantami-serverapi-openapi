@@ -93,9 +93,7 @@ class GrantaServerApiSearchSortCriterion(ModelBase):
         ----------
         sort_direction: GrantaServerApiSearchSortDirection, optional
         """
-        self._sort_direction: Union[GrantaServerApiSearchSortDirection, Unset_Type] = (
-            Unset
-        )
+        self._sort_direction: Union[GrantaServerApiSearchSortDirection, Unset_Type] = Unset
 
         if sort_direction is not Unset:
             self.sort_direction = sort_direction

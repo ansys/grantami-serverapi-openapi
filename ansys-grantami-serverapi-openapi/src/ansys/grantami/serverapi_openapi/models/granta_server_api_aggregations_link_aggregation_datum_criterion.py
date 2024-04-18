@@ -138,7 +138,9 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @property
     def local_aggregation_criteria(
         self,
-    ) -> "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]":
+    ) -> (
+        "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]"
+    ):
         """Gets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Returns
@@ -184,9 +186,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiAggregationsLinkAggregationDatumCriterion
-        ):
+        if not isinstance(other, GrantaServerApiAggregationsLinkAggregationDatumCriterion):
             return False
 
         return self.__dict__ == other.__dict__

@@ -143,9 +143,7 @@ class GrantaServerApiDataExportPropertiesRecordTypeProperty(
         return self._record_type
 
     @record_type.setter
-    def record_type(
-        self, record_type: "Union[GrantaServerApiRecordType, Unset_Type]"
-    ) -> None:
+    def record_type(self, record_type: "Union[GrantaServerApiRecordType, Unset_Type]") -> None:
         """Sets the record_type of this GrantaServerApiDataExportPropertiesRecordTypeProperty.
 
         Parameters

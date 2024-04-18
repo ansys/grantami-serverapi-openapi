@@ -121,9 +121,7 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         return self._record_history_identity
 
     @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, Unset_Type]"
-    ) -> None:
+    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
         """Sets the record_history_identity of this GrantaServerApiIndexRecordFailure.
 
         Parameters
@@ -133,9 +131,7 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         """
         # Field is not nullable
         if record_history_identity is None:
-            raise ValueError(
-                "Invalid value for 'record_history_identity', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
 
     @property
@@ -197,9 +193,7 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         return self._record_was_oversized
 
     @record_was_oversized.setter
-    def record_was_oversized(
-        self, record_was_oversized: "Union[bool, Unset_Type]"
-    ) -> None:
+    def record_was_oversized(self, record_was_oversized: "Union[bool, Unset_Type]") -> None:
         """Sets the record_was_oversized of this GrantaServerApiIndexRecordFailure.
         Records that contain a large amount of data are intentionally not sent to the index. This size limit is configurable through  MIServer.exe.config
 
@@ -210,9 +204,7 @@ class GrantaServerApiIndexRecordFailure(ModelBase):
         """
         # Field is not nullable
         if record_was_oversized is None:
-            raise ValueError(
-                "Invalid value for 'record_was_oversized', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'record_was_oversized', must not be 'None'")
         self._record_was_oversized = record_was_oversized
 
     @classmethod

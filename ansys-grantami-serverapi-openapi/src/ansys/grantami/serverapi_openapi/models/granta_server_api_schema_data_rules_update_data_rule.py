@@ -156,9 +156,7 @@ class GrantaServerApiSchemaDataRulesUpdateDataRule(ModelBase):
         """
         # Field is not nullable
         if regular_expression is None:
-            raise ValueError(
-                "Invalid value for 'regular_expression', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
         self._regular_expression = regular_expression
 
     @property

@@ -95,9 +95,7 @@ class GrantaServerApiSchemaExpressionsExpressionsInfo(ModelBase):
     @property
     def expressions(
         self,
-    ) -> (
-        "Union[List[GrantaServerApiSchemaSlimEntitiesSlimExpression], None, Unset_Type]"
-    ):
+    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimExpression], None, Unset_Type]":
         """Gets the expressions of this GrantaServerApiSchemaExpressionsExpressionsInfo.
 
         Returns

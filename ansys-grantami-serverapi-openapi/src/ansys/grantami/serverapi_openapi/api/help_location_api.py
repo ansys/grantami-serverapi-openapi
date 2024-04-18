@@ -136,14 +136,10 @@ class HelpLocationApi(ApiBase):
         -------
         None
         """
-        data = self._get_help_url_redirect_with_http_info(
-            help_key, _return_http_data_only=True
-        )
+        data = self._get_help_url_redirect_with_http_info(help_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_help_url_redirect_with_http_info(
-        self, help_key: "str", **kwargs: Any
-    ) -> Any:
+    def _get_help_url_redirect_with_http_info(self, help_key: "str", **kwargs: Any) -> Any:
         all_params = [
             "help_key",
             "_return_http_data_only",

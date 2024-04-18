@@ -83,9 +83,7 @@ class IntegrationApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method add_schema"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method add_schema")
             params[key] = val
         del params["kwargs"]
 
@@ -253,9 +251,7 @@ class IntegrationApi(ApiBase):
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
-            raise ValueError(
-                "Missing the required parameter 'schema' when calling 'delete_schema'"
-            )
+            raise ValueError("Missing the required parameter 'schema' when calling 'delete_schema'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -334,16 +330,12 @@ class IntegrationApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_schema"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_schema")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
-            raise ValueError(
-                "Missing the required parameter 'schema' when calling 'get_schema'"
-            )
+            raise ValueError("Missing the required parameter 'schema' when calling 'get_schema'")
 
         collection_formats: Dict[str, Any] = {}
 
@@ -352,10 +344,7 @@ class IntegrationApi(ApiBase):
             path_params["schema"] = params["schema"]
 
         query_params: List[Any] = []
-        if (
-            "include_implicit_attributes" in params
-            and include_implicit_attributes is not None
-        ):
+        if "include_implicit_attributes" in params and include_implicit_attributes is not None:
             query_params.append(
                 ("includeImplicitAttributes", params["include_implicit_attributes"])
             )
@@ -481,7 +470,9 @@ class IntegrationApi(ApiBase):
 
     def schema_table_mappings(
         self, *, schema: "str", database_key: "str", table_identity: "int"
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier], None]":
+    ) -> (
+        "Union[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier], None]"
+    ):
         """Returns a list of the schema source mapping from the given table. Will fail if the database is not loaded in MI.  Names and identities of source items will be populated.
 
         This method makes a synchronous HTTP request.
@@ -639,10 +630,7 @@ class IntegrationApi(ApiBase):
             path_params["schema"] = params["schema"]
 
         query_params: List[Any] = []
-        if (
-            "include_implicit_attributes" in params
-            and include_implicit_attributes is not None
-        ):
+        if "include_implicit_attributes" in params and include_implicit_attributes is not None:
             query_params.append(
                 ("includeImplicitAttributes", params["include_implicit_attributes"])
             )
@@ -697,9 +685,7 @@ class IntegrationApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method schemas"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method schemas")
             params[key] = val
         del params["kwargs"]
 
@@ -759,9 +745,7 @@ class IntegrationApi(ApiBase):
         -------
         Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
-        data = self._update_schema_with_http_info(
-            schema, body, _return_http_data_only=True
-        )
+        data = self._update_schema_with_http_info(schema, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_schema_with_http_info(
@@ -788,9 +772,7 @@ class IntegrationApi(ApiBase):
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
-            raise ValueError(
-                "Missing the required parameter 'schema' when calling 'update_schema'"
-            )
+            raise ValueError("Missing the required parameter 'schema' when calling 'update_schema'")
 
         collection_formats: Dict[str, Any] = {}
 

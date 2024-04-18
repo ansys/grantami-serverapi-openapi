@@ -205,9 +205,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
             raise ValueError("Invalid value for 'linked_attribute', must not be 'None'")
         # Field is required
         if linked_attribute is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'linked_attribute', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'linked_attribute', must not be 'Unset'")
         self._linked_attribute = linked_attribute
 
     @property
@@ -262,9 +260,7 @@ class GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn(
 
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
-        if not isinstance(
-            other, GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn
-        ):
+        if not isinstance(other, GrantaServerApiSchemaTabularColumnsLinkedColumnTabularColumn):
             return False
 
         return self.__dict__ == other.__dict__

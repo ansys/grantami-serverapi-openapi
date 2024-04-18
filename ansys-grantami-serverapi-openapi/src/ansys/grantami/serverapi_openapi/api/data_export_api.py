@@ -99,9 +99,7 @@ class DataExportApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method export_data"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method export_data")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set

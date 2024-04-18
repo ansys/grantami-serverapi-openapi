@@ -449,9 +449,7 @@ class SearchApi(ApiBase):
         )
         return data  # type: ignore[no-any-return]
 
-    def _delete_search_results_with_http_info(
-        self, search_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _delete_search_results_with_http_info(self, search_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "search_identifier",
             "_return_http_data_only",
@@ -632,9 +630,7 @@ class SearchApi(ApiBase):
         -------
         Union[GrantaServerApiSearchSearchResponse, None]
         """
-        data = self._integration_search_with_http_info(
-            schema, body, _return_http_data_only=True
-        )
+        data = self._integration_search_with_http_info(schema, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _integration_search_with_http_info(

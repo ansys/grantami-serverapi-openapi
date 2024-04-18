@@ -159,9 +159,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         """
         # Field is not nullable
         if linking_value_match_behavior is None:
-            raise ValueError(
-                "Invalid value for 'linking_value_match_behavior', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'linking_value_match_behavior', must not be 'None'")
         self._linking_value_match_behavior = linking_value_match_behavior
 
     @property

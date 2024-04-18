@@ -114,9 +114,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         return self._include_user_actions
 
     @include_user_actions.setter
-    def include_user_actions(
-        self, include_user_actions: "Union[bool, Unset_Type]"
-    ) -> None:
+    def include_user_actions(self, include_user_actions: "Union[bool, Unset_Type]") -> None:
         """Sets the include_user_actions of this GrantaServerApiListsDtoResponseOptions.
 
         Parameters
@@ -126,9 +124,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         """
         # Field is not nullable
         if include_user_actions is None:
-            raise ValueError(
-                "Invalid value for 'include_user_actions', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_user_actions', must not be 'None'")
         self._include_user_actions = include_user_actions
 
     @property
@@ -143,9 +139,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         return self._include_user_permissions
 
     @include_user_permissions.setter
-    def include_user_permissions(
-        self, include_user_permissions: "Union[bool, Unset_Type]"
-    ) -> None:
+    def include_user_permissions(self, include_user_permissions: "Union[bool, Unset_Type]") -> None:
         """Sets the include_user_permissions of this GrantaServerApiListsDtoResponseOptions.
 
         Parameters
@@ -155,9 +149,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         """
         # Field is not nullable
         if include_user_permissions is None:
-            raise ValueError(
-                "Invalid value for 'include_user_permissions', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_user_permissions', must not be 'None'")
         self._include_user_permissions = include_user_permissions
 
     @property
@@ -184,9 +176,7 @@ class GrantaServerApiListsDtoResponseOptions(ModelBase):
         """
         # Field is not nullable
         if include_record_list_items is None:
-            raise ValueError(
-                "Invalid value for 'include_record_list_items', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'include_record_list_items', must not be 'None'")
         self._include_record_list_items = include_record_list_items
 
     @classmethod

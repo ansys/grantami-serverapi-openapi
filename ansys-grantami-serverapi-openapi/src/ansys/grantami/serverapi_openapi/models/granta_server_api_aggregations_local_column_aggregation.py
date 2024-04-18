@@ -122,9 +122,7 @@ class GrantaServerApiAggregationsLocalColumnAggregation(ModelBase):
         return self._local_column_identity
 
     @local_column_identity.setter
-    def local_column_identity(
-        self, local_column_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
+    def local_column_identity(self, local_column_identity: "Union[int, None, Unset_Type]") -> None:
         """Sets the local_column_identity of this GrantaServerApiAggregationsLocalColumnAggregation.
         The identity of the local column that was aggregated over.
 
@@ -148,9 +146,7 @@ class GrantaServerApiAggregationsLocalColumnAggregation(ModelBase):
         return self._local_column_guid
 
     @local_column_guid.setter
-    def local_column_guid(
-        self, local_column_guid: "Union[str, None, Unset_Type]"
-    ) -> None:
+    def local_column_guid(self, local_column_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the local_column_guid of this GrantaServerApiAggregationsLocalColumnAggregation.
         The GUID of the local column that was aggregated over.
 

@@ -287,9 +287,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         return self._input_file_ids
 
     @input_file_ids.setter
-    def input_file_ids(
-        self, input_file_ids: "Union[List[str], None, Unset_Type]"
-    ) -> None:
+    def input_file_ids(self, input_file_ids: "Union[List[str], None, Unset_Type]") -> None:
         """Sets the input_file_ids of this GrantaServerApiAsyncJobsCreateJobRequest.
         Names of temporary input files that were uploaded prior to creating this job.
 

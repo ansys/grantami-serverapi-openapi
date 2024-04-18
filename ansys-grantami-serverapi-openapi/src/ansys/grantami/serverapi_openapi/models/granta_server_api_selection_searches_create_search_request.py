@@ -90,9 +90,7 @@ class GrantaServerApiSelectionSearchesCreateSearchRequest(ModelBase):
         search_config: str, optional
         """
         self._search_config: Union[str, None, Unset_Type] = Unset
-        self._detail: Union[
-            GrantaServerApiSelectionSearchesSearchDetail, Unset_Type
-        ] = Unset
+        self._detail: Union[GrantaServerApiSelectionSearchesSearchDetail, Unset_Type] = Unset
 
         if search_config is not Unset:
             self.search_config = search_config

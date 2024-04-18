@@ -110,9 +110,7 @@ class GrantaServerApiSearchParameterConstraint(ModelBase):
         return self._parameter
 
     @parameter.setter
-    def parameter(
-        self, parameter: "Union[GrantaServerApiObjectIdentifier, Unset_Type]"
-    ) -> None:
+    def parameter(self, parameter: "Union[GrantaServerApiObjectIdentifier, Unset_Type]") -> None:
         """Sets the parameter of this GrantaServerApiSearchParameterConstraint.
 
         Parameters

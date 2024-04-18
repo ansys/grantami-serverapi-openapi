@@ -153,9 +153,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         return self._unit
 
     @unit.setter
-    def unit(
-        self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
-    ) -> None:
+    def unit(self, unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]") -> None:
         """Sets the unit of this GrantaServerApiDataPointDataValue.
 
         Parameters
@@ -195,9 +193,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         """
         # Field is not nullable
         if significant_figures_info is None:
-            raise ValueError(
-                "Invalid value for 'significant_figures_info', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'significant_figures_info', must not be 'None'")
         self._significant_figures_info = significant_figures_info
 
     @property
@@ -224,14 +220,10 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         """
         # Field is not nullable
         if parameter_and_values is None:
-            raise ValueError(
-                "Invalid value for 'parameter_and_values', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'parameter_and_values', must not be 'None'")
         # Field is required
         if parameter_and_values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'parameter_and_values', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'parameter_and_values', must not be 'Unset'")
         self._parameter_and_values = parameter_and_values
 
     @classmethod

@@ -137,14 +137,10 @@ class GrantaServerApiAggregationsAttributeExistsAggregation(
         """
         # Field is not nullable
         if attribute_aggregation_type is None:
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_type', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'attribute_aggregation_type', must not be 'None'")
         # Field is required
         if attribute_aggregation_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_type', must not be 'Unset'"
-            )
+            raise ValueError("Invalid value for 'attribute_aggregation_type', must not be 'Unset'")
         self._attribute_aggregation_type = attribute_aggregation_type
 
     @classmethod

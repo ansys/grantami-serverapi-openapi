@@ -66,9 +66,7 @@ class MetricsApi(ApiBase):
         data = self._get_jobs_summary_with_http_info(start, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_jobs_summary_with_http_info(
-        self, start: "Optional[str]" = None, **kwargs: Any
-    ) -> Any:
+    def _get_jobs_summary_with_http_info(self, start: "Optional[str]" = None, **kwargs: Any) -> Any:
         all_params = [
             "start",
             "_return_http_data_only",

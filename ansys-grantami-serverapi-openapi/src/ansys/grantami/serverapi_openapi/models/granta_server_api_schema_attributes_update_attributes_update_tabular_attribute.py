@@ -144,9 +144,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
         self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
         self._tabular_columns: Union[
-            List[
-                GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn
-            ],
+            List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn],
             None,
             Unset_Type,
         ] = Unset
@@ -211,9 +209,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         """
         # Field is not nullable
         if display_full_table is None:
-            raise ValueError(
-                "Invalid value for 'display_full_table', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'display_full_table', must not be 'None'")
         self._display_full_table = display_full_table
 
     @property
@@ -240,9 +236,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         """
         # Field is not nullable
         if display_summary_row_inline is None:
-            raise ValueError(
-                "Invalid value for 'display_summary_row_inline', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'display_summary_row_inline', must not be 'None'")
         self._display_summary_row_inline = display_summary_row_inline
 
     @property
@@ -267,9 +261,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         """
         # Field is not nullable
         if hide_unlinked_rows is None:
-            raise ValueError(
-                "Invalid value for 'hide_unlinked_rows', must not be 'None'"
-            )
+            raise ValueError("Invalid value for 'hide_unlinked_rows', must not be 'None'")
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property

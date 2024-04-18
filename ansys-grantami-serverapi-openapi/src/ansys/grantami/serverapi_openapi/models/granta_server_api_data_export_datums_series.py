@@ -98,9 +98,9 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
         self._parameter_values: Union[
             List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type
         ] = Unset
-        self._points: Union[
-            List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type
-        ] = Unset
+        self._points: Union[List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type] = (
+            Unset
+        )
         self._graph_decoration: Union[
             GrantaServerApiDataExportDatumsGraphDecoration, Unset_Type
         ] = Unset
