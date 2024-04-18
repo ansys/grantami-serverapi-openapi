@@ -18,7 +18,7 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
-      
+
   - package-ecosystem: "pip" # See documentation for possible values
     directory: "/ansys-grantami-serverapi-openapi/" # Location of package manifests
     schedule:
