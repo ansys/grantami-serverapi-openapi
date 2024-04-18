@@ -58,11 +58,10 @@ jobs:
         poetry lock --no-update
       working-directory: ansys-grantami-serverapi-openapi
 
-    - name: "Install and run black"
+    - name: "Install and run pre-commit"
       run: |
-        pip install black
-        black ./src ./tests
-      working-directory: ansys-grantami-serverapi-openapi
+        pip install pre-commit
+        ! pre-commit run --all-files
 
     - name: "Commit changes to library code"
       uses: EndBug/add-and-commit@v9
