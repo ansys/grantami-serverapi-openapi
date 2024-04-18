@@ -162,9 +162,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self.guid = guid
 
     @property
-    def default_subset(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type]":
+    def default_subset(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type]":
         """Gets the default_subset of this GrantaServerApiSchemaTablesTable.
 
         Returns
@@ -176,8 +174,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
 
     @default_subset.setter
     def default_subset(
-        self,
-        default_subset: "Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type]",
+        self, default_subset: "Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type]"
     ) -> None:
         """Sets the default_subset of this GrantaServerApiSchemaTablesTable.
 
@@ -220,9 +217,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._subsets = subsets
 
     @property
-    def default_layout(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]":
+    def default_layout(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]":
         """Gets the default_layout of this GrantaServerApiSchemaTablesTable.
 
         Returns
@@ -234,8 +229,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
 
     @default_layout.setter
     def default_layout(
-        self,
-        default_layout: "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]",
+        self, default_layout: "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]"
     ) -> None:
         """Sets the default_layout of this GrantaServerApiSchemaTablesTable.
 

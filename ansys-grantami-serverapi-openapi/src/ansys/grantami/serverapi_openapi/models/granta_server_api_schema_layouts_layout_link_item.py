@@ -305,9 +305,7 @@ class GrantaServerApiSchemaLayoutsLayoutLinkItem(GrantaServerApiSchemaLayoutsLay
         self._forwards = forwards
 
     @property
-    def next_link(
-        self,
-    ) -> "Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]":
+    def next_link(self) -> "Union[GrantaServerApiSchemaLayoutsLayoutLinkItem, Unset_Type]":
         """Gets the next_link of this GrantaServerApiSchemaLayoutsLayoutLinkItem.
 
         Returns

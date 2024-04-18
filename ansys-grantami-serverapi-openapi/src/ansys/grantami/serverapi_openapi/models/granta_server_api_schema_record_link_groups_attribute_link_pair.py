@@ -117,8 +117,7 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
 
     @attribute_source.setter
     def attribute_source(
-        self,
-        attribute_source: "Union[GrantaServerApiSchemaSlimEntitiesSlimAttribute, Unset_Type]",
+        self, attribute_source: "Union[GrantaServerApiSchemaSlimEntitiesSlimAttribute, Unset_Type]"
     ) -> None:
         """Sets the attribute_source of this GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair.
 
@@ -147,8 +146,7 @@ class GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair(ModelBase):
 
     @attribute_target.setter
     def attribute_target(
-        self,
-        attribute_target: "Union[GrantaServerApiSchemaSlimEntitiesSlimAttribute, Unset_Type]",
+        self, attribute_target: "Union[GrantaServerApiSchemaSlimEntitiesSlimAttribute, Unset_Type]"
     ) -> None:
         """Sets the attribute_target of this GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair.
 

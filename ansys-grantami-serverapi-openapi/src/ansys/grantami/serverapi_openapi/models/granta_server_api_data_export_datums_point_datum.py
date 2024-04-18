@@ -167,9 +167,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
         self._datum_type = datum_type
 
     @property
-    def datum_value(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsPoint], None, Unset_Type]":
+    def datum_value(self) -> "Union[List[GrantaServerApiDataExportDatumsPoint], None, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.
 
         Returns
@@ -181,8 +179,7 @@ class GrantaServerApiDataExportDatumsPointDatum(GrantaServerApiDataExportDatumsA
 
     @datum_value.setter
     def datum_value(
-        self,
-        datum_value: "Union[List[GrantaServerApiDataExportDatumsPoint], None, Unset_Type]",
+        self, datum_value: "Union[List[GrantaServerApiDataExportDatumsPoint], None, Unset_Type]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsPointDatum.
 

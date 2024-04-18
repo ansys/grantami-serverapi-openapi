@@ -110,9 +110,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self.type = type
 
     @property
-    def match_any(
-        self,
-    ) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
+    def match_any(self) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
@@ -124,8 +122,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     @match_any.setter
     def match_any(
-        self,
-        match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]",
+        self, match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
@@ -137,9 +134,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self._match_any = match_any
 
     @property
-    def match_all(
-        self,
-    ) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
+    def match_all(self) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
@@ -151,8 +146,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
 
     @match_all.setter
     def match_all(
-        self,
-        match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]",
+        self, match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 

@@ -189,9 +189,7 @@ class GrantaServerApiSearchDiscreteTextValuesDatumCriterion(GrantaServerApiSearc
         self.__none = _none
 
     @property
-    def text_match_behavior(
-        self,
-    ) -> "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]":
+    def text_match_behavior(self) -> "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]":
         """Gets the text_match_behavior of this GrantaServerApiSearchDiscreteTextValuesDatumCriterion.
 
         Returns
@@ -203,8 +201,7 @@ class GrantaServerApiSearchDiscreteTextValuesDatumCriterion(GrantaServerApiSearc
 
     @text_match_behavior.setter
     def text_match_behavior(
-        self,
-        text_match_behavior: "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]",
+        self, text_match_behavior: "Union[GrantaServerApiSearchTextMatchBehavior, Unset_Type]"
     ) -> None:
         """Sets the text_match_behavior of this GrantaServerApiSearchDiscreteTextValuesDatumCriterion.
 

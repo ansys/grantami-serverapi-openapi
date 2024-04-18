@@ -208,9 +208,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
         self._default_threshold_type = default_threshold_type
 
     @property
-    def discrete_type(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def discrete_type(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the discrete_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 
         Returns
@@ -222,8 +220,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscrete
 
     @discrete_type.setter
     def discrete_type(
-        self,
-        discrete_type: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, discrete_type: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the discrete_type of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLocalDiscreteTabularColumn.
 

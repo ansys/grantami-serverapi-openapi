@@ -125,9 +125,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self.guid = guid
 
     @property
-    def mapped_attributes(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_attributes(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
@@ -139,8 +137,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
 
     @mapped_attributes.setter
     def mapped_attributes(
-        self,
-        mapped_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, mapped_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
 
@@ -158,9 +155,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self._mapped_attributes = mapped_attributes
 
     @property
-    def mapped_parameters(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
@@ -172,8 +167,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
 
     @mapped_parameters.setter
     def mapped_parameters(
-        self,
-        mapped_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, mapped_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
 
@@ -191,9 +185,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_record_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
@@ -205,8 +197,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
 
     @mapped_record_link_groups.setter
     def mapped_record_link_groups(
-        self,
-        mapped_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, mapped_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 

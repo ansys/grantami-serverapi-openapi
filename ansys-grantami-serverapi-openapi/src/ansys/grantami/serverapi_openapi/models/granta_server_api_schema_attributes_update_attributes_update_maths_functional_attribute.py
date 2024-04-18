@@ -169,8 +169,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
         self._allow_extrapolation: Union[bool, Unset_Type] = Unset
         self._is_range: Union[bool, Unset_Type] = Unset
         self._default_content: Union[
-            GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent,
-            Unset_Type,
+            GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent, Unset_Type
         ] = Unset
         self._allow_all_compatible_expressions: Union[bool, Unset_Type] = Unset
         self._allow_anonymous_expressions: Union[bool, Unset_Type] = Unset
@@ -459,8 +458,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttrib
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute,
+            other, GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsFunctionalAttribute
         ):
             return False
 

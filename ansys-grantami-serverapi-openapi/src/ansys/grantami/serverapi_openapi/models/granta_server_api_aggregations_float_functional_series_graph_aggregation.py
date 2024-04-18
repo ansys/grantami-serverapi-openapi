@@ -108,19 +108,13 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         x_axis_parameter_identity_values: List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], optional
         """
         self._x_axis_parameter_identity_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemInt32],
-            None,
-            Unset_Type,
+            List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type
         ] = Unset
         self._x_axis_parameter_guid_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemGuid],
-            None,
-            Unset_Type,
+            List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type
         ] = Unset
         self._show_as_table_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean],
-            None,
-            Unset_Type,
+            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type
         ] = Unset
         self._minimum_number_of_series: Union[int, None, Unset_Type] = Unset
         self._maximum_number_of_series: Union[int, None, Unset_Type] = Unset

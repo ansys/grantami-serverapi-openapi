@@ -213,8 +213,7 @@ class GrantaServerApiAggregationsIntegerFixedWidthHistogramAggregationDatumCrite
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiAggregationsIntegerFixedWidthHistogramAggregationDatumCriterion,
+            other, GrantaServerApiAggregationsIntegerFixedWidthHistogramAggregationDatumCriterion
         ):
             return False
 

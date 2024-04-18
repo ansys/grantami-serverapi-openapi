@@ -140,9 +140,7 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
         self._parameter_values = parameter_values
 
     @property
-    def points(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type]":
+    def points(self) -> "Union[List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type]":
         """Gets the points of this GrantaServerApiDataExportDatumsSeries.
 
         Returns
@@ -154,8 +152,7 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
 
     @points.setter
     def points(
-        self,
-        points: "Union[List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type]",
+        self, points: "Union[List[GrantaServerApiDataExportDatumsSeriesPoint], None, Unset_Type]"
     ) -> None:
         """Sets the points of this GrantaServerApiDataExportDatumsSeries.
 
@@ -181,8 +178,7 @@ class GrantaServerApiDataExportDatumsSeries(ModelBase):
 
     @graph_decoration.setter
     def graph_decoration(
-        self,
-        graph_decoration: "Union[GrantaServerApiDataExportDatumsGraphDecoration, Unset_Type]",
+        self, graph_decoration: "Union[GrantaServerApiDataExportDatumsGraphDecoration, Unset_Type]"
     ) -> None:
         """Sets the graph_decoration of this GrantaServerApiDataExportDatumsSeries.
 

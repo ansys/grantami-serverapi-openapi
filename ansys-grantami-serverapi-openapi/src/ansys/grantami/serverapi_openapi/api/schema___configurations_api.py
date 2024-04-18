@@ -133,12 +133,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -165,11 +160,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
     def delete_configuration(
-        self,
-        *,
-        database_key: "str",
-        configuration_type: "str",
-        configuration_guid: "str",
+        self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
     ) -> "None":
         """Delete a configuration
 
@@ -187,10 +178,7 @@ class SchemaConfigurationsApi(ApiBase):
         None
         """
         data = self._delete_configuration_with_http_info(
-            database_key,
-            configuration_type,
-            configuration_guid,
-            _return_http_data_only=True,
+            database_key, configuration_type, configuration_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -276,11 +264,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
     def export_configuration(
-        self,
-        *,
-        database_key: "str",
-        configuration_type: "str",
-        configuration_guid: "str",
+        self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
     ) -> "None":
         """Get individual configuration as a file
 
@@ -298,10 +282,7 @@ class SchemaConfigurationsApi(ApiBase):
         None
         """
         data = self._export_configuration_with_http_info(
-            database_key,
-            configuration_type,
-            configuration_guid,
-            _return_http_data_only=True,
+            database_key, configuration_type, configuration_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -386,11 +367,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
     def get_configuration(
-        self,
-        *,
-        database_key: "str",
-        configuration_type: "str",
-        configuration_guid: "str",
+        self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
     ) -> "Union[GrantaServerApiSchemaConfigurationsConfiguration, None]":
         """Get individual configuration
 
@@ -408,10 +385,7 @@ class SchemaConfigurationsApi(ApiBase):
         Union[GrantaServerApiSchemaConfigurationsConfiguration, None]
         """
         data = self._get_configuration_with_http_info(
-            database_key,
-            configuration_type,
-            configuration_guid,
-            _return_http_data_only=True,
+            database_key, configuration_type, configuration_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -614,11 +588,7 @@ class SchemaConfigurationsApi(ApiBase):
         Union[GrantaServerApiSchemaConfigurationsConfiguration, None]
         """
         data = self._update_configuration_with_http_info(
-            database_key,
-            configuration_type,
-            configuration_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, configuration_type, configuration_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -689,12 +659,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

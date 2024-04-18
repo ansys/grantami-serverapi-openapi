@@ -151,9 +151,7 @@ class GrantaServerApiDataExportDatumsHyperlinkDatum(GrantaServerApiDataExportDat
         self._datum_type = datum_type
 
     @property
-    def datum_value(
-        self,
-    ) -> "Union[GrantaServerApiDataExportDatumsHyperlink, Unset_Type]":
+    def datum_value(self) -> "Union[GrantaServerApiDataExportDatumsHyperlink, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsHyperlinkDatum.
 
         Returns

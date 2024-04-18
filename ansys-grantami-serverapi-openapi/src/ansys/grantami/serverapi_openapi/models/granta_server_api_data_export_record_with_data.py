@@ -162,9 +162,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
         self._record_history_identity = record_history_identity
 
     @property
-    def data(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
+    def data(self) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
         """Gets the data of this GrantaServerApiDataExportRecordWithData.
 
         Returns
@@ -176,8 +174,7 @@ class GrantaServerApiDataExportRecordWithData(ModelBase):
 
     @data.setter
     def data(
-        self,
-        data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]",
+        self, data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
     ) -> None:
         """Sets the data of this GrantaServerApiDataExportRecordWithData.
 

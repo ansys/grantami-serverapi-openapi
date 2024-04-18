@@ -67,16 +67,9 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_job_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -106,12 +99,7 @@ class JobQueueApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -151,12 +139,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _delete_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -222,12 +205,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _delete_jobs_with_http_info(self, body: "Optional[List[str]]" = None, **kwargs: Any) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -257,12 +235,7 @@ class JobQueueApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -365,12 +338,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -649,12 +617,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_output_filenames_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -788,12 +751,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _move_to_top_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -858,12 +816,7 @@ class JobQueueApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _restore_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "id",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -916,10 +869,7 @@ class JobQueueApi(ApiBase):
         )
 
     def resubmit(
-        self,
-        *,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsResubmitJobRequest]" = None,
+        self, *, id: "str", body: "Optional[GrantaServerApiAsyncJobsResubmitJobRequest]" = None
     ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
         """Resubmit a job.
 
@@ -984,12 +934,7 @@ class JobQueueApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1014,10 +959,7 @@ class JobQueueApi(ApiBase):
         )
 
     def update_job(
-        self,
-        *,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
+        self, *, id: "str", body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None
     ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
         """Update a job.
 
@@ -1082,12 +1024,7 @@ class JobQueueApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1130,12 +1067,7 @@ class JobQueueApi(ApiBase):
     def _upload_file_with_http_info(
         self, file: "Optional[Union[BinaryIO, pathlib.Path]]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "file",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["file", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():

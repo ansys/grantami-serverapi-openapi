@@ -145,9 +145,7 @@ class GrantaServerApiIntegrationSchemaAttribute(ModelBase):
         self._discrete_type_identity: Union[int, None, Unset_Type] = Unset
         self._discrete_type_guid: Union[str, None, Unset_Type] = Unset
         self._parameters: Union[
-            List[GrantaServerApiIntegrationSchemaIntegrationParameterInfo],
-            None,
-            Unset_Type,
+            List[GrantaServerApiIntegrationSchemaIntegrationParameterInfo], None, Unset_Type
         ] = Unset
         self._target_database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._target_table: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset

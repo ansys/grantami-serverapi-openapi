@@ -134,9 +134,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         self._criterion = criterion
 
     @property
-    def sort_criteria(
-        self,
-    ) -> "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]":
+    def sort_criteria(self) -> "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]":
         """Gets the sort_criteria of this GrantaServerApiSearchSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.
 
@@ -149,8 +147,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
 
     @sort_criteria.setter
     def sort_criteria(
-        self,
-        sort_criteria: "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]",
+        self, sort_criteria: "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the sort_criteria of this GrantaServerApiSearchSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.

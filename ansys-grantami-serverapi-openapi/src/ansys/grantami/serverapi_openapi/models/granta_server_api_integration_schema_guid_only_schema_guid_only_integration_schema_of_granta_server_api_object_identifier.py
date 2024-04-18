@@ -126,14 +126,10 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfG
         self._key: Union[str, None, Unset_Type] = Unset
         self._version: Union[int, None, Unset_Type] = Unset
         self._attributes: Union[
-            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute],
-            None,
-            Unset_Type,
+            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute], None, Unset_Type
         ] = Unset
         self._layouts: Union[
-            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout],
-            None,
-            Unset_Type,
+            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyLayout], None, Unset_Type
         ] = Unset
         self._unit_system: Union[str, None, Unset_Type] = Unset
         self._discrete_types: Union[
@@ -347,9 +343,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfG
         self._sources = sources
 
     @property
-    def access_control_category_values(
-        self,
-    ) -> "Union[Dict[str, List[str]], None, Unset_Type]":
+    def access_control_category_values(self) -> "Union[Dict[str, List[str]], None, Unset_Type]":
         """Gets the access_control_category_values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
         Returns
@@ -361,8 +355,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfG
 
     @access_control_category_values.setter
     def access_control_category_values(
-        self,
-        access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]",
+        self, access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]"
     ) -> None:
         """Sets the access_control_category_values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
@@ -388,8 +381,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfG
 
     @security_groups.setter
     def security_groups(
-        self,
-        security_groups: "Union[GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type]",
+        self, security_groups: "Union[GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type]"
     ) -> None:
         """Sets the security_groups of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 

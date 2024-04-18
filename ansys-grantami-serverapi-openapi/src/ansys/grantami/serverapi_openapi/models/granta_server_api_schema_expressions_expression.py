@@ -183,9 +183,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._unit = unit
 
     @property
-    def attribute_dependencies(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attribute_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
@@ -197,8 +195,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
 
     @attribute_dependencies.setter
     def attribute_dependencies(
-        self,
-        attribute_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, attribute_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
@@ -216,9 +213,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._attribute_dependencies = attribute_dependencies
 
     @property
-    def constant_dependencies(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def constant_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
@@ -230,8 +225,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
 
     @constant_dependencies.setter
     def constant_dependencies(
-        self,
-        constant_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, constant_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
@@ -249,9 +243,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._constant_dependencies = constant_dependencies
 
     @property
-    def parameter_dependencies(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def parameter_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
@@ -263,8 +255,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
 
     @parameter_dependencies.setter
     def parameter_dependencies(
-        self,
-        parameter_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, parameter_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 

@@ -160,8 +160,7 @@ class GrantaServerApiSchemaSlimEntitiesSlimAttribute(ModelBase):
 
     @about_attribute.setter
     def about_attribute(
-        self,
-        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the about_attribute of this GrantaServerApiSchemaSlimEntitiesSlimAttribute.
 

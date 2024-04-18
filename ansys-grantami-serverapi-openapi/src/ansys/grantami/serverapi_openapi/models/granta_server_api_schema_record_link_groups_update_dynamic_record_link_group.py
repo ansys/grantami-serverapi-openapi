@@ -122,8 +122,7 @@ class GrantaServerApiSchemaRecordLinkGroupsUpdateDynamicRecordLinkGroup(
             GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type
         ] = Unset
         self._attribute_pairs: Union[
-            List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair],
-            Unset_Type,
+            List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair], Unset_Type
         ] = Unset
         self._type: str
 

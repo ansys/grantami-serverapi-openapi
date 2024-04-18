@@ -216,9 +216,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         self._row_number = row_number
 
     @property
-    def local_data(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
+    def local_data(self) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
         """Gets the local_data of this GrantaServerApiDataExportDatumsTabularRow.
 
         Returns
@@ -230,8 +228,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
 
     @local_data.setter
     def local_data(
-        self,
-        local_data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]",
+        self, local_data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
     ) -> None:
         """Sets the local_data of this GrantaServerApiDataExportDatumsTabularRow.
 
@@ -287,8 +284,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
 
     @linked_data.setter
     def linked_data(
-        self,
-        linked_data: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]",
+        self, linked_data: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]"
     ) -> None:
         """Sets the linked_data of this GrantaServerApiDataExportDatumsTabularRow.
         Data for the linked records, if the request included linked data to export

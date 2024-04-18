@@ -137,9 +137,7 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):
         self._new_parent = new_parent
 
     @property
-    def subset_option(
-        self,
-    ) -> "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType":
+    def subset_option(self) -> "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType":
         """Gets the subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
 
         Returns
@@ -151,8 +149,7 @@ class GrantaServerApiRecordsRecordHistoriesCopyRecordHistory(ModelBase):
 
     @subset_option.setter
     def subset_option(
-        self,
-        subset_option: "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType",
+        self, subset_option: "GrantaServerApiRecordsRecordHistoriesRecordPropertyInheritanceType"
     ) -> None:
         """Sets the subset_option of this GrantaServerApiRecordsRecordHistoriesCopyRecordHistory.
 

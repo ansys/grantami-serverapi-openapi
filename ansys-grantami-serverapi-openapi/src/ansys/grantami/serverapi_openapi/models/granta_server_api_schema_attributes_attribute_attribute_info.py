@@ -365,9 +365,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._ordered_meta_attributes = ordered_meta_attributes
 
     @property
-    def standard_names(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def standard_names(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
@@ -397,9 +395,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._standard_names = standard_names
 
     @property
-    def primary_data_link_groups(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def primary_data_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
@@ -411,8 +407,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
 
     @primary_data_link_groups.setter
     def primary_data_link_groups(
-        self,
-        primary_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, primary_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
@@ -430,9 +425,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._primary_data_link_groups = primary_data_link_groups
 
     @property
-    def foreign_data_link_groups(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def foreign_data_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
@@ -444,8 +437,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
 
     @foreign_data_link_groups.setter
     def foreign_data_link_groups(
-        self,
-        foreign_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, foreign_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 

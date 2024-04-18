@@ -154,9 +154,7 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
         self._total_result_count = total_result_count
 
     @property
-    def results(
-        self,
-    ) -> "Union[List[GrantaServerApiSearchSearchResult], None, Unset_Type]":
+    def results(self) -> "Union[List[GrantaServerApiSearchSearchResult], None, Unset_Type]":
         """Gets the results of this GrantaServerApiSearchSearchResponse.
 
         Returns
@@ -168,8 +166,7 @@ class GrantaServerApiSearchSearchResponse(ModelBase):
 
     @results.setter
     def results(
-        self,
-        results: "Union[List[GrantaServerApiSearchSearchResult], None, Unset_Type]",
+        self, results: "Union[List[GrantaServerApiSearchSearchResult], None, Unset_Type]"
     ) -> None:
         """Sets the results of this GrantaServerApiSearchSearchResponse.
 

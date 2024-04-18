@@ -91,9 +91,7 @@ class GrantaServerApiSchemaFilesFoldersInfo(ModelBase):
             self.folders = folders
 
     @property
-    def folders(
-        self,
-    ) -> "Union[List[GrantaServerApiSchemaFilesFolder], None, Unset_Type]":
+    def folders(self) -> "Union[List[GrantaServerApiSchemaFilesFolder], None, Unset_Type]":
         """Gets the folders of this GrantaServerApiSchemaFilesFoldersInfo.
 
         Returns

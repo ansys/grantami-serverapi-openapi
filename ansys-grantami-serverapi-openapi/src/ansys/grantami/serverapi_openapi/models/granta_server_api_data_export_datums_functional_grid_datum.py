@@ -185,9 +185,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         self._graph_type = graph_type
 
     @property
-    def points(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]":
+    def points(self) -> "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]":
         """Gets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 
         Returns
@@ -199,8 +197,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
 
     @points.setter
     def points(
-        self,
-        points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]",
+        self, points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]"
     ) -> None:
         """Sets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 

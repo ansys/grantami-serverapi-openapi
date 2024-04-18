@@ -95,9 +95,7 @@ class GrantaServerApiAggregationsLogicalAggregation(GrantaServerApiAggregationsA
         """
         super().__init__()
         self._values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean],
-            None,
-            Unset_Type,
+            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type
         ] = Unset
         self._datum_type: str
 

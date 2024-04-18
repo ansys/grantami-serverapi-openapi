@@ -111,9 +111,7 @@ class GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationD
         self.type = type
 
     @property
-    def interval(
-        self,
-    ) -> "Union[GrantaServerApiAggregationsCalendarInterval, Unset_Type]":
+    def interval(self) -> "Union[GrantaServerApiAggregationsCalendarInterval, Unset_Type]":
         """Gets the interval of this GrantaServerApiAggregationsDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion.
 
         Returns

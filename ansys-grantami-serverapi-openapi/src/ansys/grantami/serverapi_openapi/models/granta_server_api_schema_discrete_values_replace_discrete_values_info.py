@@ -86,9 +86,7 @@ class GrantaServerApiSchemaDiscreteValuesReplaceDiscreteValuesInfo(ModelBase):
         discrete_values: List[GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue], optional
         """
         self._discrete_values: Union[
-            List[GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue],
-            None,
-            Unset_Type,
+            List[GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue], None, Unset_Type
         ] = Unset
 
         if discrete_values is not Unset:

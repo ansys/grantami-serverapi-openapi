@@ -197,9 +197,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
         self._graph_type = graph_type
 
     @property
-    def series(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type]":
+    def series(self) -> "Union[List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type]":
         """Gets the series of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 
         Returns
@@ -211,8 +209,7 @@ class GrantaServerApiDataExportDatumsFunctionalSeriesDatum(
 
     @series.setter
     def series(
-        self,
-        series: "Union[List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type]",
+        self, series: "Union[List[GrantaServerApiDataExportDatumsSeries], None, Unset_Type]"
     ) -> None:
         """Sets the series of this GrantaServerApiDataExportDatumsFunctionalSeriesDatum.
 

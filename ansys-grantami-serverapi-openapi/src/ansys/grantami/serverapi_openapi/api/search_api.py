@@ -137,12 +137,7 @@ class SearchApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -193,12 +188,7 @@ class SearchApi(ApiBase):
         GrantaServerApiSearchSearchResponse
         """
         data = self._database_search_in_table_with_guid_with_http_info(
-            database_key,
-            table_guid,
-            body,
-            x_ansys_vc_mode,
-            mode,
-            _return_http_data_only=True,
+            database_key, table_guid, body, x_ansys_vc_mode, mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -270,12 +260,7 @@ class SearchApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -326,12 +311,7 @@ class SearchApi(ApiBase):
         GrantaServerApiSearchSearchResponse
         """
         data = self._database_search_in_table_with_identity_with_http_info(
-            database_key,
-            table_identity,
-            body,
-            x_ansys_vc_mode,
-            mode,
-            _return_http_data_only=True,
+            database_key, table_identity, body, x_ansys_vc_mode, mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -403,12 +383,7 @@ class SearchApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -582,12 +557,7 @@ class SearchApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -612,10 +582,7 @@ class SearchApi(ApiBase):
         )
 
     def integration_search(
-        self,
-        *,
-        schema: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        self, *, schema: "str", body: "Optional[GrantaServerApiSearchSearchRequest]" = None
     ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
         """Runs a search against the integration schema.
 
@@ -684,12 +651,7 @@ class SearchApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

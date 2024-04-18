@@ -111,9 +111,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
         self.type = type
 
     @property
-    def failed_records(
-        self,
-    ) -> "List[GrantaServerApiIntegrationDataExportRecordReference]":
+    def failed_records(self) -> "List[GrantaServerApiIntegrationDataExportRecordReference]":
         """Gets the failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
 
         Returns
@@ -125,8 +123,7 @@ class GrantaServerApiDataExportExportFailuresRecordExportFailure(
 
     @failed_records.setter
     def failed_records(
-        self,
-        failed_records: "List[GrantaServerApiIntegrationDataExportRecordReference]",
+        self, failed_records: "List[GrantaServerApiIntegrationDataExportRecordReference]"
     ) -> None:
         """Sets the failed_records of this GrantaServerApiDataExportExportFailuresRecordExportFailure.
 

@@ -74,12 +74,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         Union[GrantaServerApiSchemaLayoutsNewLayoutItem, None]
         """
         data = self._create_layout_item_with_http_info(
-            database_key,
-            table_guid,
-            layout_guid,
-            section_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, table_guid, layout_guid, section_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -159,12 +154,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -285,12 +275,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -450,12 +435,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
     def delete_section(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        layout_guid: "str",
-        section_guid: "str",
+        self, *, database_key: "str", table_guid: "str", layout_guid: "str", section_guid: "str"
     ) -> "None":
         """Delete a layout section.
 
@@ -473,11 +453,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         None
         """
         data = self._delete_section_with_http_info(
-            database_key,
-            table_guid,
-            layout_guid,
-            section_guid,
-            _return_http_data_only=True,
+            database_key, table_guid, layout_guid, section_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -947,12 +923,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

@@ -118,9 +118,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
             self.scale_type = scale_type
 
     @property
-    def parameter(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
+    def parameter(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
         """Gets the parameter of this GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter.
 
         Returns
@@ -132,8 +130,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
 
     @parameter.setter
     def parameter(
-        self,
-        parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the parameter of this GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter.
 
@@ -200,9 +197,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
         self._interpolation_method = interpolation_method
 
     @property
-    def scale_type(
-        self,
-    ) -> "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]":
+    def scale_type(self) -> "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]":
         """Gets the scale_type of this GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter.
 
         Returns
@@ -214,8 +209,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter(ModelBase
 
     @scale_type.setter
     def scale_type(
-        self,
-        scale_type: "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]",
+        self, scale_type: "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]"
     ) -> None:
         """Sets the scale_type of this GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter.
 

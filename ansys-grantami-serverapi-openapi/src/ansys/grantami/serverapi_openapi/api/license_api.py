@@ -67,16 +67,9 @@ class LicenseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _checkout_app_license_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -108,12 +101,7 @@ class LicenseApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -136,9 +124,7 @@ class LicenseApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def ensure_user_license_available(
-        self,
-    ) -> "Union[MicrosoftAspNetCoreMvcObjectResult, None]":
+    def ensure_user_license_available(self) -> "Union[MicrosoftAspNetCoreMvcObjectResult, None]":
         """Either checks out a user license for the requesting user, or returns an error response if no such license is available.  This method is a no-op because it relies on license check to happen within Granta.Server.Api.Auth.UserContextFilter
 
         This method makes a synchronous HTTP request.

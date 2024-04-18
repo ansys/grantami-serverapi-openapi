@@ -148,9 +148,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
         self._type = type
 
     @property
-    def parameter_value(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def parameter_value(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the parameter_value of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 
         Returns
@@ -162,8 +160,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteParameterContent(
 
     @parameter_value.setter
     def parameter_value(
-        self,
-        parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the parameter_value of this GrantaServerApiSchemaParametersUpdateDiscreteParameterContent.
 

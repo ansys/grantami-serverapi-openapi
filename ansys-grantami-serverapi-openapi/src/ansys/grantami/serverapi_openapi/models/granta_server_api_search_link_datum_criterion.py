@@ -461,9 +461,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
         self._type = type
 
     @property
-    def local_rows_behavior(
-        self,
-    ) -> "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]":
+    def local_rows_behavior(self) -> "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]":
         """Gets the local_rows_behavior of this GrantaServerApiSearchLinkDatumCriterion.
 
         Returns
@@ -475,8 +473,7 @@ class GrantaServerApiSearchLinkDatumCriterion(GrantaServerApiSearchDatumCriterio
 
     @local_rows_behavior.setter
     def local_rows_behavior(
-        self,
-        local_rows_behavior: "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]",
+        self, local_rows_behavior: "Union[GrantaServerApiSearchLocalRowsBehavior, Unset_Type]"
     ) -> None:
         """Sets the local_rows_behavior of this GrantaServerApiSearchLinkDatumCriterion.
 

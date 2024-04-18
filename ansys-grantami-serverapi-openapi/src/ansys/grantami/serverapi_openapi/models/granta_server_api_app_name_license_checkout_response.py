@@ -107,8 +107,7 @@ class GrantaServerApiAppNameLicenseCheckoutResponse(ModelBase):
 
     @results.setter
     def results(
-        self,
-        results: "Union[List[GrantaServerApiAppNameLicenseCheckoutResult], None, Unset_Type]",
+        self, results: "Union[List[GrantaServerApiAppNameLicenseCheckoutResult], None, Unset_Type]"
     ) -> None:
         """Sets the results of this GrantaServerApiAppNameLicenseCheckoutResponse.
 

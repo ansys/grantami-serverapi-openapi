@@ -225,9 +225,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
         self._help_path = help_path
 
     @property
-    def about_attribute(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def about_attribute(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
 
         Returns
@@ -239,8 +237,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute(ModelBase):
 
     @about_attribute.setter
     def about_attribute(
-        self,
-        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the about_attribute of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute.
 

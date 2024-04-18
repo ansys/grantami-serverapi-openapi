@@ -159,9 +159,7 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
         self._entered_value = entered_value
 
     @property
-    def entered_unit(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
+    def entered_unit(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]":
         """Gets the entered_unit of this GrantaServerApiDataSignificantFiguresInfo.
 
         Returns
@@ -173,8 +171,7 @@ class GrantaServerApiDataSignificantFiguresInfo(ModelBase):
 
     @entered_unit.setter
     def entered_unit(
-        self,
-        entered_unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]",
+        self, entered_unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]"
     ) -> None:
         """Sets the entered_unit of this GrantaServerApiDataSignificantFiguresInfo.
 

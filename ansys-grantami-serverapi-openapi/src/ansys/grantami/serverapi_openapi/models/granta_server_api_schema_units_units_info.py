@@ -93,9 +93,7 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
             self.units = units
 
     @property
-    def units(
-        self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]":
+    def units(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]":
         """Gets the units of this GrantaServerApiSchemaUnitsUnitsInfo.
 
         Returns
@@ -107,8 +105,7 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
 
     @units.setter
     def units(
-        self,
-        units: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]",
+        self, units: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]"
     ) -> None:
         """Sets the units of this GrantaServerApiSchemaUnitsUnitsInfo.
 

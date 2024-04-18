@@ -133,9 +133,7 @@ class GrantaServerApiDataDiscreteParameterWithValue(GrantaServerApiDataParameter
         self._type = type
 
     @property
-    def parameter_value(
-        self,
-    ) -> "GrantaServerApiSchemaParametersDiscreteParameterValue":
+    def parameter_value(self) -> "GrantaServerApiSchemaParametersDiscreteParameterValue":
         """Gets the parameter_value of this GrantaServerApiDataDiscreteParameterWithValue.
 
         Returns

@@ -159,9 +159,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
         self.guid = guid
 
     @property
-    def default_threshold_type(
-        self,
-    ) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
+    def default_threshold_type(self) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
         """Gets the default_threshold_type of this GrantaServerApiSchemaAttributesAttribute.
 
         Returns
@@ -173,8 +171,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
 
     @default_threshold_type.setter
     def default_threshold_type(
-        self,
-        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        self, default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType"
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaAttributesAttribute.
 
@@ -250,8 +247,7 @@ class GrantaServerApiSchemaAttributesAttribute(ModelBase):
 
     @about_attribute.setter
     def about_attribute(
-        self,
-        about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the about_attribute of this GrantaServerApiSchemaAttributesAttribute.
 

@@ -125,8 +125,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
     @failed_attributes.setter
     def failed_attributes(
-        self,
-        failed_attributes: "List[GrantaServerApiDataExportExportFailuresAttributeReference]",
+        self, failed_attributes: "List[GrantaServerApiDataExportExportFailuresAttributeReference]"
     ) -> None:
         """Sets the failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
 

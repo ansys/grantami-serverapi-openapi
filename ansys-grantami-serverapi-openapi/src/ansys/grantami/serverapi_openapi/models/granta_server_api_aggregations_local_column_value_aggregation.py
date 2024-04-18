@@ -122,9 +122,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
         self.local_column_aggregation_type = local_column_aggregation_type
 
     @property
-    def aggregation_datum(
-        self,
-    ) -> "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]":
+    def aggregation_datum(self) -> "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]":
         """Gets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 
         Returns
@@ -136,8 +134,7 @@ class GrantaServerApiAggregationsLocalColumnValueAggregation(
 
     @aggregation_datum.setter
     def aggregation_datum(
-        self,
-        aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]",
+        self, aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]"
     ) -> None:
         """Sets the aggregation_datum of this GrantaServerApiAggregationsLocalColumnValueAggregation.
 

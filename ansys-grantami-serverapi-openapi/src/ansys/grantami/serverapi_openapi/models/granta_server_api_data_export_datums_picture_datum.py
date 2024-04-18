@@ -151,9 +151,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(GrantaServerApiDataExportDatum
         self._datum_type = datum_type
 
     @property
-    def datum_value(
-        self,
-    ) -> "Union[GrantaServerApiDataExportDatumsBinaryData, Unset_Type]":
+    def datum_value(self) -> "Union[GrantaServerApiDataExportDatumsBinaryData, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsPictureDatum.
 
         Returns
@@ -165,8 +163,7 @@ class GrantaServerApiDataExportDatumsPictureDatum(GrantaServerApiDataExportDatum
 
     @datum_value.setter
     def datum_value(
-        self,
-        datum_value: "Union[GrantaServerApiDataExportDatumsBinaryData, Unset_Type]",
+        self, datum_value: "Union[GrantaServerApiDataExportDatumsBinaryData, Unset_Type]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsPictureDatum.
 

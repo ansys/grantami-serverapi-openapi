@@ -344,10 +344,7 @@ class SchemaDatabasesApi(ApiBase):
         )
 
     def update_database(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateDatabase]" = None,
+        self, *, database_key: "str", body: "Optional[GrantaServerApiSchemaUpdateDatabase]" = None
     ) -> "Union[GrantaServerApiSchemaDatabase, None]":
         """Update database details.
 
@@ -414,12 +411,7 @@ class SchemaDatabasesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

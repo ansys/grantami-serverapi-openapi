@@ -132,12 +132,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -164,11 +159,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
     def delete_discrete_value(
-        self,
-        *,
-        database_key: "str",
-        discrete_type_guid: "str",
-        discrete_value_guid: "str",
+        self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
     ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]":
         """Delete a single discrete value. It must not be used by any data, or the operation will fail.
 
@@ -185,10 +176,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]
         """
         data = self._delete_discrete_value_with_http_info(
-            database_key,
-            discrete_type_guid,
-            discrete_value_guid,
-            _return_http_data_only=True,
+            database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -369,11 +357,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
     def get_discrete_value(
-        self,
-        *,
-        database_key: "str",
-        discrete_type_guid: "str",
-        discrete_value_guid: "str",
+        self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
     ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]":
         """Gets specific discrete value for a given discreteType within a given database.
 
@@ -390,10 +374,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]
         """
         data = self._get_discrete_value_with_http_info(
-            database_key,
-            discrete_type_guid,
-            discrete_value_guid,
-            _return_http_data_only=True,
+            database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -654,12 +635,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -709,11 +685,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]
         """
         data = self._update_discrete_value_with_http_info(
-            database_key,
-            discrete_type_guid,
-            discrete_value_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, discrete_type_guid, discrete_value_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -784,12 +756,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

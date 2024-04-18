@@ -202,9 +202,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         self._use_logarithmic_scale = use_logarithmic_scale
 
     @property
-    def expression(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def expression(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the expression of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Returns
@@ -216,8 +214,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
 
     @expression.setter
     def expression(
-        self,
-        expression: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, expression: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the expression of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
@@ -232,9 +229,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         self._expression = expression
 
     @property
-    def free_parameter(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def free_parameter(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the free_parameter of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Returns
@@ -246,8 +241,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
 
     @free_parameter.setter
     def free_parameter(
-        self,
-        free_parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, free_parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the free_parameter of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 

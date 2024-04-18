@@ -90,9 +90,7 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         self.parameter_values = parameter_values
 
     @property
-    def parameter_values(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def parameter_values(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
 
         Returns

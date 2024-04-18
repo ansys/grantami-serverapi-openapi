@@ -102,9 +102,7 @@ class GrantaServerApiAggregationsShortTextAggregation(GrantaServerApiAggregation
         self.datum_type = datum_type
 
     @property
-    def terms(
-        self,
-    ) -> "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]":
+    def terms(self) -> "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]":
         """Gets the terms of this GrantaServerApiAggregationsShortTextAggregation.
 
         Returns
@@ -116,8 +114,7 @@ class GrantaServerApiAggregationsShortTextAggregation(GrantaServerApiAggregation
 
     @terms.setter
     def terms(
-        self,
-        terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]",
+        self, terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]"
     ) -> None:
         """Sets the terms of this GrantaServerApiAggregationsShortTextAggregation.
 

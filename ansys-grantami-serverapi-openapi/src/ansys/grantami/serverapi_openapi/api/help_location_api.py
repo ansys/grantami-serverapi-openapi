@@ -66,12 +66,7 @@ class HelpLocationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_help_url_with_http_info(self, help_key: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "help_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["help_key", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -140,12 +135,7 @@ class HelpLocationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_help_url_redirect_with_http_info(self, help_key: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "help_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["help_key", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():

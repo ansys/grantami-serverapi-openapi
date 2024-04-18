@@ -73,12 +73,7 @@ class IntegrationApi(ApiBase):
         body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
         **kwargs: Any,
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -108,12 +103,7 @@ class IntegrationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -234,12 +224,7 @@ class IntegrationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _delete_schema_with_http_info(self, schema: "str", **kwargs: Any) -> Any:
-        all_params = [
-            "schema",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["schema", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -314,10 +299,7 @@ class IntegrationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_schema_with_http_info(
-        self,
-        schema: "str",
-        include_implicit_attributes: "Optional[bool]" = None,
-        **kwargs: Any,
+        self, schema: "str", include_implicit_attributes: "Optional[bool]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
@@ -596,10 +578,7 @@ class IntegrationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _schema_targets_with_http_info(
-        self,
-        schema: "str",
-        include_implicit_attributes: "Optional[bool]" = None,
-        **kwargs: Any,
+        self, schema: "str", include_implicit_attributes: "Optional[bool]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
@@ -797,12 +776,7 @@ class IntegrationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

@@ -172,9 +172,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
         self._datum_type = datum_type
 
     @property
-    def x_axis_parameter(
-        self,
-    ) -> "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]":
+    def x_axis_parameter(self) -> "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]":
         """Gets the x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 
         Returns
@@ -186,8 +184,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalDatum(
 
     @x_axis_parameter.setter
     def x_axis_parameter(
-        self,
-        x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]",
+        self, x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]"
     ) -> None:
         """Sets the x_axis_parameter of this GrantaServerApiDataExportDatumsDiscreteFunctionalDatum.
 

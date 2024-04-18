@@ -165,9 +165,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         self._attribute_guid = attribute_guid
 
     @property
-    def meta_datums(
-        self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
+    def meta_datums(self) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
         """Gets the meta_datums of this GrantaServerApiDataExportDatumsDatum.
 
         Returns
@@ -179,8 +177,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
 
     @meta_datums.setter
     def meta_datums(
-        self,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]",
+        self, meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
     ) -> None:
         """Sets the meta_datums of this GrantaServerApiDataExportDatumsDatum.
 

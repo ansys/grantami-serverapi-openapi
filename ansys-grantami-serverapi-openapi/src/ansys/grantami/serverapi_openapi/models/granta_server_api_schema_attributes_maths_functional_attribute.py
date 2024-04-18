@@ -243,9 +243,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
         self._unit = unit
 
     @property
-    def attribute_parameters(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attribute_parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 
         Returns
@@ -257,8 +255,7 @@ class GrantaServerApiSchemaAttributesMathsFunctionalAttribute(
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesMathsFunctionalAttribute.
 

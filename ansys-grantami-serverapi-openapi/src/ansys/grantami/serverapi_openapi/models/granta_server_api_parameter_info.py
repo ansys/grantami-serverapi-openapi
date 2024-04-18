@@ -250,8 +250,7 @@ class GrantaServerApiParameterInfo(ModelBase):
 
     @interpolation_type.setter
     def interpolation_type(
-        self,
-        interpolation_type: "Union[GrantaServerApiParameterInfoInterpolationType, Unset_Type]",
+        self, interpolation_type: "Union[GrantaServerApiParameterInfoInterpolationType, Unset_Type]"
     ) -> None:
         """Sets the interpolation_type of this GrantaServerApiParameterInfo.
 
@@ -266,9 +265,7 @@ class GrantaServerApiParameterInfo(ModelBase):
         self._interpolation_type = interpolation_type
 
     @property
-    def parameter_type(
-        self,
-    ) -> "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]":
+    def parameter_type(self) -> "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]":
         """Gets the parameter_type of this GrantaServerApiParameterInfo.
 
         Returns
@@ -280,8 +277,7 @@ class GrantaServerApiParameterInfo(ModelBase):
 
     @parameter_type.setter
     def parameter_type(
-        self,
-        parameter_type: "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]",
+        self, parameter_type: "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]"
     ) -> None:
         """Sets the parameter_type of this GrantaServerApiParameterInfo.
 
@@ -296,9 +292,7 @@ class GrantaServerApiParameterInfo(ModelBase):
         self._parameter_type = parameter_type
 
     @property
-    def default_value(
-        self,
-    ) -> "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]":
+    def default_value(self) -> "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]":
         """Gets the default_value of this GrantaServerApiParameterInfo.
 
         Returns
@@ -310,8 +304,7 @@ class GrantaServerApiParameterInfo(ModelBase):
 
     @default_value.setter
     def default_value(
-        self,
-        default_value: "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]",
+        self, default_value: "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]"
     ) -> None:
         """Sets the default_value of this GrantaServerApiParameterInfo.
 

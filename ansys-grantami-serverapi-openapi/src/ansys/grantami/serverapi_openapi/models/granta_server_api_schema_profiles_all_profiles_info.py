@@ -130,9 +130,7 @@ class GrantaServerApiSchemaProfilesAllProfilesInfo(ModelBase):
         self._profiles = profiles
 
     @property
-    def default_profile(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type]":
+    def default_profile(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type]":
         """Gets the default_profile of this GrantaServerApiSchemaProfilesAllProfilesInfo.
 
         Returns
@@ -144,8 +142,7 @@ class GrantaServerApiSchemaProfilesAllProfilesInfo(ModelBase):
 
     @default_profile.setter
     def default_profile(
-        self,
-        default_profile: "Union[GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type]",
+        self, default_profile: "Union[GrantaServerApiSchemaSlimEntitiesSlimProfile, Unset_Type]"
     ) -> None:
         """Sets the default_profile of this GrantaServerApiSchemaProfilesAllProfilesInfo.
 

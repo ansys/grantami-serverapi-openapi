@@ -282,9 +282,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
-    def target(
-        self,
-    ) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
+    def target(self) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
         """Gets the target of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Returns
@@ -296,8 +294,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
 
     @target.setter
     def target(
-        self,
-        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]",
+        self, target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]"
     ) -> None:
         """Sets the target of this GrantaServerApiSchemaAttributesTabularAttribute.
 
@@ -312,9 +309,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         self._target = target
 
     @property
-    def tabular_columns(
-        self,
-    ) -> "List[GrantaServerApiSchemaTabularColumnsTabularColumn]":
+    def tabular_columns(self) -> "List[GrantaServerApiSchemaTabularColumnsTabularColumn]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Returns

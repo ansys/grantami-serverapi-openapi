@@ -159,8 +159,7 @@ class GrantaServerApiSchemaParametersDiscreteParameterContent(
 
     @parameter_value.setter
     def parameter_value(
-        self,
-        parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, parameter_value: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the parameter_value of this GrantaServerApiSchemaParametersDiscreteParameterContent.
 

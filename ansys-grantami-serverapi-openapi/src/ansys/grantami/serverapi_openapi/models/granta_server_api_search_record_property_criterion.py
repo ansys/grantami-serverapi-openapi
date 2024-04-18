@@ -110,9 +110,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         self.type = type
 
     @property
-    def _property(
-        self,
-    ) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
+    def _property(self) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns
@@ -124,8 +122,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
 
     @_property.setter
     def _property(
-        self,
-        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]",
+        self, _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]"
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertyCriterion.
 
@@ -140,9 +137,7 @@ class GrantaServerApiSearchRecordPropertyCriterion(GrantaServerApiSearchCriterio
         self.__property = _property
 
     @property
-    def inner_criterion(
-        self,
-    ) -> "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]":
+    def inner_criterion(self) -> "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]":
         """Gets the inner_criterion of this GrantaServerApiSearchRecordPropertyCriterion.
 
         Returns

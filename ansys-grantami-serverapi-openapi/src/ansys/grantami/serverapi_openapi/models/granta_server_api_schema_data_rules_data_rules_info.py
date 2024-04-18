@@ -93,9 +93,7 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
             self.data_rules = data_rules
 
     @property
-    def data_rules(
-        self,
-    ) -> "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]":
+    def data_rules(self) -> "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]":
         """Gets the data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
 
         Returns
@@ -107,8 +105,7 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
 
     @data_rules.setter
     def data_rules(
-        self,
-        data_rules: "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]",
+        self, data_rules: "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]"
     ) -> None:
         """Sets the data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
 

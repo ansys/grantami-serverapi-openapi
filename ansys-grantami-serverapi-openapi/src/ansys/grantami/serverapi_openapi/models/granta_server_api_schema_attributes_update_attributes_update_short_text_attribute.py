@@ -197,9 +197,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
         self._is_unique = is_unique
 
     @property
-    def data_rule(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def data_rule(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
         Returns
@@ -211,8 +209,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
 
     @data_rule.setter
     def data_rule(
-        self,
-        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute.
 
@@ -249,8 +246,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute(
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute,
+            other, GrantaServerApiSchemaAttributesUpdateAttributesUpdateShortTextAttribute
         ):
             return False
 

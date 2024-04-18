@@ -182,9 +182,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._table = table
 
     @property
-    def parent(
-        self,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]":
+    def parent(self) -> "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]":
         """Gets the parent of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Returns
@@ -196,8 +194,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
 
     @parent.setter
     def parent(
-        self,
-        parent: "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]",
+        self, parent: "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]"
     ) -> None:
         """Sets the parent of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
@@ -212,9 +209,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._parent = parent
 
     @property
-    def record_versions(
-        self,
-    ) -> "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
+    def record_versions(self) -> "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
         """Gets the record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Returns
@@ -226,8 +221,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
 
     @record_versions.setter
     def record_versions(
-        self,
-        record_versions: "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
+        self, record_versions: "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]"
     ) -> None:
         """Sets the record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 

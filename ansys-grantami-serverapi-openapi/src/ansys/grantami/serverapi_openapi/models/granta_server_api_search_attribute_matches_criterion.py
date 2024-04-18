@@ -120,9 +120,7 @@ class GrantaServerApiSearchAttributeMatchesCriterion(GrantaServerApiSearchAttrib
         self.attribute_criterion_type = attribute_criterion_type
 
     @property
-    def inner_criterion(
-        self,
-    ) -> "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]":
+    def inner_criterion(self) -> "Union[GrantaServerApiSearchDatumCriterion, Unset_Type]":
         """Gets the inner_criterion of this GrantaServerApiSearchAttributeMatchesCriterion.
 
         Returns

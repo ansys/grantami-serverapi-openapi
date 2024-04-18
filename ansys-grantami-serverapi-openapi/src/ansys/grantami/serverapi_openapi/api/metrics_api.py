@@ -67,12 +67,7 @@ class MetricsApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_jobs_summary_with_http_info(self, start: "Optional[str]" = None, **kwargs: Any) -> Any:
-        all_params = [
-            "start",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["start", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():

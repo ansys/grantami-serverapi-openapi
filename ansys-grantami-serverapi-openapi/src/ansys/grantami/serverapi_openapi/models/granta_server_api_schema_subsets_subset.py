@@ -111,9 +111,7 @@ class GrantaServerApiSchemaSubsetsSubset(ModelBase):
         self.guid = guid
 
     @property
-    def associated_layout(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]":
+    def associated_layout(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]":
         """Gets the associated_layout of this GrantaServerApiSchemaSubsetsSubset.
 
         Returns
@@ -125,8 +123,7 @@ class GrantaServerApiSchemaSubsetsSubset(ModelBase):
 
     @associated_layout.setter
     def associated_layout(
-        self,
-        associated_layout: "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]",
+        self, associated_layout: "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]"
     ) -> None:
         """Sets the associated_layout of this GrantaServerApiSchemaSubsetsSubset.
 

@@ -91,9 +91,7 @@ class GrantaServerApiMetricsGetJobsSummaryResponse(ModelBase):
             self.jobs = jobs
 
     @property
-    def jobs(
-        self,
-    ) -> "Union[List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type]":
+    def jobs(self) -> "Union[List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type]":
         """Gets the jobs of this GrantaServerApiMetricsGetJobsSummaryResponse.
 
         Returns
@@ -105,8 +103,7 @@ class GrantaServerApiMetricsGetJobsSummaryResponse(ModelBase):
 
     @jobs.setter
     def jobs(
-        self,
-        jobs: "Union[List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type]",
+        self, jobs: "Union[List[GrantaServerApiMetricsJobTypeAndStatus], None, Unset_Type]"
     ) -> None:
         """Sets the jobs of this GrantaServerApiMetricsGetJobsSummaryResponse.
 

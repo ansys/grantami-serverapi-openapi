@@ -71,11 +71,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _generate_schema_from_layout_with_http_info(
-        self,
-        database_key: "str",
-        table_identity: "int",
-        layout_identity: "int",
-        **kwargs: Any,
+        self, database_key: "str", table_identity: "int", layout_identity: "int", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -178,11 +174,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _generate_schema_from_layout_name_with_http_info(
-        self,
-        database_key: "str",
-        table_identity: "int",
-        layout_name: "str",
-        **kwargs: Any,
+        self, database_key: "str", table_identity: "int", layout_name: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -388,11 +380,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _generate_schema_from_layout_with_table_name_with_http_info(
-        self,
-        database_key: "str",
-        table_name: "str",
-        layout_identity: "int",
-        **kwargs: Any,
+        self, database_key: "str", table_name: "str", layout_identity: "int", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -541,12 +529,7 @@ class DatabaseApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -594,12 +577,7 @@ class DatabaseApi(ApiBase):
     def _generate_schema_from_standard_names_all_databases_with_http_info(
         self, body: "Optional[List[str]]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -631,12 +609,7 @@ class DatabaseApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -871,10 +844,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _get_search_index_status_with_http_info(
-        self,
-        database_key: "str",
-        include_diagnostics: "Optional[bool]" = None,
-        **kwargs: Any,
+        self, database_key: "str", include_diagnostics: "Optional[bool]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",

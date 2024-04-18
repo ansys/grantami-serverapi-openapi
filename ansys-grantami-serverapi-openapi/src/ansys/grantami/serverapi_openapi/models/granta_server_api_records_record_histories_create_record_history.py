@@ -206,9 +206,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
         self._short_name = short_name
 
     @property
-    def parent(
-        self,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]":
+    def parent(self) -> "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]":
         """Gets the parent of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 
         Returns
@@ -220,8 +218,7 @@ class GrantaServerApiRecordsRecordHistoriesCreateRecordHistory(ModelBase):
 
     @parent.setter
     def parent(
-        self,
-        parent: "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]",
+        self, parent: "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]"
     ) -> None:
         """Sets the parent of this GrantaServerApiRecordsRecordHistoriesCreateRecordHistory.
 

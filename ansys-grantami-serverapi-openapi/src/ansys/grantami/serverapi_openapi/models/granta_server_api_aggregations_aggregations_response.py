@@ -91,9 +91,7 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
             self.results = results
 
     @property
-    def results(
-        self,
-    ) -> "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]":
+    def results(self) -> "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]":
         """Gets the results of this GrantaServerApiAggregationsAggregationsResponse.
 
         Returns
@@ -105,8 +103,7 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
 
     @results.setter
     def results(
-        self,
-        results: "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]",
+        self, results: "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]"
     ) -> None:
         """Sets the results of this GrantaServerApiAggregationsAggregationsResponse.
 

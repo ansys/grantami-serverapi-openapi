@@ -90,9 +90,7 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
         self.configurations = configurations
 
     @property
-    def configurations(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]":
+    def configurations(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]":
         """Gets the configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
 
         Returns

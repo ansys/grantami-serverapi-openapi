@@ -67,16 +67,9 @@ class SchemaProfilesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_profile_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GrantaServerApiSchemaProfilesCreateProfile]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -106,12 +99,7 @@ class SchemaProfilesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -289,9 +277,7 @@ class SchemaProfilesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_profiles(
-        self,
-    ) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
+    def get_profiles(self) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
         """Get AllProfilesInfo
 
         This method makes a synchronous HTTP request.
@@ -352,9 +338,7 @@ class SchemaProfilesApi(ApiBase):
         )
 
     def update_all_profiles_info(
-        self,
-        *,
-        body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
+        self, *, body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None
     ) -> "Union[GrantaServerApiSchemaProfilesAllProfilesInfo, None]":
         """Update AllProfilesInfo
 
@@ -376,12 +360,7 @@ class SchemaProfilesApi(ApiBase):
         body: "Optional[GrantaServerApiSchemaProfilesUpdateAllProfilesInfo]" = None,
         **kwargs: Any,
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -411,12 +390,7 @@ class SchemaProfilesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -513,12 +487,7 @@ class SchemaProfilesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

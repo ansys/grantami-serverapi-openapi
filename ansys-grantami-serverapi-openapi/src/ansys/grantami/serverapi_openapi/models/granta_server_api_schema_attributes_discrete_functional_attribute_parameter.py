@@ -98,9 +98,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter(ModelB
             self.default_value = default_value
 
     @property
-    def parameter(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
+    def parameter(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
         """Gets the parameter of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter.
 
         Returns
@@ -112,8 +110,7 @@ class GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter(ModelB
 
     @parameter.setter
     def parameter(
-        self,
-        parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the parameter of this GrantaServerApiSchemaAttributesDiscreteFunctionalAttributeParameter.
 

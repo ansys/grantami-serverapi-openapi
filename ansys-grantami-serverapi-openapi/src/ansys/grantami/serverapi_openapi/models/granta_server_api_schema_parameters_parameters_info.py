@@ -107,8 +107,7 @@ class GrantaServerApiSchemaParametersParametersInfo(ModelBase):
 
     @parameters.setter
     def parameters(
-        self,
-        parameters: "Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]",
+        self, parameters: "Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]"
     ) -> None:
         """Sets the parameters of this GrantaServerApiSchemaParametersParametersInfo.
 

@@ -237,9 +237,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         self._is_multi_valued = is_multi_valued
 
     @property
-    def attribute_parameters(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attribute_parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 
         Returns
@@ -251,8 +249,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self,
-        attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 

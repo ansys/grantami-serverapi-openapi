@@ -237,9 +237,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
         self._summary_row_text = summary_row_text
 
     @property
-    def roll_up_type(
-        self,
-    ) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
+    def roll_up_type(self) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
         """Gets the roll_up_type of this GrantaServerApiSchemaTabularColumnsTabularColumn.
 
         Returns
@@ -283,8 +281,7 @@ class GrantaServerApiSchemaTabularColumnsTabularColumn(ModelBase):
 
     @summary_row_roll_up_type.setter
     def summary_row_roll_up_type(
-        self,
-        summary_row_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType",
+        self, summary_row_roll_up_type: "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType"
     ) -> None:
         """Sets the summary_row_roll_up_type of this GrantaServerApiSchemaTabularColumnsTabularColumn.
 

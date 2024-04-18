@@ -153,9 +153,7 @@ class GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException(ModelBase
         self._code = code
 
     @property
-    def errors(
-        self,
-    ) -> "Union[List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type]":
+    def errors(self) -> "Union[List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type]":
         """Gets the errors of this GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException.
 
         Returns
@@ -167,8 +165,7 @@ class GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException(ModelBase
 
     @errors.setter
     def errors(
-        self,
-        errors: "Union[List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type]",
+        self, errors: "Union[List[GrantaServerApiExceptionsErrorDetail], None, Unset_Type]"
     ) -> None:
         """Sets the errors of this GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException.
 

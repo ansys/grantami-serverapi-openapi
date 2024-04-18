@@ -196,9 +196,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self._interpolation_method = interpolation_method
 
     @property
-    def scale_type(
-        self,
-    ) -> "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]":
+    def scale_type(self) -> "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]":
         """Gets the scale_type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter.
 
         Returns
@@ -210,8 +208,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
 
     @scale_type.setter
     def scale_type(
-        self,
-        scale_type: "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]",
+        self, scale_type: "Union[GrantaServerApiSchemaAttributesAttributeScaleType, Unset_Type]"
     ) -> None:
         """Sets the scale_type of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter.
 

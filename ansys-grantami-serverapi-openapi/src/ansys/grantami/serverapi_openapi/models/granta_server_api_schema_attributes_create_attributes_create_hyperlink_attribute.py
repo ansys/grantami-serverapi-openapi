@@ -171,8 +171,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateHyperlinkAttribute(
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiSchemaAttributesCreateAttributesCreateHyperlinkAttribute,
+            other, GrantaServerApiSchemaAttributesCreateAttributesCreateHyperlinkAttribute
         ):
             return False
 

@@ -121,12 +121,7 @@ class SchemaParametersApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -236,12 +231,7 @@ class SchemaParametersApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -378,19 +368,12 @@ class SchemaParametersApi(ApiBase):
         Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]
         """
         data = self._delete_parameter_value_with_http_info(
-            database_key,
-            parameter_guid,
-            parameter_value_guid,
-            _return_http_data_only=True,
+            database_key, parameter_guid, parameter_value_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _delete_parameter_value_with_http_info(
-        self,
-        database_key: "str",
-        parameter_guid: "str",
-        parameter_value_guid: "str",
-        **kwargs: Any,
+        self, database_key: "str", parameter_guid: "str", parameter_value_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -669,19 +652,12 @@ class SchemaParametersApi(ApiBase):
         Union[GrantaServerApiSchemaParametersParameterValue, None]
         """
         data = self._get_parameter_value_with_http_info(
-            database_key,
-            parameter_guid,
-            parameter_value_guid,
-            _return_http_data_only=True,
+            database_key, parameter_guid, parameter_value_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_parameter_value_with_http_info(
-        self,
-        database_key: "str",
-        parameter_guid: "str",
-        parameter_value_guid: "str",
-        **kwargs: Any,
+        self, database_key: "str", parameter_guid: "str", parameter_value_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -920,12 +896,7 @@ class SchemaParametersApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -975,11 +946,7 @@ class SchemaParametersApi(ApiBase):
         Union[GrantaServerApiSchemaParametersParameterValue, None]
         """
         data = self._update_parameter_value_with_http_info(
-            database_key,
-            parameter_guid,
-            parameter_value_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, parameter_guid, parameter_value_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -1050,12 +1017,7 @@ class SchemaParametersApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

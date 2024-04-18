@@ -297,9 +297,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
         self._tabular_columns = tabular_columns
 
     @property
-    def target(
-        self,
-    ) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
+    def target(self) -> "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]":
         """Gets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 
         Returns
@@ -311,8 +309,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute(
 
     @target.setter
     def target(
-        self,
-        target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]",
+        self, target: "Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type]"
     ) -> None:
         """Sets the target of this GrantaServerApiSchemaAttributesCreateAttributesCreateTabularAttribute.
 

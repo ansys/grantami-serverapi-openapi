@@ -233,8 +233,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
 
     @attribute_pairs.setter
     def attribute_pairs(
-        self,
-        attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
+        self, attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]"
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup.
 

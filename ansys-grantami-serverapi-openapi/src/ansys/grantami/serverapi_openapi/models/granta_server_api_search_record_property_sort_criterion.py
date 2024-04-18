@@ -114,9 +114,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
         self.type = type
 
     @property
-    def _property(
-        self,
-    ) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
+    def _property(self) -> "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]":
         """Gets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 
         Returns
@@ -128,8 +126,7 @@ class GrantaServerApiSearchRecordPropertySortCriterion(GrantaServerApiSearchSort
 
     @_property.setter
     def _property(
-        self,
-        _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]",
+        self, _property: "Union[GrantaServerApiSearchSearchableRecordProperty, Unset_Type]"
     ) -> None:
         """Sets the _property of this GrantaServerApiSearchRecordPropertySortCriterion.
 

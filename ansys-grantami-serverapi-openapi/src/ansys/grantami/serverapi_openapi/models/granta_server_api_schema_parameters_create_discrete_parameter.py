@@ -124,9 +124,7 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
         self.type = type
 
     @property
-    def values(
-        self,
-    ) -> "List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]":
+    def values(self) -> "List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersCreateDiscreteParameter.
 
         Returns
@@ -138,8 +136,7 @@ class GrantaServerApiSchemaParametersCreateDiscreteParameter(
 
     @values.setter
     def values(
-        self,
-        values: "List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]",
+        self, values: "List[GrantaServerApiSchemaParametersCreateDiscreteParameterValue]"
     ) -> None:
         """Sets the values of this GrantaServerApiSchemaParametersCreateDiscreteParameter.
 

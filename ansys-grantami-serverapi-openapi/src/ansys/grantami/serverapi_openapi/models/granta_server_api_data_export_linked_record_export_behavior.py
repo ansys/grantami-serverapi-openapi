@@ -171,9 +171,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
         self._summary_roll_up_type = summary_roll_up_type
 
     @property
-    def linked_records_criterion(
-        self,
-    ) -> "Union[GrantaServerApiSearchCriterion, Unset_Type]":
+    def linked_records_criterion(self) -> "Union[GrantaServerApiSearchCriterion, Unset_Type]":
         """Gets the linked_records_criterion of this GrantaServerApiDataExportLinkedRecordExportBehavior.
 
         Returns
@@ -185,8 +183,7 @@ class GrantaServerApiDataExportLinkedRecordExportBehavior(ModelBase):
 
     @linked_records_criterion.setter
     def linked_records_criterion(
-        self,
-        linked_records_criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]",
+        self, linked_records_criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]"
     ) -> None:
         """Sets the linked_records_criterion of this GrantaServerApiDataExportLinkedRecordExportBehavior.
 

@@ -96,9 +96,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
         self.attribute_identities = attribute_identities
 
     @property
-    def record_references(
-        self,
-    ) -> "List[GrantaServerApiIntegrationDataExportRecordReference]":
+    def record_references(self) -> "List[GrantaServerApiIntegrationDataExportRecordReference]":
         """Gets the record_references of this GrantaServerApiIntegrationDataExportIntegrationDataExportRequest.
         A list of records to export. These are references to the underlying records in the source database
 
@@ -111,8 +109,7 @@ class GrantaServerApiIntegrationDataExportIntegrationDataExportRequest(ModelBase
 
     @record_references.setter
     def record_references(
-        self,
-        record_references: "List[GrantaServerApiIntegrationDataExportRecordReference]",
+        self, record_references: "List[GrantaServerApiIntegrationDataExportRecordReference]"
     ) -> None:
         """Sets the record_references of this GrantaServerApiIntegrationDataExportIntegrationDataExportRequest.
         A list of records to export. These are references to the underlying records in the source database

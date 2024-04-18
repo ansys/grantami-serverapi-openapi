@@ -335,9 +335,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
         self._contains_records_in_databases = contains_records_in_databases
 
     @property
-    def contains_records_in_integration_schemas(
-        self,
-    ) -> "Union[List[str], None, Unset_Type]":
+    def contains_records_in_integration_schemas(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the contains_records_in_integration_schemas of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas
 
@@ -350,8 +348,7 @@ class GrantaServerApiListsDtoRecordListSearchCriterion(GrantaServerApiListsDtoLi
 
     @contains_records_in_integration_schemas.setter
     def contains_records_in_integration_schemas(
-        self,
-        contains_records_in_integration_schemas: "Union[List[str], None, Unset_Type]",
+        self, contains_records_in_integration_schemas: "Union[List[str], None, Unset_Type]"
     ) -> None:
         """Sets the contains_records_in_integration_schemas of this GrantaServerApiListsDtoRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas

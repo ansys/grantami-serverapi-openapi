@@ -180,9 +180,7 @@ class GrantaServerApiSchemaProfilesProfile(ModelBase):
         self._homepage_url = homepage_url
 
     @property
-    def profile_tables(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]":
+    def profile_tables(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimProfileTable]":
         """Gets the profile_tables of this GrantaServerApiSchemaProfilesProfile.
 
         Returns

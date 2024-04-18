@@ -205,9 +205,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._use_logarithmic_scale = use_logarithmic_scale
 
     @property
-    def expression(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type]":
+    def expression(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type]":
         """Gets the expression of this GrantaServerApiSchemaAttributesMathsContent.
 
         Returns
@@ -219,8 +217,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
 
     @expression.setter
     def expression(
-        self,
-        expression: "Union[GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type]",
+        self, expression: "Union[GrantaServerApiSchemaSlimEntitiesSlimExpression, Unset_Type]"
     ) -> None:
         """Sets the expression of this GrantaServerApiSchemaAttributesMathsContent.
 
@@ -249,8 +246,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
 
     @free_parameter.setter
     def free_parameter(
-        self,
-        free_parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, free_parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the free_parameter of this GrantaServerApiSchemaAttributesMathsContent.
 
@@ -265,9 +261,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._free_parameter = free_parameter
 
     @property
-    def parameter_contents(
-        self,
-    ) -> "List[GrantaServerApiSchemaParametersParameterContent]":
+    def parameter_contents(self) -> "List[GrantaServerApiSchemaParametersParameterContent]":
         """Gets the parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
 
         Returns
@@ -279,8 +273,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
 
     @parameter_contents.setter
     def parameter_contents(
-        self,
-        parameter_contents: "List[GrantaServerApiSchemaParametersParameterContent]",
+        self, parameter_contents: "List[GrantaServerApiSchemaParametersParameterContent]"
     ) -> None:
         """Sets the parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
 

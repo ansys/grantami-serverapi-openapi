@@ -107,8 +107,7 @@ class GrantaServerApiAggregationsHistogram(ModelBase):
 
     @buckets.setter
     def buckets(
-        self,
-        buckets: "Union[List[GrantaServerApiAggregationsHistogramBucket], None, Unset_Type]",
+        self, buckets: "Union[List[GrantaServerApiAggregationsHistogramBucket], None, Unset_Type]"
     ) -> None:
         """Sets the buckets of this GrantaServerApiAggregationsHistogram.
 

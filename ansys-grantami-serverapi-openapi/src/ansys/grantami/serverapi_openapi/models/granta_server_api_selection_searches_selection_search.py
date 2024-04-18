@@ -257,9 +257,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         self._notes = notes
 
     @property
-    def current_user_access_info(
-        self,
-    ) -> "Union[Dict[str, Dict[str, bool]], None, Unset_Type]":
+    def current_user_access_info(self) -> "Union[Dict[str, Dict[str, bool]], None, Unset_Type]":
         """Gets the current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
 
         Returns
@@ -271,8 +269,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
 
     @current_user_access_info.setter
     def current_user_access_info(
-        self,
-        current_user_access_info: "Union[Dict[str, Dict[str, bool]], None, Unset_Type]",
+        self, current_user_access_info: "Union[Dict[str, Dict[str, bool]], None, Unset_Type]"
     ) -> None:
         """Sets the current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
 

@@ -107,8 +107,7 @@ class GrantaServerApiSchemaSubsetsSubsetsInfo(ModelBase):
 
     @subsets.setter
     def subsets(
-        self,
-        subsets: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]",
+        self, subsets: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]"
     ) -> None:
         """Sets the subsets of this GrantaServerApiSchemaSubsetsSubsetsInfo.
 

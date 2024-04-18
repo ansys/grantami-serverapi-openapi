@@ -133,9 +133,7 @@ class GrantaServerApiDataDiscreteDatum(GrantaServerApiDataApplicableDatum):
         self._datum_type = datum_type
 
     @property
-    def discrete_values(
-        self,
-    ) -> "List[GrantaServerApiSchemaDiscreteValuesDiscreteValue]":
+    def discrete_values(self) -> "List[GrantaServerApiSchemaDiscreteValuesDiscreteValue]":
         """Gets the discrete_values of this GrantaServerApiDataDiscreteDatum.
 
         Returns

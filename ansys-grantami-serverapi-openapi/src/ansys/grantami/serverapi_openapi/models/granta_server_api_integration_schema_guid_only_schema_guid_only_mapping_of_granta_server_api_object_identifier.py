@@ -219,8 +219,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServe
 
     @link_source_type.setter
     def link_source_type(
-        self,
-        link_source_type: "Union[GrantaServerApiIntegrationSchemaLinkSourceType, Unset_Type]",
+        self, link_source_type: "Union[GrantaServerApiIntegrationSchemaLinkSourceType, Unset_Type]"
     ) -> None:
         """Sets the link_source_type of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier.
 

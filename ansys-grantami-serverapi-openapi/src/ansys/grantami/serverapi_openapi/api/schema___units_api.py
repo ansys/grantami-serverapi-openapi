@@ -49,10 +49,7 @@ class SchemaUnitsApi(ApiBase):
     """
 
     def create_unit(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None,
+        self, *, database_key: "str", body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None
     ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
         """Create a new unit.
 
@@ -117,12 +114,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -221,12 +213,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1232,12 +1219,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1347,12 +1329,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

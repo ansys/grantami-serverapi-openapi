@@ -120,9 +120,7 @@ class GrantaServerApiSelectionSearchesCreateSearchRequest(ModelBase):
         self._search_config = search_config
 
     @property
-    def detail(
-        self,
-    ) -> "Union[GrantaServerApiSelectionSearchesSearchDetail, Unset_Type]":
+    def detail(self) -> "Union[GrantaServerApiSelectionSearchesSearchDetail, Unset_Type]":
         """Gets the detail of this GrantaServerApiSelectionSearchesCreateSearchRequest.
 
         Returns

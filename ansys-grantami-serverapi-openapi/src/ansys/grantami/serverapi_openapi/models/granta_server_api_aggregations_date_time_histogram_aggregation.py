@@ -104,9 +104,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
         self.datum_type = datum_type
 
     @property
-    def histogram(
-        self,
-    ) -> "Union[GrantaServerApiAggregationsDateTimeHistogram, Unset_Type]":
+    def histogram(self) -> "Union[GrantaServerApiAggregationsDateTimeHistogram, Unset_Type]":
         """Gets the histogram of this GrantaServerApiAggregationsDateTimeHistogramAggregation.
 
         Returns
@@ -118,8 +116,7 @@ class GrantaServerApiAggregationsDateTimeHistogramAggregation(
 
     @histogram.setter
     def histogram(
-        self,
-        histogram: "Union[GrantaServerApiAggregationsDateTimeHistogram, Unset_Type]",
+        self, histogram: "Union[GrantaServerApiAggregationsDateTimeHistogram, Unset_Type]"
     ) -> None:
         """Sets the histogram of this GrantaServerApiAggregationsDateTimeHistogramAggregation.
 

@@ -182,9 +182,7 @@ class GrantaServerApiDataExportExportFailuresRollupReference(ModelBase):
         self._attribute_guid = attribute_guid
 
     @property
-    def rollup_type(
-        self,
-    ) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
+    def rollup_type(self) -> "GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType":
         """Gets the rollup_type of this GrantaServerApiDataExportExportFailuresRollupReference.
 
         Returns

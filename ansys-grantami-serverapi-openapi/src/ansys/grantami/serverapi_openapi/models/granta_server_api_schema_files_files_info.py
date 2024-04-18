@@ -93,9 +93,7 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
             self.files = files
 
     @property
-    def files(
-        self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]":
+    def files(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]":
         """Gets the files of this GrantaServerApiSchemaFilesFilesInfo.
 
         Returns
@@ -107,8 +105,7 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
 
     @files.setter
     def files(
-        self,
-        files: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]",
+        self, files: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]"
     ) -> None:
         """Sets the files of this GrantaServerApiSchemaFilesFilesInfo.
 

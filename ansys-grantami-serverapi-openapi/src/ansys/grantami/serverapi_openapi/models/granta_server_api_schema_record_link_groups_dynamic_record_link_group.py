@@ -243,9 +243,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
         self._referential_integrity_model = referential_integrity_model
 
     @property
-    def attribute_pairs(
-        self,
-    ) -> "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]":
+    def attribute_pairs(self) -> "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]":
         """Gets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
 
         Returns
@@ -257,8 +255,7 @@ class GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup(
 
     @attribute_pairs.setter
     def attribute_pairs(
-        self,
-        attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]",
+        self, attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsAttributeLinkPair]"
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsDynamicRecordLinkGroup.
 

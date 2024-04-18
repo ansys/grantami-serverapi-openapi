@@ -233,9 +233,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._unit = unit
 
     @property
-    def values(
-        self,
-    ) -> "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
+    def values(self) -> "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
@@ -265,9 +263,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._values = values
 
     @property
-    def interpolation_type(
-        self,
-    ) -> "GrantaServerApiSchemaParametersParameterInterpolationType":
+    def interpolation_type(self) -> "GrantaServerApiSchemaParametersParameterInterpolationType":
         """Gets the interpolation_type of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
@@ -279,8 +275,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
 
     @interpolation_type.setter
     def interpolation_type(
-        self,
-        interpolation_type: "GrantaServerApiSchemaParametersParameterInterpolationType",
+        self, interpolation_type: "GrantaServerApiSchemaParametersParameterInterpolationType"
     ) -> None:
         """Sets the interpolation_type of this GrantaServerApiSchemaParametersCreateNumericParameter.
 

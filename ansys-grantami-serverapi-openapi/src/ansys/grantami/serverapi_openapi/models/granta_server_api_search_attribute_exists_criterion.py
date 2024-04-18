@@ -120,9 +120,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(GrantaServerApiSearchAttribu
         self.attribute_criterion_type = attribute_criterion_type
 
     @property
-    def inner_criterion(
-        self,
-    ) -> "Union[GrantaServerApiSearchDatumExistsCriterion, Unset_Type]":
+    def inner_criterion(self) -> "Union[GrantaServerApiSearchDatumExistsCriterion, Unset_Type]":
         """Gets the inner_criterion of this GrantaServerApiSearchAttributeExistsCriterion.
 
         Returns
@@ -134,8 +132,7 @@ class GrantaServerApiSearchAttributeExistsCriterion(GrantaServerApiSearchAttribu
 
     @inner_criterion.setter
     def inner_criterion(
-        self,
-        inner_criterion: "Union[GrantaServerApiSearchDatumExistsCriterion, Unset_Type]",
+        self, inner_criterion: "Union[GrantaServerApiSearchDatumExistsCriterion, Unset_Type]"
     ) -> None:
         """Sets the inner_criterion of this GrantaServerApiSearchAttributeExistsCriterion.
 

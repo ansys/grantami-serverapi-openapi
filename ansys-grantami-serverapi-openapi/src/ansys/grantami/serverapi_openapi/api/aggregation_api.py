@@ -137,12 +137,7 @@ class AggregationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -194,12 +189,7 @@ class AggregationApi(ApiBase):
         Union[GrantaServerApiAggregationsAggregationsResponse, None]
         """
         data = self._database_aggregation_for_table_with_guid_with_http_info(
-            database_key,
-            table_guid,
-            body,
-            x_ansys_vc_mode,
-            mode,
-            _return_http_data_only=True,
+            database_key, table_guid, body, x_ansys_vc_mode, mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -271,12 +261,7 @@ class AggregationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -328,12 +313,7 @@ class AggregationApi(ApiBase):
         Union[GrantaServerApiAggregationsAggregationsResponse, None]
         """
         data = self._database_aggregation_for_table_with_identity_with_http_info(
-            database_key,
-            table_identity,
-            body,
-            x_ansys_vc_mode,
-            mode,
-            _return_http_data_only=True,
+            database_key, table_identity, body, x_ansys_vc_mode, mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -405,12 +385,7 @@ class AggregationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -509,12 +484,7 @@ class AggregationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

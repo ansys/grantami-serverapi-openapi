@@ -315,9 +315,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         self._attribute_type = attribute_type
 
     @property
-    def link_attribute_type(
-        self,
-    ) -> "Union[GrantaServerApiLinkAttributeType, Unset_Type]":
+    def link_attribute_type(self) -> "Union[GrantaServerApiLinkAttributeType, Unset_Type]":
         """Gets the link_attribute_type of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns
@@ -371,9 +369,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         self._export_in_reversed_direction = export_in_reversed_direction
 
     @property
-    def record_properties(
-        self,
-    ) -> "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]":
+    def record_properties(self) -> "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]":
         """Gets the record_properties of this GrantaServerApiDataExportLinkAttributeToExport.
         The properties to export on any linked records.
 
@@ -386,8 +382,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
 
     @record_properties.setter
     def record_properties(
-        self,
-        record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]",
+        self, record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]"
     ) -> None:
         """Sets the record_properties of this GrantaServerApiDataExportLinkAttributeToExport.
         The properties to export on any linked records.
@@ -461,9 +456,7 @@ class GrantaServerApiDataExportLinkAttributeToExport(GrantaServerApiDataExportAt
         self._linked_records_export_behavior = linked_records_export_behavior
 
     @property
-    def indirect_links_behavior(
-        self,
-    ) -> "Union[GrantaServerApiIndirectLinks, Unset_Type]":
+    def indirect_links_behavior(self) -> "Union[GrantaServerApiIndirectLinks, Unset_Type]":
         """Gets the indirect_links_behavior of this GrantaServerApiDataExportLinkAttributeToExport.
 
         Returns

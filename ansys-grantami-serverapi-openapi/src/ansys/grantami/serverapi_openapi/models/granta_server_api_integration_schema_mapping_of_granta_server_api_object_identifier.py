@@ -246,8 +246,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
 
     @link_source_type.setter
     def link_source_type(
-        self,
-        link_source_type: "Union[GrantaServerApiIntegrationSchemaLinkSourceType, Unset_Type]",
+        self, link_source_type: "Union[GrantaServerApiIntegrationSchemaLinkSourceType, Unset_Type]"
     ) -> None:
         """Sets the link_source_type of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
 
@@ -284,8 +283,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier,
+            other, GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier
         ):
             return False
 

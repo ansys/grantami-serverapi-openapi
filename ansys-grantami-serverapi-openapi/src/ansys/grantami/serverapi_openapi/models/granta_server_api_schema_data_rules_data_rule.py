@@ -170,9 +170,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         self._regular_expression = regular_expression
 
     @property
-    def used_by_attributes(
-        self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def used_by_attributes(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
 
         Returns
@@ -184,8 +182,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
 
     @used_by_attributes.setter
     def used_by_attributes(
-        self,
-        used_by_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        self, used_by_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
 

@@ -98,9 +98,7 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
         super().__init__()
         self._type: str
         self._local_aggregation_criteria: Union[
-            List[GrantaServerApiAggregationsLocalColumnAggregationCriterion],
-            None,
-            Unset_Type,
+            List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type
         ] = Unset
 
         self.type = type

@@ -250,8 +250,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
 
     @interpolation_type.setter
     def interpolation_type(
-        self,
-        interpolation_type: "Union[GrantaServerApiParameterInfoInterpolationType, Unset_Type]",
+        self, interpolation_type: "Union[GrantaServerApiParameterInfoInterpolationType, Unset_Type]"
     ) -> None:
         """Sets the interpolation_type of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo.
 
@@ -266,9 +265,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
         self._interpolation_type = interpolation_type
 
     @property
-    def parameter_type(
-        self,
-    ) -> "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]":
+    def parameter_type(self) -> "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]":
         """Gets the parameter_type of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo.
 
         Returns
@@ -280,8 +277,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
 
     @parameter_type.setter
     def parameter_type(
-        self,
-        parameter_type: "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]",
+        self, parameter_type: "Union[GrantaServerApiParameterInfoParameterType, Unset_Type]"
     ) -> None:
         """Sets the parameter_type of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo.
 
@@ -296,9 +292,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
         self._parameter_type = parameter_type
 
     @property
-    def default_value(
-        self,
-    ) -> "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]":
+    def default_value(self) -> "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]":
         """Gets the default_value of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo.
 
         Returns
@@ -310,8 +304,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
 
     @default_value.setter
     def default_value(
-        self,
-        default_value: "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]",
+        self, default_value: "Union[GrantaServerApiDataExportDatumsParameterValue, Unset_Type]"
     ) -> None:
         """Sets the default_value of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo.
 
@@ -348,8 +341,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameter
     def __eq__(self, other: Any) -> bool:
         """Returns true if both objects are equal"""
         if not isinstance(
-            other,
-            GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo,
+            other, GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo
         ):
             return False
 

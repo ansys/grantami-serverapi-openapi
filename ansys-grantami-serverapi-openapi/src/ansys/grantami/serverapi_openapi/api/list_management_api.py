@@ -146,16 +146,9 @@ class ListManagementApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_list_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -185,12 +178,7 @@ class ListManagementApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -288,9 +276,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_all_lists(
-        self,
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
+    def get_all_lists(self) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
         """Returns all lists visible to the calling user
 
         This method makes a synchronous HTTP request.
@@ -867,16 +853,9 @@ class ListManagementApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _run_record_lists_search_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -908,12 +887,7 @@ class ListManagementApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1091,12 +1065,7 @@ class ListManagementApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

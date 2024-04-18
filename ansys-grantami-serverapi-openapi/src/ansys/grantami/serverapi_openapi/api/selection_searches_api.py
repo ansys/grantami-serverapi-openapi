@@ -49,9 +49,7 @@ class SelectionSearchesApi(ApiBase):
     """
 
     def create_search(
-        self,
-        *,
-        body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None,
+        self, *, body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None
     ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
         """Creates a new search with the specified properties.
 
@@ -73,12 +71,7 @@ class SelectionSearchesApi(ApiBase):
         body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None,
         **kwargs: Any,
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -110,12 +103,7 @@ class SelectionSearchesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -215,9 +203,7 @@ class SelectionSearchesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_all(
-        self,
-    ) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
+    def get_all(self) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
         """Returns all searches visible to the calling user.
 
         This method makes a synchronous HTTP request.
@@ -425,12 +411,7 @@ class SelectionSearchesApi(ApiBase):
             body_params = params["body"]
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -457,9 +438,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
     def search(
-        self,
-        *,
-        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
+        self, *, body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None
     ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
         """Retrieves a collection of searches that match the specified criteria.
 
@@ -481,12 +460,7 @@ class SelectionSearchesApi(ApiBase):
         body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
         **kwargs: Any,
     ) -> Any:
-        all_params = [
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -516,12 +490,7 @@ class SelectionSearchesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

@@ -132,12 +132,7 @@ class SchemaExpressionsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -186,11 +181,7 @@ class SchemaExpressionsApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _delete_expression_with_http_info(
-        self,
-        database_key: "str",
-        table_guid: "str",
-        expression_guid: "str",
-        **kwargs: Any,
+        self, database_key: "str", table_guid: "str", expression_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -600,12 +591,7 @@ class SchemaExpressionsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

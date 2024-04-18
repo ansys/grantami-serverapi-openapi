@@ -107,8 +107,7 @@ class GrantaServerApiSchemaLayoutsLayoutsInfo(ModelBase):
 
     @layouts.setter
     def layouts(
-        self,
-        layouts: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]",
+        self, layouts: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]"
     ) -> None:
         """Sets the layouts of this GrantaServerApiSchemaLayoutsLayoutsInfo.
 

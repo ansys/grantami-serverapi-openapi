@@ -219,8 +219,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
 
     @attributes.setter
     def attributes(
-        self,
-        attributes: "Union[List[GrantaServerApiIntegrationSchemaAttribute], None, Unset_Type]",
+        self, attributes: "Union[List[GrantaServerApiIntegrationSchemaAttribute], None, Unset_Type]"
     ) -> None:
         """Sets the attributes of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
@@ -232,9 +231,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
         self._attributes = attributes
 
     @property
-    def layouts(
-        self,
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaLayout], None, Unset_Type]":
+    def layouts(self) -> "Union[List[GrantaServerApiIntegrationSchemaLayout], None, Unset_Type]":
         """Gets the layouts of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
         Returns
@@ -246,8 +243,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
 
     @layouts.setter
     def layouts(
-        self,
-        layouts: "Union[List[GrantaServerApiIntegrationSchemaLayout], None, Unset_Type]",
+        self, layouts: "Union[List[GrantaServerApiIntegrationSchemaLayout], None, Unset_Type]"
     ) -> None:
         """Sets the layouts of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
@@ -335,9 +331,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
         self._sources = sources
 
     @property
-    def access_control_category_values(
-        self,
-    ) -> "Union[Dict[str, List[str]], None, Unset_Type]":
+    def access_control_category_values(self) -> "Union[Dict[str, List[str]], None, Unset_Type]":
         """Gets the access_control_category_values of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
         Returns
@@ -349,8 +343,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
 
     @access_control_category_values.setter
     def access_control_category_values(
-        self,
-        access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]",
+        self, access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]"
     ) -> None:
         """Sets the access_control_category_values of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
@@ -376,8 +369,7 @@ class GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectId
 
     @security_groups.setter
     def security_groups(
-        self,
-        security_groups: "Union[GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type]",
+        self, security_groups: "Union[GrantaServerApiIntegrationSchemaSecurityGroups, Unset_Type]"
     ) -> None:
         """Sets the security_groups of this GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 

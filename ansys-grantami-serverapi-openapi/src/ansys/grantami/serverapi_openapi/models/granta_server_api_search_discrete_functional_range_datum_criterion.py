@@ -211,8 +211,7 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
 
     @constraints.setter
     def constraints(
-        self,
-        constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]",
+        self, constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion.
         Optional unit string. If not included, the gte and lte values are assumed to be in database units.

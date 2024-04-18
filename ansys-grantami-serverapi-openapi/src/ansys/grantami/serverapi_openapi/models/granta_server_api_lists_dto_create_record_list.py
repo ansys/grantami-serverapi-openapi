@@ -139,9 +139,7 @@ class GrantaServerApiListsDtoCreateRecordList(ModelBase):
             self.internal_use = internal_use
 
     @property
-    def items(
-        self,
-    ) -> "Union[GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type]":
+    def items(self) -> "Union[GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type]":
         """Gets the items of this GrantaServerApiListsDtoCreateRecordList.
 
         Returns
@@ -153,8 +151,7 @@ class GrantaServerApiListsDtoCreateRecordList(ModelBase):
 
     @items.setter
     def items(
-        self,
-        items: "Union[GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type]",
+        self, items: "Union[GrantaServerApiListsDtoCreateRecordListItemsInfo, Unset_Type]"
     ) -> None:
         """Sets the items of this GrantaServerApiListsDtoCreateRecordList.
 

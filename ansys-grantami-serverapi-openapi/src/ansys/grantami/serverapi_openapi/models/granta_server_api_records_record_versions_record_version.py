@@ -179,9 +179,7 @@ class GrantaServerApiRecordsRecordVersionsRecordVersion(ModelBase):
         self.guid = guid
 
     @property
-    def record_history(
-        self,
-    ) -> "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory":
+    def record_history(self) -> "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory":
         """Gets the record_history of this GrantaServerApiRecordsRecordVersionsRecordVersion.
 
         Returns

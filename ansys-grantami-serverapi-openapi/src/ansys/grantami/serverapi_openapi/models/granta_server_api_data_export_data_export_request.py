@@ -137,9 +137,7 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
         self._attributes = attributes
 
     @property
-    def record_properties(
-        self,
-    ) -> "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]":
+    def record_properties(self) -> "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]":
         """Gets the record_properties of this GrantaServerApiDataExportDataExportRequest.
 
         Returns
@@ -151,8 +149,7 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
 
     @record_properties.setter
     def record_properties(
-        self,
-        record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]",
+        self, record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]"
     ) -> None:
         """Sets the record_properties of this GrantaServerApiDataExportDataExportRequest.
 

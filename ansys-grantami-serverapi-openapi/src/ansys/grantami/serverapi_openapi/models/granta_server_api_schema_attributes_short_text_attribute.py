@@ -207,9 +207,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
         self._is_unique = is_unique
 
     @property
-    def data_rule(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
+    def data_rule(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]":
         """Gets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 
         Returns
@@ -221,8 +219,7 @@ class GrantaServerApiSchemaAttributesShortTextAttribute(GrantaServerApiSchemaAtt
 
     @data_rule.setter
     def data_rule(
-        self,
-        data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]",
+        self, data_rule: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]"
     ) -> None:
         """Sets the data_rule of this GrantaServerApiSchemaAttributesShortTextAttribute.
 

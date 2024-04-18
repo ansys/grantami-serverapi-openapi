@@ -155,9 +155,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
         self._attribute_aggregation_type = attribute_aggregation_type
 
     @property
-    def aggregation_datum(
-        self,
-    ) -> "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]":
+    def aggregation_datum(self) -> "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]":
         """Gets the aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
 
         Returns
@@ -169,8 +167,7 @@ class GrantaServerApiAggregationsAttributeValueAggregation(
 
     @aggregation_datum.setter
     def aggregation_datum(
-        self,
-        aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]",
+        self, aggregation_datum: "Union[GrantaServerApiAggregationsAggregationDatum, Unset_Type]"
     ) -> None:
         """Sets the aggregation_datum of this GrantaServerApiAggregationsAttributeValueAggregation.
 

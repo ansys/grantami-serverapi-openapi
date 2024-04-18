@@ -170,9 +170,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
         self._column_type = column_type
 
     @property
-    def linked_attribute(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def linked_attribute(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
 
         Returns
@@ -184,8 +182,7 @@ class GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttribu
 
     @linked_attribute.setter
     def linked_attribute(
-        self,
-        linked_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, linked_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the linked_attribute of this GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateLinkedAttributeTabularColumn.
 

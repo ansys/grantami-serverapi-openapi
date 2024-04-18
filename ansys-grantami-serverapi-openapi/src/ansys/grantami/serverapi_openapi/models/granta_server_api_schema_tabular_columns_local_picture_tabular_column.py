@@ -172,9 +172,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPictureTabularColumn(
         self._column_type = column_type
 
     @property
-    def default_threshold_type(
-        self,
-    ) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
+    def default_threshold_type(self) -> "GrantaServerApiSchemaAttributesAttributeThresholdType":
         """Gets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsLocalPictureTabularColumn.
 
         Returns
@@ -186,8 +184,7 @@ class GrantaServerApiSchemaTabularColumnsLocalPictureTabularColumn(
 
     @default_threshold_type.setter
     def default_threshold_type(
-        self,
-        default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
+        self, default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType"
     ) -> None:
         """Sets the default_threshold_type of this GrantaServerApiSchemaTabularColumnsLocalPictureTabularColumn.
 

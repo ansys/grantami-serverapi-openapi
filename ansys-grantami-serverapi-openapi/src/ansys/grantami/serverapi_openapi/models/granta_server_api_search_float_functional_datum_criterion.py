@@ -209,8 +209,7 @@ class GrantaServerApiSearchFloatFunctionalDatumCriterion(GrantaServerApiSearchDa
 
     @constraints.setter
     def constraints(
-        self,
-        constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]",
+        self, constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchFloatFunctionalDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.

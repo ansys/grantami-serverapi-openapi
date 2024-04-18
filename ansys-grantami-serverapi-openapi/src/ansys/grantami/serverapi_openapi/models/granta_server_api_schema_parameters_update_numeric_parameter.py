@@ -228,9 +228,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
         self._interpolation_type = interpolation_type
 
     @property
-    def scale_type(
-        self,
-    ) -> "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]":
+    def scale_type(self) -> "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]":
         """Gets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 
         Returns
@@ -242,8 +240,7 @@ class GrantaServerApiSchemaParametersUpdateNumericParameter(
 
     @scale_type.setter
     def scale_type(
-        self,
-        scale_type: "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]",
+        self, scale_type: "Union[GrantaServerApiSchemaParametersParameterScaleType, Unset_Type]"
     ) -> None:
         """Sets the scale_type of this GrantaServerApiSchemaParametersUpdateNumericParameter.
 

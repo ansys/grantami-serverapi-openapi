@@ -184,8 +184,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
 
     @series.setter
     def series(
-        self,
-        series: "Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]",
+        self, series: "Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]"
     ) -> None:
         """Sets the series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
 

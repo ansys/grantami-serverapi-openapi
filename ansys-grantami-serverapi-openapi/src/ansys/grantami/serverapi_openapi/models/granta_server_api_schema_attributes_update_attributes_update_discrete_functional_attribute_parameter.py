@@ -100,9 +100,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
             self.default_value = default_value
 
     @property
-    def parameter(
-        self,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
+    def parameter(self) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]":
         """Gets the parameter of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter.
 
         Returns
@@ -114,8 +112,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAtt
 
     @parameter.setter
     def parameter(
-        self,
-        parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]",
+        self, parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]"
     ) -> None:
         """Sets the parameter of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateDiscreteFunctionalAttributeParameter.
 

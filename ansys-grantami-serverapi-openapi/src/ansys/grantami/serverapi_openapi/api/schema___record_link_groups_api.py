@@ -132,12 +132,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -672,11 +667,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Union[GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup, None]
         """
         data = self._update_record_link_group_with_http_info(
-            database_key,
-            table_guid,
-            record_link_group_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, table_guid, record_link_group_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -747,12 +738,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

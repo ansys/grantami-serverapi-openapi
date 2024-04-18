@@ -134,9 +134,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         self._search_criterion = search_criterion
 
     @property
-    def paging_options(
-        self,
-    ) -> "Union[GrantaServerApiListsDtoPagingOptions, Unset_Type]":
+    def paging_options(self) -> "Union[GrantaServerApiListsDtoPagingOptions, Unset_Type]":
         """Gets the paging_options of this GrantaServerApiListsDtoRecordListSearchRequest.
 
         Returns
@@ -163,9 +161,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
         self._paging_options = paging_options
 
     @property
-    def response_options(
-        self,
-    ) -> "Union[GrantaServerApiListsDtoResponseOptions, Unset_Type]":
+    def response_options(self) -> "Union[GrantaServerApiListsDtoResponseOptions, Unset_Type]":
         """Gets the response_options of this GrantaServerApiListsDtoRecordListSearchRequest.
 
         Returns
@@ -177,8 +173,7 @@ class GrantaServerApiListsDtoRecordListSearchRequest(ModelBase):
 
     @response_options.setter
     def response_options(
-        self,
-        response_options: "Union[GrantaServerApiListsDtoResponseOptions, Unset_Type]",
+        self, response_options: "Union[GrantaServerApiListsDtoResponseOptions, Unset_Type]"
     ) -> None:
         """Sets the response_options of this GrantaServerApiListsDtoRecordListSearchRequest.
 

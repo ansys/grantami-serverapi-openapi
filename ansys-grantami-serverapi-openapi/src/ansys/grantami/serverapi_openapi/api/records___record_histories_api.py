@@ -132,12 +132,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -187,11 +182,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
         data = self._copy_record_history_in_table_with_http_info(
-            database_key,
-            table_guid,
-            record_history_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, table_guid, record_history_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -262,12 +253,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -377,12 +363,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -434,11 +415,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
         """
         data = self._get_latest_record_version_with_http_info(
-            database_key,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
+            database_key, record_history_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -676,11 +653,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
         data = self._get_record_history_with_http_info(
-            database_key,
-            record_history_guid,
-            mode,
-            x_ansys_vc_mode,
-            _return_http_data_only=True,
+            database_key, record_history_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -976,12 +949,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {
@@ -1031,11 +999,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
         """
         data = self._move_record_history_in_table_with_http_info(
-            database_key,
-            table_guid,
-            record_history_guid,
-            body,
-            _return_http_data_only=True,
+            database_key, table_guid, record_history_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -1106,12 +1070,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: Dict[int, Optional[str]] = {

@@ -117,8 +117,7 @@ class GrantaServerApiSchemaProfilesUpdateAllProfilesInfo(ModelBase):
 
     @profiles.setter
     def profiles(
-        self,
-        profiles: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
+        self, profiles: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]"
     ) -> None:
         """Sets the profiles of this GrantaServerApiSchemaProfilesUpdateAllProfilesInfo.
 

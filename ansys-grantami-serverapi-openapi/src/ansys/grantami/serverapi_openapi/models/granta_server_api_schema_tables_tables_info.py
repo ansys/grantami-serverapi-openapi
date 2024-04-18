@@ -93,9 +93,7 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
             self.tables = tables
 
     @property
-    def tables(
-        self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]":
+    def tables(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]":
         """Gets the tables of this GrantaServerApiSchemaTablesTablesInfo.
 
         Returns
@@ -107,8 +105,7 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
 
     @tables.setter
     def tables(
-        self,
-        tables: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]",
+        self, tables: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]"
     ) -> None:
         """Sets the tables of this GrantaServerApiSchemaTablesTablesInfo.
 

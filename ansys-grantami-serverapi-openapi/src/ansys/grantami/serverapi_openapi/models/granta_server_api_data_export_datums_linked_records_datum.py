@@ -205,9 +205,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         self._link_group_name = link_group_name
 
     @property
-    def link_attribute_type(
-        self,
-    ) -> "Union[GrantaServerApiLinkAttributeType, Unset_Type]":
+    def link_attribute_type(self) -> "Union[GrantaServerApiLinkAttributeType, Unset_Type]":
         """Gets the link_attribute_type of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -310,9 +308,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         self._linked_records = linked_records
 
     @property
-    def link_group_names_by_database_key(
-        self,
-    ) -> "Union[Dict[str, str], None, Unset_Type]":
+    def link_group_names_by_database_key(self) -> "Union[Dict[str, str], None, Unset_Type]":
         """Gets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -324,8 +320,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
 
     @link_group_names_by_database_key.setter
     def link_group_names_by_database_key(
-        self,
-        link_group_names_by_database_key: "Union[Dict[str, str], None, Unset_Type]",
+        self, link_group_names_by_database_key: "Union[Dict[str, str], None, Unset_Type]"
     ) -> None:
         """Sets the link_group_names_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
@@ -337,9 +332,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
         self._link_group_names_by_database_key = link_group_names_by_database_key
 
     @property
-    def link_group_identities_by_database_key(
-        self,
-    ) -> "Union[Dict[str, int], None, Unset_Type]":
+    def link_group_identities_by_database_key(self) -> "Union[Dict[str, int], None, Unset_Type]":
         """Gets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
         Returns
@@ -351,8 +344,7 @@ class GrantaServerApiDataExportDatumsLinkedRecordsDatum(GrantaServerApiDataExpor
 
     @link_group_identities_by_database_key.setter
     def link_group_identities_by_database_key(
-        self,
-        link_group_identities_by_database_key: "Union[Dict[str, int], None, Unset_Type]",
+        self, link_group_identities_by_database_key: "Union[Dict[str, int], None, Unset_Type]"
     ) -> None:
         """Sets the link_group_identities_by_database_key of this GrantaServerApiDataExportDatumsLinkedRecordsDatum.
 
