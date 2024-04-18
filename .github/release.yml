@@ -12,9 +12,6 @@ changelog:
     - title: "Features"
       labels:
         - enhancement
-    - title: "Documentation"
-      labels:
-        - documentation
     - title: "Maintenance"
       labels:
         - maintenance
