@@ -305,9 +305,6 @@ from .models.granta_server_api_data_discrete_datum import GrantaServerApiDataDis
 from .models.granta_server_api_data_discrete_parameter_with_value import (
     GrantaServerApiDataDiscreteParameterWithValue,
 )
-from .models.granta_server_api_data_discrete_parameter_with_value import (
-    GrantaServerApiDataDiscreteParameterWithValue,
-)
 from .models.granta_server_api_data_export_attribute_to_export import (
     GrantaServerApiDataExportAttributeToExport,
 )

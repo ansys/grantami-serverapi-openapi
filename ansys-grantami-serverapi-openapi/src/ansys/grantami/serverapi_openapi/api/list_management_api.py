@@ -1106,14 +1106,10 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._publish_list_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._publish_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _publish_list_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _publish_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -1192,14 +1188,10 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._request_approval_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._request_approval_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _request_approval_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _request_approval_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -1283,9 +1275,7 @@ class ListManagementApi(ApiBase):
         )
         return data  # type: ignore[no-any-return]
 
-    def _reset_awaiting_approval_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _reset_awaiting_approval_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -1364,9 +1354,7 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._revise_list_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._revise_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _revise_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
@@ -1380,9 +1368,7 @@ class ListManagementApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method revise_list"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method revise_list")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set
@@ -1448,9 +1434,7 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListSearchInfo, None]
         """
-        data = self._run_record_lists_search_with_http_info(
-            body, _return_http_data_only=True
-        )
+        data = self._run_record_lists_search_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _run_record_lists_search_with_http_info(
@@ -1540,14 +1524,10 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._unpublish_list_with_http_info(
-            list_identifier, _return_http_data_only=True
-        )
+        data = self._unpublish_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _unpublish_list_with_http_info(
-        self, list_identifier: "str", **kwargs: Any
-    ) -> Any:
+    def _unpublish_list_with_http_info(self, list_identifier: "str", **kwargs: Any) -> Any:
         all_params = [
             "list_identifier",
             "_return_http_data_only",
@@ -1630,9 +1610,7 @@ class ListManagementApi(ApiBase):
         -------
         Union[GrantaServerApiListsDtoRecordListHeader, None]
         """
-        data = self._update_list_with_http_info(
-            list_identifier, body, _return_http_data_only=True
-        )
+        data = self._update_list_with_http_info(list_identifier, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_list_with_http_info(
@@ -1652,9 +1630,7 @@ class ListManagementApi(ApiBase):
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_list"
-                )
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method update_list")
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "list_identifier" is set

@@ -1750,7 +1750,6 @@ from .microsoft_asp_net_core_mvc_formatters_i_output_formatter import (
 from .microsoft_asp_net_core_mvc_object_result import MicrosoftAspNetCoreMvcObjectResult
 from .system_net_http_status_code import SystemNetHttpStatusCode
 
-
 __all__ = [
     "ModelBase",
     "Unset",

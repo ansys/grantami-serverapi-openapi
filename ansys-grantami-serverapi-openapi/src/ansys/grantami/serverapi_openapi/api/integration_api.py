@@ -820,9 +820,7 @@ class IntegrationApi(ApiBase):
         -------
         Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
         """
-        data = self._update_schema_with_http_info(
-            schema, body, _return_http_data_only=True
-        )
+        data = self._update_schema_with_http_info(schema, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_schema_with_http_info(
@@ -849,9 +847,7 @@ class IntegrationApi(ApiBase):
         del params["kwargs"]
         # verify the required parameter "schema" is set
         if "schema" not in params or params["schema"] is None:
-            raise ValueError(
-                "Missing the required parameter 'schema' when calling 'update_schema'"
-            )
+            raise ValueError("Missing the required parameter 'schema' when calling 'update_schema'")
 
         collection_formats: Dict[str, Any] = {}
 
