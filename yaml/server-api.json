@@ -42246,6 +42246,14 @@
         "type": "string",
         "description": "API-level enum for version control state."
       },
+      "ANewModelToHaveSomethingToBuild": {
+        "enum": [
+          "field1",
+          "field2"
+        ],
+        "type": "string",
+        "description": "API-level enum testing purposes"
+      },
       "JsonPatchDocument": {
         "type": "object",
         "properties": {
