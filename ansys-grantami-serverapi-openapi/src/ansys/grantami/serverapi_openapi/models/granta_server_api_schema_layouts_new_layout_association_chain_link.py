@@ -153,11 +153,6 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink(ModelBase):
             raise ValueError(
                 "Invalid value for 'source_database_version_guid', must not be 'Unset'"
             )
-        # Field is required
-        if source_database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'source_database_version_guid', must not be 'Unset'"
-            )
         self._source_database_version_guid = source_database_version_guid
 
     @property

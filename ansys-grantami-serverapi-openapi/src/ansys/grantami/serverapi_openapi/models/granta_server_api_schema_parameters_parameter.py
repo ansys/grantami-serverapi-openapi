@@ -169,11 +169,6 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
             raise ValueError(
                 "Invalid value for 'default_parameter_value_guid', must not be 'Unset'"
             )
-        # Field is required
-        if default_parameter_value_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'default_parameter_value_guid', must not be 'Unset'"
-            )
         self._default_parameter_value_guid = default_parameter_value_guid
 
     @property
