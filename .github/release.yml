@@ -1,0 +1,23 @@
+changelog:
+  exclude:
+    labels:
+      - dependencies
+  categories:
+    - title: "API Definition"
+      labels:
+        - api-definition
+    - title: "Code generation"
+      labels:
+        - code-gen
+    - title: "Features"
+      labels:
+        - enhancement
+    - title: "Bug fixes"
+      labels:
+        - bug
+    - title: "Maintenance"
+      labels:
+        - maintenance
+    - title: "Other changes"
+      labels:
+        - "*"

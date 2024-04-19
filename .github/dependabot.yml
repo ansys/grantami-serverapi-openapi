@@ -11,6 +11,7 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
+      - "dependencies"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -18,10 +19,12 @@ updates:
       interval: "weekly"
     labels:
       - "maintenance"
-      
+      - "dependencies"
+
   - package-ecosystem: "pip" # See documentation for possible values
     directory: "/ansys-grantami-serverapi-openapi/" # Location of package manifests
     schedule:
       interval: "weekly"
     labels:
       - "maintenance"
+      - "dependencies"

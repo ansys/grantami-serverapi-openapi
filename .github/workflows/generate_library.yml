@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: "Get Bot Application Token"
       id: get_workflow_token
-      uses: peter-murray/workflow-application-token-action@v2
+      uses: peter-murray/workflow-application-token-action@v3
       with:
         application_id: ${{ secrets.BOT_APPLICATION_ID }}
         application_private_key: ${{ secrets.BOT_APPLICATION_PRIVATE_KEY }}
@@ -29,7 +29,7 @@ jobs:
       with:
         token: ${{ steps.get_workflow_token.outputs.token }}
         ref: ${{ github.event.pull_request.head.ref }}
-    
+
     - name: "Set up JDK 11"
       uses: actions/setup-java@v4
       with:
@@ -58,11 +58,11 @@ jobs:
         poetry lock --no-update
       working-directory: ansys-grantami-serverapi-openapi
 
-    - name: "Install and run black"
+    - name: "Install and run pre-commit"
       run: |
-        pip install black
-        black ./src ./tests
-      working-directory: ansys-grantami-serverapi-openapi
+        pip install pre-commit
+        git add ansys-grantami-serverapi-openapi/
+        ! pre-commit run --all-files
 
     - name: "Commit changes to library code"
       uses: EndBug/add-and-commit@v9
