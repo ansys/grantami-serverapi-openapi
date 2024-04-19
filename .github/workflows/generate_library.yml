@@ -61,6 +61,7 @@ jobs:
     - name: "Install and run pre-commit"
       run: |
         pip install pre-commit
+        git add ansys-grantami-serverapi-openapi/
         ! pre-commit run --all-files
 
     - name: "Commit changes to library code"
