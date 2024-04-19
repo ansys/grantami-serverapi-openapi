@@ -72,10 +72,11 @@ from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.selection_searches_api import SelectionSearchesApi
 from .api.status_api import StatusApi
-from .models.folderguid_files_body1 import FolderguidFilesBody1
-from .models.folderguid_files_body2 import FolderguidFilesBody2
 
 # import models into sdk package
+from .models.a_new_model_to_have_something_to_build import ANewModelToHaveSomethingToBuild
+from .models.folderguid_files_body1 import FolderguidFilesBody1
+from .models.folderguid_files_body2 import FolderguidFilesBody2
 from .models.folderguid_files_body import FolderguidFilesBody
 from .models.granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
@@ -1885,6 +1886,7 @@ __all__ = [
     "SearchApi",
     "SelectionSearchesApi",
     "StatusApi",
+    "ANewModelToHaveSomethingToBuild",
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",

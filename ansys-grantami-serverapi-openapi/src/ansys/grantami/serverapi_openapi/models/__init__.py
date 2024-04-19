@@ -35,10 +35,10 @@
 # import Model ABC
 from ansys.openapi.common import ModelBase, Unset, Unset_Type
 
+# import models into model package
+from .a_new_model_to_have_something_to_build import ANewModelToHaveSomethingToBuild
 from .folderguid_files_body1 import FolderguidFilesBody1
 from .folderguid_files_body2 import FolderguidFilesBody2
-
-# import models into model package
 from .folderguid_files_body import FolderguidFilesBody
 from .granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
@@ -1712,6 +1712,7 @@ __all__ = [
     "ModelBase",
     "Unset",
     "Unset_Type",
+    "ANewModelToHaveSomethingToBuild",
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
