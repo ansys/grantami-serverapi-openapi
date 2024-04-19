@@ -463,6 +463,7 @@ class SearchApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: None,
+            403: None,
             404: None,
         }
 
@@ -562,6 +563,7 @@ class SearchApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
+            403: None,
             404: None,
         }
 

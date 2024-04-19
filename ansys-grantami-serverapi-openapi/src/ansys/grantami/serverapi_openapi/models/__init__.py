@@ -1537,9 +1537,18 @@ from .granta_server_api_search_criterion import GrantaServerApiSearchCriterion
 from .granta_server_api_search_date_time_datum_criterion import (
     GrantaServerApiSearchDateTimeDatumCriterion,
 )
+from .granta_server_api_search_date_time_datum_exists_criterion import (
+    GrantaServerApiSearchDateTimeDatumExistsCriterion,
+)
 from .granta_server_api_search_datum_criterion import GrantaServerApiSearchDatumCriterion
 from .granta_server_api_search_datum_exists_criterion import (
     GrantaServerApiSearchDatumExistsCriterion,
+)
+from .granta_server_api_search_discrete_datum_exists_criterion import (
+    GrantaServerApiSearchDiscreteDatumExistsCriterion,
+)
+from .granta_server_api_search_discrete_functional_datum_exists_criterion import (
+    GrantaServerApiSearchDiscreteFunctionalDatumExistsCriterion,
 )
 from .granta_server_api_search_discrete_functional_range_datum_criterion import (
     GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion,
@@ -1576,8 +1585,14 @@ from .granta_server_api_search_discrete_text_values_datum_criterion import (
 )
 from .granta_server_api_search_double_sorting_value import GrantaServerApiSearchDoubleSortingValue
 from .granta_server_api_search_file_datum_criterion import GrantaServerApiSearchFileDatumCriterion
+from .granta_server_api_search_file_datum_exists_criterion import (
+    GrantaServerApiSearchFileDatumExistsCriterion,
+)
 from .granta_server_api_search_float_functional_datum_criterion import (
     GrantaServerApiSearchFloatFunctionalDatumCriterion,
+)
+from .granta_server_api_search_float_functional_datum_exists_criterion import (
+    GrantaServerApiSearchFloatFunctionalDatumExistsCriterion,
 )
 from .granta_server_api_search_float_functional_graph_datum_criterion import (
     GrantaServerApiSearchFloatFunctionalGraphDatumCriterion,
@@ -1586,9 +1601,15 @@ from .granta_server_api_search_free_text_criterion import GrantaServerApiSearchF
 from .granta_server_api_search_hyperlink_datum_criterion import (
     GrantaServerApiSearchHyperlinkDatumCriterion,
 )
+from .granta_server_api_search_hyperlink_datum_exists_criterion import (
+    GrantaServerApiSearchHyperlinkDatumExistsCriterion,
+)
 from .granta_server_api_search_index_status import GrantaServerApiSearchIndexStatus
 from .granta_server_api_search_integer_datum_criterion import (
     GrantaServerApiSearchIntegerDatumCriterion,
+)
+from .granta_server_api_search_integer_datum_exists_criterion import (
+    GrantaServerApiSearchIntegerDatumExistsCriterion,
 )
 from .granta_server_api_search_link_datum_criterion import GrantaServerApiSearchLinkDatumCriterion
 from .granta_server_api_search_link_exists_datum_criterion import (
@@ -1613,12 +1634,21 @@ from .granta_server_api_search_local_rows_behavior import GrantaServerApiSearchL
 from .granta_server_api_search_logical_datum_criterion import (
     GrantaServerApiSearchLogicalDatumCriterion,
 )
+from .granta_server_api_search_logical_datum_exists_criterion import (
+    GrantaServerApiSearchLogicalDatumExistsCriterion,
+)
 from .granta_server_api_search_long_sorting_value import GrantaServerApiSearchLongSortingValue
 from .granta_server_api_search_long_text_datum_criterion import (
     GrantaServerApiSearchLongTextDatumCriterion,
 )
+from .granta_server_api_search_long_text_datum_exists_criterion import (
+    GrantaServerApiSearchLongTextDatumExistsCriterion,
+)
 from .granta_server_api_search_maths_functional_datum_criterion import (
     GrantaServerApiSearchMathsFunctionalDatumCriterion,
+)
+from .granta_server_api_search_maths_functional_datum_exists_criterion import (
+    GrantaServerApiSearchMathsFunctionalDatumExistsCriterion,
 )
 from .granta_server_api_search_numeric_parameter_constraint import (
     GrantaServerApiSearchNumericParameterConstraint,
@@ -1628,8 +1658,17 @@ from .granta_server_api_search_parameter_constraint import GrantaServerApiSearch
 from .granta_server_api_search_picture_datum_criterion import (
     GrantaServerApiSearchPictureDatumCriterion,
 )
+from .granta_server_api_search_picture_datum_exists_criterion import (
+    GrantaServerApiSearchPictureDatumExistsCriterion,
+)
 from .granta_server_api_search_point_datum_criterion import GrantaServerApiSearchPointDatumCriterion
+from .granta_server_api_search_point_datum_exists_criterion import (
+    GrantaServerApiSearchPointDatumExistsCriterion,
+)
 from .granta_server_api_search_range_datum_criterion import GrantaServerApiSearchRangeDatumCriterion
+from .granta_server_api_search_range_datum_exists_criterion import (
+    GrantaServerApiSearchRangeDatumExistsCriterion,
+)
 from .granta_server_api_search_record_ancestor_criterion import (
     GrantaServerApiSearchRecordAncestorCriterion,
 )
@@ -1666,14 +1705,17 @@ from .granta_server_api_search_searchable_record_property import (
 from .granta_server_api_search_short_text_datum_criterion import (
     GrantaServerApiSearchShortTextDatumCriterion,
 )
-from .granta_server_api_search_simple_datum_exists_criterion import (
-    GrantaServerApiSearchSimpleDatumExistsCriterion,
+from .granta_server_api_search_short_text_datum_exists_criterion import (
+    GrantaServerApiSearchShortTextDatumExistsCriterion,
 )
 from .granta_server_api_search_sort_criterion import GrantaServerApiSearchSortCriterion
 from .granta_server_api_search_sort_direction import GrantaServerApiSearchSortDirection
 from .granta_server_api_search_sort_type import GrantaServerApiSearchSortType
 from .granta_server_api_search_sorting_value import GrantaServerApiSearchSortingValue
 from .granta_server_api_search_string_sorting_value import GrantaServerApiSearchStringSortingValue
+from .granta_server_api_search_tabular_datum_exists_criterion import (
+    GrantaServerApiSearchTabularDatumExistsCriterion,
+)
 from .granta_server_api_search_tabular_linking_value_criterion import (
     GrantaServerApiSearchTabularLinkingValueCriterion,
 )
@@ -2286,8 +2328,11 @@ __all__ = [
     "GrantaServerApiSearchBoostByIdentity",
     "GrantaServerApiSearchCriterion",
     "GrantaServerApiSearchDateTimeDatumCriterion",
+    "GrantaServerApiSearchDateTimeDatumExistsCriterion",
     "GrantaServerApiSearchDatumCriterion",
     "GrantaServerApiSearchDatumExistsCriterion",
+    "GrantaServerApiSearchDiscreteDatumExistsCriterion",
+    "GrantaServerApiSearchDiscreteFunctionalDatumExistsCriterion",
     "GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion",
     "GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion",
     "GrantaServerApiSearchDiscreteGuidDatumCriterion",
@@ -2301,12 +2346,16 @@ __all__ = [
     "GrantaServerApiSearchDiscreteTextValuesDatumCriterion",
     "GrantaServerApiSearchDoubleSortingValue",
     "GrantaServerApiSearchFileDatumCriterion",
+    "GrantaServerApiSearchFileDatumExistsCriterion",
     "GrantaServerApiSearchFloatFunctionalDatumCriterion",
+    "GrantaServerApiSearchFloatFunctionalDatumExistsCriterion",
     "GrantaServerApiSearchFloatFunctionalGraphDatumCriterion",
     "GrantaServerApiSearchFreeTextCriterion",
     "GrantaServerApiSearchHyperlinkDatumCriterion",
+    "GrantaServerApiSearchHyperlinkDatumExistsCriterion",
     "GrantaServerApiSearchIndexStatus",
     "GrantaServerApiSearchIntegerDatumCriterion",
+    "GrantaServerApiSearchIntegerDatumExistsCriterion",
     "GrantaServerApiSearchLinkDatumCriterion",
     "GrantaServerApiSearchLinkExistsDatumCriterion",
     "GrantaServerApiSearchLinkingValueMatchBehavior",
@@ -2316,15 +2365,21 @@ __all__ = [
     "GrantaServerApiSearchLocalColumnNotApplicableCriterion",
     "GrantaServerApiSearchLocalRowsBehavior",
     "GrantaServerApiSearchLogicalDatumCriterion",
+    "GrantaServerApiSearchLogicalDatumExistsCriterion",
     "GrantaServerApiSearchLongSortingValue",
     "GrantaServerApiSearchLongTextDatumCriterion",
+    "GrantaServerApiSearchLongTextDatumExistsCriterion",
     "GrantaServerApiSearchMathsFunctionalDatumCriterion",
+    "GrantaServerApiSearchMathsFunctionalDatumExistsCriterion",
     "GrantaServerApiSearchNumericParameterConstraint",
     "GrantaServerApiSearchPagingOptions",
     "GrantaServerApiSearchParameterConstraint",
     "GrantaServerApiSearchPictureDatumCriterion",
+    "GrantaServerApiSearchPictureDatumExistsCriterion",
     "GrantaServerApiSearchPointDatumCriterion",
+    "GrantaServerApiSearchPointDatumExistsCriterion",
     "GrantaServerApiSearchRangeDatumCriterion",
+    "GrantaServerApiSearchRangeDatumExistsCriterion",
     "GrantaServerApiSearchRecordAncestorCriterion",
     "GrantaServerApiSearchRecordAncestorHistoryIdentitiesCriterion",
     "GrantaServerApiSearchRecordListMemberCriterion",
@@ -2339,12 +2394,13 @@ __all__ = [
     "GrantaServerApiSearchSearchResultsRequest",
     "GrantaServerApiSearchSearchableRecordProperty",
     "GrantaServerApiSearchShortTextDatumCriterion",
-    "GrantaServerApiSearchSimpleDatumExistsCriterion",
+    "GrantaServerApiSearchShortTextDatumExistsCriterion",
     "GrantaServerApiSearchSortCriterion",
     "GrantaServerApiSearchSortDirection",
     "GrantaServerApiSearchSortType",
     "GrantaServerApiSearchSortingValue",
     "GrantaServerApiSearchStringSortingValue",
+    "GrantaServerApiSearchTabularDatumExistsCriterion",
     "GrantaServerApiSearchTabularLinkingValueCriterion",
     "GrantaServerApiSearchTextMatchBehavior",
     "GrantaServerApiSelectionSearchesCreateSearchRequest",

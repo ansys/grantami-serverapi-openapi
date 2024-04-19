@@ -69,8 +69,22 @@ class GrantaServerApiSearchDatumExistsCriterion(ModelBase):
     subtype_mapping: Dict[str, str] = {}
 
     discriminator_value_class_map = {
+        "integer".lower(): "#/components/schemas/GrantaServerApiSearchIntegerDatumExistsCriterion",
+        "point".lower(): "#/components/schemas/GrantaServerApiSearchPointDatumExistsCriterion",
+        "range".lower(): "#/components/schemas/GrantaServerApiSearchRangeDatumExistsCriterion",
+        "logical".lower(): "#/components/schemas/GrantaServerApiSearchLogicalDatumExistsCriterion",
+        "shortText".lower(): "#/components/schemas/GrantaServerApiSearchShortTextDatumExistsCriterion",
+        "longText".lower(): "#/components/schemas/GrantaServerApiSearchLongTextDatumExistsCriterion",
+        "dateTime".lower(): "#/components/schemas/GrantaServerApiSearchDateTimeDatumExistsCriterion",
+        "discrete".lower(): "#/components/schemas/GrantaServerApiSearchDiscreteDatumExistsCriterion",
+        "hyperlink".lower(): "#/components/schemas/GrantaServerApiSearchHyperlinkDatumExistsCriterion",
+        "file".lower(): "#/components/schemas/GrantaServerApiSearchFileDatumExistsCriterion",
+        "picture".lower(): "#/components/schemas/GrantaServerApiSearchPictureDatumExistsCriterion",
         "link".lower(): "#/components/schemas/GrantaServerApiSearchLinkExistsDatumCriterion",
-        "type".lower(): "#/components/schemas/GrantaServerApiSearchSimpleDatumExistsCriterion",
+        "floatFunctional".lower(): "#/components/schemas/GrantaServerApiSearchFloatFunctionalDatumExistsCriterion",
+        "discreteFunctional".lower(): "#/components/schemas/GrantaServerApiSearchDiscreteFunctionalDatumExistsCriterion",
+        "mathsFunctional".lower(): "#/components/schemas/GrantaServerApiSearchMathsFunctionalDatumExistsCriterion",
+        "tabular".lower(): "#/components/schemas/GrantaServerApiSearchTabularDatumExistsCriterion",
     }
 
     discriminator: Optional[str] = "type"

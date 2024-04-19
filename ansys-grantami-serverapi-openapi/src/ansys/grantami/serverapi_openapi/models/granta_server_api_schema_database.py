@@ -61,38 +61,38 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "guid": "str",
         "is_locked": "bool",
         "is_read_only": "bool",
         "key": "str",
-        "name": "str",
         "status": "GrantaServerApiDatabaseStatus",
         "author": "str",
         "company": "str",
         "currency_code": "str",
+        "guid": "str",
         "index_in_sync": "bool",
         "index_out_of_date_duration": "str",
         "index_up_to_date": "bool",
         "is_access_controlled": "bool",
+        "name": "str",
         "notes": "str",
         "schema_version": "str",
         "version_guid": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "guid": "guid",
         "is_locked": "isLocked",
         "is_read_only": "isReadOnly",
         "key": "key",
-        "name": "name",
         "status": "status",
         "author": "author",
         "company": "company",
         "currency_code": "currencyCode",
+        "guid": "guid",
         "index_in_sync": "indexInSync",
         "index_out_of_date_duration": "indexOutOfDateDuration",
         "index_up_to_date": "indexUpToDate",
         "is_access_controlled": "isAccessControlled",
+        "name": "name",
         "notes": "notes",
         "schema_version": "schemaVersion",
         "version_guid": "versionGuid",
@@ -107,19 +107,19 @@ class GrantaServerApiSchemaDatabase(ModelBase):
     def __init__(
         self,
         *,
-        guid: "str",
         is_locked: "bool",
         is_read_only: "bool",
         key: "str",
-        name: "str",
         status: "GrantaServerApiDatabaseStatus",
         author: "Union[str, None, Unset_Type]" = Unset,
         company: "Union[str, None, Unset_Type]" = Unset,
         currency_code: "Union[str, None, Unset_Type]" = Unset,
+        guid: "Union[str, None, Unset_Type]" = Unset,
         index_in_sync: "Union[bool, None, Unset_Type]" = Unset,
         index_out_of_date_duration: "Union[str, None, Unset_Type]" = Unset,
         index_up_to_date: "Union[bool, None, Unset_Type]" = Unset,
         is_access_controlled: "Union[bool, None, Unset_Type]" = Unset,
+        name: "Union[str, None, Unset_Type]" = Unset,
         notes: "Union[str, None, Unset_Type]" = Unset,
         schema_version: "Union[str, None, Unset_Type]" = Unset,
         version_guid: "Union[str, None, Unset_Type]" = Unset,
@@ -128,19 +128,19 @@ class GrantaServerApiSchemaDatabase(ModelBase):
 
         Parameters
         ----------
-        guid: str
         is_locked: bool
         is_read_only: bool
         key: str
-        name: str
         status: GrantaServerApiDatabaseStatus
         author: str, optional
         company: str, optional
         currency_code: str, optional
+        guid: str, optional
         index_in_sync: bool, optional
         index_out_of_date_duration: str, optional
         index_up_to_date: bool, optional
         is_access_controlled: bool, optional
+        name: str, optional
         notes: str, optional
         schema_version: str, optional
         version_guid: str, optional
@@ -151,16 +151,16 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         self._currency_code: Union[str, None, Unset_Type] = Unset
         self._is_access_controlled: Union[bool, None, Unset_Type] = Unset
         self._key: str
-        self._version_guid: Union[str, None, Unset_Type] = Unset
         self._status: GrantaServerApiDatabaseStatus
         self._is_read_only: bool
         self._is_locked: bool
+        self._name: Union[str, None, Unset_Type] = Unset
+        self._guid: Union[str, None, Unset_Type] = Unset
+        self._version_guid: Union[str, None, Unset_Type] = Unset
         self._index_in_sync: Union[bool, None, Unset_Type] = Unset
         self._index_up_to_date: Union[bool, None, Unset_Type] = Unset
         self._index_out_of_date_duration: Union[str, None, Unset_Type] = Unset
         self._schema_version: Union[str, None, Unset_Type] = Unset
-        self._name: str
-        self._guid: str
 
         if author is not Unset:
             self.author = author
@@ -173,11 +173,15 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         if is_access_controlled is not Unset:
             self.is_access_controlled = is_access_controlled
         self.key = key
-        if version_guid is not Unset:
-            self.version_guid = version_guid
         self.status = status
         self.is_read_only = is_read_only
         self.is_locked = is_locked
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
+        if version_guid is not Unset:
+            self.version_guid = version_guid
         if index_in_sync is not Unset:
             self.index_in_sync = index_in_sync
         if index_up_to_date is not Unset:
@@ -186,8 +190,6 @@ class GrantaServerApiSchemaDatabase(ModelBase):
             self.index_out_of_date_duration = index_out_of_date_duration
         if schema_version is not Unset:
             self.schema_version = schema_version
-        self.name = name
-        self.guid = guid
 
     @property
     def author(self) -> "Union[str, None, Unset_Type]":
@@ -328,28 +330,6 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         self._key = key
 
     @property
-    def version_guid(self) -> "Union[str, None, Unset_Type]":
-        """Gets the version_guid of this GrantaServerApiSchemaDatabase.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The version_guid of this GrantaServerApiSchemaDatabase.
-        """
-        return self._version_guid
-
-    @version_guid.setter
-    def version_guid(self, version_guid: "Union[str, None, Unset_Type]") -> None:
-        """Sets the version_guid of this GrantaServerApiSchemaDatabase.
-
-        Parameters
-        ----------
-        version_guid: Union[str, None, Unset_Type]
-            The version_guid of this GrantaServerApiSchemaDatabase.
-        """
-        self._version_guid = version_guid
-
-    @property
     def status(self) -> "GrantaServerApiDatabaseStatus":
         """Gets the status of this GrantaServerApiSchemaDatabase.
 
@@ -432,6 +412,72 @@ class GrantaServerApiSchemaDatabase(ModelBase):
         if is_locked is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_locked', must not be 'Unset'")
         self._is_locked = is_locked
+
+    @property
+    def name(self) -> "Union[str, None, Unset_Type]":
+        """Gets the name of this GrantaServerApiSchemaDatabase.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The name of this GrantaServerApiSchemaDatabase.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "Union[str, None, Unset_Type]") -> None:
+        """Sets the name of this GrantaServerApiSchemaDatabase.
+
+        Parameters
+        ----------
+        name: Union[str, None, Unset_Type]
+            The name of this GrantaServerApiSchemaDatabase.
+        """
+        self._name = name
+
+    @property
+    def guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the guid of this GrantaServerApiSchemaDatabase.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The guid of this GrantaServerApiSchemaDatabase.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the guid of this GrantaServerApiSchemaDatabase.
+
+        Parameters
+        ----------
+        guid: Union[str, None, Unset_Type]
+            The guid of this GrantaServerApiSchemaDatabase.
+        """
+        self._guid = guid
+
+    @property
+    def version_guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the version_guid of this GrantaServerApiSchemaDatabase.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The version_guid of this GrantaServerApiSchemaDatabase.
+        """
+        return self._version_guid
+
+    @version_guid.setter
+    def version_guid(self, version_guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the version_guid of this GrantaServerApiSchemaDatabase.
+
+        Parameters
+        ----------
+        version_guid: Union[str, None, Unset_Type]
+            The version_guid of this GrantaServerApiSchemaDatabase.
+        """
+        self._version_guid = version_guid
 
     @property
     def index_in_sync(self) -> "Union[bool, None, Unset_Type]":
@@ -522,62 +568,6 @@ class GrantaServerApiSchemaDatabase(ModelBase):
             The schema_version of this GrantaServerApiSchemaDatabase.
         """
         self._schema_version = schema_version
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GrantaServerApiSchemaDatabase.
-
-        Returns
-        -------
-        str
-            The name of this GrantaServerApiSchemaDatabase.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GrantaServerApiSchemaDatabase.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GrantaServerApiSchemaDatabase.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GrantaServerApiSchemaDatabase.
-
-        Returns
-        -------
-        str
-            The guid of this GrantaServerApiSchemaDatabase.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GrantaServerApiSchemaDatabase.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GrantaServerApiSchemaDatabase.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:
