@@ -73,7 +73,7 @@ class GrantaServerApiDataDatum(ModelBase):
         "notApplicable".lower(): "#/components/schemas/GrantaServerApiDataNotApplicableDatum",
     }
 
-    discriminator: Optional[str] = "not_applicable"
+    discriminator: Optional[str] = "notApplicable"
 
     def __init__(
         self,

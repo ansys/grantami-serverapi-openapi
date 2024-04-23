@@ -79,7 +79,7 @@ class GrantaServerApiAggregationsLocalColumnAggregationCriterion(ModelBase):
         "exists".lower(): "#/components/schemas/GrantaServerApiAggregationsLocalColumnAggregationExistsCriterion",
     }
 
-    discriminator: Optional[str] = "local_column_aggregation_criterion_type"
+    discriminator: Optional[str] = "localColumnAggregationCriterionType"
 
     def __init__(
         self,
