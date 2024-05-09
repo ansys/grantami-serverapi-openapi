@@ -3,6 +3,8 @@ on:
   pull_request:
   push:
     branches: [ main ]
+    paths:
+      - '../labels.yml'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -10,14 +12,23 @@ concurrency:
 
 jobs:
 
+  label-syncer:
+    name: Syncer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: micnncim/action-label-syncer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   labeler:
     name: Set labels
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
-
     - name: Label based on changed files
       uses: actions/labeler@v5
       with:
@@ -34,8 +45,8 @@ jobs:
         issue-number: ${{ github.event.pull_request.number }}
         body: |
           Please add one of the following labels to add this contribution to the Release Notes :point_down:
-          - [api-definition](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Aapi-definition)
-          - [code-gen](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Acode-gen+)
-          - [enhancement](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Aenhancement+)
-          - [maintenance](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Amaintenance+)
-          - [bug](https://github.com/ansys/grantami-serverapi-openapi/pulls?q=label%3Abug+)
+          - [api-definition](https://github.com/ansys/grantami-bomanalytics-openapi/pulls?q=label%3Aapi-definition)
+          - [code-gen](https://github.com/ansys/grantami-bomanalytics-openapi/pulls?q=label%3Acode-gen+)
+          - [enhancement](https://github.com/ansys/grantami-bomanalytics-openapi/pulls?q=label%3Aenhancement+)
+          - [maintenance](https://github.com/ansys/grantami-bomanalytics-openapi/pulls?q=label%3Amaintenance+)
+          - [bug](https://github.com/ansys/grantami-bomanalytics-openapi/pulls?q=label%3Abug+)
