@@ -54,7 +54,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsAddRecordHistoryToSubset]" = None,
+        body: "Optional[GsaAddRecordHistoryToSubset]" = None,
     ) -> "None":
         """Add a record history to a subset.
 
@@ -65,7 +65,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: str
         table_guid: str
         subset_guid: str
-        body: GrantaServerApiSchemaSubsetsAddRecordHistoryToSubset
+        body: GsaAddRecordHistoryToSubset
 
         Returns
         -------
@@ -81,7 +81,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsAddRecordHistoryToSubset]" = None,
+        body: "Optional[GsaAddRecordHistoryToSubset]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -167,12 +167,8 @@ class SchemaSubsetsApi(ApiBase):
         )
 
     def create_subset(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsCreateSubset]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
+        self, *, database_key: "str", table_guid: "str", body: "Optional[GsaCreateSubset]" = None
+    ) -> "Union[GsaSubset, None]":
         """Create a new subset.
 
         This method makes a synchronous HTTP request.
@@ -181,11 +177,11 @@ class SchemaSubsetsApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaSubsetsCreateSubset
+        body: GsaCreateSubset
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubsetsSubset, None]
+        Union[GsaSubset, None]
         """
         data = self._create_subset_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -196,7 +192,7 @@ class SchemaSubsetsApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsCreateSubset]" = None,
+        body: "Optional[GsaCreateSubset]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -254,7 +250,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaSubsetsSubset",
+            201: "GsaSubset",
             400: None,
             403: None,
             404: None,
@@ -384,7 +380,7 @@ class SchemaSubsetsApi(ApiBase):
         subset_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
+    ) -> "Union[GsaSubset, None]":
         """Get a subset with a specified guid for a given database and table.
 
         This method makes a synchronous HTTP request.
@@ -401,7 +397,7 @@ class SchemaSubsetsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubsetsSubset, None]
+        Union[GsaSubset, None]
         """
         data = self._get_subset_with_http_info(
             database_key,
@@ -481,7 +477,7 @@ class SchemaSubsetsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaSubsetsSubset",
+            200: "GsaSubset",
             404: None,
         }
 
@@ -508,7 +504,7 @@ class SchemaSubsetsApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubsetsSubsetsInfo, None]":
+    ) -> "Union[GsaSubsetsInfo, None]":
         """Get all subsets for table
 
         This method makes a synchronous HTTP request.
@@ -524,7 +520,7 @@ class SchemaSubsetsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubsetsSubsetsInfo, None]
+        Union[GsaSubsetsInfo, None]
         """
         data = self._get_subsets_with_http_info(
             database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -590,7 +586,7 @@ class SchemaSubsetsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaSubsetsSubsetsInfo",
+            200: "GsaSubsetsInfo",
             404: None,
         }
 
@@ -616,7 +612,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset]" = None,
+        body: "Optional[GsaRemoveRecordHistoryFromSubset]" = None,
     ) -> "None":
         """Remove a record history, and all of its descendants, from a subset.
 
@@ -627,7 +623,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: str
         table_guid: str
         subset_guid: str
-        body: GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset
+        body: GsaRemoveRecordHistoryFromSubset
 
         Returns
         -------
@@ -643,7 +639,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsRemoveRecordHistoryFromSubset]" = None,
+        body: "Optional[GsaRemoveRecordHistoryFromSubset]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -734,8 +730,8 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsUpdateSubset]" = None,
-    ) -> "Union[GrantaServerApiSchemaSubsetsSubset, None]":
+        body: "Optional[GsaUpdateSubset]" = None,
+    ) -> "Union[GsaSubset, None]":
         """Update a subset.
 
         This method makes a synchronous HTTP request.
@@ -745,11 +741,11 @@ class SchemaSubsetsApi(ApiBase):
         database_key: str
         table_guid: str
         subset_guid: str
-        body: GrantaServerApiSchemaSubsetsUpdateSubset
+        body: GsaUpdateSubset
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSubsetsSubset, None]
+        Union[GsaSubset, None]
         """
         data = self._update_subset_with_http_info(
             database_key, table_guid, subset_guid, body, _return_http_data_only=True
@@ -761,7 +757,7 @@ class SchemaSubsetsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         subset_guid: "str",
-        body: "Optional[GrantaServerApiSchemaSubsetsUpdateSubset]" = None,
+        body: "Optional[GsaUpdateSubset]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -827,7 +823,7 @@ class SchemaSubsetsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaSubsetsSubset",
+            200: "GsaSubset",
             400: None,
             403: None,
             404: None,

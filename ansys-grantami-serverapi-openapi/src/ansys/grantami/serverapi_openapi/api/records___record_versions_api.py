@@ -177,7 +177,7 @@ class RecordsRecordVersionsApi(ApiBase):
         table_guid: "str",
         record_history_guid: "str",
         record_version_guid: "str",
-    ) -> "Union[GrantaServerApiExceptionsVersionControlGetModifiableRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaGetModifiableRecordVersionControlException, GsaRecordVersion, None]":
         """Gets the latest modifiable record version, or creates a new one if none exists. The record version must be the latest version, and must be either released or withdrawn.
 
         This method makes a synchronous HTTP request.
@@ -191,7 +191,7 @@ class RecordsRecordVersionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsVersionControlGetModifiableRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaGetModifiableRecordVersionControlException, GsaRecordVersion, None]
         """
         data = self._get_modifiable_record_version_with_http_info(
             database_key,
@@ -273,8 +273,8 @@ class RecordsRecordVersionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiRecordsRecordVersionsRecordVersion",
-            400: "GrantaServerApiExceptionsVersionControlGetModifiableRecordVersionControlException",
+            201: "GsaRecordVersion",
+            400: "GsaGetModifiableRecordVersionControlException",
             403: None,
             404: None,
         }
@@ -304,7 +304,7 @@ class RecordsRecordVersionsApi(ApiBase):
         record_version_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaRecordVersion, None]":
         """Get a record version with a specified guid for a given database, table and record history.
 
         This method makes a synchronous HTTP request.
@@ -322,7 +322,7 @@ class RecordsRecordVersionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaRecordVersion, None]
         """
         data = self._get_record_version_with_http_info(
             database_key,
@@ -414,7 +414,7 @@ class RecordsRecordVersionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            200: "GsaRecordVersion",
             404: None,
         }
 
@@ -441,7 +441,7 @@ class RecordsRecordVersionsApi(ApiBase):
         table_guid: "str",
         record_history_guid: "str",
         record_version_guid: "str",
-    ) -> "Union[GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaRecordVersion, GsaReleaseRecordVersionControlException, None]":
         """Releases the record version.  Must be an unreleased record version.
 
         This method makes a synchronous HTTP request.
@@ -455,7 +455,7 @@ class RecordsRecordVersionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaRecordVersion, GsaReleaseRecordVersionControlException, None]
         """
         data = self._release_record_version_with_http_info(
             database_key,
@@ -537,8 +537,8 @@ class RecordsRecordVersionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
-            400: "GrantaServerApiExceptionsVersionControlReleaseRecordVersionControlException",
+            200: "GsaRecordVersion",
+            400: "GsaReleaseRecordVersionControlException",
             403: None,
             404: None,
         }
@@ -566,7 +566,7 @@ class RecordsRecordVersionsApi(ApiBase):
         table_guid: "str",
         record_history_guid: "str",
         record_version_guid: "str",
-    ) -> "Union[GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaRecordVersion, GsaWithdrawRecordVersionControlException, None]":
         """Withdraws the record version.  Must be a released record version.
 
         This method makes a synchronous HTTP request.
@@ -580,7 +580,7 @@ class RecordsRecordVersionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException, GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaRecordVersion, GsaWithdrawRecordVersionControlException, None]
         """
         data = self._withdraw_record_version_with_http_info(
             database_key,
@@ -662,8 +662,8 @@ class RecordsRecordVersionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
-            400: "GrantaServerApiExceptionsVersionControlWithdrawRecordVersionControlException",
+            200: "GsaRecordVersion",
+            400: "GsaWithdrawRecordVersionControlException",
             404: None,
         }
 

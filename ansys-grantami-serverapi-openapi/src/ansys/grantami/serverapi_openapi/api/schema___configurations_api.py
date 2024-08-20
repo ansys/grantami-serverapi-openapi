@@ -53,8 +53,8 @@ class SchemaConfigurationsApi(ApiBase):
         *,
         database_key: "str",
         configuration_type: "str",
-        body: "Optional[GrantaServerApiSchemaConfigurationsCreateConfiguration]" = None,
-    ) -> "Union[GrantaServerApiSchemaConfigurationsConfiguration, None]":
+        body: "Optional[GsaCreateConfiguration]" = None,
+    ) -> "Union[GsaConfiguration, None]":
         """Create a new configuration.
 
         This method makes a synchronous HTTP request.
@@ -64,11 +64,11 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
         configuration_type: str
             The configuration type.
-        body: GrantaServerApiSchemaConfigurationsCreateConfiguration
+        body: GsaCreateConfiguration
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConfigurationsConfiguration, None]
+        Union[GsaConfiguration, None]
         """
         data = self._create_configuration_with_http_info(
             database_key, configuration_type, body, _return_http_data_only=True
@@ -79,7 +79,7 @@ class SchemaConfigurationsApi(ApiBase):
         self,
         database_key: "str",
         configuration_type: "str",
-        body: "Optional[GrantaServerApiSchemaConfigurationsCreateConfiguration]" = None,
+        body: "Optional[GsaCreateConfiguration]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -137,7 +137,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaConfigurationsConfiguration",
+            201: "GsaConfiguration",
             400: None,
             403: None,
             404: None,
@@ -368,7 +368,7 @@ class SchemaConfigurationsApi(ApiBase):
 
     def get_configuration(
         self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaConfigurationsConfiguration, None]":
+    ) -> "Union[GsaConfiguration, None]":
         """Get individual configuration
 
         This method makes a synchronous HTTP request.
@@ -382,7 +382,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConfigurationsConfiguration, None]
+        Union[GsaConfiguration, None]
         """
         data = self._get_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, _return_http_data_only=True
@@ -451,7 +451,7 @@ class SchemaConfigurationsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConfigurationsConfiguration",
+            200: "GsaConfiguration",
             404: None,
         }
 
@@ -473,7 +473,7 @@ class SchemaConfigurationsApi(ApiBase):
 
     def get_configurations(
         self, *, database_key: "str", configuration_type: "str"
-    ) -> "Union[GrantaServerApiSchemaConfigurationsConfigurationsInfo, None]":
+    ) -> "Union[GsaConfigurationsInfo, None]":
         """Get all configurations of given type
 
         This method makes a synchronous HTTP request.
@@ -486,7 +486,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConfigurationsConfigurationsInfo, None]
+        Union[GsaConfigurationsInfo, None]
         """
         data = self._get_configurations_with_http_info(
             database_key, configuration_type, _return_http_data_only=True
@@ -543,7 +543,7 @@ class SchemaConfigurationsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConfigurationsConfigurationsInfo",
+            200: "GsaConfigurationsInfo",
             404: None,
         }
 
@@ -569,8 +569,8 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: "str",
         configuration_type: "str",
         configuration_guid: "str",
-        body: "Optional[GrantaServerApiSchemaConfigurationsUpdateConfiguration]" = None,
-    ) -> "Union[GrantaServerApiSchemaConfigurationsConfiguration, None]":
+        body: "Optional[GsaUpdateConfiguration]" = None,
+    ) -> "Union[GsaConfiguration, None]":
         """Update a configuration.
 
         This method makes a synchronous HTTP request.
@@ -581,11 +581,11 @@ class SchemaConfigurationsApi(ApiBase):
         configuration_type: str
             The configuration type.
         configuration_guid: str
-        body: GrantaServerApiSchemaConfigurationsUpdateConfiguration
+        body: GsaUpdateConfiguration
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConfigurationsConfiguration, None]
+        Union[GsaConfiguration, None]
         """
         data = self._update_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, body, _return_http_data_only=True
@@ -597,7 +597,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: "str",
         configuration_type: "str",
         configuration_guid: "str",
-        body: "Optional[GrantaServerApiSchemaConfigurationsUpdateConfiguration]" = None,
+        body: "Optional[GsaUpdateConfiguration]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -663,7 +663,7 @@ class SchemaConfigurationsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConfigurationsConfiguration",
+            200: "GsaConfiguration",
             400: None,
             403: None,
             404: None,

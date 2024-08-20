@@ -49,11 +49,8 @@ class SchemaDiscreteTypesApi(ApiBase):
     """
 
     def create_discrete_type(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateDiscreteType]" = None
+    ) -> "Union[GsaDiscreteType, None]":
         """Create a new discrete type.
 
         This method makes a synchronous HTTP request.
@@ -61,11 +58,11 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaDiscreteTypesCreateDiscreteType
+        body: GsaCreateDiscreteType
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
+        Union[GsaDiscreteType, None]
         """
         data = self._create_discrete_type_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -73,10 +70,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_discrete_type_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesCreateDiscreteType]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateDiscreteType]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -125,7 +119,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            201: "GsaDiscreteType",
             400: None,
             403: None,
             404: None,
@@ -149,7 +143,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def delete_discrete_type(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]":
+    ) -> "Union[GsaDiscreteTypeDeletionException, None]":
         """Delete discrete type, including all of its discrete values.
 
         This method makes a synchronous HTTP request.
@@ -161,7 +155,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException, None]
+        Union[GsaDiscreteTypeDeletionException, None]
         """
         data = self._delete_discrete_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -218,7 +212,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException",
+            400: "GsaDiscreteTypeDeletionException",
             200: None,
             403: None,
             404: None,
@@ -242,7 +236,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def get_attributes_for_type(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]":
+    ) -> "Union[GsaSlimObjects, None]":
         """Gets objects that are using this discrete type.
 
         This method makes a synchronous HTTP request.
@@ -254,7 +248,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]
+        Union[GsaSlimObjects, None]
         """
         data = self._get_attributes_for_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -311,7 +305,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaSlimEntitiesSlimObjects",
+            200: "GsaSlimObjects",
             400: None,
             404: None,
         }
@@ -334,7 +328,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def get_discrete_type(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
+    ) -> "Union[GsaDiscreteType, None]":
         """Gets a single discrete type.
 
         This method makes a synchronous HTTP request.
@@ -346,7 +340,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
+        Union[GsaDiscreteType, None]
         """
         data = self._get_discrete_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -403,7 +397,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            200: "GsaDiscreteType",
             404: None,
         }
 
@@ -423,9 +417,7 @@ class SchemaDiscreteTypesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_discrete_types(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]":
+    def get_discrete_types(self, *, database_key: "str") -> "Union[GsaDiscreteTypesInfo, None]":
         """Gets all discrete types for a given database.
 
         This method makes a synchronous HTTP request.
@@ -436,7 +428,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo, None]
+        Union[GsaDiscreteTypesInfo, None]
         """
         data = self._get_discrete_types_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -481,7 +473,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo",
+            200: "GsaDiscreteTypesInfo",
             400: None,
             404: None,
         }
@@ -507,8 +499,8 @@ class SchemaDiscreteTypesApi(ApiBase):
         *,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]":
+        body: "Optional[GsaUpdateDiscreteType]" = None,
+    ) -> "Union[GsaDiscreteType, None]":
         """Update discrete type.
 
         This method makes a synchronous HTTP request.
@@ -517,11 +509,11 @@ class SchemaDiscreteTypesApi(ApiBase):
         ----------
         database_key: str
         discrete_type_guid: str
-        body: GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType
+        body: GsaUpdateDiscreteType
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteTypesDiscreteType, None]
+        Union[GsaDiscreteType, None]
         """
         data = self._update_discrete_type_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -532,7 +524,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         self,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteTypesUpdateDiscreteType]" = None,
+        body: "Optional[GsaUpdateDiscreteType]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -590,7 +582,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
+            200: "GsaDiscreteType",
             400: None,
             403: None,
             404: None,

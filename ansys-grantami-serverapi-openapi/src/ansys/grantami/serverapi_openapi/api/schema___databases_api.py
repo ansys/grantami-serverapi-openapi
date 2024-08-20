@@ -48,26 +48,34 @@ class SchemaDatabasesApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def get_all_databases(self) -> "GrantaServerApiSchemaDatabasesInfo":
-        """Lists all databases that the user can see.
+    def add_database(
+        self, *, body: "Optional[GsaAddDatabase]" = None
+    ) -> "Union[GsaSlimDatabase, None]":
+        """Adds a database to the MI server. Only available to users in the System Administrator role.
 
         This method makes a synchronous HTTP request.
 
+        Parameters
+        ----------
+        body: GsaAddDatabase
+
         Returns
         -------
-        GrantaServerApiSchemaDatabasesInfo
+        Union[GsaSlimDatabase, None]
         """
-        data = self._get_all_databases_with_http_info(_return_http_data_only=True)
+        data = self._add_database_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_all_databases_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _add_database_with_http_info(
+        self, body: "Optional[GsaAddDatabase]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_all_databases"
+                    f"Got an unexpected keyword argument '{key}' to method add_database"
                 )
             params[key] = val
         del params["kwargs"]
@@ -84,11 +92,85 @@ class SchemaDatabasesApi(ApiBase):
         local_var_files: Dict[str, Any] = {}
 
         body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaSlimDatabase",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_all_databases(self, *, role: "Optional[str]" = None) -> "GsaDatabasesInfo":
+        """Lists all databases that the user can see.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        role: str
+
+        Returns
+        -------
+        GsaDatabasesInfo
+        """
+        data = self._get_all_databases_with_http_info(role, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_databases_with_http_info(self, role: "Optional[str]" = None, **kwargs: Any) -> Any:
+        all_params = ["role", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all_databases"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+        if "role" in params and role is not None:
+            query_params.append(("role", params["role"]))
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDatabasesInfo",
+            200: "GsaDatabasesInfo",
         }
 
         return self.api_client.call_api(
@@ -107,7 +189,7 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_database(self, *, database_key: "str") -> "Union[GrantaServerApiSchemaDatabase, None]":
+    def get_database(self, *, database_key: "str") -> "Union[GsaDatabase, None]":
         """Returns details for a given database.
 
         This method makes a synchronous HTTP request.
@@ -118,7 +200,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDatabase, None]
+        Union[GsaDatabase, None]
         """
         data = self._get_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -163,7 +245,7 @@ class SchemaDatabasesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDatabase",
+            200: "GsaDatabase",
             404: None,
         }
 
@@ -183,7 +265,7 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def lock_database(self, *, database_key: "str") -> "Union[GrantaServerApiSchemaDatabase, None]":
+    def lock_database(self, *, database_key: "str") -> "Union[GsaDatabase, None]":
         """Lock database
 
         This method makes a synchronous HTTP request.
@@ -195,7 +277,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDatabase, None]
+        Union[GsaDatabase, None]
         """
         data = self._lock_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -240,7 +322,7 @@ class SchemaDatabasesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDatabase",
+            200: "GsaDatabase",
             400: None,
             403: None,
             404: None,
@@ -262,9 +344,161 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def unlock_database(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDatabase, None]":
+    def reload_database(self, *, database_key: "str") -> "Union[GsaSlimDatabase, None]":
+        """Reloads a database. Only available to users in the System Administrator role.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        Union[GsaSlimDatabase, None]
+        """
+        data = self._reload_database_with_http_info(database_key, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _reload_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method reload_database"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'reload_database'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaSlimDatabase",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}:reload",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def remove_database(self, *, database_key: "str") -> "None":
+        """Removes the database from the MI server. Only available to users in the System Administrator role.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._remove_database_with_http_info(database_key, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _remove_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method remove_database"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'remove_database'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: None,
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def unlock_database(self, *, database_key: "str") -> "Union[GsaDatabase, None]":
         """Unlock database
 
         This method makes a synchronous HTTP request.
@@ -276,7 +510,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDatabase, None]
+        Union[GsaDatabase, None]
         """
         data = self._unlock_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -321,7 +555,7 @@ class SchemaDatabasesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDatabase",
+            200: "GsaDatabase",
             400: None,
             403: None,
             404: None,
@@ -344,8 +578,12 @@ class SchemaDatabasesApi(ApiBase):
         )
 
     def update_database(
-        self, *, database_key: "str", body: "Optional[GrantaServerApiSchemaUpdateDatabase]" = None
-    ) -> "Union[GrantaServerApiSchemaDatabase, None]":
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GsaUpdateDatabase]" = None,
+        allow_reload: "Optional[bool]" = false,
+    ) -> "Union[GsaDatabase, None]":
         """Update database details.
 
         This method makes a synchronous HTTP request.
@@ -353,24 +591,29 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUpdateDatabase
+        body: GsaUpdateDatabase
+        allow_reload: bool
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDatabase, None]
+        Union[GsaDatabase, None]
         """
-        data = self._update_database_with_http_info(database_key, body, _return_http_data_only=True)
+        data = self._update_database_with_http_info(
+            database_key, body, allow_reload, _return_http_data_only=True
+        )
         return data  # type: ignore[no-any-return]
 
     def _update_database_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUpdateDatabase]" = None,
+        body: "Optional[GsaUpdateDatabase]" = None,
+        allow_reload: "Optional[bool]" = false,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "body",
+            "allow_reload",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -397,6 +640,8 @@ class SchemaDatabasesApi(ApiBase):
             path_params["database-key"] = params["database_key"]
 
         query_params: List[Any] = []
+        if "allow_reload" in params and allow_reload is not None:
+            query_params.append(("allow-reload", params["allow_reload"]))
 
         header_params: Dict[str, Any] = {}
 
@@ -415,7 +660,7 @@ class SchemaDatabasesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDatabase",
+            200: "GsaDatabase",
             400: None,
             403: None,
             404: None,
@@ -424,6 +669,84 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}",
             "PATCH",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def upgrade_database(self, *, database_key: "str") -> "Union[GsaSlimDatabase, None]":
+        """Upgrade a database to the latest schema version. Only available to users in the System Administrator role.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        Union[GsaSlimDatabase, None]
+        """
+        data = self._upgrade_database_with_http_info(database_key, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _upgrade_database_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method upgrade_database"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'upgrade_database'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaSlimDatabase",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}:upgrade",
+            "POST",
             path_params,
             query_params,
             header_params,

@@ -49,11 +49,8 @@ class ListItemApi(ApiBase):
     """
 
     def add_items_to_list(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoCreateRecordListItemsInfo]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListItemsInfo, None]":
+        self, *, list_identifier: "str", body: "Optional[GsaCreateRecordListItemsInfo]" = None
+    ) -> "Union[GsaRecordListItemsInfo, None]":
         """Adds the specified items to an existing list.
 
         This method makes a synchronous HTTP request.
@@ -61,11 +58,11 @@ class ListItemApi(ApiBase):
         Parameters
         ----------
         list_identifier: str
-        body: GrantaServerApiListsDtoCreateRecordListItemsInfo
+        body: GsaCreateRecordListItemsInfo
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
+        Union[GsaRecordListItemsInfo, None]
         """
         data = self._add_items_to_list_with_http_info(
             list_identifier, body, _return_http_data_only=True
@@ -75,7 +72,7 @@ class ListItemApi(ApiBase):
     def _add_items_to_list_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoCreateRecordListItemsInfo]" = None,
+        body: "Optional[GsaCreateRecordListItemsInfo]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -127,7 +124,7 @@ class ListItemApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            202: "GrantaServerApiListsDtoRecordListItemsInfo",
+            202: "GsaRecordListItemsInfo",
             400: None,
             403: None,
             404: None,
@@ -149,9 +146,7 @@ class ListItemApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_list_items(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListItemsInfo, None]":
+    def get_list_items(self, *, list_identifier: "str") -> "Union[GsaRecordListItemsInfo, None]":
         """Returns the items in the given list
 
         This method makes a synchronous HTTP request.
@@ -162,7 +157,7 @@ class ListItemApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
+        Union[GsaRecordListItemsInfo, None]
         """
         data = self._get_list_items_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -209,7 +204,7 @@ class ListItemApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListItemsInfo",
+            200: "GsaRecordListItemsInfo",
             403: None,
             404: None,
         }
@@ -231,11 +226,8 @@ class ListItemApi(ApiBase):
         )
 
     def remove_items_from_list(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoDeleteRecordListItems]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListItemsInfo, None]":
+        self, *, list_identifier: "str", body: "Optional[GsaDeleteRecordListItems]" = None
+    ) -> "Union[GsaRecordListItemsInfo, None]":
         """Removed the specified items from an existing list.
 
         This method makes a synchronous HTTP request.
@@ -243,11 +235,11 @@ class ListItemApi(ApiBase):
         Parameters
         ----------
         list_identifier: str
-        body: GrantaServerApiListsDtoDeleteRecordListItems
+        body: GsaDeleteRecordListItems
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListItemsInfo, None]
+        Union[GsaRecordListItemsInfo, None]
         """
         data = self._remove_items_from_list_with_http_info(
             list_identifier, body, _return_http_data_only=True
@@ -257,7 +249,7 @@ class ListItemApi(ApiBase):
     def _remove_items_from_list_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoDeleteRecordListItems]" = None,
+        body: "Optional[GsaDeleteRecordListItems]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -309,7 +301,7 @@ class ListItemApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            202: "GrantaServerApiListsDtoRecordListItemsInfo",
+            202: "GsaRecordListItemsInfo",
             400: None,
             403: None,
             404: None,

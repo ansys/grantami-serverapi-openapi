@@ -49,11 +49,8 @@ class SchemaTablesApi(ApiBase):
     """
 
     def create_table(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaTablesCreateTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateTable]" = None
+    ) -> "Union[GsaTable, None]":
         """Create a new table.
 
         This method makes a synchronous HTTP request.
@@ -61,20 +58,17 @@ class SchemaTablesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaTablesCreateTable
+        body: GsaCreateTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesTable, None]
+        Union[GsaTable, None]
         """
         data = self._create_table_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_table_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaTablesCreateTable]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateTable]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -123,7 +117,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaTablesTable",
+            201: "GsaTable",
             400: None,
             403: None,
             404: None,
@@ -147,7 +141,7 @@ class SchemaTablesApi(ApiBase):
 
     def delete_table(
         self, *, database_key: "str", table_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionTableDeletionException, None]":
+    ) -> "Union[GsaTableDeletionException, None]":
         """Delete a table.
 
         This method makes a synchronous HTTP request.
@@ -159,7 +153,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionTableDeletionException, None]
+        Union[GsaTableDeletionException, None]
         """
         data = self._delete_table_with_http_info(
             database_key, table_guid, _return_http_data_only=True
@@ -216,7 +210,7 @@ class SchemaTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionTableDeletionException",
+            400: "GsaTableDeletionException",
             200: None,
             403: None,
             404: None,
@@ -240,7 +234,7 @@ class SchemaTablesApi(ApiBase):
 
     def enable_version_control(
         self, *, database_key: "str", table_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
+    ) -> "Union[GsaTable, None]":
         """Enable version control on the table.  This cannot be undone.  After this method has been called all records and data in the table are in an unreleased state.  This means that read users will not be able to see any records unless they are subsequently released.
 
         This method makes a synchronous HTTP request.
@@ -252,7 +246,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesTable, None]
+        Union[GsaTable, None]
         """
         data = self._enable_version_control_with_http_info(
             database_key, table_guid, _return_http_data_only=True
@@ -309,7 +303,7 @@ class SchemaTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaTablesTable",
+            200: "GsaTable",
             400: None,
             403: None,
             404: None,
@@ -331,6 +325,117 @@ class SchemaTablesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_inbound_links(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+    ) -> "Union[GsaLinksInfo, None]":
+        """Get all record link groups and tabular attributes pointing towards the table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+
+        Returns
+        -------
+        Union[GsaLinksInfo, None]
+        """
+        data = self._get_inbound_links_with_http_info(
+            database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_inbound_links_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "mode",
+            "x_ansys_vc_mode",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_inbound_links"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_inbound_links'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'get_inbound_links'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+
+        query_params: List[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
+
+        header_params: Dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaLinksInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}:inbound-links",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_table(
         self,
         *,
@@ -338,7 +443,7 @@ class SchemaTablesApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
+    ) -> "Union[GsaTable, None]":
         """Get a table with a specified guid for a given database.
 
         This method makes a synchronous HTTP request.
@@ -354,7 +459,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesTable, None]
+        Union[GsaTable, None]
         """
         data = self._get_table_with_http_info(
             database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -418,7 +523,7 @@ class SchemaTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaTablesTable",
+            200: "GsaTable",
             404: None,
         }
 
@@ -444,7 +549,7 @@ class SchemaTablesApi(ApiBase):
         database_key: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesTablesInfo, None]":
+    ) -> "Union[GsaTablesInfo, None]":
         """Get all tables
 
         This method makes a synchronous HTTP request.
@@ -459,7 +564,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesTablesInfo, None]
+        Union[GsaTablesInfo, None]
         """
         data = self._get_tables_with_http_info(
             database_key, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -516,7 +621,7 @@ class SchemaTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaTablesTablesInfo",
+            200: "GsaTablesInfo",
             404: None,
         }
 
@@ -538,7 +643,7 @@ class SchemaTablesApi(ApiBase):
 
     def release_table(
         self, *, database_key: "str", table_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]":
+    ) -> "Union[GsaReleaseTableVersionControlException, GsaTable, None]":
         """Releases the table.  Table must be version-controlled and unreleased.
 
         This method makes a synchronous HTTP request.
@@ -550,7 +655,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException, GrantaServerApiSchemaTablesTable, None]
+        Union[GsaReleaseTableVersionControlException, GsaTable, None]
         """
         data = self._release_table_with_http_info(
             database_key, table_guid, _return_http_data_only=True
@@ -607,8 +712,8 @@ class SchemaTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaTablesTable",
-            400: "GrantaServerApiExceptionsVersionControlReleaseTableVersionControlException",
+            200: "GsaTable",
+            400: "GsaReleaseTableVersionControlException",
             403: None,
             404: None,
         }
@@ -630,12 +735,8 @@ class SchemaTablesApi(ApiBase):
         )
 
     def update_table(
-        self,
-        *,
-        database_key: "str",
-        table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaTablesUpdateTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaTablesTable, None]":
+        self, *, database_key: "str", table_guid: "str", body: "Optional[GsaUpdateTable]" = None
+    ) -> "Union[GsaTable, None]":
         """Update a table.
 
         This method makes a synchronous HTTP request.
@@ -644,11 +745,11 @@ class SchemaTablesApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaTablesUpdateTable
+        body: GsaUpdateTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaTablesTable, None]
+        Union[GsaTable, None]
         """
         data = self._update_table_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -659,7 +760,7 @@ class SchemaTablesApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaTablesUpdateTable]" = None,
+        body: "Optional[GsaUpdateTable]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -717,7 +818,7 @@ class SchemaTablesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaTablesTable",
+            200: "GsaTable",
             400: None,
             403: None,
             404: None,

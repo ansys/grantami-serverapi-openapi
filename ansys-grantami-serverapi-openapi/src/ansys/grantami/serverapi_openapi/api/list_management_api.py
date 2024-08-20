@@ -48,9 +48,7 @@ class ListManagementApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def copy_list(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def copy_list(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Creates a copy of the list and its items
 
         This method makes a synchronous HTTP request.
@@ -61,7 +59,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._copy_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -106,7 +104,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiListsDtoRecordListHeader",
+            201: "GsaRecordListHeader",
             403: None,
             404: None,
         }
@@ -128,25 +126,25 @@ class ListManagementApi(ApiBase):
         )
 
     def create_list(
-        self, *, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+        self, *, body: "Optional[GsaCreateRecordList]" = None
+    ) -> "Union[GsaRecordListHeader, None]":
         """Creates a new list with the specified properties and items.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiListsDtoCreateRecordList
+        body: GsaCreateRecordList
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._create_list_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_list_with_http_info(
-        self, body: "Optional[GrantaServerApiListsDtoCreateRecordList]" = None, **kwargs: Any
+        self, body: "Optional[GsaCreateRecordList]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -182,7 +180,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiListsDtoRecordListHeader",
+            201: "GsaRecordListHeader",
             400: None,
             403: None,
         }
@@ -276,14 +274,14 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_all_lists(self) -> "Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]":
+    def get_all_lists(self) -> "Union[GsaRecordListHeadersInfo, None]":
         """Returns all lists visible to the calling user
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeadersInfo, None]
+        Union[GsaRecordListHeadersInfo, None]
         """
         data = self._get_all_lists_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -318,7 +316,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeadersInfo",
+            200: "GsaRecordListHeadersInfo",
             403: None,
         }
 
@@ -338,9 +336,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_list(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def get_list(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Returns the given list if it exists and the calling user has read access to it
 
         This method makes a synchronous HTTP request.
@@ -351,7 +347,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._get_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -396,7 +392,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             403: None,
             404: None,
         }
@@ -419,7 +415,7 @@ class ListManagementApi(ApiBase):
 
     def get_record_list_search_results(
         self, *, result_resource_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]":
+    ) -> "Union[GsaRecordListSearchResultsInfo, None]":
         """Returns the search results found in the specified resource
 
         This method makes a synchronous HTTP request.
@@ -430,7 +426,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListSearchResultsInfo, None]
+        Union[GsaRecordListSearchResultsInfo, None]
         """
         data = self._get_record_list_search_results_with_http_info(
             result_resource_identifier, _return_http_data_only=True
@@ -484,7 +480,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListSearchResultsInfo",
+            200: "GsaRecordListSearchResultsInfo",
             403: None,
             404: None,
             410: None,
@@ -506,9 +502,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def publish_list(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def publish_list(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Update the status of an existing list to \"published\". The list must be awaiting approval, and not already published.  The \"awaiting approval\" flag will be reset to false.
 
         This method makes a synchronous HTTP request.
@@ -519,7 +513,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._publish_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -566,7 +560,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,
@@ -588,9 +582,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def request_approval(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def request_approval(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Update the status of an existing list to \"awaiting approval\".
 
         This method makes a synchronous HTTP request.
@@ -601,7 +593,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._request_approval_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -648,7 +640,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,
@@ -672,7 +664,7 @@ class ListManagementApi(ApiBase):
 
     def reset_awaiting_approval(
         self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    ) -> "Union[GsaRecordListHeader, None]":
         """Update the status of an existing list to not be \"awaiting approval\".
 
         This method makes a synchronous HTTP request.
@@ -683,7 +675,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._reset_awaiting_approval_with_http_info(
             list_identifier, _return_http_data_only=True
@@ -732,7 +724,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,
@@ -754,9 +746,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def revise_list(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def revise_list(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Creates a private copy of a list that can be revised.
 
         This method makes a synchronous HTTP request.
@@ -767,7 +757,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._revise_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -812,7 +802,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiListsDtoRecordListHeader",
+            201: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,
@@ -835,25 +825,25 @@ class ListManagementApi(ApiBase):
         )
 
     def run_record_lists_search(
-        self, *, body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None
-    ) -> "Union[GrantaServerApiListsDtoRecordListSearchInfo, None]":
+        self, *, body: "Optional[GsaRecordListSearchRequest]" = None
+    ) -> "Union[GsaRecordListSearchInfo, None]":
         """Posts a search request, and returns an object containing search result identifier
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiListsDtoRecordListSearchRequest
+        body: GsaRecordListSearchRequest
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListSearchInfo, None]
+        Union[GsaRecordListSearchInfo, None]
         """
         data = self._run_record_lists_search_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _run_record_lists_search_with_http_info(
-        self, body: "Optional[GrantaServerApiListsDtoRecordListSearchRequest]" = None, **kwargs: Any
+        self, body: "Optional[GsaRecordListSearchRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -891,7 +881,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiListsDtoRecordListSearchInfo",
+            201: "GsaRecordListSearchInfo",
             400: None,
             403: None,
         }
@@ -912,9 +902,7 @@ class ListManagementApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def unpublish_list(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+    def unpublish_list(self, *, list_identifier: "str") -> "Union[GsaRecordListHeader, None]":
         """Update the status of an existing list to \"unpublished\". The list must be published, and awaiting approval.  The \"awaiting approval\" flag will be reset to false.
 
         This method makes a synchronous HTTP request.
@@ -925,7 +913,7 @@ class ListManagementApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._unpublish_list_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -972,7 +960,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,
@@ -995,11 +983,8 @@ class ListManagementApi(ApiBase):
         )
 
     def update_list(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListHeader, None]":
+        self, *, list_identifier: "str", body: "Optional[GsaUpdateRecordListProperties]" = None
+    ) -> "Union[GsaRecordListHeader, None]":
         """Performs a partial update on the properties of a list.
 
         This method makes a synchronous HTTP request.
@@ -1007,11 +992,11 @@ class ListManagementApi(ApiBase):
         Parameters
         ----------
         list_identifier: str
-        body: GrantaServerApiListsDtoUpdateRecordListProperties
+        body: GsaUpdateRecordListProperties
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListHeader, None]
+        Union[GsaRecordListHeader, None]
         """
         data = self._update_list_with_http_info(list_identifier, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -1019,7 +1004,7 @@ class ListManagementApi(ApiBase):
     def _update_list_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListProperties]" = None,
+        body: "Optional[GsaUpdateRecordListProperties]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1069,7 +1054,7 @@ class ListManagementApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListHeader",
+            200: "GsaRecordListHeader",
             400: None,
             403: None,
             404: None,

@@ -49,11 +49,8 @@ class SchemaConstantsApi(ApiBase):
     """
 
     def create_constant(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaConstantsCreateConstant]" = None,
-    ) -> "Union[GrantaServerApiSchemaConstantsConstant, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateConstant]" = None
+    ) -> "Union[GsaConstant, None]":
         """Create a new constant.
 
         This method makes a synchronous HTTP request.
@@ -62,21 +59,18 @@ class SchemaConstantsApi(ApiBase):
         ----------
         database_key: str
             Database in which constant will be created
-        body: GrantaServerApiSchemaConstantsCreateConstant
+        body: GsaCreateConstant
             Constant to add to database
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConstantsConstant, None]
+        Union[GsaConstant, None]
         """
         data = self._create_constant_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_constant_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaConstantsCreateConstant]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateConstant]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -125,7 +119,7 @@ class SchemaConstantsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaConstantsConstant",
+            201: "GsaConstant",
             400: None,
             403: None,
             404: None,
@@ -149,7 +143,7 @@ class SchemaConstantsApi(ApiBase):
 
     def delete_constant(
         self, *, database_key: "str", constant_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionConstantDeletionException, None]":
+    ) -> "Union[GsaConstantDeletionException, None]":
         """Delete a constant
 
         This method makes a synchronous HTTP request.
@@ -163,7 +157,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionConstantDeletionException, None]
+        Union[GsaConstantDeletionException, None]
         """
         data = self._delete_constant_with_http_info(
             database_key, constant_guid, _return_http_data_only=True
@@ -220,7 +214,7 @@ class SchemaConstantsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionConstantDeletionException",
+            400: "GsaConstantDeletionException",
             200: None,
             403: None,
             404: None,
@@ -244,7 +238,7 @@ class SchemaConstantsApi(ApiBase):
 
     def get_constant(
         self, *, database_key: "str", constant_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaConstantsConstant, None]":
+    ) -> "Union[GsaConstant, None]":
         """Get individual constant
 
         This method makes a synchronous HTTP request.
@@ -258,7 +252,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConstantsConstant, None]
+        Union[GsaConstant, None]
         """
         data = self._get_constant_with_http_info(
             database_key, constant_guid, _return_http_data_only=True
@@ -315,7 +309,7 @@ class SchemaConstantsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConstantsConstant",
+            200: "GsaConstant",
             404: None,
         }
 
@@ -335,9 +329,7 @@ class SchemaConstantsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_constants(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaConstantsConstantsInfo, None]":
+    def get_constants(self, *, database_key: "str") -> "Union[GsaConstantsInfo, None]":
         """Get all constants
 
         This method makes a synchronous HTTP request.
@@ -348,7 +340,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConstantsConstantsInfo, None]
+        Union[GsaConstantsInfo, None]
         """
         data = self._get_constants_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -393,7 +385,7 @@ class SchemaConstantsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConstantsConstantsInfo",
+            200: "GsaConstantsInfo",
             404: None,
         }
 
@@ -418,8 +410,8 @@ class SchemaConstantsApi(ApiBase):
         *,
         database_key: "str",
         constant_guid: "str",
-        body: "Optional[GrantaServerApiSchemaConstantsUpdateConstant]" = None,
-    ) -> "Union[GrantaServerApiSchemaConstantsConstant, None]":
+        body: "Optional[GsaUpdateConstant]" = None,
+    ) -> "Union[GsaConstant, None]":
         """Update constant.
 
         This method makes a synchronous HTTP request.
@@ -430,12 +422,12 @@ class SchemaConstantsApi(ApiBase):
             Database in which constant will be search for
         constant_guid: str
             Guid of constant to update
-        body: GrantaServerApiSchemaConstantsUpdateConstant
+        body: GsaUpdateConstant
             Constant data to be updated
 
         Returns
         -------
-        Union[GrantaServerApiSchemaConstantsConstant, None]
+        Union[GsaConstant, None]
         """
         data = self._update_constant_with_http_info(
             database_key, constant_guid, body, _return_http_data_only=True
@@ -446,7 +438,7 @@ class SchemaConstantsApi(ApiBase):
         self,
         database_key: "str",
         constant_guid: "str",
-        body: "Optional[GrantaServerApiSchemaConstantsUpdateConstant]" = None,
+        body: "Optional[GsaUpdateConstant]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -504,7 +496,7 @@ class SchemaConstantsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaConstantsConstant",
+            200: "GsaConstant",
             400: None,
             403: None,
             404: None,

@@ -49,11 +49,8 @@ class SchemaParametersApi(ApiBase):
     """
 
     def create_parameter(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaParametersCreateParameter]" = None,
-    ) -> "Union[GrantaServerApiSchemaParametersParameter, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateParameter]" = None
+    ) -> "Union[GsaParameter, None]":
         """Create a new parameter.
 
         This method makes a synchronous HTTP request.
@@ -61,11 +58,11 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaParametersCreateParameter
+        body: GsaCreateParameter
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameter, None]
+        Union[GsaParameter, None]
         """
         data = self._create_parameter_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -73,10 +70,7 @@ class SchemaParametersApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_parameter_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaParametersCreateParameter]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateParameter]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -125,7 +119,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaParametersParameter",
+            201: "GsaParameter",
             400: None,
             403: None,
             404: None,
@@ -152,8 +146,8 @@ class SchemaParametersApi(ApiBase):
         *,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersCreateParameterValue]" = None,
-    ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
+        body: "Optional[GsaCreateParameterValue]" = None,
+    ) -> "Union[GsaParameterValue, None]":
         """Create a new parameter value.
 
         This method makes a synchronous HTTP request.
@@ -162,11 +156,11 @@ class SchemaParametersApi(ApiBase):
         ----------
         database_key: str
         parameter_guid: str
-        body: GrantaServerApiSchemaParametersCreateParameterValue
+        body: GsaCreateParameterValue
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameterValue, None]
+        Union[GsaParameterValue, None]
         """
         data = self._create_parameter_value_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -177,7 +171,7 @@ class SchemaParametersApi(ApiBase):
         self,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersCreateParameterValue]" = None,
+        body: "Optional[GsaCreateParameterValue]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -235,7 +229,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaParametersParameterValue",
+            201: "GsaParameterValue",
             400: None,
             403: None,
             404: None,
@@ -259,7 +253,7 @@ class SchemaParametersApi(ApiBase):
 
     def delete_parameter(
         self, *, database_key: "str", parameter_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionParameterDeletionException, None]":
+    ) -> "Union[GsaParameterDeletionException, None]":
         """Delete a parameter.
 
         This method makes a synchronous HTTP request.
@@ -271,7 +265,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionParameterDeletionException, None]
+        Union[GsaParameterDeletionException, None]
         """
         data = self._delete_parameter_with_http_info(
             database_key, parameter_guid, _return_http_data_only=True
@@ -328,7 +322,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionParameterDeletionException",
+            400: "GsaParameterDeletionException",
             200: None,
             403: None,
             404: None,
@@ -352,7 +346,7 @@ class SchemaParametersApi(ApiBase):
 
     def delete_parameter_value(
         self, *, database_key: "str", parameter_guid: "str", parameter_value_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]":
+    ) -> "Union[GsaParameterValueDeletionException, None]":
         """Delete a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -365,7 +359,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionParameterValueDeletionException, None]
+        Union[GsaParameterValueDeletionException, None]
         """
         data = self._delete_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, _return_http_data_only=True
@@ -430,7 +424,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionParameterValueDeletionException",
+            400: "GsaParameterValueDeletionException",
             200: None,
             403: None,
             404: None,
@@ -454,7 +448,7 @@ class SchemaParametersApi(ApiBase):
 
     def get_objects_using_parameter(
         self, *, database_key: "str", parameter_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]":
+    ) -> "Union[GsaSlimObjects, None]":
         """Get attributes which currently use the given parameter.
 
         This method makes a synchronous HTTP request.
@@ -466,7 +460,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSlimEntitiesSlimObjects, None]
+        Union[GsaSlimObjects, None]
         """
         data = self._get_objects_using_parameter_with_http_info(
             database_key, parameter_guid, _return_http_data_only=True
@@ -523,7 +517,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaSlimEntitiesSlimObjects",
+            200: "GsaSlimObjects",
             404: None,
         }
 
@@ -545,7 +539,7 @@ class SchemaParametersApi(ApiBase):
 
     def get_parameter(
         self, *, database_key: "str", parameter_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaParametersParameter, None]":
+    ) -> "Union[GsaParameter, None]":
         """Get a parameter with a specified guid for a given database.
 
         This method makes a synchronous HTTP request.
@@ -557,7 +551,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameter, None]
+        Union[GsaParameter, None]
         """
         data = self._get_parameter_with_http_info(
             database_key, parameter_guid, _return_http_data_only=True
@@ -614,7 +608,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaParametersParameter",
+            200: "GsaParameter",
             404: None,
         }
 
@@ -636,7 +630,7 @@ class SchemaParametersApi(ApiBase):
 
     def get_parameter_value(
         self, *, database_key: "str", parameter_guid: "str", parameter_value_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
+    ) -> "Union[GsaParameterValue, None]":
         """Get a parameter value with a specified guid for a given database for a given parameter.
 
         This method makes a synchronous HTTP request.
@@ -649,7 +643,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameterValue, None]
+        Union[GsaParameterValue, None]
         """
         data = self._get_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, _return_http_data_only=True
@@ -714,7 +708,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaParametersParameterValue",
+            200: "GsaParameterValue",
             404: None,
         }
 
@@ -734,9 +728,7 @@ class SchemaParametersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_parameters(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaParametersParametersInfo, None]":
+    def get_parameters(self, *, database_key: "str") -> "Union[GsaParametersInfo, None]":
         """Get all parameters for a given database.
 
         This method makes a synchronous HTTP request.
@@ -747,7 +739,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParametersInfo, None]
+        Union[GsaParametersInfo, None]
         """
         data = self._get_parameters_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -792,7 +784,7 @@ class SchemaParametersApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaParametersParametersInfo",
+            200: "GsaParametersInfo",
             404: None,
         }
 
@@ -817,8 +809,8 @@ class SchemaParametersApi(ApiBase):
         *,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersUpdateParameter]" = None,
-    ) -> "Union[GrantaServerApiSchemaParametersParameter, None]":
+        body: "Optional[GsaUpdateParameter]" = None,
+    ) -> "Union[GsaParameter, None]":
         """Update a parameter.
 
         This method makes a synchronous HTTP request.
@@ -827,11 +819,11 @@ class SchemaParametersApi(ApiBase):
         ----------
         database_key: str
         parameter_guid: str
-        body: GrantaServerApiSchemaParametersUpdateParameter
+        body: GsaUpdateParameter
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameter, None]
+        Union[GsaParameter, None]
         """
         data = self._update_parameter_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -842,7 +834,7 @@ class SchemaParametersApi(ApiBase):
         self,
         database_key: "str",
         parameter_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersUpdateParameter]" = None,
+        body: "Optional[GsaUpdateParameter]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -900,7 +892,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaParametersParameter",
+            200: "GsaParameter",
             400: None,
             403: None,
             404: None,
@@ -928,8 +920,8 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         parameter_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersUpdateParameterValue]" = None,
-    ) -> "Union[GrantaServerApiSchemaParametersParameterValue, None]":
+        body: "Optional[GsaUpdateParameterValue]" = None,
+    ) -> "Union[GsaParameterValue, None]":
         """Update a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -939,11 +931,11 @@ class SchemaParametersApi(ApiBase):
         database_key: str
         parameter_guid: str
         parameter_value_guid: str
-        body: GrantaServerApiSchemaParametersUpdateParameterValue
+        body: GsaUpdateParameterValue
 
         Returns
         -------
-        Union[GrantaServerApiSchemaParametersParameterValue, None]
+        Union[GsaParameterValue, None]
         """
         data = self._update_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, body, _return_http_data_only=True
@@ -955,7 +947,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         parameter_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaParametersUpdateParameterValue]" = None,
+        body: "Optional[GsaUpdateParameterValue]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1021,7 +1013,7 @@ class SchemaParametersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaParametersParameterValue",
+            200: "GsaParameterValue",
             400: None,
             403: None,
             404: None,

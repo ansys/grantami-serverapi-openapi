@@ -49,8 +49,8 @@ class SchemaUnitsApi(ApiBase):
     """
 
     def create_unit(
-        self, *, database_key: "str", body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None
-    ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateUnit]" = None
+    ) -> "Union[GsaUnit, None]":
         """Create a new unit.
 
         This method makes a synchronous HTTP request.
@@ -58,20 +58,17 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUnitsCreateUnit
+        body: GsaCreateUnit
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnit, None]
+        Union[GsaUnit, None]
         """
         data = self._create_unit_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_unit_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnit]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateUnit]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -118,7 +115,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaUnitsUnit",
+            201: "GsaUnit",
             400: None,
             403: None,
             404: None,
@@ -141,11 +138,8 @@ class SchemaUnitsApi(ApiBase):
         )
 
     def create_unit_system(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateUnitSystem]" = None
+    ) -> "Union[GsaUnitSystem, None]":
         """Create a new unit system.
 
         This method makes a synchronous HTTP request.
@@ -153,11 +147,11 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaUnitsCreateUnitSystem
+        body: GsaCreateUnitSystem
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
+        Union[GsaUnitSystem, None]
         """
         data = self._create_unit_system_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -165,10 +159,7 @@ class SchemaUnitsApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_unit_system_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsCreateUnitSystem]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateUnitSystem]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -217,7 +208,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaUnitsUnitSystem",
+            201: "GsaUnitSystem",
             400: None,
             403: None,
             404: None,
@@ -417,7 +408,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_compatible_units(
         self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
+    ) -> "Union[GsaUnitsInfo, None]":
         """Get compatible units for unit
 
         This method makes a synchronous HTTP request.
@@ -429,7 +420,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
+        Union[GsaUnitsInfo, None]
         """
         data = self._get_compatible_units_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
@@ -486,7 +477,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitsInfo",
+            200: "GsaUnitsInfo",
             404: None,
         }
 
@@ -506,9 +497,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_unit(
-        self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
+    def get_unit(self, *, database_key: "str", unit_guid: "str") -> "Union[GsaUnit, None]":
         """Get individual units
 
         This method makes a synchronous HTTP request.
@@ -520,7 +509,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnit, None]
+        Union[GsaUnit, None]
         """
         data = self._get_unit_with_http_info(database_key, unit_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -569,7 +558,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnit",
+            200: "GsaUnit",
             404: None,
         }
 
@@ -591,7 +580,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_unit_equivalents(
         self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]":
+    ) -> "Union[GsaUnitEquivalentsInfo, None]":
         """Get equivalent units (one per unit system)
 
         This method makes a synchronous HTTP request.
@@ -603,7 +592,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitEquivalentsInfo, None]
+        Union[GsaUnitEquivalentsInfo, None]
         """
         data = self._get_unit_equivalents_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
@@ -660,7 +649,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitEquivalentsInfo",
+            200: "GsaUnitEquivalentsInfo",
             404: None,
         }
 
@@ -682,7 +671,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_unit_system(
         self, *, database_key: "str", unit_system_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+    ) -> "Union[GsaUnitSystem, None]":
         """Get an individual unit system
 
         This method makes a synchronous HTTP request.
@@ -694,7 +683,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
+        Union[GsaUnitSystem, None]
         """
         data = self._get_unit_system_with_http_info(
             database_key, unit_system_guid, _return_http_data_only=True
@@ -751,7 +740,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitSystem",
+            200: "GsaUnitSystem",
             404: None,
         }
 
@@ -771,9 +760,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_unit_systems(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]":
+    def get_unit_systems(self, *, database_key: "str") -> "Union[GsaUnitSystemsInfo, None]":
         """Get all unit systems in the database
 
         This method makes a synchronous HTTP request.
@@ -784,7 +771,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitSystemsInfo, None]
+        Union[GsaUnitSystemsInfo, None]
         """
         data = self._get_unit_systems_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -829,7 +816,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitSystemsInfo",
+            200: "GsaUnitSystemsInfo",
             404: None,
         }
 
@@ -851,7 +838,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_unit_usages(
         self, *, database_key: "str", unit_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitUsage, None]":
+    ) -> "Union[GsaUnitUsage, None]":
         """Get all usages of unit
 
         This method makes a synchronous HTTP request.
@@ -863,7 +850,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitUsage, None]
+        Union[GsaUnitUsage, None]
         """
         data = self._get_unit_usages_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
@@ -920,7 +907,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitUsage",
+            200: "GsaUnitUsage",
             404: None,
         }
 
@@ -940,9 +927,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_units(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitsInfo, None]":
+    def get_units(self, *, database_key: "str") -> "Union[GsaUnitsInfo, None]":
         """Get all units
 
         This method makes a synchronous HTTP request.
@@ -953,7 +938,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitsInfo, None]
+        Union[GsaUnitsInfo, None]
         """
         data = self._get_units_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -996,7 +981,7 @@ class SchemaUnitsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitsInfo",
+            200: "GsaUnitsInfo",
             404: None,
         }
 
@@ -1138,12 +1123,8 @@ class SchemaUnitsApi(ApiBase):
         )
 
     def update_unit(
-        self,
-        *,
-        database_key: "str",
-        unit_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnit]" = None,
-    ) -> "Union[GrantaServerApiSchemaUnitsUnit, None]":
+        self, *, database_key: "str", unit_guid: "str", body: "Optional[GsaUpdateUnit]" = None
+    ) -> "Union[GsaUnit, None]":
         """Update unit.
 
         This method makes a synchronous HTTP request.
@@ -1152,11 +1133,11 @@ class SchemaUnitsApi(ApiBase):
         ----------
         database_key: str
         unit_guid: str
-        body: GrantaServerApiSchemaUnitsUpdateUnit
+        body: GsaUpdateUnit
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnit, None]
+        Union[GsaUnit, None]
         """
         data = self._update_unit_with_http_info(
             database_key, unit_guid, body, _return_http_data_only=True
@@ -1167,7 +1148,7 @@ class SchemaUnitsApi(ApiBase):
         self,
         database_key: "str",
         unit_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnit]" = None,
+        body: "Optional[GsaUpdateUnit]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1223,7 +1204,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnit",
+            200: "GsaUnit",
             400: None,
             403: None,
             404: None,
@@ -1250,8 +1231,8 @@ class SchemaUnitsApi(ApiBase):
         *,
         database_key: "str",
         unit_system_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
-    ) -> "Union[GrantaServerApiSchemaUnitsUnitSystem, None]":
+        body: "Optional[GsaUpdateUnitSystem]" = None,
+    ) -> "Union[GsaUnitSystem, None]":
         """Update a unit system.
 
         This method makes a synchronous HTTP request.
@@ -1260,11 +1241,11 @@ class SchemaUnitsApi(ApiBase):
         ----------
         database_key: str
         unit_system_guid: str
-        body: GrantaServerApiSchemaUnitsUpdateUnitSystem
+        body: GsaUpdateUnitSystem
 
         Returns
         -------
-        Union[GrantaServerApiSchemaUnitsUnitSystem, None]
+        Union[GsaUnitSystem, None]
         """
         data = self._update_unit_system_with_http_info(
             database_key, unit_system_guid, body, _return_http_data_only=True
@@ -1275,7 +1256,7 @@ class SchemaUnitsApi(ApiBase):
         self,
         database_key: "str",
         unit_system_guid: "str",
-        body: "Optional[GrantaServerApiSchemaUnitsUpdateUnitSystem]" = None,
+        body: "Optional[GsaUpdateUnitSystem]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1333,7 +1314,7 @@ class SchemaUnitsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaUnitsUnitSystem",
+            200: "GsaUnitSystem",
             400: None,
             403: None,
             404: None,

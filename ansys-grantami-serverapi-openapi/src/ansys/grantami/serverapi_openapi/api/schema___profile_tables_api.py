@@ -49,11 +49,8 @@ class SchemaProfileTablesApi(ApiBase):
     """
 
     def create_profile_table(
-        self,
-        *,
-        profile_guid: "str",
-        body: "Optional[GrantaServerApiSchemaProfileTablesCreateProfileTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaProfileTablesProfileTable, None]":
+        self, *, profile_guid: "str", body: "Optional[GsaCreateProfileTable]" = None
+    ) -> "Union[GsaProfileTable, None]":
         """Create a new profile table
 
         This method makes a synchronous HTTP request.
@@ -61,11 +58,11 @@ class SchemaProfileTablesApi(ApiBase):
         Parameters
         ----------
         profile_guid: str
-        body: GrantaServerApiSchemaProfileTablesCreateProfileTable
+        body: GsaCreateProfileTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfileTablesProfileTable, None]
+        Union[GsaProfileTable, None]
         """
         data = self._create_profile_table_with_http_info(
             profile_guid, body, _return_http_data_only=True
@@ -73,10 +70,7 @@ class SchemaProfileTablesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_profile_table_with_http_info(
-        self,
-        profile_guid: "str",
-        body: "Optional[GrantaServerApiSchemaProfileTablesCreateProfileTable]" = None,
-        **kwargs: Any,
+        self, profile_guid: "str", body: "Optional[GsaCreateProfileTable]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "profile_guid",
@@ -125,7 +119,7 @@ class SchemaProfileTablesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaProfileTablesProfileTable",
+            201: "GsaProfileTable",
             400: None,
             403: None,
             404: None,
@@ -237,7 +231,7 @@ class SchemaProfileTablesApi(ApiBase):
 
     def get_profile_table(
         self, *, profile_guid: "str", profile_table_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaProfileTablesProfileTable, None]":
+    ) -> "Union[GsaProfileTable, None]":
         """Get individual profile table
 
         This method makes a synchronous HTTP request.
@@ -249,7 +243,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfileTablesProfileTable, None]
+        Union[GsaProfileTable, None]
         """
         data = self._get_profile_table_with_http_info(
             profile_guid, profile_table_guid, _return_http_data_only=True
@@ -306,7 +300,7 @@ class SchemaProfileTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaProfileTablesProfileTable",
+            200: "GsaProfileTable",
             403: None,
             404: None,
         }
@@ -327,9 +321,7 @@ class SchemaProfileTablesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_profile_tables(
-        self, *, profile_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaProfileTablesProfileTablesInfo, None]":
+    def get_profile_tables(self, *, profile_guid: "str") -> "Union[GsaProfileTablesInfo, None]":
         """Get all profile tables of given profile
 
         This method makes a synchronous HTTP request.
@@ -340,7 +332,7 @@ class SchemaProfileTablesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfileTablesProfileTablesInfo, None]
+        Union[GsaProfileTablesInfo, None]
         """
         data = self._get_profile_tables_with_http_info(profile_guid, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -385,7 +377,7 @@ class SchemaProfileTablesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaProfileTablesProfileTablesInfo",
+            200: "GsaProfileTablesInfo",
             403: None,
             404: None,
         }
@@ -411,8 +403,8 @@ class SchemaProfileTablesApi(ApiBase):
         *,
         profile_guid: "str",
         profile_table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaProfileTablesUpdateProfileTable]" = None,
-    ) -> "Union[GrantaServerApiSchemaProfileTablesProfileTable, None]":
+        body: "Optional[GsaUpdateProfileTable]" = None,
+    ) -> "Union[GsaProfileTable, None]":
         """Update a profile table
 
         This method makes a synchronous HTTP request.
@@ -421,11 +413,11 @@ class SchemaProfileTablesApi(ApiBase):
         ----------
         profile_guid: str
         profile_table_guid: str
-        body: GrantaServerApiSchemaProfileTablesUpdateProfileTable
+        body: GsaUpdateProfileTable
 
         Returns
         -------
-        Union[GrantaServerApiSchemaProfileTablesProfileTable, None]
+        Union[GsaProfileTable, None]
         """
         data = self._update_profile_table_with_http_info(
             profile_guid, profile_table_guid, body, _return_http_data_only=True
@@ -436,7 +428,7 @@ class SchemaProfileTablesApi(ApiBase):
         self,
         profile_guid: "str",
         profile_table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaProfileTablesUpdateProfileTable]" = None,
+        body: "Optional[GsaUpdateProfileTable]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -494,7 +486,7 @@ class SchemaProfileTablesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaProfileTablesProfileTable",
+            200: "GsaProfileTable",
             400: None,
             403: None,
             404: None,

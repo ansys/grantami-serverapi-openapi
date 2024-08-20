@@ -103,10 +103,8 @@ class StatusApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_database_status(
-        self, *, database_key: "str"
-    ) -> "GrantaServerApiDatabaseStatusInformation":
-        """get_database_status
+    def get_database_status(self, *, database_key: "str") -> "GsaDatabaseStatusInformation":
+        """Returns status information for a given database
 
         This method makes a synchronous HTTP request.
 
@@ -116,7 +114,7 @@ class StatusApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiDatabaseStatusInformation
+        GsaDatabaseStatusInformation
         """
         data = self._get_database_status_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -163,7 +161,7 @@ class StatusApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiDatabaseStatusInformation",
+            200: "GsaDatabaseStatusInformation",
         }
 
         return self.api_client.call_api(
@@ -182,14 +180,75 @@ class StatusApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_status(self) -> "List[GrantaServerApiDatabaseStatusInformation]":
-        """get_status
+    def get_search_cluster_status(self) -> "GsaSearchClusterStatus":
+        """Returns disk status information for the search cluster
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        List[GrantaServerApiDatabaseStatusInformation]
+        GsaSearchClusterStatus
+        """
+        data = self._get_search_cluster_status_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_search_cluster_status_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_search_cluster_status"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaSearchClusterStatus",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/status/search-cluster",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_status(self) -> "List[GsaDatabaseStatusInformation]":
+        """Returns status information for all databases
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        List[GsaDatabaseStatusInformation]
         """
         data = self._get_status_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -222,7 +281,7 @@ class StatusApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "list[GrantaServerApiDatabaseStatusInformation]",
+            200: "list[GsaDatabaseStatusInformation]",
         }
 
         return self.api_client.call_api(

@@ -52,10 +52,10 @@ class DataExportApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiDataExportDataExportRequest]" = None,
+        body: "Optional[GsaDataExportRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiDataExportDataExportResponse, None]":
+    ) -> "Union[GsaDataExportResponse, None]":
         """Export data from the given database.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class DataExportApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiDataExportDataExportRequest
+        body: GsaDataExportRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -71,7 +71,7 @@ class DataExportApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiDataExportDataExportResponse, None]
+        Union[GsaDataExportResponse, None]
         """
         data = self._export_data_with_http_info(
             database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -81,7 +81,7 @@ class DataExportApi(ApiBase):
     def _export_data_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiDataExportDataExportRequest]" = None,
+        body: "Optional[GsaDataExportRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -139,7 +139,7 @@ class DataExportApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiDataExportDataExportResponse",
+            200: "GsaDataExportResponse",
             404: None,
             403: None,
         }
@@ -161,11 +161,8 @@ class DataExportApi(ApiBase):
         )
 
     def export_data_from_integration_schema(
-        self,
-        *,
-        schema: "str",
-        body: "Optional[GrantaServerApiIntegrationDataExportIntegrationDataExportRequest]" = None,
-    ) -> "Union[GrantaServerApiDataExportDataExportResponse, None]":
+        self, *, schema: "str", body: "Optional[GsaIntegrationDataExportRequest]" = None
+    ) -> "Union[GsaDataExportResponse, None]":
         """Export data from the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -173,11 +170,11 @@ class DataExportApi(ApiBase):
         Parameters
         ----------
         schema: str
-        body: GrantaServerApiIntegrationDataExportIntegrationDataExportRequest
+        body: GsaIntegrationDataExportRequest
 
         Returns
         -------
-        Union[GrantaServerApiDataExportDataExportResponse, None]
+        Union[GsaDataExportResponse, None]
         """
         data = self._export_data_from_integration_schema_with_http_info(
             schema, body, _return_http_data_only=True
@@ -185,10 +182,7 @@ class DataExportApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _export_data_from_integration_schema_with_http_info(
-        self,
-        schema: "str",
-        body: "Optional[GrantaServerApiIntegrationDataExportIntegrationDataExportRequest]" = None,
-        **kwargs: Any,
+        self, schema: "str", body: "Optional[GsaIntegrationDataExportRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
@@ -239,7 +233,7 @@ class DataExportApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiDataExportDataExportResponse",
+            200: "GsaDataExportResponse",
             404: None,
         }
 
