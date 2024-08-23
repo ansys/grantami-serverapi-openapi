@@ -582,7 +582,7 @@ class SchemaDatabasesApi(ApiBase):
         *,
         database_key: "str",
         body: "Optional[GsaUpdateDatabase]" = None,
-        allow_reload: "Optional[bool]" = false,
+        allow_reload: "Optional[bool]" = False,
     ) -> "Union[GsaDatabase, None]":
         """Update database details.
 
@@ -607,7 +607,7 @@ class SchemaDatabasesApi(ApiBase):
         self,
         database_key: "str",
         body: "Optional[GsaUpdateDatabase]" = None,
-        allow_reload: "Optional[bool]" = false,
+        allow_reload: "Optional[bool]" = False,
         **kwargs: Any,
     ) -> Any:
         all_params = [
