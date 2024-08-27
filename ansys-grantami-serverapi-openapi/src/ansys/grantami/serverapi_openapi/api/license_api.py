@@ -49,25 +49,25 @@ class LicenseApi(ApiBase):
     """
 
     def checkout_app_license(
-        self, *, body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None
-    ) -> "GrantaServerApiAppNameLicenseCheckoutResponse":
+        self, *, body: "Optional[GsaAppNameLicenseCheckoutRequest]" = None
+    ) -> "GsaAppNameLicenseCheckoutResponse":
         """Checks out server wide licenses and returns a bool for each provided app name indicating if  the relevant license(s) required have been checked out.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiAppNameLicenseCheckoutRequest
+        body: GsaAppNameLicenseCheckoutRequest
 
         Returns
         -------
-        GrantaServerApiAppNameLicenseCheckoutResponse
+        GsaAppNameLicenseCheckoutResponse
         """
         data = self._checkout_app_license_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _checkout_app_license_with_http_info(
-        self, body: "Optional[GrantaServerApiAppNameLicenseCheckoutRequest]" = None, **kwargs: Any
+        self, body: "Optional[GsaAppNameLicenseCheckoutRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -105,7 +105,7 @@ class LicenseApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAppNameLicenseCheckoutResponse",
+            200: "GsaAppNameLicenseCheckoutResponse",
         }
 
         return self.api_client.call_api(

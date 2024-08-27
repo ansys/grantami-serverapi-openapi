@@ -55,7 +55,7 @@ class SchemaExportersApi(ApiBase):
         folder_guid: "str",
         file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
         description: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+    ) -> "Union[GsaFileHeader, None]":
         """Create a new Exporter File.
 
         This method makes a synchronous HTTP request.
@@ -69,7 +69,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._create_exporters_file_with_http_info(
             database_key, folder_guid, file, description, _return_http_data_only=True
@@ -142,7 +142,7 @@ class SchemaExportersApi(ApiBase):
         # populated by openapi-common based on request content.
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaFilesFileHeader",
+            201: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -165,11 +165,8 @@ class SchemaExportersApi(ApiBase):
         )
 
     def create_exporters_folder(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaFilesCreateFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Create a new Exporters Folder.
 
         This method makes a synchronous HTTP request.
@@ -177,11 +174,11 @@ class SchemaExportersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaFilesCreateFolder
+        body: GsaCreateFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._create_exporters_folder_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -189,10 +186,7 @@ class SchemaExportersApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_exporters_folder_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaFilesCreateFolder]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateFolder]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -243,7 +237,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaFilesFolder",
+            201: "GsaFolder",
             400: None,
             403: None,
             404: None,
@@ -552,7 +546,7 @@ class SchemaExportersApi(ApiBase):
 
     def get_exporter_file(
         self, *, database_key: "str", folder_guid: "str", file_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+    ) -> "Union[GsaFileHeader, None]":
         """Get the header information for an Exporter File
 
         This method makes a synchronous HTTP request.
@@ -565,7 +559,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._get_exporter_file_with_http_info(
             database_key, folder_guid, file_guid, _return_http_data_only=True
@@ -632,7 +626,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             404: None,
         }
 
@@ -654,7 +648,7 @@ class SchemaExportersApi(ApiBase):
 
     def get_exporters_child_folders(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFoldersInfo, None]":
+    ) -> "Union[GsaFoldersInfo, None]":
         """Get Child Exporters Folders
 
         This method makes a synchronous HTTP request.
@@ -666,7 +660,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFoldersInfo, None]
+        Union[GsaFoldersInfo, None]
         """
         data = self._get_exporters_child_folders_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -725,7 +719,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFoldersInfo",
+            200: "GsaFoldersInfo",
             404: None,
         }
 
@@ -747,7 +741,7 @@ class SchemaExportersApi(ApiBase):
 
     def get_exporters_files(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFilesInfo, None]":
+    ) -> "Union[GsaFilesInfo, None]":
         """Get the Exporter Files in a Folder
 
         This method makes a synchronous HTTP request.
@@ -759,7 +753,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFilesInfo, None]
+        Union[GsaFilesInfo, None]
         """
         data = self._get_exporters_files_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -818,7 +812,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFilesInfo",
+            200: "GsaFilesInfo",
             404: None,
         }
 
@@ -840,7 +834,7 @@ class SchemaExportersApi(ApiBase):
 
     def get_exporters_folder(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+    ) -> "Union[GsaFolder, None]":
         """Get Exporters Folder
 
         This method makes a synchronous HTTP request.
@@ -852,7 +846,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._get_exporters_folder_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -911,7 +905,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             404: None,
         }
 
@@ -931,9 +925,7 @@ class SchemaExportersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_exporters_folders(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFoldersInfo, None]":
+    def get_exporters_folders(self, *, database_key: "str") -> "Union[GsaFoldersInfo, None]":
         """Get All Exporter Folders
 
         This method makes a synchronous HTTP request.
@@ -944,7 +936,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFoldersInfo, None]
+        Union[GsaFoldersInfo, None]
         """
         data = self._get_exporters_folders_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -991,7 +983,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFoldersInfo",
+            200: "GsaFoldersInfo",
             404: None,
         }
 
@@ -1011,9 +1003,7 @@ class SchemaExportersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_exporters_root_folder(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+    def get_exporters_root_folder(self, *, database_key: "str") -> "Union[GsaFolder, None]":
         """Get Root Exporters Folder
 
         This method makes a synchronous HTTP request.
@@ -1024,7 +1014,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._get_exporters_root_folder_with_http_info(
             database_key, _return_http_data_only=True
@@ -1073,7 +1063,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             404: None,
         }
 
@@ -1099,8 +1089,8 @@ class SchemaExportersApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFile]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+        body: "Optional[GsaMoveFile]" = None,
+    ) -> "Union[GsaFileHeader, None]":
         """Move an existing Exporter File.
 
         This method makes a synchronous HTTP request.
@@ -1110,11 +1100,11 @@ class SchemaExportersApi(ApiBase):
         database_key: str
         folder_guid: str
         file_guid: str
-        body: GrantaServerApiSchemaFilesMoveFile
+        body: GsaMoveFile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._move_exporters_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1126,7 +1116,7 @@ class SchemaExportersApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFile]" = None,
+        body: "Optional[GsaMoveFile]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1194,7 +1184,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -1217,12 +1207,8 @@ class SchemaExportersApi(ApiBase):
         )
 
     def move_exporters_folder(
-        self,
-        *,
-        database_key: "str",
-        folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaMoveFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Move an existing Exporter Folder.
 
         This method makes a synchronous HTTP request.
@@ -1231,11 +1217,11 @@ class SchemaExportersApi(ApiBase):
         ----------
         database_key: str
         folder_guid: str
-        body: GrantaServerApiSchemaFilesMoveFolder
+        body: GsaMoveFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._move_exporters_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1246,7 +1232,7 @@ class SchemaExportersApi(ApiBase):
         self,
         database_key: "str",
         folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFolder]" = None,
+        body: "Optional[GsaMoveFolder]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1306,7 +1292,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             400: None,
             403: None,
             404: None,
@@ -1328,9 +1314,7 @@ class SchemaExportersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def refetch_exporters(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesExporterRefetchInfo, None]":
+    def refetch_exporters(self, *, database_key: "str") -> "Union[GsaExporterRefetchInfo, None]":
         """Re-fetch the Exporter Files.
 
         This method makes a synchronous HTTP request.
@@ -1341,7 +1325,7 @@ class SchemaExportersApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesExporterRefetchInfo, None]
+        Union[GsaExporterRefetchInfo, None]
         """
         data = self._refetch_exporters_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -1388,7 +1372,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesExporterRefetchInfo",
+            200: "GsaExporterRefetchInfo",
             400: None,
             403: None,
             404: None,
@@ -1416,8 +1400,8 @@ class SchemaExportersApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFile]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+        body: "Optional[GsaUpdateFile]" = None,
+    ) -> "Union[GsaFileHeader, None]":
         """Update an existing Exporter File.
 
         This method makes a synchronous HTTP request.
@@ -1427,11 +1411,11 @@ class SchemaExportersApi(ApiBase):
         database_key: str
         folder_guid: str
         file_guid: str
-        body: GrantaServerApiSchemaFilesUpdateFile
+        body: GsaUpdateFile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._update_exporters_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1443,7 +1427,7 @@ class SchemaExportersApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFile]" = None,
+        body: "Optional[GsaUpdateFile]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1511,7 +1495,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -1534,12 +1518,8 @@ class SchemaExportersApi(ApiBase):
         )
 
     def update_exporters_folder(
-        self,
-        *,
-        database_key: "str",
-        folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaUpdateFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Update an existing Exporters Folder.
 
         This method makes a synchronous HTTP request.
@@ -1548,11 +1528,11 @@ class SchemaExportersApi(ApiBase):
         ----------
         database_key: str
         folder_guid: str
-        body: GrantaServerApiSchemaFilesUpdateFolder
+        body: GsaUpdateFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._update_exporters_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1563,7 +1543,7 @@ class SchemaExportersApi(ApiBase):
         self,
         database_key: "str",
         folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFolder]" = None,
+        body: "Optional[GsaUpdateFolder]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1623,7 +1603,7 @@ class SchemaExportersApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             400: None,
             403: None,
             404: None,

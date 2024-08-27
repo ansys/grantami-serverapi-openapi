@@ -49,29 +49,25 @@ class IntegrationApi(ApiBase):
     """
 
     def add_schema(
-        self,
-        *,
-        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+        self, *, body: "Optional[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier]" = None
+    ) -> "Union[GsaIntegrationSchemaOfObjectIdentifier, None]":
         """Add an integration schema. Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier
+        body: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GsaIntegrationSchemaOfObjectIdentifier, None]
         """
         data = self._add_schema_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _add_schema_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -107,7 +103,7 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            201: "GsaIntegrationSchemaOfObjectIdentifier",
             400: None,
             403: None,
         }
@@ -129,30 +125,28 @@ class IntegrationApi(ApiBase):
         )
 
     def all_schema_status(
-        self, *, include_diagnostics: "Optional[bool]" = None
-    ) -> "Dict[str, GrantaServerApiIntegrationIntegrationSchemaStatus]":
+        self, *, include_errors: "Optional[bool]" = None
+    ) -> "Union[Dict[str, GsaIntegrationSchemaStatus], None]":
         """Returns the status of all available integration schemas.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        include_diagnostics: bool
+        include_errors: bool
 
         Returns
         -------
-        Dict[str, GrantaServerApiIntegrationIntegrationSchemaStatus]
+        Union[Dict[str, GsaIntegrationSchemaStatus], None]
         """
-        data = self._all_schema_status_with_http_info(
-            include_diagnostics, _return_http_data_only=True
-        )
+        data = self._all_schema_status_with_http_info(include_errors, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _all_schema_status_with_http_info(
-        self, include_diagnostics: "Optional[bool]" = None, **kwargs: Any
+        self, include_errors: "Optional[bool]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
-            "include_diagnostics",
+            "include_errors",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -172,8 +166,8 @@ class IntegrationApi(ApiBase):
         path_params: Dict[str, Any] = {}
 
         query_params: List[Any] = []
-        if "include_diagnostics" in params and include_diagnostics is not None:
-            query_params.append(("include-diagnostics", params["include_diagnostics"]))
+        if "include_errors" in params and include_errors is not None:
+            query_params.append(("include-errors", params["include_errors"]))
 
         header_params: Dict[str, Any] = {}
 
@@ -187,7 +181,8 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "dict(str, GrantaServerApiIntegrationIntegrationSchemaStatus)",
+            200: "dict(str, GsaIntegrationSchemaStatus)",
+            403: None,
         }
 
         return self.api_client.call_api(
@@ -277,7 +272,7 @@ class IntegrationApi(ApiBase):
 
     def get_schema(
         self, *, schema: "str", include_implicit_attributes: "Optional[bool]" = None
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
+    ) -> "Union[GsaIntegrationSchemaOfObjectIdentifier, None]":
         """Returns the full object representing the integration schema.  Names and identities of source items will be populated if they can be found in the databases currently loaded in MI, otherwise just the GUIDs will be returned.
 
         This method makes a synchronous HTTP request.
@@ -291,7 +286,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GsaIntegrationSchemaOfObjectIdentifier, None]
         """
         data = self._get_schema_with_http_info(
             schema, include_implicit_attributes, _return_http_data_only=True
@@ -343,7 +338,7 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            200: "GsaIntegrationSchemaOfObjectIdentifier",
             404: None,
         }
 
@@ -364,32 +359,32 @@ class IntegrationApi(ApiBase):
         )
 
     def get_status_for_integration_schema(
-        self, *, schema: "str", include_diagnostics: "Optional[bool]" = None
-    ) -> "GrantaServerApiIntegrationIntegrationSchemaStatus":
-        """get_status_for_integration_schema
+        self, *, schema: "str", include_errors: "Optional[bool]" = None
+    ) -> "Union[GsaIntegrationSchemaStatus, None]":
+        """Returns the status of a given integration schema.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         schema: str
-        include_diagnostics: bool
+        include_errors: bool
 
         Returns
         -------
-        GrantaServerApiIntegrationIntegrationSchemaStatus
+        Union[GsaIntegrationSchemaStatus, None]
         """
         data = self._get_status_for_integration_schema_with_http_info(
-            schema, include_diagnostics, _return_http_data_only=True
+            schema, include_errors, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_status_for_integration_schema_with_http_info(
-        self, schema: "str", include_diagnostics: "Optional[bool]" = None, **kwargs: Any
+        self, schema: "str", include_errors: "Optional[bool]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
-            "include_diagnostics",
+            "include_errors",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -416,8 +411,8 @@ class IntegrationApi(ApiBase):
             path_params["schema"] = params["schema"]
 
         query_params: List[Any] = []
-        if "include_diagnostics" in params and include_diagnostics is not None:
-            query_params.append(("include-diagnostics", params["include_diagnostics"]))
+        if "include_errors" in params and include_errors is not None:
+            query_params.append(("include-errors", params["include_errors"]))
 
         header_params: Dict[str, Any] = {}
 
@@ -431,7 +426,9 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiIntegrationIntegrationSchemaStatus",
+            200: "GsaIntegrationSchemaStatus",
+            403: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -452,9 +449,7 @@ class IntegrationApi(ApiBase):
 
     def schema_table_mappings(
         self, *, schema: "str", database_key: "str", table_identity: "int"
-    ) -> (
-        "Union[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier], None]"
-    ):
+    ) -> "Union[List[GsaSourceOfObjectIdentifier], None]":
         """Returns a list of the schema source mapping from the given table. Will fail if the database is not loaded in MI.  Names and identities of source items will be populated.
 
         This method makes a synchronous HTTP request.
@@ -467,7 +462,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier], None]
+        Union[List[GsaSourceOfObjectIdentifier], None]
         """
         data = self._schema_table_mappings_with_http_info(
             schema, database_key, table_identity, _return_http_data_only=True
@@ -534,7 +529,7 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "list[GrantaServerApiIntegrationSchemaSourceOfGrantaServerApiObjectIdentifier]",
+            200: "list[GsaSourceOfObjectIdentifier]",
             404: None,
         }
 
@@ -556,7 +551,7 @@ class IntegrationApi(ApiBase):
 
     def schema_targets(
         self, *, schema: "str", include_implicit_attributes: "Optional[bool]" = None
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaAttribute], None]":
+    ) -> "Union[List[GsaIntegrationAttribute], None]":
         """Returns a list of the attributes defined in the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -570,7 +565,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaAttribute], None]
+        Union[List[GsaIntegrationAttribute], None]
         """
         data = self._schema_targets_with_http_info(
             schema, include_implicit_attributes, _return_http_data_only=True
@@ -626,7 +621,7 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "list[GrantaServerApiIntegrationSchemaAttribute]",
+            200: "list[GsaIntegrationAttribute]",
             404: None,
         }
 
@@ -709,20 +704,20 @@ class IntegrationApi(ApiBase):
         self,
         *,
         schema: "str",
-        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
-    ) -> "Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
-        """Updates an integration schema, or adds a new one if there is not one with the same key already.  Will fail if the schema is not valid, or if the user is not both a global administrator and an administrator for the schema.
+        body: "Optional[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier]" = None,
+    ) -> "Union[GsaIntegrationSchemaOfObjectIdentifier, None]":
+        """Updates an integration schema.  Will fail if the schema does not exist, is not valid, or if the user is not both a global administrator and an administrator for the schema.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         schema: str
-        body: GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier
+        body: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
 
         Returns
         -------
-        Union[GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]
+        Union[GsaIntegrationSchemaOfObjectIdentifier, None]
         """
         data = self._update_schema_with_http_info(schema, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -730,7 +725,7 @@ class IntegrationApi(ApiBase):
     def _update_schema_with_http_info(
         self,
         schema: "str",
-        body: "Optional[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier]" = None,
+        body: "Optional[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -780,9 +775,10 @@ class IntegrationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiIntegrationSchemaIntegrationSchemaOfGrantaServerApiObjectIdentifier",
+            201: "GsaIntegrationSchemaOfObjectIdentifier",
             400: None,
             403: None,
+            404: None,
         }
 
         return self.api_client.call_api(

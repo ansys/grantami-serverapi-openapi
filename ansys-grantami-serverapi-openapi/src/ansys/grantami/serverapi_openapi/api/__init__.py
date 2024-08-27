@@ -49,6 +49,7 @@ from .schema___discrete_types___discrete_values_api import SchemaDiscreteTypesDi
 from .schema___discrete_types_api import SchemaDiscreteTypesApi
 from .schema___exporters_api import SchemaExportersApi
 from .schema___expressions_api import SchemaExpressionsApi
+from .schema___global_standard_names_api import SchemaGlobalStandardNamesApi
 from .schema___help_files_api import SchemaHelpFilesApi
 from .schema___home_pages_api import SchemaHomePagesApi
 from .schema___layout_sections_api import SchemaLayoutSectionsApi
@@ -92,6 +93,7 @@ __all__ = [
     "SchemaDiscreteTypesApi",
     "SchemaExportersApi",
     "SchemaExpressionsApi",
+    "SchemaGlobalStandardNamesApi",
     "SchemaHelpFilesApi",
     "SchemaHomePagesApi",
     "SchemaLayoutSectionsApi",

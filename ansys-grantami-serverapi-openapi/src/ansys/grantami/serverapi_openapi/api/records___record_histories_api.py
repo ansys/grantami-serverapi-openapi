@@ -53,8 +53,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         *,
         database_key: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCopyRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        body: "Optional[GsaCopyRecordHistory]" = None,
+    ) -> "Union[GsaRecordHistory, GsaRecordHistoryCopyException, None]":
         """Make a copy of a record history.
 
         This method makes a synchronous HTTP request.
@@ -63,11 +63,11 @@ class RecordsRecordHistoriesApi(ApiBase):
         ----------
         database_key: str
         record_history_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesCopyRecordHistory
+        body: GsaCopyRecordHistory
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, GsaRecordHistoryCopyException, None]
         """
         data = self._copy_record_history_with_http_info(
             database_key, record_history_guid, body, _return_http_data_only=True
@@ -78,7 +78,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         self,
         database_key: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCopyRecordHistory]" = None,
+        body: "Optional[GsaCopyRecordHistory]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -136,8 +136,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException",
+            201: "GsaRecordHistory",
+            400: "GsaRecordHistoryCopyException",
             403: None,
             404: None,
         }
@@ -164,8 +164,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCopyRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        body: "Optional[GsaCopyRecordHistory]" = None,
+    ) -> "Union[GsaRecordHistory, GsaRecordHistoryCopyException, None]":
         """Make a copy of a record history.
 
         This method makes a synchronous HTTP request.
@@ -175,11 +175,11 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: str
         table_guid: str
         record_history_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesCopyRecordHistory
+        body: GsaCopyRecordHistory
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, GsaRecordHistoryCopyException, None]
         """
         data = self._copy_record_history_in_table_with_http_info(
             database_key, table_guid, record_history_guid, body, _return_http_data_only=True
@@ -191,7 +191,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCopyRecordHistory]" = None,
+        body: "Optional[GsaCopyRecordHistory]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -257,8 +257,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryCopyException",
+            201: "GsaRecordHistory",
+            400: "GsaRecordHistoryCopyException",
             403: None,
             404: None,
         }
@@ -284,8 +284,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        body: "Optional[GsaCreateRecordHistory]" = None,
+    ) -> "Union[GsaRecordHistory, None]":
         """Create a new record history.
 
         This method makes a synchronous HTTP request.
@@ -294,11 +294,11 @@ class RecordsRecordHistoriesApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesCreateRecordHistory
+        body: GsaCreateRecordHistory
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, None]
         """
         data = self._create_record_history_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -309,7 +309,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesCreateRecordHistory]" = None,
+        body: "Optional[GsaCreateRecordHistory]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -367,7 +367,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            201: "GsaRecordHistory",
             400: None,
             403: None,
             404: None,
@@ -396,7 +396,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         record_history_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaRecordVersion, None]":
         """Get the latest record version for a record history for a given database.
 
         This method makes a synchronous HTTP request.
@@ -412,7 +412,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaRecordVersion, None]
         """
         data = self._get_latest_record_version_with_http_info(
             database_key, record_history_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -480,7 +480,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            200: "GsaRecordVersion",
             404: None,
         }
 
@@ -508,7 +508,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         record_history_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]":
+    ) -> "Union[GsaRecordVersion, None]":
         """Get the latest record version for a record history for a given database and table.
 
         This method makes a synchronous HTTP request.
@@ -525,7 +525,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordVersionsRecordVersion, None]
+        Union[GsaRecordVersion, None]
         """
         data = self._get_latest_record_version_from_table_with_http_info(
             database_key,
@@ -607,7 +607,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordVersionsRecordVersion",
+            200: "GsaRecordVersion",
             404: None,
         }
 
@@ -634,7 +634,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         record_history_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+    ) -> "Union[GsaRecordHistory, None]":
         """Get a record history with a specified guid for a given database.
 
         This method makes a synchronous HTTP request.
@@ -650,7 +650,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, None]
         """
         data = self._get_record_history_with_http_info(
             database_key, record_history_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -718,7 +718,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            200: "GsaRecordHistory",
             404: None,
         }
 
@@ -746,7 +746,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         record_history_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+    ) -> "Union[GsaRecordHistory, None]":
         """Get a record history with a specified guid for a given database and table.
 
         This method makes a synchronous HTTP request.
@@ -763,7 +763,7 @@ class RecordsRecordHistoriesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, None]
         """
         data = self._get_record_history_from_table_with_http_info(
             database_key,
@@ -845,7 +845,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
+            200: "GsaRecordHistory",
             404: None,
         }
 
@@ -870,8 +870,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         *,
         database_key: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        body: "Optional[GsaMoveRecordHistory]" = None,
+    ) -> "Union[GsaRecordHistory, GsaRecordHistoryMoveException, None]":
         """Move a record history to be under a new parent.
 
         This method makes a synchronous HTTP request.
@@ -880,11 +880,11 @@ class RecordsRecordHistoriesApi(ApiBase):
         ----------
         database_key: str
         record_history_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesMoveRecordHistory
+        body: GsaMoveRecordHistory
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, GsaRecordHistoryMoveException, None]
         """
         data = self._move_record_history_with_http_info(
             database_key, record_history_guid, body, _return_http_data_only=True
@@ -895,7 +895,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         self,
         database_key: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
+        body: "Optional[GsaMoveRecordHistory]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -953,8 +953,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException",
+            200: "GsaRecordHistory",
+            400: "GsaRecordHistoryMoveException",
             403: None,
             404: None,
         }
@@ -981,8 +981,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
-    ) -> "Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]":
+        body: "Optional[GsaMoveRecordHistory]" = None,
+    ) -> "Union[GsaRecordHistory, GsaRecordHistoryMoveException, None]":
         """Move a record history to be under a new parent.
 
         This method makes a synchronous HTTP request.
@@ -992,11 +992,11 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: str
         table_guid: str
         record_history_guid: str
-        body: GrantaServerApiRecordsRecordHistoriesMoveRecordHistory
+        body: GsaMoveRecordHistory
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException, GrantaServerApiRecordsRecordHistoriesRecordHistory, None]
+        Union[GsaRecordHistory, GsaRecordHistoryMoveException, None]
         """
         data = self._move_record_history_in_table_with_http_info(
             database_key, table_guid, record_history_guid, body, _return_http_data_only=True
@@ -1008,7 +1008,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         record_history_guid: "str",
-        body: "Optional[GrantaServerApiRecordsRecordHistoriesMoveRecordHistory]" = None,
+        body: "Optional[GsaMoveRecordHistory]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1074,8 +1074,8 @@ class RecordsRecordHistoriesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiRecordsRecordHistoriesRecordHistory",
-            400: "GrantaServerApiExceptionsRecordHistoryRecordHistoryMoveException",
+            200: "GsaRecordHistory",
+            400: "GsaRecordHistoryMoveException",
             403: None,
             404: None,
         }

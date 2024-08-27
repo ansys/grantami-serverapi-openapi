@@ -52,10 +52,10 @@ class AggregationApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
+    ) -> "Union[GsaAggregationsResponse, None]":
         """Runs an aggregation against the database.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class AggregationApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiAggregationsAggregationsRequest
+        body: GsaAggregationsRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -71,7 +71,7 @@ class AggregationApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAggregationsAggregationsResponse, None]
+        Union[GsaAggregationsResponse, None]
         """
         data = self._database_aggregation_with_http_info(
             database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -81,7 +81,7 @@ class AggregationApi(ApiBase):
     def _database_aggregation_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -141,7 +141,7 @@ class AggregationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAggregationsAggregationsResponse",
+            200: "GsaAggregationsResponse",
             404: None,
         }
 
@@ -166,10 +166,10 @@ class AggregationApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
+    ) -> "Union[GsaAggregationsResponse, None]":
         """Runs an aggregation against the table.
 
         This method makes a synchronous HTTP request.
@@ -178,7 +178,7 @@ class AggregationApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiAggregationsAggregationsRequest
+        body: GsaAggregationsRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -186,7 +186,7 @@ class AggregationApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAggregationsAggregationsResponse, None]
+        Union[GsaAggregationsResponse, None]
         """
         data = self._database_aggregation_for_table_with_guid_with_http_info(
             database_key, table_guid, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -197,7 +197,7 @@ class AggregationApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -265,7 +265,7 @@ class AggregationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAggregationsAggregationsResponse",
+            200: "GsaAggregationsResponse",
             404: None,
         }
 
@@ -290,10 +290,10 @@ class AggregationApi(ApiBase):
         *,
         database_key: "str",
         table_identity: "int",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
+    ) -> "Union[GsaAggregationsResponse, None]":
         """Runs an aggregation against the table.
 
         This method makes a synchronous HTTP request.
@@ -302,7 +302,7 @@ class AggregationApi(ApiBase):
         ----------
         database_key: str
         table_identity: int
-        body: GrantaServerApiAggregationsAggregationsRequest
+        body: GsaAggregationsRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -310,7 +310,7 @@ class AggregationApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAggregationsAggregationsResponse, None]
+        Union[GsaAggregationsResponse, None]
         """
         data = self._database_aggregation_for_table_with_identity_with_http_info(
             database_key, table_identity, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -321,7 +321,7 @@ class AggregationApi(ApiBase):
         self,
         database_key: "str",
         table_identity: "int",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
+        body: "Optional[GsaAggregationsRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -389,7 +389,7 @@ class AggregationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAggregationsAggregationsResponse",
+            200: "GsaAggregationsResponse",
             404: None,
         }
 
@@ -410,11 +410,8 @@ class AggregationApi(ApiBase):
         )
 
     def integration_aggregation(
-        self,
-        *,
-        schema: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
-    ) -> "Union[GrantaServerApiAggregationsAggregationsResponse, None]":
+        self, *, schema: "str", body: "Optional[GsaAggregationsRequest]" = None
+    ) -> "Union[GsaAggregationsResponse, None]":
         """Runs an aggregation against the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -422,11 +419,11 @@ class AggregationApi(ApiBase):
         Parameters
         ----------
         schema: str
-        body: GrantaServerApiAggregationsAggregationsRequest
+        body: GsaAggregationsRequest
 
         Returns
         -------
-        Union[GrantaServerApiAggregationsAggregationsResponse, None]
+        Union[GsaAggregationsResponse, None]
         """
         data = self._integration_aggregation_with_http_info(
             schema, body, _return_http_data_only=True
@@ -434,10 +431,7 @@ class AggregationApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _integration_aggregation_with_http_info(
-        self,
-        schema: "str",
-        body: "Optional[GrantaServerApiAggregationsAggregationsRequest]" = None,
-        **kwargs: Any,
+        self, schema: "str", body: "Optional[GsaAggregationsRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
@@ -488,7 +482,7 @@ class AggregationApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAggregationsAggregationsResponse",
+            200: "GsaAggregationsResponse",
             404: None,
         }
 

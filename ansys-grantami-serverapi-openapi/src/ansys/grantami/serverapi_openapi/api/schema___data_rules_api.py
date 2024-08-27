@@ -49,11 +49,8 @@ class SchemaDataRulesApi(ApiBase):
     """
 
     def create_data_rule(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateDataRule]" = None
+    ) -> "Union[GsaDataRule, None]":
         """Create a new data rule
 
         This method makes a synchronous HTTP request.
@@ -61,11 +58,11 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaDataRulesCreateDataRule
+        body: GsaCreateDataRule
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRulesDataRule, None]
+        Union[GsaDataRule, None]
         """
         data = self._create_data_rule_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -73,10 +70,7 @@ class SchemaDataRulesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_data_rule_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesCreateDataRule]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateDataRule]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -125,7 +119,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaDataRulesDataRule",
+            201: "GsaDataRule",
             400: None,
             403: None,
             404: None,
@@ -238,7 +232,7 @@ class SchemaDataRulesApi(ApiBase):
 
     def get_data_rule(
         self, *, database_key: "str", data_rule_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
+    ) -> "Union[GsaDataRule, None]":
         """Gets a data rule for a given database and guid.
 
         This method makes a synchronous HTTP request.
@@ -250,7 +244,7 @@ class SchemaDataRulesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRulesDataRule, None]
+        Union[GsaDataRule, None]
         """
         data = self._get_data_rule_with_http_info(
             database_key, data_rule_guid, _return_http_data_only=True
@@ -307,7 +301,7 @@ class SchemaDataRulesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDataRulesDataRule",
+            200: "GsaDataRule",
             404: None,
         }
 
@@ -327,9 +321,7 @@ class SchemaDataRulesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_data_rules(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]":
+    def get_data_rules(self, *, database_key: "str") -> "Union[GsaDataRulesInfo, None]":
         """Gets all data rules for a given database.
 
         This method makes a synchronous HTTP request.
@@ -340,7 +332,7 @@ class SchemaDataRulesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRulesDataRulesInfo, None]
+        Union[GsaDataRulesInfo, None]
         """
         data = self._get_data_rules_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -385,7 +377,7 @@ class SchemaDataRulesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDataRulesDataRulesInfo",
+            200: "GsaDataRulesInfo",
             404: None,
         }
 
@@ -410,8 +402,8 @@ class SchemaDataRulesApi(ApiBase):
         *,
         database_key: "str",
         data_rule_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesUpdateDataRule]" = None,
-    ) -> "Union[GrantaServerApiSchemaDataRulesDataRule, None]":
+        body: "Optional[GsaUpdateDataRule]" = None,
+    ) -> "Union[GsaDataRule, None]":
         """Edit a data rule
 
         This method makes a synchronous HTTP request.
@@ -420,11 +412,11 @@ class SchemaDataRulesApi(ApiBase):
         ----------
         database_key: str
         data_rule_guid: str
-        body: GrantaServerApiSchemaDataRulesUpdateDataRule
+        body: GsaUpdateDataRule
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDataRulesDataRule, None]
+        Union[GsaDataRule, None]
         """
         data = self._update_data_rule_with_http_info(
             database_key, data_rule_guid, body, _return_http_data_only=True
@@ -435,7 +427,7 @@ class SchemaDataRulesApi(ApiBase):
         self,
         database_key: "str",
         data_rule_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDataRulesUpdateDataRule]" = None,
+        body: "Optional[GsaUpdateDataRule]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -493,7 +485,7 @@ class SchemaDataRulesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDataRulesDataRule",
+            200: "GsaDataRule",
             400: None,
             403: None,
             404: None,

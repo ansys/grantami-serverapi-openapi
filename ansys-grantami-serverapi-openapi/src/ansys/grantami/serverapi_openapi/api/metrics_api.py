@@ -48,9 +48,7 @@ class MetricsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def get_jobs_summary(
-        self, *, start: "Optional[str]" = None
-    ) -> "GrantaServerApiMetricsGetJobsSummaryResponse":
+    def get_jobs_summary(self, *, start: "Optional[str]" = None) -> "GsaGetJobsSummaryResponse":
         """Get a summary of jobs currently running or completed since the start time.
 
         This method makes a synchronous HTTP request.
@@ -61,7 +59,7 @@ class MetricsApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiMetricsGetJobsSummaryResponse
+        GsaGetJobsSummaryResponse
         """
         data = self._get_jobs_summary_with_http_info(start, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -98,7 +96,7 @@ class MetricsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiMetricsGetJobsSummaryResponse",
+            200: "GsaGetJobsSummaryResponse",
         }
 
         return self.api_client.call_api(

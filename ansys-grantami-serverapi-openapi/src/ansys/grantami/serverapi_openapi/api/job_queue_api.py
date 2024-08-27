@@ -48,26 +48,24 @@ class JobQueueApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def create_job(
-        self, *, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None
-    ) -> "GrantaServerApiAsyncJobsJob":
+    def create_job(self, *, body: "Optional[GsaCreateJobRequest]" = None) -> "GsaJob":
         """Create a new job.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiAsyncJobsCreateJobRequest
+        body: GsaCreateJobRequest
 
         Returns
         -------
-        GrantaServerApiAsyncJobsJob
+        GsaJob
         """
         data = self._create_job_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_job_with_http_info(
-        self, body: "Optional[GrantaServerApiAsyncJobsCreateJobRequest]" = None, **kwargs: Any
+        self, body: "Optional[GsaCreateJobRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -103,7 +101,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiAsyncJobsJob",
+            201: "GsaJob",
         }
 
         return self.api_client.call_api(
@@ -260,14 +258,14 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_current_user(self) -> "GrantaServerApiAsyncJobsCurrentUser":
+    def get_current_user(self) -> "GsaCurrentUser":
         """Get the current user.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        GrantaServerApiAsyncJobsCurrentUser
+        GsaCurrentUser
         """
         data = self._get_current_user_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -302,7 +300,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsCurrentUser",
+            200: "GsaCurrentUser",
         }
 
         return self.api_client.call_api(
@@ -321,7 +319,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_job(self, *, id: "str") -> "Union[GrantaServerApiAsyncJobsJob, None]":
+    def get_job(self, *, id: "str") -> "Union[GsaJob, None]":
         """Get job by ID.
 
         This method makes a synchronous HTTP request.
@@ -332,7 +330,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsJob, None]
+        Union[GsaJob, None]
         """
         data = self._get_job_with_http_info(id, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -370,7 +368,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsJob",
+            200: "GsaJob",
             404: None,
         }
 
@@ -487,7 +485,7 @@ class JobQueueApi(ApiBase):
         submitter_name_filter: "Optional[str]" = None,
         page_size: "Optional[int]" = None,
         page_number: "Optional[int]" = None,
-    ) -> "GrantaServerApiAsyncJobsGetJobsResponse":
+    ) -> "GsaGetJobsResponse":
         """Get a list of jobs.
 
         This method makes a synchronous HTTP request.
@@ -504,7 +502,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiAsyncJobsGetJobsResponse
+        GsaGetJobsResponse
         """
         data = self._get_jobs_with_http_info(
             job_type,
@@ -581,7 +579,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsGetJobsResponse",
+            200: "GsaGetJobsResponse",
         }
 
         return self.api_client.call_api(
@@ -673,14 +671,14 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_processing_config(self) -> "GrantaServerApiAsyncJobsProcessingConfig":
+    def get_processing_config(self) -> "GsaProcessingConfig":
         """Get the processing configuration.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        GrantaServerApiAsyncJobsProcessingConfig
+        GsaProcessingConfig
         """
         data = self._get_processing_config_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -715,7 +713,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsProcessingConfig",
+            200: "GsaProcessingConfig",
         }
 
         return self.api_client.call_api(
@@ -799,7 +797,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def restore_job(self, *, id: "str") -> "Union[GrantaServerApiAsyncJobsCreateJobRequest, None]":
+    def restore_job(self, *, id: "str") -> "Union[GsaCreateJobRequest, None]":
         """Get a job creation object based on an existing job.
 
         This method makes a synchronous HTTP request.
@@ -810,7 +808,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsCreateJobRequest, None]
+        Union[GsaCreateJobRequest, None]
         """
         data = self._restore_job_with_http_info(id, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -848,7 +846,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsCreateJobRequest",
+            200: "GsaCreateJobRequest",
             404: None,
         }
 
@@ -869,8 +867,8 @@ class JobQueueApi(ApiBase):
         )
 
     def resubmit(
-        self, *, id: "str", body: "Optional[GrantaServerApiAsyncJobsResubmitJobRequest]" = None
-    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
+        self, *, id: "str", body: "Optional[GsaResubmitJobRequest]" = None
+    ) -> "Union[GsaJob, None]":
         """Resubmit a job.
 
         This method makes a synchronous HTTP request.
@@ -878,20 +876,17 @@ class JobQueueApi(ApiBase):
         Parameters
         ----------
         id: str
-        body: GrantaServerApiAsyncJobsResubmitJobRequest
+        body: GsaResubmitJobRequest
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsJob, None]
+        Union[GsaJob, None]
         """
         data = self._resubmit_with_http_info(id, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _resubmit_with_http_info(
-        self,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsResubmitJobRequest]" = None,
-        **kwargs: Any,
+        self, id: "str", body: "Optional[GsaResubmitJobRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "id",
@@ -938,7 +933,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsJob",
+            200: "GsaJob",
             404: None,
         }
 
@@ -959,8 +954,8 @@ class JobQueueApi(ApiBase):
         )
 
     def update_job(
-        self, *, id: "str", body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None
-    ) -> "Union[GrantaServerApiAsyncJobsJob, None]":
+        self, *, id: "str", body: "Optional[GsaUpdateJobRequest]" = None
+    ) -> "Union[GsaJob, None]":
         """Update a job.
 
         This method makes a synchronous HTTP request.
@@ -968,20 +963,17 @@ class JobQueueApi(ApiBase):
         Parameters
         ----------
         id: str
-        body: GrantaServerApiAsyncJobsUpdateJobRequest
+        body: GsaUpdateJobRequest
 
         Returns
         -------
-        Union[GrantaServerApiAsyncJobsJob, None]
+        Union[GsaJob, None]
         """
         data = self._update_job_with_http_info(id, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_job_with_http_info(
-        self,
-        id: "str",
-        body: "Optional[GrantaServerApiAsyncJobsUpdateJobRequest]" = None,
-        **kwargs: Any,
+        self, id: "str", body: "Optional[GsaUpdateJobRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "id",
@@ -1028,7 +1020,7 @@ class JobQueueApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiAsyncJobsJob",
+            200: "GsaJob",
             404: None,
         }
 

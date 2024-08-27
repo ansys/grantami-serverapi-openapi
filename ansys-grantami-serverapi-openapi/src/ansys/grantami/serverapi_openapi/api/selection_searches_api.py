@@ -49,27 +49,25 @@ class SelectionSearchesApi(ApiBase):
     """
 
     def create_search(
-        self, *, body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None
-    ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
+        self, *, body: "Optional[GsaCreateSearchRequest]" = None
+    ) -> "Union[GsaSelectionSearch, None]":
         """Creates a new search with the specified properties.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiSelectionSearchesCreateSearchRequest
+        body: GsaCreateSearchRequest
 
         Returns
         -------
-        Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
+        Union[GsaSelectionSearch, None]
         """
         data = self._create_search_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _create_search_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiSelectionSearchesCreateSearchRequest]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GsaCreateSearchRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -107,7 +105,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSelectionSearchesSelectionSearch",
+            201: "GsaSelectionSearch",
             400: None,
             403: None,
         }
@@ -203,14 +201,14 @@ class SelectionSearchesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_all(self) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
+    def get_all(self) -> "Union[List[GsaSelectionSearch], None]":
         """Returns all searches visible to the calling user.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]
+        Union[List[GsaSelectionSearch], None]
         """
         data = self._get_all_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -243,7 +241,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "list[GrantaServerApiSelectionSearchesSelectionSearch]",
+            200: "list[GsaSelectionSearch]",
             403: None,
         }
 
@@ -263,9 +261,7 @@ class SelectionSearchesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_search(
-        self, *, search_identifier: "str"
-    ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
+    def get_search(self, *, search_identifier: "str") -> "Union[GsaSelectionSearch, None]":
         """Returns the given search if it exists and the calling user has access to it
 
         This method makes a synchronous HTTP request.
@@ -276,7 +272,7 @@ class SelectionSearchesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
+        Union[GsaSelectionSearch, None]
         """
         data = self._get_search_with_http_info(search_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -321,7 +317,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSelectionSearchesSelectionSearch",
+            200: "GsaSelectionSearch",
             403: None,
             404: None,
             410: None,
@@ -344,10 +340,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
     def save_search(
-        self,
-        *,
-        search_identifier: "str",
-        body: "Optional[GrantaServerApiSelectionSearchesSaveSearchRequest]" = None,
+        self, *, search_identifier: "str", body: "Optional[GsaSaveSearchRequest]" = None
     ) -> "None":
         """If the search exists, updates the properties of the search. This will overwrite all current properties.  If the search does not exist or the calling user does not have access to it, returns '404 not found' response.
 
@@ -356,7 +349,7 @@ class SelectionSearchesApi(ApiBase):
         Parameters
         ----------
         search_identifier: str
-        body: GrantaServerApiSelectionSearchesSaveSearchRequest
+        body: GsaSaveSearchRequest
 
         Returns
         -------
@@ -368,10 +361,7 @@ class SelectionSearchesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _save_search_with_http_info(
-        self,
-        search_identifier: "str",
-        body: "Optional[GrantaServerApiSelectionSearchesSaveSearchRequest]" = None,
-        **kwargs: Any,
+        self, search_identifier: "str", body: "Optional[GsaSaveSearchRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "search_identifier",
@@ -438,27 +428,25 @@ class SelectionSearchesApi(ApiBase):
         )
 
     def search(
-        self, *, body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None
-    ) -> "Union[GrantaServerApiSelectionSearchesSelectionSearch, None]":
+        self, *, body: "Optional[GsaFindSearchRequest]" = None
+    ) -> "Union[GsaSelectionSearch, None]":
         """Retrieves a collection of searches that match the specified criteria.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GrantaServerApiSelectionSearchesFindSearchRequest
+        body: GsaFindSearchRequest
 
         Returns
         -------
-        Union[GrantaServerApiSelectionSearchesSelectionSearch, None]
+        Union[GsaSelectionSearch, None]
         """
         data = self._search_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _search_with_http_info(
-        self,
-        body: "Optional[GrantaServerApiSelectionSearchesFindSearchRequest]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GsaFindSearchRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -494,7 +482,7 @@ class SelectionSearchesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSelectionSearchesSelectionSearch",
+            200: "GsaSelectionSearch",
             400: None,
             403: None,
         }

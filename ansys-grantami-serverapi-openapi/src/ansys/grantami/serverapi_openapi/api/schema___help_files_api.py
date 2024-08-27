@@ -55,7 +55,7 @@ class SchemaHelpFilesApi(ApiBase):
         folder_guid: "str",
         file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
         description: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+    ) -> "Union[GsaFileHeader, None]":
         """Create a new Help File.
 
         This method makes a synchronous HTTP request.
@@ -69,7 +69,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._create_help_file_with_http_info(
             database_key, folder_guid, file, description, _return_http_data_only=True
@@ -142,7 +142,7 @@ class SchemaHelpFilesApi(ApiBase):
         # populated by openapi-common based on request content.
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaFilesFileHeader",
+            201: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -165,11 +165,8 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
     def create_help_folder(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaFilesCreateFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", body: "Optional[GsaCreateFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Create a new Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -177,11 +174,11 @@ class SchemaHelpFilesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSchemaFilesCreateFolder
+        body: GsaCreateFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._create_help_folder_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -189,10 +186,7 @@ class SchemaHelpFilesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _create_help_folder_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GrantaServerApiSchemaFilesCreateFolder]" = None,
-        **kwargs: Any,
+        self, database_key: "str", body: "Optional[GsaCreateFolder]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -243,7 +237,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaFilesFolder",
+            201: "GsaFolder",
             400: None,
             403: None,
             404: None,
@@ -552,7 +546,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def get_help_child_folders(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFoldersInfo, None]":
+    ) -> "Union[GsaFoldersInfo, None]":
         """Get Child Help File Folders
 
         This method makes a synchronous HTTP request.
@@ -564,7 +558,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFoldersInfo, None]
+        Union[GsaFoldersInfo, None]
         """
         data = self._get_help_child_folders_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -623,7 +617,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFoldersInfo",
+            200: "GsaFoldersInfo",
             404: None,
         }
 
@@ -645,7 +639,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def get_help_file(
         self, *, database_key: "str", folder_guid: "str", file_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+    ) -> "Union[GsaFileHeader, None]":
         """Get header information for a help file
 
         This method makes a synchronous HTTP request.
@@ -658,7 +652,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._get_help_file_with_http_info(
             database_key, folder_guid, file_guid, _return_http_data_only=True
@@ -725,7 +719,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             404: None,
         }
 
@@ -747,7 +741,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def get_help_files(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFilesInfo, None]":
+    ) -> "Union[GsaFilesInfo, None]":
         """Get Files in a Folder
 
         This method makes a synchronous HTTP request.
@@ -759,7 +753,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFilesInfo, None]
+        Union[GsaFilesInfo, None]
         """
         data = self._get_help_files_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -818,7 +812,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFilesInfo",
+            200: "GsaFilesInfo",
             404: None,
         }
 
@@ -840,7 +834,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def get_help_folder(
         self, *, database_key: "str", folder_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+    ) -> "Union[GsaFolder, None]":
         """Get Help File Folder
 
         This method makes a synchronous HTTP request.
@@ -852,7 +846,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._get_help_folder_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -911,7 +905,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             404: None,
         }
 
@@ -931,9 +925,7 @@ class SchemaHelpFilesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_help_folders(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFoldersInfo, None]":
+    def get_help_folders(self, *, database_key: "str") -> "Union[GsaFoldersInfo, None]":
         """Get All Help File Folders
 
         This method makes a synchronous HTTP request.
@@ -944,7 +936,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFoldersInfo, None]
+        Union[GsaFoldersInfo, None]
         """
         data = self._get_help_folders_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -991,7 +983,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFoldersInfo",
+            200: "GsaFoldersInfo",
             404: None,
         }
 
@@ -1011,9 +1003,7 @@ class SchemaHelpFilesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_help_root_folder(
-        self, *, database_key: "str"
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+    def get_help_root_folder(self, *, database_key: "str") -> "Union[GsaFolder, None]":
         """Get Root Help File Folder
 
         This method makes a synchronous HTTP request.
@@ -1024,7 +1014,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._get_help_root_folder_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -1071,7 +1061,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             404: None,
         }
 
@@ -1097,8 +1087,8 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFile]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+        body: "Optional[GsaMoveFile]" = None,
+    ) -> "Union[GsaFileHeader, None]":
         """Move an existing Help File.
 
         This method makes a synchronous HTTP request.
@@ -1108,11 +1098,11 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: str
         folder_guid: str
         file_guid: str
-        body: GrantaServerApiSchemaFilesMoveFile
+        body: GsaMoveFile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._move_help_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1124,7 +1114,7 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFile]" = None,
+        body: "Optional[GsaMoveFile]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1192,7 +1182,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -1215,12 +1205,8 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
     def move_help_folder(
-        self,
-        *,
-        database_key: "str",
-        folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaMoveFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Move an existing Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -1229,11 +1215,11 @@ class SchemaHelpFilesApi(ApiBase):
         ----------
         database_key: str
         folder_guid: str
-        body: GrantaServerApiSchemaFilesMoveFolder
+        body: GsaMoveFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._move_help_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1244,7 +1230,7 @@ class SchemaHelpFilesApi(ApiBase):
         self,
         database_key: "str",
         folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesMoveFolder]" = None,
+        body: "Optional[GsaMoveFolder]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1304,7 +1290,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             400: None,
             403: None,
             404: None,
@@ -1332,8 +1318,8 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFile]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFileHeader, None]":
+        body: "Optional[GsaUpdateFile]" = None,
+    ) -> "Union[GsaFileHeader, None]":
         """Update an existing Help File.
 
         This method makes a synchronous HTTP request.
@@ -1343,11 +1329,11 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: str
         folder_guid: str
         file_guid: str
-        body: GrantaServerApiSchemaFilesUpdateFile
+        body: GsaUpdateFile
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFileHeader, None]
+        Union[GsaFileHeader, None]
         """
         data = self._update_help_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1359,7 +1345,7 @@ class SchemaHelpFilesApi(ApiBase):
         database_key: "str",
         folder_guid: "str",
         file_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFile]" = None,
+        body: "Optional[GsaUpdateFile]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1427,7 +1413,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFileHeader",
+            200: "GsaFileHeader",
             400: None,
             403: None,
             404: None,
@@ -1450,12 +1436,8 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
     def update_help_folder(
-        self,
-        *,
-        database_key: "str",
-        folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFolder]" = None,
-    ) -> "Union[GrantaServerApiSchemaFilesFolder, None]":
+        self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaUpdateFolder]" = None
+    ) -> "Union[GsaFolder, None]":
         """Update an existing Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -1464,11 +1446,11 @@ class SchemaHelpFilesApi(ApiBase):
         ----------
         database_key: str
         folder_guid: str
-        body: GrantaServerApiSchemaFilesUpdateFolder
+        body: GsaUpdateFolder
 
         Returns
         -------
-        Union[GrantaServerApiSchemaFilesFolder, None]
+        Union[GsaFolder, None]
         """
         data = self._update_help_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1479,7 +1461,7 @@ class SchemaHelpFilesApi(ApiBase):
         self,
         database_key: "str",
         folder_guid: "str",
-        body: "Optional[GrantaServerApiSchemaFilesUpdateFolder]" = None,
+        body: "Optional[GsaUpdateFolder]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -1539,7 +1521,7 @@ class SchemaHelpFilesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaFilesFolder",
+            200: "GsaFolder",
             400: None,
             403: None,
             404: None,

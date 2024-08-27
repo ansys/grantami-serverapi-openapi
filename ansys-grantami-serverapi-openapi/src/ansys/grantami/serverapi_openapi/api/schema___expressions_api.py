@@ -53,8 +53,8 @@ class SchemaExpressionsApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaExpressionsCreateExpression]" = None,
-    ) -> "Union[GrantaServerApiSchemaExpressionsExpression, None]":
+        body: "Optional[GsaCreateExpression]" = None,
+    ) -> "Union[GsaExpression, None]":
         """Create a new expression.
 
         This method makes a synchronous HTTP request.
@@ -63,11 +63,11 @@ class SchemaExpressionsApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSchemaExpressionsCreateExpression
+        body: GsaCreateExpression
 
         Returns
         -------
-        Union[GrantaServerApiSchemaExpressionsExpression, None]
+        Union[GsaExpression, None]
         """
         data = self._create_expression_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -78,7 +78,7 @@ class SchemaExpressionsApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSchemaExpressionsCreateExpression]" = None,
+        body: "Optional[GsaCreateExpression]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -136,7 +136,7 @@ class SchemaExpressionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaExpressionsExpression",
+            201: "GsaExpression",
             400: None,
             403: None,
             404: None,
@@ -266,7 +266,7 @@ class SchemaExpressionsApi(ApiBase):
         expression_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaExpressionsExpression, None]":
+    ) -> "Union[GsaExpression, None]":
         """Get an expression with a specified guid for a given database and table.
 
         This method makes a synchronous HTTP request.
@@ -283,7 +283,7 @@ class SchemaExpressionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaExpressionsExpression, None]
+        Union[GsaExpression, None]
         """
         data = self._get_expression_with_http_info(
             database_key,
@@ -365,7 +365,7 @@ class SchemaExpressionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaExpressionsExpression",
+            200: "GsaExpression",
             404: None,
         }
 
@@ -392,7 +392,7 @@ class SchemaExpressionsApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaExpressionsExpressionsInfo, None]":
+    ) -> "Union[GsaExpressionsInfo, None]":
         """Get all expressions for table
 
         This method makes a synchronous HTTP request.
@@ -408,7 +408,7 @@ class SchemaExpressionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaExpressionsExpressionsInfo, None]
+        Union[GsaExpressionsInfo, None]
         """
         data = self._get_expressions_with_http_info(
             database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
@@ -476,7 +476,7 @@ class SchemaExpressionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaExpressionsExpressionsInfo",
+            200: "GsaExpressionsInfo",
             404: None,
         }
 
@@ -502,8 +502,8 @@ class SchemaExpressionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         expression_guid: "str",
-        body: "Optional[GrantaServerApiSchemaExpressionsUpdateExpression]" = None,
-    ) -> "Union[GrantaServerApiSchemaExpressionsExpression, None]":
+        body: "Optional[GsaUpdateExpression]" = None,
+    ) -> "Union[GsaExpression, None]":
         """Update an expression.
 
         This method makes a synchronous HTTP request.
@@ -513,11 +513,11 @@ class SchemaExpressionsApi(ApiBase):
         database_key: str
         table_guid: str
         expression_guid: str
-        body: GrantaServerApiSchemaExpressionsUpdateExpression
+        body: GsaUpdateExpression
 
         Returns
         -------
-        Union[GrantaServerApiSchemaExpressionsExpression, None]
+        Union[GsaExpression, None]
         """
         data = self._update_expression_with_http_info(
             database_key, table_guid, expression_guid, body, _return_http_data_only=True
@@ -529,7 +529,7 @@ class SchemaExpressionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         expression_guid: "str",
-        body: "Optional[GrantaServerApiSchemaExpressionsUpdateExpression]" = None,
+        body: "Optional[GsaUpdateExpression]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -595,7 +595,7 @@ class SchemaExpressionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaExpressionsExpression",
+            200: "GsaExpression",
             400: None,
             403: None,
             404: None,

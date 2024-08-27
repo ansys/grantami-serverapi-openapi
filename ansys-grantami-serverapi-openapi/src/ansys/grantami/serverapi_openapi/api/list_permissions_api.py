@@ -48,9 +48,7 @@ class ListPermissionsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def get_permissions(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoUserPermissionsInfo, None]":
+    def get_permissions(self, *, list_identifier: "str") -> "Union[GsaUserPermissionsInfo, None]":
         """Gets all permissions associated with the specified list.
 
         This method makes a synchronous HTTP request.
@@ -61,7 +59,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermissionsInfo, None]
+        Union[GsaUserPermissionsInfo, None]
         """
         data = self._get_permissions_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -108,7 +106,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoUserPermissionsInfo",
+            200: "GsaUserPermissionsInfo",
             403: None,
             404: None,
         }
@@ -131,7 +129,7 @@ class ListPermissionsApi(ApiBase):
 
     def get_permissions_for_user(
         self, *, list_identifier: "str", user_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]":
+    ) -> "Union[GsaRecordListPermissionFlags, None]":
         """Gets the permission flags of the permission associating the specified list with the specified user.
 
         This method makes a synchronous HTTP request.
@@ -143,7 +141,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]
+        Union[GsaRecordListPermissionFlags, None]
         """
         data = self._get_permissions_for_user_with_http_info(
             list_identifier, user_identifier, _return_http_data_only=True
@@ -202,7 +200,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiListsDtoRecordListPermissionFlags",
+            200: "GsaRecordListPermissionFlags",
             403: None,
             404: None,
         }
@@ -224,11 +222,8 @@ class ListPermissionsApi(ApiBase):
         )
 
     def set_permissions(
-        self,
-        *,
-        list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateUserPermissionsInfo]" = None,
-    ) -> "Union[GrantaServerApiListsDtoUserPermissionsInfo, None]":
+        self, *, list_identifier: "str", body: "Optional[GsaUpdateUserPermissionsInfo]" = None
+    ) -> "Union[GsaUserPermissionsInfo, None]":
         """Sets permissions for the specified list. Returns a collection of the created/updated permissions.
 
         This method makes a synchronous HTTP request.
@@ -236,11 +231,11 @@ class ListPermissionsApi(ApiBase):
         Parameters
         ----------
         list_identifier: str
-        body: GrantaServerApiListsDtoUpdateUserPermissionsInfo
+        body: GsaUpdateUserPermissionsInfo
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermissionsInfo, None]
+        Union[GsaUserPermissionsInfo, None]
         """
         data = self._set_permissions_with_http_info(
             list_identifier, body, _return_http_data_only=True
@@ -250,7 +245,7 @@ class ListPermissionsApi(ApiBase):
     def _set_permissions_with_http_info(
         self,
         list_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateUserPermissionsInfo]" = None,
+        body: "Optional[GsaUpdateUserPermissionsInfo]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -302,7 +297,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            202: "GrantaServerApiListsDtoUserPermissionsInfo",
+            202: "GsaUserPermissionsInfo",
             400: None,
             403: None,
             404: None,
@@ -329,8 +324,8 @@ class ListPermissionsApi(ApiBase):
         *,
         list_identifier: "str",
         user_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListPermissionFlags]" = None,
-    ) -> "Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]":
+        body: "Optional[GsaUpdateRecordListPermissionFlags]" = None,
+    ) -> "Union[GsaRecordListPermissionFlags, None]":
         """Sets the permission flags of the permission associating the specified list with the specified user.
 
         This method makes a synchronous HTTP request.
@@ -339,11 +334,11 @@ class ListPermissionsApi(ApiBase):
         ----------
         list_identifier: str
         user_identifier: str
-        body: GrantaServerApiListsDtoUpdateRecordListPermissionFlags
+        body: GsaUpdateRecordListPermissionFlags
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoRecordListPermissionFlags, None]
+        Union[GsaRecordListPermissionFlags, None]
         """
         data = self._set_permissions_for_user_with_http_info(
             list_identifier, user_identifier, body, _return_http_data_only=True
@@ -354,7 +349,7 @@ class ListPermissionsApi(ApiBase):
         self,
         list_identifier: "str",
         user_identifier: "str",
-        body: "Optional[GrantaServerApiListsDtoUpdateRecordListPermissionFlags]" = None,
+        body: "Optional[GsaUpdateRecordListPermissionFlags]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -414,7 +409,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiListsDtoRecordListPermissionFlags",
+            201: "GsaRecordListPermissionFlags",
             400: None,
             403: None,
             404: None,
@@ -436,9 +431,7 @@ class ListPermissionsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def subscribe(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoUserPermission, None]":
+    def subscribe(self, *, list_identifier: "str") -> "Union[GsaUserPermission, None]":
         """Subscribes the calling user to the specified list.
 
         This method makes a synchronous HTTP request.
@@ -449,7 +442,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermission, None]
+        Union[GsaUserPermission, None]
         """
         data = self._subscribe_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -494,7 +487,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            202: "GrantaServerApiListsDtoUserPermission",
+            202: "GsaUserPermission",
             400: None,
             403: None,
             404: None,
@@ -516,9 +509,7 @@ class ListPermissionsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def unsubscribe(
-        self, *, list_identifier: "str"
-    ) -> "Union[GrantaServerApiListsDtoUserPermission, None]":
+    def unsubscribe(self, *, list_identifier: "str") -> "Union[GsaUserPermission, None]":
         """Unsubscribes the calling user from the specified list.
 
         This method makes a synchronous HTTP request.
@@ -529,7 +520,7 @@ class ListPermissionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiListsDtoUserPermission, None]
+        Union[GsaUserPermission, None]
         """
         data = self._unsubscribe_with_http_info(list_identifier, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -574,7 +565,7 @@ class ListPermissionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            202: "GrantaServerApiListsDtoUserPermission",
+            202: "GsaUserPermission",
             400: None,
             403: None,
             404: None,

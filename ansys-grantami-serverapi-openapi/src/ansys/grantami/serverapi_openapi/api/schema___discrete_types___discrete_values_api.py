@@ -53,8 +53,8 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         *,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]":
+        body: "Optional[GsaDiscreteValuesCreateDiscreteValue]" = None,
+    ) -> "Union[GsaDiscreteValuesDiscreteValue, None]":
         """Create new discrete value. If it's ordered, it will be added at the end.
 
         This method makes a synchronous HTTP request.
@@ -63,11 +63,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         ----------
         database_key: str
         discrete_type_guid: str
-        body: GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue
+        body: GsaDiscreteValuesCreateDiscreteValue
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]
+        Union[GsaDiscreteValuesDiscreteValue, None]
         """
         data = self._create_discrete_value_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -78,7 +78,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         self,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesCreateDiscreteValue]" = None,
+        body: "Optional[GsaDiscreteValuesCreateDiscreteValue]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -136,7 +136,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaDiscreteValuesDiscreteValue",
+            201: "GsaDiscreteValuesDiscreteValue",
             400: None,
             403: None,
             404: None,
@@ -160,7 +160,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def delete_discrete_value(
         self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
-    ) -> "Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]":
+    ) -> "Union[GsaDiscreteValueDeletionException, None]":
         """Delete a single discrete value. It must not be used by any data, or the operation will fail.
 
         This method makes a synchronous HTTP request.
@@ -173,7 +173,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiExceptionsDeletionDiscreteValueDeletionException, None]
+        Union[GsaDiscreteValueDeletionException, None]
         """
         data = self._delete_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
@@ -242,7 +242,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            400: "GrantaServerApiExceptionsDeletionDiscreteValueDeletionException",
+            400: "GsaDiscreteValueDeletionException",
             200: None,
             403: None,
             404: None,
@@ -266,7 +266,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def find_unused_discrete_values(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]":
+    ) -> "Union[GsaDiscreteValuesDiscreteValuesInfo, None]":
         """Find discrete values that are not in use by any data
 
         This method makes a synchronous HTTP request.
@@ -278,7 +278,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]
+        Union[GsaDiscreteValuesDiscreteValuesInfo, None]
         """
         data = self._find_unused_discrete_values_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -335,7 +335,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo",
+            200: "GsaDiscreteValuesDiscreteValuesInfo",
             400: None,
             404: None,
         }
@@ -358,7 +358,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def get_discrete_value(
         self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]":
+    ) -> "Union[GsaDiscreteValuesDiscreteValue, None]":
         """Gets specific discrete value for a given discreteType within a given database.
 
         This method makes a synchronous HTTP request.
@@ -371,7 +371,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]
+        Union[GsaDiscreteValuesDiscreteValue, None]
         """
         data = self._get_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
@@ -440,7 +440,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteValuesDiscreteValue",
+            200: "GsaDiscreteValuesDiscreteValue",
             404: None,
         }
 
@@ -462,7 +462,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def get_discrete_values(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]":
+    ) -> "Union[GsaDiscreteValuesDiscreteValuesInfo, None]":
         """Gets all discrete values for a given discreteType. If discreteType is ordered, then discreteValues will be return in order, otherwise order is not deterministic.
 
         This method makes a synchronous HTTP request.
@@ -474,7 +474,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]
+        Union[GsaDiscreteValuesDiscreteValuesInfo, None]
         """
         data = self._get_discrete_values_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -531,7 +531,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo",
+            200: "GsaDiscreteValuesDiscreteValuesInfo",
             404: None,
         }
 
@@ -556,8 +556,8 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         *,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]":
+        body: "Optional[GsaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
+    ) -> "Union[GsaDiscreteValuesDiscreteValuesInfo, None]":
         """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.
 
         This method makes a synchronous HTTP request.
@@ -566,11 +566,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         ----------
         database_key: str
         discrete_type_guid: str
-        body: GrantaServerApiSchemaDiscreteValuesReplaceDiscreteValuesInfo
+        body: GsaDiscreteValuesReplaceDiscreteValuesInfo
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo, None]
+        Union[GsaDiscreteValuesDiscreteValuesInfo, None]
         """
         data = self._replace_discrete_values_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -581,7 +581,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         self,
         database_key: "str",
         discrete_type_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
+        body: "Optional[GsaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -639,7 +639,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteValuesDiscreteValuesInfo",
+            200: "GsaDiscreteValuesDiscreteValuesInfo",
             400: None,
             403: None,
             404: None,
@@ -667,8 +667,8 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         discrete_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesUpdateDiscreteValue]" = None,
-    ) -> "Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]":
+        body: "Optional[GsaDiscreteValuesUpdateDiscreteValue]" = None,
+    ) -> "Union[GsaDiscreteValuesDiscreteValue, None]":
         """Update discrete value.
 
         This method makes a synchronous HTTP request.
@@ -678,11 +678,11 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: str
         discrete_type_guid: str
         discrete_value_guid: str
-        body: GrantaServerApiSchemaDiscreteValuesUpdateDiscreteValue
+        body: GsaDiscreteValuesUpdateDiscreteValue
 
         Returns
         -------
-        Union[GrantaServerApiSchemaDiscreteValuesDiscreteValue, None]
+        Union[GsaDiscreteValuesDiscreteValue, None]
         """
         data = self._update_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, body, _return_http_data_only=True
@@ -694,7 +694,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         discrete_value_guid: "str",
-        body: "Optional[GrantaServerApiSchemaDiscreteValuesUpdateDiscreteValue]" = None,
+        body: "Optional[GsaDiscreteValuesUpdateDiscreteValue]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -760,7 +760,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaDiscreteValuesDiscreteValue",
+            200: "GsaDiscreteValuesDiscreteValue",
             400: None,
             403: None,
             404: None,

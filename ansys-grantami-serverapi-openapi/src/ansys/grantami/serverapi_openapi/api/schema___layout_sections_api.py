@@ -55,8 +55,8 @@ class SchemaLayoutSectionsApi(ApiBase):
         table_guid: "str",
         layout_guid: "str",
         section_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsNewLayoutItem]" = None,
-    ) -> "Union[GrantaServerApiSchemaLayoutsNewLayoutItem, None]":
+        body: "Optional[GsaNewLayoutItem]" = None,
+    ) -> "Union[GsaNewLayoutItem, None]":
         """Add a new layout item.
 
         This method makes a synchronous HTTP request.
@@ -67,11 +67,11 @@ class SchemaLayoutSectionsApi(ApiBase):
         table_guid: str
         layout_guid: str
         section_guid: str
-        body: GrantaServerApiSchemaLayoutsNewLayoutItem
+        body: GsaNewLayoutItem
 
         Returns
         -------
-        Union[GrantaServerApiSchemaLayoutsNewLayoutItem, None]
+        Union[GsaNewLayoutItem, None]
         """
         data = self._create_layout_item_with_http_info(
             database_key, table_guid, layout_guid, section_guid, body, _return_http_data_only=True
@@ -84,7 +84,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         table_guid: "str",
         layout_guid: "str",
         section_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsNewLayoutItem]" = None,
+        body: "Optional[GsaNewLayoutItem]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -158,7 +158,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaLayoutsNewLayoutItem",
+            201: "GsaNewLayoutItem",
             400: None,
             403: None,
             404: None,
@@ -186,8 +186,8 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayoutSection]" = None,
-    ) -> "Union[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection, None]":
+        body: "Optional[GsaCreateLayoutSection]" = None,
+    ) -> "Union[GsaSlimLayoutSection, None]":
         """Create a new layout section.
 
         This method makes a synchronous HTTP request.
@@ -197,11 +197,11 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: str
         table_guid: str
         layout_guid: str
-        body: GrantaServerApiSchemaLayoutsCreateLayoutSection
+        body: GsaCreateLayoutSection
 
         Returns
         -------
-        Union[GrantaServerApiSchemaSlimEntitiesSlimLayoutSection, None]
+        Union[GsaSlimLayoutSection, None]
         """
         data = self._create_section_with_http_info(
             database_key, table_guid, layout_guid, body, _return_http_data_only=True
@@ -213,7 +213,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsCreateLayoutSection]" = None,
+        body: "Optional[GsaCreateLayoutSection]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -279,7 +279,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            201: "GrantaServerApiSchemaSlimEntitiesSlimLayoutSection",
+            201: "GsaSlimLayoutSection",
             400: None,
             403: None,
             404: None,
@@ -558,7 +558,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         show_full_detail: "Optional[bool]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaLayoutsLayoutSection, None]":
+    ) -> "Union[GsaLayoutSection, None]":
         """Get a layout section with a specified guid for a given layout.
 
         This method makes a synchronous HTTP request.
@@ -577,7 +577,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaLayoutsLayoutSection, None]
+        Union[GsaLayoutSection, None]
         """
         data = self._get_layout_section_with_http_info(
             database_key,
@@ -674,7 +674,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaLayoutsLayoutSection",
+            200: "GsaLayoutSection",
             404: None,
         }
 
@@ -703,7 +703,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         show_full_detail: "Optional[bool]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "Union[GrantaServerApiSchemaLayoutsLayoutSectionsInfo, None]":
+    ) -> "Union[GsaLayoutSectionsInfo, None]":
         """Get all sections for a layout
 
         This method makes a synchronous HTTP request.
@@ -721,7 +721,7 @@ class SchemaLayoutSectionsApi(ApiBase):
 
         Returns
         -------
-        Union[GrantaServerApiSchemaLayoutsLayoutSectionsInfo, None]
+        Union[GsaLayoutSectionsInfo, None]
         """
         data = self._get_layout_sections_with_http_info(
             database_key,
@@ -808,7 +808,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
+            200: "GsaLayoutSectionsInfo",
             404: None,
         }
 
@@ -834,8 +834,8 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsReorderSectionsInfo]" = None,
-    ) -> "Union[GrantaServerApiSchemaLayoutsLayoutSectionsInfo, None]":
+        body: "Optional[GsaReorderSectionsInfo]" = None,
+    ) -> "Union[GsaLayoutSectionsInfo, None]":
         """Reorder the list of layout sections for a layout.
 
         This method makes a synchronous HTTP request.
@@ -845,11 +845,11 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: str
         table_guid: str
         layout_guid: str
-        body: GrantaServerApiSchemaLayoutsReorderSectionsInfo
+        body: GsaReorderSectionsInfo
 
         Returns
         -------
-        Union[GrantaServerApiSchemaLayoutsLayoutSectionsInfo, None]
+        Union[GsaLayoutSectionsInfo, None]
         """
         data = self._reorder_sections_with_http_info(
             database_key, table_guid, layout_guid, body, _return_http_data_only=True
@@ -861,7 +861,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         layout_guid: "str",
-        body: "Optional[GrantaServerApiSchemaLayoutsReorderSectionsInfo]" = None,
+        body: "Optional[GsaReorderSectionsInfo]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -927,7 +927,7 @@ class SchemaLayoutSectionsApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
+            200: "GsaLayoutSectionsInfo",
             400: None,
             403: None,
             404: None,

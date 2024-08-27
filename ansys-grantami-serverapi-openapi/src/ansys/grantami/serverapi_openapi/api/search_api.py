@@ -52,18 +52,18 @@ class SearchApi(ApiBase):
         self,
         *,
         database_key: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "GrantaServerApiSearchSearchResponse":
-        """database_search
+    ) -> "GsaSearchResponse":
+        """Runs a search against a given database
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         database_key: str
-        body: GrantaServerApiSearchSearchRequest
+        body: GsaSearchRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -71,7 +71,7 @@ class SearchApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiSearchSearchResponse
+        GsaSearchResponse
         """
         data = self._database_search_with_http_info(
             database_key, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -81,7 +81,7 @@ class SearchApi(ApiBase):
     def _database_search_with_http_info(
         self,
         database_key: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -141,7 +141,7 @@ class SearchApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSearchSearchResponse",
+            200: "GsaSearchResponse",
         }
 
         return self.api_client.call_api(
@@ -165,11 +165,11 @@ class SearchApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "GrantaServerApiSearchSearchResponse":
-        """database_search_in_table_with_guid
+    ) -> "GsaSearchResponse":
+        """Runs a search against a given database and table guid
 
         This method makes a synchronous HTTP request.
 
@@ -177,7 +177,7 @@ class SearchApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        body: GrantaServerApiSearchSearchRequest
+        body: GsaSearchRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -185,7 +185,7 @@ class SearchApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiSearchSearchResponse
+        GsaSearchResponse
         """
         data = self._database_search_in_table_with_guid_with_http_info(
             database_key, table_guid, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -196,7 +196,7 @@ class SearchApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -264,7 +264,7 @@ class SearchApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSearchSearchResponse",
+            200: "GsaSearchResponse",
         }
 
         return self.api_client.call_api(
@@ -288,11 +288,11 @@ class SearchApi(ApiBase):
         *,
         database_key: "str",
         table_identity: "int",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "GrantaServerApiSearchSearchResponse":
-        """database_search_in_table_with_identity
+    ) -> "GsaSearchResponse":
+        """Runs a search against a given database and table identity
 
         This method makes a synchronous HTTP request.
 
@@ -300,7 +300,7 @@ class SearchApi(ApiBase):
         ----------
         database_key: str
         table_identity: int
-        body: GrantaServerApiSearchSearchRequest
+        body: GsaSearchRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -308,7 +308,7 @@ class SearchApi(ApiBase):
 
         Returns
         -------
-        GrantaServerApiSearchSearchResponse
+        GsaSearchResponse
         """
         data = self._database_search_in_table_with_identity_with_http_info(
             database_key, table_identity, body, x_ansys_vc_mode, mode, _return_http_data_only=True
@@ -319,7 +319,7 @@ class SearchApi(ApiBase):
         self,
         database_key: "str",
         table_identity: "int",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
+        body: "Optional[GsaSearchRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -387,7 +387,7 @@ class SearchApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSearchSearchResponse",
+            200: "GsaSearchResponse",
         }
 
         return self.api_client.call_api(
@@ -407,7 +407,7 @@ class SearchApi(ApiBase):
         )
 
     def delete_search_results(self, *, search_identifier: "str") -> "None":
-        """delete_search_results
+        """Delete search results by identifier
 
         This method makes a synchronous HTTP request.
 
@@ -484,23 +484,20 @@ class SearchApi(ApiBase):
         )
 
     def get_search_results(
-        self,
-        *,
-        search_identifier: "str",
-        body: "Optional[GrantaServerApiSearchSearchResultsRequest]" = None,
-    ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
-        """get_search_results
+        self, *, search_identifier: "str", body: "Optional[GsaSearchResultsRequest]" = None
+    ) -> "Union[GsaSearchResponse, None]":
+        """Returns search results by identifier
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         search_identifier: str
-        body: GrantaServerApiSearchSearchResultsRequest
+        body: GsaSearchResultsRequest
 
         Returns
         -------
-        Union[GrantaServerApiSearchSearchResponse, None]
+        Union[GsaSearchResponse, None]
         """
         data = self._get_search_results_with_http_info(
             search_identifier, body, _return_http_data_only=True
@@ -510,7 +507,7 @@ class SearchApi(ApiBase):
     def _get_search_results_with_http_info(
         self,
         search_identifier: "str",
-        body: "Optional[GrantaServerApiSearchSearchResultsRequest]" = None,
+        body: "Optional[GsaSearchResultsRequest]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -562,7 +559,7 @@ class SearchApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSearchSearchResponse",
+            200: "GsaSearchResponse",
             403: None,
             404: None,
         }
@@ -584,8 +581,8 @@ class SearchApi(ApiBase):
         )
 
     def integration_search(
-        self, *, schema: "str", body: "Optional[GrantaServerApiSearchSearchRequest]" = None
-    ) -> "Union[GrantaServerApiSearchSearchResponse, None]":
+        self, *, schema: "str", body: "Optional[GsaSearchRequest]" = None
+    ) -> "Union[GsaSearchResponse, None]":
         """Runs a search against the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -593,20 +590,17 @@ class SearchApi(ApiBase):
         Parameters
         ----------
         schema: str
-        body: GrantaServerApiSearchSearchRequest
+        body: GsaSearchRequest
 
         Returns
         -------
-        Union[GrantaServerApiSearchSearchResponse, None]
+        Union[GsaSearchResponse, None]
         """
         data = self._integration_search_with_http_info(schema, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _integration_search_with_http_info(
-        self,
-        schema: "str",
-        body: "Optional[GrantaServerApiSearchSearchRequest]" = None,
-        **kwargs: Any,
+        self, schema: "str", body: "Optional[GsaSearchRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "schema",
@@ -657,7 +651,7 @@ class SearchApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaServerApiSearchSearchResponse",
+            200: "GsaSearchResponse",
             404: None,
         }
 
