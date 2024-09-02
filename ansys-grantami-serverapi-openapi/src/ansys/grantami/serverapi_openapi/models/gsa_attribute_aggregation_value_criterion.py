@@ -33,8 +33,12 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_aggregation_criterion import (  # noqa: F401
     GsaAttributeAggregationCriterion,
+)
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_aggregation_type import (
+    GsaAttributeAggregationType,
 )
 
 from . import ModelBase, Unset, Unset_Type
@@ -91,8 +95,8 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
     def __init__(
         self,
         *,
-        attribute_aggregation_criterion_type: "GsaAttributeAggregationType",
-        type: "GsaAggregationType",
+        attribute_aggregation_criterion_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.VALUE,
+        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaAggregationDatumCriterion, Unset_Type]" = Unset,

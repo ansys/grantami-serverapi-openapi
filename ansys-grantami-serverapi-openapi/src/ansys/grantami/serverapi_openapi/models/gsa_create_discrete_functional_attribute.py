@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_create_attribute import (  # noqa: F401
     GsaCreateAttribute,
 )
@@ -101,7 +102,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: "List[GsaCreateDiscreteFunctionalAttributeParameter]",
         discrete_type: "GsaSlimEntity",
         name: "str",
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,

@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_referenced_by_type import GsaReferencedByType
 from ansys.grantami.serverapi_openapi.models.gsa_usage_data_modification_error_detail import (  # noqa: F401
     GsaUsageDataModificationErrorDetail,
 )
@@ -88,8 +89,8 @@ class GsaTabularAttributeUsageDataModificationErrorDetail(GsaUsageDataModificati
         self,
         *,
         message: "str",
-        reason: "str",
-        referenced_by_type: "GsaReferencedByType",
+        reason: "str" = "usage",
+        referenced_by_type: "GsaReferencedByType" = GsaReferencedByType.TABULARATTRIBUTE,
         referenced_by: "Union[List[GsaSlimAttribute], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularAttributeUsageDataModificationErrorDetail - a model defined in Swagger

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_export_failure import (  # noqa: F401
     GsaExportFailure,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_export_failure_type import GsaExportFailureType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -90,7 +91,7 @@ class GsaAttributeExportFailure(GsaExportFailure):
         failed_attributes: "List[GsaAttributeReference]",
         failure_details: "str",
         failure_reason: "str",
-        type: "GsaExportFailureType",
+        type: "GsaExportFailureType" = GsaExportFailureType.ATTRIBUTE,
     ) -> None:
         """GsaAttributeExportFailure - a model defined in Swagger
 

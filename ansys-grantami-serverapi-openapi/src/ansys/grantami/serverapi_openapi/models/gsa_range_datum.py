@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -101,13 +102,13 @@ class GsaRangeDatum(GsaApplicableDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaDatumType",
+        datum_type: "GsaDatumType" = GsaDatumType.RANGE,
         estimated: "bool",
         high_value: "float",
         high_value_is_inclusive: "bool",
         low_value: "float",
         low_value_is_inclusive: "bool",
-        not_applicable: "str",
+        not_applicable: "str" = "applicable",
         high_value_significant_figures_info: "Union[GsaSignificantFiguresInfo, Unset_Type]" = Unset,
         low_value_significant_figures_info: "Union[GsaSignificantFiguresInfo, Unset_Type]" = Unset,
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,

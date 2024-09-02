@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_datum_exists_criterion import (  # noqa: F401
     GsaDatumExistsCriterion,
 )
@@ -102,7 +103,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         self,
         *,
         target_database_key: "str",
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.LINK,
         indirect_links: "Union[GsaIndirectLinks, Unset_Type]" = Unset,
         link_datum_type: "Union[GsaLinkAttributeType, Unset_Type]" = Unset,
         local_rows_behavior: "Union[GsaLocalRowsBehavior, Unset_Type]" = Unset,

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -93,10 +94,10 @@ class GsaFileDatum(GsaApplicableDatum):
         *,
         content_is_in_search_index: "bool",
         content_type: "str",
-        datum_type: "GsaDatumType",
+        datum_type: "GsaDatumType" = GsaDatumType.FILE,
         description: "str",
         file_name: "str",
-        not_applicable: "str",
+        not_applicable: "str" = "applicable",
         target: "str",
     ) -> None:
         """GsaFileDatum - a model defined in Swagger

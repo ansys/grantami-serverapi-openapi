@@ -33,9 +33,11 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 from ansys.grantami.serverapi_openapi.models.gsa_float_functional_datum import (  # noqa: F401
     GsaFloatFunctionalDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -99,13 +101,13 @@ class GsaFloatFunctionalGridDatum(GsaFloatFunctionalDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaDatumType",
+        datum_type: "GsaDatumType" = GsaDatumType.FLOATFUNCTIONAL,
         estimated: "bool",
         graph: "GsaFloatGridGraph",
-        graph_type: "GsaGraphType",
+        graph_type: "GsaGraphType" = GsaGraphType.GRID,
         is_range: "bool",
         log_scale_on_y_axis: "bool",
-        not_applicable: "str",
+        not_applicable: "str" = "applicable",
         parameter_settings: "List[GsaFunctionalParameterSetting]",
         show_as_table: "bool",
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,

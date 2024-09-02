@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item import (  # noqa: F401
     GsaNewLayoutItem,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item_type import GsaNewLayoutItemType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -85,7 +86,7 @@ class GsaNewLayoutSmartLinkItem(GsaNewLayoutItem):
     def __init__(
         self,
         *,
-        item_type: "GsaNewLayoutItemType",
+        item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.SMARTLINK,
         link_group_guid: "str",
         forwards: "Union[bool, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,

@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_record_link_group import (  # noqa: F401
     GsaRecordLinkGroup,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_record_link_group_type import (
+    GsaRecordLinkGroupType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -101,7 +104,7 @@ class GsaStaticRecordLinkGroup(GsaRecordLinkGroup):
         link_info: "GsaLinkInfo",
         name: "str",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType",
+        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.STATIC,
         identity: "Union[int, None, Unset_Type]" = Unset,
         reverse_display_names: "Union[Dict[str, str], None, Unset_Type]" = Unset,
     ) -> None:

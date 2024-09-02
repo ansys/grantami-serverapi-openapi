@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_criterion import (  # noqa: F401
     GsaAggregationDatumCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_criterion_type import (
+    GsaAggregationDatumCriterionType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -86,7 +89,7 @@ class GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion(GsaAggrega
         self,
         *,
         interval: "GsaCalendarInterval",
-        type: "GsaAggregationDatumCriterionType",
+        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEFIXEDCALENDARWIDTHHISTOGRAM,
         offset: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion - a model defined in Swagger

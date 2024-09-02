@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_parameter_content import (  # noqa: F401
     GsaParameterContent,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -89,7 +90,7 @@ class GsaNumericParameterContent(GsaParameterContent):
         *,
         parameter: "GsaSlimNamedEntity",
         parameter_range: "GsaContinuousRange",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.NUMERIC,
         value: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaNumericParameterContent - a model defined in Swagger

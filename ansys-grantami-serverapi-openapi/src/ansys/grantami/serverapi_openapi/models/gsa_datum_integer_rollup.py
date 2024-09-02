@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_rollup import GsaDatumRollup  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_datum_rollup_type import GsaDatumRollupType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -79,7 +80,7 @@ class GsaDatumIntegerRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        type: "GsaDatumRollupType",
+        type: "GsaDatumRollupType" = GsaDatumRollupType.INTEGERROLLUP,
         value: "int",
     ) -> None:
         """GsaDatumIntegerRollup - a model defined in Swagger

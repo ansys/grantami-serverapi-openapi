@@ -86,7 +86,7 @@ class GsaNotTheLatestVersionErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "str" = "notTheLatestVersion",
         newer_version: "Union[GsaSlimRecordVersion, Unset_Type]" = Unset,
     ) -> None:
         """GsaNotTheLatestVersionErrorDetail - a model defined in Swagger

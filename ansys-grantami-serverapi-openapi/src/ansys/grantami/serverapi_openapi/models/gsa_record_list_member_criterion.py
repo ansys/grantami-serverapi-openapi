@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -79,7 +80,7 @@ class GsaRecordListMemberCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType",
+        type: "GsaCriterionType" = GsaCriterionType.RECORDLISTMEMBER,
         record_list_identifiers: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordListMemberCriterion - a model defined in Swagger

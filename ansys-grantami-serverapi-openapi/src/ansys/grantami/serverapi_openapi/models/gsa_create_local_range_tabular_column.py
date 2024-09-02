@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_create_tabular_column import (  # noqa: F401
     GsaCreateTabularColumn,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_tabular_column_dto_type import (
+    GsaTabularColumnDtoType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -100,7 +103,7 @@ class GsaCreateLocalRangeTabularColumn(GsaCreateTabularColumn):
     def __init__(
         self,
         *,
-        column_type: "GsaTabularColumnDtoType",
+        column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.LOCALRANGE,
         name: "str",
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,

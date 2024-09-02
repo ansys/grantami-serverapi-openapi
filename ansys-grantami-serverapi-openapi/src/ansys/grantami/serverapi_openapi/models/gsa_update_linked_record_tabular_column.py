@@ -33,6 +33,9 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_tabular_column_dto_type import (
+    GsaTabularColumnDtoType,
+)
 from ansys.grantami.serverapi_openapi.models.gsa_update_tabular_column import (  # noqa: F401
     GsaUpdateTabularColumn,
 )
@@ -93,7 +96,7 @@ class GsaUpdateLinkedRecordTabularColumn(GsaUpdateTabularColumn):
     def __init__(
         self,
         *,
-        column_type: "GsaTabularColumnDtoType",
+        column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.LINKEDRECORD,
         guid: "Union[str, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
         roll_up_type: "Union[GsaTabularColumnRollUpType, Unset_Type]" = Unset,

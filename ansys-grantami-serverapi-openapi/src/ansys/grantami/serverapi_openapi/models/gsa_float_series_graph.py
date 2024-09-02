@@ -33,6 +33,8 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_functional_type import GsaFunctionalType
+from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
 from ansys.grantami.serverapi_openapi.models.gsa_series_graph import GsaSeriesGraph  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
@@ -90,8 +92,8 @@ class GsaFloatSeriesGraph(GsaSeriesGraph):
         self,
         *,
         constraint_parameters: "List[GsaSlimParameter]",
-        functional_type: "GsaFunctionalType",
-        graph_type: "GsaGraphType",
+        functional_type: "GsaFunctionalType" = GsaFunctionalType.FLOAT,
+        graph_type: "GsaGraphType" = GsaGraphType.SERIES,
         number_of_points: "int",
         series: "List[GsaFloatSeries]",
         x_axis_parameter: "GsaSlimParameter",

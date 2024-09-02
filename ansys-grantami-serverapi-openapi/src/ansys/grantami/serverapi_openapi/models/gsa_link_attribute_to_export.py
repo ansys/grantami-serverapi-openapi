@@ -110,7 +110,7 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
     def __init__(
         self,
         *,
-        attribute_type: "str",
+        attribute_type: "str" = "link",
         attributes: "Union[List[GsaAttributeToExport], None, Unset_Type]" = Unset,
         export_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,

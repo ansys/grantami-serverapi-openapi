@@ -82,7 +82,7 @@ class GsaNotVersionedErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "str" = "notVersioned",
     ) -> None:
         """GsaNotVersionedErrorDetail - a model defined in Swagger
 

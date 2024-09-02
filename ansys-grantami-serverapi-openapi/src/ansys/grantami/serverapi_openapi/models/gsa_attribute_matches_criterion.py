@@ -36,6 +36,10 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_criterion import (  # noqa: F401
     GsaAttributeCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_criterion_type import (
+    GsaAttributeCriterionType,
+)
+from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -91,8 +95,8 @@ class GsaAttributeMatchesCriterion(GsaAttributeCriterion):
     def __init__(
         self,
         *,
-        attribute_criterion_type: "GsaAttributeCriterionType",
-        type: "GsaCriterionType",
+        attribute_criterion_type: "GsaAttributeCriterionType" = GsaAttributeCriterionType.MATCHES,
+        type: "GsaCriterionType" = GsaCriterionType.ATTRIBUTE,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaDatumCriterion, Unset_Type]" = Unset,

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_sort_criterion import (  # noqa: F401
     GsaSortCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_sort_criterion_type import GsaSortCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -92,7 +93,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
     def __init__(
         self,
         *,
-        type: "GsaSortCriterionType",
+        type: "GsaSortCriterionType" = GsaSortCriterionType.ATTRIBUTE,
         attribute_type: "Union[GsaAttributeType, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,

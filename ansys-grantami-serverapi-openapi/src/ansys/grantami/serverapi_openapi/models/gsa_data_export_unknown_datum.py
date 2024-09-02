@@ -85,7 +85,7 @@ class GsaDataExportUnknownDatum(GsaDataExportDatum):
     def __init__(
         self,
         *,
-        not_applicable: "str",
+        not_applicable: "str" = "unknown",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,

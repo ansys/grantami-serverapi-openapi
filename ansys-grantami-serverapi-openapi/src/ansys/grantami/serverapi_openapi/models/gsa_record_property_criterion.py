@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -84,7 +85,7 @@ class GsaRecordPropertyCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType",
+        type: "GsaCriterionType" = GsaCriterionType.RECORDPROPERTY,
         _property: "Union[GsaSearchableRecordProperty, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaDatumCriterion, Unset_Type]" = Unset,
     ) -> None:

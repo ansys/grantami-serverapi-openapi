@@ -77,7 +77,7 @@ class GsaNotApplicableDatum(GsaDatum):
     def __init__(
         self,
         *,
-        not_applicable: "str",
+        not_applicable: "str" = "notApplicable",
     ) -> None:
         """GsaNotApplicableDatum - a model defined in Swagger
 

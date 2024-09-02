@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_criterion import (  # noqa: F401
     GsaAggregationCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -97,7 +98,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         self,
         *,
         attribute_aggregation_criterion_type: "GsaAttributeAggregationType",
-        type: "GsaAggregationType",
+        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         is_meta_attribute: "Union[bool, Unset_Type]" = Unset,
@@ -238,10 +239,17 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[cls.discriminator]).lower()  # type: ignore[index]
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
         return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
+        name_tokens = cls.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""

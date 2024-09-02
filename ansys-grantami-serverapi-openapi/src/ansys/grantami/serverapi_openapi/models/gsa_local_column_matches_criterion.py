@@ -33,8 +33,12 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
 from ansys.grantami.serverapi_openapi.models.gsa_local_column_criterion import (  # noqa: F401
     GsaLocalColumnCriterion,
+)
+from ansys.grantami.serverapi_openapi.models.gsa_local_column_criterion_type import (
+    GsaLocalColumnCriterionType,
 )
 
 from . import ModelBase, Unset, Unset_Type
@@ -90,8 +94,8 @@ class GsaLocalColumnMatchesCriterion(GsaLocalColumnCriterion):
         self,
         *,
         inner_criterion: "GsaDatumCriterion",
-        local_column_criterion_type: "GsaLocalColumnCriterionType",
-        type: "GsaCriterionType",
+        local_column_criterion_type: "GsaLocalColumnCriterionType" = GsaLocalColumnCriterionType.MATCHES,
+        type: "GsaCriterionType" = GsaCriterionType.LOCALCOLUMN,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:

@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_layout_section import (  # noqa: F401
     GsaLayoutSection,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_layout_section_detail_type import (
+    GsaLayoutSectionDetailType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -88,7 +91,7 @@ class GsaSlimLayoutSection(GsaLayoutSection):
         display_names: "Dict[str, str]",
         guid: "str",
         name: "str",
-        section_detail_type: "GsaLayoutSectionDetailType",
+        section_detail_type: "GsaLayoutSectionDetailType" = GsaLayoutSectionDetailType.SLIM,
     ) -> None:
         """GsaSlimLayoutSection - a model defined in Swagger
 

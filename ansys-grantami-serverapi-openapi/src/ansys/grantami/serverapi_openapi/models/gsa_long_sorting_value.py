@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_sorting_value import GsaSortingValue  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_sorting_value_type import GsaSortingValueType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -79,7 +80,7 @@ class GsaLongSortingValue(GsaSortingValue):
     def __init__(
         self,
         *,
-        type: "GsaSortingValueType",
+        type: "GsaSortingValueType" = GsaSortingValueType.LONG,
         value: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GsaLongSortingValue - a model defined in Swagger

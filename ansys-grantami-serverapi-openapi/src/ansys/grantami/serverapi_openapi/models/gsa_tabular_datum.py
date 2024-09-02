@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -88,8 +89,8 @@ class GsaTabularDatum(GsaApplicableDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaDatumType",
-        not_applicable: "str",
+        datum_type: "GsaDatumType" = GsaDatumType.TABULAR,
+        not_applicable: "str" = "applicable",
         rows: "List[GsaTabularDatumRow]",
         summary_row: "Union[GsaTabularDatumSummaryRow, Unset_Type]" = Unset,
     ) -> None:

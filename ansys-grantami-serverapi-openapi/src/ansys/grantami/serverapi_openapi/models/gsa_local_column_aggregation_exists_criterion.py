@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_local_column_aggregation_criterion import (  # noqa: F401
     GsaLocalColumnAggregationCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_local_column_aggregation_type import (
+    GsaLocalColumnAggregationType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -87,7 +90,7 @@ class GsaLocalColumnAggregationExistsCriterion(GsaLocalColumnAggregationCriterio
     def __init__(
         self,
         *,
-        local_column_aggregation_criterion_type: "GsaLocalColumnAggregationType",
+        local_column_aggregation_criterion_type: "GsaLocalColumnAggregationType" = GsaLocalColumnAggregationType.EXISTS,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaAggregationDatumExistsCriterion, Unset_Type]" = Unset,

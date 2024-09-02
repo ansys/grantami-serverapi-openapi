@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum import (  # noqa: F401
     GsaAggregationDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_type import (
+    GsaAggregationDatumType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -83,7 +86,7 @@ class GsaShortTextAggregation(GsaAggregationDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaAggregationDatumType",
+        datum_type: "GsaAggregationDatumType" = GsaAggregationDatumType.SHORTTEXT,
         terms: "Union[List[GsaTermWithCount], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaShortTextAggregation - a model defined in Swagger

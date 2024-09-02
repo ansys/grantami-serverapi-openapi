@@ -89,7 +89,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     def __init__(
         self,
         *,
-        type: "str",
+        type: "str" = "countRollup",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         attribute_identity: "Union[int, None, Unset_Type]" = Unset,
         count: "Union[int, Unset_Type]" = Unset,

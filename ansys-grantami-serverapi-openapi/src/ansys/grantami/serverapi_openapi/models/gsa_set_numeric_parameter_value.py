@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 from ansys.grantami.serverapi_openapi.models.gsa_set_parameter_value import (  # noqa: F401
     GsaSetParameterValue,
 )
@@ -81,7 +82,7 @@ class GsaSetNumericParameterValue(GsaSetParameterValue):
     def __init__(
         self,
         *,
-        parameter_type: "GsaParameterType",
+        parameter_type: "GsaParameterType" = GsaParameterType.NUMERIC,
         parameter_value: "float",
     ) -> None:
         """GsaSetNumericParameterValue - a model defined in Swagger

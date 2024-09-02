@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -81,7 +82,7 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType",
+        type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORIDENTITIES,
         ancestor_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:

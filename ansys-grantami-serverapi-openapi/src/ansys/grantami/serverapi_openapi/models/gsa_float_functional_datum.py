@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -106,12 +107,12 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaDatumType",
+        datum_type: "GsaDatumType" = GsaDatumType.FLOATFUNCTIONAL,
         estimated: "bool",
         graph_type: "GsaGraphType",
         is_range: "bool",
         log_scale_on_y_axis: "bool",
-        not_applicable: "str",
+        not_applicable: "str" = "applicable",
         parameter_settings: "List[GsaFunctionalParameterSetting]",
         show_as_table: "bool",
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
@@ -350,10 +351,17 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         data: ModelBase
             Object representing a subclass of this class
         """
-        discriminator_value = str(data[cls.discriminator]).lower()  # type: ignore[index]
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
         # The actual class name is not available in swagger-codegen,
         # so we have to extract it from the JSON reference
         return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
+        name_tokens = cls.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""

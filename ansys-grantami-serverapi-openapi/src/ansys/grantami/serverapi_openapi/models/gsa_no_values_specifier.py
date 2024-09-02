@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_value_specifier import (  # noqa: F401
     GsaValueSpecifier,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_value_specifier_type import GsaValueSpecifierType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -79,7 +80,7 @@ class GsaNoValuesSpecifier(GsaValueSpecifier):
     def __init__(
         self,
         *,
-        filter_on: "GsaValueSpecifierType",
+        filter_on: "GsaValueSpecifierType" = GsaValueSpecifierType.NONE,
     ) -> None:
         """GsaNoValuesSpecifier - a model defined in Swagger
 

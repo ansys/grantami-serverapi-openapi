@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_criterion import (  # noqa: F401
     GsaAggregationDatumCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_criterion_type import (
+    GsaAggregationDatumCriterionType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -81,7 +84,7 @@ class GsaPointHistogramAggregationDatumCriterion(GsaAggregationDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType",
+        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.POINTHISTOGRAM,
         maximum_number_of_buckets: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GsaPointHistogramAggregationDatumCriterion - a model defined in Swagger

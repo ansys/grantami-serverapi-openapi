@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion_type import GsaDatumCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -83,7 +84,7 @@ class GsaDiscreteRangeDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType",
+        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETERANGE,
         gte: "Union[int, None, Unset_Type]" = Unset,
         lte: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:

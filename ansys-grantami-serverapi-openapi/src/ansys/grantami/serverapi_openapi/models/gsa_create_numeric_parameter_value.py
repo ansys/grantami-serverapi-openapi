@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_create_parameter_value import (  # noqa: F401
     GsaCreateParameterValue,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_value_type import GsaParameterValueType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -85,7 +86,7 @@ class GsaCreateNumericParameterValue(GsaCreateParameterValue):
     def __init__(
         self,
         *,
-        type: "GsaParameterValueType",
+        type: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
         value: "float",
         guid: "Union[str, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,

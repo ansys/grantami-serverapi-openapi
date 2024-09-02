@@ -86,7 +86,7 @@ class GsaInvalidVersionStateErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "str" = "invalidVersionState",
         version_state: "Union[GsaVersionState, Unset_Type]" = Unset,
     ) -> None:
         """GsaInvalidVersionStateErrorDetail - a model defined in Swagger

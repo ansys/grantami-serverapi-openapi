@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_discrete_functional_attribute_parameter import (  # noqa: F401
     GsaDiscreteFunctionalAttributeParameter,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -86,7 +87,7 @@ class GsaDiscreteFunctionalAttributeDiscreteParameter(GsaDiscreteFunctionalAttri
         self,
         *,
         parameter: "GsaSlimNamedEntity",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_value: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteFunctionalAttributeDiscreteParameter - a model defined in Swagger

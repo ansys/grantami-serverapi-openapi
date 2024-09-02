@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 from ansys.grantami.serverapi_openapi.models.gsa_update_discrete_functional_attribute_parameter import (  # noqa: F401
     GsaUpdateDiscreteFunctionalAttributeParameter,
 )
@@ -86,7 +87,7 @@ class GsaUpdateDiscreteFunctionalAttributeNumericParameter(
         self,
         *,
         parameter_guid: "str",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_value: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUpdateDiscreteFunctionalAttributeNumericParameter - a model defined in Swagger

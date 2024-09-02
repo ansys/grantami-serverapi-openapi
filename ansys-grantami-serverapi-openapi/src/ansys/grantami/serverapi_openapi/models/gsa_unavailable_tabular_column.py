@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_tabular_column import (  # noqa: F401
     GsaTabularColumn,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_tabular_column_dto_type import (
+    GsaTabularColumnDtoType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -95,7 +98,7 @@ class GsaUnavailableTabularColumn(GsaTabularColumn):
     def __init__(
         self,
         *,
-        column_type: "GsaTabularColumnDtoType",
+        column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.UNAVAILABLE,
         display_names: "Dict[str, str]",
         guid: "str",
         name: "str",
