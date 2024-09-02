@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 from ansys.grantami.serverapi_openapi.models.gsa_update_parameter_content import (  # noqa: F401
     GsaUpdateParameterContent,
 )
@@ -89,7 +90,7 @@ class GsaUpdateDiscreteParameterContent(GsaUpdateParameterContent):
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.DISCRETE,
         parameter_range: "Union[GsaUpdateDiscreteRange, Unset_Type]" = Unset,
         parameter_value: "Union[GsaSlimEntity, Unset_Type]" = Unset,
     ) -> None:

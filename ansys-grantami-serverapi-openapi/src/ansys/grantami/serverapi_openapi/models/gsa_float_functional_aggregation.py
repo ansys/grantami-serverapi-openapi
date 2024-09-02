@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum import (  # noqa: F401
     GsaAggregationDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_type import (
+    GsaAggregationDatumType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -86,7 +89,7 @@ class GsaFloatFunctionalAggregation(GsaAggregationDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaAggregationDatumType",
+        datum_type: "GsaAggregationDatumType" = GsaAggregationDatumType.FLOATFUNCTIONALGRAPH,
         grid_graphs: "Union[GsaFloatFunctionalGridGraphAggregation, Unset_Type]" = Unset,
         series_graphs: "Union[GsaFloatFunctionalSeriesGraphAggregation, Unset_Type]" = Unset,
     ) -> None:

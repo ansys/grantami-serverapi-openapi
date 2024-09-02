@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation import GsaAggregation  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -81,7 +82,7 @@ class GsaFreeTextAggregation(GsaAggregation):
     def __init__(
         self,
         *,
-        type: "GsaAggregationType",
+        type: "GsaAggregationType" = GsaAggregationType.TEXT,
         guid: "Union[str, Unset_Type]" = Unset,
         terms: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:

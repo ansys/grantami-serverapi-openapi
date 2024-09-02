@@ -82,7 +82,7 @@ class GsaInvalidParentStateErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "str" = "invalidParentState",
     ) -> None:
         """GsaInvalidParentStateErrorDetail - a model defined in Swagger
 

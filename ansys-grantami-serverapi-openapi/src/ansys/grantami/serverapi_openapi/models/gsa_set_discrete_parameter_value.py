@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 from ansys.grantami.serverapi_openapi.models.gsa_set_parameter_value import (  # noqa: F401
     GsaSetParameterValue,
 )
@@ -83,7 +84,7 @@ class GsaSetDiscreteParameterValue(GsaSetParameterValue):
     def __init__(
         self,
         *,
-        parameter_type: "GsaParameterType",
+        parameter_type: "GsaParameterType" = GsaParameterType.DISCRETE,
         parameter_value: "GsaSlimEntity",
     ) -> None:
         """GsaSetDiscreteParameterValue - a model defined in Swagger

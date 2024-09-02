@@ -86,7 +86,7 @@ class GsaListBooleanCriterion(GsaListCriterion):
     def __init__(
         self,
         *,
-        type: "str",
+        type: "str" = "listBoolean",
         match_all: "Union[List[GsaListCriterion], None, Unset_Type]" = Unset,
         match_any: "Union[List[GsaListCriterion], None, Unset_Type]" = Unset,
     ) -> None:

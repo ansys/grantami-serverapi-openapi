@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_parameter_constraint import (  # noqa: F401
     GsaParameterConstraint,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_constraint_type import (
+    GsaParameterConstraintType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -85,7 +88,7 @@ class GsaDiscreteParameterValueConstraint(GsaParameterConstraint):
     def __init__(
         self,
         *,
-        type: "GsaParameterConstraintType",
+        type: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETEVALUE,
         _none: "Union[List[float], None, Unset_Type]" = Unset,
         any: "Union[List[float], None, Unset_Type]" = Unset,
         parameter: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,

@@ -103,7 +103,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
     def __init__(
         self,
         *,
-        type: "str",
+        type: "str" = "recordList",
         contains_records: "Union[List[str], None, Unset_Type]" = Unset,
         contains_records_in_databases: "Union[List[str], None, Unset_Type]" = Unset,
         contains_records_in_integration_schemas: "Union[List[str], None, Unset_Type]" = Unset,

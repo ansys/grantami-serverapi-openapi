@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_layout_item import GsaLayoutItem  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_layout_item_type import GsaLayoutItemType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -100,7 +101,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
         *,
         forwards: "bool",
         guid: "str",
-        item_type: "GsaLayoutItemType",
+        item_type: "GsaLayoutItemType" = GsaLayoutItemType.LINK,
         link_type: "GsaLayoutItemLinkType",
         name: "str",
         target_table: "str",

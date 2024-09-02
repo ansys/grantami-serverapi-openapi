@@ -33,6 +33,9 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_record_link_group_type import (
+    GsaRecordLinkGroupType,
+)
 from ansys.grantami.serverapi_openapi.models.gsa_update_record_link_group import (  # noqa: F401
     GsaUpdateRecordLinkGroup,
 )
@@ -94,7 +97,7 @@ class GsaUpdateDynamicRecordLinkGroup(GsaUpdateRecordLinkGroup):
     def __init__(
         self,
         *,
-        type: "GsaRecordLinkGroupType",
+        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.DYNAMIC,
         attribute_pairs: "Union[List[GsaCreateAttributeLinkPair], Unset_Type]" = Unset,
         forbid_orphans: "Union[bool, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_criterion import (  # noqa: F401
     GsaAggregationCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -92,7 +93,7 @@ class GsaFreeTextAggregationCriterion(GsaAggregationCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationType",
+        type: "GsaAggregationType" = GsaAggregationType.TEXT,
         attributes: "Union[GsaValueSpecifier, Unset_Type]" = Unset,
         criterion_guid: "Union[str, Unset_Type]" = Unset,
         local_columns: "Union[GsaValueSpecifier, Unset_Type]" = Unset,

@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_tabular_column import (  # noqa: F401
     GsaTabularColumn,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_tabular_column_dto_type import (
+    GsaTabularColumnDtoType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -102,7 +105,7 @@ class GsaLocalPointTabularColumn(GsaTabularColumn):
     def __init__(
         self,
         *,
-        column_type: "GsaTabularColumnDtoType",
+        column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.LOCALPOINT,
         default_threshold_type: "GsaAttributeThresholdType",
         display_names: "Dict[str, str]",
         guid: "str",

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item import (  # noqa: F401
     GsaNewLayoutItem,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item_type import GsaNewLayoutItemType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -94,7 +95,7 @@ class GsaNewLayoutAttributeItem(GsaNewLayoutItem):
         self,
         *,
         attribute_guid: "str",
-        item_type: "GsaNewLayoutItemType",
+        item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.ATTRIBUTE,
         guid: "Union[str, Unset_Type]" = Unset,
         meta_attributes: "Union[List[GsaNewLayoutAttributeItem], None, Unset_Type]" = Unset,
         read_only: "Union[bool, Unset_Type]" = Unset,

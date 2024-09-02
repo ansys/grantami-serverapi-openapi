@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -90,9 +91,9 @@ class GsaHyperlinkDatum(GsaApplicableDatum):
         self,
         *,
         address: "str",
-        datum_type: "GsaDatumType",
+        datum_type: "GsaDatumType" = GsaDatumType.HYPERLINK,
         description: "str",
-        not_applicable: "str",
+        not_applicable: "str" = "applicable",
         target: "GsaHyperlinkTarget",
     ) -> None:
         """GsaHyperlinkDatum - a model defined in Swagger

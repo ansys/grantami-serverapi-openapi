@@ -45,7 +45,8 @@ def test_get_real_child_model_method_exists(cls):
 @pytest.mark.parametrize("cls", POLYMORPHIC_MODELS.values())
 def test_get_real_child_model_returns_correct_class_name(cls):
     for value, sub_cls in cls.discriminator_value_class_map.items():
-        sub_cls_name = cls.get_real_child_model({cls.discriminator: value})
+        discriminator_property = cls._get_discriminator_field_name()
+        sub_cls_name = cls.get_real_child_model({discriminator_property: value})
         assert sub_cls_name == sub_cls.rsplit("/", 1)[-1]
 
 

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item import (  # noqa: F401
     GsaNewLayoutItem,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item_type import GsaNewLayoutItemType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -89,7 +90,7 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
         *,
         association_chain_links: "List[GsaNewLayoutAssociationChainLink]",
         association_chain_name: "str",
-        item_type: "GsaNewLayoutItemType",
+        item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.ASSOCIATIONCHAIN,
         guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaNewLayoutAssociationChainItem - a model defined in Swagger

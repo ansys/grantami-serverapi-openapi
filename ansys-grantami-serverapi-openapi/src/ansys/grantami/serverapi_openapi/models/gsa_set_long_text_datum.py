@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum import GsaSetDatum  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_set_datum_type import GsaSetDatumType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -82,7 +83,7 @@ class GsaSetLongTextDatum(GsaSetDatum):
         self,
         *,
         rich_text_value: "GsaRichTextValue",
-        set_datum_type: "GsaSetDatumType",
+        set_datum_type: "GsaSetDatumType" = GsaSetDatumType.LONGTEXT,
     ) -> None:
         """GsaSetLongTextDatum - a model defined in Swagger
 

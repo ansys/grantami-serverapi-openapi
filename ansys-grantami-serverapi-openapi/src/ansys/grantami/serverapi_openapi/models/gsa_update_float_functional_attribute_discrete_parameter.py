@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 from ansys.grantami.serverapi_openapi.models.gsa_update_float_functional_attribute_parameter import (  # noqa: F401
     GsaUpdateFloatFunctionalAttributeParameter,
 )
@@ -88,7 +89,7 @@ class GsaUpdateFloatFunctionalAttributeDiscreteParameter(
         self,
         *,
         parameter_guid: "str",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_value: "Union[GsaSlimEntity, Unset_Type]" = Unset,
     ) -> None:
         """GsaUpdateFloatFunctionalAttributeDiscreteParameter - a model defined in Swagger

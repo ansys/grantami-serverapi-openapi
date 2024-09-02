@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_datum_exists_criterion import (  # noqa: F401
     GsaDatumExistsCriterion,
 )
@@ -79,7 +80,7 @@ class GsaRangeDatumExistsCriterion(GsaDatumExistsCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.RANGE,
     ) -> None:
         """GsaRangeDatumExistsCriterion - a model defined in Swagger
 

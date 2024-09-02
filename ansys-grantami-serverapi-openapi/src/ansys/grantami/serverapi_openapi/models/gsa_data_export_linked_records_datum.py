@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_link_datum import (  # noqa: F401
     GsaDataExportLinkDatum,
 )
@@ -109,9 +110,9 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaAttributeType",
-        link_datum_type: "str",
-        not_applicable: "str",
+        datum_type: "GsaAttributeType" = GsaAttributeType.LINK,
+        link_datum_type: "str" = "linkGroup",
+        not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         export_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,

@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_create_parameter import (  # noqa: F401
     GsaCreateParameter,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -93,7 +94,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         *,
         default_parameter_value_index: "int",
         name: "str",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.DISCRETE,
         values: "List[GsaCreateDiscreteParameterValue]",
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,

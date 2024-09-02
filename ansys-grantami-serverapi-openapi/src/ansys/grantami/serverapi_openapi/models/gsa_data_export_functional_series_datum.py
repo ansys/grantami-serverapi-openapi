@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_float_functional_datum import (  # noqa: F401
     GsaDataExportFloatFunctionalDatum,
 )
@@ -107,9 +108,9 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
     def __init__(
         self,
         *,
-        datum_type: "GsaAttributeType",
-        graph_type: "str",
-        not_applicable: "str",
+        datum_type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
+        graph_type: "str" = "series",
+        not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         is_estimated: "Union[bool, Unset_Type]" = Unset,

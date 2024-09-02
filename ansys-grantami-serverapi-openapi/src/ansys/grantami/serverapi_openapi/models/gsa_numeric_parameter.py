@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_parameter import GsaParameter  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -109,7 +110,7 @@ class GsaNumericParameter(GsaParameter):
         is_restricted: "bool",
         name: "str",
         scale_type: "GsaParameterScaleType",
-        type: "GsaParameterType",
+        type: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "List[GsaNumericParameterValue]",
         help_path: "Union[str, None, Unset_Type]" = Unset,
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,

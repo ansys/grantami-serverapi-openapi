@@ -90,7 +90,7 @@ class GsaSimpleAttributeToExport(GsaAttributeToExport):
     def __init__(
         self,
         *,
-        attribute_type: "str",
+        attribute_type: "str" = "simple",
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         roll_up_type: "Union[GsaTabularColumnRollUpType, Unset_Type]" = Unset,

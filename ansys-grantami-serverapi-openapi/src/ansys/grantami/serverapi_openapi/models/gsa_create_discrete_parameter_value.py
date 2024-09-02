@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_create_parameter_value import (  # noqa: F401
     GsaCreateParameterValue,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_parameter_value_type import GsaParameterValueType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -84,7 +85,7 @@ class GsaCreateDiscreteParameterValue(GsaCreateParameterValue):
         self,
         *,
         name: "str",
-        type: "GsaParameterValueType",
+        type: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
         guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaCreateDiscreteParameterValue - a model defined in Swagger

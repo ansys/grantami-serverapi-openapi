@@ -36,6 +36,7 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
 )
+from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion_type import GsaDatumCriterionType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -107,7 +108,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType",
+        type: "GsaDatumCriterionType" = GsaDatumCriterionType.LINK,
         indirect_links: "Union[GsaIndirectLinks, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
         link_datum_type: "Union[GsaLinkAttributeType, Unset_Type]" = Unset,

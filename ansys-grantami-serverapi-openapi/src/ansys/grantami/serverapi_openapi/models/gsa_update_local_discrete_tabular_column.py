@@ -33,6 +33,9 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_tabular_column_dto_type import (
+    GsaTabularColumnDtoType,
+)
 from ansys.grantami.serverapi_openapi.models.gsa_update_tabular_column import (  # noqa: F401
     GsaUpdateTabularColumn,
 )
@@ -100,7 +103,7 @@ class GsaUpdateLocalDiscreteTabularColumn(GsaUpdateTabularColumn):
     def __init__(
         self,
         *,
-        column_type: "GsaTabularColumnDtoType",
+        column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.LOCALDISCRETE,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         discrete_type: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,

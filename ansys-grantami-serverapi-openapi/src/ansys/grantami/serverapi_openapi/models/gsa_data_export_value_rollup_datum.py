@@ -89,7 +89,7 @@ class GsaDataExportValueRollupDatum(GsaDataExportRollupDatum):
     def __init__(
         self,
         *,
-        type: "str",
+        type: "str" = "valueRollup",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         attribute_identity: "Union[int, None, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,

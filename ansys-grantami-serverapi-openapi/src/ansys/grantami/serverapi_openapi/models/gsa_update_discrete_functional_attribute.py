@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_update_attribute import (  # noqa: F401
     GsaUpdateAttribute,
 )
@@ -97,7 +98,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         attribute_parameters: "Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,

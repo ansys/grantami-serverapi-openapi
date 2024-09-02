@@ -33,6 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_create_attribute import (  # noqa: F401
     GsaCreateAttribute,
 )
@@ -103,7 +104,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.POINT,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         attribute_parameters: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,

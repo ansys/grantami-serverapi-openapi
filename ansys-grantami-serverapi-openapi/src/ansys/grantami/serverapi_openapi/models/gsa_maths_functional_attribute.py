@@ -34,6 +34,7 @@ import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute import GsaAttribute  # noqa: F401
+from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -132,7 +133,7 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         is_range: "bool",
         name: "str",
         table: "GsaSlimEntity",
-        type: "GsaAttributeType",
+        type: "GsaAttributeType" = GsaAttributeType.MATHSFUNCTIONAL,
         about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
