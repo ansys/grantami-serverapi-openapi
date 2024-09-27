@@ -74,7 +74,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "help_path": "str",
     }
@@ -114,7 +114,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.DISCRETE,
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -132,7 +132,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
         help_path: str, optional
         """

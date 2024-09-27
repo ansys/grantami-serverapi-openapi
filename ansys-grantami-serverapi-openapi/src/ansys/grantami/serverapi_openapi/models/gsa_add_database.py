@@ -65,13 +65,13 @@ class GsaAddDatabase(ModelBase):
         "database_key": "str",
         "initial_catalog": "str",
         "additional_sql_parameters": "str",
-        "database_version_guid": "str",
+        "is_read_only": "bool",
         "language": "str",
         "loading_order": "int",
-        "read_only": "bool",
         "sql_password": "str",
         "sql_user_name": "str",
         "use_integrated_security": "bool",
+        "version_guid": "str",
     }
 
     attribute_map: Dict[str, str] = {
@@ -79,13 +79,13 @@ class GsaAddDatabase(ModelBase):
         "database_key": "databaseKey",
         "initial_catalog": "initialCatalog",
         "additional_sql_parameters": "additionalSqlParameters",
-        "database_version_guid": "databaseVersionGuid",
+        "is_read_only": "isReadOnly",
         "language": "language",
         "loading_order": "loadingOrder",
-        "read_only": "readOnly",
         "sql_password": "sqlPassword",
         "sql_user_name": "sqlUserName",
         "use_integrated_security": "useIntegratedSecurity",
+        "version_guid": "versionGuid",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -99,13 +99,13 @@ class GsaAddDatabase(ModelBase):
         database_key: "str",
         initial_catalog: "str",
         additional_sql_parameters: "Union[str, None, Unset_Type]" = Unset,
-        database_version_guid: "Union[str, None, Unset_Type]" = Unset,
+        is_read_only: "Union[bool, None, Unset_Type]" = Unset,
         language: "Union[str, None, Unset_Type]" = Unset,
         loading_order: "Union[int, None, Unset_Type]" = Unset,
-        read_only: "Union[bool, None, Unset_Type]" = Unset,
         sql_password: "Union[str, None, Unset_Type]" = Unset,
         sql_user_name: "Union[str, None, Unset_Type]" = Unset,
         use_integrated_security: "Union[bool, None, Unset_Type]" = Unset,
+        version_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaAddDatabase - a model defined in Swagger
 
@@ -115,13 +115,13 @@ class GsaAddDatabase(ModelBase):
         database_key: str
         initial_catalog: str
         additional_sql_parameters: str, optional
-        database_version_guid: str, optional
+        is_read_only: bool, optional
         language: str, optional
         loading_order: int, optional
-        read_only: bool, optional
         sql_password: str, optional
         sql_user_name: str, optional
         use_integrated_security: bool, optional
+        version_guid: str, optional
         """
         self._database_key: str
         self._data_source: str
@@ -130,10 +130,10 @@ class GsaAddDatabase(ModelBase):
         self._sql_password: Union[str, None, Unset_Type] = Unset
         self._initial_catalog: str
         self._additional_sql_parameters: Union[str, None, Unset_Type] = Unset
-        self._read_only: Union[bool, None, Unset_Type] = Unset
+        self._is_read_only: Union[bool, None, Unset_Type] = Unset
         self._loading_order: Union[int, None, Unset_Type] = Unset
         self._language: Union[str, None, Unset_Type] = Unset
-        self._database_version_guid: Union[str, None, Unset_Type] = Unset
+        self._version_guid: Union[str, None, Unset_Type] = Unset
 
         self.database_key = database_key
         self.data_source = data_source
@@ -146,14 +146,14 @@ class GsaAddDatabase(ModelBase):
         self.initial_catalog = initial_catalog
         if additional_sql_parameters is not Unset:
             self.additional_sql_parameters = additional_sql_parameters
-        if read_only is not Unset:
-            self.read_only = read_only
+        if is_read_only is not Unset:
+            self.is_read_only = is_read_only
         if loading_order is not Unset:
             self.loading_order = loading_order
         if language is not Unset:
             self.language = language
-        if database_version_guid is not Unset:
-            self.database_version_guid = database_version_guid
+        if version_guid is not Unset:
+            self.version_guid = version_guid
 
     @property
     def database_key(self) -> "str":
@@ -342,28 +342,28 @@ class GsaAddDatabase(ModelBase):
         self._additional_sql_parameters = additional_sql_parameters
 
     @property
-    def read_only(self) -> "Union[bool, None, Unset_Type]":
-        """Gets the read_only of this GsaAddDatabase.
+    def is_read_only(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the is_read_only of this GsaAddDatabase.
         (Optional) True if the database should be set to read only after adding
 
         Returns
         -------
         Union[bool, None, Unset_Type]
-            The read_only of this GsaAddDatabase.
+            The is_read_only of this GsaAddDatabase.
         """
-        return self._read_only
+        return self._is_read_only
 
-    @read_only.setter
-    def read_only(self, read_only: "Union[bool, None, Unset_Type]") -> None:
-        """Sets the read_only of this GsaAddDatabase.
+    @is_read_only.setter
+    def is_read_only(self, is_read_only: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the is_read_only of this GsaAddDatabase.
         (Optional) True if the database should be set to read only after adding
 
         Parameters
         ----------
-        read_only: Union[bool, None, Unset_Type]
-            The read_only of this GsaAddDatabase.
+        is_read_only: Union[bool, None, Unset_Type]
+            The is_read_only of this GsaAddDatabase.
         """
-        self._read_only = read_only
+        self._is_read_only = is_read_only
 
     @property
     def loading_order(self) -> "Union[int, None, Unset_Type]":
@@ -414,28 +414,28 @@ class GsaAddDatabase(ModelBase):
         self._language = language
 
     @property
-    def database_version_guid(self) -> "Union[str, None, Unset_Type]":
-        """Gets the database_version_guid of this GsaAddDatabase.
+    def version_guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the version_guid of this GsaAddDatabase.
         (Optional) Overrides the database version guid stored in the database. This must be unique across all the loaded databases.
 
         Returns
         -------
         Union[str, None, Unset_Type]
-            The database_version_guid of this GsaAddDatabase.
+            The version_guid of this GsaAddDatabase.
         """
-        return self._database_version_guid
+        return self._version_guid
 
-    @database_version_guid.setter
-    def database_version_guid(self, database_version_guid: "Union[str, None, Unset_Type]") -> None:
-        """Sets the database_version_guid of this GsaAddDatabase.
+    @version_guid.setter
+    def version_guid(self, version_guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the version_guid of this GsaAddDatabase.
         (Optional) Overrides the database version guid stored in the database. This must be unique across all the loaded databases.
 
         Parameters
         ----------
-        database_version_guid: Union[str, None, Unset_Type]
-            The database_version_guid of this GsaAddDatabase.
+        version_guid: Union[str, None, Unset_Type]
+            The version_guid of this GsaAddDatabase.
         """
-        self._database_version_guid = database_version_guid
+        self._version_guid = version_guid
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

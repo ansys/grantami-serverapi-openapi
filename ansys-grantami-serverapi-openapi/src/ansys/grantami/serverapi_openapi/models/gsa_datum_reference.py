@@ -65,6 +65,7 @@ class GsaDatumReference(ModelBase):
         "database_key": "str",
         "record_history_identity": "int",
         "attribute_guid": "str",
+        "record_history_guid": "str",
     }
 
     attribute_map: Dict[str, str] = {
@@ -72,6 +73,7 @@ class GsaDatumReference(ModelBase):
         "database_key": "databaseKey",
         "record_history_identity": "recordHistoryIdentity",
         "attribute_guid": "attributeGuid",
+        "record_history_guid": "recordHistoryGuid",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -85,6 +87,7 @@ class GsaDatumReference(ModelBase):
         database_key: "str",
         record_history_identity: "int",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDatumReference - a model defined in Swagger
 
@@ -94,14 +97,18 @@ class GsaDatumReference(ModelBase):
         database_key: str
         record_history_identity: int
         attribute_guid: str, optional
+        record_history_guid: str, optional
         """
         self._database_key: str
         self._record_history_identity: int
+        self._record_history_guid: Union[str, None, Unset_Type] = Unset
         self._attribute_identity: int
         self._attribute_guid: Union[str, None, Unset_Type] = Unset
 
         self.database_key = database_key
         self.record_history_identity = record_history_identity
+        if record_history_guid is not Unset:
+            self.record_history_guid = record_history_guid
         self.attribute_identity = attribute_identity
         if attribute_guid is not Unset:
             self.attribute_guid = attribute_guid
@@ -161,6 +168,28 @@ class GsaDatumReference(ModelBase):
         if record_history_identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_history_identity', must not be 'Unset'")
         self._record_history_identity = record_history_identity
+
+    @property
+    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the record_history_guid of this GsaDatumReference.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The record_history_guid of this GsaDatumReference.
+        """
+        return self._record_history_guid
+
+    @record_history_guid.setter
+    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the record_history_guid of this GsaDatumReference.
+
+        Parameters
+        ----------
+        record_history_guid: Union[str, None, Unset_Type]
+            The record_history_guid of this GsaDatumReference.
+        """
+        self._record_history_guid = record_history_guid
 
     @property
     def attribute_identity(self) -> "int":

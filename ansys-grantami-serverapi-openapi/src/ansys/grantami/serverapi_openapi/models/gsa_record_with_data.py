@@ -64,6 +64,7 @@ class GsaRecordWithData(ModelBase):
         "data": "list[GsaDataExportDatum]",
         "database_key": "str",
         "properties": "list[GsaProperty]",
+        "record_history_guid": "str",
         "record_history_identity": "int",
     }
 
@@ -71,6 +72,7 @@ class GsaRecordWithData(ModelBase):
         "data": "data",
         "database_key": "databaseKey",
         "properties": "properties",
+        "record_history_guid": "recordHistoryGuid",
         "record_history_identity": "recordHistoryIdentity",
     }
 
@@ -87,6 +89,7 @@ class GsaRecordWithData(ModelBase):
         data: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
         properties: "Union[List[GsaProperty], None, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
         record_history_identity: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordWithData - a model defined in Swagger
@@ -96,10 +99,12 @@ class GsaRecordWithData(ModelBase):
         data: List[GsaDataExportDatum], optional
         database_key: str, optional
         properties: List[GsaProperty], optional
+        record_history_guid: str, optional
         record_history_identity: int, optional
         """
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._record_history_identity: Union[int, Unset_Type] = Unset
+        self._record_history_guid: Union[str, None, Unset_Type] = Unset
         self._data: Union[List[GsaDataExportDatum], None, Unset_Type] = Unset
         self._properties: Union[List[GsaProperty], None, Unset_Type] = Unset
 
@@ -107,6 +112,8 @@ class GsaRecordWithData(ModelBase):
             self.database_key = database_key
         if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
+        if record_history_guid is not Unset:
+            self.record_history_guid = record_history_guid
         if data is not Unset:
             self.data = data
         if properties is not Unset:
@@ -158,6 +165,28 @@ class GsaRecordWithData(ModelBase):
         if record_history_identity is None:
             raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
+
+    @property
+    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the record_history_guid of this GsaRecordWithData.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The record_history_guid of this GsaRecordWithData.
+        """
+        return self._record_history_guid
+
+    @record_history_guid.setter
+    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the record_history_guid of this GsaRecordWithData.
+
+        Parameters
+        ----------
+        record_history_guid: Union[str, None, Unset_Type]
+            The record_history_guid of this GsaRecordWithData.
+        """
+        self._record_history_guid = record_history_guid
 
     @property
     def data(self) -> "Union[List[GsaDataExportDatum], None, Unset_Type]":

@@ -44,6 +44,7 @@ class GsaCriterionType(Enum):
     """
     BOOLEAN = "boolean"
     TEXT = "text"
+    TEXTPREFIX = "textPrefix"
     RECORDLISTMEMBER = "recordListMember"
     RECORDPROPERTY = "recordProperty"
     REFERENCE = "reference"

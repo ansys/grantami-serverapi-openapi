@@ -90,7 +90,7 @@ class GsaMappingOfObjectIdentifier(ModelBase):
         link_source_type: "Union[GsaLinkSourceType, Unset_Type]" = Unset,
         parameter_mappings: "Union[List[GsaMappingOfObjectIdentifier], None, Unset_Type]" = Unset,
         source: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
-        target_guid: "Union[str, None, Unset_Type]" = Unset,
+        target_guid: "Union[str, Unset_Type]" = Unset,
         target_identity: "Union[int, Unset_Type]" = Unset,
     ) -> None:
         """GsaMappingOfObjectIdentifier - a model defined in Swagger
@@ -105,7 +105,7 @@ class GsaMappingOfObjectIdentifier(ModelBase):
         """
         self._source: Union[GsaObjectIdentifier, Unset_Type] = Unset
         self._target_identity: Union[int, Unset_Type] = Unset
-        self._target_guid: Union[str, None, Unset_Type] = Unset
+        self._target_guid: Union[str, Unset_Type] = Unset
         self._parameter_mappings: Union[List[GsaMappingOfObjectIdentifier], None, Unset_Type] = (
             Unset
         )
@@ -175,27 +175,30 @@ class GsaMappingOfObjectIdentifier(ModelBase):
         self._target_identity = target_identity
 
     @property
-    def target_guid(self) -> "Union[str, None, Unset_Type]":
+    def target_guid(self) -> "Union[str, Unset_Type]":
         """Gets the target_guid of this GsaMappingOfObjectIdentifier.
         The guid of the integration schema attribute
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The target_guid of this GsaMappingOfObjectIdentifier.
         """
         return self._target_guid
 
     @target_guid.setter
-    def target_guid(self, target_guid: "Union[str, None, Unset_Type]") -> None:
+    def target_guid(self, target_guid: "Union[str, Unset_Type]") -> None:
         """Sets the target_guid of this GsaMappingOfObjectIdentifier.
         The guid of the integration schema attribute
 
         Parameters
         ----------
-        target_guid: Union[str, None, Unset_Type]
+        target_guid: Union[str, Unset_Type]
             The target_guid of this GsaMappingOfObjectIdentifier.
         """
+        # Field is not nullable
+        if target_guid is None:
+            raise ValueError("Invalid value for 'target_guid', must not be 'None'")
         self._target_guid = target_guid
 
     @property

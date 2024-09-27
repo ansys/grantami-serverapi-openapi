@@ -105,6 +105,7 @@ class GsaUpdateLayout(ModelBase):
     @property
     def applicable_applications(self) -> "Union[List[str], None, Unset_Type]":
         """Gets the applicable_applications of this GsaUpdateLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Returns
         -------
@@ -118,6 +119,7 @@ class GsaUpdateLayout(ModelBase):
         self, applicable_applications: "Union[List[str], None, Unset_Type]"
     ) -> None:
         """Sets the applicable_applications of this GsaUpdateLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Parameters
         ----------

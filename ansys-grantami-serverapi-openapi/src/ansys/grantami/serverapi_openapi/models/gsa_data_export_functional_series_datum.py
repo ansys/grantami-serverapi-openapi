@@ -149,6 +149,7 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             is_estimated=is_estimated,
+            is_logarithmic=is_logarithmic,
             is_range=is_range,
             meta_datums=meta_datums,
             parameters=parameters,
@@ -156,13 +157,10 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
             x_axis_parameter=x_axis_parameter,
         )
         self._series: Union[List[GsaDataExportSeries], None, Unset_Type] = Unset
-        self._is_logarithmic: Union[bool, Unset_Type] = Unset
         self._show_as_table: Union[bool, Unset_Type] = Unset
 
         if series is not Unset:
             self.series = series
-        if is_logarithmic is not Unset:
-            self.is_logarithmic = is_logarithmic
         if show_as_table is not Unset:
             self.show_as_table = show_as_table
 
@@ -187,31 +185,6 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
             The series of this GsaDataExportFunctionalSeriesDatum.
         """
         self._series = series
-
-    @property
-    def is_logarithmic(self) -> "Union[bool, Unset_Type]":
-        """Gets the is_logarithmic of this GsaDataExportFunctionalSeriesDatum.
-
-        Returns
-        -------
-        Union[bool, Unset_Type]
-            The is_logarithmic of this GsaDataExportFunctionalSeriesDatum.
-        """
-        return self._is_logarithmic
-
-    @is_logarithmic.setter
-    def is_logarithmic(self, is_logarithmic: "Union[bool, Unset_Type]") -> None:
-        """Sets the is_logarithmic of this GsaDataExportFunctionalSeriesDatum.
-
-        Parameters
-        ----------
-        is_logarithmic: Union[bool, Unset_Type]
-            The is_logarithmic of this GsaDataExportFunctionalSeriesDatum.
-        """
-        # Field is not nullable
-        if is_logarithmic is None:
-            raise ValueError("Invalid value for 'is_logarithmic', must not be 'None'")
-        self._is_logarithmic = is_logarithmic
 
     @property
     def show_as_table(self) -> "Union[bool, Unset_Type]":

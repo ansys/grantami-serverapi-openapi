@@ -74,7 +74,7 @@ class GsaPointAttribute(GsaAttribute):
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "help_path": "str",
         "unit": "GsaSlimUnit",
@@ -117,7 +117,7 @@ class GsaPointAttribute(GsaAttribute):
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.POINT,
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
@@ -136,7 +136,7 @@ class GsaPointAttribute(GsaAttribute):
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
         help_path: str, optional
         unit: GsaSlimUnit, optional

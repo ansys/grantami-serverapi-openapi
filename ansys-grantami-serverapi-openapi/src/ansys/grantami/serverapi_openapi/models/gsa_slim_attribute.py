@@ -67,7 +67,7 @@ class GsaSlimAttribute(ModelBase):
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
     }
 
     attribute_map: Dict[str, str] = {
@@ -82,7 +82,7 @@ class GsaSlimAttribute(ModelBase):
 
     subtype_mapping: Dict[str, str] = {
         "type": "GsaAttributeType",
-        "aboutAttribute": "GsaSlimNamedEntity",
+        "aboutAttribute": "GsaSlimTypedAttribute",
         "table": "GsaSlimEntity",
     }
 
@@ -97,7 +97,7 @@ class GsaSlimAttribute(ModelBase):
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType",
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
     ) -> None:
         """GsaSlimAttribute - a model defined in Swagger
 
@@ -109,10 +109,10 @@ class GsaSlimAttribute(ModelBase):
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         """
         self._type: GsaAttributeType
-        self._about_attribute: Union[GsaSlimNamedEntity, Unset_Type] = Unset
+        self._about_attribute: Union[GsaSlimTypedAttribute, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: bool
         self._table: GsaSlimEntity
         self._display_names: Dict[str, str]
@@ -157,23 +157,23 @@ class GsaSlimAttribute(ModelBase):
         self._type = type
 
     @property
-    def about_attribute(self) -> "Union[GsaSlimNamedEntity, Unset_Type]":
+    def about_attribute(self) -> "Union[GsaSlimTypedAttribute, Unset_Type]":
         """Gets the about_attribute of this GsaSlimAttribute.
 
         Returns
         -------
-        Union[GsaSlimNamedEntity, Unset_Type]
+        Union[GsaSlimTypedAttribute, Unset_Type]
             The about_attribute of this GsaSlimAttribute.
         """
         return self._about_attribute
 
     @about_attribute.setter
-    def about_attribute(self, about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]") -> None:
+    def about_attribute(self, about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]") -> None:
         """Sets the about_attribute of this GsaSlimAttribute.
 
         Parameters
         ----------
-        about_attribute: Union[GsaSlimNamedEntity, Unset_Type]
+        about_attribute: Union[GsaSlimTypedAttribute, Unset_Type]
             The about_attribute of this GsaSlimAttribute.
         """
         # Field is not nullable

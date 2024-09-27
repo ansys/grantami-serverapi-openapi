@@ -70,20 +70,16 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
     swagger_types: Dict[str, str] = {
         "type": "GsaParameterConstraintType",
         "gte": "float",
-        "interpolation_type": "str",
         "lte": "float",
         "parameter": "GsaObjectIdentifier",
-        "scale_type": "str",
         "significant_figures": "int",
     }
 
     attribute_map: Dict[str, str] = {
         "type": "type",
         "gte": "gte",
-        "interpolation_type": "interpolationType",
         "lte": "lte",
         "parameter": "parameter",
-        "scale_type": "scaleType",
         "significant_figures": "significantFigures",
     }
 
@@ -96,10 +92,8 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
         *,
         type: "GsaParameterConstraintType" = GsaParameterConstraintType.NUMERIC,
         gte: "Union[float, None, Unset_Type]" = Unset,
-        interpolation_type: "Union[str, None, Unset_Type]" = Unset,
         lte: "Union[float, None, Unset_Type]" = Unset,
         parameter: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
-        scale_type: "Union[str, None, Unset_Type]" = Unset,
         significant_figures: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaNumericParameterConstraint - a model defined in Swagger
@@ -108,27 +102,19 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
         ----------
         type: GsaParameterConstraintType
         gte: float, optional
-        interpolation_type: str, optional
         lte: float, optional
         parameter: GsaObjectIdentifier, optional
-        scale_type: str, optional
         significant_figures: int, optional
         """
         super().__init__(type=type, parameter=parameter)
         self._gte: Union[float, None, Unset_Type] = Unset
         self._lte: Union[float, None, Unset_Type] = Unset
-        self._scale_type: Union[str, None, Unset_Type] = Unset
-        self._interpolation_type: Union[str, None, Unset_Type] = Unset
         self._significant_figures: Union[int, None, Unset_Type] = Unset
 
         if gte is not Unset:
             self.gte = gte
         if lte is not Unset:
             self.lte = lte
-        if scale_type is not Unset:
-            self.scale_type = scale_type
-        if interpolation_type is not Unset:
-            self.interpolation_type = interpolation_type
         if significant_figures is not Unset:
             self.significant_figures = significant_figures
 
@@ -175,54 +161,6 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
             The lte of this GsaNumericParameterConstraint.
         """
         self._lte = lte
-
-    @property
-    def scale_type(self) -> "Union[str, None, Unset_Type]":
-        """Gets the scale_type of this GsaNumericParameterConstraint.
-        Optionally, override the scale type of the parameter. Can be Linear or Log
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The scale_type of this GsaNumericParameterConstraint.
-        """
-        return self._scale_type
-
-    @scale_type.setter
-    def scale_type(self, scale_type: "Union[str, None, Unset_Type]") -> None:
-        """Sets the scale_type of this GsaNumericParameterConstraint.
-        Optionally, override the scale type of the parameter. Can be Linear or Log
-
-        Parameters
-        ----------
-        scale_type: Union[str, None, Unset_Type]
-            The scale_type of this GsaNumericParameterConstraint.
-        """
-        self._scale_type = scale_type
-
-    @property
-    def interpolation_type(self) -> "Union[str, None, Unset_Type]":
-        """Gets the interpolation_type of this GsaNumericParameterConstraint.
-        Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The interpolation_type of this GsaNumericParameterConstraint.
-        """
-        return self._interpolation_type
-
-    @interpolation_type.setter
-    def interpolation_type(self, interpolation_type: "Union[str, None, Unset_Type]") -> None:
-        """Sets the interpolation_type of this GsaNumericParameterConstraint.
-        Optionally, override the interpolation type of the parameter. Can be Auto, None, Linear or CubicSpline
-
-        Parameters
-        ----------
-        interpolation_type: Union[str, None, Unset_Type]
-            The interpolation_type of this GsaNumericParameterConstraint.
-        """
-        self._interpolation_type = interpolation_type
 
     @property
     def significant_figures(self) -> "Union[int, None, Unset_Type]":

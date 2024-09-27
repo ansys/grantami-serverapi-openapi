@@ -63,11 +63,13 @@ class GsaSlimUnit(ModelBase):
     swagger_types: Dict[str, str] = {
         "guid": "str",
         "symbol": "str",
+        "relative_symbol": "str",
     }
 
     attribute_map: Dict[str, str] = {
         "guid": "guid",
         "symbol": "symbol",
+        "relative_symbol": "relativeSymbol",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -79,6 +81,7 @@ class GsaSlimUnit(ModelBase):
         *,
         guid: "str",
         symbol: "str",
+        relative_symbol: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaSlimUnit - a model defined in Swagger
 
@@ -86,11 +89,15 @@ class GsaSlimUnit(ModelBase):
         ----------
         guid: str
         symbol: str
+        relative_symbol: str, optional
         """
         self._symbol: str
+        self._relative_symbol: Union[str, None, Unset_Type] = Unset
         self._guid: str
 
         self.symbol = symbol
+        if relative_symbol is not Unset:
+            self.relative_symbol = relative_symbol
         self.guid = guid
 
     @property
@@ -120,6 +127,28 @@ class GsaSlimUnit(ModelBase):
         if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
         self._symbol = symbol
+
+    @property
+    def relative_symbol(self) -> "Union[str, None, Unset_Type]":
+        """Gets the relative_symbol of this GsaSlimUnit.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The relative_symbol of this GsaSlimUnit.
+        """
+        return self._relative_symbol
+
+    @relative_symbol.setter
+    def relative_symbol(self, relative_symbol: "Union[str, None, Unset_Type]") -> None:
+        """Sets the relative_symbol of this GsaSlimUnit.
+
+        Parameters
+        ----------
+        relative_symbol: Union[str, None, Unset_Type]
+            The relative_symbol of this GsaSlimUnit.
+        """
+        self._relative_symbol = relative_symbol
 
     @property
     def guid(self) -> "str":

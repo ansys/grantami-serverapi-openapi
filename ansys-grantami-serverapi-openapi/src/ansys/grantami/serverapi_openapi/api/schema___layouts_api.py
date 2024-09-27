@@ -125,7 +125,7 @@ class SchemaLayoutsApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}/layouts/:applications",
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/layouts:applications",
             "GET",
             path_params,
             query_params,
@@ -485,6 +485,7 @@ class SchemaLayoutsApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
+        application: "Optional[str]" = None,
     ) -> "Union[GsaLayoutsInfo, None]":
         """Get all layouts for table
 
@@ -498,13 +499,20 @@ class SchemaLayoutsApi(ApiBase):
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+        application: str
+            Optionally filter by application that the layout is applicable to.
 
         Returns
         -------
         Union[GsaLayoutsInfo, None]
         """
         data = self._get_layouts_with_http_info(
-            database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
+            database_key,
+            table_guid,
+            mode,
+            x_ansys_vc_mode,
+            application,
+            _return_http_data_only=True,
         )
         return data  # type: ignore[no-any-return]
 
@@ -514,6 +522,7 @@ class SchemaLayoutsApi(ApiBase):
         table_guid: "str",
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
+        application: "Optional[str]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -521,6 +530,7 @@ class SchemaLayoutsApi(ApiBase):
             "table_guid",
             "mode",
             "x_ansys_vc_mode",
+            "application",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -554,6 +564,8 @@ class SchemaLayoutsApi(ApiBase):
         query_params: List[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
+        if "application" in params and application is not None:
+            query_params.append(("application", params["application"]))
 
         header_params: Dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:

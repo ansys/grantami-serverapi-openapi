@@ -84,6 +84,7 @@ class GsaSetDatum(ModelBase):
         "hyperLink".lower(): "#/components/schemas/GsaSetHyperlinkDatum",
         "point".lower(): "#/components/schemas/GsaSetPointDatum",
         "discrete".lower(): "#/components/schemas/GsaSetDiscreteDatum",
+        "tabular".lower(): "#/components/schemas/GsaSetTabularDatum",
     }
 
     discriminator: Optional[str] = "setDatumType"

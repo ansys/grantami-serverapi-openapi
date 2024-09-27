@@ -69,11 +69,11 @@ class GsaUpdateDatabase(ModelBase):
         "database_key": "str",
         "guid": "str",
         "initial_catalog": "str",
+        "is_read_only": "bool",
         "language": "str",
         "loading_order": "int",
         "name": "str",
         "notes": "str",
-        "read_only": "bool",
         "sql_password": "str",
         "sql_user_name": "str",
         "use_integrated_security": "bool",
@@ -89,11 +89,11 @@ class GsaUpdateDatabase(ModelBase):
         "database_key": "databaseKey",
         "guid": "guid",
         "initial_catalog": "initialCatalog",
+        "is_read_only": "isReadOnly",
         "language": "language",
         "loading_order": "loadingOrder",
         "name": "name",
         "notes": "notes",
-        "read_only": "readOnly",
         "sql_password": "sqlPassword",
         "sql_user_name": "sqlUserName",
         "use_integrated_security": "useIntegratedSecurity",
@@ -115,11 +115,11 @@ class GsaUpdateDatabase(ModelBase):
         database_key: "Union[str, None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         initial_catalog: "Union[str, None, Unset_Type]" = Unset,
+        is_read_only: "Union[bool, Unset_Type]" = Unset,
         language: "Union[str, None, Unset_Type]" = Unset,
         loading_order: "Union[int, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
         notes: "Union[str, None, Unset_Type]" = Unset,
-        read_only: "Union[bool, Unset_Type]" = Unset,
         sql_password: "Union[str, None, Unset_Type]" = Unset,
         sql_user_name: "Union[str, None, Unset_Type]" = Unset,
         use_integrated_security: "Union[bool, None, Unset_Type]" = Unset,
@@ -137,11 +137,11 @@ class GsaUpdateDatabase(ModelBase):
         database_key: str, optional
         guid: str, optional
         initial_catalog: str, optional
+        is_read_only: bool, optional
         language: str, optional
         loading_order: int, optional
         name: str, optional
         notes: str, optional
-        read_only: bool, optional
         sql_password: str, optional
         sql_user_name: str, optional
         use_integrated_security: bool, optional
@@ -154,7 +154,7 @@ class GsaUpdateDatabase(ModelBase):
         self._version_guid: Union[str, Unset_Type] = Unset
         self._guid: Union[str, Unset_Type] = Unset
         self._name: Union[str, Unset_Type] = Unset
-        self._read_only: Union[bool, Unset_Type] = Unset
+        self._is_read_only: Union[bool, Unset_Type] = Unset
         self._language: Union[str, None, Unset_Type] = Unset
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._data_source: Union[str, None, Unset_Type] = Unset
@@ -179,8 +179,8 @@ class GsaUpdateDatabase(ModelBase):
             self.guid = guid
         if name is not Unset:
             self.name = name
-        if read_only is not Unset:
-            self.read_only = read_only
+        if is_read_only is not Unset:
+            self.is_read_only = is_read_only
         if language is not Unset:
             self.language = language
         if database_key is not Unset:
@@ -378,31 +378,31 @@ class GsaUpdateDatabase(ModelBase):
         self._name = name
 
     @property
-    def read_only(self) -> "Union[bool, Unset_Type]":
-        """Gets the read_only of this GsaUpdateDatabase.
+    def is_read_only(self) -> "Union[bool, Unset_Type]":
+        """Gets the is_read_only of this GsaUpdateDatabase.
         True if the database should be set to read only. Can only be edited by a system administrator
 
         Returns
         -------
         Union[bool, Unset_Type]
-            The read_only of this GsaUpdateDatabase.
+            The is_read_only of this GsaUpdateDatabase.
         """
-        return self._read_only
+        return self._is_read_only
 
-    @read_only.setter
-    def read_only(self, read_only: "Union[bool, Unset_Type]") -> None:
-        """Sets the read_only of this GsaUpdateDatabase.
+    @is_read_only.setter
+    def is_read_only(self, is_read_only: "Union[bool, Unset_Type]") -> None:
+        """Sets the is_read_only of this GsaUpdateDatabase.
         True if the database should be set to read only. Can only be edited by a system administrator
 
         Parameters
         ----------
-        read_only: Union[bool, Unset_Type]
-            The read_only of this GsaUpdateDatabase.
+        is_read_only: Union[bool, Unset_Type]
+            The is_read_only of this GsaUpdateDatabase.
         """
         # Field is not nullable
-        if read_only is None:
-            raise ValueError("Invalid value for 'read_only', must not be 'None'")
-        self._read_only = read_only
+        if is_read_only is None:
+            raise ValueError("Invalid value for 'is_read_only', must not be 'None'")
+        self._is_read_only = is_read_only
 
     @property
     def language(self) -> "Union[str, None, Unset_Type]":
