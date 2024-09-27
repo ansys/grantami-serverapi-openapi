@@ -569,6 +569,7 @@ class ListPermissionsApi(ApiBase):
             400: None,
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(

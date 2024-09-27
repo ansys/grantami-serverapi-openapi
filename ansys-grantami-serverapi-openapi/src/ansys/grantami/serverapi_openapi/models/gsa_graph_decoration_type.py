@@ -44,4 +44,4 @@ class GsaGraphDecorationType(Enum):
     """
     LINESONLY = "linesOnly"
     MARKERSONLY = "markersOnly"
-    BOTH = "both"
+    LINESANDMARKERS = "linesAndMarkers"

@@ -67,15 +67,15 @@ class GsaDiscreteParameterContent(GsaParameterContent):
     """
     swagger_types: Dict[str, str] = {
         "parameter": "GsaSlimNamedEntity",
-        "parameter_range": "GsaDiscreteRange",
         "type": "GsaParameterType",
+        "parameter_range": "GsaDiscreteRange",
         "parameter_value": "GsaSlimNamedEntity",
     }
 
     attribute_map: Dict[str, str] = {
         "parameter": "parameter",
-        "parameter_range": "parameterRange",
         "type": "type",
+        "parameter_range": "parameterRange",
         "parameter_value": "parameterValue",
     }
 
@@ -90,8 +90,8 @@ class GsaDiscreteParameterContent(GsaParameterContent):
         self,
         *,
         parameter: "GsaSlimNamedEntity",
-        parameter_range: "GsaDiscreteRange",
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        parameter_range: "Union[GsaDiscreteRange, Unset_Type]" = Unset,
         parameter_value: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteParameterContent - a model defined in Swagger
@@ -99,17 +99,18 @@ class GsaDiscreteParameterContent(GsaParameterContent):
         Parameters
         ----------
         parameter: GsaSlimNamedEntity
-        parameter_range: GsaDiscreteRange
         type: GsaParameterType
+        parameter_range: GsaDiscreteRange, optional
         parameter_value: GsaSlimNamedEntity, optional
         """
         super().__init__(parameter=parameter, type=type)
         self._parameter_value: Union[GsaSlimNamedEntity, Unset_Type] = Unset
-        self._parameter_range: GsaDiscreteRange
+        self._parameter_range: Union[GsaDiscreteRange, Unset_Type] = Unset
 
         if parameter_value is not Unset:
             self.parameter_value = parameter_value
-        self.parameter_range = parameter_range
+        if parameter_range is not Unset:
+            self.parameter_range = parameter_range
 
     @property
     def parameter_value(self) -> "Union[GsaSlimNamedEntity, Unset_Type]":
@@ -137,31 +138,28 @@ class GsaDiscreteParameterContent(GsaParameterContent):
         self._parameter_value = parameter_value
 
     @property
-    def parameter_range(self) -> "GsaDiscreteRange":
+    def parameter_range(self) -> "Union[GsaDiscreteRange, Unset_Type]":
         """Gets the parameter_range of this GsaDiscreteParameterContent.
 
         Returns
         -------
-        GsaDiscreteRange
+        Union[GsaDiscreteRange, Unset_Type]
             The parameter_range of this GsaDiscreteParameterContent.
         """
         return self._parameter_range
 
     @parameter_range.setter
-    def parameter_range(self, parameter_range: "GsaDiscreteRange") -> None:
+    def parameter_range(self, parameter_range: "Union[GsaDiscreteRange, Unset_Type]") -> None:
         """Sets the parameter_range of this GsaDiscreteParameterContent.
 
         Parameters
         ----------
-        parameter_range: GsaDiscreteRange
+        parameter_range: Union[GsaDiscreteRange, Unset_Type]
             The parameter_range of this GsaDiscreteParameterContent.
         """
         # Field is not nullable
         if parameter_range is None:
             raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
-        # Field is required
-        if parameter_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'parameter_range', must not be 'Unset'")
         self._parameter_range = parameter_range
 
     @classmethod

@@ -73,7 +73,7 @@ class GsaShortTextAttribute(GsaAttribute):
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "data_rule": "GsaSlimNamedEntity",
         "help_path": "str",
@@ -113,7 +113,7 @@ class GsaShortTextAttribute(GsaAttribute):
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         data_rule: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -131,7 +131,7 @@ class GsaShortTextAttribute(GsaAttribute):
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
         data_rule: GsaSlimNamedEntity, optional
         help_path: str, optional

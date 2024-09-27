@@ -68,6 +68,8 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         "constraint_parameters": "list[GsaSlimParameter]",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
+        "number_of_points": "int",
+        "series": "list[GsaDiscreteSeries]",
         "x_axis_parameter": "GsaSlimParameter",
     }
 
@@ -75,10 +77,14 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         "constraint_parameters": "constraintParameters",
         "functional_type": "functionalType",
         "graph_type": "graphType",
+        "number_of_points": "numberOfPoints",
+        "series": "series",
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: Dict[str, str] = {
+        "series": "GsaDiscreteSeries",
+    }
 
     discriminator: Optional[str] = None
 
@@ -88,6 +94,8 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         constraint_parameters: "List[GsaSlimParameter]",
         functional_type: "GsaFunctionalType" = GsaFunctionalType.DISCRETE,
         graph_type: "GsaGraphType" = GsaGraphType.SERIES,
+        number_of_points: "int",
+        series: "List[GsaDiscreteSeries]",
         x_axis_parameter: "GsaSlimParameter",
     ) -> None:
         """GsaDiscreteSeriesGraph - a model defined in Swagger
@@ -97,14 +105,48 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         constraint_parameters: List[GsaSlimParameter]
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
+        number_of_points: int
+        series: List[GsaDiscreteSeries]
         x_axis_parameter: GsaSlimParameter
         """
         super().__init__(
             constraint_parameters=constraint_parameters,
             functional_type=functional_type,
             graph_type=graph_type,
+            number_of_points=number_of_points,
             x_axis_parameter=x_axis_parameter,
         )
+        self._series: List[GsaDiscreteSeries]
+
+        self.series = series
+
+    @property
+    def series(self) -> "List[GsaDiscreteSeries]":
+        """Gets the series of this GsaDiscreteSeriesGraph.
+
+        Returns
+        -------
+        List[GsaDiscreteSeries]
+            The series of this GsaDiscreteSeriesGraph.
+        """
+        return self._series
+
+    @series.setter
+    def series(self, series: "List[GsaDiscreteSeries]") -> None:
+        """Sets the series of this GsaDiscreteSeriesGraph.
+
+        Parameters
+        ----------
+        series: List[GsaDiscreteSeries]
+            The series of this GsaDiscreteSeriesGraph.
+        """
+        # Field is not nullable
+        if series is None:
+            raise ValueError("Invalid value for 'series', must not be 'None'")
+        # Field is required
+        if series is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'series', must not be 'Unset'")
+        self._series = series
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

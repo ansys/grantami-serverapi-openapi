@@ -68,12 +68,14 @@ class GsaNewLayoutRecordLinkItem(GsaNewLayoutItem):
     swagger_types: Dict[str, str] = {
         "item_type": "GsaNewLayoutItemType",
         "link_group_guid": "str",
+        "forwards": "bool",
         "guid": "str",
     }
 
     attribute_map: Dict[str, str] = {
         "item_type": "itemType",
         "link_group_guid": "linkGroupGuid",
+        "forwards": "forwards",
         "guid": "guid",
     }
 
@@ -86,6 +88,7 @@ class GsaNewLayoutRecordLinkItem(GsaNewLayoutItem):
         *,
         item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.RECORDLINK,
         link_group_guid: "str",
+        forwards: "Union[bool, None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaNewLayoutRecordLinkItem - a model defined in Swagger
@@ -94,12 +97,40 @@ class GsaNewLayoutRecordLinkItem(GsaNewLayoutItem):
         ----------
         item_type: GsaNewLayoutItemType
         link_group_guid: str
+        forwards: bool, optional
         guid: str, optional
         """
         super().__init__(item_type=item_type, guid=guid)
+        self._forwards: Union[bool, None, Unset_Type] = Unset
         self._link_group_guid: str
 
+        if forwards is not Unset:
+            self.forwards = forwards
         self.link_group_guid = link_group_guid
+
+    @property
+    def forwards(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the forwards of this GsaNewLayoutRecordLinkItem.
+        true if the record link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).  Optional - only required to determine the direction for a link group when the source and target table are the same.
+
+        Returns
+        -------
+        Union[bool, None, Unset_Type]
+            The forwards of this GsaNewLayoutRecordLinkItem.
+        """
+        return self._forwards
+
+    @forwards.setter
+    def forwards(self, forwards: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the forwards of this GsaNewLayoutRecordLinkItem.
+        true if the record link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).  Optional - only required to determine the direction for a link group when the source and target table are the same.
+
+        Parameters
+        ----------
+        forwards: Union[bool, None, Unset_Type]
+            The forwards of this GsaNewLayoutRecordLinkItem.
+        """
+        self._forwards = forwards
 
     @property
     def link_group_guid(self) -> "str":

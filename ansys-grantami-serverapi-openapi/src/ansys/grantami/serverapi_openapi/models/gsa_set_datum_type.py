@@ -51,3 +51,4 @@ class GsaSetDatumType(Enum):
     LONGTEXT = "longText"
     POINT = "point"
     DISCRETE = "discrete"
+    TABULAR = "tabular"

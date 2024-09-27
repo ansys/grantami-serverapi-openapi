@@ -76,7 +76,7 @@ class GsaTabularAttribute(GsaAttribute):
         "table": "GsaSlimEntity",
         "tabular_columns": "list[GsaTabularColumn]",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "help_path": "str",
         "target": "GsaTabularAttributeTarget",
@@ -123,7 +123,7 @@ class GsaTabularAttribute(GsaAttribute):
         table: "GsaSlimEntity",
         tabular_columns: "List[GsaTabularColumn]",
         type: "GsaAttributeType" = GsaAttributeType.LINK,
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         target: "Union[GsaTabularAttributeTarget, Unset_Type]" = Unset,
@@ -144,7 +144,7 @@ class GsaTabularAttribute(GsaAttribute):
         table: GsaSlimEntity
         tabular_columns: List[GsaTabularColumn]
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
         help_path: str, optional
         target: GsaTabularAttributeTarget, optional

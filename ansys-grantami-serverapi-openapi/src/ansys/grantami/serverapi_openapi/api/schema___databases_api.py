@@ -593,6 +593,7 @@ class SchemaDatabasesApi(ApiBase):
         database_key: str
         body: GsaUpdateDatabase
         allow_reload: bool
+            This must be set to true if any of the following properties are patched:              DatabaseKey, DataSource, UseIntegratedSecurity, SqlUserName, SqlPassword, InitialCatalog, Language, Guid.              The database will reload after the changes have been applied.
 
         Returns
         -------

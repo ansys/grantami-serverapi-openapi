@@ -48,10 +48,806 @@ class DataApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def append_values_for_discrete_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendDiscreteValues]" = None,
+    ) -> "Union[GsaDiscreteDatum, None]":
+        """Append values to the multi-valued discrete datum for a given discrete attribute and record history in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        body: GsaAppendDiscreteValues
+
+        Returns
+        -------
+        Union[GsaDiscreteDatum, None]
+        """
+        data = self._append_values_for_discrete_attribute_with_http_info(
+            database_key, record_history_guid, attribute_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _append_values_for_discrete_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendDiscreteValues]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method append_values_for_discrete_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'append_values_for_discrete_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'append_values_for_discrete_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'append_values_for_discrete_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaDiscreteDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/discrete:append-values",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def append_values_for_discrete_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendDiscreteValues]" = None,
+    ) -> "Union[GsaDiscreteDatum, None]":
+        """Append values to the multi-valued discrete datum for a given discrete attribute and record history in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        body: GsaAppendDiscreteValues
+
+        Returns
+        -------
+        Union[GsaDiscreteDatum, None]
+        """
+        data = self._append_values_for_discrete_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            body,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _append_values_for_discrete_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendDiscreteValues]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method append_values_for_discrete_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'append_values_for_discrete_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'append_values_for_discrete_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'append_values_for_discrete_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'append_values_for_discrete_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaDiscreteDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/discrete:append-values",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def append_values_for_point_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendPointValues]" = None,
+    ) -> "Union[GsaPointDatum, None]":
+        """Append values to the multi-valued point datum for a given point attribute and record history in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        body: GsaAppendPointValues
+
+        Returns
+        -------
+        Union[GsaPointDatum, None]
+        """
+        data = self._append_values_for_point_attribute_with_http_info(
+            database_key, record_history_guid, attribute_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _append_values_for_point_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendPointValues]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method append_values_for_point_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'append_values_for_point_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'append_values_for_point_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'append_values_for_point_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPointDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/point:append-values",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def append_values_for_point_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendPointValues]" = None,
+    ) -> "Union[GsaPointDatum, None]":
+        """Append values to the multi-valued point datum for a given point attribute and record history in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        body: GsaAppendPointValues
+
+        Returns
+        -------
+        Union[GsaPointDatum, None]
+        """
+        data = self._append_values_for_point_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            body,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _append_values_for_point_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        body: "Optional[GsaAppendPointValues]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method append_values_for_point_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'append_values_for_point_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'append_values_for_point_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'append_values_for_point_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'append_values_for_point_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPointDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/point:append-values",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_cell_datum_for_tabular_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+    ) -> "None":
+        """Deletes a cell datum for a given record history, tabular attribute, row and column in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_cell_datum_for_tabular_attribute_with_http_info(
+            database_key,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_cell_datum_for_tabular_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_cell_datum_for_tabular_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'delete_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'delete_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'delete_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'delete_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'delete_cell_datum_for_tabular_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_cell_datum_for_tabular_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+    ) -> "None":
+        """Deletes a cell datum for a given record history, tabular attribute, row and column in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_cell_datum_for_tabular_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_cell_datum_for_tabular_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_cell_datum_for_tabular_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def delete_datum_for_attribute(
         self, *, database_key: "str", record_history_guid: "str", attribute_guid: "str"
     ) -> "None":
-        """Deletes a datum for a given attribute and record history in a given database.
+        """Deletes a datum for a given attribute and record history, along with all meta attributes datums associated with it, in a given database.
 
         This method makes a synchronous HTTP request.
 
@@ -127,6 +923,7 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: None,
+            403: None,
             404: None,
         }
 
@@ -154,7 +951,7 @@ class DataApi(ApiBase):
         record_history_guid: "str",
         attribute_guid: "str",
     ) -> "None":
-        """Deletes a datum for a given attribute and record history in a given database and table.
+        """Deletes a datum for a given attribute and record history, along with all meta attributes datums associated with it, in a given database and table.
 
         This method makes a synchronous HTTP request.
 
@@ -248,6 +1045,7 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: None,
+            403: None,
             404: None,
         }
 
@@ -391,8 +1189,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -547,8 +1345,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -703,8 +1501,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -871,8 +1669,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -1039,8 +1837,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -1219,8 +2017,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -1399,8 +2197,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -1591,8 +2389,8 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "file",
-            404: None,
             400: None,
+            404: None,
         }
 
         return self.api_client.call_api(
@@ -2875,6 +3673,972 @@ class DataApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def set_cell_datum_for_tabular_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        body: "Optional[GsaSetDatum]" = None,
+    ) -> "Union[GsaDatum, None]":
+        """Create or edit a cell datum for a given record history, tabular attribute, row and column in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        body: GsaSetDatum
+
+        Returns
+        -------
+        Union[GsaDatum, None]
+        """
+        data = self._set_cell_datum_for_tabular_attribute_with_http_info(
+            database_key,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            body,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_datum_for_tabular_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        body: "Optional[GsaSetDatum]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_datum_for_tabular_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_datum_for_tabular_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_cell_datum_for_tabular_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        body: "Optional[GsaSetDatum]" = None,
+    ) -> "Union[GsaDatum, None]":
+        """Create or edit a cell datum for a given record history, tabular attribute, row and column in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        body: GsaSetDatum
+
+        Returns
+        -------
+        Union[GsaDatum, None]
+        """
+        data = self._set_cell_datum_for_tabular_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            body,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_datum_for_tabular_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        body: "Optional[GsaSetDatum]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_datum_for_tabular_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_cell_file_datum_for_tabular_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+    ) -> "Union[GsaFileDatum, None]":
+        """Create or edit a cell file datum for a given record history, tabular attribute, row and column in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        file: Union[BinaryIO, pathlib.Path]
+        description: str
+        target: str
+        allow_index: bool
+
+        Returns
+        -------
+        Union[GsaFileDatum, None]
+        """
+        data = self._set_cell_file_datum_for_tabular_attribute_with_http_info(
+            database_key,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            file,
+            description,
+            target,
+            allow_index,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_file_datum_for_tabular_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "file",
+            "description",
+            "target",
+            "allow_index",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_file_datum_for_tabular_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_file_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_file_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_file_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_file_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_file_datum_for_tabular_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "file" in params and file is not None:
+            local_var_files["File"] = params["file"]
+        if "description" in params and description is not None:
+            form_params.append(("Description", params["description"]))
+        if "target" in params and target is not None:
+            form_params.append(("Target", params["target"]))
+        if "allow_index" in params and allow_index is not None:
+            form_params.append(("AllowIndex", params["allow_index"]))
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaFileDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}:import-file",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_cell_file_datum_for_tabular_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+    ) -> "Union[GsaFileDatum, None]":
+        """Create or edit a cell file datum for a given record history, tabular attribute, row and column in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        file: Union[BinaryIO, pathlib.Path]
+        description: str
+        target: str
+        allow_index: bool
+
+        Returns
+        -------
+        Union[GsaFileDatum, None]
+        """
+        data = self._set_cell_file_datum_for_tabular_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            file,
+            description,
+            target,
+            allow_index,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_file_datum_for_tabular_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "file",
+            "description",
+            "target",
+            "allow_index",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_file_datum_for_tabular_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "file" in params and file is not None:
+            local_var_files["File"] = params["file"]
+        if "description" in params and description is not None:
+            form_params.append(("Description", params["description"]))
+        if "target" in params and target is not None:
+            form_params.append(("Target", params["target"]))
+        if "allow_index" in params and allow_index is not None:
+            form_params.append(("AllowIndex", params["allow_index"]))
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaFileDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}:import-file",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_cell_picture_datum_for_tabular_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+    ) -> "Union[GsaPictureDatum, None]":
+        """Create or edit a cell picture datum for a given record history, tabular attribute, row and column in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        picture: Union[BinaryIO, pathlib.Path]
+
+        Returns
+        -------
+        Union[GsaPictureDatum, None]
+        """
+        data = self._set_cell_picture_datum_for_tabular_attribute_with_http_info(
+            database_key,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            picture,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_picture_datum_for_tabular_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "picture",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_picture_datum_for_tabular_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_picture_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_picture_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_picture_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_picture_datum_for_tabular_attribute'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_picture_datum_for_tabular_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "picture" in params and picture is not None:
+            local_var_files["Picture"] = params["picture"]
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPictureDatum",
+            400: None,
+            403: None,
+            404: None,
+            415: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}:import-picture",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_cell_picture_datum_for_tabular_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+    ) -> "Union[GsaPictureDatum, None]":
+        """Create or edit a cell picture datum for a given record history, tabular attribute, row and column in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        row_guid: str
+        column_guid: str
+        picture: Union[BinaryIO, pathlib.Path]
+
+        Returns
+        -------
+        Union[GsaPictureDatum, None]
+        """
+        data = self._set_cell_picture_datum_for_tabular_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            row_guid,
+            column_guid,
+            picture,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_cell_picture_datum_for_tabular_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        row_guid: "str",
+        column_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "row_guid",
+            "column_guid",
+            "picture",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_cell_picture_datum_for_tabular_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "row_guid" is set
+        if "row_guid" not in params or params["row_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'row_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+        # verify the required parameter "column_guid" is set
+        if "column_guid" not in params or params["column_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'column_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+        if "row_guid" in params and row_guid is not None:
+            path_params["row-guid"] = params["row_guid"]
+        if "column_guid" in params and column_guid is not None:
+            path_params["column-guid"] = params["column_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "picture" in params and picture is not None:
+            local_var_files["Picture"] = params["picture"]
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPictureDatum",
+            400: None,
+            403: None,
+            404: None,
+            415: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}/rows/{row-guid}/columns/{column-guid}:import-picture",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def set_datum_for_attribute(
         self,
         *,
@@ -2975,7 +4739,10 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GsaDatum",
+            400: None,
+            403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -3110,7 +4877,10 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: "GsaDatum",
+            400: None,
+            403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -3208,6 +4978,7 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: None,
+            403: None,
             404: None,
         }
 
@@ -3329,12 +5100,569 @@ class DataApi(ApiBase):
 
         response_type_map: Dict[int, Optional[str]] = {
             200: None,
+            403: None,
             404: None,
         }
 
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}:set-not-applicable",
             "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_file_datum_for_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+    ) -> "Union[GsaFileDatum, None]":
+        """Create or edit a file datum for a given attribute and record history in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        file: Union[BinaryIO, pathlib.Path]
+        description: str
+        target: str
+        allow_index: bool
+
+        Returns
+        -------
+        Union[GsaFileDatum, None]
+        """
+        data = self._set_file_datum_for_attribute_with_http_info(
+            database_key,
+            record_history_guid,
+            attribute_guid,
+            file,
+            description,
+            target,
+            allow_index,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_file_datum_for_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "file",
+            "description",
+            "target",
+            "allow_index",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_file_datum_for_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_file_datum_for_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_file_datum_for_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_file_datum_for_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "file" in params and file is not None:
+            local_var_files["File"] = params["file"]
+        if "description" in params and description is not None:
+            form_params.append(("Description", params["description"]))
+        if "target" in params and target is not None:
+            form_params.append(("Target", params["target"]))
+        if "allow_index" in params and allow_index is not None:
+            form_params.append(("AllowIndex", params["allow_index"]))
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaFileDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}:import-file",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_file_datum_for_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+    ) -> "Union[GsaFileDatum, None]":
+        """Create or edit a file datum for a given attribute and record history in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        file: Union[BinaryIO, pathlib.Path]
+        description: str
+        target: str
+        allow_index: bool
+
+        Returns
+        -------
+        Union[GsaFileDatum, None]
+        """
+        data = self._set_file_datum_for_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            file,
+            description,
+            target,
+            allow_index,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_file_datum_for_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        file: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        description: "Optional[str]" = None,
+        target: "Optional[str]" = None,
+        allow_index: "Optional[bool]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "file",
+            "description",
+            "target",
+            "allow_index",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_file_datum_for_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_file_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'set_file_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_file_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_file_datum_for_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "file" in params and file is not None:
+            local_var_files["File"] = params["file"]
+        if "description" in params and description is not None:
+            form_params.append(("Description", params["description"]))
+        if "target" in params and target is not None:
+            form_params.append(("Target", params["target"]))
+        if "allow_index" in params and allow_index is not None:
+            form_params.append(("AllowIndex", params["allow_index"]))
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaFileDatum",
+            400: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}:import-file",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_picture_datum_for_attribute(
+        self,
+        *,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+    ) -> "Union[GsaPictureDatum, None]":
+        """Create or edit a picture datum for a given attribute and record history in a given database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        record_history_guid: str
+        attribute_guid: str
+        picture: Union[BinaryIO, pathlib.Path]
+
+        Returns
+        -------
+        Union[GsaPictureDatum, None]
+        """
+        data = self._set_picture_datum_for_attribute_with_http_info(
+            database_key, record_history_guid, attribute_guid, picture, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_picture_datum_for_attribute_with_http_info(
+        self,
+        database_key: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "record_history_guid",
+            "attribute_guid",
+            "picture",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_picture_datum_for_attribute"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_picture_datum_for_attribute'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_picture_datum_for_attribute'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_picture_datum_for_attribute'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "picture" in params and picture is not None:
+            local_var_files["Picture"] = params["picture"]
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPictureDatum",
+            400: None,
+            403: None,
+            404: None,
+            415: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/record-histories/{record-history-guid}/attributes/{attribute-guid}:import-picture",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_picture_datum_for_attribute_from_table(
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+    ) -> "Union[GsaPictureDatum, None]":
+        """Create or edit a picture datum for a given attribute and record history in a given database and table.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        table_guid: str
+        record_history_guid: str
+        attribute_guid: str
+        picture: Union[BinaryIO, pathlib.Path]
+
+        Returns
+        -------
+        Union[GsaPictureDatum, None]
+        """
+        data = self._set_picture_datum_for_attribute_from_table_with_http_info(
+            database_key,
+            table_guid,
+            record_history_guid,
+            attribute_guid,
+            picture,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_picture_datum_for_attribute_from_table_with_http_info(
+        self,
+        database_key: "str",
+        table_guid: "str",
+        record_history_guid: "str",
+        attribute_guid: "str",
+        picture: "Optional[Union[BinaryIO, pathlib.Path]]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "table_guid",
+            "record_history_guid",
+            "attribute_guid",
+            "picture",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_picture_datum_for_attribute_from_table"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_picture_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "table_guid" is set
+        if "table_guid" not in params or params["table_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'table_guid' when calling 'set_picture_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "record_history_guid" is set
+        if "record_history_guid" not in params or params["record_history_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'record_history_guid' when calling 'set_picture_datum_for_attribute_from_table'"
+            )
+        # verify the required parameter "attribute_guid" is set
+        if "attribute_guid" not in params or params["attribute_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'attribute_guid' when calling 'set_picture_datum_for_attribute_from_table'"
+            )
+
+        collection_formats: Dict[str, Any] = {}
+
+        path_params: Dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "table_guid" in params and table_guid is not None:
+            path_params["table-guid"] = params["table_guid"]
+        if "record_history_guid" in params and record_history_guid is not None:
+            path_params["record-history-guid"] = params["record_history_guid"]
+        if "attribute_guid" in params and attribute_guid is not None:
+            path_params["attribute-guid"] = params["attribute_guid"]
+
+        query_params: List[Any] = []
+
+        header_params: Dict[str, Any] = {}
+
+        form_params: List[Any] = []
+        local_var_files: Dict[str, Any] = {}
+        if "picture" in params and picture is not None:
+            local_var_files["Picture"] = params["picture"]
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # multipart/form-data request detected. Content-Type header will be
+        # populated by openapi-common based on request content.
+
+        response_type_map: Dict[int, Optional[str]] = {
+            200: "GsaPictureDatum",
+            400: None,
+            403: None,
+            404: None,
+            415: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/tables/{table-guid}/record-histories/{record-history-guid}/attributes/{attribute-guid}:import-picture",
+            "PUT",
             path_params,
             query_params,
             header_params,

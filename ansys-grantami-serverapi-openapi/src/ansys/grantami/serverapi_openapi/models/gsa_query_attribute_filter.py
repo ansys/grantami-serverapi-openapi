@@ -93,7 +93,7 @@ class GsaQueryAttributeFilter(ModelBase):
     @property
     def type(self) -> "Union[List[GsaAttributeType], None, Unset_Type]":
         """Gets the type of this GsaQueryAttributeFilter.
-        Only include attributes of any of these types
+        Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Returns
         -------
@@ -105,7 +105,7 @@ class GsaQueryAttributeFilter(ModelBase):
     @type.setter
     def type(self, type: "Union[List[GsaAttributeType], None, Unset_Type]") -> None:
         """Sets the type of this GsaQueryAttributeFilter.
-        Only include attributes of any of these types
+        Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Parameters
         ----------

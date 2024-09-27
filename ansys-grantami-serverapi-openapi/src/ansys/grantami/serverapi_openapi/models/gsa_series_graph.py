@@ -69,6 +69,7 @@ class GsaSeriesGraph(GsaGraph):
         "constraint_parameters": "list[GsaSlimParameter]",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
+        "number_of_points": "int",
         "x_axis_parameter": "GsaSlimParameter",
     }
 
@@ -76,6 +77,7 @@ class GsaSeriesGraph(GsaGraph):
         "constraint_parameters": "constraintParameters",
         "functional_type": "functionalType",
         "graph_type": "graphType",
+        "number_of_points": "numberOfPoints",
         "x_axis_parameter": "xAxisParameter",
     }
 
@@ -98,6 +100,7 @@ class GsaSeriesGraph(GsaGraph):
         constraint_parameters: "List[GsaSlimParameter]",
         functional_type: "GsaFunctionalType",
         graph_type: "GsaGraphType" = GsaGraphType.SERIES,
+        number_of_points: "int",
         x_axis_parameter: "GsaSlimParameter",
     ) -> None:
         """GsaSeriesGraph - a model defined in Swagger
@@ -107,16 +110,19 @@ class GsaSeriesGraph(GsaGraph):
         constraint_parameters: List[GsaSlimParameter]
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
+        number_of_points: int
         x_axis_parameter: GsaSlimParameter
         """
         super().__init__(graph_type=graph_type)
         self._functional_type: GsaFunctionalType
         self._x_axis_parameter: GsaSlimParameter
         self._constraint_parameters: List[GsaSlimParameter]
+        self._number_of_points: int
 
         self.functional_type = functional_type
         self.x_axis_parameter = x_axis_parameter
         self.constraint_parameters = constraint_parameters
+        self.number_of_points = number_of_points
 
     @property
     def functional_type(self) -> "GsaFunctionalType":
@@ -201,6 +207,34 @@ class GsaSeriesGraph(GsaGraph):
         if constraint_parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'constraint_parameters', must not be 'Unset'")
         self._constraint_parameters = constraint_parameters
+
+    @property
+    def number_of_points(self) -> "int":
+        """Gets the number_of_points of this GsaSeriesGraph.
+
+        Returns
+        -------
+        int
+            The number_of_points of this GsaSeriesGraph.
+        """
+        return self._number_of_points
+
+    @number_of_points.setter
+    def number_of_points(self, number_of_points: "int") -> None:
+        """Sets the number_of_points of this GsaSeriesGraph.
+
+        Parameters
+        ----------
+        number_of_points: int
+            The number_of_points of this GsaSeriesGraph.
+        """
+        # Field is not nullable
+        if number_of_points is None:
+            raise ValueError("Invalid value for 'number_of_points', must not be 'None'")
+        # Field is required
+        if number_of_points is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'number_of_points', must not be 'Unset'")
+        self._number_of_points = number_of_points
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

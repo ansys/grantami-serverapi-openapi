@@ -91,6 +91,7 @@ class GsaApplicableDatum(GsaDatum):
         "picture".lower(): "#/components/schemas/GsaPictureDatum",
         "file".lower(): "#/components/schemas/GsaFileDatum",
         "floatFunctional".lower(): "#/components/schemas/GsaFloatFunctionalDatum",
+        "discreteFunctional".lower(): "#/components/schemas/GsaDiscreteFunctionalDatum",
         "tabular".lower(): "#/components/schemas/GsaTabularDatum",
     }
 

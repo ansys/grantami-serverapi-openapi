@@ -65,6 +65,7 @@ from .api.schema___parameters_api import SchemaParametersApi
 from .api.schema___profile_tables_api import SchemaProfileTablesApi
 from .api.schema___profiles_api import SchemaProfilesApi
 from .api.schema___record_link_groups_api import SchemaRecordLinkGroupsApi
+from .api.schema___replacement_strings_api import SchemaReplacementStringsApi
 from .api.schema___standard_names_api import SchemaStandardNamesApi
 from .api.schema___subsets_api import SchemaSubsetsApi
 from .api.schema___tables_api import SchemaTablesApi
@@ -73,11 +74,24 @@ from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.selection_searches_api import SelectionSearchesApi
 from .api.status_api import StatusApi
-from .models.folderguid_files_body1 import FolderguidFilesBody1
-from .models.folderguid_files_body2 import FolderguidFilesBody2
+from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
 
 # import models into sdk package
+from .models.attributes_attributeguidimportfile_body import AttributesAttributeguidimportfileBody
+from .models.attributes_attributeguidimportpicture_body1 import (
+    AttributesAttributeguidimportpictureBody1,
+)
+from .models.attributes_attributeguidimportpicture_body import (
+    AttributesAttributeguidimportpictureBody,
+)
+from .models.columns_columnguidimportfile_body1 import ColumnsColumnguidimportfileBody1
+from .models.columns_columnguidimportfile_body import ColumnsColumnguidimportfileBody
+from .models.columns_columnguidimportpicture_body1 import ColumnsColumnguidimportpictureBody1
+from .models.columns_columnguidimportpicture_body import ColumnsColumnguidimportpictureBody
+from .models.folderguid_files_body1 import FolderguidFilesBody1
+from .models.folderguid_files_body2 import FolderguidFilesBody2
 from .models.folderguid_files_body import FolderguidFilesBody
+from .models.granta_mi_enabled_licenses_info import GrantaMIEnabledLicensesInfo
 from .models.granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
@@ -98,6 +112,8 @@ from .models.gsa_all_values_specifier import GsaAllValuesSpecifier
 from .models.gsa_app_name_license_checkout_request import GsaAppNameLicenseCheckoutRequest
 from .models.gsa_app_name_license_checkout_response import GsaAppNameLicenseCheckoutResponse
 from .models.gsa_app_name_license_checkout_result import GsaAppNameLicenseCheckoutResult
+from .models.gsa_append_discrete_values import GsaAppendDiscreteValues
+from .models.gsa_append_point_values import GsaAppendPointValues
 from .models.gsa_applicable_datum import GsaApplicableDatum
 from .models.gsa_applications_info import GsaApplicationsInfo
 from .models.gsa_attribute import GsaAttribute
@@ -221,6 +237,7 @@ from .models.gsa_create_record_history import GsaCreateRecordHistory
 from .models.gsa_create_record_link_group import GsaCreateRecordLinkGroup
 from .models.gsa_create_record_list import GsaCreateRecordList
 from .models.gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
+from .models.gsa_create_replacement_string import GsaCreateReplacementString
 from .models.gsa_create_search_request import GsaCreateSearchRequest
 from .models.gsa_create_short_text_attribute import GsaCreateShortTextAttribute
 from .models.gsa_create_standard_name import GsaCreateStandardName
@@ -345,16 +362,20 @@ from .models.gsa_discrete_functional_attribute_numeric_parameter import (
 from .models.gsa_discrete_functional_attribute_parameter import (
     GsaDiscreteFunctionalAttributeParameter,
 )
+from .models.gsa_discrete_functional_datum import GsaDiscreteFunctionalDatum
 from .models.gsa_discrete_functional_datum_exists_criterion import (
     GsaDiscreteFunctionalDatumExistsCriterion,
 )
+from .models.gsa_discrete_functional_grid_datum import GsaDiscreteFunctionalGridDatum
 from .models.gsa_discrete_functional_range_datum_criterion import (
     GsaDiscreteFunctionalRangeDatumCriterion,
 )
+from .models.gsa_discrete_functional_series_datum import GsaDiscreteFunctionalSeriesDatum
 from .models.gsa_discrete_functional_values_datum_criterion import (
     GsaDiscreteFunctionalValuesDatumCriterion,
 )
 from .models.gsa_discrete_grid_graph import GsaDiscreteGridGraph
+from .models.gsa_discrete_grid_point import GsaDiscreteGridPoint
 from .models.gsa_discrete_guid_datum_criterion import GsaDiscreteGuidDatumCriterion
 from .models.gsa_discrete_guid_values_datum_criterion import GsaDiscreteGuidValuesDatumCriterion
 from .models.gsa_discrete_identity_datum_criterion import GsaDiscreteIdentityDatumCriterion
@@ -369,12 +390,15 @@ from .models.gsa_discrete_parameter_value import GsaDiscreteParameterValue
 from .models.gsa_discrete_parameter_value_constraint import GsaDiscreteParameterValueConstraint
 from .models.gsa_discrete_range import GsaDiscreteRange
 from .models.gsa_discrete_range_datum_criterion import GsaDiscreteRangeDatumCriterion
+from .models.gsa_discrete_series import GsaDiscreteSeries
 from .models.gsa_discrete_series_graph import GsaDiscreteSeriesGraph
+from .models.gsa_discrete_series_point import GsaDiscreteSeriesPoint
 from .models.gsa_discrete_text_aggregation import GsaDiscreteTextAggregation
 from .models.gsa_discrete_text_aggregation_datum_criterion import (
     GsaDiscreteTextAggregationDatumCriterion,
 )
 from .models.gsa_discrete_text_datum_criterion import GsaDiscreteTextDatumCriterion
+from .models.gsa_discrete_text_prefix_datum_criterion import GsaDiscreteTextPrefixDatumCriterion
 from .models.gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatumCriterion
 from .models.gsa_discrete_type import GsaDiscreteType
 from .models.gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
@@ -409,6 +433,7 @@ from .models.gsa_file_datum import GsaFileDatum
 from .models.gsa_file_datum_criterion import GsaFileDatumCriterion
 from .models.gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
 from .models.gsa_file_header import GsaFileHeader
+from .models.gsa_file_prefix_datum_criterion import GsaFilePrefixDatumCriterion
 from .models.gsa_files_info import GsaFilesInfo
 from .models.gsa_find_search_request import GsaFindSearchRequest
 from .models.gsa_find_standard_names import GsaFindStandardNames
@@ -448,6 +473,7 @@ from .models.gsa_folders_info import GsaFoldersInfo
 from .models.gsa_free_text_aggregation import GsaFreeTextAggregation
 from .models.gsa_free_text_aggregation_criterion import GsaFreeTextAggregationCriterion
 from .models.gsa_free_text_criterion import GsaFreeTextCriterion
+from .models.gsa_free_text_prefix_criterion import GsaFreeTextPrefixCriterion
 from .models.gsa_full_layout_section import GsaFullLayoutSection
 from .models.gsa_full_name_property import GsaFullNameProperty
 from .models.gsa_functional_datum_parameter_info import GsaFunctionalDatumParameterInfo
@@ -480,6 +506,7 @@ from .models.gsa_hyperlink_attribute import GsaHyperlinkAttribute
 from .models.gsa_hyperlink_datum import GsaHyperlinkDatum
 from .models.gsa_hyperlink_datum_criterion import GsaHyperlinkDatumCriterion
 from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriterion
+from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
 from .models.gsa_index_record_failure import GsaIndexRecordFailure
 from .models.gsa_indirect_links import GsaIndirectLinks
@@ -588,6 +615,7 @@ from .models.gsa_long_text_attribute import GsaLongTextAttribute
 from .models.gsa_long_text_datum import GsaLongTextDatum
 from .models.gsa_long_text_datum_criterion import GsaLongTextDatumCriterion
 from .models.gsa_long_text_datum_exists_criterion import GsaLongTextDatumExistsCriterion
+from .models.gsa_long_text_prefix_datum_criterion import GsaLongTextPrefixDatumCriterion
 from .models.gsa_mapping_of_object_identifier import GsaMappingOfObjectIdentifier
 from .models.gsa_maths_content import GsaMathsContent
 from .models.gsa_maths_functional_attribute import GsaMathsFunctionalAttribute
@@ -743,6 +771,8 @@ from .models.gsa_released_date_property import GsaReleasedDateProperty
 from .models.gsa_relevance_sort_criterion import GsaRelevanceSortCriterion
 from .models.gsa_remove_record_history_from_subset import GsaRemoveRecordHistoryFromSubset
 from .models.gsa_reorder_sections_info import GsaReorderSectionsInfo
+from .models.gsa_replacement_string import GsaReplacementString
+from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .models.gsa_resolved_link import GsaResolvedLink
 from .models.gsa_resolved_link_info import GsaResolvedLinkInfo
 from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
@@ -787,6 +817,8 @@ from .models.gsa_set_point_datum import GsaSetPointDatum
 from .models.gsa_set_point_datum_value import GsaSetPointDatumValue
 from .models.gsa_set_range_datum import GsaSetRangeDatum
 from .models.gsa_set_short_text_datum import GsaSetShortTextDatum
+from .models.gsa_set_tabular_datum import GsaSetTabularDatum
+from .models.gsa_set_tabular_datum_row import GsaSetTabularDatumRow
 from .models.gsa_short_name_property import GsaShortNameProperty
 from .models.gsa_short_text_aggregation import GsaShortTextAggregation
 from .models.gsa_short_text_aggregation_datum_criterion import GsaShortTextAggregationDatumCriterion
@@ -794,6 +826,7 @@ from .models.gsa_short_text_attribute import GsaShortTextAttribute
 from .models.gsa_short_text_datum import GsaShortTextDatum
 from .models.gsa_short_text_datum_criterion import GsaShortTextDatumCriterion
 from .models.gsa_short_text_datum_exists_criterion import GsaShortTextDatumExistsCriterion
+from .models.gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriterion
 from .models.gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .models.gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
 from .models.gsa_slim_attribute import GsaSlimAttribute
@@ -806,6 +839,7 @@ from .models.gsa_slim_file import GsaSlimFile
 from .models.gsa_slim_layout import GsaSlimLayout
 from .models.gsa_slim_layout_section import GsaSlimLayoutSection
 from .models.gsa_slim_named_entity import GsaSlimNamedEntity
+from .models.gsa_slim_named_unit import GsaSlimNamedUnit
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
 from .models.gsa_slim_profile import GsaSlimProfile
@@ -813,8 +847,10 @@ from .models.gsa_slim_profile_table import GsaSlimProfileTable
 from .models.gsa_slim_record_history import GsaSlimRecordHistory
 from .models.gsa_slim_record_link_group import GsaSlimRecordLinkGroup
 from .models.gsa_slim_record_version import GsaSlimRecordVersion
+from .models.gsa_slim_replacement_string import GsaSlimReplacementString
 from .models.gsa_slim_subset import GsaSlimSubset
 from .models.gsa_slim_table import GsaSlimTable
+from .models.gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .models.gsa_slim_unit import GsaSlimUnit
 from .models.gsa_slim_unit_system import GsaSlimUnitSystem
 from .models.gsa_sort_criterion import GsaSortCriterion
@@ -943,6 +979,7 @@ from .models.gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .models.gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .models.gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
 from .models.gsa_update_record_list_properties import GsaUpdateRecordListProperties
+from .models.gsa_update_replacement_string import GsaUpdateReplacementString
 from .models.gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
 from .models.gsa_update_standard_name import GsaUpdateStandardName
 from .models.gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
@@ -1020,6 +1057,7 @@ __all__ = [
     "SchemaProfileTablesApi",
     "SchemaProfilesApi",
     "SchemaRecordLinkGroupsApi",
+    "SchemaReplacementStringsApi",
     "SchemaStandardNamesApi",
     "SchemaSubsetsApi",
     "SchemaTablesApi",
@@ -1027,9 +1065,18 @@ __all__ = [
     "SearchApi",
     "SelectionSearchesApi",
     "StatusApi",
+    "AttributesAttributeguidimportfileBody",
+    "AttributesAttributeguidimportfileBody1",
+    "AttributesAttributeguidimportpictureBody",
+    "AttributesAttributeguidimportpictureBody1",
+    "ColumnsColumnguidimportfileBody",
+    "ColumnsColumnguidimportfileBody1",
+    "ColumnsColumnguidimportpictureBody",
+    "ColumnsColumnguidimportpictureBody1",
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
+    "GrantaMIEnabledLicensesInfo",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
@@ -1048,6 +1095,8 @@ __all__ = [
     "GsaAppNameLicenseCheckoutRequest",
     "GsaAppNameLicenseCheckoutResponse",
     "GsaAppNameLicenseCheckoutResult",
+    "GsaAppendDiscreteValues",
+    "GsaAppendPointValues",
     "GsaApplicableDatum",
     "GsaApplicationsInfo",
     "GsaAttribute",
@@ -1153,6 +1202,7 @@ __all__ = [
     "GsaCreateRecordLinkGroup",
     "GsaCreateRecordList",
     "GsaCreateRecordListItemsInfo",
+    "GsaCreateReplacementString",
     "GsaCreateSearchRequest",
     "GsaCreateShortTextAttribute",
     "GsaCreateStandardName",
@@ -1257,10 +1307,14 @@ __all__ = [
     "GsaDiscreteFunctionalAttributeDiscreteParameter",
     "GsaDiscreteFunctionalAttributeNumericParameter",
     "GsaDiscreteFunctionalAttributeParameter",
+    "GsaDiscreteFunctionalDatum",
     "GsaDiscreteFunctionalDatumExistsCriterion",
+    "GsaDiscreteFunctionalGridDatum",
     "GsaDiscreteFunctionalRangeDatumCriterion",
+    "GsaDiscreteFunctionalSeriesDatum",
     "GsaDiscreteFunctionalValuesDatumCriterion",
     "GsaDiscreteGridGraph",
+    "GsaDiscreteGridPoint",
     "GsaDiscreteGuidDatumCriterion",
     "GsaDiscreteGuidValuesDatumCriterion",
     "GsaDiscreteIdentityDatumCriterion",
@@ -1273,10 +1327,13 @@ __all__ = [
     "GsaDiscreteParameterValueConstraint",
     "GsaDiscreteRange",
     "GsaDiscreteRangeDatumCriterion",
+    "GsaDiscreteSeries",
     "GsaDiscreteSeriesGraph",
+    "GsaDiscreteSeriesPoint",
     "GsaDiscreteTextAggregation",
     "GsaDiscreteTextAggregationDatumCriterion",
     "GsaDiscreteTextDatumCriterion",
+    "GsaDiscreteTextPrefixDatumCriterion",
     "GsaDiscreteTextValuesDatumCriterion",
     "GsaDiscreteType",
     "GsaDiscreteTypeDeletionException",
@@ -1305,6 +1362,7 @@ __all__ = [
     "GsaFileDatumCriterion",
     "GsaFileDatumExistsCriterion",
     "GsaFileHeader",
+    "GsaFilePrefixDatumCriterion",
     "GsaFilesInfo",
     "GsaFindSearchRequest",
     "GsaFindStandardNames",
@@ -1332,6 +1390,7 @@ __all__ = [
     "GsaFreeTextAggregation",
     "GsaFreeTextAggregationCriterion",
     "GsaFreeTextCriterion",
+    "GsaFreeTextPrefixCriterion",
     "GsaFullLayoutSection",
     "GsaFullNameProperty",
     "GsaFunctionalDatumParameterInfo",
@@ -1358,6 +1417,7 @@ __all__ = [
     "GsaHyperlinkDatum",
     "GsaHyperlinkDatumCriterion",
     "GsaHyperlinkDatumExistsCriterion",
+    "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaIndexRecordFailure",
     "GsaIndirectLinks",
@@ -1454,6 +1514,7 @@ __all__ = [
     "GsaLongTextDatum",
     "GsaLongTextDatumCriterion",
     "GsaLongTextDatumExistsCriterion",
+    "GsaLongTextPrefixDatumCriterion",
     "GsaMappingOfObjectIdentifier",
     "GsaMathsContent",
     "GsaMathsFunctionalAttribute",
@@ -1591,6 +1652,8 @@ __all__ = [
     "GsaRelevanceSortCriterion",
     "GsaRemoveRecordHistoryFromSubset",
     "GsaReorderSectionsInfo",
+    "GsaReplacementString",
+    "GsaReplacementStringsInfo",
     "GsaResolvedLink",
     "GsaResolvedLinkInfo",
     "GsaResolvedLinkTarget",
@@ -1631,6 +1694,8 @@ __all__ = [
     "GsaSetPointDatumValue",
     "GsaSetRangeDatum",
     "GsaSetShortTextDatum",
+    "GsaSetTabularDatum",
+    "GsaSetTabularDatumRow",
     "GsaShortNameProperty",
     "GsaShortTextAggregation",
     "GsaShortTextAggregationDatumCriterion",
@@ -1638,6 +1703,7 @@ __all__ = [
     "GsaShortTextDatum",
     "GsaShortTextDatumCriterion",
     "GsaShortTextDatumExistsCriterion",
+    "GsaShortTextPrefixDatumCriterion",
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
     "GsaSlimAttribute",
@@ -1650,6 +1716,7 @@ __all__ = [
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
+    "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
     "GsaSlimProfile",
@@ -1657,8 +1724,10 @@ __all__ = [
     "GsaSlimRecordHistory",
     "GsaSlimRecordLinkGroup",
     "GsaSlimRecordVersion",
+    "GsaSlimReplacementString",
     "GsaSlimSubset",
     "GsaSlimTable",
+    "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
     "GsaSortCriterion",
@@ -1771,6 +1840,7 @@ __all__ = [
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",
     "GsaUpdateRecordListProperties",
+    "GsaUpdateReplacementString",
     "GsaUpdateShortTextAttribute",
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",

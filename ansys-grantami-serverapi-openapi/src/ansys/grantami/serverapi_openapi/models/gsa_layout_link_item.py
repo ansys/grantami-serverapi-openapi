@@ -176,6 +176,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     @property
     def target_database(self) -> "Union[str, None, Unset_Type]":
         """Gets the target_database of this GsaLayoutLinkItem.
+        May be null for a cross database link group that can target multiple databases
 
         Returns
         -------
@@ -187,6 +188,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     @target_database.setter
     def target_database(self, target_database: "Union[str, None, Unset_Type]") -> None:
         """Sets the target_database of this GsaLayoutLinkItem.
+        May be null for a cross database link group that can target multiple databases
 
         Parameters
         ----------
@@ -198,6 +200,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     @property
     def target_database_version(self) -> "Union[str, None, Unset_Type]":
         """Gets the target_database_version of this GsaLayoutLinkItem.
+        May be null for a cross database link group that can target multiple databases
 
         Returns
         -------
@@ -211,6 +214,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
         self, target_database_version: "Union[str, None, Unset_Type]"
     ) -> None:
         """Sets the target_database_version of this GsaLayoutLinkItem.
+        May be null for a cross database link group that can target multiple databases
 
         Parameters
         ----------
@@ -250,6 +254,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     @property
     def forwards(self) -> "bool":
         """Gets the forwards of this GsaLayoutLinkItem.
+        true if the link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).
 
         Returns
         -------
@@ -261,6 +266,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     @forwards.setter
     def forwards(self, forwards: "bool") -> None:
         """Sets the forwards of this GsaLayoutLinkItem.
+        true if the link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).
 
         Parameters
         ----------

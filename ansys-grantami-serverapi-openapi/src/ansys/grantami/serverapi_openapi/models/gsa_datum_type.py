@@ -54,4 +54,5 @@ class GsaDatumType(Enum):
     PICTURE = "picture"
     FILE = "file"
     FLOATFUNCTIONAL = "floatFunctional"
+    DISCRETEFUNCTIONAL = "discreteFunctional"
     TABULAR = "tabular"

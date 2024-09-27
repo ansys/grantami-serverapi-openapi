@@ -61,7 +61,7 @@ class GsaUnitsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "units": "list[GsaSlimUnit]",
+        "units": "list[GsaSlimNamedUnit]",
     }
 
     attribute_map: Dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaUnitsInfo(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "units": "GsaSlimUnit",
+        "units": "GsaSlimNamedUnit",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,37 @@ class GsaUnitsInfo(ModelBase):
     def __init__(
         self,
         *,
-        units: "Union[List[GsaSlimUnit], None, Unset_Type]" = Unset,
+        units: "Union[List[GsaSlimNamedUnit], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUnitsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        units: List[GsaSlimUnit], optional
+        units: List[GsaSlimNamedUnit], optional
         """
-        self._units: Union[List[GsaSlimUnit], None, Unset_Type] = Unset
+        self._units: Union[List[GsaSlimNamedUnit], None, Unset_Type] = Unset
 
         if units is not Unset:
             self.units = units
 
     @property
-    def units(self) -> "Union[List[GsaSlimUnit], None, Unset_Type]":
+    def units(self) -> "Union[List[GsaSlimNamedUnit], None, Unset_Type]":
         """Gets the units of this GsaUnitsInfo.
 
         Returns
         -------
-        Union[List[GsaSlimUnit], None, Unset_Type]
+        Union[List[GsaSlimNamedUnit], None, Unset_Type]
             The units of this GsaUnitsInfo.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "Union[List[GsaSlimUnit], None, Unset_Type]") -> None:
+    def units(self, units: "Union[List[GsaSlimNamedUnit], None, Unset_Type]") -> None:
         """Sets the units of this GsaUnitsInfo.
 
         Parameters
         ----------
-        units: Union[List[GsaSlimUnit], None, Unset_Type]
+        units: Union[List[GsaSlimNamedUnit], None, Unset_Type]
             The units of this GsaUnitsInfo.
         """
         self._units = units

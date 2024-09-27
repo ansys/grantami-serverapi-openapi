@@ -77,6 +77,7 @@ class GsaCriterion(ModelBase):
     discriminator_value_class_map = {
         "boolean".lower(): "#/components/schemas/GsaBooleanCriterion",
         "text".lower(): "#/components/schemas/GsaFreeTextCriterion",
+        "textPrefix".lower(): "#/components/schemas/GsaFreeTextPrefixCriterion",
         "recordListMember".lower(): "#/components/schemas/GsaRecordListMemberCriterion",
         "recordProperty".lower(): "#/components/schemas/GsaRecordPropertyCriterion",
         "reference".lower(): "#/components/schemas/GsaRecordReferenceCriterion",

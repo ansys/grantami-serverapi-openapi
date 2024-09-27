@@ -72,7 +72,7 @@ class GsaFileDatum(GsaApplicableDatum):
         "description": "str",
         "file_name": "str",
         "not_applicable": "str",
-        "target": "str",
+        "target": "GsaHyperlinkTarget",
     }
 
     attribute_map: Dict[str, str] = {
@@ -85,7 +85,9 @@ class GsaFileDatum(GsaApplicableDatum):
         "target": "target",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: Dict[str, str] = {
+        "target": "GsaHyperlinkTarget",
+    }
 
     discriminator: Optional[str] = None
 
@@ -98,7 +100,7 @@ class GsaFileDatum(GsaApplicableDatum):
         description: "str",
         file_name: "str",
         not_applicable: "str" = "applicable",
-        target: "str",
+        target: "GsaHyperlinkTarget",
     ) -> None:
         """GsaFileDatum - a model defined in Swagger
 
@@ -110,13 +112,13 @@ class GsaFileDatum(GsaApplicableDatum):
         description: str
         file_name: str
         not_applicable: str
-        target: str
+        target: GsaHyperlinkTarget
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
         self._file_name: str
         self._description: str
         self._content_type: str
-        self._target: str
+        self._target: GsaHyperlinkTarget
         self._content_is_in_search_index: bool
 
         self.file_name = file_name
@@ -210,23 +212,23 @@ class GsaFileDatum(GsaApplicableDatum):
         self._content_type = content_type
 
     @property
-    def target(self) -> "str":
+    def target(self) -> "GsaHyperlinkTarget":
         """Gets the target of this GsaFileDatum.
 
         Returns
         -------
-        str
+        GsaHyperlinkTarget
             The target of this GsaFileDatum.
         """
         return self._target
 
     @target.setter
-    def target(self, target: "str") -> None:
+    def target(self, target: "GsaHyperlinkTarget") -> None:
         """Sets the target of this GsaFileDatum.
 
         Parameters
         ----------
-        target: str
+        target: GsaHyperlinkTarget
             The target of this GsaFileDatum.
         """
         # Field is not nullable
