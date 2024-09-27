@@ -65,6 +65,7 @@ class GsaUnit(ModelBase):
         "name": "str",
         "symbol": "str",
         "equation": "str",
+        "relative_symbol": "str",
     }
 
     attribute_map: Dict[str, str] = {
@@ -72,6 +73,7 @@ class GsaUnit(ModelBase):
         "name": "name",
         "symbol": "symbol",
         "equation": "equation",
+        "relative_symbol": "relativeSymbol",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -85,6 +87,7 @@ class GsaUnit(ModelBase):
         name: "str",
         symbol: "str",
         equation: "Union[str, None, Unset_Type]" = Unset,
+        relative_symbol: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUnit - a model defined in Swagger
 
@@ -94,17 +97,43 @@ class GsaUnit(ModelBase):
         name: str
         symbol: str
         equation: str, optional
+        relative_symbol: str, optional
         """
-        self._name: str
         self._equation: Union[str, None, Unset_Type] = Unset
+        self._name: str
         self._symbol: str
+        self._relative_symbol: Union[str, None, Unset_Type] = Unset
         self._guid: str
 
-        self.name = name
         if equation is not Unset:
             self.equation = equation
+        self.name = name
         self.symbol = symbol
+        if relative_symbol is not Unset:
+            self.relative_symbol = relative_symbol
         self.guid = guid
+
+    @property
+    def equation(self) -> "Union[str, None, Unset_Type]":
+        """Gets the equation of this GsaUnit.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The equation of this GsaUnit.
+        """
+        return self._equation
+
+    @equation.setter
+    def equation(self, equation: "Union[str, None, Unset_Type]") -> None:
+        """Sets the equation of this GsaUnit.
+
+        Parameters
+        ----------
+        equation: Union[str, None, Unset_Type]
+            The equation of this GsaUnit.
+        """
+        self._equation = equation
 
     @property
     def name(self) -> "str":
@@ -135,28 +164,6 @@ class GsaUnit(ModelBase):
         self._name = name
 
     @property
-    def equation(self) -> "Union[str, None, Unset_Type]":
-        """Gets the equation of this GsaUnit.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The equation of this GsaUnit.
-        """
-        return self._equation
-
-    @equation.setter
-    def equation(self, equation: "Union[str, None, Unset_Type]") -> None:
-        """Sets the equation of this GsaUnit.
-
-        Parameters
-        ----------
-        equation: Union[str, None, Unset_Type]
-            The equation of this GsaUnit.
-        """
-        self._equation = equation
-
-    @property
     def symbol(self) -> "str":
         """Gets the symbol of this GsaUnit.
 
@@ -183,6 +190,28 @@ class GsaUnit(ModelBase):
         if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
         self._symbol = symbol
+
+    @property
+    def relative_symbol(self) -> "Union[str, None, Unset_Type]":
+        """Gets the relative_symbol of this GsaUnit.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The relative_symbol of this GsaUnit.
+        """
+        return self._relative_symbol
+
+    @relative_symbol.setter
+    def relative_symbol(self, relative_symbol: "Union[str, None, Unset_Type]") -> None:
+        """Sets the relative_symbol of this GsaUnit.
+
+        Parameters
+        ----------
+        relative_symbol: Union[str, None, Unset_Type]
+            The relative_symbol of this GsaUnit.
+        """
+        self._relative_symbol = relative_symbol
 
     @property
     def guid(self) -> "str":

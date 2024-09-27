@@ -429,7 +429,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "Union[GsaRecordLinkGroupsInfo, None]":
-        """Get all record link groups
+        """Get all record link groups pointing from this table.
 
         This method makes a synchronous HTTP request.
 

@@ -72,6 +72,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "attribute_guid": "str",
         "attribute_identity": "int",
         "is_estimated": "bool",
+        "is_logarithmic": "bool",
         "is_range": "bool",
         "meta_datums": "list[GsaDataExportDatum]",
         "parameters": "list[GsaFunctionalDatumParameterInfo]",
@@ -87,6 +88,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "is_estimated": "isEstimated",
+        "is_logarithmic": "isLogarithmic",
         "is_range": "isRange",
         "meta_datums": "metaDatums",
         "parameters": "parameters",
@@ -110,6 +112,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         is_estimated: "Union[bool, Unset_Type]" = Unset,
+        is_logarithmic: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
         meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
         parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
@@ -127,6 +130,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         attribute_guid: str, optional
         attribute_identity: int, optional
         is_estimated: bool, optional
+        is_logarithmic: bool, optional
         is_range: bool, optional
         meta_datums: List[GsaDataExportDatum], optional
         parameters: List[GsaFunctionalDatumParameterInfo], optional
@@ -141,6 +145,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             is_estimated=is_estimated,
+            is_logarithmic=is_logarithmic,
             is_range=is_range,
             meta_datums=meta_datums,
             parameters=parameters,

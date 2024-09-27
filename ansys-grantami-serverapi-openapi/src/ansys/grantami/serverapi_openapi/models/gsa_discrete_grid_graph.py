@@ -69,6 +69,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         "default_x_axis_parameter": "GsaSlimParameter",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
+        "points": "list[GsaDiscreteGridPoint]",
     }
 
     attribute_map: Dict[str, str] = {
@@ -76,9 +77,12 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         "default_x_axis_parameter": "defaultXAxisParameter",
         "functional_type": "functionalType",
         "graph_type": "graphType",
+        "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: Dict[str, str] = {
+        "points": "GsaDiscreteGridPoint",
+    }
 
     discriminator: Optional[str] = None
 
@@ -89,6 +93,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         default_x_axis_parameter: "GsaSlimParameter",
         functional_type: "GsaFunctionalType" = GsaFunctionalType.DISCRETE,
         graph_type: "GsaGraphType" = GsaGraphType.GRID,
+        points: "List[GsaDiscreteGridPoint]",
     ) -> None:
         """GsaDiscreteGridGraph - a model defined in Swagger
 
@@ -98,6 +103,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         default_x_axis_parameter: GsaSlimParameter
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
+        points: List[GsaDiscreteGridPoint]
         """
         super().__init__(
             all_parameters=all_parameters,
@@ -105,6 +111,37 @@ class GsaDiscreteGridGraph(GsaGridGraph):
             functional_type=functional_type,
             graph_type=graph_type,
         )
+        self._points: List[GsaDiscreteGridPoint]
+
+        self.points = points
+
+    @property
+    def points(self) -> "List[GsaDiscreteGridPoint]":
+        """Gets the points of this GsaDiscreteGridGraph.
+
+        Returns
+        -------
+        List[GsaDiscreteGridPoint]
+            The points of this GsaDiscreteGridGraph.
+        """
+        return self._points
+
+    @points.setter
+    def points(self, points: "List[GsaDiscreteGridPoint]") -> None:
+        """Sets the points of this GsaDiscreteGridGraph.
+
+        Parameters
+        ----------
+        points: List[GsaDiscreteGridPoint]
+            The points of this GsaDiscreteGridGraph.
+        """
+        # Field is not nullable
+        if points is None:
+            raise ValueError("Invalid value for 'points', must not be 'None'")
+        # Field is required
+        if points is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'points', must not be 'Unset'")
+        self._points = points
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

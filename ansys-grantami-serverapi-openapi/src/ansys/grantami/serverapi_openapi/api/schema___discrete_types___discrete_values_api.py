@@ -55,7 +55,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         discrete_type_guid: "str",
         body: "Optional[GsaDiscreteValuesCreateDiscreteValue]" = None,
     ) -> "Union[GsaDiscreteValuesDiscreteValue, None]":
-        """Create new discrete value. If it's ordered, it will be added at the end.
+        """Create new discrete value. It will be added at the end.
 
         This method makes a synchronous HTTP request.
 
@@ -463,7 +463,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
     def get_discrete_values(
         self, *, database_key: "str", discrete_type_guid: "str"
     ) -> "Union[GsaDiscreteValuesDiscreteValuesInfo, None]":
-        """Gets all discrete values for a given discreteType. If discreteType is ordered, then discreteValues will be return in order, otherwise order is not deterministic.
+        """Gets all discrete values for a given discreteType, returned in order.
 
         This method makes a synchronous HTTP request.
 

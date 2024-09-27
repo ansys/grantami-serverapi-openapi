@@ -113,13 +113,12 @@ class GsaFloatSeriesGraph(GsaSeriesGraph):
             constraint_parameters=constraint_parameters,
             functional_type=functional_type,
             graph_type=graph_type,
+            number_of_points=number_of_points,
             x_axis_parameter=x_axis_parameter,
         )
         self._series: List[GsaFloatSeries]
-        self._number_of_points: int
 
         self.series = series
-        self.number_of_points = number_of_points
 
     @property
     def series(self) -> "List[GsaFloatSeries]":
@@ -148,34 +147,6 @@ class GsaFloatSeriesGraph(GsaSeriesGraph):
         if series is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'series', must not be 'Unset'")
         self._series = series
-
-    @property
-    def number_of_points(self) -> "int":
-        """Gets the number_of_points of this GsaFloatSeriesGraph.
-
-        Returns
-        -------
-        int
-            The number_of_points of this GsaFloatSeriesGraph.
-        """
-        return self._number_of_points
-
-    @number_of_points.setter
-    def number_of_points(self, number_of_points: "int") -> None:
-        """Sets the number_of_points of this GsaFloatSeriesGraph.
-
-        Parameters
-        ----------
-        number_of_points: int
-            The number_of_points of this GsaFloatSeriesGraph.
-        """
-        # Field is not nullable
-        if number_of_points is None:
-            raise ValueError("Invalid value for 'number_of_points', must not be 'None'")
-        # Field is required
-        if number_of_points is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'number_of_points', must not be 'Unset'")
-        self._number_of_points = number_of_points
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

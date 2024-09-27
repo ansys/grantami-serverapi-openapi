@@ -71,7 +71,7 @@ class GsaAttributeInfo(ModelBase):
         "standard_names": "list[GsaSlimNamedEntity]",
         "type_code": "str",
         "foreign_dynamic_link_groups": "list[GsaSlimNamedEntity]",
-        "ordered_meta_attributes": "list[GsaSlimNamedEntity]",
+        "ordered_meta_attributes": "list[GsaSlimTypedAttribute]",
         "primary_dynamic_link_groups": "list[GsaSlimNamedEntity]",
     }
 
@@ -91,7 +91,7 @@ class GsaAttributeInfo(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "orderedMetaAttributes": "GsaSlimNamedEntity",
+        "orderedMetaAttributes": "GsaSlimTypedAttribute",
         "standardNames": "GsaSlimNamedEntity",
         "primaryDataLinkGroups": "GsaSlimNamedEntity",
         "foreignDataLinkGroups": "GsaSlimNamedEntity",
@@ -114,7 +114,7 @@ class GsaAttributeInfo(ModelBase):
         standard_names: "List[GsaSlimNamedEntity]",
         type_code: "str",
         foreign_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
-        ordered_meta_attributes: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
+        ordered_meta_attributes: "Union[List[GsaSlimTypedAttribute], None, Unset_Type]" = Unset,
         primary_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaAttributeInfo - a model defined in Swagger
@@ -131,7 +131,7 @@ class GsaAttributeInfo(ModelBase):
         standard_names: List[GsaSlimNamedEntity]
         type_code: str
         foreign_dynamic_link_groups: List[GsaSlimNamedEntity], optional
-        ordered_meta_attributes: List[GsaSlimNamedEntity], optional
+        ordered_meta_attributes: List[GsaSlimTypedAttribute], optional
         primary_dynamic_link_groups: List[GsaSlimNamedEntity], optional
         """
         self._type_code: str
@@ -140,7 +140,7 @@ class GsaAttributeInfo(ModelBase):
         self._linkable: bool
         self._extended_name: str
         self._is_meta_attribute: bool
-        self._ordered_meta_attributes: Union[List[GsaSlimNamedEntity], None, Unset_Type] = Unset
+        self._ordered_meta_attributes: Union[List[GsaSlimTypedAttribute], None, Unset_Type] = Unset
         self._standard_names: List[GsaSlimNamedEntity]
         self._primary_data_link_groups: List[GsaSlimNamedEntity]
         self._foreign_data_link_groups: List[GsaSlimNamedEntity]
@@ -194,6 +194,7 @@ class GsaAttributeInfo(ModelBase):
     @property
     def chartable(self) -> "bool":
         """Gets the chartable of this GsaAttributeInfo.
+        Determines whether or not this attribute is chartable in an X/Y bubble chart.
 
         Returns
         -------
@@ -205,6 +206,7 @@ class GsaAttributeInfo(ModelBase):
     @chartable.setter
     def chartable(self, chartable: "bool") -> None:
         """Sets the chartable of this GsaAttributeInfo.
+        Determines whether or not this attribute is chartable in an X/Y bubble chart.
 
         Parameters
         ----------
@@ -222,6 +224,7 @@ class GsaAttributeInfo(ModelBase):
     @property
     def expressionable(self) -> "bool":
         """Gets the expressionable of this GsaAttributeInfo.
+        Determines whether or not this attribute can be used in an expression.
 
         Returns
         -------
@@ -233,6 +236,7 @@ class GsaAttributeInfo(ModelBase):
     @expressionable.setter
     def expressionable(self, expressionable: "bool") -> None:
         """Sets the expressionable of this GsaAttributeInfo.
+        Determines whether or not this attribute can be used in an expression.
 
         Parameters
         ----------
@@ -250,6 +254,7 @@ class GsaAttributeInfo(ModelBase):
     @property
     def linkable(self) -> "bool":
         """Gets the linkable of this GsaAttributeInfo.
+        Determines whether or not this attribute can be linked to from a tabular column.
 
         Returns
         -------
@@ -261,6 +266,7 @@ class GsaAttributeInfo(ModelBase):
     @linkable.setter
     def linkable(self, linkable: "bool") -> None:
         """Sets the linkable of this GsaAttributeInfo.
+        Determines whether or not this attribute can be linked to from a tabular column.
 
         Parameters
         ----------
@@ -332,25 +338,25 @@ class GsaAttributeInfo(ModelBase):
         self._is_meta_attribute = is_meta_attribute
 
     @property
-    def ordered_meta_attributes(self) -> "Union[List[GsaSlimNamedEntity], None, Unset_Type]":
+    def ordered_meta_attributes(self) -> "Union[List[GsaSlimTypedAttribute], None, Unset_Type]":
         """Gets the ordered_meta_attributes of this GsaAttributeInfo.
 
         Returns
         -------
-        Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        Union[List[GsaSlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaAttributeInfo.
         """
         return self._ordered_meta_attributes
 
     @ordered_meta_attributes.setter
     def ordered_meta_attributes(
-        self, ordered_meta_attributes: "Union[List[GsaSlimNamedEntity], None, Unset_Type]"
+        self, ordered_meta_attributes: "Union[List[GsaSlimTypedAttribute], None, Unset_Type]"
     ) -> None:
         """Sets the ordered_meta_attributes of this GsaAttributeInfo.
 
         Parameters
         ----------
-        ordered_meta_attributes: Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        ordered_meta_attributes: Union[List[GsaSlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaAttributeInfo.
         """
         self._ordered_meta_attributes = ordered_meta_attributes

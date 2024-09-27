@@ -111,6 +111,7 @@ class GsaNewLayoutSmartLinkItem(GsaNewLayoutItem):
     @property
     def forwards(self) -> "Union[bool, Unset_Type]":
         """Gets the forwards of this GsaNewLayoutSmartLinkItem.
+        true if the smart link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).
 
         Returns
         -------
@@ -122,6 +123,7 @@ class GsaNewLayoutSmartLinkItem(GsaNewLayoutItem):
     @forwards.setter
     def forwards(self, forwards: "Union[bool, Unset_Type]") -> None:
         """Sets the forwards of this GsaNewLayoutSmartLinkItem.
+        true if the smart link points from the table the layout is in; or false if it points towards the table the layout is in (an inbound link).
 
         Parameters
         ----------

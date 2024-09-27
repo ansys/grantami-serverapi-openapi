@@ -61,16 +61,17 @@ class GsaTabularDatumCell(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "column_guid": "str",
+        "column": "GsaSlimEntity",
         "cell_datum": "GsaDatum",
     }
 
     attribute_map: Dict[str, str] = {
-        "column_guid": "columnGuid",
+        "column": "column",
         "cell_datum": "cellDatum",
     }
 
     subtype_mapping: Dict[str, str] = {
+        "column": "GsaSlimEntity",
         "cellDatum": "GsaDatum",
     }
 
@@ -79,50 +80,50 @@ class GsaTabularDatumCell(ModelBase):
     def __init__(
         self,
         *,
-        column_guid: "str",
+        column: "GsaSlimEntity",
         cell_datum: "Union[GsaDatum, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularDatumCell - a model defined in Swagger
 
         Parameters
         ----------
-        column_guid: str
+        column: GsaSlimEntity
         cell_datum: GsaDatum, optional
         """
-        self._column_guid: str
+        self._column: GsaSlimEntity
         self._cell_datum: Union[GsaDatum, Unset_Type] = Unset
 
-        self.column_guid = column_guid
+        self.column = column
         if cell_datum is not Unset:
             self.cell_datum = cell_datum
 
     @property
-    def column_guid(self) -> "str":
-        """Gets the column_guid of this GsaTabularDatumCell.
+    def column(self) -> "GsaSlimEntity":
+        """Gets the column of this GsaTabularDatumCell.
 
         Returns
         -------
-        str
-            The column_guid of this GsaTabularDatumCell.
+        GsaSlimEntity
+            The column of this GsaTabularDatumCell.
         """
-        return self._column_guid
+        return self._column
 
-    @column_guid.setter
-    def column_guid(self, column_guid: "str") -> None:
-        """Sets the column_guid of this GsaTabularDatumCell.
+    @column.setter
+    def column(self, column: "GsaSlimEntity") -> None:
+        """Sets the column of this GsaTabularDatumCell.
 
         Parameters
         ----------
-        column_guid: str
-            The column_guid of this GsaTabularDatumCell.
+        column: GsaSlimEntity
+            The column of this GsaTabularDatumCell.
         """
         # Field is not nullable
-        if column_guid is None:
-            raise ValueError("Invalid value for 'column_guid', must not be 'None'")
+        if column is None:
+            raise ValueError("Invalid value for 'column', must not be 'None'")
         # Field is required
-        if column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'column_guid', must not be 'Unset'")
-        self._column_guid = column_guid
+        if column is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column', must not be 'Unset'")
+        self._column = column
 
     @property
     def cell_datum(self) -> "Union[GsaDatum, Unset_Type]":

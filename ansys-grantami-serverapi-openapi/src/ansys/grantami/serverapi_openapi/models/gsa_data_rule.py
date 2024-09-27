@@ -65,7 +65,7 @@ class GsaDataRule(ModelBase):
         "guid": "str",
         "name": "str",
         "regular_expression": "str",
-        "used_by_attributes": "list[GsaSlimNamedEntity]",
+        "used_by_attributes": "list[GsaSlimAttribute]",
     }
 
     attribute_map: Dict[str, str] = {
@@ -77,7 +77,7 @@ class GsaDataRule(ModelBase):
     }
 
     subtype_mapping: Dict[str, str] = {
-        "usedByAttributes": "GsaSlimNamedEntity",
+        "usedByAttributes": "GsaSlimAttribute",
     }
 
     discriminator: Optional[str] = None
@@ -89,7 +89,7 @@ class GsaDataRule(ModelBase):
         guid: "str",
         name: "str",
         regular_expression: "str",
-        used_by_attributes: "List[GsaSlimNamedEntity]",
+        used_by_attributes: "List[GsaSlimAttribute]",
     ) -> None:
         """GsaDataRule - a model defined in Swagger
 
@@ -99,11 +99,11 @@ class GsaDataRule(ModelBase):
         guid: str
         name: str
         regular_expression: str
-        used_by_attributes: List[GsaSlimNamedEntity]
+        used_by_attributes: List[GsaSlimAttribute]
         """
         self._description: str
         self._regular_expression: str
-        self._used_by_attributes: List[GsaSlimNamedEntity]
+        self._used_by_attributes: List[GsaSlimAttribute]
         self._name: str
         self._guid: str
 
@@ -170,23 +170,23 @@ class GsaDataRule(ModelBase):
         self._regular_expression = regular_expression
 
     @property
-    def used_by_attributes(self) -> "List[GsaSlimNamedEntity]":
+    def used_by_attributes(self) -> "List[GsaSlimAttribute]":
         """Gets the used_by_attributes of this GsaDataRule.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        List[GsaSlimAttribute]
             The used_by_attributes of this GsaDataRule.
         """
         return self._used_by_attributes
 
     @used_by_attributes.setter
-    def used_by_attributes(self, used_by_attributes: "List[GsaSlimNamedEntity]") -> None:
+    def used_by_attributes(self, used_by_attributes: "List[GsaSlimAttribute]") -> None:
         """Sets the used_by_attributes of this GsaDataRule.
 
         Parameters
         ----------
-        used_by_attributes: List[GsaSlimNamedEntity]
+        used_by_attributes: List[GsaSlimAttribute]
             The used_by_attributes of this GsaDataRule.
         """
         # Field is not nullable

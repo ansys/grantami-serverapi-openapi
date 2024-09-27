@@ -72,7 +72,7 @@ class GsaFileAttribute(GsaAttribute):
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimNamedEntity",
+        "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "help_path": "str",
     }
@@ -106,7 +106,7 @@ class GsaFileAttribute(GsaAttribute):
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.FILE,
-        about_attribute: "Union[GsaSlimNamedEntity, Unset_Type]" = Unset,
+        about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -122,7 +122,7 @@ class GsaFileAttribute(GsaAttribute):
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
-        about_attribute: GsaSlimNamedEntity, optional
+        about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
         help_path: str, optional
         """

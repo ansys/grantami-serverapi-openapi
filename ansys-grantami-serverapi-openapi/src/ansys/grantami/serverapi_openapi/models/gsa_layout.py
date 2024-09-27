@@ -144,6 +144,7 @@ class GsaLayout(ModelBase):
     @property
     def applicable_applications(self) -> "List[str]":
         """Gets the applicable_applications of this GsaLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Returns
         -------
@@ -155,6 +156,7 @@ class GsaLayout(ModelBase):
     @applicable_applications.setter
     def applicable_applications(self, applicable_applications: "List[str]") -> None:
         """Sets the applicable_applications of this GsaLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Parameters
         ----------

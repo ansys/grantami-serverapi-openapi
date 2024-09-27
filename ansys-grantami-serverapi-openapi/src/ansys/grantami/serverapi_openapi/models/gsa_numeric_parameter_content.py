@@ -67,15 +67,15 @@ class GsaNumericParameterContent(GsaParameterContent):
     """
     swagger_types: Dict[str, str] = {
         "parameter": "GsaSlimNamedEntity",
-        "parameter_range": "GsaContinuousRange",
         "type": "GsaParameterType",
+        "parameter_range": "GsaContinuousRange",
         "value": "float",
     }
 
     attribute_map: Dict[str, str] = {
         "parameter": "parameter",
-        "parameter_range": "parameterRange",
         "type": "type",
+        "parameter_range": "parameterRange",
         "value": "value",
     }
 
@@ -89,8 +89,8 @@ class GsaNumericParameterContent(GsaParameterContent):
         self,
         *,
         parameter: "GsaSlimNamedEntity",
-        parameter_range: "GsaContinuousRange",
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        parameter_range: "Union[GsaContinuousRange, Unset_Type]" = Unset,
         value: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaNumericParameterContent - a model defined in Swagger
@@ -98,17 +98,18 @@ class GsaNumericParameterContent(GsaParameterContent):
         Parameters
         ----------
         parameter: GsaSlimNamedEntity
-        parameter_range: GsaContinuousRange
         type: GsaParameterType
+        parameter_range: GsaContinuousRange, optional
         value: float, optional
         """
         super().__init__(parameter=parameter, type=type)
         self._value: Union[float, None, Unset_Type] = Unset
-        self._parameter_range: GsaContinuousRange
+        self._parameter_range: Union[GsaContinuousRange, Unset_Type] = Unset
 
         if value is not Unset:
             self.value = value
-        self.parameter_range = parameter_range
+        if parameter_range is not Unset:
+            self.parameter_range = parameter_range
 
     @property
     def value(self) -> "Union[float, None, Unset_Type]":
@@ -133,31 +134,28 @@ class GsaNumericParameterContent(GsaParameterContent):
         self._value = value
 
     @property
-    def parameter_range(self) -> "GsaContinuousRange":
+    def parameter_range(self) -> "Union[GsaContinuousRange, Unset_Type]":
         """Gets the parameter_range of this GsaNumericParameterContent.
 
         Returns
         -------
-        GsaContinuousRange
+        Union[GsaContinuousRange, Unset_Type]
             The parameter_range of this GsaNumericParameterContent.
         """
         return self._parameter_range
 
     @parameter_range.setter
-    def parameter_range(self, parameter_range: "GsaContinuousRange") -> None:
+    def parameter_range(self, parameter_range: "Union[GsaContinuousRange, Unset_Type]") -> None:
         """Sets the parameter_range of this GsaNumericParameterContent.
 
         Parameters
         ----------
-        parameter_range: GsaContinuousRange
+        parameter_range: Union[GsaContinuousRange, Unset_Type]
             The parameter_range of this GsaNumericParameterContent.
         """
         # Field is not nullable
         if parameter_range is None:
             raise ValueError("Invalid value for 'parameter_range', must not be 'None'")
-        # Field is required
-        if parameter_range is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'parameter_range', must not be 'Unset'")
         self._parameter_range = parameter_range
 
     @classmethod
