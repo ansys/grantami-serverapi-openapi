@@ -61,14 +61,14 @@ class GsaDataExportGridPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "high": "float",
-        "low": "float",
+        "high_value": "float",
+        "low_value": "float",
         "parameter_values": "list[GsaDataExportParameterValue]",
     }
 
     attribute_map: Dict[str, str] = {
-        "high": "high",
-        "low": "low",
+        "high_value": "highValue",
+        "low_value": "lowValue",
         "parameter_values": "parameterValues",
     }
 
@@ -81,28 +81,28 @@ class GsaDataExportGridPoint(ModelBase):
     def __init__(
         self,
         *,
-        high: "Union[float, Unset_Type]" = Unset,
-        low: "Union[float, Unset_Type]" = Unset,
+        high_value: "Union[float, Unset_Type]" = Unset,
+        low_value: "Union[float, Unset_Type]" = Unset,
         parameter_values: "Union[List[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportGridPoint - a model defined in Swagger
 
         Parameters
         ----------
-        high: float, optional
-        low: float, optional
+        high_value: float, optional
+        low_value: float, optional
         parameter_values: List[GsaDataExportParameterValue], optional
         """
         self._parameter_values: Union[List[GsaDataExportParameterValue], None, Unset_Type] = Unset
-        self._low: Union[float, Unset_Type] = Unset
-        self._high: Union[float, Unset_Type] = Unset
+        self._low_value: Union[float, Unset_Type] = Unset
+        self._high_value: Union[float, Unset_Type] = Unset
 
         if parameter_values is not Unset:
             self.parameter_values = parameter_values
-        if low is not Unset:
-            self.low = low
-        if high is not Unset:
-            self.high = high
+        if low_value is not Unset:
+            self.low_value = low_value
+        if high_value is not Unset:
+            self.high_value = high_value
 
     @property
     def parameter_values(self) -> "Union[List[GsaDataExportParameterValue], None, Unset_Type]":
@@ -129,54 +129,54 @@ class GsaDataExportGridPoint(ModelBase):
         self._parameter_values = parameter_values
 
     @property
-    def low(self) -> "Union[float, Unset_Type]":
-        """Gets the low of this GsaDataExportGridPoint.
+    def low_value(self) -> "Union[float, Unset_Type]":
+        """Gets the low_value of this GsaDataExportGridPoint.
 
         Returns
         -------
         Union[float, Unset_Type]
-            The low of this GsaDataExportGridPoint.
+            The low_value of this GsaDataExportGridPoint.
         """
-        return self._low
+        return self._low_value
 
-    @low.setter
-    def low(self, low: "Union[float, Unset_Type]") -> None:
-        """Sets the low of this GsaDataExportGridPoint.
+    @low_value.setter
+    def low_value(self, low_value: "Union[float, Unset_Type]") -> None:
+        """Sets the low_value of this GsaDataExportGridPoint.
 
         Parameters
         ----------
-        low: Union[float, Unset_Type]
-            The low of this GsaDataExportGridPoint.
+        low_value: Union[float, Unset_Type]
+            The low_value of this GsaDataExportGridPoint.
         """
         # Field is not nullable
-        if low is None:
-            raise ValueError("Invalid value for 'low', must not be 'None'")
-        self._low = low
+        if low_value is None:
+            raise ValueError("Invalid value for 'low_value', must not be 'None'")
+        self._low_value = low_value
 
     @property
-    def high(self) -> "Union[float, Unset_Type]":
-        """Gets the high of this GsaDataExportGridPoint.
+    def high_value(self) -> "Union[float, Unset_Type]":
+        """Gets the high_value of this GsaDataExportGridPoint.
 
         Returns
         -------
         Union[float, Unset_Type]
-            The high of this GsaDataExportGridPoint.
+            The high_value of this GsaDataExportGridPoint.
         """
-        return self._high
+        return self._high_value
 
-    @high.setter
-    def high(self, high: "Union[float, Unset_Type]") -> None:
-        """Sets the high of this GsaDataExportGridPoint.
+    @high_value.setter
+    def high_value(self, high_value: "Union[float, Unset_Type]") -> None:
+        """Sets the high_value of this GsaDataExportGridPoint.
 
         Parameters
         ----------
-        high: Union[float, Unset_Type]
-            The high of this GsaDataExportGridPoint.
+        high_value: Union[float, Unset_Type]
+            The high_value of this GsaDataExportGridPoint.
         """
         # Field is not nullable
-        if high is None:
-            raise ValueError("Invalid value for 'high', must not be 'None'")
-        self._high = high
+        if high_value is None:
+            raise ValueError("Invalid value for 'high_value', must not be 'None'")
+        self._high_value = high_value
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:
