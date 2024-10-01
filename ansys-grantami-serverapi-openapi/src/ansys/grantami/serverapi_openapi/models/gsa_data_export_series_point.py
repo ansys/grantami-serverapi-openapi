@@ -61,17 +61,17 @@ class GsaDataExportSeriesPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "x": "float",
         "x_name": "str",
-        "y_high": "float",
-        "y_low": "float",
+        "x_value": "float",
+        "y_high_value": "float",
+        "y_low_value": "float",
     }
 
     attribute_map: Dict[str, str] = {
-        "x": "x",
         "x_name": "xName",
-        "y_high": "yHigh",
-        "y_low": "yLow",
+        "x_value": "xValue",
+        "y_high_value": "yHighValue",
+        "y_low_value": "yLowValue",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -81,58 +81,58 @@ class GsaDataExportSeriesPoint(ModelBase):
     def __init__(
         self,
         *,
-        x: "Union[float, Unset_Type]" = Unset,
         x_name: "Union[str, None, Unset_Type]" = Unset,
-        y_high: "Union[float, Unset_Type]" = Unset,
-        y_low: "Union[float, Unset_Type]" = Unset,
+        x_value: "Union[float, Unset_Type]" = Unset,
+        y_high_value: "Union[float, Unset_Type]" = Unset,
+        y_low_value: "Union[float, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportSeriesPoint - a model defined in Swagger
 
         Parameters
         ----------
-        x: float, optional
         x_name: str, optional
-        y_high: float, optional
-        y_low: float, optional
+        x_value: float, optional
+        y_high_value: float, optional
+        y_low_value: float, optional
         """
-        self._x: Union[float, Unset_Type] = Unset
+        self._x_value: Union[float, Unset_Type] = Unset
         self._x_name: Union[str, None, Unset_Type] = Unset
-        self._y_low: Union[float, Unset_Type] = Unset
-        self._y_high: Union[float, Unset_Type] = Unset
+        self._y_low_value: Union[float, Unset_Type] = Unset
+        self._y_high_value: Union[float, Unset_Type] = Unset
 
-        if x is not Unset:
-            self.x = x
+        if x_value is not Unset:
+            self.x_value = x_value
         if x_name is not Unset:
             self.x_name = x_name
-        if y_low is not Unset:
-            self.y_low = y_low
-        if y_high is not Unset:
-            self.y_high = y_high
+        if y_low_value is not Unset:
+            self.y_low_value = y_low_value
+        if y_high_value is not Unset:
+            self.y_high_value = y_high_value
 
     @property
-    def x(self) -> "Union[float, Unset_Type]":
-        """Gets the x of this GsaDataExportSeriesPoint.
+    def x_value(self) -> "Union[float, Unset_Type]":
+        """Gets the x_value of this GsaDataExportSeriesPoint.
 
         Returns
         -------
         Union[float, Unset_Type]
-            The x of this GsaDataExportSeriesPoint.
+            The x_value of this GsaDataExportSeriesPoint.
         """
-        return self._x
+        return self._x_value
 
-    @x.setter
-    def x(self, x: "Union[float, Unset_Type]") -> None:
-        """Sets the x of this GsaDataExportSeriesPoint.
+    @x_value.setter
+    def x_value(self, x_value: "Union[float, Unset_Type]") -> None:
+        """Sets the x_value of this GsaDataExportSeriesPoint.
 
         Parameters
         ----------
-        x: Union[float, Unset_Type]
-            The x of this GsaDataExportSeriesPoint.
+        x_value: Union[float, Unset_Type]
+            The x_value of this GsaDataExportSeriesPoint.
         """
         # Field is not nullable
-        if x is None:
-            raise ValueError("Invalid value for 'x', must not be 'None'")
-        self._x = x
+        if x_value is None:
+            raise ValueError("Invalid value for 'x_value', must not be 'None'")
+        self._x_value = x_value
 
     @property
     def x_name(self) -> "Union[str, None, Unset_Type]":
@@ -157,54 +157,54 @@ class GsaDataExportSeriesPoint(ModelBase):
         self._x_name = x_name
 
     @property
-    def y_low(self) -> "Union[float, Unset_Type]":
-        """Gets the y_low of this GsaDataExportSeriesPoint.
+    def y_low_value(self) -> "Union[float, Unset_Type]":
+        """Gets the y_low_value of this GsaDataExportSeriesPoint.
 
         Returns
         -------
         Union[float, Unset_Type]
-            The y_low of this GsaDataExportSeriesPoint.
+            The y_low_value of this GsaDataExportSeriesPoint.
         """
-        return self._y_low
+        return self._y_low_value
 
-    @y_low.setter
-    def y_low(self, y_low: "Union[float, Unset_Type]") -> None:
-        """Sets the y_low of this GsaDataExportSeriesPoint.
+    @y_low_value.setter
+    def y_low_value(self, y_low_value: "Union[float, Unset_Type]") -> None:
+        """Sets the y_low_value of this GsaDataExportSeriesPoint.
 
         Parameters
         ----------
-        y_low: Union[float, Unset_Type]
-            The y_low of this GsaDataExportSeriesPoint.
+        y_low_value: Union[float, Unset_Type]
+            The y_low_value of this GsaDataExportSeriesPoint.
         """
         # Field is not nullable
-        if y_low is None:
-            raise ValueError("Invalid value for 'y_low', must not be 'None'")
-        self._y_low = y_low
+        if y_low_value is None:
+            raise ValueError("Invalid value for 'y_low_value', must not be 'None'")
+        self._y_low_value = y_low_value
 
     @property
-    def y_high(self) -> "Union[float, Unset_Type]":
-        """Gets the y_high of this GsaDataExportSeriesPoint.
+    def y_high_value(self) -> "Union[float, Unset_Type]":
+        """Gets the y_high_value of this GsaDataExportSeriesPoint.
 
         Returns
         -------
         Union[float, Unset_Type]
-            The y_high of this GsaDataExportSeriesPoint.
+            The y_high_value of this GsaDataExportSeriesPoint.
         """
-        return self._y_high
+        return self._y_high_value
 
-    @y_high.setter
-    def y_high(self, y_high: "Union[float, Unset_Type]") -> None:
-        """Sets the y_high of this GsaDataExportSeriesPoint.
+    @y_high_value.setter
+    def y_high_value(self, y_high_value: "Union[float, Unset_Type]") -> None:
+        """Sets the y_high_value of this GsaDataExportSeriesPoint.
 
         Parameters
         ----------
-        y_high: Union[float, Unset_Type]
-            The y_high of this GsaDataExportSeriesPoint.
+        y_high_value: Union[float, Unset_Type]
+            The y_high_value of this GsaDataExportSeriesPoint.
         """
         # Field is not nullable
-        if y_high is None:
-            raise ValueError("Invalid value for 'y_high', must not be 'None'")
-        self._y_high = y_high
+        if y_high_value is None:
+            raise ValueError("Invalid value for 'y_high_value', must not be 'None'")
+        self._y_high_value = y_high_value
 
     @classmethod
     def get_real_child_model(cls, data: Dict[str, str]) -> str:

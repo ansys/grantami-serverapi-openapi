@@ -402,6 +402,7 @@ from .models.gsa_discrete_text_prefix_datum_criterion import GsaDiscreteTextPref
 from .models.gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatumCriterion
 from .models.gsa_discrete_type import GsaDiscreteType
 from .models.gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
+from .models.gsa_discrete_type_usage import GsaDiscreteTypeUsage
 from .models.gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .models.gsa_discrete_value import GsaDiscreteValue
 from .models.gsa_discrete_value_deletion_exception import GsaDiscreteValueDeletionException
@@ -878,6 +879,7 @@ from .models.gsa_tabular_attribute_target import GsaTabularAttributeTarget
 from .models.gsa_tabular_attribute_usage_data_modification_error_detail import (
     GsaTabularAttributeUsageDataModificationErrorDetail,
 )
+from .models.gsa_tabular_attribute_with_columns import GsaTabularAttributeWithColumns
 from .models.gsa_tabular_column import GsaTabularColumn
 from .models.gsa_tabular_column_dto_type import GsaTabularColumnDtoType
 from .models.gsa_tabular_column_roll_up_type import GsaTabularColumnRollUpType
@@ -1337,6 +1339,7 @@ __all__ = [
     "GsaDiscreteTextValuesDatumCriterion",
     "GsaDiscreteType",
     "GsaDiscreteTypeDeletionException",
+    "GsaDiscreteTypeUsage",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
     "GsaDiscreteValueDeletionException",
@@ -1753,6 +1756,7 @@ __all__ = [
     "GsaTabularAttribute",
     "GsaTabularAttributeTarget",
     "GsaTabularAttributeUsageDataModificationErrorDetail",
+    "GsaTabularAttributeWithColumns",
     "GsaTabularColumn",
     "GsaTabularColumnDtoType",
     "GsaTabularColumnRollUpType",
