@@ -236,7 +236,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def get_attributes_for_type(
         self, *, database_key: "str", discrete_type_guid: "str"
-    ) -> "Union[GsaSlimObjects, None]":
+    ) -> "Union[GsaDiscreteTypeUsage, None]":
         """Gets objects that are using this discrete type.
 
         This method makes a synchronous HTTP request.
@@ -248,7 +248,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        Union[GsaSlimObjects, None]
+        Union[GsaDiscreteTypeUsage, None]
         """
         data = self._get_attributes_for_type_with_http_info(
             database_key, discrete_type_guid, _return_http_data_only=True
@@ -305,7 +305,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GsaSlimObjects",
+            200: "GsaDiscreteTypeUsage",
             400: None,
             404: None,
         }
