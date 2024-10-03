@@ -48,7 +48,6 @@ from .columns_columnguidimportpicture_body import ColumnsColumnguidimportpicture
 from .folderguid_files_body1 import FolderguidFilesBody1
 from .folderguid_files_body2 import FolderguidFilesBody2
 from .folderguid_files_body import FolderguidFilesBody
-from .granta_mi_enabled_licenses_info import GrantaMIEnabledLicensesInfo
 from .granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
@@ -360,6 +359,7 @@ from .gsa_dynamic_link_group_usage_data_modification_error_detail import (
     GsaDynamicLinkGroupUsageDataModificationErrorDetail,
 )
 from .gsa_dynamic_record_link_group import GsaDynamicRecordLinkGroup
+from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_error_detail import GsaErrorDetail
 from .gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
 from .gsa_export_failure import GsaExportFailure
@@ -957,7 +957,6 @@ __all__ = [
     "FolderguidFilesBody",
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
-    "GrantaMIEnabledLicensesInfo",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
@@ -1231,6 +1230,7 @@ __all__ = [
     "GsaDoubleSortingValue",
     "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
     "GsaDynamicRecordLinkGroup",
+    "GsaEnabledLicensesInfo",
     "GsaErrorDetail",
     "GsaExcludeValuesSpecifier",
     "GsaExportFailure",

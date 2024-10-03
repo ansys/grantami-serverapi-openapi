@@ -186,14 +186,14 @@ class LicenseApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_server_license(self) -> "GrantaMIEnabledLicensesInfo":
+    def get_server_license(self) -> "GsaEnabledLicensesInfo":
         """Get info on which server licenses are enabled, and the license expiry date.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        GrantaMIEnabledLicensesInfo
+        GsaEnabledLicensesInfo
         """
         data = self._get_server_license_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -228,7 +228,7 @@ class LicenseApi(ApiBase):
         )
 
         response_type_map: Dict[int, Optional[str]] = {
-            200: "GrantaMIEnabledLicensesInfo",
+            200: "GsaEnabledLicensesInfo",
         }
 
         return self.api_client.call_api(
