@@ -100,7 +100,7 @@ jobs:
     if: (github.event_name == 'workflow_dispatch') && (github.ref == 'refs/heads/main') && (inputs.publish-to-private-pypi == 'true')
     steps:
       - name: "Release to private PyPI"
-        uses: ansys/actions/release-pypi-private@v7
+        uses: ansys/actions/release-pypi-private@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           twine-username: "__token__"
@@ -117,13 +117,13 @@ jobs:
       contents: write
     steps:
       - name: "Release to public PyPI"
-        uses: ansys/actions/release-pypi-public@v7
+        uses: ansys/actions/release-pypi-public@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           use-trusted-publisher: true
 
       - name: "Release to private PyPI"
-        uses: ansys/actions/release-pypi-private@v7
+        uses: ansys/actions/release-pypi-private@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           twine-username: "__token__"
