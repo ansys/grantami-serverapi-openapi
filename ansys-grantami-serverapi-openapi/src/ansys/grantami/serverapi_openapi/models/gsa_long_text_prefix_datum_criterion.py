@@ -66,13 +66,13 @@ class GsaLongTextPrefixDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "type": "GsaDatumCriterionType",
         "prefix": "str",
+        "type": "GsaDatumCriterionType",
     }
 
     attribute_map: Dict[str, str] = {
-        "type": "type",
         "prefix": "prefix",
+        "type": "type",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -82,42 +82,47 @@ class GsaLongTextPrefixDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
+        prefix: "str",
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.LONGTEXTPREFIX,
-        prefix: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaLongTextPrefixDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
+        prefix: str
         type: GsaDatumCriterionType
-        prefix: str, optional
         """
         super().__init__(type=type)
-        self._prefix: Union[str, None, Unset_Type] = Unset
+        self._prefix: str
 
-        if prefix is not Unset:
-            self.prefix = prefix
+        self.prefix = prefix
 
     @property
-    def prefix(self) -> "Union[str, None, Unset_Type]":
+    def prefix(self) -> "str":
         """Gets the prefix of this GsaLongTextPrefixDatumCriterion.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The prefix of this GsaLongTextPrefixDatumCriterion.
         """
         return self._prefix
 
     @prefix.setter
-    def prefix(self, prefix: "Union[str, None, Unset_Type]") -> None:
+    def prefix(self, prefix: "str") -> None:
         """Sets the prefix of this GsaLongTextPrefixDatumCriterion.
 
         Parameters
         ----------
-        prefix: Union[str, None, Unset_Type]
+        prefix: str
             The prefix of this GsaLongTextPrefixDatumCriterion.
         """
+        # Field is not nullable
+        if prefix is None:
+            raise ValueError("Invalid value for 'prefix', must not be 'None'")
+        # Field is required
+        if prefix is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'prefix', must not be 'Unset'")
         self._prefix = prefix
 
     @classmethod

@@ -83,44 +83,46 @@ class GsaDiscreteGuidDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEGUID,
-        value: "Union[str, Unset_Type]" = Unset,
+        value: "str",
     ) -> None:
         """GsaDiscreteGuidDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
-        value: str, optional
+        value: str
         """
         super().__init__(type=type)
-        self._value: Union[str, Unset_Type] = Unset
+        self._value: str
 
-        if value is not Unset:
-            self.value = value
+        self.value = value
 
     @property
-    def value(self) -> "Union[str, Unset_Type]":
+    def value(self) -> "str":
         """Gets the value of this GsaDiscreteGuidDatumCriterion.
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The value of this GsaDiscreteGuidDatumCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Union[str, Unset_Type]") -> None:
+    def value(self, value: "str") -> None:
         """Sets the value of this GsaDiscreteGuidDatumCriterion.
 
         Parameters
         ----------
-        value: Union[str, Unset_Type]
+        value: str
             The value of this GsaDiscreteGuidDatumCriterion.
         """
         # Field is not nullable
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
     @classmethod

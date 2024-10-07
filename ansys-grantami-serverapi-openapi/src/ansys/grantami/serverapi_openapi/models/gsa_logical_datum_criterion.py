@@ -83,46 +83,48 @@ class GsaLogicalDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.LOGICAL,
-        value: "Union[bool, Unset_Type]" = Unset,
+        value: "bool",
     ) -> None:
         """GsaLogicalDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
-        value: bool, optional
+        value: bool
         """
         super().__init__(type=type)
-        self._value: Union[bool, Unset_Type] = Unset
+        self._value: bool
 
-        if value is not Unset:
-            self.value = value
+        self.value = value
 
     @property
-    def value(self) -> "Union[bool, Unset_Type]":
+    def value(self) -> "bool":
         """Gets the value of this GsaLogicalDatumCriterion.
         Logical search value
 
         Returns
         -------
-        Union[bool, Unset_Type]
+        bool
             The value of this GsaLogicalDatumCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Union[bool, Unset_Type]") -> None:
+    def value(self, value: "bool") -> None:
         """Sets the value of this GsaLogicalDatumCriterion.
         Logical search value
 
         Parameters
         ----------
-        value: Union[bool, Unset_Type]
+        value: bool
             The value of this GsaLogicalDatumCriterion.
         """
         # Field is not nullable
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
     @classmethod
