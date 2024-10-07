@@ -67,14 +67,14 @@ class GsaShortTextDatumCriterion(GsaDatumCriterion):
     """
     swagger_types: Dict[str, str] = {
         "type": "GsaDatumCriterionType",
-        "text_match_behavior": "GsaTextMatchBehavior",
         "value": "str",
+        "text_match_behavior": "GsaTextMatchBehavior",
     }
 
     attribute_map: Dict[str, str] = {
         "type": "type",
-        "text_match_behavior": "textMatchBehavior",
         "value": "value",
+        "text_match_behavior": "textMatchBehavior",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -87,46 +87,51 @@ class GsaShortTextDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.SHORTTEXT,
+        value: "str",
         text_match_behavior: "Union[GsaTextMatchBehavior, Unset_Type]" = Unset,
-        value: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaShortTextDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
+        value: str
         text_match_behavior: GsaTextMatchBehavior, optional
-        value: str, optional
         """
         super().__init__(type=type)
-        self._value: Union[str, None, Unset_Type] = Unset
+        self._value: str
         self._text_match_behavior: Union[GsaTextMatchBehavior, Unset_Type] = Unset
 
-        if value is not Unset:
-            self.value = value
+        self.value = value
         if text_match_behavior is not Unset:
             self.text_match_behavior = text_match_behavior
 
     @property
-    def value(self) -> "Union[str, None, Unset_Type]":
+    def value(self) -> "str":
         """Gets the value of this GsaShortTextDatumCriterion.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The value of this GsaShortTextDatumCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Union[str, None, Unset_Type]") -> None:
+    def value(self, value: "str") -> None:
         """Sets the value of this GsaShortTextDatumCriterion.
 
         Parameters
         ----------
-        value: Union[str, None, Unset_Type]
+        value: str
             The value of this GsaShortTextDatumCriterion.
         """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
     @property

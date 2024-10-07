@@ -83,43 +83,48 @@ class GsaLongTextDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.LONGTEXT,
-        value: "Union[str, None, Unset_Type]" = Unset,
+        value: "str",
     ) -> None:
         """GsaLongTextDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
-        value: str, optional
+        value: str
         """
         super().__init__(type=type)
-        self._value: Union[str, None, Unset_Type] = Unset
+        self._value: str
 
-        if value is not Unset:
-            self.value = value
+        self.value = value
 
     @property
-    def value(self) -> "Union[str, None, Unset_Type]":
+    def value(self) -> "str":
         """Gets the value of this GsaLongTextDatumCriterion.
         Long text search value
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The value of this GsaLongTextDatumCriterion.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "Union[str, None, Unset_Type]") -> None:
+    def value(self, value: "str") -> None:
         """Sets the value of this GsaLongTextDatumCriterion.
         Long text search value
 
         Parameters
         ----------
-        value: Union[str, None, Unset_Type]
+        value: str
             The value of this GsaLongTextDatumCriterion.
         """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
 
     @classmethod
