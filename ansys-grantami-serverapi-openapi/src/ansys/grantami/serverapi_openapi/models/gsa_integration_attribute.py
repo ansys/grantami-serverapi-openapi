@@ -61,6 +61,7 @@ class GsaIntegrationAttribute(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "name": "str",
         "type": "GsaAttributeType",
         "discrete_type_guid": "str",
         "discrete_type_identity": "int",
@@ -68,7 +69,6 @@ class GsaIntegrationAttribute(ModelBase):
         "guid": "str",
         "identity": "int",
         "is_unitted": "bool",
-        "name": "str",
         "parameters": "list[GsaIntegrationParameterInfo]",
         "target_database": "GsaObjectIdentifier",
         "target_table": "GsaObjectIdentifier",
@@ -77,6 +77,7 @@ class GsaIntegrationAttribute(ModelBase):
     }
 
     attribute_map: Dict[str, str] = {
+        "name": "name",
         "type": "type",
         "discrete_type_guid": "discreteTypeGuid",
         "discrete_type_identity": "discreteTypeIdentity",
@@ -84,7 +85,6 @@ class GsaIntegrationAttribute(ModelBase):
         "guid": "guid",
         "identity": "identity",
         "is_unitted": "isUnitted",
-        "name": "name",
         "parameters": "parameters",
         "target_database": "targetDatabase",
         "target_table": "targetTable",
@@ -104,6 +104,7 @@ class GsaIntegrationAttribute(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
         type: "GsaAttributeType",
         discrete_type_guid: "Union[str, None, Unset_Type]" = Unset,
         discrete_type_identity: "Union[int, None, Unset_Type]" = Unset,
@@ -111,7 +112,6 @@ class GsaIntegrationAttribute(ModelBase):
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, Unset_Type]" = Unset,
         is_unitted: "Union[bool, None, Unset_Type]" = Unset,
-        name: "Union[str, None, Unset_Type]" = Unset,
         parameters: "Union[List[GsaIntegrationParameterInfo], None, Unset_Type]" = Unset,
         target_database: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         target_table: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
@@ -122,6 +122,7 @@ class GsaIntegrationAttribute(ModelBase):
 
         Parameters
         ----------
+        name: str
         type: GsaAttributeType
         discrete_type_guid: str, optional
         discrete_type_identity: int, optional
@@ -129,14 +130,13 @@ class GsaIntegrationAttribute(ModelBase):
         guid: str, optional
         identity: int, optional
         is_unitted: bool, optional
-        name: str, optional
         parameters: List[GsaIntegrationParameterInfo], optional
         target_database: GsaObjectIdentifier, optional
         target_table: GsaObjectIdentifier, optional
         unit_symbol: str, optional
         x_axis_parameter: str, optional
         """
-        self._name: Union[str, None, Unset_Type] = Unset
+        self._name: str
         self._identity: Union[int, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
         self._type: GsaAttributeType
@@ -150,8 +150,7 @@ class GsaIntegrationAttribute(ModelBase):
         self._graph_type: Union[str, None, Unset_Type] = Unset
         self._x_axis_parameter: Union[str, None, Unset_Type] = Unset
 
-        if name is not Unset:
-            self.name = name
+        self.name = name
         if identity is not Unset:
             self.identity = identity
         if guid is not Unset:
@@ -177,25 +176,31 @@ class GsaIntegrationAttribute(ModelBase):
             self.x_axis_parameter = x_axis_parameter
 
     @property
-    def name(self) -> "Union[str, None, Unset_Type]":
+    def name(self) -> "str":
         """Gets the name of this GsaIntegrationAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The name of this GsaIntegrationAttribute.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "Union[str, None, Unset_Type]") -> None:
+    def name(self, name: "str") -> None:
         """Sets the name of this GsaIntegrationAttribute.
 
         Parameters
         ----------
-        name: Union[str, None, Unset_Type]
+        name: str
             The name of this GsaIntegrationAttribute.
         """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @property

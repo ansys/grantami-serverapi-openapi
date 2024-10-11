@@ -62,16 +62,16 @@ class GsaDataExportRequest(ModelBase):
     """
     swagger_types: Dict[str, str] = {
         "attributes": "list[GsaAttributeToExport]",
+        "record_properties": "list[GsaRecordProperty]",
         "record_history_guids": "list[str]",
         "record_history_identities": "list[int]",
-        "record_properties": "list[GsaRecordProperty]",
     }
 
     attribute_map: Dict[str, str] = {
         "attributes": "attributes",
+        "record_properties": "recordProperties",
         "record_history_guids": "recordHistoryGuids",
         "record_history_identities": "recordHistoryIdentities",
-        "record_properties": "recordProperties",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -84,78 +84,86 @@ class GsaDataExportRequest(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "Union[List[GsaAttributeToExport], None, Unset_Type]" = Unset,
+        attributes: "List[GsaAttributeToExport]",
+        record_properties: "List[GsaRecordProperty]",
         record_history_guids: "Union[List[str], None, Unset_Type]" = Unset,
         record_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
-        record_properties: "Union[List[GsaRecordProperty], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportRequest - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GsaAttributeToExport], optional
+        attributes: List[GsaAttributeToExport]
+        record_properties: List[GsaRecordProperty]
         record_history_guids: List[str], optional
         record_history_identities: List[int], optional
-        record_properties: List[GsaRecordProperty], optional
         """
-        self._attributes: Union[List[GsaAttributeToExport], None, Unset_Type] = Unset
-        self._record_properties: Union[List[GsaRecordProperty], None, Unset_Type] = Unset
+        self._attributes: List[GsaAttributeToExport]
+        self._record_properties: List[GsaRecordProperty]
         self._record_history_identities: Union[List[int], None, Unset_Type] = Unset
         self._record_history_guids: Union[List[str], None, Unset_Type] = Unset
 
-        if attributes is not Unset:
-            self.attributes = attributes
-        if record_properties is not Unset:
-            self.record_properties = record_properties
+        self.attributes = attributes
+        self.record_properties = record_properties
         if record_history_identities is not Unset:
             self.record_history_identities = record_history_identities
         if record_history_guids is not Unset:
             self.record_history_guids = record_history_guids
 
     @property
-    def attributes(self) -> "Union[List[GsaAttributeToExport], None, Unset_Type]":
+    def attributes(self) -> "List[GsaAttributeToExport]":
         """Gets the attributes of this GsaDataExportRequest.
 
         Returns
         -------
-        Union[List[GsaAttributeToExport], None, Unset_Type]
+        List[GsaAttributeToExport]
             The attributes of this GsaDataExportRequest.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "Union[List[GsaAttributeToExport], None, Unset_Type]") -> None:
+    def attributes(self, attributes: "List[GsaAttributeToExport]") -> None:
         """Sets the attributes of this GsaDataExportRequest.
 
         Parameters
         ----------
-        attributes: Union[List[GsaAttributeToExport], None, Unset_Type]
+        attributes: List[GsaAttributeToExport]
             The attributes of this GsaDataExportRequest.
         """
+        # Field is not nullable
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
+        # Field is required
+        if attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attributes', must not be 'Unset'")
         self._attributes = attributes
 
     @property
-    def record_properties(self) -> "Union[List[GsaRecordProperty], None, Unset_Type]":
+    def record_properties(self) -> "List[GsaRecordProperty]":
         """Gets the record_properties of this GsaDataExportRequest.
 
         Returns
         -------
-        Union[List[GsaRecordProperty], None, Unset_Type]
+        List[GsaRecordProperty]
             The record_properties of this GsaDataExportRequest.
         """
         return self._record_properties
 
     @record_properties.setter
-    def record_properties(
-        self, record_properties: "Union[List[GsaRecordProperty], None, Unset_Type]"
-    ) -> None:
+    def record_properties(self, record_properties: "List[GsaRecordProperty]") -> None:
         """Sets the record_properties of this GsaDataExportRequest.
 
         Parameters
         ----------
-        record_properties: Union[List[GsaRecordProperty], None, Unset_Type]
+        record_properties: List[GsaRecordProperty]
             The record_properties of this GsaDataExportRequest.
         """
+        # Field is not nullable
+        if record_properties is None:
+            raise ValueError("Invalid value for 'record_properties', must not be 'None'")
+        # Field is required
+        if record_properties is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'record_properties', must not be 'Unset'")
         self._record_properties = record_properties
 
     @property

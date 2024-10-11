@@ -81,7 +81,7 @@ class GsaSearchResponse(ModelBase):
     def __init__(
         self,
         *,
-        results: "Union[List[GsaSearchResult], None, Unset_Type]" = Unset,
+        results: "List[GsaSearchResult]",
         search_identifier: "Union[str, None, Unset_Type]" = Unset,
         total_result_count: "Union[int, Unset_Type]" = Unset,
     ) -> None:
@@ -89,20 +89,19 @@ class GsaSearchResponse(ModelBase):
 
         Parameters
         ----------
-        results: List[GsaSearchResult], optional
+        results: List[GsaSearchResult]
         search_identifier: str, optional
         total_result_count: int, optional
         """
         self._search_identifier: Union[str, None, Unset_Type] = Unset
         self._total_result_count: Union[int, Unset_Type] = Unset
-        self._results: Union[List[GsaSearchResult], None, Unset_Type] = Unset
+        self._results: List[GsaSearchResult]
 
         if search_identifier is not Unset:
             self.search_identifier = search_identifier
         if total_result_count is not Unset:
             self.total_result_count = total_result_count
-        if results is not Unset:
-            self.results = results
+        self.results = results
 
     @property
     def search_identifier(self) -> "Union[str, None, Unset_Type]":
@@ -154,25 +153,31 @@ class GsaSearchResponse(ModelBase):
         self._total_result_count = total_result_count
 
     @property
-    def results(self) -> "Union[List[GsaSearchResult], None, Unset_Type]":
+    def results(self) -> "List[GsaSearchResult]":
         """Gets the results of this GsaSearchResponse.
 
         Returns
         -------
-        Union[List[GsaSearchResult], None, Unset_Type]
+        List[GsaSearchResult]
             The results of this GsaSearchResponse.
         """
         return self._results
 
     @results.setter
-    def results(self, results: "Union[List[GsaSearchResult], None, Unset_Type]") -> None:
+    def results(self, results: "List[GsaSearchResult]") -> None:
         """Sets the results of this GsaSearchResponse.
 
         Parameters
         ----------
-        results: Union[List[GsaSearchResult], None, Unset_Type]
+        results: List[GsaSearchResult]
             The results of this GsaSearchResponse.
         """
+        # Field is not nullable
+        if results is None:
+            raise ValueError("Invalid value for 'results', must not be 'None'")
+        # Field is required
+        if results is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'results', must not be 'Unset'")
         self._results = results
 
     @classmethod

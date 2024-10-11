@@ -80,25 +80,24 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
     def __init__(
         self,
         *,
-        schema: "Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type]" = Unset,
+        schema: "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier",
         warnings: "Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaGeneratedIntegrationSchemaOfObjectIdentifier - a model defined in Swagger
 
         Parameters
         ----------
-        schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, optional
+        schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
         warnings: List[GsaIntegrationSchemaGenerationErrorDetail], optional
         """
         self._warnings: Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type] = (
             Unset
         )
-        self._schema: Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type] = Unset
+        self._schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
 
         if warnings is not Unset:
             self.warnings = warnings
-        if schema is not Unset:
-            self.schema = schema
+        self.schema = schema
 
     @property
     def warnings(
@@ -127,30 +126,31 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._warnings = warnings
 
     @property
-    def schema(self) -> "Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type]":
+    def schema(self) -> "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier":
         """Gets the schema of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type]
+        GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
             The schema of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
         """
         return self._schema
 
     @schema.setter
-    def schema(
-        self, schema: "Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type]"
-    ) -> None:
+    def schema(self, schema: "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier") -> None:
         """Sets the schema of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        schema: Union[GsaGuidOnlyIntegrationSchemaOfObjectIdentifier, Unset_Type]
+        schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
             The schema of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
         """
         # Field is not nullable
         if schema is None:
             raise ValueError("Invalid value for 'schema', must not be 'None'")
+        # Field is required
+        if schema is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'schema', must not be 'Unset'")
         self._schema = schema
 
     @classmethod

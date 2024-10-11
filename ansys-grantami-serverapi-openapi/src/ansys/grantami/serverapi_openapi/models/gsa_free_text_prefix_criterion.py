@@ -64,6 +64,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "prefix": "str",
         "type": "GsaCriterionType",
         "attribute_guids_to_boost": "list[GsaBoostByGuid]",
         "attribute_identities_to_boost": "list[GsaBoostByIdentity]",
@@ -71,10 +72,10 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         "column_guids_to_boost": "list[GsaBoostByGuid]",
         "column_identities_to_boost": "list[GsaBoostByIdentity]",
         "local_columns": "GsaValueSpecifier",
-        "prefix": "str",
     }
 
     attribute_map: Dict[str, str] = {
+        "prefix": "prefix",
         "type": "type",
         "attribute_guids_to_boost": "attributeGuidsToBoost",
         "attribute_identities_to_boost": "attributeIdentitiesToBoost",
@@ -82,7 +83,6 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         "column_guids_to_boost": "columnGuidsToBoost",
         "column_identities_to_boost": "columnIdentitiesToBoost",
         "local_columns": "localColumns",
-        "prefix": "prefix",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -99,6 +99,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
     def __init__(
         self,
         *,
+        prefix: "str",
         type: "GsaCriterionType" = GsaCriterionType.TEXTPREFIX,
         attribute_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]" = Unset,
         attribute_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]" = Unset,
@@ -106,12 +107,12 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         column_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]" = Unset,
         column_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]" = Unset,
         local_columns: "Union[GsaValueSpecifier, Unset_Type]" = Unset,
-        prefix: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFreeTextPrefixCriterion - a model defined in Swagger
 
         Parameters
         ----------
+        prefix: str
         type: GsaCriterionType
         attribute_guids_to_boost: List[GsaBoostByGuid], optional
         attribute_identities_to_boost: List[GsaBoostByIdentity], optional
@@ -119,10 +120,9 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         column_guids_to_boost: List[GsaBoostByGuid], optional
         column_identities_to_boost: List[GsaBoostByIdentity], optional
         local_columns: GsaValueSpecifier, optional
-        prefix: str, optional
         """
         super().__init__(type=type)
-        self._prefix: Union[str, None, Unset_Type] = Unset
+        self._prefix: str
         self._attributes: Union[GsaValueSpecifier, Unset_Type] = Unset
         self._local_columns: Union[GsaValueSpecifier, Unset_Type] = Unset
         self._attribute_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type] = (
@@ -132,8 +132,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         self._column_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type] = Unset
         self._column_guids_to_boost: Union[List[GsaBoostByGuid], None, Unset_Type] = Unset
 
-        if prefix is not Unset:
-            self.prefix = prefix
+        self.prefix = prefix
         if attributes is not Unset:
             self.attributes = attributes
         if local_columns is not Unset:
@@ -148,25 +147,31 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
             self.column_guids_to_boost = column_guids_to_boost
 
     @property
-    def prefix(self) -> "Union[str, None, Unset_Type]":
+    def prefix(self) -> "str":
         """Gets the prefix of this GsaFreeTextPrefixCriterion.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The prefix of this GsaFreeTextPrefixCriterion.
         """
         return self._prefix
 
     @prefix.setter
-    def prefix(self, prefix: "Union[str, None, Unset_Type]") -> None:
+    def prefix(self, prefix: "str") -> None:
         """Sets the prefix of this GsaFreeTextPrefixCriterion.
 
         Parameters
         ----------
-        prefix: Union[str, None, Unset_Type]
+        prefix: str
             The prefix of this GsaFreeTextPrefixCriterion.
         """
+        # Field is not nullable
+        if prefix is None:
+            raise ValueError("Invalid value for 'prefix', must not be 'None'")
+        # Field is required
+        if prefix is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'prefix', must not be 'Unset'")
         self._prefix = prefix
 
     @property

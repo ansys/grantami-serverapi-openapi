@@ -70,19 +70,19 @@ class GsaAttributeMatchesCriterion(GsaAttributeCriterion):
     """
     swagger_types: Dict[str, str] = {
         "attribute_criterion_type": "GsaAttributeCriterionType",
+        "inner_criterion": "GsaDatumCriterion",
         "type": "GsaCriterionType",
         "guid": "str",
         "identity": "int",
-        "inner_criterion": "GsaDatumCriterion",
         "is_meta_attribute": "bool",
     }
 
     attribute_map: Dict[str, str] = {
         "attribute_criterion_type": "attributeCriterionType",
+        "inner_criterion": "innerCriterion",
         "type": "type",
         "guid": "guid",
         "identity": "identity",
-        "inner_criterion": "innerCriterion",
         "is_meta_attribute": "isMetaAttribute",
     }
 
@@ -96,10 +96,10 @@ class GsaAttributeMatchesCriterion(GsaAttributeCriterion):
         self,
         *,
         attribute_criterion_type: "GsaAttributeCriterionType" = GsaAttributeCriterionType.MATCHES,
+        inner_criterion: "GsaDatumCriterion",
         type: "GsaCriterionType" = GsaCriterionType.ATTRIBUTE,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
-        inner_criterion: "Union[GsaDatumCriterion, Unset_Type]" = Unset,
         is_meta_attribute: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
         """GsaAttributeMatchesCriterion - a model defined in Swagger
@@ -107,10 +107,10 @@ class GsaAttributeMatchesCriterion(GsaAttributeCriterion):
         Parameters
         ----------
         attribute_criterion_type: GsaAttributeCriterionType
+        inner_criterion: GsaDatumCriterion
         type: GsaCriterionType
         guid: str, optional
         identity: int, optional
-        inner_criterion: GsaDatumCriterion, optional
         is_meta_attribute: bool, optional
         """
         super().__init__(
@@ -120,34 +120,36 @@ class GsaAttributeMatchesCriterion(GsaAttributeCriterion):
             identity=identity,
             is_meta_attribute=is_meta_attribute,
         )
-        self._inner_criterion: Union[GsaDatumCriterion, Unset_Type] = Unset
+        self._inner_criterion: GsaDatumCriterion
 
-        if inner_criterion is not Unset:
-            self.inner_criterion = inner_criterion
+        self.inner_criterion = inner_criterion
 
     @property
-    def inner_criterion(self) -> "Union[GsaDatumCriterion, Unset_Type]":
+    def inner_criterion(self) -> "GsaDatumCriterion":
         """Gets the inner_criterion of this GsaAttributeMatchesCriterion.
 
         Returns
         -------
-        Union[GsaDatumCriterion, Unset_Type]
+        GsaDatumCriterion
             The inner_criterion of this GsaAttributeMatchesCriterion.
         """
         return self._inner_criterion
 
     @inner_criterion.setter
-    def inner_criterion(self, inner_criterion: "Union[GsaDatumCriterion, Unset_Type]") -> None:
+    def inner_criterion(self, inner_criterion: "GsaDatumCriterion") -> None:
         """Sets the inner_criterion of this GsaAttributeMatchesCriterion.
 
         Parameters
         ----------
-        inner_criterion: Union[GsaDatumCriterion, Unset_Type]
+        inner_criterion: GsaDatumCriterion
             The inner_criterion of this GsaAttributeMatchesCriterion.
         """
         # Field is not nullable
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
+        # Field is required
+        if inner_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'Unset'")
         self._inner_criterion = inner_criterion
 
     @classmethod

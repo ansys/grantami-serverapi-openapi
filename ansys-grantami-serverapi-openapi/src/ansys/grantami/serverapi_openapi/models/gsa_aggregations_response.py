@@ -77,39 +77,44 @@ class GsaAggregationsResponse(ModelBase):
     def __init__(
         self,
         *,
-        results: "Union[List[GsaAggregation], None, Unset_Type]" = Unset,
+        results: "List[GsaAggregation]",
     ) -> None:
         """GsaAggregationsResponse - a model defined in Swagger
 
         Parameters
         ----------
-        results: List[GsaAggregation], optional
+        results: List[GsaAggregation]
         """
-        self._results: Union[List[GsaAggregation], None, Unset_Type] = Unset
+        self._results: List[GsaAggregation]
 
-        if results is not Unset:
-            self.results = results
+        self.results = results
 
     @property
-    def results(self) -> "Union[List[GsaAggregation], None, Unset_Type]":
+    def results(self) -> "List[GsaAggregation]":
         """Gets the results of this GsaAggregationsResponse.
 
         Returns
         -------
-        Union[List[GsaAggregation], None, Unset_Type]
+        List[GsaAggregation]
             The results of this GsaAggregationsResponse.
         """
         return self._results
 
     @results.setter
-    def results(self, results: "Union[List[GsaAggregation], None, Unset_Type]") -> None:
+    def results(self, results: "List[GsaAggregation]") -> None:
         """Sets the results of this GsaAggregationsResponse.
 
         Parameters
         ----------
-        results: Union[List[GsaAggregation], None, Unset_Type]
+        results: List[GsaAggregation]
             The results of this GsaAggregationsResponse.
         """
+        # Field is not nullable
+        if results is None:
+            raise ValueError("Invalid value for 'results', must not be 'None'")
+        # Field is required
+        if results is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'results', must not be 'Unset'")
         self._results = results
 
     @classmethod

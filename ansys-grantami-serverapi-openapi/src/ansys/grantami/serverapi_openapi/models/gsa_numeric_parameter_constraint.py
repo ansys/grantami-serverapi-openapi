@@ -68,18 +68,18 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "parameter": "GsaObjectIdentifier",
         "type": "GsaParameterConstraintType",
         "gte": "float",
         "lte": "float",
-        "parameter": "GsaObjectIdentifier",
         "significant_figures": "int",
     }
 
     attribute_map: Dict[str, str] = {
+        "parameter": "parameter",
         "type": "type",
         "gte": "gte",
         "lte": "lte",
-        "parameter": "parameter",
         "significant_figures": "significantFigures",
     }
 
@@ -90,23 +90,23 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
     def __init__(
         self,
         *,
+        parameter: "GsaObjectIdentifier",
         type: "GsaParameterConstraintType" = GsaParameterConstraintType.NUMERIC,
         gte: "Union[float, None, Unset_Type]" = Unset,
         lte: "Union[float, None, Unset_Type]" = Unset,
-        parameter: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         significant_figures: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaNumericParameterConstraint - a model defined in Swagger
 
         Parameters
         ----------
+        parameter: GsaObjectIdentifier
         type: GsaParameterConstraintType
         gte: float, optional
         lte: float, optional
-        parameter: GsaObjectIdentifier, optional
         significant_figures: int, optional
         """
-        super().__init__(type=type, parameter=parameter)
+        super().__init__(parameter=parameter, type=type)
         self._gte: Union[float, None, Unset_Type] = Unset
         self._lte: Union[float, None, Unset_Type] = Unset
         self._significant_figures: Union[int, None, Unset_Type] = Unset

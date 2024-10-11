@@ -72,7 +72,6 @@ class GsaDiscreteFunctionalSeriesDatum(GsaDiscreteFunctionalDatum):
         "graph_type": "GsaGraphType",
         "not_applicable": "str",
         "parameter_settings": "list[GsaFunctionalParameterSetting]",
-        "show_as_table": "bool",
     }
 
     attribute_map: Dict[str, str] = {
@@ -81,7 +80,6 @@ class GsaDiscreteFunctionalSeriesDatum(GsaDiscreteFunctionalDatum):
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
         "parameter_settings": "parameterSettings",
-        "show_as_table": "showAsTable",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -98,7 +96,6 @@ class GsaDiscreteFunctionalSeriesDatum(GsaDiscreteFunctionalDatum):
         graph_type: "GsaGraphType" = GsaGraphType.SERIES,
         not_applicable: "str" = "applicable",
         parameter_settings: "List[GsaFunctionalParameterSetting]",
-        show_as_table: "bool",
     ) -> None:
         """GsaDiscreteFunctionalSeriesDatum - a model defined in Swagger
 
@@ -109,7 +106,6 @@ class GsaDiscreteFunctionalSeriesDatum(GsaDiscreteFunctionalDatum):
         graph_type: GsaGraphType
         not_applicable: str
         parameter_settings: List[GsaFunctionalParameterSetting]
-        show_as_table: bool
         """
         super().__init__(
             datum_type=datum_type,
@@ -117,39 +113,9 @@ class GsaDiscreteFunctionalSeriesDatum(GsaDiscreteFunctionalDatum):
             not_applicable=not_applicable,
             parameter_settings=parameter_settings,
         )
-        self._show_as_table: bool
         self._graph: GsaDiscreteSeriesGraph
 
-        self.show_as_table = show_as_table
         self.graph = graph
-
-    @property
-    def show_as_table(self) -> "bool":
-        """Gets the show_as_table of this GsaDiscreteFunctionalSeriesDatum.
-
-        Returns
-        -------
-        bool
-            The show_as_table of this GsaDiscreteFunctionalSeriesDatum.
-        """
-        return self._show_as_table
-
-    @show_as_table.setter
-    def show_as_table(self, show_as_table: "bool") -> None:
-        """Sets the show_as_table of this GsaDiscreteFunctionalSeriesDatum.
-
-        Parameters
-        ----------
-        show_as_table: bool
-            The show_as_table of this GsaDiscreteFunctionalSeriesDatum.
-        """
-        # Field is not nullable
-        if show_as_table is None:
-            raise ValueError("Invalid value for 'show_as_table', must not be 'None'")
-        # Field is required
-        if show_as_table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'show_as_table', must not be 'Unset'")
-        self._show_as_table = show_as_table
 
     @property
     def graph(self) -> "GsaDiscreteSeriesGraph":

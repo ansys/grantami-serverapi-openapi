@@ -79,7 +79,7 @@ class GsaRecordReference(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "Union[str, None, Unset_Type]" = Unset,
+        database_key: "str",
         record_history_guid: "Union[str, None, Unset_Type]" = Unset,
         record_history_identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
@@ -87,20 +87,19 @@ class GsaRecordReference(ModelBase):
 
         Parameters
         ----------
-        database_key: str, optional
+        database_key: str
         record_history_guid: str, optional
         record_history_identity: int, optional
         """
         self._record_history_identity: Union[int, None, Unset_Type] = Unset
         self._record_history_guid: Union[str, None, Unset_Type] = Unset
-        self._database_key: Union[str, None, Unset_Type] = Unset
+        self._database_key: str
 
         if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
-        if database_key is not Unset:
-            self.database_key = database_key
+        self.database_key = database_key
 
     @property
     def record_history_identity(self) -> "Union[int, None, Unset_Type]":
@@ -149,25 +148,31 @@ class GsaRecordReference(ModelBase):
         self._record_history_guid = record_history_guid
 
     @property
-    def database_key(self) -> "Union[str, None, Unset_Type]":
+    def database_key(self) -> "str":
         """Gets the database_key of this GsaRecordReference.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The database_key of this GsaRecordReference.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GsaRecordReference.
 
         Parameters
         ----------
-        database_key: Union[str, None, Unset_Type]
+        database_key: str
             The database_key of this GsaRecordReference.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
+        # Field is required
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
     @classmethod

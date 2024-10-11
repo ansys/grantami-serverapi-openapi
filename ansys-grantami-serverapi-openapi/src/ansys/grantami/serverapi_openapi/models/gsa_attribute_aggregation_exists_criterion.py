@@ -70,19 +70,19 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
     """
     swagger_types: Dict[str, str] = {
         "attribute_aggregation_criterion_type": "GsaAttributeAggregationType",
+        "inner_criterion": "GsaAggregationDatumExistsCriterion",
         "type": "GsaAggregationType",
         "guid": "str",
         "identity": "int",
-        "inner_criterion": "GsaAggregationDatumExistsCriterion",
         "is_meta_attribute": "bool",
     }
 
     attribute_map: Dict[str, str] = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
+        "inner_criterion": "innerCriterion",
         "type": "type",
         "guid": "guid",
         "identity": "identity",
-        "inner_criterion": "innerCriterion",
         "is_meta_attribute": "isMetaAttribute",
     }
 
@@ -96,10 +96,10 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
         self,
         *,
         attribute_aggregation_criterion_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.EXISTS,
+        inner_criterion: "GsaAggregationDatumExistsCriterion",
         type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
-        inner_criterion: "Union[GsaAggregationDatumExistsCriterion, Unset_Type]" = Unset,
         is_meta_attribute: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
         """GsaAttributeAggregationExistsCriterion - a model defined in Swagger
@@ -107,10 +107,10 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
         Parameters
         ----------
         attribute_aggregation_criterion_type: GsaAttributeAggregationType
+        inner_criterion: GsaAggregationDatumExistsCriterion
         type: GsaAggregationType
         guid: str, optional
         identity: int, optional
-        inner_criterion: GsaAggregationDatumExistsCriterion, optional
         is_meta_attribute: bool, optional
         """
         super().__init__(
@@ -120,36 +120,36 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
             identity=identity,
             is_meta_attribute=is_meta_attribute,
         )
-        self._inner_criterion: Union[GsaAggregationDatumExistsCriterion, Unset_Type] = Unset
+        self._inner_criterion: GsaAggregationDatumExistsCriterion
 
-        if inner_criterion is not Unset:
-            self.inner_criterion = inner_criterion
+        self.inner_criterion = inner_criterion
 
     @property
-    def inner_criterion(self) -> "Union[GsaAggregationDatumExistsCriterion, Unset_Type]":
+    def inner_criterion(self) -> "GsaAggregationDatumExistsCriterion":
         """Gets the inner_criterion of this GsaAttributeAggregationExistsCriterion.
 
         Returns
         -------
-        Union[GsaAggregationDatumExistsCriterion, Unset_Type]
+        GsaAggregationDatumExistsCriterion
             The inner_criterion of this GsaAttributeAggregationExistsCriterion.
         """
         return self._inner_criterion
 
     @inner_criterion.setter
-    def inner_criterion(
-        self, inner_criterion: "Union[GsaAggregationDatumExistsCriterion, Unset_Type]"
-    ) -> None:
+    def inner_criterion(self, inner_criterion: "GsaAggregationDatumExistsCriterion") -> None:
         """Sets the inner_criterion of this GsaAttributeAggregationExistsCriterion.
 
         Parameters
         ----------
-        inner_criterion: Union[GsaAggregationDatumExistsCriterion, Unset_Type]
+        inner_criterion: GsaAggregationDatumExistsCriterion
             The inner_criterion of this GsaAttributeAggregationExistsCriterion.
         """
         # Field is not nullable
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
+        # Field is required
+        if inner_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'Unset'")
         self._inner_criterion = inner_criterion
 
     @classmethod
