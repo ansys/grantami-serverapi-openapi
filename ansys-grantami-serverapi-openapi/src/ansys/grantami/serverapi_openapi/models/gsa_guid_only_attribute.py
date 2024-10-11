@@ -61,12 +61,12 @@ class GsaGuidOnlyAttribute(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "name": "str",
         "type": "GsaAttributeType",
         "discrete_type_guid": "str",
         "graph_type": "str",
         "guid": "str",
         "is_unitted": "bool",
-        "name": "str",
         "parameters": "list[GsaGuidOnlyIntegrationParameterInfo]",
         "target_database": "GsaObjectIdentifier",
         "target_table": "GsaObjectIdentifier",
@@ -75,12 +75,12 @@ class GsaGuidOnlyAttribute(ModelBase):
     }
 
     attribute_map: Dict[str, str] = {
+        "name": "name",
         "type": "type",
         "discrete_type_guid": "discreteTypeGuid",
         "graph_type": "graphType",
         "guid": "guid",
         "is_unitted": "isUnitted",
-        "name": "name",
         "parameters": "parameters",
         "target_database": "targetDatabase",
         "target_table": "targetTable",
@@ -100,12 +100,12 @@ class GsaGuidOnlyAttribute(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
         type: "GsaAttributeType",
         discrete_type_guid: "Union[str, None, Unset_Type]" = Unset,
         graph_type: "Union[str, None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         is_unitted: "Union[bool, None, Unset_Type]" = Unset,
-        name: "Union[str, None, Unset_Type]" = Unset,
         parameters: "Union[List[GsaGuidOnlyIntegrationParameterInfo], None, Unset_Type]" = Unset,
         target_database: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         target_table: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
@@ -116,19 +116,19 @@ class GsaGuidOnlyAttribute(ModelBase):
 
         Parameters
         ----------
+        name: str
         type: GsaAttributeType
         discrete_type_guid: str, optional
         graph_type: str, optional
         guid: str, optional
         is_unitted: bool, optional
-        name: str, optional
         parameters: List[GsaGuidOnlyIntegrationParameterInfo], optional
         target_database: GsaObjectIdentifier, optional
         target_table: GsaObjectIdentifier, optional
         unit_symbol: str, optional
         x_axis_parameter: str, optional
         """
-        self._name: Union[str, None, Unset_Type] = Unset
+        self._name: str
         self._guid: Union[str, Unset_Type] = Unset
         self._type: GsaAttributeType
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
@@ -140,8 +140,7 @@ class GsaGuidOnlyAttribute(ModelBase):
         self._graph_type: Union[str, None, Unset_Type] = Unset
         self._x_axis_parameter: Union[str, None, Unset_Type] = Unset
 
-        if name is not Unset:
-            self.name = name
+        self.name = name
         if guid is not Unset:
             self.guid = guid
         self.type = type
@@ -163,25 +162,31 @@ class GsaGuidOnlyAttribute(ModelBase):
             self.x_axis_parameter = x_axis_parameter
 
     @property
-    def name(self) -> "Union[str, None, Unset_Type]":
+    def name(self) -> "str":
         """Gets the name of this GsaGuidOnlyAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The name of this GsaGuidOnlyAttribute.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "Union[str, None, Unset_Type]") -> None:
+    def name(self, name: "str") -> None:
         """Sets the name of this GsaGuidOnlyAttribute.
 
         Parameters
         ----------
-        name: Union[str, None, Unset_Type]
+        name: str
             The name of this GsaGuidOnlyAttribute.
         """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @property

@@ -68,14 +68,14 @@ class GsaDateTimeFixedWidthHistogramAggregationDatumCriterion(GsaAggregationDatu
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
         "interval": "str",
+        "type": "GsaAggregationDatumCriterionType",
         "offset": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "type": "type",
         "interval": "interval",
+        "type": "type",
         "offset": "offset",
     }
 
@@ -86,49 +86,54 @@ class GsaDateTimeFixedWidthHistogramAggregationDatumCriterion(GsaAggregationDatu
     def __init__(
         self,
         *,
+        interval: "str",
         type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEFIXEDWIDTHHISTOGRAM,
-        interval: "Union[str, None, Unset_Type]" = Unset,
         offset: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDateTimeFixedWidthHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
+        interval: str
         type: GsaAggregationDatumCriterionType
-        interval: str, optional
         offset: str, optional
         """
         super().__init__(type=type)
-        self._interval: Union[str, None, Unset_Type] = Unset
+        self._interval: str
         self._offset: Union[str, None, Unset_Type] = Unset
 
-        if interval is not Unset:
-            self.interval = interval
+        self.interval = interval
         if offset is not Unset:
             self.offset = offset
 
     @property
-    def interval(self) -> "Union[str, None, Unset_Type]":
+    def interval(self) -> "str":
         """Gets the interval of this GsaDateTimeFixedWidthHistogramAggregationDatumCriterion.
         Fixed size of the resulting histogram buckets, in SI time units. Must be an integer followed by one of the following units: ms (milliseconds), s (seconds), m (minutes), h (hours), d (days)
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The interval of this GsaDateTimeFixedWidthHistogramAggregationDatumCriterion.
         """
         return self._interval
 
     @interval.setter
-    def interval(self, interval: "Union[str, None, Unset_Type]") -> None:
+    def interval(self, interval: "str") -> None:
         """Sets the interval of this GsaDateTimeFixedWidthHistogramAggregationDatumCriterion.
         Fixed size of the resulting histogram buckets, in SI time units. Must be an integer followed by one of the following units: ms (milliseconds), s (seconds), m (minutes), h (hours), d (days)
 
         Parameters
         ----------
-        interval: Union[str, None, Unset_Type]
+        interval: str
             The interval of this GsaDateTimeFixedWidthHistogramAggregationDatumCriterion.
         """
+        # Field is not nullable
+        if interval is None:
+            raise ValueError("Invalid value for 'interval', must not be 'None'")
+        # Field is required
+        if interval is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'interval', must not be 'Unset'")
         self._interval = interval
 
     @property

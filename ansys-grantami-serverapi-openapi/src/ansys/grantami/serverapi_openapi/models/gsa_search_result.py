@@ -61,8 +61,8 @@ class GsaSearchResult(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "cubic_spline_status": "str",
         "database_key": "str",
+        "cubic_spline_status": "str",
         "parent_identity": "int",
         "record_color": "str",
         "record_guid": "str",
@@ -81,8 +81,8 @@ class GsaSearchResult(ModelBase):
     }
 
     attribute_map: Dict[str, str] = {
-        "cubic_spline_status": "cubicSplineStatus",
         "database_key": "databaseKey",
+        "cubic_spline_status": "cubicSplineStatus",
         "parent_identity": "parentIdentity",
         "record_color": "recordColor",
         "record_guid": "recordGuid",
@@ -110,8 +110,8 @@ class GsaSearchResult(ModelBase):
     def __init__(
         self,
         *,
+        database_key: "str",
         cubic_spline_status: "Union[str, None, Unset_Type]" = Unset,
-        database_key: "Union[str, None, Unset_Type]" = Unset,
         parent_identity: "Union[int, None, Unset_Type]" = Unset,
         record_color: "Union[str, None, Unset_Type]" = Unset,
         record_guid: "Union[str, None, Unset_Type]" = Unset,
@@ -132,8 +132,8 @@ class GsaSearchResult(ModelBase):
 
         Parameters
         ----------
+        database_key: str
         cubic_spline_status: str, optional
-        database_key: str, optional
         parent_identity: int, optional
         record_color: str, optional
         record_guid: str, optional
@@ -150,7 +150,7 @@ class GsaSearchResult(ModelBase):
         version_control_state: str, optional
         version_number: int, optional
         """
-        self._database_key: Union[str, None, Unset_Type] = Unset
+        self._database_key: str
         self._record_history_identity: Union[int, Unset_Type] = Unset
         self._record_identity: Union[int, Unset_Type] = Unset
         self._record_history_guid: Union[str, None, Unset_Type] = Unset
@@ -168,8 +168,7 @@ class GsaSearchResult(ModelBase):
         self._score: Union[float, None, Unset_Type] = Unset
         self._sorting_value: Union[GsaSortingValue, Unset_Type] = Unset
 
-        if database_key is not Unset:
-            self.database_key = database_key
+        self.database_key = database_key
         if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
         if record_identity is not Unset:
@@ -204,25 +203,31 @@ class GsaSearchResult(ModelBase):
             self.sorting_value = sorting_value
 
     @property
-    def database_key(self) -> "Union[str, None, Unset_Type]":
+    def database_key(self) -> "str":
         """Gets the database_key of this GsaSearchResult.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The database_key of this GsaSearchResult.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GsaSearchResult.
 
         Parameters
         ----------
-        database_key: Union[str, None, Unset_Type]
+        database_key: str
             The database_key of this GsaSearchResult.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
+        # Field is required
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
     @property

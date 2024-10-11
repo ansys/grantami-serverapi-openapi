@@ -68,17 +68,17 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "parameter": "GsaObjectIdentifier",
         "type": "GsaParameterConstraintType",
         "_none": "list[str]",
         "any": "list[str]",
-        "parameter": "GsaObjectIdentifier",
     }
 
     attribute_map: Dict[str, str] = {
+        "parameter": "parameter",
         "type": "type",
         "_none": "none",
         "any": "any",
-        "parameter": "parameter",
     }
 
     subtype_mapping: Dict[str, str] = {}
@@ -88,21 +88,21 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
     def __init__(
         self,
         *,
+        parameter: "GsaObjectIdentifier",
         type: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETENAME,
         _none: "Union[List[str], None, Unset_Type]" = Unset,
         any: "Union[List[str], None, Unset_Type]" = Unset,
-        parameter: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteParameterNameConstraint - a model defined in Swagger
 
         Parameters
         ----------
+        parameter: GsaObjectIdentifier
         type: GsaParameterConstraintType
         _none: List[str], optional
         any: List[str], optional
-        parameter: GsaObjectIdentifier, optional
         """
-        super().__init__(type=type, parameter=parameter)
+        super().__init__(parameter=parameter, type=type)
         self._any: Union[List[str], None, Unset_Type] = Unset
         self.__none: Union[List[str], None, Unset_Type] = Unset
 

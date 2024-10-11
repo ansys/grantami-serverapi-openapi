@@ -61,17 +61,17 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "database": "GsaObjectIdentifier",
-        "database_key": "str",
         "mappings": "list[GsaGuidOnlyMappingOfObjectIdentifier]",
         "table": "GsaObjectIdentifier",
+        "database": "GsaObjectIdentifier",
+        "database_key": "str",
     }
 
     attribute_map: Dict[str, str] = {
-        "database": "database",
-        "database_key": "databaseKey",
         "mappings": "mappings",
         "table": "table",
+        "database": "database",
+        "database_key": "databaseKey",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -85,33 +85,31 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
     def __init__(
         self,
         *,
+        mappings: "List[GsaGuidOnlyMappingOfObjectIdentifier]",
+        table: "GsaObjectIdentifier",
         database: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
-        mappings: "Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type]" = Unset,
-        table: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
     ) -> None:
         """GsaGuidOnlySourceOfObjectIdentifier - a model defined in Swagger
 
         Parameters
         ----------
+        mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
+        table: GsaObjectIdentifier
         database: GsaObjectIdentifier, optional
         database_key: str, optional
-        mappings: List[GsaGuidOnlyMappingOfObjectIdentifier], optional
-        table: GsaObjectIdentifier, optional
         """
         self._database: Union[GsaObjectIdentifier, Unset_Type] = Unset
         self._database_key: Union[str, None, Unset_Type] = Unset
-        self._table: Union[GsaObjectIdentifier, Unset_Type] = Unset
-        self._mappings: Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type] = Unset
+        self._table: GsaObjectIdentifier
+        self._mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
 
         if database is not Unset:
             self.database = database
         if database_key is not Unset:
             self.database_key = database_key
-        if table is not Unset:
-            self.table = table
-        if mappings is not Unset:
-            self.mappings = mappings
+        self.table = table
+        self.mappings = mappings
 
     @property
     def database(self) -> "Union[GsaObjectIdentifier, Unset_Type]":
@@ -161,54 +159,61 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
         self._database_key = database_key
 
     @property
-    def table(self) -> "Union[GsaObjectIdentifier, Unset_Type]":
+    def table(self) -> "GsaObjectIdentifier":
         """Gets the table of this GsaGuidOnlySourceOfObjectIdentifier.
 
         Returns
         -------
-        Union[GsaObjectIdentifier, Unset_Type]
+        GsaObjectIdentifier
             The table of this GsaGuidOnlySourceOfObjectIdentifier.
         """
         return self._table
 
     @table.setter
-    def table(self, table: "Union[GsaObjectIdentifier, Unset_Type]") -> None:
+    def table(self, table: "GsaObjectIdentifier") -> None:
         """Sets the table of this GsaGuidOnlySourceOfObjectIdentifier.
 
         Parameters
         ----------
-        table: Union[GsaObjectIdentifier, Unset_Type]
+        table: GsaObjectIdentifier
             The table of this GsaGuidOnlySourceOfObjectIdentifier.
         """
         # Field is not nullable
         if table is None:
             raise ValueError("Invalid value for 'table', must not be 'None'")
+        # Field is required
+        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'table', must not be 'Unset'")
         self._table = table
 
     @property
-    def mappings(self) -> "Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type]":
+    def mappings(self) -> "List[GsaGuidOnlyMappingOfObjectIdentifier]":
         """Gets the mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Returns
         -------
-        Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type]
+        List[GsaGuidOnlyMappingOfObjectIdentifier]
             The mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         """
         return self._mappings
 
     @mappings.setter
-    def mappings(
-        self, mappings: "Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type]"
-    ) -> None:
+    def mappings(self, mappings: "List[GsaGuidOnlyMappingOfObjectIdentifier]") -> None:
         """Sets the mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Parameters
         ----------
-        mappings: Union[List[GsaGuidOnlyMappingOfObjectIdentifier], None, Unset_Type]
+        mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
             The mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         """
+        # Field is not nullable
+        if mappings is None:
+            raise ValueError("Invalid value for 'mappings', must not be 'None'")
+        # Field is required
+        if mappings is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'mappings', must not be 'Unset'")
         self._mappings = mappings
 
     @classmethod

@@ -61,16 +61,16 @@ class GsaRecordWithData(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "data": "list[GsaDataExportDatum]",
         "database_key": "str",
+        "data": "list[GsaDataExportDatum]",
         "properties": "list[GsaProperty]",
         "record_history_guid": "str",
         "record_history_identity": "int",
     }
 
     attribute_map: Dict[str, str] = {
-        "data": "data",
         "database_key": "databaseKey",
+        "data": "data",
         "properties": "properties",
         "record_history_guid": "recordHistoryGuid",
         "record_history_identity": "recordHistoryIdentity",
@@ -86,8 +86,8 @@ class GsaRecordWithData(ModelBase):
     def __init__(
         self,
         *,
+        database_key: "str",
         data: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        database_key: "Union[str, None, Unset_Type]" = Unset,
         properties: "Union[List[GsaProperty], None, Unset_Type]" = Unset,
         record_history_guid: "Union[str, None, Unset_Type]" = Unset,
         record_history_identity: "Union[int, Unset_Type]" = Unset,
@@ -96,20 +96,19 @@ class GsaRecordWithData(ModelBase):
 
         Parameters
         ----------
+        database_key: str
         data: List[GsaDataExportDatum], optional
-        database_key: str, optional
         properties: List[GsaProperty], optional
         record_history_guid: str, optional
         record_history_identity: int, optional
         """
-        self._database_key: Union[str, None, Unset_Type] = Unset
+        self._database_key: str
         self._record_history_identity: Union[int, Unset_Type] = Unset
         self._record_history_guid: Union[str, None, Unset_Type] = Unset
         self._data: Union[List[GsaDataExportDatum], None, Unset_Type] = Unset
         self._properties: Union[List[GsaProperty], None, Unset_Type] = Unset
 
-        if database_key is not Unset:
-            self.database_key = database_key
+        self.database_key = database_key
         if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
         if record_history_guid is not Unset:
@@ -120,25 +119,31 @@ class GsaRecordWithData(ModelBase):
             self.properties = properties
 
     @property
-    def database_key(self) -> "Union[str, None, Unset_Type]":
+    def database_key(self) -> "str":
         """Gets the database_key of this GsaRecordWithData.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        str
             The database_key of this GsaRecordWithData.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "Union[str, None, Unset_Type]") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GsaRecordWithData.
 
         Parameters
         ----------
-        database_key: Union[str, None, Unset_Type]
+        database_key: str
             The database_key of this GsaRecordWithData.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
+        # Field is required
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
     @property

@@ -66,10 +66,10 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "link_datum_type": "GsaLinkAttributeType",
         "type": "GsaDatumCriterionType",
         "indirect_links": "GsaIndirectLinks",
         "inner_criterion": "GsaCriterion",
-        "link_datum_type": "GsaLinkAttributeType",
         "local_criterion": "GsaCriterion",
         "local_rows_behavior": "GsaLocalRowsBehavior",
         "search_in_reversed_direction": "bool",
@@ -81,10 +81,10 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
     }
 
     attribute_map: Dict[str, str] = {
+        "link_datum_type": "linkDatumType",
         "type": "type",
         "indirect_links": "indirectLinks",
         "inner_criterion": "innerCriterion",
-        "link_datum_type": "linkDatumType",
         "local_criterion": "localCriterion",
         "local_rows_behavior": "localRowsBehavior",
         "search_in_reversed_direction": "searchInReversedDirection",
@@ -108,10 +108,10 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
+        link_datum_type: "GsaLinkAttributeType",
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.LINK,
         indirect_links: "Union[GsaIndirectLinks, Unset_Type]" = Unset,
         inner_criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
-        link_datum_type: "Union[GsaLinkAttributeType, Unset_Type]" = Unset,
         local_criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
         local_rows_behavior: "Union[GsaLocalRowsBehavior, Unset_Type]" = Unset,
         search_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
@@ -125,10 +125,10 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
+        link_datum_type: GsaLinkAttributeType
         type: GsaDatumCriterionType
         indirect_links: GsaIndirectLinks, optional
         inner_criterion: GsaCriterion, optional
-        link_datum_type: GsaLinkAttributeType, optional
         local_criterion: GsaCriterion, optional
         local_rows_behavior: GsaLocalRowsBehavior, optional
         search_in_reversed_direction: bool, optional
@@ -143,7 +143,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         self._target_table_guid: Union[str, None, Unset_Type] = Unset
         self._target_database_key: Union[str, None, Unset_Type] = Unset
         self._local_criterion: Union[GsaCriterion, Unset_Type] = Unset
-        self._link_datum_type: Union[GsaLinkAttributeType, Unset_Type] = Unset
+        self._link_datum_type: GsaLinkAttributeType
         self._indirect_links: Union[GsaIndirectLinks, Unset_Type] = Unset
         self._search_in_reversed_direction: Union[bool, Unset_Type] = Unset
         self._target_attribute_identity: Union[int, None, Unset_Type] = Unset
@@ -159,8 +159,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
             self.target_database_key = target_database_key
         if local_criterion is not Unset:
             self.local_criterion = local_criterion
-        if link_datum_type is not Unset:
-            self.link_datum_type = link_datum_type
+        self.link_datum_type = link_datum_type
         if indirect_links is not Unset:
             self.indirect_links = indirect_links
         if search_in_reversed_direction is not Unset:
@@ -272,28 +271,31 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         self._local_criterion = local_criterion
 
     @property
-    def link_datum_type(self) -> "Union[GsaLinkAttributeType, Unset_Type]":
+    def link_datum_type(self) -> "GsaLinkAttributeType":
         """Gets the link_datum_type of this GsaLinkDatumCriterion.
 
         Returns
         -------
-        Union[GsaLinkAttributeType, Unset_Type]
+        GsaLinkAttributeType
             The link_datum_type of this GsaLinkDatumCriterion.
         """
         return self._link_datum_type
 
     @link_datum_type.setter
-    def link_datum_type(self, link_datum_type: "Union[GsaLinkAttributeType, Unset_Type]") -> None:
+    def link_datum_type(self, link_datum_type: "GsaLinkAttributeType") -> None:
         """Sets the link_datum_type of this GsaLinkDatumCriterion.
 
         Parameters
         ----------
-        link_datum_type: Union[GsaLinkAttributeType, Unset_Type]
+        link_datum_type: GsaLinkAttributeType
             The link_datum_type of this GsaLinkDatumCriterion.
         """
         # Field is not nullable
         if link_datum_type is None:
             raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
+        # Field is required
+        if link_datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'link_datum_type', must not be 'Unset'")
         self._link_datum_type = link_datum_type
 
     @property

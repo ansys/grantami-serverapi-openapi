@@ -63,13 +63,13 @@ class GsaParameterConstraint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
-        "type": "GsaParameterConstraintType",
         "parameter": "GsaObjectIdentifier",
+        "type": "GsaParameterConstraintType",
     }
 
     attribute_map: Dict[str, str] = {
-        "type": "type",
         "parameter": "parameter",
+        "type": "type",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -88,46 +88,48 @@ class GsaParameterConstraint(ModelBase):
     def __init__(
         self,
         *,
+        parameter: "GsaObjectIdentifier",
         type: "GsaParameterConstraintType",
-        parameter: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
     ) -> None:
         """GsaParameterConstraint - a model defined in Swagger
 
         Parameters
         ----------
+        parameter: GsaObjectIdentifier
         type: GsaParameterConstraintType
-        parameter: GsaObjectIdentifier, optional
         """
-        self._parameter: Union[GsaObjectIdentifier, Unset_Type] = Unset
+        self._parameter: GsaObjectIdentifier
         self._type: GsaParameterConstraintType
 
-        if parameter is not Unset:
-            self.parameter = parameter
+        self.parameter = parameter
         self.type = type
 
     @property
-    def parameter(self) -> "Union[GsaObjectIdentifier, Unset_Type]":
+    def parameter(self) -> "GsaObjectIdentifier":
         """Gets the parameter of this GsaParameterConstraint.
 
         Returns
         -------
-        Union[GsaObjectIdentifier, Unset_Type]
+        GsaObjectIdentifier
             The parameter of this GsaParameterConstraint.
         """
         return self._parameter
 
     @parameter.setter
-    def parameter(self, parameter: "Union[GsaObjectIdentifier, Unset_Type]") -> None:
+    def parameter(self, parameter: "GsaObjectIdentifier") -> None:
         """Sets the parameter of this GsaParameterConstraint.
 
         Parameters
         ----------
-        parameter: Union[GsaObjectIdentifier, Unset_Type]
+        parameter: GsaObjectIdentifier
             The parameter of this GsaParameterConstraint.
         """
         # Field is not nullable
         if parameter is None:
             raise ValueError("Invalid value for 'parameter', must not be 'None'")
+        # Field is required
+        if parameter is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'parameter', must not be 'Unset'")
         self._parameter = parameter
 
     @property

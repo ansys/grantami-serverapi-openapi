@@ -64,15 +64,15 @@ class GsaRecordPropertyCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: Dict[str, str] = {
+        "inner_criterion": "GsaDatumCriterion",
         "type": "GsaCriterionType",
         "_property": "GsaSearchableRecordProperty",
-        "inner_criterion": "GsaDatumCriterion",
     }
 
     attribute_map: Dict[str, str] = {
+        "inner_criterion": "innerCriterion",
         "type": "type",
         "_property": "property",
-        "inner_criterion": "innerCriterion",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -85,26 +85,25 @@ class GsaRecordPropertyCriterion(GsaCriterion):
     def __init__(
         self,
         *,
+        inner_criterion: "GsaDatumCriterion",
         type: "GsaCriterionType" = GsaCriterionType.RECORDPROPERTY,
         _property: "Union[GsaSearchableRecordProperty, Unset_Type]" = Unset,
-        inner_criterion: "Union[GsaDatumCriterion, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordPropertyCriterion - a model defined in Swagger
 
         Parameters
         ----------
+        inner_criterion: GsaDatumCriterion
         type: GsaCriterionType
         _property: GsaSearchableRecordProperty, optional
-        inner_criterion: GsaDatumCriterion, optional
         """
         super().__init__(type=type)
         self.__property: Union[GsaSearchableRecordProperty, Unset_Type] = Unset
-        self._inner_criterion: Union[GsaDatumCriterion, Unset_Type] = Unset
+        self._inner_criterion: GsaDatumCriterion
 
         if _property is not Unset:
             self._property = _property
-        if inner_criterion is not Unset:
-            self.inner_criterion = inner_criterion
+        self.inner_criterion = inner_criterion
 
     @property
     def _property(self) -> "Union[GsaSearchableRecordProperty, Unset_Type]":
@@ -132,28 +131,31 @@ class GsaRecordPropertyCriterion(GsaCriterion):
         self.__property = _property
 
     @property
-    def inner_criterion(self) -> "Union[GsaDatumCriterion, Unset_Type]":
+    def inner_criterion(self) -> "GsaDatumCriterion":
         """Gets the inner_criterion of this GsaRecordPropertyCriterion.
 
         Returns
         -------
-        Union[GsaDatumCriterion, Unset_Type]
+        GsaDatumCriterion
             The inner_criterion of this GsaRecordPropertyCriterion.
         """
         return self._inner_criterion
 
     @inner_criterion.setter
-    def inner_criterion(self, inner_criterion: "Union[GsaDatumCriterion, Unset_Type]") -> None:
+    def inner_criterion(self, inner_criterion: "GsaDatumCriterion") -> None:
         """Sets the inner_criterion of this GsaRecordPropertyCriterion.
 
         Parameters
         ----------
-        inner_criterion: Union[GsaDatumCriterion, Unset_Type]
+        inner_criterion: GsaDatumCriterion
             The inner_criterion of this GsaRecordPropertyCriterion.
         """
         # Field is not nullable
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
+        # Field is required
+        if inner_criterion is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'inner_criterion', must not be 'Unset'")
         self._inner_criterion = inner_criterion
 
     @classmethod

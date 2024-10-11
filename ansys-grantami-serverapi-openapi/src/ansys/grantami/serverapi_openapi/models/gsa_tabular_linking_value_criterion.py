@@ -65,14 +65,14 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
     """
     swagger_types: Dict[str, str] = {
         "type": "GsaCriterionType",
-        "linking_value_match_behavior": "GsaLinkingValueMatchBehavior",
         "values": "list[str]",
+        "linking_value_match_behavior": "GsaLinkingValueMatchBehavior",
     }
 
     attribute_map: Dict[str, str] = {
         "type": "type",
-        "linking_value_match_behavior": "linkingValueMatchBehavior",
         "values": "values",
+        "linking_value_match_behavior": "linkingValueMatchBehavior",
     }
 
     subtype_mapping: Dict[str, str] = {
@@ -85,46 +85,51 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
         self,
         *,
         type: "GsaCriterionType" = GsaCriterionType.TABULARLINKINGVALUE,
+        values: "List[str]",
         linking_value_match_behavior: "Union[GsaLinkingValueMatchBehavior, Unset_Type]" = Unset,
-        values: "Union[List[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularLinkingValueCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaCriterionType
+        values: List[str]
         linking_value_match_behavior: GsaLinkingValueMatchBehavior, optional
-        values: List[str], optional
         """
         super().__init__(type=type)
-        self._values: Union[List[str], None, Unset_Type] = Unset
+        self._values: List[str]
         self._linking_value_match_behavior: Union[GsaLinkingValueMatchBehavior, Unset_Type] = Unset
 
-        if values is not Unset:
-            self.values = values
+        self.values = values
         if linking_value_match_behavior is not Unset:
             self.linking_value_match_behavior = linking_value_match_behavior
 
     @property
-    def values(self) -> "Union[List[str], None, Unset_Type]":
+    def values(self) -> "List[str]":
         """Gets the values of this GsaTabularLinkingValueCriterion.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        List[str]
             The values of this GsaTabularLinkingValueCriterion.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Union[List[str], None, Unset_Type]") -> None:
+    def values(self, values: "List[str]") -> None:
         """Sets the values of this GsaTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        values: Union[List[str], None, Unset_Type]
+        values: List[str]
             The values of this GsaTabularLinkingValueCriterion.
         """
+        # Field is not nullable
+        if values is None:
+            raise ValueError("Invalid value for 'values', must not be 'None'")
+        # Field is required
+        if values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'values', must not be 'Unset'")
         self._values = values
 
     @property
