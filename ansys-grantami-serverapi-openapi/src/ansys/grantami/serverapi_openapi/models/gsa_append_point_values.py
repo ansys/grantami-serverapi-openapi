@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaAppendPointValues(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "values": "list[GsaSetPointDatumValue]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GsaSetPointDatumValue",
     }
 
@@ -77,36 +77,36 @@ class GsaAppendPointValues(ModelBase):
     def __init__(
         self,
         *,
-        values: "List[GsaSetPointDatumValue]",
+        values: "list[GsaSetPointDatumValue]",
     ) -> None:
         """GsaAppendPointValues - a model defined in Swagger
 
         Parameters
         ----------
-        values: List[GsaSetPointDatumValue]
+        values: list[GsaSetPointDatumValue]
         """
-        self._values: List[GsaSetPointDatumValue]
+        self._values: list[GsaSetPointDatumValue]
 
         self.values = values
 
     @property
-    def values(self) -> "List[GsaSetPointDatumValue]":
+    def values(self) -> "list[GsaSetPointDatumValue]":
         """Gets the values of this GsaAppendPointValues.
 
         Returns
         -------
-        List[GsaSetPointDatumValue]
+        list[GsaSetPointDatumValue]
             The values of this GsaAppendPointValues.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaSetPointDatumValue]") -> None:
+    def values(self, values: "list[GsaSetPointDatumValue]") -> None:
         """Sets the values of this GsaAppendPointValues.
 
         Parameters
         ----------
-        values: List[GsaSetPointDatumValue]
+        values: list[GsaSetPointDatumValue]
             The values of this GsaAppendPointValues.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaAppendPointValues(ModelBase):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaRecordHistory(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "guid": "str",
         "is_folder": "bool",
         "record_versions": "list[GsaSlimRecordVersion]",
@@ -69,7 +69,7 @@ class GsaRecordHistory(ModelBase):
         "parent": "GsaSlimRecordHistory",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "guid": "guid",
         "is_folder": "isFolder",
         "record_versions": "recordVersions",
@@ -78,7 +78,7 @@ class GsaRecordHistory(ModelBase):
         "parent": "parent",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "table": "GsaSlimTable",
         "parent": "GsaSlimRecordHistory",
         "recordVersions": "GsaSlimRecordVersion",
@@ -92,8 +92,8 @@ class GsaRecordHistory(ModelBase):
         *,
         guid: "str",
         is_folder: "bool",
-        record_versions: "List[GsaSlimRecordVersion]",
-        subsets: "List[GsaSlimSubset]",
+        record_versions: "list[GsaSlimRecordVersion]",
+        subsets: "list[GsaSlimSubset]",
         table: "GsaSlimTable",
         parent: "Union[GsaSlimRecordHistory, Unset_Type]" = Unset,
     ) -> None:
@@ -103,16 +103,16 @@ class GsaRecordHistory(ModelBase):
         ----------
         guid: str
         is_folder: bool
-        record_versions: List[GsaSlimRecordVersion]
-        subsets: List[GsaSlimSubset]
+        record_versions: list[GsaSlimRecordVersion]
+        subsets: list[GsaSlimSubset]
         table: GsaSlimTable
         parent: GsaSlimRecordHistory, optional
         """
         self._is_folder: bool
         self._table: GsaSlimTable
         self._parent: Union[GsaSlimRecordHistory, Unset_Type] = Unset
-        self._record_versions: List[GsaSlimRecordVersion]
-        self._subsets: List[GsaSlimSubset]
+        self._record_versions: list[GsaSlimRecordVersion]
+        self._subsets: list[GsaSlimSubset]
         self._guid: str
 
         self.is_folder = is_folder
@@ -205,23 +205,23 @@ class GsaRecordHistory(ModelBase):
         self._parent = parent
 
     @property
-    def record_versions(self) -> "List[GsaSlimRecordVersion]":
+    def record_versions(self) -> "list[GsaSlimRecordVersion]":
         """Gets the record_versions of this GsaRecordHistory.
 
         Returns
         -------
-        List[GsaSlimRecordVersion]
+        list[GsaSlimRecordVersion]
             The record_versions of this GsaRecordHistory.
         """
         return self._record_versions
 
     @record_versions.setter
-    def record_versions(self, record_versions: "List[GsaSlimRecordVersion]") -> None:
+    def record_versions(self, record_versions: "list[GsaSlimRecordVersion]") -> None:
         """Sets the record_versions of this GsaRecordHistory.
 
         Parameters
         ----------
-        record_versions: List[GsaSlimRecordVersion]
+        record_versions: list[GsaSlimRecordVersion]
             The record_versions of this GsaRecordHistory.
         """
         # Field is not nullable
@@ -233,23 +233,23 @@ class GsaRecordHistory(ModelBase):
         self._record_versions = record_versions
 
     @property
-    def subsets(self) -> "List[GsaSlimSubset]":
+    def subsets(self) -> "list[GsaSlimSubset]":
         """Gets the subsets of this GsaRecordHistory.
 
         Returns
         -------
-        List[GsaSlimSubset]
+        list[GsaSlimSubset]
             The subsets of this GsaRecordHistory.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "List[GsaSlimSubset]") -> None:
+    def subsets(self, subsets: "list[GsaSlimSubset]") -> None:
         """Sets the subsets of this GsaRecordHistory.
 
         Parameters
         ----------
-        subsets: List[GsaSlimSubset]
+        subsets: list[GsaSlimSubset]
             The subsets of this GsaRecordHistory.
         """
         # Field is not nullable
@@ -289,7 +289,7 @@ class GsaRecordHistory(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

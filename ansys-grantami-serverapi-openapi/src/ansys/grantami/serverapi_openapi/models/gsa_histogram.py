@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaHistogram(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "buckets": "list[GsaHistogramBucket]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "buckets": "buckets",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "buckets": "GsaHistogramBucket",
     }
 
@@ -77,43 +77,43 @@ class GsaHistogram(ModelBase):
     def __init__(
         self,
         *,
-        buckets: "Union[List[GsaHistogramBucket], None, Unset_Type]" = Unset,
+        buckets: "Union[list[GsaHistogramBucket], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaHistogram - a model defined in Swagger
 
         Parameters
         ----------
-        buckets: List[GsaHistogramBucket], optional
+        buckets: list[GsaHistogramBucket], optional
         """
-        self._buckets: Union[List[GsaHistogramBucket], None, Unset_Type] = Unset
+        self._buckets: Union[list[GsaHistogramBucket], None, Unset_Type] = Unset
 
         if buckets is not Unset:
             self.buckets = buckets
 
     @property
-    def buckets(self) -> "Union[List[GsaHistogramBucket], None, Unset_Type]":
+    def buckets(self) -> "Union[list[GsaHistogramBucket], None, Unset_Type]":
         """Gets the buckets of this GsaHistogram.
 
         Returns
         -------
-        Union[List[GsaHistogramBucket], None, Unset_Type]
+        Union[list[GsaHistogramBucket], None, Unset_Type]
             The buckets of this GsaHistogram.
         """
         return self._buckets
 
     @buckets.setter
-    def buckets(self, buckets: "Union[List[GsaHistogramBucket], None, Unset_Type]") -> None:
+    def buckets(self, buckets: "Union[list[GsaHistogramBucket], None, Unset_Type]") -> None:
         """Sets the buckets of this GsaHistogram.
 
         Parameters
         ----------
-        buckets: Union[List[GsaHistogramBucket], None, Unset_Type]
+        buckets: Union[list[GsaHistogramBucket], None, Unset_Type]
             The buckets of this GsaHistogram.
         """
         self._buckets = buckets
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

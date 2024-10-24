@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaQueryAttributeInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "chartable": "bool",
         "ordered_meta_attributes": "list[GsaQuerySlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "chartable": "chartable",
         "ordered_meta_attributes": "orderedMetaAttributes",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "orderedMetaAttributes": "GsaQuerySlimNamedEntity",
     }
 
@@ -80,17 +80,17 @@ class GsaQueryAttributeInfo(ModelBase):
         self,
         *,
         chartable: "Union[bool, None, Unset_Type]" = Unset,
-        ordered_meta_attributes: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        ordered_meta_attributes: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryAttributeInfo - a model defined in Swagger
 
         Parameters
         ----------
         chartable: bool, optional
-        ordered_meta_attributes: List[GsaQuerySlimNamedEntity], optional
+        ordered_meta_attributes: list[GsaQuerySlimNamedEntity], optional
         """
         self._chartable: Union[bool, None, Unset_Type] = Unset
-        self._ordered_meta_attributes: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type] = (
+        self._ordered_meta_attributes: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = (
             Unset
         )
 
@@ -122,31 +122,31 @@ class GsaQueryAttributeInfo(ModelBase):
         self._chartable = chartable
 
     @property
-    def ordered_meta_attributes(self) -> "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]":
+    def ordered_meta_attributes(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
         """Gets the ordered_meta_attributes of this GsaQueryAttributeInfo.
 
         Returns
         -------
-        Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The ordered_meta_attributes of this GsaQueryAttributeInfo.
         """
         return self._ordered_meta_attributes
 
     @ordered_meta_attributes.setter
     def ordered_meta_attributes(
-        self, ordered_meta_attributes: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]"
+        self, ordered_meta_attributes: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the ordered_meta_attributes of this GsaQueryAttributeInfo.
 
         Parameters
         ----------
-        ordered_meta_attributes: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        ordered_meta_attributes: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The ordered_meta_attributes of this GsaQueryAttributeInfo.
         """
         self._ordered_meta_attributes = ordered_meta_attributes
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

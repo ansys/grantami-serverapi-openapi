@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaAttributeInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "chartable": "bool",
         "expressionable": "bool",
         "extended_name": "str",
@@ -75,7 +75,7 @@ class GsaAttributeInfo(ModelBase):
         "primary_dynamic_link_groups": "list[GsaSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "chartable": "chartable",
         "expressionable": "expressionable",
         "extended_name": "extendedName",
@@ -90,7 +90,7 @@ class GsaAttributeInfo(ModelBase):
         "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "orderedMetaAttributes": "GsaSlimTypedAttribute",
         "standardNames": "GsaSlimNamedEntity",
         "primaryDataLinkGroups": "GsaSlimNamedEntity",
@@ -107,15 +107,15 @@ class GsaAttributeInfo(ModelBase):
         chartable: "bool",
         expressionable: "bool",
         extended_name: "str",
-        foreign_data_link_groups: "List[GsaSlimNamedEntity]",
+        foreign_data_link_groups: "list[GsaSlimNamedEntity]",
         is_meta_attribute: "bool",
         linkable: "bool",
-        primary_data_link_groups: "List[GsaSlimNamedEntity]",
-        standard_names: "List[GsaSlimNamedEntity]",
+        primary_data_link_groups: "list[GsaSlimNamedEntity]",
+        standard_names: "list[GsaSlimNamedEntity]",
         type_code: "str",
-        foreign_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
-        ordered_meta_attributes: "Union[List[GsaSlimTypedAttribute], None, Unset_Type]" = Unset,
-        primary_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
+        foreign_dynamic_link_groups: "Union[list[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
+        ordered_meta_attributes: "Union[list[GsaSlimTypedAttribute], None, Unset_Type]" = Unset,
+        primary_dynamic_link_groups: "Union[list[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaAttributeInfo - a model defined in Swagger
 
@@ -124,15 +124,15 @@ class GsaAttributeInfo(ModelBase):
         chartable: bool
         expressionable: bool
         extended_name: str
-        foreign_data_link_groups: List[GsaSlimNamedEntity]
+        foreign_data_link_groups: list[GsaSlimNamedEntity]
         is_meta_attribute: bool
         linkable: bool
-        primary_data_link_groups: List[GsaSlimNamedEntity]
-        standard_names: List[GsaSlimNamedEntity]
+        primary_data_link_groups: list[GsaSlimNamedEntity]
+        standard_names: list[GsaSlimNamedEntity]
         type_code: str
-        foreign_dynamic_link_groups: List[GsaSlimNamedEntity], optional
-        ordered_meta_attributes: List[GsaSlimTypedAttribute], optional
-        primary_dynamic_link_groups: List[GsaSlimNamedEntity], optional
+        foreign_dynamic_link_groups: list[GsaSlimNamedEntity], optional
+        ordered_meta_attributes: list[GsaSlimTypedAttribute], optional
+        primary_dynamic_link_groups: list[GsaSlimNamedEntity], optional
         """
         self._type_code: str
         self._chartable: bool
@@ -140,12 +140,12 @@ class GsaAttributeInfo(ModelBase):
         self._linkable: bool
         self._extended_name: str
         self._is_meta_attribute: bool
-        self._ordered_meta_attributes: Union[List[GsaSlimTypedAttribute], None, Unset_Type] = Unset
-        self._standard_names: List[GsaSlimNamedEntity]
-        self._primary_data_link_groups: List[GsaSlimNamedEntity]
-        self._foreign_data_link_groups: List[GsaSlimNamedEntity]
-        self._primary_dynamic_link_groups: Union[List[GsaSlimNamedEntity], None, Unset_Type] = Unset
-        self._foreign_dynamic_link_groups: Union[List[GsaSlimNamedEntity], None, Unset_Type] = Unset
+        self._ordered_meta_attributes: Union[list[GsaSlimTypedAttribute], None, Unset_Type] = Unset
+        self._standard_names: list[GsaSlimNamedEntity]
+        self._primary_data_link_groups: list[GsaSlimNamedEntity]
+        self._foreign_data_link_groups: list[GsaSlimNamedEntity]
+        self._primary_dynamic_link_groups: Union[list[GsaSlimNamedEntity], None, Unset_Type] = Unset
+        self._foreign_dynamic_link_groups: Union[list[GsaSlimNamedEntity], None, Unset_Type] = Unset
 
         self.type_code = type_code
         self.chartable = chartable
@@ -338,47 +338,47 @@ class GsaAttributeInfo(ModelBase):
         self._is_meta_attribute = is_meta_attribute
 
     @property
-    def ordered_meta_attributes(self) -> "Union[List[GsaSlimTypedAttribute], None, Unset_Type]":
+    def ordered_meta_attributes(self) -> "Union[list[GsaSlimTypedAttribute], None, Unset_Type]":
         """Gets the ordered_meta_attributes of this GsaAttributeInfo.
 
         Returns
         -------
-        Union[List[GsaSlimTypedAttribute], None, Unset_Type]
+        Union[list[GsaSlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaAttributeInfo.
         """
         return self._ordered_meta_attributes
 
     @ordered_meta_attributes.setter
     def ordered_meta_attributes(
-        self, ordered_meta_attributes: "Union[List[GsaSlimTypedAttribute], None, Unset_Type]"
+        self, ordered_meta_attributes: "Union[list[GsaSlimTypedAttribute], None, Unset_Type]"
     ) -> None:
         """Sets the ordered_meta_attributes of this GsaAttributeInfo.
 
         Parameters
         ----------
-        ordered_meta_attributes: Union[List[GsaSlimTypedAttribute], None, Unset_Type]
+        ordered_meta_attributes: Union[list[GsaSlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaAttributeInfo.
         """
         self._ordered_meta_attributes = ordered_meta_attributes
 
     @property
-    def standard_names(self) -> "List[GsaSlimNamedEntity]":
+    def standard_names(self) -> "list[GsaSlimNamedEntity]":
         """Gets the standard_names of this GsaAttributeInfo.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The standard_names of this GsaAttributeInfo.
         """
         return self._standard_names
 
     @standard_names.setter
-    def standard_names(self, standard_names: "List[GsaSlimNamedEntity]") -> None:
+    def standard_names(self, standard_names: "list[GsaSlimNamedEntity]") -> None:
         """Sets the standard_names of this GsaAttributeInfo.
 
         Parameters
         ----------
-        standard_names: List[GsaSlimNamedEntity]
+        standard_names: list[GsaSlimNamedEntity]
             The standard_names of this GsaAttributeInfo.
         """
         # Field is not nullable
@@ -390,25 +390,25 @@ class GsaAttributeInfo(ModelBase):
         self._standard_names = standard_names
 
     @property
-    def primary_data_link_groups(self) -> "List[GsaSlimNamedEntity]":
+    def primary_data_link_groups(self) -> "list[GsaSlimNamedEntity]":
         """Gets the primary_data_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The primary_data_link_groups of this GsaAttributeInfo.
         """
         return self._primary_data_link_groups
 
     @primary_data_link_groups.setter
     def primary_data_link_groups(
-        self, primary_data_link_groups: "List[GsaSlimNamedEntity]"
+        self, primary_data_link_groups: "list[GsaSlimNamedEntity]"
     ) -> None:
         """Sets the primary_data_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        primary_data_link_groups: List[GsaSlimNamedEntity]
+        primary_data_link_groups: list[GsaSlimNamedEntity]
             The primary_data_link_groups of this GsaAttributeInfo.
         """
         # Field is not nullable
@@ -420,25 +420,25 @@ class GsaAttributeInfo(ModelBase):
         self._primary_data_link_groups = primary_data_link_groups
 
     @property
-    def foreign_data_link_groups(self) -> "List[GsaSlimNamedEntity]":
+    def foreign_data_link_groups(self) -> "list[GsaSlimNamedEntity]":
         """Gets the foreign_data_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The foreign_data_link_groups of this GsaAttributeInfo.
         """
         return self._foreign_data_link_groups
 
     @foreign_data_link_groups.setter
     def foreign_data_link_groups(
-        self, foreign_data_link_groups: "List[GsaSlimNamedEntity]"
+        self, foreign_data_link_groups: "list[GsaSlimNamedEntity]"
     ) -> None:
         """Sets the foreign_data_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        foreign_data_link_groups: List[GsaSlimNamedEntity]
+        foreign_data_link_groups: list[GsaSlimNamedEntity]
             The foreign_data_link_groups of this GsaAttributeInfo.
         """
         # Field is not nullable
@@ -450,55 +450,55 @@ class GsaAttributeInfo(ModelBase):
         self._foreign_data_link_groups = foreign_data_link_groups
 
     @property
-    def primary_dynamic_link_groups(self) -> "Union[List[GsaSlimNamedEntity], None, Unset_Type]":
+    def primary_dynamic_link_groups(self) -> "Union[list[GsaSlimNamedEntity], None, Unset_Type]":
         """Gets the primary_dynamic_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
-        Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The primary_dynamic_link_groups of this GsaAttributeInfo.
         """
         return self._primary_dynamic_link_groups
 
     @primary_dynamic_link_groups.setter
     def primary_dynamic_link_groups(
-        self, primary_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]"
+        self, primary_dynamic_link_groups: "Union[list[GsaSlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the primary_dynamic_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        primary_dynamic_link_groups: Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        primary_dynamic_link_groups: Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The primary_dynamic_link_groups of this GsaAttributeInfo.
         """
         self._primary_dynamic_link_groups = primary_dynamic_link_groups
 
     @property
-    def foreign_dynamic_link_groups(self) -> "Union[List[GsaSlimNamedEntity], None, Unset_Type]":
+    def foreign_dynamic_link_groups(self) -> "Union[list[GsaSlimNamedEntity], None, Unset_Type]":
         """Gets the foreign_dynamic_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
-        Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The foreign_dynamic_link_groups of this GsaAttributeInfo.
         """
         return self._foreign_dynamic_link_groups
 
     @foreign_dynamic_link_groups.setter
     def foreign_dynamic_link_groups(
-        self, foreign_dynamic_link_groups: "Union[List[GsaSlimNamedEntity], None, Unset_Type]"
+        self, foreign_dynamic_link_groups: "Union[list[GsaSlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the foreign_dynamic_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        foreign_dynamic_link_groups: Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        foreign_dynamic_link_groups: Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The foreign_dynamic_link_groups of this GsaAttributeInfo.
         """
         self._foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

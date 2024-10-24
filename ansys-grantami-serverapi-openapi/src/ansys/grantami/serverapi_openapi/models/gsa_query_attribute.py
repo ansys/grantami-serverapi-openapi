@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaQueryAttribute(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaQuerySlimNamedEntity]",
         "data_rule": "GsaQueryDataRule",
         "default_threshold_type": "GsaAttributeThresholdType",
@@ -76,7 +76,7 @@ class GsaQueryAttribute(ModelBase):
         "unit": "GsaQueryUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "data_rule": "dataRule",
         "default_threshold_type": "defaultThresholdType",
@@ -92,7 +92,7 @@ class GsaQueryAttribute(ModelBase):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
         "defaultThresholdType": "GsaAttributeThresholdType",
         "info": "GsaQueryAttributeInfo",
@@ -110,16 +110,16 @@ class GsaQueryAttribute(ModelBase):
     def __init__(
         self,
         *,
-        attribute_parameters: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         data_rule: "Union[GsaQueryDataRule, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         discrete_type: "Union[GsaQueryDiscreteType, Unset_Type]" = Unset,
-        expressions: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        expressions: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         info: "Union[GsaQueryAttributeInfo, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
-        tabular_columns: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        tabular_columns: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         target: "Union[GsaQueryTabularAttributeTarget, Unset_Type]" = Unset,
         type: "Union[GsaAttributeType, Unset_Type]" = Unset,
         unit: "Union[GsaQueryUnit, Unset_Type]" = Unset,
@@ -128,16 +128,16 @@ class GsaQueryAttribute(ModelBase):
 
         Parameters
         ----------
-        attribute_parameters: List[GsaQuerySlimNamedEntity], optional
+        attribute_parameters: list[GsaQuerySlimNamedEntity], optional
         data_rule: GsaQueryDataRule, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         discrete_type: GsaQueryDiscreteType, optional
-        expressions: List[GsaQuerySlimNamedEntity], optional
+        expressions: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         info: GsaQueryAttributeInfo, optional
         is_hidden_from_search_criteria: bool, optional
         name: str, optional
-        tabular_columns: List[GsaQuerySlimNamedEntity], optional
+        tabular_columns: list[GsaQuerySlimNamedEntity], optional
         target: GsaQueryTabularAttributeTarget, optional
         type: GsaAttributeType, optional
         unit: GsaQueryUnit, optional
@@ -150,9 +150,9 @@ class GsaQueryAttribute(ModelBase):
         self._discrete_type: Union[GsaQueryDiscreteType, Unset_Type] = Unset
         self._data_rule: Union[GsaQueryDataRule, Unset_Type] = Unset
         self._target: Union[GsaQueryTabularAttributeTarget, Unset_Type] = Unset
-        self._tabular_columns: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
-        self._attribute_parameters: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
-        self._expressions: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
+        self._tabular_columns: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
+        self._attribute_parameters: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
+        self._expressions: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
@@ -385,73 +385,73 @@ class GsaQueryAttribute(ModelBase):
         self._target = target
 
     @property
-    def tabular_columns(self) -> "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]":
+    def tabular_columns(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
         """Gets the tabular_columns of this GsaQueryAttribute.
 
         Returns
         -------
-        Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The tabular_columns of this GsaQueryAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]"
+        self, tabular_columns: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_columns of this GsaQueryAttribute.
 
         Parameters
         ----------
-        tabular_columns: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        tabular_columns: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The tabular_columns of this GsaQueryAttribute.
         """
         self._tabular_columns = tabular_columns
 
     @property
-    def attribute_parameters(self) -> "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]":
+    def attribute_parameters(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GsaQueryAttribute.
 
         Returns
         -------
-        Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The attribute_parameters of this GsaQueryAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]"
+        self, attribute_parameters: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the attribute_parameters of this GsaQueryAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        attribute_parameters: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The attribute_parameters of this GsaQueryAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(self) -> "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]":
+    def expressions(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
         """Gets the expressions of this GsaQueryAttribute.
 
         Returns
         -------
-        Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The expressions of this GsaQueryAttribute.
         """
         return self._expressions
 
     @expressions.setter
     def expressions(
-        self, expressions: "Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]"
+        self, expressions: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the expressions of this GsaQueryAttribute.
 
         Parameters
         ----------
-        expressions: Union[List[GsaQuerySlimNamedEntity], None, Unset_Type]
+        expressions: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
             The expressions of this GsaQueryAttribute.
         """
         self._expressions = expressions
@@ -501,7 +501,7 @@ class GsaQueryAttribute(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

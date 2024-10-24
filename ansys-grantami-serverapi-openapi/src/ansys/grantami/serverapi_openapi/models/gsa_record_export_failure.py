@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_export_failure import (  # noqa: F401
     GsaExportFailure,
@@ -56,30 +56,30 @@ class GsaRecordExportFailure(GsaExportFailure):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "failed_records": "list[GsaRecordReference]",
         "failure_details": "str",
         "failure_reason": "str",
         "type": "GsaExportFailureType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "failed_records": "failedRecords",
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "failedRecords": "GsaRecordReference",
     }
 
@@ -88,7 +88,7 @@ class GsaRecordExportFailure(GsaExportFailure):
     def __init__(
         self,
         *,
-        failed_records: "List[GsaRecordReference]",
+        failed_records: "list[GsaRecordReference]",
         failure_details: "str",
         failure_reason: "str",
         type: "GsaExportFailureType" = GsaExportFailureType.RECORD,
@@ -97,34 +97,34 @@ class GsaRecordExportFailure(GsaExportFailure):
 
         Parameters
         ----------
-        failed_records: List[GsaRecordReference]
+        failed_records: list[GsaRecordReference]
         failure_details: str
         failure_reason: str
         type: GsaExportFailureType
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason, type=type)
-        self._failed_records: List[GsaRecordReference]
+        self._failed_records: list[GsaRecordReference]
 
         self.failed_records = failed_records
 
     @property
-    def failed_records(self) -> "List[GsaRecordReference]":
+    def failed_records(self) -> "list[GsaRecordReference]":
         """Gets the failed_records of this GsaRecordExportFailure.
 
         Returns
         -------
-        List[GsaRecordReference]
+        list[GsaRecordReference]
             The failed_records of this GsaRecordExportFailure.
         """
         return self._failed_records
 
     @failed_records.setter
-    def failed_records(self, failed_records: "List[GsaRecordReference]") -> None:
+    def failed_records(self, failed_records: "list[GsaRecordReference]") -> None:
         """Sets the failed_records of this GsaRecordExportFailure.
 
         Parameters
         ----------
-        failed_records: List[GsaRecordReference]
+        failed_records: list[GsaRecordReference]
             The failed_records of this GsaRecordExportFailure.
         """
         # Field is not nullable
@@ -136,7 +136,7 @@ class GsaRecordExportFailure(GsaExportFailure):
         self._failed_records = failed_records
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaSearchResponse(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "results": "list[GsaSearchResult]",
         "search_identifier": "str",
         "total_result_count": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "results": "results",
         "search_identifier": "searchIdentifier",
         "total_result_count": "totalResultCount",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "results": "GsaSearchResult",
     }
 
@@ -81,7 +81,7 @@ class GsaSearchResponse(ModelBase):
     def __init__(
         self,
         *,
-        results: "List[GsaSearchResult]",
+        results: "list[GsaSearchResult]",
         search_identifier: "Union[str, None, Unset_Type]" = Unset,
         total_result_count: "Union[int, Unset_Type]" = Unset,
     ) -> None:
@@ -89,13 +89,13 @@ class GsaSearchResponse(ModelBase):
 
         Parameters
         ----------
-        results: List[GsaSearchResult]
+        results: list[GsaSearchResult]
         search_identifier: str, optional
         total_result_count: int, optional
         """
         self._search_identifier: Union[str, None, Unset_Type] = Unset
         self._total_result_count: Union[int, Unset_Type] = Unset
-        self._results: List[GsaSearchResult]
+        self._results: list[GsaSearchResult]
 
         if search_identifier is not Unset:
             self.search_identifier = search_identifier
@@ -153,23 +153,23 @@ class GsaSearchResponse(ModelBase):
         self._total_result_count = total_result_count
 
     @property
-    def results(self) -> "List[GsaSearchResult]":
+    def results(self) -> "list[GsaSearchResult]":
         """Gets the results of this GsaSearchResponse.
 
         Returns
         -------
-        List[GsaSearchResult]
+        list[GsaSearchResult]
             The results of this GsaSearchResponse.
         """
         return self._results
 
     @results.setter
-    def results(self, results: "List[GsaSearchResult]") -> None:
+    def results(self, results: "list[GsaSearchResult]") -> None:
         """Sets the results of this GsaSearchResponse.
 
         Parameters
         ----------
-        results: List[GsaSearchResult]
+        results: list[GsaSearchResult]
             The results of this GsaSearchResponse.
         """
         # Field is not nullable
@@ -181,7 +181,7 @@ class GsaSearchResponse(ModelBase):
         self._results = results
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

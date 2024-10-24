@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_criterion import (  # noqa: F401
     GsaAggregationCriterion,
@@ -56,18 +56,18 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_aggregation_criterion_type": "GsaAttributeAggregationType",
         "type": "GsaAggregationType",
         "guid": "str",
@@ -75,7 +75,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         "is_meta_attribute": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
         "type": "type",
         "guid": "guid",
@@ -83,7 +83,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         "is_meta_attribute": "isMetaAttribute",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributeAggregationCriterionType": "GsaAttributeAggregationType",
     }
 
@@ -231,7 +231,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         self._attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

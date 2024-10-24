@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -78,16 +78,16 @@ class IntegrationApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -102,7 +102,7 @@ class IntegrationApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GsaIntegrationSchemaOfObjectIdentifier",
             400: None,
             403: None,
@@ -126,7 +126,7 @@ class IntegrationApi(ApiBase):
 
     def all_schema_status(
         self, *, include_errors: "Optional[bool]" = None
-    ) -> "Union[Dict[str, GsaIntegrationSchemaStatus], None]":
+    ) -> "Union[None, dict[str, GsaIntegrationSchemaStatus]]":
         """Returns the status of all available integration schemas.
 
         This method makes a synchronous HTTP request.
@@ -137,7 +137,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[Dict[str, GsaIntegrationSchemaStatus], None]
+        Union[None, dict[str, GsaIntegrationSchemaStatus]]
         """
         data = self._all_schema_status_with_http_info(include_errors, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -161,18 +161,18 @@ class IntegrationApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "include_errors" in params and include_errors is not None:
             query_params.append(("include-errors", params["include_errors"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -180,7 +180,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "dict(str, GsaIntegrationSchemaStatus)",
             403: None,
         }
@@ -233,22 +233,22 @@ class IntegrationApi(ApiBase):
         if "schema" not in params or params["schema"] is None:
             raise ValueError("Missing the required parameter 'schema' when calling 'delete_schema'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             204: None,
             403: None,
             404: None,
@@ -314,22 +314,22 @@ class IntegrationApi(ApiBase):
         if "schema" not in params or params["schema"] is None:
             raise ValueError("Missing the required parameter 'schema' when calling 'get_schema'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "include_implicit_attributes" in params and include_implicit_attributes is not None:
             query_params.append(
                 ("includeImplicitAttributes", params["include_implicit_attributes"])
             )
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -337,7 +337,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaIntegrationSchemaOfObjectIdentifier",
             404: None,
         }
@@ -404,20 +404,20 @@ class IntegrationApi(ApiBase):
                 "Missing the required parameter 'schema' when calling 'get_status_for_integration_schema'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "include_errors" in params and include_errors is not None:
             query_params.append(("include-errors", params["include_errors"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -425,7 +425,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaIntegrationSchemaStatus",
             403: None,
             404: None,
@@ -449,7 +449,7 @@ class IntegrationApi(ApiBase):
 
     def schema_table_mappings(
         self, *, schema: "str", database_key: "str", table_identity: "int"
-    ) -> "Union[List[GsaSourceOfObjectIdentifier], None]":
+    ) -> "Union[None, list[GsaSourceOfObjectIdentifier]]":
         """Returns a list of the schema source mapping from the given table. Will fail if the database is not loaded in MI.  Names and identities of source items will be populated.
 
         This method makes a synchronous HTTP request.
@@ -462,7 +462,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[List[GsaSourceOfObjectIdentifier], None]
+        Union[None, list[GsaSourceOfObjectIdentifier]]
         """
         data = self._schema_table_mappings_with_http_info(
             schema, database_key, table_identity, _return_http_data_only=True
@@ -505,9 +505,9 @@ class IntegrationApi(ApiBase):
                 "Missing the required parameter 'table_identity' when calling 'schema_table_mappings'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
         if "database_key" in params and database_key is not None:
@@ -515,12 +515,12 @@ class IntegrationApi(ApiBase):
         if "table_identity" in params and table_identity is not None:
             path_params["table-identity"] = params["table_identity"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -528,7 +528,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[GsaSourceOfObjectIdentifier]",
             404: None,
         }
@@ -551,7 +551,7 @@ class IntegrationApi(ApiBase):
 
     def schema_targets(
         self, *, schema: "str", include_implicit_attributes: "Optional[bool]" = None
-    ) -> "Union[List[GsaIntegrationAttribute], None]":
+    ) -> "Union[None, list[GsaIntegrationAttribute]]":
         """Returns a list of the attributes defined in the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -565,7 +565,7 @@ class IntegrationApi(ApiBase):
 
         Returns
         -------
-        Union[List[GsaIntegrationAttribute], None]
+        Union[None, list[GsaIntegrationAttribute]]
         """
         data = self._schema_targets_with_http_info(
             schema, include_implicit_attributes, _return_http_data_only=True
@@ -597,22 +597,22 @@ class IntegrationApi(ApiBase):
                 "Missing the required parameter 'schema' when calling 'schema_targets'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "include_implicit_attributes" in params and include_implicit_attributes is not None:
             query_params.append(
                 ("includeImplicitAttributes", params["include_implicit_attributes"])
             )
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -620,7 +620,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[GsaIntegrationAttribute]",
             404: None,
         }
@@ -641,14 +641,14 @@ class IntegrationApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def schemas(self) -> "List[str]":
+    def schemas(self) -> "list[str]":
         """Lists the available integration schemas.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        List[str]
+        list[str]
         """
         data = self._schemas_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -663,16 +663,16 @@ class IntegrationApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -680,7 +680,7 @@ class IntegrationApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[str]",
         }
 
@@ -748,18 +748,18 @@ class IntegrationApi(ApiBase):
         if "schema" not in params or params["schema"] is None:
             raise ValueError("Missing the required parameter 'schema' when calling 'update_schema'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -774,7 +774,7 @@ class IntegrationApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GsaIntegrationSchemaOfObjectIdentifier",
             400: None,
             403: None,

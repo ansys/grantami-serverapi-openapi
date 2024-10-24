@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaRecordLinkGroupsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "record_link_groups": "list[GsaSlimRecordLinkGroup]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "record_link_groups": "recordLinkGroups",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "recordLinkGroups": "GsaSlimRecordLinkGroup",
     }
 
@@ -77,45 +77,45 @@ class GsaRecordLinkGroupsInfo(ModelBase):
     def __init__(
         self,
         *,
-        record_link_groups: "Union[List[GsaSlimRecordLinkGroup], None, Unset_Type]" = Unset,
+        record_link_groups: "Union[list[GsaSlimRecordLinkGroup], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordLinkGroupsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        record_link_groups: List[GsaSlimRecordLinkGroup], optional
+        record_link_groups: list[GsaSlimRecordLinkGroup], optional
         """
-        self._record_link_groups: Union[List[GsaSlimRecordLinkGroup], None, Unset_Type] = Unset
+        self._record_link_groups: Union[list[GsaSlimRecordLinkGroup], None, Unset_Type] = Unset
 
         if record_link_groups is not Unset:
             self.record_link_groups = record_link_groups
 
     @property
-    def record_link_groups(self) -> "Union[List[GsaSlimRecordLinkGroup], None, Unset_Type]":
+    def record_link_groups(self) -> "Union[list[GsaSlimRecordLinkGroup], None, Unset_Type]":
         """Gets the record_link_groups of this GsaRecordLinkGroupsInfo.
 
         Returns
         -------
-        Union[List[GsaSlimRecordLinkGroup], None, Unset_Type]
+        Union[list[GsaSlimRecordLinkGroup], None, Unset_Type]
             The record_link_groups of this GsaRecordLinkGroupsInfo.
         """
         return self._record_link_groups
 
     @record_link_groups.setter
     def record_link_groups(
-        self, record_link_groups: "Union[List[GsaSlimRecordLinkGroup], None, Unset_Type]"
+        self, record_link_groups: "Union[list[GsaSlimRecordLinkGroup], None, Unset_Type]"
     ) -> None:
         """Sets the record_link_groups of this GsaRecordLinkGroupsInfo.
 
         Parameters
         ----------
-        record_link_groups: Union[List[GsaSlimRecordLinkGroup], None, Unset_Type]
+        record_link_groups: Union[list[GsaSlimRecordLinkGroup], None, Unset_Type]
             The record_link_groups of this GsaRecordLinkGroupsInfo.
         """
         self._record_link_groups = record_link_groups
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

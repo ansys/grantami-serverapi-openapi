@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_list_criterion import (  # noqa: F401
     GsaListCriterion,
@@ -55,16 +55,16 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "str",
         "contains_records": "list[str]",
         "contains_records_in_databases": "list[str]",
@@ -79,7 +79,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         "user_role": "GsaUserRole",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "contains_records": "containsRecords",
         "contains_records_in_databases": "containsRecordsInDatabases",
@@ -94,7 +94,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         "user_role": "userRole",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "userRole": "GsaUserRole",
     }
 
@@ -104,10 +104,10 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         self,
         *,
         type: "str" = "recordList",
-        contains_records: "Union[List[str], None, Unset_Type]" = Unset,
-        contains_records_in_databases: "Union[List[str], None, Unset_Type]" = Unset,
-        contains_records_in_integration_schemas: "Union[List[str], None, Unset_Type]" = Unset,
-        contains_records_in_tables: "Union[List[str], None, Unset_Type]" = Unset,
+        contains_records: "Union[list[str], None, Unset_Type]" = Unset,
+        contains_records_in_databases: "Union[list[str], None, Unset_Type]" = Unset,
+        contains_records_in_integration_schemas: "Union[list[str], None, Unset_Type]" = Unset,
+        contains_records_in_tables: "Union[list[str], None, Unset_Type]" = Unset,
         is_awaiting_approval: "Union[bool, None, Unset_Type]" = Unset,
         is_internal_use: "Union[bool, None, Unset_Type]" = Unset,
         is_published: "Union[bool, None, Unset_Type]" = Unset,
@@ -121,10 +121,10 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         Parameters
         ----------
         type: str
-        contains_records: List[str], optional
-        contains_records_in_databases: List[str], optional
-        contains_records_in_integration_schemas: List[str], optional
-        contains_records_in_tables: List[str], optional
+        contains_records: list[str], optional
+        contains_records_in_databases: list[str], optional
+        contains_records_in_integration_schemas: list[str], optional
+        contains_records_in_tables: list[str], optional
         is_awaiting_approval: bool, optional
         is_internal_use: bool, optional
         is_published: bool, optional
@@ -140,10 +140,10 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         self._is_awaiting_approval: Union[bool, None, Unset_Type] = Unset
         self._is_internal_use: Union[bool, None, Unset_Type] = Unset
         self._is_revision: Union[bool, None, Unset_Type] = Unset
-        self._contains_records_in_databases: Union[List[str], None, Unset_Type] = Unset
-        self._contains_records_in_integration_schemas: Union[List[str], None, Unset_Type] = Unset
-        self._contains_records_in_tables: Union[List[str], None, Unset_Type] = Unset
-        self._contains_records: Union[List[str], None, Unset_Type] = Unset
+        self._contains_records_in_databases: Union[list[str], None, Unset_Type] = Unset
+        self._contains_records_in_integration_schemas: Union[list[str], None, Unset_Type] = Unset
+        self._contains_records_in_tables: Union[list[str], None, Unset_Type] = Unset
+        self._contains_records: Union[list[str], None, Unset_Type] = Unset
         self._user_can_add_or_remove_items: Union[bool, None, Unset_Type] = Unset
 
         if name_contains is not Unset:
@@ -307,103 +307,103 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         self._is_revision = is_revision
 
     @property
-    def contains_records_in_databases(self) -> "Union[List[str], None, Unset_Type]":
+    def contains_records_in_databases(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the contains_records_in_databases of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of of the specified databases
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The contains_records_in_databases of this GsaRecordListSearchCriterion.
         """
         return self._contains_records_in_databases
 
     @contains_records_in_databases.setter
     def contains_records_in_databases(
-        self, contains_records_in_databases: "Union[List[str], None, Unset_Type]"
+        self, contains_records_in_databases: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the contains_records_in_databases of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of of the specified databases
 
         Parameters
         ----------
-        contains_records_in_databases: Union[List[str], None, Unset_Type]
+        contains_records_in_databases: Union[list[str], None, Unset_Type]
             The contains_records_in_databases of this GsaRecordListSearchCriterion.
         """
         self._contains_records_in_databases = contains_records_in_databases
 
     @property
-    def contains_records_in_integration_schemas(self) -> "Union[List[str], None, Unset_Type]":
+    def contains_records_in_integration_schemas(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the contains_records_in_integration_schemas of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The contains_records_in_integration_schemas of this GsaRecordListSearchCriterion.
         """
         return self._contains_records_in_integration_schemas
 
     @contains_records_in_integration_schemas.setter
     def contains_records_in_integration_schemas(
-        self, contains_records_in_integration_schemas: "Union[List[str], None, Unset_Type]"
+        self, contains_records_in_integration_schemas: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the contains_records_in_integration_schemas of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified integration schemas
 
         Parameters
         ----------
-        contains_records_in_integration_schemas: Union[List[str], None, Unset_Type]
+        contains_records_in_integration_schemas: Union[list[str], None, Unset_Type]
             The contains_records_in_integration_schemas of this GsaRecordListSearchCriterion.
         """
         self._contains_records_in_integration_schemas = contains_records_in_integration_schemas
 
     @property
-    def contains_records_in_tables(self) -> "Union[List[str], None, Unset_Type]":
+    def contains_records_in_tables(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the contains_records_in_tables of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified tables
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The contains_records_in_tables of this GsaRecordListSearchCriterion.
         """
         return self._contains_records_in_tables
 
     @contains_records_in_tables.setter
     def contains_records_in_tables(
-        self, contains_records_in_tables: "Union[List[str], None, Unset_Type]"
+        self, contains_records_in_tables: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the contains_records_in_tables of this GsaRecordListSearchCriterion.
         Limits results to lists containing records in any of the specified tables
 
         Parameters
         ----------
-        contains_records_in_tables: Union[List[str], None, Unset_Type]
+        contains_records_in_tables: Union[list[str], None, Unset_Type]
             The contains_records_in_tables of this GsaRecordListSearchCriterion.
         """
         self._contains_records_in_tables = contains_records_in_tables
 
     @property
-    def contains_records(self) -> "Union[List[str], None, Unset_Type]":
+    def contains_records(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the contains_records of this GsaRecordListSearchCriterion.
         Limits results to lists containing any of the given records
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The contains_records of this GsaRecordListSearchCriterion.
         """
         return self._contains_records
 
     @contains_records.setter
-    def contains_records(self, contains_records: "Union[List[str], None, Unset_Type]") -> None:
+    def contains_records(self, contains_records: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the contains_records of this GsaRecordListSearchCriterion.
         Limits results to lists containing any of the given records
 
         Parameters
         ----------
-        contains_records: Union[List[str], None, Unset_Type]
+        contains_records: Union[list[str], None, Unset_Type]
             The contains_records of this GsaRecordListSearchCriterion.
         """
         self._contains_records = contains_records
@@ -435,7 +435,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         self._user_can_add_or_remove_items = user_can_add_or_remove_items
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

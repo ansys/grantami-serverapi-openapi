@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaAttributesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GsaSlimAttribute]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaSlimAttribute",
     }
 
@@ -77,36 +77,36 @@ class GsaAttributesInfo(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "List[GsaSlimAttribute]",
+        attributes: "list[GsaSlimAttribute]",
     ) -> None:
         """GsaAttributesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GsaSlimAttribute]
+        attributes: list[GsaSlimAttribute]
         """
-        self._attributes: List[GsaSlimAttribute]
+        self._attributes: list[GsaSlimAttribute]
 
         self.attributes = attributes
 
     @property
-    def attributes(self) -> "List[GsaSlimAttribute]":
+    def attributes(self) -> "list[GsaSlimAttribute]":
         """Gets the attributes of this GsaAttributesInfo.
 
         Returns
         -------
-        List[GsaSlimAttribute]
+        list[GsaSlimAttribute]
             The attributes of this GsaAttributesInfo.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "List[GsaSlimAttribute]") -> None:
+    def attributes(self, attributes: "list[GsaSlimAttribute]") -> None:
         """Sets the attributes of this GsaAttributesInfo.
 
         Parameters
         ----------
-        attributes: List[GsaSlimAttribute]
+        attributes: list[GsaSlimAttribute]
             The attributes of this GsaAttributesInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaAttributesInfo(ModelBase):
         self._attributes = attributes
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

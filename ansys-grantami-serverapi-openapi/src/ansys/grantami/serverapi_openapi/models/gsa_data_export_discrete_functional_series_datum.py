@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_discrete_functional_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
@@ -77,7 +77,7 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
         "x_axis_parameter": "GsaFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
@@ -89,7 +89,7 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "series": "GsaDataExportDiscreteSeries",
     }
 
@@ -103,9 +103,9 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
         not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
-        series: "Union[List[GsaDataExportDiscreteSeries], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        series: "Union[list[GsaDataExportDiscreteSeries], None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GsaFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDiscreteFunctionalSeriesDatum - a model defined in Swagger
@@ -117,9 +117,9 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
         not_applicable: str
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GsaDataExportDatum], optional
-        parameters: List[GsaFunctionalDatumParameterInfo], optional
-        series: List[GsaDataExportDiscreteSeries], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        parameters: list[GsaFunctionalDatumParameterInfo], optional
+        series: list[GsaDataExportDiscreteSeries], optional
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
         """
         super().__init__(
@@ -132,35 +132,35 @@ class GsaDataExportDiscreteFunctionalSeriesDatum(GsaDataExportDiscreteFunctional
             parameters=parameters,
             x_axis_parameter=x_axis_parameter,
         )
-        self._series: Union[List[GsaDataExportDiscreteSeries], None, Unset_Type] = Unset
+        self._series: Union[list[GsaDataExportDiscreteSeries], None, Unset_Type] = Unset
 
         if series is not Unset:
             self.series = series
 
     @property
-    def series(self) -> "Union[List[GsaDataExportDiscreteSeries], None, Unset_Type]":
+    def series(self) -> "Union[list[GsaDataExportDiscreteSeries], None, Unset_Type]":
         """Gets the series of this GsaDataExportDiscreteFunctionalSeriesDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportDiscreteSeries], None, Unset_Type]
+        Union[list[GsaDataExportDiscreteSeries], None, Unset_Type]
             The series of this GsaDataExportDiscreteFunctionalSeriesDatum.
         """
         return self._series
 
     @series.setter
-    def series(self, series: "Union[List[GsaDataExportDiscreteSeries], None, Unset_Type]") -> None:
+    def series(self, series: "Union[list[GsaDataExportDiscreteSeries], None, Unset_Type]") -> None:
         """Sets the series of this GsaDataExportDiscreteFunctionalSeriesDatum.
 
         Parameters
         ----------
-        series: Union[List[GsaDataExportDiscreteSeries], None, Unset_Type]
+        series: Union[list[GsaDataExportDiscreteSeries], None, Unset_Type]
             The series of this GsaDataExportDiscreteFunctionalSeriesDatum.
         """
         self._series = series
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

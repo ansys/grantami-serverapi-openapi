@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "schema": "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier",
         "warnings": "list[GsaIntegrationSchemaGenerationErrorDetail]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "schema": "schema",
         "warnings": "warnings",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "warnings": "GsaIntegrationSchemaGenerationErrorDetail",
         "schema": "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier",
     }
@@ -81,16 +81,16 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
         self,
         *,
         schema: "GsaGuidOnlyIntegrationSchemaOfObjectIdentifier",
-        warnings: "Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]" = Unset,
+        warnings: "Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaGeneratedIntegrationSchemaOfObjectIdentifier - a model defined in Swagger
 
         Parameters
         ----------
         schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
-        warnings: List[GsaIntegrationSchemaGenerationErrorDetail], optional
+        warnings: list[GsaIntegrationSchemaGenerationErrorDetail], optional
         """
-        self._warnings: Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type] = (
+        self._warnings: Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type] = (
             Unset
         )
         self._schema: GsaGuidOnlyIntegrationSchemaOfObjectIdentifier
@@ -102,25 +102,25 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
     @property
     def warnings(
         self,
-    ) -> "Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]":
+    ) -> "Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]":
         """Gets the warnings of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
+        Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
             The warnings of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
         """
         return self._warnings
 
     @warnings.setter
     def warnings(
-        self, warnings: "Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]"
+        self, warnings: "Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]"
     ) -> None:
         """Sets the warnings of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        warnings: Union[List[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
+        warnings: Union[list[GsaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
             The warnings of this GsaGeneratedIntegrationSchemaOfObjectIdentifier.
         """
         self._warnings = warnings
@@ -154,7 +154,7 @@ class GsaGeneratedIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._schema = schema
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

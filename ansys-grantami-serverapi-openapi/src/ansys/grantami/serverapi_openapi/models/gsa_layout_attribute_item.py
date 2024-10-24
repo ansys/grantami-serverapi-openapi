@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_layout_item import GsaLayoutItem  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_layout_item_type import GsaLayoutItemType
@@ -54,16 +54,16 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_type": "GsaAttributeType",
         "guid": "str",
         "item_type": "GsaLayoutItemType",
@@ -75,7 +75,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         "tabular_columns": "list[GsaLayoutTabularColumn]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_type": "attributeType",
         "guid": "guid",
         "item_type": "itemType",
@@ -87,7 +87,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         "tabular_columns": "tabularColumns",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributeType": "GsaAttributeType",
         "metaAttributes": "GsaLayoutAttributeItem",
         "tabularColumns": "GsaLayoutTabularColumn",
@@ -105,8 +105,8 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         read_only: "bool",
         required: "bool",
         underlying_entity_guid: "str",
-        meta_attributes: "Union[List[GsaLayoutAttributeItem], None, Unset_Type]" = Unset,
-        tabular_columns: "Union[List[GsaLayoutTabularColumn], None, Unset_Type]" = Unset,
+        meta_attributes: "Union[list[GsaLayoutAttributeItem], None, Unset_Type]" = Unset,
+        tabular_columns: "Union[list[GsaLayoutTabularColumn], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaLayoutAttributeItem - a model defined in Swagger
 
@@ -119,8 +119,8 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         read_only: bool
         required: bool
         underlying_entity_guid: str
-        meta_attributes: List[GsaLayoutAttributeItem], optional
-        tabular_columns: List[GsaLayoutTabularColumn], optional
+        meta_attributes: list[GsaLayoutAttributeItem], optional
+        tabular_columns: list[GsaLayoutTabularColumn], optional
         """
         super().__init__(
             guid=guid, item_type=item_type, name=name, underlying_entity_guid=underlying_entity_guid
@@ -128,8 +128,8 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         self._attribute_type: GsaAttributeType
         self._required: bool
         self._read_only: bool
-        self._meta_attributes: Union[List[GsaLayoutAttributeItem], None, Unset_Type] = Unset
-        self._tabular_columns: Union[List[GsaLayoutTabularColumn], None, Unset_Type] = Unset
+        self._meta_attributes: Union[list[GsaLayoutAttributeItem], None, Unset_Type] = Unset
+        self._tabular_columns: Union[list[GsaLayoutTabularColumn], None, Unset_Type] = Unset
 
         self.attribute_type = attribute_type
         self.required = required
@@ -224,55 +224,55 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         self._read_only = read_only
 
     @property
-    def meta_attributes(self) -> "Union[List[GsaLayoutAttributeItem], None, Unset_Type]":
+    def meta_attributes(self) -> "Union[list[GsaLayoutAttributeItem], None, Unset_Type]":
         """Gets the meta_attributes of this GsaLayoutAttributeItem.
 
         Returns
         -------
-        Union[List[GsaLayoutAttributeItem], None, Unset_Type]
+        Union[list[GsaLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GsaLayoutAttributeItem.
         """
         return self._meta_attributes
 
     @meta_attributes.setter
     def meta_attributes(
-        self, meta_attributes: "Union[List[GsaLayoutAttributeItem], None, Unset_Type]"
+        self, meta_attributes: "Union[list[GsaLayoutAttributeItem], None, Unset_Type]"
     ) -> None:
         """Sets the meta_attributes of this GsaLayoutAttributeItem.
 
         Parameters
         ----------
-        meta_attributes: Union[List[GsaLayoutAttributeItem], None, Unset_Type]
+        meta_attributes: Union[list[GsaLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GsaLayoutAttributeItem.
         """
         self._meta_attributes = meta_attributes
 
     @property
-    def tabular_columns(self) -> "Union[List[GsaLayoutTabularColumn], None, Unset_Type]":
+    def tabular_columns(self) -> "Union[list[GsaLayoutTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GsaLayoutAttributeItem.
 
         Returns
         -------
-        Union[List[GsaLayoutTabularColumn], None, Unset_Type]
+        Union[list[GsaLayoutTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaLayoutAttributeItem.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "Union[List[GsaLayoutTabularColumn], None, Unset_Type]"
+        self, tabular_columns: "Union[list[GsaLayoutTabularColumn], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_columns of this GsaLayoutAttributeItem.
 
         Parameters
         ----------
-        tabular_columns: Union[List[GsaLayoutTabularColumn], None, Unset_Type]
+        tabular_columns: Union[list[GsaLayoutTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaLayoutAttributeItem.
         """
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

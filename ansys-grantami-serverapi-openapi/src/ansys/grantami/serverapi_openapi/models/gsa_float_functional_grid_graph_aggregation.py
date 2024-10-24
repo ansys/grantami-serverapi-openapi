@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "count": "int",
         "default_x_axis_parameter_guid_values": "list[GsaValueWithCountOfGuid]",
         "default_x_axis_parameter_identity_values": "list[GsaValueWithCountOfInt32]",
@@ -69,7 +69,7 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
         "show_as_table_values": "list[GsaValueWithCountOfBoolean]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "count": "count",
         "default_x_axis_parameter_guid_values": "defaultXAxisParameterGuidValues",
         "default_x_axis_parameter_identity_values": "defaultXAxisParameterIdentityValues",
@@ -78,7 +78,7 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
         "show_as_table_values": "showAsTableValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "defaultXAxisParameterIdentityValues": "GsaValueWithCountOfInt32",
         "defaultXAxisParameterGuidValues": "GsaValueWithCountOfGuid",
         "showAsTableValues": "GsaValueWithCountOfBoolean",
@@ -90,30 +90,30 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
         self,
         *,
         count: "Union[int, Unset_Type]" = Unset,
-        default_x_axis_parameter_guid_values: "Union[List[GsaValueWithCountOfGuid], None, Unset_Type]" = Unset,
-        default_x_axis_parameter_identity_values: "Union[List[GsaValueWithCountOfInt32], None, Unset_Type]" = Unset,
+        default_x_axis_parameter_guid_values: "Union[list[GsaValueWithCountOfGuid], None, Unset_Type]" = Unset,
+        default_x_axis_parameter_identity_values: "Union[list[GsaValueWithCountOfInt32], None, Unset_Type]" = Unset,
         maximum_number_of_points: "Union[int, None, Unset_Type]" = Unset,
         minimum_number_of_points: "Union[int, None, Unset_Type]" = Unset,
-        show_as_table_values: "Union[List[GsaValueWithCountOfBoolean], None, Unset_Type]" = Unset,
+        show_as_table_values: "Union[list[GsaValueWithCountOfBoolean], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFloatFunctionalGridGraphAggregation - a model defined in Swagger
 
         Parameters
         ----------
         count: int, optional
-        default_x_axis_parameter_guid_values: List[GsaValueWithCountOfGuid], optional
-        default_x_axis_parameter_identity_values: List[GsaValueWithCountOfInt32], optional
+        default_x_axis_parameter_guid_values: list[GsaValueWithCountOfGuid], optional
+        default_x_axis_parameter_identity_values: list[GsaValueWithCountOfInt32], optional
         maximum_number_of_points: int, optional
         minimum_number_of_points: int, optional
-        show_as_table_values: List[GsaValueWithCountOfBoolean], optional
+        show_as_table_values: list[GsaValueWithCountOfBoolean], optional
         """
         self._default_x_axis_parameter_identity_values: Union[
-            List[GsaValueWithCountOfInt32], None, Unset_Type
+            list[GsaValueWithCountOfInt32], None, Unset_Type
         ] = Unset
         self._default_x_axis_parameter_guid_values: Union[
-            List[GsaValueWithCountOfGuid], None, Unset_Type
+            list[GsaValueWithCountOfGuid], None, Unset_Type
         ] = Unset
-        self._show_as_table_values: Union[List[GsaValueWithCountOfBoolean], None, Unset_Type] = (
+        self._show_as_table_values: Union[list[GsaValueWithCountOfBoolean], None, Unset_Type] = (
             Unset
         )
         self._minimum_number_of_points: Union[int, None, Unset_Type] = Unset
@@ -136,12 +136,12 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
     @property
     def default_x_axis_parameter_identity_values(
         self,
-    ) -> "Union[List[GsaValueWithCountOfInt32], None, Unset_Type]":
+    ) -> "Union[list[GsaValueWithCountOfInt32], None, Unset_Type]":
         """Gets the default_x_axis_parameter_identity_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Returns
         -------
-        Union[List[GsaValueWithCountOfInt32], None, Unset_Type]
+        Union[list[GsaValueWithCountOfInt32], None, Unset_Type]
             The default_x_axis_parameter_identity_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         return self._default_x_axis_parameter_identity_values
@@ -149,13 +149,13 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
     @default_x_axis_parameter_identity_values.setter
     def default_x_axis_parameter_identity_values(
         self,
-        default_x_axis_parameter_identity_values: "Union[List[GsaValueWithCountOfInt32], None, Unset_Type]",
+        default_x_axis_parameter_identity_values: "Union[list[GsaValueWithCountOfInt32], None, Unset_Type]",
     ) -> None:
         """Sets the default_x_axis_parameter_identity_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Parameters
         ----------
-        default_x_axis_parameter_identity_values: Union[List[GsaValueWithCountOfInt32], None, Unset_Type]
+        default_x_axis_parameter_identity_values: Union[list[GsaValueWithCountOfInt32], None, Unset_Type]
             The default_x_axis_parameter_identity_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         self._default_x_axis_parameter_identity_values = default_x_axis_parameter_identity_values
@@ -163,12 +163,12 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
     @property
     def default_x_axis_parameter_guid_values(
         self,
-    ) -> "Union[List[GsaValueWithCountOfGuid], None, Unset_Type]":
+    ) -> "Union[list[GsaValueWithCountOfGuid], None, Unset_Type]":
         """Gets the default_x_axis_parameter_guid_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Returns
         -------
-        Union[List[GsaValueWithCountOfGuid], None, Unset_Type]
+        Union[list[GsaValueWithCountOfGuid], None, Unset_Type]
             The default_x_axis_parameter_guid_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         return self._default_x_axis_parameter_guid_values
@@ -176,37 +176,37 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
     @default_x_axis_parameter_guid_values.setter
     def default_x_axis_parameter_guid_values(
         self,
-        default_x_axis_parameter_guid_values: "Union[List[GsaValueWithCountOfGuid], None, Unset_Type]",
+        default_x_axis_parameter_guid_values: "Union[list[GsaValueWithCountOfGuid], None, Unset_Type]",
     ) -> None:
         """Sets the default_x_axis_parameter_guid_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Parameters
         ----------
-        default_x_axis_parameter_guid_values: Union[List[GsaValueWithCountOfGuid], None, Unset_Type]
+        default_x_axis_parameter_guid_values: Union[list[GsaValueWithCountOfGuid], None, Unset_Type]
             The default_x_axis_parameter_guid_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         self._default_x_axis_parameter_guid_values = default_x_axis_parameter_guid_values
 
     @property
-    def show_as_table_values(self) -> "Union[List[GsaValueWithCountOfBoolean], None, Unset_Type]":
+    def show_as_table_values(self) -> "Union[list[GsaValueWithCountOfBoolean], None, Unset_Type]":
         """Gets the show_as_table_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Returns
         -------
-        Union[List[GsaValueWithCountOfBoolean], None, Unset_Type]
+        Union[list[GsaValueWithCountOfBoolean], None, Unset_Type]
             The show_as_table_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         return self._show_as_table_values
 
     @show_as_table_values.setter
     def show_as_table_values(
-        self, show_as_table_values: "Union[List[GsaValueWithCountOfBoolean], None, Unset_Type]"
+        self, show_as_table_values: "Union[list[GsaValueWithCountOfBoolean], None, Unset_Type]"
     ) -> None:
         """Sets the show_as_table_values of this GsaFloatFunctionalGridGraphAggregation.
 
         Parameters
         ----------
-        show_as_table_values: Union[List[GsaValueWithCountOfBoolean], None, Unset_Type]
+        show_as_table_values: Union[list[GsaValueWithCountOfBoolean], None, Unset_Type]
             The show_as_table_values of this GsaFloatFunctionalGridGraphAggregation.
         """
         self._show_as_table_values = show_as_table_values
@@ -287,7 +287,7 @@ class GsaFloatFunctionalGridGraphAggregation(ModelBase):
         self._count = count
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

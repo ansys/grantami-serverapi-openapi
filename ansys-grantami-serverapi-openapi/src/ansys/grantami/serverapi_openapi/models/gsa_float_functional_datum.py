@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
@@ -56,18 +56,18 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaDatumType",
         "estimated": "bool",
         "graph_type": "GsaGraphType",
@@ -79,7 +79,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "estimated": "estimated",
         "graph_type": "graphType",
@@ -91,7 +91,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "graphType": "GsaGraphType",
         "unit": "GsaSlimUnit",
         "parameterSettings": "GsaFunctionalParameterSetting",
@@ -113,7 +113,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         is_range: "bool",
         log_scale_on_y_axis: "bool",
         not_applicable: "str" = "applicable",
-        parameter_settings: "List[GsaFunctionalParameterSetting]",
+        parameter_settings: "list[GsaFunctionalParameterSetting]",
         show_as_table: "bool",
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
     ) -> None:
@@ -127,7 +127,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         is_range: bool
         log_scale_on_y_axis: bool
         not_applicable: str
-        parameter_settings: List[GsaFunctionalParameterSetting]
+        parameter_settings: list[GsaFunctionalParameterSetting]
         show_as_table: bool
         unit: GsaSlimUnit, optional
         """
@@ -138,7 +138,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         self._show_as_table: bool
         self._is_range: bool
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
-        self._parameter_settings: List[GsaFunctionalParameterSetting]
+        self._parameter_settings: list[GsaFunctionalParameterSetting]
 
         self.graph_type = graph_type
         self.log_scale_on_y_axis = log_scale_on_y_axis
@@ -315,23 +315,23 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         self._unit = unit
 
     @property
-    def parameter_settings(self) -> "List[GsaFunctionalParameterSetting]":
+    def parameter_settings(self) -> "list[GsaFunctionalParameterSetting]":
         """Gets the parameter_settings of this GsaFloatFunctionalDatum.
 
         Returns
         -------
-        List[GsaFunctionalParameterSetting]
+        list[GsaFunctionalParameterSetting]
             The parameter_settings of this GsaFloatFunctionalDatum.
         """
         return self._parameter_settings
 
     @parameter_settings.setter
-    def parameter_settings(self, parameter_settings: "List[GsaFunctionalParameterSetting]") -> None:
+    def parameter_settings(self, parameter_settings: "list[GsaFunctionalParameterSetting]") -> None:
         """Sets the parameter_settings of this GsaFloatFunctionalDatum.
 
         Parameters
         ----------
-        parameter_settings: List[GsaFunctionalParameterSetting]
+        parameter_settings: list[GsaFunctionalParameterSetting]
             The parameter_settings of this GsaFloatFunctionalDatum.
         """
         # Field is not nullable
@@ -343,7 +343,7 @@ class GsaFloatFunctionalDatum(GsaApplicableDatum):
         self._parameter_settings = parameter_settings
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaCreateStandardName(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "guid": "str",
         "mapped_attributes": "list[GsaSlimEntity]",
@@ -69,7 +69,7 @@ class GsaCreateStandardName(ModelBase):
         "mapped_record_link_groups": "list[GsaSlimEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "guid": "guid",
         "mapped_attributes": "mappedAttributes",
@@ -78,7 +78,7 @@ class GsaCreateStandardName(ModelBase):
         "mapped_record_link_groups": "mappedRecordLinkGroups",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "mappedAttributes": "GsaSlimEntity",
         "mappedParameters": "GsaSlimEntity",
         "mappedRecordLinkGroups": "GsaSlimEntity",
@@ -92,10 +92,10 @@ class GsaCreateStandardName(ModelBase):
         *,
         name: "str",
         guid: "Union[str, Unset_Type]" = Unset,
-        mapped_attributes: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
-        mapped_cross_database_record_link_groups: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
-        mapped_parameters: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
-        mapped_record_link_groups: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
+        mapped_attributes: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
+        mapped_cross_database_record_link_groups: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
+        mapped_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
+        mapped_record_link_groups: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaCreateStandardName - a model defined in Swagger
 
@@ -103,16 +103,16 @@ class GsaCreateStandardName(ModelBase):
         ----------
         name: str
         guid: str, optional
-        mapped_attributes: List[GsaSlimEntity], optional
-        mapped_cross_database_record_link_groups: List[GsaSlimEntity], optional
-        mapped_parameters: List[GsaSlimEntity], optional
-        mapped_record_link_groups: List[GsaSlimEntity], optional
+        mapped_attributes: list[GsaSlimEntity], optional
+        mapped_cross_database_record_link_groups: list[GsaSlimEntity], optional
+        mapped_parameters: list[GsaSlimEntity], optional
+        mapped_record_link_groups: list[GsaSlimEntity], optional
         """
-        self._mapped_attributes: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
-        self._mapped_parameters: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
-        self._mapped_record_link_groups: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
+        self._mapped_attributes: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
+        self._mapped_parameters: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
+        self._mapped_record_link_groups: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
         self._mapped_cross_database_record_link_groups: Union[
-            List[GsaSlimEntity], None, Unset_Type
+            list[GsaSlimEntity], None, Unset_Type
         ] = Unset
         self._name: str
         self._guid: Union[str, Unset_Type] = Unset
@@ -130,73 +130,73 @@ class GsaCreateStandardName(ModelBase):
             self.guid = guid
 
     @property
-    def mapped_attributes(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def mapped_attributes(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the mapped_attributes of this GsaCreateStandardName.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_attributes of this GsaCreateStandardName.
         """
         return self._mapped_attributes
 
     @mapped_attributes.setter
     def mapped_attributes(
-        self, mapped_attributes: "Union[List[GsaSlimEntity], None, Unset_Type]"
+        self, mapped_attributes: "Union[list[GsaSlimEntity], None, Unset_Type]"
     ) -> None:
         """Sets the mapped_attributes of this GsaCreateStandardName.
 
         Parameters
         ----------
-        mapped_attributes: Union[List[GsaSlimEntity], None, Unset_Type]
+        mapped_attributes: Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_attributes of this GsaCreateStandardName.
         """
         self._mapped_attributes = mapped_attributes
 
     @property
-    def mapped_parameters(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def mapped_parameters(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the mapped_parameters of this GsaCreateStandardName.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_parameters of this GsaCreateStandardName.
         """
         return self._mapped_parameters
 
     @mapped_parameters.setter
     def mapped_parameters(
-        self, mapped_parameters: "Union[List[GsaSlimEntity], None, Unset_Type]"
+        self, mapped_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]"
     ) -> None:
         """Sets the mapped_parameters of this GsaCreateStandardName.
 
         Parameters
         ----------
-        mapped_parameters: Union[List[GsaSlimEntity], None, Unset_Type]
+        mapped_parameters: Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_parameters of this GsaCreateStandardName.
         """
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def mapped_record_link_groups(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the mapped_record_link_groups of this GsaCreateStandardName.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_record_link_groups of this GsaCreateStandardName.
         """
         return self._mapped_record_link_groups
 
     @mapped_record_link_groups.setter
     def mapped_record_link_groups(
-        self, mapped_record_link_groups: "Union[List[GsaSlimEntity], None, Unset_Type]"
+        self, mapped_record_link_groups: "Union[list[GsaSlimEntity], None, Unset_Type]"
     ) -> None:
         """Sets the mapped_record_link_groups of this GsaCreateStandardName.
 
         Parameters
         ----------
-        mapped_record_link_groups: Union[List[GsaSlimEntity], None, Unset_Type]
+        mapped_record_link_groups: Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_record_link_groups of this GsaCreateStandardName.
         """
         self._mapped_record_link_groups = mapped_record_link_groups
@@ -204,12 +204,12 @@ class GsaCreateStandardName(ModelBase):
     @property
     def mapped_cross_database_record_link_groups(
         self,
-    ) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    ) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the mapped_cross_database_record_link_groups of this GsaCreateStandardName.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_cross_database_record_link_groups of this GsaCreateStandardName.
         """
         return self._mapped_cross_database_record_link_groups
@@ -217,13 +217,13 @@ class GsaCreateStandardName(ModelBase):
     @mapped_cross_database_record_link_groups.setter
     def mapped_cross_database_record_link_groups(
         self,
-        mapped_cross_database_record_link_groups: "Union[List[GsaSlimEntity], None, Unset_Type]",
+        mapped_cross_database_record_link_groups: "Union[list[GsaSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the mapped_cross_database_record_link_groups of this GsaCreateStandardName.
 
         Parameters
         ----------
-        mapped_cross_database_record_link_groups: Union[List[GsaSlimEntity], None, Unset_Type]
+        mapped_cross_database_record_link_groups: Union[list[GsaSlimEntity], None, Unset_Type]
             The mapped_cross_database_record_link_groups of this GsaCreateStandardName.
         """
         self._mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
@@ -282,7 +282,7 @@ class GsaCreateStandardName(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

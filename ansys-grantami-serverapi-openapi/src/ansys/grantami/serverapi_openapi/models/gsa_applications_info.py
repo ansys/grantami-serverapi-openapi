@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,67 +51,67 @@ class GsaApplicationsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "applications": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "applications": "applications",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        applications: "Union[List[str], None, Unset_Type]" = Unset,
+        applications: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaApplicationsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        applications: List[str], optional
+        applications: list[str], optional
         """
-        self._applications: Union[List[str], None, Unset_Type] = Unset
+        self._applications: Union[list[str], None, Unset_Type] = Unset
 
         if applications is not Unset:
             self.applications = applications
 
     @property
-    def applications(self) -> "Union[List[str], None, Unset_Type]":
+    def applications(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the applications of this GsaApplicationsInfo.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The applications of this GsaApplicationsInfo.
         """
         return self._applications
 
     @applications.setter
-    def applications(self, applications: "Union[List[str], None, Unset_Type]") -> None:
+    def applications(self, applications: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the applications of this GsaApplicationsInfo.
 
         Parameters
         ----------
-        applications: Union[List[str], None, Unset_Type]
+        applications: Union[list[str], None, Unset_Type]
             The applications of this GsaApplicationsInfo.
         """
         self._applications = applications
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

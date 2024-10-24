@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -76,16 +76,16 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -100,7 +100,7 @@ class JobQueueApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GsaJob",
         }
 
@@ -149,22 +149,22 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'delete_job'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             204: None,
             404: None,
@@ -186,23 +186,23 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_jobs(self, *, body: "Optional[List[str]]" = None) -> "Union[List[str], None]":
+    def delete_jobs(self, *, body: "Optional[list[str]]" = None) -> "Union[None, list[str]]":
         """Delete specified jobs.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: List[str]
+        body: list[str]
 
         Returns
         -------
-        Union[List[str], None]
+        Union[None, list[str]]
         """
         data = self._delete_jobs_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _delete_jobs_with_http_info(self, body: "Optional[List[str]]" = None, **kwargs: Any) -> Any:
+    def _delete_jobs_with_http_info(self, body: "Optional[list[str]]" = None, **kwargs: Any) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
@@ -212,16 +212,16 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -236,7 +236,7 @@ class JobQueueApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[str]",
             422: None,
             500: None,
@@ -282,16 +282,16 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -299,7 +299,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaCurrentUser",
         }
 
@@ -348,18 +348,18 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'get_job'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -367,7 +367,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaJob",
             404: None,
         }
@@ -435,26 +435,26 @@ class JobQueueApi(ApiBase):
                 "Missing the required parameter 'file_name' when calling 'get_job_output_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "file_name" in params and file_name is not None:
             query_params.append(("fileName", params["file_name"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/octet-stream"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             404: None,
         }
@@ -547,11 +547,11 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "job_type" in params and job_type is not None:
             query_params.append(("jobType", params["job_type"]))
         if "status" in params and status is not None:
@@ -567,10 +567,10 @@ class JobQueueApi(ApiBase):
         if "page_number" in params and page_number is not None:
             query_params.append(("pageNumber", params["page_number"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -578,7 +578,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaGetJobsResponse",
         }
 
@@ -598,7 +598,7 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_output_filenames(self, *, id: "str") -> "Union[List[str], None]":
+    def get_output_filenames(self, *, id: "str") -> "Union[None, list[str]]":
         """Get a job's output filenames.
 
         This method makes a synchronous HTTP request.
@@ -609,7 +609,7 @@ class JobQueueApi(ApiBase):
 
         Returns
         -------
-        Union[List[str], None]
+        Union[None, list[str]]
         """
         data = self._get_output_filenames_with_http_info(id, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -631,18 +631,18 @@ class JobQueueApi(ApiBase):
                 "Missing the required parameter 'id' when calling 'get_output_filenames'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -650,7 +650,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[str]",
             404: None,
         }
@@ -695,16 +695,16 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -712,7 +712,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaProcessingConfig",
         }
 
@@ -761,22 +761,22 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'move_to_top'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             404: None,
         }
@@ -826,18 +826,18 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'restore_job'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -845,7 +845,7 @@ class JobQueueApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaCreateJobRequest",
             404: None,
         }
@@ -906,18 +906,18 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'resubmit'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -932,7 +932,7 @@ class JobQueueApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaJob",
             404: None,
         }
@@ -993,18 +993,18 @@ class JobQueueApi(ApiBase):
         if "id" not in params or params["id"] is None:
             raise ValueError("Missing the required parameter 'id' when calling 'update_job'")
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "id" in params and id is not None:
             path_params["id"] = params["id"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1019,7 +1019,7 @@ class JobQueueApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaJob",
             404: None,
         }
@@ -1068,16 +1068,16 @@ class JobQueueApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["file"] = params["file"]
 
@@ -1090,7 +1090,7 @@ class JobQueueApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "str",
         }
 

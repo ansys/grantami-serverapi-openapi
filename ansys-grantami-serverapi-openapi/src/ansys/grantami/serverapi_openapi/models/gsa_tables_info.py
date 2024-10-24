@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaTablesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "tables": "list[GsaSlimTable]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "tables": "tables",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tables": "GsaSlimTable",
     }
 
@@ -77,43 +77,43 @@ class GsaTablesInfo(ModelBase):
     def __init__(
         self,
         *,
-        tables: "Union[List[GsaSlimTable], None, Unset_Type]" = Unset,
+        tables: "Union[list[GsaSlimTable], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaTablesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        tables: List[GsaSlimTable], optional
+        tables: list[GsaSlimTable], optional
         """
-        self._tables: Union[List[GsaSlimTable], None, Unset_Type] = Unset
+        self._tables: Union[list[GsaSlimTable], None, Unset_Type] = Unset
 
         if tables is not Unset:
             self.tables = tables
 
     @property
-    def tables(self) -> "Union[List[GsaSlimTable], None, Unset_Type]":
+    def tables(self) -> "Union[list[GsaSlimTable], None, Unset_Type]":
         """Gets the tables of this GsaTablesInfo.
 
         Returns
         -------
-        Union[List[GsaSlimTable], None, Unset_Type]
+        Union[list[GsaSlimTable], None, Unset_Type]
             The tables of this GsaTablesInfo.
         """
         return self._tables
 
     @tables.setter
-    def tables(self, tables: "Union[List[GsaSlimTable], None, Unset_Type]") -> None:
+    def tables(self, tables: "Union[list[GsaSlimTable], None, Unset_Type]") -> None:
         """Sets the tables of this GsaTablesInfo.
 
         Parameters
         ----------
-        tables: Union[List[GsaSlimTable], None, Unset_Type]
+        tables: Union[list[GsaSlimTable], None, Unset_Type]
             The tables of this GsaTablesInfo.
         """
         self._tables = tables
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

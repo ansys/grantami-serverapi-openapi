@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaQueryAttributeFilter(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "list[GsaAttributeType]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
     }
 
@@ -77,45 +77,45 @@ class GsaQueryAttributeFilter(ModelBase):
     def __init__(
         self,
         *,
-        type: "Union[List[GsaAttributeType], None, Unset_Type]" = Unset,
+        type: "Union[list[GsaAttributeType], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryAttributeFilter - a model defined in Swagger
 
         Parameters
         ----------
-        type: List[GsaAttributeType], optional
+        type: list[GsaAttributeType], optional
         """
-        self._type: Union[List[GsaAttributeType], None, Unset_Type] = Unset
+        self._type: Union[list[GsaAttributeType], None, Unset_Type] = Unset
 
         if type is not Unset:
             self.type = type
 
     @property
-    def type(self) -> "Union[List[GsaAttributeType], None, Unset_Type]":
+    def type(self) -> "Union[list[GsaAttributeType], None, Unset_Type]":
         """Gets the type of this GsaQueryAttributeFilter.
         Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Returns
         -------
-        Union[List[GsaAttributeType], None, Unset_Type]
+        Union[list[GsaAttributeType], None, Unset_Type]
             The type of this GsaQueryAttributeFilter.
         """
         return self._type
 
     @type.setter
-    def type(self, type: "Union[List[GsaAttributeType], None, Unset_Type]") -> None:
+    def type(self, type: "Union[list[GsaAttributeType], None, Unset_Type]") -> None:
         """Sets the type of this GsaQueryAttributeFilter.
         Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Parameters
         ----------
-        type: Union[List[GsaAttributeType], None, Unset_Type]
+        type: Union[list[GsaAttributeType], None, Unset_Type]
             The type of this GsaQueryAttributeFilter.
         """
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

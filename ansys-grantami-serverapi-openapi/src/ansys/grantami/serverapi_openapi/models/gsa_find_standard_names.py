@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,67 +51,67 @@ class GsaFindStandardNames(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "names": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "names": "names",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        names: "Union[List[str], None, Unset_Type]" = Unset,
+        names: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFindStandardNames - a model defined in Swagger
 
         Parameters
         ----------
-        names: List[str], optional
+        names: list[str], optional
         """
-        self._names: Union[List[str], None, Unset_Type] = Unset
+        self._names: Union[list[str], None, Unset_Type] = Unset
 
         if names is not Unset:
             self.names = names
 
     @property
-    def names(self) -> "Union[List[str], None, Unset_Type]":
+    def names(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the names of this GsaFindStandardNames.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The names of this GsaFindStandardNames.
         """
         return self._names
 
     @names.setter
-    def names(self, names: "Union[List[str], None, Unset_Type]") -> None:
+    def names(self, names: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the names of this GsaFindStandardNames.
 
         Parameters
         ----------
-        names: Union[List[str], None, Unset_Type]
+        names: Union[list[str], None, Unset_Type]
             The names of this GsaFindStandardNames.
         """
         self._names = names
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

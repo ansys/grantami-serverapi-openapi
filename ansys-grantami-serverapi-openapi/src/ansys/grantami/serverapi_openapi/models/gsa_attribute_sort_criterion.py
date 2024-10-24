@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_sort_criterion import (  # noqa: F401
     GsaSortCriterion,
@@ -56,16 +56,16 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaSortCriterionType",
         "attribute_type": "GsaAttributeType",
         "guid": "str",
@@ -74,7 +74,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
         "sort_type": "GsaSortType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "attribute_type": "attributeType",
         "guid": "guid",
@@ -83,7 +83,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
         "sort_type": "sortType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributeType": "GsaAttributeType",
         "sortType": "GsaSortType",
     }
@@ -221,7 +221,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
         self._sort_type = sort_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

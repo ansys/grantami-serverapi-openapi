@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaDiscreteTypeUsage(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GsaSlimAttribute]",
         "tabular_columns": "list[GsaTabularAttributeWithColumns]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
         "tabular_columns": "tabularColumns",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaSlimAttribute",
         "tabularColumns": "GsaTabularAttributeWithColumns",
     }
@@ -80,40 +80,40 @@ class GsaDiscreteTypeUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "List[GsaSlimAttribute]",
-        tabular_columns: "List[GsaTabularAttributeWithColumns]",
+        attributes: "list[GsaSlimAttribute]",
+        tabular_columns: "list[GsaTabularAttributeWithColumns]",
     ) -> None:
         """GsaDiscreteTypeUsage - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GsaSlimAttribute]
-        tabular_columns: List[GsaTabularAttributeWithColumns]
+        attributes: list[GsaSlimAttribute]
+        tabular_columns: list[GsaTabularAttributeWithColumns]
         """
-        self._attributes: List[GsaSlimAttribute]
-        self._tabular_columns: List[GsaTabularAttributeWithColumns]
+        self._attributes: list[GsaSlimAttribute]
+        self._tabular_columns: list[GsaTabularAttributeWithColumns]
 
         self.attributes = attributes
         self.tabular_columns = tabular_columns
 
     @property
-    def attributes(self) -> "List[GsaSlimAttribute]":
+    def attributes(self) -> "list[GsaSlimAttribute]":
         """Gets the attributes of this GsaDiscreteTypeUsage.
 
         Returns
         -------
-        List[GsaSlimAttribute]
+        list[GsaSlimAttribute]
             The attributes of this GsaDiscreteTypeUsage.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "List[GsaSlimAttribute]") -> None:
+    def attributes(self, attributes: "list[GsaSlimAttribute]") -> None:
         """Sets the attributes of this GsaDiscreteTypeUsage.
 
         Parameters
         ----------
-        attributes: List[GsaSlimAttribute]
+        attributes: list[GsaSlimAttribute]
             The attributes of this GsaDiscreteTypeUsage.
         """
         # Field is not nullable
@@ -125,23 +125,23 @@ class GsaDiscreteTypeUsage(ModelBase):
         self._attributes = attributes
 
     @property
-    def tabular_columns(self) -> "List[GsaTabularAttributeWithColumns]":
+    def tabular_columns(self) -> "list[GsaTabularAttributeWithColumns]":
         """Gets the tabular_columns of this GsaDiscreteTypeUsage.
 
         Returns
         -------
-        List[GsaTabularAttributeWithColumns]
+        list[GsaTabularAttributeWithColumns]
             The tabular_columns of this GsaDiscreteTypeUsage.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
-    def tabular_columns(self, tabular_columns: "List[GsaTabularAttributeWithColumns]") -> None:
+    def tabular_columns(self, tabular_columns: "list[GsaTabularAttributeWithColumns]") -> None:
         """Sets the tabular_columns of this GsaDiscreteTypeUsage.
 
         Parameters
         ----------
-        tabular_columns: List[GsaTabularAttributeWithColumns]
+        tabular_columns: list[GsaTabularAttributeWithColumns]
             The tabular_columns of this GsaDiscreteTypeUsage.
         """
         # Field is not nullable
@@ -153,7 +153,7 @@ class GsaDiscreteTypeUsage(ModelBase):
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

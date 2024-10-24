@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_record_link_group import (  # noqa: F401
     GsaRecordLinkGroup,
@@ -58,16 +58,16 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_pairs": "list[GsaAttributeLinkPair]",
         "display_names": "dict(str, str)",
         "forbid_orphans": "bool",
@@ -81,7 +81,7 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         "reverse_display_names": "dict(str, str)",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_pairs": "attributePairs",
         "display_names": "displayNames",
         "forbid_orphans": "forbidOrphans",
@@ -95,7 +95,7 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         "reverse_display_names": "reverseDisplayNames",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "referentialIntegrityModel": "GsaReferentialIntegrityModel",
         "attributePairs": "GsaAttributeLinkPair",
     }
@@ -105,8 +105,8 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
     def __init__(
         self,
         *,
-        attribute_pairs: "List[GsaAttributeLinkPair]",
-        display_names: "Dict[str, str]",
+        attribute_pairs: "list[GsaAttributeLinkPair]",
+        display_names: "dict[str, str]",
         forbid_orphans: "bool",
         guid: "str",
         link_info: "GsaLinkInfo",
@@ -115,14 +115,14 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         reverse_name: "str",
         type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.DYNAMIC,
         identity: "Union[int, None, Unset_Type]" = Unset,
-        reverse_display_names: "Union[Dict[str, str], None, Unset_Type]" = Unset,
+        reverse_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDynamicRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-        attribute_pairs: List[GsaAttributeLinkPair]
-        display_names: Dict[str, str]
+        attribute_pairs: list[GsaAttributeLinkPair]
+        display_names: dict[str, str]
         forbid_orphans: bool
         guid: str
         link_info: GsaLinkInfo
@@ -131,7 +131,7 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         reverse_name: str
         type: GsaRecordLinkGroupType
         identity: int, optional
-        reverse_display_names: Dict[str, str], optional
+        reverse_display_names: dict[str, str], optional
         """
         super().__init__(
             display_names=display_names,
@@ -145,7 +145,7 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         )
         self._forbid_orphans: bool
         self._referential_integrity_model: GsaReferentialIntegrityModel
-        self._attribute_pairs: List[GsaAttributeLinkPair]
+        self._attribute_pairs: list[GsaAttributeLinkPair]
 
         self.forbid_orphans = forbid_orphans
         self.referential_integrity_model = referential_integrity_model
@@ -210,23 +210,23 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         self._referential_integrity_model = referential_integrity_model
 
     @property
-    def attribute_pairs(self) -> "List[GsaAttributeLinkPair]":
+    def attribute_pairs(self) -> "list[GsaAttributeLinkPair]":
         """Gets the attribute_pairs of this GsaDynamicRecordLinkGroup.
 
         Returns
         -------
-        List[GsaAttributeLinkPair]
+        list[GsaAttributeLinkPair]
             The attribute_pairs of this GsaDynamicRecordLinkGroup.
         """
         return self._attribute_pairs
 
     @attribute_pairs.setter
-    def attribute_pairs(self, attribute_pairs: "List[GsaAttributeLinkPair]") -> None:
+    def attribute_pairs(self, attribute_pairs: "list[GsaAttributeLinkPair]") -> None:
         """Sets the attribute_pairs of this GsaDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        attribute_pairs: List[GsaAttributeLinkPair]
+        attribute_pairs: list[GsaAttributeLinkPair]
             The attribute_pairs of this GsaDynamicRecordLinkGroup.
         """
         # Field is not nullable
@@ -238,7 +238,7 @@ class GsaDynamicRecordLinkGroup(GsaRecordLinkGroup):
         self._attribute_pairs = attribute_pairs
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

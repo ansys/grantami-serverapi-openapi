@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaExpression(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_dependencies": "list[GsaSlimAttribute]",
         "constant_dependencies": "list[GsaSlimNamedEntity]",
         "guid": "str",
@@ -70,7 +70,7 @@ class GsaExpression(ModelBase):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_dependencies": "attributeDependencies",
         "constant_dependencies": "constantDependencies",
         "guid": "guid",
@@ -80,7 +80,7 @@ class GsaExpression(ModelBase):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimUnit",
         "attributeDependencies": "GsaSlimAttribute",
         "constantDependencies": "GsaSlimNamedEntity",
@@ -92,11 +92,11 @@ class GsaExpression(ModelBase):
     def __init__(
         self,
         *,
-        attribute_dependencies: "List[GsaSlimAttribute]",
-        constant_dependencies: "List[GsaSlimNamedEntity]",
+        attribute_dependencies: "list[GsaSlimAttribute]",
+        constant_dependencies: "list[GsaSlimNamedEntity]",
         guid: "str",
         name: "str",
-        parameter_dependencies: "List[GsaSlimNamedEntity]",
+        parameter_dependencies: "list[GsaSlimNamedEntity]",
         value: "str",
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
     ) -> None:
@@ -104,19 +104,19 @@ class GsaExpression(ModelBase):
 
         Parameters
         ----------
-        attribute_dependencies: List[GsaSlimAttribute]
-        constant_dependencies: List[GsaSlimNamedEntity]
+        attribute_dependencies: list[GsaSlimAttribute]
+        constant_dependencies: list[GsaSlimNamedEntity]
         guid: str
         name: str
-        parameter_dependencies: List[GsaSlimNamedEntity]
+        parameter_dependencies: list[GsaSlimNamedEntity]
         value: str
         unit: GsaSlimUnit, optional
         """
         self._value: str
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
-        self._attribute_dependencies: List[GsaSlimAttribute]
-        self._constant_dependencies: List[GsaSlimNamedEntity]
-        self._parameter_dependencies: List[GsaSlimNamedEntity]
+        self._attribute_dependencies: list[GsaSlimAttribute]
+        self._constant_dependencies: list[GsaSlimNamedEntity]
+        self._parameter_dependencies: list[GsaSlimNamedEntity]
         self._name: str
         self._guid: str
 
@@ -183,23 +183,23 @@ class GsaExpression(ModelBase):
         self._unit = unit
 
     @property
-    def attribute_dependencies(self) -> "List[GsaSlimAttribute]":
+    def attribute_dependencies(self) -> "list[GsaSlimAttribute]":
         """Gets the attribute_dependencies of this GsaExpression.
 
         Returns
         -------
-        List[GsaSlimAttribute]
+        list[GsaSlimAttribute]
             The attribute_dependencies of this GsaExpression.
         """
         return self._attribute_dependencies
 
     @attribute_dependencies.setter
-    def attribute_dependencies(self, attribute_dependencies: "List[GsaSlimAttribute]") -> None:
+    def attribute_dependencies(self, attribute_dependencies: "list[GsaSlimAttribute]") -> None:
         """Sets the attribute_dependencies of this GsaExpression.
 
         Parameters
         ----------
-        attribute_dependencies: List[GsaSlimAttribute]
+        attribute_dependencies: list[GsaSlimAttribute]
             The attribute_dependencies of this GsaExpression.
         """
         # Field is not nullable
@@ -211,23 +211,23 @@ class GsaExpression(ModelBase):
         self._attribute_dependencies = attribute_dependencies
 
     @property
-    def constant_dependencies(self) -> "List[GsaSlimNamedEntity]":
+    def constant_dependencies(self) -> "list[GsaSlimNamedEntity]":
         """Gets the constant_dependencies of this GsaExpression.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The constant_dependencies of this GsaExpression.
         """
         return self._constant_dependencies
 
     @constant_dependencies.setter
-    def constant_dependencies(self, constant_dependencies: "List[GsaSlimNamedEntity]") -> None:
+    def constant_dependencies(self, constant_dependencies: "list[GsaSlimNamedEntity]") -> None:
         """Sets the constant_dependencies of this GsaExpression.
 
         Parameters
         ----------
-        constant_dependencies: List[GsaSlimNamedEntity]
+        constant_dependencies: list[GsaSlimNamedEntity]
             The constant_dependencies of this GsaExpression.
         """
         # Field is not nullable
@@ -239,23 +239,23 @@ class GsaExpression(ModelBase):
         self._constant_dependencies = constant_dependencies
 
     @property
-    def parameter_dependencies(self) -> "List[GsaSlimNamedEntity]":
+    def parameter_dependencies(self) -> "list[GsaSlimNamedEntity]":
         """Gets the parameter_dependencies of this GsaExpression.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The parameter_dependencies of this GsaExpression.
         """
         return self._parameter_dependencies
 
     @parameter_dependencies.setter
-    def parameter_dependencies(self, parameter_dependencies: "List[GsaSlimNamedEntity]") -> None:
+    def parameter_dependencies(self, parameter_dependencies: "list[GsaSlimNamedEntity]") -> None:
         """Sets the parameter_dependencies of this GsaExpression.
 
         Parameters
         ----------
-        parameter_dependencies: List[GsaSlimNamedEntity]
+        parameter_dependencies: list[GsaSlimNamedEntity]
             The parameter_dependencies of this GsaExpression.
         """
         # Field is not nullable
@@ -323,7 +323,7 @@ class GsaExpression(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

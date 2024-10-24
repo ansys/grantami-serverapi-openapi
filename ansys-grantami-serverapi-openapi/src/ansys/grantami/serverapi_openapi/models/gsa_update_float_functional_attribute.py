@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_update_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "attribute_parameters": "list[GsaUpdateFloatFunctionalAttributeParameter]",
@@ -79,7 +79,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         "unit": "GsaSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
@@ -93,7 +93,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "attributeParameters": "GsaUpdateFloatFunctionalAttributeParameter",
     }
@@ -105,7 +105,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         *,
         type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -121,7 +121,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        attribute_parameters: List[GsaUpdateFloatFunctionalAttributeParameter], optional
+        attribute_parameters: list[GsaUpdateFloatFunctionalAttributeParameter], optional
         axis_name: str, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -143,7 +143,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         )
         self._unit: Union[GsaSlimEntity, Unset_Type] = Unset
         self._attribute_parameters: Union[
-            List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type
+            list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type
         ] = Unset
         self._is_range: Union[bool, Unset_Type] = Unset
 
@@ -182,12 +182,12 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
     @property
     def attribute_parameters(
         self,
-    ) -> "Union[List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]":
+    ) -> "Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]":
         """Gets the attribute_parameters of this GsaUpdateFloatFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]
+        Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GsaUpdateFloatFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -195,13 +195,13 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Union[List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]",
+        attribute_parameters: "Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GsaUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]
+        attribute_parameters: Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GsaUpdateFloatFunctionalAttribute.
         """
         # Field is not nullable
@@ -235,7 +235,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

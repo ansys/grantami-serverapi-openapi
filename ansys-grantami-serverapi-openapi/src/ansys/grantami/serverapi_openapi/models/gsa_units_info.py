@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaUnitsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "units": "list[GsaSlimNamedUnit]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "units": "units",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "units": "GsaSlimNamedUnit",
     }
 
@@ -77,43 +77,43 @@ class GsaUnitsInfo(ModelBase):
     def __init__(
         self,
         *,
-        units: "Union[List[GsaSlimNamedUnit], None, Unset_Type]" = Unset,
+        units: "Union[list[GsaSlimNamedUnit], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUnitsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        units: List[GsaSlimNamedUnit], optional
+        units: list[GsaSlimNamedUnit], optional
         """
-        self._units: Union[List[GsaSlimNamedUnit], None, Unset_Type] = Unset
+        self._units: Union[list[GsaSlimNamedUnit], None, Unset_Type] = Unset
 
         if units is not Unset:
             self.units = units
 
     @property
-    def units(self) -> "Union[List[GsaSlimNamedUnit], None, Unset_Type]":
+    def units(self) -> "Union[list[GsaSlimNamedUnit], None, Unset_Type]":
         """Gets the units of this GsaUnitsInfo.
 
         Returns
         -------
-        Union[List[GsaSlimNamedUnit], None, Unset_Type]
+        Union[list[GsaSlimNamedUnit], None, Unset_Type]
             The units of this GsaUnitsInfo.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "Union[List[GsaSlimNamedUnit], None, Unset_Type]") -> None:
+    def units(self, units: "Union[list[GsaSlimNamedUnit], None, Unset_Type]") -> None:
         """Sets the units of this GsaUnitsInfo.
 
         Parameters
         ----------
-        units: Union[List[GsaSlimNamedUnit], None, Unset_Type]
+        units: Union[list[GsaSlimNamedUnit], None, Unset_Type]
             The units of this GsaUnitsInfo.
         """
         self._units = units
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

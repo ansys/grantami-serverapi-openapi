@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaIntegrationAttribute(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
         "discrete_type_guid": "str",
@@ -76,7 +76,7 @@ class GsaIntegrationAttribute(ModelBase):
         "x_axis_parameter": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
         "discrete_type_guid": "discreteTypeGuid",
@@ -92,7 +92,7 @@ class GsaIntegrationAttribute(ModelBase):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
         "parameters": "GsaIntegrationParameterInfo",
         "targetDatabase": "GsaObjectIdentifier",
@@ -112,7 +112,7 @@ class GsaIntegrationAttribute(ModelBase):
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, Unset_Type]" = Unset,
         is_unitted: "Union[bool, None, Unset_Type]" = Unset,
-        parameters: "Union[List[GsaIntegrationParameterInfo], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GsaIntegrationParameterInfo], None, Unset_Type]" = Unset,
         target_database: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         target_table: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
@@ -130,7 +130,7 @@ class GsaIntegrationAttribute(ModelBase):
         guid: str, optional
         identity: int, optional
         is_unitted: bool, optional
-        parameters: List[GsaIntegrationParameterInfo], optional
+        parameters: list[GsaIntegrationParameterInfo], optional
         target_database: GsaObjectIdentifier, optional
         target_table: GsaObjectIdentifier, optional
         unit_symbol: str, optional
@@ -144,7 +144,7 @@ class GsaIntegrationAttribute(ModelBase):
         self._is_unitted: Union[bool, None, Unset_Type] = Unset
         self._discrete_type_identity: Union[int, None, Unset_Type] = Unset
         self._discrete_type_guid: Union[str, None, Unset_Type] = Unset
-        self._parameters: Union[List[GsaIntegrationParameterInfo], None, Unset_Type] = Unset
+        self._parameters: Union[list[GsaIntegrationParameterInfo], None, Unset_Type] = Unset
         self._target_database: Union[GsaObjectIdentifier, Unset_Type] = Unset
         self._target_table: Union[GsaObjectIdentifier, Unset_Type] = Unset
         self._graph_type: Union[str, None, Unset_Type] = Unset
@@ -375,27 +375,27 @@ class GsaIntegrationAttribute(ModelBase):
         self._discrete_type_guid = discrete_type_guid
 
     @property
-    def parameters(self) -> "Union[List[GsaIntegrationParameterInfo], None, Unset_Type]":
+    def parameters(self) -> "Union[list[GsaIntegrationParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GsaIntegrationAttribute.
         A float functional attribute must define a list of parameters.
 
         Returns
         -------
-        Union[List[GsaIntegrationParameterInfo], None, Unset_Type]
+        Union[list[GsaIntegrationParameterInfo], None, Unset_Type]
             The parameters of this GsaIntegrationAttribute.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "Union[List[GsaIntegrationParameterInfo], None, Unset_Type]"
+        self, parameters: "Union[list[GsaIntegrationParameterInfo], None, Unset_Type]"
     ) -> None:
         """Sets the parameters of this GsaIntegrationAttribute.
         A float functional attribute must define a list of parameters.
 
         Parameters
         ----------
-        parameters: Union[List[GsaIntegrationParameterInfo], None, Unset_Type]
+        parameters: Union[list[GsaIntegrationParameterInfo], None, Unset_Type]
             The parameters of this GsaIntegrationAttribute.
         """
         self._parameters = parameters
@@ -499,7 +499,7 @@ class GsaIntegrationAttribute(ModelBase):
         self._x_axis_parameter = x_axis_parameter
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

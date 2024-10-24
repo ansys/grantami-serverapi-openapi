@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -118,9 +118,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'append_values_for_discrete_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -128,12 +128,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -146,7 +146,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDiscreteDatum",
             400: None,
             403: None,
@@ -253,9 +253,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'append_values_for_discrete_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -265,12 +265,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -283,7 +283,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDiscreteDatum",
             400: None,
             403: None,
@@ -376,9 +376,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'append_values_for_point_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -386,12 +386,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -404,7 +404,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPointDatum",
             400: None,
             403: None,
@@ -511,9 +511,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'append_values_for_point_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -523,12 +523,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -541,7 +541,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPointDatum",
             400: None,
             403: None,
@@ -653,9 +653,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'delete_cell_datum_for_tabular_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -667,16 +667,16 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -797,9 +797,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'delete_cell_datum_for_tabular_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -813,16 +813,16 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -902,9 +902,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'delete_datum_for_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -912,16 +912,16 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -1022,9 +1022,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'delete_datum_for_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1034,16 +1034,16 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -1156,9 +1156,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'export_binary_data_for_latest'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -1166,7 +1166,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -1174,12 +1174,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1187,7 +1187,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -1310,9 +1310,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'export_binary_data_for_latest_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1322,7 +1322,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -1330,12 +1330,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1343,7 +1343,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -1466,9 +1466,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'export_binary_data_for_version'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -1478,7 +1478,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -1486,12 +1486,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1499,7 +1499,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -1632,9 +1632,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'export_binary_data_for_version_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1646,7 +1646,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -1654,12 +1654,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1667,7 +1667,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -1800,9 +1800,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'export_cell_binary_data_for_latest'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -1814,7 +1814,7 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -1822,12 +1822,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1835,7 +1835,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -1978,9 +1978,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'export_cell_binary_data_for_latest_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1994,7 +1994,7 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -2002,12 +2002,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -2015,7 +2015,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -2158,9 +2158,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'export_cell_binary_data_for_version'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -2174,7 +2174,7 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -2182,12 +2182,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -2195,7 +2195,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -2348,9 +2348,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'export_cell_binary_data_for_version_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -2366,7 +2366,7 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "max_width" in params and max_width is not None:
@@ -2374,12 +2374,12 @@ class DataApi(ApiBase):
         if "max_height" in params and max_height is not None:
             query_params.append(("maxHeight", params["max_height"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -2387,7 +2387,7 @@ class DataApi(ApiBase):
             ["application/octet-stream", "application/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "file",
             400: None,
             404: None,
@@ -2510,9 +2510,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'get_cell_datum_for_latest'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -2524,22 +2524,22 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -2671,9 +2671,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'get_cell_datum_for_latest_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -2687,22 +2687,22 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -2834,9 +2834,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'get_cell_datum_for_version'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -2850,22 +2850,22 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3007,9 +3007,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'get_cell_datum_for_version_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -3025,22 +3025,22 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3152,9 +3152,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_datum_for_latest'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -3162,7 +3162,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "filter_empty_cells" in params and filter_empty_cells is not None:
@@ -3170,18 +3170,18 @@ class DataApi(ApiBase):
         if "filter_empty_rows" in params and filter_empty_rows is not None:
             query_params.append(("filterEmptyRows", params["filter_empty_rows"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3303,9 +3303,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_datum_for_latest_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -3315,7 +3315,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "filter_empty_cells" in params and filter_empty_cells is not None:
@@ -3323,18 +3323,18 @@ class DataApi(ApiBase):
         if "filter_empty_rows" in params and filter_empty_rows is not None:
             query_params.append(("filterEmptyRows", params["filter_empty_rows"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3456,9 +3456,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_datum_for_version'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -3468,7 +3468,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "filter_empty_cells" in params and filter_empty_cells is not None:
@@ -3476,18 +3476,18 @@ class DataApi(ApiBase):
         if "filter_empty_rows" in params and filter_empty_rows is not None:
             query_params.append(("filterEmptyRows", params["filter_empty_rows"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3619,9 +3619,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_datum_for_version_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -3633,7 +3633,7 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
         if "filter_empty_cells" in params and filter_empty_cells is not None:
@@ -3641,18 +3641,18 @@ class DataApi(ApiBase):
         if "filter_empty_rows" in params and filter_empty_rows is not None:
             query_params.append(("filterEmptyRows", params["filter_empty_rows"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             404: None,
         }
@@ -3767,9 +3767,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_datum_for_tabular_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -3781,12 +3781,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -3799,7 +3799,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             400: None,
             403: None,
@@ -3926,9 +3926,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_datum_for_tabular_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -3942,12 +3942,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -3960,7 +3960,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             400: None,
             403: None,
@@ -4092,9 +4092,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_file_datum_for_tabular_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -4106,12 +4106,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["File"] = params["file"]
         if "description" in params and description is not None:
@@ -4128,7 +4128,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileDatum",
             400: None,
             403: None,
@@ -4270,9 +4270,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_file_datum_for_tabular_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -4286,12 +4286,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["File"] = params["file"]
         if "description" in params and description is not None:
@@ -4308,7 +4308,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileDatum",
             400: None,
             403: None,
@@ -4425,9 +4425,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_picture_datum_for_tabular_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -4439,12 +4439,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "picture" in params and picture is not None:
             local_var_files["Picture"] = params["picture"]
 
@@ -4455,7 +4455,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPictureDatum",
             400: None,
             403: None,
@@ -4583,9 +4583,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'column_guid' when calling 'set_cell_picture_datum_for_tabular_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -4599,12 +4599,12 @@ class DataApi(ApiBase):
         if "column_guid" in params and column_guid is not None:
             path_params["column-guid"] = params["column_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "picture" in params and picture is not None:
             local_var_files["Picture"] = params["picture"]
 
@@ -4615,7 +4615,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPictureDatum",
             400: None,
             403: None,
@@ -4709,9 +4709,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_datum_for_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -4719,12 +4719,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -4737,7 +4737,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             400: None,
             403: None,
@@ -4845,9 +4845,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_datum_for_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -4857,12 +4857,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -4875,7 +4875,7 @@ class DataApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaDatum",
             400: None,
             403: None,
@@ -4957,9 +4957,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_datum_not_applicable'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -4967,16 +4967,16 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -5077,9 +5077,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_datum_not_applicable_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -5089,16 +5089,16 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -5209,9 +5209,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_file_datum_for_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -5219,12 +5219,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["File"] = params["file"]
         if "description" in params and description is not None:
@@ -5241,7 +5241,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileDatum",
             400: None,
             403: None,
@@ -5363,9 +5363,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_file_datum_for_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -5375,12 +5375,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["File"] = params["file"]
         if "description" in params and description is not None:
@@ -5397,7 +5397,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileDatum",
             400: None,
             403: None,
@@ -5490,9 +5490,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_picture_datum_for_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "record_history_guid" in params and record_history_guid is not None:
@@ -5500,12 +5500,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "picture" in params and picture is not None:
             local_var_files["Picture"] = params["picture"]
 
@@ -5516,7 +5516,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPictureDatum",
             400: None,
             403: None,
@@ -5624,9 +5624,9 @@ class DataApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'set_picture_datum_for_attribute_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -5636,12 +5636,12 @@ class DataApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "picture" in params and picture is not None:
             local_var_files["Picture"] = params["picture"]
 
@@ -5652,7 +5652,7 @@ class DataApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaPictureDatum",
             400: None,
             403: None,

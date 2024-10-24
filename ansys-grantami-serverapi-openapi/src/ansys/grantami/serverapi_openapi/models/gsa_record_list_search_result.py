@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaRecordListSearchResult(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "header": "GsaRecordListHeader",
         "items": "list[GsaListItem]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "header": "header",
         "items": "items",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "header": "GsaRecordListHeader",
         "items": "GsaListItem",
     }
@@ -81,17 +81,17 @@ class GsaRecordListSearchResult(ModelBase):
         self,
         *,
         header: "GsaRecordListHeader",
-        items: "List[GsaListItem]",
+        items: "list[GsaListItem]",
     ) -> None:
         """GsaRecordListSearchResult - a model defined in Swagger
 
         Parameters
         ----------
         header: GsaRecordListHeader
-        items: List[GsaListItem]
+        items: list[GsaListItem]
         """
         self._header: GsaRecordListHeader
-        self._items: List[GsaListItem]
+        self._items: list[GsaListItem]
 
         self.header = header
         self.items = items
@@ -125,23 +125,23 @@ class GsaRecordListSearchResult(ModelBase):
         self._header = header
 
     @property
-    def items(self) -> "List[GsaListItem]":
+    def items(self) -> "list[GsaListItem]":
         """Gets the items of this GsaRecordListSearchResult.
 
         Returns
         -------
-        List[GsaListItem]
+        list[GsaListItem]
             The items of this GsaRecordListSearchResult.
         """
         return self._items
 
     @items.setter
-    def items(self, items: "List[GsaListItem]") -> None:
+    def items(self, items: "list[GsaListItem]") -> None:
         """Sets the items of this GsaRecordListSearchResult.
 
         Parameters
         ----------
-        items: List[GsaListItem]
+        items: list[GsaListItem]
             The items of this GsaRecordListSearchResult.
         """
         # Field is not nullable
@@ -153,7 +153,7 @@ class GsaRecordListSearchResult(ModelBase):
         self._items = items
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum import GsaSetDatum  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum_type import GsaSetDatumType
@@ -54,26 +54,26 @@ class GsaSetDiscreteDatum(GsaSetDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "discrete_values": "list[GsaSlimEntity]",
         "set_datum_type": "GsaSetDatumType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "discrete_values": "discreteValues",
         "set_datum_type": "setDatumType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "discreteValues": "GsaSlimEntity",
     }
 
@@ -82,39 +82,39 @@ class GsaSetDiscreteDatum(GsaSetDatum):
     def __init__(
         self,
         *,
-        discrete_values: "List[GsaSlimEntity]",
+        discrete_values: "list[GsaSlimEntity]",
         set_datum_type: "GsaSetDatumType" = GsaSetDatumType.DISCRETE,
     ) -> None:
         """GsaSetDiscreteDatum - a model defined in Swagger
 
         Parameters
         ----------
-        discrete_values: List[GsaSlimEntity]
+        discrete_values: list[GsaSlimEntity]
         set_datum_type: GsaSetDatumType
         """
         super().__init__(set_datum_type=set_datum_type)
-        self._discrete_values: List[GsaSlimEntity]
+        self._discrete_values: list[GsaSlimEntity]
 
         self.discrete_values = discrete_values
 
     @property
-    def discrete_values(self) -> "List[GsaSlimEntity]":
+    def discrete_values(self) -> "list[GsaSlimEntity]":
         """Gets the discrete_values of this GsaSetDiscreteDatum.
 
         Returns
         -------
-        List[GsaSlimEntity]
+        list[GsaSlimEntity]
             The discrete_values of this GsaSetDiscreteDatum.
         """
         return self._discrete_values
 
     @discrete_values.setter
-    def discrete_values(self, discrete_values: "List[GsaSlimEntity]") -> None:
+    def discrete_values(self, discrete_values: "list[GsaSlimEntity]") -> None:
         """Sets the discrete_values of this GsaSetDiscreteDatum.
 
         Parameters
         ----------
-        discrete_values: List[GsaSlimEntity]
+        discrete_values: list[GsaSlimEntity]
             The discrete_values of this GsaSetDiscreteDatum.
         """
         # Field is not nullable
@@ -126,7 +126,7 @@ class GsaSetDiscreteDatum(GsaSetDatum):
         self._discrete_values = discrete_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_functional_type import GsaFunctionalType
 from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
@@ -55,16 +55,16 @@ class GsaDiscreteGridGraph(GsaGridGraph):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "all_parameters": "list[GsaSlimParameter]",
         "default_x_axis_parameter": "GsaSlimParameter",
         "functional_type": "GsaFunctionalType",
@@ -72,7 +72,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         "points": "list[GsaDiscreteGridPoint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "all_parameters": "allParameters",
         "default_x_axis_parameter": "defaultXAxisParameter",
         "functional_type": "functionalType",
@@ -80,7 +80,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "points": "GsaDiscreteGridPoint",
     }
 
@@ -89,21 +89,21 @@ class GsaDiscreteGridGraph(GsaGridGraph):
     def __init__(
         self,
         *,
-        all_parameters: "List[GsaSlimParameter]",
+        all_parameters: "list[GsaSlimParameter]",
         default_x_axis_parameter: "GsaSlimParameter",
         functional_type: "GsaFunctionalType" = GsaFunctionalType.DISCRETE,
         graph_type: "GsaGraphType" = GsaGraphType.GRID,
-        points: "List[GsaDiscreteGridPoint]",
+        points: "list[GsaDiscreteGridPoint]",
     ) -> None:
         """GsaDiscreteGridGraph - a model defined in Swagger
 
         Parameters
         ----------
-        all_parameters: List[GsaSlimParameter]
+        all_parameters: list[GsaSlimParameter]
         default_x_axis_parameter: GsaSlimParameter
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
-        points: List[GsaDiscreteGridPoint]
+        points: list[GsaDiscreteGridPoint]
         """
         super().__init__(
             all_parameters=all_parameters,
@@ -111,28 +111,28 @@ class GsaDiscreteGridGraph(GsaGridGraph):
             functional_type=functional_type,
             graph_type=graph_type,
         )
-        self._points: List[GsaDiscreteGridPoint]
+        self._points: list[GsaDiscreteGridPoint]
 
         self.points = points
 
     @property
-    def points(self) -> "List[GsaDiscreteGridPoint]":
+    def points(self) -> "list[GsaDiscreteGridPoint]":
         """Gets the points of this GsaDiscreteGridGraph.
 
         Returns
         -------
-        List[GsaDiscreteGridPoint]
+        list[GsaDiscreteGridPoint]
             The points of this GsaDiscreteGridGraph.
         """
         return self._points
 
     @points.setter
-    def points(self, points: "List[GsaDiscreteGridPoint]") -> None:
+    def points(self, points: "list[GsaDiscreteGridPoint]") -> None:
         """Sets the points of this GsaDiscreteGridGraph.
 
         Parameters
         ----------
-        points: List[GsaDiscreteGridPoint]
+        points: list[GsaDiscreteGridPoint]
             The points of this GsaDiscreteGridGraph.
         """
         # Field is not nullable
@@ -144,7 +144,7 @@ class GsaDiscreteGridGraph(GsaGridGraph):
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

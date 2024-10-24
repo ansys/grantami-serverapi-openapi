@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_float_functional_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
@@ -81,7 +81,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "x_axis_parameter": "GsaFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
@@ -97,7 +97,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "points": "GsaDataExportGridPoint",
     }
 
@@ -114,9 +114,9 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_logarithmic: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
-        points: "Union[List[GsaDataExportGridPoint], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        points: "Union[list[GsaDataExportGridPoint], None, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GsaFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
@@ -132,9 +132,9 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         is_estimated: bool, optional
         is_logarithmic: bool, optional
         is_range: bool, optional
-        meta_datums: List[GsaDataExportDatum], optional
-        parameters: List[GsaFunctionalDatumParameterInfo], optional
-        points: List[GsaDataExportGridPoint], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        parameters: list[GsaFunctionalDatumParameterInfo], optional
+        points: list[GsaDataExportGridPoint], optional
         unit_symbol: str, optional
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
         """
@@ -152,35 +152,35 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
             unit_symbol=unit_symbol,
             x_axis_parameter=x_axis_parameter,
         )
-        self._points: Union[List[GsaDataExportGridPoint], None, Unset_Type] = Unset
+        self._points: Union[list[GsaDataExportGridPoint], None, Unset_Type] = Unset
 
         if points is not Unset:
             self.points = points
 
     @property
-    def points(self) -> "Union[List[GsaDataExportGridPoint], None, Unset_Type]":
+    def points(self) -> "Union[list[GsaDataExportGridPoint], None, Unset_Type]":
         """Gets the points of this GsaDataExportFunctionalGridDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportGridPoint], None, Unset_Type]
+        Union[list[GsaDataExportGridPoint], None, Unset_Type]
             The points of this GsaDataExportFunctionalGridDatum.
         """
         return self._points
 
     @points.setter
-    def points(self, points: "Union[List[GsaDataExportGridPoint], None, Unset_Type]") -> None:
+    def points(self, points: "Union[list[GsaDataExportGridPoint], None, Unset_Type]") -> None:
         """Sets the points of this GsaDataExportFunctionalGridDatum.
 
         Parameters
         ----------
-        points: Union[List[GsaDataExportGridPoint], None, Unset_Type]
+        points: Union[list[GsaDataExportGridPoint], None, Unset_Type]
             The points of this GsaDataExportFunctionalGridDatum.
         """
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

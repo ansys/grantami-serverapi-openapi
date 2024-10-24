@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaSearchRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "criterion": "GsaCriterion",
         "paging_options": "GsaPagingOptions",
         "sort_criteria": "list[GsaSortCriterion]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "criterion": "criterion",
         "paging_options": "pagingOptions",
         "sort_criteria": "sortCriteria",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "criterion": "GsaCriterion",
         "sortCriteria": "GsaSortCriterion",
         "pagingOptions": "GsaPagingOptions",
@@ -85,7 +85,7 @@ class GsaSearchRequest(ModelBase):
         *,
         criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
         paging_options: "Union[GsaPagingOptions, Unset_Type]" = Unset,
-        sort_criteria: "Union[List[GsaSortCriterion], None, Unset_Type]" = Unset,
+        sort_criteria: "Union[list[GsaSortCriterion], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaSearchRequest - a model defined in Swagger
 
@@ -93,10 +93,10 @@ class GsaSearchRequest(ModelBase):
         ----------
         criterion: GsaCriterion, optional
         paging_options: GsaPagingOptions, optional
-        sort_criteria: List[GsaSortCriterion], optional
+        sort_criteria: list[GsaSortCriterion], optional
         """
         self._criterion: Union[GsaCriterion, Unset_Type] = Unset
-        self._sort_criteria: Union[List[GsaSortCriterion], None, Unset_Type] = Unset
+        self._sort_criteria: Union[list[GsaSortCriterion], None, Unset_Type] = Unset
         self._paging_options: Union[GsaPagingOptions, Unset_Type] = Unset
 
         if criterion is not Unset:
@@ -132,27 +132,27 @@ class GsaSearchRequest(ModelBase):
         self._criterion = criterion
 
     @property
-    def sort_criteria(self) -> "Union[List[GsaSortCriterion], None, Unset_Type]":
+    def sort_criteria(self) -> "Union[list[GsaSortCriterion], None, Unset_Type]":
         """Gets the sort_criteria of this GsaSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.
 
         Returns
         -------
-        Union[List[GsaSortCriterion], None, Unset_Type]
+        Union[list[GsaSortCriterion], None, Unset_Type]
             The sort_criteria of this GsaSearchRequest.
         """
         return self._sort_criteria
 
     @sort_criteria.setter
     def sort_criteria(
-        self, sort_criteria: "Union[List[GsaSortCriterion], None, Unset_Type]"
+        self, sort_criteria: "Union[list[GsaSortCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the sort_criteria of this GsaSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.
 
         Parameters
         ----------
-        sort_criteria: Union[List[GsaSortCriterion], None, Unset_Type]
+        sort_criteria: Union[list[GsaSortCriterion], None, Unset_Type]
             The sort_criteria of this GsaSearchRequest.
         """
         self._sort_criteria = sort_criteria
@@ -183,7 +183,7 @@ class GsaSearchRequest(ModelBase):
         self._paging_options = paging_options
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_create_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
@@ -80,7 +80,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         "target": "GsaTabularAttributeTarget",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
         "about_attribute": "aboutAttribute",
@@ -95,7 +95,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         "target": "target",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tabularColumns": "GsaCreateTabularColumn",
         "target": "GsaTabularAttributeTarget",
     }
@@ -115,7 +115,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         help_path: "Union[str, None, Unset_Type]" = Unset,
         hide_unlinked_rows: "Union[bool, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
-        tabular_columns: "Union[List[GsaCreateTabularColumn], None, Unset_Type]" = Unset,
+        tabular_columns: "Union[list[GsaCreateTabularColumn], None, Unset_Type]" = Unset,
         target: "Union[GsaTabularAttributeTarget, Unset_Type]" = Unset,
     ) -> None:
         """GsaCreateTabularAttribute - a model defined in Swagger
@@ -132,7 +132,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         help_path: str, optional
         hide_unlinked_rows: bool, optional
         is_hidden_from_search_criteria: bool, optional
-        tabular_columns: List[GsaCreateTabularColumn], optional
+        tabular_columns: list[GsaCreateTabularColumn], optional
         target: GsaTabularAttributeTarget, optional
         """
         super().__init__(
@@ -147,7 +147,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         self._display_full_table: Union[bool, Unset_Type] = Unset
         self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
         self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
-        self._tabular_columns: Union[List[GsaCreateTabularColumn], None, Unset_Type] = Unset
+        self._tabular_columns: Union[list[GsaCreateTabularColumn], None, Unset_Type] = Unset
         self._target: Union[GsaTabularAttributeTarget, Unset_Type] = Unset
 
         if display_full_table is not Unset:
@@ -239,25 +239,25 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
-    def tabular_columns(self) -> "Union[List[GsaCreateTabularColumn], None, Unset_Type]":
+    def tabular_columns(self) -> "Union[list[GsaCreateTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GsaCreateTabularAttribute.
 
         Returns
         -------
-        Union[List[GsaCreateTabularColumn], None, Unset_Type]
+        Union[list[GsaCreateTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaCreateTabularAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "Union[List[GsaCreateTabularColumn], None, Unset_Type]"
+        self, tabular_columns: "Union[list[GsaCreateTabularColumn], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_columns of this GsaCreateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: Union[List[GsaCreateTabularColumn], None, Unset_Type]
+        tabular_columns: Union[list[GsaCreateTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaCreateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
@@ -288,7 +288,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         self._target = target
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

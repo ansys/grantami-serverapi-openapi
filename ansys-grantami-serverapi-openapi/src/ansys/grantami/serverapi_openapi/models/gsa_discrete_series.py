@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaDiscreteSeries(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraints": "list[GsaParameterWithDataValue]",
         "points": "list[GsaDiscreteSeriesPoint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraints": "constraints",
         "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterWithDataValue",
         "points": "GsaDiscreteSeriesPoint",
     }
@@ -80,40 +80,40 @@ class GsaDiscreteSeries(ModelBase):
     def __init__(
         self,
         *,
-        constraints: "List[GsaParameterWithDataValue]",
-        points: "List[GsaDiscreteSeriesPoint]",
+        constraints: "list[GsaParameterWithDataValue]",
+        points: "list[GsaDiscreteSeriesPoint]",
     ) -> None:
         """GsaDiscreteSeries - a model defined in Swagger
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
-        points: List[GsaDiscreteSeriesPoint]
+        constraints: list[GsaParameterWithDataValue]
+        points: list[GsaDiscreteSeriesPoint]
         """
-        self._constraints: List[GsaParameterWithDataValue]
-        self._points: List[GsaDiscreteSeriesPoint]
+        self._constraints: list[GsaParameterWithDataValue]
+        self._points: list[GsaDiscreteSeriesPoint]
 
         self.constraints = constraints
         self.points = points
 
     @property
-    def constraints(self) -> "List[GsaParameterWithDataValue]":
+    def constraints(self) -> "list[GsaParameterWithDataValue]":
         """Gets the constraints of this GsaDiscreteSeries.
 
         Returns
         -------
-        List[GsaParameterWithDataValue]
+        list[GsaParameterWithDataValue]
             The constraints of this GsaDiscreteSeries.
         """
         return self._constraints
 
     @constraints.setter
-    def constraints(self, constraints: "List[GsaParameterWithDataValue]") -> None:
+    def constraints(self, constraints: "list[GsaParameterWithDataValue]") -> None:
         """Sets the constraints of this GsaDiscreteSeries.
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
             The constraints of this GsaDiscreteSeries.
         """
         # Field is not nullable
@@ -125,23 +125,23 @@ class GsaDiscreteSeries(ModelBase):
         self._constraints = constraints
 
     @property
-    def points(self) -> "List[GsaDiscreteSeriesPoint]":
+    def points(self) -> "list[GsaDiscreteSeriesPoint]":
         """Gets the points of this GsaDiscreteSeries.
 
         Returns
         -------
-        List[GsaDiscreteSeriesPoint]
+        list[GsaDiscreteSeriesPoint]
             The points of this GsaDiscreteSeries.
         """
         return self._points
 
     @points.setter
-    def points(self, points: "List[GsaDiscreteSeriesPoint]") -> None:
+    def points(self, points: "list[GsaDiscreteSeriesPoint]") -> None:
         """Sets the points of this GsaDiscreteSeries.
 
         Parameters
         ----------
-        points: List[GsaDiscreteSeriesPoint]
+        points: list[GsaDiscreteSeriesPoint]
             The points of this GsaDiscreteSeries.
         """
         # Field is not nullable
@@ -153,7 +153,7 @@ class GsaDiscreteSeries(ModelBase):
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

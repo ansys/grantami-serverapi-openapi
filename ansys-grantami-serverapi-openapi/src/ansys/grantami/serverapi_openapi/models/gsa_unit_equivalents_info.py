@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaUnitEquivalentsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "unit_equivalents": "list[GsaUnitEquivalent]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "unit_equivalents": "unitEquivalents",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unitEquivalents": "GsaUnitEquivalent",
     }
 
@@ -77,45 +77,45 @@ class GsaUnitEquivalentsInfo(ModelBase):
     def __init__(
         self,
         *,
-        unit_equivalents: "Union[List[GsaUnitEquivalent], None, Unset_Type]" = Unset,
+        unit_equivalents: "Union[list[GsaUnitEquivalent], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUnitEquivalentsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        unit_equivalents: List[GsaUnitEquivalent], optional
+        unit_equivalents: list[GsaUnitEquivalent], optional
         """
-        self._unit_equivalents: Union[List[GsaUnitEquivalent], None, Unset_Type] = Unset
+        self._unit_equivalents: Union[list[GsaUnitEquivalent], None, Unset_Type] = Unset
 
         if unit_equivalents is not Unset:
             self.unit_equivalents = unit_equivalents
 
     @property
-    def unit_equivalents(self) -> "Union[List[GsaUnitEquivalent], None, Unset_Type]":
+    def unit_equivalents(self) -> "Union[list[GsaUnitEquivalent], None, Unset_Type]":
         """Gets the unit_equivalents of this GsaUnitEquivalentsInfo.
 
         Returns
         -------
-        Union[List[GsaUnitEquivalent], None, Unset_Type]
+        Union[list[GsaUnitEquivalent], None, Unset_Type]
             The unit_equivalents of this GsaUnitEquivalentsInfo.
         """
         return self._unit_equivalents
 
     @unit_equivalents.setter
     def unit_equivalents(
-        self, unit_equivalents: "Union[List[GsaUnitEquivalent], None, Unset_Type]"
+        self, unit_equivalents: "Union[list[GsaUnitEquivalent], None, Unset_Type]"
     ) -> None:
         """Sets the unit_equivalents of this GsaUnitEquivalentsInfo.
 
         Parameters
         ----------
-        unit_equivalents: Union[List[GsaUnitEquivalent], None, Unset_Type]
+        unit_equivalents: Union[list[GsaUnitEquivalent], None, Unset_Type]
             The unit_equivalents of this GsaUnitEquivalentsInfo.
         """
         self._unit_equivalents = unit_equivalents
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

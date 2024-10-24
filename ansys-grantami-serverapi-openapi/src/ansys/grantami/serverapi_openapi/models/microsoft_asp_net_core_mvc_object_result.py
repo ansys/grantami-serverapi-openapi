@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "content_types": "list[str]",
         "declared_type": "str",
         "formatters": "list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter]",
@@ -68,7 +68,7 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
         "value": "object",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "content_types": "contentTypes",
         "declared_type": "declaredType",
         "formatters": "formatters",
@@ -76,7 +76,7 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "formatters": "MicrosoftAspNetCoreMvcFormattersIOutputFormatter",
     }
 
@@ -85,9 +85,9 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
     def __init__(
         self,
         *,
-        content_types: "Union[List[str], None, Unset_Type]" = Unset,
+        content_types: "Union[list[str], None, Unset_Type]" = Unset,
         declared_type: "Union[str, None, Unset_Type]" = Unset,
-        formatters: "Union[List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]" = Unset,
+        formatters: "Union[list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]" = Unset,
         status_code: "Union[int, None, Unset_Type]" = Unset,
         value: "Union[object, None, Unset_Type]" = Unset,
     ) -> None:
@@ -95,17 +95,17 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
 
         Parameters
         ----------
-        content_types: List[str], optional
+        content_types: list[str], optional
         declared_type: str, optional
-        formatters: List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], optional
+        formatters: list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], optional
         status_code: int, optional
         value: object, optional
         """
         self._value: Union[object, None, Unset_Type] = Unset
         self._formatters: Union[
-            List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type
+            list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type
         ] = Unset
-        self._content_types: Union[List[str], None, Unset_Type] = Unset
+        self._content_types: Union[list[str], None, Unset_Type] = Unset
         self._declared_type: Union[str, None, Unset_Type] = Unset
         self._status_code: Union[int, None, Unset_Type] = Unset
 
@@ -145,12 +145,12 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
     @property
     def formatters(
         self,
-    ) -> "Union[List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]":
+    ) -> "Union[list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]":
         """Gets the formatters of this MicrosoftAspNetCoreMvcObjectResult.
 
         Returns
         -------
-        Union[List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]
+        Union[list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]
             The formatters of this MicrosoftAspNetCoreMvcObjectResult.
         """
         return self._formatters
@@ -158,35 +158,35 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
     @formatters.setter
     def formatters(
         self,
-        formatters: "Union[List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]",
+        formatters: "Union[list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]",
     ) -> None:
         """Sets the formatters of this MicrosoftAspNetCoreMvcObjectResult.
 
         Parameters
         ----------
-        formatters: Union[List[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]
+        formatters: Union[list[MicrosoftAspNetCoreMvcFormattersIOutputFormatter], None, Unset_Type]
             The formatters of this MicrosoftAspNetCoreMvcObjectResult.
         """
         self._formatters = formatters
 
     @property
-    def content_types(self) -> "Union[List[str], None, Unset_Type]":
+    def content_types(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the content_types of this MicrosoftAspNetCoreMvcObjectResult.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The content_types of this MicrosoftAspNetCoreMvcObjectResult.
         """
         return self._content_types
 
     @content_types.setter
-    def content_types(self, content_types: "Union[List[str], None, Unset_Type]") -> None:
+    def content_types(self, content_types: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the content_types of this MicrosoftAspNetCoreMvcObjectResult.
 
         Parameters
         ----------
-        content_types: Union[List[str], None, Unset_Type]
+        content_types: Union[list[str], None, Unset_Type]
             The content_types of this MicrosoftAspNetCoreMvcObjectResult.
         """
         self._content_types = content_types
@@ -236,7 +236,7 @@ class MicrosoftAspNetCoreMvcObjectResult(ModelBase):
         self._status_code = status_code
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

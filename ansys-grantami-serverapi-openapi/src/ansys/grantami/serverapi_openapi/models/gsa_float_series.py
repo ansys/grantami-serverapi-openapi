@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaFloatSeries(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraints": "list[GsaParameterWithDataValue]",
         "graph_decoration": "GsaGraphDecorationType",
         "points": "list[GsaFloatSeriesPoint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraints": "constraints",
         "graph_decoration": "graphDecoration",
         "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterWithDataValue",
         "points": "GsaFloatSeriesPoint",
         "graphDecoration": "GsaGraphDecorationType",
@@ -83,20 +83,20 @@ class GsaFloatSeries(ModelBase):
     def __init__(
         self,
         *,
-        constraints: "List[GsaParameterWithDataValue]",
+        constraints: "list[GsaParameterWithDataValue]",
         graph_decoration: "GsaGraphDecorationType",
-        points: "List[GsaFloatSeriesPoint]",
+        points: "list[GsaFloatSeriesPoint]",
     ) -> None:
         """GsaFloatSeries - a model defined in Swagger
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
         graph_decoration: GsaGraphDecorationType
-        points: List[GsaFloatSeriesPoint]
+        points: list[GsaFloatSeriesPoint]
         """
-        self._constraints: List[GsaParameterWithDataValue]
-        self._points: List[GsaFloatSeriesPoint]
+        self._constraints: list[GsaParameterWithDataValue]
+        self._points: list[GsaFloatSeriesPoint]
         self._graph_decoration: GsaGraphDecorationType
 
         self.constraints = constraints
@@ -104,23 +104,23 @@ class GsaFloatSeries(ModelBase):
         self.graph_decoration = graph_decoration
 
     @property
-    def constraints(self) -> "List[GsaParameterWithDataValue]":
+    def constraints(self) -> "list[GsaParameterWithDataValue]":
         """Gets the constraints of this GsaFloatSeries.
 
         Returns
         -------
-        List[GsaParameterWithDataValue]
+        list[GsaParameterWithDataValue]
             The constraints of this GsaFloatSeries.
         """
         return self._constraints
 
     @constraints.setter
-    def constraints(self, constraints: "List[GsaParameterWithDataValue]") -> None:
+    def constraints(self, constraints: "list[GsaParameterWithDataValue]") -> None:
         """Sets the constraints of this GsaFloatSeries.
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
             The constraints of this GsaFloatSeries.
         """
         # Field is not nullable
@@ -132,23 +132,23 @@ class GsaFloatSeries(ModelBase):
         self._constraints = constraints
 
     @property
-    def points(self) -> "List[GsaFloatSeriesPoint]":
+    def points(self) -> "list[GsaFloatSeriesPoint]":
         """Gets the points of this GsaFloatSeries.
 
         Returns
         -------
-        List[GsaFloatSeriesPoint]
+        list[GsaFloatSeriesPoint]
             The points of this GsaFloatSeries.
         """
         return self._points
 
     @points.setter
-    def points(self, points: "List[GsaFloatSeriesPoint]") -> None:
+    def points(self, points: "list[GsaFloatSeriesPoint]") -> None:
         """Sets the points of this GsaFloatSeries.
 
         Parameters
         ----------
-        points: List[GsaFloatSeriesPoint]
+        points: list[GsaFloatSeriesPoint]
             The points of this GsaFloatSeries.
         """
         # Field is not nullable
@@ -188,7 +188,7 @@ class GsaFloatSeries(ModelBase):
         self._graph_decoration = graph_decoration
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

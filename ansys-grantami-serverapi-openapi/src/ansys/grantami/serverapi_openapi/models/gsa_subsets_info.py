@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaSubsetsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "subsets": "list[GsaSlimSubset]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "subsets": "subsets",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "subsets": "GsaSlimSubset",
     }
 
@@ -77,43 +77,43 @@ class GsaSubsetsInfo(ModelBase):
     def __init__(
         self,
         *,
-        subsets: "Union[List[GsaSlimSubset], None, Unset_Type]" = Unset,
+        subsets: "Union[list[GsaSlimSubset], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaSubsetsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        subsets: List[GsaSlimSubset], optional
+        subsets: list[GsaSlimSubset], optional
         """
-        self._subsets: Union[List[GsaSlimSubset], None, Unset_Type] = Unset
+        self._subsets: Union[list[GsaSlimSubset], None, Unset_Type] = Unset
 
         if subsets is not Unset:
             self.subsets = subsets
 
     @property
-    def subsets(self) -> "Union[List[GsaSlimSubset], None, Unset_Type]":
+    def subsets(self) -> "Union[list[GsaSlimSubset], None, Unset_Type]":
         """Gets the subsets of this GsaSubsetsInfo.
 
         Returns
         -------
-        Union[List[GsaSlimSubset], None, Unset_Type]
+        Union[list[GsaSlimSubset], None, Unset_Type]
             The subsets of this GsaSubsetsInfo.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "Union[List[GsaSlimSubset], None, Unset_Type]") -> None:
+    def subsets(self, subsets: "Union[list[GsaSlimSubset], None, Unset_Type]") -> None:
         """Sets the subsets of this GsaSubsetsInfo.
 
         Parameters
         ----------
-        subsets: Union[List[GsaSlimSubset], None, Unset_Type]
+        subsets: Union[list[GsaSlimSubset], None, Unset_Type]
             The subsets of this GsaSubsetsInfo.
         """
         self._subsets = subsets
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

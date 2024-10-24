@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaGetJobsSummaryResponse(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "jobs": "list[GsaJobTypeAndStatus]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "jobs": "jobs",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "jobs": "GsaJobTypeAndStatus",
     }
 
@@ -77,43 +77,43 @@ class GsaGetJobsSummaryResponse(ModelBase):
     def __init__(
         self,
         *,
-        jobs: "Union[List[GsaJobTypeAndStatus], None, Unset_Type]" = Unset,
+        jobs: "Union[list[GsaJobTypeAndStatus], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaGetJobsSummaryResponse - a model defined in Swagger
 
         Parameters
         ----------
-        jobs: List[GsaJobTypeAndStatus], optional
+        jobs: list[GsaJobTypeAndStatus], optional
         """
-        self._jobs: Union[List[GsaJobTypeAndStatus], None, Unset_Type] = Unset
+        self._jobs: Union[list[GsaJobTypeAndStatus], None, Unset_Type] = Unset
 
         if jobs is not Unset:
             self.jobs = jobs
 
     @property
-    def jobs(self) -> "Union[List[GsaJobTypeAndStatus], None, Unset_Type]":
+    def jobs(self) -> "Union[list[GsaJobTypeAndStatus], None, Unset_Type]":
         """Gets the jobs of this GsaGetJobsSummaryResponse.
 
         Returns
         -------
-        Union[List[GsaJobTypeAndStatus], None, Unset_Type]
+        Union[list[GsaJobTypeAndStatus], None, Unset_Type]
             The jobs of this GsaGetJobsSummaryResponse.
         """
         return self._jobs
 
     @jobs.setter
-    def jobs(self, jobs: "Union[List[GsaJobTypeAndStatus], None, Unset_Type]") -> None:
+    def jobs(self, jobs: "Union[list[GsaJobTypeAndStatus], None, Unset_Type]") -> None:
         """Sets the jobs of this GsaGetJobsSummaryResponse.
 
         Parameters
         ----------
-        jobs: Union[List[GsaJobTypeAndStatus], None, Unset_Type]
+        jobs: Union[list[GsaJobTypeAndStatus], None, Unset_Type]
             The jobs of this GsaGetJobsSummaryResponse.
         """
         self._jobs = jobs
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

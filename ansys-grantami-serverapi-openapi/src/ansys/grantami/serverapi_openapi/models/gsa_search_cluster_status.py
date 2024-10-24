@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GsaSearchClusterStatus(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "cluster_unavailable": "bool",
         "disk_status": "dict(str, GsaDiskStatus)",
         "disk_threshold": "str",
         "disk_threshold_max_headroom": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "cluster_unavailable": "clusterUnavailable",
         "disk_status": "diskStatus",
         "disk_threshold": "diskThreshold",
         "disk_threshold_max_headroom": "diskThresholdMaxHeadroom",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "diskStatus": "GsaDiskStatus",
     }
 
@@ -84,7 +84,7 @@ class GsaSearchClusterStatus(ModelBase):
         self,
         *,
         cluster_unavailable: "Union[bool, None, Unset_Type]" = Unset,
-        disk_status: "Union[Dict[str, GsaDiskStatus], None, Unset_Type]" = Unset,
+        disk_status: "Union[dict[str, GsaDiskStatus], None, Unset_Type]" = Unset,
         disk_threshold: "Union[str, None, Unset_Type]" = Unset,
         disk_threshold_max_headroom: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -93,11 +93,11 @@ class GsaSearchClusterStatus(ModelBase):
         Parameters
         ----------
         cluster_unavailable: bool, optional
-        disk_status: Dict[str, GsaDiskStatus], optional
+        disk_status: dict[str, GsaDiskStatus], optional
         disk_threshold: str, optional
         disk_threshold_max_headroom: str, optional
         """
-        self._disk_status: Union[Dict[str, GsaDiskStatus], None, Unset_Type] = Unset
+        self._disk_status: Union[dict[str, GsaDiskStatus], None, Unset_Type] = Unset
         self._disk_threshold: Union[str, None, Unset_Type] = Unset
         self._disk_threshold_max_headroom: Union[str, None, Unset_Type] = Unset
         self._cluster_unavailable: Union[bool, None, Unset_Type] = Unset
@@ -112,25 +112,25 @@ class GsaSearchClusterStatus(ModelBase):
             self.cluster_unavailable = cluster_unavailable
 
     @property
-    def disk_status(self) -> "Union[Dict[str, GsaDiskStatus], None, Unset_Type]":
+    def disk_status(self) -> "Union[dict[str, GsaDiskStatus], None, Unset_Type]":
         """Gets the disk_status of this GsaSearchClusterStatus.
         The status of the disk compared to the Elasticsearch space thresholds.
 
         Returns
         -------
-        Union[Dict[str, GsaDiskStatus], None, Unset_Type]
+        Union[dict[str, GsaDiskStatus], None, Unset_Type]
             The disk_status of this GsaSearchClusterStatus.
         """
         return self._disk_status
 
     @disk_status.setter
-    def disk_status(self, disk_status: "Union[Dict[str, GsaDiskStatus], None, Unset_Type]") -> None:
+    def disk_status(self, disk_status: "Union[dict[str, GsaDiskStatus], None, Unset_Type]") -> None:
         """Sets the disk_status of this GsaSearchClusterStatus.
         The status of the disk compared to the Elasticsearch space thresholds.
 
         Parameters
         ----------
-        disk_status: Union[Dict[str, GsaDiskStatus], None, Unset_Type]
+        disk_status: Union[dict[str, GsaDiskStatus], None, Unset_Type]
             The disk_status of this GsaSearchClusterStatus.
         """
         self._disk_status = disk_status
@@ -210,7 +210,7 @@ class GsaSearchClusterStatus(ModelBase):
         self._cluster_unavailable = cluster_unavailable
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

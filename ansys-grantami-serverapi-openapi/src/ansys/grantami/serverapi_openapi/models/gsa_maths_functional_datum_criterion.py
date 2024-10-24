@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
@@ -56,30 +56,30 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaDatumCriterionType",
         "constraints": "list[GsaParameterConstraint]",
         "gte": "float",
         "lte": "float",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterConstraint",
     }
 
@@ -89,7 +89,7 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.MATHSFUNCTIONAL,
-        constraints: "Union[List[GsaParameterConstraint], None, Unset_Type]" = Unset,
+        constraints: "Union[list[GsaParameterConstraint], None, Unset_Type]" = Unset,
         gte: "Union[float, None, Unset_Type]" = Unset,
         lte: "Union[float, None, Unset_Type]" = Unset,
     ) -> None:
@@ -98,14 +98,14 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
         Parameters
         ----------
         type: GsaDatumCriterionType
-        constraints: List[GsaParameterConstraint], optional
+        constraints: list[GsaParameterConstraint], optional
         gte: float, optional
         lte: float, optional
         """
         super().__init__(type=type)
         self._gte: Union[float, None, Unset_Type] = Unset
         self._lte: Union[float, None, Unset_Type] = Unset
-        self._constraints: Union[List[GsaParameterConstraint], None, Unset_Type] = Unset
+        self._constraints: Union[list[GsaParameterConstraint], None, Unset_Type] = Unset
 
         if gte is not Unset:
             self.gte = gte
@@ -163,33 +163,33 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
         self._lte = lte
 
     @property
-    def constraints(self) -> "Union[List[GsaParameterConstraint], None, Unset_Type]":
+    def constraints(self) -> "Union[list[GsaParameterConstraint], None, Unset_Type]":
         """Gets the constraints of this GsaMathsFunctionalDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Returns
         -------
-        Union[List[GsaParameterConstraint], None, Unset_Type]
+        Union[list[GsaParameterConstraint], None, Unset_Type]
             The constraints of this GsaMathsFunctionalDatumCriterion.
         """
         return self._constraints
 
     @constraints.setter
     def constraints(
-        self, constraints: "Union[List[GsaParameterConstraint], None, Unset_Type]"
+        self, constraints: "Union[list[GsaParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GsaMathsFunctionalDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Parameters
         ----------
-        constraints: Union[List[GsaParameterConstraint], None, Unset_Type]
+        constraints: Union[list[GsaParameterConstraint], None, Unset_Type]
             The constraints of this GsaMathsFunctionalDatumCriterion.
         """
         self._constraints = constraints
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_graph import GsaGraph  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
@@ -54,18 +54,18 @@ class GsaSeriesGraph(GsaGraph):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraint_parameters": "list[GsaSlimParameter]",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
@@ -73,7 +73,7 @@ class GsaSeriesGraph(GsaGraph):
         "x_axis_parameter": "GsaSlimParameter",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraint_parameters": "constraintParameters",
         "functional_type": "functionalType",
         "graph_type": "graphType",
@@ -81,7 +81,7 @@ class GsaSeriesGraph(GsaGraph):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "functionalType": "GsaFunctionalType",
         "xAxisParameter": "GsaSlimParameter",
         "constraintParameters": "GsaSlimParameter",
@@ -97,7 +97,7 @@ class GsaSeriesGraph(GsaGraph):
     def __init__(
         self,
         *,
-        constraint_parameters: "List[GsaSlimParameter]",
+        constraint_parameters: "list[GsaSlimParameter]",
         functional_type: "GsaFunctionalType",
         graph_type: "GsaGraphType" = GsaGraphType.SERIES,
         number_of_points: "int",
@@ -107,7 +107,7 @@ class GsaSeriesGraph(GsaGraph):
 
         Parameters
         ----------
-        constraint_parameters: List[GsaSlimParameter]
+        constraint_parameters: list[GsaSlimParameter]
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
         number_of_points: int
@@ -116,7 +116,7 @@ class GsaSeriesGraph(GsaGraph):
         super().__init__(graph_type=graph_type)
         self._functional_type: GsaFunctionalType
         self._x_axis_parameter: GsaSlimParameter
-        self._constraint_parameters: List[GsaSlimParameter]
+        self._constraint_parameters: list[GsaSlimParameter]
         self._number_of_points: int
 
         self.functional_type = functional_type
@@ -181,23 +181,23 @@ class GsaSeriesGraph(GsaGraph):
         self._x_axis_parameter = x_axis_parameter
 
     @property
-    def constraint_parameters(self) -> "List[GsaSlimParameter]":
+    def constraint_parameters(self) -> "list[GsaSlimParameter]":
         """Gets the constraint_parameters of this GsaSeriesGraph.
 
         Returns
         -------
-        List[GsaSlimParameter]
+        list[GsaSlimParameter]
             The constraint_parameters of this GsaSeriesGraph.
         """
         return self._constraint_parameters
 
     @constraint_parameters.setter
-    def constraint_parameters(self, constraint_parameters: "List[GsaSlimParameter]") -> None:
+    def constraint_parameters(self, constraint_parameters: "list[GsaSlimParameter]") -> None:
         """Sets the constraint_parameters of this GsaSeriesGraph.
 
         Parameters
         ----------
-        constraint_parameters: List[GsaSlimParameter]
+        constraint_parameters: list[GsaSlimParameter]
             The constraint_parameters of this GsaSeriesGraph.
         """
         # Field is not nullable
@@ -237,7 +237,7 @@ class GsaSeriesGraph(GsaGraph):
         self._number_of_points = number_of_points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

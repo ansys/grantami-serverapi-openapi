@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GsaDataExportRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GsaAttributeToExport]",
         "record_properties": "list[GsaRecordProperty]",
         "record_history_guids": "list[str]",
         "record_history_identities": "list[int]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
         "record_properties": "recordProperties",
         "record_history_guids": "recordHistoryGuids",
         "record_history_identities": "recordHistoryIdentities",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaAttributeToExport",
         "recordProperties": "GsaRecordProperty",
     }
@@ -84,24 +84,24 @@ class GsaDataExportRequest(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "List[GsaAttributeToExport]",
-        record_properties: "List[GsaRecordProperty]",
-        record_history_guids: "Union[List[str], None, Unset_Type]" = Unset,
-        record_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
+        attributes: "list[GsaAttributeToExport]",
+        record_properties: "list[GsaRecordProperty]",
+        record_history_guids: "Union[list[str], None, Unset_Type]" = Unset,
+        record_history_identities: "Union[list[int], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportRequest - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GsaAttributeToExport]
-        record_properties: List[GsaRecordProperty]
-        record_history_guids: List[str], optional
-        record_history_identities: List[int], optional
+        attributes: list[GsaAttributeToExport]
+        record_properties: list[GsaRecordProperty]
+        record_history_guids: list[str], optional
+        record_history_identities: list[int], optional
         """
-        self._attributes: List[GsaAttributeToExport]
-        self._record_properties: List[GsaRecordProperty]
-        self._record_history_identities: Union[List[int], None, Unset_Type] = Unset
-        self._record_history_guids: Union[List[str], None, Unset_Type] = Unset
+        self._attributes: list[GsaAttributeToExport]
+        self._record_properties: list[GsaRecordProperty]
+        self._record_history_identities: Union[list[int], None, Unset_Type] = Unset
+        self._record_history_guids: Union[list[str], None, Unset_Type] = Unset
 
         self.attributes = attributes
         self.record_properties = record_properties
@@ -111,23 +111,23 @@ class GsaDataExportRequest(ModelBase):
             self.record_history_guids = record_history_guids
 
     @property
-    def attributes(self) -> "List[GsaAttributeToExport]":
+    def attributes(self) -> "list[GsaAttributeToExport]":
         """Gets the attributes of this GsaDataExportRequest.
 
         Returns
         -------
-        List[GsaAttributeToExport]
+        list[GsaAttributeToExport]
             The attributes of this GsaDataExportRequest.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "List[GsaAttributeToExport]") -> None:
+    def attributes(self, attributes: "list[GsaAttributeToExport]") -> None:
         """Sets the attributes of this GsaDataExportRequest.
 
         Parameters
         ----------
-        attributes: List[GsaAttributeToExport]
+        attributes: list[GsaAttributeToExport]
             The attributes of this GsaDataExportRequest.
         """
         # Field is not nullable
@@ -139,23 +139,23 @@ class GsaDataExportRequest(ModelBase):
         self._attributes = attributes
 
     @property
-    def record_properties(self) -> "List[GsaRecordProperty]":
+    def record_properties(self) -> "list[GsaRecordProperty]":
         """Gets the record_properties of this GsaDataExportRequest.
 
         Returns
         -------
-        List[GsaRecordProperty]
+        list[GsaRecordProperty]
             The record_properties of this GsaDataExportRequest.
         """
         return self._record_properties
 
     @record_properties.setter
-    def record_properties(self, record_properties: "List[GsaRecordProperty]") -> None:
+    def record_properties(self, record_properties: "list[GsaRecordProperty]") -> None:
         """Sets the record_properties of this GsaDataExportRequest.
 
         Parameters
         ----------
-        record_properties: List[GsaRecordProperty]
+        record_properties: list[GsaRecordProperty]
             The record_properties of this GsaDataExportRequest.
         """
         # Field is not nullable
@@ -167,55 +167,55 @@ class GsaDataExportRequest(ModelBase):
         self._record_properties = record_properties
 
     @property
-    def record_history_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def record_history_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the record_history_identities of this GsaDataExportRequest.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The record_history_identities of this GsaDataExportRequest.
         """
         return self._record_history_identities
 
     @record_history_identities.setter
     def record_history_identities(
-        self, record_history_identities: "Union[List[int], None, Unset_Type]"
+        self, record_history_identities: "Union[list[int], None, Unset_Type]"
     ) -> None:
         """Sets the record_history_identities of this GsaDataExportRequest.
 
         Parameters
         ----------
-        record_history_identities: Union[List[int], None, Unset_Type]
+        record_history_identities: Union[list[int], None, Unset_Type]
             The record_history_identities of this GsaDataExportRequest.
         """
         self._record_history_identities = record_history_identities
 
     @property
-    def record_history_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def record_history_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the record_history_guids of this GsaDataExportRequest.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The record_history_guids of this GsaDataExportRequest.
         """
         return self._record_history_guids
 
     @record_history_guids.setter
     def record_history_guids(
-        self, record_history_guids: "Union[List[str], None, Unset_Type]"
+        self, record_history_guids: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the record_history_guids of this GsaDataExportRequest.
 
         Parameters
         ----------
-        record_history_guids: Union[List[str], None, Unset_Type]
+        record_history_guids: Union[list[str], None, Unset_Type]
             The record_history_guids of this GsaDataExportRequest.
         """
         self._record_history_guids = record_history_guids
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

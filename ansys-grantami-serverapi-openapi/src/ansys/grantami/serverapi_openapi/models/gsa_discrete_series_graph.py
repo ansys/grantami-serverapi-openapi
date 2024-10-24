@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_functional_type import GsaFunctionalType
 from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
@@ -55,16 +55,16 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraint_parameters": "list[GsaSlimParameter]",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
@@ -73,7 +73,7 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         "x_axis_parameter": "GsaSlimParameter",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraint_parameters": "constraintParameters",
         "functional_type": "functionalType",
         "graph_type": "graphType",
@@ -82,7 +82,7 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "series": "GsaDiscreteSeries",
     }
 
@@ -91,22 +91,22 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
     def __init__(
         self,
         *,
-        constraint_parameters: "List[GsaSlimParameter]",
+        constraint_parameters: "list[GsaSlimParameter]",
         functional_type: "GsaFunctionalType" = GsaFunctionalType.DISCRETE,
         graph_type: "GsaGraphType" = GsaGraphType.SERIES,
         number_of_points: "int",
-        series: "List[GsaDiscreteSeries]",
+        series: "list[GsaDiscreteSeries]",
         x_axis_parameter: "GsaSlimParameter",
     ) -> None:
         """GsaDiscreteSeriesGraph - a model defined in Swagger
 
         Parameters
         ----------
-        constraint_parameters: List[GsaSlimParameter]
+        constraint_parameters: list[GsaSlimParameter]
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
         number_of_points: int
-        series: List[GsaDiscreteSeries]
+        series: list[GsaDiscreteSeries]
         x_axis_parameter: GsaSlimParameter
         """
         super().__init__(
@@ -116,28 +116,28 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
             number_of_points=number_of_points,
             x_axis_parameter=x_axis_parameter,
         )
-        self._series: List[GsaDiscreteSeries]
+        self._series: list[GsaDiscreteSeries]
 
         self.series = series
 
     @property
-    def series(self) -> "List[GsaDiscreteSeries]":
+    def series(self) -> "list[GsaDiscreteSeries]":
         """Gets the series of this GsaDiscreteSeriesGraph.
 
         Returns
         -------
-        List[GsaDiscreteSeries]
+        list[GsaDiscreteSeries]
             The series of this GsaDiscreteSeriesGraph.
         """
         return self._series
 
     @series.setter
-    def series(self, series: "List[GsaDiscreteSeries]") -> None:
+    def series(self, series: "list[GsaDiscreteSeries]") -> None:
         """Sets the series of this GsaDiscreteSeriesGraph.
 
         Parameters
         ----------
-        series: List[GsaDiscreteSeries]
+        series: list[GsaDiscreteSeries]
             The series of this GsaDiscreteSeriesGraph.
         """
         # Field is not nullable
@@ -149,7 +149,7 @@ class GsaDiscreteSeriesGraph(GsaSeriesGraph):
         self._series = series
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

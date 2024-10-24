@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaFilesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "files": "list[GsaSlimFile]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "files": "files",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "files": "GsaSlimFile",
     }
 
@@ -77,43 +77,43 @@ class GsaFilesInfo(ModelBase):
     def __init__(
         self,
         *,
-        files: "Union[List[GsaSlimFile], None, Unset_Type]" = Unset,
+        files: "Union[list[GsaSlimFile], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFilesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        files: List[GsaSlimFile], optional
+        files: list[GsaSlimFile], optional
         """
-        self._files: Union[List[GsaSlimFile], None, Unset_Type] = Unset
+        self._files: Union[list[GsaSlimFile], None, Unset_Type] = Unset
 
         if files is not Unset:
             self.files = files
 
     @property
-    def files(self) -> "Union[List[GsaSlimFile], None, Unset_Type]":
+    def files(self) -> "Union[list[GsaSlimFile], None, Unset_Type]":
         """Gets the files of this GsaFilesInfo.
 
         Returns
         -------
-        Union[List[GsaSlimFile], None, Unset_Type]
+        Union[list[GsaSlimFile], None, Unset_Type]
             The files of this GsaFilesInfo.
         """
         return self._files
 
     @files.setter
-    def files(self, files: "Union[List[GsaSlimFile], None, Unset_Type]") -> None:
+    def files(self, files: "Union[list[GsaSlimFile], None, Unset_Type]") -> None:
         """Sets the files of this GsaFilesInfo.
 
         Parameters
         ----------
-        files: Union[List[GsaSlimFile], None, Unset_Type]
+        files: Union[list[GsaSlimFile], None, Unset_Type]
             The files of this GsaFilesInfo.
         """
         self._files = files
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_link_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "link_datum_type": "str",
         "not_applicable": "str",
@@ -77,7 +77,7 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         "tabular_rows": "list[GsaDataExportTabularRow]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "link_datum_type": "linkDatumType",
         "not_applicable": "notApplicable",
@@ -89,7 +89,7 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         "tabular_rows": "tabularRows",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tabularRows": "GsaDataExportTabularRow",
         "summaryRow": "GsaDataExportRollupDatum",
     }
@@ -105,9 +105,9 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         attribute_name: "Union[str, None, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        summary_row: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
-        tabular_rows: "Union[List[GsaDataExportTabularRow], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        summary_row: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
+        tabular_rows: "Union[list[GsaDataExportTabularRow], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportTabularDatum - a model defined in Swagger
 
@@ -119,9 +119,9 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         attribute_guid: str, optional
         attribute_identity: int, optional
         attribute_name: str, optional
-        meta_datums: List[GsaDataExportDatum], optional
-        summary_row: List[GsaDataExportRollupDatum], optional
-        tabular_rows: List[GsaDataExportTabularRow], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        summary_row: list[GsaDataExportRollupDatum], optional
+        tabular_rows: list[GsaDataExportTabularRow], optional
         """
         super().__init__(
             datum_type=datum_type,
@@ -132,8 +132,8 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
             meta_datums=meta_datums,
         )
         self._attribute_name: Union[str, None, Unset_Type] = Unset
-        self._tabular_rows: Union[List[GsaDataExportTabularRow], None, Unset_Type] = Unset
-        self._summary_row: Union[List[GsaDataExportRollupDatum], None, Unset_Type] = Unset
+        self._tabular_rows: Union[list[GsaDataExportTabularRow], None, Unset_Type] = Unset
+        self._summary_row: Union[list[GsaDataExportRollupDatum], None, Unset_Type] = Unset
 
         if attribute_name is not Unset:
             self.attribute_name = attribute_name
@@ -165,55 +165,55 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         self._attribute_name = attribute_name
 
     @property
-    def tabular_rows(self) -> "Union[List[GsaDataExportTabularRow], None, Unset_Type]":
+    def tabular_rows(self) -> "Union[list[GsaDataExportTabularRow], None, Unset_Type]":
         """Gets the tabular_rows of this GsaDataExportTabularDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportTabularRow], None, Unset_Type]
+        Union[list[GsaDataExportTabularRow], None, Unset_Type]
             The tabular_rows of this GsaDataExportTabularDatum.
         """
         return self._tabular_rows
 
     @tabular_rows.setter
     def tabular_rows(
-        self, tabular_rows: "Union[List[GsaDataExportTabularRow], None, Unset_Type]"
+        self, tabular_rows: "Union[list[GsaDataExportTabularRow], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_rows of this GsaDataExportTabularDatum.
 
         Parameters
         ----------
-        tabular_rows: Union[List[GsaDataExportTabularRow], None, Unset_Type]
+        tabular_rows: Union[list[GsaDataExportTabularRow], None, Unset_Type]
             The tabular_rows of this GsaDataExportTabularDatum.
         """
         self._tabular_rows = tabular_rows
 
     @property
-    def summary_row(self) -> "Union[List[GsaDataExportRollupDatum], None, Unset_Type]":
+    def summary_row(self) -> "Union[list[GsaDataExportRollupDatum], None, Unset_Type]":
         """Gets the summary_row of this GsaDataExportTabularDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The summary_row of this GsaDataExportTabularDatum.
         """
         return self._summary_row
 
     @summary_row.setter
     def summary_row(
-        self, summary_row: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]"
+        self, summary_row: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]"
     ) -> None:
         """Sets the summary_row of this GsaDataExportTabularDatum.
 
         Parameters
         ----------
-        summary_row: Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        summary_row: Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The summary_row of this GsaDataExportTabularDatum.
         """
         self._summary_row = summary_row
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

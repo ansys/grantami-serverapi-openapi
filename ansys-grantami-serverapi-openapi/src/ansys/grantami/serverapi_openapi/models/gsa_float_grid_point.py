@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GsaFloatGridPoint(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraints": "list[GsaParameterWithDataValue]",
         "estimated": "bool",
         "high_value": "float",
         "low_value": "float",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraints": "constraints",
         "estimated": "estimated",
         "high_value": "highValue",
         "low_value": "lowValue",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterWithDataValue",
     }
 
@@ -83,7 +83,7 @@ class GsaFloatGridPoint(ModelBase):
     def __init__(
         self,
         *,
-        constraints: "List[GsaParameterWithDataValue]",
+        constraints: "list[GsaParameterWithDataValue]",
         estimated: "bool",
         high_value: "float",
         low_value: "float",
@@ -92,12 +92,12 @@ class GsaFloatGridPoint(ModelBase):
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
         estimated: bool
         high_value: float
         low_value: float
         """
-        self._constraints: List[GsaParameterWithDataValue]
+        self._constraints: list[GsaParameterWithDataValue]
         self._low_value: float
         self._high_value: float
         self._estimated: bool
@@ -108,23 +108,23 @@ class GsaFloatGridPoint(ModelBase):
         self.estimated = estimated
 
     @property
-    def constraints(self) -> "List[GsaParameterWithDataValue]":
+    def constraints(self) -> "list[GsaParameterWithDataValue]":
         """Gets the constraints of this GsaFloatGridPoint.
 
         Returns
         -------
-        List[GsaParameterWithDataValue]
+        list[GsaParameterWithDataValue]
             The constraints of this GsaFloatGridPoint.
         """
         return self._constraints
 
     @constraints.setter
-    def constraints(self, constraints: "List[GsaParameterWithDataValue]") -> None:
+    def constraints(self, constraints: "list[GsaParameterWithDataValue]") -> None:
         """Sets the constraints of this GsaFloatGridPoint.
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
             The constraints of this GsaFloatGridPoint.
         """
         # Field is not nullable
@@ -220,7 +220,7 @@ class GsaFloatGridPoint(ModelBase):
         self._estimated = estimated
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

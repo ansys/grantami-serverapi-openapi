@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
@@ -56,30 +56,30 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaDatumCriterionType",
         "any_guids": "list[str]",
         "any_identities": "list[int]",
         "constraints": "list[GsaParameterConstraint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "any_guids": "anyGuids",
         "any_identities": "anyIdentities",
         "constraints": "constraints",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterConstraint",
     }
 
@@ -89,23 +89,23 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEFUNCTIONALVALUES,
-        any_guids: "Union[List[str], None, Unset_Type]" = Unset,
-        any_identities: "Union[List[int], None, Unset_Type]" = Unset,
-        constraints: "Union[List[GsaParameterConstraint], None, Unset_Type]" = Unset,
+        any_guids: "Union[list[str], None, Unset_Type]" = Unset,
+        any_identities: "Union[list[int], None, Unset_Type]" = Unset,
+        constraints: "Union[list[GsaParameterConstraint], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteFunctionalValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
-        any_guids: List[str], optional
-        any_identities: List[int], optional
-        constraints: List[GsaParameterConstraint], optional
+        any_guids: list[str], optional
+        any_identities: list[int], optional
+        constraints: list[GsaParameterConstraint], optional
         """
         super().__init__(type=type)
-        self._any_identities: Union[List[int], None, Unset_Type] = Unset
-        self._any_guids: Union[List[str], None, Unset_Type] = Unset
-        self._constraints: Union[List[GsaParameterConstraint], None, Unset_Type] = Unset
+        self._any_identities: Union[list[int], None, Unset_Type] = Unset
+        self._any_guids: Union[list[str], None, Unset_Type] = Unset
+        self._constraints: Union[list[GsaParameterConstraint], None, Unset_Type] = Unset
 
         if any_identities is not Unset:
             self.any_identities = any_identities
@@ -115,81 +115,81 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
             self.constraints = constraints
 
     @property
-    def any_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def any_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the any_identities of this GsaDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The any_identities of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         return self._any_identities
 
     @any_identities.setter
-    def any_identities(self, any_identities: "Union[List[int], None, Unset_Type]") -> None:
+    def any_identities(self, any_identities: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the any_identities of this GsaDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any_identities: Union[List[int], None, Unset_Type]
+        any_identities: Union[list[int], None, Unset_Type]
             The any_identities of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_identities = any_identities
 
     @property
-    def any_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def any_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the any_guids of this GsaDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The any_guids of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         return self._any_guids
 
     @any_guids.setter
-    def any_guids(self, any_guids: "Union[List[str], None, Unset_Type]") -> None:
+    def any_guids(self, any_guids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the any_guids of this GsaDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any_guids: Union[List[str], None, Unset_Type]
+        any_guids: Union[list[str], None, Unset_Type]
             The any_guids of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_guids = any_guids
 
     @property
-    def constraints(self) -> "Union[List[GsaParameterConstraint], None, Unset_Type]":
+    def constraints(self) -> "Union[list[GsaParameterConstraint], None, Unset_Type]":
         """Gets the constraints of this GsaDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Returns
         -------
-        Union[List[GsaParameterConstraint], None, Unset_Type]
+        Union[list[GsaParameterConstraint], None, Unset_Type]
             The constraints of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         return self._constraints
 
     @constraints.setter
     def constraints(
-        self, constraints: "Union[List[GsaParameterConstraint], None, Unset_Type]"
+        self, constraints: "Union[list[GsaParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GsaDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Parameters
         ----------
-        constraints: Union[List[GsaParameterConstraint], None, Unset_Type]
+        constraints: Union[list[GsaParameterConstraint], None, Unset_Type]
             The constraints of this GsaDiscreteFunctionalValuesDatumCriterion.
         """
         self._constraints = constraints
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

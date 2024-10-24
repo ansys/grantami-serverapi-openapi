@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaConfigurationsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "configurations": "list[GsaSlimConfiguration]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "configurations": "configurations",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "configurations": "GsaSlimConfiguration",
     }
 
@@ -77,36 +77,36 @@ class GsaConfigurationsInfo(ModelBase):
     def __init__(
         self,
         *,
-        configurations: "List[GsaSlimConfiguration]",
+        configurations: "list[GsaSlimConfiguration]",
     ) -> None:
         """GsaConfigurationsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        configurations: List[GsaSlimConfiguration]
+        configurations: list[GsaSlimConfiguration]
         """
-        self._configurations: List[GsaSlimConfiguration]
+        self._configurations: list[GsaSlimConfiguration]
 
         self.configurations = configurations
 
     @property
-    def configurations(self) -> "List[GsaSlimConfiguration]":
+    def configurations(self) -> "list[GsaSlimConfiguration]":
         """Gets the configurations of this GsaConfigurationsInfo.
 
         Returns
         -------
-        List[GsaSlimConfiguration]
+        list[GsaSlimConfiguration]
             The configurations of this GsaConfigurationsInfo.
         """
         return self._configurations
 
     @configurations.setter
-    def configurations(self, configurations: "List[GsaSlimConfiguration]") -> None:
+    def configurations(self, configurations: "list[GsaSlimConfiguration]") -> None:
         """Sets the configurations of this GsaConfigurationsInfo.
 
         Parameters
         ----------
-        configurations: List[GsaSlimConfiguration]
+        configurations: list[GsaSlimConfiguration]
             The configurations of this GsaConfigurationsInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaConfigurationsInfo(ModelBase):
         self._configurations = configurations
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

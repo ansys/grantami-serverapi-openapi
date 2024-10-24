@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaSetPointDatumValue(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "point_value": "float",
         "parameters_and_values": "list[GsaSetParameterWithValue]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "point_value": "pointValue",
         "parameters_and_values": "parametersAndValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parametersAndValues": "GsaSetParameterWithValue",
     }
 
@@ -80,17 +80,17 @@ class GsaSetPointDatumValue(ModelBase):
         self,
         *,
         point_value: "float",
-        parameters_and_values: "Union[List[GsaSetParameterWithValue], None, Unset_Type]" = Unset,
+        parameters_and_values: "Union[list[GsaSetParameterWithValue], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaSetPointDatumValue - a model defined in Swagger
 
         Parameters
         ----------
         point_value: float
-        parameters_and_values: List[GsaSetParameterWithValue], optional
+        parameters_and_values: list[GsaSetParameterWithValue], optional
         """
         self._point_value: float
-        self._parameters_and_values: Union[List[GsaSetParameterWithValue], None, Unset_Type] = Unset
+        self._parameters_and_values: Union[list[GsaSetParameterWithValue], None, Unset_Type] = Unset
 
         self.point_value = point_value
         if parameters_and_values is not Unset:
@@ -125,31 +125,31 @@ class GsaSetPointDatumValue(ModelBase):
         self._point_value = point_value
 
     @property
-    def parameters_and_values(self) -> "Union[List[GsaSetParameterWithValue], None, Unset_Type]":
+    def parameters_and_values(self) -> "Union[list[GsaSetParameterWithValue], None, Unset_Type]":
         """Gets the parameters_and_values of this GsaSetPointDatumValue.
 
         Returns
         -------
-        Union[List[GsaSetParameterWithValue], None, Unset_Type]
+        Union[list[GsaSetParameterWithValue], None, Unset_Type]
             The parameters_and_values of this GsaSetPointDatumValue.
         """
         return self._parameters_and_values
 
     @parameters_and_values.setter
     def parameters_and_values(
-        self, parameters_and_values: "Union[List[GsaSetParameterWithValue], None, Unset_Type]"
+        self, parameters_and_values: "Union[list[GsaSetParameterWithValue], None, Unset_Type]"
     ) -> None:
         """Sets the parameters_and_values of this GsaSetPointDatumValue.
 
         Parameters
         ----------
-        parameters_and_values: Union[List[GsaSetParameterWithValue], None, Unset_Type]
+        parameters_and_values: Union[list[GsaSetParameterWithValue], None, Unset_Type]
             The parameters_and_values of this GsaSetPointDatumValue.
         """
         self._parameters_and_values = parameters_and_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
