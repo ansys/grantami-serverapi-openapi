@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum import GsaSetDatum  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum_type import GsaSetDatumType
@@ -54,26 +54,26 @@ class GsaSetTabularDatum(GsaSetDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "rows": "list[GsaSetTabularDatumRow]",
         "set_datum_type": "GsaSetDatumType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "rows": "rows",
         "set_datum_type": "setDatumType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "rows": "GsaSetTabularDatumRow",
     }
 
@@ -82,39 +82,39 @@ class GsaSetTabularDatum(GsaSetDatum):
     def __init__(
         self,
         *,
-        rows: "List[GsaSetTabularDatumRow]",
+        rows: "list[GsaSetTabularDatumRow]",
         set_datum_type: "GsaSetDatumType" = GsaSetDatumType.TABULAR,
     ) -> None:
         """GsaSetTabularDatum - a model defined in Swagger
 
         Parameters
         ----------
-        rows: List[GsaSetTabularDatumRow]
+        rows: list[GsaSetTabularDatumRow]
         set_datum_type: GsaSetDatumType
         """
         super().__init__(set_datum_type=set_datum_type)
-        self._rows: List[GsaSetTabularDatumRow]
+        self._rows: list[GsaSetTabularDatumRow]
 
         self.rows = rows
 
     @property
-    def rows(self) -> "List[GsaSetTabularDatumRow]":
+    def rows(self) -> "list[GsaSetTabularDatumRow]":
         """Gets the rows of this GsaSetTabularDatum.
 
         Returns
         -------
-        List[GsaSetTabularDatumRow]
+        list[GsaSetTabularDatumRow]
             The rows of this GsaSetTabularDatum.
         """
         return self._rows
 
     @rows.setter
-    def rows(self, rows: "List[GsaSetTabularDatumRow]") -> None:
+    def rows(self, rows: "list[GsaSetTabularDatumRow]") -> None:
         """Sets the rows of this GsaSetTabularDatum.
 
         Parameters
         ----------
-        rows: List[GsaSetTabularDatumRow]
+        rows: list[GsaSetTabularDatumRow]
             The rows of this GsaSetTabularDatum.
         """
         # Field is not nullable
@@ -126,7 +126,7 @@ class GsaSetTabularDatum(GsaSetDatum):
         self._rows = rows
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

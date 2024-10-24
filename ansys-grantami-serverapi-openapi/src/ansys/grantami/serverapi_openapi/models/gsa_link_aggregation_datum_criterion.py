@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum_criterion import (  # noqa: F401
     GsaAggregationDatumCriterion,
@@ -58,26 +58,26 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaAggregationDatumCriterionType",
         "local_aggregation_criteria": "list[GsaLocalColumnAggregationCriterion]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "local_aggregation_criteria": "localAggregationCriteria",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localAggregationCriteria": "GsaLocalColumnAggregationCriterion",
     }
 
@@ -87,18 +87,18 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
         self,
         *,
         type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.LINK,
-        local_aggregation_criteria: "Union[List[GsaLocalColumnAggregationCriterion], None, Unset_Type]" = Unset,
+        local_aggregation_criteria: "Union[list[GsaLocalColumnAggregationCriterion], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaAggregationDatumCriterionType
-        local_aggregation_criteria: List[GsaLocalColumnAggregationCriterion], optional
+        local_aggregation_criteria: list[GsaLocalColumnAggregationCriterion], optional
         """
         super().__init__(type=type)
         self._local_aggregation_criteria: Union[
-            List[GsaLocalColumnAggregationCriterion], None, Unset_Type
+            list[GsaLocalColumnAggregationCriterion], None, Unset_Type
         ] = Unset
 
         if local_aggregation_criteria is not Unset:
@@ -107,12 +107,12 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
     @property
     def local_aggregation_criteria(
         self,
-    ) -> "Union[List[GsaLocalColumnAggregationCriterion], None, Unset_Type]":
+    ) -> "Union[list[GsaLocalColumnAggregationCriterion], None, Unset_Type]":
         """Gets the local_aggregation_criteria of this GsaLinkAggregationDatumCriterion.
 
         Returns
         -------
-        Union[List[GsaLocalColumnAggregationCriterion], None, Unset_Type]
+        Union[list[GsaLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GsaLinkAggregationDatumCriterion.
         """
         return self._local_aggregation_criteria
@@ -120,19 +120,19 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
     @local_aggregation_criteria.setter
     def local_aggregation_criteria(
         self,
-        local_aggregation_criteria: "Union[List[GsaLocalColumnAggregationCriterion], None, Unset_Type]",
+        local_aggregation_criteria: "Union[list[GsaLocalColumnAggregationCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the local_aggregation_criteria of this GsaLinkAggregationDatumCriterion.
 
         Parameters
         ----------
-        local_aggregation_criteria: Union[List[GsaLocalColumnAggregationCriterion], None, Unset_Type]
+        local_aggregation_criteria: Union[list[GsaLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GsaLinkAggregationDatumCriterion.
         """
         self._local_aggregation_criteria = local_aggregation_criteria
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

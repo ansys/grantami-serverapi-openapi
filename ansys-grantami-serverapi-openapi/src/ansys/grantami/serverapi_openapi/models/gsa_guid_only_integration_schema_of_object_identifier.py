@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "access_control_category_values": "dict(str, list[str])",
         "attributes": "list[GsaGuidOnlyAttribute]",
         "discrete_types": "list[GsaGuidOnlyDiscreteType]",
@@ -72,7 +72,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         "version": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "access_control_category_values": "accessControlCategoryValues",
         "attributes": "attributes",
         "discrete_types": "discreteTypes",
@@ -84,7 +84,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         "version": "version",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaGuidOnlyAttribute",
         "layouts": "GsaGuidOnlyLayout",
         "discreteTypes": "GsaGuidOnlyDiscreteType",
@@ -97,13 +97,13 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
     def __init__(
         self,
         *,
-        access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]" = Unset,
-        attributes: "Union[List[GsaGuidOnlyAttribute], None, Unset_Type]" = Unset,
-        discrete_types: "Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type]" = Unset,
+        access_control_category_values: "Union[dict[str, list[str]], None, Unset_Type]" = Unset,
+        attributes: "Union[list[GsaGuidOnlyAttribute], None, Unset_Type]" = Unset,
+        discrete_types: "Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type]" = Unset,
         key: "Union[str, None, Unset_Type]" = Unset,
-        layouts: "Union[List[GsaGuidOnlyLayout], None, Unset_Type]" = Unset,
+        layouts: "Union[list[GsaGuidOnlyLayout], None, Unset_Type]" = Unset,
         security_groups: "Union[GsaSecurityGroups, Unset_Type]" = Unset,
-        sources: "Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]" = Unset,
+        sources: "Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]" = Unset,
         unit_system: "Union[str, None, Unset_Type]" = Unset,
         version: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
@@ -111,24 +111,24 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
 
         Parameters
         ----------
-        access_control_category_values: Dict[str, List[str]], optional
-        attributes: List[GsaGuidOnlyAttribute], optional
-        discrete_types: List[GsaGuidOnlyDiscreteType], optional
+        access_control_category_values: dict[str, list[str]], optional
+        attributes: list[GsaGuidOnlyAttribute], optional
+        discrete_types: list[GsaGuidOnlyDiscreteType], optional
         key: str, optional
-        layouts: List[GsaGuidOnlyLayout], optional
+        layouts: list[GsaGuidOnlyLayout], optional
         security_groups: GsaSecurityGroups, optional
-        sources: List[GsaGuidOnlySourceOfObjectIdentifier], optional
+        sources: list[GsaGuidOnlySourceOfObjectIdentifier], optional
         unit_system: str, optional
         version: int, optional
         """
         self._key: Union[str, None, Unset_Type] = Unset
         self._version: Union[int, None, Unset_Type] = Unset
-        self._attributes: Union[List[GsaGuidOnlyAttribute], None, Unset_Type] = Unset
-        self._layouts: Union[List[GsaGuidOnlyLayout], None, Unset_Type] = Unset
+        self._attributes: Union[list[GsaGuidOnlyAttribute], None, Unset_Type] = Unset
+        self._layouts: Union[list[GsaGuidOnlyLayout], None, Unset_Type] = Unset
         self._unit_system: Union[str, None, Unset_Type] = Unset
-        self._discrete_types: Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type] = Unset
-        self._sources: Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type] = Unset
-        self._access_control_category_values: Union[Dict[str, List[str]], None, Unset_Type] = Unset
+        self._discrete_types: Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type] = Unset
+        self._sources: Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type] = Unset
+        self._access_control_category_values: Union[dict[str, list[str]], None, Unset_Type] = Unset
         self._security_groups: Union[GsaSecurityGroups, Unset_Type] = Unset
 
         if key is not Unset:
@@ -195,45 +195,45 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._version = version
 
     @property
-    def attributes(self) -> "Union[List[GsaGuidOnlyAttribute], None, Unset_Type]":
+    def attributes(self) -> "Union[list[GsaGuidOnlyAttribute], None, Unset_Type]":
         """Gets the attributes of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[List[GsaGuidOnlyAttribute], None, Unset_Type]
+        Union[list[GsaGuidOnlyAttribute], None, Unset_Type]
             The attributes of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "Union[List[GsaGuidOnlyAttribute], None, Unset_Type]") -> None:
+    def attributes(self, attributes: "Union[list[GsaGuidOnlyAttribute], None, Unset_Type]") -> None:
         """Sets the attributes of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        attributes: Union[List[GsaGuidOnlyAttribute], None, Unset_Type]
+        attributes: Union[list[GsaGuidOnlyAttribute], None, Unset_Type]
             The attributes of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         self._attributes = attributes
 
     @property
-    def layouts(self) -> "Union[List[GsaGuidOnlyLayout], None, Unset_Type]":
+    def layouts(self) -> "Union[list[GsaGuidOnlyLayout], None, Unset_Type]":
         """Gets the layouts of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[List[GsaGuidOnlyLayout], None, Unset_Type]
+        Union[list[GsaGuidOnlyLayout], None, Unset_Type]
             The layouts of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._layouts
 
     @layouts.setter
-    def layouts(self, layouts: "Union[List[GsaGuidOnlyLayout], None, Unset_Type]") -> None:
+    def layouts(self, layouts: "Union[list[GsaGuidOnlyLayout], None, Unset_Type]") -> None:
         """Sets the layouts of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        layouts: Union[List[GsaGuidOnlyLayout], None, Unset_Type]
+        layouts: Union[list[GsaGuidOnlyLayout], None, Unset_Type]
             The layouts of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         self._layouts = layouts
@@ -261,73 +261,73 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._unit_system = unit_system
 
     @property
-    def discrete_types(self) -> "Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type]":
+    def discrete_types(self) -> "Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type]":
         """Gets the discrete_types of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type]
+        Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type]
             The discrete_types of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._discrete_types
 
     @discrete_types.setter
     def discrete_types(
-        self, discrete_types: "Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type]"
+        self, discrete_types: "Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type]"
     ) -> None:
         """Sets the discrete_types of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        discrete_types: Union[List[GsaGuidOnlyDiscreteType], None, Unset_Type]
+        discrete_types: Union[list[GsaGuidOnlyDiscreteType], None, Unset_Type]
             The discrete_types of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         self._discrete_types = discrete_types
 
     @property
-    def sources(self) -> "Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]":
+    def sources(self) -> "Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]":
         """Gets the sources of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]
+        Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]
             The sources of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._sources
 
     @sources.setter
     def sources(
-        self, sources: "Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]"
+        self, sources: "Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]"
     ) -> None:
         """Sets the sources of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        sources: Union[List[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]
+        sources: Union[list[GsaGuidOnlySourceOfObjectIdentifier], None, Unset_Type]
             The sources of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         self._sources = sources
 
     @property
-    def access_control_category_values(self) -> "Union[Dict[str, List[str]], None, Unset_Type]":
+    def access_control_category_values(self) -> "Union[dict[str, list[str]], None, Unset_Type]":
         """Gets the access_control_category_values of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        Union[Dict[str, List[str]], None, Unset_Type]
+        Union[dict[str, list[str]], None, Unset_Type]
             The access_control_category_values of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._access_control_category_values
 
     @access_control_category_values.setter
     def access_control_category_values(
-        self, access_control_category_values: "Union[Dict[str, List[str]], None, Unset_Type]"
+        self, access_control_category_values: "Union[dict[str, list[str]], None, Unset_Type]"
     ) -> None:
         """Sets the access_control_category_values of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        access_control_category_values: Union[Dict[str, List[str]], None, Unset_Type]
+        access_control_category_values: Union[dict[str, list[str]], None, Unset_Type]
             The access_control_category_values of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         self._access_control_category_values = access_control_category_values
@@ -358,7 +358,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._security_groups = security_groups
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

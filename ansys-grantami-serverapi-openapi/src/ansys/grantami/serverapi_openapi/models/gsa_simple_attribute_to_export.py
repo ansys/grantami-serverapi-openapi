@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_to_export import (  # noqa: F401
     GsaAttributeToExport,
@@ -55,16 +55,16 @@ class GsaSimpleAttributeToExport(GsaAttributeToExport):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_type": "str",
         "guid": "str",
         "identity": "int",
@@ -72,7 +72,7 @@ class GsaSimpleAttributeToExport(GsaAttributeToExport):
         "summary_roll_up_type": "GsaTabularColumnRollUpType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_type": "attributeType",
         "guid": "guid",
         "identity": "identity",
@@ -80,7 +80,7 @@ class GsaSimpleAttributeToExport(GsaAttributeToExport):
         "summary_roll_up_type": "summaryRollUpType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "rollUpType": "GsaTabularColumnRollUpType",
         "summaryRollUpType": "GsaTabularColumnRollUpType",
     }
@@ -168,7 +168,7 @@ class GsaSimpleAttributeToExport(GsaAttributeToExport):
         self._summary_roll_up_type = summary_roll_up_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

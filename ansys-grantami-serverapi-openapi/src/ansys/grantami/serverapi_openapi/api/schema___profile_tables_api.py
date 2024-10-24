@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -94,18 +94,18 @@ class SchemaProfileTablesApi(ApiBase):
                 "Missing the required parameter 'profile_guid' when calling 'create_profile_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "profile_guid" in params and profile_guid is not None:
             path_params["profile-guid"] = params["profile_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -118,7 +118,7 @@ class SchemaProfileTablesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GsaProfileTable",
             400: None,
             403: None,
@@ -190,24 +190,24 @@ class SchemaProfileTablesApi(ApiBase):
                 "Missing the required parameter 'profile_table_guid' when calling 'delete_profile_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "profile_guid" in params and profile_guid is not None:
             path_params["profile-guid"] = params["profile_guid"]
         if "profile_table_guid" in params and profile_table_guid is not None:
             path_params["profile-table-guid"] = params["profile_table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -280,26 +280,26 @@ class SchemaProfileTablesApi(ApiBase):
                 "Missing the required parameter 'profile_table_guid' when calling 'get_profile_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "profile_guid" in params and profile_guid is not None:
             path_params["profile-guid"] = params["profile_guid"]
         if "profile_table_guid" in params and profile_table_guid is not None:
             path_params["profile-table-guid"] = params["profile_table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaProfileTable",
             403: None,
             404: None,
@@ -359,24 +359,24 @@ class SchemaProfileTablesApi(ApiBase):
                 "Missing the required parameter 'profile_guid' when calling 'get_profile_tables'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "profile_guid" in params and profile_guid is not None:
             path_params["profile-guid"] = params["profile_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaProfileTablesInfo",
             403: None,
             404: None,
@@ -459,20 +459,20 @@ class SchemaProfileTablesApi(ApiBase):
                 "Missing the required parameter 'profile_table_guid' when calling 'update_profile_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "profile_guid" in params and profile_guid is not None:
             path_params["profile-guid"] = params["profile_guid"]
         if "profile_table_guid" in params and profile_table_guid is not None:
             path_params["profile-table-guid"] = params["profile_table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -485,7 +485,7 @@ class SchemaProfileTablesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GsaProfileTable",
             400: None,
             403: None,

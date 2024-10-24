@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_parameter_constraint import (  # noqa: F401
     GsaParameterConstraint,
@@ -58,30 +58,30 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter": "GsaObjectIdentifier",
         "type": "GsaParameterConstraintType",
         "_none": "list[str]",
         "any": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter": "parameter",
         "type": "type",
         "_none": "none",
         "any": "any",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -90,8 +90,8 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
         *,
         parameter: "GsaObjectIdentifier",
         type: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETENAME,
-        _none: "Union[List[str], None, Unset_Type]" = Unset,
-        any: "Union[List[str], None, Unset_Type]" = Unset,
+        _none: "Union[list[str], None, Unset_Type]" = Unset,
+        any: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteParameterNameConstraint - a model defined in Swagger
 
@@ -99,12 +99,12 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
         ----------
         parameter: GsaObjectIdentifier
         type: GsaParameterConstraintType
-        _none: List[str], optional
-        any: List[str], optional
+        _none: list[str], optional
+        any: list[str], optional
         """
         super().__init__(parameter=parameter, type=type)
-        self._any: Union[List[str], None, Unset_Type] = Unset
-        self.__none: Union[List[str], None, Unset_Type] = Unset
+        self._any: Union[list[str], None, Unset_Type] = Unset
+        self.__none: Union[list[str], None, Unset_Type] = Unset
 
         if any is not Unset:
             self.any = any
@@ -112,51 +112,51 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
             self._none = _none
 
     @property
-    def any(self) -> "Union[List[str], None, Unset_Type]":
+    def any(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the any of this GsaDiscreteParameterNameConstraint.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The any of this GsaDiscreteParameterNameConstraint.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Union[List[str], None, Unset_Type]") -> None:
+    def any(self, any: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the any of this GsaDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        any: Union[List[str], None, Unset_Type]
+        any: Union[list[str], None, Unset_Type]
             The any of this GsaDiscreteParameterNameConstraint.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Union[List[str], None, Unset_Type]":
+    def _none(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the _none of this GsaDiscreteParameterNameConstraint.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The _none of this GsaDiscreteParameterNameConstraint.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Union[List[str], None, Unset_Type]") -> None:
+    def _none(self, _none: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the _none of this GsaDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        _none: Union[List[str], None, Unset_Type]
+        _none: Union[list[str], None, Unset_Type]
             The _none of this GsaDiscreteParameterNameConstraint.
         """
         self.__none = _none
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

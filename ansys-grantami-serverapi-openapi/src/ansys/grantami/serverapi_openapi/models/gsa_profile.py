@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaProfile(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "is_implicit": "bool",
         "key": "str",
         "name": "str",
@@ -71,7 +71,7 @@ class GsaProfile(ModelBase):
         "homepage_url": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "is_implicit": "isImplicit",
         "key": "key",
         "name": "name",
@@ -82,7 +82,7 @@ class GsaProfile(ModelBase):
         "homepage_url": "homepageUrl",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "profileTables": "GsaSlimProfileTable",
     }
 
@@ -94,7 +94,7 @@ class GsaProfile(ModelBase):
         is_implicit: "bool",
         key: "str",
         name: "str",
-        profile_tables: "List[GsaSlimProfileTable]",
+        profile_tables: "list[GsaSlimProfileTable]",
         description: "Union[str, None, Unset_Type]" = Unset,
         group_name: "Union[str, None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
@@ -107,7 +107,7 @@ class GsaProfile(ModelBase):
         is_implicit: bool
         key: str
         name: str
-        profile_tables: List[GsaSlimProfileTable]
+        profile_tables: list[GsaSlimProfileTable]
         description: str, optional
         group_name: str, optional
         guid: str, optional
@@ -115,7 +115,7 @@ class GsaProfile(ModelBase):
         """
         self._description: Union[str, None, Unset_Type] = Unset
         self._homepage_url: Union[str, None, Unset_Type] = Unset
-        self._profile_tables: List[GsaSlimProfileTable]
+        self._profile_tables: list[GsaSlimProfileTable]
         self._key: str
         self._guid: Union[str, None, Unset_Type] = Unset
         self._group_name: Union[str, None, Unset_Type] = Unset
@@ -180,23 +180,23 @@ class GsaProfile(ModelBase):
         self._homepage_url = homepage_url
 
     @property
-    def profile_tables(self) -> "List[GsaSlimProfileTable]":
+    def profile_tables(self) -> "list[GsaSlimProfileTable]":
         """Gets the profile_tables of this GsaProfile.
 
         Returns
         -------
-        List[GsaSlimProfileTable]
+        list[GsaSlimProfileTable]
             The profile_tables of this GsaProfile.
         """
         return self._profile_tables
 
     @profile_tables.setter
-    def profile_tables(self, profile_tables: "List[GsaSlimProfileTable]") -> None:
+    def profile_tables(self, profile_tables: "list[GsaSlimProfileTable]") -> None:
         """Sets the profile_tables of this GsaProfile.
 
         Parameters
         ----------
-        profile_tables: List[GsaSlimProfileTable]
+        profile_tables: list[GsaSlimProfileTable]
             The profile_tables of this GsaProfile.
         """
         # Field is not nullable
@@ -340,7 +340,7 @@ class GsaProfile(ModelBase):
         self._name = name
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

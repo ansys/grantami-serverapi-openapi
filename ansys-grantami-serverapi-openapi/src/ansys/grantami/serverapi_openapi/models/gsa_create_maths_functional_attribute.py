@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_create_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
@@ -84,7 +84,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "unit": "GsaSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
         "about_attribute": "aboutAttribute",
@@ -103,7 +103,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "attributeParameters": "GsaSlimEntity",
         "expressions": "GsaSlimEntity",
@@ -121,11 +121,11 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         allow_all_compatible_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_anonymous_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_extrapolation: "Union[bool, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_content: "Union[GsaCreateMathsContent, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
-        expressions: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
+        expressions: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
@@ -142,11 +142,11 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         allow_all_compatible_expressions: bool, optional
         allow_anonymous_expressions: bool, optional
         allow_extrapolation: bool, optional
-        attribute_parameters: List[GsaSlimEntity], optional
+        attribute_parameters: list[GsaSlimEntity], optional
         axis_name: str, optional
         default_content: GsaCreateMathsContent, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        expressions: List[GsaSlimEntity], optional
+        expressions: list[GsaSlimEntity], optional
         guid: str, optional
         help_path: str, optional
         is_hidden_from_search_criteria: bool, optional
@@ -163,8 +163,8 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
         )
         self._unit: Union[GsaSlimEntity, Unset_Type] = Unset
-        self._attribute_parameters: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
-        self._expressions: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
+        self._attribute_parameters: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
+        self._expressions: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
         self._allow_extrapolation: Union[bool, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
         self._is_range: Union[bool, Unset_Type] = Unset
@@ -217,47 +217,47 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         self._unit = unit
 
     @property
-    def attribute_parameters(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def attribute_parameters(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GsaCreateMathsFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The attribute_parameters of this GsaCreateMathsFunctionalAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "Union[List[GsaSlimEntity], None, Unset_Type]"
+        self, attribute_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]"
     ) -> None:
         """Sets the attribute_parameters of this GsaCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GsaSlimEntity], None, Unset_Type]
+        attribute_parameters: Union[list[GsaSlimEntity], None, Unset_Type]
             The attribute_parameters of this GsaCreateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def expressions(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the expressions of this GsaCreateMathsFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The expressions of this GsaCreateMathsFunctionalAttribute.
         """
         return self._expressions
 
     @expressions.setter
-    def expressions(self, expressions: "Union[List[GsaSlimEntity], None, Unset_Type]") -> None:
+    def expressions(self, expressions: "Union[list[GsaSlimEntity], None, Unset_Type]") -> None:
         """Sets the expressions of this GsaCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: Union[List[GsaSlimEntity], None, Unset_Type]
+        expressions: Union[list[GsaSlimEntity], None, Unset_Type]
             The expressions of this GsaCreateMathsFunctionalAttribute.
         """
         self._expressions = expressions
@@ -416,7 +416,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

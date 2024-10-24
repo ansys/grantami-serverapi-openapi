@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_update_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "attribute_parameters": "list[GsaUpdateDiscreteFunctionalAttributeParameter]",
@@ -77,7 +77,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         "name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
@@ -89,7 +89,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         "name": "name",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributeParameters": "GsaUpdateDiscreteFunctionalAttributeParameter",
     }
 
@@ -100,7 +100,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         *,
         type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -114,7 +114,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        attribute_parameters: List[GsaUpdateDiscreteFunctionalAttributeParameter], optional
+        attribute_parameters: list[GsaUpdateDiscreteFunctionalAttributeParameter], optional
         axis_name: str, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -133,7 +133,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
             name=name,
         )
         self._attribute_parameters: Union[
-            List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type
+            list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type
         ] = Unset
 
         if attribute_parameters is not Unset:
@@ -142,12 +142,12 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
     @property
     def attribute_parameters(
         self,
-    ) -> "Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]":
+    ) -> "Union[list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]":
         """Gets the attribute_parameters of this GsaUpdateDiscreteFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]
+        Union[list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GsaUpdateDiscreteFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -155,13 +155,13 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]",
+        attribute_parameters: "Union[list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GsaUpdateDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]
+        attribute_parameters: Union[list[GsaUpdateDiscreteFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GsaUpdateDiscreteFunctionalAttribute.
         """
         # Field is not nullable
@@ -170,7 +170,7 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

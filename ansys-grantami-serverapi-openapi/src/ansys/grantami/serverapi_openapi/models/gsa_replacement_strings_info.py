@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaReplacementStringsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "replacement_strings": "list[GsaSlimReplacementString]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "replacement_strings": "replacementStrings",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "replacementStrings": "GsaSlimReplacementString",
     }
 
@@ -77,36 +77,36 @@ class GsaReplacementStringsInfo(ModelBase):
     def __init__(
         self,
         *,
-        replacement_strings: "List[GsaSlimReplacementString]",
+        replacement_strings: "list[GsaSlimReplacementString]",
     ) -> None:
         """GsaReplacementStringsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        replacement_strings: List[GsaSlimReplacementString]
+        replacement_strings: list[GsaSlimReplacementString]
         """
-        self._replacement_strings: List[GsaSlimReplacementString]
+        self._replacement_strings: list[GsaSlimReplacementString]
 
         self.replacement_strings = replacement_strings
 
     @property
-    def replacement_strings(self) -> "List[GsaSlimReplacementString]":
+    def replacement_strings(self) -> "list[GsaSlimReplacementString]":
         """Gets the replacement_strings of this GsaReplacementStringsInfo.
 
         Returns
         -------
-        List[GsaSlimReplacementString]
+        list[GsaSlimReplacementString]
             The replacement_strings of this GsaReplacementStringsInfo.
         """
         return self._replacement_strings
 
     @replacement_strings.setter
-    def replacement_strings(self, replacement_strings: "List[GsaSlimReplacementString]") -> None:
+    def replacement_strings(self, replacement_strings: "list[GsaSlimReplacementString]") -> None:
         """Sets the replacement_strings of this GsaReplacementStringsInfo.
 
         Parameters
         ----------
-        replacement_strings: List[GsaSlimReplacementString]
+        replacement_strings: list[GsaSlimReplacementString]
             The replacement_strings of this GsaReplacementStringsInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaReplacementStringsInfo(ModelBase):
         self._replacement_strings = replacement_strings
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

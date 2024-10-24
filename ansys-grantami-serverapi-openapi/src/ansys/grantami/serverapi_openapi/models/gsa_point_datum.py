@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
@@ -56,30 +56,30 @@ class GsaPointDatum(GsaApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaDatumType",
         "estimated": "bool",
         "not_applicable": "str",
         "values": "list[GsaPointDataValue]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "estimated": "estimated",
         "not_applicable": "notApplicable",
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GsaPointDataValue",
     }
 
@@ -91,7 +91,7 @@ class GsaPointDatum(GsaApplicableDatum):
         datum_type: "GsaDatumType" = GsaDatumType.POINT,
         estimated: "bool",
         not_applicable: "str" = "applicable",
-        values: "List[GsaPointDataValue]",
+        values: "list[GsaPointDataValue]",
     ) -> None:
         """GsaPointDatum - a model defined in Swagger
 
@@ -100,11 +100,11 @@ class GsaPointDatum(GsaApplicableDatum):
         datum_type: GsaDatumType
         estimated: bool
         not_applicable: str
-        values: List[GsaPointDataValue]
+        values: list[GsaPointDataValue]
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
         self._estimated: bool
-        self._values: List[GsaPointDataValue]
+        self._values: list[GsaPointDataValue]
 
         self.estimated = estimated
         self.values = values
@@ -138,23 +138,23 @@ class GsaPointDatum(GsaApplicableDatum):
         self._estimated = estimated
 
     @property
-    def values(self) -> "List[GsaPointDataValue]":
+    def values(self) -> "list[GsaPointDataValue]":
         """Gets the values of this GsaPointDatum.
 
         Returns
         -------
-        List[GsaPointDataValue]
+        list[GsaPointDataValue]
             The values of this GsaPointDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaPointDataValue]") -> None:
+    def values(self, values: "list[GsaPointDataValue]") -> None:
         """Sets the values of this GsaPointDatum.
 
         Parameters
         ----------
-        values: List[GsaPointDataValue]
+        values: list[GsaPointDataValue]
             The values of this GsaPointDatum.
         """
         # Field is not nullable
@@ -166,7 +166,7 @@ class GsaPointDatum(GsaApplicableDatum):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

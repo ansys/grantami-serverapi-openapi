@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_applicable_datum import (  # noqa: F401
@@ -56,18 +56,18 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
@@ -78,7 +78,7 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         "x_axis_parameter": "GsaFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
@@ -89,7 +89,7 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "xAxisParameter": "GsaFunctionalDatumParameterInfo",
         "parameters": "GsaFunctionalDatumParameterInfo",
     }
@@ -109,8 +109,8 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GsaFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDiscreteFunctionalDatum - a model defined in Swagger
@@ -122,8 +122,8 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         not_applicable: str
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GsaDataExportDatum], optional
-        parameters: List[GsaFunctionalDatumParameterInfo], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        parameters: list[GsaFunctionalDatumParameterInfo], optional
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
         """
         super().__init__(
@@ -135,7 +135,7 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         )
         self._graph_type: str
         self._x_axis_parameter: Union[GsaFunctionalDatumParameterInfo, Unset_Type] = Unset
-        self._parameters: Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type] = Unset
+        self._parameters: Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type] = Unset
 
         self.graph_type = graph_type
         if x_axis_parameter is not Unset:
@@ -196,31 +196,31 @@ class GsaDataExportDiscreteFunctionalDatum(GsaDataExportApplicableDatum):
         self._x_axis_parameter = x_axis_parameter
 
     @property
-    def parameters(self) -> "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]":
+    def parameters(self) -> "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GsaDataExportDiscreteFunctionalDatum.
 
         Returns
         -------
-        Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]
+        Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GsaDataExportDiscreteFunctionalDatum.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]"
+        self, parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]"
     ) -> None:
         """Sets the parameters of this GsaDataExportDiscreteFunctionalDatum.
 
         Parameters
         ----------
-        parameters: Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]
+        parameters: Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GsaDataExportDiscreteFunctionalDatum.
         """
         self._parameters = parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

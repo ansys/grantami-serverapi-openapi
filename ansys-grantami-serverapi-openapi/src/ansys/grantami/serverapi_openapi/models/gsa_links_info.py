@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaLinksInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "links": "list[GsaResolvedLink]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "links": "links",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "links": "GsaResolvedLink",
     }
 
@@ -77,36 +77,36 @@ class GsaLinksInfo(ModelBase):
     def __init__(
         self,
         *,
-        links: "List[GsaResolvedLink]",
+        links: "list[GsaResolvedLink]",
     ) -> None:
         """GsaLinksInfo - a model defined in Swagger
 
         Parameters
         ----------
-        links: List[GsaResolvedLink]
+        links: list[GsaResolvedLink]
         """
-        self._links: List[GsaResolvedLink]
+        self._links: list[GsaResolvedLink]
 
         self.links = links
 
     @property
-    def links(self) -> "List[GsaResolvedLink]":
+    def links(self) -> "list[GsaResolvedLink]":
         """Gets the links of this GsaLinksInfo.
 
         Returns
         -------
-        List[GsaResolvedLink]
+        list[GsaResolvedLink]
             The links of this GsaLinksInfo.
         """
         return self._links
 
     @links.setter
-    def links(self, links: "List[GsaResolvedLink]") -> None:
+    def links(self, links: "list[GsaResolvedLink]") -> None:
         """Sets the links of this GsaLinksInfo.
 
         Parameters
         ----------
-        links: List[GsaResolvedLink]
+        links: list[GsaResolvedLink]
             The links of this GsaLinksInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaLinksInfo(ModelBase):
         self._links = links
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

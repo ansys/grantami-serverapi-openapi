@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_create_parameter import (  # noqa: F401
     GsaCreateParameter,
@@ -56,16 +56,16 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_index": "int",
         "name": "str",
         "type": "GsaParameterType",
@@ -74,7 +74,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         "help_path": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "name": "name",
         "type": "type",
@@ -83,7 +83,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         "help_path": "helpPath",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GsaCreateDiscreteParameterValue",
     }
 
@@ -95,7 +95,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         default_parameter_value_index: "int",
         name: "str",
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
-        values: "List[GsaCreateDiscreteParameterValue]",
+        values: "list[GsaCreateDiscreteParameterValue]",
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -106,7 +106,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         default_parameter_value_index: int
         name: str
         type: GsaParameterType
-        values: List[GsaCreateDiscreteParameterValue]
+        values: list[GsaCreateDiscreteParameterValue]
         guid: str, optional
         help_path: str, optional
         """
@@ -117,28 +117,28 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
             guid=guid,
             help_path=help_path,
         )
-        self._values: List[GsaCreateDiscreteParameterValue]
+        self._values: list[GsaCreateDiscreteParameterValue]
 
         self.values = values
 
     @property
-    def values(self) -> "List[GsaCreateDiscreteParameterValue]":
+    def values(self) -> "list[GsaCreateDiscreteParameterValue]":
         """Gets the values of this GsaCreateDiscreteParameter.
 
         Returns
         -------
-        List[GsaCreateDiscreteParameterValue]
+        list[GsaCreateDiscreteParameterValue]
             The values of this GsaCreateDiscreteParameter.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaCreateDiscreteParameterValue]") -> None:
+    def values(self, values: "list[GsaCreateDiscreteParameterValue]") -> None:
         """Sets the values of this GsaCreateDiscreteParameter.
 
         Parameters
         ----------
-        values: List[GsaCreateDiscreteParameterValue]
+        values: list[GsaCreateDiscreteParameterValue]
             The values of this GsaCreateDiscreteParameter.
         """
         # Field is not nullable
@@ -150,7 +150,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

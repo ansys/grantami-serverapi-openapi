@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_rollup_datum import (  # noqa: F401
     GsaDataExportRollupDatum,
@@ -55,16 +55,16 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -74,7 +74,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         "values": "list[object]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -84,7 +84,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -97,7 +97,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         database_key: "Union[str, None, Unset_Type]" = Unset,
         roll_up_type: "Union[GsaTabularColumnRollUpType, Unset_Type]" = Unset,
         unit: "Union[str, None, Unset_Type]" = Unset,
-        values: "Union[List[object], None, Unset_Type]" = Unset,
+        values: "Union[list[object], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportValuesRollupDatum - a model defined in Swagger
 
@@ -109,7 +109,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         database_key: str, optional
         roll_up_type: GsaTabularColumnRollUpType, optional
         unit: str, optional
-        values: List[object], optional
+        values: list[object], optional
         """
         super().__init__(
             type=type,
@@ -118,7 +118,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
             database_key=database_key,
             roll_up_type=roll_up_type,
         )
-        self._values: Union[List[object], None, Unset_Type] = Unset
+        self._values: Union[list[object], None, Unset_Type] = Unset
         self._unit: Union[str, None, Unset_Type] = Unset
 
         if values is not Unset:
@@ -127,23 +127,23 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
             self.unit = unit
 
     @property
-    def values(self) -> "Union[List[object], None, Unset_Type]":
+    def values(self) -> "Union[list[object], None, Unset_Type]":
         """Gets the values of this GsaDataExportValuesRollupDatum.
 
         Returns
         -------
-        Union[List[object], None, Unset_Type]
+        Union[list[object], None, Unset_Type]
             The values of this GsaDataExportValuesRollupDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Union[List[object], None, Unset_Type]") -> None:
+    def values(self, values: "Union[list[object], None, Unset_Type]") -> None:
         """Sets the values of this GsaDataExportValuesRollupDatum.
 
         Parameters
         ----------
-        values: Union[List[object], None, Unset_Type]
+        values: Union[list[object], None, Unset_Type]
             The values of this GsaDataExportValuesRollupDatum.
         """
         self._values = values
@@ -171,7 +171,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         self._unit = unit
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

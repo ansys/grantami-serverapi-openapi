@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
@@ -54,28 +54,28 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaCriterionType",
         "ancestor_history_identities": "list[int]",
         "database_key": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "ancestor_history_identities": "ancestorHistoryIdentities",
         "database_key": "databaseKey",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -83,7 +83,7 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
         self,
         *,
         type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORIDENTITIES,
-        ancestor_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
+        ancestor_history_identities: "Union[list[int], None, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordAncestorHistoryIdentitiesCriterion - a model defined in Swagger
@@ -91,11 +91,11 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
         Parameters
         ----------
         type: GsaCriterionType
-        ancestor_history_identities: List[int], optional
+        ancestor_history_identities: list[int], optional
         database_key: str, optional
         """
         super().__init__(type=type)
-        self._ancestor_history_identities: Union[List[int], None, Unset_Type] = Unset
+        self._ancestor_history_identities: Union[list[int], None, Unset_Type] = Unset
         self._database_key: Union[str, None, Unset_Type] = Unset
 
         if ancestor_history_identities is not Unset:
@@ -104,25 +104,25 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
             self.database_key = database_key
 
     @property
-    def ancestor_history_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def ancestor_history_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the ancestor_history_identities of this GsaRecordAncestorHistoryIdentitiesCriterion.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The ancestor_history_identities of this GsaRecordAncestorHistoryIdentitiesCriterion.
         """
         return self._ancestor_history_identities
 
     @ancestor_history_identities.setter
     def ancestor_history_identities(
-        self, ancestor_history_identities: "Union[List[int], None, Unset_Type]"
+        self, ancestor_history_identities: "Union[list[int], None, Unset_Type]"
     ) -> None:
         """Sets the ancestor_history_identities of this GsaRecordAncestorHistoryIdentitiesCriterion.
 
         Parameters
         ----------
-        ancestor_history_identities: Union[List[int], None, Unset_Type]
+        ancestor_history_identities: Union[list[int], None, Unset_Type]
             The ancestor_history_identities of this GsaRecordAncestorHistoryIdentitiesCriterion.
         """
         self._ancestor_history_identities = ancestor_history_identities
@@ -150,7 +150,7 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
         self._database_key = database_key
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

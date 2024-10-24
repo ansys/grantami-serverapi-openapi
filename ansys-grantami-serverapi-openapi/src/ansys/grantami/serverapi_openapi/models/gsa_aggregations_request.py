@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaAggregationsRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "aggregation_criteria": "list[GsaAggregationCriterion]",
         "criterion": "GsaCriterion",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "aggregation_criteria": "aggregationCriteria",
         "criterion": "criterion",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "criterion": "GsaCriterion",
         "aggregationCriteria": "GsaAggregationCriterion",
     }
@@ -80,18 +80,18 @@ class GsaAggregationsRequest(ModelBase):
     def __init__(
         self,
         *,
-        aggregation_criteria: "Union[List[GsaAggregationCriterion], None, Unset_Type]" = Unset,
+        aggregation_criteria: "Union[list[GsaAggregationCriterion], None, Unset_Type]" = Unset,
         criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
     ) -> None:
         """GsaAggregationsRequest - a model defined in Swagger
 
         Parameters
         ----------
-        aggregation_criteria: List[GsaAggregationCriterion], optional
+        aggregation_criteria: list[GsaAggregationCriterion], optional
         criterion: GsaCriterion, optional
         """
         self._criterion: Union[GsaCriterion, Unset_Type] = Unset
-        self._aggregation_criteria: Union[List[GsaAggregationCriterion], None, Unset_Type] = Unset
+        self._aggregation_criteria: Union[list[GsaAggregationCriterion], None, Unset_Type] = Unset
 
         if criterion is not Unset:
             self.criterion = criterion
@@ -124,33 +124,33 @@ class GsaAggregationsRequest(ModelBase):
         self._criterion = criterion
 
     @property
-    def aggregation_criteria(self) -> "Union[List[GsaAggregationCriterion], None, Unset_Type]":
+    def aggregation_criteria(self) -> "Union[list[GsaAggregationCriterion], None, Unset_Type]":
         """Gets the aggregation_criteria of this GsaAggregationsRequest.
         The aggregations you wish to perform.
 
         Returns
         -------
-        Union[List[GsaAggregationCriterion], None, Unset_Type]
+        Union[list[GsaAggregationCriterion], None, Unset_Type]
             The aggregation_criteria of this GsaAggregationsRequest.
         """
         return self._aggregation_criteria
 
     @aggregation_criteria.setter
     def aggregation_criteria(
-        self, aggregation_criteria: "Union[List[GsaAggregationCriterion], None, Unset_Type]"
+        self, aggregation_criteria: "Union[list[GsaAggregationCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the aggregation_criteria of this GsaAggregationsRequest.
         The aggregations you wish to perform.
 
         Parameters
         ----------
-        aggregation_criteria: Union[List[GsaAggregationCriterion], None, Unset_Type]
+        aggregation_criteria: Union[list[GsaAggregationCriterion], None, Unset_Type]
             The aggregation_criteria of this GsaAggregationsRequest.
         """
         self._aggregation_criteria = aggregation_criteria
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

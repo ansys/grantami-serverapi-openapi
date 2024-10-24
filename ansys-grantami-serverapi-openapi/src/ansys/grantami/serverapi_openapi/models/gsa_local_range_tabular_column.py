@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_tabular_column import (  # noqa: F401
     GsaTabularColumn,
@@ -58,16 +58,16 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "column_type": "GsaTabularColumnDtoType",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -81,7 +81,7 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "column_type": "columnType",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -95,7 +95,7 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "defaultThresholdType": "GsaAttributeThresholdType",
         "unit": "GsaSlimUnit",
     }
@@ -107,7 +107,7 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
         *,
         column_type: "GsaTabularColumnDtoType" = GsaTabularColumnDtoType.LOCALRANGE,
         default_threshold_type: "GsaAttributeThresholdType",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
         roll_up_type: "GsaTabularColumnRollUpType",
@@ -123,7 +123,7 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
         ----------
         column_type: GsaTabularColumnDtoType
         default_threshold_type: GsaAttributeThresholdType
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
         roll_up_type: GsaTabularColumnRollUpType
@@ -205,7 +205,7 @@ class GsaLocalRangeTabularColumn(GsaTabularColumn):
         self._unit = unit
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

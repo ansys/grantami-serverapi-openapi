@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
@@ -54,28 +54,28 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaCriterionType",
         "values": "list[str]",
         "linking_value_match_behavior": "GsaLinkingValueMatchBehavior",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "values": "values",
         "linking_value_match_behavior": "linkingValueMatchBehavior",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "linkingValueMatchBehavior": "GsaLinkingValueMatchBehavior",
     }
 
@@ -85,7 +85,7 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
         self,
         *,
         type: "GsaCriterionType" = GsaCriterionType.TABULARLINKINGVALUE,
-        values: "List[str]",
+        values: "list[str]",
         linking_value_match_behavior: "Union[GsaLinkingValueMatchBehavior, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularLinkingValueCriterion - a model defined in Swagger
@@ -93,11 +93,11 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
         Parameters
         ----------
         type: GsaCriterionType
-        values: List[str]
+        values: list[str]
         linking_value_match_behavior: GsaLinkingValueMatchBehavior, optional
         """
         super().__init__(type=type)
-        self._values: List[str]
+        self._values: list[str]
         self._linking_value_match_behavior: Union[GsaLinkingValueMatchBehavior, Unset_Type] = Unset
 
         self.values = values
@@ -105,23 +105,23 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
             self.linking_value_match_behavior = linking_value_match_behavior
 
     @property
-    def values(self) -> "List[str]":
+    def values(self) -> "list[str]":
         """Gets the values of this GsaTabularLinkingValueCriterion.
 
         Returns
         -------
-        List[str]
+        list[str]
             The values of this GsaTabularLinkingValueCriterion.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[str]") -> None:
+    def values(self, values: "list[str]") -> None:
         """Sets the values of this GsaTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        values: List[str]
+        values: list[str]
             The values of this GsaTabularLinkingValueCriterion.
         """
         # Field is not nullable
@@ -160,7 +160,7 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
         self._linking_value_match_behavior = linking_value_match_behavior
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
@@ -56,30 +56,30 @@ class GsaTabularDatum(GsaApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaDatumType",
         "not_applicable": "str",
         "rows": "list[GsaTabularDatumRow]",
         "summary_row": "GsaTabularDatumSummaryRow",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
         "rows": "rows",
         "summary_row": "summaryRow",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "rows": "GsaTabularDatumRow",
         "summaryRow": "GsaTabularDatumSummaryRow",
     }
@@ -91,7 +91,7 @@ class GsaTabularDatum(GsaApplicableDatum):
         *,
         datum_type: "GsaDatumType" = GsaDatumType.TABULAR,
         not_applicable: "str" = "applicable",
-        rows: "List[GsaTabularDatumRow]",
+        rows: "list[GsaTabularDatumRow]",
         summary_row: "Union[GsaTabularDatumSummaryRow, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularDatum - a model defined in Swagger
@@ -100,11 +100,11 @@ class GsaTabularDatum(GsaApplicableDatum):
         ----------
         datum_type: GsaDatumType
         not_applicable: str
-        rows: List[GsaTabularDatumRow]
+        rows: list[GsaTabularDatumRow]
         summary_row: GsaTabularDatumSummaryRow, optional
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
-        self._rows: List[GsaTabularDatumRow]
+        self._rows: list[GsaTabularDatumRow]
         self._summary_row: Union[GsaTabularDatumSummaryRow, Unset_Type] = Unset
 
         self.rows = rows
@@ -112,23 +112,23 @@ class GsaTabularDatum(GsaApplicableDatum):
             self.summary_row = summary_row
 
     @property
-    def rows(self) -> "List[GsaTabularDatumRow]":
+    def rows(self) -> "list[GsaTabularDatumRow]":
         """Gets the rows of this GsaTabularDatum.
 
         Returns
         -------
-        List[GsaTabularDatumRow]
+        list[GsaTabularDatumRow]
             The rows of this GsaTabularDatum.
         """
         return self._rows
 
     @rows.setter
-    def rows(self, rows: "List[GsaTabularDatumRow]") -> None:
+    def rows(self, rows: "list[GsaTabularDatumRow]") -> None:
         """Sets the rows of this GsaTabularDatum.
 
         Parameters
         ----------
-        rows: List[GsaTabularDatumRow]
+        rows: list[GsaTabularDatumRow]
             The rows of this GsaTabularDatum.
         """
         # Field is not nullable
@@ -165,7 +165,7 @@ class GsaTabularDatum(GsaApplicableDatum):
         self._summary_row = summary_row
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

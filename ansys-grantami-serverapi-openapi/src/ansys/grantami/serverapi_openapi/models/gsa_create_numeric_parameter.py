@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_create_parameter import (  # noqa: F401
     GsaCreateParameter,
@@ -56,16 +56,16 @@ class GsaCreateNumericParameter(GsaCreateParameter):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_index": "int",
         "interpolation_type": "GsaParameterInterpolationType",
         "is_restricted": "bool",
@@ -78,7 +78,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "unit": "GsaSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "interpolation_type": "interpolationType",
         "is_restricted": "isRestricted",
@@ -91,7 +91,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "values": "GsaCreateNumericParameterValue",
         "interpolationType": "GsaParameterInterpolationType",
@@ -109,7 +109,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         name: "str",
         scale_type: "GsaParameterScaleType",
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
-        values: "List[GsaCreateNumericParameterValue]",
+        values: "list[GsaCreateNumericParameterValue]",
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         unit: "Union[GsaSlimEntity, Unset_Type]" = Unset,
@@ -124,7 +124,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         name: str
         scale_type: GsaParameterScaleType
         type: GsaParameterType
-        values: List[GsaCreateNumericParameterValue]
+        values: list[GsaCreateNumericParameterValue]
         guid: str, optional
         help_path: str, optional
         unit: GsaSlimEntity, optional
@@ -138,7 +138,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         )
         self._is_restricted: bool
         self._unit: Union[GsaSlimEntity, Unset_Type] = Unset
-        self._values: List[GsaCreateNumericParameterValue]
+        self._values: list[GsaCreateNumericParameterValue]
         self._interpolation_type: GsaParameterInterpolationType
         self._scale_type: GsaParameterScaleType
 
@@ -203,23 +203,23 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         self._unit = unit
 
     @property
-    def values(self) -> "List[GsaCreateNumericParameterValue]":
+    def values(self) -> "list[GsaCreateNumericParameterValue]":
         """Gets the values of this GsaCreateNumericParameter.
 
         Returns
         -------
-        List[GsaCreateNumericParameterValue]
+        list[GsaCreateNumericParameterValue]
             The values of this GsaCreateNumericParameter.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaCreateNumericParameterValue]") -> None:
+    def values(self, values: "list[GsaCreateNumericParameterValue]") -> None:
         """Sets the values of this GsaCreateNumericParameter.
 
         Parameters
         ----------
-        values: List[GsaCreateNumericParameterValue]
+        values: list[GsaCreateNumericParameterValue]
             The values of this GsaCreateNumericParameter.
         """
         # Field is not nullable
@@ -287,7 +287,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         self._scale_type = scale_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

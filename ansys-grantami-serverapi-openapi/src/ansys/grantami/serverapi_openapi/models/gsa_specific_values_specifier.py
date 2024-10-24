@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_value_specifier import (  # noqa: F401
     GsaValueSpecifier,
@@ -56,28 +56,28 @@ class GsaSpecificValuesSpecifier(GsaValueSpecifier):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "filter_on": "GsaValueSpecifierType",
         "guids": "list[str]",
         "identities": "list[int]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "filter_on": "filterOn",
         "guids": "guids",
         "identities": "identities",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -85,20 +85,20 @@ class GsaSpecificValuesSpecifier(GsaValueSpecifier):
         self,
         *,
         filter_on: "GsaValueSpecifierType" = GsaValueSpecifierType.SPECIFIC,
-        guids: "Union[List[str], None, Unset_Type]" = Unset,
-        identities: "Union[List[int], None, Unset_Type]" = Unset,
+        guids: "Union[list[str], None, Unset_Type]" = Unset,
+        identities: "Union[list[int], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaSpecificValuesSpecifier - a model defined in Swagger
 
         Parameters
         ----------
         filter_on: GsaValueSpecifierType
-        guids: List[str], optional
-        identities: List[int], optional
+        guids: list[str], optional
+        identities: list[int], optional
         """
         super().__init__(filter_on=filter_on)
-        self._identities: Union[List[int], None, Unset_Type] = Unset
-        self._guids: Union[List[str], None, Unset_Type] = Unset
+        self._identities: Union[list[int], None, Unset_Type] = Unset
+        self._guids: Union[list[str], None, Unset_Type] = Unset
 
         if identities is not Unset:
             self.identities = identities
@@ -106,51 +106,51 @@ class GsaSpecificValuesSpecifier(GsaValueSpecifier):
             self.guids = guids
 
     @property
-    def identities(self) -> "Union[List[int], None, Unset_Type]":
+    def identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the identities of this GsaSpecificValuesSpecifier.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The identities of this GsaSpecificValuesSpecifier.
         """
         return self._identities
 
     @identities.setter
-    def identities(self, identities: "Union[List[int], None, Unset_Type]") -> None:
+    def identities(self, identities: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the identities of this GsaSpecificValuesSpecifier.
 
         Parameters
         ----------
-        identities: Union[List[int], None, Unset_Type]
+        identities: Union[list[int], None, Unset_Type]
             The identities of this GsaSpecificValuesSpecifier.
         """
         self._identities = identities
 
     @property
-    def guids(self) -> "Union[List[str], None, Unset_Type]":
+    def guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the guids of this GsaSpecificValuesSpecifier.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The guids of this GsaSpecificValuesSpecifier.
         """
         return self._guids
 
     @guids.setter
-    def guids(self, guids: "Union[List[str], None, Unset_Type]") -> None:
+    def guids(self, guids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the guids of this GsaSpecificValuesSpecifier.
 
         Parameters
         ----------
-        guids: Union[List[str], None, Unset_Type]
+        guids: Union[list[str], None, Unset_Type]
             The guids of this GsaSpecificValuesSpecifier.
         """
         self._guids = guids
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

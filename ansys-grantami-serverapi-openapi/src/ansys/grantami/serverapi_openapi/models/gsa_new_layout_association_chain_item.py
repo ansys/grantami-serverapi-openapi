@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_new_layout_item import (  # noqa: F401
     GsaNewLayoutItem,
@@ -56,30 +56,30 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "association_chain_links": "list[GsaNewLayoutAssociationChainLink]",
         "association_chain_name": "str",
         "item_type": "GsaNewLayoutItemType",
         "guid": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "association_chain_links": "associationChainLinks",
         "association_chain_name": "associationChainName",
         "item_type": "itemType",
         "guid": "guid",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "associationChainLinks": "GsaNewLayoutAssociationChainLink",
     }
 
@@ -88,7 +88,7 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
     def __init__(
         self,
         *,
-        association_chain_links: "List[GsaNewLayoutAssociationChainLink]",
+        association_chain_links: "list[GsaNewLayoutAssociationChainLink]",
         association_chain_name: "str",
         item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.ASSOCIATIONCHAIN,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -97,14 +97,14 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
 
         Parameters
         ----------
-        association_chain_links: List[GsaNewLayoutAssociationChainLink]
+        association_chain_links: list[GsaNewLayoutAssociationChainLink]
         association_chain_name: str
         item_type: GsaNewLayoutItemType
         guid: str, optional
         """
         super().__init__(item_type=item_type, guid=guid)
         self._association_chain_name: str
-        self._association_chain_links: List[GsaNewLayoutAssociationChainLink]
+        self._association_chain_links: list[GsaNewLayoutAssociationChainLink]
 
         self.association_chain_name = association_chain_name
         self.association_chain_links = association_chain_links
@@ -138,25 +138,25 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
         self._association_chain_name = association_chain_name
 
     @property
-    def association_chain_links(self) -> "List[GsaNewLayoutAssociationChainLink]":
+    def association_chain_links(self) -> "list[GsaNewLayoutAssociationChainLink]":
         """Gets the association_chain_links of this GsaNewLayoutAssociationChainItem.
 
         Returns
         -------
-        List[GsaNewLayoutAssociationChainLink]
+        list[GsaNewLayoutAssociationChainLink]
             The association_chain_links of this GsaNewLayoutAssociationChainItem.
         """
         return self._association_chain_links
 
     @association_chain_links.setter
     def association_chain_links(
-        self, association_chain_links: "List[GsaNewLayoutAssociationChainLink]"
+        self, association_chain_links: "list[GsaNewLayoutAssociationChainLink]"
     ) -> None:
         """Sets the association_chain_links of this GsaNewLayoutAssociationChainItem.
 
         Parameters
         ----------
-        association_chain_links: List[GsaNewLayoutAssociationChainLink]
+        association_chain_links: list[GsaNewLayoutAssociationChainLink]
             The association_chain_links of this GsaNewLayoutAssociationChainItem.
         """
         # Field is not nullable
@@ -168,7 +168,7 @@ class GsaNewLayoutAssociationChainItem(GsaNewLayoutItem):
         self._association_chain_links = association_chain_links
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

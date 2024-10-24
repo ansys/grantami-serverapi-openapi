@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaUnitUsage(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GsaSlimNamedEntity]",
         "constants": "list[GsaSlimNamedEntity]",
         "expressions": "list[GsaSlimNamedEntity]",
@@ -68,7 +68,7 @@ class GsaUnitUsage(ModelBase):
         "units": "list[GsaSlimUnit]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
         "constants": "constants",
         "expressions": "expressions",
@@ -76,7 +76,7 @@ class GsaUnitUsage(ModelBase):
         "units": "units",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaSlimNamedEntity",
         "parameters": "GsaSlimNamedEntity",
         "constants": "GsaSlimNamedEntity",
@@ -89,27 +89,27 @@ class GsaUnitUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "List[GsaSlimNamedEntity]",
-        constants: "List[GsaSlimNamedEntity]",
-        expressions: "List[GsaSlimNamedEntity]",
-        parameters: "List[GsaSlimNamedEntity]",
-        units: "List[GsaSlimUnit]",
+        attributes: "list[GsaSlimNamedEntity]",
+        constants: "list[GsaSlimNamedEntity]",
+        expressions: "list[GsaSlimNamedEntity]",
+        parameters: "list[GsaSlimNamedEntity]",
+        units: "list[GsaSlimUnit]",
     ) -> None:
         """GsaUnitUsage - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GsaSlimNamedEntity]
-        constants: List[GsaSlimNamedEntity]
-        expressions: List[GsaSlimNamedEntity]
-        parameters: List[GsaSlimNamedEntity]
-        units: List[GsaSlimUnit]
+        attributes: list[GsaSlimNamedEntity]
+        constants: list[GsaSlimNamedEntity]
+        expressions: list[GsaSlimNamedEntity]
+        parameters: list[GsaSlimNamedEntity]
+        units: list[GsaSlimUnit]
         """
-        self._attributes: List[GsaSlimNamedEntity]
-        self._parameters: List[GsaSlimNamedEntity]
-        self._constants: List[GsaSlimNamedEntity]
-        self._expressions: List[GsaSlimNamedEntity]
-        self._units: List[GsaSlimUnit]
+        self._attributes: list[GsaSlimNamedEntity]
+        self._parameters: list[GsaSlimNamedEntity]
+        self._constants: list[GsaSlimNamedEntity]
+        self._expressions: list[GsaSlimNamedEntity]
+        self._units: list[GsaSlimUnit]
 
         self.attributes = attributes
         self.parameters = parameters
@@ -118,23 +118,23 @@ class GsaUnitUsage(ModelBase):
         self.units = units
 
     @property
-    def attributes(self) -> "List[GsaSlimNamedEntity]":
+    def attributes(self) -> "list[GsaSlimNamedEntity]":
         """Gets the attributes of this GsaUnitUsage.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The attributes of this GsaUnitUsage.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "List[GsaSlimNamedEntity]") -> None:
+    def attributes(self, attributes: "list[GsaSlimNamedEntity]") -> None:
         """Sets the attributes of this GsaUnitUsage.
 
         Parameters
         ----------
-        attributes: List[GsaSlimNamedEntity]
+        attributes: list[GsaSlimNamedEntity]
             The attributes of this GsaUnitUsage.
         """
         # Field is not nullable
@@ -146,23 +146,23 @@ class GsaUnitUsage(ModelBase):
         self._attributes = attributes
 
     @property
-    def parameters(self) -> "List[GsaSlimNamedEntity]":
+    def parameters(self) -> "list[GsaSlimNamedEntity]":
         """Gets the parameters of this GsaUnitUsage.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The parameters of this GsaUnitUsage.
         """
         return self._parameters
 
     @parameters.setter
-    def parameters(self, parameters: "List[GsaSlimNamedEntity]") -> None:
+    def parameters(self, parameters: "list[GsaSlimNamedEntity]") -> None:
         """Sets the parameters of this GsaUnitUsage.
 
         Parameters
         ----------
-        parameters: List[GsaSlimNamedEntity]
+        parameters: list[GsaSlimNamedEntity]
             The parameters of this GsaUnitUsage.
         """
         # Field is not nullable
@@ -174,23 +174,23 @@ class GsaUnitUsage(ModelBase):
         self._parameters = parameters
 
     @property
-    def constants(self) -> "List[GsaSlimNamedEntity]":
+    def constants(self) -> "list[GsaSlimNamedEntity]":
         """Gets the constants of this GsaUnitUsage.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The constants of this GsaUnitUsage.
         """
         return self._constants
 
     @constants.setter
-    def constants(self, constants: "List[GsaSlimNamedEntity]") -> None:
+    def constants(self, constants: "list[GsaSlimNamedEntity]") -> None:
         """Sets the constants of this GsaUnitUsage.
 
         Parameters
         ----------
-        constants: List[GsaSlimNamedEntity]
+        constants: list[GsaSlimNamedEntity]
             The constants of this GsaUnitUsage.
         """
         # Field is not nullable
@@ -202,23 +202,23 @@ class GsaUnitUsage(ModelBase):
         self._constants = constants
 
     @property
-    def expressions(self) -> "List[GsaSlimNamedEntity]":
+    def expressions(self) -> "list[GsaSlimNamedEntity]":
         """Gets the expressions of this GsaUnitUsage.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The expressions of this GsaUnitUsage.
         """
         return self._expressions
 
     @expressions.setter
-    def expressions(self, expressions: "List[GsaSlimNamedEntity]") -> None:
+    def expressions(self, expressions: "list[GsaSlimNamedEntity]") -> None:
         """Sets the expressions of this GsaUnitUsage.
 
         Parameters
         ----------
-        expressions: List[GsaSlimNamedEntity]
+        expressions: list[GsaSlimNamedEntity]
             The expressions of this GsaUnitUsage.
         """
         # Field is not nullable
@@ -230,23 +230,23 @@ class GsaUnitUsage(ModelBase):
         self._expressions = expressions
 
     @property
-    def units(self) -> "List[GsaSlimUnit]":
+    def units(self) -> "list[GsaSlimUnit]":
         """Gets the units of this GsaUnitUsage.
 
         Returns
         -------
-        List[GsaSlimUnit]
+        list[GsaSlimUnit]
             The units of this GsaUnitUsage.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "List[GsaSlimUnit]") -> None:
+    def units(self, units: "list[GsaSlimUnit]") -> None:
         """Sets the units of this GsaUnitUsage.
 
         Parameters
         ----------
-        units: List[GsaSlimUnit]
+        units: list[GsaSlimUnit]
             The units of this GsaUnitUsage.
         """
         # Field is not nullable
@@ -258,7 +258,7 @@ class GsaUnitUsage(ModelBase):
         self._units = units
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

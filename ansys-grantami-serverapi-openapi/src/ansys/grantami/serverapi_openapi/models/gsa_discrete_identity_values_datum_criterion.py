@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
@@ -56,30 +56,30 @@ class GsaDiscreteIdentityValuesDatumCriterion(GsaDatumCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaDatumCriterionType",
         "_none": "list[int]",
         "all": "list[int]",
         "any": "list[int]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "_none": "none",
         "all": "all",
         "any": "any",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -87,23 +87,23 @@ class GsaDiscreteIdentityValuesDatumCriterion(GsaDatumCriterion):
         self,
         *,
         type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEIDENTITYVALUES,
-        _none: "Union[List[int], None, Unset_Type]" = Unset,
-        all: "Union[List[int], None, Unset_Type]" = Unset,
-        any: "Union[List[int], None, Unset_Type]" = Unset,
+        _none: "Union[list[int], None, Unset_Type]" = Unset,
+        all: "Union[list[int], None, Unset_Type]" = Unset,
+        any: "Union[list[int], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteIdentityValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaDatumCriterionType
-        _none: List[int], optional
-        all: List[int], optional
-        any: List[int], optional
+        _none: list[int], optional
+        all: list[int], optional
+        any: list[int], optional
         """
         super().__init__(type=type)
-        self._all: Union[List[int], None, Unset_Type] = Unset
-        self._any: Union[List[int], None, Unset_Type] = Unset
-        self.__none: Union[List[int], None, Unset_Type] = Unset
+        self._all: Union[list[int], None, Unset_Type] = Unset
+        self._any: Union[list[int], None, Unset_Type] = Unset
+        self.__none: Union[list[int], None, Unset_Type] = Unset
 
         if all is not Unset:
             self.all = all
@@ -113,79 +113,79 @@ class GsaDiscreteIdentityValuesDatumCriterion(GsaDatumCriterion):
             self._none = _none
 
     @property
-    def all(self) -> "Union[List[int], None, Unset_Type]":
+    def all(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the all of this GsaDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The all of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         return self._all
 
     @all.setter
-    def all(self, all: "Union[List[int], None, Unset_Type]") -> None:
+    def all(self, all: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the all of this GsaDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Parameters
         ----------
-        all: Union[List[int], None, Unset_Type]
+        all: Union[list[int], None, Unset_Type]
             The all of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "Union[List[int], None, Unset_Type]":
+    def any(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the any of this GsaDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The any of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Union[List[int], None, Unset_Type]") -> None:
+    def any(self, any: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the any of this GsaDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any: Union[List[int], None, Unset_Type]
+        any: Union[list[int], None, Unset_Type]
             The any of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Union[List[int], None, Unset_Type]":
+    def _none(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the _none of this GsaDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The _none of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Union[List[int], None, Unset_Type]") -> None:
+    def _none(self, _none: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the _none of this GsaDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Parameters
         ----------
-        _none: Union[List[int], None, Unset_Type]
+        _none: Union[list[int], None, Unset_Type]
             The _none of this GsaDiscreteIdentityValuesDatumCriterion.
         """
         self.__none = _none
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

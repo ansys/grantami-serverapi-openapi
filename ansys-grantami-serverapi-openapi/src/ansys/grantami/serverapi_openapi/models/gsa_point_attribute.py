@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute import GsaAttribute  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
@@ -54,16 +54,16 @@ class GsaPointAttribute(GsaAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaSlimNamedEntity]",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -80,7 +80,7 @@ class GsaPointAttribute(GsaAttribute):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -97,7 +97,7 @@ class GsaPointAttribute(GsaAttribute):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimUnit",
         "attributeParameters": "GsaSlimNamedEntity",
     }
@@ -107,9 +107,9 @@ class GsaPointAttribute(GsaAttribute):
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GsaSlimNamedEntity]",
+        attribute_parameters: "list[GsaSlimNamedEntity]",
         default_threshold_type: "GsaAttributeThresholdType",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
@@ -126,9 +126,9 @@ class GsaPointAttribute(GsaAttribute):
 
         Parameters
         ----------
-        attribute_parameters: List[GsaSlimNamedEntity]
+        attribute_parameters: list[GsaSlimNamedEntity]
         default_threshold_type: GsaAttributeThresholdType
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
@@ -156,7 +156,7 @@ class GsaPointAttribute(GsaAttribute):
         )
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
         self._is_multi_valued: bool
-        self._attribute_parameters: List[GsaSlimNamedEntity]
+        self._attribute_parameters: list[GsaSlimNamedEntity]
 
         if unit is not Unset:
             self.unit = unit
@@ -217,23 +217,23 @@ class GsaPointAttribute(GsaAttribute):
         self._is_multi_valued = is_multi_valued
 
     @property
-    def attribute_parameters(self) -> "List[GsaSlimNamedEntity]":
+    def attribute_parameters(self) -> "list[GsaSlimNamedEntity]":
         """Gets the attribute_parameters of this GsaPointAttribute.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The attribute_parameters of this GsaPointAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
-    def attribute_parameters(self, attribute_parameters: "List[GsaSlimNamedEntity]") -> None:
+    def attribute_parameters(self, attribute_parameters: "list[GsaSlimNamedEntity]") -> None:
         """Sets the attribute_parameters of this GsaPointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GsaSlimNamedEntity]
+        attribute_parameters: list[GsaSlimNamedEntity]
             The attribute_parameters of this GsaPointAttribute.
         """
         # Field is not nullable
@@ -245,7 +245,7 @@ class GsaPointAttribute(GsaAttribute):
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

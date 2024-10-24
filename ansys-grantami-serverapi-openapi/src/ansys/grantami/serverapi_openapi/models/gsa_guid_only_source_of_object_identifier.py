@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "mappings": "list[GsaGuidOnlyMappingOfObjectIdentifier]",
         "table": "GsaObjectIdentifier",
         "database": "GsaObjectIdentifier",
         "database_key": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "mappings": "mappings",
         "table": "table",
         "database": "database",
         "database_key": "databaseKey",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "database": "GsaObjectIdentifier",
         "table": "GsaObjectIdentifier",
         "mappings": "GsaGuidOnlyMappingOfObjectIdentifier",
@@ -85,7 +85,7 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
     def __init__(
         self,
         *,
-        mappings: "List[GsaGuidOnlyMappingOfObjectIdentifier]",
+        mappings: "list[GsaGuidOnlyMappingOfObjectIdentifier]",
         table: "GsaObjectIdentifier",
         database: "Union[GsaObjectIdentifier, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
@@ -94,7 +94,7 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
 
         Parameters
         ----------
-        mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
+        mappings: list[GsaGuidOnlyMappingOfObjectIdentifier]
         table: GsaObjectIdentifier
         database: GsaObjectIdentifier, optional
         database_key: str, optional
@@ -102,7 +102,7 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
         self._database: Union[GsaObjectIdentifier, Unset_Type] = Unset
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._table: GsaObjectIdentifier
-        self._mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
+        self._mappings: list[GsaGuidOnlyMappingOfObjectIdentifier]
 
         if database is not Unset:
             self.database = database
@@ -187,25 +187,25 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
         self._table = table
 
     @property
-    def mappings(self) -> "List[GsaGuidOnlyMappingOfObjectIdentifier]":
+    def mappings(self) -> "list[GsaGuidOnlyMappingOfObjectIdentifier]":
         """Gets the mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Returns
         -------
-        List[GsaGuidOnlyMappingOfObjectIdentifier]
+        list[GsaGuidOnlyMappingOfObjectIdentifier]
             The mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         """
         return self._mappings
 
     @mappings.setter
-    def mappings(self, mappings: "List[GsaGuidOnlyMappingOfObjectIdentifier]") -> None:
+    def mappings(self, mappings: "list[GsaGuidOnlyMappingOfObjectIdentifier]") -> None:
         """Sets the mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Parameters
         ----------
-        mappings: List[GsaGuidOnlyMappingOfObjectIdentifier]
+        mappings: list[GsaGuidOnlyMappingOfObjectIdentifier]
             The mappings of this GsaGuidOnlySourceOfObjectIdentifier.
         """
         # Field is not nullable
@@ -217,7 +217,7 @@ class GsaGuidOnlySourceOfObjectIdentifier(ModelBase):
         self._mappings = mappings
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

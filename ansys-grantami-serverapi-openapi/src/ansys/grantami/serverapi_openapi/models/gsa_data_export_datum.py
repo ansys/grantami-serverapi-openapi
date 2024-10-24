@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,32 +51,32 @@ class GsaDataExportDatum(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "not_applicable": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "metaDatums": "GsaDataExportDatum",
     }
 
@@ -94,7 +94,7 @@ class GsaDataExportDatum(ModelBase):
         not_applicable: "str",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDatum - a model defined in Swagger
 
@@ -103,11 +103,11 @@ class GsaDataExportDatum(ModelBase):
         not_applicable: str
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GsaDataExportDatum], optional
+        meta_datums: list[GsaDataExportDatum], optional
         """
         self._attribute_identity: Union[int, Unset_Type] = Unset
         self._attribute_guid: Union[str, Unset_Type] = Unset
-        self._meta_datums: Union[List[GsaDataExportDatum], None, Unset_Type] = Unset
+        self._meta_datums: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
         self._not_applicable: str
 
         if attribute_identity is not Unset:
@@ -169,23 +169,23 @@ class GsaDataExportDatum(ModelBase):
         self._attribute_guid = attribute_guid
 
     @property
-    def meta_datums(self) -> "Union[List[GsaDataExportDatum], None, Unset_Type]":
+    def meta_datums(self) -> "Union[list[GsaDataExportDatum], None, Unset_Type]":
         """Gets the meta_datums of this GsaDataExportDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportDatum], None, Unset_Type]
+        Union[list[GsaDataExportDatum], None, Unset_Type]
             The meta_datums of this GsaDataExportDatum.
         """
         return self._meta_datums
 
     @meta_datums.setter
-    def meta_datums(self, meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]") -> None:
+    def meta_datums(self, meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]") -> None:
         """Sets the meta_datums of this GsaDataExportDatum.
 
         Parameters
         ----------
-        meta_datums: Union[List[GsaDataExportDatum], None, Unset_Type]
+        meta_datums: Union[list[GsaDataExportDatum], None, Unset_Type]
             The meta_datums of this GsaDataExportDatum.
         """
         self._meta_datums = meta_datums
@@ -216,7 +216,7 @@ class GsaDataExportDatum(ModelBase):
         self._not_applicable = not_applicable
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

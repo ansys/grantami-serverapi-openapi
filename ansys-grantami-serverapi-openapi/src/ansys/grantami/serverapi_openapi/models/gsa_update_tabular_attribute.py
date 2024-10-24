@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_update_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "axis_name": "str",
@@ -80,7 +80,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "tabular_columns": "list[GsaUpdateTabularColumn]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
@@ -95,7 +95,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "tabular_columns": "tabularColumns",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tabularColumns": "GsaUpdateTabularColumn",
     }
 
@@ -115,7 +115,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         hide_unlinked_rows: "Union[bool, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
-        tabular_columns: "Union[List[GsaUpdateTabularColumn], None, Unset_Type]" = Unset,
+        tabular_columns: "Union[list[GsaUpdateTabularColumn], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUpdateTabularAttribute - a model defined in Swagger
 
@@ -132,7 +132,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         hide_unlinked_rows: bool, optional
         is_hidden_from_search_criteria: bool, optional
         name: str, optional
-        tabular_columns: List[GsaUpdateTabularColumn], optional
+        tabular_columns: list[GsaUpdateTabularColumn], optional
         """
         super().__init__(
             type=type,
@@ -147,7 +147,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         self._display_full_table: Union[bool, Unset_Type] = Unset
         self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
         self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
-        self._tabular_columns: Union[List[GsaUpdateTabularColumn], None, Unset_Type] = Unset
+        self._tabular_columns: Union[list[GsaUpdateTabularColumn], None, Unset_Type] = Unset
 
         if display_full_table is not Unset:
             self.display_full_table = display_full_table
@@ -236,31 +236,31 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         self._hide_unlinked_rows = hide_unlinked_rows
 
     @property
-    def tabular_columns(self) -> "Union[List[GsaUpdateTabularColumn], None, Unset_Type]":
+    def tabular_columns(self) -> "Union[list[GsaUpdateTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GsaUpdateTabularAttribute.
 
         Returns
         -------
-        Union[List[GsaUpdateTabularColumn], None, Unset_Type]
+        Union[list[GsaUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaUpdateTabularAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "Union[List[GsaUpdateTabularColumn], None, Unset_Type]"
+        self, tabular_columns: "Union[list[GsaUpdateTabularColumn], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_columns of this GsaUpdateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: Union[List[GsaUpdateTabularColumn], None, Unset_Type]
+        tabular_columns: Union[list[GsaUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GsaUpdateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

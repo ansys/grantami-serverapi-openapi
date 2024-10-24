@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_applicable_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "not_applicable": "str",
         "attribute_guid": "str",
@@ -74,7 +74,7 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
@@ -83,7 +83,7 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
         "meta_datums": "metaDatums",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "datumValue": "GsaDiscreteValue",
     }
 
@@ -96,8 +96,8 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
         not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        datum_value: "Union[List[GsaDiscreteValue], None, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        datum_value: "Union[list[GsaDiscreteValue], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDiscreteDatum - a model defined in Swagger
 
@@ -107,8 +107,8 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
         not_applicable: str
         attribute_guid: str, optional
         attribute_identity: int, optional
-        datum_value: List[GsaDiscreteValue], optional
-        meta_datums: List[GsaDataExportDatum], optional
+        datum_value: list[GsaDiscreteValue], optional
+        meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
             datum_type=datum_type,
@@ -117,35 +117,35 @@ class GsaDataExportDiscreteDatum(GsaDataExportApplicableDatum):
             attribute_identity=attribute_identity,
             meta_datums=meta_datums,
         )
-        self._datum_value: Union[List[GsaDiscreteValue], None, Unset_Type] = Unset
+        self._datum_value: Union[list[GsaDiscreteValue], None, Unset_Type] = Unset
 
         if datum_value is not Unset:
             self.datum_value = datum_value
 
     @property
-    def datum_value(self) -> "Union[List[GsaDiscreteValue], None, Unset_Type]":
+    def datum_value(self) -> "Union[list[GsaDiscreteValue], None, Unset_Type]":
         """Gets the datum_value of this GsaDataExportDiscreteDatum.
 
         Returns
         -------
-        Union[List[GsaDiscreteValue], None, Unset_Type]
+        Union[list[GsaDiscreteValue], None, Unset_Type]
             The datum_value of this GsaDataExportDiscreteDatum.
         """
         return self._datum_value
 
     @datum_value.setter
-    def datum_value(self, datum_value: "Union[List[GsaDiscreteValue], None, Unset_Type]") -> None:
+    def datum_value(self, datum_value: "Union[list[GsaDiscreteValue], None, Unset_Type]") -> None:
         """Sets the datum_value of this GsaDataExportDiscreteDatum.
 
         Parameters
         ----------
-        datum_value: Union[List[GsaDiscreteValue], None, Unset_Type]
+        datum_value: Union[list[GsaDiscreteValue], None, Unset_Type]
             The datum_value of this GsaDataExportDiscreteDatum.
         """
         self._datum_value = datum_value
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

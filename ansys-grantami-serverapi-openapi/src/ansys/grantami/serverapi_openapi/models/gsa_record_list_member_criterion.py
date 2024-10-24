@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
@@ -54,26 +54,26 @@ class GsaRecordListMemberCriterion(GsaCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaCriterionType",
         "record_list_identifiers": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "record_list_identifiers": "recordListIdentifiers",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -81,47 +81,47 @@ class GsaRecordListMemberCriterion(GsaCriterion):
         self,
         *,
         type: "GsaCriterionType" = GsaCriterionType.RECORDLISTMEMBER,
-        record_list_identifiers: "Union[List[str], None, Unset_Type]" = Unset,
+        record_list_identifiers: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordListMemberCriterion - a model defined in Swagger
 
         Parameters
         ----------
         type: GsaCriterionType
-        record_list_identifiers: List[str], optional
+        record_list_identifiers: list[str], optional
         """
         super().__init__(type=type)
-        self._record_list_identifiers: Union[List[str], None, Unset_Type] = Unset
+        self._record_list_identifiers: Union[list[str], None, Unset_Type] = Unset
 
         if record_list_identifiers is not Unset:
             self.record_list_identifiers = record_list_identifiers
 
     @property
-    def record_list_identifiers(self) -> "Union[List[str], None, Unset_Type]":
+    def record_list_identifiers(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the record_list_identifiers of this GsaRecordListMemberCriterion.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The record_list_identifiers of this GsaRecordListMemberCriterion.
         """
         return self._record_list_identifiers
 
     @record_list_identifiers.setter
     def record_list_identifiers(
-        self, record_list_identifiers: "Union[List[str], None, Unset_Type]"
+        self, record_list_identifiers: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the record_list_identifiers of this GsaRecordListMemberCriterion.
 
         Parameters
         ----------
-        record_list_identifiers: Union[List[str], None, Unset_Type]
+        record_list_identifiers: Union[list[str], None, Unset_Type]
             The record_list_identifiers of this GsaRecordListMemberCriterion.
         """
         self._record_list_identifiers = record_list_identifiers
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

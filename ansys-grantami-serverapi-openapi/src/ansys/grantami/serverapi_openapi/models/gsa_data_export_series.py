@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaDataExportSeries(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "graph_decoration": "GsaDataExportGraphDecoration",
         "parameter_values": "list[GsaDataExportParameterValue]",
         "points": "list[GsaDataExportSeriesPoint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "graph_decoration": "graphDecoration",
         "parameter_values": "parameterValues",
         "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GsaDataExportParameterValue",
         "points": "GsaDataExportSeriesPoint",
         "graphDecoration": "GsaDataExportGraphDecoration",
@@ -84,19 +84,19 @@ class GsaDataExportSeries(ModelBase):
         self,
         *,
         graph_decoration: "Union[GsaDataExportGraphDecoration, Unset_Type]" = Unset,
-        parameter_values: "Union[List[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
-        points: "Union[List[GsaDataExportSeriesPoint], None, Unset_Type]" = Unset,
+        parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
+        points: "Union[list[GsaDataExportSeriesPoint], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportSeries - a model defined in Swagger
 
         Parameters
         ----------
         graph_decoration: GsaDataExportGraphDecoration, optional
-        parameter_values: List[GsaDataExportParameterValue], optional
-        points: List[GsaDataExportSeriesPoint], optional
+        parameter_values: list[GsaDataExportParameterValue], optional
+        points: list[GsaDataExportSeriesPoint], optional
         """
-        self._parameter_values: Union[List[GsaDataExportParameterValue], None, Unset_Type] = Unset
-        self._points: Union[List[GsaDataExportSeriesPoint], None, Unset_Type] = Unset
+        self._parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type] = Unset
+        self._points: Union[list[GsaDataExportSeriesPoint], None, Unset_Type] = Unset
         self._graph_decoration: Union[GsaDataExportGraphDecoration, Unset_Type] = Unset
 
         if parameter_values is not Unset:
@@ -107,47 +107,47 @@ class GsaDataExportSeries(ModelBase):
             self.graph_decoration = graph_decoration
 
     @property
-    def parameter_values(self) -> "Union[List[GsaDataExportParameterValue], None, Unset_Type]":
+    def parameter_values(self) -> "Union[list[GsaDataExportParameterValue], None, Unset_Type]":
         """Gets the parameter_values of this GsaDataExportSeries.
 
         Returns
         -------
-        Union[List[GsaDataExportParameterValue], None, Unset_Type]
+        Union[list[GsaDataExportParameterValue], None, Unset_Type]
             The parameter_values of this GsaDataExportSeries.
         """
         return self._parameter_values
 
     @parameter_values.setter
     def parameter_values(
-        self, parameter_values: "Union[List[GsaDataExportParameterValue], None, Unset_Type]"
+        self, parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]"
     ) -> None:
         """Sets the parameter_values of this GsaDataExportSeries.
 
         Parameters
         ----------
-        parameter_values: Union[List[GsaDataExportParameterValue], None, Unset_Type]
+        parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type]
             The parameter_values of this GsaDataExportSeries.
         """
         self._parameter_values = parameter_values
 
     @property
-    def points(self) -> "Union[List[GsaDataExportSeriesPoint], None, Unset_Type]":
+    def points(self) -> "Union[list[GsaDataExportSeriesPoint], None, Unset_Type]":
         """Gets the points of this GsaDataExportSeries.
 
         Returns
         -------
-        Union[List[GsaDataExportSeriesPoint], None, Unset_Type]
+        Union[list[GsaDataExportSeriesPoint], None, Unset_Type]
             The points of this GsaDataExportSeries.
         """
         return self._points
 
     @points.setter
-    def points(self, points: "Union[List[GsaDataExportSeriesPoint], None, Unset_Type]") -> None:
+    def points(self, points: "Union[list[GsaDataExportSeriesPoint], None, Unset_Type]") -> None:
         """Sets the points of this GsaDataExportSeries.
 
         Parameters
         ----------
-        points: Union[List[GsaDataExportSeriesPoint], None, Unset_Type]
+        points: Union[list[GsaDataExportSeriesPoint], None, Unset_Type]
             The points of this GsaDataExportSeries.
         """
         self._points = points
@@ -180,7 +180,7 @@ class GsaDataExportSeries(ModelBase):
         self._graph_decoration = graph_decoration
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

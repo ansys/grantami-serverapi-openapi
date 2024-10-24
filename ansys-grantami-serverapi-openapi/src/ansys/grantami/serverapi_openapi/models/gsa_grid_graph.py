@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_graph import GsaGraph  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_graph_type import GsaGraphType
@@ -54,32 +54,32 @@ class GsaGridGraph(GsaGraph):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "all_parameters": "list[GsaSlimParameter]",
         "default_x_axis_parameter": "GsaSlimParameter",
         "functional_type": "GsaFunctionalType",
         "graph_type": "GsaGraphType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "all_parameters": "allParameters",
         "default_x_axis_parameter": "defaultXAxisParameter",
         "functional_type": "functionalType",
         "graph_type": "graphType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "functionalType": "GsaFunctionalType",
         "defaultXAxisParameter": "GsaSlimParameter",
         "allParameters": "GsaSlimParameter",
@@ -95,7 +95,7 @@ class GsaGridGraph(GsaGraph):
     def __init__(
         self,
         *,
-        all_parameters: "List[GsaSlimParameter]",
+        all_parameters: "list[GsaSlimParameter]",
         default_x_axis_parameter: "GsaSlimParameter",
         functional_type: "GsaFunctionalType",
         graph_type: "GsaGraphType" = GsaGraphType.GRID,
@@ -104,7 +104,7 @@ class GsaGridGraph(GsaGraph):
 
         Parameters
         ----------
-        all_parameters: List[GsaSlimParameter]
+        all_parameters: list[GsaSlimParameter]
         default_x_axis_parameter: GsaSlimParameter
         functional_type: GsaFunctionalType
         graph_type: GsaGraphType
@@ -112,7 +112,7 @@ class GsaGridGraph(GsaGraph):
         super().__init__(graph_type=graph_type)
         self._functional_type: GsaFunctionalType
         self._default_x_axis_parameter: GsaSlimParameter
-        self._all_parameters: List[GsaSlimParameter]
+        self._all_parameters: list[GsaSlimParameter]
 
         self.functional_type = functional_type
         self.default_x_axis_parameter = default_x_axis_parameter
@@ -175,23 +175,23 @@ class GsaGridGraph(GsaGraph):
         self._default_x_axis_parameter = default_x_axis_parameter
 
     @property
-    def all_parameters(self) -> "List[GsaSlimParameter]":
+    def all_parameters(self) -> "list[GsaSlimParameter]":
         """Gets the all_parameters of this GsaGridGraph.
 
         Returns
         -------
-        List[GsaSlimParameter]
+        list[GsaSlimParameter]
             The all_parameters of this GsaGridGraph.
         """
         return self._all_parameters
 
     @all_parameters.setter
-    def all_parameters(self, all_parameters: "List[GsaSlimParameter]") -> None:
+    def all_parameters(self, all_parameters: "list[GsaSlimParameter]") -> None:
         """Sets the all_parameters of this GsaGridGraph.
 
         Parameters
         ----------
-        all_parameters: List[GsaSlimParameter]
+        all_parameters: list[GsaSlimParameter]
             The all_parameters of this GsaGridGraph.
         """
         # Field is not nullable
@@ -203,7 +203,7 @@ class GsaGridGraph(GsaGraph):
         self._all_parameters = all_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

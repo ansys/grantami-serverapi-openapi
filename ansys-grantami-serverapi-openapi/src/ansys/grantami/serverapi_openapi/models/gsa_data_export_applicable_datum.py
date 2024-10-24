@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_datum import (  # noqa: F401
     GsaDataExportDatum,
@@ -55,18 +55,18 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "not_applicable": "str",
         "attribute_guid": "str",
@@ -74,7 +74,7 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
@@ -82,7 +82,7 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         "meta_datums": "metaDatums",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "datumType": "GsaAttributeType",
     }
 
@@ -112,7 +112,7 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         not_applicable: "str" = "applicable",
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportApplicableDatum - a model defined in Swagger
 
@@ -122,7 +122,7 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         not_applicable: str
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GsaDataExportDatum], optional
+        meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
             not_applicable=not_applicable,
@@ -163,7 +163,7 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters
