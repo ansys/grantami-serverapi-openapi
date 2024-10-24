@@ -63,6 +63,7 @@ Granta MI releases and versions of the Python package.
 
 | Granta MI | ansys-grantami-serverapi-openapi |
 |-----------|----------------------------------|
+| 2025R1    | v4.0.0                           |
 | 2024R2    | v3.0.0                           |
 | 2024R1    | v2.0.0                           |
 | 2023R2    | v1.0.0                           |
@@ -144,6 +145,6 @@ if __name__ == '__main__':
     api_client = Connection(api_url=URL).with_autologon().connect()
 
     schema_api = api.SchemaApi(api_client)
-    server_version = schema_api.v1alpha_schema_mi_version_get()
+    server_version = schema_api.get_version()
     print(server_version.version)
 ```
