@@ -69,10 +69,10 @@ Granta MI releases and versions of the Python package.
 | 2023R2    | v1.0.0                           |
 
 Alternatively, use the PyGranta meta-package with a requirement specifier. The following code will install all
-PyGranta packages compatible with Granta MI 2023 R2, including `ansys-grantami-serverapi-openapi` v1.0.0:
+PyGranta packages compatible with Granta MI 2024 R2, including `ansys-grantami-serverapi-openapi` v3.0.0:
 
 ```console
-   pip install pygranta==2023.2.0
+   pip install pygranta==2024.2.0
 ```
 
 See [PyGranta Package versions](https://grantami.docs.pyansys.com/version/dev/package_versions.html) for a detailed list
