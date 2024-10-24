@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_to_export import (  # noqa: F401
     GsaAttributeToExport,
@@ -55,16 +55,16 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_type": "str",
         "attributes": "list[GsaAttributeToExport]",
         "export_in_reversed_direction": "bool",
@@ -80,7 +80,7 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         "target_table_guid": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_type": "attributeType",
         "attributes": "attributes",
         "export_in_reversed_direction": "exportInReversedDirection",
@@ -96,7 +96,7 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         "target_table_guid": "targetTableGuid",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localData": "GsaSimpleAttributeToExport",
         "linkAttributeType": "GsaLinkAttributeType",
         "recordProperties": "GsaRecordProperty",
@@ -111,15 +111,15 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         self,
         *,
         attribute_type: "str" = "link",
-        attributes: "Union[List[GsaAttributeToExport], None, Unset_Type]" = Unset,
+        attributes: "Union[list[GsaAttributeToExport], None, Unset_Type]" = Unset,
         export_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         identity: "Union[int, None, Unset_Type]" = Unset,
         indirect_links_behavior: "Union[GsaIndirectLinks, Unset_Type]" = Unset,
         link_attribute_type: "Union[GsaLinkAttributeType, Unset_Type]" = Unset,
         linked_records_export_behavior: "Union[GsaLinkedRecordExportBehavior, Unset_Type]" = Unset,
-        local_data: "Union[List[GsaSimpleAttributeToExport], None, Unset_Type]" = Unset,
-        record_properties: "Union[List[GsaRecordProperty], None, Unset_Type]" = Unset,
+        local_data: "Union[list[GsaSimpleAttributeToExport], None, Unset_Type]" = Unset,
+        record_properties: "Union[list[GsaRecordProperty], None, Unset_Type]" = Unset,
         target_attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         target_database_guid: "Union[str, None, Unset_Type]" = Unset,
         target_table_guid: "Union[str, None, Unset_Type]" = Unset,
@@ -129,28 +129,28 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         Parameters
         ----------
         attribute_type: str
-        attributes: List[GsaAttributeToExport], optional
+        attributes: list[GsaAttributeToExport], optional
         export_in_reversed_direction: bool, optional
         guid: str, optional
         identity: int, optional
         indirect_links_behavior: GsaIndirectLinks, optional
         link_attribute_type: GsaLinkAttributeType, optional
         linked_records_export_behavior: GsaLinkedRecordExportBehavior, optional
-        local_data: List[GsaSimpleAttributeToExport], optional
-        record_properties: List[GsaRecordProperty], optional
+        local_data: list[GsaSimpleAttributeToExport], optional
+        record_properties: list[GsaRecordProperty], optional
         target_attribute_guid: str, optional
         target_database_guid: str, optional
         target_table_guid: str, optional
         """
         super().__init__(attribute_type=attribute_type, guid=guid, identity=identity)
-        self._local_data: Union[List[GsaSimpleAttributeToExport], None, Unset_Type] = Unset
+        self._local_data: Union[list[GsaSimpleAttributeToExport], None, Unset_Type] = Unset
         self._target_table_guid: Union[str, None, Unset_Type] = Unset
         self._target_database_guid: Union[str, None, Unset_Type] = Unset
         self._target_attribute_guid: Union[str, None, Unset_Type] = Unset
         self._link_attribute_type: Union[GsaLinkAttributeType, Unset_Type] = Unset
         self._export_in_reversed_direction: Union[bool, Unset_Type] = Unset
-        self._record_properties: Union[List[GsaRecordProperty], None, Unset_Type] = Unset
-        self._attributes: Union[List[GsaAttributeToExport], None, Unset_Type] = Unset
+        self._record_properties: Union[list[GsaRecordProperty], None, Unset_Type] = Unset
+        self._attributes: Union[list[GsaAttributeToExport], None, Unset_Type] = Unset
         self._linked_records_export_behavior: Union[GsaLinkedRecordExportBehavior, Unset_Type] = (
             Unset
         )
@@ -178,27 +178,27 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
             self.indirect_links_behavior = indirect_links_behavior
 
     @property
-    def local_data(self) -> "Union[List[GsaSimpleAttributeToExport], None, Unset_Type]":
+    def local_data(self) -> "Union[list[GsaSimpleAttributeToExport], None, Unset_Type]":
         """Gets the local_data of this GsaLinkAttributeToExport.
         The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
 
         Returns
         -------
-        Union[List[GsaSimpleAttributeToExport], None, Unset_Type]
+        Union[list[GsaSimpleAttributeToExport], None, Unset_Type]
             The local_data of this GsaLinkAttributeToExport.
         """
         return self._local_data
 
     @local_data.setter
     def local_data(
-        self, local_data: "Union[List[GsaSimpleAttributeToExport], None, Unset_Type]"
+        self, local_data: "Union[list[GsaSimpleAttributeToExport], None, Unset_Type]"
     ) -> None:
         """Sets the local_data of this GsaLinkAttributeToExport.
         The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
 
         Parameters
         ----------
-        local_data: Union[List[GsaSimpleAttributeToExport], None, Unset_Type]
+        local_data: Union[list[GsaSimpleAttributeToExport], None, Unset_Type]
             The local_data of this GsaLinkAttributeToExport.
         """
         self._local_data = local_data
@@ -330,51 +330,51 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         self._export_in_reversed_direction = export_in_reversed_direction
 
     @property
-    def record_properties(self) -> "Union[List[GsaRecordProperty], None, Unset_Type]":
+    def record_properties(self) -> "Union[list[GsaRecordProperty], None, Unset_Type]":
         """Gets the record_properties of this GsaLinkAttributeToExport.
         The properties to export on any linked records.
 
         Returns
         -------
-        Union[List[GsaRecordProperty], None, Unset_Type]
+        Union[list[GsaRecordProperty], None, Unset_Type]
             The record_properties of this GsaLinkAttributeToExport.
         """
         return self._record_properties
 
     @record_properties.setter
     def record_properties(
-        self, record_properties: "Union[List[GsaRecordProperty], None, Unset_Type]"
+        self, record_properties: "Union[list[GsaRecordProperty], None, Unset_Type]"
     ) -> None:
         """Sets the record_properties of this GsaLinkAttributeToExport.
         The properties to export on any linked records.
 
         Parameters
         ----------
-        record_properties: Union[List[GsaRecordProperty], None, Unset_Type]
+        record_properties: Union[list[GsaRecordProperty], None, Unset_Type]
             The record_properties of this GsaLinkAttributeToExport.
         """
         self._record_properties = record_properties
 
     @property
-    def attributes(self) -> "Union[List[GsaAttributeToExport], None, Unset_Type]":
+    def attributes(self) -> "Union[list[GsaAttributeToExport], None, Unset_Type]":
         """Gets the attributes of this GsaLinkAttributeToExport.
         The attributes to export on any linked records.
 
         Returns
         -------
-        Union[List[GsaAttributeToExport], None, Unset_Type]
+        Union[list[GsaAttributeToExport], None, Unset_Type]
             The attributes of this GsaLinkAttributeToExport.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "Union[List[GsaAttributeToExport], None, Unset_Type]") -> None:
+    def attributes(self, attributes: "Union[list[GsaAttributeToExport], None, Unset_Type]") -> None:
         """Sets the attributes of this GsaLinkAttributeToExport.
         The attributes to export on any linked records.
 
         Parameters
         ----------
-        attributes: Union[List[GsaAttributeToExport], None, Unset_Type]
+        attributes: Union[list[GsaAttributeToExport], None, Unset_Type]
             The attributes of this GsaLinkAttributeToExport.
         """
         self._attributes = attributes
@@ -436,7 +436,7 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         self._indirect_links_behavior = indirect_links_behavior
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

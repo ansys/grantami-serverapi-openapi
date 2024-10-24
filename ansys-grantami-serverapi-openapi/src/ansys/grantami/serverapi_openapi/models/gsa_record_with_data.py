@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaRecordWithData(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "database_key": "str",
         "data": "list[GsaDataExportDatum]",
         "properties": "list[GsaProperty]",
@@ -68,7 +68,7 @@ class GsaRecordWithData(ModelBase):
         "record_history_identity": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
         "data": "data",
         "properties": "properties",
@@ -76,7 +76,7 @@ class GsaRecordWithData(ModelBase):
         "record_history_identity": "recordHistoryIdentity",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "data": "GsaDataExportDatum",
         "properties": "GsaProperty",
     }
@@ -87,8 +87,8 @@ class GsaRecordWithData(ModelBase):
         self,
         *,
         database_key: "str",
-        data: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        properties: "Union[List[GsaProperty], None, Unset_Type]" = Unset,
+        data: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        properties: "Union[list[GsaProperty], None, Unset_Type]" = Unset,
         record_history_guid: "Union[str, None, Unset_Type]" = Unset,
         record_history_identity: "Union[int, Unset_Type]" = Unset,
     ) -> None:
@@ -97,16 +97,16 @@ class GsaRecordWithData(ModelBase):
         Parameters
         ----------
         database_key: str
-        data: List[GsaDataExportDatum], optional
-        properties: List[GsaProperty], optional
+        data: list[GsaDataExportDatum], optional
+        properties: list[GsaProperty], optional
         record_history_guid: str, optional
         record_history_identity: int, optional
         """
         self._database_key: str
         self._record_history_identity: Union[int, Unset_Type] = Unset
         self._record_history_guid: Union[str, None, Unset_Type] = Unset
-        self._data: Union[List[GsaDataExportDatum], None, Unset_Type] = Unset
-        self._properties: Union[List[GsaProperty], None, Unset_Type] = Unset
+        self._data: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
+        self._properties: Union[list[GsaProperty], None, Unset_Type] = Unset
 
         self.database_key = database_key
         if record_history_identity is not Unset:
@@ -194,51 +194,51 @@ class GsaRecordWithData(ModelBase):
         self._record_history_guid = record_history_guid
 
     @property
-    def data(self) -> "Union[List[GsaDataExportDatum], None, Unset_Type]":
+    def data(self) -> "Union[list[GsaDataExportDatum], None, Unset_Type]":
         """Gets the data of this GsaRecordWithData.
 
         Returns
         -------
-        Union[List[GsaDataExportDatum], None, Unset_Type]
+        Union[list[GsaDataExportDatum], None, Unset_Type]
             The data of this GsaRecordWithData.
         """
         return self._data
 
     @data.setter
-    def data(self, data: "Union[List[GsaDataExportDatum], None, Unset_Type]") -> None:
+    def data(self, data: "Union[list[GsaDataExportDatum], None, Unset_Type]") -> None:
         """Sets the data of this GsaRecordWithData.
 
         Parameters
         ----------
-        data: Union[List[GsaDataExportDatum], None, Unset_Type]
+        data: Union[list[GsaDataExportDatum], None, Unset_Type]
             The data of this GsaRecordWithData.
         """
         self._data = data
 
     @property
-    def properties(self) -> "Union[List[GsaProperty], None, Unset_Type]":
+    def properties(self) -> "Union[list[GsaProperty], None, Unset_Type]":
         """Gets the properties of this GsaRecordWithData.
 
         Returns
         -------
-        Union[List[GsaProperty], None, Unset_Type]
+        Union[list[GsaProperty], None, Unset_Type]
             The properties of this GsaRecordWithData.
         """
         return self._properties
 
     @properties.setter
-    def properties(self, properties: "Union[List[GsaProperty], None, Unset_Type]") -> None:
+    def properties(self, properties: "Union[list[GsaProperty], None, Unset_Type]") -> None:
         """Sets the properties of this GsaRecordWithData.
 
         Parameters
         ----------
-        properties: Union[List[GsaProperty], None, Unset_Type]
+        properties: Union[list[GsaProperty], None, Unset_Type]
             The properties of this GsaRecordWithData.
         """
         self._properties = properties
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

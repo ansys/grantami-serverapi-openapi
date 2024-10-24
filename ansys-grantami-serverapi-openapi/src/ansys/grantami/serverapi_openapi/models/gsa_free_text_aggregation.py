@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation import GsaAggregation  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
@@ -54,28 +54,28 @@ class GsaFreeTextAggregation(GsaAggregation):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GsaAggregationType",
         "guid": "str",
         "terms": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "guid": "guid",
         "terms": "terms",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -84,7 +84,7 @@ class GsaFreeTextAggregation(GsaAggregation):
         *,
         type: "GsaAggregationType" = GsaAggregationType.TEXT,
         guid: "Union[str, Unset_Type]" = Unset,
-        terms: "Union[List[str], None, Unset_Type]" = Unset,
+        terms: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFreeTextAggregation - a model defined in Swagger
 
@@ -92,11 +92,11 @@ class GsaFreeTextAggregation(GsaAggregation):
         ----------
         type: GsaAggregationType
         guid: str, optional
-        terms: List[str], optional
+        terms: list[str], optional
         """
         super().__init__(type=type)
         self._guid: Union[str, Unset_Type] = Unset
-        self._terms: Union[List[str], None, Unset_Type] = Unset
+        self._terms: Union[list[str], None, Unset_Type] = Unset
 
         if guid is not Unset:
             self.guid = guid
@@ -131,31 +131,31 @@ class GsaFreeTextAggregation(GsaAggregation):
         self._guid = guid
 
     @property
-    def terms(self) -> "Union[List[str], None, Unset_Type]":
+    def terms(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the terms of this GsaFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The terms of this GsaFreeTextAggregation.
         """
         return self._terms
 
     @terms.setter
-    def terms(self, terms: "Union[List[str], None, Unset_Type]") -> None:
+    def terms(self, terms: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the terms of this GsaFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Parameters
         ----------
-        terms: Union[List[str], None, Unset_Type]
+        terms: Union[list[str], None, Unset_Type]
             The terms of this GsaFreeTextAggregation.
         """
         self._terms = terms
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

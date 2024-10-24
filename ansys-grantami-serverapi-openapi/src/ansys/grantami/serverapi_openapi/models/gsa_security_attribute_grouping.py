@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaSecurityAttributeGrouping(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "available_discrete_values": "list[GsaDiscreteValue]",
         "identity": "int",
         "name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "available_discrete_values": "availableDiscreteValues",
         "identity": "identity",
         "name": "name",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "availableDiscreteValues": "GsaDiscreteValue",
     }
 
@@ -81,7 +81,7 @@ class GsaSecurityAttributeGrouping(ModelBase):
     def __init__(
         self,
         *,
-        available_discrete_values: "Union[List[GsaDiscreteValue], None, Unset_Type]" = Unset,
+        available_discrete_values: "Union[list[GsaDiscreteValue], None, Unset_Type]" = Unset,
         identity: "Union[int, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -89,13 +89,13 @@ class GsaSecurityAttributeGrouping(ModelBase):
 
         Parameters
         ----------
-        available_discrete_values: List[GsaDiscreteValue], optional
+        available_discrete_values: list[GsaDiscreteValue], optional
         identity: int, optional
         name: str, optional
         """
         self._identity: Union[int, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
-        self._available_discrete_values: Union[List[GsaDiscreteValue], None, Unset_Type] = Unset
+        self._available_discrete_values: Union[list[GsaDiscreteValue], None, Unset_Type] = Unset
 
         if identity is not Unset:
             self.identity = identity
@@ -152,31 +152,31 @@ class GsaSecurityAttributeGrouping(ModelBase):
         self._name = name
 
     @property
-    def available_discrete_values(self) -> "Union[List[GsaDiscreteValue], None, Unset_Type]":
+    def available_discrete_values(self) -> "Union[list[GsaDiscreteValue], None, Unset_Type]":
         """Gets the available_discrete_values of this GsaSecurityAttributeGrouping.
 
         Returns
         -------
-        Union[List[GsaDiscreteValue], None, Unset_Type]
+        Union[list[GsaDiscreteValue], None, Unset_Type]
             The available_discrete_values of this GsaSecurityAttributeGrouping.
         """
         return self._available_discrete_values
 
     @available_discrete_values.setter
     def available_discrete_values(
-        self, available_discrete_values: "Union[List[GsaDiscreteValue], None, Unset_Type]"
+        self, available_discrete_values: "Union[list[GsaDiscreteValue], None, Unset_Type]"
     ) -> None:
         """Sets the available_discrete_values of this GsaSecurityAttributeGrouping.
 
         Parameters
         ----------
-        available_discrete_values: Union[List[GsaDiscreteValue], None, Unset_Type]
+        available_discrete_values: Union[list[GsaDiscreteValue], None, Unset_Type]
             The available_discrete_values of this GsaSecurityAttributeGrouping.
         """
         self._available_discrete_values = available_discrete_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

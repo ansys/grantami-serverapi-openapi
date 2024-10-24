@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute import GsaAttribute  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
@@ -54,16 +54,16 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaFloatFunctionalAttributeParameter]",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -80,7 +80,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -97,7 +97,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimUnit",
         "attributeParameters": "GsaFloatFunctionalAttributeParameter",
     }
@@ -107,7 +107,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GsaFloatFunctionalAttributeParameter]",
+        attribute_parameters: "list[GsaFloatFunctionalAttributeParameter]",
         default_threshold_type: "GsaAttributeThresholdType",
         display_names: "Dict[str, str]",
         guid: "str",
@@ -126,7 +126,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
 
         Parameters
         ----------
-        attribute_parameters: List[GsaFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GsaFloatFunctionalAttributeParameter]
         default_threshold_type: GsaAttributeThresholdType
         display_names: Dict[str, str]
         guid: str
@@ -155,7 +155,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
             help_path=help_path,
         )
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
-        self._attribute_parameters: List[GsaFloatFunctionalAttributeParameter]
+        self._attribute_parameters: list[GsaFloatFunctionalAttributeParameter]
         self._is_range: bool
 
         if unit is not Unset:
@@ -189,25 +189,25 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         self._unit = unit
 
     @property
-    def attribute_parameters(self) -> "List[GsaFloatFunctionalAttributeParameter]":
+    def attribute_parameters(self) -> "list[GsaFloatFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GsaFloatFunctionalAttribute.
 
         Returns
         -------
-        List[GsaFloatFunctionalAttributeParameter]
+        list[GsaFloatFunctionalAttributeParameter]
             The attribute_parameters of this GsaFloatFunctionalAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "List[GsaFloatFunctionalAttributeParameter]"
+        self, attribute_parameters: "list[GsaFloatFunctionalAttributeParameter]"
     ) -> None:
         """Sets the attribute_parameters of this GsaFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GsaFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GsaFloatFunctionalAttributeParameter]
             The attribute_parameters of this GsaFloatFunctionalAttribute.
         """
         # Field is not nullable
@@ -247,7 +247,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

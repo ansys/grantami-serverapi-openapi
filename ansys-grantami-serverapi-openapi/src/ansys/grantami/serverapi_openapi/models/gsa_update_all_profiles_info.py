@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaUpdateAllProfilesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_profile": "GsaUpdateDefaultProfile",
         "profiles": "list[GsaSlimEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_profile": "defaultProfile",
         "profiles": "profiles",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "profiles": "GsaSlimEntity",
         "defaultProfile": "GsaUpdateDefaultProfile",
     }
@@ -81,16 +81,16 @@ class GsaUpdateAllProfilesInfo(ModelBase):
         self,
         *,
         default_profile: "Union[GsaUpdateDefaultProfile, Unset_Type]" = Unset,
-        profiles: "Union[List[GsaSlimEntity], None, Unset_Type]" = Unset,
+        profiles: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaUpdateAllProfilesInfo - a model defined in Swagger
 
         Parameters
         ----------
         default_profile: GsaUpdateDefaultProfile, optional
-        profiles: List[GsaSlimEntity], optional
+        profiles: list[GsaSlimEntity], optional
         """
-        self._profiles: Union[List[GsaSlimEntity], None, Unset_Type] = Unset
+        self._profiles: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
         self._default_profile: Union[GsaUpdateDefaultProfile, Unset_Type] = Unset
 
         if profiles is not Unset:
@@ -99,23 +99,23 @@ class GsaUpdateAllProfilesInfo(ModelBase):
             self.default_profile = default_profile
 
     @property
-    def profiles(self) -> "Union[List[GsaSlimEntity], None, Unset_Type]":
+    def profiles(self) -> "Union[list[GsaSlimEntity], None, Unset_Type]":
         """Gets the profiles of this GsaUpdateAllProfilesInfo.
 
         Returns
         -------
-        Union[List[GsaSlimEntity], None, Unset_Type]
+        Union[list[GsaSlimEntity], None, Unset_Type]
             The profiles of this GsaUpdateAllProfilesInfo.
         """
         return self._profiles
 
     @profiles.setter
-    def profiles(self, profiles: "Union[List[GsaSlimEntity], None, Unset_Type]") -> None:
+    def profiles(self, profiles: "Union[list[GsaSlimEntity], None, Unset_Type]") -> None:
         """Sets the profiles of this GsaUpdateAllProfilesInfo.
 
         Parameters
         ----------
-        profiles: Union[List[GsaSlimEntity], None, Unset_Type]
+        profiles: Union[list[GsaSlimEntity], None, Unset_Type]
             The profiles of this GsaUpdateAllProfilesInfo.
         """
         self._profiles = profiles
@@ -148,7 +148,7 @@ class GsaUpdateAllProfilesInfo(ModelBase):
         self._default_profile = default_profile
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

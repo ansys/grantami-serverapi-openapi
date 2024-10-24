@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaDataExportDiscreteSeries(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_values": "list[GsaDataExportParameterValue]",
         "points": "list[GsaDataExportDiscreteSeriesPoint]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_values": "parameterValues",
         "points": "points",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GsaDataExportParameterValue",
         "points": "GsaDataExportDiscreteSeriesPoint",
     }
@@ -80,18 +80,18 @@ class GsaDataExportDiscreteSeries(ModelBase):
     def __init__(
         self,
         *,
-        parameter_values: "Union[List[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
-        points: "Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]" = Unset,
+        parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
+        points: "Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDiscreteSeries - a model defined in Swagger
 
         Parameters
         ----------
-        parameter_values: List[GsaDataExportParameterValue], optional
-        points: List[GsaDataExportDiscreteSeriesPoint], optional
+        parameter_values: list[GsaDataExportParameterValue], optional
+        points: list[GsaDataExportDiscreteSeriesPoint], optional
         """
-        self._parameter_values: Union[List[GsaDataExportParameterValue], None, Unset_Type] = Unset
-        self._points: Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type] = Unset
+        self._parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type] = Unset
+        self._points: Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type] = Unset
 
         if parameter_values is not Unset:
             self.parameter_values = parameter_values
@@ -99,55 +99,55 @@ class GsaDataExportDiscreteSeries(ModelBase):
             self.points = points
 
     @property
-    def parameter_values(self) -> "Union[List[GsaDataExportParameterValue], None, Unset_Type]":
+    def parameter_values(self) -> "Union[list[GsaDataExportParameterValue], None, Unset_Type]":
         """Gets the parameter_values of this GsaDataExportDiscreteSeries.
 
         Returns
         -------
-        Union[List[GsaDataExportParameterValue], None, Unset_Type]
+        Union[list[GsaDataExportParameterValue], None, Unset_Type]
             The parameter_values of this GsaDataExportDiscreteSeries.
         """
         return self._parameter_values
 
     @parameter_values.setter
     def parameter_values(
-        self, parameter_values: "Union[List[GsaDataExportParameterValue], None, Unset_Type]"
+        self, parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]"
     ) -> None:
         """Sets the parameter_values of this GsaDataExportDiscreteSeries.
 
         Parameters
         ----------
-        parameter_values: Union[List[GsaDataExportParameterValue], None, Unset_Type]
+        parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type]
             The parameter_values of this GsaDataExportDiscreteSeries.
         """
         self._parameter_values = parameter_values
 
     @property
-    def points(self) -> "Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]":
+    def points(self) -> "Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]":
         """Gets the points of this GsaDataExportDiscreteSeries.
 
         Returns
         -------
-        Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]
+        Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]
             The points of this GsaDataExportDiscreteSeries.
         """
         return self._points
 
     @points.setter
     def points(
-        self, points: "Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]"
+        self, points: "Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]"
     ) -> None:
         """Sets the points of this GsaDataExportDiscreteSeries.
 
         Parameters
         ----------
-        points: Union[List[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]
+        points: Union[list[GsaDataExportDiscreteSeriesPoint], None, Unset_Type]
             The points of this GsaDataExportDiscreteSeries.
         """
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

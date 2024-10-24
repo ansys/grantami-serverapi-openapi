@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaTabularDatumRow(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "cells": "list[GsaTabularDatumCell]",
         "guid": "str",
         "linking_value": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "cells": "cells",
         "guid": "guid",
         "linking_value": "linkingValue",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "cells": "GsaTabularDatumCell",
     }
 
@@ -81,7 +81,7 @@ class GsaTabularDatumRow(ModelBase):
     def __init__(
         self,
         *,
-        cells: "List[GsaTabularDatumCell]",
+        cells: "list[GsaTabularDatumCell]",
         guid: "str",
         linking_value: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -89,12 +89,12 @@ class GsaTabularDatumRow(ModelBase):
 
         Parameters
         ----------
-        cells: List[GsaTabularDatumCell]
+        cells: list[GsaTabularDatumCell]
         guid: str
         linking_value: str, optional
         """
         self._guid: str
-        self._cells: List[GsaTabularDatumCell]
+        self._cells: list[GsaTabularDatumCell]
         self._linking_value: Union[str, None, Unset_Type] = Unset
 
         self.guid = guid
@@ -131,23 +131,23 @@ class GsaTabularDatumRow(ModelBase):
         self._guid = guid
 
     @property
-    def cells(self) -> "List[GsaTabularDatumCell]":
+    def cells(self) -> "list[GsaTabularDatumCell]":
         """Gets the cells of this GsaTabularDatumRow.
 
         Returns
         -------
-        List[GsaTabularDatumCell]
+        list[GsaTabularDatumCell]
             The cells of this GsaTabularDatumRow.
         """
         return self._cells
 
     @cells.setter
-    def cells(self, cells: "List[GsaTabularDatumCell]") -> None:
+    def cells(self, cells: "list[GsaTabularDatumCell]") -> None:
         """Sets the cells of this GsaTabularDatumRow.
 
         Parameters
         ----------
-        cells: List[GsaTabularDatumCell]
+        cells: list[GsaTabularDatumCell]
             The cells of this GsaTabularDatumRow.
         """
         # Field is not nullable
@@ -181,7 +181,7 @@ class GsaTabularDatumRow(ModelBase):
         self._linking_value = linking_value
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_aggregation_datum import (  # noqa: F401
     GsaAggregationDatum,
@@ -58,26 +58,26 @@ class GsaLinkAggregation(GsaAggregationDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAggregationDatumType",
         "local_aggregations": "list[GsaLocalColumnAggregation]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "local_aggregations": "localAggregations",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localAggregations": "GsaLocalColumnAggregation",
     }
 
@@ -87,47 +87,47 @@ class GsaLinkAggregation(GsaAggregationDatum):
         self,
         *,
         datum_type: "GsaAggregationDatumType" = GsaAggregationDatumType.LINK,
-        local_aggregations: "Union[List[GsaLocalColumnAggregation], None, Unset_Type]" = Unset,
+        local_aggregations: "Union[list[GsaLocalColumnAggregation], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaLinkAggregation - a model defined in Swagger
 
         Parameters
         ----------
         datum_type: GsaAggregationDatumType
-        local_aggregations: List[GsaLocalColumnAggregation], optional
+        local_aggregations: list[GsaLocalColumnAggregation], optional
         """
         super().__init__(datum_type=datum_type)
-        self._local_aggregations: Union[List[GsaLocalColumnAggregation], None, Unset_Type] = Unset
+        self._local_aggregations: Union[list[GsaLocalColumnAggregation], None, Unset_Type] = Unset
 
         if local_aggregations is not Unset:
             self.local_aggregations = local_aggregations
 
     @property
-    def local_aggregations(self) -> "Union[List[GsaLocalColumnAggregation], None, Unset_Type]":
+    def local_aggregations(self) -> "Union[list[GsaLocalColumnAggregation], None, Unset_Type]":
         """Gets the local_aggregations of this GsaLinkAggregation.
 
         Returns
         -------
-        Union[List[GsaLocalColumnAggregation], None, Unset_Type]
+        Union[list[GsaLocalColumnAggregation], None, Unset_Type]
             The local_aggregations of this GsaLinkAggregation.
         """
         return self._local_aggregations
 
     @local_aggregations.setter
     def local_aggregations(
-        self, local_aggregations: "Union[List[GsaLocalColumnAggregation], None, Unset_Type]"
+        self, local_aggregations: "Union[list[GsaLocalColumnAggregation], None, Unset_Type]"
     ) -> None:
         """Sets the local_aggregations of this GsaLinkAggregation.
 
         Parameters
         ----------
-        local_aggregations: Union[List[GsaLocalColumnAggregation], None, Unset_Type]
+        local_aggregations: Union[list[GsaLocalColumnAggregation], None, Unset_Type]
             The local_aggregations of this GsaLinkAggregation.
         """
         self._local_aggregations = local_aggregations
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute import GsaAttribute  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
@@ -54,16 +54,16 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "allow_all_compatible_expressions": "bool",
         "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
@@ -85,7 +85,7 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
         "allow_anonymous_expressions": "allowAnonymousExpressions",
         "allow_extrapolation": "allowExtrapolation",
@@ -107,7 +107,7 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimUnit",
         "attributeParameters": "GsaSlimNamedEntity",
         "expressions": "GsaSlimExpression",
@@ -122,11 +122,11 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         allow_all_compatible_expressions: "bool",
         allow_anonymous_expressions: "bool",
         allow_extrapolation: "bool",
-        attribute_parameters: "List[GsaSlimNamedEntity]",
+        attribute_parameters: "list[GsaSlimNamedEntity]",
         default_content: "GsaMathsContent",
         default_threshold_type: "GsaAttributeThresholdType",
         display_names: "Dict[str, str]",
-        expressions: "List[GsaSlimExpression]",
+        expressions: "list[GsaSlimExpression]",
         guid: "str",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
@@ -146,11 +146,11 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         allow_all_compatible_expressions: bool
         allow_anonymous_expressions: bool
         allow_extrapolation: bool
-        attribute_parameters: List[GsaSlimNamedEntity]
+        attribute_parameters: list[GsaSlimNamedEntity]
         default_content: GsaMathsContent
         default_threshold_type: GsaAttributeThresholdType
         display_names: Dict[str, str]
-        expressions: List[GsaSlimExpression]
+        expressions: list[GsaSlimExpression]
         guid: str
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
@@ -177,8 +177,8 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
             help_path=help_path,
         )
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
-        self._attribute_parameters: List[GsaSlimNamedEntity]
-        self._expressions: List[GsaSlimExpression]
+        self._attribute_parameters: list[GsaSlimNamedEntity]
+        self._expressions: list[GsaSlimExpression]
         self._allow_extrapolation: bool
         self._is_range: bool
         self._allow_all_compatible_expressions: bool
@@ -221,23 +221,23 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         self._unit = unit
 
     @property
-    def attribute_parameters(self) -> "List[GsaSlimNamedEntity]":
+    def attribute_parameters(self) -> "list[GsaSlimNamedEntity]":
         """Gets the attribute_parameters of this GsaMathsFunctionalAttribute.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The attribute_parameters of this GsaMathsFunctionalAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
-    def attribute_parameters(self, attribute_parameters: "List[GsaSlimNamedEntity]") -> None:
+    def attribute_parameters(self, attribute_parameters: "list[GsaSlimNamedEntity]") -> None:
         """Sets the attribute_parameters of this GsaMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GsaSlimNamedEntity]
+        attribute_parameters: list[GsaSlimNamedEntity]
             The attribute_parameters of this GsaMathsFunctionalAttribute.
         """
         # Field is not nullable
@@ -249,23 +249,23 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         self._attribute_parameters = attribute_parameters
 
     @property
-    def expressions(self) -> "List[GsaSlimExpression]":
+    def expressions(self) -> "list[GsaSlimExpression]":
         """Gets the expressions of this GsaMathsFunctionalAttribute.
 
         Returns
         -------
-        List[GsaSlimExpression]
+        list[GsaSlimExpression]
             The expressions of this GsaMathsFunctionalAttribute.
         """
         return self._expressions
 
     @expressions.setter
-    def expressions(self, expressions: "List[GsaSlimExpression]") -> None:
+    def expressions(self, expressions: "list[GsaSlimExpression]") -> None:
         """Sets the expressions of this GsaMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: List[GsaSlimExpression]
+        expressions: list[GsaSlimExpression]
             The expressions of this GsaMathsFunctionalAttribute.
         """
         # Field is not nullable
@@ -421,7 +421,7 @@ class GsaMathsFunctionalAttribute(GsaAttribute):
         self._default_content = default_content
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

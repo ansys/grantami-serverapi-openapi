@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_layout_section import (  # noqa: F401
     GsaLayoutSection,
@@ -58,16 +58,16 @@ class GsaFullLayoutSection(GsaLayoutSection):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
@@ -75,7 +75,7 @@ class GsaFullLayoutSection(GsaLayoutSection):
         "section_items": "list[GsaLayoutItem]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
@@ -83,7 +83,7 @@ class GsaFullLayoutSection(GsaLayoutSection):
         "section_items": "sectionItems",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "sectionItems": "GsaLayoutItem",
     }
 
@@ -96,7 +96,7 @@ class GsaFullLayoutSection(GsaLayoutSection):
         guid: "str",
         name: "str",
         section_detail_type: "GsaLayoutSectionDetailType" = GsaLayoutSectionDetailType.FULL,
-        section_items: "List[GsaLayoutItem]",
+        section_items: "list[GsaLayoutItem]",
     ) -> None:
         """GsaFullLayoutSection - a model defined in Swagger
 
@@ -106,7 +106,7 @@ class GsaFullLayoutSection(GsaLayoutSection):
         guid: str
         name: str
         section_detail_type: GsaLayoutSectionDetailType
-        section_items: List[GsaLayoutItem]
+        section_items: list[GsaLayoutItem]
         """
         super().__init__(
             display_names=display_names,
@@ -114,28 +114,28 @@ class GsaFullLayoutSection(GsaLayoutSection):
             name=name,
             section_detail_type=section_detail_type,
         )
-        self._section_items: List[GsaLayoutItem]
+        self._section_items: list[GsaLayoutItem]
 
         self.section_items = section_items
 
     @property
-    def section_items(self) -> "List[GsaLayoutItem]":
+    def section_items(self) -> "list[GsaLayoutItem]":
         """Gets the section_items of this GsaFullLayoutSection.
 
         Returns
         -------
-        List[GsaLayoutItem]
+        list[GsaLayoutItem]
             The section_items of this GsaFullLayoutSection.
         """
         return self._section_items
 
     @section_items.setter
-    def section_items(self, section_items: "List[GsaLayoutItem]") -> None:
+    def section_items(self, section_items: "list[GsaLayoutItem]") -> None:
         """Sets the section_items of this GsaFullLayoutSection.
 
         Parameters
         ----------
-        section_items: List[GsaLayoutItem]
+        section_items: list[GsaLayoutItem]
             The section_items of this GsaFullLayoutSection.
         """
         # Field is not nullable
@@ -147,7 +147,7 @@ class GsaFullLayoutSection(GsaLayoutSection):
         self._section_items = section_items
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

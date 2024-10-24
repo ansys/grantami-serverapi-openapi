@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum import GsaSetDatum  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_set_datum_type import GsaSetDatumType
@@ -54,28 +54,28 @@ class GsaSetPointDatum(GsaSetDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "estimated": "bool",
         "set_datum_type": "GsaSetDatumType",
         "values": "list[GsaSetPointDatumValue]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "estimated": "estimated",
         "set_datum_type": "setDatumType",
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GsaSetPointDatumValue",
     }
 
@@ -86,7 +86,7 @@ class GsaSetPointDatum(GsaSetDatum):
         *,
         estimated: "bool",
         set_datum_type: "GsaSetDatumType" = GsaSetDatumType.POINT,
-        values: "List[GsaSetPointDatumValue]",
+        values: "list[GsaSetPointDatumValue]",
     ) -> None:
         """GsaSetPointDatum - a model defined in Swagger
 
@@ -94,11 +94,11 @@ class GsaSetPointDatum(GsaSetDatum):
         ----------
         estimated: bool
         set_datum_type: GsaSetDatumType
-        values: List[GsaSetPointDatumValue]
+        values: list[GsaSetPointDatumValue]
         """
         super().__init__(set_datum_type=set_datum_type)
         self._estimated: bool
-        self._values: List[GsaSetPointDatumValue]
+        self._values: list[GsaSetPointDatumValue]
 
         self.estimated = estimated
         self.values = values
@@ -132,23 +132,23 @@ class GsaSetPointDatum(GsaSetDatum):
         self._estimated = estimated
 
     @property
-    def values(self) -> "List[GsaSetPointDatumValue]":
+    def values(self) -> "list[GsaSetPointDatumValue]":
         """Gets the values of this GsaSetPointDatum.
 
         Returns
         -------
-        List[GsaSetPointDatumValue]
+        list[GsaSetPointDatumValue]
             The values of this GsaSetPointDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaSetPointDatumValue]") -> None:
+    def values(self, values: "list[GsaSetPointDatumValue]") -> None:
         """Sets the values of this GsaSetPointDatum.
 
         Parameters
         ----------
-        values: List[GsaSetPointDatumValue]
+        values: list[GsaSetPointDatumValue]
             The values of this GsaSetPointDatum.
         """
         # Field is not nullable
@@ -160,7 +160,7 @@ class GsaSetPointDatum(GsaSetDatum):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

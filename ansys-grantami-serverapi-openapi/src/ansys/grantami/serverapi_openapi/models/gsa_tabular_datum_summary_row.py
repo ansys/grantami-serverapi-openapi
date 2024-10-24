@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaTabularDatumSummaryRow(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "cells": "list[GsaTabularDatumRollupCell]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "cells": "cells",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "cells": "GsaTabularDatumRollupCell",
     }
 
@@ -77,36 +77,36 @@ class GsaTabularDatumSummaryRow(ModelBase):
     def __init__(
         self,
         *,
-        cells: "List[GsaTabularDatumRollupCell]",
+        cells: "list[GsaTabularDatumRollupCell]",
     ) -> None:
         """GsaTabularDatumSummaryRow - a model defined in Swagger
 
         Parameters
         ----------
-        cells: List[GsaTabularDatumRollupCell]
+        cells: list[GsaTabularDatumRollupCell]
         """
-        self._cells: List[GsaTabularDatumRollupCell]
+        self._cells: list[GsaTabularDatumRollupCell]
 
         self.cells = cells
 
     @property
-    def cells(self) -> "List[GsaTabularDatumRollupCell]":
+    def cells(self) -> "list[GsaTabularDatumRollupCell]":
         """Gets the cells of this GsaTabularDatumSummaryRow.
 
         Returns
         -------
-        List[GsaTabularDatumRollupCell]
+        list[GsaTabularDatumRollupCell]
             The cells of this GsaTabularDatumSummaryRow.
         """
         return self._cells
 
     @cells.setter
-    def cells(self, cells: "List[GsaTabularDatumRollupCell]") -> None:
+    def cells(self, cells: "list[GsaTabularDatumRollupCell]") -> None:
         """Sets the cells of this GsaTabularDatumSummaryRow.
 
         Parameters
         ----------
-        cells: List[GsaTabularDatumRollupCell]
+        cells: list[GsaTabularDatumRollupCell]
             The cells of this GsaTabularDatumSummaryRow.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaTabularDatumSummaryRow(ModelBase):
         self._cells = cells
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

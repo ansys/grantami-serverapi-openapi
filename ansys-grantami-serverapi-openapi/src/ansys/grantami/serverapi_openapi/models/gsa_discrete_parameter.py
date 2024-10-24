@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_parameter import GsaParameter  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_parameter_type import GsaParameterType
@@ -54,16 +54,16 @@ class GsaDiscreteParameter(GsaParameter):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -73,7 +73,7 @@ class GsaDiscreteParameter(GsaParameter):
         "help_path": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
@@ -83,7 +83,7 @@ class GsaDiscreteParameter(GsaParameter):
         "help_path": "helpPath",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GsaDiscreteParameterValue",
     }
 
@@ -97,7 +97,7 @@ class GsaDiscreteParameter(GsaParameter):
         guid: "str",
         name: "str",
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
-        values: "List[GsaDiscreteParameterValue]",
+        values: "list[GsaDiscreteParameterValue]",
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteParameter - a model defined in Swagger
@@ -109,7 +109,7 @@ class GsaDiscreteParameter(GsaParameter):
         guid: str
         name: str
         type: GsaParameterType
-        values: List[GsaDiscreteParameterValue]
+        values: list[GsaDiscreteParameterValue]
         help_path: str, optional
         """
         super().__init__(
@@ -120,28 +120,28 @@ class GsaDiscreteParameter(GsaParameter):
             type=type,
             help_path=help_path,
         )
-        self._values: List[GsaDiscreteParameterValue]
+        self._values: list[GsaDiscreteParameterValue]
 
         self.values = values
 
     @property
-    def values(self) -> "List[GsaDiscreteParameterValue]":
+    def values(self) -> "list[GsaDiscreteParameterValue]":
         """Gets the values of this GsaDiscreteParameter.
 
         Returns
         -------
-        List[GsaDiscreteParameterValue]
+        list[GsaDiscreteParameterValue]
             The values of this GsaDiscreteParameter.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GsaDiscreteParameterValue]") -> None:
+    def values(self, values: "list[GsaDiscreteParameterValue]") -> None:
         """Sets the values of this GsaDiscreteParameter.
 
         Parameters
         ----------
-        values: List[GsaDiscreteParameterValue]
+        values: list[GsaDiscreteParameterValue]
             The values of this GsaDiscreteParameter.
         """
         # Field is not nullable
@@ -153,7 +153,7 @@ class GsaDiscreteParameter(GsaParameter):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

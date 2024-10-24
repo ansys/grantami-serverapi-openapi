@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaRecordHistoryMoveException(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaErrorDetail]",
         "message": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "GsaErrorDetail",
     }
@@ -83,7 +83,7 @@ class GsaRecordHistoryMoveException(ModelBase):
         self,
         *,
         code: "Union[SystemNetHttpStatusCode, Unset_Type]" = Unset,
-        errors: "Union[List[GsaErrorDetail], None, Unset_Type]" = Unset,
+        errors: "Union[list[GsaErrorDetail], None, Unset_Type]" = Unset,
         message: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordHistoryMoveException - a model defined in Swagger
@@ -91,12 +91,12 @@ class GsaRecordHistoryMoveException(ModelBase):
         Parameters
         ----------
         code: SystemNetHttpStatusCode, optional
-        errors: List[GsaErrorDetail], optional
+        errors: list[GsaErrorDetail], optional
         message: str, optional
         """
         self._message: Union[str, None, Unset_Type] = Unset
         self._code: Union[SystemNetHttpStatusCode, Unset_Type] = Unset
-        self._errors: Union[List[GsaErrorDetail], None, Unset_Type] = Unset
+        self._errors: Union[list[GsaErrorDetail], None, Unset_Type] = Unset
 
         if message is not Unset:
             self.message = message
@@ -153,29 +153,29 @@ class GsaRecordHistoryMoveException(ModelBase):
         self._code = code
 
     @property
-    def errors(self) -> "Union[List[GsaErrorDetail], None, Unset_Type]":
+    def errors(self) -> "Union[list[GsaErrorDetail], None, Unset_Type]":
         """Gets the errors of this GsaRecordHistoryMoveException.
 
         Returns
         -------
-        Union[List[GsaErrorDetail], None, Unset_Type]
+        Union[list[GsaErrorDetail], None, Unset_Type]
             The errors of this GsaRecordHistoryMoveException.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "Union[List[GsaErrorDetail], None, Unset_Type]") -> None:
+    def errors(self, errors: "Union[list[GsaErrorDetail], None, Unset_Type]") -> None:
         """Sets the errors of this GsaRecordHistoryMoveException.
 
         Parameters
         ----------
-        errors: Union[List[GsaErrorDetail], None, Unset_Type]
+        errors: Union[list[GsaErrorDetail], None, Unset_Type]
             The errors of this GsaRecordHistoryMoveException.
         """
         self._errors = errors
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

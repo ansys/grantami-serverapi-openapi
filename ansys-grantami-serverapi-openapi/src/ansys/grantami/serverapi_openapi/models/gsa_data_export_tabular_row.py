@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaDataExportTabularRow(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "linked_data": "list[GsaRecordWithData]",
         "linked_records": "list[GsaRecordReference]",
         "linking_value": "str",
@@ -70,7 +70,7 @@ class GsaDataExportTabularRow(ModelBase):
         "row_number": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "linked_data": "linkedData",
         "linked_records": "linkedRecords",
         "linking_value": "linkingValue",
@@ -80,7 +80,7 @@ class GsaDataExportTabularRow(ModelBase):
         "row_number": "rowNumber",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localData": "GsaDataExportDatum",
         "linkedRecords": "GsaRecordReference",
         "linkedData": "GsaRecordWithData",
@@ -92,11 +92,11 @@ class GsaDataExportTabularRow(ModelBase):
     def __init__(
         self,
         *,
-        linked_data: "Union[List[GsaRecordWithData], None, Unset_Type]" = Unset,
-        linked_records: "Union[List[GsaRecordReference], None, Unset_Type]" = Unset,
+        linked_data: "Union[list[GsaRecordWithData], None, Unset_Type]" = Unset,
+        linked_records: "Union[list[GsaRecordReference], None, Unset_Type]" = Unset,
         linking_value: "Union[str, None, Unset_Type]" = Unset,
-        local_data: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        rolled_up_data: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
+        local_data: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        rolled_up_data: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
         row_guid: "Union[str, Unset_Type]" = Unset,
         row_number: "Union[int, Unset_Type]" = Unset,
     ) -> None:
@@ -104,21 +104,21 @@ class GsaDataExportTabularRow(ModelBase):
 
         Parameters
         ----------
-        linked_data: List[GsaRecordWithData], optional
-        linked_records: List[GsaRecordReference], optional
+        linked_data: list[GsaRecordWithData], optional
+        linked_records: list[GsaRecordReference], optional
         linking_value: str, optional
-        local_data: List[GsaDataExportDatum], optional
-        rolled_up_data: List[GsaDataExportRollupDatum], optional
+        local_data: list[GsaDataExportDatum], optional
+        rolled_up_data: list[GsaDataExportRollupDatum], optional
         row_guid: str, optional
         row_number: int, optional
         """
         self._row_guid: Union[str, Unset_Type] = Unset
         self._linking_value: Union[str, None, Unset_Type] = Unset
         self._row_number: Union[int, Unset_Type] = Unset
-        self._local_data: Union[List[GsaDataExportDatum], None, Unset_Type] = Unset
-        self._linked_records: Union[List[GsaRecordReference], None, Unset_Type] = Unset
-        self._linked_data: Union[List[GsaRecordWithData], None, Unset_Type] = Unset
-        self._rolled_up_data: Union[List[GsaDataExportRollupDatum], None, Unset_Type] = Unset
+        self._local_data: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
+        self._linked_records: Union[list[GsaRecordReference], None, Unset_Type] = Unset
+        self._linked_data: Union[list[GsaRecordWithData], None, Unset_Type] = Unset
+        self._rolled_up_data: Union[list[GsaDataExportRollupDatum], None, Unset_Type] = Unset
 
         if row_guid is not Unset:
             self.row_guid = row_guid
@@ -208,103 +208,103 @@ class GsaDataExportTabularRow(ModelBase):
         self._row_number = row_number
 
     @property
-    def local_data(self) -> "Union[List[GsaDataExportDatum], None, Unset_Type]":
+    def local_data(self) -> "Union[list[GsaDataExportDatum], None, Unset_Type]":
         """Gets the local_data of this GsaDataExportTabularRow.
 
         Returns
         -------
-        Union[List[GsaDataExportDatum], None, Unset_Type]
+        Union[list[GsaDataExportDatum], None, Unset_Type]
             The local_data of this GsaDataExportTabularRow.
         """
         return self._local_data
 
     @local_data.setter
-    def local_data(self, local_data: "Union[List[GsaDataExportDatum], None, Unset_Type]") -> None:
+    def local_data(self, local_data: "Union[list[GsaDataExportDatum], None, Unset_Type]") -> None:
         """Sets the local_data of this GsaDataExportTabularRow.
 
         Parameters
         ----------
-        local_data: Union[List[GsaDataExportDatum], None, Unset_Type]
+        local_data: Union[list[GsaDataExportDatum], None, Unset_Type]
             The local_data of this GsaDataExportTabularRow.
         """
         self._local_data = local_data
 
     @property
-    def linked_records(self) -> "Union[List[GsaRecordReference], None, Unset_Type]":
+    def linked_records(self) -> "Union[list[GsaRecordReference], None, Unset_Type]":
         """Gets the linked_records of this GsaDataExportTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Returns
         -------
-        Union[List[GsaRecordReference], None, Unset_Type]
+        Union[list[GsaRecordReference], None, Unset_Type]
             The linked_records of this GsaDataExportTabularRow.
         """
         return self._linked_records
 
     @linked_records.setter
     def linked_records(
-        self, linked_records: "Union[List[GsaRecordReference], None, Unset_Type]"
+        self, linked_records: "Union[list[GsaRecordReference], None, Unset_Type]"
     ) -> None:
         """Sets the linked_records of this GsaDataExportTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Parameters
         ----------
-        linked_records: Union[List[GsaRecordReference], None, Unset_Type]
+        linked_records: Union[list[GsaRecordReference], None, Unset_Type]
             The linked_records of this GsaDataExportTabularRow.
         """
         self._linked_records = linked_records
 
     @property
-    def linked_data(self) -> "Union[List[GsaRecordWithData], None, Unset_Type]":
+    def linked_data(self) -> "Union[list[GsaRecordWithData], None, Unset_Type]":
         """Gets the linked_data of this GsaDataExportTabularRow.
         Data for the linked records, if the request included linked data to export
 
         Returns
         -------
-        Union[List[GsaRecordWithData], None, Unset_Type]
+        Union[list[GsaRecordWithData], None, Unset_Type]
             The linked_data of this GsaDataExportTabularRow.
         """
         return self._linked_data
 
     @linked_data.setter
-    def linked_data(self, linked_data: "Union[List[GsaRecordWithData], None, Unset_Type]") -> None:
+    def linked_data(self, linked_data: "Union[list[GsaRecordWithData], None, Unset_Type]") -> None:
         """Sets the linked_data of this GsaDataExportTabularRow.
         Data for the linked records, if the request included linked data to export
 
         Parameters
         ----------
-        linked_data: Union[List[GsaRecordWithData], None, Unset_Type]
+        linked_data: Union[list[GsaRecordWithData], None, Unset_Type]
             The linked_data of this GsaDataExportTabularRow.
         """
         self._linked_data = linked_data
 
     @property
-    def rolled_up_data(self) -> "Union[List[GsaDataExportRollupDatum], None, Unset_Type]":
+    def rolled_up_data(self) -> "Union[list[GsaDataExportRollupDatum], None, Unset_Type]":
         """Gets the rolled_up_data of this GsaDataExportTabularRow.
 
         Returns
         -------
-        Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The rolled_up_data of this GsaDataExportTabularRow.
         """
         return self._rolled_up_data
 
     @rolled_up_data.setter
     def rolled_up_data(
-        self, rolled_up_data: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]"
+        self, rolled_up_data: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]"
     ) -> None:
         """Sets the rolled_up_data of this GsaDataExportTabularRow.
 
         Parameters
         ----------
-        rolled_up_data: Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        rolled_up_data: Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The rolled_up_data of this GsaDataExportTabularRow.
         """
         self._rolled_up_data = rolled_up_data
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

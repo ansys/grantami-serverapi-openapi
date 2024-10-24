@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaRecordListHeader(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "awaiting_approval": "bool",
         "created_timestamp": "datetime",
         "created_user": "GsaListsUserOrGroup",
@@ -79,7 +79,7 @@ class GsaRecordListHeader(ModelBase):
         "published_user": "GsaListsUserOrGroup",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "awaiting_approval": "awaitingApproval",
         "created_timestamp": "createdTimestamp",
         "created_user": "createdUser",
@@ -98,7 +98,7 @@ class GsaRecordListHeader(ModelBase):
         "published_user": "publishedUser",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "createdUser": "GsaListsUserOrGroup",
         "lastModifiedUser": "GsaListsUserOrGroup",
         "publishedUser": "GsaListsUserOrGroup",
@@ -610,7 +610,7 @@ class GsaRecordListHeader(ModelBase):
         self._internal_use = internal_use
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

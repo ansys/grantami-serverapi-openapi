@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GsaDiscreteGridPoint(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraints": "list[GsaParameterWithDataValue]",
         "value": "GsaDiscreteValuesDiscreteValue",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraints": "constraints",
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GsaParameterWithDataValue",
         "value": "GsaDiscreteValuesDiscreteValue",
     }
@@ -80,40 +80,40 @@ class GsaDiscreteGridPoint(ModelBase):
     def __init__(
         self,
         *,
-        constraints: "List[GsaParameterWithDataValue]",
+        constraints: "list[GsaParameterWithDataValue]",
         value: "GsaDiscreteValuesDiscreteValue",
     ) -> None:
         """GsaDiscreteGridPoint - a model defined in Swagger
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
         value: GsaDiscreteValuesDiscreteValue
         """
-        self._constraints: List[GsaParameterWithDataValue]
+        self._constraints: list[GsaParameterWithDataValue]
         self._value: GsaDiscreteValuesDiscreteValue
 
         self.constraints = constraints
         self.value = value
 
     @property
-    def constraints(self) -> "List[GsaParameterWithDataValue]":
+    def constraints(self) -> "list[GsaParameterWithDataValue]":
         """Gets the constraints of this GsaDiscreteGridPoint.
 
         Returns
         -------
-        List[GsaParameterWithDataValue]
+        list[GsaParameterWithDataValue]
             The constraints of this GsaDiscreteGridPoint.
         """
         return self._constraints
 
     @constraints.setter
-    def constraints(self, constraints: "List[GsaParameterWithDataValue]") -> None:
+    def constraints(self, constraints: "list[GsaParameterWithDataValue]") -> None:
         """Sets the constraints of this GsaDiscreteGridPoint.
 
         Parameters
         ----------
-        constraints: List[GsaParameterWithDataValue]
+        constraints: list[GsaParameterWithDataValue]
             The constraints of this GsaDiscreteGridPoint.
         """
         # Field is not nullable
@@ -153,7 +153,7 @@ class GsaDiscreteGridPoint(ModelBase):
         self._value = value
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

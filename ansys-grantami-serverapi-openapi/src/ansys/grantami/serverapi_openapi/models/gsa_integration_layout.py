@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,49 +51,49 @@ class GsaIntegrationLayout(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guids": "list[str]",
         "attribute_identities": "list[int]",
         "name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guids": "attributeGuids",
         "attribute_identities": "attributeIdentities",
         "name": "name",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        attribute_guids: "Union[List[str], None, Unset_Type]" = Unset,
-        attribute_identities: "Union[List[int], None, Unset_Type]" = Unset,
+        attribute_guids: "Union[list[str], None, Unset_Type]" = Unset,
+        attribute_identities: "Union[list[int], None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaIntegrationLayout - a model defined in Swagger
 
         Parameters
         ----------
-        attribute_guids: List[str], optional
-        attribute_identities: List[int], optional
+        attribute_guids: list[str], optional
+        attribute_identities: list[int], optional
         name: str, optional
         """
         self._name: Union[str, None, Unset_Type] = Unset
-        self._attribute_identities: Union[List[int], None, Unset_Type] = Unset
-        self._attribute_guids: Union[List[str], None, Unset_Type] = Unset
+        self._attribute_identities: Union[list[int], None, Unset_Type] = Unset
+        self._attribute_guids: Union[list[str], None, Unset_Type] = Unset
 
         if name is not Unset:
             self.name = name
@@ -125,53 +125,53 @@ class GsaIntegrationLayout(ModelBase):
         self._name = name
 
     @property
-    def attribute_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def attribute_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the attribute_identities of this GsaIntegrationLayout.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The attribute_identities of this GsaIntegrationLayout.
         """
         return self._attribute_identities
 
     @attribute_identities.setter
     def attribute_identities(
-        self, attribute_identities: "Union[List[int], None, Unset_Type]"
+        self, attribute_identities: "Union[list[int], None, Unset_Type]"
     ) -> None:
         """Sets the attribute_identities of this GsaIntegrationLayout.
 
         Parameters
         ----------
-        attribute_identities: Union[List[int], None, Unset_Type]
+        attribute_identities: Union[list[int], None, Unset_Type]
             The attribute_identities of this GsaIntegrationLayout.
         """
         self._attribute_identities = attribute_identities
 
     @property
-    def attribute_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def attribute_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the attribute_guids of this GsaIntegrationLayout.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The attribute_guids of this GsaIntegrationLayout.
         """
         return self._attribute_guids
 
     @attribute_guids.setter
-    def attribute_guids(self, attribute_guids: "Union[List[str], None, Unset_Type]") -> None:
+    def attribute_guids(self, attribute_guids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the attribute_guids of this GsaIntegrationLayout.
 
         Parameters
         ----------
-        attribute_guids: Union[List[str], None, Unset_Type]
+        attribute_guids: Union[list[str], None, Unset_Type]
             The attribute_guids of this GsaIntegrationLayout.
         """
         self._attribute_guids = attribute_guids
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

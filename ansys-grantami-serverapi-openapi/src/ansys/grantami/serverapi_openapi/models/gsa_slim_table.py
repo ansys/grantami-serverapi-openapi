@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaSlimTable(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -70,7 +70,7 @@ class GsaSlimTable(ModelBase):
         "table_types": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -80,7 +80,7 @@ class GsaSlimTable(ModelBase):
         "table_types": "tableTypes",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -93,7 +93,7 @@ class GsaSlimTable(ModelBase):
         is_hidden_from_search: "bool",
         is_versioned: "bool",
         name: "str",
-        table_types: "List[str]",
+        table_types: "list[str]",
     ) -> None:
         """GsaSlimTable - a model defined in Swagger
 
@@ -105,12 +105,12 @@ class GsaSlimTable(ModelBase):
         is_hidden_from_search: bool
         is_versioned: bool
         name: str
-        table_types: List[str]
+        table_types: list[str]
         """
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
-        self._table_types: List[str]
+        self._table_types: list[str]
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -208,23 +208,23 @@ class GsaSlimTable(ModelBase):
         self._is_versioned = is_versioned
 
     @property
-    def table_types(self) -> "List[str]":
+    def table_types(self) -> "list[str]":
         """Gets the table_types of this GsaSlimTable.
 
         Returns
         -------
-        List[str]
+        list[str]
             The table_types of this GsaSlimTable.
         """
         return self._table_types
 
     @table_types.setter
-    def table_types(self, table_types: "List[str]") -> None:
+    def table_types(self, table_types: "list[str]") -> None:
         """Sets the table_types of this GsaSlimTable.
 
         Parameters
         ----------
-        table_types: List[str]
+        table_types: list[str]
             The table_types of this GsaSlimTable.
         """
         # Field is not nullable
@@ -320,7 +320,7 @@ class GsaSlimTable(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

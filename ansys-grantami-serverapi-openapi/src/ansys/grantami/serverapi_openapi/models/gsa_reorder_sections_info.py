@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaReorderSectionsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "layout_sections": "list[GsaSlimEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "layout_sections": "layoutSections",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "layoutSections": "GsaSlimEntity",
     }
 
@@ -77,36 +77,36 @@ class GsaReorderSectionsInfo(ModelBase):
     def __init__(
         self,
         *,
-        layout_sections: "List[GsaSlimEntity]",
+        layout_sections: "list[GsaSlimEntity]",
     ) -> None:
         """GsaReorderSectionsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        layout_sections: List[GsaSlimEntity]
+        layout_sections: list[GsaSlimEntity]
         """
-        self._layout_sections: List[GsaSlimEntity]
+        self._layout_sections: list[GsaSlimEntity]
 
         self.layout_sections = layout_sections
 
     @property
-    def layout_sections(self) -> "List[GsaSlimEntity]":
+    def layout_sections(self) -> "list[GsaSlimEntity]":
         """Gets the layout_sections of this GsaReorderSectionsInfo.
 
         Returns
         -------
-        List[GsaSlimEntity]
+        list[GsaSlimEntity]
             The layout_sections of this GsaReorderSectionsInfo.
         """
         return self._layout_sections
 
     @layout_sections.setter
-    def layout_sections(self, layout_sections: "List[GsaSlimEntity]") -> None:
+    def layout_sections(self, layout_sections: "list[GsaSlimEntity]") -> None:
         """Sets the layout_sections of this GsaReorderSectionsInfo.
 
         Parameters
         ----------
-        layout_sections: List[GsaSlimEntity]
+        layout_sections: list[GsaSlimEntity]
             The layout_sections of this GsaReorderSectionsInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaReorderSectionsInfo(ModelBase):
         self._layout_sections = layout_sections
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

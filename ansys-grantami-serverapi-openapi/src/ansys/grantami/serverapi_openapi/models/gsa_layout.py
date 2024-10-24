@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaLayout(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "applicable_applications": "list[str]",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -68,7 +68,7 @@ class GsaLayout(ModelBase):
         "sections": "list[GsaLayoutSection]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "applicable_applications": "applicableApplications",
         "display_names": "displayNames",
         "guid": "guid",
@@ -76,7 +76,7 @@ class GsaLayout(ModelBase):
         "sections": "sections",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "sections": "GsaLayoutSection",
     }
 
@@ -85,24 +85,24 @@ class GsaLayout(ModelBase):
     def __init__(
         self,
         *,
-        applicable_applications: "List[str]",
+        applicable_applications: "list[str]",
         display_names: "Dict[str, str]",
         guid: "str",
         name: "str",
-        sections: "List[GsaLayoutSection]",
+        sections: "list[GsaLayoutSection]",
     ) -> None:
         """GsaLayout - a model defined in Swagger
 
         Parameters
         ----------
-        applicable_applications: List[str]
+        applicable_applications: list[str]
         display_names: Dict[str, str]
         guid: str
         name: str
-        sections: List[GsaLayoutSection]
+        sections: list[GsaLayoutSection]
         """
-        self._sections: List[GsaLayoutSection]
-        self._applicable_applications: List[str]
+        self._sections: list[GsaLayoutSection]
+        self._applicable_applications: list[str]
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -114,23 +114,23 @@ class GsaLayout(ModelBase):
         self.guid = guid
 
     @property
-    def sections(self) -> "List[GsaLayoutSection]":
+    def sections(self) -> "list[GsaLayoutSection]":
         """Gets the sections of this GsaLayout.
 
         Returns
         -------
-        List[GsaLayoutSection]
+        list[GsaLayoutSection]
             The sections of this GsaLayout.
         """
         return self._sections
 
     @sections.setter
-    def sections(self, sections: "List[GsaLayoutSection]") -> None:
+    def sections(self, sections: "list[GsaLayoutSection]") -> None:
         """Sets the sections of this GsaLayout.
 
         Parameters
         ----------
-        sections: List[GsaLayoutSection]
+        sections: list[GsaLayoutSection]
             The sections of this GsaLayout.
         """
         # Field is not nullable
@@ -142,25 +142,25 @@ class GsaLayout(ModelBase):
         self._sections = sections
 
     @property
-    def applicable_applications(self) -> "List[str]":
+    def applicable_applications(self) -> "list[str]":
         """Gets the applicable_applications of this GsaLayout.
         If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Returns
         -------
-        List[str]
+        list[str]
             The applicable_applications of this GsaLayout.
         """
         return self._applicable_applications
 
     @applicable_applications.setter
-    def applicable_applications(self, applicable_applications: "List[str]") -> None:
+    def applicable_applications(self, applicable_applications: "list[str]") -> None:
         """Sets the applicable_applications of this GsaLayout.
         If there are no ApplicableApplications, the layout is applicable in all applications.
 
         Parameters
         ----------
-        applicable_applications: List[str]
+        applicable_applications: list[str]
             The applicable_applications of this GsaLayout.
         """
         # Field is not nullable
@@ -256,7 +256,7 @@ class GsaLayout(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

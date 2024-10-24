@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,44 +51,44 @@ class GsaExporterRefetchInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "errors": "list[str]",
         "succeeded": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "errors": "errors",
         "succeeded": "succeeded",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        errors: "Union[List[str], None, Unset_Type]" = Unset,
+        errors: "Union[list[str], None, Unset_Type]" = Unset,
         succeeded: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
         """GsaExporterRefetchInfo - a model defined in Swagger
 
         Parameters
         ----------
-        errors: List[str], optional
+        errors: list[str], optional
         succeeded: bool, optional
         """
         self._succeeded: Union[bool, Unset_Type] = Unset
-        self._errors: Union[List[str], None, Unset_Type] = Unset
+        self._errors: Union[list[str], None, Unset_Type] = Unset
 
         if succeeded is not Unset:
             self.succeeded = succeeded
@@ -121,29 +121,29 @@ class GsaExporterRefetchInfo(ModelBase):
         self._succeeded = succeeded
 
     @property
-    def errors(self) -> "Union[List[str], None, Unset_Type]":
+    def errors(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the errors of this GsaExporterRefetchInfo.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The errors of this GsaExporterRefetchInfo.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "Union[List[str], None, Unset_Type]") -> None:
+    def errors(self, errors: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the errors of this GsaExporterRefetchInfo.
 
         Parameters
         ----------
-        errors: Union[List[str], None, Unset_Type]
+        errors: Union[list[str], None, Unset_Type]
             The errors of this GsaExporterRefetchInfo.
         """
         self._errors = errors
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

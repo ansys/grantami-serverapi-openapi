@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaTable(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -75,7 +75,7 @@ class GsaTable(ModelBase):
         "default_subset": "GsaSlimSubset",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -90,7 +90,7 @@ class GsaTable(ModelBase):
         "default_subset": "defaultSubset",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "defaultSubset": "GsaSlimSubset",
         "subsets": "GsaSlimSubset",
         "defaultLayout": "GsaSlimLayout",
@@ -108,10 +108,10 @@ class GsaTable(ModelBase):
         is_hidden_from_browse: "bool",
         is_hidden_from_search: "bool",
         is_versioned: "bool",
-        layouts: "List[GsaSlimLayout]",
+        layouts: "list[GsaSlimLayout]",
         name: "str",
-        subsets: "List[GsaSlimSubset]",
-        table_types: "List[str]",
+        subsets: "list[GsaSlimSubset]",
+        table_types: "list[str]",
         version_state: "GsaVersionState",
         default_layout: "Union[GsaSlimLayout, Unset_Type]" = Unset,
         default_subset: "Union[GsaSlimSubset, Unset_Type]" = Unset,
@@ -125,23 +125,23 @@ class GsaTable(ModelBase):
         is_hidden_from_browse: bool
         is_hidden_from_search: bool
         is_versioned: bool
-        layouts: List[GsaSlimLayout]
+        layouts: list[GsaSlimLayout]
         name: str
-        subsets: List[GsaSlimSubset]
-        table_types: List[str]
+        subsets: list[GsaSlimSubset]
+        table_types: list[str]
         version_state: GsaVersionState
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
         """
         self._default_subset: Union[GsaSlimSubset, Unset_Type] = Unset
-        self._subsets: List[GsaSlimSubset]
+        self._subsets: list[GsaSlimSubset]
         self._default_layout: Union[GsaSlimLayout, Unset_Type] = Unset
-        self._layouts: List[GsaSlimLayout]
+        self._layouts: list[GsaSlimLayout]
         self._version_state: GsaVersionState
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
-        self._table_types: List[str]
+        self._table_types: list[str]
         self._display_names: Dict[str, str]
         self._name: str
         self._guid: str
@@ -187,23 +187,23 @@ class GsaTable(ModelBase):
         self._default_subset = default_subset
 
     @property
-    def subsets(self) -> "List[GsaSlimSubset]":
+    def subsets(self) -> "list[GsaSlimSubset]":
         """Gets the subsets of this GsaTable.
 
         Returns
         -------
-        List[GsaSlimSubset]
+        list[GsaSlimSubset]
             The subsets of this GsaTable.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "List[GsaSlimSubset]") -> None:
+    def subsets(self, subsets: "list[GsaSlimSubset]") -> None:
         """Sets the subsets of this GsaTable.
 
         Parameters
         ----------
-        subsets: List[GsaSlimSubset]
+        subsets: list[GsaSlimSubset]
             The subsets of this GsaTable.
         """
         # Field is not nullable
@@ -240,23 +240,23 @@ class GsaTable(ModelBase):
         self._default_layout = default_layout
 
     @property
-    def layouts(self) -> "List[GsaSlimLayout]":
+    def layouts(self) -> "list[GsaSlimLayout]":
         """Gets the layouts of this GsaTable.
 
         Returns
         -------
-        List[GsaSlimLayout]
+        list[GsaSlimLayout]
             The layouts of this GsaTable.
         """
         return self._layouts
 
     @layouts.setter
-    def layouts(self, layouts: "List[GsaSlimLayout]") -> None:
+    def layouts(self, layouts: "list[GsaSlimLayout]") -> None:
         """Sets the layouts of this GsaTable.
 
         Parameters
         ----------
-        layouts: List[GsaSlimLayout]
+        layouts: list[GsaSlimLayout]
             The layouts of this GsaTable.
         """
         # Field is not nullable
@@ -380,23 +380,23 @@ class GsaTable(ModelBase):
         self._is_versioned = is_versioned
 
     @property
-    def table_types(self) -> "List[str]":
+    def table_types(self) -> "list[str]":
         """Gets the table_types of this GsaTable.
 
         Returns
         -------
-        List[str]
+        list[str]
             The table_types of this GsaTable.
         """
         return self._table_types
 
     @table_types.setter
-    def table_types(self, table_types: "List[str]") -> None:
+    def table_types(self, table_types: "list[str]") -> None:
         """Sets the table_types of this GsaTable.
 
         Parameters
         ----------
-        table_types: List[str]
+        table_types: list[str]
             The table_types of this GsaTable.
         """
         # Field is not nullable
@@ -492,7 +492,7 @@ class GsaTable(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

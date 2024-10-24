@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_record_link_group import (  # noqa: F401
     GsaRecordLinkGroup,
@@ -58,16 +58,16 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "include_indirect_links": "bool",
@@ -79,7 +79,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         "reverse_display_names": "dict(str, str)",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "include_indirect_links": "includeIndirectLinks",
@@ -91,7 +91,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         "reverse_display_names": "reverseDisplayNames",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -165,7 +165,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         self._include_indirect_links = include_indirect_links
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

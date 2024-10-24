@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute import GsaAttribute  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
@@ -54,16 +54,16 @@ class GsaTabularAttribute(GsaAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_full_table": "bool",
         "display_names": "dict(str, str)",
@@ -82,7 +82,7 @@ class GsaTabularAttribute(GsaAttribute):
         "target": "GsaTabularAttributeTarget",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
         "display_names": "displayNames",
@@ -101,7 +101,7 @@ class GsaTabularAttribute(GsaAttribute):
         "target": "target",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "target": "GsaTabularAttributeTarget",
         "tabularColumns": "GsaTabularColumn",
     }
@@ -121,7 +121,7 @@ class GsaTabularAttribute(GsaAttribute):
         is_hidden_from_search_criteria: "bool",
         name: "str",
         table: "GsaSlimEntity",
-        tabular_columns: "List[GsaTabularColumn]",
+        tabular_columns: "list[GsaTabularColumn]",
         type: "GsaAttributeType" = GsaAttributeType.LINK,
         about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
@@ -142,7 +142,7 @@ class GsaTabularAttribute(GsaAttribute):
         is_hidden_from_search_criteria: bool
         name: str
         table: GsaSlimEntity
-        tabular_columns: List[GsaTabularColumn]
+        tabular_columns: list[GsaTabularColumn]
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
@@ -166,7 +166,7 @@ class GsaTabularAttribute(GsaAttribute):
         self._display_summary_row_inline: bool
         self._hide_unlinked_rows: bool
         self._target: Union[GsaTabularAttributeTarget, Unset_Type] = Unset
-        self._tabular_columns: List[GsaTabularColumn]
+        self._tabular_columns: list[GsaTabularColumn]
 
         self.display_full_table = display_full_table
         self.display_summary_row_inline = display_summary_row_inline
@@ -285,23 +285,23 @@ class GsaTabularAttribute(GsaAttribute):
         self._target = target
 
     @property
-    def tabular_columns(self) -> "List[GsaTabularColumn]":
+    def tabular_columns(self) -> "list[GsaTabularColumn]":
         """Gets the tabular_columns of this GsaTabularAttribute.
 
         Returns
         -------
-        List[GsaTabularColumn]
+        list[GsaTabularColumn]
             The tabular_columns of this GsaTabularAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
-    def tabular_columns(self, tabular_columns: "List[GsaTabularColumn]") -> None:
+    def tabular_columns(self, tabular_columns: "list[GsaTabularColumn]") -> None:
         """Sets the tabular_columns of this GsaTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: List[GsaTabularColumn]
+        tabular_columns: list[GsaTabularColumn]
             The tabular_columns of this GsaTabularAttribute.
         """
         # Field is not nullable
@@ -313,7 +313,7 @@ class GsaTabularAttribute(GsaAttribute):
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

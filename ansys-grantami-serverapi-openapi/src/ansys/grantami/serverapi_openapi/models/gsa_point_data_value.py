@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GsaPointDataValue(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameters_and_values": "list[GsaParameterWithDataValue]",
         "point_value": "float",
         "significant_figures_info": "GsaSignificantFiguresInfo",
         "unit": "GsaSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameters_and_values": "parametersAndValues",
         "point_value": "pointValue",
         "significant_figures_info": "significantFiguresInfo",
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimUnit",
         "significantFiguresInfo": "GsaSignificantFiguresInfo",
         "parametersAndValues": "GsaParameterWithDataValue",
@@ -85,7 +85,7 @@ class GsaPointDataValue(ModelBase):
     def __init__(
         self,
         *,
-        parameters_and_values: "List[GsaParameterWithDataValue]",
+        parameters_and_values: "list[GsaParameterWithDataValue]",
         point_value: "float",
         significant_figures_info: "Union[GsaSignificantFiguresInfo, Unset_Type]" = Unset,
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
@@ -94,7 +94,7 @@ class GsaPointDataValue(ModelBase):
 
         Parameters
         ----------
-        parameters_and_values: List[GsaParameterWithDataValue]
+        parameters_and_values: list[GsaParameterWithDataValue]
         point_value: float
         significant_figures_info: GsaSignificantFiguresInfo, optional
         unit: GsaSlimUnit, optional
@@ -102,7 +102,7 @@ class GsaPointDataValue(ModelBase):
         self._point_value: float
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset
         self._significant_figures_info: Union[GsaSignificantFiguresInfo, Unset_Type] = Unset
-        self._parameters_and_values: List[GsaParameterWithDataValue]
+        self._parameters_and_values: list[GsaParameterWithDataValue]
 
         self.point_value = point_value
         if unit is not Unset:
@@ -192,25 +192,25 @@ class GsaPointDataValue(ModelBase):
         self._significant_figures_info = significant_figures_info
 
     @property
-    def parameters_and_values(self) -> "List[GsaParameterWithDataValue]":
+    def parameters_and_values(self) -> "list[GsaParameterWithDataValue]":
         """Gets the parameters_and_values of this GsaPointDataValue.
 
         Returns
         -------
-        List[GsaParameterWithDataValue]
+        list[GsaParameterWithDataValue]
             The parameters_and_values of this GsaPointDataValue.
         """
         return self._parameters_and_values
 
     @parameters_and_values.setter
     def parameters_and_values(
-        self, parameters_and_values: "List[GsaParameterWithDataValue]"
+        self, parameters_and_values: "list[GsaParameterWithDataValue]"
     ) -> None:
         """Sets the parameters_and_values of this GsaPointDataValue.
 
         Parameters
         ----------
-        parameters_and_values: List[GsaParameterWithDataValue]
+        parameters_and_values: list[GsaParameterWithDataValue]
             The parameters_and_values of this GsaPointDataValue.
         """
         # Field is not nullable
@@ -222,7 +222,7 @@ class GsaPointDataValue(ModelBase):
         self._parameters_and_values = parameters_and_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

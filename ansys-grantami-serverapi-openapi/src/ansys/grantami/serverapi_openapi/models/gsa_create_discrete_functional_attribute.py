@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_create_attribute import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         "discrete_type": "GsaSlimEntity",
         "name": "str",
@@ -77,7 +77,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "is_hidden_from_search_criteria": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "discrete_type": "discreteType",
         "name": "name",
@@ -89,7 +89,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "discreteType": "GsaSlimEntity",
         "attributeParameters": "GsaCreateDiscreteFunctionalAttributeParameter",
     }
@@ -99,7 +99,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GsaCreateDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         discrete_type: "GsaSlimEntity",
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
@@ -113,7 +113,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
 
         Parameters
         ----------
-        attribute_parameters: List[GsaCreateDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GsaCreateDiscreteFunctionalAttributeParameter]
         discrete_type: GsaSlimEntity
         name: str
         type: GsaAttributeType
@@ -133,7 +133,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
         )
         self._discrete_type: GsaSlimEntity
-        self._attribute_parameters: List[GsaCreateDiscreteFunctionalAttributeParameter]
+        self._attribute_parameters: list[GsaCreateDiscreteFunctionalAttributeParameter]
 
         self.discrete_type = discrete_type
         self.attribute_parameters = attribute_parameters
@@ -167,25 +167,25 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         self._discrete_type = discrete_type
 
     @property
-    def attribute_parameters(self) -> "List[GsaCreateDiscreteFunctionalAttributeParameter]":
+    def attribute_parameters(self) -> "list[GsaCreateDiscreteFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GsaCreateDiscreteFunctionalAttribute.
 
         Returns
         -------
-        List[GsaCreateDiscreteFunctionalAttributeParameter]
+        list[GsaCreateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GsaCreateDiscreteFunctionalAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "List[GsaCreateDiscreteFunctionalAttributeParameter]"
+        self, attribute_parameters: "list[GsaCreateDiscreteFunctionalAttributeParameter]"
     ) -> None:
         """Sets the attribute_parameters of this GsaCreateDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GsaCreateDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GsaCreateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GsaCreateDiscreteFunctionalAttribute.
         """
         # Field is not nullable
@@ -197,7 +197,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

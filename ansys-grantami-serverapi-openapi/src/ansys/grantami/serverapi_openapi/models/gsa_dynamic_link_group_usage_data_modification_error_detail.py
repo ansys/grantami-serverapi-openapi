@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_referenced_by_type import GsaReferencedByType
 from ansys.grantami.serverapi_openapi.models.gsa_usage_data_modification_error_detail import (  # noqa: F401
@@ -56,30 +56,30 @@ class GsaDynamicLinkGroupUsageDataModificationErrorDetail(GsaUsageDataModificati
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "str",
         "referenced_by_type": "GsaReferencedByType",
         "referenced_by": "list[GsaSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
         "referenced_by_type": "referencedByType",
         "referenced_by": "referencedBy",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "referencedBy": "GsaSlimNamedEntity",
     }
 
@@ -91,7 +91,7 @@ class GsaDynamicLinkGroupUsageDataModificationErrorDetail(GsaUsageDataModificati
         message: "str",
         reason: "str" = "usage",
         referenced_by_type: "GsaReferencedByType" = GsaReferencedByType.DYNAMICLINKGROUP,
-        referenced_by: "Union[List[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
+        referenced_by: "Union[list[GsaSlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDynamicLinkGroupUsageDataModificationErrorDetail - a model defined in Swagger
 
@@ -100,40 +100,40 @@ class GsaDynamicLinkGroupUsageDataModificationErrorDetail(GsaUsageDataModificati
         message: str
         reason: str
         referenced_by_type: GsaReferencedByType
-        referenced_by: List[GsaSlimNamedEntity], optional
+        referenced_by: list[GsaSlimNamedEntity], optional
         """
         super().__init__(message=message, reason=reason, referenced_by_type=referenced_by_type)
-        self._referenced_by: Union[List[GsaSlimNamedEntity], None, Unset_Type] = Unset
+        self._referenced_by: Union[list[GsaSlimNamedEntity], None, Unset_Type] = Unset
 
         if referenced_by is not Unset:
             self.referenced_by = referenced_by
 
     @property
-    def referenced_by(self) -> "Union[List[GsaSlimNamedEntity], None, Unset_Type]":
+    def referenced_by(self) -> "Union[list[GsaSlimNamedEntity], None, Unset_Type]":
         """Gets the referenced_by of this GsaDynamicLinkGroupUsageDataModificationErrorDetail.
 
         Returns
         -------
-        Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GsaDynamicLinkGroupUsageDataModificationErrorDetail.
         """
         return self._referenced_by
 
     @referenced_by.setter
     def referenced_by(
-        self, referenced_by: "Union[List[GsaSlimNamedEntity], None, Unset_Type]"
+        self, referenced_by: "Union[list[GsaSlimNamedEntity], None, Unset_Type]"
     ) -> None:
         """Sets the referenced_by of this GsaDynamicLinkGroupUsageDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by: Union[List[GsaSlimNamedEntity], None, Unset_Type]
+        referenced_by: Union[list[GsaSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GsaDynamicLinkGroupUsageDataModificationErrorDetail.
         """
         self._referenced_by = referenced_by
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

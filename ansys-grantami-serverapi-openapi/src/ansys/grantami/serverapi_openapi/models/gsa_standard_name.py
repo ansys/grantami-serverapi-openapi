@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaStandardName(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "database_guid": "str",
         "database_key": "str",
         "database_version_guid": "str",
@@ -72,7 +72,7 @@ class GsaStandardName(ModelBase):
         "name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "database_guid": "databaseGuid",
         "database_key": "databaseKey",
         "database_version_guid": "databaseVersionGuid",
@@ -84,7 +84,7 @@ class GsaStandardName(ModelBase):
         "name": "name",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "mappedAttributes": "GsaSlimAttribute",
         "mappedParameters": "GsaSlimNamedEntity",
         "mappedRecordLinkGroups": "GsaSlimNamedEntity",
@@ -100,10 +100,10 @@ class GsaStandardName(ModelBase):
         database_key: "str",
         database_version_guid: "str",
         guid: "str",
-        mapped_attributes: "List[GsaSlimAttribute]",
-        mapped_cross_database_record_link_groups: "List[GsaSlimNamedEntity]",
-        mapped_parameters: "List[GsaSlimNamedEntity]",
-        mapped_record_link_groups: "List[GsaSlimNamedEntity]",
+        mapped_attributes: "list[GsaSlimAttribute]",
+        mapped_cross_database_record_link_groups: "list[GsaSlimNamedEntity]",
+        mapped_parameters: "list[GsaSlimNamedEntity]",
+        mapped_record_link_groups: "list[GsaSlimNamedEntity]",
         name: "str",
     ) -> None:
         """GsaStandardName - a model defined in Swagger
@@ -114,16 +114,16 @@ class GsaStandardName(ModelBase):
         database_key: str
         database_version_guid: str
         guid: str
-        mapped_attributes: List[GsaSlimAttribute]
-        mapped_cross_database_record_link_groups: List[GsaSlimNamedEntity]
-        mapped_parameters: List[GsaSlimNamedEntity]
-        mapped_record_link_groups: List[GsaSlimNamedEntity]
+        mapped_attributes: list[GsaSlimAttribute]
+        mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
+        mapped_parameters: list[GsaSlimNamedEntity]
+        mapped_record_link_groups: list[GsaSlimNamedEntity]
         name: str
         """
-        self._mapped_attributes: List[GsaSlimAttribute]
-        self._mapped_parameters: List[GsaSlimNamedEntity]
-        self._mapped_record_link_groups: List[GsaSlimNamedEntity]
-        self._mapped_cross_database_record_link_groups: List[GsaSlimNamedEntity]
+        self._mapped_attributes: list[GsaSlimAttribute]
+        self._mapped_parameters: list[GsaSlimNamedEntity]
+        self._mapped_record_link_groups: list[GsaSlimNamedEntity]
+        self._mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
         self._database_key: str
         self._database_guid: str
         self._database_version_guid: str
@@ -141,23 +141,23 @@ class GsaStandardName(ModelBase):
         self.guid = guid
 
     @property
-    def mapped_attributes(self) -> "List[GsaSlimAttribute]":
+    def mapped_attributes(self) -> "list[GsaSlimAttribute]":
         """Gets the mapped_attributes of this GsaStandardName.
 
         Returns
         -------
-        List[GsaSlimAttribute]
+        list[GsaSlimAttribute]
             The mapped_attributes of this GsaStandardName.
         """
         return self._mapped_attributes
 
     @mapped_attributes.setter
-    def mapped_attributes(self, mapped_attributes: "List[GsaSlimAttribute]") -> None:
+    def mapped_attributes(self, mapped_attributes: "list[GsaSlimAttribute]") -> None:
         """Sets the mapped_attributes of this GsaStandardName.
 
         Parameters
         ----------
-        mapped_attributes: List[GsaSlimAttribute]
+        mapped_attributes: list[GsaSlimAttribute]
             The mapped_attributes of this GsaStandardName.
         """
         # Field is not nullable
@@ -169,23 +169,23 @@ class GsaStandardName(ModelBase):
         self._mapped_attributes = mapped_attributes
 
     @property
-    def mapped_parameters(self) -> "List[GsaSlimNamedEntity]":
+    def mapped_parameters(self) -> "list[GsaSlimNamedEntity]":
         """Gets the mapped_parameters of this GsaStandardName.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The mapped_parameters of this GsaStandardName.
         """
         return self._mapped_parameters
 
     @mapped_parameters.setter
-    def mapped_parameters(self, mapped_parameters: "List[GsaSlimNamedEntity]") -> None:
+    def mapped_parameters(self, mapped_parameters: "list[GsaSlimNamedEntity]") -> None:
         """Sets the mapped_parameters of this GsaStandardName.
 
         Parameters
         ----------
-        mapped_parameters: List[GsaSlimNamedEntity]
+        mapped_parameters: list[GsaSlimNamedEntity]
             The mapped_parameters of this GsaStandardName.
         """
         # Field is not nullable
@@ -197,25 +197,25 @@ class GsaStandardName(ModelBase):
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(self) -> "List[GsaSlimNamedEntity]":
+    def mapped_record_link_groups(self) -> "list[GsaSlimNamedEntity]":
         """Gets the mapped_record_link_groups of this GsaStandardName.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The mapped_record_link_groups of this GsaStandardName.
         """
         return self._mapped_record_link_groups
 
     @mapped_record_link_groups.setter
     def mapped_record_link_groups(
-        self, mapped_record_link_groups: "List[GsaSlimNamedEntity]"
+        self, mapped_record_link_groups: "list[GsaSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_record_link_groups of this GsaStandardName.
 
         Parameters
         ----------
-        mapped_record_link_groups: List[GsaSlimNamedEntity]
+        mapped_record_link_groups: list[GsaSlimNamedEntity]
             The mapped_record_link_groups of this GsaStandardName.
         """
         # Field is not nullable
@@ -227,25 +227,25 @@ class GsaStandardName(ModelBase):
         self._mapped_record_link_groups = mapped_record_link_groups
 
     @property
-    def mapped_cross_database_record_link_groups(self) -> "List[GsaSlimNamedEntity]":
+    def mapped_cross_database_record_link_groups(self) -> "list[GsaSlimNamedEntity]":
         """Gets the mapped_cross_database_record_link_groups of this GsaStandardName.
 
         Returns
         -------
-        List[GsaSlimNamedEntity]
+        list[GsaSlimNamedEntity]
             The mapped_cross_database_record_link_groups of this GsaStandardName.
         """
         return self._mapped_cross_database_record_link_groups
 
     @mapped_cross_database_record_link_groups.setter
     def mapped_cross_database_record_link_groups(
-        self, mapped_cross_database_record_link_groups: "List[GsaSlimNamedEntity]"
+        self, mapped_cross_database_record_link_groups: "list[GsaSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_cross_database_record_link_groups of this GsaStandardName.
 
         Parameters
         ----------
-        mapped_cross_database_record_link_groups: List[GsaSlimNamedEntity]
+        mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
             The mapped_cross_database_record_link_groups of this GsaStandardName.
         """
         # Field is not nullable
@@ -401,7 +401,7 @@ class GsaStandardName(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

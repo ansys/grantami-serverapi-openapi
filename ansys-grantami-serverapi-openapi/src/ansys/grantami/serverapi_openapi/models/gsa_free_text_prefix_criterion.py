@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_criterion import GsaCriterion  # noqa: F401
 from ansys.grantami.serverapi_openapi.models.gsa_criterion_type import GsaCriterionType
@@ -54,16 +54,16 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "prefix": "str",
         "type": "GsaCriterionType",
         "attribute_guids_to_boost": "list[GsaBoostByGuid]",
@@ -74,7 +74,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         "local_columns": "GsaValueSpecifier",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "prefix": "prefix",
         "type": "type",
         "attribute_guids_to_boost": "attributeGuidsToBoost",
@@ -85,7 +85,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         "local_columns": "localColumns",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GsaValueSpecifier",
         "localColumns": "GsaValueSpecifier",
         "attributeIdentitiesToBoost": "GsaBoostByIdentity",
@@ -101,11 +101,11 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         *,
         prefix: "str",
         type: "GsaCriterionType" = GsaCriterionType.TEXTPREFIX,
-        attribute_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]" = Unset,
-        attribute_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]" = Unset,
+        attribute_guids_to_boost: "Union[list[GsaBoostByGuid], None, Unset_Type]" = Unset,
+        attribute_identities_to_boost: "Union[list[GsaBoostByIdentity], None, Unset_Type]" = Unset,
         attributes: "Union[GsaValueSpecifier, Unset_Type]" = Unset,
-        column_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]" = Unset,
-        column_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]" = Unset,
+        column_guids_to_boost: "Union[list[GsaBoostByGuid], None, Unset_Type]" = Unset,
+        column_identities_to_boost: "Union[list[GsaBoostByIdentity], None, Unset_Type]" = Unset,
         local_columns: "Union[GsaValueSpecifier, Unset_Type]" = Unset,
     ) -> None:
         """GsaFreeTextPrefixCriterion - a model defined in Swagger
@@ -114,23 +114,23 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         ----------
         prefix: str
         type: GsaCriterionType
-        attribute_guids_to_boost: List[GsaBoostByGuid], optional
-        attribute_identities_to_boost: List[GsaBoostByIdentity], optional
+        attribute_guids_to_boost: list[GsaBoostByGuid], optional
+        attribute_identities_to_boost: list[GsaBoostByIdentity], optional
         attributes: GsaValueSpecifier, optional
-        column_guids_to_boost: List[GsaBoostByGuid], optional
-        column_identities_to_boost: List[GsaBoostByIdentity], optional
+        column_guids_to_boost: list[GsaBoostByGuid], optional
+        column_identities_to_boost: list[GsaBoostByIdentity], optional
         local_columns: GsaValueSpecifier, optional
         """
         super().__init__(type=type)
         self._prefix: str
         self._attributes: Union[GsaValueSpecifier, Unset_Type] = Unset
         self._local_columns: Union[GsaValueSpecifier, Unset_Type] = Unset
-        self._attribute_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type] = (
+        self._attribute_identities_to_boost: Union[list[GsaBoostByIdentity], None, Unset_Type] = (
             Unset
         )
-        self._attribute_guids_to_boost: Union[List[GsaBoostByGuid], None, Unset_Type] = Unset
-        self._column_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type] = Unset
-        self._column_guids_to_boost: Union[List[GsaBoostByGuid], None, Unset_Type] = Unset
+        self._attribute_guids_to_boost: Union[list[GsaBoostByGuid], None, Unset_Type] = Unset
+        self._column_identities_to_boost: Union[list[GsaBoostByIdentity], None, Unset_Type] = Unset
+        self._column_guids_to_boost: Union[list[GsaBoostByGuid], None, Unset_Type] = Unset
 
         self.prefix = prefix
         if attributes is not Unset:
@@ -225,103 +225,103 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         self._local_columns = local_columns
 
     @property
-    def attribute_identities_to_boost(self) -> "Union[List[GsaBoostByIdentity], None, Unset_Type]":
+    def attribute_identities_to_boost(self) -> "Union[list[GsaBoostByIdentity], None, Unset_Type]":
         """Gets the attribute_identities_to_boost of this GsaFreeTextPrefixCriterion.
 
         Returns
         -------
-        Union[List[GsaBoostByIdentity], None, Unset_Type]
+        Union[list[GsaBoostByIdentity], None, Unset_Type]
             The attribute_identities_to_boost of this GsaFreeTextPrefixCriterion.
         """
         return self._attribute_identities_to_boost
 
     @attribute_identities_to_boost.setter
     def attribute_identities_to_boost(
-        self, attribute_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]"
+        self, attribute_identities_to_boost: "Union[list[GsaBoostByIdentity], None, Unset_Type]"
     ) -> None:
         """Sets the attribute_identities_to_boost of this GsaFreeTextPrefixCriterion.
 
         Parameters
         ----------
-        attribute_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type]
+        attribute_identities_to_boost: Union[list[GsaBoostByIdentity], None, Unset_Type]
             The attribute_identities_to_boost of this GsaFreeTextPrefixCriterion.
         """
         self._attribute_identities_to_boost = attribute_identities_to_boost
 
     @property
-    def attribute_guids_to_boost(self) -> "Union[List[GsaBoostByGuid], None, Unset_Type]":
+    def attribute_guids_to_boost(self) -> "Union[list[GsaBoostByGuid], None, Unset_Type]":
         """Gets the attribute_guids_to_boost of this GsaFreeTextPrefixCriterion.
 
         Returns
         -------
-        Union[List[GsaBoostByGuid], None, Unset_Type]
+        Union[list[GsaBoostByGuid], None, Unset_Type]
             The attribute_guids_to_boost of this GsaFreeTextPrefixCriterion.
         """
         return self._attribute_guids_to_boost
 
     @attribute_guids_to_boost.setter
     def attribute_guids_to_boost(
-        self, attribute_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]"
+        self, attribute_guids_to_boost: "Union[list[GsaBoostByGuid], None, Unset_Type]"
     ) -> None:
         """Sets the attribute_guids_to_boost of this GsaFreeTextPrefixCriterion.
 
         Parameters
         ----------
-        attribute_guids_to_boost: Union[List[GsaBoostByGuid], None, Unset_Type]
+        attribute_guids_to_boost: Union[list[GsaBoostByGuid], None, Unset_Type]
             The attribute_guids_to_boost of this GsaFreeTextPrefixCriterion.
         """
         self._attribute_guids_to_boost = attribute_guids_to_boost
 
     @property
-    def column_identities_to_boost(self) -> "Union[List[GsaBoostByIdentity], None, Unset_Type]":
+    def column_identities_to_boost(self) -> "Union[list[GsaBoostByIdentity], None, Unset_Type]":
         """Gets the column_identities_to_boost of this GsaFreeTextPrefixCriterion.
 
         Returns
         -------
-        Union[List[GsaBoostByIdentity], None, Unset_Type]
+        Union[list[GsaBoostByIdentity], None, Unset_Type]
             The column_identities_to_boost of this GsaFreeTextPrefixCriterion.
         """
         return self._column_identities_to_boost
 
     @column_identities_to_boost.setter
     def column_identities_to_boost(
-        self, column_identities_to_boost: "Union[List[GsaBoostByIdentity], None, Unset_Type]"
+        self, column_identities_to_boost: "Union[list[GsaBoostByIdentity], None, Unset_Type]"
     ) -> None:
         """Sets the column_identities_to_boost of this GsaFreeTextPrefixCriterion.
 
         Parameters
         ----------
-        column_identities_to_boost: Union[List[GsaBoostByIdentity], None, Unset_Type]
+        column_identities_to_boost: Union[list[GsaBoostByIdentity], None, Unset_Type]
             The column_identities_to_boost of this GsaFreeTextPrefixCriterion.
         """
         self._column_identities_to_boost = column_identities_to_boost
 
     @property
-    def column_guids_to_boost(self) -> "Union[List[GsaBoostByGuid], None, Unset_Type]":
+    def column_guids_to_boost(self) -> "Union[list[GsaBoostByGuid], None, Unset_Type]":
         """Gets the column_guids_to_boost of this GsaFreeTextPrefixCriterion.
 
         Returns
         -------
-        Union[List[GsaBoostByGuid], None, Unset_Type]
+        Union[list[GsaBoostByGuid], None, Unset_Type]
             The column_guids_to_boost of this GsaFreeTextPrefixCriterion.
         """
         return self._column_guids_to_boost
 
     @column_guids_to_boost.setter
     def column_guids_to_boost(
-        self, column_guids_to_boost: "Union[List[GsaBoostByGuid], None, Unset_Type]"
+        self, column_guids_to_boost: "Union[list[GsaBoostByGuid], None, Unset_Type]"
     ) -> None:
         """Sets the column_guids_to_boost of this GsaFreeTextPrefixCriterion.
 
         Parameters
         ----------
-        column_guids_to_boost: Union[List[GsaBoostByGuid], None, Unset_Type]
+        column_guids_to_boost: Union[list[GsaBoostByGuid], None, Unset_Type]
             The column_guids_to_boost of this GsaFreeTextPrefixCriterion.
         """
         self._column_guids_to_boost = column_guids_to_boost
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

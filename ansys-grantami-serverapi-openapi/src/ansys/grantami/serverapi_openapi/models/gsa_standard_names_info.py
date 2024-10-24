@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaStandardNamesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "standard_names": "list[GsaStandardName]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "standard_names": "standardNames",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "standardNames": "GsaStandardName",
     }
 
@@ -77,45 +77,45 @@ class GsaStandardNamesInfo(ModelBase):
     def __init__(
         self,
         *,
-        standard_names: "Union[List[GsaStandardName], None, Unset_Type]" = Unset,
+        standard_names: "Union[list[GsaStandardName], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaStandardNamesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        standard_names: List[GsaStandardName], optional
+        standard_names: list[GsaStandardName], optional
         """
-        self._standard_names: Union[List[GsaStandardName], None, Unset_Type] = Unset
+        self._standard_names: Union[list[GsaStandardName], None, Unset_Type] = Unset
 
         if standard_names is not Unset:
             self.standard_names = standard_names
 
     @property
-    def standard_names(self) -> "Union[List[GsaStandardName], None, Unset_Type]":
+    def standard_names(self) -> "Union[list[GsaStandardName], None, Unset_Type]":
         """Gets the standard_names of this GsaStandardNamesInfo.
 
         Returns
         -------
-        Union[List[GsaStandardName], None, Unset_Type]
+        Union[list[GsaStandardName], None, Unset_Type]
             The standard_names of this GsaStandardNamesInfo.
         """
         return self._standard_names
 
     @standard_names.setter
     def standard_names(
-        self, standard_names: "Union[List[GsaStandardName], None, Unset_Type]"
+        self, standard_names: "Union[list[GsaStandardName], None, Unset_Type]"
     ) -> None:
         """Sets the standard_names of this GsaStandardNamesInfo.
 
         Parameters
         ----------
-        standard_names: Union[List[GsaStandardName], None, Unset_Type]
+        standard_names: Union[list[GsaStandardName], None, Unset_Type]
             The standard_names of this GsaStandardNamesInfo.
         """
         self._standard_names = standard_names
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

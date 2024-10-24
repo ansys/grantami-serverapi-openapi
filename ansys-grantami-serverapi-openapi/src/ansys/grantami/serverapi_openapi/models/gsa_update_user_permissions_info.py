@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaUpdateUserPermissionsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "user_permissions": "list[GsaUpdateUserPermission]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "user_permissions": "userPermissions",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "userPermissions": "GsaUpdateUserPermission",
     }
 
@@ -77,36 +77,36 @@ class GsaUpdateUserPermissionsInfo(ModelBase):
     def __init__(
         self,
         *,
-        user_permissions: "List[GsaUpdateUserPermission]",
+        user_permissions: "list[GsaUpdateUserPermission]",
     ) -> None:
         """GsaUpdateUserPermissionsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        user_permissions: List[GsaUpdateUserPermission]
+        user_permissions: list[GsaUpdateUserPermission]
         """
-        self._user_permissions: List[GsaUpdateUserPermission]
+        self._user_permissions: list[GsaUpdateUserPermission]
 
         self.user_permissions = user_permissions
 
     @property
-    def user_permissions(self) -> "List[GsaUpdateUserPermission]":
+    def user_permissions(self) -> "list[GsaUpdateUserPermission]":
         """Gets the user_permissions of this GsaUpdateUserPermissionsInfo.
 
         Returns
         -------
-        List[GsaUpdateUserPermission]
+        list[GsaUpdateUserPermission]
             The user_permissions of this GsaUpdateUserPermissionsInfo.
         """
         return self._user_permissions
 
     @user_permissions.setter
-    def user_permissions(self, user_permissions: "List[GsaUpdateUserPermission]") -> None:
+    def user_permissions(self, user_permissions: "list[GsaUpdateUserPermission]") -> None:
         """Sets the user_permissions of this GsaUpdateUserPermissionsInfo.
 
         Parameters
         ----------
-        user_permissions: List[GsaUpdateUserPermission]
+        user_permissions: list[GsaUpdateUserPermission]
             The user_permissions of this GsaUpdateUserPermissionsInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaUpdateUserPermissionsInfo(ModelBase):
         self._user_permissions = user_permissions
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

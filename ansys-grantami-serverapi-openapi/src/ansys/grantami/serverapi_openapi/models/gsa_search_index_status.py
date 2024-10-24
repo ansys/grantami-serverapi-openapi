@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GsaSearchIndexStatus(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "records_that_failed_to_index": "list[GsaIndexRecordFailure]",
         "search_index_in_sync": "bool",
         "search_index_is_read_only": "bool",
@@ -70,7 +70,7 @@ class GsaSearchIndexStatus(ModelBase):
         "search_index_up_to_date": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "records_that_failed_to_index": "recordsThatFailedToIndex",
         "search_index_in_sync": "searchIndexInSync",
         "search_index_is_read_only": "searchIndexIsReadOnly",
@@ -80,7 +80,7 @@ class GsaSearchIndexStatus(ModelBase):
         "search_index_up_to_date": "searchIndexUpToDate",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "recordsThatFailedToIndex": "GsaIndexRecordFailure",
     }
 
@@ -89,7 +89,7 @@ class GsaSearchIndexStatus(ModelBase):
     def __init__(
         self,
         *,
-        records_that_failed_to_index: "Union[List[GsaIndexRecordFailure], None, Unset_Type]" = Unset,
+        records_that_failed_to_index: "Union[list[GsaIndexRecordFailure], None, Unset_Type]" = Unset,
         search_index_in_sync: "Union[bool, Unset_Type]" = Unset,
         search_index_is_read_only: "Union[bool, None, Unset_Type]" = Unset,
         search_index_location: "Union[str, None, Unset_Type]" = Unset,
@@ -101,7 +101,7 @@ class GsaSearchIndexStatus(ModelBase):
 
         Parameters
         ----------
-        records_that_failed_to_index: List[GsaIndexRecordFailure], optional
+        records_that_failed_to_index: list[GsaIndexRecordFailure], optional
         search_index_in_sync: bool, optional
         search_index_is_read_only: bool, optional
         search_index_location: str, optional
@@ -115,7 +115,7 @@ class GsaSearchIndexStatus(ModelBase):
         self._search_index_location: Union[str, None, Unset_Type] = Unset
         self._search_index_is_read_only: Union[bool, None, Unset_Type] = Unset
         self._search_index_unavailable: Union[bool, None, Unset_Type] = Unset
-        self._records_that_failed_to_index: Union[List[GsaIndexRecordFailure], None, Unset_Type] = (
+        self._records_that_failed_to_index: Union[list[GsaIndexRecordFailure], None, Unset_Type] = (
             Unset
         )
 
@@ -293,33 +293,33 @@ class GsaSearchIndexStatus(ModelBase):
     @property
     def records_that_failed_to_index(
         self,
-    ) -> "Union[List[GsaIndexRecordFailure], None, Unset_Type]":
+    ) -> "Union[list[GsaIndexRecordFailure], None, Unset_Type]":
         """Gets the records_that_failed_to_index of this GsaSearchIndexStatus.
         Details of any records that failed to index.
 
         Returns
         -------
-        Union[List[GsaIndexRecordFailure], None, Unset_Type]
+        Union[list[GsaIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GsaSearchIndexStatus.
         """
         return self._records_that_failed_to_index
 
     @records_that_failed_to_index.setter
     def records_that_failed_to_index(
-        self, records_that_failed_to_index: "Union[List[GsaIndexRecordFailure], None, Unset_Type]"
+        self, records_that_failed_to_index: "Union[list[GsaIndexRecordFailure], None, Unset_Type]"
     ) -> None:
         """Sets the records_that_failed_to_index of this GsaSearchIndexStatus.
         Details of any records that failed to index.
 
         Parameters
         ----------
-        records_that_failed_to_index: Union[List[GsaIndexRecordFailure], None, Unset_Type]
+        records_that_failed_to_index: Union[list[GsaIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GsaSearchIndexStatus.
         """
         self._records_that_failed_to_index = records_that_failed_to_index
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

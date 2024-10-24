@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaProfileTablesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "profile_tables": "list[GsaSlimProfileTable]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "profile_tables": "profileTables",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "profileTables": "GsaSlimProfileTable",
     }
 
@@ -77,45 +77,45 @@ class GsaProfileTablesInfo(ModelBase):
     def __init__(
         self,
         *,
-        profile_tables: "Union[List[GsaSlimProfileTable], None, Unset_Type]" = Unset,
+        profile_tables: "Union[list[GsaSlimProfileTable], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaProfileTablesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        profile_tables: List[GsaSlimProfileTable], optional
+        profile_tables: list[GsaSlimProfileTable], optional
         """
-        self._profile_tables: Union[List[GsaSlimProfileTable], None, Unset_Type] = Unset
+        self._profile_tables: Union[list[GsaSlimProfileTable], None, Unset_Type] = Unset
 
         if profile_tables is not Unset:
             self.profile_tables = profile_tables
 
     @property
-    def profile_tables(self) -> "Union[List[GsaSlimProfileTable], None, Unset_Type]":
+    def profile_tables(self) -> "Union[list[GsaSlimProfileTable], None, Unset_Type]":
         """Gets the profile_tables of this GsaProfileTablesInfo.
 
         Returns
         -------
-        Union[List[GsaSlimProfileTable], None, Unset_Type]
+        Union[list[GsaSlimProfileTable], None, Unset_Type]
             The profile_tables of this GsaProfileTablesInfo.
         """
         return self._profile_tables
 
     @profile_tables.setter
     def profile_tables(
-        self, profile_tables: "Union[List[GsaSlimProfileTable], None, Unset_Type]"
+        self, profile_tables: "Union[list[GsaSlimProfileTable], None, Unset_Type]"
     ) -> None:
         """Sets the profile_tables of this GsaProfileTablesInfo.
 
         Parameters
         ----------
-        profile_tables: Union[List[GsaSlimProfileTable], None, Unset_Type]
+        profile_tables: Union[list[GsaSlimProfileTable], None, Unset_Type]
             The profile_tables of this GsaProfileTablesInfo.
         """
         self._profile_tables = profile_tables
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

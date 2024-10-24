@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GsaWithdrawRecordVersionControlException(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaVersionControlErrorDetail]",
         "message": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "GsaVersionControlErrorDetail",
     }
@@ -83,7 +83,7 @@ class GsaWithdrawRecordVersionControlException(ModelBase):
         self,
         *,
         code: "Union[SystemNetHttpStatusCode, Unset_Type]" = Unset,
-        errors: "Union[List[GsaVersionControlErrorDetail], None, Unset_Type]" = Unset,
+        errors: "Union[list[GsaVersionControlErrorDetail], None, Unset_Type]" = Unset,
         message: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaWithdrawRecordVersionControlException - a model defined in Swagger
@@ -91,12 +91,12 @@ class GsaWithdrawRecordVersionControlException(ModelBase):
         Parameters
         ----------
         code: SystemNetHttpStatusCode, optional
-        errors: List[GsaVersionControlErrorDetail], optional
+        errors: list[GsaVersionControlErrorDetail], optional
         message: str, optional
         """
         self._message: Union[str, None, Unset_Type] = Unset
         self._code: Union[SystemNetHttpStatusCode, Unset_Type] = Unset
-        self._errors: Union[List[GsaVersionControlErrorDetail], None, Unset_Type] = Unset
+        self._errors: Union[list[GsaVersionControlErrorDetail], None, Unset_Type] = Unset
 
         if message is not Unset:
             self.message = message
@@ -153,29 +153,29 @@ class GsaWithdrawRecordVersionControlException(ModelBase):
         self._code = code
 
     @property
-    def errors(self) -> "Union[List[GsaVersionControlErrorDetail], None, Unset_Type]":
+    def errors(self) -> "Union[list[GsaVersionControlErrorDetail], None, Unset_Type]":
         """Gets the errors of this GsaWithdrawRecordVersionControlException.
 
         Returns
         -------
-        Union[List[GsaVersionControlErrorDetail], None, Unset_Type]
+        Union[list[GsaVersionControlErrorDetail], None, Unset_Type]
             The errors of this GsaWithdrawRecordVersionControlException.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "Union[List[GsaVersionControlErrorDetail], None, Unset_Type]") -> None:
+    def errors(self, errors: "Union[list[GsaVersionControlErrorDetail], None, Unset_Type]") -> None:
         """Sets the errors of this GsaWithdrawRecordVersionControlException.
 
         Parameters
         ----------
-        errors: Union[List[GsaVersionControlErrorDetail], None, Unset_Type]
+        errors: Union[list[GsaVersionControlErrorDetail], None, Unset_Type]
             The errors of this GsaWithdrawRecordVersionControlException.
         """
         self._errors = errors
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

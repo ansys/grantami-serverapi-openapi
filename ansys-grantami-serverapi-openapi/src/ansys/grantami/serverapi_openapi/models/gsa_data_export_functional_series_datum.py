@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_float_functional_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
@@ -82,7 +82,7 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         "x_axis_parameter": "GsaFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
@@ -99,7 +99,7 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "series": "GsaDataExportSeries",
     }
 
@@ -116,9 +116,9 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_logarithmic: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        parameters: "Union[List[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
-        series: "Union[List[GsaDataExportSeries], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        series: "Union[list[GsaDataExportSeries], None, Unset_Type]" = Unset,
         show_as_table: "Union[bool, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GsaFunctionalDatumParameterInfo, Unset_Type]" = Unset,
@@ -135,9 +135,9 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         is_estimated: bool, optional
         is_logarithmic: bool, optional
         is_range: bool, optional
-        meta_datums: List[GsaDataExportDatum], optional
-        parameters: List[GsaFunctionalDatumParameterInfo], optional
-        series: List[GsaDataExportSeries], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        parameters: list[GsaFunctionalDatumParameterInfo], optional
+        series: list[GsaDataExportSeries], optional
         show_as_table: bool, optional
         unit_symbol: str, optional
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
@@ -156,7 +156,7 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
             unit_symbol=unit_symbol,
             x_axis_parameter=x_axis_parameter,
         )
-        self._series: Union[List[GsaDataExportSeries], None, Unset_Type] = Unset
+        self._series: Union[list[GsaDataExportSeries], None, Unset_Type] = Unset
         self._show_as_table: Union[bool, Unset_Type] = Unset
 
         if series is not Unset:
@@ -165,23 +165,23 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
             self.show_as_table = show_as_table
 
     @property
-    def series(self) -> "Union[List[GsaDataExportSeries], None, Unset_Type]":
+    def series(self) -> "Union[list[GsaDataExportSeries], None, Unset_Type]":
         """Gets the series of this GsaDataExportFunctionalSeriesDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportSeries], None, Unset_Type]
+        Union[list[GsaDataExportSeries], None, Unset_Type]
             The series of this GsaDataExportFunctionalSeriesDatum.
         """
         return self._series
 
     @series.setter
-    def series(self, series: "Union[List[GsaDataExportSeries], None, Unset_Type]") -> None:
+    def series(self, series: "Union[list[GsaDataExportSeries], None, Unset_Type]") -> None:
         """Sets the series of this GsaDataExportFunctionalSeriesDatum.
 
         Parameters
         ----------
-        series: Union[List[GsaDataExportSeries], None, Unset_Type]
+        series: Union[list[GsaDataExportSeries], None, Unset_Type]
             The series of this GsaDataExportFunctionalSeriesDatum.
         """
         self._series = series
@@ -212,7 +212,7 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         self._show_as_table = show_as_table
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

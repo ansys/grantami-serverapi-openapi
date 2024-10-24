@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaConstantsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constants": "list[GsaSlimConstant]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constants": "constants",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constants": "GsaSlimConstant",
     }
 
@@ -77,43 +77,43 @@ class GsaConstantsInfo(ModelBase):
     def __init__(
         self,
         *,
-        constants: "Union[List[GsaSlimConstant], None, Unset_Type]" = Unset,
+        constants: "Union[list[GsaSlimConstant], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaConstantsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        constants: List[GsaSlimConstant], optional
+        constants: list[GsaSlimConstant], optional
         """
-        self._constants: Union[List[GsaSlimConstant], None, Unset_Type] = Unset
+        self._constants: Union[list[GsaSlimConstant], None, Unset_Type] = Unset
 
         if constants is not Unset:
             self.constants = constants
 
     @property
-    def constants(self) -> "Union[List[GsaSlimConstant], None, Unset_Type]":
+    def constants(self) -> "Union[list[GsaSlimConstant], None, Unset_Type]":
         """Gets the constants of this GsaConstantsInfo.
 
         Returns
         -------
-        Union[List[GsaSlimConstant], None, Unset_Type]
+        Union[list[GsaSlimConstant], None, Unset_Type]
             The constants of this GsaConstantsInfo.
         """
         return self._constants
 
     @constants.setter
-    def constants(self, constants: "Union[List[GsaSlimConstant], None, Unset_Type]") -> None:
+    def constants(self, constants: "Union[list[GsaSlimConstant], None, Unset_Type]") -> None:
         """Sets the constants of this GsaConstantsInfo.
 
         Parameters
         ----------
-        constants: Union[List[GsaSlimConstant], None, Unset_Type]
+        constants: Union[list[GsaSlimConstant], None, Unset_Type]
             The constants of this GsaConstantsInfo.
         """
         self._constants = constants
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

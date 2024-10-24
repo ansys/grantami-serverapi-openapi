@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.gsa_attribute_type import GsaAttributeType
 from ansys.grantami.serverapi_openapi.models.gsa_data_export_link_datum import (  # noqa: F401
@@ -56,16 +56,16 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "GsaAttributeType",
         "link_datum_type": "str",
         "not_applicable": "str",
@@ -82,7 +82,7 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         "target_database_guid": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "link_datum_type": "linkDatumType",
         "not_applicable": "notApplicable",
@@ -99,7 +99,7 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         "target_database_guid": "targetDatabaseGuid",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "linkAttributeType": "GsaLinkAttributeType",
         "linkedRecords": "GsaRecordWithData",
         "rolledUpData": "GsaDataExportRollupDatum",
@@ -120,9 +120,9 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         link_group_identities_by_database_key: "Union[Dict[str, int], None, Unset_Type]" = Unset,
         link_group_name: "Union[str, None, Unset_Type]" = Unset,
         link_group_names_by_database_key: "Union[Dict[str, str], None, Unset_Type]" = Unset,
-        linked_records: "Union[List[GsaRecordWithData], None, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GsaDataExportDatum], None, Unset_Type]" = Unset,
-        rolled_up_data: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
+        linked_records: "Union[list[GsaRecordWithData], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
+        rolled_up_data: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
         target_database_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportLinkedRecordsDatum - a model defined in Swagger
@@ -139,9 +139,9 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         link_group_identities_by_database_key: Dict[str, int], optional
         link_group_name: str, optional
         link_group_names_by_database_key: Dict[str, str], optional
-        linked_records: List[GsaRecordWithData], optional
-        meta_datums: List[GsaDataExportDatum], optional
-        rolled_up_data: List[GsaDataExportRollupDatum], optional
+        linked_records: list[GsaRecordWithData], optional
+        meta_datums: list[GsaDataExportDatum], optional
+        rolled_up_data: list[GsaDataExportRollupDatum], optional
         target_database_guid: str, optional
         """
         super().__init__(
@@ -156,10 +156,10 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         self._link_attribute_type: Union[GsaLinkAttributeType, Unset_Type] = Unset
         self._export_in_reversed_direction: Union[bool, Unset_Type] = Unset
         self._target_database_guid: Union[str, None, Unset_Type] = Unset
-        self._linked_records: Union[List[GsaRecordWithData], None, Unset_Type] = Unset
+        self._linked_records: Union[list[GsaRecordWithData], None, Unset_Type] = Unset
         self._link_group_names_by_database_key: Union[Dict[str, str], None, Unset_Type] = Unset
         self._link_group_identities_by_database_key: Union[Dict[str, int], None, Unset_Type] = Unset
-        self._rolled_up_data: Union[List[GsaDataExportRollupDatum], None, Unset_Type] = Unset
+        self._rolled_up_data: Union[list[GsaDataExportRollupDatum], None, Unset_Type] = Unset
 
         if link_group_name is not Unset:
             self.link_group_name = link_group_name
@@ -277,25 +277,25 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         self._target_database_guid = target_database_guid
 
     @property
-    def linked_records(self) -> "Union[List[GsaRecordWithData], None, Unset_Type]":
+    def linked_records(self) -> "Union[list[GsaRecordWithData], None, Unset_Type]":
         """Gets the linked_records of this GsaDataExportLinkedRecordsDatum.
 
         Returns
         -------
-        Union[List[GsaRecordWithData], None, Unset_Type]
+        Union[list[GsaRecordWithData], None, Unset_Type]
             The linked_records of this GsaDataExportLinkedRecordsDatum.
         """
         return self._linked_records
 
     @linked_records.setter
     def linked_records(
-        self, linked_records: "Union[List[GsaRecordWithData], None, Unset_Type]"
+        self, linked_records: "Union[list[GsaRecordWithData], None, Unset_Type]"
     ) -> None:
         """Sets the linked_records of this GsaDataExportLinkedRecordsDatum.
 
         Parameters
         ----------
-        linked_records: Union[List[GsaRecordWithData], None, Unset_Type]
+        linked_records: Union[list[GsaRecordWithData], None, Unset_Type]
             The linked_records of this GsaDataExportLinkedRecordsDatum.
         """
         self._linked_records = linked_records
@@ -349,31 +349,31 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         self._link_group_identities_by_database_key = link_group_identities_by_database_key
 
     @property
-    def rolled_up_data(self) -> "Union[List[GsaDataExportRollupDatum], None, Unset_Type]":
+    def rolled_up_data(self) -> "Union[list[GsaDataExportRollupDatum], None, Unset_Type]":
         """Gets the rolled_up_data of this GsaDataExportLinkedRecordsDatum.
 
         Returns
         -------
-        Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The rolled_up_data of this GsaDataExportLinkedRecordsDatum.
         """
         return self._rolled_up_data
 
     @rolled_up_data.setter
     def rolled_up_data(
-        self, rolled_up_data: "Union[List[GsaDataExportRollupDatum], None, Unset_Type]"
+        self, rolled_up_data: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]"
     ) -> None:
         """Sets the rolled_up_data of this GsaDataExportLinkedRecordsDatum.
 
         Parameters
         ----------
-        rolled_up_data: Union[List[GsaDataExportRollupDatum], None, Unset_Type]
+        rolled_up_data: Union[list[GsaDataExportRollupDatum], None, Unset_Type]
             The rolled_up_data of this GsaDataExportLinkedRecordsDatum.
         """
         self._rolled_up_data = rolled_up_data
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

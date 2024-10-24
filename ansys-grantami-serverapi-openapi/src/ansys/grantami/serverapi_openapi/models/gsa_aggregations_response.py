@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GsaAggregationsResponse(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "results": "list[GsaAggregation]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "results": "results",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "results": "GsaAggregation",
     }
 
@@ -77,36 +77,36 @@ class GsaAggregationsResponse(ModelBase):
     def __init__(
         self,
         *,
-        results: "List[GsaAggregation]",
+        results: "list[GsaAggregation]",
     ) -> None:
         """GsaAggregationsResponse - a model defined in Swagger
 
         Parameters
         ----------
-        results: List[GsaAggregation]
+        results: list[GsaAggregation]
         """
-        self._results: List[GsaAggregation]
+        self._results: list[GsaAggregation]
 
         self.results = results
 
     @property
-    def results(self) -> "List[GsaAggregation]":
+    def results(self) -> "list[GsaAggregation]":
         """Gets the results of this GsaAggregationsResponse.
 
         Returns
         -------
-        List[GsaAggregation]
+        list[GsaAggregation]
             The results of this GsaAggregationsResponse.
         """
         return self._results
 
     @results.setter
-    def results(self, results: "List[GsaAggregation]") -> None:
+    def results(self, results: "list[GsaAggregation]") -> None:
         """Sets the results of this GsaAggregationsResponse.
 
         Parameters
         ----------
-        results: List[GsaAggregation]
+        results: list[GsaAggregation]
             The results of this GsaAggregationsResponse.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GsaAggregationsResponse(ModelBase):
         self._results = results
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
