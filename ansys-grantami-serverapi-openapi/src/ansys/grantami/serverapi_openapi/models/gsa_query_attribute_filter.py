@@ -61,10 +61,12 @@ class GsaQueryAttributeFilter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "list[str]",
         "type": "list[GsaAttributeType]",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "type": "type",
     }
 
@@ -77,23 +79,28 @@ class GsaQueryAttributeFilter(ModelBase):
     def __init__(
         self,
         *,
+        name: "Union[list[str], None, Unset_Type]" = Unset,
         type: "Union[list[GsaAttributeType], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryAttributeFilter - a model defined in Swagger
 
         Parameters
         ----------
+        name: list[str], optional
         type: list[GsaAttributeType], optional
         """
         self._type: Union[list[GsaAttributeType], None, Unset_Type] = Unset
+        self._name: Union[list[str], None, Unset_Type] = Unset
 
         if type is not Unset:
             self.type = type
+        if name is not Unset:
+            self.name = name
 
     @property
     def type(self) -> "Union[list[GsaAttributeType], None, Unset_Type]":
         """Gets the type of this GsaQueryAttributeFilter.
-        Only include attributes of any of these types.  Note that Tabular attributes have type: link.
+        If set, only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Returns
         -------
@@ -105,7 +112,7 @@ class GsaQueryAttributeFilter(ModelBase):
     @type.setter
     def type(self, type: "Union[list[GsaAttributeType], None, Unset_Type]") -> None:
         """Sets the type of this GsaQueryAttributeFilter.
-        Only include attributes of any of these types.  Note that Tabular attributes have type: link.
+        If set, only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Parameters
         ----------
@@ -113,6 +120,30 @@ class GsaQueryAttributeFilter(ModelBase):
             The type of this GsaQueryAttributeFilter.
         """
         self._type = type
+
+    @property
+    def name(self) -> "Union[list[str], None, Unset_Type]":
+        """Gets the name of this GsaQueryAttributeFilter.
+        If set, attribute name must match any of these names.
+
+        Returns
+        -------
+        Union[list[str], None, Unset_Type]
+            The name of this GsaQueryAttributeFilter.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "Union[list[str], None, Unset_Type]") -> None:
+        """Sets the name of this GsaQueryAttributeFilter.
+        If set, attribute name must match any of these names.
+
+        Parameters
+        ----------
+        name: Union[list[str], None, Unset_Type]
+            The name of this GsaQueryAttributeFilter.
+        """
+        self._name = name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

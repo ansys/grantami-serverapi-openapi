@@ -82,7 +82,7 @@ class GsaCriterion(ModelBase):
         "recordProperty".lower(): "#/components/schemas/GsaRecordPropertyCriterion",
         "reference".lower(): "#/components/schemas/GsaRecordReferenceCriterion",
         "recordAncestor".lower(): "#/components/schemas/GsaRecordAncestorCriterion",
-        "recordAncestorIdentities".lower(): "#/components/schemas/GsaRecordAncestorHistoryIdentitiesCriterion",
+        "recordAncestorHistoryIdentity".lower(): "#/components/schemas/GsaRecordAncestorHistoryIdentityCriterion",
         "subset".lower(): "#/components/schemas/GsaRecordSubsetCriterion",
         "tabularLinkingValue".lower(): "#/components/schemas/GsaTabularLinkingValueCriterion",
         "attribute".lower(): "#/components/schemas/GsaAttributeCriterion",

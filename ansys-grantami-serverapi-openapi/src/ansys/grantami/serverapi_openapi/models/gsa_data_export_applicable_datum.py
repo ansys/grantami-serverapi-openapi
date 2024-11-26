@@ -67,18 +67,18 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "datum_type": "GsaAttributeType",
-        "not_applicable": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
+        "datum_type": "GsaAttributeType",
+        "not_applicable": "str",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
     attribute_map: dict[str, str] = {
-        "datum_type": "datumType",
-        "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
+        "not_applicable": "notApplicable",
         "meta_datums": "metaDatums",
     }
 
@@ -108,26 +108,26 @@ class GsaDataExportApplicableDatum(GsaDataExportDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportApplicableDatum - a model defined in Swagger
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
-            not_applicable=not_applicable,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
+            not_applicable=not_applicable,
             meta_datums=meta_datums,
         )
         self._datum_type: GsaAttributeType

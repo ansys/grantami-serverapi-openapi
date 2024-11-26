@@ -64,6 +64,7 @@ class GsaQueryUnit(ModelBase):
         "equation": "str",
         "guid": "str",
         "name": "str",
+        "relative_symbol": "str",
         "symbol": "str",
     }
 
@@ -71,6 +72,7 @@ class GsaQueryUnit(ModelBase):
         "equation": "equation",
         "guid": "guid",
         "name": "name",
+        "relative_symbol": "relativeSymbol",
         "symbol": "symbol",
     }
 
@@ -84,6 +86,7 @@ class GsaQueryUnit(ModelBase):
         equation: "Union[str, None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
+        relative_symbol: "Union[str, None, Unset_Type]" = Unset,
         symbol: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryUnit - a model defined in Swagger
@@ -93,11 +96,13 @@ class GsaQueryUnit(ModelBase):
         equation: str, optional
         guid: str, optional
         name: str, optional
+        relative_symbol: str, optional
         symbol: str, optional
         """
         self._name: Union[str, None, Unset_Type] = Unset
         self._equation: Union[str, None, Unset_Type] = Unset
         self._symbol: Union[str, None, Unset_Type] = Unset
+        self._relative_symbol: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
         if name is not Unset:
@@ -106,6 +111,8 @@ class GsaQueryUnit(ModelBase):
             self.equation = equation
         if symbol is not Unset:
             self.symbol = symbol
+        if relative_symbol is not Unset:
+            self.relative_symbol = relative_symbol
         if guid is not Unset:
             self.guid = guid
 
@@ -174,6 +181,28 @@ class GsaQueryUnit(ModelBase):
             The symbol of this GsaQueryUnit.
         """
         self._symbol = symbol
+
+    @property
+    def relative_symbol(self) -> "Union[str, None, Unset_Type]":
+        """Gets the relative_symbol of this GsaQueryUnit.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The relative_symbol of this GsaQueryUnit.
+        """
+        return self._relative_symbol
+
+    @relative_symbol.setter
+    def relative_symbol(self, relative_symbol: "Union[str, None, Unset_Type]") -> None:
+        """Sets the relative_symbol of this GsaQueryUnit.
+
+        Parameters
+        ----------
+        relative_symbol: Union[str, None, Unset_Type]
+            The relative_symbol of this GsaQueryUnit.
+        """
+        self._relative_symbol = relative_symbol
 
     @property
     def guid(self) -> "Union[str, None, Unset_Type]":

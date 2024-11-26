@@ -66,11 +66,11 @@ class GsaDataExportDiscreteFunctionalGridDatum(GsaDataExportDiscreteFunctionalDa
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
-        "attribute_guid": "str",
-        "attribute_identity": "int",
         "meta_datums": "list[GsaDataExportDatum]",
         "parameters": "list[GsaFunctionalDatumParameterInfo]",
         "values": "list[GsaDataExportDiscreteGridPoint]",
@@ -78,11 +78,11 @@ class GsaDataExportDiscreteFunctionalGridDatum(GsaDataExportDiscreteFunctionalDa
     }
 
     attribute_map: dict[str, str] = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
-        "attribute_guid": "attributeGuid",
-        "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
         "parameters": "parameters",
         "values": "values",
@@ -98,11 +98,11 @@ class GsaDataExportDiscreteFunctionalGridDatum(GsaDataExportDiscreteFunctionalDa
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         graph_type: "str" = "grid",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
         parameters: "Union[list[GsaFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
         values: "Union[list[GsaDataExportDiscreteGridPoint], None, Unset_Type]" = Unset,
@@ -112,22 +112,22 @@ class GsaDataExportDiscreteFunctionalGridDatum(GsaDataExportDiscreteFunctionalDa
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         graph_type: str
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         meta_datums: list[GsaDataExportDatum], optional
         parameters: list[GsaFunctionalDatumParameterInfo], optional
         values: list[GsaDataExportDiscreteGridPoint], optional
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
         """
         super().__init__(
+            attribute_guid=attribute_guid,
+            attribute_identity=attribute_identity,
             datum_type=datum_type,
             graph_type=graph_type,
             not_applicable=not_applicable,
-            attribute_guid=attribute_guid,
-            attribute_identity=attribute_identity,
             meta_datums=meta_datums,
             parameters=parameters,
             x_axis_parameter=x_axis_parameter,

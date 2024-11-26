@@ -68,7 +68,9 @@ class GsaQueryAttribute(ModelBase):
         "expressions": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
         "info": "GsaQueryAttributeInfo",
+        "is_functional_range": "bool",
         "is_hidden_from_search_criteria": "bool",
+        "is_multi_valued": "bool",
         "name": "str",
         "tabular_columns": "list[GsaQuerySlimNamedEntity]",
         "target": "GsaQueryTabularAttributeTarget",
@@ -84,7 +86,9 @@ class GsaQueryAttribute(ModelBase):
         "expressions": "expressions",
         "guid": "guid",
         "info": "info",
+        "is_functional_range": "isFunctionalRange",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
+        "is_multi_valued": "isMultiValued",
         "name": "name",
         "tabular_columns": "tabularColumns",
         "target": "target",
@@ -117,7 +121,9 @@ class GsaQueryAttribute(ModelBase):
         expressions: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         info: "Union[GsaQueryAttributeInfo, Unset_Type]" = Unset,
+        is_functional_range: "Union[bool, None, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
+        is_multi_valued: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
         tabular_columns: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         target: "Union[GsaQueryTabularAttributeTarget, Unset_Type]" = Unset,
@@ -135,7 +141,9 @@ class GsaQueryAttribute(ModelBase):
         expressions: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         info: GsaQueryAttributeInfo, optional
+        is_functional_range: bool, optional
         is_hidden_from_search_criteria: bool, optional
+        is_multi_valued: bool, optional
         name: str, optional
         tabular_columns: list[GsaQuerySlimNamedEntity], optional
         target: GsaQueryTabularAttributeTarget, optional
@@ -145,6 +153,8 @@ class GsaQueryAttribute(ModelBase):
         self._type: Union[GsaAttributeType, Unset_Type] = Unset
         self._default_threshold_type: Union[GsaAttributeThresholdType, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
+        self._is_multi_valued: Union[bool, None, Unset_Type] = Unset
+        self._is_functional_range: Union[bool, None, Unset_Type] = Unset
         self._info: Union[GsaQueryAttributeInfo, Unset_Type] = Unset
         self._unit: Union[GsaQueryUnit, Unset_Type] = Unset
         self._discrete_type: Union[GsaQueryDiscreteType, Unset_Type] = Unset
@@ -162,6 +172,10 @@ class GsaQueryAttribute(ModelBase):
             self.default_threshold_type = default_threshold_type
         if is_hidden_from_search_criteria is not Unset:
             self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
+        if is_multi_valued is not Unset:
+            self.is_multi_valued = is_multi_valued
+        if is_functional_range is not Unset:
+            self.is_functional_range = is_functional_range
         if info is not Unset:
             self.info = info
         if unit is not Unset:
@@ -258,6 +272,50 @@ class GsaQueryAttribute(ModelBase):
             The is_hidden_from_search_criteria of this GsaQueryAttribute.
         """
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
+
+    @property
+    def is_multi_valued(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the is_multi_valued of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[bool, None, Unset_Type]
+            The is_multi_valued of this GsaQueryAttribute.
+        """
+        return self._is_multi_valued
+
+    @is_multi_valued.setter
+    def is_multi_valued(self, is_multi_valued: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the is_multi_valued of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        is_multi_valued: Union[bool, None, Unset_Type]
+            The is_multi_valued of this GsaQueryAttribute.
+        """
+        self._is_multi_valued = is_multi_valued
+
+    @property
+    def is_functional_range(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the is_functional_range of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[bool, None, Unset_Type]
+            The is_functional_range of this GsaQueryAttribute.
+        """
+        return self._is_functional_range
+
+    @is_functional_range.setter
+    def is_functional_range(self, is_functional_range: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the is_functional_range of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        is_functional_range: Union[bool, None, Unset_Type]
+            The is_functional_range of this GsaQueryAttribute.
+        """
+        self._is_functional_range = is_functional_range
 
     @property
     def info(self) -> "Union[GsaQueryAttributeInfo, Unset_Type]":

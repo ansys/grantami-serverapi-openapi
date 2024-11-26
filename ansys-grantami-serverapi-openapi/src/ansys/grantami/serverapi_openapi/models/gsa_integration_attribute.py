@@ -109,7 +109,7 @@ class GsaIntegrationAttribute(ModelBase):
         discrete_type_guid: "Union[str, None, Unset_Type]" = Unset,
         discrete_type_identity: "Union[int, None, Unset_Type]" = Unset,
         graph_type: "Union[str, None, Unset_Type]" = Unset,
-        guid: "Union[str, None, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
         identity: "Union[int, Unset_Type]" = Unset,
         is_unitted: "Union[bool, None, Unset_Type]" = Unset,
         parameters: "Union[list[GsaIntegrationParameterInfo], None, Unset_Type]" = Unset,
@@ -138,7 +138,7 @@ class GsaIntegrationAttribute(ModelBase):
         """
         self._name: str
         self._identity: Union[int, Unset_Type] = Unset
-        self._guid: Union[str, None, Unset_Type] = Unset
+        self._guid: Union[str, Unset_Type] = Unset
         self._type: GsaAttributeType
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
         self._is_unitted: Union[bool, None, Unset_Type] = Unset
@@ -229,27 +229,28 @@ class GsaIntegrationAttribute(ModelBase):
         self._identity = identity
 
     @property
-    def guid(self) -> "Union[str, None, Unset_Type]":
+    def guid(self) -> "Union[str, Unset_Type]":
         """Gets the guid of this GsaIntegrationAttribute.
-        Set as nullable for older schema compatibility,  but we expect it to be set almost everywhere,  except during loading from disk.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The guid of this GsaIntegrationAttribute.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
+    def guid(self, guid: "Union[str, Unset_Type]") -> None:
         """Sets the guid of this GsaIntegrationAttribute.
-        Set as nullable for older schema compatibility,  but we expect it to be set almost everywhere,  except during loading from disk.
 
         Parameters
         ----------
-        guid: Union[str, None, Unset_Type]
+        guid: Union[str, Unset_Type]
             The guid of this GsaIntegrationAttribute.
         """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
     @property

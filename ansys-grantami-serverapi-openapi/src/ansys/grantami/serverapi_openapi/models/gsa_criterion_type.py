@@ -49,7 +49,7 @@ class GsaCriterionType(Enum):
     RECORDPROPERTY = "recordProperty"
     REFERENCE = "reference"
     RECORDANCESTOR = "recordAncestor"
-    RECORDANCESTORIDENTITIES = "recordAncestorIdentities"
+    RECORDANCESTORHISTORYIDENTITY = "recordAncestorHistoryIdentity"
     SUBSET = "subset"
     TABULARLINKINGVALUE = "tabularLinkingValue"
     ATTRIBUTE = "attribute"
