@@ -63,16 +63,16 @@ class GsaDataExportDatum(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "not_applicable": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
+        "not_applicable": "str",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
     attribute_map: dict[str, str] = {
-        "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
+        "not_applicable": "notApplicable",
         "meta_datums": "metaDatums",
     }
 
@@ -91,81 +91,85 @@ class GsaDataExportDatum(ModelBase):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         not_applicable: "str",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportDatum - a model defined in Swagger
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         meta_datums: list[GsaDataExportDatum], optional
         """
-        self._attribute_identity: Union[int, Unset_Type] = Unset
-        self._attribute_guid: Union[str, Unset_Type] = Unset
+        self._attribute_identity: int
+        self._attribute_guid: str
         self._meta_datums: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
         self._not_applicable: str
 
-        if attribute_identity is not Unset:
-            self.attribute_identity = attribute_identity
-        if attribute_guid is not Unset:
-            self.attribute_guid = attribute_guid
+        self.attribute_identity = attribute_identity
+        self.attribute_guid = attribute_guid
         if meta_datums is not Unset:
             self.meta_datums = meta_datums
         self.not_applicable = not_applicable
 
     @property
-    def attribute_identity(self) -> "Union[int, Unset_Type]":
+    def attribute_identity(self) -> "int":
         """Gets the attribute_identity of this GsaDataExportDatum.
 
         Returns
         -------
-        Union[int, Unset_Type]
+        int
             The attribute_identity of this GsaDataExportDatum.
         """
         return self._attribute_identity
 
     @attribute_identity.setter
-    def attribute_identity(self, attribute_identity: "Union[int, Unset_Type]") -> None:
+    def attribute_identity(self, attribute_identity: "int") -> None:
         """Sets the attribute_identity of this GsaDataExportDatum.
 
         Parameters
         ----------
-        attribute_identity: Union[int, Unset_Type]
+        attribute_identity: int
             The attribute_identity of this GsaDataExportDatum.
         """
         # Field is not nullable
         if attribute_identity is None:
             raise ValueError("Invalid value for 'attribute_identity', must not be 'None'")
+        # Field is required
+        if attribute_identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_identity', must not be 'Unset'")
         self._attribute_identity = attribute_identity
 
     @property
-    def attribute_guid(self) -> "Union[str, Unset_Type]":
+    def attribute_guid(self) -> "str":
         """Gets the attribute_guid of this GsaDataExportDatum.
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The attribute_guid of this GsaDataExportDatum.
         """
         return self._attribute_guid
 
     @attribute_guid.setter
-    def attribute_guid(self, attribute_guid: "Union[str, Unset_Type]") -> None:
+    def attribute_guid(self, attribute_guid: "str") -> None:
         """Sets the attribute_guid of this GsaDataExportDatum.
 
         Parameters
         ----------
-        attribute_guid: Union[str, Unset_Type]
+        attribute_guid: str
             The attribute_guid of this GsaDataExportDatum.
         """
         # Field is not nullable
         if attribute_guid is None:
             raise ValueError("Invalid value for 'attribute_guid', must not be 'None'")
+        # Field is required
+        if attribute_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_guid', must not be 'Unset'")
         self._attribute_guid = attribute_guid
 
     @property
@@ -210,6 +214,9 @@ class GsaDataExportDatum(ModelBase):
         not_applicable: str
             The not_applicable of this GsaDataExportDatum.
         """
+        # Field is not nullable
+        if not_applicable is None:
+            raise ValueError("Invalid value for 'not_applicable', must not be 'None'")
         # Field is required
         if not_applicable is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'not_applicable', must not be 'Unset'")

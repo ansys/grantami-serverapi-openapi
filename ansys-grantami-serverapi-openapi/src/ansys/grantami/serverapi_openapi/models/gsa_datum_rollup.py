@@ -75,10 +75,10 @@ class GsaDatumRollup(ModelBase):
     }
 
     discriminator_value_class_map = {
-        "listRollup".lower(): "#/components/schemas/GsaDatumListRollup",
-        "integerRollup".lower(): "#/components/schemas/GsaDatumIntegerRollup",
-        "numericalRollup".lower(): "#/components/schemas/GsaDatumNumericalRollup",
-        "discreteRollup".lower(): "#/components/schemas/GsaDatumDiscreteRollup",
+        "list".lower(): "#/components/schemas/GsaDatumListRollup",
+        "integer".lower(): "#/components/schemas/GsaDatumIntegerRollup",
+        "double".lower(): "#/components/schemas/GsaDatumDoubleRollup",
+        "discrete".lower(): "#/components/schemas/GsaDatumDiscreteRollup",
     }
 
     discriminator: Optional[str] = "type"

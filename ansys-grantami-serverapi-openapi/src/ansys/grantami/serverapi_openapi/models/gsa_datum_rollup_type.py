@@ -42,7 +42,7 @@ class GsaDatumRollupType(Enum):
     """
     Allowed Enum values
     """
-    LISTROLLUP = "listRollup"
-    INTEGERROLLUP = "integerRollup"
-    NUMERICALROLLUP = "numericalRollup"
-    DISCRETEROLLUP = "discreteRollup"
+    LIST = "list"
+    INTEGER = "integer"
+    DOUBLE = "double"
+    DISCRETE = "discrete"

@@ -83,7 +83,7 @@ class GsaDatumListRollup(GsaDatumRollup):
         self,
         *,
         datums: "list[GsaDatum]",
-        type: "GsaDatumRollupType" = GsaDatumRollupType.LISTROLLUP,
+        type: "GsaDatumRollupType" = GsaDatumRollupType.LIST,
     ) -> None:
         """GsaDatumListRollup - a model defined in Swagger
 
