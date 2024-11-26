@@ -66,11 +66,11 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "GsaAttributeType",
         "link_datum_type": "str",
         "not_applicable": "str",
-        "attribute_guid": "str",
-        "attribute_identity": "int",
         "attribute_name": "str",
         "meta_datums": "list[GsaDataExportDatum]",
         "summary_row": "list[GsaDataExportRollupDatum]",
@@ -78,11 +78,11 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
     }
 
     attribute_map: dict[str, str] = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "link_datum_type": "linkDatumType",
         "not_applicable": "notApplicable",
-        "attribute_guid": "attributeGuid",
-        "attribute_identity": "attributeIdentity",
         "attribute_name": "attributeName",
         "meta_datums": "metaDatums",
         "summary_row": "summaryRow",
@@ -99,11 +99,11 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.LINK,
         link_datum_type: "str" = "tabular",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         attribute_name: "Union[str, None, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
         summary_row: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
@@ -113,22 +113,22 @@ class GsaDataExportTabularDatum(GsaDataExportLinkDatum):
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         link_datum_type: str
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         attribute_name: str, optional
         meta_datums: list[GsaDataExportDatum], optional
         summary_row: list[GsaDataExportRollupDatum], optional
         tabular_rows: list[GsaDataExportTabularRow], optional
         """
         super().__init__(
+            attribute_guid=attribute_guid,
+            attribute_identity=attribute_identity,
             datum_type=datum_type,
             link_datum_type=link_datum_type,
             not_applicable=not_applicable,
-            attribute_guid=attribute_guid,
-            attribute_identity=attribute_identity,
             meta_datums=meta_datums,
         )
         self._attribute_name: Union[str, None, Unset_Type] = Unset

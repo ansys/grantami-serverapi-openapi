@@ -66,19 +66,19 @@ class GsaDataExportHyperlinkDatum(GsaDataExportApplicableDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "datum_type": "GsaAttributeType",
-        "not_applicable": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
+        "datum_type": "GsaAttributeType",
+        "not_applicable": "str",
         "datum_value": "GsaDataExportHyperlink",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
     attribute_map: dict[str, str] = {
-        "datum_type": "datumType",
-        "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
+        "not_applicable": "notApplicable",
         "datum_value": "datumValue",
         "meta_datums": "metaDatums",
     }
@@ -92,10 +92,10 @@ class GsaDataExportHyperlinkDatum(GsaDataExportApplicableDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.HYPERLINK,
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_value: "Union[GsaDataExportHyperlink, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
@@ -103,18 +103,18 @@ class GsaDataExportHyperlinkDatum(GsaDataExportApplicableDatum):
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         datum_value: GsaDataExportHyperlink, optional
         meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
-            datum_type=datum_type,
-            not_applicable=not_applicable,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
+            datum_type=datum_type,
+            not_applicable=not_applicable,
             meta_datums=meta_datums,
         )
         self._datum_value: Union[GsaDataExportHyperlink, Unset_Type] = Unset

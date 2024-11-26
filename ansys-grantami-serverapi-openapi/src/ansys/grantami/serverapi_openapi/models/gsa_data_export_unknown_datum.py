@@ -65,46 +65,83 @@ class GsaDataExportUnknownDatum(GsaDataExportDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "not_applicable": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
+        "datum_type": "GsaAttributeType",
+        "not_applicable": "str",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
     attribute_map: dict[str, str] = {
-        "not_applicable": "notApplicable",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
+        "datum_type": "datumType",
+        "not_applicable": "notApplicable",
         "meta_datums": "metaDatums",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "datumType": "GsaAttributeType",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
+        datum_type: "GsaAttributeType",
         not_applicable: "str" = "unknown",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportUnknownDatum - a model defined in Swagger
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
+        datum_type: GsaAttributeType
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
-            not_applicable=not_applicable,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
+            not_applicable=not_applicable,
             meta_datums=meta_datums,
         )
+        self._datum_type: GsaAttributeType
+
+        self.datum_type = datum_type
+
+    @property
+    def datum_type(self) -> "GsaAttributeType":
+        """Gets the datum_type of this GsaDataExportUnknownDatum.
+
+        Returns
+        -------
+        GsaAttributeType
+            The datum_type of this GsaDataExportUnknownDatum.
+        """
+        return self._datum_type
+
+    @datum_type.setter
+    def datum_type(self, datum_type: "GsaAttributeType") -> None:
+        """Sets the datum_type of this GsaDataExportUnknownDatum.
+
+        Parameters
+        ----------
+        datum_type: GsaAttributeType
+            The datum_type of this GsaDataExportUnknownDatum.
+        """
+        # Field is not nullable
+        if datum_type is None:
+            raise ValueError("Invalid value for 'datum_type', must not be 'None'")
+        # Field is required
+        if datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'datum_type', must not be 'Unset'")
+        self._datum_type = datum_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -68,20 +68,20 @@ class GsaDataExportLinkDatum(GsaDataExportApplicableDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "GsaAttributeType",
         "link_datum_type": "str",
         "not_applicable": "str",
-        "attribute_guid": "str",
-        "attribute_identity": "int",
         "meta_datums": "list[GsaDataExportDatum]",
     }
 
     attribute_map: dict[str, str] = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "link_datum_type": "linkDatumType",
         "not_applicable": "notApplicable",
-        "attribute_guid": "attributeGuid",
-        "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
     }
 
@@ -97,29 +97,29 @@ class GsaDataExportLinkDatum(GsaDataExportApplicableDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.LINK,
         link_datum_type: "str",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         meta_datums: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportLinkDatum - a model defined in Swagger
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         link_datum_type: str
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         meta_datums: list[GsaDataExportDatum], optional
         """
         super().__init__(
-            datum_type=datum_type,
-            not_applicable=not_applicable,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
+            datum_type=datum_type,
+            not_applicable=not_applicable,
             meta_datums=meta_datums,
         )
         self._link_datum_type: str

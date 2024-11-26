@@ -283,11 +283,11 @@ from .gsa_datum import GsaDatum
 from .gsa_datum_criterion import GsaDatumCriterion
 from .gsa_datum_criterion_type import GsaDatumCriterionType
 from .gsa_datum_discrete_rollup import GsaDatumDiscreteRollup
+from .gsa_datum_double_rollup import GsaDatumDoubleRollup
 from .gsa_datum_exists_criterion import GsaDatumExistsCriterion
 from .gsa_datum_export_failure import GsaDatumExportFailure
 from .gsa_datum_integer_rollup import GsaDatumIntegerRollup
 from .gsa_datum_list_rollup import GsaDatumListRollup
-from .gsa_datum_numerical_rollup import GsaDatumNumericalRollup
 from .gsa_datum_reference import GsaDatumReference
 from .gsa_datum_rollup import GsaDatumRollup
 from .gsa_datum_rollup_type import GsaDatumRollupType
@@ -508,6 +508,7 @@ from .gsa_links_info import GsaLinksInfo
 from .gsa_list_boolean_criterion import GsaListBooleanCriterion
 from .gsa_list_criterion import GsaListCriterion
 from .gsa_list_item import GsaListItem
+from .gsa_list_item_record_reference import GsaListItemRecordReference
 from .gsa_lists_paging_options import GsaListsPagingOptions
 from .gsa_lists_user_or_group import GsaListsUserOrGroup
 from .gsa_local_column_aggregation import GsaLocalColumnAggregation
@@ -648,8 +649,8 @@ from .gsa_range_histogram_aggregation_datum_criterion import (
     GsaRangeHistogramAggregationDatumCriterion,
 )
 from .gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
-from .gsa_record_ancestor_history_identities_criterion import (
-    GsaRecordAncestorHistoryIdentitiesCriterion,
+from .gsa_record_ancestor_history_identity_criterion import (
+    GsaRecordAncestorHistoryIdentityCriterion,
 )
 from .gsa_record_color import GsaRecordColor
 from .gsa_record_color_property import GsaRecordColorProperty
@@ -1168,11 +1169,11 @@ __all__ = [
     "GsaDatumCriterion",
     "GsaDatumCriterionType",
     "GsaDatumDiscreteRollup",
+    "GsaDatumDoubleRollup",
     "GsaDatumExistsCriterion",
     "GsaDatumExportFailure",
     "GsaDatumIntegerRollup",
     "GsaDatumListRollup",
-    "GsaDatumNumericalRollup",
     "GsaDatumReference",
     "GsaDatumRollup",
     "GsaDatumRollupType",
@@ -1359,6 +1360,7 @@ __all__ = [
     "GsaListBooleanCriterion",
     "GsaListCriterion",
     "GsaListItem",
+    "GsaListItemRecordReference",
     "GsaListsPagingOptions",
     "GsaListsUserOrGroup",
     "GsaLocalColumnAggregation",
@@ -1491,7 +1493,7 @@ __all__ = [
     "GsaRangeHistogramAggregation",
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
-    "GsaRecordAncestorHistoryIdentitiesCriterion",
+    "GsaRecordAncestorHistoryIdentityCriterion",
     "GsaRecordColor",
     "GsaRecordColorProperty",
     "GsaRecordExportFailure",

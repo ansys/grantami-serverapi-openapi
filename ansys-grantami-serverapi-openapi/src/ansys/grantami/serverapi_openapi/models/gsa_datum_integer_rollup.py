@@ -80,7 +80,7 @@ class GsaDatumIntegerRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        type: "GsaDatumRollupType" = GsaDatumRollupType.INTEGERROLLUP,
+        type: "GsaDatumRollupType" = GsaDatumRollupType.INTEGER,
         value: "int",
     ) -> None:
         """GsaDatumIntegerRollup - a model defined in Swagger
