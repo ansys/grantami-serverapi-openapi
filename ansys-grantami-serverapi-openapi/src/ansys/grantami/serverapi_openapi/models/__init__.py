@@ -505,10 +505,13 @@ from .gsa_linked_record_tabular_column import GsaLinkedRecordTabularColumn
 from .gsa_linking_value_exists_datum_criterion import GsaLinkingValueExistsDatumCriterion
 from .gsa_linking_value_match_behavior import GsaLinkingValueMatchBehavior
 from .gsa_links_info import GsaLinksInfo
+from .gsa_list_action import GsaListAction
+from .gsa_list_audit_log_search_request import GsaListAuditLogSearchRequest
 from .gsa_list_boolean_criterion import GsaListBooleanCriterion
 from .gsa_list_criterion import GsaListCriterion
 from .gsa_list_item import GsaListItem
 from .gsa_list_item_record_reference import GsaListItemRecordReference
+from .gsa_list_rollup_datum import GsaListRollupDatum
 from .gsa_lists_paging_options import GsaListsPagingOptions
 from .gsa_lists_user_or_group import GsaListsUserOrGroup
 from .gsa_local_column_aggregation import GsaLocalColumnAggregation
@@ -1357,10 +1360,13 @@ __all__ = [
     "GsaLinkingValueExistsDatumCriterion",
     "GsaLinkingValueMatchBehavior",
     "GsaLinksInfo",
+    "GsaListAction",
+    "GsaListAuditLogSearchRequest",
     "GsaListBooleanCriterion",
     "GsaListCriterion",
     "GsaListItem",
     "GsaListItemRecordReference",
+    "GsaListRollupDatum",
     "GsaListsPagingOptions",
     "GsaListsUserOrGroup",
     "GsaLocalColumnAggregation",

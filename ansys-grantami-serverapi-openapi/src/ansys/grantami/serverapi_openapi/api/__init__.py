@@ -34,6 +34,7 @@ from .help_location_api import HelpLocationApi
 from .integration_api import IntegrationApi
 from .job_queue_api import JobQueueApi
 from .license_api import LicenseApi
+from .list_audit_log_api import ListAuditLogApi
 from .list_item_api import ListItemApi
 from .list_management_api import ListManagementApi
 from .list_permissions_api import ListPermissionsApi
@@ -78,6 +79,7 @@ __all__ = [
     "IntegrationApi",
     "JobQueueApi",
     "LicenseApi",
+    "ListAuditLogApi",
     "ListItemApi",
     "ListManagementApi",
     "ListPermissionsApi",
