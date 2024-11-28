@@ -64,7 +64,7 @@ class GsaQueryAttribute(ModelBase):
         "attribute_parameters": "list[GsaQuerySlimNamedEntity]",
         "data_rule": "GsaQueryDataRule",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "discrete_type": "GsaQueryDiscreteType",
+        "discrete_type": "GsaQuerySlimDiscreteType",
         "expressions": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
         "info": "GsaQueryAttributeInfo",
@@ -101,7 +101,7 @@ class GsaQueryAttribute(ModelBase):
         "defaultThresholdType": "GsaAttributeThresholdType",
         "info": "GsaQueryAttributeInfo",
         "unit": "GsaQueryUnit",
-        "discreteType": "GsaQueryDiscreteType",
+        "discreteType": "GsaQuerySlimDiscreteType",
         "dataRule": "GsaQueryDataRule",
         "target": "GsaQueryTabularAttributeTarget",
         "tabularColumns": "GsaQuerySlimNamedEntity",
@@ -117,7 +117,7 @@ class GsaQueryAttribute(ModelBase):
         attribute_parameters: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         data_rule: "Union[GsaQueryDataRule, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
-        discrete_type: "Union[GsaQueryDiscreteType, Unset_Type]" = Unset,
+        discrete_type: "Union[GsaQuerySlimDiscreteType, Unset_Type]" = Unset,
         expressions: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         info: "Union[GsaQueryAttributeInfo, Unset_Type]" = Unset,
@@ -137,7 +137,7 @@ class GsaQueryAttribute(ModelBase):
         attribute_parameters: list[GsaQuerySlimNamedEntity], optional
         data_rule: GsaQueryDataRule, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        discrete_type: GsaQueryDiscreteType, optional
+        discrete_type: GsaQuerySlimDiscreteType, optional
         expressions: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         info: GsaQueryAttributeInfo, optional
@@ -157,7 +157,7 @@ class GsaQueryAttribute(ModelBase):
         self._is_functional_range: Union[bool, None, Unset_Type] = Unset
         self._info: Union[GsaQueryAttributeInfo, Unset_Type] = Unset
         self._unit: Union[GsaQueryUnit, Unset_Type] = Unset
-        self._discrete_type: Union[GsaQueryDiscreteType, Unset_Type] = Unset
+        self._discrete_type: Union[GsaQuerySlimDiscreteType, Unset_Type] = Unset
         self._data_rule: Union[GsaQueryDataRule, Unset_Type] = Unset
         self._target: Union[GsaQueryTabularAttributeTarget, Unset_Type] = Unset
         self._tabular_columns: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
@@ -368,23 +368,23 @@ class GsaQueryAttribute(ModelBase):
         self._unit = unit
 
     @property
-    def discrete_type(self) -> "Union[GsaQueryDiscreteType, Unset_Type]":
+    def discrete_type(self) -> "Union[GsaQuerySlimDiscreteType, Unset_Type]":
         """Gets the discrete_type of this GsaQueryAttribute.
 
         Returns
         -------
-        Union[GsaQueryDiscreteType, Unset_Type]
+        Union[GsaQuerySlimDiscreteType, Unset_Type]
             The discrete_type of this GsaQueryAttribute.
         """
         return self._discrete_type
 
     @discrete_type.setter
-    def discrete_type(self, discrete_type: "Union[GsaQueryDiscreteType, Unset_Type]") -> None:
+    def discrete_type(self, discrete_type: "Union[GsaQuerySlimDiscreteType, Unset_Type]") -> None:
         """Sets the discrete_type of this GsaQueryAttribute.
 
         Parameters
         ----------
-        discrete_type: Union[GsaQueryDiscreteType, Unset_Type]
+        discrete_type: Union[GsaQuerySlimDiscreteType, Unset_Type]
             The discrete_type of this GsaQueryAttribute.
         """
         # Field is not nullable

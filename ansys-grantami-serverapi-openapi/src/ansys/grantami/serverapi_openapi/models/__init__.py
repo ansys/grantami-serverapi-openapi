@@ -632,6 +632,10 @@ from .gsa_query_data_rule import GsaQueryDataRule
 from .gsa_query_data_rule_properties import GsaQueryDataRuleProperties
 from .gsa_query_discrete_type import GsaQueryDiscreteType
 from .gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
+from .gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
+from .gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
+from .gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
+from .gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
 from .gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
 from .gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
 from .gsa_query_tabular_attribute_target import GsaQueryTabularAttributeTarget
@@ -759,6 +763,7 @@ from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_configuration import GsaSlimConfiguration
 from .gsa_slim_constant import GsaSlimConstant
 from .gsa_slim_database import GsaSlimDatabase
+from .gsa_slim_discrete_type import GsaSlimDiscreteType
 from .gsa_slim_entity import GsaSlimEntity
 from .gsa_slim_expression import GsaSlimExpression
 from .gsa_slim_file import GsaSlimFile
@@ -1483,6 +1488,10 @@ __all__ = [
     "GsaQueryDataRuleProperties",
     "GsaQueryDiscreteType",
     "GsaQueryDiscreteTypeProperties",
+    "GsaQueryDiscreteTypesInfo",
+    "GsaQueryDiscreteTypesRequest",
+    "GsaQuerySlimDiscreteType",
+    "GsaQuerySlimDiscreteTypeProperties",
     "GsaQuerySlimNamedEntity",
     "GsaQuerySlimNamedEntityProperties",
     "GsaQueryTabularAttributeTarget",
@@ -1600,6 +1609,7 @@ __all__ = [
     "GsaSlimConfiguration",
     "GsaSlimConstant",
     "GsaSlimDatabase",
+    "GsaSlimDiscreteType",
     "GsaSlimEntity",
     "GsaSlimExpression",
     "GsaSlimFile",
