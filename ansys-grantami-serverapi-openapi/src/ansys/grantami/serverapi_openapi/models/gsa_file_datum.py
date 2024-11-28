@@ -72,6 +72,7 @@ class GsaFileDatum(GsaApplicableDatum):
         "description": "str",
         "file_name": "str",
         "not_applicable": "str",
+        "relative_export_url": "str",
         "target": "GsaHyperlinkTarget",
     }
 
@@ -82,6 +83,7 @@ class GsaFileDatum(GsaApplicableDatum):
         "description": "description",
         "file_name": "fileName",
         "not_applicable": "notApplicable",
+        "relative_export_url": "relativeExportUrl",
         "target": "target",
     }
 
@@ -100,6 +102,7 @@ class GsaFileDatum(GsaApplicableDatum):
         description: "str",
         file_name: "str",
         not_applicable: "str" = "applicable",
+        relative_export_url: "str",
         target: "GsaHyperlinkTarget",
     ) -> None:
         """GsaFileDatum - a model defined in Swagger
@@ -112,6 +115,7 @@ class GsaFileDatum(GsaApplicableDatum):
         description: str
         file_name: str
         not_applicable: str
+        relative_export_url: str
         target: GsaHyperlinkTarget
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
@@ -120,12 +124,14 @@ class GsaFileDatum(GsaApplicableDatum):
         self._content_type: str
         self._target: GsaHyperlinkTarget
         self._content_is_in_search_index: bool
+        self._relative_export_url: str
 
         self.file_name = file_name
         self.description = description
         self.content_type = content_type
         self.target = target
         self.content_is_in_search_index = content_is_in_search_index
+        self.relative_export_url = relative_export_url
 
     @property
     def file_name(self) -> "str":
@@ -266,6 +272,34 @@ class GsaFileDatum(GsaApplicableDatum):
         if content_is_in_search_index is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'content_is_in_search_index', must not be 'Unset'")
         self._content_is_in_search_index = content_is_in_search_index
+
+    @property
+    def relative_export_url(self) -> "str":
+        """Gets the relative_export_url of this GsaFileDatum.
+
+        Returns
+        -------
+        str
+            The relative_export_url of this GsaFileDatum.
+        """
+        return self._relative_export_url
+
+    @relative_export_url.setter
+    def relative_export_url(self, relative_export_url: "str") -> None:
+        """Sets the relative_export_url of this GsaFileDatum.
+
+        Parameters
+        ----------
+        relative_export_url: str
+            The relative_export_url of this GsaFileDatum.
+        """
+        # Field is not nullable
+        if relative_export_url is None:
+            raise ValueError("Invalid value for 'relative_export_url', must not be 'None'")
+        # Field is required
+        if relative_export_url is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'relative_export_url', must not be 'Unset'")
+        self._relative_export_url = relative_export_url
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

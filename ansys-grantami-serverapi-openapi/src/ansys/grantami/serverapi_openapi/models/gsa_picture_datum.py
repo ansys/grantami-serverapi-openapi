@@ -68,11 +68,13 @@ class GsaPictureDatum(GsaApplicableDatum):
     swagger_types: dict[str, str] = {
         "datum_type": "GsaDatumType",
         "not_applicable": "str",
+        "relative_export_url": "str",
     }
 
     attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
+        "relative_export_url": "relativeExportUrl",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -84,6 +86,7 @@ class GsaPictureDatum(GsaApplicableDatum):
         *,
         datum_type: "GsaDatumType" = GsaDatumType.PICTURE,
         not_applicable: "str" = "applicable",
+        relative_export_url: "str",
     ) -> None:
         """GsaPictureDatum - a model defined in Swagger
 
@@ -91,8 +94,40 @@ class GsaPictureDatum(GsaApplicableDatum):
         ----------
         datum_type: GsaDatumType
         not_applicable: str
+        relative_export_url: str
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
+        self._relative_export_url: str
+
+        self.relative_export_url = relative_export_url
+
+    @property
+    def relative_export_url(self) -> "str":
+        """Gets the relative_export_url of this GsaPictureDatum.
+
+        Returns
+        -------
+        str
+            The relative_export_url of this GsaPictureDatum.
+        """
+        return self._relative_export_url
+
+    @relative_export_url.setter
+    def relative_export_url(self, relative_export_url: "str") -> None:
+        """Sets the relative_export_url of this GsaPictureDatum.
+
+        Parameters
+        ----------
+        relative_export_url: str
+            The relative_export_url of this GsaPictureDatum.
+        """
+        # Field is not nullable
+        if relative_export_url is None:
+            raise ValueError("Invalid value for 'relative_export_url', must not be 'None'")
+        # Field is required
+        if relative_export_url is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'relative_export_url', must not be 'Unset'")
+        self._relative_export_url = relative_export_url
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

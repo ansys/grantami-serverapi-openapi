@@ -61,16 +61,17 @@ class GsaTabularDatumRollupCell(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "column_guid": "str",
+        "column": "GsaSlimEntity",
         "datum_rollup": "GsaDatumRollup",
     }
 
     attribute_map: dict[str, str] = {
-        "column_guid": "columnGuid",
+        "column": "column",
         "datum_rollup": "datumRollup",
     }
 
     subtype_mapping: dict[str, str] = {
+        "column": "GsaSlimEntity",
         "datumRollup": "GsaDatumRollup",
     }
 
@@ -79,50 +80,50 @@ class GsaTabularDatumRollupCell(ModelBase):
     def __init__(
         self,
         *,
-        column_guid: "str",
+        column: "GsaSlimEntity",
         datum_rollup: "Union[GsaDatumRollup, Unset_Type]" = Unset,
     ) -> None:
         """GsaTabularDatumRollupCell - a model defined in Swagger
 
         Parameters
         ----------
-        column_guid: str
+        column: GsaSlimEntity
         datum_rollup: GsaDatumRollup, optional
         """
-        self._column_guid: str
+        self._column: GsaSlimEntity
         self._datum_rollup: Union[GsaDatumRollup, Unset_Type] = Unset
 
-        self.column_guid = column_guid
+        self.column = column
         if datum_rollup is not Unset:
             self.datum_rollup = datum_rollup
 
     @property
-    def column_guid(self) -> "str":
-        """Gets the column_guid of this GsaTabularDatumRollupCell.
+    def column(self) -> "GsaSlimEntity":
+        """Gets the column of this GsaTabularDatumRollupCell.
 
         Returns
         -------
-        str
-            The column_guid of this GsaTabularDatumRollupCell.
+        GsaSlimEntity
+            The column of this GsaTabularDatumRollupCell.
         """
-        return self._column_guid
+        return self._column
 
-    @column_guid.setter
-    def column_guid(self, column_guid: "str") -> None:
-        """Sets the column_guid of this GsaTabularDatumRollupCell.
+    @column.setter
+    def column(self, column: "GsaSlimEntity") -> None:
+        """Sets the column of this GsaTabularDatumRollupCell.
 
         Parameters
         ----------
-        column_guid: str
-            The column_guid of this GsaTabularDatumRollupCell.
+        column: GsaSlimEntity
+            The column of this GsaTabularDatumRollupCell.
         """
         # Field is not nullable
-        if column_guid is None:
-            raise ValueError("Invalid value for 'column_guid', must not be 'None'")
+        if column is None:
+            raise ValueError("Invalid value for 'column', must not be 'None'")
         # Field is required
-        if column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'column_guid', must not be 'Unset'")
-        self._column_guid = column_guid
+        if column is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column', must not be 'Unset'")
+        self._column = column
 
     @property
     def datum_rollup(self) -> "Union[GsaDatumRollup, Unset_Type]":

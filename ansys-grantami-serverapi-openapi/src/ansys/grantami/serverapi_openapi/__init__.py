@@ -41,6 +41,7 @@ from .api.help_location_api import HelpLocationApi
 from .api.integration_api import IntegrationApi
 from .api.job_queue_api import JobQueueApi
 from .api.license_api import LicenseApi
+from .api.list_audit_log_api import ListAuditLogApi
 from .api.list_item_api import ListItemApi
 from .api.list_management_api import ListManagementApi
 from .api.list_permissions_api import ListPermissionsApi
@@ -572,10 +573,13 @@ from .models.gsa_linked_record_tabular_column import GsaLinkedRecordTabularColum
 from .models.gsa_linking_value_exists_datum_criterion import GsaLinkingValueExistsDatumCriterion
 from .models.gsa_linking_value_match_behavior import GsaLinkingValueMatchBehavior
 from .models.gsa_links_info import GsaLinksInfo
+from .models.gsa_list_action import GsaListAction
+from .models.gsa_list_audit_log_search_request import GsaListAuditLogSearchRequest
 from .models.gsa_list_boolean_criterion import GsaListBooleanCriterion
 from .models.gsa_list_criterion import GsaListCriterion
 from .models.gsa_list_item import GsaListItem
 from .models.gsa_list_item_record_reference import GsaListItemRecordReference
+from .models.gsa_list_rollup_datum import GsaListRollupDatum
 from .models.gsa_lists_paging_options import GsaListsPagingOptions
 from .models.gsa_lists_user_or_group import GsaListsUserOrGroup
 from .models.gsa_local_column_aggregation import GsaLocalColumnAggregation
@@ -1035,6 +1039,7 @@ __all__ = [
     "IntegrationApi",
     "JobQueueApi",
     "LicenseApi",
+    "ListAuditLogApi",
     "ListItemApi",
     "ListManagementApi",
     "ListPermissionsApi",
@@ -1478,10 +1483,13 @@ __all__ = [
     "GsaLinkingValueExistsDatumCriterion",
     "GsaLinkingValueMatchBehavior",
     "GsaLinksInfo",
+    "GsaListAction",
+    "GsaListAuditLogSearchRequest",
     "GsaListBooleanCriterion",
     "GsaListCriterion",
     "GsaListItem",
     "GsaListItemRecordReference",
+    "GsaListRollupDatum",
     "GsaListsPagingOptions",
     "GsaListsUserOrGroup",
     "GsaLocalColumnAggregation",
