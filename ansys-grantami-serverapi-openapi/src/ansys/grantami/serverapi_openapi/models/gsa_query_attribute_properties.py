@@ -64,7 +64,7 @@ class GsaQueryAttributeProperties(ModelBase):
         "attribute_parameters": "GsaQuerySlimNamedEntityProperties",
         "data_rule": "GsaQueryDataRuleProperties",
         "default_threshold_type": "bool",
-        "discrete_type": "GsaQueryDiscreteTypeProperties",
+        "discrete_type": "GsaQuerySlimDiscreteTypeProperties",
         "expressions": "GsaQuerySlimNamedEntityProperties",
         "guid": "bool",
         "info": "GsaQueryAttributeInfoProperties",
@@ -99,7 +99,7 @@ class GsaQueryAttributeProperties(ModelBase):
     subtype_mapping: dict[str, str] = {
         "info": "GsaQueryAttributeInfoProperties",
         "unit": "GsaQueryUnitProperties",
-        "discreteType": "GsaQueryDiscreteTypeProperties",
+        "discreteType": "GsaQuerySlimDiscreteTypeProperties",
         "dataRule": "GsaQueryDataRuleProperties",
         "target": "GsaQueryTabularAttributeTargetProperties",
         "tabularColumns": "GsaQuerySlimNamedEntityProperties",
@@ -115,7 +115,7 @@ class GsaQueryAttributeProperties(ModelBase):
         attribute_parameters: "Union[GsaQuerySlimNamedEntityProperties, Unset_Type]" = Unset,
         data_rule: "Union[GsaQueryDataRuleProperties, Unset_Type]" = Unset,
         default_threshold_type: "Union[bool, None, Unset_Type]" = Unset,
-        discrete_type: "Union[GsaQueryDiscreteTypeProperties, Unset_Type]" = Unset,
+        discrete_type: "Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type]" = Unset,
         expressions: "Union[GsaQuerySlimNamedEntityProperties, Unset_Type]" = Unset,
         guid: "Union[bool, None, Unset_Type]" = Unset,
         info: "Union[GsaQueryAttributeInfoProperties, Unset_Type]" = Unset,
@@ -135,7 +135,7 @@ class GsaQueryAttributeProperties(ModelBase):
         attribute_parameters: GsaQuerySlimNamedEntityProperties, optional
         data_rule: GsaQueryDataRuleProperties, optional
         default_threshold_type: bool, optional
-        discrete_type: GsaQueryDiscreteTypeProperties, optional
+        discrete_type: GsaQuerySlimDiscreteTypeProperties, optional
         expressions: GsaQuerySlimNamedEntityProperties, optional
         guid: bool, optional
         info: GsaQueryAttributeInfoProperties, optional
@@ -155,7 +155,7 @@ class GsaQueryAttributeProperties(ModelBase):
         self._is_functional_range: Union[bool, None, Unset_Type] = Unset
         self._info: Union[GsaQueryAttributeInfoProperties, Unset_Type] = Unset
         self._unit: Union[GsaQueryUnitProperties, Unset_Type] = Unset
-        self._discrete_type: Union[GsaQueryDiscreteTypeProperties, Unset_Type] = Unset
+        self._discrete_type: Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type] = Unset
         self._data_rule: Union[GsaQueryDataRuleProperties, Unset_Type] = Unset
         self._target: Union[GsaQueryTabularAttributeTargetProperties, Unset_Type] = Unset
         self._tabular_columns: Union[GsaQuerySlimNamedEntityProperties, Unset_Type] = Unset
@@ -362,25 +362,25 @@ class GsaQueryAttributeProperties(ModelBase):
         self._unit = unit
 
     @property
-    def discrete_type(self) -> "Union[GsaQueryDiscreteTypeProperties, Unset_Type]":
+    def discrete_type(self) -> "Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type]":
         """Gets the discrete_type of this GsaQueryAttributeProperties.
 
         Returns
         -------
-        Union[GsaQueryDiscreteTypeProperties, Unset_Type]
+        Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type]
             The discrete_type of this GsaQueryAttributeProperties.
         """
         return self._discrete_type
 
     @discrete_type.setter
     def discrete_type(
-        self, discrete_type: "Union[GsaQueryDiscreteTypeProperties, Unset_Type]"
+        self, discrete_type: "Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type]"
     ) -> None:
         """Sets the discrete_type of this GsaQueryAttributeProperties.
 
         Parameters
         ----------
-        discrete_type: Union[GsaQueryDiscreteTypeProperties, Unset_Type]
+        discrete_type: Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type]
             The discrete_type of this GsaQueryAttributeProperties.
         """
         # Field is not nullable

@@ -970,7 +970,7 @@ class SchemaAttributesApi(ApiBase):
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "Union[GsaQueryAttributesInfo, None]":
-        """Fetch properties for attributes. Optionally filter the returned attributes.
+        """Get attributes in table, populate the requested properties. Optionally filter the returned attributes.
 
         This method makes a synchronous HTTP request.
 

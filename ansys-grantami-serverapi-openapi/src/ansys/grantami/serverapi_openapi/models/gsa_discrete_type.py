@@ -61,24 +61,29 @@ class GsaDiscreteType(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "discrete_values": "list[GsaDiscreteValuesDiscreteValue]",
         "guid": "str",
         "is_ordered": "bool",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
         "name": "name",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "discreteValues": "GsaDiscreteValuesDiscreteValue",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
+        discrete_values: "list[GsaDiscreteValuesDiscreteValue]",
         guid: "str",
         is_ordered: "bool",
         name: "str",
@@ -87,17 +92,48 @@ class GsaDiscreteType(ModelBase):
 
         Parameters
         ----------
+        discrete_values: list[GsaDiscreteValuesDiscreteValue]
         guid: str
         is_ordered: bool
         name: str
         """
+        self._discrete_values: list[GsaDiscreteValuesDiscreteValue]
         self._is_ordered: bool
         self._name: str
         self._guid: str
 
+        self.discrete_values = discrete_values
         self.is_ordered = is_ordered
         self.name = name
         self.guid = guid
+
+    @property
+    def discrete_values(self) -> "list[GsaDiscreteValuesDiscreteValue]":
+        """Gets the discrete_values of this GsaDiscreteType.
+
+        Returns
+        -------
+        list[GsaDiscreteValuesDiscreteValue]
+            The discrete_values of this GsaDiscreteType.
+        """
+        return self._discrete_values
+
+    @discrete_values.setter
+    def discrete_values(self, discrete_values: "list[GsaDiscreteValuesDiscreteValue]") -> None:
+        """Sets the discrete_values of this GsaDiscreteType.
+
+        Parameters
+        ----------
+        discrete_values: list[GsaDiscreteValuesDiscreteValue]
+            The discrete_values of this GsaDiscreteType.
+        """
+        # Field is not nullable
+        if discrete_values is None:
+            raise ValueError("Invalid value for 'discrete_values', must not be 'None'")
+        # Field is required
+        if discrete_values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'discrete_values', must not be 'Unset'")
+        self._discrete_values = discrete_values
 
     @property
     def is_ordered(self) -> "bool":
