@@ -631,6 +631,7 @@ from .gsa_query_attributes_request import GsaQueryAttributesRequest
 from .gsa_query_data_rule import GsaQueryDataRule
 from .gsa_query_data_rule_properties import GsaQueryDataRuleProperties
 from .gsa_query_discrete_type import GsaQueryDiscreteType
+from .gsa_query_discrete_type_filter import GsaQueryDiscreteTypeFilter
 from .gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
 from .gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
 from .gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
@@ -1487,6 +1488,7 @@ __all__ = [
     "GsaQueryDataRule",
     "GsaQueryDataRuleProperties",
     "GsaQueryDiscreteType",
+    "GsaQueryDiscreteTypeFilter",
     "GsaQueryDiscreteTypeProperties",
     "GsaQueryDiscreteTypesInfo",
     "GsaQueryDiscreteTypesRequest",
