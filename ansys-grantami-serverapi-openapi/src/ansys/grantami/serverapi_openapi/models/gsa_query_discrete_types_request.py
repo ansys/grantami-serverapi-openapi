@@ -62,14 +62,17 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "properties": "GsaQueryDiscreteTypeProperties",
+        "filter": "GsaQueryDiscreteTypeFilter",
     }
 
     attribute_map: dict[str, str] = {
         "properties": "properties",
+        "filter": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
         "properties": "GsaQueryDiscreteTypeProperties",
+        "filter": "GsaQueryDiscreteTypeFilter",
     }
 
     discriminator: Optional[str] = None
@@ -78,16 +81,21 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
         self,
         *,
         properties: "GsaQueryDiscreteTypeProperties",
+        filter: "Union[GsaQueryDiscreteTypeFilter, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryDiscreteTypesRequest - a model defined in Swagger
 
         Parameters
         ----------
         properties: GsaQueryDiscreteTypeProperties
+        filter: GsaQueryDiscreteTypeFilter, optional
         """
         self._properties: GsaQueryDiscreteTypeProperties
+        self._filter: Union[GsaQueryDiscreteTypeFilter, Unset_Type] = Unset
 
         self.properties = properties
+        if filter is not Unset:
+            self.filter = filter
 
     @property
     def properties(self) -> "GsaQueryDiscreteTypeProperties":
@@ -116,6 +124,31 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
         if properties is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'properties', must not be 'Unset'")
         self._properties = properties
+
+    @property
+    def filter(self) -> "Union[GsaQueryDiscreteTypeFilter, Unset_Type]":
+        """Gets the filter of this GsaQueryDiscreteTypesRequest.
+
+        Returns
+        -------
+        Union[GsaQueryDiscreteTypeFilter, Unset_Type]
+            The filter of this GsaQueryDiscreteTypesRequest.
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter: "Union[GsaQueryDiscreteTypeFilter, Unset_Type]") -> None:
+        """Sets the filter of this GsaQueryDiscreteTypesRequest.
+
+        Parameters
+        ----------
+        filter: Union[GsaQueryDiscreteTypeFilter, Unset_Type]
+            The filter of this GsaQueryDiscreteTypesRequest.
+        """
+        # Field is not nullable
+        if filter is None:
+            raise ValueError("Invalid value for 'filter', must not be 'None'")
+        self._filter = filter
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
