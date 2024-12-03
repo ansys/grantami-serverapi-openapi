@@ -76,6 +76,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
+        "axis_name_display_names": "dict(str, str)",
         "help_path": "str",
     }
 
@@ -92,6 +93,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         "type": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
+        "axis_name_display_names": "axisNameDisplayNames",
         "help_path": "helpPath",
     }
 
@@ -116,6 +118,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         type: "GsaAttributeType" = GsaAttributeType.DISCRETE,
         about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteAttribute - a model defined in Swagger
@@ -134,6 +137,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
+        axis_name_display_names: dict[str, str], optional
         help_path: str, optional
         """
         super().__init__(
@@ -147,6 +151,7 @@ class GsaDiscreteAttribute(GsaAttribute):
             type=type,
             about_attribute=about_attribute,
             axis_name=axis_name,
+            axis_name_display_names=axis_name_display_names,
             help_path=help_path,
         )
         self._discrete_type: GsaSlimNamedEntity

@@ -62,9 +62,12 @@ class GsaQueryAttribute(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaQuerySlimNamedEntity]",
+        "axis_name": "str",
+        "axis_name_display_names": "dict(str, str)",
         "data_rule": "GsaQueryDataRule",
         "default_threshold_type": "GsaAttributeThresholdType",
         "discrete_type": "GsaQuerySlimDiscreteType",
+        "display_names": "dict(str, str)",
         "expressions": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
         "info": "GsaQueryAttributeInfo",
@@ -80,9 +83,12 @@ class GsaQueryAttribute(ModelBase):
 
     attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
+        "axis_name": "axisName",
+        "axis_name_display_names": "axisNameDisplayNames",
         "data_rule": "dataRule",
         "default_threshold_type": "defaultThresholdType",
         "discrete_type": "discreteType",
+        "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
         "info": "info",
@@ -115,9 +121,12 @@ class GsaQueryAttribute(ModelBase):
         self,
         *,
         attribute_parameters: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         data_rule: "Union[GsaQueryDataRule, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         discrete_type: "Union[GsaQuerySlimDiscreteType, Unset_Type]" = Unset,
+        display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         expressions: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         info: "Union[GsaQueryAttributeInfo, Unset_Type]" = Unset,
@@ -135,9 +144,12 @@ class GsaQueryAttribute(ModelBase):
         Parameters
         ----------
         attribute_parameters: list[GsaQuerySlimNamedEntity], optional
+        axis_name: str, optional
+        axis_name_display_names: dict[str, str], optional
         data_rule: GsaQueryDataRule, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         discrete_type: GsaQuerySlimDiscreteType, optional
+        display_names: dict[str, str], optional
         expressions: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         info: GsaQueryAttributeInfo, optional
@@ -155,6 +167,8 @@ class GsaQueryAttribute(ModelBase):
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
         self._is_multi_valued: Union[bool, None, Unset_Type] = Unset
         self._is_functional_range: Union[bool, None, Unset_Type] = Unset
+        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._axis_name_display_names: Union[dict[str, str], None, Unset_Type] = Unset
         self._info: Union[GsaQueryAttributeInfo, Unset_Type] = Unset
         self._unit: Union[GsaQueryUnit, Unset_Type] = Unset
         self._discrete_type: Union[GsaQuerySlimDiscreteType, Unset_Type] = Unset
@@ -163,6 +177,7 @@ class GsaQueryAttribute(ModelBase):
         self._tabular_columns: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._attribute_parameters: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._expressions: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
+        self._display_names: Union[dict[str, str], None, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
@@ -176,6 +191,10 @@ class GsaQueryAttribute(ModelBase):
             self.is_multi_valued = is_multi_valued
         if is_functional_range is not Unset:
             self.is_functional_range = is_functional_range
+        if axis_name is not Unset:
+            self.axis_name = axis_name
+        if axis_name_display_names is not Unset:
+            self.axis_name_display_names = axis_name_display_names
         if info is not Unset:
             self.info = info
         if unit is not Unset:
@@ -192,6 +211,8 @@ class GsaQueryAttribute(ModelBase):
             self.attribute_parameters = attribute_parameters
         if expressions is not Unset:
             self.expressions = expressions
+        if display_names is not Unset:
+            self.display_names = display_names
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -316,6 +337,52 @@ class GsaQueryAttribute(ModelBase):
             The is_functional_range of this GsaQueryAttribute.
         """
         self._is_functional_range = is_functional_range
+
+    @property
+    def axis_name(self) -> "Union[str, None, Unset_Type]":
+        """Gets the axis_name of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[str, None, Unset_Type]
+            The axis_name of this GsaQueryAttribute.
+        """
+        return self._axis_name
+
+    @axis_name.setter
+    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+        """Sets the axis_name of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        axis_name: Union[str, None, Unset_Type]
+            The axis_name of this GsaQueryAttribute.
+        """
+        self._axis_name = axis_name
+
+    @property
+    def axis_name_display_names(self) -> "Union[dict[str, str], None, Unset_Type]":
+        """Gets the axis_name_display_names of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[dict[str, str], None, Unset_Type]
+            The axis_name_display_names of this GsaQueryAttribute.
+        """
+        return self._axis_name_display_names
+
+    @axis_name_display_names.setter
+    def axis_name_display_names(
+        self, axis_name_display_names: "Union[dict[str, str], None, Unset_Type]"
+    ) -> None:
+        """Sets the axis_name_display_names of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        axis_name_display_names: Union[dict[str, str], None, Unset_Type]
+            The axis_name_display_names of this GsaQueryAttribute.
+        """
+        self._axis_name_display_names = axis_name_display_names
 
     @property
     def info(self) -> "Union[GsaQueryAttributeInfo, Unset_Type]":
@@ -513,6 +580,28 @@ class GsaQueryAttribute(ModelBase):
             The expressions of this GsaQueryAttribute.
         """
         self._expressions = expressions
+
+    @property
+    def display_names(self) -> "Union[dict[str, str], None, Unset_Type]":
+        """Gets the display_names of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[dict[str, str], None, Unset_Type]
+            The display_names of this GsaQueryAttribute.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "Union[dict[str, str], None, Unset_Type]") -> None:
+        """Sets the display_names of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        display_names: Union[dict[str, str], None, Unset_Type]
+            The display_names of this GsaQueryAttribute.
+        """
+        self._display_names = display_names
 
     @property
     def name(self) -> "Union[str, None, Unset_Type]":
