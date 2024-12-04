@@ -160,7 +160,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def delete_discrete_value(
         self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
-    ) -> "Union[GsaDiscreteValueDeletionException, None]":
+    ) -> "Union[GsaDiscreteValueAggregateException, None]":
         """Delete a single discrete value. It must not be used by any data, or the operation will fail.
 
         This method makes a synchronous HTTP request.
@@ -173,7 +173,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         Returns
         -------
-        Union[GsaDiscreteValueDeletionException, None]
+        Union[GsaDiscreteValueAggregateException, None]
         """
         data = self._delete_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
@@ -242,7 +242,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaDiscreteValueDeletionException",
+            400: "GsaDiscreteValueAggregateException",
             200: None,
             403: None,
             404: None,
