@@ -405,7 +405,8 @@ from .models.gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletion
 from .models.gsa_discrete_type_usage import GsaDiscreteTypeUsage
 from .models.gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .models.gsa_discrete_value import GsaDiscreteValue
-from .models.gsa_discrete_value_deletion_exception import GsaDiscreteValueDeletionException
+from .models.gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
+from .models.gsa_discrete_value_aggregate_exception import GsaDiscreteValueAggregateException
 from .models.gsa_discrete_values_create_discrete_value import GsaDiscreteValuesCreateDiscreteValue
 from .models.gsa_discrete_values_discrete_value import GsaDiscreteValuesDiscreteValue
 from .models.gsa_discrete_values_discrete_values_info import GsaDiscreteValuesDiscreteValuesInfo
@@ -1353,7 +1354,8 @@ __all__ = [
     "GsaDiscreteTypeUsage",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
-    "GsaDiscreteValueDeletionException",
+    "GsaDiscreteValueAggregateErrorReason",
+    "GsaDiscreteValueAggregateException",
     "GsaDiscreteValuesCreateDiscreteValue",
     "GsaDiscreteValuesDiscreteValue",
     "GsaDiscreteValuesDiscreteValuesInfo",

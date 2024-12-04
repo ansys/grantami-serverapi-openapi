@@ -66,24 +66,29 @@ class GsaDataUsageDataModificationErrorDetail(GsaUsageDataModificationErrorDetai
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "entity_in_use": "GsaSlimNamedEntity",
         "message": "str",
         "reason": "str",
         "referenced_by_type": "GsaReferencedByType",
     }
 
     attribute_map: dict[str, str] = {
+        "entity_in_use": "entityInUse",
         "message": "message",
         "reason": "reason",
         "referenced_by_type": "referencedByType",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "entityInUse": "GsaSlimNamedEntity",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
+        entity_in_use: "GsaSlimNamedEntity",
         message: "str",
         reason: "str" = "usage",
         referenced_by_type: "GsaReferencedByType" = GsaReferencedByType.DATA,
@@ -92,11 +97,43 @@ class GsaDataUsageDataModificationErrorDetail(GsaUsageDataModificationErrorDetai
 
         Parameters
         ----------
+        entity_in_use: GsaSlimNamedEntity
         message: str
         reason: str
         referenced_by_type: GsaReferencedByType
         """
         super().__init__(message=message, reason=reason, referenced_by_type=referenced_by_type)
+        self._entity_in_use: GsaSlimNamedEntity
+
+        self.entity_in_use = entity_in_use
+
+    @property
+    def entity_in_use(self) -> "GsaSlimNamedEntity":
+        """Gets the entity_in_use of this GsaDataUsageDataModificationErrorDetail.
+
+        Returns
+        -------
+        GsaSlimNamedEntity
+            The entity_in_use of this GsaDataUsageDataModificationErrorDetail.
+        """
+        return self._entity_in_use
+
+    @entity_in_use.setter
+    def entity_in_use(self, entity_in_use: "GsaSlimNamedEntity") -> None:
+        """Sets the entity_in_use of this GsaDataUsageDataModificationErrorDetail.
+
+        Parameters
+        ----------
+        entity_in_use: GsaSlimNamedEntity
+            The entity_in_use of this GsaDataUsageDataModificationErrorDetail.
+        """
+        # Field is not nullable
+        if entity_in_use is None:
+            raise ValueError("Invalid value for 'entity_in_use', must not be 'None'")
+        # Field is required
+        if entity_in_use is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'entity_in_use', must not be 'Unset'")
+        self._entity_in_use = entity_in_use
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
