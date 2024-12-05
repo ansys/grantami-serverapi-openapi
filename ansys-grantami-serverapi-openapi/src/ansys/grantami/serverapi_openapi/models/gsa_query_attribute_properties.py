@@ -61,6 +61,7 @@ class GsaQueryAttributeProperties(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "about_attribute": "GsaQuerySlimTypedAttributeProperties",
         "attribute_parameters": "GsaQuerySlimNamedEntityProperties",
         "axis_name": "bool",
         "axis_name_display_names": "bool",
@@ -82,6 +83,7 @@ class GsaQueryAttributeProperties(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
         "axis_name_display_names": "axisNameDisplayNames",
@@ -107,6 +109,7 @@ class GsaQueryAttributeProperties(ModelBase):
         "unit": "GsaQueryUnitProperties",
         "discreteType": "GsaQuerySlimDiscreteTypeProperties",
         "dataRule": "GsaQueryDataRuleProperties",
+        "aboutAttribute": "GsaQuerySlimTypedAttributeProperties",
         "target": "GsaQueryTabularAttributeTargetProperties",
         "tabularColumns": "GsaQuerySlimNamedEntityProperties",
         "attributeParameters": "GsaQuerySlimNamedEntityProperties",
@@ -118,6 +121,7 @@ class GsaQueryAttributeProperties(ModelBase):
     def __init__(
         self,
         *,
+        about_attribute: "Union[GsaQuerySlimTypedAttributeProperties, Unset_Type]" = Unset,
         attribute_parameters: "Union[GsaQuerySlimNamedEntityProperties, Unset_Type]" = Unset,
         axis_name: "Union[bool, None, Unset_Type]" = Unset,
         axis_name_display_names: "Union[bool, None, Unset_Type]" = Unset,
@@ -141,6 +145,7 @@ class GsaQueryAttributeProperties(ModelBase):
 
         Parameters
         ----------
+        about_attribute: GsaQuerySlimTypedAttributeProperties, optional
         attribute_parameters: GsaQuerySlimNamedEntityProperties, optional
         axis_name: bool, optional
         axis_name_display_names: bool, optional
@@ -171,6 +176,7 @@ class GsaQueryAttributeProperties(ModelBase):
         self._unit: Union[GsaQueryUnitProperties, Unset_Type] = Unset
         self._discrete_type: Union[GsaQuerySlimDiscreteTypeProperties, Unset_Type] = Unset
         self._data_rule: Union[GsaQueryDataRuleProperties, Unset_Type] = Unset
+        self._about_attribute: Union[GsaQuerySlimTypedAttributeProperties, Unset_Type] = Unset
         self._target: Union[GsaQueryTabularAttributeTargetProperties, Unset_Type] = Unset
         self._tabular_columns: Union[GsaQuerySlimNamedEntityProperties, Unset_Type] = Unset
         self._attribute_parameters: Union[GsaQuerySlimNamedEntityProperties, Unset_Type] = Unset
@@ -201,6 +207,8 @@ class GsaQueryAttributeProperties(ModelBase):
             self.discrete_type = discrete_type
         if data_rule is not Unset:
             self.data_rule = data_rule
+        if about_attribute is not Unset:
+            self.about_attribute = about_attribute
         if target is not Unset:
             self.target = target
         if tabular_columns is not Unset:
@@ -479,6 +487,33 @@ class GsaQueryAttributeProperties(ModelBase):
         if data_rule is None:
             raise ValueError("Invalid value for 'data_rule', must not be 'None'")
         self._data_rule = data_rule
+
+    @property
+    def about_attribute(self) -> "Union[GsaQuerySlimTypedAttributeProperties, Unset_Type]":
+        """Gets the about_attribute of this GsaQueryAttributeProperties.
+
+        Returns
+        -------
+        Union[GsaQuerySlimTypedAttributeProperties, Unset_Type]
+            The about_attribute of this GsaQueryAttributeProperties.
+        """
+        return self._about_attribute
+
+    @about_attribute.setter
+    def about_attribute(
+        self, about_attribute: "Union[GsaQuerySlimTypedAttributeProperties, Unset_Type]"
+    ) -> None:
+        """Sets the about_attribute of this GsaQueryAttributeProperties.
+
+        Parameters
+        ----------
+        about_attribute: Union[GsaQuerySlimTypedAttributeProperties, Unset_Type]
+            The about_attribute of this GsaQueryAttributeProperties.
+        """
+        # Field is not nullable
+        if about_attribute is None:
+            raise ValueError("Invalid value for 'about_attribute', must not be 'None'")
+        self._about_attribute = about_attribute
 
     @property
     def target(self) -> "Union[GsaQueryTabularAttributeTargetProperties, Unset_Type]":
