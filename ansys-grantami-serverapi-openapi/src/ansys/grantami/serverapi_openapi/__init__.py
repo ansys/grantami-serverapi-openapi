@@ -714,6 +714,8 @@ from .models.gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .models.gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
 from .models.gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
 from .models.gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
+from .models.gsa_query_slim_typed_attribute import GsaQuerySlimTypedAttribute
+from .models.gsa_query_slim_typed_attribute_properties import GsaQuerySlimTypedAttributeProperties
 from .models.gsa_query_tabular_attribute_target import GsaQueryTabularAttributeTarget
 from .models.gsa_query_tabular_attribute_target_properties import (
     GsaQueryTabularAttributeTargetProperties,
@@ -1621,6 +1623,8 @@ __all__ = [
     "GsaQuerySlimDiscreteTypeProperties",
     "GsaQuerySlimNamedEntity",
     "GsaQuerySlimNamedEntityProperties",
+    "GsaQuerySlimTypedAttribute",
+    "GsaQuerySlimTypedAttributeProperties",
     "GsaQueryTabularAttributeTarget",
     "GsaQueryTabularAttributeTargetProperties",
     "GsaQueryUnit",

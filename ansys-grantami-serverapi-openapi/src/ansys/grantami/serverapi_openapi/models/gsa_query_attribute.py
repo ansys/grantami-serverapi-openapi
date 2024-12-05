@@ -61,6 +61,7 @@ class GsaQueryAttribute(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "about_attribute": "GsaQuerySlimTypedAttribute",
         "attribute_parameters": "list[GsaQuerySlimNamedEntity]",
         "axis_name": "str",
         "axis_name_display_names": "dict(str, str)",
@@ -82,6 +83,7 @@ class GsaQueryAttribute(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
         "axis_name_display_names": "axisNameDisplayNames",
@@ -110,6 +112,7 @@ class GsaQueryAttribute(ModelBase):
         "discreteType": "GsaQuerySlimDiscreteType",
         "dataRule": "GsaQueryDataRule",
         "target": "GsaQueryTabularAttributeTarget",
+        "aboutAttribute": "GsaQuerySlimTypedAttribute",
         "tabularColumns": "GsaQuerySlimNamedEntity",
         "attributeParameters": "GsaQuerySlimNamedEntity",
         "expressions": "GsaQuerySlimNamedEntity",
@@ -120,6 +123,7 @@ class GsaQueryAttribute(ModelBase):
     def __init__(
         self,
         *,
+        about_attribute: "Union[GsaQuerySlimTypedAttribute, Unset_Type]" = Unset,
         attribute_parameters: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
@@ -143,6 +147,7 @@ class GsaQueryAttribute(ModelBase):
 
         Parameters
         ----------
+        about_attribute: GsaQuerySlimTypedAttribute, optional
         attribute_parameters: list[GsaQuerySlimNamedEntity], optional
         axis_name: str, optional
         axis_name_display_names: dict[str, str], optional
@@ -174,6 +179,7 @@ class GsaQueryAttribute(ModelBase):
         self._discrete_type: Union[GsaQuerySlimDiscreteType, Unset_Type] = Unset
         self._data_rule: Union[GsaQueryDataRule, Unset_Type] = Unset
         self._target: Union[GsaQueryTabularAttributeTarget, Unset_Type] = Unset
+        self._about_attribute: Union[GsaQuerySlimTypedAttribute, Unset_Type] = Unset
         self._tabular_columns: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._attribute_parameters: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._expressions: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
@@ -205,6 +211,8 @@ class GsaQueryAttribute(ModelBase):
             self.data_rule = data_rule
         if target is not Unset:
             self.target = target
+        if about_attribute is not Unset:
+            self.about_attribute = about_attribute
         if tabular_columns is not Unset:
             self.tabular_columns = tabular_columns
         if attribute_parameters is not Unset:
@@ -508,6 +516,33 @@ class GsaQueryAttribute(ModelBase):
         if target is None:
             raise ValueError("Invalid value for 'target', must not be 'None'")
         self._target = target
+
+    @property
+    def about_attribute(self) -> "Union[GsaQuerySlimTypedAttribute, Unset_Type]":
+        """Gets the about_attribute of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[GsaQuerySlimTypedAttribute, Unset_Type]
+            The about_attribute of this GsaQueryAttribute.
+        """
+        return self._about_attribute
+
+    @about_attribute.setter
+    def about_attribute(
+        self, about_attribute: "Union[GsaQuerySlimTypedAttribute, Unset_Type]"
+    ) -> None:
+        """Sets the about_attribute of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        about_attribute: Union[GsaQuerySlimTypedAttribute, Unset_Type]
+            The about_attribute of this GsaQueryAttribute.
+        """
+        # Field is not nullable
+        if about_attribute is None:
+            raise ValueError("Invalid value for 'about_attribute', must not be 'None'")
+        self._about_attribute = about_attribute
 
     @property
     def tabular_columns(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
