@@ -107,7 +107,6 @@ class GsaUpdateDiscreteFunctionalAttributeNumericParameter(
     @property
     def default_value(self) -> "Union[float, None, Unset_Type]":
         """Gets the default_value of this GsaUpdateDiscreteFunctionalAttributeNumericParameter.
-        If there is no default value, fallback to the parameter default.
 
         Returns
         -------
@@ -119,7 +118,6 @@ class GsaUpdateDiscreteFunctionalAttributeNumericParameter(
     @default_value.setter
     def default_value(self, default_value: "Union[float, None, Unset_Type]") -> None:
         """Sets the default_value of this GsaUpdateDiscreteFunctionalAttributeNumericParameter.
-        If there is no default value, fallback to the parameter default.
 
         Parameters
         ----------
