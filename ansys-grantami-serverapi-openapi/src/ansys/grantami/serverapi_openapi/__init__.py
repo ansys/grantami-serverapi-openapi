@@ -736,9 +736,11 @@ from .models.gsa_range_histogram_aggregation_datum_criterion import (
     GsaRangeHistogramAggregationDatumCriterion,
 )
 from .models.gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
+from .models.gsa_record_ancestor_history_criterion import GsaRecordAncestorHistoryCriterion
 from .models.gsa_record_ancestor_history_identity_criterion import (
     GsaRecordAncestorHistoryIdentityCriterion,
 )
+from .models.gsa_record_ancestor_identity_criterion import GsaRecordAncestorIdentityCriterion
 from .models.gsa_record_capabilities import GsaRecordCapabilities
 from .models.gsa_record_color import GsaRecordColor
 from .models.gsa_record_color_property import GsaRecordColorProperty
@@ -1640,7 +1642,9 @@ __all__ = [
     "GsaRangeHistogramAggregation",
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
+    "GsaRecordAncestorHistoryCriterion",
     "GsaRecordAncestorHistoryIdentityCriterion",
+    "GsaRecordAncestorIdentityCriterion",
     "GsaRecordCapabilities",
     "GsaRecordColor",
     "GsaRecordColorProperty",
