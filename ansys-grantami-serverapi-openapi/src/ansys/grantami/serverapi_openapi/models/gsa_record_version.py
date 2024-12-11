@@ -61,6 +61,7 @@ class GsaRecordVersion(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "capabilities": "GsaRecordCapabilities",
         "created_by_user": "str",
         "created_date": "datetime",
         "database_key": "str",
@@ -79,6 +80,7 @@ class GsaRecordVersion(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "capabilities": "capabilities",
         "created_by_user": "createdByUser",
         "created_date": "createdDate",
         "database_key": "databaseKey",
@@ -101,6 +103,7 @@ class GsaRecordVersion(ModelBase):
         "table": "GsaSlimTable",
         "recordType": "GsaRecordType",
         "recordColor": "GsaRecordColor",
+        "capabilities": "GsaRecordCapabilities",
         "versionState": "GsaVersionState",
     }
 
@@ -109,6 +112,7 @@ class GsaRecordVersion(ModelBase):
     def __init__(
         self,
         *,
+        capabilities: "GsaRecordCapabilities",
         created_by_user: "str",
         created_date: "datetime",
         database_key: "str",
@@ -129,6 +133,7 @@ class GsaRecordVersion(ModelBase):
 
         Parameters
         ----------
+        capabilities: GsaRecordCapabilities
         created_by_user: str
         created_date: datetime
         database_key: str
@@ -156,6 +161,7 @@ class GsaRecordVersion(ModelBase):
         self._released_date: Union[datetime, None, Unset_Type] = Unset
         self._short_name: str
         self._record_color: GsaRecordColor
+        self._capabilities: GsaRecordCapabilities
         self._version_number: int
         self._version_state: GsaVersionState
         self._name: str
@@ -173,6 +179,7 @@ class GsaRecordVersion(ModelBase):
             self.released_date = released_date
         self.short_name = short_name
         self.record_color = record_color
+        self.capabilities = capabilities
         self.version_number = version_number
         self.version_state = version_state
         self.name = name
@@ -479,6 +486,34 @@ class GsaRecordVersion(ModelBase):
         if record_color is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'record_color', must not be 'Unset'")
         self._record_color = record_color
+
+    @property
+    def capabilities(self) -> "GsaRecordCapabilities":
+        """Gets the capabilities of this GsaRecordVersion.
+
+        Returns
+        -------
+        GsaRecordCapabilities
+            The capabilities of this GsaRecordVersion.
+        """
+        return self._capabilities
+
+    @capabilities.setter
+    def capabilities(self, capabilities: "GsaRecordCapabilities") -> None:
+        """Sets the capabilities of this GsaRecordVersion.
+
+        Parameters
+        ----------
+        capabilities: GsaRecordCapabilities
+            The capabilities of this GsaRecordVersion.
+        """
+        # Field is not nullable
+        if capabilities is None:
+            raise ValueError("Invalid value for 'capabilities', must not be 'None'")
+        # Field is required
+        if capabilities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'capabilities', must not be 'Unset'")
+        self._capabilities = capabilities
 
     @property
     def version_number(self) -> "int":
