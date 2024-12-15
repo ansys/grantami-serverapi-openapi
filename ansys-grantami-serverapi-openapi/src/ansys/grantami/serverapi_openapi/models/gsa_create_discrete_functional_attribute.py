@@ -70,7 +70,6 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "discrete_type": "GsaSlimEntity",
         "name": "str",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -82,7 +81,6 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "discrete_type": "discreteType",
         "name": "name",
         "type": "type",
-        "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
         "help_path": "helpPath",
@@ -103,7 +101,6 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         discrete_type: "GsaSlimEntity",
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
-        about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -117,7 +114,6 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         discrete_type: GsaSlimEntity
         name: str
         type: GsaAttributeType
-        about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -126,7 +122,6 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         super().__init__(
             name=name,
             type=type,
-            about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

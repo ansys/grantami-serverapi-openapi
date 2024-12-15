@@ -65,7 +65,6 @@ class GsaCreateAttribute(ModelBase):
     swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -75,7 +74,6 @@ class GsaCreateAttribute(ModelBase):
     attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
-        "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
         "help_path": "helpPath",
@@ -85,7 +83,6 @@ class GsaCreateAttribute(ModelBase):
     subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
         "defaultThresholdType": "GsaAttributeThresholdType",
-        "aboutAttribute": "GsaSlimEntity",
     }
 
     discriminator_value_class_map = {
@@ -113,7 +110,6 @@ class GsaCreateAttribute(ModelBase):
         *,
         name: "str",
         type: "GsaAttributeType",
-        about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -125,7 +121,6 @@ class GsaCreateAttribute(ModelBase):
         ----------
         name: str
         type: GsaAttributeType
-        about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -134,7 +129,6 @@ class GsaCreateAttribute(ModelBase):
         self._type: GsaAttributeType
         self._default_threshold_type: Union[GsaAttributeThresholdType, Unset_Type] = Unset
         self._help_path: Union[str, None, Unset_Type] = Unset
-        self._about_attribute: Union[GsaSlimEntity, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
         self._name: str
         self._guid: Union[str, Unset_Type] = Unset
@@ -144,8 +138,6 @@ class GsaCreateAttribute(ModelBase):
             self.default_threshold_type = default_threshold_type
         if help_path is not Unset:
             self.help_path = help_path
-        if about_attribute is not Unset:
-            self.about_attribute = about_attribute
         if is_hidden_from_search_criteria is not Unset:
             self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
         self.name = name
@@ -228,31 +220,6 @@ class GsaCreateAttribute(ModelBase):
             The help_path of this GsaCreateAttribute.
         """
         self._help_path = help_path
-
-    @property
-    def about_attribute(self) -> "Union[GsaSlimEntity, Unset_Type]":
-        """Gets the about_attribute of this GsaCreateAttribute.
-
-        Returns
-        -------
-        Union[GsaSlimEntity, Unset_Type]
-            The about_attribute of this GsaCreateAttribute.
-        """
-        return self._about_attribute
-
-    @about_attribute.setter
-    def about_attribute(self, about_attribute: "Union[GsaSlimEntity, Unset_Type]") -> None:
-        """Sets the about_attribute of this GsaCreateAttribute.
-
-        Parameters
-        ----------
-        about_attribute: Union[GsaSlimEntity, Unset_Type]
-            The about_attribute of this GsaCreateAttribute.
-        """
-        # Field is not nullable
-        if about_attribute is None:
-            raise ValueError("Invalid value for 'about_attribute', must not be 'None'")
-        self._about_attribute = about_attribute
 
     @property
     def is_hidden_from_search_criteria(self) -> "Union[bool, None, Unset_Type]":
