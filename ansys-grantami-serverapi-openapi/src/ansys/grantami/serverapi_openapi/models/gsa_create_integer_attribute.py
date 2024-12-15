@@ -68,7 +68,6 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -80,7 +79,6 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
     attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
-        "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -98,7 +96,6 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         *,
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.INTEGER,
-        about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -112,7 +109,6 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         ----------
         name: str
         type: GsaAttributeType
-        about_attribute: GsaSlimEntity, optional
         axis_name: str, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -123,7 +119,6 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         super().__init__(
             name=name,
             type=type,
-            about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

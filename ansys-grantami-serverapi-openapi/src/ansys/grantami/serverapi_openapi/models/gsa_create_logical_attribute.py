@@ -68,7 +68,6 @@ class GsaCreateLogicalAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -78,7 +77,6 @@ class GsaCreateLogicalAttribute(GsaCreateAttribute):
     attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
-        "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
         "help_path": "helpPath",
@@ -94,7 +92,6 @@ class GsaCreateLogicalAttribute(GsaCreateAttribute):
         *,
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.LOGICAL,
-        about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -106,7 +103,6 @@ class GsaCreateLogicalAttribute(GsaCreateAttribute):
         ----------
         name: str
         type: GsaAttributeType
-        about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -115,7 +111,6 @@ class GsaCreateLogicalAttribute(GsaCreateAttribute):
         super().__init__(
             name=name,
             type=type,
-            about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,
