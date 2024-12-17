@@ -50,7 +50,7 @@ class ListAuditLogApi(ApiBase):
 
     def get_list_audit_log_search_results(
         self, *, result_resource_identifier: "str"
-    ) -> "Union[GsaRecordListSearchResultsInfo, None]":
+    ) -> "Union[None, list[GsaListAuditLogItem]]":
         """Returns the search results found in the specified resource
 
         This method makes a synchronous HTTP request.
@@ -61,7 +61,7 @@ class ListAuditLogApi(ApiBase):
 
         Returns
         -------
-        Union[GsaRecordListSearchResultsInfo, None]
+        Union[None, list[GsaListAuditLogItem]]
         """
         data = self._get_list_audit_log_search_results_with_http_info(
             result_resource_identifier, _return_http_data_only=True
@@ -115,7 +115,7 @@ class ListAuditLogApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaRecordListSearchResultsInfo",
+            200: "list[GsaListAuditLogItem]",
             403: None,
             404: None,
             410: None,

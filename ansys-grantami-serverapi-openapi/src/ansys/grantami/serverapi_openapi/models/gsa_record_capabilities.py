@@ -61,12 +61,20 @@ class GsaRecordCapabilities(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "can_delete": "bool",
+        "can_get_modifiable_version": "bool",
         "can_modify": "bool",
+        "can_release": "bool",
+        "can_withdraw": "bool",
         "can_write": "bool",
     }
 
     attribute_map: dict[str, str] = {
+        "can_delete": "canDelete",
+        "can_get_modifiable_version": "canGetModifiableVersion",
         "can_modify": "canModify",
+        "can_release": "canRelease",
+        "can_withdraw": "canWithdraw",
         "can_write": "canWrite",
     }
 
@@ -77,21 +85,37 @@ class GsaRecordCapabilities(ModelBase):
     def __init__(
         self,
         *,
+        can_delete: "bool",
+        can_get_modifiable_version: "bool",
         can_modify: "bool",
+        can_release: "bool",
+        can_withdraw: "bool",
         can_write: "bool",
     ) -> None:
         """GsaRecordCapabilities - a model defined in Swagger
 
         Parameters
         ----------
+        can_delete: bool
+        can_get_modifiable_version: bool
         can_modify: bool
+        can_release: bool
+        can_withdraw: bool
         can_write: bool
         """
         self._can_write: bool
         self._can_modify: bool
+        self._can_release: bool
+        self._can_get_modifiable_version: bool
+        self._can_withdraw: bool
+        self._can_delete: bool
 
         self.can_write = can_write
         self.can_modify = can_modify
+        self.can_release = can_release
+        self.can_get_modifiable_version = can_get_modifiable_version
+        self.can_withdraw = can_withdraw
+        self.can_delete = can_delete
 
     @property
     def can_write(self) -> "bool":
@@ -152,6 +176,126 @@ class GsaRecordCapabilities(ModelBase):
         if can_modify is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'can_modify', must not be 'Unset'")
         self._can_modify = can_modify
+
+    @property
+    def can_release(self) -> "bool":
+        """Gets the can_release of this GsaRecordCapabilities.
+        True if the current user can release this record version.
+
+        Returns
+        -------
+        bool
+            The can_release of this GsaRecordCapabilities.
+        """
+        return self._can_release
+
+    @can_release.setter
+    def can_release(self, can_release: "bool") -> None:
+        """Sets the can_release of this GsaRecordCapabilities.
+        True if the current user can release this record version.
+
+        Parameters
+        ----------
+        can_release: bool
+            The can_release of this GsaRecordCapabilities.
+        """
+        # Field is not nullable
+        if can_release is None:
+            raise ValueError("Invalid value for 'can_release', must not be 'None'")
+        # Field is required
+        if can_release is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_release', must not be 'Unset'")
+        self._can_release = can_release
+
+    @property
+    def can_get_modifiable_version(self) -> "bool":
+        """Gets the can_get_modifiable_version of this GsaRecordCapabilities.
+        True if the current user can get a modifiable version of this record version (gets the latest modifiable record version, or creates a new one if none exists).
+
+        Returns
+        -------
+        bool
+            The can_get_modifiable_version of this GsaRecordCapabilities.
+        """
+        return self._can_get_modifiable_version
+
+    @can_get_modifiable_version.setter
+    def can_get_modifiable_version(self, can_get_modifiable_version: "bool") -> None:
+        """Sets the can_get_modifiable_version of this GsaRecordCapabilities.
+        True if the current user can get a modifiable version of this record version (gets the latest modifiable record version, or creates a new one if none exists).
+
+        Parameters
+        ----------
+        can_get_modifiable_version: bool
+            The can_get_modifiable_version of this GsaRecordCapabilities.
+        """
+        # Field is not nullable
+        if can_get_modifiable_version is None:
+            raise ValueError("Invalid value for 'can_get_modifiable_version', must not be 'None'")
+        # Field is required
+        if can_get_modifiable_version is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_get_modifiable_version', must not be 'Unset'")
+        self._can_get_modifiable_version = can_get_modifiable_version
+
+    @property
+    def can_withdraw(self) -> "bool":
+        """Gets the can_withdraw of this GsaRecordCapabilities.
+        True if the current user can withdraw this record version.
+
+        Returns
+        -------
+        bool
+            The can_withdraw of this GsaRecordCapabilities.
+        """
+        return self._can_withdraw
+
+    @can_withdraw.setter
+    def can_withdraw(self, can_withdraw: "bool") -> None:
+        """Sets the can_withdraw of this GsaRecordCapabilities.
+        True if the current user can withdraw this record version.
+
+        Parameters
+        ----------
+        can_withdraw: bool
+            The can_withdraw of this GsaRecordCapabilities.
+        """
+        # Field is not nullable
+        if can_withdraw is None:
+            raise ValueError("Invalid value for 'can_withdraw', must not be 'None'")
+        # Field is required
+        if can_withdraw is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_withdraw', must not be 'Unset'")
+        self._can_withdraw = can_withdraw
+
+    @property
+    def can_delete(self) -> "bool":
+        """Gets the can_delete of this GsaRecordCapabilities.
+        True if the current user can delete this record version.
+
+        Returns
+        -------
+        bool
+            The can_delete of this GsaRecordCapabilities.
+        """
+        return self._can_delete
+
+    @can_delete.setter
+    def can_delete(self, can_delete: "bool") -> None:
+        """Sets the can_delete of this GsaRecordCapabilities.
+        True if the current user can delete this record version.
+
+        Parameters
+        ----------
+        can_delete: bool
+            The can_delete of this GsaRecordCapabilities.
+        """
+        # Field is not nullable
+        if can_delete is None:
+            raise ValueError("Invalid value for 'can_delete', must not be 'None'")
+        # Field is required
+        if can_delete is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_delete', must not be 'Unset'")
+        self._can_delete = can_delete
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
