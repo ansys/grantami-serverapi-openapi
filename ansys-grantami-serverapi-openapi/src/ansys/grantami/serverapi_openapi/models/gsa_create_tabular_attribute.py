@@ -68,7 +68,6 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
-        "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_full_table": "bool",
         "display_summary_row_inline": "bool",
@@ -83,7 +82,6 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
     attribute_map: dict[str, str] = {
         "name": "name",
         "type": "type",
-        "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
         "display_summary_row_inline": "displaySummaryRowInline",
@@ -107,7 +105,6 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         *,
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.LINK,
-        about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         display_full_table: "Union[bool, Unset_Type]" = Unset,
         display_summary_row_inline: "Union[bool, Unset_Type]" = Unset,
@@ -124,7 +121,6 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         ----------
         name: str
         type: GsaAttributeType
-        about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_full_table: bool, optional
         display_summary_row_inline: bool, optional
@@ -138,7 +134,6 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         super().__init__(
             name=name,
             type=type,
-            about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

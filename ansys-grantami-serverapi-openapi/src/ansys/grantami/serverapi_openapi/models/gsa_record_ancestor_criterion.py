@@ -64,15 +64,15 @@ class GsaRecordAncestorCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
-        "ancestor_identity": "int",
         "direct_parent_only": "bool",
+        "type": "GsaCriterionType",
+        "ancestor_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "ancestor_identity": "ancestorIdentity",
         "direct_parent_only": "directParentOnly",
+        "type": "type",
+        "ancestor_guid": "ancestorGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -82,69 +82,74 @@ class GsaRecordAncestorCriterion(GsaCriterion):
     def __init__(
         self,
         *,
+        direct_parent_only: "bool",
         type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTOR,
-        ancestor_identity: "Union[int, None, Unset_Type]" = Unset,
-        direct_parent_only: "Union[bool, None, Unset_Type]" = Unset,
+        ancestor_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordAncestorCriterion - a model defined in Swagger
 
         Parameters
         ----------
+        direct_parent_only: bool
         type: GsaCriterionType
-        ancestor_identity: int, optional
-        direct_parent_only: bool, optional
+        ancestor_guid: str, optional
         """
         super().__init__(type=type)
-        self._ancestor_identity: Union[int, None, Unset_Type] = Unset
-        self._direct_parent_only: Union[bool, None, Unset_Type] = Unset
+        self._ancestor_guid: Union[str, None, Unset_Type] = Unset
+        self._direct_parent_only: bool
 
-        if ancestor_identity is not Unset:
-            self.ancestor_identity = ancestor_identity
-        if direct_parent_only is not Unset:
-            self.direct_parent_only = direct_parent_only
+        if ancestor_guid is not Unset:
+            self.ancestor_guid = ancestor_guid
+        self.direct_parent_only = direct_parent_only
 
     @property
-    def ancestor_identity(self) -> "Union[int, None, Unset_Type]":
-        """Gets the ancestor_identity of this GsaRecordAncestorCriterion.
+    def ancestor_guid(self) -> "Union[str, None, Unset_Type]":
+        """Gets the ancestor_guid of this GsaRecordAncestorCriterion.
 
         Returns
         -------
-        Union[int, None, Unset_Type]
-            The ancestor_identity of this GsaRecordAncestorCriterion.
+        Union[str, None, Unset_Type]
+            The ancestor_guid of this GsaRecordAncestorCriterion.
         """
-        return self._ancestor_identity
+        return self._ancestor_guid
 
-    @ancestor_identity.setter
-    def ancestor_identity(self, ancestor_identity: "Union[int, None, Unset_Type]") -> None:
-        """Sets the ancestor_identity of this GsaRecordAncestorCriterion.
+    @ancestor_guid.setter
+    def ancestor_guid(self, ancestor_guid: "Union[str, None, Unset_Type]") -> None:
+        """Sets the ancestor_guid of this GsaRecordAncestorCriterion.
 
         Parameters
         ----------
-        ancestor_identity: Union[int, None, Unset_Type]
-            The ancestor_identity of this GsaRecordAncestorCriterion.
+        ancestor_guid: Union[str, None, Unset_Type]
+            The ancestor_guid of this GsaRecordAncestorCriterion.
         """
-        self._ancestor_identity = ancestor_identity
+        self._ancestor_guid = ancestor_guid
 
     @property
-    def direct_parent_only(self) -> "Union[bool, None, Unset_Type]":
+    def direct_parent_only(self) -> "bool":
         """Gets the direct_parent_only of this GsaRecordAncestorCriterion.
 
         Returns
         -------
-        Union[bool, None, Unset_Type]
+        bool
             The direct_parent_only of this GsaRecordAncestorCriterion.
         """
         return self._direct_parent_only
 
     @direct_parent_only.setter
-    def direct_parent_only(self, direct_parent_only: "Union[bool, None, Unset_Type]") -> None:
+    def direct_parent_only(self, direct_parent_only: "bool") -> None:
         """Sets the direct_parent_only of this GsaRecordAncestorCriterion.
 
         Parameters
         ----------
-        direct_parent_only: Union[bool, None, Unset_Type]
+        direct_parent_only: bool
             The direct_parent_only of this GsaRecordAncestorCriterion.
         """
+        # Field is not nullable
+        if direct_parent_only is None:
+            raise ValueError("Invalid value for 'direct_parent_only', must not be 'None'")
+        # Field is required
+        if direct_parent_only is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'direct_parent_only', must not be 'Unset'")
         self._direct_parent_only = direct_parent_only
 
     @classmethod

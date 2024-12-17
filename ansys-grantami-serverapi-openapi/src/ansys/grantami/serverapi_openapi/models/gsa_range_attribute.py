@@ -74,6 +74,7 @@ class GsaRangeAttribute(GsaAttribute):
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
+        "axis_name_display_names": "dict(str, str)",
         "help_path": "str",
         "unit": "GsaSlimUnit",
     }
@@ -89,6 +90,7 @@ class GsaRangeAttribute(GsaAttribute):
         "type": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
+        "axis_name_display_names": "axisNameDisplayNames",
         "help_path": "helpPath",
         "unit": "unit",
     }
@@ -112,6 +114,7 @@ class GsaRangeAttribute(GsaAttribute):
         type: "GsaAttributeType" = GsaAttributeType.RANGE,
         about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         unit: "Union[GsaSlimUnit, Unset_Type]" = Unset,
     ) -> None:
@@ -129,6 +132,7 @@ class GsaRangeAttribute(GsaAttribute):
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str, optional
+        axis_name_display_names: dict[str, str], optional
         help_path: str, optional
         unit: GsaSlimUnit, optional
         """
@@ -143,6 +147,7 @@ class GsaRangeAttribute(GsaAttribute):
             type=type,
             about_attribute=about_attribute,
             axis_name=axis_name,
+            axis_name_display_names=axis_name_display_names,
             help_path=help_path,
         )
         self._unit: Union[GsaSlimUnit, Unset_Type] = Unset

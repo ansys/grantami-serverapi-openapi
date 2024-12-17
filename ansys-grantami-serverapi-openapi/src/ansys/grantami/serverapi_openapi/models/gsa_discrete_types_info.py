@@ -61,7 +61,7 @@ class GsaDiscreteTypesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "discrete_types": "list[GsaDiscreteType]",
+        "discrete_types": "list[GsaSlimDiscreteType]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaDiscreteTypesInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "discreteTypes": "GsaDiscreteType",
+        "discreteTypes": "GsaSlimDiscreteType",
     }
 
     discriminator: Optional[str] = None
@@ -77,39 +77,39 @@ class GsaDiscreteTypesInfo(ModelBase):
     def __init__(
         self,
         *,
-        discrete_types: "Union[list[GsaDiscreteType], None, Unset_Type]" = Unset,
+        discrete_types: "Union[list[GsaSlimDiscreteType], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDiscreteTypesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        discrete_types: list[GsaDiscreteType], optional
+        discrete_types: list[GsaSlimDiscreteType], optional
         """
-        self._discrete_types: Union[list[GsaDiscreteType], None, Unset_Type] = Unset
+        self._discrete_types: Union[list[GsaSlimDiscreteType], None, Unset_Type] = Unset
 
         if discrete_types is not Unset:
             self.discrete_types = discrete_types
 
     @property
-    def discrete_types(self) -> "Union[list[GsaDiscreteType], None, Unset_Type]":
+    def discrete_types(self) -> "Union[list[GsaSlimDiscreteType], None, Unset_Type]":
         """Gets the discrete_types of this GsaDiscreteTypesInfo.
 
         Returns
         -------
-        Union[list[GsaDiscreteType], None, Unset_Type]
+        Union[list[GsaSlimDiscreteType], None, Unset_Type]
             The discrete_types of this GsaDiscreteTypesInfo.
         """
         return self._discrete_types
 
     @discrete_types.setter
     def discrete_types(
-        self, discrete_types: "Union[list[GsaDiscreteType], None, Unset_Type]"
+        self, discrete_types: "Union[list[GsaSlimDiscreteType], None, Unset_Type]"
     ) -> None:
         """Sets the discrete_types of this GsaDiscreteTypesInfo.
 
         Parameters
         ----------
-        discrete_types: Union[list[GsaDiscreteType], None, Unset_Type]
+        discrete_types: Union[list[GsaSlimDiscreteType], None, Unset_Type]
             The discrete_types of this GsaDiscreteTypesInfo.
         """
         self._discrete_types = discrete_types

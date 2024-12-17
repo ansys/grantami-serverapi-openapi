@@ -98,7 +98,7 @@ class GsaListsPagingOptions(ModelBase):
     @property
     def start_index(self) -> "Union[int, None, Unset_Type]":
         """Gets the start_index of this GsaListsPagingOptions.
-        The index of the first list in the collection to be returned. If not provided it will start at index 0.
+        The index of the first item in the collection to be returned. If not provided it will start at index 0.
 
         Returns
         -------
@@ -110,7 +110,7 @@ class GsaListsPagingOptions(ModelBase):
     @start_index.setter
     def start_index(self, start_index: "Union[int, None, Unset_Type]") -> None:
         """Sets the start_index of this GsaListsPagingOptions.
-        The index of the first list in the collection to be returned. If not provided it will start at index 0.
+        The index of the first item in the collection to be returned. If not provided it will start at index 0.
 
         Parameters
         ----------
@@ -122,7 +122,7 @@ class GsaListsPagingOptions(ModelBase):
     @property
     def page_size(self) -> "Union[int, None, Unset_Type]":
         """Gets the page_size of this GsaListsPagingOptions.
-        The number of lists to be returned per page. If not provided the number of returned lists will be unlimited.
+        The number of items to be returned per page. If not provided the number of returned lists will be unlimited.
 
         Returns
         -------
@@ -134,7 +134,7 @@ class GsaListsPagingOptions(ModelBase):
     @page_size.setter
     def page_size(self, page_size: "Union[int, None, Unset_Type]") -> None:
         """Sets the page_size of this GsaListsPagingOptions.
-        The number of lists to be returned per page. If not provided the number of returned lists will be unlimited.
+        The number of items to be returned per page. If not provided the number of returned lists will be unlimited.
 
         Parameters
         ----------

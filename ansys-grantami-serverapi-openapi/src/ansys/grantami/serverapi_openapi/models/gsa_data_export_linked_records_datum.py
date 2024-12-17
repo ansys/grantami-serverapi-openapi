@@ -66,11 +66,11 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "GsaAttributeType",
         "link_datum_type": "str",
         "not_applicable": "str",
-        "attribute_guid": "str",
-        "attribute_identity": "int",
         "export_in_reversed_direction": "bool",
         "link_attribute_type": "GsaLinkAttributeType",
         "link_group_identities_by_database_key": "dict(str, int)",
@@ -83,11 +83,11 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
     }
 
     attribute_map: dict[str, str] = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "link_datum_type": "linkDatumType",
         "not_applicable": "notApplicable",
-        "attribute_guid": "attributeGuid",
-        "attribute_identity": "attributeIdentity",
         "export_in_reversed_direction": "exportInReversedDirection",
         "link_attribute_type": "linkAttributeType",
         "link_group_identities_by_database_key": "linkGroupIdentitiesByDatabaseKey",
@@ -110,11 +110,11 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.LINK,
         link_datum_type: "str" = "linkGroup",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         export_in_reversed_direction: "Union[bool, Unset_Type]" = Unset,
         link_attribute_type: "Union[GsaLinkAttributeType, Unset_Type]" = Unset,
         link_group_identities_by_database_key: "Union[dict[str, int], None, Unset_Type]" = Unset,
@@ -129,11 +129,11 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         link_datum_type: str
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         export_in_reversed_direction: bool, optional
         link_attribute_type: GsaLinkAttributeType, optional
         link_group_identities_by_database_key: dict[str, int], optional
@@ -145,11 +145,11 @@ class GsaDataExportLinkedRecordsDatum(GsaDataExportLinkDatum):
         target_database_guid: str, optional
         """
         super().__init__(
+            attribute_guid=attribute_guid,
+            attribute_identity=attribute_identity,
             datum_type=datum_type,
             link_datum_type=link_datum_type,
             not_applicable=not_applicable,
-            attribute_guid=attribute_guid,
-            attribute_identity=attribute_identity,
             meta_datums=meta_datums,
         )
         self._link_group_name: Union[str, None, Unset_Type] = Unset

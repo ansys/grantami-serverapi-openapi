@@ -66,11 +66,11 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "attribute_guid": "str",
+        "attribute_identity": "int",
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
-        "attribute_guid": "str",
-        "attribute_identity": "int",
         "is_estimated": "bool",
         "is_logarithmic": "bool",
         "is_range": "bool",
@@ -83,11 +83,11 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
     }
 
     attribute_map: dict[str, str] = {
+        "attribute_guid": "attributeGuid",
+        "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
-        "attribute_guid": "attributeGuid",
-        "attribute_identity": "attributeIdentity",
         "is_estimated": "isEstimated",
         "is_logarithmic": "isLogarithmic",
         "is_range": "isRange",
@@ -108,11 +108,11 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
     def __init__(
         self,
         *,
+        attribute_guid: "str",
+        attribute_identity: "int",
         datum_type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         graph_type: "str" = "series",
         not_applicable: "str" = "applicable",
-        attribute_guid: "Union[str, Unset_Type]" = Unset,
-        attribute_identity: "Union[int, Unset_Type]" = Unset,
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_logarithmic: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
@@ -127,11 +127,11 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
 
         Parameters
         ----------
+        attribute_guid: str
+        attribute_identity: int
         datum_type: GsaAttributeType
         graph_type: str
         not_applicable: str
-        attribute_guid: str, optional
-        attribute_identity: int, optional
         is_estimated: bool, optional
         is_logarithmic: bool, optional
         is_range: bool, optional
@@ -143,11 +143,11 @@ class GsaDataExportFunctionalSeriesDatum(GsaDataExportFloatFunctionalDatum):
         x_axis_parameter: GsaFunctionalDatumParameterInfo, optional
         """
         super().__init__(
+            attribute_guid=attribute_guid,
+            attribute_identity=attribute_identity,
             datum_type=datum_type,
             graph_type=graph_type,
             not_applicable=not_applicable,
-            attribute_guid=attribute_guid,
-            attribute_identity=attribute_identity,
             is_estimated=is_estimated,
             is_logarithmic=is_logarithmic,
             is_range=is_range,

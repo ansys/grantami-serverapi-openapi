@@ -82,7 +82,7 @@ class GsaDatumDiscreteRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        type: "GsaDatumRollupType" = GsaDatumRollupType.DISCRETEROLLUP,
+        type: "GsaDatumRollupType" = GsaDatumRollupType.DISCRETE,
         value: "GsaDiscreteValuesDiscreteValue",
     ) -> None:
         """GsaDatumDiscreteRollup - a model defined in Swagger

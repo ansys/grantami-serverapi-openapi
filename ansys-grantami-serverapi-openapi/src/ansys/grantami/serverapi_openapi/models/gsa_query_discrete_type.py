@@ -61,24 +61,29 @@ class GsaQueryDiscreteType(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "discrete_values": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
         "is_ordered": "bool",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
         "name": "name",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "discreteValues": "GsaQuerySlimNamedEntity",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
+        discrete_values: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         is_ordered: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
@@ -87,20 +92,48 @@ class GsaQueryDiscreteType(ModelBase):
 
         Parameters
         ----------
+        discrete_values: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         is_ordered: bool, optional
         name: str, optional
         """
+        self._discrete_values: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._is_ordered: Union[bool, None, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
+        if discrete_values is not Unset:
+            self.discrete_values = discrete_values
         if is_ordered is not Unset:
             self.is_ordered = is_ordered
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def discrete_values(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
+        """Gets the discrete_values of this GsaQueryDiscreteType.
+
+        Returns
+        -------
+        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
+            The discrete_values of this GsaQueryDiscreteType.
+        """
+        return self._discrete_values
+
+    @discrete_values.setter
+    def discrete_values(
+        self, discrete_values: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
+    ) -> None:
+        """Sets the discrete_values of this GsaQueryDiscreteType.
+
+        Parameters
+        ----------
+        discrete_values: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
+            The discrete_values of this GsaQueryDiscreteType.
+        """
+        self._discrete_values = discrete_values
 
     @property
     def is_ordered(self) -> "Union[bool, None, Unset_Type]":

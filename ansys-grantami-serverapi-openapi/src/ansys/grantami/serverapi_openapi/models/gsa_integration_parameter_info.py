@@ -95,7 +95,7 @@ class GsaIntegrationParameterInfo(ModelBase):
         self,
         *,
         default_value: "Union[GsaDataExportParameterValue, Unset_Type]" = Unset,
-        guid: "Union[str, None, Unset_Type]" = Unset,
+        guid: "Union[str, Unset_Type]" = Unset,
         identity: "Union[int, Unset_Type]" = Unset,
         interpolation_type: "Union[GsaParameterInfoInterpolationType, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
@@ -118,7 +118,7 @@ class GsaIntegrationParameterInfo(ModelBase):
         """
         self._name: Union[str, None, Unset_Type] = Unset
         self._identity: Union[int, Unset_Type] = Unset
-        self._guid: Union[str, None, Unset_Type] = Unset
+        self._guid: Union[str, Unset_Type] = Unset
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
         self._scale_type: Union[GsaParameterInfoScaleType, Unset_Type] = Unset
         self._interpolation_type: Union[GsaParameterInfoInterpolationType, Unset_Type] = Unset
@@ -190,25 +190,28 @@ class GsaIntegrationParameterInfo(ModelBase):
         self._identity = identity
 
     @property
-    def guid(self) -> "Union[str, None, Unset_Type]":
+    def guid(self) -> "Union[str, Unset_Type]":
         """Gets the guid of this GsaIntegrationParameterInfo.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The guid of this GsaIntegrationParameterInfo.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Union[str, None, Unset_Type]") -> None:
+    def guid(self, guid: "Union[str, Unset_Type]") -> None:
         """Sets the guid of this GsaIntegrationParameterInfo.
 
         Parameters
         ----------
-        guid: Union[str, None, Unset_Type]
+        guid: Union[str, Unset_Type]
             The guid of this GsaIntegrationParameterInfo.
         """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
 
     @property

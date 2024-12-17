@@ -79,7 +79,7 @@ class GsaGuidOnlyDiscreteType(ModelBase):
     def __init__(
         self,
         *,
-        guid: "Union[str, Unset_Type]" = Unset,
+        guid: "str",
         name: "Union[str, None, Unset_Type]" = Unset,
         values: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
@@ -87,44 +87,46 @@ class GsaGuidOnlyDiscreteType(ModelBase):
 
         Parameters
         ----------
-        guid: str, optional
+        guid: str
         name: str, optional
         values: list[str], optional
         """
-        self._guid: Union[str, Unset_Type] = Unset
+        self._guid: str
         self._name: Union[str, None, Unset_Type] = Unset
         self._values: Union[list[str], None, Unset_Type] = Unset
 
-        if guid is not Unset:
-            self.guid = guid
+        self.guid = guid
         if name is not Unset:
             self.name = name
         if values is not Unset:
             self.values = values
 
     @property
-    def guid(self) -> "Union[str, Unset_Type]":
+    def guid(self) -> "str":
         """Gets the guid of this GsaGuidOnlyDiscreteType.
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The guid of this GsaGuidOnlyDiscreteType.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Union[str, Unset_Type]") -> None:
+    def guid(self, guid: "str") -> None:
         """Sets the guid of this GsaGuidOnlyDiscreteType.
 
         Parameters
         ----------
-        guid: Union[str, Unset_Type]
+        guid: str
             The guid of this GsaGuidOnlyDiscreteType.
         """
         # Field is not nullable
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 
     @property

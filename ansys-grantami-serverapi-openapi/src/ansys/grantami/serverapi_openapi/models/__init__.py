@@ -283,11 +283,11 @@ from .gsa_datum import GsaDatum
 from .gsa_datum_criterion import GsaDatumCriterion
 from .gsa_datum_criterion_type import GsaDatumCriterionType
 from .gsa_datum_discrete_rollup import GsaDatumDiscreteRollup
+from .gsa_datum_double_rollup import GsaDatumDoubleRollup
 from .gsa_datum_exists_criterion import GsaDatumExistsCriterion
 from .gsa_datum_export_failure import GsaDatumExportFailure
 from .gsa_datum_integer_rollup import GsaDatumIntegerRollup
 from .gsa_datum_list_rollup import GsaDatumListRollup
-from .gsa_datum_numerical_rollup import GsaDatumNumericalRollup
 from .gsa_datum_reference import GsaDatumReference
 from .gsa_datum_rollup import GsaDatumRollup
 from .gsa_datum_rollup_type import GsaDatumRollupType
@@ -345,7 +345,8 @@ from .gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionExcepti
 from .gsa_discrete_type_usage import GsaDiscreteTypeUsage
 from .gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .gsa_discrete_value import GsaDiscreteValue
-from .gsa_discrete_value_deletion_exception import GsaDiscreteValueDeletionException
+from .gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
+from .gsa_discrete_value_aggregate_exception import GsaDiscreteValueAggregateException
 from .gsa_discrete_values_create_discrete_value import GsaDiscreteValuesCreateDiscreteValue
 from .gsa_discrete_values_discrete_value import GsaDiscreteValuesDiscreteValue
 from .gsa_discrete_values_discrete_values_info import GsaDiscreteValuesDiscreteValuesInfo
@@ -505,9 +506,14 @@ from .gsa_linked_record_tabular_column import GsaLinkedRecordTabularColumn
 from .gsa_linking_value_exists_datum_criterion import GsaLinkingValueExistsDatumCriterion
 from .gsa_linking_value_match_behavior import GsaLinkingValueMatchBehavior
 from .gsa_links_info import GsaLinksInfo
+from .gsa_list_action import GsaListAction
+from .gsa_list_audit_log_item import GsaListAuditLogItem
+from .gsa_list_audit_log_search_request import GsaListAuditLogSearchRequest
 from .gsa_list_boolean_criterion import GsaListBooleanCriterion
 from .gsa_list_criterion import GsaListCriterion
 from .gsa_list_item import GsaListItem
+from .gsa_list_item_record_reference import GsaListItemRecordReference
+from .gsa_list_rollup_datum import GsaListRollupDatum
 from .gsa_lists_paging_options import GsaListsPagingOptions
 from .gsa_lists_user_or_group import GsaListsUserOrGroup
 from .gsa_local_column_aggregation import GsaLocalColumnAggregation
@@ -627,9 +633,16 @@ from .gsa_query_attributes_request import GsaQueryAttributesRequest
 from .gsa_query_data_rule import GsaQueryDataRule
 from .gsa_query_data_rule_properties import GsaQueryDataRuleProperties
 from .gsa_query_discrete_type import GsaQueryDiscreteType
+from .gsa_query_discrete_type_filter import GsaQueryDiscreteTypeFilter
 from .gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
+from .gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
+from .gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
+from .gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
+from .gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
 from .gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
 from .gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
+from .gsa_query_slim_typed_attribute import GsaQuerySlimTypedAttribute
+from .gsa_query_slim_typed_attribute_properties import GsaQuerySlimTypedAttributeProperties
 from .gsa_query_tabular_attribute_target import GsaQueryTabularAttributeTarget
 from .gsa_query_tabular_attribute_target_properties import GsaQueryTabularAttributeTargetProperties
 from .gsa_query_unit import GsaQueryUnit
@@ -648,9 +661,12 @@ from .gsa_range_histogram_aggregation_datum_criterion import (
     GsaRangeHistogramAggregationDatumCriterion,
 )
 from .gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
-from .gsa_record_ancestor_history_identities_criterion import (
-    GsaRecordAncestorHistoryIdentitiesCriterion,
+from .gsa_record_ancestor_history_criterion import GsaRecordAncestorHistoryCriterion
+from .gsa_record_ancestor_history_identity_criterion import (
+    GsaRecordAncestorHistoryIdentityCriterion,
 )
+from .gsa_record_ancestor_identity_criterion import GsaRecordAncestorIdentityCriterion
+from .gsa_record_capabilities import GsaRecordCapabilities
 from .gsa_record_color import GsaRecordColor
 from .gsa_record_color_property import GsaRecordColorProperty
 from .gsa_record_export_failure import GsaRecordExportFailure
@@ -755,6 +771,7 @@ from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_configuration import GsaSlimConfiguration
 from .gsa_slim_constant import GsaSlimConstant
 from .gsa_slim_database import GsaSlimDatabase
+from .gsa_slim_discrete_type import GsaSlimDiscreteType
 from .gsa_slim_entity import GsaSlimEntity
 from .gsa_slim_expression import GsaSlimExpression
 from .gsa_slim_file import GsaSlimFile
@@ -1168,11 +1185,11 @@ __all__ = [
     "GsaDatumCriterion",
     "GsaDatumCriterionType",
     "GsaDatumDiscreteRollup",
+    "GsaDatumDoubleRollup",
     "GsaDatumExistsCriterion",
     "GsaDatumExportFailure",
     "GsaDatumIntegerRollup",
     "GsaDatumListRollup",
-    "GsaDatumNumericalRollup",
     "GsaDatumReference",
     "GsaDatumRollup",
     "GsaDatumRollupType",
@@ -1220,7 +1237,8 @@ __all__ = [
     "GsaDiscreteTypeUsage",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
-    "GsaDiscreteValueDeletionException",
+    "GsaDiscreteValueAggregateErrorReason",
+    "GsaDiscreteValueAggregateException",
     "GsaDiscreteValuesCreateDiscreteValue",
     "GsaDiscreteValuesDiscreteValue",
     "GsaDiscreteValuesDiscreteValuesInfo",
@@ -1356,9 +1374,14 @@ __all__ = [
     "GsaLinkingValueExistsDatumCriterion",
     "GsaLinkingValueMatchBehavior",
     "GsaLinksInfo",
+    "GsaListAction",
+    "GsaListAuditLogItem",
+    "GsaListAuditLogSearchRequest",
     "GsaListBooleanCriterion",
     "GsaListCriterion",
     "GsaListItem",
+    "GsaListItemRecordReference",
+    "GsaListRollupDatum",
     "GsaListsPagingOptions",
     "GsaListsUserOrGroup",
     "GsaLocalColumnAggregation",
@@ -1474,9 +1497,16 @@ __all__ = [
     "GsaQueryDataRule",
     "GsaQueryDataRuleProperties",
     "GsaQueryDiscreteType",
+    "GsaQueryDiscreteTypeFilter",
     "GsaQueryDiscreteTypeProperties",
+    "GsaQueryDiscreteTypesInfo",
+    "GsaQueryDiscreteTypesRequest",
+    "GsaQuerySlimDiscreteType",
+    "GsaQuerySlimDiscreteTypeProperties",
     "GsaQuerySlimNamedEntity",
     "GsaQuerySlimNamedEntityProperties",
+    "GsaQuerySlimTypedAttribute",
+    "GsaQuerySlimTypedAttributeProperties",
     "GsaQueryTabularAttributeTarget",
     "GsaQueryTabularAttributeTargetProperties",
     "GsaQueryUnit",
@@ -1491,7 +1521,10 @@ __all__ = [
     "GsaRangeHistogramAggregation",
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
-    "GsaRecordAncestorHistoryIdentitiesCriterion",
+    "GsaRecordAncestorHistoryCriterion",
+    "GsaRecordAncestorHistoryIdentityCriterion",
+    "GsaRecordAncestorIdentityCriterion",
+    "GsaRecordCapabilities",
     "GsaRecordColor",
     "GsaRecordColorProperty",
     "GsaRecordExportFailure",
@@ -1592,6 +1625,7 @@ __all__ = [
     "GsaSlimConfiguration",
     "GsaSlimConstant",
     "GsaSlimDatabase",
+    "GsaSlimDiscreteType",
     "GsaSlimEntity",
     "GsaSlimExpression",
     "GsaSlimFile",

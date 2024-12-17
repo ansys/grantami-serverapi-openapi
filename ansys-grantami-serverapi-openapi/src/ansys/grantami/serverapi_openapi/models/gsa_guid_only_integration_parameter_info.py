@@ -61,8 +61,8 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "default_value": "GsaDataExportParameterValue",
         "guid": "str",
+        "default_value": "GsaDataExportParameterValue",
         "interpolation_type": "GsaParameterInfoInterpolationType",
         "name": "str",
         "parameter_type": "GsaParameterInfoParameterType",
@@ -71,8 +71,8 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "default_value": "defaultValue",
         "guid": "guid",
+        "default_value": "defaultValue",
         "interpolation_type": "interpolationType",
         "name": "name",
         "parameter_type": "parameterType",
@@ -92,8 +92,8 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
     def __init__(
         self,
         *,
+        guid: "str",
         default_value: "Union[GsaDataExportParameterValue, Unset_Type]" = Unset,
-        guid: "Union[str, Unset_Type]" = Unset,
         interpolation_type: "Union[GsaParameterInfoInterpolationType, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
         parameter_type: "Union[GsaParameterInfoParameterType, Unset_Type]" = Unset,
@@ -104,8 +104,8 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
 
         Parameters
         ----------
+        guid: str
         default_value: GsaDataExportParameterValue, optional
-        guid: str, optional
         interpolation_type: GsaParameterInfoInterpolationType, optional
         name: str, optional
         parameter_type: GsaParameterInfoParameterType, optional
@@ -113,7 +113,7 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
         unit_symbol: str, optional
         """
         self._name: Union[str, None, Unset_Type] = Unset
-        self._guid: Union[str, Unset_Type] = Unset
+        self._guid: str
         self._unit_symbol: Union[str, None, Unset_Type] = Unset
         self._scale_type: Union[GsaParameterInfoScaleType, Unset_Type] = Unset
         self._interpolation_type: Union[GsaParameterInfoInterpolationType, Unset_Type] = Unset
@@ -122,8 +122,7 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
 
         if name is not Unset:
             self.name = name
-        if guid is not Unset:
-            self.guid = guid
+        self.guid = guid
         if unit_symbol is not Unset:
             self.unit_symbol = unit_symbol
         if scale_type is not Unset:
@@ -158,28 +157,31 @@ class GsaGuidOnlyIntegrationParameterInfo(ModelBase):
         self._name = name
 
     @property
-    def guid(self) -> "Union[str, Unset_Type]":
+    def guid(self) -> "str":
         """Gets the guid of this GsaGuidOnlyIntegrationParameterInfo.
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The guid of this GsaGuidOnlyIntegrationParameterInfo.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "Union[str, Unset_Type]") -> None:
+    def guid(self, guid: "str") -> None:
         """Sets the guid of this GsaGuidOnlyIntegrationParameterInfo.
 
         Parameters
         ----------
-        guid: Union[str, Unset_Type]
+        guid: str
             The guid of this GsaGuidOnlyIntegrationParameterInfo.
         """
         # Field is not nullable
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 
     @property

@@ -64,17 +64,17 @@ class GsaDatumListRollup(GsaDatumRollup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "datums": "list[GsaDatum]",
+        "list_rollup_datums": "list[GsaListRollupDatum]",
         "type": "GsaDatumRollupType",
     }
 
     attribute_map: dict[str, str] = {
-        "datums": "datums",
+        "list_rollup_datums": "listRollupDatums",
         "type": "type",
     }
 
     subtype_mapping: dict[str, str] = {
-        "datums": "GsaDatum",
+        "listRollupDatums": "GsaListRollupDatum",
     }
 
     discriminator: Optional[str] = None
@@ -82,48 +82,48 @@ class GsaDatumListRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        datums: "list[GsaDatum]",
-        type: "GsaDatumRollupType" = GsaDatumRollupType.LISTROLLUP,
+        list_rollup_datums: "list[GsaListRollupDatum]",
+        type: "GsaDatumRollupType" = GsaDatumRollupType.LIST,
     ) -> None:
         """GsaDatumListRollup - a model defined in Swagger
 
         Parameters
         ----------
-        datums: list[GsaDatum]
+        list_rollup_datums: list[GsaListRollupDatum]
         type: GsaDatumRollupType
         """
         super().__init__(type=type)
-        self._datums: list[GsaDatum]
+        self._list_rollup_datums: list[GsaListRollupDatum]
 
-        self.datums = datums
+        self.list_rollup_datums = list_rollup_datums
 
     @property
-    def datums(self) -> "list[GsaDatum]":
-        """Gets the datums of this GsaDatumListRollup.
+    def list_rollup_datums(self) -> "list[GsaListRollupDatum]":
+        """Gets the list_rollup_datums of this GsaDatumListRollup.
 
         Returns
         -------
-        list[GsaDatum]
-            The datums of this GsaDatumListRollup.
+        list[GsaListRollupDatum]
+            The list_rollup_datums of this GsaDatumListRollup.
         """
-        return self._datums
+        return self._list_rollup_datums
 
-    @datums.setter
-    def datums(self, datums: "list[GsaDatum]") -> None:
-        """Sets the datums of this GsaDatumListRollup.
+    @list_rollup_datums.setter
+    def list_rollup_datums(self, list_rollup_datums: "list[GsaListRollupDatum]") -> None:
+        """Sets the list_rollup_datums of this GsaDatumListRollup.
 
         Parameters
         ----------
-        datums: list[GsaDatum]
-            The datums of this GsaDatumListRollup.
+        list_rollup_datums: list[GsaListRollupDatum]
+            The list_rollup_datums of this GsaDatumListRollup.
         """
         # Field is not nullable
-        if datums is None:
-            raise ValueError("Invalid value for 'datums', must not be 'None'")
+        if list_rollup_datums is None:
+            raise ValueError("Invalid value for 'list_rollup_datums', must not be 'None'")
         # Field is required
-        if datums is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'datums', must not be 'Unset'")
-        self._datums = datums
+        if list_rollup_datums is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'list_rollup_datums', must not be 'Unset'")
+        self._list_rollup_datums = list_rollup_datums
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

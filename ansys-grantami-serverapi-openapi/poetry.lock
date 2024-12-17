@@ -2,13 +2,13 @@
 
 [[package]]
 name = "ansys-openapi-common"
-version = "2.1.1"
+version = "2.2.0"
 description = "Provides a helper to create sessions for use with Ansys OpenAPI clients."
 optional = false
-python-versions = "<4.0,>=3.9"
+python-versions = "<4.0,>=3.10"
 files = [
-    {file = "ansys_openapi_common-2.1.1-py3-none-any.whl", hash = "sha256:bed2fc9224e7db4ced7302804526d2fbd344fd1218faed41e98e3eff615a556a"},
-    {file = "ansys_openapi_common-2.1.1.tar.gz", hash = "sha256:9d775a39ee551fb52ee969370e3a53adce6cc8620adfc036c490aad61aa0b92b"},
+    {file = "ansys_openapi_common-2.2.0-py3-none-any.whl", hash = "sha256:3b95bd0ee38acd37800179489a451a854d6fe0312a5f0b1182e1407c8ad57e9e"},
+    {file = "ansys_openapi_common-2.2.0.tar.gz", hash = "sha256:176928ec15cfc6690dbb3ba7b806f01046a70b44c898530af390682973282195"},
 ]
 
 [package.dependencies]
@@ -475,13 +475,13 @@ yaml = ["ruamel.yaml"]
 
 [[package]]
 name = "pytest"
-version = "8.3.3"
+version = "8.3.4"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "pytest-8.3.3-py3-none-any.whl", hash = "sha256:a6853c7375b2663155079443d2e45de913a911a11d669df02a50814944db57b2"},
-    {file = "pytest-8.3.3.tar.gz", hash = "sha256:70b98107bd648308a7952b06e6ca9a50bc660be218d53c257cc1fc94fda10181"},
+    {file = "pytest-8.3.4-py3-none-any.whl", hash = "sha256:50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6"},
+    {file = "pytest-8.3.4.tar.gz", hash = "sha256:965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761"},
 ]
 
 [package.dependencies]
