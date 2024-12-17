@@ -507,6 +507,7 @@ from .gsa_linking_value_exists_datum_criterion import GsaLinkingValueExistsDatum
 from .gsa_linking_value_match_behavior import GsaLinkingValueMatchBehavior
 from .gsa_links_info import GsaLinksInfo
 from .gsa_list_action import GsaListAction
+from .gsa_list_audit_log_item import GsaListAuditLogItem
 from .gsa_list_audit_log_search_request import GsaListAuditLogSearchRequest
 from .gsa_list_boolean_criterion import GsaListBooleanCriterion
 from .gsa_list_criterion import GsaListCriterion
@@ -1374,6 +1375,7 @@ __all__ = [
     "GsaLinkingValueMatchBehavior",
     "GsaLinksInfo",
     "GsaListAction",
+    "GsaListAuditLogItem",
     "GsaListAuditLogSearchRequest",
     "GsaListBooleanCriterion",
     "GsaListCriterion",
