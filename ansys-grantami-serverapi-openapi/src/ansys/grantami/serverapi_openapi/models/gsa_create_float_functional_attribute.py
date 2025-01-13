@@ -69,7 +69,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         "attribute_parameters": "list[GsaCreateFloatFunctionalAttributeParameter]",
         "name": "str",
         "type": "GsaAttributeType",
-        "axis_name": "str",
+        "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -93,6 +93,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
 
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
+        "axisName": "GsaCreateAxisName",
         "attributeParameters": "GsaCreateFloatFunctionalAttributeParameter",
     }
 
@@ -104,7 +105,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: "list[GsaCreateFloatFunctionalAttributeParameter]",
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaCreateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -119,7 +120,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: list[GsaCreateFloatFunctionalAttributeParameter]
         name: str
         type: GsaAttributeType
-        axis_name: str, optional
+        axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -136,7 +137,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
         )
         self._unit: Union[GsaSlimEntity, Unset_Type] = Unset
-        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._axis_name: Union[GsaCreateAxisName, Unset_Type] = Unset
         self._attribute_parameters: list[GsaCreateFloatFunctionalAttributeParameter]
         self._is_range: Union[bool, Unset_Type] = Unset
 
@@ -174,25 +175,28 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         self._unit = unit
 
     @property
-    def axis_name(self) -> "Union[str, None, Unset_Type]":
+    def axis_name(self) -> "Union[GsaCreateAxisName, Unset_Type]":
         """Gets the axis_name of this GsaCreateFloatFunctionalAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateFloatFunctionalAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+    def axis_name(self, axis_name: "Union[GsaCreateAxisName, Unset_Type]") -> None:
         """Sets the axis_name of this GsaCreateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        axis_name: Union[str, None, Unset_Type]
+        axis_name: Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateFloatFunctionalAttribute.
         """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
         self._axis_name = axis_name
 
     @property

@@ -101,6 +101,7 @@ from .gsa_attribute_usage_data_modification_error_detail import (
 from .gsa_attribute_validate_response import GsaAttributeValidateResponse
 from .gsa_attribute_value_aggregation import GsaAttributeValueAggregation
 from .gsa_attributes_info import GsaAttributesInfo
+from .gsa_axis_name import GsaAxisName
 from .gsa_boolean_criterion import GsaBooleanCriterion
 from .gsa_boost_by_guid import GsaBoostByGuid
 from .gsa_boost_by_identity import GsaBoostByIdentity
@@ -114,6 +115,7 @@ from .gsa_continuous_range import GsaContinuousRange
 from .gsa_copy_record_history import GsaCopyRecordHistory
 from .gsa_create_attribute import GsaCreateAttribute
 from .gsa_create_attribute_link_pair import GsaCreateAttributeLinkPair
+from .gsa_create_axis_name import GsaCreateAxisName
 from .gsa_create_configuration import GsaCreateConfiguration
 from .gsa_create_constant import GsaCreateConstant
 from .gsa_create_continuous_range import GsaCreateContinuousRange
@@ -630,6 +632,8 @@ from .gsa_query_attribute_info_properties import GsaQueryAttributeInfoProperties
 from .gsa_query_attribute_properties import GsaQueryAttributeProperties
 from .gsa_query_attributes_info import GsaQueryAttributesInfo
 from .gsa_query_attributes_request import GsaQueryAttributesRequest
+from .gsa_query_axis_name import GsaQueryAxisName
+from .gsa_query_axis_name_properties import GsaQueryAxisNameProperties
 from .gsa_query_data_rule import GsaQueryDataRule
 from .gsa_query_data_rule_properties import GsaQueryDataRuleProperties
 from .gsa_query_discrete_type import GsaQueryDiscreteType
@@ -662,10 +666,6 @@ from .gsa_range_histogram_aggregation_datum_criterion import (
 )
 from .gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
 from .gsa_record_ancestor_history_criterion import GsaRecordAncestorHistoryCriterion
-from .gsa_record_ancestor_history_identity_criterion import (
-    GsaRecordAncestorHistoryIdentityCriterion,
-)
-from .gsa_record_ancestor_identity_criterion import GsaRecordAncestorIdentityCriterion
 from .gsa_record_capabilities import GsaRecordCapabilities
 from .gsa_record_color import GsaRecordColor
 from .gsa_record_color_property import GsaRecordColorProperty
@@ -676,6 +676,7 @@ from .gsa_record_history_copy_exception import GsaRecordHistoryCopyException
 from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_identity_property import GsaRecordHistoryIdentityProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
+from .gsa_record_history_reference import GsaRecordHistoryReference
 from .gsa_record_identity_property import GsaRecordIdentityProperty
 from .gsa_record_link_group import GsaRecordLinkGroup
 from .gsa_record_link_group_type import GsaRecordLinkGroupType
@@ -696,10 +697,12 @@ from .gsa_record_property_inheritance_type import GsaRecordPropertyInheritanceTy
 from .gsa_record_property_sort_criterion import GsaRecordPropertySortCriterion
 from .gsa_record_reference import GsaRecordReference
 from .gsa_record_reference_criterion import GsaRecordReferenceCriterion
+from .gsa_record_reference_type import GsaRecordReferenceType
 from .gsa_record_subset_criterion import GsaRecordSubsetCriterion
 from .gsa_record_type import GsaRecordType
 from .gsa_record_type_property import GsaRecordTypeProperty
 from .gsa_record_version import GsaRecordVersion
+from .gsa_record_version_reference import GsaRecordVersionReference
 from .gsa_record_with_data import GsaRecordWithData
 from .gsa_referenced_by_type import GsaReferencedByType
 from .gsa_referential_integrity_model import GsaReferentialIntegrityModel
@@ -842,6 +845,7 @@ from .gsa_unit_usage import GsaUnitUsage
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_update_all_profiles_info import GsaUpdateAllProfilesInfo
 from .gsa_update_attribute import GsaUpdateAttribute
+from .gsa_update_axis_name import GsaUpdateAxisName
 from .gsa_update_configuration import GsaUpdateConfiguration
 from .gsa_update_constant import GsaUpdateConstant
 from .gsa_update_continuous_range import GsaUpdateContinuousRange
@@ -1023,6 +1027,7 @@ __all__ = [
     "GsaAttributeValidateResponse",
     "GsaAttributeValueAggregation",
     "GsaAttributesInfo",
+    "GsaAxisName",
     "GsaBooleanCriterion",
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
@@ -1036,6 +1041,7 @@ __all__ = [
     "GsaCopyRecordHistory",
     "GsaCreateAttribute",
     "GsaCreateAttributeLinkPair",
+    "GsaCreateAxisName",
     "GsaCreateConfiguration",
     "GsaCreateConstant",
     "GsaCreateContinuousRange",
@@ -1494,6 +1500,8 @@ __all__ = [
     "GsaQueryAttributeProperties",
     "GsaQueryAttributesInfo",
     "GsaQueryAttributesRequest",
+    "GsaQueryAxisName",
+    "GsaQueryAxisNameProperties",
     "GsaQueryDataRule",
     "GsaQueryDataRuleProperties",
     "GsaQueryDiscreteType",
@@ -1522,8 +1530,6 @@ __all__ = [
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
     "GsaRecordAncestorHistoryCriterion",
-    "GsaRecordAncestorHistoryIdentityCriterion",
-    "GsaRecordAncestorIdentityCriterion",
     "GsaRecordCapabilities",
     "GsaRecordColor",
     "GsaRecordColorProperty",
@@ -1534,6 +1540,7 @@ __all__ = [
     "GsaRecordHistoryGuidProperty",
     "GsaRecordHistoryIdentityProperty",
     "GsaRecordHistoryMoveException",
+    "GsaRecordHistoryReference",
     "GsaRecordIdentityProperty",
     "GsaRecordLinkGroup",
     "GsaRecordLinkGroupType",
@@ -1554,10 +1561,12 @@ __all__ = [
     "GsaRecordPropertySortCriterion",
     "GsaRecordReference",
     "GsaRecordReferenceCriterion",
+    "GsaRecordReferenceType",
     "GsaRecordSubsetCriterion",
     "GsaRecordType",
     "GsaRecordTypeProperty",
     "GsaRecordVersion",
+    "GsaRecordVersionReference",
     "GsaRecordWithData",
     "GsaReferencedByType",
     "GsaReferentialIntegrityModel",
@@ -1694,6 +1703,7 @@ __all__ = [
     "GsaUnitsInfo",
     "GsaUpdateAllProfilesInfo",
     "GsaUpdateAttribute",
+    "GsaUpdateAxisName",
     "GsaUpdateConfiguration",
     "GsaUpdateConstant",
     "GsaUpdateContinuousRange",

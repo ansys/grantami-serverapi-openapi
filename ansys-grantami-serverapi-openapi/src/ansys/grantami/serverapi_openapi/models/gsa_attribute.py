@@ -72,8 +72,7 @@ class GsaAttribute(ModelBase):
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
-        "axis_name": "str",
-        "axis_name_display_names": "dict(str, str)",
+        "axis_name": "GsaAxisName",
         "help_path": "str",
     }
 
@@ -88,12 +87,12 @@ class GsaAttribute(ModelBase):
         "type": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
-        "axis_name_display_names": "axisNameDisplayNames",
         "help_path": "helpPath",
     }
 
     subtype_mapping: dict[str, str] = {
         "defaultThresholdType": "GsaAttributeThresholdType",
+        "axisName": "GsaAxisName",
         "info": "GsaAttributeInfo",
         "type": "GsaAttributeType",
         "aboutAttribute": "GsaSlimTypedAttribute",
@@ -132,8 +131,7 @@ class GsaAttribute(ModelBase):
         table: "GsaSlimEntity",
         type: "GsaAttributeType",
         about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
-        axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaAxisName, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaAttribute - a model defined in Swagger
@@ -149,13 +147,11 @@ class GsaAttribute(ModelBase):
         table: GsaSlimEntity
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
-        axis_name: str, optional
-        axis_name_display_names: dict[str, str], optional
+        axis_name: GsaAxisName, optional
         help_path: str, optional
         """
         self._default_threshold_type: GsaAttributeThresholdType
-        self._axis_name: Union[str, None, Unset_Type] = Unset
-        self._axis_name_display_names: Union[dict[str, str], None, Unset_Type] = Unset
+        self._axis_name: Union[GsaAxisName, Unset_Type] = Unset
         self._help_path: Union[str, None, Unset_Type] = Unset
         self._info: GsaAttributeInfo
         self._type: GsaAttributeType
@@ -169,8 +165,6 @@ class GsaAttribute(ModelBase):
         self.default_threshold_type = default_threshold_type
         if axis_name is not Unset:
             self.axis_name = axis_name
-        if axis_name_display_names is not Unset:
-            self.axis_name_display_names = axis_name_display_names
         if help_path is not Unset:
             self.help_path = help_path
         self.info = info
@@ -212,50 +206,29 @@ class GsaAttribute(ModelBase):
         self._default_threshold_type = default_threshold_type
 
     @property
-    def axis_name(self) -> "Union[str, None, Unset_Type]":
+    def axis_name(self) -> "Union[GsaAxisName, Unset_Type]":
         """Gets the axis_name of this GsaAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[GsaAxisName, Unset_Type]
             The axis_name of this GsaAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+    def axis_name(self, axis_name: "Union[GsaAxisName, Unset_Type]") -> None:
         """Sets the axis_name of this GsaAttribute.
 
         Parameters
         ----------
-        axis_name: Union[str, None, Unset_Type]
+        axis_name: Union[GsaAxisName, Unset_Type]
             The axis_name of this GsaAttribute.
         """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
         self._axis_name = axis_name
-
-    @property
-    def axis_name_display_names(self) -> "Union[dict[str, str], None, Unset_Type]":
-        """Gets the axis_name_display_names of this GsaAttribute.
-
-        Returns
-        -------
-        Union[dict[str, str], None, Unset_Type]
-            The axis_name_display_names of this GsaAttribute.
-        """
-        return self._axis_name_display_names
-
-    @axis_name_display_names.setter
-    def axis_name_display_names(
-        self, axis_name_display_names: "Union[dict[str, str], None, Unset_Type]"
-    ) -> None:
-        """Sets the axis_name_display_names of this GsaAttribute.
-
-        Parameters
-        ----------
-        axis_name_display_names: Union[dict[str, str], None, Unset_Type]
-            The axis_name_display_names of this GsaAttribute.
-        """
-        self._axis_name_display_names = axis_name_display_names
 
     @property
     def help_path(self) -> "Union[str, None, Unset_Type]":

@@ -72,7 +72,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
         "attribute_parameters": "list[GsaSlimEntity]",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "default_content": "GsaUpdateMathsContent",
         "default_threshold_type": "GsaAttributeThresholdType",
         "expressions": "list[GsaSlimEntity]",
@@ -121,7 +121,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         allow_anonymous_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_extrapolation: "Union[bool, Unset_Type]" = Unset,
         attribute_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_content: "Union[GsaUpdateMathsContent, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         expressions: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
@@ -142,7 +142,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         allow_anonymous_expressions: bool, optional
         allow_extrapolation: bool, optional
         attribute_parameters: list[GsaSlimEntity], optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         default_content: GsaUpdateMathsContent, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         expressions: list[GsaSlimEntity], optional

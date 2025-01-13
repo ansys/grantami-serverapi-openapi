@@ -62,7 +62,7 @@ class GsaDataExportTabularRow(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "linked_data": "list[GsaRecordWithData]",
-        "linked_records": "list[GsaRecordReference]",
+        "linked_records": "list[GsaRecordHistoryReference]",
         "linking_value": "str",
         "local_data": "list[GsaDataExportDatum]",
         "rolled_up_data": "list[GsaDataExportRollupDatum]",
@@ -82,7 +82,7 @@ class GsaDataExportTabularRow(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "localData": "GsaDataExportDatum",
-        "linkedRecords": "GsaRecordReference",
+        "linkedRecords": "GsaRecordHistoryReference",
         "linkedData": "GsaRecordWithData",
         "rolledUpData": "GsaDataExportRollupDatum",
     }
@@ -93,7 +93,7 @@ class GsaDataExportTabularRow(ModelBase):
         self,
         *,
         linked_data: "Union[list[GsaRecordWithData], None, Unset_Type]" = Unset,
-        linked_records: "Union[list[GsaRecordReference], None, Unset_Type]" = Unset,
+        linked_records: "Union[list[GsaRecordHistoryReference], None, Unset_Type]" = Unset,
         linking_value: "Union[str, None, Unset_Type]" = Unset,
         local_data: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
         rolled_up_data: "Union[list[GsaDataExportRollupDatum], None, Unset_Type]" = Unset,
@@ -105,7 +105,7 @@ class GsaDataExportTabularRow(ModelBase):
         Parameters
         ----------
         linked_data: list[GsaRecordWithData], optional
-        linked_records: list[GsaRecordReference], optional
+        linked_records: list[GsaRecordHistoryReference], optional
         linking_value: str, optional
         local_data: list[GsaDataExportDatum], optional
         rolled_up_data: list[GsaDataExportRollupDatum], optional
@@ -116,7 +116,7 @@ class GsaDataExportTabularRow(ModelBase):
         self._linking_value: Union[str, None, Unset_Type] = Unset
         self._row_number: Union[int, Unset_Type] = Unset
         self._local_data: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
-        self._linked_records: Union[list[GsaRecordReference], None, Unset_Type] = Unset
+        self._linked_records: Union[list[GsaRecordHistoryReference], None, Unset_Type] = Unset
         self._linked_data: Union[list[GsaRecordWithData], None, Unset_Type] = Unset
         self._rolled_up_data: Union[list[GsaDataExportRollupDatum], None, Unset_Type] = Unset
 
@@ -230,27 +230,27 @@ class GsaDataExportTabularRow(ModelBase):
         self._local_data = local_data
 
     @property
-    def linked_records(self) -> "Union[list[GsaRecordReference], None, Unset_Type]":
+    def linked_records(self) -> "Union[list[GsaRecordHistoryReference], None, Unset_Type]":
         """Gets the linked_records of this GsaDataExportTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Returns
         -------
-        Union[list[GsaRecordReference], None, Unset_Type]
+        Union[list[GsaRecordHistoryReference], None, Unset_Type]
             The linked_records of this GsaDataExportTabularRow.
         """
         return self._linked_records
 
     @linked_records.setter
     def linked_records(
-        self, linked_records: "Union[list[GsaRecordReference], None, Unset_Type]"
+        self, linked_records: "Union[list[GsaRecordHistoryReference], None, Unset_Type]"
     ) -> None:
         """Sets the linked_records of this GsaDataExportTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Parameters
         ----------
-        linked_records: Union[list[GsaRecordReference], None, Unset_Type]
+        linked_records: Union[list[GsaRecordHistoryReference], None, Unset_Type]
             The linked_records of this GsaDataExportTabularRow.
         """
         self._linked_records = linked_records
