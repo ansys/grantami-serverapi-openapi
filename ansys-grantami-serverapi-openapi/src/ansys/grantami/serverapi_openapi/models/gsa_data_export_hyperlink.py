@@ -64,15 +64,19 @@ class GsaDataExportHyperlink(ModelBase):
         "address": "str",
         "description": "str",
         "formatted_address": "str",
+        "target": "GsaHyperlinkTarget",
     }
 
     attribute_map: dict[str, str] = {
         "address": "address",
         "description": "description",
         "formatted_address": "formattedAddress",
+        "target": "target",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "target": "GsaHyperlinkTarget",
+    }
 
     discriminator: Optional[str] = None
 
@@ -82,6 +86,7 @@ class GsaDataExportHyperlink(ModelBase):
         address: "Union[str, None, Unset_Type]" = Unset,
         description: "Union[str, None, Unset_Type]" = Unset,
         formatted_address: "Union[str, None, Unset_Type]" = Unset,
+        target: "Union[GsaHyperlinkTarget, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportHyperlink - a model defined in Swagger
 
@@ -90,10 +95,12 @@ class GsaDataExportHyperlink(ModelBase):
         address: str, optional
         description: str, optional
         formatted_address: str, optional
+        target: GsaHyperlinkTarget, optional
         """
         self._address: Union[str, None, Unset_Type] = Unset
         self._formatted_address: Union[str, None, Unset_Type] = Unset
         self._description: Union[str, None, Unset_Type] = Unset
+        self._target: Union[GsaHyperlinkTarget, Unset_Type] = Unset
 
         if address is not Unset:
             self.address = address
@@ -101,6 +108,8 @@ class GsaDataExportHyperlink(ModelBase):
             self.formatted_address = formatted_address
         if description is not Unset:
             self.description = description
+        if target is not Unset:
+            self.target = target
 
     @property
     def address(self) -> "Union[str, None, Unset_Type]":
@@ -167,6 +176,31 @@ class GsaDataExportHyperlink(ModelBase):
             The description of this GsaDataExportHyperlink.
         """
         self._description = description
+
+    @property
+    def target(self) -> "Union[GsaHyperlinkTarget, Unset_Type]":
+        """Gets the target of this GsaDataExportHyperlink.
+
+        Returns
+        -------
+        Union[GsaHyperlinkTarget, Unset_Type]
+            The target of this GsaDataExportHyperlink.
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target: "Union[GsaHyperlinkTarget, Unset_Type]") -> None:
+        """Sets the target of this GsaDataExportHyperlink.
+
+        Parameters
+        ----------
+        target: Union[GsaHyperlinkTarget, Unset_Type]
+            The target of this GsaDataExportHyperlink.
+        """
+        # Field is not nullable
+        if target is None:
+            raise ValueError("Invalid value for 'target', must not be 'None'")
+        self._target = target
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
