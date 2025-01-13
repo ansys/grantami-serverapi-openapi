@@ -69,7 +69,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "attribute_parameters": "list[GsaUpdateFloatFunctionalAttributeParameter]",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -106,7 +106,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         attribute_parameters: "Union[list[GsaUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -122,7 +122,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         attribute_parameters: list[GsaUpdateFloatFunctionalAttributeParameter], optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional

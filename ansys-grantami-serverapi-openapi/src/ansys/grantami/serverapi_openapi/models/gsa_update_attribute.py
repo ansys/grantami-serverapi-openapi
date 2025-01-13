@@ -65,7 +65,7 @@ class GsaUpdateAttribute(ModelBase):
     swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -87,6 +87,7 @@ class GsaUpdateAttribute(ModelBase):
     subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
         "defaultThresholdType": "GsaAttributeThresholdType",
+        "axisName": "GsaUpdateAxisName",
         "aboutAttribute": "GsaSlimEntity",
     }
 
@@ -115,7 +116,7 @@ class GsaUpdateAttribute(ModelBase):
         *,
         type: "GsaAttributeType",
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -128,7 +129,7 @@ class GsaUpdateAttribute(ModelBase):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -137,7 +138,7 @@ class GsaUpdateAttribute(ModelBase):
         """
         self._type: GsaAttributeType
         self._default_threshold_type: Union[GsaAttributeThresholdType, Unset_Type] = Unset
-        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._axis_name: Union[GsaUpdateAxisName, Unset_Type] = Unset
         self._help_path: Union[str, None, Unset_Type] = Unset
         self._about_attribute: Union[GsaSlimEntity, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
@@ -216,25 +217,28 @@ class GsaUpdateAttribute(ModelBase):
         self._default_threshold_type = default_threshold_type
 
     @property
-    def axis_name(self) -> "Union[str, None, Unset_Type]":
+    def axis_name(self) -> "Union[GsaUpdateAxisName, Unset_Type]":
         """Gets the axis_name of this GsaUpdateAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[GsaUpdateAxisName, Unset_Type]
             The axis_name of this GsaUpdateAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+    def axis_name(self, axis_name: "Union[GsaUpdateAxisName, Unset_Type]") -> None:
         """Sets the axis_name of this GsaUpdateAttribute.
 
         Parameters
         ----------
-        axis_name: Union[str, None, Unset_Type]
+        axis_name: Union[GsaUpdateAxisName, Unset_Type]
             The axis_name of this GsaUpdateAttribute.
         """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
         self._axis_name = axis_name
 
     @property

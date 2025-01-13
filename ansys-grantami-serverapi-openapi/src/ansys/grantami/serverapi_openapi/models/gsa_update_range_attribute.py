@@ -68,7 +68,7 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
     swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -100,7 +100,7 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         *,
         type: "GsaAttributeType" = GsaAttributeType.RANGE,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -114,7 +114,7 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional

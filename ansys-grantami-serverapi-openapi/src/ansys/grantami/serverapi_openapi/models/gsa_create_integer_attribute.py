@@ -68,7 +68,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "name": "str",
         "type": "GsaAttributeType",
-        "axis_name": "str",
+        "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -87,7 +87,9 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         "is_unique": "isUnique",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "axisName": "GsaCreateAxisName",
+    }
 
     discriminator: Optional[str] = None
 
@@ -96,7 +98,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         *,
         name: "str",
         type: "GsaAttributeType" = GsaAttributeType.INTEGER,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaCreateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -109,7 +111,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         ----------
         name: str
         type: GsaAttributeType
-        axis_name: str, optional
+        axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str, optional
@@ -125,7 +127,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
         )
         self._is_unique: Union[bool, Unset_Type] = Unset
-        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._axis_name: Union[GsaCreateAxisName, Unset_Type] = Unset
 
         if is_unique is not Unset:
             self.is_unique = is_unique
@@ -160,25 +162,28 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         self._is_unique = is_unique
 
     @property
-    def axis_name(self) -> "Union[str, None, Unset_Type]":
+    def axis_name(self) -> "Union[GsaCreateAxisName, Unset_Type]":
         """Gets the axis_name of this GsaCreateIntegerAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateIntegerAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+    def axis_name(self, axis_name: "Union[GsaCreateAxisName, Unset_Type]") -> None:
         """Sets the axis_name of this GsaCreateIntegerAttribute.
 
         Parameters
         ----------
-        axis_name: Union[str, None, Unset_Type]
+        axis_name: Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateIntegerAttribute.
         """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
         self._axis_name = axis_name
 
     @classmethod

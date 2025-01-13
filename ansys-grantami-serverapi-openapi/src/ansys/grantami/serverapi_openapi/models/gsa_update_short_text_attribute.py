@@ -68,7 +68,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
     swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "data_rule": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -102,7 +102,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
         *,
         type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         data_rule: "Union[GsaSlimEntity, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -117,7 +117,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         data_rule: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional

@@ -57,95 +57,78 @@ class GsaRecordReference(ModelBase):
         The key is attribute name and the value is json key in definition.
     subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
+    discriminator_class_map: dict[str, str]
+        They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
         "database_key": "str",
-        "record_history_guid": "str",
-        "record_history_identity": "int",
+        "record_reference_type": "GsaRecordReferenceType",
     }
 
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
-        "record_history_guid": "recordHistoryGuid",
-        "record_history_identity": "recordHistoryIdentity",
+        "record_reference_type": "recordReferenceType",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "recordReferenceType": "GsaRecordReferenceType",
+    }
 
-    discriminator: Optional[str] = None
+    discriminator_value_class_map = {
+        "history".lower(): "#/components/schemas/GsaRecordHistoryReference",
+        "version".lower(): "#/components/schemas/GsaRecordVersionReference",
+    }
+
+    discriminator: Optional[str] = "recordReferenceType"
 
     def __init__(
         self,
         *,
         database_key: "str",
-        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
-        record_history_identity: "Union[int, None, Unset_Type]" = Unset,
+        record_reference_type: "GsaRecordReferenceType",
     ) -> None:
         """GsaRecordReference - a model defined in Swagger
 
         Parameters
         ----------
         database_key: str
-        record_history_guid: str, optional
-        record_history_identity: int, optional
+        record_reference_type: GsaRecordReferenceType
         """
-        self._record_history_identity: Union[int, None, Unset_Type] = Unset
-        self._record_history_guid: Union[str, None, Unset_Type] = Unset
+        self._record_reference_type: GsaRecordReferenceType
         self._database_key: str
 
-        if record_history_identity is not Unset:
-            self.record_history_identity = record_history_identity
-        if record_history_guid is not Unset:
-            self.record_history_guid = record_history_guid
+        self.record_reference_type = record_reference_type
         self.database_key = database_key
 
     @property
-    def record_history_identity(self) -> "Union[int, None, Unset_Type]":
-        """Gets the record_history_identity of this GsaRecordReference.
+    def record_reference_type(self) -> "GsaRecordReferenceType":
+        """Gets the record_reference_type of this GsaRecordReference.
 
         Returns
         -------
-        Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordReference.
+        GsaRecordReferenceType
+            The record_reference_type of this GsaRecordReference.
         """
-        return self._record_history_identity
+        return self._record_reference_type
 
-    @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
-        """Sets the record_history_identity of this GsaRecordReference.
+    @record_reference_type.setter
+    def record_reference_type(self, record_reference_type: "GsaRecordReferenceType") -> None:
+        """Sets the record_reference_type of this GsaRecordReference.
 
         Parameters
         ----------
-        record_history_identity: Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordReference.
+        record_reference_type: GsaRecordReferenceType
+            The record_reference_type of this GsaRecordReference.
         """
-        self._record_history_identity = record_history_identity
-
-    @property
-    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
-        """Gets the record_history_guid of this GsaRecordReference.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The record_history_guid of this GsaRecordReference.
-        """
-        return self._record_history_guid
-
-    @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
-        """Sets the record_history_guid of this GsaRecordReference.
-
-        Parameters
-        ----------
-        record_history_guid: Union[str, None, Unset_Type]
-            The record_history_guid of this GsaRecordReference.
-        """
-        self._record_history_guid = record_history_guid
+        # Field is not nullable
+        if record_reference_type is None:
+            raise ValueError("Invalid value for 'record_reference_type', must not be 'None'")
+        # Field is required
+        if record_reference_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'record_reference_type', must not be 'Unset'")
+        self._record_reference_type = record_reference_type
 
     @property
     def database_key(self) -> "str":
@@ -177,19 +160,24 @@ class GsaRecordReference(ModelBase):
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
-        """Raises a NotImplementedError for a type without a discriminator defined.
+        """Returns the real base class as determined by the discriminator
 
         Parameters
         ----------
         data: ModelBase
             Object representing a subclass of this class
-
-        Raises
-        ------
-        NotImplementedError
-            This class has no discriminator, and hence no subclasses
         """
-        raise NotImplementedError()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
+        # The actual class name is not available in swagger-codegen,
+        # so we have to extract it from the JSON reference
+        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
+        name_tokens = cls.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""

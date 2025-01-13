@@ -72,7 +72,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
         "attribute_parameters": "list[GsaSlimEntity]",
-        "axis_name": "str",
+        "axis_name": "GsaCreateAxisName",
         "default_content": "GsaCreateMathsContent",
         "default_threshold_type": "GsaAttributeThresholdType",
         "expressions": "list[GsaSlimEntity]",
@@ -105,6 +105,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "unit": "GsaSlimEntity",
         "attributeParameters": "GsaSlimEntity",
         "expressions": "GsaSlimEntity",
+        "axisName": "GsaCreateAxisName",
         "defaultContent": "GsaCreateMathsContent",
     }
 
@@ -119,7 +120,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         allow_anonymous_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_extrapolation: "Union[bool, Unset_Type]" = Unset,
         attribute_parameters: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaCreateAxisName, Unset_Type]" = Unset,
         default_content: "Union[GsaCreateMathsContent, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         expressions: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
@@ -139,7 +140,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         allow_anonymous_expressions: bool, optional
         allow_extrapolation: bool, optional
         attribute_parameters: list[GsaSlimEntity], optional
-        axis_name: str, optional
+        axis_name: GsaCreateAxisName, optional
         default_content: GsaCreateMathsContent, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         expressions: list[GsaSlimEntity], optional
@@ -161,7 +162,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         self._attribute_parameters: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
         self._expressions: Union[list[GsaSlimEntity], None, Unset_Type] = Unset
         self._allow_extrapolation: Union[bool, Unset_Type] = Unset
-        self._axis_name: Union[str, None, Unset_Type] = Unset
+        self._axis_name: Union[GsaCreateAxisName, Unset_Type] = Unset
         self._is_range: Union[bool, Unset_Type] = Unset
         self._default_content: Union[GsaCreateMathsContent, Unset_Type] = Unset
         self._allow_all_compatible_expressions: Union[bool, Unset_Type] = Unset
@@ -283,25 +284,28 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         self._allow_extrapolation = allow_extrapolation
 
     @property
-    def axis_name(self) -> "Union[str, None, Unset_Type]":
+    def axis_name(self) -> "Union[GsaCreateAxisName, Unset_Type]":
         """Gets the axis_name of this GsaCreateMathsFunctionalAttribute.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateMathsFunctionalAttribute.
         """
         return self._axis_name
 
     @axis_name.setter
-    def axis_name(self, axis_name: "Union[str, None, Unset_Type]") -> None:
+    def axis_name(self, axis_name: "Union[GsaCreateAxisName, Unset_Type]") -> None:
         """Sets the axis_name of this GsaCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        axis_name: Union[str, None, Unset_Type]
+        axis_name: Union[GsaCreateAxisName, Unset_Type]
             The axis_name of this GsaCreateMathsFunctionalAttribute.
         """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
         self._axis_name = axis_name
 
     @property

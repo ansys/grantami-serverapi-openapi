@@ -65,6 +65,7 @@ class GsaDataExportRequest(ModelBase):
         "record_properties": "list[GsaRecordProperty]",
         "record_history_guids": "list[str]",
         "record_history_identities": "list[int]",
+        "record_version_guids": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
@@ -72,6 +73,7 @@ class GsaDataExportRequest(ModelBase):
         "record_properties": "recordProperties",
         "record_history_guids": "recordHistoryGuids",
         "record_history_identities": "recordHistoryIdentities",
+        "record_version_guids": "recordVersionGuids",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -88,6 +90,7 @@ class GsaDataExportRequest(ModelBase):
         record_properties: "list[GsaRecordProperty]",
         record_history_guids: "Union[list[str], None, Unset_Type]" = Unset,
         record_history_identities: "Union[list[int], None, Unset_Type]" = Unset,
+        record_version_guids: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDataExportRequest - a model defined in Swagger
 
@@ -97,11 +100,13 @@ class GsaDataExportRequest(ModelBase):
         record_properties: list[GsaRecordProperty]
         record_history_guids: list[str], optional
         record_history_identities: list[int], optional
+        record_version_guids: list[str], optional
         """
         self._attributes: list[GsaAttributeToExport]
         self._record_properties: list[GsaRecordProperty]
         self._record_history_identities: Union[list[int], None, Unset_Type] = Unset
         self._record_history_guids: Union[list[str], None, Unset_Type] = Unset
+        self._record_version_guids: Union[list[str], None, Unset_Type] = Unset
 
         self.attributes = attributes
         self.record_properties = record_properties
@@ -109,6 +114,8 @@ class GsaDataExportRequest(ModelBase):
             self.record_history_identities = record_history_identities
         if record_history_guids is not Unset:
             self.record_history_guids = record_history_guids
+        if record_version_guids is not Unset:
+            self.record_version_guids = record_version_guids
 
     @property
     def attributes(self) -> "list[GsaAttributeToExport]":
@@ -213,6 +220,32 @@ class GsaDataExportRequest(ModelBase):
             The record_history_guids of this GsaDataExportRequest.
         """
         self._record_history_guids = record_history_guids
+
+    @property
+    def record_version_guids(self) -> "Union[list[str], None, Unset_Type]":
+        """Gets the record_version_guids of this GsaDataExportRequest.
+        Data can be exported for either record histories or record versions in each request, not both.
+
+        Returns
+        -------
+        Union[list[str], None, Unset_Type]
+            The record_version_guids of this GsaDataExportRequest.
+        """
+        return self._record_version_guids
+
+    @record_version_guids.setter
+    def record_version_guids(
+        self, record_version_guids: "Union[list[str], None, Unset_Type]"
+    ) -> None:
+        """Sets the record_version_guids of this GsaDataExportRequest.
+        Data can be exported for either record histories or record versions in each request, not both.
+
+        Parameters
+        ----------
+        record_version_guids: Union[list[str], None, Unset_Type]
+            The record_version_guids of this GsaDataExportRequest.
+        """
+        self._record_version_guids = record_version_guids
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

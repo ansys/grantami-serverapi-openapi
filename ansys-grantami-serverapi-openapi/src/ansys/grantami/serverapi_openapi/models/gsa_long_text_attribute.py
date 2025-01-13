@@ -73,8 +73,7 @@ class GsaLongTextAttribute(GsaAttribute):
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
-        "axis_name": "str",
-        "axis_name_display_names": "dict(str, str)",
+        "axis_name": "GsaAxisName",
         "help_path": "str",
     }
 
@@ -89,7 +88,6 @@ class GsaLongTextAttribute(GsaAttribute):
         "type": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
-        "axis_name_display_names": "axisNameDisplayNames",
         "help_path": "helpPath",
     }
 
@@ -109,8 +107,7 @@ class GsaLongTextAttribute(GsaAttribute):
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.LONGTEXT,
         about_attribute: "Union[GsaSlimTypedAttribute, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
-        axis_name_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaAxisName, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaLongTextAttribute - a model defined in Swagger
@@ -126,8 +123,7 @@ class GsaLongTextAttribute(GsaAttribute):
         table: GsaSlimEntity
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
-        axis_name: str, optional
-        axis_name_display_names: dict[str, str], optional
+        axis_name: GsaAxisName, optional
         help_path: str, optional
         """
         super().__init__(
@@ -141,7 +137,6 @@ class GsaLongTextAttribute(GsaAttribute):
             type=type,
             about_attribute=about_attribute,
             axis_name=axis_name,
-            axis_name_display_names=axis_name_display_names,
             help_path=help_path,
         )
 

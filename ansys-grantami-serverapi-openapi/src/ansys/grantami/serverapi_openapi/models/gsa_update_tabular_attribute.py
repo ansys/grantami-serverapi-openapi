@@ -68,7 +68,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
     swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
-        "axis_name": "str",
+        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_full_table": "bool",
         "display_summary_row_inline": "bool",
@@ -106,7 +106,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         *,
         type: "GsaAttributeType" = GsaAttributeType.LINK,
         about_attribute: "Union[GsaSlimEntity, Unset_Type]" = Unset,
-        axis_name: "Union[str, None, Unset_Type]" = Unset,
+        axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         display_full_table: "Union[bool, Unset_Type]" = Unset,
         display_summary_row_inline: "Union[bool, Unset_Type]" = Unset,
@@ -123,7 +123,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
-        axis_name: str, optional
+        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_full_table: bool, optional
         display_summary_row_inline: bool, optional

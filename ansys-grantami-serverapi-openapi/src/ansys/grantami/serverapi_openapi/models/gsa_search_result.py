@@ -64,7 +64,6 @@ class GsaSearchResult(ModelBase):
         "database_key": "str",
         "cubic_spline_status": "str",
         "parent_guid": "str",
-        "parent_identity": "int",
         "record_color": "str",
         "record_guid": "str",
         "record_history_guid": "str",
@@ -85,7 +84,6 @@ class GsaSearchResult(ModelBase):
         "database_key": "databaseKey",
         "cubic_spline_status": "cubicSplineStatus",
         "parent_guid": "parentGuid",
-        "parent_identity": "parentIdentity",
         "record_color": "recordColor",
         "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
@@ -115,10 +113,9 @@ class GsaSearchResult(ModelBase):
         database_key: "str",
         cubic_spline_status: "Union[str, None, Unset_Type]" = Unset,
         parent_guid: "Union[str, None, Unset_Type]" = Unset,
-        parent_identity: "Union[int, None, Unset_Type]" = Unset,
         record_color: "Union[str, None, Unset_Type]" = Unset,
-        record_guid: "Union[str, None, Unset_Type]" = Unset,
-        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
+        record_guid: "Union[str, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, Unset_Type]" = Unset,
         record_history_identity: "Union[int, Unset_Type]" = Unset,
         record_identity: "Union[int, Unset_Type]" = Unset,
         record_name: "Union[str, None, Unset_Type]" = Unset,
@@ -138,7 +135,6 @@ class GsaSearchResult(ModelBase):
         database_key: str
         cubic_spline_status: str, optional
         parent_guid: str, optional
-        parent_identity: int, optional
         record_color: str, optional
         record_guid: str, optional
         record_history_guid: str, optional
@@ -157,8 +153,8 @@ class GsaSearchResult(ModelBase):
         self._database_key: str
         self._record_history_identity: Union[int, Unset_Type] = Unset
         self._record_identity: Union[int, Unset_Type] = Unset
-        self._record_history_guid: Union[str, None, Unset_Type] = Unset
-        self._record_guid: Union[str, None, Unset_Type] = Unset
+        self._record_history_guid: Union[str, Unset_Type] = Unset
+        self._record_guid: Union[str, Unset_Type] = Unset
         self._record_name: Union[str, None, Unset_Type] = Unset
         self._tree_name: Union[str, None, Unset_Type] = Unset
         self._record_color: Union[str, None, Unset_Type] = Unset
@@ -167,7 +163,6 @@ class GsaSearchResult(ModelBase):
         self._cubic_spline_status: Union[str, None, Unset_Type] = Unset
         self._version_control_state: Union[str, None, Unset_Type] = Unset
         self._version_number: Union[int, Unset_Type] = Unset
-        self._parent_identity: Union[int, None, Unset_Type] = Unset
         self._parent_guid: Union[str, None, Unset_Type] = Unset
         self._type: Union[GsaRecordType, Unset_Type] = Unset
         self._score: Union[float, None, Unset_Type] = Unset
@@ -198,8 +193,6 @@ class GsaSearchResult(ModelBase):
             self.version_control_state = version_control_state
         if version_number is not Unset:
             self.version_number = version_number
-        if parent_identity is not Unset:
-            self.parent_identity = parent_identity
         if parent_guid is not Unset:
             self.parent_guid = parent_guid
         if type is not Unset:
@@ -288,47 +281,53 @@ class GsaSearchResult(ModelBase):
         self._record_identity = record_identity
 
     @property
-    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
+    def record_history_guid(self) -> "Union[str, Unset_Type]":
         """Gets the record_history_guid of this GsaSearchResult.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The record_history_guid of this GsaSearchResult.
         """
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
         """Sets the record_history_guid of this GsaSearchResult.
 
         Parameters
         ----------
-        record_history_guid: Union[str, None, Unset_Type]
+        record_history_guid: Union[str, Unset_Type]
             The record_history_guid of this GsaSearchResult.
         """
+        # Field is not nullable
+        if record_history_guid is None:
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
         self._record_history_guid = record_history_guid
 
     @property
-    def record_guid(self) -> "Union[str, None, Unset_Type]":
+    def record_guid(self) -> "Union[str, Unset_Type]":
         """Gets the record_guid of this GsaSearchResult.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The record_guid of this GsaSearchResult.
         """
         return self._record_guid
 
     @record_guid.setter
-    def record_guid(self, record_guid: "Union[str, None, Unset_Type]") -> None:
+    def record_guid(self, record_guid: "Union[str, Unset_Type]") -> None:
         """Sets the record_guid of this GsaSearchResult.
 
         Parameters
         ----------
-        record_guid: Union[str, None, Unset_Type]
+        record_guid: Union[str, Unset_Type]
             The record_guid of this GsaSearchResult.
         """
+        # Field is not nullable
+        if record_guid is None:
+            raise ValueError("Invalid value for 'record_guid', must not be 'None'")
         self._record_guid = record_guid
 
     @property
@@ -515,28 +514,6 @@ class GsaSearchResult(ModelBase):
         if version_number is None:
             raise ValueError("Invalid value for 'version_number', must not be 'None'")
         self._version_number = version_number
-
-    @property
-    def parent_identity(self) -> "Union[int, None, Unset_Type]":
-        """Gets the parent_identity of this GsaSearchResult.
-
-        Returns
-        -------
-        Union[int, None, Unset_Type]
-            The parent_identity of this GsaSearchResult.
-        """
-        return self._parent_identity
-
-    @parent_identity.setter
-    def parent_identity(self, parent_identity: "Union[int, None, Unset_Type]") -> None:
-        """Sets the parent_identity of this GsaSearchResult.
-
-        Parameters
-        ----------
-        parent_identity: Union[int, None, Unset_Type]
-            The parent_identity of this GsaSearchResult.
-        """
-        self._parent_identity = parent_identity
 
     @property
     def parent_guid(self) -> "Union[str, None, Unset_Type]":
