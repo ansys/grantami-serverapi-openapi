@@ -47,6 +47,16 @@ The release process follows the standard [PyAnsys release guidelines](https://de
 
 Once the tag is pushed to GitHub, a workflow will build and publish the release.
 
+## Creating a new interface version
+
+Once a release is completed, the build scripts should be updated to build the new in-development version of the
+package, additionaly the oldest release can be removed.
+
+1. Update the version number of the package in the ``version`` node of the pom.xml file to begin development
+2. Update the ``interface-dev-version`` element in the pom.xml file to refer to the current in-development version
+   of Granta MI. For example 24R2 would be ``v242``
+3. Remove the oldest folder from the ``src/ansys/grantami/serverapi_openapi`` directory, it is no longer supported
+4. Create a PR to merge these changes into main
 
 ## Using this package directly
 
