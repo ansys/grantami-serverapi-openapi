@@ -50,7 +50,7 @@ Once the tag is pushed to GitHub, a workflow will build and publish the release.
 ## Creating a new interface version
 
 Once a release is completed, the build scripts should be updated to build the new in-development version of the
-package, additionaly the oldest release can be removed.
+package, additionally the oldest release can be removed.
 
 1. Update the version number of the package in the ``version`` node of the pom.xml file to begin development
 2. Update the ``interface-dev-version`` element in the pom.xml file to refer to the current in-development version
