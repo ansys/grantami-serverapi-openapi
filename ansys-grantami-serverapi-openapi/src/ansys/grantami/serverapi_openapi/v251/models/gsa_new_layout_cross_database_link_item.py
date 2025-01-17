@@ -36,7 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 from ansys.grantami.serverapi_openapi.v251.models.gsa_new_layout_item import (  # noqa: F401
     GsaNewLayoutItem,
 )
-from ansys.grantami.serverapi_openapi.v251.models.gsa_new_layout_item_type import GsaNewLayoutItemType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_new_layout_item_type import (
+    GsaNewLayoutItemType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 

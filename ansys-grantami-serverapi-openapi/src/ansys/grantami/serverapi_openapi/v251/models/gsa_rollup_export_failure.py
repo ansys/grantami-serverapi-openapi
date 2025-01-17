@@ -36,7 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 from ansys.grantami.serverapi_openapi.v251.models.gsa_export_failure import (  # noqa: F401
     GsaExportFailure,
 )
-from ansys.grantami.serverapi_openapi.v251.models.gsa_export_failure_type import GsaExportFailureType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_export_failure_type import (
+    GsaExportFailureType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 

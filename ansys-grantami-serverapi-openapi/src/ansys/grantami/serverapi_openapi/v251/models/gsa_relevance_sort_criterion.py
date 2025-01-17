@@ -36,7 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 from ansys.grantami.serverapi_openapi.v251.models.gsa_sort_criterion import (  # noqa: F401
     GsaSortCriterion,
 )
-from ansys.grantami.serverapi_openapi.v251.models.gsa_sort_criterion_type import GsaSortCriterionType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_sort_criterion_type import (
+    GsaSortCriterionType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 

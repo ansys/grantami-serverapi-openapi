@@ -33,7 +33,9 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_rollup import GsaDatumRollup  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_rollup import (  # noqa: F401
+    GsaDatumRollup,
+)
 from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_rollup_type import GsaDatumRollupType
 
 from . import ModelBase, Unset, Unset_Type

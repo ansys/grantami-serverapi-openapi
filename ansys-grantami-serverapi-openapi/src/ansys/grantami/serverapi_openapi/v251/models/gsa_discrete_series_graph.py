@@ -35,7 +35,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.v251.models.gsa_functional_type import GsaFunctionalType
 from ansys.grantami.serverapi_openapi.v251.models.gsa_graph_type import GsaGraphType
-from ansys.grantami.serverapi_openapi.v251.models.gsa_series_graph import GsaSeriesGraph  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_series_graph import (  # noqa: F401
+    GsaSeriesGraph,
+)
 
 from . import ModelBase, Unset, Unset_Type
 

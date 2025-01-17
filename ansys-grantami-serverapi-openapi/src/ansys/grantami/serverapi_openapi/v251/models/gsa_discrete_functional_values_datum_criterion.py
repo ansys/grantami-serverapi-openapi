@@ -36,7 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_criterion import (  # noqa: F401
     GsaDatumCriterion,
 )
-from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_criterion_type import GsaDatumCriterionType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_criterion_type import (
+    GsaDatumCriterionType,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
