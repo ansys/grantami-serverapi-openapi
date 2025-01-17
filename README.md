@@ -95,7 +95,7 @@ Or with pip:
 ```
 
 ### Minimal setup
-The following code snippet demonstrates how to perform the minimal setup required to interact with the 2025 R1 version of the 
+The following code snippet demonstrates how to perform the minimal setup required to interact with the 2025 R1 version of the
 API using this library.
 
 ```python
