@@ -38,7 +38,11 @@ jobs:
         cache: maven
 
     - name: "Clean library folder"
-      run: find . ! -name 'poetry.lock' -type f -exec rm -f {} +
+      run: |
+        echo "Cleaning root directory"
+        find . ! -name 'poetry.lock' -path './src' -prune -o -type f -exec rm -f {} +
+        echo "Cleaning output directory"
+        mvn clean
       working-directory: ansys-grantami-serverapi-openapi
 
     - name: "Build client library"
