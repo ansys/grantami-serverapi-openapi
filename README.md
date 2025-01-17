@@ -95,8 +95,8 @@ Or with pip:
 ```
 
 ### Minimal setup
-The following code snippet demonstrates how to perform the minimal setup required to interact with the API using this
-library.
+The following code snippet demonstrates how to perform the minimal setup required to interact with the 2025 R1 version of the 
+API using this library.
 
 ```python
 from typing import Optional
@@ -108,7 +108,7 @@ from ansys.openapi.common import (
     generate_user_agent,
     SessionConfiguration,
 )
-from ansys.grantami.serverapi_openapi import models
+from ansys.grantami.serverapi_openapi.v251 import models
 
 SERVICE_PATH = "/proxy/v1.svc/mi"  # "/proxy/v1.svc" for Granta MI 2024 R1 and older
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
