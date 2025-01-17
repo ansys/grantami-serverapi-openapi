@@ -1010,6 +1010,7 @@ from .models.gsa_update_static_record_link_group import GsaUpdateStaticRecordLin
 from .models.gsa_update_subset import GsaUpdateSubset
 from .models.gsa_update_table import GsaUpdateTable
 from .models.gsa_update_tabular_attribute import GsaUpdateTabularAttribute
+from .models.gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
 from .models.gsa_update_tabular_column import GsaUpdateTabularColumn
 from .models.gsa_update_unit import GsaUpdateUnit
 from .models.gsa_update_unit_system import GsaUpdateUnitSystem
@@ -1897,6 +1898,7 @@ __all__ = [
     "GsaUpdateSubset",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",
+    "GsaUpdateTabularAttributeTarget",
     "GsaUpdateTabularColumn",
     "GsaUpdateUnit",
     "GsaUpdateUnitSystem",
