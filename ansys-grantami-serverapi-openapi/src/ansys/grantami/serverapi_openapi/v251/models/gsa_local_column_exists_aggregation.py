@@ -33,10 +33,10 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_local_column_aggregation import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_local_column_aggregation import (  # noqa: F401
     GsaLocalColumnAggregation,
 )
-from ansys.grantami.serverapi_openapi.models.gsa_local_column_aggregation_type import (
+from ansys.grantami.serverapi_openapi.v251.models.gsa_local_column_aggregation_type import (
     GsaLocalColumnAggregationType,
 )
 

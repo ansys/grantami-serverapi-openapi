@@ -33,7 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter_value import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v242.models.granta_server_api_schema_parameters_create_parameter_value import (  # noqa: F401
     GrantaServerApiSchemaParametersCreateParameterValue,
 )
 

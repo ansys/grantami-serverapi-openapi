@@ -33,7 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_data_export_rollup_datum import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_data_export_rollup_datum import (  # noqa: F401
     GsaDataExportRollupDatum,
 )
 

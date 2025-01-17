@@ -33,10 +33,10 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_record_link_group_type import (
+from ansys.grantami.serverapi_openapi.v251.models.gsa_record_link_group_type import (
     GsaRecordLinkGroupType,
 )
-from ansys.grantami.serverapi_openapi.models.gsa_update_record_link_group import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_update_record_link_group import (  # noqa: F401
     GsaUpdateRecordLinkGroup,
 )
 

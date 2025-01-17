@@ -33,8 +33,8 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_parameter_value_type import GsaParameterValueType
-from ansys.grantami.serverapi_openapi.models.gsa_update_parameter_value import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_parameter_value_type import GsaParameterValueType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_update_parameter_value import (  # noqa: F401
     GsaUpdateParameterValue,
 )
 

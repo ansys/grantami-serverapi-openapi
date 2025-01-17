@@ -33,7 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_tabular_columns_create_tabular_columns_create_tabular_column import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v242.models.granta_server_api_schema_tabular_columns_create_tabular_columns_create_tabular_column import (  # noqa: F401
     GrantaServerApiSchemaTabularColumnsCreateTabularColumnsCreateTabularColumn,
 )
 

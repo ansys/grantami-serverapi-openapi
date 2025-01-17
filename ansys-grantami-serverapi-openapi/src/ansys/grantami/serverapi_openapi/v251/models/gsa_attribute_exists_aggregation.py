@@ -33,11 +33,11 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_aggregation_type import GsaAggregationType
-from ansys.grantami.serverapi_openapi.models.gsa_attribute_aggregation import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_aggregation_type import GsaAggregationType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_attribute_aggregation import (  # noqa: F401
     GsaAttributeAggregation,
 )
-from ansys.grantami.serverapi_openapi.models.gsa_attribute_aggregation_type import (
+from ansys.grantami.serverapi_openapi.v251.models.gsa_attribute_aggregation_type import (
     GsaAttributeAggregationType,
 )
 

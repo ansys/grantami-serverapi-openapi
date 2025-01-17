@@ -33,10 +33,10 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_applicable_datum import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_applicable_datum import (  # noqa: F401
     GsaApplicableDatum,
 )
-from ansys.grantami.serverapi_openapi.models.gsa_datum_type import GsaDatumType
+from ansys.grantami.serverapi_openapi.v251.models.gsa_datum_type import GsaDatumType
 
 from . import ModelBase, Unset, Unset_Type
 

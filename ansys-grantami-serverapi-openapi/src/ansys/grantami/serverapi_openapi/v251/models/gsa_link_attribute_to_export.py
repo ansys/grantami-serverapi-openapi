@@ -33,7 +33,7 @@
 import re  # noqa: F401
 from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
-from ansys.grantami.serverapi_openapi.models.gsa_attribute_to_export import (  # noqa: F401
+from ansys.grantami.serverapi_openapi.v251.models.gsa_attribute_to_export import (  # noqa: F401
     GsaAttributeToExport,
 )
 
