@@ -83,7 +83,6 @@ class GsaProperty(ModelBase):
         "lastModifiedByUser".lower(): "#/components/schemas/GsaLastModifiedByUserProperty",
         "recordColor".lower(): "#/components/schemas/GsaRecordColorProperty",
         "recordGuid".lower(): "#/components/schemas/GsaRecordGuidProperty",
-        "recordIdentity".lower(): "#/components/schemas/GsaRecordIdentityProperty",
         "recordHistoryGuid".lower(): "#/components/schemas/GsaRecordHistoryGuidProperty",
         "recordHistoryIdentity".lower(): "#/components/schemas/GsaRecordHistoryIdentityProperty",
         "recordType".lower(): "#/components/schemas/GsaRecordTypeProperty",

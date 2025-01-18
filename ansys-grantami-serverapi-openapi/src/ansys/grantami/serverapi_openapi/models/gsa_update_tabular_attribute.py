@@ -78,6 +78,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "is_hidden_from_search_criteria": "bool",
         "name": "str",
         "tabular_columns": "list[GsaUpdateTabularColumn]",
+        "target": "GsaUpdateTabularAttributeTarget",
     }
 
     attribute_map: dict[str, str] = {
@@ -93,10 +94,12 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "name": "name",
         "tabular_columns": "tabularColumns",
+        "target": "target",
     }
 
     subtype_mapping: dict[str, str] = {
         "tabularColumns": "GsaUpdateTabularColumn",
+        "target": "GsaUpdateTabularAttributeTarget",
     }
 
     discriminator: Optional[str] = None
@@ -116,6 +119,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
         tabular_columns: "Union[list[GsaUpdateTabularColumn], None, Unset_Type]" = Unset,
+        target: "Union[GsaUpdateTabularAttributeTarget, Unset_Type]" = Unset,
     ) -> None:
         """GsaUpdateTabularAttribute - a model defined in Swagger
 
@@ -133,6 +137,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         is_hidden_from_search_criteria: bool, optional
         name: str, optional
         tabular_columns: list[GsaUpdateTabularColumn], optional
+        target: GsaUpdateTabularAttributeTarget, optional
         """
         super().__init__(
             type=type,
@@ -148,6 +153,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
         self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
         self._tabular_columns: Union[list[GsaUpdateTabularColumn], None, Unset_Type] = Unset
+        self._target: Union[GsaUpdateTabularAttributeTarget, Unset_Type] = Unset
 
         if display_full_table is not Unset:
             self.display_full_table = display_full_table
@@ -157,6 +163,8 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
             self.hide_unlinked_rows = hide_unlinked_rows
         if tabular_columns is not Unset:
             self.tabular_columns = tabular_columns
+        if target is not Unset:
+            self.target = target
 
     @property
     def display_full_table(self) -> "Union[bool, Unset_Type]":
@@ -258,6 +266,31 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
             The tabular_columns of this GsaUpdateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
+
+    @property
+    def target(self) -> "Union[GsaUpdateTabularAttributeTarget, Unset_Type]":
+        """Gets the target of this GsaUpdateTabularAttribute.
+
+        Returns
+        -------
+        Union[GsaUpdateTabularAttributeTarget, Unset_Type]
+            The target of this GsaUpdateTabularAttribute.
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target: "Union[GsaUpdateTabularAttributeTarget, Unset_Type]") -> None:
+        """Sets the target of this GsaUpdateTabularAttribute.
+
+        Parameters
+        ----------
+        target: Union[GsaUpdateTabularAttributeTarget, Unset_Type]
+            The target of this GsaUpdateTabularAttribute.
+        """
+        # Field is not nullable
+        if target is None:
+            raise ValueError("Invalid value for 'target', must not be 'None'")
+        self._target = target
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

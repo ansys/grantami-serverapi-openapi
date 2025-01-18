@@ -68,7 +68,6 @@ class GsaSearchResult(ModelBase):
         "record_guid": "str",
         "record_history_guid": "str",
         "record_history_identity": "int",
-        "record_identity": "int",
         "record_name": "str",
         "score": "float",
         "sorting_value": "GsaSortingValue",
@@ -88,7 +87,6 @@ class GsaSearchResult(ModelBase):
         "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
         "record_history_identity": "recordHistoryIdentity",
-        "record_identity": "recordIdentity",
         "record_name": "recordName",
         "score": "score",
         "sorting_value": "sortingValue",
@@ -117,7 +115,6 @@ class GsaSearchResult(ModelBase):
         record_guid: "Union[str, Unset_Type]" = Unset,
         record_history_guid: "Union[str, Unset_Type]" = Unset,
         record_history_identity: "Union[int, Unset_Type]" = Unset,
-        record_identity: "Union[int, Unset_Type]" = Unset,
         record_name: "Union[str, None, Unset_Type]" = Unset,
         score: "Union[float, None, Unset_Type]" = Unset,
         sorting_value: "Union[GsaSortingValue, Unset_Type]" = Unset,
@@ -139,7 +136,6 @@ class GsaSearchResult(ModelBase):
         record_guid: str, optional
         record_history_guid: str, optional
         record_history_identity: int, optional
-        record_identity: int, optional
         record_name: str, optional
         score: float, optional
         sorting_value: GsaSortingValue, optional
@@ -152,7 +148,6 @@ class GsaSearchResult(ModelBase):
         """
         self._database_key: str
         self._record_history_identity: Union[int, Unset_Type] = Unset
-        self._record_identity: Union[int, Unset_Type] = Unset
         self._record_history_guid: Union[str, Unset_Type] = Unset
         self._record_guid: Union[str, Unset_Type] = Unset
         self._record_name: Union[str, None, Unset_Type] = Unset
@@ -171,8 +166,6 @@ class GsaSearchResult(ModelBase):
         self.database_key = database_key
         if record_history_identity is not Unset:
             self.record_history_identity = record_history_identity
-        if record_identity is not Unset:
-            self.record_identity = record_identity
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
         if record_guid is not Unset:
@@ -254,31 +247,6 @@ class GsaSearchResult(ModelBase):
         if record_history_identity is None:
             raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
         self._record_history_identity = record_history_identity
-
-    @property
-    def record_identity(self) -> "Union[int, Unset_Type]":
-        """Gets the record_identity of this GsaSearchResult.
-
-        Returns
-        -------
-        Union[int, Unset_Type]
-            The record_identity of this GsaSearchResult.
-        """
-        return self._record_identity
-
-    @record_identity.setter
-    def record_identity(self, record_identity: "Union[int, Unset_Type]") -> None:
-        """Sets the record_identity of this GsaSearchResult.
-
-        Parameters
-        ----------
-        record_identity: Union[int, Unset_Type]
-            The record_identity of this GsaSearchResult.
-        """
-        # Field is not nullable
-        if record_identity is None:
-            raise ValueError("Invalid value for 'record_identity', must not be 'None'")
-        self._record_identity = record_identity
 
     @property
     def record_history_guid(self) -> "Union[str, Unset_Type]":
