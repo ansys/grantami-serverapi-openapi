@@ -42,7 +42,6 @@ class GsaRecordProperty(Enum):
     """
     Allowed Enum values
     """
-    RECORDIDENTITY = "recordIdentity"
     RECORDGUID = "recordGuid"
     RECORDHISTORYIDENTITY = "recordHistoryIdentity"
     RECORDHISTORYGUID = "recordHistoryGuid"

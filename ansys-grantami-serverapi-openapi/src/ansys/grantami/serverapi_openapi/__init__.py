@@ -33,6 +33,7 @@
 """
 
 # import apis into sdk package
+from .api.access_control_api import AccessControlApi
 from .api.aggregation_api import AggregationApi
 from .api.data_api import DataApi
 from .api.data_export_api import DataExportApi
@@ -95,6 +96,8 @@ from .models.folderguid_files_body import FolderguidFilesBody
 from .models.granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
+from .models.gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
+from .models.gsa_access_control_category import GsaAccessControlCategory
 from .models.gsa_add_database import GsaAddDatabase
 from .models.gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .models.gsa_aggregation import GsaAggregation
@@ -753,7 +756,6 @@ from .models.gsa_record_history_guid_property import GsaRecordHistoryGuidPropert
 from .models.gsa_record_history_identity_property import GsaRecordHistoryIdentityProperty
 from .models.gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .models.gsa_record_history_reference import GsaRecordHistoryReference
-from .models.gsa_record_identity_property import GsaRecordIdentityProperty
 from .models.gsa_record_link_group import GsaRecordLinkGroup
 from .models.gsa_record_link_group_type import GsaRecordLinkGroupType
 from .models.gsa_record_link_groups_info import GsaRecordLinkGroupsInfo
@@ -850,6 +852,7 @@ from .models.gsa_short_text_datum_exists_criterion import GsaShortTextDatumExist
 from .models.gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriterion
 from .models.gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .models.gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
+from .models.gsa_slim_access_control_category import GsaSlimAccessControlCategory
 from .models.gsa_slim_attribute import GsaSlimAttribute
 from .models.gsa_slim_configuration import GsaSlimConfiguration
 from .models.gsa_slim_constant import GsaSlimConstant
@@ -1010,6 +1013,7 @@ from .models.gsa_update_static_record_link_group import GsaUpdateStaticRecordLin
 from .models.gsa_update_subset import GsaUpdateSubset
 from .models.gsa_update_table import GsaUpdateTable
 from .models.gsa_update_tabular_attribute import GsaUpdateTabularAttribute
+from .models.gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
 from .models.gsa_update_tabular_column import GsaUpdateTabularColumn
 from .models.gsa_update_unit import GsaUpdateUnit
 from .models.gsa_update_unit_system import GsaUpdateUnitSystem
@@ -1048,6 +1052,7 @@ from .models.microsoft_asp_net_core_mvc_object_result import MicrosoftAspNetCore
 from .models.system_net_http_status_code import SystemNetHttpStatusCode
 
 __all__ = [
+    "AccessControlApi",
     "AggregationApi",
     "DataApi",
     "DataExportApi",
@@ -1102,6 +1107,8 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
+    "GsaAccessControlCategoriesInfo",
+    "GsaAccessControlCategory",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
@@ -1664,7 +1671,6 @@ __all__ = [
     "GsaRecordHistoryIdentityProperty",
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
-    "GsaRecordIdentityProperty",
     "GsaRecordLinkGroup",
     "GsaRecordLinkGroupType",
     "GsaRecordLinkGroupsInfo",
@@ -1753,6 +1759,7 @@ __all__ = [
     "GsaShortTextPrefixDatumCriterion",
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
+    "GsaSlimAccessControlCategory",
     "GsaSlimAttribute",
     "GsaSlimConfiguration",
     "GsaSlimConstant",
@@ -1897,6 +1904,7 @@ __all__ = [
     "GsaUpdateSubset",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",
+    "GsaUpdateTabularAttributeTarget",
     "GsaUpdateTabularColumn",
     "GsaUpdateUnit",
     "GsaUpdateUnitSystem",

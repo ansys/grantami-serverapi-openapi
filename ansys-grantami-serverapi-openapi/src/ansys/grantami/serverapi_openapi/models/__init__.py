@@ -51,6 +51,8 @@ from .folderguid_files_body import FolderguidFilesBody
 from .granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
+from .gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
+from .gsa_access_control_category import GsaAccessControlCategory
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .gsa_aggregation import GsaAggregation
@@ -677,7 +679,6 @@ from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_identity_property import GsaRecordHistoryIdentityProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .gsa_record_history_reference import GsaRecordHistoryReference
-from .gsa_record_identity_property import GsaRecordIdentityProperty
 from .gsa_record_link_group import GsaRecordLinkGroup
 from .gsa_record_link_group_type import GsaRecordLinkGroupType
 from .gsa_record_link_groups_info import GsaRecordLinkGroupsInfo
@@ -770,6 +771,7 @@ from .gsa_short_text_datum_exists_criterion import GsaShortTextDatumExistsCriter
 from .gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriterion
 from .gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
+from .gsa_slim_access_control_category import GsaSlimAccessControlCategory
 from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_configuration import GsaSlimConfiguration
 from .gsa_slim_constant import GsaSlimConstant
@@ -928,6 +930,7 @@ from .gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
 from .gsa_update_subset import GsaUpdateSubset
 from .gsa_update_table import GsaUpdateTable
 from .gsa_update_tabular_attribute import GsaUpdateTabularAttribute
+from .gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
 from .gsa_update_tabular_column import GsaUpdateTabularColumn
 from .gsa_update_unit import GsaUpdateUnit
 from .gsa_update_unit_system import GsaUpdateUnitSystem
@@ -979,6 +982,8 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
+    "GsaAccessControlCategoriesInfo",
+    "GsaAccessControlCategory",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
@@ -1541,7 +1546,6 @@ __all__ = [
     "GsaRecordHistoryIdentityProperty",
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
-    "GsaRecordIdentityProperty",
     "GsaRecordLinkGroup",
     "GsaRecordLinkGroupType",
     "GsaRecordLinkGroupsInfo",
@@ -1630,6 +1634,7 @@ __all__ = [
     "GsaShortTextPrefixDatumCriterion",
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
+    "GsaSlimAccessControlCategory",
     "GsaSlimAttribute",
     "GsaSlimConfiguration",
     "GsaSlimConstant",
@@ -1774,6 +1779,7 @@ __all__ = [
     "GsaUpdateSubset",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",
+    "GsaUpdateTabularAttributeTarget",
     "GsaUpdateTabularColumn",
     "GsaUpdateUnit",
     "GsaUpdateUnitSystem",

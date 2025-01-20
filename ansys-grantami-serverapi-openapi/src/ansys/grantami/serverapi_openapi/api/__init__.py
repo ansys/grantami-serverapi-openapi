@@ -26,6 +26,7 @@
 from ansys.openapi.common import ApiBase
 
 # import apis into api package
+from .access_control_api import AccessControlApi
 from .aggregation_api import AggregationApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
@@ -71,6 +72,7 @@ from .status_api import StatusApi
 
 __all__ = [
     "ApiBase",
+    "AccessControlApi",
     "AggregationApi",
     "DataApi",
     "DataExportApi",
