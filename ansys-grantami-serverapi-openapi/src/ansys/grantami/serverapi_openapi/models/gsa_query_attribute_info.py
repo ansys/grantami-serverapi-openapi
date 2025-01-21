@@ -62,7 +62,7 @@ class GsaQueryAttributeInfo(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "chartable": "bool",
-        "ordered_meta_attributes": "list[GsaQuerySlimNamedEntity]",
+        "ordered_meta_attributes": "list[GsaQuerySlimTypedAttribute]",
     }
 
     attribute_map: dict[str, str] = {
@@ -71,7 +71,7 @@ class GsaQueryAttributeInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "orderedMetaAttributes": "GsaQuerySlimNamedEntity",
+        "orderedMetaAttributes": "GsaQuerySlimTypedAttribute",
     }
 
     discriminator: Optional[str] = None
@@ -80,17 +80,17 @@ class GsaQueryAttributeInfo(ModelBase):
         self,
         *,
         chartable: "Union[bool, None, Unset_Type]" = Unset,
-        ordered_meta_attributes: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
+        ordered_meta_attributes: "Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryAttributeInfo - a model defined in Swagger
 
         Parameters
         ----------
         chartable: bool, optional
-        ordered_meta_attributes: list[GsaQuerySlimNamedEntity], optional
+        ordered_meta_attributes: list[GsaQuerySlimTypedAttribute], optional
         """
         self._chartable: Union[bool, None, Unset_Type] = Unset
-        self._ordered_meta_attributes: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = (
+        self._ordered_meta_attributes: Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type] = (
             Unset
         )
 
@@ -122,25 +122,27 @@ class GsaQueryAttributeInfo(ModelBase):
         self._chartable = chartable
 
     @property
-    def ordered_meta_attributes(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
+    def ordered_meta_attributes(
+        self,
+    ) -> "Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type]":
         """Gets the ordered_meta_attributes of this GsaQueryAttributeInfo.
 
         Returns
         -------
-        Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
+        Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaQueryAttributeInfo.
         """
         return self._ordered_meta_attributes
 
     @ordered_meta_attributes.setter
     def ordered_meta_attributes(
-        self, ordered_meta_attributes: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]"
+        self, ordered_meta_attributes: "Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type]"
     ) -> None:
         """Sets the ordered_meta_attributes of this GsaQueryAttributeInfo.
 
         Parameters
         ----------
-        ordered_meta_attributes: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]
+        ordered_meta_attributes: Union[list[GsaQuerySlimTypedAttribute], None, Unset_Type]
             The ordered_meta_attributes of this GsaQueryAttributeInfo.
         """
         self._ordered_meta_attributes = ordered_meta_attributes
