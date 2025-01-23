@@ -26,7 +26,6 @@
 from ansys.openapi.common import ApiBase
 
 # import apis into api package
-from .access_control_api import AccessControlApi
 from .aggregation_api import AggregationApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
@@ -40,6 +39,7 @@ from .list_item_api import ListItemApi
 from .list_management_api import ListManagementApi
 from .list_permissions_api import ListPermissionsApi
 from .metrics_api import MetricsApi
+from .permission_based_access_control_api import PermissionBasedAccessControlApi
 from .records___record_histories_api import RecordsRecordHistoriesApi
 from .records___record_versions_api import RecordsRecordVersionsApi
 from .schema___attributes_api import SchemaAttributesApi
@@ -72,7 +72,6 @@ from .status_api import StatusApi
 
 __all__ = [
     "ApiBase",
-    "AccessControlApi",
     "AggregationApi",
     "DataApi",
     "DataExportApi",
@@ -86,6 +85,7 @@ __all__ = [
     "ListManagementApi",
     "ListPermissionsApi",
     "MetricsApi",
+    "PermissionBasedAccessControlApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
     "SchemaApi",
