@@ -33,7 +33,6 @@
 """
 
 # import apis into sdk package
-from .api.access_control_api import AccessControlApi
 from .api.aggregation_api import AggregationApi
 from .api.data_api import DataApi
 from .api.data_export_api import DataExportApi
@@ -47,6 +46,7 @@ from .api.list_item_api import ListItemApi
 from .api.list_management_api import ListManagementApi
 from .api.list_permissions_api import ListPermissionsApi
 from .api.metrics_api import MetricsApi
+from .api.permission_based_access_control_api import PermissionBasedAccessControlApi
 from .api.records___record_histories_api import RecordsRecordHistoriesApi
 from .api.records___record_versions_api import RecordsRecordVersionsApi
 from .api.schema___attributes_api import SchemaAttributesApi
@@ -96,8 +96,6 @@ from .models.folderguid_files_body import FolderguidFilesBody
 from .models.granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
-from .models.gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
-from .models.gsa_access_control_category import GsaAccessControlCategory
 from .models.gsa_add_database import GsaAddDatabase
 from .models.gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .models.gsa_aggregation import GsaAggregation
@@ -679,6 +677,8 @@ from .models.gsa_parameter_value_deletion_exception import GsaParameterValueDele
 from .models.gsa_parameter_value_type import GsaParameterValueType
 from .models.gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .models.gsa_parameters_info import GsaParametersInfo
+from .models.gsa_permission_categories_info import GsaPermissionCategoriesInfo
+from .models.gsa_permission_category import GsaPermissionCategory
 from .models.gsa_picture_attribute import GsaPictureAttribute
 from .models.gsa_picture_datum import GsaPictureDatum
 from .models.gsa_picture_datum_criterion import GsaPictureDatumCriterion
@@ -852,7 +852,6 @@ from .models.gsa_short_text_datum_exists_criterion import GsaShortTextDatumExist
 from .models.gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriterion
 from .models.gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .models.gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
-from .models.gsa_slim_access_control_category import GsaSlimAccessControlCategory
 from .models.gsa_slim_attribute import GsaSlimAttribute
 from .models.gsa_slim_configuration import GsaSlimConfiguration
 from .models.gsa_slim_constant import GsaSlimConstant
@@ -867,6 +866,7 @@ from .models.gsa_slim_named_entity import GsaSlimNamedEntity
 from .models.gsa_slim_named_unit import GsaSlimNamedUnit
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
+from .models.gsa_slim_permission_category import GsaSlimPermissionCategory
 from .models.gsa_slim_profile import GsaSlimProfile
 from .models.gsa_slim_profile_table import GsaSlimProfileTable
 from .models.gsa_slim_record_history import GsaSlimRecordHistory
@@ -1052,7 +1052,6 @@ from .models.microsoft_asp_net_core_mvc_object_result import MicrosoftAspNetCore
 from .models.system_net_http_status_code import SystemNetHttpStatusCode
 
 __all__ = [
-    "AccessControlApi",
     "AggregationApi",
     "DataApi",
     "DataExportApi",
@@ -1066,6 +1065,7 @@ __all__ = [
     "ListManagementApi",
     "ListPermissionsApi",
     "MetricsApi",
+    "PermissionBasedAccessControlApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
     "SchemaApi",
@@ -1107,8 +1107,6 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
-    "GsaAccessControlCategoriesInfo",
-    "GsaAccessControlCategory",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
@@ -1604,6 +1602,8 @@ __all__ = [
     "GsaParameterValueType",
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
+    "GsaPermissionCategoriesInfo",
+    "GsaPermissionCategory",
     "GsaPictureAttribute",
     "GsaPictureDatum",
     "GsaPictureDatumCriterion",
@@ -1759,7 +1759,6 @@ __all__ = [
     "GsaShortTextPrefixDatumCriterion",
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
-    "GsaSlimAccessControlCategory",
     "GsaSlimAttribute",
     "GsaSlimConfiguration",
     "GsaSlimConstant",
@@ -1774,6 +1773,7 @@ __all__ = [
     "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
+    "GsaSlimPermissionCategory",
     "GsaSlimProfile",
     "GsaSlimProfileTable",
     "GsaSlimRecordHistory",

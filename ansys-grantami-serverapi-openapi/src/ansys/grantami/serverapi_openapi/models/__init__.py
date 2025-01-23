@@ -51,8 +51,6 @@ from .folderguid_files_body import FolderguidFilesBody
 from .granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
-from .gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
-from .gsa_access_control_category import GsaAccessControlCategory
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .gsa_aggregation import GsaAggregation
@@ -604,6 +602,8 @@ from .gsa_parameter_value_deletion_exception import GsaParameterValueDeletionExc
 from .gsa_parameter_value_type import GsaParameterValueType
 from .gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .gsa_parameters_info import GsaParametersInfo
+from .gsa_permission_categories_info import GsaPermissionCategoriesInfo
+from .gsa_permission_category import GsaPermissionCategory
 from .gsa_picture_attribute import GsaPictureAttribute
 from .gsa_picture_datum import GsaPictureDatum
 from .gsa_picture_datum_criterion import GsaPictureDatumCriterion
@@ -771,7 +771,6 @@ from .gsa_short_text_datum_exists_criterion import GsaShortTextDatumExistsCriter
 from .gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriterion
 from .gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
-from .gsa_slim_access_control_category import GsaSlimAccessControlCategory
 from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_configuration import GsaSlimConfiguration
 from .gsa_slim_constant import GsaSlimConstant
@@ -786,6 +785,7 @@ from .gsa_slim_named_entity import GsaSlimNamedEntity
 from .gsa_slim_named_unit import GsaSlimNamedUnit
 from .gsa_slim_objects import GsaSlimObjects
 from .gsa_slim_parameter import GsaSlimParameter
+from .gsa_slim_permission_category import GsaSlimPermissionCategory
 from .gsa_slim_profile import GsaSlimProfile
 from .gsa_slim_profile_table import GsaSlimProfileTable
 from .gsa_slim_record_history import GsaSlimRecordHistory
@@ -982,8 +982,6 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
-    "GsaAccessControlCategoriesInfo",
-    "GsaAccessControlCategory",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
@@ -1479,6 +1477,8 @@ __all__ = [
     "GsaParameterValueType",
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
+    "GsaPermissionCategoriesInfo",
+    "GsaPermissionCategory",
     "GsaPictureAttribute",
     "GsaPictureDatum",
     "GsaPictureDatumCriterion",
@@ -1634,7 +1634,6 @@ __all__ = [
     "GsaShortTextPrefixDatumCriterion",
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
-    "GsaSlimAccessControlCategory",
     "GsaSlimAttribute",
     "GsaSlimConfiguration",
     "GsaSlimConstant",
@@ -1649,6 +1648,7 @@ __all__ = [
     "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
+    "GsaSlimPermissionCategory",
     "GsaSlimProfile",
     "GsaSlimProfileTable",
     "GsaSlimRecordHistory",
