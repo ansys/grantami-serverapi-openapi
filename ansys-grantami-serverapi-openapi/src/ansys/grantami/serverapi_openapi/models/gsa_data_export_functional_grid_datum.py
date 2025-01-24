@@ -71,6 +71,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "datum_type": "GsaAttributeType",
         "graph_type": "str",
         "not_applicable": "str",
+        "graph_decoration": "GsaDataExportGraphDecoration",
         "is_estimated": "bool",
         "is_logarithmic": "bool",
         "is_range": "bool",
@@ -87,6 +88,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         "datum_type": "datumType",
         "graph_type": "graphType",
         "not_applicable": "notApplicable",
+        "graph_decoration": "graphDecoration",
         "is_estimated": "isEstimated",
         "is_logarithmic": "isLogarithmic",
         "is_range": "isRange",
@@ -99,6 +101,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
 
     subtype_mapping: dict[str, str] = {
         "points": "GsaDataExportGridPoint",
+        "graphDecoration": "GsaDataExportGraphDecoration",
     }
 
     discriminator: Optional[str] = None
@@ -111,6 +114,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         datum_type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         graph_type: "str" = "grid",
         not_applicable: "str" = "applicable",
+        graph_decoration: "Union[GsaDataExportGraphDecoration, Unset_Type]" = Unset,
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_logarithmic: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
@@ -129,6 +133,7 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
         datum_type: GsaAttributeType
         graph_type: str
         not_applicable: str
+        graph_decoration: GsaDataExportGraphDecoration, optional
         is_estimated: bool, optional
         is_logarithmic: bool, optional
         is_range: bool, optional
@@ -153,9 +158,12 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
             x_axis_parameter=x_axis_parameter,
         )
         self._points: Union[list[GsaDataExportGridPoint], None, Unset_Type] = Unset
+        self._graph_decoration: Union[GsaDataExportGraphDecoration, Unset_Type] = Unset
 
         if points is not Unset:
             self.points = points
+        if graph_decoration is not Unset:
+            self.graph_decoration = graph_decoration
 
     @property
     def points(self) -> "Union[list[GsaDataExportGridPoint], None, Unset_Type]":
@@ -178,6 +186,33 @@ class GsaDataExportFunctionalGridDatum(GsaDataExportFloatFunctionalDatum):
             The points of this GsaDataExportFunctionalGridDatum.
         """
         self._points = points
+
+    @property
+    def graph_decoration(self) -> "Union[GsaDataExportGraphDecoration, Unset_Type]":
+        """Gets the graph_decoration of this GsaDataExportFunctionalGridDatum.
+
+        Returns
+        -------
+        Union[GsaDataExportGraphDecoration, Unset_Type]
+            The graph_decoration of this GsaDataExportFunctionalGridDatum.
+        """
+        return self._graph_decoration
+
+    @graph_decoration.setter
+    def graph_decoration(
+        self, graph_decoration: "Union[GsaDataExportGraphDecoration, Unset_Type]"
+    ) -> None:
+        """Sets the graph_decoration of this GsaDataExportFunctionalGridDatum.
+
+        Parameters
+        ----------
+        graph_decoration: Union[GsaDataExportGraphDecoration, Unset_Type]
+            The graph_decoration of this GsaDataExportFunctionalGridDatum.
+        """
+        # Field is not nullable
+        if graph_decoration is None:
+            raise ValueError("Invalid value for 'graph_decoration', must not be 'None'")
+        self._graph_decoration = graph_decoration
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
