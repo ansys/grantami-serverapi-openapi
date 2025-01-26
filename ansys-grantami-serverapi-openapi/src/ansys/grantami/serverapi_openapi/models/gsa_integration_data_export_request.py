@@ -62,19 +62,16 @@ class GsaIntegrationDataExportRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "attribute_identities": "list[int]",
-        "record_history_references": "list[GsaRecordHistoryReference]",
-        "record_version_references": "list[GsaRecordVersionReference]",
+        "record_references": "list[GsaRecordReference]",
     }
 
     attribute_map: dict[str, str] = {
         "attribute_identities": "attributeIdentities",
-        "record_history_references": "recordHistoryReferences",
-        "record_version_references": "recordVersionReferences",
+        "record_references": "recordReferences",
     }
 
     subtype_mapping: dict[str, str] = {
-        "recordHistoryReferences": "GsaRecordHistoryReference",
-        "recordVersionReferences": "GsaRecordVersionReference",
+        "recordReferences": "GsaRecordReference",
     }
 
     discriminator: Optional[str] = None
@@ -83,86 +80,47 @@ class GsaIntegrationDataExportRequest(ModelBase):
         self,
         *,
         attribute_identities: "list[int]",
-        record_history_references: "Union[list[GsaRecordHistoryReference], None, Unset_Type]" = Unset,
-        record_version_references: "Union[list[GsaRecordVersionReference], None, Unset_Type]" = Unset,
+        record_references: "Union[list[GsaRecordReference], None, Unset_Type]" = Unset,
     ) -> None:
         """GsaIntegrationDataExportRequest - a model defined in Swagger
 
         Parameters
         ----------
         attribute_identities: list[int]
-        record_history_references: list[GsaRecordHistoryReference], optional
-        record_version_references: list[GsaRecordVersionReference], optional
+        record_references: list[GsaRecordReference], optional
         """
-        self._record_history_references: Union[
-            list[GsaRecordHistoryReference], None, Unset_Type
-        ] = Unset
-        self._record_version_references: Union[
-            list[GsaRecordVersionReference], None, Unset_Type
-        ] = Unset
+        self._record_references: Union[list[GsaRecordReference], None, Unset_Type] = Unset
         self._attribute_identities: list[int]
 
-        if record_history_references is not Unset:
-            self.record_history_references = record_history_references
-        if record_version_references is not Unset:
-            self.record_version_references = record_version_references
+        if record_references is not Unset:
+            self.record_references = record_references
         self.attribute_identities = attribute_identities
 
     @property
-    def record_history_references(
-        self,
-    ) -> "Union[list[GsaRecordHistoryReference], None, Unset_Type]":
-        """Gets the record_history_references of this GsaIntegrationDataExportRequest.
-        A list of record histories to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
+    def record_references(self) -> "Union[list[GsaRecordReference], None, Unset_Type]":
+        """Gets the record_references of this GsaIntegrationDataExportRequest.
+        A list of record references to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
 
         Returns
         -------
-        Union[list[GsaRecordHistoryReference], None, Unset_Type]
-            The record_history_references of this GsaIntegrationDataExportRequest.
+        Union[list[GsaRecordReference], None, Unset_Type]
+            The record_references of this GsaIntegrationDataExportRequest.
         """
-        return self._record_history_references
+        return self._record_references
 
-    @record_history_references.setter
-    def record_history_references(
-        self, record_history_references: "Union[list[GsaRecordHistoryReference], None, Unset_Type]"
+    @record_references.setter
+    def record_references(
+        self, record_references: "Union[list[GsaRecordReference], None, Unset_Type]"
     ) -> None:
-        """Sets the record_history_references of this GsaIntegrationDataExportRequest.
-        A list of record histories to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
+        """Sets the record_references of this GsaIntegrationDataExportRequest.
+        A list of record references to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
 
         Parameters
         ----------
-        record_history_references: Union[list[GsaRecordHistoryReference], None, Unset_Type]
-            The record_history_references of this GsaIntegrationDataExportRequest.
+        record_references: Union[list[GsaRecordReference], None, Unset_Type]
+            The record_references of this GsaIntegrationDataExportRequest.
         """
-        self._record_history_references = record_history_references
-
-    @property
-    def record_version_references(
-        self,
-    ) -> "Union[list[GsaRecordVersionReference], None, Unset_Type]":
-        """Gets the record_version_references of this GsaIntegrationDataExportRequest.
-        A list of record versions to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
-
-        Returns
-        -------
-        Union[list[GsaRecordVersionReference], None, Unset_Type]
-            The record_version_references of this GsaIntegrationDataExportRequest.
-        """
-        return self._record_version_references
-
-    @record_version_references.setter
-    def record_version_references(
-        self, record_version_references: "Union[list[GsaRecordVersionReference], None, Unset_Type]"
-    ) -> None:
-        """Sets the record_version_references of this GsaIntegrationDataExportRequest.
-        A list of record versions to export. These are references to the underlying records in the source database.  Data can be exported for either record histories or record versions in each request, not both.
-
-        Parameters
-        ----------
-        record_version_references: Union[list[GsaRecordVersionReference], None, Unset_Type]
-            The record_version_references of this GsaIntegrationDataExportRequest.
-        """
-        self._record_version_references = record_version_references
+        self._record_references = record_references
 
     @property
     def attribute_identities(self) -> "list[int]":
