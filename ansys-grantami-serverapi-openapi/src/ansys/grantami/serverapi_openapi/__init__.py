@@ -677,8 +677,10 @@ from .models.gsa_parameter_value_deletion_exception import GsaParameterValueDele
 from .models.gsa_parameter_value_type import GsaParameterValueType
 from .models.gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .models.gsa_parameters_info import GsaParametersInfo
+from .models.gsa_permission import GsaPermission
 from .models.gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .models.gsa_permission_category import GsaPermissionCategory
+from .models.gsa_permissions_info import GsaPermissionsInfo
 from .models.gsa_picture_attribute import GsaPictureAttribute
 from .models.gsa_picture_datum import GsaPictureDatum
 from .models.gsa_picture_datum_criterion import GsaPictureDatumCriterion
@@ -866,6 +868,7 @@ from .models.gsa_slim_named_entity import GsaSlimNamedEntity
 from .models.gsa_slim_named_unit import GsaSlimNamedUnit
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
+from .models.gsa_slim_permission import GsaSlimPermission
 from .models.gsa_slim_permission_category import GsaSlimPermissionCategory
 from .models.gsa_slim_profile import GsaSlimProfile
 from .models.gsa_slim_profile_table import GsaSlimProfileTable
@@ -1602,8 +1605,10 @@ __all__ = [
     "GsaParameterValueType",
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
+    "GsaPermission",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
+    "GsaPermissionsInfo",
     "GsaPictureAttribute",
     "GsaPictureDatum",
     "GsaPictureDatumCriterion",
@@ -1773,6 +1778,7 @@ __all__ = [
     "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
+    "GsaSlimPermission",
     "GsaSlimPermissionCategory",
     "GsaSlimProfile",
     "GsaSlimProfileTable",
