@@ -111,6 +111,7 @@ class PermissionBasedAccessControlApi(ApiBase):
             200: "GsaPermissionCategoriesInfo",
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -203,6 +204,7 @@ class PermissionBasedAccessControlApi(ApiBase):
             200: "GsaPermissionCategory",
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -304,6 +306,7 @@ class PermissionBasedAccessControlApi(ApiBase):
             200: "GsaPermission",
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -396,6 +399,7 @@ class PermissionBasedAccessControlApi(ApiBase):
             200: "GsaPermissionsInfo",
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(

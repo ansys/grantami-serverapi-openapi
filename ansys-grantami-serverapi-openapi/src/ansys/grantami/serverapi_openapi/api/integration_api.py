@@ -106,6 +106,7 @@ class IntegrationApi(ApiBase):
             201: "GsaIntegrationSchemaOfObjectIdentifier",
             400: None,
             403: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -340,6 +341,7 @@ class IntegrationApi(ApiBase):
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaIntegrationSchemaOfObjectIdentifier",
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -531,6 +533,7 @@ class IntegrationApi(ApiBase):
         response_type_map: dict[int, Optional[str]] = {
             200: "list[GsaSourceOfObjectIdentifier]",
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -623,6 +626,7 @@ class IntegrationApi(ApiBase):
         response_type_map: dict[int, Optional[str]] = {
             200: "list[GsaIntegrationAttribute]",
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
@@ -779,6 +783,7 @@ class IntegrationApi(ApiBase):
             400: None,
             403: None,
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
