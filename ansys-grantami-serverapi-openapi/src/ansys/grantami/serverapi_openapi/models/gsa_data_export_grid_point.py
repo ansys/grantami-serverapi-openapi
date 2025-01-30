@@ -61,12 +61,14 @@ class GsaDataExportGridPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "is_estimated": "bool",
         "high_value": "float",
         "low_value": "float",
         "parameter_values": "list[GsaDataExportParameterValue]",
     }
 
     attribute_map: dict[str, str] = {
+        "is_estimated": "isEstimated",
         "high_value": "highValue",
         "low_value": "lowValue",
         "parameter_values": "parameterValues",
@@ -81,6 +83,7 @@ class GsaDataExportGridPoint(ModelBase):
     def __init__(
         self,
         *,
+        is_estimated: "bool",
         high_value: "Union[float, Unset_Type]" = Unset,
         low_value: "Union[float, Unset_Type]" = Unset,
         parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
@@ -89,6 +92,7 @@ class GsaDataExportGridPoint(ModelBase):
 
         Parameters
         ----------
+        is_estimated: bool
         high_value: float, optional
         low_value: float, optional
         parameter_values: list[GsaDataExportParameterValue], optional
@@ -96,6 +100,7 @@ class GsaDataExportGridPoint(ModelBase):
         self._parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type] = Unset
         self._low_value: Union[float, Unset_Type] = Unset
         self._high_value: Union[float, Unset_Type] = Unset
+        self._is_estimated: bool
 
         if parameter_values is not Unset:
             self.parameter_values = parameter_values
@@ -103,6 +108,7 @@ class GsaDataExportGridPoint(ModelBase):
             self.low_value = low_value
         if high_value is not Unset:
             self.high_value = high_value
+        self.is_estimated = is_estimated
 
     @property
     def parameter_values(self) -> "Union[list[GsaDataExportParameterValue], None, Unset_Type]":
@@ -177,6 +183,34 @@ class GsaDataExportGridPoint(ModelBase):
         if high_value is None:
             raise ValueError("Invalid value for 'high_value', must not be 'None'")
         self._high_value = high_value
+
+    @property
+    def is_estimated(self) -> "bool":
+        """Gets the is_estimated of this GsaDataExportGridPoint.
+
+        Returns
+        -------
+        bool
+            The is_estimated of this GsaDataExportGridPoint.
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated: "bool") -> None:
+        """Sets the is_estimated of this GsaDataExportGridPoint.
+
+        Parameters
+        ----------
+        is_estimated: bool
+            The is_estimated of this GsaDataExportGridPoint.
+        """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
+        # Field is required
+        if is_estimated is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_estimated', must not be 'Unset'")
+        self._is_estimated = is_estimated
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

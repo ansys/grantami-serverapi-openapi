@@ -61,11 +61,13 @@ class GsaDataExportDiscreteGridPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "is_estimated": "bool",
         "parameter_values": "list[GsaDataExportParameterValue]",
         "value": "GsaDiscreteValue",
     }
 
     attribute_map: dict[str, str] = {
+        "is_estimated": "isEstimated",
         "parameter_values": "parameterValues",
         "value": "value",
     }
@@ -80,6 +82,7 @@ class GsaDataExportDiscreteGridPoint(ModelBase):
     def __init__(
         self,
         *,
+        is_estimated: "Union[bool, Unset_Type]" = Unset,
         parameter_values: "Union[list[GsaDataExportParameterValue], None, Unset_Type]" = Unset,
         value: "Union[GsaDiscreteValue, Unset_Type]" = Unset,
     ) -> None:
@@ -87,16 +90,20 @@ class GsaDataExportDiscreteGridPoint(ModelBase):
 
         Parameters
         ----------
+        is_estimated: bool, optional
         parameter_values: list[GsaDataExportParameterValue], optional
         value: GsaDiscreteValue, optional
         """
         self._parameter_values: Union[list[GsaDataExportParameterValue], None, Unset_Type] = Unset
         self._value: Union[GsaDiscreteValue, Unset_Type] = Unset
+        self._is_estimated: Union[bool, Unset_Type] = Unset
 
         if parameter_values is not Unset:
             self.parameter_values = parameter_values
         if value is not Unset:
             self.value = value
+        if is_estimated is not Unset:
+            self.is_estimated = is_estimated
 
     @property
     def parameter_values(self) -> "Union[list[GsaDataExportParameterValue], None, Unset_Type]":
@@ -146,6 +153,31 @@ class GsaDataExportDiscreteGridPoint(ModelBase):
         if value is None:
             raise ValueError("Invalid value for 'value', must not be 'None'")
         self._value = value
+
+    @property
+    def is_estimated(self) -> "Union[bool, Unset_Type]":
+        """Gets the is_estimated of this GsaDataExportDiscreteGridPoint.
+
+        Returns
+        -------
+        Union[bool, Unset_Type]
+            The is_estimated of this GsaDataExportDiscreteGridPoint.
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated: "Union[bool, Unset_Type]") -> None:
+        """Sets the is_estimated of this GsaDataExportDiscreteGridPoint.
+
+        Parameters
+        ----------
+        is_estimated: Union[bool, Unset_Type]
+            The is_estimated of this GsaDataExportDiscreteGridPoint.
+        """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
+        self._is_estimated = is_estimated
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

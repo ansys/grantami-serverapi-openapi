@@ -484,6 +484,7 @@ class AggregationApi(ApiBase):
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaAggregationsResponse",
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(

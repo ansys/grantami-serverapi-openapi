@@ -235,6 +235,7 @@ class DataExportApi(ApiBase):
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaDataExportResponse",
             404: None,
+            422: None,
         }
 
         return self.api_client.call_api(
