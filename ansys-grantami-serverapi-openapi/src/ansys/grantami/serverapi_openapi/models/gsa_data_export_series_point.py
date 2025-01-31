@@ -61,6 +61,7 @@ class GsaDataExportSeriesPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "is_estimated": "bool",
         "x_name": "str",
         "x_value": "float",
         "y_high_value": "float",
@@ -68,6 +69,7 @@ class GsaDataExportSeriesPoint(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "is_estimated": "isEstimated",
         "x_name": "xName",
         "x_value": "xValue",
         "y_high_value": "yHighValue",
@@ -81,6 +83,7 @@ class GsaDataExportSeriesPoint(ModelBase):
     def __init__(
         self,
         *,
+        is_estimated: "bool",
         x_name: "Union[str, None, Unset_Type]" = Unset,
         x_value: "Union[float, Unset_Type]" = Unset,
         y_high_value: "Union[float, Unset_Type]" = Unset,
@@ -90,6 +93,7 @@ class GsaDataExportSeriesPoint(ModelBase):
 
         Parameters
         ----------
+        is_estimated: bool
         x_name: str, optional
         x_value: float, optional
         y_high_value: float, optional
@@ -99,6 +103,7 @@ class GsaDataExportSeriesPoint(ModelBase):
         self._x_name: Union[str, None, Unset_Type] = Unset
         self._y_low_value: Union[float, Unset_Type] = Unset
         self._y_high_value: Union[float, Unset_Type] = Unset
+        self._is_estimated: bool
 
         if x_value is not Unset:
             self.x_value = x_value
@@ -108,6 +113,7 @@ class GsaDataExportSeriesPoint(ModelBase):
             self.y_low_value = y_low_value
         if y_high_value is not Unset:
             self.y_high_value = y_high_value
+        self.is_estimated = is_estimated
 
     @property
     def x_value(self) -> "Union[float, Unset_Type]":
@@ -205,6 +211,34 @@ class GsaDataExportSeriesPoint(ModelBase):
         if y_high_value is None:
             raise ValueError("Invalid value for 'y_high_value', must not be 'None'")
         self._y_high_value = y_high_value
+
+    @property
+    def is_estimated(self) -> "bool":
+        """Gets the is_estimated of this GsaDataExportSeriesPoint.
+
+        Returns
+        -------
+        bool
+            The is_estimated of this GsaDataExportSeriesPoint.
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated: "bool") -> None:
+        """Sets the is_estimated of this GsaDataExportSeriesPoint.
+
+        Parameters
+        ----------
+        is_estimated: bool
+            The is_estimated of this GsaDataExportSeriesPoint.
+        """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
+        # Field is required
+        if is_estimated is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_estimated', must not be 'Unset'")
+        self._is_estimated = is_estimated
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
