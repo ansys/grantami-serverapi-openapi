@@ -935,6 +935,7 @@ from .gsa_update_table import GsaUpdateTable
 from .gsa_update_tabular_attribute import GsaUpdateTabularAttribute
 from .gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
 from .gsa_update_tabular_column import GsaUpdateTabularColumn
+from .gsa_update_unavailable_tabular_column import GsaUpdateUnavailableTabularColumn
 from .gsa_update_unit import GsaUpdateUnit
 from .gsa_update_unit_system import GsaUpdateUnitSystem
 from .gsa_update_user_permission import GsaUpdateUserPermission
@@ -1787,6 +1788,7 @@ __all__ = [
     "GsaUpdateTabularAttribute",
     "GsaUpdateTabularAttributeTarget",
     "GsaUpdateTabularColumn",
+    "GsaUpdateUnavailableTabularColumn",
     "GsaUpdateUnit",
     "GsaUpdateUnitSystem",
     "GsaUpdateUserPermission",
