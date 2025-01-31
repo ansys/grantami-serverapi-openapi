@@ -105,6 +105,7 @@ class GsaUpdateTabularColumn(ModelBase):
         "localHyperlink".lower(): "#/components/schemas/GsaUpdateLocalHyperlinkTabularColumn",
         "localFile".lower(): "#/components/schemas/GsaUpdateLocalFileTabularColumn",
         "localPicture".lower(): "#/components/schemas/GsaUpdateLocalPictureTabularColumn",
+        "unavailable".lower(): "#/components/schemas/GsaUpdateUnavailableTabularColumn",
     }
 
     discriminator: Optional[str] = "columnType"

@@ -62,11 +62,13 @@ class GsaDiscreteGridPoint(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "constraints": "list[GsaParameterWithDataValue]",
+        "estimated": "bool",
         "value": "GsaDiscreteValuesDiscreteValue",
     }
 
     attribute_map: dict[str, str] = {
         "constraints": "constraints",
+        "estimated": "estimated",
         "value": "value",
     }
 
@@ -81,6 +83,7 @@ class GsaDiscreteGridPoint(ModelBase):
         self,
         *,
         constraints: "list[GsaParameterWithDataValue]",
+        estimated: "bool",
         value: "GsaDiscreteValuesDiscreteValue",
     ) -> None:
         """GsaDiscreteGridPoint - a model defined in Swagger
@@ -88,13 +91,16 @@ class GsaDiscreteGridPoint(ModelBase):
         Parameters
         ----------
         constraints: list[GsaParameterWithDataValue]
+        estimated: bool
         value: GsaDiscreteValuesDiscreteValue
         """
         self._constraints: list[GsaParameterWithDataValue]
         self._value: GsaDiscreteValuesDiscreteValue
+        self._estimated: bool
 
         self.constraints = constraints
         self.value = value
+        self.estimated = estimated
 
     @property
     def constraints(self) -> "list[GsaParameterWithDataValue]":
@@ -151,6 +157,34 @@ class GsaDiscreteGridPoint(ModelBase):
         if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'value', must not be 'Unset'")
         self._value = value
+
+    @property
+    def estimated(self) -> "bool":
+        """Gets the estimated of this GsaDiscreteGridPoint.
+
+        Returns
+        -------
+        bool
+            The estimated of this GsaDiscreteGridPoint.
+        """
+        return self._estimated
+
+    @estimated.setter
+    def estimated(self, estimated: "bool") -> None:
+        """Sets the estimated of this GsaDiscreteGridPoint.
+
+        Parameters
+        ----------
+        estimated: bool
+            The estimated of this GsaDiscreteGridPoint.
+        """
+        # Field is not nullable
+        if estimated is None:
+            raise ValueError("Invalid value for 'estimated', must not be 'None'")
+        # Field is required
+        if estimated is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'estimated', must not be 'Unset'")
+        self._estimated = estimated
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
