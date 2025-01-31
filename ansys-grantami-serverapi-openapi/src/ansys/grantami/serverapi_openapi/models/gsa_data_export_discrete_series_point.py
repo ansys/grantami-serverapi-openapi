@@ -61,12 +61,14 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "is_estimated": "bool",
         "x": "float",
         "x_name": "str",
         "y": "GsaDiscreteValue",
     }
 
     attribute_map: dict[str, str] = {
+        "is_estimated": "isEstimated",
         "x": "x",
         "x_name": "xName",
         "y": "y",
@@ -81,6 +83,7 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
     def __init__(
         self,
         *,
+        is_estimated: "Union[bool, Unset_Type]" = Unset,
         x: "Union[float, Unset_Type]" = Unset,
         x_name: "Union[str, None, Unset_Type]" = Unset,
         y: "Union[GsaDiscreteValue, Unset_Type]" = Unset,
@@ -89,6 +92,7 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
 
         Parameters
         ----------
+        is_estimated: bool, optional
         x: float, optional
         x_name: str, optional
         y: GsaDiscreteValue, optional
@@ -96,6 +100,7 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
         self._x: Union[float, Unset_Type] = Unset
         self._x_name: Union[str, None, Unset_Type] = Unset
         self._y: Union[GsaDiscreteValue, Unset_Type] = Unset
+        self._is_estimated: Union[bool, Unset_Type] = Unset
 
         if x is not Unset:
             self.x = x
@@ -103,6 +108,8 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
             self.x_name = x_name
         if y is not Unset:
             self.y = y
+        if is_estimated is not Unset:
+            self.is_estimated = is_estimated
 
     @property
     def x(self) -> "Union[float, Unset_Type]":
@@ -175,6 +182,31 @@ class GsaDataExportDiscreteSeriesPoint(ModelBase):
         if y is None:
             raise ValueError("Invalid value for 'y', must not be 'None'")
         self._y = y
+
+    @property
+    def is_estimated(self) -> "Union[bool, Unset_Type]":
+        """Gets the is_estimated of this GsaDataExportDiscreteSeriesPoint.
+
+        Returns
+        -------
+        Union[bool, Unset_Type]
+            The is_estimated of this GsaDataExportDiscreteSeriesPoint.
+        """
+        return self._is_estimated
+
+    @is_estimated.setter
+    def is_estimated(self, is_estimated: "Union[bool, Unset_Type]") -> None:
+        """Sets the is_estimated of this GsaDataExportDiscreteSeriesPoint.
+
+        Parameters
+        ----------
+        is_estimated: Union[bool, Unset_Type]
+            The is_estimated of this GsaDataExportDiscreteSeriesPoint.
+        """
+        # Field is not nullable
+        if is_estimated is None:
+            raise ValueError("Invalid value for 'is_estimated', must not be 'None'")
+        self._is_estimated = is_estimated
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
