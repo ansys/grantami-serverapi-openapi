@@ -105,6 +105,11 @@ from .gsa_axis_name import GsaAxisName
 from .gsa_boolean_criterion import GsaBooleanCriterion
 from .gsa_boost_by_guid import GsaBoostByGuid
 from .gsa_boost_by_identity import GsaBoostByIdentity
+from .gsa_bulk_info import GsaBulkInfo
+from .gsa_bulk_request import GsaBulkRequest
+from .gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
+from .gsa_bulk_request_item import GsaBulkRequestItem
+from .gsa_bulk_response_item import GsaBulkResponseItem
 from .gsa_calendar_interval import GsaCalendarInterval
 from .gsa_configuration import GsaConfiguration
 from .gsa_configurations_info import GsaConfigurationsInfo
@@ -1038,6 +1043,11 @@ __all__ = [
     "GsaBooleanCriterion",
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
+    "GsaBulkInfo",
+    "GsaBulkRequest",
+    "GsaBulkRequestHttpMethod",
+    "GsaBulkRequestItem",
+    "GsaBulkResponseItem",
     "GsaCalendarInterval",
     "GsaConfiguration",
     "GsaConfigurationsInfo",
