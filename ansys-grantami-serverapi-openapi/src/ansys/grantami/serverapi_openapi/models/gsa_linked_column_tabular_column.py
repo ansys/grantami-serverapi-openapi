@@ -72,13 +72,14 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         "display_names": "dict(str, str)",
         "guid": "str",
         "linked_attribute": "GsaSlimAttribute",
-        "linked_column": "GsaSlimNamedEntity",
+        "linked_column": "GsaTabularColumn",
         "name": "str",
         "roll_up_type": "GsaTabularColumnRollUpType",
         "show_as_link": "bool",
         "summary_row_enabled": "bool",
         "summary_row_roll_up_type": "GsaTabularColumnRollUpType",
         "summary_row_text": "str",
+        "linked_target": "GsaTabularAttributeTarget",
     }
 
     attribute_map: dict[str, str] = {
@@ -93,11 +94,13 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         "summary_row_enabled": "summaryRowEnabled",
         "summary_row_roll_up_type": "summaryRowRollUpType",
         "summary_row_text": "summaryRowText",
+        "linked_target": "linkedTarget",
     }
 
     subtype_mapping: dict[str, str] = {
         "linkedAttribute": "GsaSlimAttribute",
-        "linkedColumn": "GsaSlimNamedEntity",
+        "linkedColumn": "GsaTabularColumn",
+        "linkedTarget": "GsaTabularAttributeTarget",
     }
 
     discriminator: Optional[str] = None
@@ -109,13 +112,14 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         display_names: "dict[str, str]",
         guid: "str",
         linked_attribute: "GsaSlimAttribute",
-        linked_column: "GsaSlimNamedEntity",
+        linked_column: "GsaTabularColumn",
         name: "str",
         roll_up_type: "GsaTabularColumnRollUpType",
         show_as_link: "bool",
         summary_row_enabled: "bool",
         summary_row_roll_up_type: "GsaTabularColumnRollUpType",
         summary_row_text: "str",
+        linked_target: "Union[GsaTabularAttributeTarget, Unset_Type]" = Unset,
     ) -> None:
         """GsaLinkedColumnTabularColumn - a model defined in Swagger
 
@@ -125,13 +129,14 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         display_names: dict[str, str]
         guid: str
         linked_attribute: GsaSlimAttribute
-        linked_column: GsaSlimNamedEntity
+        linked_column: GsaTabularColumn
         name: str
         roll_up_type: GsaTabularColumnRollUpType
         show_as_link: bool
         summary_row_enabled: bool
         summary_row_roll_up_type: GsaTabularColumnRollUpType
         summary_row_text: str
+        linked_target: GsaTabularAttributeTarget, optional
         """
         super().__init__(
             column_type=column_type,
@@ -145,10 +150,13 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
             summary_row_text=summary_row_text,
         )
         self._linked_attribute: GsaSlimAttribute
-        self._linked_column: GsaSlimNamedEntity
+        self._linked_column: GsaTabularColumn
+        self._linked_target: Union[GsaTabularAttributeTarget, Unset_Type] = Unset
 
         self.linked_attribute = linked_attribute
         self.linked_column = linked_column
+        if linked_target is not Unset:
+            self.linked_target = linked_target
 
     @property
     def linked_attribute(self) -> "GsaSlimAttribute":
@@ -179,23 +187,23 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         self._linked_attribute = linked_attribute
 
     @property
-    def linked_column(self) -> "GsaSlimNamedEntity":
+    def linked_column(self) -> "GsaTabularColumn":
         """Gets the linked_column of this GsaLinkedColumnTabularColumn.
 
         Returns
         -------
-        GsaSlimNamedEntity
+        GsaTabularColumn
             The linked_column of this GsaLinkedColumnTabularColumn.
         """
         return self._linked_column
 
     @linked_column.setter
-    def linked_column(self, linked_column: "GsaSlimNamedEntity") -> None:
+    def linked_column(self, linked_column: "GsaTabularColumn") -> None:
         """Sets the linked_column of this GsaLinkedColumnTabularColumn.
 
         Parameters
         ----------
-        linked_column: GsaSlimNamedEntity
+        linked_column: GsaTabularColumn
             The linked_column of this GsaLinkedColumnTabularColumn.
         """
         # Field is not nullable
@@ -205,6 +213,31 @@ class GsaLinkedColumnTabularColumn(GsaTabularColumn):
         if linked_column is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'linked_column', must not be 'Unset'")
         self._linked_column = linked_column
+
+    @property
+    def linked_target(self) -> "Union[GsaTabularAttributeTarget, Unset_Type]":
+        """Gets the linked_target of this GsaLinkedColumnTabularColumn.
+
+        Returns
+        -------
+        Union[GsaTabularAttributeTarget, Unset_Type]
+            The linked_target of this GsaLinkedColumnTabularColumn.
+        """
+        return self._linked_target
+
+    @linked_target.setter
+    def linked_target(self, linked_target: "Union[GsaTabularAttributeTarget, Unset_Type]") -> None:
+        """Sets the linked_target of this GsaLinkedColumnTabularColumn.
+
+        Parameters
+        ----------
+        linked_target: Union[GsaTabularAttributeTarget, Unset_Type]
+            The linked_target of this GsaLinkedColumnTabularColumn.
+        """
+        # Field is not nullable
+        if linked_target is None:
+            raise ValueError("Invalid value for 'linked_target', must not be 'None'")
+        self._linked_target = linked_target
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
