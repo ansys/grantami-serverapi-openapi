@@ -76,6 +76,7 @@ from .api.schema___units_api import SchemaUnitsApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.selection_searches_api import SelectionSearchesApi
+from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
 
@@ -887,6 +888,7 @@ from .models.gsa_slim_table import GsaSlimTable
 from .models.gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .models.gsa_slim_unit import GsaSlimUnit
 from .models.gsa_slim_unit_system import GsaSlimUnitSystem
+from .models.gsa_smtp_properties import GsaSmtpProperties
 from .models.gsa_sort_criterion import GsaSortCriterion
 from .models.gsa_sort_criterion_type import GsaSortCriterionType
 from .models.gsa_sort_direction import GsaSortDirection
@@ -1105,6 +1107,7 @@ __all__ = [
     "SchemaUnitsApi",
     "SearchApi",
     "SelectionSearchesApi",
+    "ServerManagerApi",
     "StatusApi",
     "AttributesAttributeguidimportfileBody",
     "AttributesAttributeguidimportfileBody1",
@@ -1804,6 +1807,7 @@ __all__ = [
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
+    "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
     "GsaSortDirection",
