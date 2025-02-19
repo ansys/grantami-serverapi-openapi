@@ -88,7 +88,7 @@ class GsaSmtpProperties(ModelBase):
         authentication_password: "Union[str, None, Unset_Type]" = Unset,
         authentication_username: "Union[str, None, Unset_Type]" = Unset,
         host_name: "Union[str, None, Unset_Type]" = Unset,
-        port: "int" = 25,
+        port: "Union[int, Unset_Type]" = 25,
         use_authentication: "Union[bool, Unset_Type]" = Unset,
         use_ssl: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
