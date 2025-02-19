@@ -805,6 +805,7 @@ from .gsa_slim_table import GsaSlimTable
 from .gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .gsa_slim_unit import GsaSlimUnit
 from .gsa_slim_unit_system import GsaSlimUnitSystem
+from .gsa_smtp_properties import GsaSmtpProperties
 from .gsa_sort_criterion import GsaSortCriterion
 from .gsa_sort_criterion_type import GsaSortCriterionType
 from .gsa_sort_direction import GsaSortDirection
@@ -1677,6 +1678,7 @@ __all__ = [
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
+    "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
     "GsaSortDirection",
