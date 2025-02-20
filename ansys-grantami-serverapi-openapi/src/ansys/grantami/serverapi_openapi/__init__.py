@@ -500,6 +500,7 @@ from .models.gsa_get_jobs_summary_response import GsaGetJobsSummaryResponse
 from .models.gsa_get_modifiable_record_version_control_exception import (
     GsaGetModifiableRecordVersionControlException,
 )
+from .models.gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
 from .models.gsa_graph import GsaGraph
 from .models.gsa_graph_decoration_type import GsaGraphDecorationType
 from .models.gsa_graph_type import GsaGraphType
@@ -523,6 +524,7 @@ from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatum
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
 from .models.gsa_index_record_failure import GsaIndexRecordFailure
 from .models.gsa_indirect_links import GsaIndirectLinks
+from .models.gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .models.gsa_integer_aggregation import GsaIntegerAggregation
 from .models.gsa_integer_aggregation_datum_criterion import GsaIntegerAggregationDatumCriterion
 from .models.gsa_integer_attribute import GsaIntegerAttribute
@@ -930,6 +932,9 @@ from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
 from .models.gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .models.gsa_unit import GsaUnit
+from .models.gsa_unit_conversion_set import GsaUnitConversionSet
+from .models.gsa_unit_conversion_set_request import GsaUnitConversionSetRequest
+from .models.gsa_unit_conversions_info import GsaUnitConversionsInfo
 from .models.gsa_unit_equivalent import GsaUnitEquivalent
 from .models.gsa_unit_equivalents_info import GsaUnitEquivalentsInfo
 from .models.gsa_unit_mapping import GsaUnitMapping
@@ -1453,6 +1458,7 @@ __all__ = [
     "GsaGetJobsResponse",
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
+    "GsaGetUnitConversionsRequest",
     "GsaGraph",
     "GsaGraphDecorationType",
     "GsaGraphType",
@@ -1474,6 +1480,7 @@ __all__ = [
     "GsaHyperlinkTarget",
     "GsaIndexRecordFailure",
     "GsaIndirectLinks",
+    "GsaInputValidationErrorDetail",
     "GsaIntegerAggregation",
     "GsaIntegerAggregationDatumCriterion",
     "GsaIntegerAttribute",
@@ -1847,6 +1854,9 @@ __all__ = [
     "GsaTextMatchBehavior",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
+    "GsaUnitConversionSet",
+    "GsaUnitConversionSetRequest",
+    "GsaUnitConversionsInfo",
     "GsaUnitEquivalent",
     "GsaUnitEquivalentsInfo",
     "GsaUnitMapping",
