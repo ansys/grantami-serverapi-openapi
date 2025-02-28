@@ -69,14 +69,12 @@ class GsaRecordHistoryReference(GsaRecordReference):
         "database_key": "str",
         "record_reference_type": "GsaRecordReferenceType",
         "record_history_guid": "str",
-        "record_history_identity": "int",
     }
 
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
         "record_reference_type": "recordReferenceType",
         "record_history_guid": "recordHistoryGuid",
-        "record_history_identity": "recordHistoryIdentity",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -88,8 +86,7 @@ class GsaRecordHistoryReference(GsaRecordReference):
         *,
         database_key: "str",
         record_reference_type: "GsaRecordReferenceType" = GsaRecordReferenceType.HISTORY,
-        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
-        record_history_identity: "Union[int, None, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordHistoryReference - a model defined in Swagger
 
@@ -98,61 +95,36 @@ class GsaRecordHistoryReference(GsaRecordReference):
         database_key: str
         record_reference_type: GsaRecordReferenceType
         record_history_guid: str, optional
-        record_history_identity: int, optional
         """
         super().__init__(database_key=database_key, record_reference_type=record_reference_type)
-        self._record_history_identity: Union[int, None, Unset_Type] = Unset
-        self._record_history_guid: Union[str, None, Unset_Type] = Unset
+        self._record_history_guid: Union[str, Unset_Type] = Unset
 
-        if record_history_identity is not Unset:
-            self.record_history_identity = record_history_identity
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
 
     @property
-    def record_history_identity(self) -> "Union[int, None, Unset_Type]":
-        """Gets the record_history_identity of this GsaRecordHistoryReference.
-
-        Returns
-        -------
-        Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordHistoryReference.
-        """
-        return self._record_history_identity
-
-    @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
-        """Sets the record_history_identity of this GsaRecordHistoryReference.
-
-        Parameters
-        ----------
-        record_history_identity: Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordHistoryReference.
-        """
-        self._record_history_identity = record_history_identity
-
-    @property
-    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
+    def record_history_guid(self) -> "Union[str, Unset_Type]":
         """Gets the record_history_guid of this GsaRecordHistoryReference.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The record_history_guid of this GsaRecordHistoryReference.
         """
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
         """Sets the record_history_guid of this GsaRecordHistoryReference.
 
         Parameters
         ----------
-        record_history_guid: Union[str, None, Unset_Type]
+        record_history_guid: Union[str, Unset_Type]
             The record_history_guid of this GsaRecordHistoryReference.
         """
+        # Field is not nullable
+        if record_history_guid is None:
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
         self._record_history_guid = record_history_guid
 
     @classmethod

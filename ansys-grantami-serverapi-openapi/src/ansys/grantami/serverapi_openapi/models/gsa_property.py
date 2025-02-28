@@ -84,7 +84,6 @@ class GsaProperty(ModelBase):
         "recordColor".lower(): "#/components/schemas/GsaRecordColorProperty",
         "recordGuid".lower(): "#/components/schemas/GsaRecordGuidProperty",
         "recordHistoryGuid".lower(): "#/components/schemas/GsaRecordHistoryGuidProperty",
-        "recordHistoryIdentity".lower(): "#/components/schemas/GsaRecordHistoryIdentityProperty",
         "recordType".lower(): "#/components/schemas/GsaRecordTypeProperty",
         "releasedDate".lower(): "#/components/schemas/GsaReleasedDateProperty",
         "shortName".lower(): "#/components/schemas/GsaShortNameProperty",

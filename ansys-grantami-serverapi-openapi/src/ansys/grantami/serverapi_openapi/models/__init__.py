@@ -685,7 +685,6 @@ from .gsa_record_guid_property import GsaRecordGuidProperty
 from .gsa_record_history import GsaRecordHistory
 from .gsa_record_history_copy_exception import GsaRecordHistoryCopyException
 from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
-from .gsa_record_history_identity_property import GsaRecordHistoryIdentityProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .gsa_record_history_reference import GsaRecordHistoryReference
 from .gsa_record_link_group import GsaRecordLinkGroup
@@ -1567,7 +1566,6 @@ __all__ = [
     "GsaRecordHistory",
     "GsaRecordHistoryCopyException",
     "GsaRecordHistoryGuidProperty",
-    "GsaRecordHistoryIdentityProperty",
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
     "GsaRecordLinkGroup",
