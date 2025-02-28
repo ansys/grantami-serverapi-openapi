@@ -764,7 +764,6 @@ from .models.gsa_record_guid_property import GsaRecordGuidProperty
 from .models.gsa_record_history import GsaRecordHistory
 from .models.gsa_record_history_copy_exception import GsaRecordHistoryCopyException
 from .models.gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
-from .models.gsa_record_history_identity_property import GsaRecordHistoryIdentityProperty
 from .models.gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .models.gsa_record_history_reference import GsaRecordHistoryReference
 from .models.gsa_record_link_group import GsaRecordLinkGroup
@@ -1696,7 +1695,6 @@ __all__ = [
     "GsaRecordHistory",
     "GsaRecordHistoryCopyException",
     "GsaRecordHistoryGuidProperty",
-    "GsaRecordHistoryIdentityProperty",
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
     "GsaRecordLinkGroup",

@@ -66,7 +66,6 @@ class GsaRecordWithData(ModelBase):
         "data": "list[GsaDataExportDatum]",
         "properties": "list[GsaProperty]",
         "record_history_guid": "str",
-        "record_history_identity": "int",
     }
 
     attribute_map: dict[str, str] = {
@@ -75,7 +74,6 @@ class GsaRecordWithData(ModelBase):
         "data": "data",
         "properties": "properties",
         "record_history_guid": "recordHistoryGuid",
-        "record_history_identity": "recordHistoryIdentity",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -92,8 +90,7 @@ class GsaRecordWithData(ModelBase):
         record_version_guid: "str",
         data: "Union[list[GsaDataExportDatum], None, Unset_Type]" = Unset,
         properties: "Union[list[GsaProperty], None, Unset_Type]" = Unset,
-        record_history_guid: "Union[str, None, Unset_Type]" = Unset,
-        record_history_identity: "Union[int, Unset_Type]" = Unset,
+        record_history_guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordWithData - a model defined in Swagger
 
@@ -104,18 +101,14 @@ class GsaRecordWithData(ModelBase):
         data: list[GsaDataExportDatum], optional
         properties: list[GsaProperty], optional
         record_history_guid: str, optional
-        record_history_identity: int, optional
         """
         self._database_key: str
-        self._record_history_identity: Union[int, Unset_Type] = Unset
-        self._record_history_guid: Union[str, None, Unset_Type] = Unset
+        self._record_history_guid: Union[str, Unset_Type] = Unset
         self._record_version_guid: str
         self._data: Union[list[GsaDataExportDatum], None, Unset_Type] = Unset
         self._properties: Union[list[GsaProperty], None, Unset_Type] = Unset
 
         self.database_key = database_key
-        if record_history_identity is not Unset:
-            self.record_history_identity = record_history_identity
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
         self.record_version_guid = record_version_guid
@@ -153,50 +146,28 @@ class GsaRecordWithData(ModelBase):
         self._database_key = database_key
 
     @property
-    def record_history_identity(self) -> "Union[int, Unset_Type]":
-        """Gets the record_history_identity of this GsaRecordWithData.
-
-        Returns
-        -------
-        Union[int, Unset_Type]
-            The record_history_identity of this GsaRecordWithData.
-        """
-        return self._record_history_identity
-
-    @record_history_identity.setter
-    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
-        """Sets the record_history_identity of this GsaRecordWithData.
-
-        Parameters
-        ----------
-        record_history_identity: Union[int, Unset_Type]
-            The record_history_identity of this GsaRecordWithData.
-        """
-        # Field is not nullable
-        if record_history_identity is None:
-            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
-        self._record_history_identity = record_history_identity
-
-    @property
-    def record_history_guid(self) -> "Union[str, None, Unset_Type]":
+    def record_history_guid(self) -> "Union[str, Unset_Type]":
         """Gets the record_history_guid of this GsaRecordWithData.
 
         Returns
         -------
-        Union[str, None, Unset_Type]
+        Union[str, Unset_Type]
             The record_history_guid of this GsaRecordWithData.
         """
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, None, Unset_Type]") -> None:
+    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
         """Sets the record_history_guid of this GsaRecordWithData.
 
         Parameters
         ----------
-        record_history_guid: Union[str, None, Unset_Type]
+        record_history_guid: Union[str, Unset_Type]
             The record_history_guid of this GsaRecordWithData.
         """
+        # Field is not nullable
+        if record_history_guid is None:
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
         self._record_history_guid = record_history_guid
 
     @property

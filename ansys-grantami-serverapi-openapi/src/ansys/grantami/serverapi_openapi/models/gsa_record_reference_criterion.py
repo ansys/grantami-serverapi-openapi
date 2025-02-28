@@ -68,7 +68,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         "type": "GsaCriterionType",
         "record_guid": "str",
         "record_history_guid": "str",
-        "record_history_identity": "int",
     }
 
     attribute_map: dict[str, str] = {
@@ -76,7 +75,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         "type": "type",
         "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
-        "record_history_identity": "recordHistoryIdentity",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -90,7 +88,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         type: "GsaCriterionType" = GsaCriterionType.REFERENCE,
         record_guid: "Union[str, None, Unset_Type]" = Unset,
         record_history_guid: "Union[str, None, Unset_Type]" = Unset,
-        record_history_identity: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaRecordReferenceCriterion - a model defined in Swagger
 
@@ -100,17 +97,13 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         type: GsaCriterionType
         record_guid: str, optional
         record_history_guid: str, optional
-        record_history_identity: int, optional
         """
         super().__init__(type=type)
         self._database_key: str
-        self._record_history_identity: Union[int, None, Unset_Type] = Unset
         self._record_history_guid: Union[str, None, Unset_Type] = Unset
         self._record_guid: Union[str, None, Unset_Type] = Unset
 
         self.database_key = database_key
-        if record_history_identity is not Unset:
-            self.record_history_identity = record_history_identity
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
         if record_guid is not Unset:
@@ -143,30 +136,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
-
-    @property
-    def record_history_identity(self) -> "Union[int, None, Unset_Type]":
-        """Gets the record_history_identity of this GsaRecordReferenceCriterion.
-
-        Returns
-        -------
-        Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordReferenceCriterion.
-        """
-        return self._record_history_identity
-
-    @record_history_identity.setter
-    def record_history_identity(
-        self, record_history_identity: "Union[int, None, Unset_Type]"
-    ) -> None:
-        """Sets the record_history_identity of this GsaRecordReferenceCriterion.
-
-        Parameters
-        ----------
-        record_history_identity: Union[int, None, Unset_Type]
-            The record_history_identity of this GsaRecordReferenceCriterion.
-        """
-        self._record_history_identity = record_history_identity
 
     @property
     def record_history_guid(self) -> "Union[str, None, Unset_Type]":
