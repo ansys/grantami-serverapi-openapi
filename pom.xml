@@ -52,7 +52,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>2024r1</bindingNamespace>
+                <bindingNamespace>v2024r1</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
@@ -77,7 +77,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>2024r2</bindingNamespace>
+                <bindingNamespace>v2024r2</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
@@ -102,7 +102,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>2025r1</bindingNamespace>
+                <bindingNamespace>v2025r1</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
@@ -127,7 +127,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>2025r2</bindingNamespace>
+                <bindingNamespace>v2025r2</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
