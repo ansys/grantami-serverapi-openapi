@@ -31,6 +31,7 @@ from .bulk_api import BulkApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
 from .database_api import DatabaseApi
+from .graph_api import GraphApi
 from .help_location_api import HelpLocationApi
 from .integration_api import IntegrationApi
 from .job_queue_api import JobQueueApi
@@ -79,6 +80,7 @@ __all__ = [
     "DataApi",
     "DataExportApi",
     "DatabaseApi",
+    "GraphApi",
     "HelpLocationApi",
     "IntegrationApi",
     "JobQueueApi",

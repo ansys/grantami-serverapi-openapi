@@ -50,7 +50,7 @@ class SchemaAttributesApi(ApiBase):
 
     def create_attribute(
         self, *, database_key: "str", table_guid: "str", body: "Optional[GsaCreateAttribute]" = None
-    ) -> "Union[GsaAttribute, None]":
+    ) -> "Union[GsaAttribute, GsaAttributeCreationException, None]":
         """Create a new attribute.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        Union[GsaAttribute, None]
+        Union[GsaAttribute, GsaAttributeCreationException, None]
         """
         data = self._create_attribute_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -133,7 +133,7 @@ class SchemaAttributesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaAttribute",
-            400: None,
+            400: "GsaAttributeCreationException",
             403: None,
             404: None,
         }
@@ -161,7 +161,7 @@ class SchemaAttributesApi(ApiBase):
         table_guid: "str",
         attribute_guid: "str",
         body: "Optional[GsaCreateAttribute]" = None,
-    ) -> "Union[GsaAttribute, None]":
+    ) -> "Union[GsaAttribute, GsaAttributeCreationException, None]":
         """Create a new meta-attribute for attribute.
 
         This method makes a synchronous HTTP request.
@@ -175,7 +175,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        Union[GsaAttribute, None]
+        Union[GsaAttribute, GsaAttributeCreationException, None]
         """
         data = self._create_meta_attribute_with_http_info(
             database_key, table_guid, attribute_guid, body, _return_http_data_only=True
@@ -254,7 +254,7 @@ class SchemaAttributesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaAttribute",
-            400: None,
+            400: "GsaAttributeCreationException",
             403: None,
             404: None,
         }

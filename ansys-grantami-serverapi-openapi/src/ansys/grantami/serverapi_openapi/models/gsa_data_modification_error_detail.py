@@ -64,7 +64,7 @@ class GsaDataModificationErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "str",
+        "reason": "GsaDataModificationErrorReason",
     }
 
     attribute_map: dict[str, str] = {
@@ -72,7 +72,9 @@ class GsaDataModificationErrorDetail(ModelBase):
         "reason": "reason",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "reason": "GsaDataModificationErrorReason",
+    }
 
     discriminator_value_class_map = {
         "usage".lower(): "#/components/schemas/GsaUsageDataModificationErrorDetail",
@@ -84,17 +86,17 @@ class GsaDataModificationErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "GsaDataModificationErrorReason",
     ) -> None:
         """GsaDataModificationErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: str
+        reason: GsaDataModificationErrorReason
         """
         self._message: str
-        self._reason: str
+        self._reason: GsaDataModificationErrorReason
 
         self.message = message
         self.reason = reason
@@ -128,23 +130,23 @@ class GsaDataModificationErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "str":
+    def reason(self) -> "GsaDataModificationErrorReason":
         """Gets the reason of this GsaDataModificationErrorDetail.
 
         Returns
         -------
-        str
+        GsaDataModificationErrorReason
             The reason of this GsaDataModificationErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "str") -> None:
+    def reason(self, reason: "GsaDataModificationErrorReason") -> None:
         """Sets the reason of this GsaDataModificationErrorDetail.
 
         Parameters
         ----------
-        reason: str
+        reason: GsaDataModificationErrorReason
             The reason of this GsaDataModificationErrorDetail.
         """
         # Field is not nullable
