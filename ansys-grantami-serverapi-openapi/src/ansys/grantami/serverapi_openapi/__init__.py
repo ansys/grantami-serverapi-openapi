@@ -38,6 +38,7 @@ from .api.bulk_api import BulkApi
 from .api.data_api import DataApi
 from .api.data_export_api import DataExportApi
 from .api.database_api import DatabaseApi
+from .api.graph_api import GraphApi
 from .api.help_location_api import HelpLocationApi
 from .api.integration_api import IntegrationApi
 from .api.job_queue_api import JobQueueApi
@@ -98,6 +99,9 @@ from .models.folderguid_files_body import FolderguidFilesBody
 from .models.granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
+from .models.gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
+    GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
+)
 from .models.gsa_add_database import GsaAddDatabase
 from .models.gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .models.gsa_aggregation import GsaAggregation
@@ -112,6 +116,9 @@ from .models.gsa_aggregations_request import GsaAggregationsRequest
 from .models.gsa_aggregations_response import GsaAggregationsResponse
 from .models.gsa_all_profiles_info import GsaAllProfilesInfo
 from .models.gsa_all_values_specifier import GsaAllValuesSpecifier
+from .models.gsa_anonymous_expressions_must_allow_all_compatible_maths_functional_error_detail import (
+    GsaAnonymousExpressionsMustAllowAllCompatibleMathsFunctionalErrorDetail,
+)
 from .models.gsa_app_name_license_checkout_request import GsaAppNameLicenseCheckoutRequest
 from .models.gsa_app_name_license_checkout_response import GsaAppNameLicenseCheckoutResponse
 from .models.gsa_app_name_license_checkout_result import GsaAppNameLicenseCheckoutResult
@@ -127,9 +134,12 @@ from .models.gsa_attribute_aggregation_exists_criterion import (
 )
 from .models.gsa_attribute_aggregation_type import GsaAttributeAggregationType
 from .models.gsa_attribute_aggregation_value_criterion import GsaAttributeAggregationValueCriterion
+from .models.gsa_attribute_creation_exception import GsaAttributeCreationException
 from .models.gsa_attribute_criterion import GsaAttributeCriterion
 from .models.gsa_attribute_criterion_type import GsaAttributeCriterionType
 from .models.gsa_attribute_deletion_exception import GsaAttributeDeletionException
+from .models.gsa_attribute_error_detail import GsaAttributeErrorDetail
+from .models.gsa_attribute_error_reason import GsaAttributeErrorReason
 from .models.gsa_attribute_exists_aggregation import GsaAttributeExistsAggregation
 from .models.gsa_attribute_exists_criterion import GsaAttributeExistsCriterion
 from .models.gsa_attribute_export_failure import GsaAttributeExportFailure
@@ -137,6 +147,7 @@ from .models.gsa_attribute_info import GsaAttributeInfo
 from .models.gsa_attribute_interpolation_method import GsaAttributeInterpolationMethod
 from .models.gsa_attribute_link_pair import GsaAttributeLinkPair
 from .models.gsa_attribute_matches_criterion import GsaAttributeMatchesCriterion
+from .models.gsa_attribute_no_such_entity_type import GsaAttributeNoSuchEntityType
 from .models.gsa_attribute_not_applicable_criterion import GsaAttributeNotApplicableCriterion
 from .models.gsa_attribute_reference import GsaAttributeReference
 from .models.gsa_attribute_scale_type import GsaAttributeScaleType
@@ -313,6 +324,7 @@ from .models.gsa_data_export_unknown_datum import GsaDataExportUnknownDatum
 from .models.gsa_data_export_value_rollup_datum import GsaDataExportValueRollupDatum
 from .models.gsa_data_export_values_rollup_datum import GsaDataExportValuesRollupDatum
 from .models.gsa_data_modification_error_detail import GsaDataModificationErrorDetail
+from .models.gsa_data_modification_error_reason import GsaDataModificationErrorReason
 from .models.gsa_data_rule import GsaDataRule
 from .models.gsa_data_rules_info import GsaDataRulesInfo
 from .models.gsa_data_usage_data_modification_error_detail import (
@@ -354,6 +366,12 @@ from .models.gsa_datum_reference import GsaDatumReference
 from .models.gsa_datum_rollup import GsaDatumRollup
 from .models.gsa_datum_rollup_type import GsaDatumRollupType
 from .models.gsa_datum_type import GsaDatumType
+from .models.gsa_default_expression_not_found_maths_functional_error_detail import (
+    GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail,
+)
+from .models.gsa_default_free_parameter_not_found_maths_functional_error_detail import (
+    GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail,
+)
 from .models.gsa_default_parameter_value_usage_data_modification_error_detail import (
     GsaDefaultParameterValueUsageDataModificationErrorDetail,
 )
@@ -384,6 +402,8 @@ from .models.gsa_discrete_functional_series_datum import GsaDiscreteFunctionalSe
 from .models.gsa_discrete_functional_values_datum_criterion import (
     GsaDiscreteFunctionalValuesDatumCriterion,
 )
+from .models.gsa_discrete_graph_parameter_value import GsaDiscreteGraphParameterValue
+from .models.gsa_discrete_graph_value import GsaDiscreteGraphValue
 from .models.gsa_discrete_grid_graph import GsaDiscreteGridGraph
 from .models.gsa_discrete_grid_point import GsaDiscreteGridPoint
 from .models.gsa_discrete_guid_datum_criterion import GsaDiscreteGuidDatumCriterion
@@ -426,19 +446,33 @@ from .models.gsa_discrete_values_replace_discrete_values_info import (
 from .models.gsa_discrete_values_update_discrete_value import GsaDiscreteValuesUpdateDiscreteValue
 from .models.gsa_disk_status import GsaDiskStatus
 from .models.gsa_double_sorting_value import GsaDoubleSortingValue
+from .models.gsa_duplicate_expression_guids_maths_functional_error_detail import (
+    GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail,
+)
+from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
+    GsaDuplicateParameterGuidsAttributeErrorDetail,
+)
 from .models.gsa_dynamic_link_group_usage_data_modification_error_detail import (
     GsaDynamicLinkGroupUsageDataModificationErrorDetail,
 )
 from .models.gsa_dynamic_record_link_group import GsaDynamicRecordLinkGroup
+from .models.gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .models.gsa_enabled_licenses_info import GsaEnabledLicensesInfo
+from .models.gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
 from .models.gsa_error_detail import GsaErrorDetail
 from .models.gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
 from .models.gsa_export_failure import GsaExportFailure
 from .models.gsa_export_failure_type import GsaExportFailureType
 from .models.gsa_exporter_refetch_info import GsaExporterRefetchInfo
 from .models.gsa_expression import GsaExpression
+from .models.gsa_expression_maths_functional_error_detail import (
+    GsaExpressionMathsFunctionalErrorDetail,
+)
 from .models.gsa_expression_usage_data_modification_error_detail import (
     GsaExpressionUsageDataModificationErrorDetail,
+)
+from .models.gsa_expressions_have_unknown_parameters_maths_functional_error_detail import (
+    GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail,
 )
 from .models.gsa_expressions_info import GsaExpressionsInfo
 from .models.gsa_file_attribute import GsaFileAttribute
@@ -489,6 +523,7 @@ from .models.gsa_free_text_criterion import GsaFreeTextCriterion
 from .models.gsa_free_text_prefix_criterion import GsaFreeTextPrefixCriterion
 from .models.gsa_full_layout_section import GsaFullLayoutSection
 from .models.gsa_full_name_property import GsaFullNameProperty
+from .models.gsa_func_no_params_attribute_error_detail import GsaFuncNoParamsAttributeErrorDetail
 from .models.gsa_functional_datum_parameter_info import GsaFunctionalDatumParameterInfo
 from .models.gsa_functional_parameter_setting import GsaFunctionalParameterSetting
 from .models.gsa_functional_type import GsaFunctionalType
@@ -503,7 +538,11 @@ from .models.gsa_get_modifiable_record_version_control_exception import (
 from .models.gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
 from .models.gsa_graph import GsaGraph
 from .models.gsa_graph_decoration_type import GsaGraphDecorationType
+from .models.gsa_graph_parameter_value import GsaGraphParameterValue
+from .models.gsa_graph_parameter_with_value import GsaGraphParameterWithValue
 from .models.gsa_graph_type import GsaGraphType
+from .models.gsa_graph_value import GsaGraphValue
+from .models.gsa_graph_value_type import GsaGraphValueType
 from .models.gsa_grid_graph import GsaGridGraph
 from .models.gsa_guid_only_attribute import GsaGuidOnlyAttribute
 from .models.gsa_guid_only_discrete_type import GsaGuidOnlyDiscreteType
@@ -639,15 +678,33 @@ from .models.gsa_long_text_prefix_datum_criterion import GsaLongTextPrefixDatumC
 from .models.gsa_mapping_of_object_identifier import GsaMappingOfObjectIdentifier
 from .models.gsa_maths_content import GsaMathsContent
 from .models.gsa_maths_functional_attribute import GsaMathsFunctionalAttribute
+from .models.gsa_maths_functional_attribute_error_detail import (
+    GsaMathsFunctionalAttributeErrorDetail,
+)
 from .models.gsa_maths_functional_datum_criterion import GsaMathsFunctionalDatumCriterion
 from .models.gsa_maths_functional_datum_exists_criterion import (
     GsaMathsFunctionalDatumExistsCriterion,
 )
+from .models.gsa_maths_functional_error_detail import GsaMathsFunctionalErrorDetail
+from .models.gsa_maths_functional_error_reason import GsaMathsFunctionalErrorReason
+from .models.gsa_mfa_expression_error_detail import GsaMfaExpressionErrorDetail
+from .models.gsa_mfa_expression_error_reason import GsaMfaExpressionErrorReason
 from .models.gsa_mi_version import GsaMiVersion
+from .models.gsa_missing_arguments_parameter_content_error_detail import (
+    GsaMissingArgumentsParameterContentErrorDetail,
+)
+from .models.gsa_missing_parameter_guid_attribute_error_detail import (
+    GsaMissingParameterGuidAttributeErrorDetail,
+)
 from .models.gsa_move_file import GsaMoveFile
 from .models.gsa_move_folder import GsaMoveFolder
 from .models.gsa_move_record_history import GsaMoveRecordHistory
+from .models.gsa_name_already_exists_error_detail import GsaNameAlreadyExistsErrorDetail
+from .models.gsa_name_not_provided_error_detail import GsaNameNotProvidedErrorDetail
 from .models.gsa_named_criterion import GsaNamedCriterion
+from .models.gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
+from .models.gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
+from .models.gsa_named_entity_error_reason import GsaNamedEntityErrorReason
 from .models.gsa_new_layout_association_chain_item import GsaNewLayoutAssociationChainItem
 from .models.gsa_new_layout_association_chain_link import GsaNewLayoutAssociationChainLink
 from .models.gsa_new_layout_attribute_item import GsaNewLayoutAttributeItem
@@ -656,10 +713,21 @@ from .models.gsa_new_layout_item import GsaNewLayoutItem
 from .models.gsa_new_layout_item_type import GsaNewLayoutItemType
 from .models.gsa_new_layout_record_link_item import GsaNewLayoutRecordLinkItem
 from .models.gsa_new_layout_smart_link_item import GsaNewLayoutSmartLinkItem
+from .models.gsa_no_expressions_maths_functional_error_detail import (
+    GsaNoExpressionsMathsFunctionalErrorDetail,
+)
+from .models.gsa_no_such_entity_attribute_error_detail import GsaNoSuchEntityAttributeErrorDetail
+from .models.gsa_no_such_expressions_maths_functional_error_detail import (
+    GsaNoSuchExpressionsMathsFunctionalErrorDetail,
+)
+from .models.gsa_no_such_parameter_value_parameter_content_error_detail import (
+    GsaNoSuchParameterValueParameterContentErrorDetail,
+)
 from .models.gsa_no_values_specifier import GsaNoValuesSpecifier
 from .models.gsa_not_applicable_datum import GsaNotApplicableDatum
 from .models.gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .models.gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
+from .models.gsa_numeric_graph_parameter_value import GsaNumericGraphParameterValue
 from .models.gsa_numeric_parameter import GsaNumericParameter
 from .models.gsa_numeric_parameter_constraint import GsaNumericParameterConstraint
 from .models.gsa_numeric_parameter_content import GsaNumericParameterContent
@@ -671,6 +739,18 @@ from .models.gsa_parameter import GsaParameter
 from .models.gsa_parameter_constraint import GsaParameterConstraint
 from .models.gsa_parameter_constraint_type import GsaParameterConstraintType
 from .models.gsa_parameter_content import GsaParameterContent
+from .models.gsa_parameter_content_duplicate_guids_maths_functional_error_detail import (
+    GsaParameterContentDuplicateGuidsMathsFunctionalErrorDetail,
+)
+from .models.gsa_parameter_content_error_detail import GsaParameterContentErrorDetail
+from .models.gsa_parameter_content_error_reason import GsaParameterContentErrorReason
+from .models.gsa_parameter_content_maths_functional_error_detail import (
+    GsaParameterContentMathsFunctionalErrorDetail,
+)
+from .models.gsa_parameter_content_missing_argument import GsaParameterContentMissingArgument
+from .models.gsa_parameter_content_unknown_parameters_maths_functional_error_detail import (
+    GsaParameterContentUnknownParametersMathsFunctionalErrorDetail,
+)
 from .models.gsa_parameter_data_value import GsaParameterDataValue
 from .models.gsa_parameter_deletion_exception import GsaParameterDeletionException
 from .models.gsa_parameter_info import GsaParameterInfo
@@ -681,6 +761,9 @@ from .models.gsa_parameter_interpolation_type import GsaParameterInterpolationTy
 from .models.gsa_parameter_scale_type import GsaParameterScaleType
 from .models.gsa_parameter_setting_defined_at import GsaParameterSettingDefinedAt
 from .models.gsa_parameter_type import GsaParameterType
+from .models.gsa_parameter_type_parameter_content_error_detail import (
+    GsaParameterTypeParameterContentErrorDetail,
+)
 from .models.gsa_parameter_value import GsaParameterValue
 from .models.gsa_parameter_value_deletion_exception import GsaParameterValueDeletionException
 from .models.gsa_parameter_value_type import GsaParameterValueType
@@ -707,6 +790,9 @@ from .models.gsa_point_fixed_width_histogram_aggregation_datum_criterion import 
 from .models.gsa_point_histogram_aggregation import GsaPointHistogramAggregation
 from .models.gsa_point_histogram_aggregation_datum_criterion import (
     GsaPointHistogramAggregationDatumCriterion,
+)
+from .models.gsa_point_parameters_requires_multi_valued_attribute_error_detail import (
+    GsaPointParametersRequiresMultiValuedAttributeErrorDetail,
 )
 from .models.gsa_processing_config import GsaProcessingConfig
 from .models.gsa_profile import GsaProfile
@@ -750,6 +836,7 @@ from .models.gsa_range_datum_exists_criterion import GsaRangeDatumExistsCriterio
 from .models.gsa_range_fixed_width_histogram_aggregation_datum_criterion import (
     GsaRangeFixedWidthHistogramAggregationDatumCriterion,
 )
+from .models.gsa_range_graph_value import GsaRangeGraphValue
 from .models.gsa_range_histogram_aggregation import GsaRangeHistogramAggregation
 from .models.gsa_range_histogram_aggregation_datum_criterion import (
     GsaRangeHistogramAggregationDatumCriterion,
@@ -927,8 +1014,15 @@ from .models.gsa_tabular_datum_row import GsaTabularDatumRow
 from .models.gsa_tabular_datum_summary_row import GsaTabularDatumSummaryRow
 from .models.gsa_tabular_linking_value_criterion import GsaTabularLinkingValueCriterion
 from .models.gsa_tabular_row_export_behavior import GsaTabularRowExportBehavior
+from .models.gsa_target_attribute_not_in_table_attribute_error_detail import (
+    GsaTargetAttributeNotInTableAttributeErrorDetail,
+)
+from .models.gsa_target_attribute_type_attribute_error_detail import (
+    GsaTargetAttributeTypeAttributeErrorDetail,
+)
 from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
+from .models.gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
 from .models.gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .models.gsa_unit import GsaUnit
 from .models.gsa_unit_conversion_set import GsaUnitConversionSet
@@ -1073,6 +1167,7 @@ __all__ = [
     "DataApi",
     "DataExportApi",
     "DatabaseApi",
+    "GraphApi",
     "HelpLocationApi",
     "IntegrationApi",
     "JobQueueApi",
@@ -1125,6 +1220,7 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
+    "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAddDatabase",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
@@ -1139,6 +1235,7 @@ __all__ = [
     "GsaAggregationsResponse",
     "GsaAllProfilesInfo",
     "GsaAllValuesSpecifier",
+    "GsaAnonymousExpressionsMustAllowAllCompatibleMathsFunctionalErrorDetail",
     "GsaAppNameLicenseCheckoutRequest",
     "GsaAppNameLicenseCheckoutResponse",
     "GsaAppNameLicenseCheckoutResult",
@@ -1152,9 +1249,12 @@ __all__ = [
     "GsaAttributeAggregationExistsCriterion",
     "GsaAttributeAggregationType",
     "GsaAttributeAggregationValueCriterion",
+    "GsaAttributeCreationException",
     "GsaAttributeCriterion",
     "GsaAttributeCriterionType",
     "GsaAttributeDeletionException",
+    "GsaAttributeErrorDetail",
+    "GsaAttributeErrorReason",
     "GsaAttributeExistsAggregation",
     "GsaAttributeExistsCriterion",
     "GsaAttributeExportFailure",
@@ -1162,6 +1262,7 @@ __all__ = [
     "GsaAttributeInterpolationMethod",
     "GsaAttributeLinkPair",
     "GsaAttributeMatchesCriterion",
+    "GsaAttributeNoSuchEntityType",
     "GsaAttributeNotApplicableCriterion",
     "GsaAttributeReference",
     "GsaAttributeScaleType",
@@ -1318,6 +1419,7 @@ __all__ = [
     "GsaDataExportValueRollupDatum",
     "GsaDataExportValuesRollupDatum",
     "GsaDataModificationErrorDetail",
+    "GsaDataModificationErrorReason",
     "GsaDataRule",
     "GsaDataRulesInfo",
     "GsaDataUsageDataModificationErrorDetail",
@@ -1351,6 +1453,8 @@ __all__ = [
     "GsaDatumRollup",
     "GsaDatumRollupType",
     "GsaDatumType",
+    "GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail",
+    "GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultParameterValueUsageDataModificationErrorDetail",
     "GsaDeleteRecordListItem",
     "GsaDeleteRecordListItems",
@@ -1367,6 +1471,8 @@ __all__ = [
     "GsaDiscreteFunctionalRangeDatumCriterion",
     "GsaDiscreteFunctionalSeriesDatum",
     "GsaDiscreteFunctionalValuesDatumCriterion",
+    "GsaDiscreteGraphParameterValue",
+    "GsaDiscreteGraphValue",
     "GsaDiscreteGridGraph",
     "GsaDiscreteGridPoint",
     "GsaDiscreteGuidDatumCriterion",
@@ -1403,16 +1509,22 @@ __all__ = [
     "GsaDiscreteValuesUpdateDiscreteValue",
     "GsaDiskStatus",
     "GsaDoubleSortingValue",
+    "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
+    "GsaDuplicateParameterGuidsAttributeErrorDetail",
     "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
     "GsaDynamicRecordLinkGroup",
+    "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
+    "GsaEntityAlreadyExistsErrorDetail",
     "GsaErrorDetail",
     "GsaExcludeValuesSpecifier",
     "GsaExportFailure",
     "GsaExportFailureType",
     "GsaExporterRefetchInfo",
     "GsaExpression",
+    "GsaExpressionMathsFunctionalErrorDetail",
     "GsaExpressionUsageDataModificationErrorDetail",
+    "GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail",
     "GsaExpressionsInfo",
     "GsaFileAttribute",
     "GsaFileDatum",
@@ -1450,6 +1562,7 @@ __all__ = [
     "GsaFreeTextPrefixCriterion",
     "GsaFullLayoutSection",
     "GsaFullNameProperty",
+    "GsaFuncNoParamsAttributeErrorDetail",
     "GsaFunctionalDatumParameterInfo",
     "GsaFunctionalParameterSetting",
     "GsaFunctionalType",
@@ -1460,7 +1573,11 @@ __all__ = [
     "GsaGetUnitConversionsRequest",
     "GsaGraph",
     "GsaGraphDecorationType",
+    "GsaGraphParameterValue",
+    "GsaGraphParameterWithValue",
     "GsaGraphType",
+    "GsaGraphValue",
+    "GsaGraphValueType",
     "GsaGridGraph",
     "GsaGuidOnlyAttribute",
     "GsaGuidOnlyDiscreteType",
@@ -1582,13 +1699,25 @@ __all__ = [
     "GsaMappingOfObjectIdentifier",
     "GsaMathsContent",
     "GsaMathsFunctionalAttribute",
+    "GsaMathsFunctionalAttributeErrorDetail",
     "GsaMathsFunctionalDatumCriterion",
     "GsaMathsFunctionalDatumExistsCriterion",
+    "GsaMathsFunctionalErrorDetail",
+    "GsaMathsFunctionalErrorReason",
+    "GsaMfaExpressionErrorDetail",
+    "GsaMfaExpressionErrorReason",
     "GsaMiVersion",
+    "GsaMissingArgumentsParameterContentErrorDetail",
+    "GsaMissingParameterGuidAttributeErrorDetail",
     "GsaMoveFile",
     "GsaMoveFolder",
     "GsaMoveRecordHistory",
+    "GsaNameAlreadyExistsErrorDetail",
+    "GsaNameNotProvidedErrorDetail",
     "GsaNamedCriterion",
+    "GsaNamedEntityAttributeErrorDetail",
+    "GsaNamedEntityErrorDetail",
+    "GsaNamedEntityErrorReason",
     "GsaNewLayoutAssociationChainItem",
     "GsaNewLayoutAssociationChainLink",
     "GsaNewLayoutAttributeItem",
@@ -1597,10 +1726,15 @@ __all__ = [
     "GsaNewLayoutItemType",
     "GsaNewLayoutRecordLinkItem",
     "GsaNewLayoutSmartLinkItem",
+    "GsaNoExpressionsMathsFunctionalErrorDetail",
+    "GsaNoSuchEntityAttributeErrorDetail",
+    "GsaNoSuchExpressionsMathsFunctionalErrorDetail",
+    "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoValuesSpecifier",
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
+    "GsaNumericGraphParameterValue",
     "GsaNumericParameter",
     "GsaNumericParameterConstraint",
     "GsaNumericParameterContent",
@@ -1612,6 +1746,12 @@ __all__ = [
     "GsaParameterConstraint",
     "GsaParameterConstraintType",
     "GsaParameterContent",
+    "GsaParameterContentDuplicateGuidsMathsFunctionalErrorDetail",
+    "GsaParameterContentErrorDetail",
+    "GsaParameterContentErrorReason",
+    "GsaParameterContentMathsFunctionalErrorDetail",
+    "GsaParameterContentMissingArgument",
+    "GsaParameterContentUnknownParametersMathsFunctionalErrorDetail",
     "GsaParameterDataValue",
     "GsaParameterDeletionException",
     "GsaParameterInfo",
@@ -1622,6 +1762,7 @@ __all__ = [
     "GsaParameterScaleType",
     "GsaParameterSettingDefinedAt",
     "GsaParameterType",
+    "GsaParameterTypeParameterContentErrorDetail",
     "GsaParameterValue",
     "GsaParameterValueDeletionException",
     "GsaParameterValueType",
@@ -1645,6 +1786,7 @@ __all__ = [
     "GsaPointFixedWidthHistogramAggregationDatumCriterion",
     "GsaPointHistogramAggregation",
     "GsaPointHistogramAggregationDatumCriterion",
+    "GsaPointParametersRequiresMultiValuedAttributeErrorDetail",
     "GsaProcessingConfig",
     "GsaProfile",
     "GsaProfileTable",
@@ -1683,6 +1825,7 @@ __all__ = [
     "GsaRangeDatumCriterion",
     "GsaRangeDatumExistsCriterion",
     "GsaRangeFixedWidthHistogramAggregationDatumCriterion",
+    "GsaRangeGraphValue",
     "GsaRangeHistogramAggregation",
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
@@ -1848,8 +1991,11 @@ __all__ = [
     "GsaTabularDatumSummaryRow",
     "GsaTabularLinkingValueCriterion",
     "GsaTabularRowExportBehavior",
+    "GsaTargetAttributeNotInTableAttributeErrorDetail",
+    "GsaTargetAttributeTypeAttributeErrorDetail",
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
+    "GsaThresholdTypeAttributeErrorDetail",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
     "GsaUnitConversionSet",
