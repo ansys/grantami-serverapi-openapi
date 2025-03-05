@@ -62,14 +62,14 @@ class GsaIndexRecordFailure(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "error": "str",
-        "record_history_guid": "str",
+        "record_history_identity": "int",
         "record_name": "str",
         "record_was_oversized": "bool",
     }
 
     attribute_map: dict[str, str] = {
         "error": "error",
-        "record_history_guid": "recordHistoryGuid",
+        "record_history_identity": "recordHistoryIdentity",
         "record_name": "recordName",
         "record_was_oversized": "recordWasOversized",
     }
@@ -82,7 +82,7 @@ class GsaIndexRecordFailure(ModelBase):
         self,
         *,
         error: "Union[str, None, Unset_Type]" = Unset,
-        record_history_guid: "Union[str, Unset_Type]" = Unset,
+        record_history_identity: "Union[int, Unset_Type]" = Unset,
         record_name: "Union[str, None, Unset_Type]" = Unset,
         record_was_oversized: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
@@ -91,17 +91,17 @@ class GsaIndexRecordFailure(ModelBase):
         Parameters
         ----------
         error: str, optional
-        record_history_guid: str, optional
+        record_history_identity: int, optional
         record_name: str, optional
         record_was_oversized: bool, optional
         """
-        self._record_history_guid: Union[str, Unset_Type] = Unset
+        self._record_history_identity: Union[int, Unset_Type] = Unset
         self._record_name: Union[str, None, Unset_Type] = Unset
         self._error: Union[str, None, Unset_Type] = Unset
         self._record_was_oversized: Union[bool, Unset_Type] = Unset
 
-        if record_history_guid is not Unset:
-            self.record_history_guid = record_history_guid
+        if record_history_identity is not Unset:
+            self.record_history_identity = record_history_identity
         if record_name is not Unset:
             self.record_name = record_name
         if error is not Unset:
@@ -110,29 +110,29 @@ class GsaIndexRecordFailure(ModelBase):
             self.record_was_oversized = record_was_oversized
 
     @property
-    def record_history_guid(self) -> "Union[str, Unset_Type]":
-        """Gets the record_history_guid of this GsaIndexRecordFailure.
+    def record_history_identity(self) -> "Union[int, Unset_Type]":
+        """Gets the record_history_identity of this GsaIndexRecordFailure.
 
         Returns
         -------
-        Union[str, Unset_Type]
-            The record_history_guid of this GsaIndexRecordFailure.
+        Union[int, Unset_Type]
+            The record_history_identity of this GsaIndexRecordFailure.
         """
-        return self._record_history_guid
+        return self._record_history_identity
 
-    @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
-        """Sets the record_history_guid of this GsaIndexRecordFailure.
+    @record_history_identity.setter
+    def record_history_identity(self, record_history_identity: "Union[int, Unset_Type]") -> None:
+        """Sets the record_history_identity of this GsaIndexRecordFailure.
 
         Parameters
         ----------
-        record_history_guid: Union[str, Unset_Type]
-            The record_history_guid of this GsaIndexRecordFailure.
+        record_history_identity: Union[int, Unset_Type]
+            The record_history_identity of this GsaIndexRecordFailure.
         """
         # Field is not nullable
-        if record_history_guid is None:
-            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
-        self._record_history_guid = record_history_guid
+        if record_history_identity is None:
+            raise ValueError("Invalid value for 'record_history_identity', must not be 'None'")
+        self._record_history_identity = record_history_identity
 
     @property
     def record_name(self) -> "Union[str, None, Unset_Type]":
