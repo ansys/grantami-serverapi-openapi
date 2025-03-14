@@ -62,14 +62,12 @@ class GsaLinkedRecordExportBehavior(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "linked_records_criterion": "GsaCriterion",
-        "roll_up_types": "list[GsaTabularColumnRollUpType]",
         "summary_roll_up_type": "GsaTabularColumnRollUpType",
         "tabular_row_behavior": "GsaTabularRowExportBehavior",
     }
 
     attribute_map: dict[str, str] = {
         "linked_records_criterion": "linkedRecordsCriterion",
-        "roll_up_types": "rollUpTypes",
         "summary_roll_up_type": "summaryRollUpType",
         "tabular_row_behavior": "tabularRowBehavior",
     }
@@ -77,7 +75,6 @@ class GsaLinkedRecordExportBehavior(ModelBase):
     subtype_mapping: dict[str, str] = {
         "tabularRowBehavior": "GsaTabularRowExportBehavior",
         "summaryRollUpType": "GsaTabularColumnRollUpType",
-        "rollUpTypes": "GsaTabularColumnRollUpType",
         "linkedRecordsCriterion": "GsaCriterion",
     }
 
@@ -87,7 +84,6 @@ class GsaLinkedRecordExportBehavior(ModelBase):
         self,
         *,
         linked_records_criterion: "Union[GsaCriterion, Unset_Type]" = Unset,
-        roll_up_types: "Union[list[GsaTabularColumnRollUpType], None, Unset_Type]" = Unset,
         summary_roll_up_type: "Union[GsaTabularColumnRollUpType, Unset_Type]" = Unset,
         tabular_row_behavior: "Union[GsaTabularRowExportBehavior, Unset_Type]" = Unset,
     ) -> None:
@@ -96,21 +92,17 @@ class GsaLinkedRecordExportBehavior(ModelBase):
         Parameters
         ----------
         linked_records_criterion: GsaCriterion, optional
-        roll_up_types: list[GsaTabularColumnRollUpType], optional
         summary_roll_up_type: GsaTabularColumnRollUpType, optional
         tabular_row_behavior: GsaTabularRowExportBehavior, optional
         """
         self._tabular_row_behavior: Union[GsaTabularRowExportBehavior, Unset_Type] = Unset
         self._summary_roll_up_type: Union[GsaTabularColumnRollUpType, Unset_Type] = Unset
-        self._roll_up_types: Union[list[GsaTabularColumnRollUpType], None, Unset_Type] = Unset
         self._linked_records_criterion: Union[GsaCriterion, Unset_Type] = Unset
 
         if tabular_row_behavior is not Unset:
             self.tabular_row_behavior = tabular_row_behavior
         if summary_roll_up_type is not Unset:
             self.summary_roll_up_type = summary_roll_up_type
-        if roll_up_types is not Unset:
-            self.roll_up_types = roll_up_types
         if linked_records_criterion is not Unset:
             self.linked_records_criterion = linked_records_criterion
 
@@ -167,32 +159,6 @@ class GsaLinkedRecordExportBehavior(ModelBase):
         if summary_roll_up_type is None:
             raise ValueError("Invalid value for 'summary_roll_up_type', must not be 'None'")
         self._summary_roll_up_type = summary_roll_up_type
-
-    @property
-    def roll_up_types(self) -> "Union[list[GsaTabularColumnRollUpType], None, Unset_Type]":
-        """Gets the roll_up_types of this GsaLinkedRecordExportBehavior.
-        Optional: if this attribute is being used as part of a tabular export, this can be used to specify how linked records should be rolled up
-
-        Returns
-        -------
-        Union[list[GsaTabularColumnRollUpType], None, Unset_Type]
-            The roll_up_types of this GsaLinkedRecordExportBehavior.
-        """
-        return self._roll_up_types
-
-    @roll_up_types.setter
-    def roll_up_types(
-        self, roll_up_types: "Union[list[GsaTabularColumnRollUpType], None, Unset_Type]"
-    ) -> None:
-        """Sets the roll_up_types of this GsaLinkedRecordExportBehavior.
-        Optional: if this attribute is being used as part of a tabular export, this can be used to specify how linked records should be rolled up
-
-        Parameters
-        ----------
-        roll_up_types: Union[list[GsaTabularColumnRollUpType], None, Unset_Type]
-            The roll_up_types of this GsaLinkedRecordExportBehavior.
-        """
-        self._roll_up_types = roll_up_types
 
     @property
     def linked_records_criterion(self) -> "Union[GsaCriterion, Unset_Type]":

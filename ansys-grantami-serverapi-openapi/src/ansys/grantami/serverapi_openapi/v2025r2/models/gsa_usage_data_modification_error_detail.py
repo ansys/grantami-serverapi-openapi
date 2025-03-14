@@ -36,6 +36,9 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 from ansys.grantami.serverapi_openapi.v2025r2.models.gsa_data_modification_error_detail import (  # noqa: F401
     GsaDataModificationErrorDetail,
 )
+from ansys.grantami.serverapi_openapi.v2025r2.models.gsa_data_modification_error_reason import (
+    GsaDataModificationErrorReason,
+)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -68,7 +71,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "str",
+        "reason": "GsaDataModificationErrorReason",
         "referenced_by_type": "GsaReferencedByType",
     }
 
@@ -101,7 +104,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         self,
         *,
         message: "str",
-        reason: "str" = "usage",
+        reason: "GsaDataModificationErrorReason" = GsaDataModificationErrorReason.USAGE,
         referenced_by_type: "GsaReferencedByType",
     ) -> None:
         """GsaUsageDataModificationErrorDetail - a model defined in Swagger
@@ -109,7 +112,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         Parameters
         ----------
         message: str
-        reason: str
+        reason: GsaDataModificationErrorReason
         referenced_by_type: GsaReferencedByType
         """
         super().__init__(message=message, reason=reason)
