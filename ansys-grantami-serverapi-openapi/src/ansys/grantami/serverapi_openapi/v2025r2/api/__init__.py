@@ -33,6 +33,7 @@ from .data_export_api import DataExportApi
 from .database_api import DatabaseApi
 from .graph_api import GraphApi
 from .help_location_api import HelpLocationApi
+from .identities_api import IdentitiesApi
 from .integration_api import IntegrationApi
 from .job_queue_api import JobQueueApi
 from .license_api import LicenseApi
@@ -82,6 +83,7 @@ __all__ = [
     "DatabaseApi",
     "GraphApi",
     "HelpLocationApi",
+    "IdentitiesApi",
     "IntegrationApi",
     "JobQueueApi",
     "LicenseApi",
