@@ -869,6 +869,7 @@ from .gsa_slim_discrete_type import GsaSlimDiscreteType
 from .gsa_slim_entity import GsaSlimEntity
 from .gsa_slim_expression import GsaSlimExpression
 from .gsa_slim_file import GsaSlimFile
+from .gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .gsa_slim_layout import GsaSlimLayout
 from .gsa_slim_layout_section import GsaSlimLayoutSection
 from .gsa_slim_named_entity import GsaSlimNamedEntity
@@ -935,6 +936,8 @@ from .gsa_target_attribute_type_attribute_error_detail import (
 from .gsa_term_with_count import GsaTermWithCount
 from .gsa_text_match_behavior import GsaTextMatchBehavior
 from .gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
+from .gsa_translate_guids_to_identities_request import GsaTranslateGuidsToIdentitiesRequest
+from .gsa_translate_guids_to_identities_response import GsaTranslateGuidsToIdentitiesResponse
 from .gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .gsa_unit import GsaUnit
 from .gsa_unit_conversion_set import GsaUnitConversionSet
@@ -1801,6 +1804,7 @@ __all__ = [
     "GsaSlimEntity",
     "GsaSlimExpression",
     "GsaSlimFile",
+    "GsaSlimIdentifiedEntity",
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
@@ -1861,6 +1865,8 @@ __all__ = [
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
+    "GsaTranslateGuidsToIdentitiesRequest",
+    "GsaTranslateGuidsToIdentitiesResponse",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
     "GsaUnitConversionSet",

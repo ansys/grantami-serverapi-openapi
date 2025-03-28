@@ -40,6 +40,7 @@ from .api.data_export_api import DataExportApi
 from .api.database_api import DatabaseApi
 from .api.graph_api import GraphApi
 from .api.help_location_api import HelpLocationApi
+from .api.identities_api import IdentitiesApi
 from .api.integration_api import IntegrationApi
 from .api.job_queue_api import JobQueueApi
 from .api.license_api import LicenseApi
@@ -957,6 +958,7 @@ from .models.gsa_slim_discrete_type import GsaSlimDiscreteType
 from .models.gsa_slim_entity import GsaSlimEntity
 from .models.gsa_slim_expression import GsaSlimExpression
 from .models.gsa_slim_file import GsaSlimFile
+from .models.gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .models.gsa_slim_layout import GsaSlimLayout
 from .models.gsa_slim_layout_section import GsaSlimLayoutSection
 from .models.gsa_slim_named_entity import GsaSlimNamedEntity
@@ -1023,6 +1025,8 @@ from .models.gsa_target_attribute_type_attribute_error_detail import (
 from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
 from .models.gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
+from .models.gsa_translate_guids_to_identities_request import GsaTranslateGuidsToIdentitiesRequest
+from .models.gsa_translate_guids_to_identities_response import GsaTranslateGuidsToIdentitiesResponse
 from .models.gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .models.gsa_unit import GsaUnit
 from .models.gsa_unit_conversion_set import GsaUnitConversionSet
@@ -1169,6 +1173,7 @@ __all__ = [
     "DatabaseApi",
     "GraphApi",
     "HelpLocationApi",
+    "IdentitiesApi",
     "IntegrationApi",
     "JobQueueApi",
     "LicenseApi",
@@ -1936,6 +1941,7 @@ __all__ = [
     "GsaSlimEntity",
     "GsaSlimExpression",
     "GsaSlimFile",
+    "GsaSlimIdentifiedEntity",
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
@@ -1996,6 +2002,8 @@ __all__ = [
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
+    "GsaTranslateGuidsToIdentitiesRequest",
+    "GsaTranslateGuidsToIdentitiesResponse",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
     "GsaUnitConversionSet",
