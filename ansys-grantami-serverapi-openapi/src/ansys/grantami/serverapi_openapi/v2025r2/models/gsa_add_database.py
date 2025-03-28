@@ -61,91 +61,59 @@ class GsaAddDatabase(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "data_source": "str",
+        "connection_details": "GsaConnectionDetails",
         "database_key": "str",
-        "initial_catalog": "str",
-        "additional_sql_parameters": "str",
         "is_read_only": "bool",
         "language": "str",
         "loading_order": "int",
-        "sql_password": "str",
-        "sql_user_name": "str",
-        "use_integrated_security": "bool",
         "version_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "data_source": "dataSource",
+        "connection_details": "connectionDetails",
         "database_key": "databaseKey",
-        "initial_catalog": "initialCatalog",
-        "additional_sql_parameters": "additionalSqlParameters",
         "is_read_only": "isReadOnly",
         "language": "language",
         "loading_order": "loadingOrder",
-        "sql_password": "sqlPassword",
-        "sql_user_name": "sqlUserName",
-        "use_integrated_security": "useIntegratedSecurity",
         "version_guid": "versionGuid",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "connectionDetails": "GsaConnectionDetails",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        data_source: "str",
+        connection_details: "GsaConnectionDetails",
         database_key: "str",
-        initial_catalog: "str",
-        additional_sql_parameters: "Union[str, None, Unset_Type]" = Unset,
         is_read_only: "Union[bool, None, Unset_Type]" = Unset,
         language: "Union[str, None, Unset_Type]" = Unset,
         loading_order: "Union[int, None, Unset_Type]" = Unset,
-        sql_password: "Union[str, None, Unset_Type]" = Unset,
-        sql_user_name: "Union[str, None, Unset_Type]" = Unset,
-        use_integrated_security: "Union[bool, None, Unset_Type]" = Unset,
         version_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaAddDatabase - a model defined in Swagger
 
         Parameters
         ----------
-        data_source: str
+        connection_details: GsaConnectionDetails
         database_key: str
-        initial_catalog: str
-        additional_sql_parameters: str, optional
         is_read_only: bool, optional
         language: str, optional
         loading_order: int, optional
-        sql_password: str, optional
-        sql_user_name: str, optional
-        use_integrated_security: bool, optional
         version_guid: str, optional
         """
         self._database_key: str
-        self._data_source: str
-        self._use_integrated_security: Union[bool, None, Unset_Type] = Unset
-        self._sql_user_name: Union[str, None, Unset_Type] = Unset
-        self._sql_password: Union[str, None, Unset_Type] = Unset
-        self._initial_catalog: str
-        self._additional_sql_parameters: Union[str, None, Unset_Type] = Unset
+        self._connection_details: GsaConnectionDetails
         self._is_read_only: Union[bool, None, Unset_Type] = Unset
         self._loading_order: Union[int, None, Unset_Type] = Unset
         self._language: Union[str, None, Unset_Type] = Unset
         self._version_guid: Union[str, None, Unset_Type] = Unset
 
         self.database_key = database_key
-        self.data_source = data_source
-        if use_integrated_security is not Unset:
-            self.use_integrated_security = use_integrated_security
-        if sql_user_name is not Unset:
-            self.sql_user_name = sql_user_name
-        if sql_password is not Unset:
-            self.sql_password = sql_password
-        self.initial_catalog = initial_catalog
-        if additional_sql_parameters is not Unset:
-            self.additional_sql_parameters = additional_sql_parameters
+        self.connection_details = connection_details
         if is_read_only is not Unset:
             self.is_read_only = is_read_only
         if loading_order is not Unset:
@@ -184,162 +152,32 @@ class GsaAddDatabase(ModelBase):
         self._database_key = database_key
 
     @property
-    def data_source(self) -> "str":
-        """Gets the data_source of this GsaAddDatabase.
-        The SQL server data source
+    def connection_details(self) -> "GsaConnectionDetails":
+        """Gets the connection_details of this GsaAddDatabase.
 
         Returns
         -------
-        str
-            The data_source of this GsaAddDatabase.
+        GsaConnectionDetails
+            The connection_details of this GsaAddDatabase.
         """
-        return self._data_source
+        return self._connection_details
 
-    @data_source.setter
-    def data_source(self, data_source: "str") -> None:
-        """Sets the data_source of this GsaAddDatabase.
-        The SQL server data source
+    @connection_details.setter
+    def connection_details(self, connection_details: "GsaConnectionDetails") -> None:
+        """Sets the connection_details of this GsaAddDatabase.
 
         Parameters
         ----------
-        data_source: str
-            The data_source of this GsaAddDatabase.
+        connection_details: GsaConnectionDetails
+            The connection_details of this GsaAddDatabase.
         """
         # Field is not nullable
-        if data_source is None:
-            raise ValueError("Invalid value for 'data_source', must not be 'None'")
+        if connection_details is None:
+            raise ValueError("Invalid value for 'connection_details', must not be 'None'")
         # Field is required
-        if data_source is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'data_source', must not be 'Unset'")
-        self._data_source = data_source
-
-    @property
-    def use_integrated_security(self) -> "Union[bool, None, Unset_Type]":
-        """Gets the use_integrated_security of this GsaAddDatabase.
-        Set to true if the SQL connection to the new database should use Windows authentication
-
-        Returns
-        -------
-        Union[bool, None, Unset_Type]
-            The use_integrated_security of this GsaAddDatabase.
-        """
-        return self._use_integrated_security
-
-    @use_integrated_security.setter
-    def use_integrated_security(
-        self, use_integrated_security: "Union[bool, None, Unset_Type]"
-    ) -> None:
-        """Sets the use_integrated_security of this GsaAddDatabase.
-        Set to true if the SQL connection to the new database should use Windows authentication
-
-        Parameters
-        ----------
-        use_integrated_security: Union[bool, None, Unset_Type]
-            The use_integrated_security of this GsaAddDatabase.
-        """
-        self._use_integrated_security = use_integrated_security
-
-    @property
-    def sql_user_name(self) -> "Union[str, None, Unset_Type]":
-        """Gets the sql_user_name of this GsaAddDatabase.
-        The user name to use if the new database should use SQL authentication. The password must also be provided.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The sql_user_name of this GsaAddDatabase.
-        """
-        return self._sql_user_name
-
-    @sql_user_name.setter
-    def sql_user_name(self, sql_user_name: "Union[str, None, Unset_Type]") -> None:
-        """Sets the sql_user_name of this GsaAddDatabase.
-        The user name to use if the new database should use SQL authentication. The password must also be provided.
-
-        Parameters
-        ----------
-        sql_user_name: Union[str, None, Unset_Type]
-            The sql_user_name of this GsaAddDatabase.
-        """
-        self._sql_user_name = sql_user_name
-
-    @property
-    def sql_password(self) -> "Union[str, None, Unset_Type]":
-        """Gets the sql_password of this GsaAddDatabase.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The sql_password of this GsaAddDatabase.
-        """
-        return self._sql_password
-
-    @sql_password.setter
-    def sql_password(self, sql_password: "Union[str, None, Unset_Type]") -> None:
-        """Sets the sql_password of this GsaAddDatabase.
-
-        Parameters
-        ----------
-        sql_password: Union[str, None, Unset_Type]
-            The sql_password of this GsaAddDatabase.
-        """
-        self._sql_password = sql_password
-
-    @property
-    def initial_catalog(self) -> "str":
-        """Gets the initial_catalog of this GsaAddDatabase.
-        The name of the database in SQL server
-
-        Returns
-        -------
-        str
-            The initial_catalog of this GsaAddDatabase.
-        """
-        return self._initial_catalog
-
-    @initial_catalog.setter
-    def initial_catalog(self, initial_catalog: "str") -> None:
-        """Sets the initial_catalog of this GsaAddDatabase.
-        The name of the database in SQL server
-
-        Parameters
-        ----------
-        initial_catalog: str
-            The initial_catalog of this GsaAddDatabase.
-        """
-        # Field is not nullable
-        if initial_catalog is None:
-            raise ValueError("Invalid value for 'initial_catalog', must not be 'None'")
-        # Field is required
-        if initial_catalog is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'initial_catalog', must not be 'Unset'")
-        self._initial_catalog = initial_catalog
-
-    @property
-    def additional_sql_parameters(self) -> "Union[str, None, Unset_Type]":
-        """Gets the additional_sql_parameters of this GsaAddDatabase.
-        (Optional) Any additional parameters that will be added to the SQL connection string for the database. Must be a valid SQL connection string format.
-
-        Returns
-        -------
-        Union[str, None, Unset_Type]
-            The additional_sql_parameters of this GsaAddDatabase.
-        """
-        return self._additional_sql_parameters
-
-    @additional_sql_parameters.setter
-    def additional_sql_parameters(
-        self, additional_sql_parameters: "Union[str, None, Unset_Type]"
-    ) -> None:
-        """Sets the additional_sql_parameters of this GsaAddDatabase.
-        (Optional) Any additional parameters that will be added to the SQL connection string for the database. Must be a valid SQL connection string format.
-
-        Parameters
-        ----------
-        additional_sql_parameters: Union[str, None, Unset_Type]
-            The additional_sql_parameters of this GsaAddDatabase.
-        """
-        self._additional_sql_parameters = additional_sql_parameters
+        if connection_details is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'connection_details', must not be 'Unset'")
+        self._connection_details = connection_details
 
     @property
     def is_read_only(self) -> "Union[bool, None, Unset_Type]":

@@ -104,6 +104,9 @@ from .models.gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
 from .models.gsa_add_database import GsaAddDatabase
+from .models.gsa_add_database_issue_type import GsaAddDatabaseIssueType
+from .models.gsa_add_database_validation_issue import GsaAddDatabaseValidationIssue
+from .models.gsa_add_database_validation_result import GsaAddDatabaseValidationResult
 from .models.gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .models.gsa_aggregation import GsaAggregation
 from .models.gsa_aggregation_criterion import GsaAggregationCriterion
@@ -174,6 +177,7 @@ from .models.gsa_bulk_response_item import GsaBulkResponseItem
 from .models.gsa_calendar_interval import GsaCalendarInterval
 from .models.gsa_configuration import GsaConfiguration
 from .models.gsa_configurations_info import GsaConfigurationsInfo
+from .models.gsa_connection_details import GsaConnectionDetails
 from .models.gsa_constant import GsaConstant
 from .models.gsa_constant_deletion_exception import GsaConstantDeletionException
 from .models.gsa_constants_info import GsaConstantsInfo
@@ -447,11 +451,23 @@ from .models.gsa_discrete_values_replace_discrete_values_info import (
 from .models.gsa_discrete_values_update_discrete_value import GsaDiscreteValuesUpdateDiscreteValue
 from .models.gsa_disk_status import GsaDiskStatus
 from .models.gsa_double_sorting_value import GsaDoubleSortingValue
+from .models.gsa_duplicate_database_add_database_validation_issue import (
+    GsaDuplicateDatabaseAddDatabaseValidationIssue,
+)
 from .models.gsa_duplicate_expression_guids_maths_functional_error_detail import (
     GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail,
 )
+from .models.gsa_duplicate_guid_add_database_validation_issue import (
+    GsaDuplicateGuidAddDatabaseValidationIssue,
+)
+from .models.gsa_duplicate_key_add_database_validation_issue import (
+    GsaDuplicateKeyAddDatabaseValidationIssue,
+)
 from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
+)
+from .models.gsa_duplicate_version_guid_add_database_validation_issue import (
+    GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
 from .models.gsa_dynamic_link_group_usage_data_modification_error_detail import (
     GsaDynamicLinkGroupUsageDataModificationErrorDetail,
@@ -590,6 +606,9 @@ from .models.gsa_integration_schema_of_object_identifier import (
     GsaIntegrationSchemaOfObjectIdentifier,
 )
 from .models.gsa_integration_schema_status import GsaIntegrationSchemaStatus
+from .models.gsa_invalid_key_add_database_validation_issue import (
+    GsaInvalidKeyAddDatabaseValidationIssue,
+)
 from .models.gsa_invalid_parent_state_error_detail import GsaInvalidParentStateErrorDetail
 from .models.gsa_invalid_version_state_error_detail import GsaInvalidVersionStateErrorDetail
 from .models.gsa_job import GsaJob
@@ -904,6 +923,12 @@ from .models.gsa_rich_text_value import GsaRichTextValue
 from .models.gsa_rollup_export_failure import GsaRollupExportFailure
 from .models.gsa_rollup_reference import GsaRollupReference
 from .models.gsa_save_search_request import GsaSaveSearchRequest
+from .models.gsa_schema_too_new_add_database_validation_issue import (
+    GsaSchemaTooNewAddDatabaseValidationIssue,
+)
+from .models.gsa_schema_too_old_add_database_validation_issue import (
+    GsaSchemaTooOldAddDatabaseValidationIssue,
+)
 from .models.gsa_search_cluster_status import GsaSearchClusterStatus
 from .models.gsa_search_detail import GsaSearchDetail
 from .models.gsa_search_index_status import GsaSearchIndexStatus
@@ -1027,6 +1052,9 @@ from .models.gsa_text_match_behavior import GsaTextMatchBehavior
 from .models.gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
 from .models.gsa_translate_guids_to_identities_request import GsaTranslateGuidsToIdentitiesRequest
 from .models.gsa_translate_guids_to_identities_response import GsaTranslateGuidsToIdentitiesResponse
+from .models.gsa_unable_to_connect_add_database_validation_issue import (
+    GsaUnableToConnectAddDatabaseValidationIssue,
+)
 from .models.gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .models.gsa_unit import GsaUnit
 from .models.gsa_unit_conversion_set import GsaUnitConversionSet
@@ -1227,6 +1255,9 @@ __all__ = [
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAddDatabase",
+    "GsaAddDatabaseIssueType",
+    "GsaAddDatabaseValidationIssue",
+    "GsaAddDatabaseValidationResult",
     "GsaAddRecordHistoryToSubset",
     "GsaAggregation",
     "GsaAggregationCriterion",
@@ -1291,6 +1322,7 @@ __all__ = [
     "GsaCalendarInterval",
     "GsaConfiguration",
     "GsaConfigurationsInfo",
+    "GsaConnectionDetails",
     "GsaConstant",
     "GsaConstantDeletionException",
     "GsaConstantsInfo",
@@ -1514,8 +1546,12 @@ __all__ = [
     "GsaDiscreteValuesUpdateDiscreteValue",
     "GsaDiskStatus",
     "GsaDoubleSortingValue",
+    "GsaDuplicateDatabaseAddDatabaseValidationIssue",
     "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
+    "GsaDuplicateGuidAddDatabaseValidationIssue",
+    "GsaDuplicateKeyAddDatabaseValidationIssue",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
+    "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
     "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
     "GsaDynamicRecordLinkGroup",
     "GsaEmptyAxisNameAttributeErrorDetail",
@@ -1619,6 +1655,7 @@ __all__ = [
     "GsaIntegrationSchemaGenerationErrorDetail",
     "GsaIntegrationSchemaOfObjectIdentifier",
     "GsaIntegrationSchemaStatus",
+    "GsaInvalidKeyAddDatabaseValidationIssue",
     "GsaInvalidParentStateErrorDetail",
     "GsaInvalidVersionStateErrorDetail",
     "GsaJob",
@@ -1891,6 +1928,8 @@ __all__ = [
     "GsaRollupExportFailure",
     "GsaRollupReference",
     "GsaSaveSearchRequest",
+    "GsaSchemaTooNewAddDatabaseValidationIssue",
+    "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
     "GsaSearchDetail",
     "GsaSearchIndexStatus",
@@ -2004,6 +2043,7 @@ __all__ = [
     "GsaThresholdTypeAttributeErrorDetail",
     "GsaTranslateGuidsToIdentitiesRequest",
     "GsaTranslateGuidsToIdentitiesResponse",
+    "GsaUnableToConnectAddDatabaseValidationIssue",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
     "GsaUnitConversionSet",

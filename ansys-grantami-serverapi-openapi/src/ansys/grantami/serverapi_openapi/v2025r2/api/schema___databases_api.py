@@ -760,3 +760,154 @@ class SchemaDatabasesApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map,
         )
+
+    def upgrade_database_not_added_to_mi(
+        self, *, body: "Optional[GsaConnectionDetails]" = None
+    ) -> "None":
+        """Upgrades an external database to the latest schema version. Only available to users in the System Administrator role.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaConnectionDetails
+
+        Returns
+        -------
+        None
+        """
+        data = self._upgrade_database_not_added_to_mi_with_http_info(
+            body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _upgrade_database_not_added_to_mi_with_http_info(
+        self, body: "Optional[GsaConnectionDetails]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method upgrade_database_not_added_to_mi"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases:upgrade-external",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def validate_database_to_add(
+        self, *, body: "Optional[GsaAddDatabase]" = None
+    ) -> "Union[GsaAddDatabaseValidationResult, None]":
+        """Validates whether a database can be added to MI server. Only available to users in the System Administrator role.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaAddDatabase
+
+        Returns
+        -------
+        Union[GsaAddDatabaseValidationResult, None]
+        """
+        data = self._validate_database_to_add_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _validate_database_to_add_with_http_info(
+        self, body: "Optional[GsaAddDatabase]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method validate_database_to_add"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaAddDatabaseValidationResult",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases:validate",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
