@@ -65,6 +65,8 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "path_attribute_guids": "list[str]",
+        "path_attribute_identities": "list[int]",
         "type": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -74,6 +76,8 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     }
 
     attribute_map: dict[str, str] = {
+        "path_attribute_guids": "pathAttributeGuids",
+        "path_attribute_identities": "pathAttributeIdentities",
         "type": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -89,6 +93,8 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     def __init__(
         self,
         *,
+        path_attribute_guids: "list[str]",
+        path_attribute_identities: "list[int]",
         type: "str" = "countRollup",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         attribute_identity: "Union[int, None, Unset_Type]" = Unset,
@@ -100,6 +106,8 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
 
         Parameters
         ----------
+        path_attribute_guids: list[str]
+        path_attribute_identities: list[int]
         type: str
         attribute_guid: str, optional
         attribute_identity: int, optional
@@ -108,6 +116,8 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         roll_up_type: GsaTabularColumnRollUpType, optional
         """
         super().__init__(
+            path_attribute_guids=path_attribute_guids,
+            path_attribute_identities=path_attribute_identities,
             type=type,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,

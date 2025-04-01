@@ -89,6 +89,11 @@ class GsaAttributeErrorDetail(ModelBase):
         "targetAttributeNotInTable".lower(): "#/components/schemas/GsaTargetAttributeNotInTableAttributeErrorDetail",
         "targetAttributeType".lower(): "#/components/schemas/GsaTargetAttributeTypeAttributeErrorDetail",
         "thresholdType".lower(): "#/components/schemas/GsaThresholdTypeAttributeErrorDetail",
+        "duplicateTabularColumnGuids".lower(): "#/components/schemas/GsaDuplicateTabularColumnGuidsErrorDetail",
+        "existingTabularColumnGuid".lower(): "#/components/schemas/GsaExistingTabularColumnGuidErrorDetail",
+        "tabularColumnNameNotProvided".lower(): "#/components/schemas/GsaTabularColumnNameNotProvidedErrorDetail",
+        "duplicateTabularColumnNames".lower(): "#/components/schemas/GsaDuplicateTabularColumnNamesErrorDetail",
+        "tabularColumnNoSuchEntity".lower(): "#/components/schemas/GsaNoSuchEntityTabularColumnErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

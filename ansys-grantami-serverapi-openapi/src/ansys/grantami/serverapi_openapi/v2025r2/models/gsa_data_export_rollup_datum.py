@@ -63,6 +63,8 @@ class GsaDataExportRollupDatum(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "path_attribute_guids": "list[str]",
+        "path_attribute_identities": "list[int]",
         "type": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -71,6 +73,8 @@ class GsaDataExportRollupDatum(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "path_attribute_guids": "pathAttributeGuids",
+        "path_attribute_identities": "pathAttributeIdentities",
         "type": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -94,6 +98,8 @@ class GsaDataExportRollupDatum(ModelBase):
     def __init__(
         self,
         *,
+        path_attribute_guids: "list[str]",
+        path_attribute_identities: "list[int]",
         type: "str",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         attribute_identity: "Union[int, None, Unset_Type]" = Unset,
@@ -104,6 +110,8 @@ class GsaDataExportRollupDatum(ModelBase):
 
         Parameters
         ----------
+        path_attribute_guids: list[str]
+        path_attribute_identities: list[int]
         type: str
         attribute_guid: str, optional
         attribute_identity: int, optional
@@ -114,6 +122,8 @@ class GsaDataExportRollupDatum(ModelBase):
         self._attribute_identity: Union[int, None, Unset_Type] = Unset
         self._attribute_guid: Union[str, None, Unset_Type] = Unset
         self._roll_up_type: Union[GsaTabularColumnRollUpType, Unset_Type] = Unset
+        self._path_attribute_guids: list[str]
+        self._path_attribute_identities: list[int]
         self._type: str
 
         if database_key is not Unset:
@@ -124,6 +134,8 @@ class GsaDataExportRollupDatum(ModelBase):
             self.attribute_guid = attribute_guid
         if roll_up_type is not Unset:
             self.roll_up_type = roll_up_type
+        self.path_attribute_guids = path_attribute_guids
+        self.path_attribute_identities = path_attribute_identities
         self.type = type
 
     @property
@@ -222,6 +234,66 @@ class GsaDataExportRollupDatum(ModelBase):
         if roll_up_type is None:
             raise ValueError("Invalid value for 'roll_up_type', must not be 'None'")
         self._roll_up_type = roll_up_type
+
+    @property
+    def path_attribute_guids(self) -> "list[str]":
+        """Gets the path_attribute_guids of this GsaDataExportRollupDatum.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by GUID - if they were requested by identity, see pathAttributeIdentities.
+
+        Returns
+        -------
+        list[str]
+            The path_attribute_guids of this GsaDataExportRollupDatum.
+        """
+        return self._path_attribute_guids
+
+    @path_attribute_guids.setter
+    def path_attribute_guids(self, path_attribute_guids: "list[str]") -> None:
+        """Sets the path_attribute_guids of this GsaDataExportRollupDatum.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by GUID - if they were requested by identity, see pathAttributeIdentities.
+
+        Parameters
+        ----------
+        path_attribute_guids: list[str]
+            The path_attribute_guids of this GsaDataExportRollupDatum.
+        """
+        # Field is not nullable
+        if path_attribute_guids is None:
+            raise ValueError("Invalid value for 'path_attribute_guids', must not be 'None'")
+        # Field is required
+        if path_attribute_guids is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'path_attribute_guids', must not be 'Unset'")
+        self._path_attribute_guids = path_attribute_guids
+
+    @property
+    def path_attribute_identities(self) -> "list[int]":
+        """Gets the path_attribute_identities of this GsaDataExportRollupDatum.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by identity - if they were requested by GUID, see pathAttributeGuids.
+
+        Returns
+        -------
+        list[int]
+            The path_attribute_identities of this GsaDataExportRollupDatum.
+        """
+        return self._path_attribute_identities
+
+    @path_attribute_identities.setter
+    def path_attribute_identities(self, path_attribute_identities: "list[int]") -> None:
+        """Sets the path_attribute_identities of this GsaDataExportRollupDatum.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by identity - if they were requested by GUID, see pathAttributeGuids.
+
+        Parameters
+        ----------
+        path_attribute_identities: list[int]
+            The path_attribute_identities of this GsaDataExportRollupDatum.
+        """
+        # Field is not nullable
+        if path_attribute_identities is None:
+            raise ValueError("Invalid value for 'path_attribute_identities', must not be 'None'")
+        # Field is required
+        if path_attribute_identities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'path_attribute_identities', must not be 'Unset'")
+        self._path_attribute_identities = path_attribute_identities
 
     @property
     def type(self) -> "str":
