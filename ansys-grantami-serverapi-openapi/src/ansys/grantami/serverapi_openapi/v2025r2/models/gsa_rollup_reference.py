@@ -62,6 +62,8 @@ class GsaRollupReference(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "database_key": "str",
+        "path_attribute_guids": "list[str]",
+        "path_attribute_identities": "list[int]",
         "rollup_type": "GsaTabularColumnRollUpType",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -69,6 +71,8 @@ class GsaRollupReference(ModelBase):
 
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
+        "path_attribute_guids": "pathAttributeGuids",
+        "path_attribute_identities": "pathAttributeIdentities",
         "rollup_type": "rollupType",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -84,6 +88,8 @@ class GsaRollupReference(ModelBase):
         self,
         *,
         database_key: "str",
+        path_attribute_guids: "list[str]",
+        path_attribute_identities: "list[int]",
         rollup_type: "GsaTabularColumnRollUpType",
         attribute_guid: "Union[str, None, Unset_Type]" = Unset,
         attribute_identity: "Union[int, None, Unset_Type]" = Unset,
@@ -93,6 +99,8 @@ class GsaRollupReference(ModelBase):
         Parameters
         ----------
         database_key: str
+        path_attribute_guids: list[str]
+        path_attribute_identities: list[int]
         rollup_type: GsaTabularColumnRollUpType
         attribute_guid: str, optional
         attribute_identity: int, optional
@@ -101,6 +109,8 @@ class GsaRollupReference(ModelBase):
         self._attribute_identity: Union[int, None, Unset_Type] = Unset
         self._attribute_guid: Union[str, None, Unset_Type] = Unset
         self._rollup_type: GsaTabularColumnRollUpType
+        self._path_attribute_guids: list[str]
+        self._path_attribute_identities: list[int]
 
         self.database_key = database_key
         if attribute_identity is not Unset:
@@ -108,6 +118,8 @@ class GsaRollupReference(ModelBase):
         if attribute_guid is not Unset:
             self.attribute_guid = attribute_guid
         self.rollup_type = rollup_type
+        self.path_attribute_guids = path_attribute_guids
+        self.path_attribute_identities = path_attribute_identities
 
     @property
     def database_key(self) -> "str":
@@ -208,6 +220,66 @@ class GsaRollupReference(ModelBase):
         if rollup_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'rollup_type', must not be 'Unset'")
         self._rollup_type = rollup_type
+
+    @property
+    def path_attribute_guids(self) -> "list[str]":
+        """Gets the path_attribute_guids of this GsaRollupReference.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by GUID - if they were requested by identity, see pathAttributeIdentities.
+
+        Returns
+        -------
+        list[str]
+            The path_attribute_guids of this GsaRollupReference.
+        """
+        return self._path_attribute_guids
+
+    @path_attribute_guids.setter
+    def path_attribute_guids(self, path_attribute_guids: "list[str]") -> None:
+        """Sets the path_attribute_guids of this GsaRollupReference.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by GUID - if they were requested by identity, see pathAttributeIdentities.
+
+        Parameters
+        ----------
+        path_attribute_guids: list[str]
+            The path_attribute_guids of this GsaRollupReference.
+        """
+        # Field is not nullable
+        if path_attribute_guids is None:
+            raise ValueError("Invalid value for 'path_attribute_guids', must not be 'None'")
+        # Field is required
+        if path_attribute_guids is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'path_attribute_guids', must not be 'Unset'")
+        self._path_attribute_guids = path_attribute_guids
+
+    @property
+    def path_attribute_identities(self) -> "list[int]":
+        """Gets the path_attribute_identities of this GsaRollupReference.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by identity - if they were requested by GUID, see pathAttributeGuids.
+
+        Returns
+        -------
+        list[int]
+            The path_attribute_identities of this GsaRollupReference.
+        """
+        return self._path_attribute_identities
+
+    @path_attribute_identities.setter
+    def path_attribute_identities(self, path_attribute_identities: "list[int]") -> None:
+        """Sets the path_attribute_identities of this GsaRollupReference.
+        The path from the exported link datum that contains this rollup, to the rolled up attribute.  Can be used to distinguish rollups over the same attribute via different link attributes.  Only populated if the attributes were requested by identity - if they were requested by GUID, see pathAttributeGuids.
+
+        Parameters
+        ----------
+        path_attribute_identities: list[int]
+            The path_attribute_identities of this GsaRollupReference.
+        """
+        # Field is not nullable
+        if path_attribute_identities is None:
+            raise ValueError("Invalid value for 'path_attribute_identities', must not be 'None'")
+        # Field is required
+        if path_attribute_identities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'path_attribute_identities', must not be 'Unset'")
+        self._path_attribute_identities = path_attribute_identities
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

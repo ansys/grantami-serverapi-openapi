@@ -401,6 +401,12 @@ from .gsa_duplicate_key_add_database_validation_issue import (
 from .gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
 )
+from .gsa_duplicate_tabular_column_guids_error_detail import (
+    GsaDuplicateTabularColumnGuidsErrorDetail,
+)
+from .gsa_duplicate_tabular_column_names_error_detail import (
+    GsaDuplicateTabularColumnNamesErrorDetail,
+)
 from .gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
@@ -413,6 +419,7 @@ from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
 from .gsa_error_detail import GsaErrorDetail
 from .gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
+from .gsa_existing_tabular_column_guid_error_detail import GsaExistingTabularColumnGuidErrorDetail
 from .gsa_export_failure import GsaExportFailure
 from .gsa_export_failure_type import GsaExportFailureType
 from .gsa_exporter_refetch_info import GsaExporterRefetchInfo
@@ -652,6 +659,7 @@ from .gsa_no_expressions_maths_functional_error_detail import (
     GsaNoExpressionsMathsFunctionalErrorDetail,
 )
 from .gsa_no_such_entity_attribute_error_detail import GsaNoSuchEntityAttributeErrorDetail
+from .gsa_no_such_entity_tabular_column_error_detail import GsaNoSuchEntityTabularColumnErrorDetail
 from .gsa_no_such_expressions_maths_functional_error_detail import (
     GsaNoSuchExpressionsMathsFunctionalErrorDetail,
 )
@@ -941,6 +949,10 @@ from .gsa_tabular_attribute_usage_data_modification_error_detail import (
 from .gsa_tabular_attribute_with_columns import GsaTabularAttributeWithColumns
 from .gsa_tabular_column import GsaTabularColumn
 from .gsa_tabular_column_dto_type import GsaTabularColumnDtoType
+from .gsa_tabular_column_name_not_provided_error_detail import (
+    GsaTabularColumnNameNotProvidedErrorDetail,
+)
+from .gsa_tabular_column_no_such_entity_type import GsaTabularColumnNoSuchEntityType
 from .gsa_tabular_column_roll_up_type import GsaTabularColumnRollUpType
 from .gsa_tabular_datum import GsaTabularDatum
 from .gsa_tabular_datum_cell import GsaTabularDatumCell
@@ -1412,6 +1424,8 @@ __all__ = [
     "GsaDuplicateGuidAddDatabaseValidationIssue",
     "GsaDuplicateKeyAddDatabaseValidationIssue",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
+    "GsaDuplicateTabularColumnGuidsErrorDetail",
+    "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
     "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
     "GsaDynamicRecordLinkGroup",
@@ -1420,6 +1434,7 @@ __all__ = [
     "GsaEntityAlreadyExistsErrorDetail",
     "GsaErrorDetail",
     "GsaExcludeValuesSpecifier",
+    "GsaExistingTabularColumnGuidErrorDetail",
     "GsaExportFailure",
     "GsaExportFailureType",
     "GsaExporterRefetchInfo",
@@ -1631,6 +1646,7 @@ __all__ = [
     "GsaNewLayoutSmartLinkItem",
     "GsaNoExpressionsMathsFunctionalErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
+    "GsaNoSuchEntityTabularColumnErrorDetail",
     "GsaNoSuchExpressionsMathsFunctionalErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoValuesSpecifier",
@@ -1888,6 +1904,8 @@ __all__ = [
     "GsaTabularAttributeWithColumns",
     "GsaTabularColumn",
     "GsaTabularColumnDtoType",
+    "GsaTabularColumnNameNotProvidedErrorDetail",
+    "GsaTabularColumnNoSuchEntityType",
     "GsaTabularColumnRollUpType",
     "GsaTabularDatum",
     "GsaTabularDatumCell",
