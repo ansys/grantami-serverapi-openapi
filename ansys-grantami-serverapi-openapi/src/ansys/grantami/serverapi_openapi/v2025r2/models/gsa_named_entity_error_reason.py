@@ -43,5 +43,6 @@ class GsaNamedEntityErrorReason(Enum):
     Allowed Enum values
     """
     ENTITYALREADYEXISTS = "entityAlreadyExists"
+    ENTITYIDENTIFIERALREADYSPECIFIED = "entityIdentifierAlreadySpecified"
     NAMENOTPROVIDED = "nameNotProvided"
     NAMEALREADYEXISTS = "nameAlreadyExists"

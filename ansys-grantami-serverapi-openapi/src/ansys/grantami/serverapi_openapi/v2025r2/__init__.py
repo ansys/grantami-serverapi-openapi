@@ -482,6 +482,9 @@ from .models.gsa_dynamic_record_link_group import GsaDynamicRecordLinkGroup
 from .models.gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .models.gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .models.gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
+from .models.gsa_entity_identifier_already_specified_error_detail import (
+    GsaEntityIdentifierAlreadySpecifiedErrorDetail,
+)
 from .models.gsa_error_detail import GsaErrorDetail
 from .models.gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
 from .models.gsa_existing_tabular_column_guid_error_detail import (
@@ -1575,6 +1578,7 @@ __all__ = [
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
+    "GsaEntityIdentifierAlreadySpecifiedErrorDetail",
     "GsaErrorDetail",
     "GsaExcludeValuesSpecifier",
     "GsaExistingTabularColumnGuidErrorDetail",
