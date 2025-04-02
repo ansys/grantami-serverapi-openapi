@@ -82,6 +82,7 @@ class GsaNamedEntityErrorDetail(ModelBase):
         "entityAlreadyExists".lower(): "#/components/schemas/GsaEntityAlreadyExistsErrorDetail",
         "nameNotProvided".lower(): "#/components/schemas/GsaNameNotProvidedErrorDetail",
         "nameAlreadyExists".lower(): "#/components/schemas/GsaNameAlreadyExistsErrorDetail",
+        "entityIdentifierAlreadySpecified".lower(): "#/components/schemas/GsaEntityIdentifierAlreadySpecifiedErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
