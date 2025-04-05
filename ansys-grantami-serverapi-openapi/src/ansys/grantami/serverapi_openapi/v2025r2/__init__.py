@@ -856,6 +856,11 @@ from .models.gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
 from .models.gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
 from .models.gsa_query_slim_typed_attribute import GsaQuerySlimTypedAttribute
 from .models.gsa_query_slim_typed_attribute_properties import GsaQuerySlimTypedAttributeProperties
+from .models.gsa_query_table import GsaQueryTable
+from .models.gsa_query_table_filter import GsaQueryTableFilter
+from .models.gsa_query_table_properties import GsaQueryTableProperties
+from .models.gsa_query_tables_info import GsaQueryTablesInfo
+from .models.gsa_query_tables_request import GsaQueryTablesRequest
 from .models.gsa_query_tabular_attribute_target import GsaQueryTabularAttributeTarget
 from .models.gsa_query_tabular_attribute_target_properties import (
     GsaQueryTabularAttributeTargetProperties,
@@ -1880,6 +1885,11 @@ __all__ = [
     "GsaQuerySlimNamedEntityProperties",
     "GsaQuerySlimTypedAttribute",
     "GsaQuerySlimTypedAttributeProperties",
+    "GsaQueryTable",
+    "GsaQueryTableFilter",
+    "GsaQueryTableProperties",
+    "GsaQueryTablesInfo",
+    "GsaQueryTablesRequest",
     "GsaQueryTabularAttributeTarget",
     "GsaQueryTabularAttributeTargetProperties",
     "GsaQueryUnit",
