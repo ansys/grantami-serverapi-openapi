@@ -108,3 +108,68 @@ class ServerManagerApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map,
         )
+
+    def put(self, *, body: "Optional[GsaSmtpProperties]" = None) -> "None":
+        """put
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaSmtpProperties
+
+        Returns
+        -------
+        None
+        """
+        data = self._put_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _put_with_http_info(self, body: "Optional[GsaSmtpProperties]" = None, **kwargs: Any) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method put")
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/email",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
