@@ -66,4 +66,4 @@ class GsaListAction(Enum):
     LISTPUBLISHERREMOVED = "ListPublisherRemoved"
     LISTMADEINTERNAL = "ListMadeInternal"
     LISTMADENOTINTERNAL = "ListMadeNotInternal"
-    LISTREVISIONPUBLISHEDANDDISCARDED = "ListRevisionPublishedAndDiscarded"
+    LISTREVISIONDISCARDED = "ListRevisionDiscarded"
