@@ -79,81 +79,85 @@ class GsaListItemRecordReference(ModelBase):
     def __init__(
         self,
         *,
-        database_guid: "Union[str, Unset_Type]" = Unset,
-        record_history_guid: "Union[str, Unset_Type]" = Unset,
+        database_guid: "str",
+        record_history_guid: "str",
         record_version: "Union[int, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaListItemRecordReference - a model defined in Swagger
 
         Parameters
         ----------
-        database_guid: str, optional
-        record_history_guid: str, optional
+        database_guid: str
+        record_history_guid: str
         record_version: int, optional
         """
-        self._database_guid: Union[str, Unset_Type] = Unset
-        self._record_history_guid: Union[str, Unset_Type] = Unset
+        self._database_guid: str
+        self._record_history_guid: str
         self._record_version: Union[int, None, Unset_Type] = Unset
 
-        if database_guid is not Unset:
-            self.database_guid = database_guid
-        if record_history_guid is not Unset:
-            self.record_history_guid = record_history_guid
+        self.database_guid = database_guid
+        self.record_history_guid = record_history_guid
         if record_version is not Unset:
             self.record_version = record_version
 
     @property
-    def database_guid(self) -> "Union[str, Unset_Type]":
+    def database_guid(self) -> "str":
         """Gets the database_guid of this GsaListItemRecordReference.
         The database GUID of the record
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The database_guid of this GsaListItemRecordReference.
         """
         return self._database_guid
 
     @database_guid.setter
-    def database_guid(self, database_guid: "Union[str, Unset_Type]") -> None:
+    def database_guid(self, database_guid: "str") -> None:
         """Sets the database_guid of this GsaListItemRecordReference.
         The database GUID of the record
 
         Parameters
         ----------
-        database_guid: Union[str, Unset_Type]
+        database_guid: str
             The database_guid of this GsaListItemRecordReference.
         """
         # Field is not nullable
         if database_guid is None:
             raise ValueError("Invalid value for 'database_guid', must not be 'None'")
+        # Field is required
+        if database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_guid', must not be 'Unset'")
         self._database_guid = database_guid
 
     @property
-    def record_history_guid(self) -> "Union[str, Unset_Type]":
+    def record_history_guid(self) -> "str":
         """Gets the record_history_guid of this GsaListItemRecordReference.
         The record history GUID of the record
 
         Returns
         -------
-        Union[str, Unset_Type]
+        str
             The record_history_guid of this GsaListItemRecordReference.
         """
         return self._record_history_guid
 
     @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "Union[str, Unset_Type]") -> None:
+    def record_history_guid(self, record_history_guid: "str") -> None:
         """Sets the record_history_guid of this GsaListItemRecordReference.
         The record history GUID of the record
 
         Parameters
         ----------
-        record_history_guid: Union[str, Unset_Type]
+        record_history_guid: str
             The record_history_guid of this GsaListItemRecordReference.
         """
         # Field is not nullable
         if record_history_guid is None:
             raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
+        # Field is required
+        if record_history_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'record_history_guid', must not be 'Unset'")
         self._record_history_guid = record_history_guid
 
     @property
