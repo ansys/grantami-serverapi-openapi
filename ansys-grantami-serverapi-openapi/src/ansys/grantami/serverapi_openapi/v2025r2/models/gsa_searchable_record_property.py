@@ -55,3 +55,4 @@ class GsaSearchableRecordProperty(Enum):
     DATABASEKEY = "databaseKey"
     TABLENAME = "tableName"
     TABLEIDENTITY = "tableIdentity"
+    TABLEGUID = "tableGuid"
