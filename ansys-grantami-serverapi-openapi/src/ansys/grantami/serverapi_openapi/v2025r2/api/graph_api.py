@@ -55,7 +55,7 @@ class GraphApi(ApiBase):
         record_history_guid: "str",
         record_version_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "Union[GsaGraphValue, None]":
@@ -69,7 +69,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-        body: list[GsaGraphParameterWithValue]
+        body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -97,7 +97,7 @@ class GraphApi(ApiBase):
         record_history_guid: "str",
         record_version_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -208,7 +208,7 @@ class GraphApi(ApiBase):
         record_history_guid: "str",
         record_version_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "Union[GsaGraphValue, None]":
@@ -223,7 +223,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-        body: list[GsaGraphParameterWithValue]
+        body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -253,7 +253,7 @@ class GraphApi(ApiBase):
         record_history_guid: "str",
         record_version_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -370,7 +370,7 @@ class GraphApi(ApiBase):
         database_key: "str",
         record_history_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "Union[GsaGraphValue, None]":
@@ -383,7 +383,7 @@ class GraphApi(ApiBase):
         database_key: str
         record_history_guid: str
         attribute_guid: str
-        body: list[GsaGraphParameterWithValue]
+        body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -409,7 +409,7 @@ class GraphApi(ApiBase):
         database_key: "str",
         record_history_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -511,7 +511,7 @@ class GraphApi(ApiBase):
         table_guid: "str",
         record_history_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
     ) -> "Union[GsaGraphValue, None]":
@@ -525,7 +525,7 @@ class GraphApi(ApiBase):
         table_guid: str
         record_history_guid: str
         attribute_guid: str
-        body: list[GsaGraphParameterWithValue]
+        body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
         mode: str
@@ -553,7 +553,7 @@ class GraphApi(ApiBase):
         table_guid: "str",
         record_history_guid: "str",
         attribute_guid: "str",
-        body: "Optional[list[GsaGraphParameterWithValue]]" = None,
+        body: "Optional[GsaGraphEvaluationSettings]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         **kwargs: Any,

@@ -67,7 +67,7 @@ class GsaDiscreteGraphValue(GsaGraphValue):
     """
     swagger_types: dict[str, str] = {
         "graph_value_type": "GsaGraphValueType",
-        "value": "GsaDiscreteValue",
+        "value": "GsaDiscreteValuesDiscreteValue",
     }
 
     attribute_map: dict[str, str] = {
@@ -76,7 +76,7 @@ class GsaDiscreteGraphValue(GsaGraphValue):
     }
 
     subtype_mapping: dict[str, str] = {
-        "value": "GsaDiscreteValue",
+        "value": "GsaDiscreteValuesDiscreteValue",
     }
 
     discriminator: Optional[str] = None
@@ -85,38 +85,38 @@ class GsaDiscreteGraphValue(GsaGraphValue):
         self,
         *,
         graph_value_type: "GsaGraphValueType" = GsaGraphValueType.DISCRETE,
-        value: "GsaDiscreteValue",
+        value: "GsaDiscreteValuesDiscreteValue",
     ) -> None:
         """GsaDiscreteGraphValue - a model defined in Swagger
 
         Parameters
         ----------
         graph_value_type: GsaGraphValueType
-        value: GsaDiscreteValue
+        value: GsaDiscreteValuesDiscreteValue
         """
         super().__init__(graph_value_type=graph_value_type)
-        self._value: GsaDiscreteValue
+        self._value: GsaDiscreteValuesDiscreteValue
 
         self.value = value
 
     @property
-    def value(self) -> "GsaDiscreteValue":
+    def value(self) -> "GsaDiscreteValuesDiscreteValue":
         """Gets the value of this GsaDiscreteGraphValue.
 
         Returns
         -------
-        GsaDiscreteValue
+        GsaDiscreteValuesDiscreteValue
             The value of this GsaDiscreteGraphValue.
         """
         return self._value
 
     @value.setter
-    def value(self, value: "GsaDiscreteValue") -> None:
+    def value(self, value: "GsaDiscreteValuesDiscreteValue") -> None:
         """Sets the value of this GsaDiscreteGraphValue.
 
         Parameters
         ----------
-        value: GsaDiscreteValue
+        value: GsaDiscreteValuesDiscreteValue
             The value of this GsaDiscreteGraphValue.
         """
         # Field is not nullable

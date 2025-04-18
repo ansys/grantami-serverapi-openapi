@@ -44,3 +44,4 @@ class GsaGraphValueType(Enum):
     """
     DISCRETE = "discrete"
     RANGE = "range"
+    NOVALUEEXISTS = "noValueExists"
