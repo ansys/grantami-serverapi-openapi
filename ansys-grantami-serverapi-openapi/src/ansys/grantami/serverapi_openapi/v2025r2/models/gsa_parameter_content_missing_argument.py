@@ -42,6 +42,6 @@ class GsaParameterContentMissingArgument(Enum):
     """
     Allowed Enum values
     """
-    _0 = "0"
-    _1 = "1"
-    _2 = "2"
+    POS_0 = 0
+    POS_1 = 1
+    POS_2 = 2
