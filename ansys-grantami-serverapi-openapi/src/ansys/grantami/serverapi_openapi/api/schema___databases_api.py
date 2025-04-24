@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -72,22 +72,22 @@ class SchemaDatabasesApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabasesInfo",
         }
 
@@ -145,24 +145,24 @@ class SchemaDatabasesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_database'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
             404: None,
         }
@@ -222,24 +222,24 @@ class SchemaDatabasesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'lock_database'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
             400: None,
             403: None,
@@ -303,24 +303,24 @@ class SchemaDatabasesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'unlock_database'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
             400: None,
             403: None,
@@ -390,18 +390,18 @@ class SchemaDatabasesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'update_database'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -414,7 +414,7 @@ class SchemaDatabasesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDatabase",
             400: None,
             403: None,

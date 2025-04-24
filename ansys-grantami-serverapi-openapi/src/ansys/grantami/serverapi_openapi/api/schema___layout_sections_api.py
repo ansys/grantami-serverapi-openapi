@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -127,9 +127,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'section_guid' when calling 'create_layout_item'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -139,12 +139,12 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "section_guid" in params and section_guid is not None:
             path_params["section-guid"] = params["section_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -157,7 +157,7 @@ class SchemaLayoutSectionsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaLayoutsNewLayoutItem",
             400: None,
             403: None,
@@ -250,9 +250,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'layout_guid' when calling 'create_section'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -260,12 +260,12 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "layout_guid" in params and layout_guid is not None:
             path_params["layout-guid"] = params["layout_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -278,7 +278,7 @@ class SchemaLayoutSectionsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaSlimEntitiesSlimLayoutSection",
             400: None,
             403: None,
@@ -388,9 +388,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'item_guid' when calling 'delete_item'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -402,16 +402,16 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "item_guid" in params and item_guid is not None:
             path_params["item-guid"] = params["item_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             400: None,
             403: None,
@@ -504,9 +504,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'section_guid' when calling 'delete_section'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -516,16 +516,16 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "section_guid" in params and section_guid is not None:
             path_params["section-guid"] = params["section_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             400: None,
             403: None,
@@ -644,9 +644,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'section_guid' when calling 'get_layout_section'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -656,24 +656,24 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "section_guid" in params and section_guid is not None:
             path_params["section-guid"] = params["section_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "show_full_detail" in params and show_full_detail is not None:
             query_params.append(("showFullDetail", params["show_full_detail"]))
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaLayoutsLayoutSection",
             404: None,
         }
@@ -780,9 +780,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'layout_guid' when calling 'get_layout_sections'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -790,24 +790,24 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "layout_guid" in params and layout_guid is not None:
             path_params["layout-guid"] = params["layout_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "show_full_detail" in params and show_full_detail is not None:
             query_params.append(("showFullDetail", params["show_full_detail"]))
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
             404: None,
         }
@@ -898,9 +898,9 @@ class SchemaLayoutSectionsApi(ApiBase):
                 "Missing the required parameter 'layout_guid' when calling 'reorder_sections'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -908,12 +908,12 @@ class SchemaLayoutSectionsApi(ApiBase):
         if "layout_guid" in params and layout_guid is not None:
             path_params["layout-guid"] = params["layout_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -926,7 +926,7 @@ class SchemaLayoutSectionsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaLayoutsLayoutSectionsInfo",
             400: None,
             403: None,

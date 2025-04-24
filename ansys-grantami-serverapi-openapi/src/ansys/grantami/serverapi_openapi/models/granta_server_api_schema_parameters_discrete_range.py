@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_values": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_values": "parameterValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
@@ -77,38 +77,38 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
     def __init__(
         self,
         *,
-        parameter_values: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        parameter_values: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     ) -> None:
         """GrantaServerApiSchemaParametersDiscreteRange - a model defined in Swagger
 
         Parameters
         ----------
-        parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
-        self._parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
 
         self.parameter_values = parameter_values
 
     @property
-    def parameter_values(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def parameter_values(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
         """
         return self._parameter_values
 
     @parameter_values.setter
     def parameter_values(
-        self, parameter_values: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, parameter_values: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
 
         Parameters
         ----------
-        parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameter_values of this GrantaServerApiSchemaParametersDiscreteRange.
         """
         # Field is not nullable
@@ -120,7 +120,7 @@ class GrantaServerApiSchemaParametersDiscreteRange(ModelBase):
         self._parameter_values = parameter_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

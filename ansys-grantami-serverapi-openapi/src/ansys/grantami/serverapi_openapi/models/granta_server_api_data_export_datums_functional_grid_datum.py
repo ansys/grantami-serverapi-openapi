@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_float_functional_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsFloatFunctionalDatum,
@@ -57,16 +57,16 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -81,7 +81,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -96,7 +96,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "points": "GrantaServerApiDataExportDatumsGridPoint",
     }
 
@@ -111,10 +111,10 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         graph_type: "str" = "grid",
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
-        points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        points: "Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
@@ -128,10 +128,10 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         graph_type: str
         is_estimated: bool, optional
         is_range: bool, optional
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
-        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-        points: List[GrantaServerApiDataExportDatumsGridPoint], optional
+        parameters: list[GrantaServerApiFunctionalDatumParameterInfo], optional
+        points: list[GrantaServerApiDataExportDatumsGridPoint], optional
         unit_symbol: str, optional
         x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
@@ -148,7 +148,7 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
             x_axis_parameter=x_axis_parameter,
         )
         self._graph_type: str
-        self._points: Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type] = (
+        self._points: Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type] = (
             Unset
         )
 
@@ -185,31 +185,31 @@ class GrantaServerApiDataExportDatumsFunctionalGridDatum(
         self._graph_type = graph_type
 
     @property
-    def points(self) -> "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]":
+    def points(self) -> "Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]":
         """Gets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
             The points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
         """
         return self._points
 
     @points.setter
     def points(
-        self, points: "Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]"
+        self, points: "Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]"
     ) -> None:
         """Sets the points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
 
         Parameters
         ----------
-        points: Union[List[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
+        points: Union[list[GrantaServerApiDataExportDatumsGridPoint], None, Unset_Type]
             The points of this GrantaServerApiDataExportDatumsFunctionalGridDatum.
         """
         self._points = points
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

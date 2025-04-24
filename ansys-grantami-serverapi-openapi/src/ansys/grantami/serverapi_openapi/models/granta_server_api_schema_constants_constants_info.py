@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaConstantsConstantsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constants": "list[GrantaServerApiSchemaSlimEntitiesSlimConstant]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constants": "constants",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constants": "GrantaServerApiSchemaSlimEntitiesSlimConstant",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaConstantsConstantsInfo(ModelBase):
     def __init__(
         self,
         *,
-        constants: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]" = Unset,
+        constants: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaConstantsConstantsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        constants: List[GrantaServerApiSchemaSlimEntitiesSlimConstant], optional
+        constants: list[GrantaServerApiSchemaSlimEntitiesSlimConstant], optional
         """
         self._constants: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type
         ] = Unset
 
         if constants is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaConstantsConstantsInfo(ModelBase):
     @property
     def constants(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]":
         """Gets the constants of this GrantaServerApiSchemaConstantsConstantsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]
             The constants of this GrantaServerApiSchemaConstantsConstantsInfo.
         """
         return self._constants
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaConstantsConstantsInfo(ModelBase):
     @constants.setter
     def constants(
         self,
-        constants: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]",
+        constants: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]",
     ) -> None:
         """Sets the constants of this GrantaServerApiSchemaConstantsConstantsInfo.
 
         Parameters
         ----------
-        constants: Union[List[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]
+        constants: Union[list[GrantaServerApiSchemaSlimEntitiesSlimConstant], None, Unset_Type]
             The constants of this GrantaServerApiSchemaConstantsConstantsInfo.
         """
         self._constants = constants
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

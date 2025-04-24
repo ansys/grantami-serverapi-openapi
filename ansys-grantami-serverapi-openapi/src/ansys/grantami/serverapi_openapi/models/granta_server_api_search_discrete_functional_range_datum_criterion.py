@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (  # noqa: F401
     GrantaServerApiSearchDatumCriterion,
@@ -57,30 +57,30 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "gte": "int",
         "lte": "int",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
@@ -89,7 +89,7 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
     def __init__(
         self,
         *,
-        constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]" = Unset,
+        constraints: "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]" = Unset,
         gte: "Union[int, None, Unset_Type]" = Unset,
         lte: "Union[int, None, Unset_Type]" = Unset,
         type: "str" = "discreteFunctionalRange",
@@ -98,7 +98,7 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
 
         Parameters
         ----------
-        constraints: List[GrantaServerApiSearchParameterConstraint], optional
+        constraints: list[GrantaServerApiSearchParameterConstraint], optional
         gte: int, optional
         lte: int, optional
         type: str
@@ -108,7 +108,7 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
         self._gte: Union[int, None, Unset_Type] = Unset
         self._lte: Union[int, None, Unset_Type] = Unset
         self._constraints: Union[
-            List[GrantaServerApiSearchParameterConstraint], None, Unset_Type
+            list[GrantaServerApiSearchParameterConstraint], None, Unset_Type
         ] = Unset
 
         self.type = type
@@ -198,33 +198,33 @@ class GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion(
     @property
     def constraints(
         self,
-    ) -> "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]":
         """Gets the constraints of this GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion.
         Optional unit string. If not included, the gte and lte values are assumed to be in database units.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
+        Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
             The constraints of this GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion.
         """
         return self._constraints
 
     @constraints.setter
     def constraints(
-        self, constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
+        self, constraints: "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion.
         Optional unit string. If not included, the gte and lte values are assumed to be in database units.
 
         Parameters
         ----------
-        constraints: Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
+        constraints: Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
             The constraints of this GrantaServerApiSearchDiscreteFunctionalRangeDatumCriterion.
         """
         self._constraints = constraints
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

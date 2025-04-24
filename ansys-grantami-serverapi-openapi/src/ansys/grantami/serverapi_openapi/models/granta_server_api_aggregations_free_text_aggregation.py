@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation import (  # noqa: F401
     GrantaServerApiAggregationsAggregation,
@@ -55,28 +55,28 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "guid": "str",
         "terms": "list[str]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "guid": "guid",
         "terms": "terms",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -84,7 +84,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         self,
         *,
         guid: "Union[str, Unset_Type]" = Unset,
-        terms: "Union[List[str], None, Unset_Type]" = Unset,
+        terms: "Union[list[str], None, Unset_Type]" = Unset,
         type: "str" = "text",
     ) -> None:
         """GrantaServerApiAggregationsFreeTextAggregation - a model defined in Swagger
@@ -92,12 +92,12 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         Parameters
         ----------
         guid: str, optional
-        terms: List[str], optional
+        terms: list[str], optional
         type: str
         """
         super().__init__()
         self._guid: Union[str, Unset_Type] = Unset
-        self._terms: Union[List[str], None, Unset_Type] = Unset
+        self._terms: Union[list[str], None, Unset_Type] = Unset
         self._type: str
 
         if guid is not Unset:
@@ -134,25 +134,25 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         self._guid = guid
 
     @property
-    def terms(self) -> "Union[List[str], None, Unset_Type]":
+    def terms(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         return self._terms
 
     @terms.setter
-    def terms(self, terms: "Union[List[str], None, Unset_Type]") -> None:
+    def terms(self, terms: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the terms of this GrantaServerApiAggregationsFreeTextAggregation.
         The topmost terms in the specified attributes, across all relevant records. Due to how  matches in multiple attributes are reconciled, we cannot easily provide a document count,  nor can we guarantee that the terms are perfectly correctly ordered.
 
         Parameters
         ----------
-        terms: Union[List[str], None, Unset_Type]
+        terms: Union[list[str], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsFreeTextAggregation.
         """
         self._terms = terms
@@ -186,7 +186,7 @@ class GrantaServerApiAggregationsFreeTextAggregation(GrantaServerApiAggregations
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

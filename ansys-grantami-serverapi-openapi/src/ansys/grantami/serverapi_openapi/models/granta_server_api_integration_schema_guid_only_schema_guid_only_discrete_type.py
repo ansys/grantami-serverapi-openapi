@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType(ModelBa
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
         "values": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -81,7 +81,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType(ModelBa
         *,
         guid: "Union[str, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
-        values: "Union[List[str], None, Unset_Type]" = Unset,
+        values: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType - a model defined in Swagger
 
@@ -89,11 +89,11 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType(ModelBa
         ----------
         guid: str, optional
         name: str, optional
-        values: List[str], optional
+        values: list[str], optional
         """
         self._guid: Union[str, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
-        self._values: Union[List[str], None, Unset_Type] = Unset
+        self._values: Union[list[str], None, Unset_Type] = Unset
 
         if guid is not Unset:
             self.guid = guid
@@ -150,29 +150,29 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType(ModelBa
         self._name = name
 
     @property
-    def values(self) -> "Union[List[str], None, Unset_Type]":
+    def values(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Union[List[str], None, Unset_Type]") -> None:
+    def values(self, values: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType.
 
         Parameters
         ----------
-        values: Union[List[str], None, Unset_Type]
+        values: Union[list[str], None, Unset_Type]
             The values of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyDiscreteType.
         """
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "constant_dependencies": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "guid": "str",
@@ -70,7 +70,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_dependencies": "attributeDependencies",
         "constant_dependencies": "constantDependencies",
         "guid": "guid",
@@ -80,7 +80,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "attributeDependencies": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "constantDependencies": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -92,11 +92,11 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
     def __init__(
         self,
         *,
-        attribute_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        constant_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        attribute_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        constant_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         guid: "str",
         name: "str",
-        parameter_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        parameter_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         value: "str",
         unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
     ) -> None:
@@ -104,19 +104,19 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
 
         Parameters
         ----------
-        attribute_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        constant_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        constant_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         guid: str
         name: str
-        parameter_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameter_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         value: str
         unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
         """
         self._value: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
-        self._attribute_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._constant_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._parameter_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._attribute_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._constant_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._parameter_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._name: str
         self._guid: str
 
@@ -183,25 +183,25 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._unit = unit
 
     @property
-    def attribute_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attribute_dependencies(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         return self._attribute_dependencies
 
     @attribute_dependencies.setter
     def attribute_dependencies(
-        self, attribute_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, attribute_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Parameters
         ----------
-        attribute_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         # Field is not nullable
@@ -213,25 +213,25 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._attribute_dependencies = attribute_dependencies
 
     @property
-    def constant_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def constant_dependencies(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         return self._constant_dependencies
 
     @constant_dependencies.setter
     def constant_dependencies(
-        self, constant_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, constant_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Parameters
         ----------
-        constant_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        constant_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The constant_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         # Field is not nullable
@@ -243,25 +243,25 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._constant_dependencies = constant_dependencies
 
     @property
-    def parameter_dependencies(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def parameter_dependencies(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         return self._parameter_dependencies
 
     @parameter_dependencies.setter
     def parameter_dependencies(
-        self, parameter_dependencies: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, parameter_dependencies: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
 
         Parameters
         ----------
-        parameter_dependencies: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameter_dependencies: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameter_dependencies of this GrantaServerApiSchemaExpressionsExpression.
         """
         # Field is not nullable
@@ -329,7 +329,7 @@ class GrantaServerApiSchemaExpressionsExpression(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

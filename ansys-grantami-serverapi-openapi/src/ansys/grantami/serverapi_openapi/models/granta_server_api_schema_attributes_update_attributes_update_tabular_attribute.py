@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
@@ -80,7 +80,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
@@ -94,7 +94,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tabularColumns": "GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn",
     }
 
@@ -112,7 +112,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         help_path: "Union[str, None, Unset_Type]" = Unset,
         hide_unlinked_rows: "Union[bool, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
-        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]" = Unset,
+        tabular_columns: "Union[list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute - a model defined in Swagger
@@ -128,7 +128,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         help_path: str, optional
         hide_unlinked_rows: bool, optional
         name: str, optional
-        tabular_columns: List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], optional
+        tabular_columns: list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], optional
         type: str
         """
         super().__init__(
@@ -144,7 +144,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
         self._display_summary_row_inline: Union[bool, Unset_Type] = Unset
         self._hide_unlinked_rows: Union[bool, Unset_Type] = Unset
         self._tabular_columns: Union[
-            List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn],
+            list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn],
             None,
             Unset_Type,
         ] = Unset
@@ -267,12 +267,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     @property
     def tabular_columns(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         return self._tabular_columns
@@ -280,19 +280,19 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute(
     @tabular_columns.setter
     def tabular_columns(
         self,
-        tabular_columns: "Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]",
+        tabular_columns: "Union[list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]",
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: Union[List[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
+        tabular_columns: Union[list[GrantaServerApiSchemaTabularColumnsUpdateTabularColumnsUpdateTabularColumn], None, Unset_Type]
             The tabular_columns of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateTabularAttribute.
         """
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

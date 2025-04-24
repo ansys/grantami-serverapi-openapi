@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (  # noqa: F401
     GrantaServerApiSearchDatumCriterion,
@@ -57,54 +57,54 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "_none": "list[int]",
         "all": "list[int]",
         "any": "list[int]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "_none": "none",
         "all": "all",
         "any": "any",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        _none: "Union[List[int], None, Unset_Type]" = Unset,
-        all: "Union[List[int], None, Unset_Type]" = Unset,
-        any: "Union[List[int], None, Unset_Type]" = Unset,
+        _none: "Union[list[int], None, Unset_Type]" = Unset,
+        all: "Union[list[int], None, Unset_Type]" = Unset,
+        any: "Union[list[int], None, Unset_Type]" = Unset,
         type: "str" = "discreteIdentityValues",
     ) -> None:
         """GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        _none: List[int], optional
-        all: List[int], optional
-        any: List[int], optional
+        _none: list[int], optional
+        all: list[int], optional
+        any: list[int], optional
         type: str
         """
         super().__init__()
-        self._all: Union[List[int], None, Unset_Type] = Unset
-        self._any: Union[List[int], None, Unset_Type] = Unset
-        self.__none: Union[List[int], None, Unset_Type] = Unset
+        self._all: Union[list[int], None, Unset_Type] = Unset
+        self._any: Union[list[int], None, Unset_Type] = Unset
+        self.__none: Union[list[int], None, Unset_Type] = Unset
         self._type: str
 
         if all is not Unset:
@@ -116,73 +116,73 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         self.type = type
 
     @property
-    def all(self) -> "Union[List[int], None, Unset_Type]":
+    def all(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         return self._all
 
     @all.setter
-    def all(self, all: "Union[List[int], None, Unset_Type]") -> None:
+    def all(self, all: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Parameters
         ----------
-        all: Union[List[int], None, Unset_Type]
+        all: Union[list[int], None, Unset_Type]
             The all of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self._all = all
 
     @property
-    def any(self) -> "Union[List[int], None, Unset_Type]":
+    def any(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Union[List[int], None, Unset_Type]") -> None:
+    def any(self, any: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any: Union[List[int], None, Unset_Type]
+        any: Union[list[int], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Union[List[int], None, Unset_Type]":
+    def _none(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Union[List[int], None, Unset_Type]") -> None:
+    def _none(self, _none: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Parameters
         ----------
-        _none: Union[List[int], None, Unset_Type]
+        _none: Union[list[int], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion.
         """
         self.__none = _none
@@ -216,7 +216,7 @@ class GrantaServerApiSearchDiscreteIdentityValuesDatumCriterion(
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

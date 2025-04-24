@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaSlimEntitiesSlimObjects(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaSlimEntitiesSlimObjects(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        attributes: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaSlimEntitiesSlimObjects - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
         """
         self._attributes: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
 
         if attributes is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaSlimEntitiesSlimObjects(ModelBase):
     @property
     def attributes(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the attributes of this GrantaServerApiSchemaSlimEntitiesSlimObjects.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The attributes of this GrantaServerApiSchemaSlimEntitiesSlimObjects.
         """
         return self._attributes
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaSlimEntitiesSlimObjects(ModelBase):
     @attributes.setter
     def attributes(
         self,
-        attributes: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
+        attributes: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attributes of this GrantaServerApiSchemaSlimEntitiesSlimObjects.
 
         Parameters
         ----------
-        attributes: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        attributes: Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The attributes of this GrantaServerApiSchemaSlimEntitiesSlimObjects.
         """
         self._attributes = attributes
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (  # noqa: F401
     GrantaServerApiSearchCriterion,
@@ -55,28 +55,28 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "linking_value_match_behavior": "GrantaServerApiSearchLinkingValueMatchBehavior",
         "type": "str",
         "values": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "linking_value_match_behavior": "linkingValueMatchBehavior",
         "type": "type",
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "linkingValueMatchBehavior": "GrantaServerApiSearchLinkingValueMatchBehavior",
     }
 
@@ -87,7 +87,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         *,
         linking_value_match_behavior: "Union[GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type]" = Unset,
         type: "str" = "tabularLinkingValue",
-        values: "Union[List[str], None, Unset_Type]" = Unset,
+        values: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchTabularLinkingValueCriterion - a model defined in Swagger
 
@@ -95,10 +95,10 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         ----------
         linking_value_match_behavior: GrantaServerApiSearchLinkingValueMatchBehavior, optional
         type: str
-        values: List[str], optional
+        values: list[str], optional
         """
         super().__init__()
-        self._values: Union[List[str], None, Unset_Type] = Unset
+        self._values: Union[list[str], None, Unset_Type] = Unset
         self._linking_value_match_behavior: Union[
             GrantaServerApiSearchLinkingValueMatchBehavior, Unset_Type
         ] = Unset
@@ -111,23 +111,23 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         self.type = type
 
     @property
-    def values(self) -> "Union[List[str], None, Unset_Type]":
+    def values(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The values of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Union[List[str], None, Unset_Type]") -> None:
+    def values(self, values: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the values of this GrantaServerApiSearchTabularLinkingValueCriterion.
 
         Parameters
         ----------
-        values: Union[List[str], None, Unset_Type]
+        values: Union[list[str], None, Unset_Type]
             The values of this GrantaServerApiSearchTabularLinkingValueCriterion.
         """
         self._values = values
@@ -191,7 +191,7 @@ class GrantaServerApiSearchTabularLinkingValueCriterion(GrantaServerApiSearchCri
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

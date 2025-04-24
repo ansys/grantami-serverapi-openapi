@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -88,18 +88,18 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'get_permissions'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -107,7 +107,7 @@ class ListPermissionsApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoUserPermissionsInfo",
             403: None,
             404: None,
@@ -180,20 +180,20 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'user_identifier' when calling 'get_permissions_for_user'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
         if "user_identifier" in params and user_identifier is not None:
             path_params["userIdentifier"] = params["user_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -201,7 +201,7 @@ class ListPermissionsApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListPermissionFlags",
             403: None,
             404: None,
@@ -275,18 +275,18 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'set_permissions'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -301,7 +301,7 @@ class ListPermissionsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             202: "GrantaServerApiListsDtoUserPermissionsInfo",
             400: None,
             403: None,
@@ -385,20 +385,20 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'user_identifier' when calling 'set_permissions_for_user'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
         if "user_identifier" in params and user_identifier is not None:
             path_params["userIdentifier"] = params["user_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -413,7 +413,7 @@ class ListPermissionsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiListsDtoRecordListPermissionFlags",
             400: None,
             403: None,
@@ -474,18 +474,18 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'subscribe'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -493,7 +493,7 @@ class ListPermissionsApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             202: "GrantaServerApiListsDtoUserPermission",
             400: None,
             403: None,
@@ -554,18 +554,18 @@ class ListPermissionsApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'unsubscribe'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -573,7 +573,7 @@ class ListPermissionsApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             202: "GrantaServerApiListsDtoUserPermission",
             400: None,
             403: None,

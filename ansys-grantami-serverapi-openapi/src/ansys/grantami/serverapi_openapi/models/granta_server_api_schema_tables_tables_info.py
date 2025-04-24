@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "tables": "list[GrantaServerApiSchemaSlimEntitiesSlimTable]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "tables": "tables",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tables": "GrantaServerApiSchemaSlimEntitiesSlimTable",
     }
 
@@ -77,15 +77,15 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
     def __init__(
         self,
         *,
-        tables: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]" = Unset,
+        tables: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaTablesTablesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        tables: List[GrantaServerApiSchemaSlimEntitiesSlimTable], optional
+        tables: list[GrantaServerApiSchemaSlimEntitiesSlimTable], optional
         """
-        self._tables: Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type] = (
+        self._tables: Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type] = (
             Unset
         )
 
@@ -93,31 +93,31 @@ class GrantaServerApiSchemaTablesTablesInfo(ModelBase):
             self.tables = tables
 
     @property
-    def tables(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]":
+    def tables(self) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]":
         """Gets the tables of this GrantaServerApiSchemaTablesTablesInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]
             The tables of this GrantaServerApiSchemaTablesTablesInfo.
         """
         return self._tables
 
     @tables.setter
     def tables(
-        self, tables: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]"
+        self, tables: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]"
     ) -> None:
         """Sets the tables of this GrantaServerApiSchemaTablesTablesInfo.
 
         Parameters
         ----------
-        tables: Union[List[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]
+        tables: Union[list[GrantaServerApiSchemaSlimEntitiesSlimTable], None, Unset_Type]
             The tables of this GrantaServerApiSchemaTablesTablesInfo.
         """
         self._tables = tables
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

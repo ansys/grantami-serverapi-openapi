@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "chartable": "bool",
         "expressionable": "bool",
         "extended_name": "str",
@@ -75,7 +75,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         "primary_dynamic_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "chartable": "chartable",
         "expressionable": "expressionable",
         "extended_name": "extendedName",
@@ -90,7 +90,7 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "orderedMetaAttributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "standardNames": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "primaryDataLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -107,15 +107,15 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         chartable: "bool",
         expressionable: "bool",
         extended_name: "str",
-        foreign_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        foreign_data_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         is_meta_attribute: "bool",
         linkable: "bool",
-        primary_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        standard_names: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        primary_data_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        standard_names: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         type_code: "str",
-        foreign_dynamic_link_groups: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
-        ordered_meta_attributes: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
-        primary_dynamic_link_groups: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        foreign_dynamic_link_groups: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        ordered_meta_attributes: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        primary_dynamic_link_groups: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaAttributesAttributeAttributeInfo - a model defined in Swagger
 
@@ -124,15 +124,15 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         chartable: bool
         expressionable: bool
         extended_name: str
-        foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        foreign_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         is_meta_attribute: bool
         linkable: bool
-        primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        primary_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        standard_names: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         type_code: str
-        foreign_dynamic_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-        ordered_meta_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
-        primary_dynamic_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        foreign_dynamic_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        ordered_meta_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        primary_dynamic_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
         """
         self._type_code: str
         self._chartable: bool
@@ -141,16 +141,16 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._extended_name: str
         self._is_meta_attribute: bool
         self._ordered_meta_attributes: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
-        self._standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._standard_names: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._primary_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._foreign_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._primary_dynamic_link_groups: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
         self._foreign_dynamic_link_groups: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
 
         self.type_code = type_code
@@ -340,12 +340,12 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @property
     def ordered_meta_attributes(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the ordered_meta_attributes of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The ordered_meta_attributes of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._ordered_meta_attributes
@@ -353,37 +353,37 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @ordered_meta_attributes.setter
     def ordered_meta_attributes(
         self,
-        ordered_meta_attributes: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
+        ordered_meta_attributes: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the ordered_meta_attributes of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        ordered_meta_attributes: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        ordered_meta_attributes: Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The ordered_meta_attributes of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         self._ordered_meta_attributes = ordered_meta_attributes
 
     @property
-    def standard_names(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def standard_names(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._standard_names
 
     @standard_names.setter
     def standard_names(
-        self, standard_names: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, standard_names: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        standard_names: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        standard_names: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The standard_names of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         # Field is not nullable
@@ -395,25 +395,25 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._standard_names = standard_names
 
     @property
-    def primary_data_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def primary_data_link_groups(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._primary_data_link_groups
 
     @primary_data_link_groups.setter
     def primary_data_link_groups(
-        self, primary_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, primary_data_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        primary_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        primary_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The primary_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         # Field is not nullable
@@ -425,25 +425,25 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
         self._primary_data_link_groups = primary_data_link_groups
 
     @property
-    def foreign_data_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def foreign_data_link_groups(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._foreign_data_link_groups
 
     @foreign_data_link_groups.setter
     def foreign_data_link_groups(
-        self, foreign_data_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, foreign_data_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        foreign_data_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        foreign_data_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The foreign_data_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         # Field is not nullable
@@ -457,12 +457,12 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @property
     def primary_dynamic_link_groups(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the primary_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The primary_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._primary_dynamic_link_groups
@@ -470,13 +470,13 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @primary_dynamic_link_groups.setter
     def primary_dynamic_link_groups(
         self,
-        primary_dynamic_link_groups: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
+        primary_dynamic_link_groups: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the primary_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        primary_dynamic_link_groups: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        primary_dynamic_link_groups: Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The primary_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         self._primary_dynamic_link_groups = primary_dynamic_link_groups
@@ -484,12 +484,12 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @property
     def foreign_dynamic_link_groups(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the foreign_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The foreign_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         return self._foreign_dynamic_link_groups
@@ -497,19 +497,19 @@ class GrantaServerApiSchemaAttributesAttributeAttributeInfo(ModelBase):
     @foreign_dynamic_link_groups.setter
     def foreign_dynamic_link_groups(
         self,
-        foreign_dynamic_link_groups: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
+        foreign_dynamic_link_groups: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the foreign_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
 
         Parameters
         ----------
-        foreign_dynamic_link_groups: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        foreign_dynamic_link_groups: Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The foreign_dynamic_link_groups of this GrantaServerApiSchemaAttributesAttributeAttributeInfo.
         """
         self._foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

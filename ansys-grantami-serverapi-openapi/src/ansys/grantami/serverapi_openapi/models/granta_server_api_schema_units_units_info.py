@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "units": "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "units": "units",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "units": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
@@ -77,15 +77,15 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
     def __init__(
         self,
         *,
-        units: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]" = Unset,
+        units: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit], optional
+        units: list[GrantaServerApiSchemaSlimEntitiesSlimUnit], optional
         """
-        self._units: Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type] = (
+        self._units: Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type] = (
             Unset
         )
 
@@ -93,31 +93,31 @@ class GrantaServerApiSchemaUnitsUnitsInfo(ModelBase):
             self.units = units
 
     @property
-    def units(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]":
+    def units(self) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]":
         """Gets the units of this GrantaServerApiSchemaUnitsUnitsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]
             The units of this GrantaServerApiSchemaUnitsUnitsInfo.
         """
         return self._units
 
     @units.setter
     def units(
-        self, units: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]"
+        self, units: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]"
     ) -> None:
         """Sets the units of this GrantaServerApiSchemaUnitsUnitsInfo.
 
         Parameters
         ----------
-        units: Union[List[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]
+        units: Union[list[GrantaServerApiSchemaSlimEntitiesSlimUnit], None, Unset_Type]
             The units of this GrantaServerApiSchemaUnitsUnitsInfo.
         """
         self._units = units
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

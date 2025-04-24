@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "description": "str",
         "group_name": "str",
         "guid": "str",
@@ -69,7 +69,7 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         "profile_table_guids": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "description": "description",
         "group_name": "groupName",
         "guid": "guid",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         "profile_table_guids": "profileTableGuids",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -90,7 +90,7 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         guid: "Union[str, None, Unset_Type]" = Unset,
         homepage_url: "Union[str, None, Unset_Type]" = Unset,
         name: "Union[str, Unset_Type]" = Unset,
-        profile_table_guids: "Union[List[str], None, Unset_Type]" = Unset,
+        profile_table_guids: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaProfilesUpdateProfile - a model defined in Swagger
 
@@ -101,11 +101,11 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         guid: str, optional
         homepage_url: str, optional
         name: str, optional
-        profile_table_guids: List[str], optional
+        profile_table_guids: list[str], optional
         """
         self._description: Union[str, None, Unset_Type] = Unset
         self._homepage_url: Union[str, None, Unset_Type] = Unset
-        self._profile_table_guids: Union[List[str], None, Unset_Type] = Unset
+        self._profile_table_guids: Union[list[str], None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
         self._group_name: Union[str, None, Unset_Type] = Unset
         self._name: Union[str, Unset_Type] = Unset
@@ -168,25 +168,25 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         self._homepage_url = homepage_url
 
     @property
-    def profile_table_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def profile_table_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the profile_table_guids of this GrantaServerApiSchemaProfilesUpdateProfile.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The profile_table_guids of this GrantaServerApiSchemaProfilesUpdateProfile.
         """
         return self._profile_table_guids
 
     @profile_table_guids.setter
     def profile_table_guids(
-        self, profile_table_guids: "Union[List[str], None, Unset_Type]"
+        self, profile_table_guids: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the profile_table_guids of this GrantaServerApiSchemaProfilesUpdateProfile.
 
         Parameters
         ----------
-        profile_table_guids: Union[List[str], None, Unset_Type]
+        profile_table_guids: Union[list[str], None, Unset_Type]
             The profile_table_guids of this GrantaServerApiSchemaProfilesUpdateProfile.
         """
         self._profile_table_guids = profile_table_guids
@@ -263,7 +263,7 @@ class GrantaServerApiSchemaProfilesUpdateProfile(ModelBase):
         self._name = name
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

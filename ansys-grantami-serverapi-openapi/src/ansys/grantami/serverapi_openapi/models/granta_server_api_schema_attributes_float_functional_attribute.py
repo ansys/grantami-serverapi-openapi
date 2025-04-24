@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -81,7 +81,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -96,7 +96,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "attributeParameters": "GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter",
     }
@@ -106,9 +106,9 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
         default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         is_range: "bool",
@@ -123,9 +123,9 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
         is_range: bool
@@ -148,7 +148,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         )
         self._type: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
-        self._attribute_parameters: List[
+        self._attribute_parameters: list[
             GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter
         ]
         self._is_range: bool
@@ -215,12 +215,12 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]":
+    ) -> "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Returns
         -------
-        List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
+        list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -228,13 +228,13 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesFloatFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesFloatFunctionalAttribute.
         """
         # Field is not nullable
@@ -274,7 +274,7 @@ class GrantaServerApiSchemaAttributesFloatFunctionalAttribute(
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

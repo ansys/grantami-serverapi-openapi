@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_record_link_groups_create_record_link_group import (  # noqa: F401
     GrantaServerApiSchemaRecordLinkGroupsCreateRecordLinkGroup,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_pairs": "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
         "link_target": "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
         "name": "str",
@@ -77,7 +77,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_pairs": "attributePairs",
         "link_target": "linkTarget",
         "name": "name",
@@ -88,7 +88,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "referentialIntegrityModel": "GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel",
         "attributePairs": "GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair",
     }
@@ -98,7 +98,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
     def __init__(
         self,
         *,
-        attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
+        attribute_pairs: "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]",
         link_target: "GrantaServerApiSchemaRecordLinkGroupsLinkTarget",
         name: "str",
         reverse_name: "str",
@@ -111,7 +111,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
 
         Parameters
         ----------
-        attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
         link_target: GrantaServerApiSchemaRecordLinkGroupsLinkTarget
         name: str
         reverse_name: str
@@ -126,7 +126,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         self._referential_integrity_model: Union[
             GrantaServerApiSchemaRecordLinkGroupsReferentialIntegrityModel, Unset_Type
         ] = Unset
-        self._attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        self._attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
 
         self.type = type
         if forbid_orphans is not Unset:
@@ -221,25 +221,25 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
     @property
     def attribute_pairs(
         self,
-    ) -> "List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]":
+    ) -> "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]":
         """Gets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup.
 
         Returns
         -------
-        List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup.
         """
         return self._attribute_pairs
 
     @attribute_pairs.setter
     def attribute_pairs(
-        self, attribute_pairs: "List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]"
+        self, attribute_pairs: "list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]"
     ) -> None:
         """Sets the attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup.
 
         Parameters
         ----------
-        attribute_pairs: List[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
+        attribute_pairs: list[GrantaServerApiSchemaRecordLinkGroupsCreateAttributeLinkPair]
             The attribute_pairs of this GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup.
         """
         # Field is not nullable
@@ -251,7 +251,7 @@ class GrantaServerApiSchemaRecordLinkGroupsCreateDynamicRecordLinkGroup(
         self._attribute_pairs = attribute_pairs
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

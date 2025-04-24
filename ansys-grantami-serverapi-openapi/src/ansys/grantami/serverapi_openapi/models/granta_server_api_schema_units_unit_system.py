@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
         "unit_mappings": "list[GrantaServerApiSchemaUnitsUnitMapping]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
         "unit_mappings": "unitMappings",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unitMappings": "GrantaServerApiSchemaUnitsUnitMapping",
     }
 
@@ -83,22 +83,22 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
     def __init__(
         self,
         *,
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        unit_mappings: "List[GrantaServerApiSchemaUnitsUnitMapping]",
+        unit_mappings: "list[GrantaServerApiSchemaUnitsUnitMapping]",
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitSystem - a model defined in Swagger
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
-        unit_mappings: List[GrantaServerApiSchemaUnitsUnitMapping]
+        unit_mappings: list[GrantaServerApiSchemaUnitsUnitMapping]
         """
-        self._unit_mappings: List[GrantaServerApiSchemaUnitsUnitMapping]
-        self._display_names: Dict[str, str]
+        self._unit_mappings: list[GrantaServerApiSchemaUnitsUnitMapping]
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
@@ -108,23 +108,23 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         self.guid = guid
 
     @property
-    def unit_mappings(self) -> "List[GrantaServerApiSchemaUnitsUnitMapping]":
+    def unit_mappings(self) -> "list[GrantaServerApiSchemaUnitsUnitMapping]":
         """Gets the unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
 
         Returns
         -------
-        List[GrantaServerApiSchemaUnitsUnitMapping]
+        list[GrantaServerApiSchemaUnitsUnitMapping]
             The unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
         """
         return self._unit_mappings
 
     @unit_mappings.setter
-    def unit_mappings(self, unit_mappings: "List[GrantaServerApiSchemaUnitsUnitMapping]") -> None:
+    def unit_mappings(self, unit_mappings: "list[GrantaServerApiSchemaUnitsUnitMapping]") -> None:
         """Sets the unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
 
         Parameters
         ----------
-        unit_mappings: List[GrantaServerApiSchemaUnitsUnitMapping]
+        unit_mappings: list[GrantaServerApiSchemaUnitsUnitMapping]
             The unit_mappings of this GrantaServerApiSchemaUnitsUnitSystem.
         """
         # Field is not nullable
@@ -136,23 +136,23 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         self._unit_mappings = unit_mappings
 
     @property
-    def display_names(self) -> "Dict[str, str]":
+    def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GrantaServerApiSchemaUnitsUnitSystem.
 
         Returns
         -------
-        Dict[str, str]
+        dict[str, str]
             The display_names of this GrantaServerApiSchemaUnitsUnitSystem.
         """
         return self._display_names
 
     @display_names.setter
-    def display_names(self, display_names: "Dict[str, str]") -> None:
+    def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GrantaServerApiSchemaUnitsUnitSystem.
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
             The display_names of this GrantaServerApiSchemaUnitsUnitSystem.
         """
         # Field is not nullable
@@ -220,7 +220,7 @@ class GrantaServerApiSchemaUnitsUnitSystem(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

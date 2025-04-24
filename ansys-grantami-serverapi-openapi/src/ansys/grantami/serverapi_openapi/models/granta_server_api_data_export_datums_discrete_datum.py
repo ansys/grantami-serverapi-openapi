@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsApplicableDatum,
@@ -55,16 +55,16 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -73,7 +73,7 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
         "not_applicable": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -82,7 +82,7 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "datumValue": "GrantaServerApiDiscreteValue",
     }
 
@@ -94,8 +94,8 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "discrete",
-        datum_value: "Union[List[GrantaServerApiDiscreteValue], None, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        datum_value: "Union[list[GrantaServerApiDiscreteValue], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsDiscreteDatum - a model defined in Swagger
@@ -105,8 +105,8 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
         attribute_guid: str, optional
         attribute_identity: int, optional
         datum_type: str
-        datum_value: List[GrantaServerApiDiscreteValue], optional
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        datum_value: list[GrantaServerApiDiscreteValue], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
         """
         super().__init__(
@@ -116,7 +116,7 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
             not_applicable=not_applicable,
         )
         self._datum_type: str
-        self._datum_value: Union[List[GrantaServerApiDiscreteValue], None, Unset_Type] = Unset
+        self._datum_value: Union[list[GrantaServerApiDiscreteValue], None, Unset_Type] = Unset
 
         self.datum_type = datum_type
         if datum_value is not Unset:
@@ -151,31 +151,31 @@ class GrantaServerApiDataExportDatumsDiscreteDatum(GrantaServerApiDataExportDatu
         self._datum_type = datum_type
 
     @property
-    def datum_value(self) -> "Union[List[GrantaServerApiDiscreteValue], None, Unset_Type]":
+    def datum_value(self) -> "Union[list[GrantaServerApiDiscreteValue], None, Unset_Type]":
         """Gets the datum_value of this GrantaServerApiDataExportDatumsDiscreteDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDiscreteValue], None, Unset_Type]
+        Union[list[GrantaServerApiDiscreteValue], None, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsDiscreteDatum.
         """
         return self._datum_value
 
     @datum_value.setter
     def datum_value(
-        self, datum_value: "Union[List[GrantaServerApiDiscreteValue], None, Unset_Type]"
+        self, datum_value: "Union[list[GrantaServerApiDiscreteValue], None, Unset_Type]"
     ) -> None:
         """Sets the datum_value of this GrantaServerApiDataExportDatumsDiscreteDatum.
 
         Parameters
         ----------
-        datum_value: Union[List[GrantaServerApiDiscreteValue], None, Unset_Type]
+        datum_value: Union[list[GrantaServerApiDiscreteValue], None, Unset_Type]
             The datum_value of this GrantaServerApiDataExportDatumsDiscreteDatum.
         """
         self._datum_value = datum_value
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

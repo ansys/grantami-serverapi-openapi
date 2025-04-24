@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaLayoutsLayoutsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "layouts": "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "layouts": "layouts",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "layouts": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaLayoutsLayoutsInfo(ModelBase):
     def __init__(
         self,
         *,
-        layouts: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]" = Unset,
+        layouts: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout], optional
+        layouts: list[GrantaServerApiSchemaSlimEntitiesSlimLayout], optional
         """
         self._layouts: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type
         ] = Unset
 
         if layouts is not Unset:
@@ -95,31 +95,31 @@ class GrantaServerApiSchemaLayoutsLayoutsInfo(ModelBase):
     @property
     def layouts(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]":
         """Gets the layouts of this GrantaServerApiSchemaLayoutsLayoutsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]
             The layouts of this GrantaServerApiSchemaLayoutsLayoutsInfo.
         """
         return self._layouts
 
     @layouts.setter
     def layouts(
-        self, layouts: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]"
+        self, layouts: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]"
     ) -> None:
         """Sets the layouts of this GrantaServerApiSchemaLayoutsLayoutsInfo.
 
         Parameters
         ----------
-        layouts: Union[List[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]
+        layouts: Union[list[GrantaServerApiSchemaSlimEntitiesSlimLayout], None, Unset_Type]
             The layouts of this GrantaServerApiSchemaLayoutsLayoutsInfo.
         """
         self._layouts = layouts
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

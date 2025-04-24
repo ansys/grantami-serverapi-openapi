@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (  # noqa: F401
     GrantaServerApiSchemaLayoutsNewLayoutItem,
@@ -57,30 +57,30 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "association_chain_links": "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
         "association_chain_name": "str",
         "guid": "str",
         "item_type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "association_chain_links": "associationChainLinks",
         "association_chain_name": "associationChainName",
         "guid": "guid",
         "item_type": "itemType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "associationChainLinks": "GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink",
     }
 
@@ -89,7 +89,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     def __init__(
         self,
         *,
-        association_chain_links: "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
+        association_chain_links: "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
         association_chain_name: "str",
         guid: "Union[str, Unset_Type]" = Unset,
         item_type: "str" = "associationChain",
@@ -98,7 +98,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
 
         Parameters
         ----------
-        association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        association_chain_links: list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
         association_chain_name: str
         guid: str, optional
         item_type: str
@@ -106,7 +106,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         super().__init__(guid=guid)
         self._item_type: str
         self._association_chain_name: str
-        self._association_chain_links: List[
+        self._association_chain_links: list[
             GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink
         ]
 
@@ -173,12 +173,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     @property
     def association_chain_links(
         self,
-    ) -> "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]":
+    ) -> "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]":
         """Gets the association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
 
         Returns
         -------
-        List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
         return self._association_chain_links
@@ -186,13 +186,13 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
     @association_chain_links.setter
     def association_chain_links(
         self,
-        association_chain_links: "List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
+        association_chain_links: "list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]",
     ) -> None:
         """Sets the association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
 
         Parameters
         ----------
-        association_chain_links: List[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
+        association_chain_links: list[GrantaServerApiSchemaLayoutsNewLayoutAssociationChainLink]
             The association_chain_links of this GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem.
         """
         # Field is not nullable
@@ -204,7 +204,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAssociationChainItem(
         self._association_chain_links = association_chain_links
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

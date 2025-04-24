@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_value_specifier import (  # noqa: F401
     GrantaServerApiValueSpecifier,
@@ -55,28 +55,28 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "filter_on": "str",
         "guids": "list[str]",
         "identities": "list[int]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "filter_on": "filterOn",
         "guids": "guids",
         "identities": "identities",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -84,20 +84,20 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         self,
         *,
         filter_on: "str" = "specific",
-        guids: "Union[List[str], None, Unset_Type]" = Unset,
-        identities: "Union[List[int], None, Unset_Type]" = Unset,
+        guids: "Union[list[str], None, Unset_Type]" = Unset,
+        identities: "Union[list[int], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSpecificValuesSpecifier - a model defined in Swagger
 
         Parameters
         ----------
         filter_on: str
-        guids: List[str], optional
-        identities: List[int], optional
+        guids: list[str], optional
+        identities: list[int], optional
         """
         super().__init__()
-        self._identities: Union[List[int], None, Unset_Type] = Unset
-        self._guids: Union[List[str], None, Unset_Type] = Unset
+        self._identities: Union[list[int], None, Unset_Type] = Unset
+        self._guids: Union[list[str], None, Unset_Type] = Unset
         self._filter_on: str
 
         if identities is not Unset:
@@ -107,45 +107,45 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         self.filter_on = filter_on
 
     @property
-    def identities(self) -> "Union[List[int], None, Unset_Type]":
+    def identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The identities of this GrantaServerApiSpecificValuesSpecifier.
         """
         return self._identities
 
     @identities.setter
-    def identities(self, identities: "Union[List[int], None, Unset_Type]") -> None:
+    def identities(self, identities: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the identities of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        identities: Union[List[int], None, Unset_Type]
+        identities: Union[list[int], None, Unset_Type]
             The identities of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._identities = identities
 
     @property
-    def guids(self) -> "Union[List[str], None, Unset_Type]":
+    def guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The guids of this GrantaServerApiSpecificValuesSpecifier.
         """
         return self._guids
 
     @guids.setter
-    def guids(self, guids: "Union[List[str], None, Unset_Type]") -> None:
+    def guids(self, guids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the guids of this GrantaServerApiSpecificValuesSpecifier.
 
         Parameters
         ----------
-        guids: Union[List[str], None, Unset_Type]
+        guids: Union[list[str], None, Unset_Type]
             The guids of this GrantaServerApiSpecificValuesSpecifier.
         """
         self._guids = guids
@@ -179,7 +179,7 @@ class GrantaServerApiSpecificValuesSpecifier(GrantaServerApiValueSpecifier):
         self._filter_on = filter_on
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

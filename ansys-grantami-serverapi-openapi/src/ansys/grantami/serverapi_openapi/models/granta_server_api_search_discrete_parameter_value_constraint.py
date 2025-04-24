@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_parameter_constraint import (  # noqa: F401
     GrantaServerApiSearchParameterConstraint,
@@ -57,38 +57,38 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "_none": "list[float]",
         "any": "list[float]",
         "parameter": "GrantaServerApiObjectIdentifier",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "_none": "none",
         "any": "any",
         "parameter": "parameter",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        _none: "Union[List[float], None, Unset_Type]" = Unset,
-        any: "Union[List[float], None, Unset_Type]" = Unset,
+        _none: "Union[list[float], None, Unset_Type]" = Unset,
+        any: "Union[list[float], None, Unset_Type]" = Unset,
         parameter: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         type: "str" = "discreteValue",
     ) -> None:
@@ -96,14 +96,14 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
 
         Parameters
         ----------
-        _none: List[float], optional
-        any: List[float], optional
+        _none: list[float], optional
+        any: list[float], optional
         parameter: GrantaServerApiObjectIdentifier, optional
         type: str
         """
         super().__init__(parameter=parameter)
-        self._any: Union[List[float], None, Unset_Type] = Unset
-        self.__none: Union[List[float], None, Unset_Type] = Unset
+        self._any: Union[list[float], None, Unset_Type] = Unset
+        self.__none: Union[list[float], None, Unset_Type] = Unset
         self._type: str
 
         if any is not Unset:
@@ -113,45 +113,45 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
         self.type = type
 
     @property
-    def any(self) -> "Union[List[float], None, Unset_Type]":
+    def any(self) -> "Union[list[float], None, Unset_Type]":
         """Gets the any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Returns
         -------
-        Union[List[float], None, Unset_Type]
+        Union[list[float], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         return self._any
 
     @any.setter
-    def any(self, any: "Union[List[float], None, Unset_Type]") -> None:
+    def any(self, any: "Union[list[float], None, Unset_Type]") -> None:
         """Sets the any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        any: Union[List[float], None, Unset_Type]
+        any: Union[list[float], None, Unset_Type]
             The any of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         self._any = any
 
     @property
-    def _none(self) -> "Union[List[float], None, Unset_Type]":
+    def _none(self) -> "Union[list[float], None, Unset_Type]":
         """Gets the _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Returns
         -------
-        Union[List[float], None, Unset_Type]
+        Union[list[float], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         return self.__none
 
     @_none.setter
-    def _none(self, _none: "Union[List[float], None, Unset_Type]") -> None:
+    def _none(self, _none: "Union[list[float], None, Unset_Type]") -> None:
         """Sets the _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        _none: Union[List[float], None, Unset_Type]
+        _none: Union[list[float], None, Unset_Type]
             The _none of this GrantaServerApiSearchDiscreteParameterValueConstraint.
         """
         self.__none = _none
@@ -185,7 +185,7 @@ class GrantaServerApiSearchDiscreteParameterValueConstraint(
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

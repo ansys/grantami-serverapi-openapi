@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_applicable_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsApplicableDatum,
@@ -57,18 +57,18 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -81,7 +81,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -94,7 +94,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "xAxisParameter": "GrantaServerApiFunctionalDatumParameterInfo",
         "parameters": "GrantaServerApiFunctionalDatumParameterInfo",
     }
@@ -114,9 +114,9 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         datum_type: "str" = "floatFunctional",
         is_estimated: "Union[bool, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
@@ -129,9 +129,9 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         datum_type: str
         is_estimated: bool, optional
         is_range: bool, optional
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
-        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
+        parameters: list[GrantaServerApiFunctionalDatumParameterInfo], optional
         unit_symbol: str, optional
         x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
@@ -147,7 +147,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
             Unset
         )
         self._parameters: Union[
-            List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
+            list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type
         ] = Unset
         self._is_estimated: Union[bool, Unset_Type] = Unset
         self._is_range: Union[bool, Unset_Type] = Unset
@@ -244,12 +244,12 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     @property
     def parameters(
         self,
-    ) -> "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
+        Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         return self._parameters
@@ -257,13 +257,13 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
     @parameters.setter
     def parameters(
         self,
-        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]",
+        parameters: "Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]",
     ) -> None:
         """Sets the parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
 
         Parameters
         ----------
-        parameters: Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
+        parameters: Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiDataExportDatumsFloatFunctionalDatum.
         """
         self._parameters = parameters
@@ -319,7 +319,7 @@ class GrantaServerApiDataExportDatumsFloatFunctionalDatum(
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

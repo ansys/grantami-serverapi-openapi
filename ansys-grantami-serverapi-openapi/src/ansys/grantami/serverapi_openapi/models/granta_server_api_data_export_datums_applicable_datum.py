@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsDatum,
@@ -55,32 +55,32 @@ class GrantaServerApiDataExportDatumsApplicableDatum(GrantaServerApiDataExportDa
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
         "not_applicable": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator_value_class_map = {
         "logical".lower(): "#/components/schemas/GrantaServerApiDataExportDatumsBooleanDatum",
@@ -106,7 +106,7 @@ class GrantaServerApiDataExportDatumsApplicableDatum(GrantaServerApiDataExportDa
         *,
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
     ) -> None:
         """GrantaServerApiDataExportDatumsApplicableDatum - a model defined in Swagger
@@ -115,7 +115,7 @@ class GrantaServerApiDataExportDatumsApplicableDatum(GrantaServerApiDataExportDa
         ----------
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
         """
         super().__init__(
@@ -156,7 +156,7 @@ class GrantaServerApiDataExportDatumsApplicableDatum(GrantaServerApiDataExportDa
         self._not_applicable = not_applicable
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

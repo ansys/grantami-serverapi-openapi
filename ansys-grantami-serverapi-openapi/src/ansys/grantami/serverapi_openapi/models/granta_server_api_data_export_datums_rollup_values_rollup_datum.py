@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_rollup_rollup_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsRollupRollupDatum,
@@ -57,16 +57,16 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "database_key": "str",
@@ -76,7 +76,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         "values": "list[object]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "database_key": "databaseKey",
@@ -86,7 +86,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         "values": "values",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -99,7 +99,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         roll_up_type: "Union[GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, Unset_Type]" = Unset,
         type: "str" = "valuesRollup",
         unit: "Union[str, None, Unset_Type]" = Unset,
-        values: "Union[List[object], None, Unset_Type]" = Unset,
+        values: "Union[list[object], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsRollupValuesRollupDatum - a model defined in Swagger
 
@@ -111,7 +111,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         roll_up_type: GrantaServerApiSchemaTabularColumnsTabularColumnRollUpType, optional
         type: str
         unit: str, optional
-        values: List[object], optional
+        values: list[object], optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -119,7 +119,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
             database_key=database_key,
             roll_up_type=roll_up_type,
         )
-        self._values: Union[List[object], None, Unset_Type] = Unset
+        self._values: Union[list[object], None, Unset_Type] = Unset
         self._unit: Union[str, None, Unset_Type] = Unset
         self._type: str
 
@@ -130,23 +130,23 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         self.type = type
 
     @property
-    def values(self) -> "Union[List[object], None, Unset_Type]":
+    def values(self) -> "Union[list[object], None, Unset_Type]":
         """Gets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Returns
         -------
-        Union[List[object], None, Unset_Type]
+        Union[list[object], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "Union[List[object], None, Unset_Type]") -> None:
+    def values(self, values: "Union[list[object], None, Unset_Type]") -> None:
         """Sets the values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
 
         Parameters
         ----------
-        values: Union[List[object], None, Unset_Type]
+        values: Union[list[object], None, Unset_Type]
             The values of this GrantaServerApiDataExportDatumsRollupValuesRollupDatum.
         """
         self._values = values
@@ -202,7 +202,7 @@ class GrantaServerApiDataExportDatumsRollupValuesRollupDatum(
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

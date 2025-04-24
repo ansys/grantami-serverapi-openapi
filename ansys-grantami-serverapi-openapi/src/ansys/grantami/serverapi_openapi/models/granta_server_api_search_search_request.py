@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "criterion": "GrantaServerApiSearchCriterion",
         "paging_options": "GrantaServerApiSearchPagingOptions",
         "sort_criteria": "list[GrantaServerApiSearchSortCriterion]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "criterion": "criterion",
         "paging_options": "pagingOptions",
         "sort_criteria": "sortCriteria",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "criterion": "GrantaServerApiSearchCriterion",
         "sortCriteria": "GrantaServerApiSearchSortCriterion",
         "pagingOptions": "GrantaServerApiSearchPagingOptions",
@@ -85,7 +85,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         *,
         criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]" = Unset,
         paging_options: "Union[GrantaServerApiSearchPagingOptions, Unset_Type]" = Unset,
-        sort_criteria: "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]" = Unset,
+        sort_criteria: "Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSearchSearchRequest - a model defined in Swagger
 
@@ -93,10 +93,10 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         ----------
         criterion: GrantaServerApiSearchCriterion, optional
         paging_options: GrantaServerApiSearchPagingOptions, optional
-        sort_criteria: List[GrantaServerApiSearchSortCriterion], optional
+        sort_criteria: list[GrantaServerApiSearchSortCriterion], optional
         """
         self._criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
-        self._sort_criteria: Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type] = (
+        self._sort_criteria: Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type] = (
             Unset
         )
         self._paging_options: Union[GrantaServerApiSearchPagingOptions, Unset_Type] = Unset
@@ -134,27 +134,27 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         self._criterion = criterion
 
     @property
-    def sort_criteria(self) -> "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]":
+    def sort_criteria(self) -> "Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type]":
         """Gets the sort_criteria of this GrantaServerApiSearchSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]
+        Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type]
             The sort_criteria of this GrantaServerApiSearchSearchRequest.
         """
         return self._sort_criteria
 
     @sort_criteria.setter
     def sort_criteria(
-        self, sort_criteria: "Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]"
+        self, sort_criteria: "Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the sort_criteria of this GrantaServerApiSearchSearchRequest.
         An optional set of attribute based sort criteria. If none are provided, the results will be sorted in descending relevance order.
 
         Parameters
         ----------
-        sort_criteria: Union[List[GrantaServerApiSearchSortCriterion], None, Unset_Type]
+        sort_criteria: Union[list[GrantaServerApiSearchSortCriterion], None, Unset_Type]
             The sort_criteria of this GrantaServerApiSearchSearchRequest.
         """
         self._sort_criteria = sort_criteria
@@ -187,7 +187,7 @@ class GrantaServerApiSearchSearchRequest(ModelBase):
         self._paging_options = paging_options
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -86,18 +86,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'copy_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -105,7 +105,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiListsDtoRecordListHeader",
             403: None,
             404: None,
@@ -157,16 +157,16 @@ class ListManagementApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -181,7 +181,7 @@ class ListManagementApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -239,22 +239,22 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'delete_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -300,16 +300,16 @@ class ListManagementApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -317,7 +317,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeadersInfo",
             403: None,
         }
@@ -376,18 +376,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'get_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -395,7 +395,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             403: None,
             404: None,
@@ -464,18 +464,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'result_resource_identifier' when calling 'get_record_list_search_results'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "result_resource_identifier" in params and result_resource_identifier is not None:
             path_params["resultResourceIdentifier"] = params["result_resource_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -483,7 +483,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListSearchResultsInfo",
             403: None,
             404: None,
@@ -546,18 +546,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'publish_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -565,7 +565,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -628,18 +628,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'request_approval'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -647,7 +647,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -712,18 +712,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'reset_awaiting_approval'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -731,7 +731,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -792,18 +792,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'revise_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -811,7 +811,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -866,16 +866,16 @@ class ListManagementApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -890,7 +890,7 @@ class ListManagementApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiListsDtoRecordListSearchInfo",
             400: None,
             403: None,
@@ -952,18 +952,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'unpublish_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -971,7 +971,7 @@ class ListManagementApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,
@@ -1042,18 +1042,18 @@ class ListManagementApi(ApiBase):
                 "Missing the required parameter 'list_identifier' when calling 'update_list'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "list_identifier" in params and list_identifier is not None:
             path_params["listIdentifier"] = params["list_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1068,7 +1068,7 @@ class ListManagementApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiListsDtoRecordListHeader",
             400: None,
             403: None,

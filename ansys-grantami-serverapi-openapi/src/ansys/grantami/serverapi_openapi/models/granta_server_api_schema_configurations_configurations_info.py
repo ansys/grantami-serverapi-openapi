@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "configurations": "list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "configurations": "configurations",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "configurations": "GrantaServerApiSchemaSlimEntitiesSlimConfiguration",
     }
 
@@ -77,38 +77,38 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
     def __init__(
         self,
         *,
-        configurations: "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]",
+        configurations: "list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]",
     ) -> None:
         """GrantaServerApiSchemaConfigurationsConfigurationsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        configurations: List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
+        configurations: list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
         """
-        self._configurations: List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
+        self._configurations: list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
 
         self.configurations = configurations
 
     @property
-    def configurations(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]":
+    def configurations(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]":
         """Gets the configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
+        list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
             The configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
         """
         return self._configurations
 
     @configurations.setter
     def configurations(
-        self, configurations: "List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]"
+        self, configurations: "list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]"
     ) -> None:
         """Sets the configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
 
         Parameters
         ----------
-        configurations: List[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
+        configurations: list[GrantaServerApiSchemaSlimEntitiesSlimConfiguration]
             The configurations of this GrantaServerApiSchemaConfigurationsConfigurationsInfo.
         """
         # Field is not nullable
@@ -120,7 +120,7 @@ class GrantaServerApiSchemaConfigurationsConfigurationsInfo(ModelBase):
         self._configurations = configurations
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

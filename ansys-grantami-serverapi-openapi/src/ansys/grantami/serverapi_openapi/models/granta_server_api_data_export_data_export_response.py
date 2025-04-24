@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "failures": "list[GrantaServerApiDataExportExportFailuresExportFailure]",
         "results": "list[GrantaServerApiDataExportRecordWithData]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "failures": "failures",
         "results": "results",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "results": "GrantaServerApiDataExportRecordWithData",
         "failures": "GrantaServerApiDataExportExportFailuresExportFailure",
     }
@@ -80,40 +80,40 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
     def __init__(
         self,
         *,
-        failures: "List[GrantaServerApiDataExportExportFailuresExportFailure]",
-        results: "List[GrantaServerApiDataExportRecordWithData]",
+        failures: "list[GrantaServerApiDataExportExportFailuresExportFailure]",
+        results: "list[GrantaServerApiDataExportRecordWithData]",
     ) -> None:
         """GrantaServerApiDataExportDataExportResponse - a model defined in Swagger
 
         Parameters
         ----------
-        failures: List[GrantaServerApiDataExportExportFailuresExportFailure]
-        results: List[GrantaServerApiDataExportRecordWithData]
+        failures: list[GrantaServerApiDataExportExportFailuresExportFailure]
+        results: list[GrantaServerApiDataExportRecordWithData]
         """
-        self._results: List[GrantaServerApiDataExportRecordWithData]
-        self._failures: List[GrantaServerApiDataExportExportFailuresExportFailure]
+        self._results: list[GrantaServerApiDataExportRecordWithData]
+        self._failures: list[GrantaServerApiDataExportExportFailuresExportFailure]
 
         self.results = results
         self.failures = failures
 
     @property
-    def results(self) -> "List[GrantaServerApiDataExportRecordWithData]":
+    def results(self) -> "list[GrantaServerApiDataExportRecordWithData]":
         """Gets the results of this GrantaServerApiDataExportDataExportResponse.
 
         Returns
         -------
-        List[GrantaServerApiDataExportRecordWithData]
+        list[GrantaServerApiDataExportRecordWithData]
             The results of this GrantaServerApiDataExportDataExportResponse.
         """
         return self._results
 
     @results.setter
-    def results(self, results: "List[GrantaServerApiDataExportRecordWithData]") -> None:
+    def results(self, results: "list[GrantaServerApiDataExportRecordWithData]") -> None:
         """Sets the results of this GrantaServerApiDataExportDataExportResponse.
 
         Parameters
         ----------
-        results: List[GrantaServerApiDataExportRecordWithData]
+        results: list[GrantaServerApiDataExportRecordWithData]
             The results of this GrantaServerApiDataExportDataExportResponse.
         """
         # Field is not nullable
@@ -125,27 +125,27 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         self._results = results
 
     @property
-    def failures(self) -> "List[GrantaServerApiDataExportExportFailuresExportFailure]":
+    def failures(self) -> "list[GrantaServerApiDataExportExportFailuresExportFailure]":
         """Gets the failures of this GrantaServerApiDataExportDataExportResponse.
         List the records that were requested, but that we failed to export any data for.
 
         Returns
         -------
-        List[GrantaServerApiDataExportExportFailuresExportFailure]
+        list[GrantaServerApiDataExportExportFailuresExportFailure]
             The failures of this GrantaServerApiDataExportDataExportResponse.
         """
         return self._failures
 
     @failures.setter
     def failures(
-        self, failures: "List[GrantaServerApiDataExportExportFailuresExportFailure]"
+        self, failures: "list[GrantaServerApiDataExportExportFailuresExportFailure]"
     ) -> None:
         """Sets the failures of this GrantaServerApiDataExportDataExportResponse.
         List the records that were requested, but that we failed to export any data for.
 
         Parameters
         ----------
-        failures: List[GrantaServerApiDataExportExportFailuresExportFailure]
+        failures: list[GrantaServerApiDataExportExportFailuresExportFailure]
             The failures of this GrantaServerApiDataExportDataExportResponse.
         """
         # Field is not nullable
@@ -157,7 +157,7 @@ class GrantaServerApiDataExportDataExportResponse(ModelBase):
         self._failures = failures
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

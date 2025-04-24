@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "disk_status": "GrantaServerApiDiskStatus",
         "disk_threshold": "str",
         "errored_databases": "dict(str, str)",
@@ -77,7 +77,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         "search_index_up_to_date": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "disk_status": "diskStatus",
         "disk_threshold": "diskThreshold",
         "errored_databases": "erroredDatabases",
@@ -94,7 +94,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         "search_index_up_to_date": "searchIndexUpToDate",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "loadedDatabaseIndexStatuses": "GrantaServerApiSearchIndexStatus",
         "diskStatus": "GrantaServerApiDiskStatus",
         "recordsThatFailedToIndex": "GrantaServerApiIndexRecordFailure",
@@ -107,12 +107,12 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         *,
         disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]" = Unset,
         disk_threshold: "Union[str, None, Unset_Type]" = Unset,
-        errored_databases: "Union[Dict[str, str], None, Unset_Type]" = Unset,
-        loaded_database_index_statuses: "Union[Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]" = Unset,
-        loaded_databases: "Union[List[str], None, Unset_Type]" = Unset,
-        loading_databases: "Union[List[str], None, Unset_Type]" = Unset,
-        not_loaded_databases: "Union[List[str], None, Unset_Type]" = Unset,
-        records_that_failed_to_index: "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]" = Unset,
+        errored_databases: "Union[dict[str, str], None, Unset_Type]" = Unset,
+        loaded_database_index_statuses: "Union[dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]" = Unset,
+        loaded_databases: "Union[list[str], None, Unset_Type]" = Unset,
+        loading_databases: "Union[list[str], None, Unset_Type]" = Unset,
+        not_loaded_databases: "Union[list[str], None, Unset_Type]" = Unset,
+        records_that_failed_to_index: "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]" = Unset,
         search_index_in_sync: "Union[bool, Unset_Type]" = Unset,
         search_index_is_read_only: "Union[bool, None, Unset_Type]" = Unset,
         search_index_location: "Union[str, None, Unset_Type]" = Unset,
@@ -126,12 +126,12 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         ----------
         disk_status: GrantaServerApiDiskStatus, optional
         disk_threshold: str, optional
-        errored_databases: Dict[str, str], optional
-        loaded_database_index_statuses: Dict[str, GrantaServerApiSearchIndexStatus], optional
-        loaded_databases: List[str], optional
-        loading_databases: List[str], optional
-        not_loaded_databases: List[str], optional
-        records_that_failed_to_index: List[GrantaServerApiIndexRecordFailure], optional
+        errored_databases: dict[str, str], optional
+        loaded_database_index_statuses: dict[str, GrantaServerApiSearchIndexStatus], optional
+        loaded_databases: list[str], optional
+        loading_databases: list[str], optional
+        not_loaded_databases: list[str], optional
+        records_that_failed_to_index: list[GrantaServerApiIndexRecordFailure], optional
         search_index_in_sync: bool, optional
         search_index_is_read_only: bool, optional
         search_index_location: str, optional
@@ -139,12 +139,12 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         search_index_unavailable: bool, optional
         search_index_up_to_date: bool, optional
         """
-        self._loaded_databases: Union[List[str], None, Unset_Type] = Unset
-        self._loading_databases: Union[List[str], None, Unset_Type] = Unset
-        self._not_loaded_databases: Union[List[str], None, Unset_Type] = Unset
-        self._errored_databases: Union[Dict[str, str], None, Unset_Type] = Unset
+        self._loaded_databases: Union[list[str], None, Unset_Type] = Unset
+        self._loading_databases: Union[list[str], None, Unset_Type] = Unset
+        self._not_loaded_databases: Union[list[str], None, Unset_Type] = Unset
+        self._errored_databases: Union[dict[str, str], None, Unset_Type] = Unset
         self._loaded_database_index_statuses: Union[
-            Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type
+            dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type
         ] = Unset
         self._search_index_up_to_date: Union[bool, Unset_Type] = Unset
         self._search_index_out_of_date_duration: Union[str, None, Unset_Type] = Unset
@@ -155,7 +155,7 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
         self._disk_threshold: Union[str, None, Unset_Type] = Unset
         self._search_index_unavailable: Union[bool, None, Unset_Type] = Unset
         self._records_that_failed_to_index: Union[
-            List[GrantaServerApiIndexRecordFailure], None, Unset_Type
+            list[GrantaServerApiIndexRecordFailure], None, Unset_Type
         ] = Unset
 
         if loaded_databases is not Unset:
@@ -188,101 +188,101 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
             self.records_that_failed_to_index = records_that_failed_to_index
 
     @property
-    def loaded_databases(self) -> "Union[List[str], None, Unset_Type]":
+    def loaded_databases(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Loaded databases have been successfully indexed into the integration schema.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._loaded_databases
 
     @loaded_databases.setter
-    def loaded_databases(self, loaded_databases: "Union[List[str], None, Unset_Type]") -> None:
+    def loaded_databases(self, loaded_databases: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Loaded databases have been successfully indexed into the integration schema.
 
         Parameters
         ----------
-        loaded_databases: Union[List[str], None, Unset_Type]
+        loaded_databases: Union[list[str], None, Unset_Type]
             The loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._loaded_databases = loaded_databases
 
     @property
-    def loading_databases(self) -> "Union[List[str], None, Unset_Type]":
+    def loading_databases(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the loading_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases which are in the process of loading.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The loading_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._loading_databases
 
     @loading_databases.setter
-    def loading_databases(self, loading_databases: "Union[List[str], None, Unset_Type]") -> None:
+    def loading_databases(self, loading_databases: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the loading_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases which are in the process of loading.
 
         Parameters
         ----------
-        loading_databases: Union[List[str], None, Unset_Type]
+        loading_databases: Union[list[str], None, Unset_Type]
             The loading_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._loading_databases = loading_databases
 
     @property
-    def not_loaded_databases(self) -> "Union[List[str], None, Unset_Type]":
+    def not_loaded_databases(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the not_loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases that are referenced in the schema but that are not yet loaded. This could be because they are still queued for  load in the MI system, or because they have not yet been added.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The not_loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._not_loaded_databases
 
     @not_loaded_databases.setter
     def not_loaded_databases(
-        self, not_loaded_databases: "Union[List[str], None, Unset_Type]"
+        self, not_loaded_databases: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the not_loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases that are referenced in the schema but that are not yet loaded. This could be because they are still queued for  load in the MI system, or because they have not yet been added.
 
         Parameters
         ----------
-        not_loaded_databases: Union[List[str], None, Unset_Type]
+        not_loaded_databases: Union[list[str], None, Unset_Type]
             The not_loaded_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._not_loaded_databases = not_loaded_databases
 
     @property
-    def errored_databases(self) -> "Union[Dict[str, str], None, Unset_Type]":
+    def errored_databases(self) -> "Union[dict[str, str], None, Unset_Type]":
         """Gets the errored_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases that encountered an error while loading. These databases will not be available for searches.
 
         Returns
         -------
-        Union[Dict[str, str], None, Unset_Type]
+        Union[dict[str, str], None, Unset_Type]
             The errored_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._errored_databases
 
     @errored_databases.setter
     def errored_databases(
-        self, errored_databases: "Union[Dict[str, str], None, Unset_Type]"
+        self, errored_databases: "Union[dict[str, str], None, Unset_Type]"
     ) -> None:
         """Sets the errored_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Databases that encountered an error while loading. These databases will not be available for searches.
 
         Parameters
         ----------
-        errored_databases: Union[Dict[str, str], None, Unset_Type]
+        errored_databases: Union[dict[str, str], None, Unset_Type]
             The errored_databases of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._errored_databases = errored_databases
@@ -290,13 +290,13 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     @property
     def loaded_database_index_statuses(
         self,
-    ) -> "Union[Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]":
+    ) -> "Union[dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]":
         """Gets the loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Index information about all loaded databases, including the out of sync status.
 
         Returns
         -------
-        Union[Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]
+        Union[dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]
             The loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._loaded_database_index_statuses
@@ -304,14 +304,14 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     @loaded_database_index_statuses.setter
     def loaded_database_index_statuses(
         self,
-        loaded_database_index_statuses: "Union[Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]",
+        loaded_database_index_statuses: "Union[dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]",
     ) -> None:
         """Sets the loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Index information about all loaded databases, including the out of sync status.
 
         Parameters
         ----------
-        loaded_database_index_statuses: Union[Dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]
+        loaded_database_index_statuses: Union[dict[str, GrantaServerApiSearchIndexStatus], None, Unset_Type]
             The loaded_database_index_statuses of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._loaded_database_index_statuses = loaded_database_index_statuses
@@ -524,13 +524,13 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     @property
     def records_that_failed_to_index(
         self,
-    ) -> "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]":
         """Gets the records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Details of any records that failed to index.
 
         Returns
         -------
-        Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]
+        Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         return self._records_that_failed_to_index
@@ -538,20 +538,20 @@ class GrantaServerApiIntegrationIntegrationSchemaStatus(ModelBase):
     @records_that_failed_to_index.setter
     def records_that_failed_to_index(
         self,
-        records_that_failed_to_index: "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]",
+        records_that_failed_to_index: "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]",
     ) -> None:
         """Sets the records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         Details of any records that failed to index.
 
         Parameters
         ----------
-        records_that_failed_to_index: Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]
+        records_that_failed_to_index: Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GrantaServerApiIntegrationIntegrationSchemaStatus.
         """
         self._records_that_failed_to_index = records_that_failed_to_index
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

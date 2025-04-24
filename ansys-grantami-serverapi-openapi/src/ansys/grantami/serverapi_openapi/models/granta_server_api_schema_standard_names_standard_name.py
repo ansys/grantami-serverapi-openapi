@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "guid": "str",
         "mapped_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "mapped_cross_database_record_link_groups": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
@@ -69,7 +69,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         "name": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "guid": "guid",
         "mapped_attributes": "mappedAttributes",
         "mapped_cross_database_record_link_groups": "mappedCrossDatabaseRecordLinkGroups",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         "name": "name",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "mappedAttributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "mappedParameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "mappedRecordLinkGroups": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -91,10 +91,10 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self,
         *,
         guid: "str",
-        mapped_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        mapped_cross_database_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        mapped_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        mapped_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        mapped_attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        mapped_cross_database_record_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        mapped_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        mapped_record_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         name: "str",
     ) -> None:
         """GrantaServerApiSchemaStandardNamesStandardName - a model defined in Swagger
@@ -102,16 +102,16 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         Parameters
         ----------
         guid: str
-        mapped_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        mapped_cross_database_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        mapped_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        mapped_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_cross_database_record_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_record_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         name: str
         """
-        self._mapped_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._mapped_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._mapped_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._mapped_cross_database_record_link_groups: List[
+        self._mapped_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._mapped_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._mapped_record_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._mapped_cross_database_record_link_groups: list[
             GrantaServerApiSchemaSlimEntitiesSlimNamedEntity
         ]
         self._name: str
@@ -125,25 +125,25 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self.guid = guid
 
     @property
-    def mapped_attributes(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_attributes(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         return self._mapped_attributes
 
     @mapped_attributes.setter
     def mapped_attributes(
-        self, mapped_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, mapped_attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Parameters
         ----------
-        mapped_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_attributes of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         # Field is not nullable
@@ -155,25 +155,25 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self._mapped_attributes = mapped_attributes
 
     @property
-    def mapped_parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_parameters(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         return self._mapped_parameters
 
     @mapped_parameters.setter
     def mapped_parameters(
-        self, mapped_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, mapped_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Parameters
         ----------
-        mapped_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_parameters of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         # Field is not nullable
@@ -185,25 +185,25 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def mapped_record_link_groups(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         return self._mapped_record_link_groups
 
     @mapped_record_link_groups.setter
     def mapped_record_link_groups(
-        self, mapped_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, mapped_record_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Parameters
         ----------
-        mapped_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_record_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         # Field is not nullable
@@ -217,12 +217,12 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
     @property
     def mapped_cross_database_record_link_groups(
         self,
-    ) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    ) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the mapped_cross_database_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_cross_database_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         return self._mapped_cross_database_record_link_groups
@@ -230,13 +230,13 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
     @mapped_cross_database_record_link_groups.setter
     def mapped_cross_database_record_link_groups(
         self,
-        mapped_cross_database_record_link_groups: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        mapped_cross_database_record_link_groups: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     ) -> None:
         """Sets the mapped_cross_database_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
 
         Parameters
         ----------
-        mapped_cross_database_record_link_groups: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        mapped_cross_database_record_link_groups: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The mapped_cross_database_record_link_groups of this GrantaServerApiSchemaStandardNamesStandardName.
         """
         # Field is not nullable
@@ -308,7 +308,7 @@ class GrantaServerApiSchemaStandardNamesStandardName(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

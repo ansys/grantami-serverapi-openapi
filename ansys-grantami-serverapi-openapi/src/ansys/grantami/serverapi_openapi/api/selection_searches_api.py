@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -82,16 +82,16 @@ class SelectionSearchesApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -106,7 +106,7 @@ class SelectionSearchesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSelectionSearchesSelectionSearch",
             400: None,
             403: None,
@@ -166,22 +166,22 @@ class SelectionSearchesApi(ApiBase):
                 "Missing the required parameter 'search_identifier' when calling 'delete_search'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "search_identifier" in params and search_identifier is not None:
             path_params["searchIdentifier"] = params["search_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -203,14 +203,14 @@ class SelectionSearchesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_all(self) -> "Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]":
+    def get_all(self) -> "Union[None, list[GrantaServerApiSelectionSearchesSelectionSearch]]":
         """Returns all searches visible to the calling user.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        Union[List[GrantaServerApiSelectionSearchesSelectionSearch], None]
+        Union[None, list[GrantaServerApiSelectionSearchesSelectionSearch]]
         """
         data = self._get_all_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -225,16 +225,16 @@ class SelectionSearchesApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -242,7 +242,7 @@ class SelectionSearchesApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[GrantaServerApiSelectionSearchesSelectionSearch]",
             403: None,
         }
@@ -301,18 +301,18 @@ class SelectionSearchesApi(ApiBase):
                 "Missing the required parameter 'search_identifier' when calling 'get_search'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "search_identifier" in params and search_identifier is not None:
             path_params["searchIdentifier"] = params["search_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -320,7 +320,7 @@ class SelectionSearchesApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSelectionSearchesSelectionSearch",
             403: None,
             404: None,
@@ -393,18 +393,18 @@ class SelectionSearchesApi(ApiBase):
                 "Missing the required parameter 'search_identifier' when calling 'save_search'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "search_identifier" in params and search_identifier is not None:
             path_params["searchIdentifier"] = params["search_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -414,7 +414,7 @@ class SelectionSearchesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             400: None,
             403: None,
@@ -469,16 +469,16 @@ class SelectionSearchesApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -493,7 +493,7 @@ class SelectionSearchesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSelectionSearchesSelectionSearch",
             400: None,
             403: None,

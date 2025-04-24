@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "description": "str",
         "guid": "str",
         "name": "str",
@@ -68,7 +68,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         "used_by_attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "description": "description",
         "guid": "guid",
         "name": "name",
@@ -76,7 +76,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         "used_by_attributes": "usedByAttributes",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "usedByAttributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
@@ -89,7 +89,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         guid: "str",
         name: "str",
         regular_expression: "str",
-        used_by_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        used_by_attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
     ) -> None:
         """GrantaServerApiSchemaDataRulesDataRule - a model defined in Swagger
 
@@ -99,11 +99,11 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         guid: str
         name: str
         regular_expression: str
-        used_by_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        used_by_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         """
         self._description: str
         self._regular_expression: str
-        self._used_by_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._used_by_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         self._name: str
         self._guid: str
 
@@ -170,25 +170,25 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         self._regular_expression = regular_expression
 
     @property
-    def used_by_attributes(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def used_by_attributes(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
         """
         return self._used_by_attributes
 
     @used_by_attributes.setter
     def used_by_attributes(
-        self, used_by_attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, used_by_attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
 
         Parameters
         ----------
-        used_by_attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        used_by_attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The used_by_attributes of this GrantaServerApiSchemaDataRulesDataRule.
         """
         # Field is not nullable
@@ -256,7 +256,7 @@ class GrantaServerApiSchemaDataRulesDataRule(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

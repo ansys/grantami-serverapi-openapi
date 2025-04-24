@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaSubsetsSubsetsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "subsets": "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "subsets": "subsets",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "subsets": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaSubsetsSubsetsInfo(ModelBase):
     def __init__(
         self,
         *,
-        subsets: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]" = Unset,
+        subsets: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaSubsetsSubsetsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset], optional
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset], optional
         """
         self._subsets: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type
         ] = Unset
 
         if subsets is not Unset:
@@ -95,31 +95,31 @@ class GrantaServerApiSchemaSubsetsSubsetsInfo(ModelBase):
     @property
     def subsets(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]":
         """Gets the subsets of this GrantaServerApiSchemaSubsetsSubsetsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]
             The subsets of this GrantaServerApiSchemaSubsetsSubsetsInfo.
         """
         return self._subsets
 
     @subsets.setter
     def subsets(
-        self, subsets: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]"
+        self, subsets: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]"
     ) -> None:
         """Sets the subsets of this GrantaServerApiSchemaSubsetsSubsetsInfo.
 
         Parameters
         ----------
-        subsets: Union[List[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]
+        subsets: Union[list[GrantaServerApiSchemaSlimEntitiesSlimSubset], None, Unset_Type]
             The subsets of this GrantaServerApiSchemaSubsetsSubsetsInfo.
         """
         self._subsets = subsets
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum import (  # noqa: F401
     GrantaServerApiAggregationsAggregationDatum,
@@ -57,26 +57,26 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "datum_type": "str",
         "terms": "list[GrantaServerApiAggregationsTermWithCount]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "terms": "terms",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "terms": "GrantaServerApiAggregationsTermWithCount",
     }
 
@@ -86,17 +86,17 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         self,
         *,
         datum_type: "str" = "discreteText",
-        terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]" = Unset,
+        terms: "Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsDiscreteTextAggregation - a model defined in Swagger
 
         Parameters
         ----------
         datum_type: str
-        terms: List[GrantaServerApiAggregationsTermWithCount], optional
+        terms: list[GrantaServerApiAggregationsTermWithCount], optional
         """
         super().__init__()
-        self._terms: Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type] = Unset
+        self._terms: Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type] = Unset
         self._datum_type: str
 
         if terms is not Unset:
@@ -104,25 +104,25 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         self.datum_type = datum_type
 
     @property
-    def terms(self) -> "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]":
+    def terms(self) -> "Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]":
         """Gets the terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
         """
         return self._terms
 
     @terms.setter
     def terms(
-        self, terms: "Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]"
+        self, terms: "Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]"
     ) -> None:
         """Sets the terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
 
         Parameters
         ----------
-        terms: Union[List[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
+        terms: Union[list[GrantaServerApiAggregationsTermWithCount], None, Unset_Type]
             The terms of this GrantaServerApiAggregationsDiscreteTextAggregation.
         """
         self._terms = terms
@@ -156,7 +156,7 @@ class GrantaServerApiAggregationsDiscreteTextAggregation(
         self._datum_type = datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

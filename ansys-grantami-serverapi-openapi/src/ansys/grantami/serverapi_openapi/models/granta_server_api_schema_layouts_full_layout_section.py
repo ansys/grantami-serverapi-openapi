@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_layout_section import (  # noqa: F401
     GrantaServerApiSchemaLayoutsLayoutSection,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
@@ -72,7 +72,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         "section_detail_type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
@@ -80,7 +80,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         "section_detail_type": "sectionDetailType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "sectionItems": "GrantaServerApiSchemaLayoutsLayoutItem",
     }
 
@@ -89,25 +89,25 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
     def __init__(
         self,
         *,
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        section_items: "List[GrantaServerApiSchemaLayoutsLayoutItem]",
+        section_items: "list[GrantaServerApiSchemaLayoutsLayoutItem]",
         section_detail_type: "str" = "full",
     ) -> None:
         """GrantaServerApiSchemaLayoutsFullLayoutSection - a model defined in Swagger
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
-        section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
+        section_items: list[GrantaServerApiSchemaLayoutsLayoutItem]
         section_detail_type: str
         """
         super().__init__(display_names=display_names, guid=guid, name=name)
         self._section_detail_type: str
-        self._section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
+        self._section_items: list[GrantaServerApiSchemaLayoutsLayoutItem]
 
         self.section_detail_type = section_detail_type
         self.section_items = section_items
@@ -141,23 +141,23 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         self._section_detail_type = section_detail_type
 
     @property
-    def section_items(self) -> "List[GrantaServerApiSchemaLayoutsLayoutItem]":
+    def section_items(self) -> "list[GrantaServerApiSchemaLayoutsLayoutItem]":
         """Gets the section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
 
         Returns
         -------
-        List[GrantaServerApiSchemaLayoutsLayoutItem]
+        list[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
         return self._section_items
 
     @section_items.setter
-    def section_items(self, section_items: "List[GrantaServerApiSchemaLayoutsLayoutItem]") -> None:
+    def section_items(self, section_items: "list[GrantaServerApiSchemaLayoutsLayoutItem]") -> None:
         """Sets the section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
 
         Parameters
         ----------
-        section_items: List[GrantaServerApiSchemaLayoutsLayoutItem]
+        section_items: list[GrantaServerApiSchemaLayoutsLayoutItem]
             The section_items of this GrantaServerApiSchemaLayoutsFullLayoutSection.
         """
         # Field is not nullable
@@ -169,7 +169,7 @@ class GrantaServerApiSchemaLayoutsFullLayoutSection(GrantaServerApiSchemaLayouts
         self._section_items = section_items
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

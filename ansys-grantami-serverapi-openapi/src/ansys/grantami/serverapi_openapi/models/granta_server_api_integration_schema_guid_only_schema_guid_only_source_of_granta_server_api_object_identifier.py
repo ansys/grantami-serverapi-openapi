@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -53,30 +53,30 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "database": "GrantaServerApiObjectIdentifier",
         "database_key": "str",
         "mappings": "list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier]",
         "table": "GrantaServerApiObjectIdentifier",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "database": "database",
         "database_key": "databaseKey",
         "mappings": "mappings",
         "table": "table",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "database": "GrantaServerApiObjectIdentifier",
         "table": "GrantaServerApiObjectIdentifier",
         "mappings": "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier",
@@ -89,7 +89,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
         *,
         database: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         database_key: "Union[str, None, Unset_Type]" = Unset,
-        mappings: "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]" = Unset,
+        mappings: "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]" = Unset,
         table: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier - a model defined in Swagger
@@ -98,14 +98,14 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
         ----------
         database: GrantaServerApiObjectIdentifier, optional
         database_key: str, optional
-        mappings: List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], optional
+        mappings: list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], optional
         table: GrantaServerApiObjectIdentifier, optional
         """
         self._database: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._table: Union[GrantaServerApiObjectIdentifier, Unset_Type] = Unset
         self._mappings: Union[
-            List[
+            list[
                 GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier
             ],
             None,
@@ -196,13 +196,13 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
     @property
     def mappings(
         self,
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]":
         """Gets the mappings of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
+        Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
             The mappings of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
         """
         return self._mappings
@@ -210,20 +210,20 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServer
     @mappings.setter
     def mappings(
         self,
-        mappings: "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]",
+        mappings: "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]",
     ) -> None:
         """Sets the mappings of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
         Mappings for items from this table to the integration schema attributes.
 
         Parameters
         ----------
-        mappings: Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
+        mappings: Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
             The mappings of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlySourceOfGrantaServerApiObjectIdentifier.
         """
         self._mappings = mappings
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesAttribute,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -79,7 +79,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -94,7 +94,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
@@ -104,9 +104,9 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         is_multi_valued: "bool",
@@ -121,9 +121,9 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
         is_multi_valued: bool
@@ -147,7 +147,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         self._type: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
         self._is_multi_valued: bool
-        self._attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
 
         self.type = type
         if unit is not Unset:
@@ -237,25 +237,25 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         self._is_multi_valued = is_multi_valued
 
     @property
-    def attribute_parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attribute_parameters(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
         """
         return self._attribute_parameters
 
     @attribute_parameters.setter
     def attribute_parameters(
-        self, attribute_parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, attribute_parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attribute_parameters of this GrantaServerApiSchemaAttributesPointAttribute.
         """
         # Field is not nullable
@@ -267,7 +267,7 @@ class GrantaServerApiSchemaAttributesPointAttribute(GrantaServerApiSchemaAttribu
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -53,26 +53,26 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "schema": "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
         "warnings": "list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "schema": "schema",
         "warnings": "warnings",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "warnings": "GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail",
         "schema": "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier",
     }
@@ -83,17 +83,17 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
         self,
         *,
         schema: "Union[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
-        warnings: "Union[List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]" = Unset,
+        warnings: "Union[list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier - a model defined in Swagger
 
         Parameters
         ----------
         schema: GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationSchemaOfGrantaServerApiObjectIdentifier, optional
-        warnings: List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], optional
+        warnings: list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], optional
         """
         self._warnings: Union[
-            List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail],
+            list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail],
             None,
             Unset_Type,
         ] = Unset
@@ -110,12 +110,12 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
     @property
     def warnings(
         self,
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]":
         """Gets the warnings of this GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
+        Union[list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
             The warnings of this GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier.
         """
         return self._warnings
@@ -123,13 +123,13 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
     @warnings.setter
     def warnings(
         self,
-        warnings: "Union[List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]",
+        warnings: "Union[list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]",
     ) -> None:
         """Sets the warnings of this GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier.
 
         Parameters
         ----------
-        warnings: Union[List[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
+        warnings: Union[list[GrantaServerApiIntegrationSchemaIntegrationSchemaGenerationErrorDetail], None, Unset_Type]
             The warnings of this GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier.
         """
         self._warnings = warnings
@@ -165,7 +165,7 @@ class GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerAp
         self._schema = schema
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -110,22 +110,22 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'database_search'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -140,7 +140,7 @@ class SearchApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
         }
 
@@ -231,24 +231,24 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'database_search_in_table_with_guid'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -263,7 +263,7 @@ class SearchApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
         }
 
@@ -354,24 +354,24 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'table_identity' when calling 'database_search_in_table_with_identity'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_identity" in params and table_identity is not None:
             path_params["table-identity"] = params["table_identity"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -386,7 +386,7 @@ class SearchApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
         }
 
@@ -446,22 +446,22 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'search_identifier' when calling 'delete_search_results'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "search_identifier" in params and search_identifier is not None:
             path_params["searchIdentifier"] = params["search_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -535,18 +535,18 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'search_identifier' when calling 'get_search_results'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "search_identifier" in params and search_identifier is not None:
             path_params["searchIdentifier"] = params["search_identifier"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -561,7 +561,7 @@ class SearchApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
             403: None,
             404: None,
@@ -630,18 +630,18 @@ class SearchApi(ApiBase):
                 "Missing the required parameter 'schema' when calling 'integration_search'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -656,7 +656,7 @@ class SearchApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchSearchResponse",
             404: None,
         }

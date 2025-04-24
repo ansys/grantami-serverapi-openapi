@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_applicable_datum import (  # noqa: F401
     GrantaServerApiDataApplicableDatum,
@@ -55,30 +55,30 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "estimated": "bool",
         "values": "list[GrantaServerApiDataPointDataValue]",
         "datum_type": "str",
         "not_applicable": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "estimated": "estimated",
         "values": "values",
         "datum_type": "datumType",
         "not_applicable": "notApplicable",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GrantaServerApiDataPointDataValue",
     }
 
@@ -88,7 +88,7 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         self,
         *,
         estimated: "bool",
-        values: "List[GrantaServerApiDataPointDataValue]",
+        values: "list[GrantaServerApiDataPointDataValue]",
         datum_type: "str" = "point",
         not_applicable: "str" = "applicable",
     ) -> None:
@@ -97,14 +97,14 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         Parameters
         ----------
         estimated: bool
-        values: List[GrantaServerApiDataPointDataValue]
+        values: list[GrantaServerApiDataPointDataValue]
         datum_type: str
         not_applicable: str
         """
         super().__init__(not_applicable=not_applicable)
         self._datum_type: str
         self._estimated: bool
-        self._values: List[GrantaServerApiDataPointDataValue]
+        self._values: list[GrantaServerApiDataPointDataValue]
 
         self.datum_type = datum_type
         self.estimated = estimated
@@ -167,23 +167,23 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         self._estimated = estimated
 
     @property
-    def values(self) -> "List[GrantaServerApiDataPointDataValue]":
+    def values(self) -> "list[GrantaServerApiDataPointDataValue]":
         """Gets the values of this GrantaServerApiDataPointDatum.
 
         Returns
         -------
-        List[GrantaServerApiDataPointDataValue]
+        list[GrantaServerApiDataPointDataValue]
             The values of this GrantaServerApiDataPointDatum.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GrantaServerApiDataPointDataValue]") -> None:
+    def values(self, values: "list[GrantaServerApiDataPointDataValue]") -> None:
         """Sets the values of this GrantaServerApiDataPointDatum.
 
         Parameters
         ----------
-        values: List[GrantaServerApiDataPointDataValue]
+        values: list[GrantaServerApiDataPointDataValue]
             The values of this GrantaServerApiDataPointDatum.
         """
         # Field is not nullable
@@ -195,7 +195,7 @@ class GrantaServerApiDataPointDatum(GrantaServerApiDataApplicableDatum):
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

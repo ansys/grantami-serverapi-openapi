@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_lists_dto_list_criterion import (  # noqa: F401
     GrantaServerApiListsDtoListCriterion,
@@ -55,28 +55,28 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "match_all": "list[GrantaServerApiListsDtoListCriterion]",
         "match_any": "list[GrantaServerApiListsDtoListCriterion]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "match_all": "matchAll",
         "match_any": "matchAny",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "matchAny": "GrantaServerApiListsDtoListCriterion",
         "matchAll": "GrantaServerApiListsDtoListCriterion",
     }
@@ -86,21 +86,21 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
     def __init__(
         self,
         *,
-        match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
-        match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
+        match_all: "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
+        match_any: "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]" = Unset,
         type: "str" = "listBoolean",
     ) -> None:
         """GrantaServerApiListsDtoListBooleanCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        match_all: List[GrantaServerApiListsDtoListCriterion], optional
-        match_any: List[GrantaServerApiListsDtoListCriterion], optional
+        match_all: list[GrantaServerApiListsDtoListCriterion], optional
+        match_any: list[GrantaServerApiListsDtoListCriterion], optional
         type: str
         """
         super().__init__()
-        self._match_any: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
-        self._match_all: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
+        self._match_any: Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
+        self._match_all: Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type] = Unset
         self._type: str
 
         if match_any is not Unset:
@@ -110,49 +110,49 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self.type = type
 
     @property
-    def match_any(self) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
+    def match_any(self) -> "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
+        Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_any of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         return self._match_any
 
     @match_any.setter
     def match_any(
-        self, match_any: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
+        self, match_any: "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the match_any of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_any: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
+        match_any: Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_any of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_any = match_any
 
     @property
-    def match_all(self) -> "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
+    def match_all(self) -> "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]":
         """Gets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
+        Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_all of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         return self._match_all
 
     @match_all.setter
     def match_all(
-        self, match_all: "Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
+        self, match_all: "Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]"
     ) -> None:
         """Sets the match_all of this GrantaServerApiListsDtoListBooleanCriterion.
 
         Parameters
         ----------
-        match_all: Union[List[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
+        match_all: Union[list[GrantaServerApiListsDtoListCriterion], None, Unset_Type]
             The match_all of this GrantaServerApiListsDtoListBooleanCriterion.
         """
         self._match_all = match_all
@@ -186,7 +186,7 @@ class GrantaServerApiListsDtoListBooleanCriterion(GrantaServerApiListsDtoListCri
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "count": "int",
         "maximum_number_of_series": "int",
         "minimum_number_of_series": "int",
@@ -69,7 +69,7 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         "x_axis_parameter_identity_values": "list[GrantaServerApiAggregationsValueWithCountOfSystemInt32]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "count": "count",
         "maximum_number_of_series": "maximumNumberOfSeries",
         "minimum_number_of_series": "minimumNumberOfSeries",
@@ -78,7 +78,7 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         "x_axis_parameter_identity_values": "xAxisParameterIdentityValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "xAxisParameterIdentityValues": "GrantaServerApiAggregationsValueWithCountOfSystemInt32",
         "xAxisParameterGuidValues": "GrantaServerApiAggregationsValueWithCountOfSystemGuid",
         "showAsTableValues": "GrantaServerApiAggregationsValueWithCountOfSystemBoolean",
@@ -92,9 +92,9 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         count: "Union[int, Unset_Type]" = Unset,
         maximum_number_of_series: "Union[int, None, Unset_Type]" = Unset,
         minimum_number_of_series: "Union[int, None, Unset_Type]" = Unset,
-        show_as_table_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]" = Unset,
-        x_axis_parameter_guid_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]" = Unset,
-        x_axis_parameter_identity_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]" = Unset,
+        show_as_table_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]" = Unset,
+        x_axis_parameter_guid_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]" = Unset,
+        x_axis_parameter_identity_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation - a model defined in Swagger
 
@@ -103,18 +103,18 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         count: int, optional
         maximum_number_of_series: int, optional
         minimum_number_of_series: int, optional
-        show_as_table_values: List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], optional
-        x_axis_parameter_guid_values: List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], optional
-        x_axis_parameter_identity_values: List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], optional
+        show_as_table_values: list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], optional
+        x_axis_parameter_guid_values: list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], optional
+        x_axis_parameter_identity_values: list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], optional
         """
         self._x_axis_parameter_identity_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type
+            list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type
         ] = Unset
         self._x_axis_parameter_guid_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type
+            list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type
         ] = Unset
         self._show_as_table_values: Union[
-            List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type
+            list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type
         ] = Unset
         self._minimum_number_of_series: Union[int, None, Unset_Type] = Unset
         self._maximum_number_of_series: Union[int, None, Unset_Type] = Unset
@@ -136,12 +136,12 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @property
     def x_axis_parameter_identity_values(
         self,
-    ) -> "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]":
         """Gets the x_axis_parameter_identity_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]
             The x_axis_parameter_identity_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         return self._x_axis_parameter_identity_values
@@ -149,13 +149,13 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @x_axis_parameter_identity_values.setter
     def x_axis_parameter_identity_values(
         self,
-        x_axis_parameter_identity_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]",
+        x_axis_parameter_identity_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]",
     ) -> None:
         """Sets the x_axis_parameter_identity_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Parameters
         ----------
-        x_axis_parameter_identity_values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]
+        x_axis_parameter_identity_values: Union[list[GrantaServerApiAggregationsValueWithCountOfSystemInt32], None, Unset_Type]
             The x_axis_parameter_identity_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         self._x_axis_parameter_identity_values = x_axis_parameter_identity_values
@@ -163,12 +163,12 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @property
     def x_axis_parameter_guid_values(
         self,
-    ) -> "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]":
         """Gets the x_axis_parameter_guid_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]
             The x_axis_parameter_guid_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         return self._x_axis_parameter_guid_values
@@ -176,13 +176,13 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @x_axis_parameter_guid_values.setter
     def x_axis_parameter_guid_values(
         self,
-        x_axis_parameter_guid_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]",
+        x_axis_parameter_guid_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]",
     ) -> None:
         """Sets the x_axis_parameter_guid_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Parameters
         ----------
-        x_axis_parameter_guid_values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]
+        x_axis_parameter_guid_values: Union[list[GrantaServerApiAggregationsValueWithCountOfSystemGuid], None, Unset_Type]
             The x_axis_parameter_guid_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         self._x_axis_parameter_guid_values = x_axis_parameter_guid_values
@@ -190,12 +190,12 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @property
     def show_as_table_values(
         self,
-    ) -> "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]":
         """Gets the show_as_table_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
             The show_as_table_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         return self._show_as_table_values
@@ -203,13 +203,13 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
     @show_as_table_values.setter
     def show_as_table_values(
         self,
-        show_as_table_values: "Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]",
+        show_as_table_values: "Union[list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]",
     ) -> None:
         """Sets the show_as_table_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
 
         Parameters
         ----------
-        show_as_table_values: Union[List[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
+        show_as_table_values: Union[list[GrantaServerApiAggregationsValueWithCountOfSystemBoolean], None, Unset_Type]
             The show_as_table_values of this GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation.
         """
         self._show_as_table_values = show_as_table_values
@@ -290,7 +290,7 @@ class GrantaServerApiAggregationsFloatFunctionalSeriesGraphAggregation(ModelBase
         self._count = count
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

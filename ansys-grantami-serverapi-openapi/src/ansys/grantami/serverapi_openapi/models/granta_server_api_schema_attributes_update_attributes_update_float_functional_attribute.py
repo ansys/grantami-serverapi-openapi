@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_update_attributes_update_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesUpdateAttributesUpdateAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter]",
         "axis_name": "str",
@@ -79,7 +79,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
@@ -92,7 +92,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter",
     }
@@ -103,7 +103,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self,
         *,
         about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -118,7 +118,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         Parameters
         ----------
         about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-        attribute_parameters: List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], optional
+        attribute_parameters: list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], optional
         axis_name: str, optional
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
         guid: str, optional
@@ -139,7 +139,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self._type: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._attribute_parameters: Union[
-            List[
+            list[
                 GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter
             ],
             Unset_Type,
@@ -210,12 +210,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
+        Union[list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -223,13 +223,13 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]",
+        attribute_parameters: "Union[list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
+        attribute_parameters: Union[list[GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttributeParameter], Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttribute.
         """
         # Field is not nullable
@@ -263,7 +263,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateFloatFunctionalAttrib
         self._is_range = is_range
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

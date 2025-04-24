@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_layouts_new_layout_item import (  # noqa: F401
     GrantaServerApiSchemaLayoutsNewLayoutItem,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "guid": "str",
         "item_type": "str",
@@ -74,7 +74,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         "tabular_column_guids": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "guid": "guid",
         "item_type": "itemType",
@@ -84,7 +84,7 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         "tabular_column_guids": "tabularColumnGuids",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "metaAttributes": "GrantaServerApiSchemaLayoutsNewLayoutAttributeItem",
     }
 
@@ -96,10 +96,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         attribute_guid: "str",
         guid: "Union[str, Unset_Type]" = Unset,
         item_type: "str" = "attribute",
-        meta_attributes: "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]" = Unset,
+        meta_attributes: "Union[list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]" = Unset,
         read_only: "Union[bool, Unset_Type]" = Unset,
         required: "Union[bool, Unset_Type]" = Unset,
-        tabular_column_guids: "Union[List[str], None, Unset_Type]" = Unset,
+        tabular_column_guids: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaLayoutsNewLayoutAttributeItem - a model defined in Swagger
 
@@ -108,10 +108,10 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         attribute_guid: str
         guid: str, optional
         item_type: str
-        meta_attributes: List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], optional
+        meta_attributes: list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], optional
         read_only: bool, optional
         required: bool, optional
-        tabular_column_guids: List[str], optional
+        tabular_column_guids: list[str], optional
         """
         super().__init__(guid=guid)
         self._item_type: str
@@ -119,9 +119,9 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
         self._required: Union[bool, Unset_Type] = Unset
         self._read_only: Union[bool, Unset_Type] = Unset
         self._meta_attributes: Union[
-            List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type
+            list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type
         ] = Unset
-        self._tabular_column_guids: Union[List[str], None, Unset_Type] = Unset
+        self._tabular_column_guids: Union[list[str], None, Unset_Type] = Unset
 
         self.item_type = item_type
         self.attribute_guid = attribute_guid
@@ -243,12 +243,12 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
     @property
     def meta_attributes(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]":
         """Gets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._meta_attributes
@@ -256,43 +256,43 @@ class GrantaServerApiSchemaLayoutsNewLayoutAttributeItem(GrantaServerApiSchemaLa
     @meta_attributes.setter
     def meta_attributes(
         self,
-        meta_attributes: "Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]",
+        meta_attributes: "Union[list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]",
     ) -> None:
         """Sets the meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        meta_attributes: Union[List[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
+        meta_attributes: Union[list[GrantaServerApiSchemaLayoutsNewLayoutAttributeItem], None, Unset_Type]
             The meta_attributes of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._meta_attributes = meta_attributes
 
     @property
-    def tabular_column_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def tabular_column_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         return self._tabular_column_guids
 
     @tabular_column_guids.setter
     def tabular_column_guids(
-        self, tabular_column_guids: "Union[List[str], None, Unset_Type]"
+        self, tabular_column_guids: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
 
         Parameters
         ----------
-        tabular_column_guids: Union[List[str], None, Unset_Type]
+        tabular_column_guids: Union[list[str], None, Unset_Type]
             The tabular_column_guids of this GrantaServerApiSchemaLayoutsNewLayoutAttributeItem.
         """
         self._tabular_column_guids = tabular_column_guids
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

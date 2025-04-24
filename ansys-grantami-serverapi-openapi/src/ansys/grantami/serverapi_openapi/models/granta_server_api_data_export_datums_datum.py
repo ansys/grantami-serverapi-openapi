@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "meta_datums": "list[GrantaServerApiDataExportDatumsDatum]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "meta_datums": "metaDatums",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "metaDatums": "GrantaServerApiDataExportDatumsDatum",
     }
 
@@ -91,7 +91,7 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         *,
         attribute_guid: "Union[str, Unset_Type]" = Unset,
         attribute_identity: "Union[int, Unset_Type]" = Unset,
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsDatum - a model defined in Swagger
 
@@ -99,11 +99,11 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         ----------
         attribute_guid: str, optional
         attribute_identity: int, optional
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         """
         self._attribute_identity: Union[int, Unset_Type] = Unset
         self._attribute_guid: Union[str, Unset_Type] = Unset
-        self._meta_datums: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
+        self._meta_datums: Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
             Unset
         )
 
@@ -165,31 +165,31 @@ class GrantaServerApiDataExportDatumsDatum(ModelBase):
         self._attribute_guid = attribute_guid
 
     @property
-    def meta_datums(self) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
+    def meta_datums(self) -> "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
         """Gets the meta_datums of this GrantaServerApiDataExportDatumsDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
             The meta_datums of this GrantaServerApiDataExportDatumsDatum.
         """
         return self._meta_datums
 
     @meta_datums.setter
     def meta_datums(
-        self, meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
+        self, meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
     ) -> None:
         """Sets the meta_datums of this GrantaServerApiDataExportDatumsDatum.
 
         Parameters
         ----------
-        meta_datums: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
+        meta_datums: Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
             The meta_datums of this GrantaServerApiDataExportDatumsDatum.
         """
         self._meta_datums = meta_datums
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

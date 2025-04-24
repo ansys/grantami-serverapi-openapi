@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (  # noqa: F401
     GrantaServerApiSearchCriterion,
@@ -55,44 +55,44 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "record_list_identifiers": "list[str]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "record_list_identifiers": "recordListIdentifiers",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        record_list_identifiers: "Union[List[str], None, Unset_Type]" = Unset,
+        record_list_identifiers: "Union[list[str], None, Unset_Type]" = Unset,
         type: "str" = "recordListMember",
     ) -> None:
         """GrantaServerApiSearchRecordListMemberCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        record_list_identifiers: List[str], optional
+        record_list_identifiers: list[str], optional
         type: str
         """
         super().__init__()
-        self._record_list_identifiers: Union[List[str], None, Unset_Type] = Unset
+        self._record_list_identifiers: Union[list[str], None, Unset_Type] = Unset
         self._type: str
 
         if record_list_identifiers is not Unset:
@@ -100,25 +100,25 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         self.type = type
 
     @property
-    def record_list_identifiers(self) -> "Union[List[str], None, Unset_Type]":
+    def record_list_identifiers(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
         """
         return self._record_list_identifiers
 
     @record_list_identifiers.setter
     def record_list_identifiers(
-        self, record_list_identifiers: "Union[List[str], None, Unset_Type]"
+        self, record_list_identifiers: "Union[list[str], None, Unset_Type]"
     ) -> None:
         """Sets the record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
 
         Parameters
         ----------
-        record_list_identifiers: Union[List[str], None, Unset_Type]
+        record_list_identifiers: Union[list[str], None, Unset_Type]
             The record_list_identifiers of this GrantaServerApiSearchRecordListMemberCriterion.
         """
         self._record_list_identifiers = record_list_identifiers
@@ -152,7 +152,7 @@ class GrantaServerApiSearchRecordListMemberCriterion(GrantaServerApiSearchCriter
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

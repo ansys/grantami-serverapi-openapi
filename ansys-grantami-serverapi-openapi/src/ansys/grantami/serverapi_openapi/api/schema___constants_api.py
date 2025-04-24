@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -100,18 +100,18 @@ class SchemaConstantsApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'create_constant'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -124,7 +124,7 @@ class SchemaConstantsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaConstantsConstant",
             400: None,
             403: None,
@@ -200,26 +200,26 @@ class SchemaConstantsApi(ApiBase):
                 "Missing the required parameter 'constant_guid' when calling 'delete_constant'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "constant_guid" in params and constant_guid is not None:
             path_params["constant-guid"] = params["constant_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionConstantDeletionException",
             200: None,
             403: None,
@@ -295,26 +295,26 @@ class SchemaConstantsApi(ApiBase):
                 "Missing the required parameter 'constant_guid' when calling 'get_constant'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "constant_guid" in params and constant_guid is not None:
             path_params["constant-guid"] = params["constant_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaConstantsConstant",
             404: None,
         }
@@ -375,24 +375,24 @@ class SchemaConstantsApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_constants'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaConstantsConstantsInfo",
             404: None,
         }
@@ -477,20 +477,20 @@ class SchemaConstantsApi(ApiBase):
                 "Missing the required parameter 'constant_guid' when calling 'update_constant'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "constant_guid" in params and constant_guid is not None:
             path_params["constant-guid"] = params["constant_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -503,7 +503,7 @@ class SchemaConstantsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaConstantsConstant",
             400: None,
             403: None,

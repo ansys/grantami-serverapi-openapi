@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter import (  # noqa: F401
     GrantaServerApiSchemaParametersParameter,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
@@ -92,7 +92,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "values": "GrantaServerApiSchemaParametersNumericParameterValue",
         "interpolationType": "GrantaServerApiSchemaParametersParameterInterpolationType",
@@ -105,13 +105,13 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         self,
         *,
         default_parameter_value_guid: "str",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         interpolation_type: "GrantaServerApiSchemaParametersParameterInterpolationType",
         is_restricted: "bool",
         name: "str",
         scale_type: "GrantaServerApiSchemaParametersParameterScaleType",
-        values: "List[GrantaServerApiSchemaParametersNumericParameterValue]",
+        values: "list[GrantaServerApiSchemaParametersNumericParameterValue]",
         help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
         unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
@@ -121,13 +121,13 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         Parameters
         ----------
         default_parameter_value_guid: str
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
         is_restricted: bool
         name: str
         scale_type: GrantaServerApiSchemaParametersParameterScaleType
-        values: List[GrantaServerApiSchemaParametersNumericParameterValue]
+        values: list[GrantaServerApiSchemaParametersNumericParameterValue]
         help_path: str, optional
         type: str
         unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
@@ -142,7 +142,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         self._type: str
         self._is_restricted: bool
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type] = Unset
-        self._values: List[GrantaServerApiSchemaParametersNumericParameterValue]
+        self._values: list[GrantaServerApiSchemaParametersNumericParameterValue]
         self._interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
         self._scale_type: GrantaServerApiSchemaParametersParameterScaleType
 
@@ -236,23 +236,23 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         self._unit = unit
 
     @property
-    def values(self) -> "List[GrantaServerApiSchemaParametersNumericParameterValue]":
+    def values(self) -> "list[GrantaServerApiSchemaParametersNumericParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersNumericParameter.
 
         Returns
         -------
-        List[GrantaServerApiSchemaParametersNumericParameterValue]
+        list[GrantaServerApiSchemaParametersNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersNumericParameter.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GrantaServerApiSchemaParametersNumericParameterValue]") -> None:
+    def values(self, values: "list[GrantaServerApiSchemaParametersNumericParameterValue]") -> None:
         """Sets the values of this GrantaServerApiSchemaParametersNumericParameter.
 
         Parameters
         ----------
-        values: List[GrantaServerApiSchemaParametersNumericParameterValue]
+        values: list[GrantaServerApiSchemaParametersNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersNumericParameter.
         """
         # Field is not nullable
@@ -322,7 +322,7 @@ class GrantaServerApiSchemaParametersNumericParameter(GrantaServerApiSchemaParam
         self._scale_type = scale_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

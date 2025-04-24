@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,67 +51,67 @@ class GrantaServerApiAppNameLicenseCheckoutRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "app_names": "list[str]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "app_names": "appNames",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        app_names: "Union[List[str], None, Unset_Type]" = Unset,
+        app_names: "Union[list[str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAppNameLicenseCheckoutRequest - a model defined in Swagger
 
         Parameters
         ----------
-        app_names: List[str], optional
+        app_names: list[str], optional
         """
-        self._app_names: Union[List[str], None, Unset_Type] = Unset
+        self._app_names: Union[list[str], None, Unset_Type] = Unset
 
         if app_names is not Unset:
             self.app_names = app_names
 
     @property
-    def app_names(self) -> "Union[List[str], None, Unset_Type]":
+    def app_names(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the app_names of this GrantaServerApiAppNameLicenseCheckoutRequest.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The app_names of this GrantaServerApiAppNameLicenseCheckoutRequest.
         """
         return self._app_names
 
     @app_names.setter
-    def app_names(self, app_names: "Union[List[str], None, Unset_Type]") -> None:
+    def app_names(self, app_names: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the app_names of this GrantaServerApiAppNameLicenseCheckoutRequest.
 
         Parameters
         ----------
-        app_names: Union[List[str], None, Unset_Type]
+        app_names: Union[list[str], None, Unset_Type]
             The app_names of this GrantaServerApiAppNameLicenseCheckoutRequest.
         """
         self._app_names = app_names
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

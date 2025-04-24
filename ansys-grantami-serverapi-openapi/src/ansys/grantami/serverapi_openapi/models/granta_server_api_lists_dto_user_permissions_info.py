@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiListsDtoUserPermissionsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "user_permissions": "list[GrantaServerApiListsDtoUserPermission]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "user_permissions": "userPermissions",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "userPermissions": "GrantaServerApiListsDtoUserPermission",
     }
 
@@ -77,38 +77,38 @@ class GrantaServerApiListsDtoUserPermissionsInfo(ModelBase):
     def __init__(
         self,
         *,
-        user_permissions: "List[GrantaServerApiListsDtoUserPermission]",
+        user_permissions: "list[GrantaServerApiListsDtoUserPermission]",
     ) -> None:
         """GrantaServerApiListsDtoUserPermissionsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        user_permissions: List[GrantaServerApiListsDtoUserPermission]
+        user_permissions: list[GrantaServerApiListsDtoUserPermission]
         """
-        self._user_permissions: List[GrantaServerApiListsDtoUserPermission]
+        self._user_permissions: list[GrantaServerApiListsDtoUserPermission]
 
         self.user_permissions = user_permissions
 
     @property
-    def user_permissions(self) -> "List[GrantaServerApiListsDtoUserPermission]":
+    def user_permissions(self) -> "list[GrantaServerApiListsDtoUserPermission]":
         """Gets the user_permissions of this GrantaServerApiListsDtoUserPermissionsInfo.
 
         Returns
         -------
-        List[GrantaServerApiListsDtoUserPermission]
+        list[GrantaServerApiListsDtoUserPermission]
             The user_permissions of this GrantaServerApiListsDtoUserPermissionsInfo.
         """
         return self._user_permissions
 
     @user_permissions.setter
     def user_permissions(
-        self, user_permissions: "List[GrantaServerApiListsDtoUserPermission]"
+        self, user_permissions: "list[GrantaServerApiListsDtoUserPermission]"
     ) -> None:
         """Sets the user_permissions of this GrantaServerApiListsDtoUserPermissionsInfo.
 
         Parameters
         ----------
-        user_permissions: List[GrantaServerApiListsDtoUserPermission]
+        user_permissions: list[GrantaServerApiListsDtoUserPermission]
             The user_permissions of this GrantaServerApiListsDtoUserPermissionsInfo.
         """
         # Field is not nullable
@@ -120,7 +120,7 @@ class GrantaServerApiListsDtoUserPermissionsInfo(ModelBase):
         self._user_permissions = user_permissions
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

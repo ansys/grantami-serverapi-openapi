@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -109,20 +109,20 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'create_record_link_group'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -135,7 +135,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
             400: None,
             403: None,
@@ -238,9 +238,9 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'record_link_group_type' when calling 'delete_record_link_group'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -250,16 +250,16 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         if "record_link_group_type" in params and record_link_group_type is not None:
             path_params["record-link-group-type"] = params["record_link_group_type"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -348,30 +348,30 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'get_inbound_record_link_groups'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo",
             404: None,
         }
@@ -484,9 +484,9 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'record_link_group_type' when calling 'get_record_link_group'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -496,22 +496,22 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         if "record_link_group_type" in params and record_link_group_type is not None:
             path_params["record-link-group-type"] = params["record_link_group_type"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
             404: None,
         }
@@ -599,30 +599,30 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'get_record_link_groups'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroupsInfo",
             404: None,
         }
@@ -713,9 +713,9 @@ class SchemaRecordLinkGroupsApi(ApiBase):
                 "Missing the required parameter 'record_link_group_guid' when calling 'update_record_link_group'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -723,12 +723,12 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         if "record_link_group_guid" in params and record_link_group_guid is not None:
             path_params["record-link-group-guid"] = params["record_link_group_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -741,7 +741,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup",
             400: None,
             403: None,

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "files": "list[GrantaServerApiSchemaSlimEntitiesSlimFile]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "files": "files",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "files": "GrantaServerApiSchemaSlimEntitiesSlimFile",
     }
 
@@ -77,15 +77,15 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
     def __init__(
         self,
         *,
-        files: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]" = Unset,
+        files: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaFilesFilesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        files: List[GrantaServerApiSchemaSlimEntitiesSlimFile], optional
+        files: list[GrantaServerApiSchemaSlimEntitiesSlimFile], optional
         """
-        self._files: Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type] = (
+        self._files: Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type] = (
             Unset
         )
 
@@ -93,31 +93,31 @@ class GrantaServerApiSchemaFilesFilesInfo(ModelBase):
             self.files = files
 
     @property
-    def files(self) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]":
+    def files(self) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]":
         """Gets the files of this GrantaServerApiSchemaFilesFilesInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]
             The files of this GrantaServerApiSchemaFilesFilesInfo.
         """
         return self._files
 
     @files.setter
     def files(
-        self, files: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]"
+        self, files: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]"
     ) -> None:
         """Sets the files of this GrantaServerApiSchemaFilesFilesInfo.
 
         Parameters
         ----------
-        files: Union[List[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]
+        files: Union[list[GrantaServerApiSchemaSlimEntitiesSlimFile], None, Unset_Type]
             The files of this GrantaServerApiSchemaFilesFilesInfo.
         """
         self._files = files
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
