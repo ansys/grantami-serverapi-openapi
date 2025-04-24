@@ -55,7 +55,7 @@ jobs:
     - name: "Ensure poetry.lock file is up to date"
       run: |
         pip install poetry
-        poetry lock --no-update
+        poetry lock
       working-directory: ansys-grantami-serverapi-openapi
 
     - name: "Install and run pre-commit"
