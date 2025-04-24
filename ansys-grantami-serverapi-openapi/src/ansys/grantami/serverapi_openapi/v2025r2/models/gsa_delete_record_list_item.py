@@ -159,6 +159,7 @@ class GsaDeleteRecordListItem(ModelBase):
     @property
     def record_version(self) -> "Union[int, None, Unset_Type]":
         """Gets the record_version of this GsaDeleteRecordListItem.
+        Optional version. If not provided, only matching items with no version will be deleted. If provided, only items matching the version exactly will be deleted.
 
         Returns
         -------
@@ -170,6 +171,7 @@ class GsaDeleteRecordListItem(ModelBase):
     @record_version.setter
     def record_version(self, record_version: "Union[int, None, Unset_Type]") -> None:
         """Sets the record_version of this GsaDeleteRecordListItem.
+        Optional version. If not provided, only matching items with no version will be deleted. If provided, only items matching the version exactly will be deleted.
 
         Parameters
         ----------
