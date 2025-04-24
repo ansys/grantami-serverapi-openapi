@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -100,18 +100,18 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'create_discrete_type'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -124,7 +124,7 @@ class SchemaDiscreteTypesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             400: None,
             403: None,
@@ -198,26 +198,26 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'discrete_type_guid' when calling 'delete_discrete_type'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "discrete_type_guid" in params and discrete_type_guid is not None:
             path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionDiscreteTypeDeletionException",
             200: None,
             403: None,
@@ -291,26 +291,26 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'discrete_type_guid' when calling 'get_attributes_for_type'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "discrete_type_guid" in params and discrete_type_guid is not None:
             path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaSlimEntitiesSlimObjects",
             400: None,
             404: None,
@@ -383,26 +383,26 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'discrete_type_guid' when calling 'get_discrete_type'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "discrete_type_guid" in params and discrete_type_guid is not None:
             path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             404: None,
         }
@@ -463,24 +463,24 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_discrete_types'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo",
             400: None,
             404: None,
@@ -563,20 +563,20 @@ class SchemaDiscreteTypesApi(ApiBase):
                 "Missing the required parameter 'discrete_type_guid' when calling 'update_discrete_type'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "discrete_type_guid" in params and discrete_type_guid is not None:
             path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -589,7 +589,7 @@ class SchemaDiscreteTypesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaDiscreteTypesDiscreteType",
             400: None,
             403: None,

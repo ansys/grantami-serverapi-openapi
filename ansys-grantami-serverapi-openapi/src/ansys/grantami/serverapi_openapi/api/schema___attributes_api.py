@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -109,20 +109,20 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'create_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -135,7 +135,7 @@ class SchemaAttributesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaAttributesAttribute",
             400: None,
             403: None,
@@ -216,9 +216,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'delete_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -226,18 +226,18 @@ class SchemaAttributesApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionAttributeDeletionException",
             200: None,
             403: None,
@@ -318,9 +318,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'meta_attribute_guid' when calling 'delete_meta_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -328,18 +328,18 @@ class SchemaAttributesApi(ApiBase):
         if "meta_attribute_guid" in params and meta_attribute_guid is not None:
             path_params["meta-attribute-guid"] = params["meta_attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             400: "GrantaServerApiExceptionsDeletionAttributeDeletionException",
             200: None,
             403: None,
@@ -443,9 +443,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -453,22 +453,22 @@ class SchemaAttributesApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttribute",
             404: None,
         }
@@ -556,30 +556,30 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'get_attributes'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttributesInfo",
             404: None,
         }
@@ -681,9 +681,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'meta_attribute_guid' when calling 'get_meta_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -691,22 +691,22 @@ class SchemaAttributesApi(ApiBase):
         if "meta_attribute_guid" in params and meta_attribute_guid is not None:
             path_params["meta-attribute-guid"] = params["meta_attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttribute",
             404: None,
         }
@@ -794,30 +794,30 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'table_guid' when calling 'get_meta_attributes'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
             path_params["table-guid"] = params["table_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttributesInfo",
             404: None,
         }
@@ -919,9 +919,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'get_meta_attributes_for_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -929,22 +929,22 @@ class SchemaAttributesApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
             header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttributesInfo",
             404: None,
         }
@@ -1035,9 +1035,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'update_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1045,12 +1045,12 @@ class SchemaAttributesApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1063,7 +1063,7 @@ class SchemaAttributesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttribute",
             400: None,
             403: None,
@@ -1156,9 +1156,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'meta_attribute_guid' when calling 'update_meta_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1166,12 +1166,12 @@ class SchemaAttributesApi(ApiBase):
         if "meta_attribute_guid" in params and meta_attribute_guid is not None:
             path_params["meta-attribute-guid"] = params["meta_attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1184,7 +1184,7 @@ class SchemaAttributesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttribute",
             400: None,
             403: None,
@@ -1277,9 +1277,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'attribute_guid' when calling 'validate_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1287,12 +1287,12 @@ class SchemaAttributesApi(ApiBase):
         if "attribute_guid" in params and attribute_guid is not None:
             path_params["attribute-guid"] = params["attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1305,7 +1305,7 @@ class SchemaAttributesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttributeValidateResponse",
             400: None,
             403: None,
@@ -1398,9 +1398,9 @@ class SchemaAttributesApi(ApiBase):
                 "Missing the required parameter 'meta_attribute_guid' when calling 'validate_meta_attribute'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_guid" in params and table_guid is not None:
@@ -1408,12 +1408,12 @@ class SchemaAttributesApi(ApiBase):
         if "meta_attribute_guid" in params and meta_attribute_guid is not None:
             path_params["meta-attribute-guid"] = params["meta_attribute_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1426,7 +1426,7 @@ class SchemaAttributesApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaAttributesAttributeValidateResponse",
             400: None,
             403: None,

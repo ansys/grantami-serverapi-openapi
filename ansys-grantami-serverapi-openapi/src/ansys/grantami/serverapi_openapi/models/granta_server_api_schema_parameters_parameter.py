@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,18 +51,18 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -70,7 +70,7 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         "help_path": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         "help_path": "helpPath",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator_value_class_map = {
         "discrete".lower(): "#/components/schemas/GrantaServerApiSchemaParametersDiscreteParameter",
@@ -91,7 +91,7 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         self,
         *,
         default_parameter_value_guid: "str",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -101,14 +101,14 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         Parameters
         ----------
         default_parameter_value_guid: str
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
         help_path: str, optional
         """
         self._help_path: Union[str, None, Unset_Type] = Unset
         self._default_parameter_value_guid: str
-        self._display_names: Dict[str, str]
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
@@ -172,23 +172,23 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         self._default_parameter_value_guid = default_parameter_value_guid
 
     @property
-    def display_names(self) -> "Dict[str, str]":
+    def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GrantaServerApiSchemaParametersParameter.
 
         Returns
         -------
-        Dict[str, str]
+        dict[str, str]
             The display_names of this GrantaServerApiSchemaParametersParameter.
         """
         return self._display_names
 
     @display_names.setter
-    def display_names(self, display_names: "Dict[str, str]") -> None:
+    def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GrantaServerApiSchemaParametersParameter.
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
             The display_names of this GrantaServerApiSchemaParametersParameter.
         """
         # Field is not nullable
@@ -256,7 +256,7 @@ class GrantaServerApiSchemaParametersParameter(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

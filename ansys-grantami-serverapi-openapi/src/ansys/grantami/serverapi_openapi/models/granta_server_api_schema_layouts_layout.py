@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
         "sections": "list[GrantaServerApiSchemaLayoutsLayoutSection]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
         "sections": "sections",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "sections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
@@ -83,22 +83,22 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
     def __init__(
         self,
         *,
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        sections: "List[GrantaServerApiSchemaLayoutsLayoutSection]",
+        sections: "list[GrantaServerApiSchemaLayoutsLayoutSection]",
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayout - a model defined in Swagger
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
-        sections: List[GrantaServerApiSchemaLayoutsLayoutSection]
+        sections: list[GrantaServerApiSchemaLayoutsLayoutSection]
         """
-        self._sections: List[GrantaServerApiSchemaLayoutsLayoutSection]
-        self._display_names: Dict[str, str]
+        self._sections: list[GrantaServerApiSchemaLayoutsLayoutSection]
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
@@ -108,23 +108,23 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         self.guid = guid
 
     @property
-    def sections(self) -> "List[GrantaServerApiSchemaLayoutsLayoutSection]":
+    def sections(self) -> "list[GrantaServerApiSchemaLayoutsLayoutSection]":
         """Gets the sections of this GrantaServerApiSchemaLayoutsLayout.
 
         Returns
         -------
-        List[GrantaServerApiSchemaLayoutsLayoutSection]
+        list[GrantaServerApiSchemaLayoutsLayoutSection]
             The sections of this GrantaServerApiSchemaLayoutsLayout.
         """
         return self._sections
 
     @sections.setter
-    def sections(self, sections: "List[GrantaServerApiSchemaLayoutsLayoutSection]") -> None:
+    def sections(self, sections: "list[GrantaServerApiSchemaLayoutsLayoutSection]") -> None:
         """Sets the sections of this GrantaServerApiSchemaLayoutsLayout.
 
         Parameters
         ----------
-        sections: List[GrantaServerApiSchemaLayoutsLayoutSection]
+        sections: list[GrantaServerApiSchemaLayoutsLayoutSection]
             The sections of this GrantaServerApiSchemaLayoutsLayout.
         """
         # Field is not nullable
@@ -136,23 +136,23 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         self._sections = sections
 
     @property
-    def display_names(self) -> "Dict[str, str]":
+    def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GrantaServerApiSchemaLayoutsLayout.
 
         Returns
         -------
-        Dict[str, str]
+        dict[str, str]
             The display_names of this GrantaServerApiSchemaLayoutsLayout.
         """
         return self._display_names
 
     @display_names.setter
-    def display_names(self, display_names: "Dict[str, str]") -> None:
+    def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GrantaServerApiSchemaLayoutsLayout.
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
             The display_names of this GrantaServerApiSchemaLayoutsLayout.
         """
         # Field is not nullable
@@ -220,7 +220,7 @@ class GrantaServerApiSchemaLayoutsLayout(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

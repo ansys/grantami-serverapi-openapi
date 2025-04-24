@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "type": "GrantaServerApiAttributeType",
         "discrete_type_guid": "str",
         "graph_type": "str",
@@ -74,7 +74,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         "x_axis_parameter": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "type": "type",
         "discrete_type_guid": "discreteTypeGuid",
         "graph_type": "graphType",
@@ -88,7 +88,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "type": "GrantaServerApiAttributeType",
         "parameters": "GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo",
         "targetDatabase": "GrantaServerApiObjectIdentifier",
@@ -106,7 +106,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         guid: "Union[str, Unset_Type]" = Unset,
         is_unitted: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
-        parameters: "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]" = Unset,
         target_database: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         target_table: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         unit_symbol: "Union[str, None, Unset_Type]" = Unset,
@@ -122,7 +122,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         guid: str, optional
         is_unitted: bool, optional
         name: str, optional
-        parameters: List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], optional
+        parameters: list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], optional
         target_database: GrantaServerApiObjectIdentifier, optional
         target_table: GrantaServerApiObjectIdentifier, optional
         unit_symbol: str, optional
@@ -135,7 +135,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         self._is_unitted: Union[bool, None, Unset_Type] = Unset
         self._discrete_type_guid: Union[str, None, Unset_Type] = Unset
         self._parameters: Union[
-            List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo],
+            list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo],
             None,
             Unset_Type,
         ] = Unset
@@ -314,13 +314,13 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
     @property
     def parameters(
         self,
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]":
         """Gets the parameters of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         A float functional attribute must define a list of parameters.
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]
+        Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         """
         return self._parameters
@@ -328,14 +328,14 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
     @parameters.setter
     def parameters(
         self,
-        parameters: "Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]",
+        parameters: "Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]",
     ) -> None:
         """Sets the parameters of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         A float functional attribute must define a list of parameters.
 
         Parameters
         ----------
-        parameters: Union[List[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]
+        parameters: Union[list[GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyIntegrationParameterInfo], None, Unset_Type]
             The parameters of this GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute.
         """
         self._parameters = parameters
@@ -443,7 +443,7 @@ class GrantaServerApiIntegrationSchemaGuidOnlySchemaGuidOnlyAttribute(ModelBase)
         self._x_axis_parameter = x_axis_parameter
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

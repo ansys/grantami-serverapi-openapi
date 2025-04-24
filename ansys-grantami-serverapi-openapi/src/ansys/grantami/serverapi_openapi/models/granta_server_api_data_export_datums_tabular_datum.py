@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_link_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsLinkDatum,
@@ -55,16 +55,16 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "attribute_name": "str",
@@ -76,7 +76,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         "tabular_rows": "list[GrantaServerApiDataExportDatumsTabularRow]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "attribute_name": "attributeName",
@@ -88,7 +88,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         "tabular_rows": "tabularRows",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "tabularRows": "GrantaServerApiDataExportDatumsTabularRow",
         "summaryRow": "GrantaServerApiDataExportDatumsRollupRollupDatum",
     }
@@ -103,10 +103,10 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         attribute_name: "Union[str, None, Unset_Type]" = Unset,
         datum_type: "str" = "link",
         link_datum_type: "str" = "tabular",
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        summary_row: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]" = Unset,
-        tabular_rows: "Union[List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]" = Unset,
+        summary_row: "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]" = Unset,
+        tabular_rows: "Union[list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsTabularDatum - a model defined in Swagger
 
@@ -117,10 +117,10 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         attribute_name: str, optional
         datum_type: str
         link_datum_type: str
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
-        summary_row: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
-        tabular_rows: List[GrantaServerApiDataExportDatumsTabularRow], optional
+        summary_row: list[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
+        tabular_rows: list[GrantaServerApiDataExportDatumsTabularRow], optional
         """
         super().__init__(
             attribute_guid=attribute_guid,
@@ -131,10 +131,10 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         )
         self._attribute_name: Union[str, None, Unset_Type] = Unset
         self._tabular_rows: Union[
-            List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type
         ] = Unset
         self._summary_row: Union[
-            List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type
         ] = Unset
         self._link_datum_type: str
 
@@ -171,12 +171,12 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
     @property
     def tabular_rows(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]":
         """Gets the tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]
             The tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         return self._tabular_rows
@@ -184,13 +184,13 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
     @tabular_rows.setter
     def tabular_rows(
         self,
-        tabular_rows: "Union[List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]",
+        tabular_rows: "Union[list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]",
     ) -> None:
         """Sets the tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Parameters
         ----------
-        tabular_rows: Union[List[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]
+        tabular_rows: Union[list[GrantaServerApiDataExportDatumsTabularRow], None, Unset_Type]
             The tabular_rows of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         self._tabular_rows = tabular_rows
@@ -198,12 +198,12 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
     @property
     def summary_row(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]":
         """Gets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         return self._summary_row
@@ -211,13 +211,13 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
     @summary_row.setter
     def summary_row(
         self,
-        summary_row: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]",
+        summary_row: "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]",
     ) -> None:
         """Sets the summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
 
         Parameters
         ----------
-        summary_row: Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
+        summary_row: Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The summary_row of this GrantaServerApiDataExportDatumsTabularDatum.
         """
         self._summary_row = summary_row
@@ -251,7 +251,7 @@ class GrantaServerApiDataExportDatumsTabularDatum(GrantaServerApiDataExportDatum
         self._link_datum_type = link_datum_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

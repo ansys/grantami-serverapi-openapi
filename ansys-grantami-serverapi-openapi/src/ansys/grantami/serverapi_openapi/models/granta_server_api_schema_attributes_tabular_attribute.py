@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesAttribute,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_threshold_type": "GrantaServerApiSchemaAttributesAttributeThresholdType",
         "display_full_table": "bool",
         "display_names": "dict(str, str)",
@@ -81,7 +81,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
         "display_names": "displayNames",
@@ -98,7 +98,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "target": "GrantaServerApiSchemaAttributesTabularAttributeTarget",
         "tabularColumns": "GrantaServerApiSchemaTabularColumnsTabularColumn",
     }
@@ -110,13 +110,13 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         *,
         default_threshold_type: "GrantaServerApiSchemaAttributesAttributeThresholdType",
         display_full_table: "bool",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         display_summary_row_inline: "bool",
         guid: "str",
         hide_unlinked_rows: "bool",
         info: "GrantaServerApiSchemaAttributesAttributeAttributeInfo",
         name: "str",
-        tabular_columns: "List[GrantaServerApiSchemaTabularColumnsTabularColumn]",
+        tabular_columns: "list[GrantaServerApiSchemaTabularColumnsTabularColumn]",
         about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -129,13 +129,13 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         ----------
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType
         display_full_table: bool
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         display_summary_row_inline: bool
         guid: str
         hide_unlinked_rows: bool
         info: GrantaServerApiSchemaAttributesAttributeAttributeInfo
         name: str
-        tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        tabular_columns: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
         about_attribute: GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, optional
         axis_name: str, optional
         help_path: str, optional
@@ -159,7 +159,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         self._target: Union[GrantaServerApiSchemaAttributesTabularAttributeTarget, Unset_Type] = (
             Unset
         )
-        self._tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        self._tabular_columns: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
 
         self.type = type
         self.display_full_table = display_full_table
@@ -309,25 +309,25 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         self._target = target
 
     @property
-    def tabular_columns(self) -> "List[GrantaServerApiSchemaTabularColumnsTabularColumn]":
+    def tabular_columns(self) -> "list[GrantaServerApiSchemaTabularColumnsTabularColumn]":
         """Gets the tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Returns
         -------
-        List[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        list[GrantaServerApiSchemaTabularColumnsTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "List[GrantaServerApiSchemaTabularColumnsTabularColumn]"
+        self, tabular_columns: "list[GrantaServerApiSchemaTabularColumnsTabularColumn]"
     ) -> None:
         """Sets the tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
 
         Parameters
         ----------
-        tabular_columns: List[GrantaServerApiSchemaTabularColumnsTabularColumn]
+        tabular_columns: list[GrantaServerApiSchemaTabularColumnsTabularColumn]
             The tabular_columns of this GrantaServerApiSchemaAttributesTabularAttribute.
         """
         # Field is not nullable
@@ -339,7 +339,7 @@ class GrantaServerApiSchemaAttributesTabularAttribute(GrantaServerApiSchemaAttri
         self._tabular_columns = tabular_columns
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

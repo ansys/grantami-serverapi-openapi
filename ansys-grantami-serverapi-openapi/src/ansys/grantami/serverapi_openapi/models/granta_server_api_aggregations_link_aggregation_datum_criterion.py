@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_aggregations_aggregation_datum_criterion import (  # noqa: F401
     GrantaServerApiAggregationsAggregationDatumCriterion,
@@ -57,26 +57,26 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "local_aggregation_criteria": "list[GrantaServerApiAggregationsLocalColumnAggregationCriterion]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "local_aggregation_criteria": "localAggregationCriteria",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localAggregationCriteria": "GrantaServerApiAggregationsLocalColumnAggregationCriterion",
     }
 
@@ -85,20 +85,20 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     def __init__(
         self,
         *,
-        local_aggregation_criteria: "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]" = Unset,
+        local_aggregation_criteria: "Union[list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]" = Unset,
         type: "str" = "link",
     ) -> None:
         """GrantaServerApiAggregationsLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        local_aggregation_criteria: List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], optional
+        local_aggregation_criteria: list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], optional
         type: str
         """
         super().__init__()
         self._type: str
         self._local_aggregation_criteria: Union[
-            List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type
+            list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type
         ] = Unset
 
         self.type = type
@@ -137,13 +137,13 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     def local_aggregation_criteria(
         self,
     ) -> (
-        "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]"
+        "Union[list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]"
     ):
         """Gets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         return self._local_aggregation_criteria
@@ -151,19 +151,19 @@ class GrantaServerApiAggregationsLinkAggregationDatumCriterion(
     @local_aggregation_criteria.setter
     def local_aggregation_criteria(
         self,
-        local_aggregation_criteria: "Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]",
+        local_aggregation_criteria: "Union[list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
 
         Parameters
         ----------
-        local_aggregation_criteria: Union[List[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
+        local_aggregation_criteria: Union[list[GrantaServerApiAggregationsLocalColumnAggregationCriterion], None, Unset_Type]
             The local_aggregation_criteria of this GrantaServerApiAggregationsLinkAggregationDatumCriterion.
         """
         self._local_aggregation_criteria = local_aggregation_criteria
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

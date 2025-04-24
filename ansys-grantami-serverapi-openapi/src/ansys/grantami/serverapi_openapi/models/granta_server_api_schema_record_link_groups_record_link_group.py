@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,18 +51,18 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
-    discriminator_class_map: Dict[str, str]
+    discriminator_class_map: dict[str, str]
         They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "link_info": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
@@ -72,7 +72,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         "reverse_display_names": "dict(str, str)",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "link_info": "linkInfo",
@@ -82,7 +82,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         "reverse_display_names": "reverseDisplayNames",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "linkInfo": "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
     }
 
@@ -97,31 +97,31 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
     def __init__(
         self,
         *,
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         link_info: "GrantaServerApiSchemaRecordLinkGroupsLinkInfo",
         name: "str",
         reverse_name: "str",
         identity: "Union[int, None, Unset_Type]" = Unset,
-        reverse_display_names: "Union[Dict[str, str], None, Unset_Type]" = Unset,
+        reverse_display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup - a model defined in Swagger
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
         name: str
         reverse_name: str
         identity: int, optional
-        reverse_display_names: Dict[str, str], optional
+        reverse_display_names: dict[str, str], optional
         """
         self._link_info: GrantaServerApiSchemaRecordLinkGroupsLinkInfo
         self._identity: Union[int, None, Unset_Type] = Unset
         self._reverse_name: str
-        self._reverse_display_names: Union[Dict[str, str], None, Unset_Type] = Unset
-        self._display_names: Dict[str, str]
+        self._reverse_display_names: Union[dict[str, str], None, Unset_Type] = Unset
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
@@ -214,47 +214,47 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         self._reverse_name = reverse_name
 
     @property
-    def reverse_display_names(self) -> "Union[Dict[str, str], None, Unset_Type]":
+    def reverse_display_names(self) -> "Union[dict[str, str], None, Unset_Type]":
         """Gets the reverse_display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
 
         Returns
         -------
-        Union[Dict[str, str], None, Unset_Type]
+        Union[dict[str, str], None, Unset_Type]
             The reverse_display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
         return self._reverse_display_names
 
     @reverse_display_names.setter
     def reverse_display_names(
-        self, reverse_display_names: "Union[Dict[str, str], None, Unset_Type]"
+        self, reverse_display_names: "Union[dict[str, str], None, Unset_Type]"
     ) -> None:
         """Sets the reverse_display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
 
         Parameters
         ----------
-        reverse_display_names: Union[Dict[str, str], None, Unset_Type]
+        reverse_display_names: Union[dict[str, str], None, Unset_Type]
             The reverse_display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
         self._reverse_display_names = reverse_display_names
 
     @property
-    def display_names(self) -> "Dict[str, str]":
+    def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
 
         Returns
         -------
-        Dict[str, str]
+        dict[str, str]
             The display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
         return self._display_names
 
     @display_names.setter
-    def display_names(self, display_names: "Dict[str, str]") -> None:
+    def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
             The display_names of this GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup.
         """
         # Field is not nullable
@@ -322,7 +322,7 @@ class GrantaServerApiSchemaRecordLinkGroupsRecordLinkGroup(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Returns the real base class as determined by the discriminator
 
         Parameters

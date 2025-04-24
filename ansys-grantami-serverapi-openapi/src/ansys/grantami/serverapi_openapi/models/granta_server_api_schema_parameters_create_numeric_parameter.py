@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_create_parameter import (  # noqa: F401
     GrantaServerApiSchemaParametersCreateParameter,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_index": "int",
         "interpolation_type": "GrantaServerApiSchemaParametersParameterInterpolationType",
         "is_restricted": "bool",
@@ -79,7 +79,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "interpolation_type": "interpolationType",
         "is_restricted": "isRestricted",
@@ -92,7 +92,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "values": "GrantaServerApiSchemaParametersCreateNumericParameterValue",
         "interpolationType": "GrantaServerApiSchemaParametersParameterInterpolationType",
@@ -109,7 +109,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         is_restricted: "bool",
         name: "str",
         scale_type: "GrantaServerApiSchemaParametersParameterScaleType",
-        values: "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]",
+        values: "list[GrantaServerApiSchemaParametersCreateNumericParameterValue]",
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "numeric",
@@ -124,7 +124,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         is_restricted: bool
         name: str
         scale_type: GrantaServerApiSchemaParametersParameterScaleType
-        values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        values: list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
         guid: str, optional
         help_path: str, optional
         type: str
@@ -139,7 +139,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._type: str
         self._is_restricted: bool
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
-        self._values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        self._values: list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
         self._interpolation_type: GrantaServerApiSchemaParametersParameterInterpolationType
         self._scale_type: GrantaServerApiSchemaParametersParameterScaleType
 
@@ -233,25 +233,25 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._unit = unit
 
     @property
-    def values(self) -> "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
+    def values(self) -> "list[GrantaServerApiSchemaParametersCreateNumericParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Returns
         -------
-        List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
         return self._values
 
     @values.setter
     def values(
-        self, values: "List[GrantaServerApiSchemaParametersCreateNumericParameterValue]"
+        self, values: "list[GrantaServerApiSchemaParametersCreateNumericParameterValue]"
     ) -> None:
         """Sets the values of this GrantaServerApiSchemaParametersCreateNumericParameter.
 
         Parameters
         ----------
-        values: List[GrantaServerApiSchemaParametersCreateNumericParameterValue]
+        values: list[GrantaServerApiSchemaParametersCreateNumericParameterValue]
             The values of this GrantaServerApiSchemaParametersCreateNumericParameter.
         """
         # Field is not nullable
@@ -321,7 +321,7 @@ class GrantaServerApiSchemaParametersCreateNumericParameter(
         self._scale_type = scale_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

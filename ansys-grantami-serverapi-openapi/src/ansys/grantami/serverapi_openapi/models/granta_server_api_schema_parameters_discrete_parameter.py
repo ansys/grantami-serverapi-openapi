@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_parameters_parameter import (  # noqa: F401
     GrantaServerApiSchemaParametersParameter,
@@ -55,16 +55,16 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "default_parameter_value_guid": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -74,7 +74,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "display_names": "displayNames",
         "guid": "guid",
@@ -84,7 +84,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "values": "GrantaServerApiSchemaParametersDiscreteParameterValue",
     }
 
@@ -94,10 +94,10 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         self,
         *,
         default_parameter_value_guid: "str",
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        values: "List[GrantaServerApiSchemaParametersDiscreteParameterValue]",
+        values: "list[GrantaServerApiSchemaParametersDiscreteParameterValue]",
         help_path: "Union[str, None, Unset_Type]" = Unset,
         type: "str" = "discrete",
     ) -> None:
@@ -106,10 +106,10 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         Parameters
         ----------
         default_parameter_value_guid: str
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         name: str
-        values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
         help_path: str, optional
         type: str
         """
@@ -121,7 +121,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
             help_path=help_path,
         )
         self._type: str
-        self._values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        self._values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
 
         self.type = type
         self.values = values
@@ -155,23 +155,23 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         self._type = type
 
     @property
-    def values(self) -> "List[GrantaServerApiSchemaParametersDiscreteParameterValue]":
+    def values(self) -> "list[GrantaServerApiSchemaParametersDiscreteParameterValue]":
         """Gets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
 
         Returns
         -------
-        List[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        list[GrantaServerApiSchemaParametersDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
         return self._values
 
     @values.setter
-    def values(self, values: "List[GrantaServerApiSchemaParametersDiscreteParameterValue]") -> None:
+    def values(self, values: "list[GrantaServerApiSchemaParametersDiscreteParameterValue]") -> None:
         """Sets the values of this GrantaServerApiSchemaParametersDiscreteParameter.
 
         Parameters
         ----------
-        values: List[GrantaServerApiSchemaParametersDiscreteParameterValue]
+        values: list[GrantaServerApiSchemaParametersDiscreteParameterValue]
             The values of this GrantaServerApiSchemaParametersDiscreteParameter.
         """
         # Field is not nullable
@@ -183,7 +183,7 @@ class GrantaServerApiSchemaParametersDiscreteParameter(GrantaServerApiSchemaPara
         self._values = values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "link_source_type": "GrantaServerApiIntegrationSchemaLinkSourceType",
         "parameter_mappings": "list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier]",
         "source": "GrantaServerApiObjectIdentifier",
@@ -68,7 +68,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         "target_identity": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "link_source_type": "linkSourceType",
         "parameter_mappings": "parameterMappings",
         "source": "source",
@@ -76,7 +76,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         "target_identity": "targetIdentity",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "source": "GrantaServerApiObjectIdentifier",
         "parameterMappings": "GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier",
         "linkSourceType": "GrantaServerApiIntegrationSchemaLinkSourceType",
@@ -88,7 +88,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         self,
         *,
         link_source_type: "Union[GrantaServerApiIntegrationSchemaLinkSourceType, Unset_Type]" = Unset,
-        parameter_mappings: "Union[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]" = Unset,
+        parameter_mappings: "Union[list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]" = Unset,
         source: "Union[GrantaServerApiObjectIdentifier, Unset_Type]" = Unset,
         target_guid: "Union[str, None, Unset_Type]" = Unset,
         target_identity: "Union[int, Unset_Type]" = Unset,
@@ -98,7 +98,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         Parameters
         ----------
         link_source_type: GrantaServerApiIntegrationSchemaLinkSourceType, optional
-        parameter_mappings: List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], optional
+        parameter_mappings: list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], optional
         source: GrantaServerApiObjectIdentifier, optional
         target_guid: str, optional
         target_identity: int, optional
@@ -107,7 +107,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         self._target_identity: Union[int, Unset_Type] = Unset
         self._target_guid: Union[str, None, Unset_Type] = Unset
         self._parameter_mappings: Union[
-            List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier],
+            list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier],
             None,
             Unset_Type,
         ] = Unset
@@ -205,13 +205,13 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
     @property
     def parameter_mappings(
         self,
-    ) -> "Union[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]":
         """Gets the parameter_mappings of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
         Any mapped parameters (float functional attributes only). The target parameters must be defined on the target integration attribute.  Not every parameters from the source database needs to be mapped for each attribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
+        Union[list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
             The parameter_mappings of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
         """
         return self._parameter_mappings
@@ -219,14 +219,14 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
     @parameter_mappings.setter
     def parameter_mappings(
         self,
-        parameter_mappings: "Union[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]",
+        parameter_mappings: "Union[list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]",
     ) -> None:
         """Sets the parameter_mappings of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
         Any mapped parameters (float functional attributes only). The target parameters must be defined on the target integration attribute.  Not every parameters from the source database needs to be mapped for each attribute.
 
         Parameters
         ----------
-        parameter_mappings: Union[List[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
+        parameter_mappings: Union[list[GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier], None, Unset_Type]
             The parameter_mappings of this GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier.
         """
         self._parameter_mappings = parameter_mappings
@@ -261,7 +261,7 @@ class GrantaServerApiIntegrationSchemaMappingOfGrantaServerApiObjectIdentifier(M
         self._link_source_type = link_source_type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
         "discrete_type": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "name": "str",
@@ -77,7 +77,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "discrete_type": "discreteType",
         "name": "name",
@@ -88,7 +88,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "discreteType": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter",
     }
@@ -98,7 +98,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     def __init__(
         self,
         *,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
         discrete_type: "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         name: "str",
         about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
@@ -111,7 +111,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
         discrete_type: GrantaServerApiSchemaSlimEntitiesSlimEntity
         name: str
         about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
@@ -129,7 +129,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         )
         self._type: str
         self._discrete_type: GrantaServerApiSchemaSlimEntitiesSlimEntity
-        self._attribute_parameters: List[
+        self._attribute_parameters: list[
             GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter
         ]
 
@@ -196,12 +196,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     @property
     def attribute_parameters(
         self,
-    ) -> "List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]":
+    ) -> "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
 
         Returns
         -------
-        List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
+        list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -209,13 +209,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
+        attribute_parameters: "list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: List[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
+        attribute_parameters: list[GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttributeParameter]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAttribute.
         """
         # Field is not nullable
@@ -227,7 +227,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateDiscreteFunctionalAtt
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

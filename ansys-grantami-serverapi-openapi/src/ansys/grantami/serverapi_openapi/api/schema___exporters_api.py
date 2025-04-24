@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -113,20 +113,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'create_exporters_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
         if "file" in params and file is not None:
             local_var_files["file"] = params["file"]
         if "description" in params and description is not None:
@@ -141,7 +141,7 @@ class SchemaExportersApi(ApiBase):
         # multipart/form-data request detected. Content-Type header will be
         # populated by openapi-common based on request content.
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaFilesFileHeader",
             400: None,
             403: None,
@@ -216,18 +216,18 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'create_exporters_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -242,7 +242,7 @@ class SchemaExportersApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             201: "GrantaServerApiSchemaFilesFolder",
             400: None,
             403: None,
@@ -323,9 +323,9 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'file_guid' when calling 'delete_exporters_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
@@ -333,16 +333,16 @@ class SchemaExportersApi(ApiBase):
         if "file_guid" in params and file_guid is not None:
             path_params["file-guid"] = params["file_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -413,24 +413,24 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'delete_exporters_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             403: None,
             404: None,
@@ -510,9 +510,9 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'file_guid' when calling 'export_exporters_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
@@ -520,16 +520,16 @@ class SchemaExportersApi(ApiBase):
         if "file_guid" in params and file_guid is not None:
             path_params["file-guid"] = params["file_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
             404: None,
         }
@@ -608,9 +608,9 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'file_guid' when calling 'get_exporter_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
@@ -618,12 +618,12 @@ class SchemaExportersApi(ApiBase):
         if "file_guid" in params and file_guid is not None:
             path_params["file-guid"] = params["file_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -631,7 +631,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFileHeader",
             404: None,
         }
@@ -703,20 +703,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'get_exporters_child_folders'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -724,7 +724,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFoldersInfo",
             404: None,
         }
@@ -796,20 +796,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'get_exporters_files'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -817,7 +817,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFilesInfo",
             404: None,
         }
@@ -889,20 +889,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'get_exporters_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -910,7 +910,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFolder",
             404: None,
         }
@@ -971,18 +971,18 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_exporters_folders'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -990,7 +990,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFoldersInfo",
             404: None,
         }
@@ -1053,18 +1053,18 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_exporters_root_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1072,7 +1072,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFolder",
             404: None,
         }
@@ -1163,9 +1163,9 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'file_guid' when calling 'move_exporters_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
@@ -1173,12 +1173,12 @@ class SchemaExportersApi(ApiBase):
         if "file_guid" in params and file_guid is not None:
             path_params["file-guid"] = params["file_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1193,7 +1193,7 @@ class SchemaExportersApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFileHeader",
             400: None,
             403: None,
@@ -1277,20 +1277,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'move_exporters_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1305,7 +1305,7 @@ class SchemaExportersApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFolder",
             400: None,
             403: None,
@@ -1368,18 +1368,18 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'refetch_exporters'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -1387,7 +1387,7 @@ class SchemaExportersApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesExporterRefetchInfo",
             400: None,
             403: None,
@@ -1480,9 +1480,9 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'file_guid' when calling 'update_exporters_file'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
@@ -1490,12 +1490,12 @@ class SchemaExportersApi(ApiBase):
         if "file_guid" in params and file_guid is not None:
             path_params["file-guid"] = params["file_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1510,7 +1510,7 @@ class SchemaExportersApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFileHeader",
             400: None,
             403: None,
@@ -1594,20 +1594,20 @@ class SchemaExportersApi(ApiBase):
                 "Missing the required parameter 'folder_guid' when calling 'update_exporters_folder'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "folder_guid" in params and folder_guid is not None:
             path_params["folder-guid"] = params["folder_guid"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -1622,7 +1622,7 @@ class SchemaExportersApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSchemaFilesFolder",
             400: None,
             403: None,

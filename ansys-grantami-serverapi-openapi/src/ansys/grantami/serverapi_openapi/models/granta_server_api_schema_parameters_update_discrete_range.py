@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaParametersUpdateDiscreteRange(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_values": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_values": "parameterValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
@@ -77,38 +77,38 @@ class GrantaServerApiSchemaParametersUpdateDiscreteRange(ModelBase):
     def __init__(
         self,
         *,
-        parameter_values: "List[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
+        parameter_values: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
     ) -> None:
         """GrantaServerApiSchemaParametersUpdateDiscreteRange - a model defined in Swagger
 
         Parameters
         ----------
-        parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
         """
-        self._parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        self._parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
 
         self.parameter_values = parameter_values
 
     @property
-    def parameter_values(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
+    def parameter_values(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]":
         """Gets the parameter_values of this GrantaServerApiSchemaParametersUpdateDiscreteRange.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The parameter_values of this GrantaServerApiSchemaParametersUpdateDiscreteRange.
         """
         return self._parameter_values
 
     @parameter_values.setter
     def parameter_values(
-        self, parameter_values: "List[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
+        self, parameter_values: "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]"
     ) -> None:
         """Sets the parameter_values of this GrantaServerApiSchemaParametersUpdateDiscreteRange.
 
         Parameters
         ----------
-        parameter_values: List[GrantaServerApiSchemaSlimEntitiesSlimEntity]
+        parameter_values: list[GrantaServerApiSchemaSlimEntitiesSlimEntity]
             The parameter_values of this GrantaServerApiSchemaParametersUpdateDiscreteRange.
         """
         # Field is not nullable
@@ -120,7 +120,7 @@ class GrantaServerApiSchemaParametersUpdateDiscreteRange(ModelBase):
         self._parameter_values = parameter_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

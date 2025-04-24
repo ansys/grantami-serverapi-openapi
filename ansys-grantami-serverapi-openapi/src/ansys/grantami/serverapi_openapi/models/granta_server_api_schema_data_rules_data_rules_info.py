@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "data_rules": "list[GrantaServerApiSchemaDataRulesDataRule]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "data_rules": "dataRules",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "dataRules": "GrantaServerApiSchemaDataRulesDataRule",
     }
 
@@ -77,15 +77,15 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
     def __init__(
         self,
         *,
-        data_rules: "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]" = Unset,
+        data_rules: "Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaDataRulesDataRulesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        data_rules: List[GrantaServerApiSchemaDataRulesDataRule], optional
+        data_rules: list[GrantaServerApiSchemaDataRulesDataRule], optional
         """
-        self._data_rules: Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type] = (
+        self._data_rules: Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type] = (
             Unset
         )
 
@@ -93,31 +93,31 @@ class GrantaServerApiSchemaDataRulesDataRulesInfo(ModelBase):
             self.data_rules = data_rules
 
     @property
-    def data_rules(self) -> "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]":
+    def data_rules(self) -> "Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]":
         """Gets the data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]
             The data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
         """
         return self._data_rules
 
     @data_rules.setter
     def data_rules(
-        self, data_rules: "Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]"
+        self, data_rules: "Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]"
     ) -> None:
         """Sets the data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
 
         Parameters
         ----------
-        data_rules: Union[List[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]
+        data_rules: Union[list[GrantaServerApiSchemaDataRulesDataRule], None, Unset_Type]
             The data_rules of this GrantaServerApiSchemaDataRulesDataRulesInfo.
         """
         self._data_rules = data_rules
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_criterion import (  # noqa: F401
     GrantaServerApiSearchCriterion,
@@ -55,16 +55,16 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guids_to_boost": "list[GrantaServerApiSearchBoostByGuid]",
         "attribute_identities_to_boost": "list[GrantaServerApiSearchBoostByIdentity]",
         "attributes": "GrantaServerApiValueSpecifier",
@@ -75,7 +75,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         "value": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guids_to_boost": "attributeGuidsToBoost",
         "attribute_identities_to_boost": "attributeIdentitiesToBoost",
         "attributes": "attributes",
@@ -86,7 +86,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GrantaServerApiValueSpecifier",
         "localColumns": "GrantaServerApiValueSpecifier",
         "attributeIdentitiesToBoost": "GrantaServerApiSearchBoostByIdentity",
@@ -100,11 +100,11 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     def __init__(
         self,
         *,
-        attribute_guids_to_boost: "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]" = Unset,
-        attribute_identities_to_boost: "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]" = Unset,
+        attribute_guids_to_boost: "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]" = Unset,
+        attribute_identities_to_boost: "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]" = Unset,
         attributes: "Union[GrantaServerApiValueSpecifier, Unset_Type]" = Unset,
-        column_guids_to_boost: "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]" = Unset,
-        column_identities_to_boost: "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]" = Unset,
+        column_guids_to_boost: "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]" = Unset,
+        column_identities_to_boost: "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]" = Unset,
         local_columns: "Union[GrantaServerApiValueSpecifier, Unset_Type]" = Unset,
         type: "str" = "text",
         value: "Union[str, None, Unset_Type]" = Unset,
@@ -113,11 +113,11 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
 
         Parameters
         ----------
-        attribute_guids_to_boost: List[GrantaServerApiSearchBoostByGuid], optional
-        attribute_identities_to_boost: List[GrantaServerApiSearchBoostByIdentity], optional
+        attribute_guids_to_boost: list[GrantaServerApiSearchBoostByGuid], optional
+        attribute_identities_to_boost: list[GrantaServerApiSearchBoostByIdentity], optional
         attributes: GrantaServerApiValueSpecifier, optional
-        column_guids_to_boost: List[GrantaServerApiSearchBoostByGuid], optional
-        column_identities_to_boost: List[GrantaServerApiSearchBoostByIdentity], optional
+        column_guids_to_boost: list[GrantaServerApiSearchBoostByGuid], optional
+        column_identities_to_boost: list[GrantaServerApiSearchBoostByIdentity], optional
         local_columns: GrantaServerApiValueSpecifier, optional
         type: str
         value: str, optional
@@ -127,16 +127,16 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         self._attributes: Union[GrantaServerApiValueSpecifier, Unset_Type] = Unset
         self._local_columns: Union[GrantaServerApiValueSpecifier, Unset_Type] = Unset
         self._attribute_identities_to_boost: Union[
-            List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type
+            list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type
         ] = Unset
         self._attribute_guids_to_boost: Union[
-            List[GrantaServerApiSearchBoostByGuid], None, Unset_Type
+            list[GrantaServerApiSearchBoostByGuid], None, Unset_Type
         ] = Unset
         self._column_identities_to_boost: Union[
-            List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type
+            list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type
         ] = Unset
         self._column_guids_to_boost: Union[
-            List[GrantaServerApiSearchBoostByGuid], None, Unset_Type
+            list[GrantaServerApiSearchBoostByGuid], None, Unset_Type
         ] = Unset
         self._type: str
 
@@ -233,12 +233,12 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @property
     def attribute_identities_to_boost(
         self,
-    ) -> "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]":
         """Gets the attribute_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
+        Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
             The attribute_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         return self._attribute_identities_to_boost
@@ -246,13 +246,13 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @attribute_identities_to_boost.setter
     def attribute_identities_to_boost(
         self,
-        attribute_identities_to_boost: "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]",
+        attribute_identities_to_boost: "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
         ----------
-        attribute_identities_to_boost: Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
+        attribute_identities_to_boost: Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
             The attribute_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         self._attribute_identities_to_boost = attribute_identities_to_boost
@@ -260,12 +260,12 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @property
     def attribute_guids_to_boost(
         self,
-    ) -> "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]":
         """Gets the attribute_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
+        Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
             The attribute_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         return self._attribute_guids_to_boost
@@ -273,13 +273,13 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @attribute_guids_to_boost.setter
     def attribute_guids_to_boost(
         self,
-        attribute_guids_to_boost: "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]",
+        attribute_guids_to_boost: "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
         ----------
-        attribute_guids_to_boost: Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
+        attribute_guids_to_boost: Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
             The attribute_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         self._attribute_guids_to_boost = attribute_guids_to_boost
@@ -287,12 +287,12 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @property
     def column_identities_to_boost(
         self,
-    ) -> "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]":
         """Gets the column_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
+        Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
             The column_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         return self._column_identities_to_boost
@@ -300,13 +300,13 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @column_identities_to_boost.setter
     def column_identities_to_boost(
         self,
-        column_identities_to_boost: "Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]",
+        column_identities_to_boost: "Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]",
     ) -> None:
         """Sets the column_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
         ----------
-        column_identities_to_boost: Union[List[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
+        column_identities_to_boost: Union[list[GrantaServerApiSearchBoostByIdentity], None, Unset_Type]
             The column_identities_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         self._column_identities_to_boost = column_identities_to_boost
@@ -314,12 +314,12 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @property
     def column_guids_to_boost(
         self,
-    ) -> "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]":
         """Gets the column_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
+        Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
             The column_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         return self._column_guids_to_boost
@@ -327,13 +327,13 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
     @column_guids_to_boost.setter
     def column_guids_to_boost(
         self,
-        column_guids_to_boost: "Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]",
+        column_guids_to_boost: "Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]",
     ) -> None:
         """Sets the column_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
 
         Parameters
         ----------
-        column_guids_to_boost: Union[List[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
+        column_guids_to_boost: Union[list[GrantaServerApiSearchBoostByGuid], None, Unset_Type]
             The column_guids_to_boost of this GrantaServerApiSearchFreeTextCriterion.
         """
         self._column_guids_to_boost = column_guids_to_boost
@@ -367,7 +367,7 @@ class GrantaServerApiSearchFreeTextCriterion(GrantaServerApiSearchCriterion):
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

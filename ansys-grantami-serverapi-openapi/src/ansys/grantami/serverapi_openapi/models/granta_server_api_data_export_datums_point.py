@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GrantaServerApiDataExportDatumsPoint(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_values": "list[GrantaServerApiDataExportDatumsParameterValue]",
         "value": "float",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_values": "parameterValues",
         "value": "value",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GrantaServerApiDataExportDatumsParameterValue",
     }
 
@@ -79,19 +79,19 @@ class GrantaServerApiDataExportDatumsPoint(ModelBase):
     def __init__(
         self,
         *,
-        parameter_values: "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]" = Unset,
+        parameter_values: "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]" = Unset,
         value: "Union[float, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsPoint - a model defined in Swagger
 
         Parameters
         ----------
-        parameter_values: List[GrantaServerApiDataExportDatumsParameterValue], optional
+        parameter_values: list[GrantaServerApiDataExportDatumsParameterValue], optional
         value: float, optional
         """
         self._value: Union[float, Unset_Type] = Unset
         self._parameter_values: Union[
-            List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type
         ] = Unset
 
         if value is not Unset:
@@ -127,12 +127,12 @@ class GrantaServerApiDataExportDatumsPoint(ModelBase):
     @property
     def parameter_values(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]":
         """Gets the parameter_values of this GrantaServerApiDataExportDatumsPoint.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
             The parameter_values of this GrantaServerApiDataExportDatumsPoint.
         """
         return self._parameter_values
@@ -140,19 +140,19 @@ class GrantaServerApiDataExportDatumsPoint(ModelBase):
     @parameter_values.setter
     def parameter_values(
         self,
-        parameter_values: "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]",
+        parameter_values: "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]",
     ) -> None:
         """Sets the parameter_values of this GrantaServerApiDataExportDatumsPoint.
 
         Parameters
         ----------
-        parameter_values: Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
+        parameter_values: Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
             The parameter_values of this GrantaServerApiDataExportDatumsPoint.
         """
         self._parameter_values = parameter_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

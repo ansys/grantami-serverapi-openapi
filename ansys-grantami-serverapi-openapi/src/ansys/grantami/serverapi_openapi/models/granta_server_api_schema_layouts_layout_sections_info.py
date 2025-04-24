@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "layout_sections": "list[GrantaServerApiSchemaLayoutsLayoutSection]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "layout_sections": "layoutSections",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "layoutSections": "GrantaServerApiSchemaLayoutsLayoutSection",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
     def __init__(
         self,
         *,
-        layout_sections: "Union[List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]" = Unset,
+        layout_sections: "Union[list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaLayoutsLayoutSectionsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        layout_sections: List[GrantaServerApiSchemaLayoutsLayoutSection], optional
+        layout_sections: list[GrantaServerApiSchemaLayoutsLayoutSection], optional
         """
         self._layout_sections: Union[
-            List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type
+            list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type
         ] = Unset
 
         if layout_sections is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
     @property
     def layout_sections(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]":
         """Gets the layout_sections of this GrantaServerApiSchemaLayoutsLayoutSectionsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]
             The layout_sections of this GrantaServerApiSchemaLayoutsLayoutSectionsInfo.
         """
         return self._layout_sections
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaLayoutsLayoutSectionsInfo(ModelBase):
     @layout_sections.setter
     def layout_sections(
         self,
-        layout_sections: "Union[List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]",
+        layout_sections: "Union[list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]",
     ) -> None:
         """Sets the layout_sections of this GrantaServerApiSchemaLayoutsLayoutSectionsInfo.
 
         Parameters
         ----------
-        layout_sections: Union[List[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]
+        layout_sections: Union[list[GrantaServerApiSchemaLayoutsLayoutSection], None, Unset_Type]
             The layout_sections of this GrantaServerApiSchemaLayoutsLayoutSectionsInfo.
         """
         self._layout_sections = layout_sections
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

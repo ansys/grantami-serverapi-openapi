@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_contents": "list[GrantaServerApiSchemaParametersParameterContent]",
         "transpose_axes": "bool",
         "use_logarithmic_scale": "bool",
@@ -69,7 +69,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         "free_parameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_contents": "parameterContents",
         "transpose_axes": "transposeAxes",
         "use_logarithmic_scale": "useLogarithmicScale",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         "free_parameter": "freeParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "expression": "GrantaServerApiSchemaSlimEntitiesSlimExpression",
         "freeParameter": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameterContents": "GrantaServerApiSchemaParametersParameterContent",
@@ -89,7 +89,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
     def __init__(
         self,
         *,
-        parameter_contents: "List[GrantaServerApiSchemaParametersParameterContent]",
+        parameter_contents: "list[GrantaServerApiSchemaParametersParameterContent]",
         transpose_axes: "bool",
         use_logarithmic_scale: "bool",
         curve_label: "Union[str, None, Unset_Type]" = Unset,
@@ -100,7 +100,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
 
         Parameters
         ----------
-        parameter_contents: List[GrantaServerApiSchemaParametersParameterContent]
+        parameter_contents: list[GrantaServerApiSchemaParametersParameterContent]
         transpose_axes: bool
         use_logarithmic_scale: bool
         curve_label: str, optional
@@ -114,7 +114,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._free_parameter: Union[
             GrantaServerApiSchemaSlimEntitiesSlimNamedEntity, Unset_Type
         ] = Unset
-        self._parameter_contents: List[GrantaServerApiSchemaParametersParameterContent]
+        self._parameter_contents: list[GrantaServerApiSchemaParametersParameterContent]
 
         if curve_label is not Unset:
             self.curve_label = curve_label
@@ -261,25 +261,25 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._free_parameter = free_parameter
 
     @property
-    def parameter_contents(self) -> "List[GrantaServerApiSchemaParametersParameterContent]":
+    def parameter_contents(self) -> "list[GrantaServerApiSchemaParametersParameterContent]":
         """Gets the parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
 
         Returns
         -------
-        List[GrantaServerApiSchemaParametersParameterContent]
+        list[GrantaServerApiSchemaParametersParameterContent]
             The parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
         """
         return self._parameter_contents
 
     @parameter_contents.setter
     def parameter_contents(
-        self, parameter_contents: "List[GrantaServerApiSchemaParametersParameterContent]"
+        self, parameter_contents: "list[GrantaServerApiSchemaParametersParameterContent]"
     ) -> None:
         """Sets the parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
 
         Parameters
         ----------
-        parameter_contents: List[GrantaServerApiSchemaParametersParameterContent]
+        parameter_contents: list[GrantaServerApiSchemaParametersParameterContent]
             The parameter_contents of this GrantaServerApiSchemaAttributesMathsContent.
         """
         # Field is not nullable
@@ -291,7 +291,7 @@ class GrantaServerApiSchemaAttributesMathsContent(ModelBase):
         self._parameter_contents = parameter_contents
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

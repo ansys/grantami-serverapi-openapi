@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_exceptions_data_modification_data_modification_error_detail import (  # noqa: F401
     GrantaServerApiExceptionsDataModificationDataModificationErrorDetail,
@@ -57,30 +57,30 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "str",
         "referenced_by": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "referenced_by_type": "GrantaServerApiExceptionsDataModificationReferencedByType",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
         "referenced_by": "referencedBy",
         "referenced_by_type": "referencedByType",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "referencedByType": "GrantaServerApiExceptionsDataModificationReferencedByType",
         "referencedBy": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
     }
@@ -92,7 +92,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         *,
         message: "str",
         reason: "str" = "inUse",
-        referenced_by: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
+        referenced_by: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]" = Unset,
         referenced_by_type: "Union[GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail - a model defined in Swagger
@@ -101,7 +101,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         ----------
         message: str
         reason: str
-        referenced_by: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
+        referenced_by: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], optional
         referenced_by_type: GrantaServerApiExceptionsDataModificationReferencedByType, optional
         """
         super().__init__(message=message)
@@ -109,7 +109,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
             GrantaServerApiExceptionsDataModificationReferencedByType, Unset_Type
         ] = Unset
         self._referenced_by: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type
         ] = Unset
         self._reason: str
 
@@ -152,12 +152,12 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @property
     def referenced_by(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]":
         """Gets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         return self._referenced_by
@@ -165,13 +165,13 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
     @referenced_by.setter
     def referenced_by(
         self,
-        referenced_by: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
+        referenced_by: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]",
     ) -> None:
         """Sets the referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by: Union[List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
+        referenced_by: Union[list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity], None, Unset_Type]
             The referenced_by of this GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail.
         """
         self._referenced_by = referenced_by
@@ -205,7 +205,7 @@ class GrantaServerApiExceptionsDataModificationInUseDataModificationErrorDetail(
         self._reason = reason
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

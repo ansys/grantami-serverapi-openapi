@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "guid": "str",
         "is_folder": "bool",
         "record_versions": "list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
@@ -69,7 +69,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "guid": "guid",
         "is_folder": "isFolder",
         "record_versions": "recordVersions",
@@ -78,7 +78,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         "parent": "parent",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "table": "GrantaServerApiSchemaSlimEntitiesSlimTable",
         "parent": "GrantaServerApiRecordsRecordHistoriesSlimRecordHistory",
         "recordVersions": "GrantaServerApiRecordsRecordVersionsSlimRecordVersion",
@@ -92,8 +92,8 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         *,
         guid: "str",
         is_folder: "bool",
-        record_versions: "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
-        subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
+        record_versions: "list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]",
+        subsets: "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
         table: "GrantaServerApiSchemaSlimEntitiesSlimTable",
         parent: "Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type]" = Unset,
     ) -> None:
@@ -103,8 +103,8 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         ----------
         guid: str
         is_folder: bool
-        record_versions: List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
-        subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        record_versions: list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
         table: GrantaServerApiSchemaSlimEntitiesSlimTable
         parent: GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, optional
         """
@@ -113,8 +113,8 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._parent: Union[GrantaServerApiRecordsRecordHistoriesSlimRecordHistory, Unset_Type] = (
             Unset
         )
-        self._record_versions: List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
-        self._subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        self._record_versions: list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
+        self._subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
         self._guid: str
 
         self.is_folder = is_folder
@@ -209,25 +209,25 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._parent = parent
 
     @property
-    def record_versions(self) -> "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
+    def record_versions(self) -> "list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]":
         """Gets the record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Returns
         -------
-        List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
+        list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
             The record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
         """
         return self._record_versions
 
     @record_versions.setter
     def record_versions(
-        self, record_versions: "List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]"
+        self, record_versions: "list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]"
     ) -> None:
         """Sets the record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Parameters
         ----------
-        record_versions: List[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
+        record_versions: list[GrantaServerApiRecordsRecordVersionsSlimRecordVersion]
             The record_versions of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
         """
         # Field is not nullable
@@ -239,23 +239,23 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._record_versions = record_versions
 
     @property
-    def subsets(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]":
+    def subsets(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]":
         """Gets the subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
             The subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
+    def subsets(self, subsets: "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
         """Sets the subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
 
         Parameters
         ----------
-        subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
             The subsets of this GrantaServerApiRecordsRecordHistoriesRecordHistory.
         """
         # Field is not nullable
@@ -295,7 +295,7 @@ class GrantaServerApiRecordsRecordHistoriesRecordHistory(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

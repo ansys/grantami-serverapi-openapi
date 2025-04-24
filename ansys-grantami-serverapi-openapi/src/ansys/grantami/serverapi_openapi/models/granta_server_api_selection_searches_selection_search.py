@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "created_timestamp": "datetime",
         "created_user_or_group": "GrantaServerApiSelectionSearchesUserOrGroup",
         "criteria": "str",
@@ -74,7 +74,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         "search_identifier": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "created_timestamp": "createdTimestamp",
         "created_user_or_group": "createdUserOrGroup",
         "criteria": "criteria",
@@ -88,7 +88,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         "search_identifier": "searchIdentifier",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "createdUserOrGroup": "GrantaServerApiSelectionSearchesUserOrGroup",
         "lastModifiedUserOrGroup": "GrantaServerApiSelectionSearchesUserOrGroup",
     }
@@ -101,7 +101,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         created_timestamp: "Union[datetime, Unset_Type]" = Unset,
         created_user_or_group: "Union[GrantaServerApiSelectionSearchesUserOrGroup, Unset_Type]" = Unset,
         criteria: "Union[str, None, Unset_Type]" = Unset,
-        current_user_access_info: "Union[Dict[str, Dict[str, bool]], None, Unset_Type]" = Unset,
+        current_user_access_info: "Union[dict[str, dict[str, bool]], None, Unset_Type]" = Unset,
         description: "Union[str, None, Unset_Type]" = Unset,
         explore_config: "Union[str, None, Unset_Type]" = Unset,
         last_modified_timestamp: "Union[datetime, Unset_Type]" = Unset,
@@ -117,7 +117,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         created_timestamp: datetime, optional
         created_user_or_group: GrantaServerApiSelectionSearchesUserOrGroup, optional
         criteria: str, optional
-        current_user_access_info: Dict[str, Dict[str, bool]], optional
+        current_user_access_info: dict[str, dict[str, bool]], optional
         description: str, optional
         explore_config: str, optional
         last_modified_timestamp: datetime, optional
@@ -130,7 +130,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         self._name: Union[str, None, Unset_Type] = Unset
         self._description: Union[str, None, Unset_Type] = Unset
         self._notes: Union[str, None, Unset_Type] = Unset
-        self._current_user_access_info: Union[Dict[str, Dict[str, bool]], None, Unset_Type] = Unset
+        self._current_user_access_info: Union[dict[str, dict[str, bool]], None, Unset_Type] = Unset
         self._criteria: Union[str, None, Unset_Type] = Unset
         self._explore_config: Union[str, None, Unset_Type] = Unset
         self._created_timestamp: Union[datetime, Unset_Type] = Unset
@@ -257,25 +257,25 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         self._notes = notes
 
     @property
-    def current_user_access_info(self) -> "Union[Dict[str, Dict[str, bool]], None, Unset_Type]":
+    def current_user_access_info(self) -> "Union[dict[str, dict[str, bool]], None, Unset_Type]":
         """Gets the current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
 
         Returns
         -------
-        Union[Dict[str, Dict[str, bool]], None, Unset_Type]
+        Union[dict[str, dict[str, bool]], None, Unset_Type]
             The current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
         """
         return self._current_user_access_info
 
     @current_user_access_info.setter
     def current_user_access_info(
-        self, current_user_access_info: "Union[Dict[str, Dict[str, bool]], None, Unset_Type]"
+        self, current_user_access_info: "Union[dict[str, dict[str, bool]], None, Unset_Type]"
     ) -> None:
         """Sets the current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
 
         Parameters
         ----------
-        current_user_access_info: Union[Dict[str, Dict[str, bool]], None, Unset_Type]
+        current_user_access_info: Union[dict[str, dict[str, bool]], None, Unset_Type]
             The current_user_access_info of this GrantaServerApiSelectionSearchesSelectionSearch.
         """
         self._current_user_access_info = current_user_access_info
@@ -437,7 +437,7 @@ class GrantaServerApiSelectionSearchesSelectionSearch(ModelBase):
         self._last_modified_user_or_group = last_modified_user_or_group
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

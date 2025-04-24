@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "results": "list[GrantaServerApiAggregationsAggregation]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "results": "results",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "results": "GrantaServerApiAggregationsAggregation",
     }
 
@@ -77,45 +77,45 @@ class GrantaServerApiAggregationsAggregationsResponse(ModelBase):
     def __init__(
         self,
         *,
-        results: "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]" = Unset,
+        results: "Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsAggregationsResponse - a model defined in Swagger
 
         Parameters
         ----------
-        results: List[GrantaServerApiAggregationsAggregation], optional
+        results: list[GrantaServerApiAggregationsAggregation], optional
         """
-        self._results: Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type] = Unset
+        self._results: Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type] = Unset
 
         if results is not Unset:
             self.results = results
 
     @property
-    def results(self) -> "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]":
+    def results(self) -> "Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type]":
         """Gets the results of this GrantaServerApiAggregationsAggregationsResponse.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type]
             The results of this GrantaServerApiAggregationsAggregationsResponse.
         """
         return self._results
 
     @results.setter
     def results(
-        self, results: "Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]"
+        self, results: "Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type]"
     ) -> None:
         """Sets the results of this GrantaServerApiAggregationsAggregationsResponse.
 
         Parameters
         ----------
-        results: Union[List[GrantaServerApiAggregationsAggregation], None, Unset_Type]
+        results: Union[list[GrantaServerApiAggregationsAggregation], None, Unset_Type]
             The results of this GrantaServerApiAggregationsAggregationsResponse.
         """
         self._results = results
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

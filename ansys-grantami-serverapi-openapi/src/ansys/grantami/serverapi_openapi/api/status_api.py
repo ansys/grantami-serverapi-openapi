@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -70,20 +70,20 @@ class StatusApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: None,
         }
 
@@ -143,18 +143,18 @@ class StatusApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_database_status'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -162,7 +162,7 @@ class StatusApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiDatabaseStatusInformation",
         }
 
@@ -182,14 +182,14 @@ class StatusApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_status(self) -> "List[GrantaServerApiDatabaseStatusInformation]":
+    def get_status(self) -> "list[GrantaServerApiDatabaseStatusInformation]":
         """get_status
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        List[GrantaServerApiDatabaseStatusInformation]
+        list[GrantaServerApiDatabaseStatusInformation]
         """
         data = self._get_status_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -204,16 +204,16 @@ class StatusApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -221,7 +221,7 @@ class StatusApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "list[GrantaServerApiDatabaseStatusInformation]",
         }
 

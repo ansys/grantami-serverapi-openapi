@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaDatabasesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "databases": "list[GrantaServerApiSchemaSlimEntitiesSlimDatabase]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "databases": "databases",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "databases": "GrantaServerApiSchemaSlimEntitiesSlimDatabase",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaDatabasesInfo(ModelBase):
     def __init__(
         self,
         *,
-        databases: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]" = Unset,
+        databases: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaDatabasesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        databases: List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], optional
+        databases: list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], optional
         """
         self._databases: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type
         ] = Unset
 
         if databases is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaDatabasesInfo(ModelBase):
     @property
     def databases(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]":
         """Gets the databases of this GrantaServerApiSchemaDatabasesInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]
             The databases of this GrantaServerApiSchemaDatabasesInfo.
         """
         return self._databases
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaDatabasesInfo(ModelBase):
     @databases.setter
     def databases(
         self,
-        databases: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]",
+        databases: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]",
     ) -> None:
         """Sets the databases of this GrantaServerApiSchemaDatabasesInfo.
 
         Parameters
         ----------
-        databases: Union[List[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]
+        databases: Union[list[GrantaServerApiSchemaSlimEntitiesSlimDatabase], None, Unset_Type]
             The databases of this GrantaServerApiSchemaDatabasesInfo.
         """
         self._databases = databases
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

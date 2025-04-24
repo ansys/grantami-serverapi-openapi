@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "culture": "str",
         "description": "str",
         "input_file_ids": "list[str]",
@@ -71,7 +71,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         "version": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "culture": "culture",
         "description": "description",
         "input_file_ids": "inputFileIds",
@@ -82,7 +82,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         "version": "version",
     }
 
-    subtype_mapping: Dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -91,7 +91,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         *,
         culture: "Union[str, None, Unset_Type]" = Unset,
         description: "Union[str, None, Unset_Type]" = Unset,
-        input_file_ids: "Union[List[str], None, Unset_Type]" = Unset,
+        input_file_ids: "Union[list[str], None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
         parameters: "Union[str, None, Unset_Type]" = Unset,
         scheduled_execution_date: "Union[datetime, None, Unset_Type]" = Unset,
@@ -104,7 +104,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         ----------
         culture: str, optional
         description: str, optional
-        input_file_ids: List[str], optional
+        input_file_ids: list[str], optional
         name: str, optional
         parameters: str, optional
         scheduled_execution_date: datetime, optional
@@ -117,7 +117,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         self._type: Union[str, None, Unset_Type] = Unset
         self._version: Union[int, Unset_Type] = Unset
         self._scheduled_execution_date: Union[datetime, None, Unset_Type] = Unset
-        self._input_file_ids: Union[List[str], None, Unset_Type] = Unset
+        self._input_file_ids: Union[list[str], None, Unset_Type] = Unset
         self._parameters: Union[str, None, Unset_Type] = Unset
 
         if name is not Unset:
@@ -275,25 +275,25 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         self._scheduled_execution_date = scheduled_execution_date
 
     @property
-    def input_file_ids(self) -> "Union[List[str], None, Unset_Type]":
+    def input_file_ids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the input_file_ids of this GrantaServerApiAsyncJobsCreateJobRequest.
         Names of temporary input files that were uploaded prior to creating this job.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The input_file_ids of this GrantaServerApiAsyncJobsCreateJobRequest.
         """
         return self._input_file_ids
 
     @input_file_ids.setter
-    def input_file_ids(self, input_file_ids: "Union[List[str], None, Unset_Type]") -> None:
+    def input_file_ids(self, input_file_ids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the input_file_ids of this GrantaServerApiAsyncJobsCreateJobRequest.
         Names of temporary input files that were uploaded prior to creating this job.
 
         Parameters
         ----------
-        input_file_ids: Union[List[str], None, Unset_Type]
+        input_file_ids: Union[list[str], None, Unset_Type]
             The input_file_ids of this GrantaServerApiAsyncJobsCreateJobRequest.
         """
         self._input_file_ids = input_file_ids
@@ -321,7 +321,7 @@ class GrantaServerApiAsyncJobsCreateJobRequest(ModelBase):
         self._parameters = parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

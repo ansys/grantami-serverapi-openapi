@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_export_failures_export_failure import (  # noqa: F401
     GrantaServerApiDataExportExportFailuresExportFailure,
@@ -57,30 +57,30 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "failed_attributes": "list[GrantaServerApiDataExportExportFailuresAttributeReference]",
         "failure_details": "str",
         "failure_reason": "str",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "failed_attributes": "failedAttributes",
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "failedAttributes": "GrantaServerApiDataExportExportFailuresAttributeReference",
     }
 
@@ -89,7 +89,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
     def __init__(
         self,
         *,
-        failed_attributes: "List[GrantaServerApiDataExportExportFailuresAttributeReference]",
+        failed_attributes: "list[GrantaServerApiDataExportExportFailuresAttributeReference]",
         failure_details: "str",
         failure_reason: "str",
         type: "str" = "attribute",
@@ -98,13 +98,13 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
 
         Parameters
         ----------
-        failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
+        failed_attributes: list[GrantaServerApiDataExportExportFailuresAttributeReference]
         failure_details: str
         failure_reason: str
         type: str
         """
         super().__init__(failure_details=failure_details, failure_reason=failure_reason)
-        self._failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
+        self._failed_attributes: list[GrantaServerApiDataExportExportFailuresAttributeReference]
         self._type: str
 
         self.failed_attributes = failed_attributes
@@ -113,25 +113,25 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
     @property
     def failed_attributes(
         self,
-    ) -> "List[GrantaServerApiDataExportExportFailuresAttributeReference]":
+    ) -> "list[GrantaServerApiDataExportExportFailuresAttributeReference]":
         """Gets the failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
 
         Returns
         -------
-        List[GrantaServerApiDataExportExportFailuresAttributeReference]
+        list[GrantaServerApiDataExportExportFailuresAttributeReference]
             The failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
         """
         return self._failed_attributes
 
     @failed_attributes.setter
     def failed_attributes(
-        self, failed_attributes: "List[GrantaServerApiDataExportExportFailuresAttributeReference]"
+        self, failed_attributes: "list[GrantaServerApiDataExportExportFailuresAttributeReference]"
     ) -> None:
         """Sets the failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
 
         Parameters
         ----------
-        failed_attributes: List[GrantaServerApiDataExportExportFailuresAttributeReference]
+        failed_attributes: list[GrantaServerApiDataExportExportFailuresAttributeReference]
             The failed_attributes of this GrantaServerApiDataExportExportFailuresAttributeExportFailure.
         """
         # Field is not nullable
@@ -171,7 +171,7 @@ class GrantaServerApiDataExportExportFailuresAttributeExportFailure(
         self._type = type
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "disk_status": "GrantaServerApiDiskStatus",
         "disk_threshold": "str",
         "records_that_failed_to_index": "list[GrantaServerApiIndexRecordFailure]",
@@ -72,7 +72,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "search_index_up_to_date": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "disk_status": "diskStatus",
         "disk_threshold": "diskThreshold",
         "records_that_failed_to_index": "recordsThatFailedToIndex",
@@ -84,7 +84,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         "search_index_up_to_date": "searchIndexUpToDate",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "diskStatus": "GrantaServerApiDiskStatus",
         "recordsThatFailedToIndex": "GrantaServerApiIndexRecordFailure",
     }
@@ -96,7 +96,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         *,
         disk_status: "Union[GrantaServerApiDiskStatus, Unset_Type]" = Unset,
         disk_threshold: "Union[str, None, Unset_Type]" = Unset,
-        records_that_failed_to_index: "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]" = Unset,
+        records_that_failed_to_index: "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]" = Unset,
         search_index_in_sync: "Union[bool, Unset_Type]" = Unset,
         search_index_is_read_only: "Union[bool, None, Unset_Type]" = Unset,
         search_index_location: "Union[str, None, Unset_Type]" = Unset,
@@ -110,7 +110,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         ----------
         disk_status: GrantaServerApiDiskStatus, optional
         disk_threshold: str, optional
-        records_that_failed_to_index: List[GrantaServerApiIndexRecordFailure], optional
+        records_that_failed_to_index: list[GrantaServerApiIndexRecordFailure], optional
         search_index_in_sync: bool, optional
         search_index_is_read_only: bool, optional
         search_index_location: str, optional
@@ -127,7 +127,7 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
         self._disk_threshold: Union[str, None, Unset_Type] = Unset
         self._search_index_unavailable: Union[bool, None, Unset_Type] = Unset
         self._records_that_failed_to_index: Union[
-            List[GrantaServerApiIndexRecordFailure], None, Unset_Type
+            list[GrantaServerApiIndexRecordFailure], None, Unset_Type
         ] = Unset
 
         if search_index_up_to_date is not Unset:
@@ -357,13 +357,13 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
     @property
     def records_that_failed_to_index(
         self,
-    ) -> "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]":
         """Gets the records_that_failed_to_index of this GrantaServerApiSearchIndexStatus.
         Details of any records that failed to index.
 
         Returns
         -------
-        Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]
+        Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GrantaServerApiSearchIndexStatus.
         """
         return self._records_that_failed_to_index
@@ -371,20 +371,20 @@ class GrantaServerApiSearchIndexStatus(ModelBase):
     @records_that_failed_to_index.setter
     def records_that_failed_to_index(
         self,
-        records_that_failed_to_index: "Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]",
+        records_that_failed_to_index: "Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]",
     ) -> None:
         """Sets the records_that_failed_to_index of this GrantaServerApiSearchIndexStatus.
         Details of any records that failed to index.
 
         Parameters
         ----------
-        records_that_failed_to_index: Union[List[GrantaServerApiIndexRecordFailure], None, Unset_Type]
+        records_that_failed_to_index: Union[list[GrantaServerApiIndexRecordFailure], None, Unset_Type]
             The records_that_failed_to_index of this GrantaServerApiSearchIndexStatus.
         """
         self._records_that_failed_to_index = records_that_failed_to_index
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

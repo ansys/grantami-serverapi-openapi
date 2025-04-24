@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_data_export_datums_discrete_functional_datum import (  # noqa: F401
     GrantaServerApiDataExportDatumsDiscreteFunctionalDatum,
@@ -57,16 +57,16 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "attribute_identity": "int",
         "datum_type": "str",
@@ -78,7 +78,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         "x_axis_parameter": "GrantaServerApiFunctionalDatumParameterInfo",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "datum_type": "datumType",
@@ -90,7 +90,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         "x_axis_parameter": "xAxisParameter",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "series": "GrantaServerApiDataExportDatumsDiscreteSeries",
     }
 
@@ -103,10 +103,10 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         attribute_identity: "Union[int, Unset_Type]" = Unset,
         datum_type: "str" = "discreteFunctional",
         graph_type: "str" = "series",
-        meta_datums: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        meta_datums: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
         not_applicable: "str" = "applicable",
-        parameters: "Union[List[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
-        series: "Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GrantaServerApiFunctionalDatumParameterInfo], None, Unset_Type]" = Unset,
+        series: "Union[list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]" = Unset,
         x_axis_parameter: "Union[GrantaServerApiFunctionalDatumParameterInfo, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum - a model defined in Swagger
@@ -117,10 +117,10 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         attribute_identity: int, optional
         datum_type: str
         graph_type: str
-        meta_datums: List[GrantaServerApiDataExportDatumsDatum], optional
+        meta_datums: list[GrantaServerApiDataExportDatumsDatum], optional
         not_applicable: str
-        parameters: List[GrantaServerApiFunctionalDatumParameterInfo], optional
-        series: List[GrantaServerApiDataExportDatumsDiscreteSeries], optional
+        parameters: list[GrantaServerApiFunctionalDatumParameterInfo], optional
+        series: list[GrantaServerApiDataExportDatumsDiscreteSeries], optional
         x_axis_parameter: GrantaServerApiFunctionalDatumParameterInfo, optional
         """
         super().__init__(
@@ -134,7 +134,7 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
         )
         self._graph_type: str
         self._series: Union[
-            List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type
         ] = Unset
 
         self.graph_type = graph_type
@@ -172,31 +172,31 @@ class GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum(
     @property
     def series(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]":
         """Gets the series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]
             The series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
         """
         return self._series
 
     @series.setter
     def series(
-        self, series: "Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]"
+        self, series: "Union[list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]"
     ) -> None:
         """Sets the series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
 
         Parameters
         ----------
-        series: Union[List[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]
+        series: Union[list[GrantaServerApiDataExportDatumsDiscreteSeries], None, Unset_Type]
             The series of this GrantaServerApiDataExportDatumsDiscreteFunctionalSeriesDatum.
         """
         self._series = series
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

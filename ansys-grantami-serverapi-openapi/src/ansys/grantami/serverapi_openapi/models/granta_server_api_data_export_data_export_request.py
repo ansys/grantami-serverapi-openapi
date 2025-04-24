@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GrantaServerApiDataExportAttributeToExport]",
         "record_history_identities": "list[int]",
         "record_properties": "list[GrantaServerApiRecordProperty]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
         "record_history_identities": "recordHistoryIdentities",
         "record_properties": "recordProperties",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GrantaServerApiDataExportAttributeToExport",
         "recordProperties": "GrantaServerApiRecordProperty",
     }
@@ -82,25 +82,25 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "Union[List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]" = Unset,
-        record_history_identities: "Union[List[int], None, Unset_Type]" = Unset,
-        record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]" = Unset,
+        attributes: "Union[list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]" = Unset,
+        record_history_identities: "Union[list[int], None, Unset_Type]" = Unset,
+        record_properties: "Union[list[GrantaServerApiRecordProperty], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDataExportRequest - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GrantaServerApiDataExportAttributeToExport], optional
-        record_history_identities: List[int], optional
-        record_properties: List[GrantaServerApiRecordProperty], optional
+        attributes: list[GrantaServerApiDataExportAttributeToExport], optional
+        record_history_identities: list[int], optional
+        record_properties: list[GrantaServerApiRecordProperty], optional
         """
         self._attributes: Union[
-            List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type
+            list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type
         ] = Unset
-        self._record_properties: Union[List[GrantaServerApiRecordProperty], None, Unset_Type] = (
+        self._record_properties: Union[list[GrantaServerApiRecordProperty], None, Unset_Type] = (
             Unset
         )
-        self._record_history_identities: Union[List[int], None, Unset_Type] = Unset
+        self._record_history_identities: Union[list[int], None, Unset_Type] = Unset
 
         if attributes is not Unset:
             self.attributes = attributes
@@ -112,12 +112,12 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     @property
     def attributes(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]":
         """Gets the attributes of this GrantaServerApiDataExportDataExportRequest.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]
             The attributes of this GrantaServerApiDataExportDataExportRequest.
         """
         return self._attributes
@@ -125,67 +125,67 @@ class GrantaServerApiDataExportDataExportRequest(ModelBase):
     @attributes.setter
     def attributes(
         self,
-        attributes: "Union[List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]",
+        attributes: "Union[list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]",
     ) -> None:
         """Sets the attributes of this GrantaServerApiDataExportDataExportRequest.
 
         Parameters
         ----------
-        attributes: Union[List[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]
+        attributes: Union[list[GrantaServerApiDataExportAttributeToExport], None, Unset_Type]
             The attributes of this GrantaServerApiDataExportDataExportRequest.
         """
         self._attributes = attributes
 
     @property
-    def record_properties(self) -> "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]":
+    def record_properties(self) -> "Union[list[GrantaServerApiRecordProperty], None, Unset_Type]":
         """Gets the record_properties of this GrantaServerApiDataExportDataExportRequest.
 
         Returns
         -------
-        Union[List[GrantaServerApiRecordProperty], None, Unset_Type]
+        Union[list[GrantaServerApiRecordProperty], None, Unset_Type]
             The record_properties of this GrantaServerApiDataExportDataExportRequest.
         """
         return self._record_properties
 
     @record_properties.setter
     def record_properties(
-        self, record_properties: "Union[List[GrantaServerApiRecordProperty], None, Unset_Type]"
+        self, record_properties: "Union[list[GrantaServerApiRecordProperty], None, Unset_Type]"
     ) -> None:
         """Sets the record_properties of this GrantaServerApiDataExportDataExportRequest.
 
         Parameters
         ----------
-        record_properties: Union[List[GrantaServerApiRecordProperty], None, Unset_Type]
+        record_properties: Union[list[GrantaServerApiRecordProperty], None, Unset_Type]
             The record_properties of this GrantaServerApiDataExportDataExportRequest.
         """
         self._record_properties = record_properties
 
     @property
-    def record_history_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def record_history_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the record_history_identities of this GrantaServerApiDataExportDataExportRequest.
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The record_history_identities of this GrantaServerApiDataExportDataExportRequest.
         """
         return self._record_history_identities
 
     @record_history_identities.setter
     def record_history_identities(
-        self, record_history_identities: "Union[List[int], None, Unset_Type]"
+        self, record_history_identities: "Union[list[int], None, Unset_Type]"
     ) -> None:
         """Sets the record_history_identities of this GrantaServerApiDataExportDataExportRequest.
 
         Parameters
         ----------
-        record_history_identities: Union[List[int], None, Unset_Type]
+        record_history_identities: Union[list[int], None, Unset_Type]
             The record_history_identities of this GrantaServerApiDataExportDataExportRequest.
         """
         self._record_history_identities = record_history_identities
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

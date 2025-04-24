@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,26 +51,26 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "aggregation_criteria": "list[GrantaServerApiAggregationsAggregationCriterion]",
         "criterion": "GrantaServerApiSearchCriterion",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "aggregation_criteria": "aggregationCriteria",
         "criterion": "criterion",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "criterion": "GrantaServerApiSearchCriterion",
         "aggregationCriteria": "GrantaServerApiAggregationsAggregationCriterion",
     }
@@ -80,19 +80,19 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
     def __init__(
         self,
         *,
-        aggregation_criteria: "Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]" = Unset,
+        aggregation_criteria: "Union[list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]" = Unset,
         criterion: "Union[GrantaServerApiSearchCriterion, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAggregationsAggregationsRequest - a model defined in Swagger
 
         Parameters
         ----------
-        aggregation_criteria: List[GrantaServerApiAggregationsAggregationCriterion], optional
+        aggregation_criteria: list[GrantaServerApiAggregationsAggregationCriterion], optional
         criterion: GrantaServerApiSearchCriterion, optional
         """
         self._criterion: Union[GrantaServerApiSearchCriterion, Unset_Type] = Unset
         self._aggregation_criteria: Union[
-            List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type
+            list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type
         ] = Unset
 
         if criterion is not Unset:
@@ -128,13 +128,13 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
     @property
     def aggregation_criteria(
         self,
-    ) -> "Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]":
         """Gets the aggregation_criteria of this GrantaServerApiAggregationsAggregationsRequest.
         The aggregations you wish to perform.
 
         Returns
         -------
-        Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]
+        Union[list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]
             The aggregation_criteria of this GrantaServerApiAggregationsAggregationsRequest.
         """
         return self._aggregation_criteria
@@ -142,20 +142,20 @@ class GrantaServerApiAggregationsAggregationsRequest(ModelBase):
     @aggregation_criteria.setter
     def aggregation_criteria(
         self,
-        aggregation_criteria: "Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]",
+        aggregation_criteria: "Union[list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]",
     ) -> None:
         """Sets the aggregation_criteria of this GrantaServerApiAggregationsAggregationsRequest.
         The aggregations you wish to perform.
 
         Parameters
         ----------
-        aggregation_criteria: Union[List[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]
+        aggregation_criteria: Union[list[GrantaServerApiAggregationsAggregationCriterion], None, Unset_Type]
             The aggregation_criteria of this GrantaServerApiAggregationsAggregationsRequest.
         """
         self._aggregation_criteria = aggregation_criteria
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

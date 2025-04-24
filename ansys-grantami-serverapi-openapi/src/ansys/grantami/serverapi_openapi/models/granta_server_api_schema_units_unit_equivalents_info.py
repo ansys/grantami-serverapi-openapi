@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaUnitsUnitEquivalentsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "unit_equivalents": "list[GrantaServerApiSchemaUnitsUnitEquivalent]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "unit_equivalents": "unitEquivalents",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unitEquivalents": "GrantaServerApiSchemaUnitsUnitEquivalent",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaUnitsUnitEquivalentsInfo(ModelBase):
     def __init__(
         self,
         *,
-        unit_equivalents: "Union[List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]" = Unset,
+        unit_equivalents: "Union[list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitEquivalentsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        unit_equivalents: List[GrantaServerApiSchemaUnitsUnitEquivalent], optional
+        unit_equivalents: list[GrantaServerApiSchemaUnitsUnitEquivalent], optional
         """
         self._unit_equivalents: Union[
-            List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type
+            list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type
         ] = Unset
 
         if unit_equivalents is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaUnitsUnitEquivalentsInfo(ModelBase):
     @property
     def unit_equivalents(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]":
         """Gets the unit_equivalents of this GrantaServerApiSchemaUnitsUnitEquivalentsInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]
             The unit_equivalents of this GrantaServerApiSchemaUnitsUnitEquivalentsInfo.
         """
         return self._unit_equivalents
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaUnitsUnitEquivalentsInfo(ModelBase):
     @unit_equivalents.setter
     def unit_equivalents(
         self,
-        unit_equivalents: "Union[List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]",
+        unit_equivalents: "Union[list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]",
     ) -> None:
         """Sets the unit_equivalents of this GrantaServerApiSchemaUnitsUnitEquivalentsInfo.
 
         Parameters
         ----------
-        unit_equivalents: Union[List[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]
+        unit_equivalents: Union[list[GrantaServerApiSchemaUnitsUnitEquivalent], None, Unset_Type]
             The unit_equivalents of this GrantaServerApiSchemaUnitsUnitEquivalentsInfo.
         """
         self._unit_equivalents = unit_equivalents
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

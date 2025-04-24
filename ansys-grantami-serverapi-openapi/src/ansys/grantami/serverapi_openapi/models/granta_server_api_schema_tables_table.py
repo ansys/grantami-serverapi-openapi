@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -75,7 +75,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         "default_subset": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -90,7 +90,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         "default_subset": "defaultSubset",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "defaultSubset": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
         "subsets": "GrantaServerApiSchemaSlimEntitiesSlimSubset",
         "defaultLayout": "GrantaServerApiSchemaSlimEntitiesSlimLayout",
@@ -103,15 +103,15 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
     def __init__(
         self,
         *,
-        display_names: "Dict[str, str]",
+        display_names: "dict[str, str]",
         guid: "str",
         is_hidden_from_browse: "bool",
         is_hidden_from_search: "bool",
         is_versioned: "bool",
-        layouts: "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
+        layouts: "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]",
         name: "str",
-        subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
-        table_types: "List[str]",
+        subsets: "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]",
+        table_types: "list[str]",
         version_state: "GrantaServerApiVersionState",
         default_layout: "Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type]" = Unset,
         default_subset: "Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type]" = Unset,
@@ -120,29 +120,29 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
         guid: str
         is_hidden_from_browse: bool
         is_hidden_from_search: bool
         is_versioned: bool
-        layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
+        layouts: list[GrantaServerApiSchemaSlimEntitiesSlimLayout]
         name: str
-        subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
-        table_types: List[str]
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        table_types: list[str]
         version_state: GrantaServerApiVersionState
         default_layout: GrantaServerApiSchemaSlimEntitiesSlimLayout, optional
         default_subset: GrantaServerApiSchemaSlimEntitiesSlimSubset, optional
         """
         self._default_subset: Union[GrantaServerApiSchemaSlimEntitiesSlimSubset, Unset_Type] = Unset
-        self._subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        self._subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
         self._default_layout: Union[GrantaServerApiSchemaSlimEntitiesSlimLayout, Unset_Type] = Unset
-        self._layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
+        self._layouts: list[GrantaServerApiSchemaSlimEntitiesSlimLayout]
         self._version_state: GrantaServerApiVersionState
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
-        self._table_types: List[str]
-        self._display_names: Dict[str, str]
+        self._table_types: list[str]
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
@@ -189,23 +189,23 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._default_subset = default_subset
 
     @property
-    def subsets(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]":
+    def subsets(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]":
         """Gets the subsets of this GrantaServerApiSchemaTablesTable.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
             The subsets of this GrantaServerApiSchemaTablesTable.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "List[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
+    def subsets(self, subsets: "list[GrantaServerApiSchemaSlimEntitiesSlimSubset]") -> None:
         """Sets the subsets of this GrantaServerApiSchemaTablesTable.
 
         Parameters
         ----------
-        subsets: List[GrantaServerApiSchemaSlimEntitiesSlimSubset]
+        subsets: list[GrantaServerApiSchemaSlimEntitiesSlimSubset]
             The subsets of this GrantaServerApiSchemaTablesTable.
         """
         # Field is not nullable
@@ -244,23 +244,23 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._default_layout = default_layout
 
     @property
-    def layouts(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]":
+    def layouts(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]":
         """Gets the layouts of this GrantaServerApiSchemaTablesTable.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
+        list[GrantaServerApiSchemaSlimEntitiesSlimLayout]
             The layouts of this GrantaServerApiSchemaTablesTable.
         """
         return self._layouts
 
     @layouts.setter
-    def layouts(self, layouts: "List[GrantaServerApiSchemaSlimEntitiesSlimLayout]") -> None:
+    def layouts(self, layouts: "list[GrantaServerApiSchemaSlimEntitiesSlimLayout]") -> None:
         """Sets the layouts of this GrantaServerApiSchemaTablesTable.
 
         Parameters
         ----------
-        layouts: List[GrantaServerApiSchemaSlimEntitiesSlimLayout]
+        layouts: list[GrantaServerApiSchemaSlimEntitiesSlimLayout]
             The layouts of this GrantaServerApiSchemaTablesTable.
         """
         # Field is not nullable
@@ -384,23 +384,23 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._is_versioned = is_versioned
 
     @property
-    def table_types(self) -> "List[str]":
+    def table_types(self) -> "list[str]":
         """Gets the table_types of this GrantaServerApiSchemaTablesTable.
 
         Returns
         -------
-        List[str]
+        list[str]
             The table_types of this GrantaServerApiSchemaTablesTable.
         """
         return self._table_types
 
     @table_types.setter
-    def table_types(self, table_types: "List[str]") -> None:
+    def table_types(self, table_types: "list[str]") -> None:
         """Sets the table_types of this GrantaServerApiSchemaTablesTable.
 
         Parameters
         ----------
-        table_types: List[str]
+        table_types: list[str]
             The table_types of this GrantaServerApiSchemaTablesTable.
         """
         # Field is not nullable
@@ -412,23 +412,23 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._table_types = table_types
 
     @property
-    def display_names(self) -> "Dict[str, str]":
+    def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GrantaServerApiSchemaTablesTable.
 
         Returns
         -------
-        Dict[str, str]
+        dict[str, str]
             The display_names of this GrantaServerApiSchemaTablesTable.
         """
         return self._display_names
 
     @display_names.setter
-    def display_names(self, display_names: "Dict[str, str]") -> None:
+    def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GrantaServerApiSchemaTablesTable.
 
         Parameters
         ----------
-        display_names: Dict[str, str]
+        display_names: dict[str, str]
             The display_names of this GrantaServerApiSchemaTablesTable.
         """
         # Field is not nullable
@@ -496,7 +496,7 @@ class GrantaServerApiSchemaTablesTable(ModelBase):
         self._guid = guid
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "completion_date": "datetime",
         "description": "str",
         "execution_date": "datetime",
@@ -78,7 +78,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "completion_date": "completionDate",
         "description": "description",
         "execution_date": "executionDate",
@@ -96,7 +96,7 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "status": "GrantaServerApiAsyncJobsJobStatus",
     }
 
@@ -109,16 +109,16 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         description: "Union[str, None, Unset_Type]" = Unset,
         execution_date: "Union[datetime, None, Unset_Type]" = Unset,
         id: "Union[str, Unset_Type]" = Unset,
-        input_file_ids: "Union[List[str], None, Unset_Type]" = Unset,
-        job_specific_outputs: "Union[Dict[str, object], None, Unset_Type]" = Unset,
+        input_file_ids: "Union[list[str], None, Unset_Type]" = Unset,
+        job_specific_outputs: "Union[dict[str, object], None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
-        output_file_names: "Union[List[str], None, Unset_Type]" = Unset,
+        output_file_names: "Union[list[str], None, Unset_Type]" = Unset,
         position: "Union[int, None, Unset_Type]" = Unset,
         scheduled_execution_date: "Union[datetime, None, Unset_Type]" = Unset,
         status: "Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type]" = Unset,
         submission_date: "Union[datetime, None, Unset_Type]" = Unset,
         submitter_name: "Union[str, None, Unset_Type]" = Unset,
-        submitter_roles: "Union[List[str], None, Unset_Type]" = Unset,
+        submitter_roles: "Union[list[str], None, Unset_Type]" = Unset,
         type: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiAsyncJobsJob - a model defined in Swagger
@@ -129,16 +129,16 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         description: str, optional
         execution_date: datetime, optional
         id: str, optional
-        input_file_ids: List[str], optional
-        job_specific_outputs: Dict[str, object], optional
+        input_file_ids: list[str], optional
+        job_specific_outputs: dict[str, object], optional
         name: str, optional
-        output_file_names: List[str], optional
+        output_file_names: list[str], optional
         position: int, optional
         scheduled_execution_date: datetime, optional
         status: GrantaServerApiAsyncJobsJobStatus, optional
         submission_date: datetime, optional
         submitter_name: str, optional
-        submitter_roles: List[str], optional
+        submitter_roles: list[str], optional
         type: str, optional
         """
         self._id: Union[str, Unset_Type] = Unset
@@ -146,16 +146,16 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         self._description: Union[str, None, Unset_Type] = Unset
         self._type: Union[str, None, Unset_Type] = Unset
         self._submitter_name: Union[str, None, Unset_Type] = Unset
-        self._submitter_roles: Union[List[str], None, Unset_Type] = Unset
+        self._submitter_roles: Union[list[str], None, Unset_Type] = Unset
         self._submission_date: Union[datetime, None, Unset_Type] = Unset
         self._scheduled_execution_date: Union[datetime, None, Unset_Type] = Unset
         self._execution_date: Union[datetime, None, Unset_Type] = Unset
         self._completion_date: Union[datetime, None, Unset_Type] = Unset
         self._status: Union[GrantaServerApiAsyncJobsJobStatus, Unset_Type] = Unset
-        self._input_file_ids: Union[List[str], None, Unset_Type] = Unset
-        self._output_file_names: Union[List[str], None, Unset_Type] = Unset
+        self._input_file_ids: Union[list[str], None, Unset_Type] = Unset
+        self._output_file_names: Union[list[str], None, Unset_Type] = Unset
         self._position: Union[int, None, Unset_Type] = Unset
-        self._job_specific_outputs: Union[Dict[str, object], None, Unset_Type] = Unset
+        self._job_specific_outputs: Union[dict[str, object], None, Unset_Type] = Unset
 
         if id is not Unset:
             self.id = id
@@ -302,23 +302,23 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         self._submitter_name = submitter_name
 
     @property
-    def submitter_roles(self) -> "Union[List[str], None, Unset_Type]":
+    def submitter_roles(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the submitter_roles of this GrantaServerApiAsyncJobsJob.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The submitter_roles of this GrantaServerApiAsyncJobsJob.
         """
         return self._submitter_roles
 
     @submitter_roles.setter
-    def submitter_roles(self, submitter_roles: "Union[List[str], None, Unset_Type]") -> None:
+    def submitter_roles(self, submitter_roles: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the submitter_roles of this GrantaServerApiAsyncJobsJob.
 
         Parameters
         ----------
-        submitter_roles: Union[List[str], None, Unset_Type]
+        submitter_roles: Union[list[str], None, Unset_Type]
             The submitter_roles of this GrantaServerApiAsyncJobsJob.
         """
         self._submitter_roles = submitter_roles
@@ -439,45 +439,45 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         self._status = status
 
     @property
-    def input_file_ids(self) -> "Union[List[str], None, Unset_Type]":
+    def input_file_ids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the input_file_ids of this GrantaServerApiAsyncJobsJob.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The input_file_ids of this GrantaServerApiAsyncJobsJob.
         """
         return self._input_file_ids
 
     @input_file_ids.setter
-    def input_file_ids(self, input_file_ids: "Union[List[str], None, Unset_Type]") -> None:
+    def input_file_ids(self, input_file_ids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the input_file_ids of this GrantaServerApiAsyncJobsJob.
 
         Parameters
         ----------
-        input_file_ids: Union[List[str], None, Unset_Type]
+        input_file_ids: Union[list[str], None, Unset_Type]
             The input_file_ids of this GrantaServerApiAsyncJobsJob.
         """
         self._input_file_ids = input_file_ids
 
     @property
-    def output_file_names(self) -> "Union[List[str], None, Unset_Type]":
+    def output_file_names(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the output_file_names of this GrantaServerApiAsyncJobsJob.
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The output_file_names of this GrantaServerApiAsyncJobsJob.
         """
         return self._output_file_names
 
     @output_file_names.setter
-    def output_file_names(self, output_file_names: "Union[List[str], None, Unset_Type]") -> None:
+    def output_file_names(self, output_file_names: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the output_file_names of this GrantaServerApiAsyncJobsJob.
 
         Parameters
         ----------
-        output_file_names: Union[List[str], None, Unset_Type]
+        output_file_names: Union[list[str], None, Unset_Type]
             The output_file_names of this GrantaServerApiAsyncJobsJob.
         """
         self._output_file_names = output_file_names
@@ -505,31 +505,31 @@ class GrantaServerApiAsyncJobsJob(ModelBase):
         self._position = position
 
     @property
-    def job_specific_outputs(self) -> "Union[Dict[str, object], None, Unset_Type]":
+    def job_specific_outputs(self) -> "Union[dict[str, object], None, Unset_Type]":
         """Gets the job_specific_outputs of this GrantaServerApiAsyncJobsJob.
 
         Returns
         -------
-        Union[Dict[str, object], None, Unset_Type]
+        Union[dict[str, object], None, Unset_Type]
             The job_specific_outputs of this GrantaServerApiAsyncJobsJob.
         """
         return self._job_specific_outputs
 
     @job_specific_outputs.setter
     def job_specific_outputs(
-        self, job_specific_outputs: "Union[Dict[str, object], None, Unset_Type]"
+        self, job_specific_outputs: "Union[dict[str, object], None, Unset_Type]"
     ) -> None:
         """Sets the job_specific_outputs of this GrantaServerApiAsyncJobsJob.
 
         Parameters
         ----------
-        job_specific_outputs: Union[Dict[str, object], None, Unset_Type]
+        job_specific_outputs: Union[dict[str, object], None, Unset_Type]
             The job_specific_outputs of this GrantaServerApiAsyncJobsJob.
         """
         self._job_specific_outputs = job_specific_outputs
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

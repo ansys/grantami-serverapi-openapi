@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaParametersParametersInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameters": "list[GrantaServerApiSchemaParametersParameter]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameters": "parameters",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameters": "GrantaServerApiSchemaParametersParameter",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaParametersParametersInfo(ModelBase):
     def __init__(
         self,
         *,
-        parameters: "Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]" = Unset,
+        parameters: "Union[list[GrantaServerApiSchemaParametersParameter], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaParametersParametersInfo - a model defined in Swagger
 
         Parameters
         ----------
-        parameters: List[GrantaServerApiSchemaParametersParameter], optional
+        parameters: list[GrantaServerApiSchemaParametersParameter], optional
         """
         self._parameters: Union[
-            List[GrantaServerApiSchemaParametersParameter], None, Unset_Type
+            list[GrantaServerApiSchemaParametersParameter], None, Unset_Type
         ] = Unset
 
         if parameters is not Unset:
@@ -95,31 +95,31 @@ class GrantaServerApiSchemaParametersParametersInfo(ModelBase):
     @property
     def parameters(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaParametersParameter], None, Unset_Type]":
         """Gets the parameters of this GrantaServerApiSchemaParametersParametersInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaParametersParameter], None, Unset_Type]
             The parameters of this GrantaServerApiSchemaParametersParametersInfo.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]"
+        self, parameters: "Union[list[GrantaServerApiSchemaParametersParameter], None, Unset_Type]"
     ) -> None:
         """Sets the parameters of this GrantaServerApiSchemaParametersParametersInfo.
 
         Parameters
         ----------
-        parameters: Union[List[GrantaServerApiSchemaParametersParameter], None, Unset_Type]
+        parameters: Union[list[GrantaServerApiSchemaParametersParameter], None, Unset_Type]
             The parameters of this GrantaServerApiSchemaParametersParametersInfo.
         """
         self._parameters = parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "high": "float",
         "low": "float",
         "parameter_values": "list[GrantaServerApiDataExportDatumsParameterValue]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "high": "high",
         "low": "low",
         "parameter_values": "parameterValues",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "parameterValues": "GrantaServerApiDataExportDatumsParameterValue",
     }
 
@@ -83,7 +83,7 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
         *,
         high: "Union[float, Unset_Type]" = Unset,
         low: "Union[float, Unset_Type]" = Unset,
-        parameter_values: "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]" = Unset,
+        parameter_values: "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiDataExportDatumsGridPoint - a model defined in Swagger
 
@@ -91,10 +91,10 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
         ----------
         high: float, optional
         low: float, optional
-        parameter_values: List[GrantaServerApiDataExportDatumsParameterValue], optional
+        parameter_values: list[GrantaServerApiDataExportDatumsParameterValue], optional
         """
         self._parameter_values: Union[
-            List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type
         ] = Unset
         self._low: Union[float, Unset_Type] = Unset
         self._high: Union[float, Unset_Type] = Unset
@@ -109,12 +109,12 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
     @property
     def parameter_values(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]":
         """Gets the parameter_values of this GrantaServerApiDataExportDatumsGridPoint.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
             The parameter_values of this GrantaServerApiDataExportDatumsGridPoint.
         """
         return self._parameter_values
@@ -122,13 +122,13 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
     @parameter_values.setter
     def parameter_values(
         self,
-        parameter_values: "Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]",
+        parameter_values: "Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]",
     ) -> None:
         """Sets the parameter_values of this GrantaServerApiDataExportDatumsGridPoint.
 
         Parameters
         ----------
-        parameter_values: Union[List[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
+        parameter_values: Union[list[GrantaServerApiDataExportDatumsParameterValue], None, Unset_Type]
             The parameter_values of this GrantaServerApiDataExportDatumsGridPoint.
         """
         self._parameter_values = parameter_values
@@ -184,7 +184,7 @@ class GrantaServerApiDataExportDatumsGridPoint(ModelBase):
         self._high = high
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

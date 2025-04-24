@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "curve_label": "str",
         "expression": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "free_parameter": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -69,7 +69,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         "use_logarithmic_scale": "bool",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "curve_label": "curveLabel",
         "expression": "expression",
         "free_parameter": "freeParameter",
@@ -78,7 +78,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         "use_logarithmic_scale": "useLogarithmicScale",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "expression": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "freeParameter": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "parameterContents": "GrantaServerApiSchemaParametersUpdateParameterContent",
@@ -92,7 +92,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         curve_label: "Union[str, None, Unset_Type]" = Unset,
         expression: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
         free_parameter: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
-        parameter_contents: "Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]" = Unset,
+        parameter_contents: "Union[list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]" = Unset,
         transpose_axes: "Union[bool, Unset_Type]" = Unset,
         use_logarithmic_scale: "Union[bool, Unset_Type]" = Unset,
     ) -> None:
@@ -103,7 +103,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         curve_label: str, optional
         expression: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
         free_parameter: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-        parameter_contents: List[GrantaServerApiSchemaParametersUpdateParameterContent], optional
+        parameter_contents: list[GrantaServerApiSchemaParametersUpdateParameterContent], optional
         transpose_axes: bool, optional
         use_logarithmic_scale: bool, optional
         """
@@ -113,7 +113,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         self._expression: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._free_parameter: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._parameter_contents: Union[
-            List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type
+            list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type
         ] = Unset
 
         if curve_label is not Unset:
@@ -258,12 +258,12 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
     @property
     def parameter_contents(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]":
         """Gets the parameter_contents of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]
+        Union[list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]
             The parameter_contents of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
         """
         return self._parameter_contents
@@ -271,13 +271,13 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
     @parameter_contents.setter
     def parameter_contents(
         self,
-        parameter_contents: "Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]",
+        parameter_contents: "Union[list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]",
     ) -> None:
         """Sets the parameter_contents of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
 
         Parameters
         ----------
-        parameter_contents: Union[List[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]
+        parameter_contents: Union[list[GrantaServerApiSchemaParametersUpdateParameterContent], Unset_Type]
             The parameter_contents of this GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent.
         """
         # Field is not nullable
@@ -286,7 +286,7 @@ class GrantaServerApiSchemaAttributesUpdateAttributesUpdateMathsContent(ModelBas
         self._parameter_contents = parameter_contents
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

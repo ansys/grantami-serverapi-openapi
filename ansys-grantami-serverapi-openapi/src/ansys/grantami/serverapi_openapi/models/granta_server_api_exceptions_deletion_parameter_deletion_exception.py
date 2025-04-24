@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,28 +51,28 @@ class GrantaServerApiExceptionsDeletionParameterDeletionException(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail]",
         "message": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "code": "SystemNetHttpStatusCode",
         "errors": "GrantaServerApiExceptionsDataModificationDataModificationErrorDetail",
     }
@@ -83,7 +83,7 @@ class GrantaServerApiExceptionsDeletionParameterDeletionException(ModelBase):
         self,
         *,
         code: "Union[SystemNetHttpStatusCode, Unset_Type]" = Unset,
-        errors: "Union[List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]" = Unset,
+        errors: "Union[list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]" = Unset,
         message: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiExceptionsDeletionParameterDeletionException - a model defined in Swagger
@@ -91,13 +91,13 @@ class GrantaServerApiExceptionsDeletionParameterDeletionException(ModelBase):
         Parameters
         ----------
         code: SystemNetHttpStatusCode, optional
-        errors: List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], optional
+        errors: list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], optional
         message: str, optional
         """
         self._message: Union[str, None, Unset_Type] = Unset
         self._code: Union[SystemNetHttpStatusCode, Unset_Type] = Unset
         self._errors: Union[
-            List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail],
+            list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail],
             None,
             Unset_Type,
         ] = Unset
@@ -159,12 +159,12 @@ class GrantaServerApiExceptionsDeletionParameterDeletionException(ModelBase):
     @property
     def errors(
         self,
-    ) -> "Union[List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]":
         """Gets the errors of this GrantaServerApiExceptionsDeletionParameterDeletionException.
 
         Returns
         -------
-        Union[List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]
+        Union[list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]
             The errors of this GrantaServerApiExceptionsDeletionParameterDeletionException.
         """
         return self._errors
@@ -172,19 +172,19 @@ class GrantaServerApiExceptionsDeletionParameterDeletionException(ModelBase):
     @errors.setter
     def errors(
         self,
-        errors: "Union[List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]",
+        errors: "Union[list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]",
     ) -> None:
         """Sets the errors of this GrantaServerApiExceptionsDeletionParameterDeletionException.
 
         Parameters
         ----------
-        errors: Union[List[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]
+        errors: Union[list[GrantaServerApiExceptionsDataModificationDataModificationErrorDetail], None, Unset_Type]
             The errors of this GrantaServerApiExceptionsDeletionParameterDeletionException.
         """
         self._errors = errors
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

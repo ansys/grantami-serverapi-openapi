@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "linked_data": "list[GrantaServerApiDataExportRecordWithData]",
         "linked_records": "list[GrantaServerApiIntegrationDataExportRecordReference]",
         "linking_value": "str",
@@ -70,7 +70,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         "row_number": "int",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "linked_data": "linkedData",
         "linked_records": "linkedRecords",
         "linking_value": "linkingValue",
@@ -80,7 +80,7 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         "row_number": "rowNumber",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "localData": "GrantaServerApiDataExportDatumsDatum",
         "linkedRecords": "GrantaServerApiIntegrationDataExportRecordReference",
         "linkedData": "GrantaServerApiDataExportRecordWithData",
@@ -92,11 +92,11 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     def __init__(
         self,
         *,
-        linked_data: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]" = Unset,
-        linked_records: "Union[List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]" = Unset,
+        linked_data: "Union[list[GrantaServerApiDataExportRecordWithData], None, Unset_Type]" = Unset,
+        linked_records: "Union[list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]" = Unset,
         linking_value: "Union[str, None, Unset_Type]" = Unset,
-        local_data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
-        rolled_up_data: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]" = Unset,
+        local_data: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]" = Unset,
+        rolled_up_data: "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]" = Unset,
         row_guid: "Union[str, Unset_Type]" = Unset,
         row_number: "Union[int, Unset_Type]" = Unset,
     ) -> None:
@@ -104,28 +104,28 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
 
         Parameters
         ----------
-        linked_data: List[GrantaServerApiDataExportRecordWithData], optional
-        linked_records: List[GrantaServerApiIntegrationDataExportRecordReference], optional
+        linked_data: list[GrantaServerApiDataExportRecordWithData], optional
+        linked_records: list[GrantaServerApiIntegrationDataExportRecordReference], optional
         linking_value: str, optional
-        local_data: List[GrantaServerApiDataExportDatumsDatum], optional
-        rolled_up_data: List[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
+        local_data: list[GrantaServerApiDataExportDatumsDatum], optional
+        rolled_up_data: list[GrantaServerApiDataExportDatumsRollupRollupDatum], optional
         row_guid: str, optional
         row_number: int, optional
         """
         self._row_guid: Union[str, Unset_Type] = Unset
         self._linking_value: Union[str, None, Unset_Type] = Unset
         self._row_number: Union[int, Unset_Type] = Unset
-        self._local_data: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
+        self._local_data: Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type] = (
             Unset
         )
         self._linked_records: Union[
-            List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type
+            list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type
         ] = Unset
         self._linked_data: Union[
-            List[GrantaServerApiDataExportRecordWithData], None, Unset_Type
+            list[GrantaServerApiDataExportRecordWithData], None, Unset_Type
         ] = Unset
         self._rolled_up_data: Union[
-            List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type
+            list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type
         ] = Unset
 
         if row_guid is not Unset:
@@ -216,25 +216,25 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
         self._row_number = row_number
 
     @property
-    def local_data(self) -> "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
+    def local_data(self) -> "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]":
         """Gets the local_data of this GrantaServerApiDataExportDatumsTabularRow.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
             The local_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         return self._local_data
 
     @local_data.setter
     def local_data(
-        self, local_data: "Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
+        self, local_data: "Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]"
     ) -> None:
         """Sets the local_data of this GrantaServerApiDataExportDatumsTabularRow.
 
         Parameters
         ----------
-        local_data: Union[List[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
+        local_data: Union[list[GrantaServerApiDataExportDatumsDatum], None, Unset_Type]
             The local_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         self._local_data = local_data
@@ -242,13 +242,13 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     @property
     def linked_records(
         self,
-    ) -> "Union[List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]":
         """Gets the linked_records of this GrantaServerApiDataExportDatumsTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Returns
         -------
-        Union[List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]
+        Union[list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]
             The linked_records of this GrantaServerApiDataExportDatumsTabularRow.
         """
         return self._linked_records
@@ -256,14 +256,14 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     @linked_records.setter
     def linked_records(
         self,
-        linked_records: "Union[List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]",
+        linked_records: "Union[list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]",
     ) -> None:
         """Sets the linked_records of this GrantaServerApiDataExportDatumsTabularRow.
         Records linked to this tabular row (only populated if the target table/attribute was provided in the request)
 
         Parameters
         ----------
-        linked_records: Union[List[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]
+        linked_records: Union[list[GrantaServerApiIntegrationDataExportRecordReference], None, Unset_Type]
             The linked_records of this GrantaServerApiDataExportDatumsTabularRow.
         """
         self._linked_records = linked_records
@@ -271,27 +271,27 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     @property
     def linked_data(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportRecordWithData], None, Unset_Type]":
         """Gets the linked_data of this GrantaServerApiDataExportDatumsTabularRow.
         Data for the linked records, if the request included linked data to export
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
             The linked_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         return self._linked_data
 
     @linked_data.setter
     def linked_data(
-        self, linked_data: "Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]"
+        self, linked_data: "Union[list[GrantaServerApiDataExportRecordWithData], None, Unset_Type]"
     ) -> None:
         """Sets the linked_data of this GrantaServerApiDataExportDatumsTabularRow.
         Data for the linked records, if the request included linked data to export
 
         Parameters
         ----------
-        linked_data: Union[List[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
+        linked_data: Union[list[GrantaServerApiDataExportRecordWithData], None, Unset_Type]
             The linked_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         self._linked_data = linked_data
@@ -299,12 +299,12 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     @property
     def rolled_up_data(
         self,
-    ) -> "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]":
         """Gets the rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
 
         Returns
         -------
-        Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
+        Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         return self._rolled_up_data
@@ -312,19 +312,19 @@ class GrantaServerApiDataExportDatumsTabularRow(ModelBase):
     @rolled_up_data.setter
     def rolled_up_data(
         self,
-        rolled_up_data: "Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]",
+        rolled_up_data: "Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]",
     ) -> None:
         """Sets the rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
 
         Parameters
         ----------
-        rolled_up_data: Union[List[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
+        rolled_up_data: Union[list[GrantaServerApiDataExportDatumsRollupRollupDatum], None, Unset_Type]
             The rolled_up_data of this GrantaServerApiDataExportDatumsTabularRow.
         """
         self._rolled_up_data = rolled_up_data
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

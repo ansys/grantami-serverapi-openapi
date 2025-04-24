@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "discrete_types": "list[GrantaServerApiSchemaDiscreteTypesDiscreteType]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "discrete_types": "discreteTypes",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "discreteTypes": "GrantaServerApiSchemaDiscreteTypesDiscreteType",
     }
 
@@ -77,16 +77,16 @@ class GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo(ModelBase):
     def __init__(
         self,
         *,
-        discrete_types: "Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]" = Unset,
+        discrete_types: "Union[list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]" = Unset,
     ) -> None:
         """GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        discrete_types: List[GrantaServerApiSchemaDiscreteTypesDiscreteType], optional
+        discrete_types: list[GrantaServerApiSchemaDiscreteTypesDiscreteType], optional
         """
         self._discrete_types: Union[
-            List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type
+            list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type
         ] = Unset
 
         if discrete_types is not Unset:
@@ -95,12 +95,12 @@ class GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo(ModelBase):
     @property
     def discrete_types(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]":
         """Gets the discrete_types of this GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]
             The discrete_types of this GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo.
         """
         return self._discrete_types
@@ -108,19 +108,19 @@ class GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo(ModelBase):
     @discrete_types.setter
     def discrete_types(
         self,
-        discrete_types: "Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]",
+        discrete_types: "Union[list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]",
     ) -> None:
         """Sets the discrete_types of this GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo.
 
         Parameters
         ----------
-        discrete_types: Union[List[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]
+        discrete_types: Union[list[GrantaServerApiSchemaDiscreteTypesDiscreteType], None, Unset_Type]
             The discrete_types of this GrantaServerApiSchemaDiscreteTypesDiscreteTypesInfo.
         """
         self._discrete_types = discrete_types
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

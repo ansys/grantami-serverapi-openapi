@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ApiBase
 
@@ -106,9 +106,9 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'layout_identity' when calling 'generate_schema_from_layout'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_identity" in params and table_identity is not None:
@@ -116,12 +116,12 @@ class DatabaseApi(ApiBase):
         if "layout_identity" in params and layout_identity is not None:
             path_params["layout-identity"] = params["layout_identity"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -129,7 +129,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -209,9 +209,9 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'layout_name' when calling 'generate_schema_from_layout_name'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_identity" in params and table_identity is not None:
@@ -219,12 +219,12 @@ class DatabaseApi(ApiBase):
         if "layout_name" in params and layout_name is not None:
             path_params["layout-name"] = params["layout_name"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -232,7 +232,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -312,9 +312,9 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'layout_name' when calling 'generate_schema_from_layout_name_with_table_name'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_name" in params and table_name is not None:
@@ -322,12 +322,12 @@ class DatabaseApi(ApiBase):
         if "layout_name" in params and layout_name is not None:
             path_params["layout-name"] = params["layout_name"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -335,7 +335,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -415,9 +415,9 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'layout_identity' when calling 'generate_schema_from_layout_with_table_name'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_name" in params and table_name is not None:
@@ -425,12 +425,12 @@ class DatabaseApi(ApiBase):
         if "layout_identity" in params and layout_identity is not None:
             path_params["layout-identity"] = params["layout_identity"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -438,7 +438,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -461,7 +461,7 @@ class DatabaseApi(ApiBase):
         )
 
     def generate_schema_from_standard_names(
-        self, *, database_key: "str", body: "Optional[List[str]]" = None
+        self, *, database_key: "str", body: "Optional[list[str]]" = None
     ) -> "Union[GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema with attributes for each provided standard name in the given database. The user must be an Admin user for the database.
 
@@ -470,7 +470,7 @@ class DatabaseApi(ApiBase):
         Parameters
         ----------
         database_key: str
-        body: List[str]
+        body: list[str]
 
         Returns
         -------
@@ -482,7 +482,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _generate_schema_from_standard_names_with_http_info(
-        self, database_key: "str", body: "Optional[List[str]]" = None, **kwargs: Any
+        self, database_key: "str", body: "Optional[list[str]]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
@@ -506,18 +506,18 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'generate_schema_from_standard_names'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -532,7 +532,7 @@ class DatabaseApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -555,7 +555,7 @@ class DatabaseApi(ApiBase):
         )
 
     def generate_schema_from_standard_names_all_databases(
-        self, *, body: "Optional[List[str]]" = None
+        self, *, body: "Optional[list[str]]" = None
     ) -> "Union[GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier, None]":
         """Generate an integration schema with attributes for each provided standard name. This will include attribute from all loaded databases for which the user is an Admin.
 
@@ -563,7 +563,7 @@ class DatabaseApi(ApiBase):
 
         Parameters
         ----------
-        body: List[str]
+        body: list[str]
 
         Returns
         -------
@@ -575,7 +575,7 @@ class DatabaseApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _generate_schema_from_standard_names_all_databases_with_http_info(
-        self, body: "Optional[List[str]]" = None, **kwargs: Any
+        self, body: "Optional[list[str]]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -588,16 +588,16 @@ class DatabaseApi(ApiBase):
             params[key] = val
         del params["kwargs"]
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         if "body" in params and body is not None:
@@ -612,7 +612,7 @@ class DatabaseApi(ApiBase):
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -685,20 +685,20 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'table_identity' when calling 'generate_schema_from_table'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_identity" in params and table_identity is not None:
             path_params["table-identity"] = params["table_identity"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -706,7 +706,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -779,20 +779,20 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'table_name' when calling 'generate_schema_from_table_name'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
         if "table_name" in params and table_name is not None:
             path_params["table-name"] = params["table_name"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -800,7 +800,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiIntegrationSchemaGeneratedIntegrationSchemaOfGrantaServerApiObjectIdentifier",
             403: None,
             404: None,
@@ -868,20 +868,20 @@ class DatabaseApi(ApiBase):
                 "Missing the required parameter 'database_key' when calling 'get_search_index_status'"
             )
 
-        collection_formats: Dict[str, Any] = {}
+        collection_formats: dict[str, Any] = {}
 
-        path_params: Dict[str, Any] = {}
+        path_params: dict[str, Any] = {}
         if "database_key" in params and database_key is not None:
             path_params["database-key"] = params["database_key"]
 
-        query_params: List[Any] = []
+        query_params: list[Any] = []
         if "include_diagnostics" in params and include_diagnostics is not None:
             query_params.append(("include-diagnostics", params["include_diagnostics"]))
 
-        header_params: Dict[str, Any] = {}
+        header_params: dict[str, Any] = {}
 
-        form_params: List[Any] = []
-        local_var_files: Dict[str, Any] = {}
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
 
         body_params = None
         # HTTP header 'Accept'
@@ -889,7 +889,7 @@ class DatabaseApi(ApiBase):
             ["text/plain", "application/json", "text/json"]
         )
 
-        response_type_map: Dict[int, Optional[str]] = {
+        response_type_map: dict[int, Optional[str]] = {
             200: "GrantaServerApiSearchIndexStatus",
             403: None,
             404: None,

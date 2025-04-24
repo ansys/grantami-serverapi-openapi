@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiListsDtoRecordListSearchResultsInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "search_results": "list[GrantaServerApiListsDtoRecordListSearchResult]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "search_results": "searchResults",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "searchResults": "GrantaServerApiListsDtoRecordListSearchResult",
     }
 
@@ -77,38 +77,38 @@ class GrantaServerApiListsDtoRecordListSearchResultsInfo(ModelBase):
     def __init__(
         self,
         *,
-        search_results: "List[GrantaServerApiListsDtoRecordListSearchResult]",
+        search_results: "list[GrantaServerApiListsDtoRecordListSearchResult]",
     ) -> None:
         """GrantaServerApiListsDtoRecordListSearchResultsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        search_results: List[GrantaServerApiListsDtoRecordListSearchResult]
+        search_results: list[GrantaServerApiListsDtoRecordListSearchResult]
         """
-        self._search_results: List[GrantaServerApiListsDtoRecordListSearchResult]
+        self._search_results: list[GrantaServerApiListsDtoRecordListSearchResult]
 
         self.search_results = search_results
 
     @property
-    def search_results(self) -> "List[GrantaServerApiListsDtoRecordListSearchResult]":
+    def search_results(self) -> "list[GrantaServerApiListsDtoRecordListSearchResult]":
         """Gets the search_results of this GrantaServerApiListsDtoRecordListSearchResultsInfo.
 
         Returns
         -------
-        List[GrantaServerApiListsDtoRecordListSearchResult]
+        list[GrantaServerApiListsDtoRecordListSearchResult]
             The search_results of this GrantaServerApiListsDtoRecordListSearchResultsInfo.
         """
         return self._search_results
 
     @search_results.setter
     def search_results(
-        self, search_results: "List[GrantaServerApiListsDtoRecordListSearchResult]"
+        self, search_results: "list[GrantaServerApiListsDtoRecordListSearchResult]"
     ) -> None:
         """Sets the search_results of this GrantaServerApiListsDtoRecordListSearchResultsInfo.
 
         Parameters
         ----------
-        search_results: List[GrantaServerApiListsDtoRecordListSearchResult]
+        search_results: list[GrantaServerApiListsDtoRecordListSearchResult]
             The search_results of this GrantaServerApiListsDtoRecordListSearchResultsInfo.
         """
         # Field is not nullable
@@ -120,7 +120,7 @@ class GrantaServerApiListsDtoRecordListSearchResultsInfo(ModelBase):
         self._search_results = search_results
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "allow_all_compatible_expressions": "bool",
@@ -83,7 +83,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
@@ -100,7 +100,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "expressions": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
@@ -116,10 +116,10 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         allow_all_compatible_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_anonymous_expressions: "Union[bool, Unset_Type]" = Unset,
         allow_extrapolation: "Union[bool, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
-        expressions: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        expressions: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         is_range: "Union[bool, Unset_Type]" = Unset,
@@ -135,10 +135,10 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         allow_all_compatible_expressions: bool, optional
         allow_anonymous_expressions: bool, optional
         allow_extrapolation: bool, optional
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
         axis_name: str, optional
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
-        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
         guid: str, optional
         help_path: str, optional
         is_range: bool, optional
@@ -155,10 +155,10 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._type: str
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._attribute_parameters: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
         ] = Unset
         self._expressions: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
         ] = Unset
         self._allow_extrapolation: Union[bool, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
@@ -240,12 +240,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     @property
     def attribute_parameters(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         return self._attribute_parameters
@@ -253,13 +253,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
+        attribute_parameters: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        attribute_parameters: Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         self._attribute_parameters = attribute_parameters
@@ -267,12 +267,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     @property
     def expressions(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         return self._expressions
@@ -280,13 +280,13 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
     @expressions.setter
     def expressions(
         self,
-        expressions: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
+        expressions: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
 
         Parameters
         ----------
-        expressions: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        expressions: Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The expressions of this GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttribute.
         """
         self._expressions = expressions
@@ -420,7 +420,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreateMathsFunctionalAttrib
         self._allow_anonymous_expressions = allow_anonymous_expressions
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

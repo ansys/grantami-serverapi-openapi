@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_search_datum_criterion import (  # noqa: F401
     GrantaServerApiSearchDatumCriterion,
@@ -57,30 +57,30 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "any_guids": "list[str]",
         "any_identities": "list[int]",
         "constraints": "list[GrantaServerApiSearchParameterConstraint]",
         "type": "str",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "any_guids": "anyGuids",
         "any_identities": "anyIdentities",
         "constraints": "constraints",
         "type": "type",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "constraints": "GrantaServerApiSearchParameterConstraint",
     }
 
@@ -89,26 +89,26 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     def __init__(
         self,
         *,
-        any_guids: "Union[List[str], None, Unset_Type]" = Unset,
-        any_identities: "Union[List[int], None, Unset_Type]" = Unset,
-        constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]" = Unset,
+        any_guids: "Union[list[str], None, Unset_Type]" = Unset,
+        any_identities: "Union[list[int], None, Unset_Type]" = Unset,
+        constraints: "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]" = Unset,
         type: "str" = "discreteFunctionalValues",
     ) -> None:
         """GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        any_guids: List[str], optional
-        any_identities: List[int], optional
-        constraints: List[GrantaServerApiSearchParameterConstraint], optional
+        any_guids: list[str], optional
+        any_identities: list[int], optional
+        constraints: list[GrantaServerApiSearchParameterConstraint], optional
         type: str
         """
         super().__init__()
-        self._any_identities: Union[List[int], None, Unset_Type] = Unset
-        self._any_guids: Union[List[str], None, Unset_Type] = Unset
+        self._any_identities: Union[list[int], None, Unset_Type] = Unset
+        self._any_guids: Union[list[str], None, Unset_Type] = Unset
         self._type: str
         self._constraints: Union[
-            List[GrantaServerApiSearchParameterConstraint], None, Unset_Type
+            list[GrantaServerApiSearchParameterConstraint], None, Unset_Type
         ] = Unset
 
         if any_identities is not Unset:
@@ -120,49 +120,49 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
             self.constraints = constraints
 
     @property
-    def any_identities(self) -> "Union[List[int], None, Unset_Type]":
+    def any_identities(self) -> "Union[list[int], None, Unset_Type]":
         """Gets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
         Returns
         -------
-        Union[List[int], None, Unset_Type]
+        Union[list[int], None, Unset_Type]
             The any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         return self._any_identities
 
     @any_identities.setter
-    def any_identities(self, any_identities: "Union[List[int], None, Unset_Type]") -> None:
+    def any_identities(self, any_identities: "Union[list[int], None, Unset_Type]") -> None:
         """Sets the any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any_identities: Union[List[int], None, Unset_Type]
+        any_identities: Union[list[int], None, Unset_Type]
             The any_identities of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_identities = any_identities
 
     @property
-    def any_guids(self) -> "Union[List[str], None, Unset_Type]":
+    def any_guids(self) -> "Union[list[str], None, Unset_Type]":
         """Gets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Returns
         -------
-        Union[List[str], None, Unset_Type]
+        Union[list[str], None, Unset_Type]
             The any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         return self._any_guids
 
     @any_guids.setter
-    def any_guids(self, any_guids: "Union[List[str], None, Unset_Type]") -> None:
+    def any_guids(self, any_guids: "Union[list[str], None, Unset_Type]") -> None:
         """Sets the any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any_guids: Union[List[str], None, Unset_Type]
+        any_guids: Union[list[str], None, Unset_Type]
             The any_guids of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._any_guids = any_guids
@@ -198,33 +198,33 @@ class GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion(
     @property
     def constraints(
         self,
-    ) -> "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]":
         """Gets the constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Returns
         -------
-        Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
+        Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
             The constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         return self._constraints
 
     @constraints.setter
     def constraints(
-        self, constraints: "Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
+        self, constraints: "Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]"
     ) -> None:
         """Sets the constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         Constraints on the parameters of the attribute. Unspecified parameters will be assumed to be unconstrained.
 
         Parameters
         ----------
-        constraints: Union[List[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
+        constraints: Union[list[GrantaServerApiSearchParameterConstraint], None, Unset_Type]
             The constraints of this GrantaServerApiSearchDiscreteFunctionalValuesDatumCriterion.
         """
         self._constraints = constraints
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,16 +51,16 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "attributes": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "constants": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
         "expressions": "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
@@ -68,7 +68,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         "units": "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "attributes": "attributes",
         "constants": "constants",
         "expressions": "expressions",
@@ -76,7 +76,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         "units": "units",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "attributes": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "parameters": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
         "constants": "GrantaServerApiSchemaSlimEntitiesSlimNamedEntity",
@@ -89,27 +89,27 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        constants: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        expressions: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
-        units: "List[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
+        attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        constants: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]",
+        units: "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]",
     ) -> None:
         """GrantaServerApiSchemaUnitsUnitUsage - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        constants: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        constants: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        units: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
         """
-        self._attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._constants: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._expressions: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
-        self._units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        self._attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._constants: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._expressions: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        self._units: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
 
         self.attributes = attributes
         self.parameters = parameters
@@ -118,25 +118,25 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self.units = units
 
     @property
-    def attributes(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def attributes(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the attributes of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attributes of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         return self._attributes
 
     @attributes.setter
     def attributes(
-        self, attributes: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, attributes: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the attributes of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Parameters
         ----------
-        attributes: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        attributes: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The attributes of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         # Field is not nullable
@@ -148,25 +148,25 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self._attributes = attributes
 
     @property
-    def parameters(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def parameters(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the parameters of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameters of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         return self._parameters
 
     @parameters.setter
     def parameters(
-        self, parameters: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, parameters: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the parameters of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Parameters
         ----------
-        parameters: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        parameters: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The parameters of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         # Field is not nullable
@@ -178,25 +178,25 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self._parameters = parameters
 
     @property
-    def constants(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def constants(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the constants of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The constants of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         return self._constants
 
     @constants.setter
     def constants(
-        self, constants: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, constants: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the constants of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Parameters
         ----------
-        constants: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        constants: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The constants of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         # Field is not nullable
@@ -208,25 +208,25 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self._constants = constants
 
     @property
-    def expressions(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
+    def expressions(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]":
         """Gets the expressions of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The expressions of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         return self._expressions
 
     @expressions.setter
     def expressions(
-        self, expressions: "List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
+        self, expressions: "list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]"
     ) -> None:
         """Sets the expressions of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Parameters
         ----------
-        expressions: List[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
+        expressions: list[GrantaServerApiSchemaSlimEntitiesSlimNamedEntity]
             The expressions of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         # Field is not nullable
@@ -238,23 +238,23 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self._expressions = expressions
 
     @property
-    def units(self) -> "List[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
+    def units(self) -> "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]":
         """Gets the units of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Returns
         -------
-        List[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
             The units of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "List[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
+    def units(self, units: "list[GrantaServerApiSchemaSlimEntitiesSlimUnit]") -> None:
         """Sets the units of this GrantaServerApiSchemaUnitsUnitUsage.
 
         Parameters
         ----------
-        units: List[GrantaServerApiSchemaSlimEntitiesSlimUnit]
+        units: list[GrantaServerApiSchemaSlimEntitiesSlimUnit]
             The units of this GrantaServerApiSchemaUnitsUnitUsage.
         """
         # Field is not nullable
@@ -266,7 +266,7 @@ class GrantaServerApiSchemaUnitsUnitUsage(ModelBase):
         self._units = units
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

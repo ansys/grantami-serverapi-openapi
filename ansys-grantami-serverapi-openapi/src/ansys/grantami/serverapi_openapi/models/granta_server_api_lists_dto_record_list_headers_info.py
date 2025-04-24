@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,24 +51,24 @@ class GrantaServerApiListsDtoRecordListHeadersInfo(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "lists": "list[GrantaServerApiListsDtoRecordListHeader]",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "lists": "lists",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "lists": "GrantaServerApiListsDtoRecordListHeader",
     }
 
@@ -77,36 +77,36 @@ class GrantaServerApiListsDtoRecordListHeadersInfo(ModelBase):
     def __init__(
         self,
         *,
-        lists: "List[GrantaServerApiListsDtoRecordListHeader]",
+        lists: "list[GrantaServerApiListsDtoRecordListHeader]",
     ) -> None:
         """GrantaServerApiListsDtoRecordListHeadersInfo - a model defined in Swagger
 
         Parameters
         ----------
-        lists: List[GrantaServerApiListsDtoRecordListHeader]
+        lists: list[GrantaServerApiListsDtoRecordListHeader]
         """
-        self._lists: List[GrantaServerApiListsDtoRecordListHeader]
+        self._lists: list[GrantaServerApiListsDtoRecordListHeader]
 
         self.lists = lists
 
     @property
-    def lists(self) -> "List[GrantaServerApiListsDtoRecordListHeader]":
+    def lists(self) -> "list[GrantaServerApiListsDtoRecordListHeader]":
         """Gets the lists of this GrantaServerApiListsDtoRecordListHeadersInfo.
 
         Returns
         -------
-        List[GrantaServerApiListsDtoRecordListHeader]
+        list[GrantaServerApiListsDtoRecordListHeader]
             The lists of this GrantaServerApiListsDtoRecordListHeadersInfo.
         """
         return self._lists
 
     @lists.setter
-    def lists(self, lists: "List[GrantaServerApiListsDtoRecordListHeader]") -> None:
+    def lists(self, lists: "list[GrantaServerApiListsDtoRecordListHeader]") -> None:
         """Sets the lists of this GrantaServerApiListsDtoRecordListHeadersInfo.
 
         Parameters
         ----------
-        lists: List[GrantaServerApiListsDtoRecordListHeader]
+        lists: list[GrantaServerApiListsDtoRecordListHeader]
             The lists of this GrantaServerApiListsDtoRecordListHeadersInfo.
         """
         # Field is not nullable
@@ -118,7 +118,7 @@ class GrantaServerApiListsDtoRecordListHeadersInfo(ModelBase):
         self._lists = lists
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

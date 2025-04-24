@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -51,30 +51,30 @@ class GrantaServerApiDataPointDataValue(ModelBase):
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "parameter_and_values": "list[GrantaServerApiDataParameterWithValue]",
         "point_value": "float",
         "significant_figures_info": "GrantaServerApiDataSignificantFiguresInfo",
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "parameter_and_values": "parameterAndValues",
         "point_value": "pointValue",
         "significant_figures_info": "significantFiguresInfo",
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimUnit",
         "significantFiguresInfo": "GrantaServerApiDataSignificantFiguresInfo",
         "parameterAndValues": "GrantaServerApiDataParameterWithValue",
@@ -85,7 +85,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
     def __init__(
         self,
         *,
-        parameter_and_values: "List[GrantaServerApiDataParameterWithValue]",
+        parameter_and_values: "list[GrantaServerApiDataParameterWithValue]",
         point_value: "float",
         significant_figures_info: "Union[GrantaServerApiDataSignificantFiguresInfo, Unset_Type]" = Unset,
         unit: "Union[GrantaServerApiSchemaSlimEntitiesSlimUnit, Unset_Type]" = Unset,
@@ -94,7 +94,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
 
         Parameters
         ----------
-        parameter_and_values: List[GrantaServerApiDataParameterWithValue]
+        parameter_and_values: list[GrantaServerApiDataParameterWithValue]
         point_value: float
         significant_figures_info: GrantaServerApiDataSignificantFiguresInfo, optional
         unit: GrantaServerApiSchemaSlimEntitiesSlimUnit, optional
@@ -104,7 +104,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         self._significant_figures_info: Union[
             GrantaServerApiDataSignificantFiguresInfo, Unset_Type
         ] = Unset
-        self._parameter_and_values: List[GrantaServerApiDataParameterWithValue]
+        self._parameter_and_values: list[GrantaServerApiDataParameterWithValue]
 
         self.point_value = point_value
         if unit is not Unset:
@@ -197,25 +197,25 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         self._significant_figures_info = significant_figures_info
 
     @property
-    def parameter_and_values(self) -> "List[GrantaServerApiDataParameterWithValue]":
+    def parameter_and_values(self) -> "list[GrantaServerApiDataParameterWithValue]":
         """Gets the parameter_and_values of this GrantaServerApiDataPointDataValue.
 
         Returns
         -------
-        List[GrantaServerApiDataParameterWithValue]
+        list[GrantaServerApiDataParameterWithValue]
             The parameter_and_values of this GrantaServerApiDataPointDataValue.
         """
         return self._parameter_and_values
 
     @parameter_and_values.setter
     def parameter_and_values(
-        self, parameter_and_values: "List[GrantaServerApiDataParameterWithValue]"
+        self, parameter_and_values: "list[GrantaServerApiDataParameterWithValue]"
     ) -> None:
         """Sets the parameter_and_values of this GrantaServerApiDataPointDataValue.
 
         Parameters
         ----------
-        parameter_and_values: List[GrantaServerApiDataParameterWithValue]
+        parameter_and_values: list[GrantaServerApiDataParameterWithValue]
             The parameter_and_values of this GrantaServerApiDataPointDataValue.
         """
         # Field is not nullable
@@ -227,7 +227,7 @@ class GrantaServerApiDataPointDataValue(ModelBase):
         self._parameter_and_values = parameter_and_values
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters

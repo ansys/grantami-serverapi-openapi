@@ -31,7 +31,7 @@
 """
 
 import re  # noqa: F401
-from typing import TYPE_CHECKING, Any, BinaryIO, Dict, List, Optional, Union  # noqa: F401
+from typing import TYPE_CHECKING, Any, BinaryIO, Optional, Union  # noqa: F401
 
 from ansys.grantami.serverapi_openapi.models.granta_server_api_schema_attributes_create_attributes_create_attribute import (  # noqa: F401
     GrantaServerApiSchemaAttributesCreateAttributesCreateAttribute,
@@ -57,16 +57,16 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     """
     Attributes
     ----------
-    swagger_types: Dict[str, str]
+    swagger_types: dict[str, str]
         The key is attribute name and the value is attribute type.
-    attribute_map: Dict[str, str]
+    attribute_map: dict[str, str]
         The key is attribute name and the value is json key in definition.
-    subtype_mapping: Dict[str, str]
+    subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
-    swagger_types: Dict[str, str] = {
+    swagger_types: dict[str, str] = {
         "name": "str",
         "about_attribute": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attribute_parameters": "list[GrantaServerApiSchemaSlimEntitiesSlimEntity]",
@@ -79,7 +79,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
 
-    attribute_map: Dict[str, str] = {
+    attribute_map: dict[str, str] = {
         "name": "name",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
@@ -92,7 +92,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         "unit": "unit",
     }
 
-    subtype_mapping: Dict[str, str] = {
+    subtype_mapping: dict[str, str] = {
         "unit": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
         "attributeParameters": "GrantaServerApiSchemaSlimEntitiesSlimEntity",
     }
@@ -104,7 +104,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         *,
         name: "str",
         about_attribute: "Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type]" = Unset,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
+        attribute_parameters: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]" = Unset,
         axis_name: "Union[str, None, Unset_Type]" = Unset,
         default_threshold_type: "Union[GrantaServerApiSchemaAttributesAttributeThresholdType, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
@@ -119,7 +119,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         ----------
         name: str
         about_attribute: GrantaServerApiSchemaSlimEntitiesSlimEntity, optional
-        attribute_parameters: List[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
+        attribute_parameters: list[GrantaServerApiSchemaSlimEntitiesSlimEntity], optional
         axis_name: str, optional
         default_threshold_type: GrantaServerApiSchemaAttributesAttributeThresholdType, optional
         guid: str, optional
@@ -140,7 +140,7 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
         self._unit: Union[GrantaServerApiSchemaSlimEntitiesSlimEntity, Unset_Type] = Unset
         self._axis_name: Union[str, None, Unset_Type] = Unset
         self._attribute_parameters: Union[
-            List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
+            list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type
         ] = Unset
 
         self.type = type
@@ -256,12 +256,12 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     @property
     def attribute_parameters(
         self,
-    ) -> "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
+    ) -> "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]":
         """Gets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Returns
         -------
-        Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         return self._attribute_parameters
@@ -269,19 +269,19 @@ class GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute(
     @attribute_parameters.setter
     def attribute_parameters(
         self,
-        attribute_parameters: "Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
+        attribute_parameters: "Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]",
     ) -> None:
         """Sets the attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
 
         Parameters
         ----------
-        attribute_parameters: Union[List[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
+        attribute_parameters: Union[list[GrantaServerApiSchemaSlimEntitiesSlimEntity], None, Unset_Type]
             The attribute_parameters of this GrantaServerApiSchemaAttributesCreateAttributesCreatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
 
     @classmethod
-    def get_real_child_model(cls, data: Dict[str, str]) -> str:
+    def get_real_child_model(cls, data: dict[str, str]) -> str:
         """Raises a NotImplementedError for a type without a discriminator defined.
 
         Parameters
