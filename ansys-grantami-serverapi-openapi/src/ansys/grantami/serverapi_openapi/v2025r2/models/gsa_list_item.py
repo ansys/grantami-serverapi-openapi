@@ -172,6 +172,7 @@ class GsaListItem(ModelBase):
     @property
     def record_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the record_guid of this GsaListItem.
+        This may be null if the list item does not exist in a currently loaded database
 
         Returns
         -------
@@ -183,6 +184,7 @@ class GsaListItem(ModelBase):
     @record_guid.setter
     def record_guid(self, record_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the record_guid of this GsaListItem.
+        This may be null if the list item does not exist in a currently loaded database
 
         Parameters
         ----------

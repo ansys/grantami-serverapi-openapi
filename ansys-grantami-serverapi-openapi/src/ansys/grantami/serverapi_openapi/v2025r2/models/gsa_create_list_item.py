@@ -166,6 +166,7 @@ class GsaCreateListItem(ModelBase):
     @property
     def record_version(self) -> "Union[int, None, Unset_Type]":
         """Gets the record_version of this GsaCreateListItem.
+        Optional record version. Note that versioned items should not be used in lists used in the Favorites App, which considers all items to be versionless.
 
         Returns
         -------
@@ -177,6 +178,7 @@ class GsaCreateListItem(ModelBase):
     @record_version.setter
     def record_version(self, record_version: "Union[int, None, Unset_Type]") -> None:
         """Sets the record_version of this GsaCreateListItem.
+        Optional record version. Note that versioned items should not be used in lists used in the Favorites App, which considers all items to be versionless.
 
         Parameters
         ----------
@@ -188,6 +190,7 @@ class GsaCreateListItem(ModelBase):
     @property
     def table_guid(self) -> "Union[str, None, Unset_Type]":
         """Gets the table_guid of this GsaCreateListItem.
+        Optional table GUID. If the item exists in a loaded database, the GUID will be calculated if not provided.
 
         Returns
         -------
@@ -199,6 +202,7 @@ class GsaCreateListItem(ModelBase):
     @table_guid.setter
     def table_guid(self, table_guid: "Union[str, None, Unset_Type]") -> None:
         """Sets the table_guid of this GsaCreateListItem.
+        Optional table GUID. If the item exists in a loaded database, the GUID will be calculated if not provided.
 
         Parameters
         ----------
