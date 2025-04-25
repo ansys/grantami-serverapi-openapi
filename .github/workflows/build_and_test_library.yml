@@ -107,7 +107,7 @@ jobs:
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           twine-username: "__token__"
-          twine-token: ${{ secrets.PYPI_TOKEN }}
+          twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
 
       - name: "Download distribution artifacts"
         uses: actions/download-artifact@v4
