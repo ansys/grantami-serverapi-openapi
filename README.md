@@ -63,11 +63,11 @@ Granta MI releases and versions of the Python package.
 
 | Granta MI | ansys-grantami-serverapi-openapi       |
 |-----------|----------------------------------------|
-| 2025 R2   | v5.0.0                                 |
-| 2025 R1   | v4.0.0 (v5.0.0 via `2025r1` submodule) |
-| 2024 R2   | v3.0.0 (v5.0.0 via `2024r2` submodule) |
-| 2024 R1   | v2.0.0 (v5.0.0 via `2024r1` submodule) |
-| 2023 R2   | v1.0.0                                 |
+| 2025 R2   | v5.0.0 via `2025r2` submodule          |
+| 2025 R1   | v4.0.0, v5.0.0 via `2025r1` submodule) |
+| 2024 R2   | v3.0.0, v5.0.0 via `2024r2` submodule) |
+| 2024 R1   | v2.0.0, v5.0.0 via `2024r1` submodule) |
+| 2023 R2   | v1.0.0 only                            |
 
 As of v5.0.0, this package includes bindings for multiple Granta MI versions in separate submodules. v5.0.0 should
 be used for all development against Granta MI 2024 R1 and newer.
@@ -102,7 +102,7 @@ from ansys.openapi.common import (
     generate_user_agent,
     SessionConfiguration,
 )
-from ansys.grantami.serverapi_openapi.2025r2 import models
+from ansys.grantami.serverapi_openapi.2025r2 import models  # Use different bindings with a different submodule, e.g. 2024r2
 
 SERVICE_PATH = "/proxy/v1.svc/mi"  # "/proxy/v1.svc" for Granta MI 2024 R1 and older
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
@@ -134,7 +134,7 @@ class Connection(ApiClientFactory):
 
 
 if __name__ == '__main__':
-    from ansys.grantami.serverapi_openapi.2025r2 import api
+    from ansys.grantami.serverapi_openapi.2025r2 import api  # Use different bindings with a different submodule, e.g. 2024r2
 
     # Update URL and connection method for your system
     URL = "http://my_server_name/mi_servicelayer"
