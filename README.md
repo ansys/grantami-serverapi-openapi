@@ -61,22 +61,16 @@ get started with the library.
 The `ansys-grantami-serverapi-openapi` package requires Granta MI. The following table details compatibility between
 Granta MI releases and versions of the Python package.
 
-| Granta MI | ansys-grantami-serverapi-openapi |
-|-----------|----------------------------------|
-| 2025R1    | v4.0.0                           |
-| 2024R2    | v3.0.0                           |
-| 2024R1    | v2.0.0                           |
-| 2023R2    | v1.0.0                           |
+| Granta MI | ansys-grantami-serverapi-openapi       |
+|-----------|----------------------------------------|
+| 2025 R2   | v5.0.0                                 |
+| 2025 R1   | v4.0.0 (v5.0.0 via `2025r1` submodule) |
+| 2024 R2   | v3.0.0 (v5.0.0 via `2024r2` submodule) |
+| 2024 R1   | v2.0.0 (v5.0.0 via `2024r1` submodule) |
+| 2023 R2   | v1.0.0                                 |
 
-Alternatively, use the PyGranta meta-package with a requirement specifier. The following code will install all
-PyGranta packages compatible with Granta MI 2024 R2, including `ansys-grantami-serverapi-openapi` v3.0.0:
-
-```console
-   pip install pygranta==2024.2.0
-```
-
-See [PyGranta Package versions](https://grantami.docs.pyansys.com/version/dev/package_versions.html) for a detailed list
-of packages included in each meta-package release.
+As of v5.0.0, this package includes bindings for multiple Granta MI versions in separate submodules. v5.0.0 should
+be used for all development against Granta MI 2024 R1 and newer.
 
 ### Installation
 
@@ -108,7 +102,7 @@ from ansys.openapi.common import (
     generate_user_agent,
     SessionConfiguration,
 )
-from ansys.grantami.serverapi_openapi import models
+from ansys.grantami.serverapi_openapi.2025r2 import models
 
 SERVICE_PATH = "/proxy/v1.svc/mi"  # "/proxy/v1.svc" for Granta MI 2024 R1 and older
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
@@ -140,7 +134,7 @@ class Connection(ApiClientFactory):
 
 
 if __name__ == '__main__':
-    from ansys.grantami.serverapi_openapi import api
+    from ansys.grantami.serverapi_openapi.2025r2 import api
 
     # Update URL and connection method for your system
     URL = "http://my_server_name/mi_servicelayer"
