@@ -37,7 +37,7 @@ The release process follows the standard [PyAnsys release guidelines](https://de
 2. Create a new branch from the ``main`` branch with the name ``release/MAJOR.MINOR`` and push the branch to GitHub.
 3. Do one of the following two steps to generate a 'release' `pyproject.toml` file:
    * To change the version number, modify the ``<version>`` XML element in the ``pom.xml`` file and open a Pull Request.
-   * If the version number is correct, manually run the 'Generate client library' GitHub action on the release branch.
+   * If the version number is correct, create a branch based on the release branch and manually run the 'Generate client library' GitHub action. Then open a Pull Request.
 4. Pull the branch and check that the most recent commit includes the 'release' `pyproject.toml` file.
 5. Tag the release:
    ```console
