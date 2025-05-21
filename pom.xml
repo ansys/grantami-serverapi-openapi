@@ -21,6 +21,7 @@
     <v24r1-filename>server-api-24r1.json</v24r1-filename>
     <v24r2-filename>server-api-24r2.json</v24r2-filename>
     <v25r1-filename>server-api-25r1.json</v25r1-filename>
+    <v25r2-filename>server-api-25r2.json</v25r2-filename>
     <dev-filename>server-api.json</dev-filename>
   </properties>
 
@@ -107,6 +108,31 @@
             </configuration>
           </execution>
           <execution>
+            <id>${v25r2-filename}</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${project.basedir}/yaml/${v25r2-filename}</inputSpec>
+              <language>${language}</language>
+              <output>${package-name}</output>
+              <generateApiTests>false</generateApiTests>
+              <generateModelTests>false</generateModelTests>
+              <configOptions>
+                <packageName>${package-import-path}</packageName>
+                <projectName>${package-name}</projectName>
+                <projectDescription>${package-description}</projectDescription>
+                <homepageUrl>${homepage-url}</homepageUrl>
+                <documentationUrl>${documentation-url}</documentationUrl>
+                <packageVersion>${project.version}</packageVersion>
+                <buildNumber>${build-id}</buildNumber>
+                <isReleaseBuild>${is-release}</isReleaseBuild>
+                <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
+                <bindingNamespace>v2025r2</bindingNamespace>
+              </configOptions>
+            </configuration>
+          </execution>
+          <execution>
             <id>${dev-filename}</id>
             <goals>
               <goal>generate</goal>
@@ -127,7 +153,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>v2025r2</bindingNamespace>
+                <bindingNamespace>v2026r1</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
