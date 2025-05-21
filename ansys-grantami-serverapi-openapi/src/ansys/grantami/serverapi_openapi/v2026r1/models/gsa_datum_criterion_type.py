@@ -70,4 +70,4 @@ class GsaDatumCriterionType(Enum):
     RANGE = "range"
     SHORTTEXT = "shortText"
     SHORTTEXTPREFIX = "shortTextPrefix"
-    DYNAMICLINKINGVALUE = "dynamicLinkingValue"
+    SMARTLINKINGVALUE = "smartLinkingValue"
