@@ -44,7 +44,7 @@ class GsaReferencedByType(Enum):
     """
     EXPRESSION = "expression"
     VERSIONCONTROLLEDDATA = "versionControlledData"
-    DYNAMICLINKGROUP = "dynamicLinkGroup"
+    SMARTLINKGROUP = "smartLinkGroup"
     TABULARATTRIBUTE = "tabularAttribute"
     XYCHARTTEMPLATE = "xyChartTemplate"
     SEARCHMASK = "searchMask"

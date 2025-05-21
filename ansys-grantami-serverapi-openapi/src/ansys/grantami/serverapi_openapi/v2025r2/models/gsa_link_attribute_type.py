@@ -44,5 +44,5 @@ class GsaLinkAttributeType(Enum):
     """
     RECORDLINK = "recordLink"
     CROSSDATABASELINK = "crossDatabaseLink"
-    DYNAMICLINK = "dynamicLink"
+    SMARTLINK = "smartLink"
     TABULARATTRIBUTE = "tabularAttribute"
