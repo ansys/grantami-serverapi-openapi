@@ -85,7 +85,7 @@ class GsaCreateRecordLinkGroup(ModelBase):
 
     discriminator_value_class_map = {
         "static".lower(): "#/components/schemas/GsaCreateStaticRecordLinkGroup",
-        "smart".lower(): "#/components/schemas/GsaCreateSmartRecordLinkGroup",
+        "dynamic".lower(): "#/components/schemas/GsaCreateDynamicRecordLinkGroup",
         "crossDatabase".lower(): "#/components/schemas/GsaCreateCrossDatabaseRecordLinkGroup",
     }
 
