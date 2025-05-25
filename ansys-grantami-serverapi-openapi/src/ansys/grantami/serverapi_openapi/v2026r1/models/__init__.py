@@ -157,6 +157,7 @@ from .gsa_create_discrete_parameter_content import GsaCreateDiscreteParameterCon
 from .gsa_create_discrete_parameter_value import GsaCreateDiscreteParameterValue
 from .gsa_create_discrete_range import GsaCreateDiscreteRange
 from .gsa_create_discrete_type import GsaCreateDiscreteType
+from .gsa_create_dynamic_record_link_group import GsaCreateDynamicRecordLinkGroup
 from .gsa_create_expression import GsaCreateExpression
 from .gsa_create_file_attribute import GsaCreateFileAttribute
 from .gsa_create_float_functional_attribute import GsaCreateFloatFunctionalAttribute
@@ -212,7 +213,6 @@ from .gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
 from .gsa_create_replacement_string import GsaCreateReplacementString
 from .gsa_create_search_request import GsaCreateSearchRequest
 from .gsa_create_short_text_attribute import GsaCreateShortTextAttribute
-from .gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .gsa_create_standard_name import GsaCreateStandardName
 from .gsa_create_static_record_link_group import GsaCreateStaticRecordLinkGroup
 from .gsa_create_subset import GsaCreateSubset
@@ -410,6 +410,10 @@ from .gsa_duplicate_tabular_column_names_error_detail import (
 from .gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
+from .gsa_dynamic_link_group_usage_data_modification_error_detail import (
+    GsaDynamicLinkGroupUsageDataModificationErrorDetail,
+)
+from .gsa_dynamic_record_link_group import GsaDynamicRecordLinkGroup
 from .gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
@@ -926,10 +930,6 @@ from .gsa_slim_table import GsaSlimTable
 from .gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .gsa_slim_unit import GsaSlimUnit
 from .gsa_slim_unit_system import GsaSlimUnitSystem
-from .gsa_smart_link_group_usage_data_modification_error_detail import (
-    GsaSmartLinkGroupUsageDataModificationErrorDetail,
-)
-from .gsa_smart_record_link_group import GsaSmartRecordLinkGroup
 from .gsa_smtp_properties import GsaSmtpProperties
 from .gsa_sort_criterion import GsaSortCriterion
 from .gsa_sort_criterion_type import GsaSortCriterionType
@@ -1025,6 +1025,7 @@ from .gsa_update_discrete_parameter_content import GsaUpdateDiscreteParameterCon
 from .gsa_update_discrete_parameter_value import GsaUpdateDiscreteParameterValue
 from .gsa_update_discrete_range import GsaUpdateDiscreteRange
 from .gsa_update_discrete_type import GsaUpdateDiscreteType
+from .gsa_update_dynamic_record_link_group import GsaUpdateDynamicRecordLinkGroup
 from .gsa_update_expression import GsaUpdateExpression
 from .gsa_update_file import GsaUpdateFile
 from .gsa_update_file_attribute import GsaUpdateFileAttribute
@@ -1077,7 +1078,6 @@ from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissi
 from .gsa_update_record_list_properties import GsaUpdateRecordListProperties
 from .gsa_update_replacement_string import GsaUpdateReplacementString
 from .gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
-from .gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .gsa_update_standard_name import GsaUpdateStandardName
 from .gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
 from .gsa_update_subset import GsaUpdateSubset
@@ -1230,6 +1230,7 @@ __all__ = [
     "GsaCreateDiscreteParameterValue",
     "GsaCreateDiscreteRange",
     "GsaCreateDiscreteType",
+    "GsaCreateDynamicRecordLinkGroup",
     "GsaCreateExpression",
     "GsaCreateFileAttribute",
     "GsaCreateFloatFunctionalAttribute",
@@ -1279,7 +1280,6 @@ __all__ = [
     "GsaCreateReplacementString",
     "GsaCreateSearchRequest",
     "GsaCreateShortTextAttribute",
-    "GsaCreateSmartRecordLinkGroup",
     "GsaCreateStandardName",
     "GsaCreateStaticRecordLinkGroup",
     "GsaCreateSubset",
@@ -1437,6 +1437,8 @@ __all__ = [
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
+    "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
+    "GsaDynamicRecordLinkGroup",
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
@@ -1893,8 +1895,6 @@ __all__ = [
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
-    "GsaSmartLinkGroupUsageDataModificationErrorDetail",
-    "GsaSmartRecordLinkGroup",
     "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
@@ -1974,6 +1974,7 @@ __all__ = [
     "GsaUpdateDiscreteParameterValue",
     "GsaUpdateDiscreteRange",
     "GsaUpdateDiscreteType",
+    "GsaUpdateDynamicRecordLinkGroup",
     "GsaUpdateExpression",
     "GsaUpdateFile",
     "GsaUpdateFileAttribute",
@@ -2020,7 +2021,6 @@ __all__ = [
     "GsaUpdateRecordListProperties",
     "GsaUpdateReplacementString",
     "GsaUpdateShortTextAttribute",
-    "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",
     "GsaUpdateSubset",
