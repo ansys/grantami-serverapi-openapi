@@ -210,7 +210,6 @@ from .gsa_create_record_link_group import GsaCreateRecordLinkGroup
 from .gsa_create_record_list import GsaCreateRecordList
 from .gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
 from .gsa_create_replacement_string import GsaCreateReplacementString
-from .gsa_create_search_request import GsaCreateSearchRequest
 from .gsa_create_short_text_attribute import GsaCreateShortTextAttribute
 from .gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .gsa_create_standard_name import GsaCreateStandardName
@@ -438,7 +437,6 @@ from .gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
 from .gsa_file_header import GsaFileHeader
 from .gsa_file_prefix_datum_criterion import GsaFilePrefixDatumCriterion
 from .gsa_files_info import GsaFilesInfo
-from .gsa_find_search_request import GsaFindSearchRequest
 from .gsa_find_standard_names import GsaFindStandardNames
 from .gsa_float_functional_aggregation import GsaFloatFunctionalAggregation
 from .gsa_float_functional_aggregation_datum_criterion import (
@@ -845,7 +843,6 @@ from .gsa_rich_text_type import GsaRichTextType
 from .gsa_rich_text_value import GsaRichTextValue
 from .gsa_rollup_export_failure import GsaRollupExportFailure
 from .gsa_rollup_reference import GsaRollupReference
-from .gsa_save_search_request import GsaSaveSearchRequest
 from .gsa_schema_too_new_add_database_validation_issue import (
     GsaSchemaTooNewAddDatabaseValidationIssue,
 )
@@ -853,7 +850,6 @@ from .gsa_schema_too_old_add_database_validation_issue import (
     GsaSchemaTooOldAddDatabaseValidationIssue,
 )
 from .gsa_search_cluster_status import GsaSearchClusterStatus
-from .gsa_search_detail import GsaSearchDetail
 from .gsa_search_index_status import GsaSearchIndexStatus
 from .gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
@@ -868,7 +864,6 @@ from .gsa_security_attribute_usage_data_modification_error_detail import (
     GsaSecurityAttributeUsageDataModificationErrorDetail,
 )
 from .gsa_security_groups import GsaSecurityGroups
-from .gsa_selection_search import GsaSelectionSearch
 from .gsa_series_graph import GsaSeriesGraph
 from .gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .gsa_set_datum import GsaSetDatum
@@ -1091,7 +1086,6 @@ from .gsa_update_unit_system import GsaUpdateUnitSystem
 from .gsa_update_user_permission import GsaUpdateUserPermission
 from .gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
 from .gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
-from .gsa_user_or_group import GsaUserOrGroup
 from .gsa_user_permission import GsaUserPermission
 from .gsa_user_permissions_info import GsaUserPermissionsInfo
 from .gsa_user_role import GsaUserRole
@@ -1277,7 +1271,6 @@ __all__ = [
     "GsaCreateRecordList",
     "GsaCreateRecordListItemsInfo",
     "GsaCreateReplacementString",
-    "GsaCreateSearchRequest",
     "GsaCreateShortTextAttribute",
     "GsaCreateSmartRecordLinkGroup",
     "GsaCreateStandardName",
@@ -1459,7 +1452,6 @@ __all__ = [
     "GsaFileHeader",
     "GsaFilePrefixDatumCriterion",
     "GsaFilesInfo",
-    "GsaFindSearchRequest",
     "GsaFindStandardNames",
     "GsaFloatFunctionalAggregation",
     "GsaFloatFunctionalAggregationDatumCriterion",
@@ -1820,11 +1812,9 @@ __all__ = [
     "GsaRichTextValue",
     "GsaRollupExportFailure",
     "GsaRollupReference",
-    "GsaSaveSearchRequest",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
-    "GsaSearchDetail",
     "GsaSearchIndexStatus",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
@@ -1835,7 +1825,6 @@ __all__ = [
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
-    "GsaSelectionSearch",
     "GsaSeriesGraph",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
@@ -2034,7 +2023,6 @@ __all__ = [
     "GsaUpdateUserPermission",
     "GsaUpdateUserPermissionsInfo",
     "GsaUsageDataModificationErrorDetail",
-    "GsaUserOrGroup",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
