@@ -77,7 +77,6 @@ from .api.schema___tables_api import SchemaTablesApi
 from .api.schema___units_api import SchemaUnitsApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
-from .api.selection_searches_api import SelectionSearchesApi
 from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
@@ -263,7 +262,6 @@ from .models.gsa_create_record_link_group import GsaCreateRecordLinkGroup
 from .models.gsa_create_record_list import GsaCreateRecordList
 from .models.gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
 from .models.gsa_create_replacement_string import GsaCreateReplacementString
-from .models.gsa_create_search_request import GsaCreateSearchRequest
 from .models.gsa_create_short_text_attribute import GsaCreateShortTextAttribute
 from .models.gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .models.gsa_create_standard_name import GsaCreateStandardName
@@ -507,7 +505,6 @@ from .models.gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
 from .models.gsa_file_header import GsaFileHeader
 from .models.gsa_file_prefix_datum_criterion import GsaFilePrefixDatumCriterion
 from .models.gsa_files_info import GsaFilesInfo
-from .models.gsa_find_search_request import GsaFindSearchRequest
 from .models.gsa_find_standard_names import GsaFindStandardNames
 from .models.gsa_float_functional_aggregation import GsaFloatFunctionalAggregation
 from .models.gsa_float_functional_aggregation_datum_criterion import (
@@ -940,7 +937,6 @@ from .models.gsa_rich_text_type import GsaRichTextType
 from .models.gsa_rich_text_value import GsaRichTextValue
 from .models.gsa_rollup_export_failure import GsaRollupExportFailure
 from .models.gsa_rollup_reference import GsaRollupReference
-from .models.gsa_save_search_request import GsaSaveSearchRequest
 from .models.gsa_schema_too_new_add_database_validation_issue import (
     GsaSchemaTooNewAddDatabaseValidationIssue,
 )
@@ -948,7 +944,6 @@ from .models.gsa_schema_too_old_add_database_validation_issue import (
     GsaSchemaTooOldAddDatabaseValidationIssue,
 )
 from .models.gsa_search_cluster_status import GsaSearchClusterStatus
-from .models.gsa_search_detail import GsaSearchDetail
 from .models.gsa_search_index_status import GsaSearchIndexStatus
 from .models.gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
@@ -963,7 +958,6 @@ from .models.gsa_security_attribute_usage_data_modification_error_detail import 
     GsaSecurityAttributeUsageDataModificationErrorDetail,
 )
 from .models.gsa_security_groups import GsaSecurityGroups
-from .models.gsa_selection_search import GsaSelectionSearch
 from .models.gsa_series_graph import GsaSeriesGraph
 from .models.gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .models.gsa_set_datum import GsaSetDatum
@@ -1188,7 +1182,6 @@ from .models.gsa_update_unit_system import GsaUpdateUnitSystem
 from .models.gsa_update_user_permission import GsaUpdateUserPermission
 from .models.gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
 from .models.gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
-from .models.gsa_user_or_group import GsaUserOrGroup
 from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
 from .models.gsa_user_role import GsaUserRole
@@ -1264,7 +1257,6 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitsApi",
     "SearchApi",
-    "SelectionSearchesApi",
     "ServerManagerApi",
     "StatusApi",
     "AttributesAttributeguidimportfileBody",
@@ -1420,7 +1412,6 @@ __all__ = [
     "GsaCreateRecordList",
     "GsaCreateRecordListItemsInfo",
     "GsaCreateReplacementString",
-    "GsaCreateSearchRequest",
     "GsaCreateShortTextAttribute",
     "GsaCreateSmartRecordLinkGroup",
     "GsaCreateStandardName",
@@ -1602,7 +1593,6 @@ __all__ = [
     "GsaFileHeader",
     "GsaFilePrefixDatumCriterion",
     "GsaFilesInfo",
-    "GsaFindSearchRequest",
     "GsaFindStandardNames",
     "GsaFloatFunctionalAggregation",
     "GsaFloatFunctionalAggregationDatumCriterion",
@@ -1963,11 +1953,9 @@ __all__ = [
     "GsaRichTextValue",
     "GsaRollupExportFailure",
     "GsaRollupReference",
-    "GsaSaveSearchRequest",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
-    "GsaSearchDetail",
     "GsaSearchIndexStatus",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
@@ -1978,7 +1966,6 @@ __all__ = [
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
-    "GsaSelectionSearch",
     "GsaSeriesGraph",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
@@ -2177,7 +2164,6 @@ __all__ = [
     "GsaUpdateUserPermission",
     "GsaUpdateUserPermissionsInfo",
     "GsaUsageDataModificationErrorDetail",
-    "GsaUserOrGroup",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
