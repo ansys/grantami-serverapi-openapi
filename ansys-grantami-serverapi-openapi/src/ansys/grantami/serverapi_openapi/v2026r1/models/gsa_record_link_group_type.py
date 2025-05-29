@@ -43,5 +43,5 @@ class GsaRecordLinkGroupType(Enum):
     Allowed Enum values
     """
     STATIC = "static"
-    DYNAMIC = "dynamic"
+    SMART = "smart"
     CROSSDATABASE = "crossDatabase"
