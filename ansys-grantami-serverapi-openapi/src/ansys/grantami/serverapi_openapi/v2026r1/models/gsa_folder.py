@@ -63,12 +63,16 @@ class GsaFolder(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
+        "has_child_folders": "bool",
+        "has_files": "bool",
         "parent_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
+        "has_child_folders": "hasChildFolders",
+        "has_files": "hasFiles",
         "parent_guid": "parentGuid",
     }
 
@@ -81,6 +85,8 @@ class GsaFolder(ModelBase):
         *,
         guid: "str",
         name: "str",
+        has_child_folders: "Union[bool, Unset_Type]" = Unset,
+        has_files: "Union[bool, Unset_Type]" = Unset,
         parent_guid: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaFolder - a model defined in Swagger
@@ -89,14 +95,22 @@ class GsaFolder(ModelBase):
         ----------
         guid: str
         name: str
+        has_child_folders: bool, optional
+        has_files: bool, optional
         parent_guid: str, optional
         """
         self._parent_guid: Union[str, None, Unset_Type] = Unset
+        self._has_files: Union[bool, Unset_Type] = Unset
+        self._has_child_folders: Union[bool, Unset_Type] = Unset
         self._name: str
         self._guid: str
 
         if parent_guid is not Unset:
             self.parent_guid = parent_guid
+        if has_files is not Unset:
+            self.has_files = has_files
+        if has_child_folders is not Unset:
+            self.has_child_folders = has_child_folders
         self.name = name
         self.guid = guid
 
@@ -121,6 +135,56 @@ class GsaFolder(ModelBase):
             The parent_guid of this GsaFolder.
         """
         self._parent_guid = parent_guid
+
+    @property
+    def has_files(self) -> "Union[bool, Unset_Type]":
+        """Gets the has_files of this GsaFolder.
+
+        Returns
+        -------
+        Union[bool, Unset_Type]
+            The has_files of this GsaFolder.
+        """
+        return self._has_files
+
+    @has_files.setter
+    def has_files(self, has_files: "Union[bool, Unset_Type]") -> None:
+        """Sets the has_files of this GsaFolder.
+
+        Parameters
+        ----------
+        has_files: Union[bool, Unset_Type]
+            The has_files of this GsaFolder.
+        """
+        # Field is not nullable
+        if has_files is None:
+            raise ValueError("Invalid value for 'has_files', must not be 'None'")
+        self._has_files = has_files
+
+    @property
+    def has_child_folders(self) -> "Union[bool, Unset_Type]":
+        """Gets the has_child_folders of this GsaFolder.
+
+        Returns
+        -------
+        Union[bool, Unset_Type]
+            The has_child_folders of this GsaFolder.
+        """
+        return self._has_child_folders
+
+    @has_child_folders.setter
+    def has_child_folders(self, has_child_folders: "Union[bool, Unset_Type]") -> None:
+        """Sets the has_child_folders of this GsaFolder.
+
+        Parameters
+        ----------
+        has_child_folders: Union[bool, Unset_Type]
+            The has_child_folders of this GsaFolder.
+        """
+        # Field is not nullable
+        if has_child_folders is None:
+            raise ValueError("Invalid value for 'has_child_folders', must not be 'None'")
+        self._has_child_folders = has_child_folders
 
     @property
     def name(self) -> "str":

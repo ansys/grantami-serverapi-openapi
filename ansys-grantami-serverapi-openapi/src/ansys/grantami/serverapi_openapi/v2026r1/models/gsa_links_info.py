@@ -61,7 +61,7 @@ class GsaLinksInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "links": "list[GsaResolvedLink]",
+        "links": "list[GsaLink]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaLinksInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "links": "GsaResolvedLink",
+        "links": "GsaLink",
     }
 
     discriminator: Optional[str] = None
@@ -77,36 +77,36 @@ class GsaLinksInfo(ModelBase):
     def __init__(
         self,
         *,
-        links: "list[GsaResolvedLink]",
+        links: "list[GsaLink]",
     ) -> None:
         """GsaLinksInfo - a model defined in Swagger
 
         Parameters
         ----------
-        links: list[GsaResolvedLink]
+        links: list[GsaLink]
         """
-        self._links: list[GsaResolvedLink]
+        self._links: list[GsaLink]
 
         self.links = links
 
     @property
-    def links(self) -> "list[GsaResolvedLink]":
+    def links(self) -> "list[GsaLink]":
         """Gets the links of this GsaLinksInfo.
 
         Returns
         -------
-        list[GsaResolvedLink]
+        list[GsaLink]
             The links of this GsaLinksInfo.
         """
         return self._links
 
     @links.setter
-    def links(self, links: "list[GsaResolvedLink]") -> None:
+    def links(self, links: "list[GsaLink]") -> None:
         """Sets the links of this GsaLinksInfo.
 
         Parameters
         ----------
-        links: list[GsaResolvedLink]
+        links: list[GsaLink]
             The links of this GsaLinksInfo.
         """
         # Field is not nullable
