@@ -555,6 +555,7 @@ from .gsa_layout_section_detail_type import GsaLayoutSectionDetailType
 from .gsa_layout_sections_info import GsaLayoutSectionsInfo
 from .gsa_layout_tabular_column import GsaLayoutTabularColumn
 from .gsa_layouts_info import GsaLayoutsInfo
+from .gsa_link import GsaLink
 from .gsa_link_aggregation import GsaLinkAggregation
 from .gsa_link_aggregation_datum_criterion import GsaLinkAggregationDatumCriterion
 from .gsa_link_attribute_to_export import GsaLinkAttributeToExport
@@ -834,9 +835,6 @@ from .gsa_remove_record_history_from_subset import GsaRemoveRecordHistoryFromSub
 from .gsa_reorder_sections_info import GsaReorderSectionsInfo
 from .gsa_replacement_string import GsaReplacementString
 from .gsa_replacement_strings_info import GsaReplacementStringsInfo
-from .gsa_resolved_link import GsaResolvedLink
-from .gsa_resolved_link_info import GsaResolvedLinkInfo
-from .gsa_resolved_link_target import GsaResolvedLinkTarget
 from .gsa_response_options import GsaResponseOptions
 from .gsa_resubmit_job_request import GsaResubmitJobRequest
 from .gsa_rich_text_type import GsaRichTextType
@@ -1552,6 +1550,7 @@ __all__ = [
     "GsaLayoutSectionsInfo",
     "GsaLayoutTabularColumn",
     "GsaLayoutsInfo",
+    "GsaLink",
     "GsaLinkAggregation",
     "GsaLinkAggregationDatumCriterion",
     "GsaLinkAttributeToExport",
@@ -1803,9 +1802,6 @@ __all__ = [
     "GsaReorderSectionsInfo",
     "GsaReplacementString",
     "GsaReplacementStringsInfo",
-    "GsaResolvedLink",
-    "GsaResolvedLinkInfo",
-    "GsaResolvedLinkTarget",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
     "GsaRichTextType",
