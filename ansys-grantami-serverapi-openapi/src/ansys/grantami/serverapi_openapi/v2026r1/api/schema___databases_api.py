@@ -124,6 +124,83 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def check_databases_for_retarget_potential(
+        self, *, body: "Optional[GsaRetargetPotentialRequest]" = None
+    ) -> "Union[GsaDatabasesInfo, None]":
+        """Check databases for retarget potential - whether there are any cross-database tabular attributes targeting them.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaRetargetPotentialRequest
+
+        Returns
+        -------
+        Union[GsaDatabasesInfo, None]
+        """
+        data = self._check_databases_for_retarget_potential_with_http_info(
+            body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _check_databases_for_retarget_potential_with_http_info(
+        self, body: "Optional[GsaRetargetPotentialRequest]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method check_databases_for_retarget_potential"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaDatabasesInfo",
+            400: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases:check-retarget-potential",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_all_databases(self, *, role: "Optional[str]" = None) -> "GsaDatabasesInfo":
         """Lists all databases that the user can see.
 
@@ -594,6 +671,82 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}",
             "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def retarget_tabulars(
+        self, *, body: "Optional[GsaRetargetRequest]" = None
+    ) -> "Union[GsaRetargetResultsInfo, None]":
+        """Retargets tabulars from the current database to a new one.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaRetargetRequest
+
+        Returns
+        -------
+        Union[GsaRetargetResultsInfo, None]
+        """
+        data = self._retarget_tabulars_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _retarget_tabulars_with_http_info(
+        self, body: "Optional[GsaRetargetRequest]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method retarget_tabulars"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRetargetResultsInfo",
+            400: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases:retarget",
+            "POST",
             path_params,
             query_params,
             header_params,

@@ -931,6 +931,11 @@ from .models.gsa_replacement_string import GsaReplacementString
 from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .models.gsa_response_options import GsaResponseOptions
 from .models.gsa_resubmit_job_request import GsaResubmitJobRequest
+from .models.gsa_retarget_potential_request import GsaRetargetPotentialRequest
+from .models.gsa_retarget_request import GsaRetargetRequest
+from .models.gsa_retarget_result import GsaRetargetResult
+from .models.gsa_retarget_result_type import GsaRetargetResultType
+from .models.gsa_retarget_results_info import GsaRetargetResultsInfo
 from .models.gsa_rich_text_type import GsaRichTextType
 from .models.gsa_rich_text_value import GsaRichTextValue
 from .models.gsa_rollup_export_failure import GsaRollupExportFailure
@@ -1945,6 +1950,11 @@ __all__ = [
     "GsaReplacementStringsInfo",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
+    "GsaRetargetPotentialRequest",
+    "GsaRetargetRequest",
+    "GsaRetargetResult",
+    "GsaRetargetResultType",
+    "GsaRetargetResultsInfo",
     "GsaRichTextType",
     "GsaRichTextValue",
     "GsaRollupExportFailure",
