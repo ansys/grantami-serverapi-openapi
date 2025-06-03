@@ -837,6 +837,11 @@ from .gsa_replacement_string import GsaReplacementString
 from .gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .gsa_response_options import GsaResponseOptions
 from .gsa_resubmit_job_request import GsaResubmitJobRequest
+from .gsa_retarget_potential_request import GsaRetargetPotentialRequest
+from .gsa_retarget_request import GsaRetargetRequest
+from .gsa_retarget_result import GsaRetargetResult
+from .gsa_retarget_result_type import GsaRetargetResultType
+from .gsa_retarget_results_info import GsaRetargetResultsInfo
 from .gsa_rich_text_type import GsaRichTextType
 from .gsa_rich_text_value import GsaRichTextValue
 from .gsa_rollup_export_failure import GsaRollupExportFailure
@@ -1804,6 +1809,11 @@ __all__ = [
     "GsaReplacementStringsInfo",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
+    "GsaRetargetPotentialRequest",
+    "GsaRetargetRequest",
+    "GsaRetargetResult",
+    "GsaRetargetResultType",
+    "GsaRetargetResultsInfo",
     "GsaRichTextType",
     "GsaRichTextValue",
     "GsaRollupExportFailure",
