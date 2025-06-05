@@ -62,11 +62,13 @@ class GsaDiscreteValuesDiscreteValue(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "guid": "str",
+        "is_protected": "bool",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
+        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -78,6 +80,7 @@ class GsaDiscreteValuesDiscreteValue(ModelBase):
         self,
         *,
         guid: "str",
+        is_protected: "bool",
         name: "str",
     ) -> None:
         """GsaDiscreteValuesDiscreteValue - a model defined in Swagger
@@ -85,13 +88,46 @@ class GsaDiscreteValuesDiscreteValue(ModelBase):
         Parameters
         ----------
         guid: str
+        is_protected: bool
         name: str
         """
+        self._is_protected: bool
         self._name: str
         self._guid: str
 
+        self.is_protected = is_protected
         self.name = name
         self.guid = guid
+
+    @property
+    def is_protected(self) -> "bool":
+        """Gets the is_protected of this GsaDiscreteValuesDiscreteValue.
+        If true, the discrete value is protected from all changes.
+
+        Returns
+        -------
+        bool
+            The is_protected of this GsaDiscreteValuesDiscreteValue.
+        """
+        return self._is_protected
+
+    @is_protected.setter
+    def is_protected(self, is_protected: "bool") -> None:
+        """Sets the is_protected of this GsaDiscreteValuesDiscreteValue.
+        If true, the discrete value is protected from all changes.
+
+        Parameters
+        ----------
+        is_protected: bool
+            The is_protected of this GsaDiscreteValuesDiscreteValue.
+        """
+        # Field is not nullable
+        if is_protected is None:
+            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
+        # Field is required
+        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
+        self._is_protected = is_protected
 
     @property
     def name(self) -> "str":

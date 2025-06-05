@@ -71,6 +71,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
         "is_multi_valued": "bool",
+        "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
@@ -87,6 +88,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_multi_valued": "isMultiValued",
+        "is_protected": "isProtected",
         "name": "name",
         "table": "table",
         "type": "type",
@@ -111,6 +113,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
         is_multi_valued: "bool",
+        is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.DISCRETE,
@@ -129,6 +132,7 @@ class GsaDiscreteAttribute(GsaAttribute):
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
         is_multi_valued: bool
+        is_protected: bool
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
@@ -142,6 +146,7 @@ class GsaDiscreteAttribute(GsaAttribute):
             guid=guid,
             info=info,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            is_protected=is_protected,
             name=name,
             table=table,
             type=type,

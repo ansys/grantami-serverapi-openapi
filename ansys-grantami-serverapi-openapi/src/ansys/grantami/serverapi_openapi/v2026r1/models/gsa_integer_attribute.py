@@ -69,6 +69,7 @@ class GsaIntegerAttribute(GsaAttribute):
         "guid": "str",
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
+        "is_protected": "bool",
         "is_unique": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
@@ -84,6 +85,7 @@ class GsaIntegerAttribute(GsaAttribute):
         "guid": "guid",
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
+        "is_protected": "isProtected",
         "is_unique": "isUnique",
         "name": "name",
         "table": "table",
@@ -105,6 +107,7 @@ class GsaIntegerAttribute(GsaAttribute):
         guid: "str",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
+        is_protected: "bool",
         is_unique: "bool",
         name: "str",
         table: "GsaSlimEntity",
@@ -122,6 +125,7 @@ class GsaIntegerAttribute(GsaAttribute):
         guid: str
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
+        is_protected: bool
         is_unique: bool
         name: str
         table: GsaSlimEntity
@@ -136,6 +140,7 @@ class GsaIntegerAttribute(GsaAttribute):
             guid=guid,
             info=info,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            is_protected=is_protected,
             name=name,
             table=table,
             type=type,
