@@ -69,7 +69,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
     """
     swagger_types: dict[str, str] = {
         "attribute_pairs": "list[GsaCreateAttributeLinkPair]",
-        "link_target": "GsaLinkTarget",
+        "link_target": "GsaCreateSmartLinkTarget",
         "name": "str",
         "reverse_name": "str",
         "type": "GsaRecordLinkGroupType",
@@ -90,6 +90,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
     }
 
     subtype_mapping: dict[str, str] = {
+        "linkTarget": "GsaCreateSmartLinkTarget",
         "referentialIntegrityModel": "GsaReferentialIntegrityModel",
         "attributePairs": "GsaCreateAttributeLinkPair",
     }
@@ -100,7 +101,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
         self,
         *,
         attribute_pairs: "list[GsaCreateAttributeLinkPair]",
-        link_target: "GsaLinkTarget",
+        link_target: "GsaCreateSmartLinkTarget",
         name: "str",
         reverse_name: "str",
         type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
@@ -113,7 +114,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
         Parameters
         ----------
         attribute_pairs: list[GsaCreateAttributeLinkPair]
-        link_target: GsaLinkTarget
+        link_target: GsaCreateSmartLinkTarget
         name: str
         reverse_name: str
         type: GsaRecordLinkGroupType
@@ -121,18 +122,46 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
         guid: str, optional
         referential_integrity_model: GsaReferentialIntegrityModel, optional
         """
-        super().__init__(
-            link_target=link_target, name=name, reverse_name=reverse_name, type=type, guid=guid
-        )
+        super().__init__(name=name, reverse_name=reverse_name, type=type, guid=guid)
+        self._link_target: GsaCreateSmartLinkTarget
         self._forbid_orphans: Union[bool, Unset_Type] = Unset
         self._referential_integrity_model: Union[GsaReferentialIntegrityModel, Unset_Type] = Unset
         self._attribute_pairs: list[GsaCreateAttributeLinkPair]
 
+        self.link_target = link_target
         if forbid_orphans is not Unset:
             self.forbid_orphans = forbid_orphans
         if referential_integrity_model is not Unset:
             self.referential_integrity_model = referential_integrity_model
         self.attribute_pairs = attribute_pairs
+
+    @property
+    def link_target(self) -> "GsaCreateSmartLinkTarget":
+        """Gets the link_target of this GsaCreateSmartRecordLinkGroup.
+
+        Returns
+        -------
+        GsaCreateSmartLinkTarget
+            The link_target of this GsaCreateSmartRecordLinkGroup.
+        """
+        return self._link_target
+
+    @link_target.setter
+    def link_target(self, link_target: "GsaCreateSmartLinkTarget") -> None:
+        """Sets the link_target of this GsaCreateSmartRecordLinkGroup.
+
+        Parameters
+        ----------
+        link_target: GsaCreateSmartLinkTarget
+            The link_target of this GsaCreateSmartRecordLinkGroup.
+        """
+        # Field is not nullable
+        if link_target is None:
+            raise ValueError("Invalid value for 'link_target', must not be 'None'")
+        # Field is required
+        if link_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'link_target', must not be 'Unset'")
+        self._link_target = link_target
 
     @property
     def forbid_orphans(self) -> "Union[bool, Unset_Type]":

@@ -188,6 +188,7 @@ from .models.gsa_create_axis_name import GsaCreateAxisName
 from .models.gsa_create_configuration import GsaCreateConfiguration
 from .models.gsa_create_constant import GsaCreateConstant
 from .models.gsa_create_continuous_range import GsaCreateContinuousRange
+from .models.gsa_create_cross_database_link_target import GsaCreateCrossDatabaseLinkTarget
 from .models.gsa_create_cross_database_record_link_group import (
     GsaCreateCrossDatabaseRecordLinkGroup,
 )
@@ -263,8 +264,10 @@ from .models.gsa_create_record_list import GsaCreateRecordList
 from .models.gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
 from .models.gsa_create_replacement_string import GsaCreateReplacementString
 from .models.gsa_create_short_text_attribute import GsaCreateShortTextAttribute
+from .models.gsa_create_smart_link_target import GsaCreateSmartLinkTarget
 from .models.gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .models.gsa_create_standard_name import GsaCreateStandardName
+from .models.gsa_create_static_link_target import GsaCreateStaticLinkTarget
 from .models.gsa_create_static_record_link_group import GsaCreateStaticRecordLinkGroup
 from .models.gsa_create_subset import GsaCreateSubset
 from .models.gsa_create_table import GsaCreateTable
@@ -1355,6 +1358,7 @@ __all__ = [
     "GsaCreateConfiguration",
     "GsaCreateConstant",
     "GsaCreateContinuousRange",
+    "GsaCreateCrossDatabaseLinkTarget",
     "GsaCreateCrossDatabaseRecordLinkGroup",
     "GsaCreateDataRule",
     "GsaCreateDateTimeAttribute",
@@ -1416,8 +1420,10 @@ __all__ = [
     "GsaCreateRecordListItemsInfo",
     "GsaCreateReplacementString",
     "GsaCreateShortTextAttribute",
+    "GsaCreateSmartLinkTarget",
     "GsaCreateSmartRecordLinkGroup",
     "GsaCreateStandardName",
+    "GsaCreateStaticLinkTarget",
     "GsaCreateStaticRecordLinkGroup",
     "GsaCreateSubset",
     "GsaCreateTable",
