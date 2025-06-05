@@ -70,6 +70,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         "guid": "str",
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
+        "is_protected": "bool",
         "is_range": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
@@ -87,6 +88,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         "guid": "guid",
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
+        "is_protected": "isProtected",
         "is_range": "isRange",
         "name": "name",
         "table": "table",
@@ -113,6 +115,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         guid: "str",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
+        is_protected: "bool",
         is_range: "bool",
         name: "str",
         table: "GsaSlimEntity",
@@ -132,6 +135,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
         guid: str
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
+        is_protected: bool
         is_range: bool
         name: str
         table: GsaSlimEntity
@@ -147,6 +151,7 @@ class GsaFloatFunctionalAttribute(GsaAttribute):
             guid=guid,
             info=info,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            is_protected=is_protected,
             name=name,
             table=table,
             type=type,
