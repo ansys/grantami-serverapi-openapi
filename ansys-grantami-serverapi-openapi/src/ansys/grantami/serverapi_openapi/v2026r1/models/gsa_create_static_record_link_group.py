@@ -68,7 +68,7 @@ class GsaCreateStaticRecordLinkGroup(GsaCreateRecordLinkGroup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "link_target": "GsaCreateStaticLinkTarget",
+        "link_target": "GsaLinkTarget",
         "name": "str",
         "reverse_name": "str",
         "type": "GsaRecordLinkGroupType",
@@ -85,16 +85,14 @@ class GsaCreateStaticRecordLinkGroup(GsaCreateRecordLinkGroup):
         "include_indirect_links": "includeIndirectLinks",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "linkTarget": "GsaCreateStaticLinkTarget",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        link_target: "GsaCreateStaticLinkTarget",
+        link_target: "GsaLinkTarget",
         name: "str",
         reverse_name: "str",
         type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.STATIC,
@@ -105,48 +103,20 @@ class GsaCreateStaticRecordLinkGroup(GsaCreateRecordLinkGroup):
 
         Parameters
         ----------
-        link_target: GsaCreateStaticLinkTarget
+        link_target: GsaLinkTarget
         name: str
         reverse_name: str
         type: GsaRecordLinkGroupType
         guid: str, optional
         include_indirect_links: bool, optional
         """
-        super().__init__(name=name, reverse_name=reverse_name, type=type, guid=guid)
-        self._link_target: GsaCreateStaticLinkTarget
+        super().__init__(
+            link_target=link_target, name=name, reverse_name=reverse_name, type=type, guid=guid
+        )
         self._include_indirect_links: Union[bool, Unset_Type] = Unset
 
-        self.link_target = link_target
         if include_indirect_links is not Unset:
             self.include_indirect_links = include_indirect_links
-
-    @property
-    def link_target(self) -> "GsaCreateStaticLinkTarget":
-        """Gets the link_target of this GsaCreateStaticRecordLinkGroup.
-
-        Returns
-        -------
-        GsaCreateStaticLinkTarget
-            The link_target of this GsaCreateStaticRecordLinkGroup.
-        """
-        return self._link_target
-
-    @link_target.setter
-    def link_target(self, link_target: "GsaCreateStaticLinkTarget") -> None:
-        """Sets the link_target of this GsaCreateStaticRecordLinkGroup.
-
-        Parameters
-        ----------
-        link_target: GsaCreateStaticLinkTarget
-            The link_target of this GsaCreateStaticRecordLinkGroup.
-        """
-        # Field is not nullable
-        if link_target is None:
-            raise ValueError("Invalid value for 'link_target', must not be 'None'")
-        # Field is required
-        if link_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'link_target', must not be 'Unset'")
-        self._link_target = link_target
 
     @property
     def include_indirect_links(self) -> "Union[bool, Unset_Type]":
