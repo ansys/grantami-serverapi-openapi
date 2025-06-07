@@ -63,6 +63,7 @@ class GsaCreateRecordLinkGroup(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "link_target": "GsaLinkTarget",
         "name": "str",
         "reverse_name": "str",
         "type": "GsaRecordLinkGroupType",
@@ -70,6 +71,7 @@ class GsaCreateRecordLinkGroup(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "link_target": "linkTarget",
         "name": "name",
         "reverse_name": "reverseName",
         "type": "type",
@@ -78,11 +80,12 @@ class GsaCreateRecordLinkGroup(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "type": "GsaRecordLinkGroupType",
+        "linkTarget": "GsaLinkTarget",
     }
 
     discriminator_value_class_map = {
         "static".lower(): "#/components/schemas/GsaCreateStaticRecordLinkGroup",
-        "smart".lower(): "#/components/schemas/GsaCreateSmartRecordLinkGroup",
+        "dynamic".lower(): "#/components/schemas/GsaCreateDynamicRecordLinkGroup",
         "crossDatabase".lower(): "#/components/schemas/GsaCreateCrossDatabaseRecordLinkGroup",
     }
 
@@ -91,6 +94,7 @@ class GsaCreateRecordLinkGroup(ModelBase):
     def __init__(
         self,
         *,
+        link_target: "GsaLinkTarget",
         name: "str",
         reverse_name: "str",
         type: "GsaRecordLinkGroupType",
@@ -100,17 +104,20 @@ class GsaCreateRecordLinkGroup(ModelBase):
 
         Parameters
         ----------
+        link_target: GsaLinkTarget
         name: str
         reverse_name: str
         type: GsaRecordLinkGroupType
         guid: str, optional
         """
         self._type: GsaRecordLinkGroupType
+        self._link_target: GsaLinkTarget
         self._reverse_name: str
         self._name: str
         self._guid: Union[str, Unset_Type] = Unset
 
         self.type = type
+        self.link_target = link_target
         self.reverse_name = reverse_name
         self.name = name
         if guid is not Unset:
@@ -143,6 +150,34 @@ class GsaCreateRecordLinkGroup(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
+
+    @property
+    def link_target(self) -> "GsaLinkTarget":
+        """Gets the link_target of this GsaCreateRecordLinkGroup.
+
+        Returns
+        -------
+        GsaLinkTarget
+            The link_target of this GsaCreateRecordLinkGroup.
+        """
+        return self._link_target
+
+    @link_target.setter
+    def link_target(self, link_target: "GsaLinkTarget") -> None:
+        """Sets the link_target of this GsaCreateRecordLinkGroup.
+
+        Parameters
+        ----------
+        link_target: GsaLinkTarget
+            The link_target of this GsaCreateRecordLinkGroup.
+        """
+        # Field is not nullable
+        if link_target is None:
+            raise ValueError("Invalid value for 'link_target', must not be 'None'")
+        # Field is required
+        if link_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'link_target', must not be 'Unset'")
+        self._link_target = link_target
 
     @property
     def reverse_name(self) -> "str":
