@@ -932,6 +932,9 @@ from .models.gsa_remove_record_history_from_subset import GsaRemoveRecordHistory
 from .models.gsa_reorder_sections_info import GsaReorderSectionsInfo
 from .models.gsa_replacement_string import GsaReplacementString
 from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
+from .models.gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
+from .models.gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
+from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
 from .models.gsa_response_options import GsaResponseOptions
 from .models.gsa_resubmit_job_request import GsaResubmitJobRequest
 from .models.gsa_retarget_potential_request import GsaRetargetPotentialRequest
@@ -1954,6 +1957,9 @@ __all__ = [
     "GsaReorderSectionsInfo",
     "GsaReplacementString",
     "GsaReplacementStringsInfo",
+    "GsaResolveLinkTargetsInfo",
+    "GsaResolveLinkTargetsRequest",
+    "GsaResolvedLinkTarget",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
     "GsaRetargetPotentialRequest",
