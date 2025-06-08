@@ -77,6 +77,7 @@ from .api.schema___tables_api import SchemaTablesApi
 from .api.schema___units_api import SchemaUnitsApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
+from .api.selection_searches_api import SelectionSearchesApi
 from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
@@ -188,7 +189,6 @@ from .models.gsa_create_axis_name import GsaCreateAxisName
 from .models.gsa_create_configuration import GsaCreateConfiguration
 from .models.gsa_create_constant import GsaCreateConstant
 from .models.gsa_create_continuous_range import GsaCreateContinuousRange
-from .models.gsa_create_cross_database_link_target import GsaCreateCrossDatabaseLinkTarget
 from .models.gsa_create_cross_database_record_link_group import (
     GsaCreateCrossDatabaseRecordLinkGroup,
 )
@@ -210,6 +210,7 @@ from .models.gsa_create_discrete_parameter_content import GsaCreateDiscreteParam
 from .models.gsa_create_discrete_parameter_value import GsaCreateDiscreteParameterValue
 from .models.gsa_create_discrete_range import GsaCreateDiscreteRange
 from .models.gsa_create_discrete_type import GsaCreateDiscreteType
+from .models.gsa_create_dynamic_record_link_group import GsaCreateDynamicRecordLinkGroup
 from .models.gsa_create_expression import GsaCreateExpression
 from .models.gsa_create_file_attribute import GsaCreateFileAttribute
 from .models.gsa_create_float_functional_attribute import GsaCreateFloatFunctionalAttribute
@@ -263,11 +264,9 @@ from .models.gsa_create_record_link_group import GsaCreateRecordLinkGroup
 from .models.gsa_create_record_list import GsaCreateRecordList
 from .models.gsa_create_record_list_items_info import GsaCreateRecordListItemsInfo
 from .models.gsa_create_replacement_string import GsaCreateReplacementString
+from .models.gsa_create_search_request import GsaCreateSearchRequest
 from .models.gsa_create_short_text_attribute import GsaCreateShortTextAttribute
-from .models.gsa_create_smart_link_target import GsaCreateSmartLinkTarget
-from .models.gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .models.gsa_create_standard_name import GsaCreateStandardName
-from .models.gsa_create_static_link_target import GsaCreateStaticLinkTarget
 from .models.gsa_create_static_record_link_group import GsaCreateStaticRecordLinkGroup
 from .models.gsa_create_subset import GsaCreateSubset
 from .models.gsa_create_table import GsaCreateTable
@@ -476,6 +475,10 @@ from .models.gsa_duplicate_tabular_column_names_error_detail import (
 from .models.gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
+from .models.gsa_dynamic_link_group_usage_data_modification_error_detail import (
+    GsaDynamicLinkGroupUsageDataModificationErrorDetail,
+)
+from .models.gsa_dynamic_record_link_group import GsaDynamicRecordLinkGroup
 from .models.gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .models.gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .models.gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
@@ -508,6 +511,7 @@ from .models.gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
 from .models.gsa_file_header import GsaFileHeader
 from .models.gsa_file_prefix_datum_criterion import GsaFilePrefixDatumCriterion
 from .models.gsa_files_info import GsaFilesInfo
+from .models.gsa_find_search_request import GsaFindSearchRequest
 from .models.gsa_find_standard_names import GsaFindStandardNames
 from .models.gsa_float_functional_aggregation import GsaFloatFunctionalAggregation
 from .models.gsa_float_functional_aggregation_datum_criterion import (
@@ -636,7 +640,6 @@ from .models.gsa_layout_section_detail_type import GsaLayoutSectionDetailType
 from .models.gsa_layout_sections_info import GsaLayoutSectionsInfo
 from .models.gsa_layout_tabular_column import GsaLayoutTabularColumn
 from .models.gsa_layouts_info import GsaLayoutsInfo
-from .models.gsa_link import GsaLink
 from .models.gsa_link_aggregation import GsaLinkAggregation
 from .models.gsa_link_aggregation_datum_criterion import GsaLinkAggregationDatumCriterion
 from .models.gsa_link_attribute_to_export import GsaLinkAttributeToExport
@@ -932,17 +935,16 @@ from .models.gsa_remove_record_history_from_subset import GsaRemoveRecordHistory
 from .models.gsa_reorder_sections_info import GsaReorderSectionsInfo
 from .models.gsa_replacement_string import GsaReplacementString
 from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
+from .models.gsa_resolved_link import GsaResolvedLink
+from .models.gsa_resolved_link_info import GsaResolvedLinkInfo
+from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
 from .models.gsa_response_options import GsaResponseOptions
 from .models.gsa_resubmit_job_request import GsaResubmitJobRequest
-from .models.gsa_retarget_potential_request import GsaRetargetPotentialRequest
-from .models.gsa_retarget_request import GsaRetargetRequest
-from .models.gsa_retarget_result import GsaRetargetResult
-from .models.gsa_retarget_result_type import GsaRetargetResultType
-from .models.gsa_retarget_results_info import GsaRetargetResultsInfo
 from .models.gsa_rich_text_type import GsaRichTextType
 from .models.gsa_rich_text_value import GsaRichTextValue
 from .models.gsa_rollup_export_failure import GsaRollupExportFailure
 from .models.gsa_rollup_reference import GsaRollupReference
+from .models.gsa_save_search_request import GsaSaveSearchRequest
 from .models.gsa_schema_too_new_add_database_validation_issue import (
     GsaSchemaTooNewAddDatabaseValidationIssue,
 )
@@ -950,6 +952,7 @@ from .models.gsa_schema_too_old_add_database_validation_issue import (
     GsaSchemaTooOldAddDatabaseValidationIssue,
 )
 from .models.gsa_search_cluster_status import GsaSearchClusterStatus
+from .models.gsa_search_detail import GsaSearchDetail
 from .models.gsa_search_index_status import GsaSearchIndexStatus
 from .models.gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
@@ -964,6 +967,7 @@ from .models.gsa_security_attribute_usage_data_modification_error_detail import 
     GsaSecurityAttributeUsageDataModificationErrorDetail,
 )
 from .models.gsa_security_groups import GsaSecurityGroups
+from .models.gsa_selection_search import GsaSelectionSearch
 from .models.gsa_series_graph import GsaSeriesGraph
 from .models.gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .models.gsa_set_datum import GsaSetDatum
@@ -1021,10 +1025,6 @@ from .models.gsa_slim_table import GsaSlimTable
 from .models.gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .models.gsa_slim_unit import GsaSlimUnit
 from .models.gsa_slim_unit_system import GsaSlimUnitSystem
-from .models.gsa_smart_link_group_usage_data_modification_error_detail import (
-    GsaSmartLinkGroupUsageDataModificationErrorDetail,
-)
-from .models.gsa_smart_record_link_group import GsaSmartRecordLinkGroup
 from .models.gsa_smtp_properties import GsaSmtpProperties
 from .models.gsa_sort_criterion import GsaSortCriterion
 from .models.gsa_sort_criterion_type import GsaSortCriterionType
@@ -1122,6 +1122,7 @@ from .models.gsa_update_discrete_parameter_content import GsaUpdateDiscreteParam
 from .models.gsa_update_discrete_parameter_value import GsaUpdateDiscreteParameterValue
 from .models.gsa_update_discrete_range import GsaUpdateDiscreteRange
 from .models.gsa_update_discrete_type import GsaUpdateDiscreteType
+from .models.gsa_update_dynamic_record_link_group import GsaUpdateDynamicRecordLinkGroup
 from .models.gsa_update_expression import GsaUpdateExpression
 from .models.gsa_update_file import GsaUpdateFile
 from .models.gsa_update_file_attribute import GsaUpdateFileAttribute
@@ -1174,7 +1175,6 @@ from .models.gsa_update_record_list_permission_flags import GsaUpdateRecordListP
 from .models.gsa_update_record_list_properties import GsaUpdateRecordListProperties
 from .models.gsa_update_replacement_string import GsaUpdateReplacementString
 from .models.gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
-from .models.gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .models.gsa_update_standard_name import GsaUpdateStandardName
 from .models.gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
 from .models.gsa_update_subset import GsaUpdateSubset
@@ -1188,6 +1188,7 @@ from .models.gsa_update_unit_system import GsaUpdateUnitSystem
 from .models.gsa_update_user_permission import GsaUpdateUserPermission
 from .models.gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
 from .models.gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
+from .models.gsa_user_or_group import GsaUserOrGroup
 from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
 from .models.gsa_user_role import GsaUserRole
@@ -1263,6 +1264,7 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitsApi",
     "SearchApi",
+    "SelectionSearchesApi",
     "ServerManagerApi",
     "StatusApi",
     "AttributesAttributeguidimportfileBody",
@@ -1358,7 +1360,6 @@ __all__ = [
     "GsaCreateConfiguration",
     "GsaCreateConstant",
     "GsaCreateContinuousRange",
-    "GsaCreateCrossDatabaseLinkTarget",
     "GsaCreateCrossDatabaseRecordLinkGroup",
     "GsaCreateDataRule",
     "GsaCreateDateTimeAttribute",
@@ -1372,6 +1373,7 @@ __all__ = [
     "GsaCreateDiscreteParameterValue",
     "GsaCreateDiscreteRange",
     "GsaCreateDiscreteType",
+    "GsaCreateDynamicRecordLinkGroup",
     "GsaCreateExpression",
     "GsaCreateFileAttribute",
     "GsaCreateFloatFunctionalAttribute",
@@ -1419,11 +1421,9 @@ __all__ = [
     "GsaCreateRecordList",
     "GsaCreateRecordListItemsInfo",
     "GsaCreateReplacementString",
+    "GsaCreateSearchRequest",
     "GsaCreateShortTextAttribute",
-    "GsaCreateSmartLinkTarget",
-    "GsaCreateSmartRecordLinkGroup",
     "GsaCreateStandardName",
-    "GsaCreateStaticLinkTarget",
     "GsaCreateStaticRecordLinkGroup",
     "GsaCreateSubset",
     "GsaCreateTable",
@@ -1580,6 +1580,8 @@ __all__ = [
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
+    "GsaDynamicLinkGroupUsageDataModificationErrorDetail",
+    "GsaDynamicRecordLinkGroup",
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
@@ -1602,6 +1604,7 @@ __all__ = [
     "GsaFileHeader",
     "GsaFilePrefixDatumCriterion",
     "GsaFilesInfo",
+    "GsaFindSearchRequest",
     "GsaFindStandardNames",
     "GsaFloatFunctionalAggregation",
     "GsaFloatFunctionalAggregationDatumCriterion",
@@ -1702,7 +1705,6 @@ __all__ = [
     "GsaLayoutSectionsInfo",
     "GsaLayoutTabularColumn",
     "GsaLayoutsInfo",
-    "GsaLink",
     "GsaLinkAggregation",
     "GsaLinkAggregationDatumCriterion",
     "GsaLinkAttributeToExport",
@@ -1954,20 +1956,20 @@ __all__ = [
     "GsaReorderSectionsInfo",
     "GsaReplacementString",
     "GsaReplacementStringsInfo",
+    "GsaResolvedLink",
+    "GsaResolvedLinkInfo",
+    "GsaResolvedLinkTarget",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
-    "GsaRetargetPotentialRequest",
-    "GsaRetargetRequest",
-    "GsaRetargetResult",
-    "GsaRetargetResultType",
-    "GsaRetargetResultsInfo",
     "GsaRichTextType",
     "GsaRichTextValue",
     "GsaRollupExportFailure",
     "GsaRollupReference",
+    "GsaSaveSearchRequest",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
+    "GsaSearchDetail",
     "GsaSearchIndexStatus",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
@@ -1978,6 +1980,7 @@ __all__ = [
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
+    "GsaSelectionSearch",
     "GsaSeriesGraph",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
@@ -2035,8 +2038,6 @@ __all__ = [
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
-    "GsaSmartLinkGroupUsageDataModificationErrorDetail",
-    "GsaSmartRecordLinkGroup",
     "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
@@ -2116,6 +2117,7 @@ __all__ = [
     "GsaUpdateDiscreteParameterValue",
     "GsaUpdateDiscreteRange",
     "GsaUpdateDiscreteType",
+    "GsaUpdateDynamicRecordLinkGroup",
     "GsaUpdateExpression",
     "GsaUpdateFile",
     "GsaUpdateFileAttribute",
@@ -2162,7 +2164,6 @@ __all__ = [
     "GsaUpdateRecordListProperties",
     "GsaUpdateReplacementString",
     "GsaUpdateShortTextAttribute",
-    "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",
     "GsaUpdateSubset",
@@ -2176,6 +2177,7 @@ __all__ = [
     "GsaUpdateUserPermission",
     "GsaUpdateUserPermissionsInfo",
     "GsaUsageDataModificationErrorDetail",
+    "GsaUserOrGroup",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
