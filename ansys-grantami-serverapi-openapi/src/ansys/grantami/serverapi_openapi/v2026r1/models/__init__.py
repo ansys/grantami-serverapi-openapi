@@ -838,6 +838,9 @@ from .gsa_remove_record_history_from_subset import GsaRemoveRecordHistoryFromSub
 from .gsa_reorder_sections_info import GsaReorderSectionsInfo
 from .gsa_replacement_string import GsaReplacementString
 from .gsa_replacement_strings_info import GsaReplacementStringsInfo
+from .gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
+from .gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
+from .gsa_resolved_link_target import GsaResolvedLinkTarget
 from .gsa_response_options import GsaResponseOptions
 from .gsa_resubmit_job_request import GsaResubmitJobRequest
 from .gsa_retarget_potential_request import GsaRetargetPotentialRequest
@@ -1813,6 +1816,9 @@ __all__ = [
     "GsaReorderSectionsInfo",
     "GsaReplacementString",
     "GsaReplacementStringsInfo",
+    "GsaResolveLinkTargetsInfo",
+    "GsaResolveLinkTargetsRequest",
+    "GsaResolvedLinkTarget",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
     "GsaRetargetPotentialRequest",
