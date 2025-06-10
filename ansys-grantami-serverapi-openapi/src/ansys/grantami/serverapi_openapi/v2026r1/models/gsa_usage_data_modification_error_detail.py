@@ -88,7 +88,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
     discriminator_value_class_map = {
         "expression".lower(): "#/components/schemas/GsaExpressionUsageDataModificationErrorDetail",
         "versionControlledData".lower(): "#/components/schemas/GsaVersionControlledDataUsageDataModificationErrorDetail",
-        "smartLinkGroup".lower(): "#/components/schemas/GsaSmartLinkGroupUsageDataModificationErrorDetail",
+        "dynamicLinkGroup".lower(): "#/components/schemas/GsaDynamicLinkGroupUsageDataModificationErrorDetail",
         "tabularAttribute".lower(): "#/components/schemas/GsaTabularAttributeUsageDataModificationErrorDetail",
         "xyChartTemplate".lower(): "#/components/schemas/GsaXYChartTemplateUsageDataModificationErrorDetail",
         "searchMask".lower(): "#/components/schemas/GsaSearchMaskUsageDataModificationErrorDetail",
