@@ -71,6 +71,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_full_table": "bool",
+        "display_names": "dict(str, str)",
         "display_summary_row_inline": "bool",
         "guid": "str",
         "help_path": "str",
@@ -87,6 +88,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
+        "display_names": "displayNames",
         "display_summary_row_inline": "displaySummaryRowInline",
         "guid": "guid",
         "help_path": "helpPath",
@@ -112,6 +114,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         axis_name: "Union[GsaUpdateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
         display_full_table: "Union[bool, Unset_Type]" = Unset,
+        display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         display_summary_row_inline: "Union[bool, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -130,6 +133,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
         axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_full_table: bool, optional
+        display_names: dict[str, str], optional
         display_summary_row_inline: bool, optional
         guid: str, optional
         help_path: str, optional
@@ -144,6 +148,7 @@ class GsaUpdateTabularAttribute(GsaUpdateAttribute):
             about_attribute=about_attribute,
             axis_name=axis_name,
             default_threshold_type=default_threshold_type,
+            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,

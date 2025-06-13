@@ -83,6 +83,9 @@ class GsaNamedEntityErrorDetail(ModelBase):
         "nameNotProvided".lower(): "#/components/schemas/GsaNameNotProvidedErrorDetail",
         "nameAlreadyExists".lower(): "#/components/schemas/GsaNameAlreadyExistsErrorDetail",
         "entityIdentifierAlreadySpecified".lower(): "#/components/schemas/GsaEntityIdentifierAlreadySpecifiedErrorDetail",
+        "displayNameEmpty".lower(): "#/components/schemas/GsaDisplayNameEmptyErrorDetail",
+        "displayNameLanguageNotProvided".lower(): "#/components/schemas/GsaDisplayNameLanguageNotProvidedErrorDetail",
+        "displayNameLanguageNotSupported".lower(): "#/components/schemas/GsaDisplayNameLanguageNotSupportedErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
