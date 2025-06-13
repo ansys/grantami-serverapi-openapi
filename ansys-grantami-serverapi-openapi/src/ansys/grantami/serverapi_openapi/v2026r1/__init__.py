@@ -451,6 +451,13 @@ from .models.gsa_discrete_values_replace_discrete_values_info import (
 )
 from .models.gsa_discrete_values_update_discrete_value import GsaDiscreteValuesUpdateDiscreteValue
 from .models.gsa_disk_status import GsaDiskStatus
+from .models.gsa_display_name_empty_error_detail import GsaDisplayNameEmptyErrorDetail
+from .models.gsa_display_name_language_not_provided_error_detail import (
+    GsaDisplayNameLanguageNotProvidedErrorDetail,
+)
+from .models.gsa_display_name_language_not_supported_error_detail import (
+    GsaDisplayNameLanguageNotSupportedErrorDetail,
+)
 from .models.gsa_double_sorting_value import GsaDoubleSortingValue
 from .models.gsa_duplicate_database_add_database_validation_issue import (
     GsaDuplicateDatabaseAddDatabaseValidationIssue,
@@ -1574,6 +1581,9 @@ __all__ = [
     "GsaDiscreteValuesReplaceDiscreteValuesInfo",
     "GsaDiscreteValuesUpdateDiscreteValue",
     "GsaDiskStatus",
+    "GsaDisplayNameEmptyErrorDetail",
+    "GsaDisplayNameLanguageNotProvidedErrorDetail",
+    "GsaDisplayNameLanguageNotSupportedErrorDetail",
     "GsaDoubleSortingValue",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
     "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
