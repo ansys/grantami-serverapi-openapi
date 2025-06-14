@@ -54,6 +54,9 @@ from .granta_mi_record_property_fake_attribute_identities import (
 from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
+from .gsa_activity_log_entries_filter import GsaActivityLogEntriesFilter
+from .gsa_activity_log_entries_info import GsaActivityLogEntriesInfo
+from .gsa_activity_log_entry import GsaActivityLogEntry
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_database_issue_type import GsaAddDatabaseIssueType
 from .gsa_add_database_validation_issue import GsaAddDatabaseValidationIssue
@@ -1102,6 +1105,7 @@ from .gsa_update_unit_system import GsaUpdateUnitSystem
 from .gsa_update_user_permission import GsaUpdateUserPermission
 from .gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
 from .gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
+from .gsa_usage_mode import GsaUsageMode
 from .gsa_user_permission import GsaUserPermission
 from .gsa_user_permissions_info import GsaUserPermissionsInfo
 from .gsa_user_role import GsaUserRole
@@ -1147,6 +1151,9 @@ __all__ = [
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+    "GsaActivityLogEntriesFilter",
+    "GsaActivityLogEntriesInfo",
+    "GsaActivityLogEntry",
     "GsaAddDatabase",
     "GsaAddDatabaseIssueType",
     "GsaAddDatabaseValidationIssue",
@@ -2051,6 +2058,7 @@ __all__ = [
     "GsaUpdateUserPermission",
     "GsaUpdateUserPermissionsInfo",
     "GsaUsageDataModificationErrorDetail",
+    "GsaUsageMode",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
