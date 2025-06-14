@@ -70,6 +70,7 @@ from .schema___tables_api import SchemaTablesApi
 from .schema___units_api import SchemaUnitsApi
 from .schema_api import SchemaApi
 from .search_api import SearchApi
+from .selection_searches_api import SelectionSearchesApi
 from .server_manager_api import ServerManagerApi
 from .status_api import StatusApi
 
@@ -119,6 +120,7 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitsApi",
     "SearchApi",
+    "SelectionSearchesApi",
     "ServerManagerApi",
     "StatusApi",
 ]

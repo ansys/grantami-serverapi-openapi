@@ -75,7 +75,6 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "axis_name": "GsaCreateAxisName",
         "default_content": "GsaCreateMathsContent",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "expressions": "list[GsaSlimEntity]",
         "guid": "str",
         "help_path": "str",
@@ -94,7 +93,6 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         "axis_name": "axisName",
         "default_content": "defaultContent",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
         "help_path": "helpPath",
@@ -125,7 +123,6 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         axis_name: "Union[GsaCreateAxisName, Unset_Type]" = Unset,
         default_content: "Union[GsaCreateMathsContent, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
-        display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         expressions: "Union[list[GsaSlimEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
@@ -146,7 +143,6 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         axis_name: GsaCreateAxisName, optional
         default_content: GsaCreateMathsContent, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str], optional
         expressions: list[GsaSlimEntity], optional
         guid: str, optional
         help_path: str, optional
@@ -158,7 +154,6 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
             name=name,
             type=type,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
