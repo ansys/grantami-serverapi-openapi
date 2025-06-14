@@ -46,6 +46,3 @@ class GsaNamedEntityErrorReason(Enum):
     ENTITYIDENTIFIERALREADYSPECIFIED = "entityIdentifierAlreadySpecified"
     NAMENOTPROVIDED = "nameNotProvided"
     NAMEALREADYEXISTS = "nameAlreadyExists"
-    DISPLAYNAMEEMPTY = "displayNameEmpty"
-    DISPLAYNAMELANGUAGENOTPROVIDED = "displayNameLanguageNotProvided"
-    DISPLAYNAMELANGUAGENOTSUPPORTED = "displayNameLanguageNotSupported"
