@@ -54,6 +54,13 @@ from .granta_mi_record_property_fake_attribute_identities import (
 from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
+from .gsa_activity_log_date_filter import GsaActivityLogDateFilter
+from .gsa_activity_log_entries_filter import GsaActivityLogEntriesFilter
+from .gsa_activity_log_entries_info import GsaActivityLogEntriesInfo
+from .gsa_activity_log_entry import GsaActivityLogEntry
+from .gsa_activity_log_match_type import GsaActivityLogMatchType
+from .gsa_activity_log_usage_mode import GsaActivityLogUsageMode
+from .gsa_activity_log_username_filter import GsaActivityLogUsernameFilter
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_database_issue_type import GsaAddDatabaseIssueType
 from .gsa_add_database_validation_issue import GsaAddDatabaseValidationIssue
@@ -1147,6 +1154,13 @@ __all__ = [
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+    "GsaActivityLogDateFilter",
+    "GsaActivityLogEntriesFilter",
+    "GsaActivityLogEntriesInfo",
+    "GsaActivityLogEntry",
+    "GsaActivityLogMatchType",
+    "GsaActivityLogUsageMode",
+    "GsaActivityLogUsernameFilter",
     "GsaAddDatabase",
     "GsaAddDatabaseIssueType",
     "GsaAddDatabaseValidationIssue",
