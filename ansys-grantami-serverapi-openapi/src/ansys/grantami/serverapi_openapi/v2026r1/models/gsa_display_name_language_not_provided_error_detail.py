@@ -68,17 +68,17 @@ class GsaDisplayNameLanguageNotProvidedErrorDetail(GsaNamedEntityErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
         "display_name": "str",
-        "entity_type_name": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
         "display_name": "displayName",
-        "entity_type_name": "entityTypeName",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -88,21 +88,21 @@ class GsaDisplayNameLanguageNotProvidedErrorDetail(GsaNamedEntityErrorDetail):
     def __init__(
         self,
         *,
+        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason" = GsaNamedEntityErrorReason.DISPLAYNAMELANGUAGENOTPROVIDED,
         display_name: "Union[str, None, Unset_Type]" = Unset,
-        entity_type_name: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDisplayNameLanguageNotProvidedErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
+        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
         display_name: str, optional
-        entity_type_name: str, optional
         """
-        super().__init__(message=message, reason=reason, entity_type_name=entity_type_name)
+        super().__init__(entity_type=entity_type, message=message, reason=reason)
         self._display_name: Union[str, None, Unset_Type] = Unset
 
         if display_name is not Unset:

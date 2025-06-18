@@ -50,7 +50,7 @@ class SchemaParametersApi(ApiBase):
 
     def create_parameter(
         self, *, database_key: "str", body: "Optional[GsaCreateParameter]" = None
-    ) -> "Union[GsaParameter, None]":
+    ) -> "Union[GsaParameter, GsaParameterCreationException, None]":
         """Create a new parameter.
 
         This method makes a synchronous HTTP request.
@@ -62,7 +62,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GsaParameter, None]
+        Union[GsaParameter, GsaParameterCreationException, None]
         """
         data = self._create_parameter_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -120,7 +120,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameter",
-            400: None,
+            400: "GsaParameterCreationException",
             403: None,
             404: None,
         }
@@ -147,7 +147,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaCreateParameterValue]" = None,
-    ) -> "Union[GsaParameterValue, None]":
+    ) -> "Union[GsaParameterValue, GsaParameterValueCreationException, None]":
         """Create a new parameter value.
 
         This method makes a synchronous HTTP request.
@@ -160,7 +160,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GsaParameterValue, None]
+        Union[GsaParameterValue, GsaParameterValueCreationException, None]
         """
         data = self._create_parameter_value_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -230,7 +230,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameterValue",
-            400: None,
+            400: "GsaParameterValueCreationException",
             403: None,
             404: None,
         }
@@ -810,7 +810,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaUpdateParameter]" = None,
-    ) -> "Union[GsaParameter, None]":
+    ) -> "Union[GsaParameter, GsaParameterUpdateException, None]":
         """Update a parameter.
 
         This method makes a synchronous HTTP request.
@@ -823,7 +823,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GsaParameter, None]
+        Union[GsaParameter, GsaParameterUpdateException, None]
         """
         data = self._update_parameter_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -893,7 +893,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameter",
-            400: None,
+            400: "GsaParameterUpdateException",
             403: None,
             404: None,
         }
@@ -921,7 +921,7 @@ class SchemaParametersApi(ApiBase):
         parameter_guid: "str",
         parameter_value_guid: "str",
         body: "Optional[GsaUpdateParameterValue]" = None,
-    ) -> "Union[GsaParameterValue, None]":
+    ) -> "Union[GsaParameterValue, GsaParameterValueUpdateException, None]":
         """Update a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -935,7 +935,7 @@ class SchemaParametersApi(ApiBase):
 
         Returns
         -------
-        Union[GsaParameterValue, None]
+        Union[GsaParameterValue, GsaParameterValueUpdateException, None]
         """
         data = self._update_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, body, _return_http_data_only=True
@@ -1014,7 +1014,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameterValue",
-            400: None,
+            400: "GsaParameterValueUpdateException",
             403: None,
             404: None,
         }
