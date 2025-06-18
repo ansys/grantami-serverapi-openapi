@@ -68,16 +68,16 @@ class GsaEntityIdentifierAlreadySpecifiedErrorDetail(GsaNamedEntityErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
-        "entity_type_name": "str",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
-        "entity_type_name": "entityTypeName",
         "guid": "guid",
     }
 
@@ -88,21 +88,21 @@ class GsaEntityIdentifierAlreadySpecifiedErrorDetail(GsaNamedEntityErrorDetail):
     def __init__(
         self,
         *,
+        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason" = GsaNamedEntityErrorReason.ENTITYIDENTIFIERALREADYSPECIFIED,
-        entity_type_name: "Union[str, None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
     ) -> None:
         """GsaEntityIdentifierAlreadySpecifiedErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
+        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
-        entity_type_name: str, optional
         guid: str, optional
         """
-        super().__init__(message=message, reason=reason, entity_type_name=entity_type_name)
+        super().__init__(entity_type=entity_type, message=message, reason=reason)
         self._guid: Union[str, Unset_Type] = Unset
 
         if guid is not Unset:

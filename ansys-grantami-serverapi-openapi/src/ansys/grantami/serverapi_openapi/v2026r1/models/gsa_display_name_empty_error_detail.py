@@ -68,16 +68,16 @@ class GsaDisplayNameEmptyErrorDetail(GsaNamedEntityErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
-        "entity_type_name": "str",
         "language": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
-        "entity_type_name": "entityTypeName",
         "language": "language",
     }
 
@@ -88,21 +88,21 @@ class GsaDisplayNameEmptyErrorDetail(GsaNamedEntityErrorDetail):
     def __init__(
         self,
         *,
+        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason" = GsaNamedEntityErrorReason.DISPLAYNAMEEMPTY,
-        entity_type_name: "Union[str, None, Unset_Type]" = Unset,
         language: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaDisplayNameEmptyErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
+        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
-        entity_type_name: str, optional
         language: str, optional
         """
-        super().__init__(message=message, reason=reason, entity_type_name=entity_type_name)
+        super().__init__(entity_type=entity_type, message=message, reason=reason)
         self._language: Union[str, None, Unset_Type] = Unset
 
         if language is not Unset:
