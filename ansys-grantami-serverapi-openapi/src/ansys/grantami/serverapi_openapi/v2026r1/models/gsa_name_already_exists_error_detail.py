@@ -68,54 +68,45 @@ class GsaNameAlreadyExistsErrorDetail(GsaNamedEntityErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
+        "entity_type_name": "str",
         "name": "str",
-        "parent_entity_type": "GsaEntityType",
     }
 
     attribute_map: dict[str, str] = {
-        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
+        "entity_type_name": "entityTypeName",
         "name": "name",
-        "parent_entity_type": "parentEntityType",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "parentEntityType": "GsaEntityType",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason" = GsaNamedEntityErrorReason.NAMEALREADYEXISTS,
+        entity_type_name: "Union[str, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
-        parent_entity_type: "Union[GsaEntityType, Unset_Type]" = Unset,
     ) -> None:
         """GsaNameAlreadyExistsErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
+        entity_type_name: str, optional
         name: str, optional
-        parent_entity_type: GsaEntityType, optional
         """
-        super().__init__(entity_type=entity_type, message=message, reason=reason)
+        super().__init__(message=message, reason=reason, entity_type_name=entity_type_name)
         self._name: Union[str, None, Unset_Type] = Unset
-        self._parent_entity_type: Union[GsaEntityType, Unset_Type] = Unset
 
         if name is not Unset:
             self.name = name
-        if parent_entity_type is not Unset:
-            self.parent_entity_type = parent_entity_type
 
     @property
     def name(self) -> "Union[str, None, Unset_Type]":
@@ -138,31 +129,6 @@ class GsaNameAlreadyExistsErrorDetail(GsaNamedEntityErrorDetail):
             The name of this GsaNameAlreadyExistsErrorDetail.
         """
         self._name = name
-
-    @property
-    def parent_entity_type(self) -> "Union[GsaEntityType, Unset_Type]":
-        """Gets the parent_entity_type of this GsaNameAlreadyExistsErrorDetail.
-
-        Returns
-        -------
-        Union[GsaEntityType, Unset_Type]
-            The parent_entity_type of this GsaNameAlreadyExistsErrorDetail.
-        """
-        return self._parent_entity_type
-
-    @parent_entity_type.setter
-    def parent_entity_type(self, parent_entity_type: "Union[GsaEntityType, Unset_Type]") -> None:
-        """Sets the parent_entity_type of this GsaNameAlreadyExistsErrorDetail.
-
-        Parameters
-        ----------
-        parent_entity_type: Union[GsaEntityType, Unset_Type]
-            The parent_entity_type of this GsaNameAlreadyExistsErrorDetail.
-        """
-        # Field is not nullable
-        if parent_entity_type is None:
-            raise ValueError("Invalid value for 'parent_entity_type', must not be 'None'")
-        self._parent_entity_type = parent_entity_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

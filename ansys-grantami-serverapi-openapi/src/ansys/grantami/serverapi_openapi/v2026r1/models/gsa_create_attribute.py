@@ -66,7 +66,6 @@ class GsaCreateAttribute(ModelBase):
         "name": "str",
         "type": "GsaAttributeType",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -76,7 +75,6 @@ class GsaCreateAttribute(ModelBase):
         "name": "name",
         "type": "type",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -113,7 +111,6 @@ class GsaCreateAttribute(ModelBase):
         name: "str",
         type: "GsaAttributeType",
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
-        display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
@@ -125,7 +122,6 @@ class GsaCreateAttribute(ModelBase):
         name: str
         type: GsaAttributeType
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str], optional
         guid: str, optional
         help_path: str, optional
         is_hidden_from_search_criteria: bool, optional
@@ -134,7 +130,6 @@ class GsaCreateAttribute(ModelBase):
         self._default_threshold_type: Union[GsaAttributeThresholdType, Unset_Type] = Unset
         self._help_path: Union[str, None, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
-        self._display_names: Union[dict[str, str], None, Unset_Type] = Unset
         self._name: str
         self._guid: Union[str, Unset_Type] = Unset
 
@@ -145,8 +140,6 @@ class GsaCreateAttribute(ModelBase):
             self.help_path = help_path
         if is_hidden_from_search_criteria is not Unset:
             self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
-        if display_names is not Unset:
-            self.display_names = display_names
         self.name = name
         if guid is not Unset:
             self.guid = guid
@@ -253,30 +246,6 @@ class GsaCreateAttribute(ModelBase):
             The is_hidden_from_search_criteria of this GsaCreateAttribute.
         """
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
-
-    @property
-    def display_names(self) -> "Union[dict[str, str], None, Unset_Type]":
-        """Gets the display_names of this GsaCreateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
-
-        Returns
-        -------
-        Union[dict[str, str], None, Unset_Type]
-            The display_names of this GsaCreateAttribute.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "Union[dict[str, str], None, Unset_Type]") -> None:
-        """Sets the display_names of this GsaCreateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
-
-        Parameters
-        ----------
-        display_names: Union[dict[str, str], None, Unset_Type]
-            The display_names of this GsaCreateAttribute.
-        """
-        self._display_names = display_names
 
     @property
     def name(self) -> "str":
