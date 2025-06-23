@@ -70,7 +70,6 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         "type": "GsaAttributeType",
         "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -82,7 +81,6 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         "type": "type",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -103,7 +101,6 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         type: "GsaAttributeType" = GsaAttributeType.RANGE,
         axis_name: "Union[GsaCreateAxisName, Unset_Type]" = Unset,
         default_threshold_type: "Union[GsaAttributeThresholdType, Unset_Type]" = Unset,
-        display_names: "Union[dict[str, str], None, Unset_Type]" = Unset,
         guid: "Union[str, Unset_Type]" = Unset,
         help_path: "Union[str, None, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
@@ -117,7 +114,6 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         type: GsaAttributeType
         axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str], optional
         guid: str, optional
         help_path: str, optional
         is_hidden_from_search_criteria: bool, optional
@@ -127,7 +123,6 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
             name=name,
             type=type,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
