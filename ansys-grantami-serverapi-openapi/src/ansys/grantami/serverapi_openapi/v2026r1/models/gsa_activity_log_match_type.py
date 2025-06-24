@@ -42,5 +42,5 @@ class GsaActivityLogMatchType(Enum):
     """
     Allowed Enum values
     """
-    EXACTMATCH = "exactMatch"
-    CONTAINS = "contains"
+    EXACTMATCHCASEINSENSITIVE = "exactMatchCaseInsensitive"
+    CONTAINSCASEINSENSITIVE = "containsCaseInsensitive"

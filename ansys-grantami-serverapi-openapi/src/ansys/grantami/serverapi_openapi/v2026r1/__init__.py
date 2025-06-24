@@ -103,6 +103,11 @@ from .models.granta_mi_record_property_fake_attribute_identities import (
 from .models.gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
+from .models.gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
+from .models.gsa_activity_log_application_names_collection_filter import (
+    GsaActivityLogApplicationNamesCollectionFilter,
+)
+from .models.gsa_activity_log_collection_match_type import GsaActivityLogCollectionMatchType
 from .models.gsa_activity_log_date_filter import GsaActivityLogDateFilter
 from .models.gsa_activity_log_entries_filter import GsaActivityLogEntriesFilter
 from .models.gsa_activity_log_entries_info import GsaActivityLogEntriesInfo
@@ -1335,6 +1340,9 @@ __all__ = [
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+    "GsaActivityLogApplicationNameFilter",
+    "GsaActivityLogApplicationNamesCollectionFilter",
+    "GsaActivityLogCollectionMatchType",
     "GsaActivityLogDateFilter",
     "GsaActivityLogEntriesFilter",
     "GsaActivityLogEntriesInfo",

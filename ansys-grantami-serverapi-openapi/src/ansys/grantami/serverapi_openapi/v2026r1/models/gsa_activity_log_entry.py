@@ -62,7 +62,7 @@ class GsaActivityLogEntry(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "_date": "datetime",
-        "applications_names": "list[str]",
+        "application_names": "list[str]",
         "mode": "GsaActivityLogUsageMode",
         "username": "str",
         "database_key": "str",
@@ -70,7 +70,7 @@ class GsaActivityLogEntry(ModelBase):
 
     attribute_map: dict[str, str] = {
         "_date": "date",
-        "applications_names": "applicationsNames",
+        "application_names": "applicationNames",
         "mode": "mode",
         "username": "username",
         "database_key": "databaseKey",
@@ -86,7 +86,7 @@ class GsaActivityLogEntry(ModelBase):
         self,
         *,
         _date: "datetime",
-        applications_names: "list[str]",
+        application_names: "list[str]",
         mode: "GsaActivityLogUsageMode",
         username: "str",
         database_key: "Union[str, None, Unset_Type]" = Unset,
@@ -96,20 +96,20 @@ class GsaActivityLogEntry(ModelBase):
         Parameters
         ----------
         _date: datetime
-        applications_names: list[str]
+        application_names: list[str]
         mode: GsaActivityLogUsageMode
         username: str
         database_key: str, optional
         """
         self.__date: datetime
         self._username: str
-        self._applications_names: list[str]
+        self._application_names: list[str]
         self._database_key: Union[str, None, Unset_Type] = Unset
         self._mode: GsaActivityLogUsageMode
 
         self._date = _date
         self.username = username
-        self.applications_names = applications_names
+        self.application_names = application_names
         if database_key is not Unset:
             self.database_key = database_key
         self.mode = mode
@@ -171,32 +171,32 @@ class GsaActivityLogEntry(ModelBase):
         self._username = username
 
     @property
-    def applications_names(self) -> "list[str]":
-        """Gets the applications_names of this GsaActivityLogEntry.
+    def application_names(self) -> "list[str]":
+        """Gets the application_names of this GsaActivityLogEntry.
 
         Returns
         -------
         list[str]
-            The applications_names of this GsaActivityLogEntry.
+            The application_names of this GsaActivityLogEntry.
         """
-        return self._applications_names
+        return self._application_names
 
-    @applications_names.setter
-    def applications_names(self, applications_names: "list[str]") -> None:
-        """Sets the applications_names of this GsaActivityLogEntry.
+    @application_names.setter
+    def application_names(self, application_names: "list[str]") -> None:
+        """Sets the application_names of this GsaActivityLogEntry.
 
         Parameters
         ----------
-        applications_names: list[str]
-            The applications_names of this GsaActivityLogEntry.
+        application_names: list[str]
+            The application_names of this GsaActivityLogEntry.
         """
         # Field is not nullable
-        if applications_names is None:
-            raise ValueError("Invalid value for 'applications_names', must not be 'None'")
+        if application_names is None:
+            raise ValueError("Invalid value for 'application_names', must not be 'None'")
         # Field is required
-        if applications_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'applications_names', must not be 'Unset'")
-        self._applications_names = applications_names
+        if application_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'application_names', must not be 'Unset'")
+        self._application_names = application_names
 
     @property
     def database_key(self) -> "Union[str, None, Unset_Type]":
