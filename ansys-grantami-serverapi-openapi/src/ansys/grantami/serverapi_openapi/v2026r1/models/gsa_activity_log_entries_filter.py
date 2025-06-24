@@ -61,12 +61,16 @@ class GsaActivityLogEntriesFilter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "application_name_filter": "GsaActivityLogApplicationNameFilter",
+        "application_names_collection_filter": "GsaActivityLogApplicationNamesCollectionFilter",
         "date_filter": "GsaActivityLogDateFilter",
         "results_limit": "int",
         "username_filter": "GsaActivityLogUsernameFilter",
     }
 
     attribute_map: dict[str, str] = {
+        "application_name_filter": "applicationNameFilter",
+        "application_names_collection_filter": "applicationNamesCollectionFilter",
         "date_filter": "dateFilter",
         "results_limit": "resultsLimit",
         "username_filter": "usernameFilter",
@@ -75,6 +79,8 @@ class GsaActivityLogEntriesFilter(ModelBase):
     subtype_mapping: dict[str, str] = {
         "dateFilter": "GsaActivityLogDateFilter",
         "usernameFilter": "GsaActivityLogUsernameFilter",
+        "applicationNamesCollectionFilter": "GsaActivityLogApplicationNamesCollectionFilter",
+        "applicationNameFilter": "GsaActivityLogApplicationNameFilter",
     }
 
     discriminator: Optional[str] = None
@@ -82,6 +88,8 @@ class GsaActivityLogEntriesFilter(ModelBase):
     def __init__(
         self,
         *,
+        application_name_filter: "Union[GsaActivityLogApplicationNameFilter, Unset_Type]" = Unset,
+        application_names_collection_filter: "Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]" = Unset,
         date_filter: "Union[GsaActivityLogDateFilter, Unset_Type]" = Unset,
         results_limit: "Union[int, Unset_Type]" = Unset,
         username_filter: "Union[GsaActivityLogUsernameFilter, Unset_Type]" = Unset,
@@ -90,6 +98,8 @@ class GsaActivityLogEntriesFilter(ModelBase):
 
         Parameters
         ----------
+        application_name_filter: GsaActivityLogApplicationNameFilter, optional
+        application_names_collection_filter: GsaActivityLogApplicationNamesCollectionFilter, optional
         date_filter: GsaActivityLogDateFilter, optional
         results_limit: int, optional
         username_filter: GsaActivityLogUsernameFilter, optional
@@ -97,6 +107,12 @@ class GsaActivityLogEntriesFilter(ModelBase):
         self._results_limit: Union[int, Unset_Type] = Unset
         self._date_filter: Union[GsaActivityLogDateFilter, Unset_Type] = Unset
         self._username_filter: Union[GsaActivityLogUsernameFilter, Unset_Type] = Unset
+        self._application_names_collection_filter: Union[
+            GsaActivityLogApplicationNamesCollectionFilter, Unset_Type
+        ] = Unset
+        self._application_name_filter: Union[GsaActivityLogApplicationNameFilter, Unset_Type] = (
+            Unset
+        )
 
         if results_limit is not Unset:
             self.results_limit = results_limit
@@ -104,6 +120,10 @@ class GsaActivityLogEntriesFilter(ModelBase):
             self.date_filter = date_filter
         if username_filter is not Unset:
             self.username_filter = username_filter
+        if application_names_collection_filter is not Unset:
+            self.application_names_collection_filter = application_names_collection_filter
+        if application_name_filter is not Unset:
+            self.application_name_filter = application_name_filter
 
     @property
     def results_limit(self) -> "Union[int, Unset_Type]":
@@ -183,6 +203,65 @@ class GsaActivityLogEntriesFilter(ModelBase):
         if username_filter is None:
             raise ValueError("Invalid value for 'username_filter', must not be 'None'")
         self._username_filter = username_filter
+
+    @property
+    def application_names_collection_filter(
+        self,
+    ) -> "Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]":
+        """Gets the application_names_collection_filter of this GsaActivityLogEntriesFilter.
+
+        Returns
+        -------
+        Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]
+            The application_names_collection_filter of this GsaActivityLogEntriesFilter.
+        """
+        return self._application_names_collection_filter
+
+    @application_names_collection_filter.setter
+    def application_names_collection_filter(
+        self,
+        application_names_collection_filter: "Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]",
+    ) -> None:
+        """Sets the application_names_collection_filter of this GsaActivityLogEntriesFilter.
+
+        Parameters
+        ----------
+        application_names_collection_filter: Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]
+            The application_names_collection_filter of this GsaActivityLogEntriesFilter.
+        """
+        # Field is not nullable
+        if application_names_collection_filter is None:
+            raise ValueError(
+                "Invalid value for 'application_names_collection_filter', must not be 'None'"
+            )
+        self._application_names_collection_filter = application_names_collection_filter
+
+    @property
+    def application_name_filter(self) -> "Union[GsaActivityLogApplicationNameFilter, Unset_Type]":
+        """Gets the application_name_filter of this GsaActivityLogEntriesFilter.
+
+        Returns
+        -------
+        Union[GsaActivityLogApplicationNameFilter, Unset_Type]
+            The application_name_filter of this GsaActivityLogEntriesFilter.
+        """
+        return self._application_name_filter
+
+    @application_name_filter.setter
+    def application_name_filter(
+        self, application_name_filter: "Union[GsaActivityLogApplicationNameFilter, Unset_Type]"
+    ) -> None:
+        """Sets the application_name_filter of this GsaActivityLogEntriesFilter.
+
+        Parameters
+        ----------
+        application_name_filter: Union[GsaActivityLogApplicationNameFilter, Unset_Type]
+            The application_name_filter of this GsaActivityLogEntriesFilter.
+        """
+        # Field is not nullable
+        if application_name_filter is None:
+            raise ValueError("Invalid value for 'application_name_filter', must not be 'None'")
+        self._application_name_filter = application_name_filter
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
