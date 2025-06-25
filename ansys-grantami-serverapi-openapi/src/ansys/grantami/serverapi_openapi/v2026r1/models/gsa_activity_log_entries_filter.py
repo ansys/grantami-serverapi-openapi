@@ -63,16 +63,18 @@ class GsaActivityLogEntriesFilter(ModelBase):
     swagger_types: dict[str, str] = {
         "application_name_filter": "GsaActivityLogApplicationNameFilter",
         "application_names_collection_filter": "GsaActivityLogApplicationNamesCollectionFilter",
+        "database_key_filter": "GsaActivityLogDatabaseKeyFilter",
         "date_filter": "GsaActivityLogDateFilter",
-        "results_limit": "int",
+        "usage_mode_filter": "GsaActivityLogUsageModeFilter",
         "username_filter": "GsaActivityLogUsernameFilter",
     }
 
     attribute_map: dict[str, str] = {
         "application_name_filter": "applicationNameFilter",
         "application_names_collection_filter": "applicationNamesCollectionFilter",
+        "database_key_filter": "databaseKeyFilter",
         "date_filter": "dateFilter",
-        "results_limit": "resultsLimit",
+        "usage_mode_filter": "usageModeFilter",
         "username_filter": "usernameFilter",
     }
 
@@ -81,6 +83,8 @@ class GsaActivityLogEntriesFilter(ModelBase):
         "usernameFilter": "GsaActivityLogUsernameFilter",
         "applicationNamesCollectionFilter": "GsaActivityLogApplicationNamesCollectionFilter",
         "applicationNameFilter": "GsaActivityLogApplicationNameFilter",
+        "databaseKeyFilter": "GsaActivityLogDatabaseKeyFilter",
+        "usageModeFilter": "GsaActivityLogUsageModeFilter",
     }
 
     discriminator: Optional[str] = None
@@ -90,8 +94,9 @@ class GsaActivityLogEntriesFilter(ModelBase):
         *,
         application_name_filter: "Union[GsaActivityLogApplicationNameFilter, Unset_Type]" = Unset,
         application_names_collection_filter: "Union[GsaActivityLogApplicationNamesCollectionFilter, Unset_Type]" = Unset,
+        database_key_filter: "Union[GsaActivityLogDatabaseKeyFilter, Unset_Type]" = Unset,
         date_filter: "Union[GsaActivityLogDateFilter, Unset_Type]" = Unset,
-        results_limit: "Union[int, Unset_Type]" = Unset,
+        usage_mode_filter: "Union[GsaActivityLogUsageModeFilter, Unset_Type]" = Unset,
         username_filter: "Union[GsaActivityLogUsernameFilter, Unset_Type]" = Unset,
     ) -> None:
         """GsaActivityLogEntriesFilter - a model defined in Swagger
@@ -100,11 +105,11 @@ class GsaActivityLogEntriesFilter(ModelBase):
         ----------
         application_name_filter: GsaActivityLogApplicationNameFilter, optional
         application_names_collection_filter: GsaActivityLogApplicationNamesCollectionFilter, optional
+        database_key_filter: GsaActivityLogDatabaseKeyFilter, optional
         date_filter: GsaActivityLogDateFilter, optional
-        results_limit: int, optional
+        usage_mode_filter: GsaActivityLogUsageModeFilter, optional
         username_filter: GsaActivityLogUsernameFilter, optional
         """
-        self._results_limit: Union[int, Unset_Type] = Unset
         self._date_filter: Union[GsaActivityLogDateFilter, Unset_Type] = Unset
         self._username_filter: Union[GsaActivityLogUsernameFilter, Unset_Type] = Unset
         self._application_names_collection_filter: Union[
@@ -113,9 +118,9 @@ class GsaActivityLogEntriesFilter(ModelBase):
         self._application_name_filter: Union[GsaActivityLogApplicationNameFilter, Unset_Type] = (
             Unset
         )
+        self._database_key_filter: Union[GsaActivityLogDatabaseKeyFilter, Unset_Type] = Unset
+        self._usage_mode_filter: Union[GsaActivityLogUsageModeFilter, Unset_Type] = Unset
 
-        if results_limit is not Unset:
-            self.results_limit = results_limit
         if date_filter is not Unset:
             self.date_filter = date_filter
         if username_filter is not Unset:
@@ -124,33 +129,10 @@ class GsaActivityLogEntriesFilter(ModelBase):
             self.application_names_collection_filter = application_names_collection_filter
         if application_name_filter is not Unset:
             self.application_name_filter = application_name_filter
-
-    @property
-    def results_limit(self) -> "Union[int, Unset_Type]":
-        """Gets the results_limit of this GsaActivityLogEntriesFilter.
-        Limit the number of entries returned. Defaults to 1000. If set to 0, no limit is applied.
-
-        Returns
-        -------
-        Union[int, Unset_Type]
-            The results_limit of this GsaActivityLogEntriesFilter.
-        """
-        return self._results_limit
-
-    @results_limit.setter
-    def results_limit(self, results_limit: "Union[int, Unset_Type]") -> None:
-        """Sets the results_limit of this GsaActivityLogEntriesFilter.
-        Limit the number of entries returned. Defaults to 1000. If set to 0, no limit is applied.
-
-        Parameters
-        ----------
-        results_limit: Union[int, Unset_Type]
-            The results_limit of this GsaActivityLogEntriesFilter.
-        """
-        # Field is not nullable
-        if results_limit is None:
-            raise ValueError("Invalid value for 'results_limit', must not be 'None'")
-        self._results_limit = results_limit
+        if database_key_filter is not Unset:
+            self.database_key_filter = database_key_filter
+        if usage_mode_filter is not Unset:
+            self.usage_mode_filter = usage_mode_filter
 
     @property
     def date_filter(self) -> "Union[GsaActivityLogDateFilter, Unset_Type]":
@@ -262,6 +244,60 @@ class GsaActivityLogEntriesFilter(ModelBase):
         if application_name_filter is None:
             raise ValueError("Invalid value for 'application_name_filter', must not be 'None'")
         self._application_name_filter = application_name_filter
+
+    @property
+    def database_key_filter(self) -> "Union[GsaActivityLogDatabaseKeyFilter, Unset_Type]":
+        """Gets the database_key_filter of this GsaActivityLogEntriesFilter.
+
+        Returns
+        -------
+        Union[GsaActivityLogDatabaseKeyFilter, Unset_Type]
+            The database_key_filter of this GsaActivityLogEntriesFilter.
+        """
+        return self._database_key_filter
+
+    @database_key_filter.setter
+    def database_key_filter(
+        self, database_key_filter: "Union[GsaActivityLogDatabaseKeyFilter, Unset_Type]"
+    ) -> None:
+        """Sets the database_key_filter of this GsaActivityLogEntriesFilter.
+
+        Parameters
+        ----------
+        database_key_filter: Union[GsaActivityLogDatabaseKeyFilter, Unset_Type]
+            The database_key_filter of this GsaActivityLogEntriesFilter.
+        """
+        # Field is not nullable
+        if database_key_filter is None:
+            raise ValueError("Invalid value for 'database_key_filter', must not be 'None'")
+        self._database_key_filter = database_key_filter
+
+    @property
+    def usage_mode_filter(self) -> "Union[GsaActivityLogUsageModeFilter, Unset_Type]":
+        """Gets the usage_mode_filter of this GsaActivityLogEntriesFilter.
+
+        Returns
+        -------
+        Union[GsaActivityLogUsageModeFilter, Unset_Type]
+            The usage_mode_filter of this GsaActivityLogEntriesFilter.
+        """
+        return self._usage_mode_filter
+
+    @usage_mode_filter.setter
+    def usage_mode_filter(
+        self, usage_mode_filter: "Union[GsaActivityLogUsageModeFilter, Unset_Type]"
+    ) -> None:
+        """Sets the usage_mode_filter of this GsaActivityLogEntriesFilter.
+
+        Parameters
+        ----------
+        usage_mode_filter: Union[GsaActivityLogUsageModeFilter, Unset_Type]
+            The usage_mode_filter of this GsaActivityLogEntriesFilter.
+        """
+        # Field is not nullable
+        if usage_mode_filter is None:
+            raise ValueError("Invalid value for 'usage_mode_filter', must not be 'None'")
+        self._usage_mode_filter = usage_mode_filter
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

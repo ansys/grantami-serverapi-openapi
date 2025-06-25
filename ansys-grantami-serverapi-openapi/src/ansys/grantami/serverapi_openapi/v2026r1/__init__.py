@@ -108,12 +108,14 @@ from .models.gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
 )
 from .models.gsa_activity_log_collection_match_type import GsaActivityLogCollectionMatchType
+from .models.gsa_activity_log_database_key_filter import GsaActivityLogDatabaseKeyFilter
 from .models.gsa_activity_log_date_filter import GsaActivityLogDateFilter
 from .models.gsa_activity_log_entries_filter import GsaActivityLogEntriesFilter
 from .models.gsa_activity_log_entries_info import GsaActivityLogEntriesInfo
 from .models.gsa_activity_log_entry import GsaActivityLogEntry
 from .models.gsa_activity_log_match_type import GsaActivityLogMatchType
 from .models.gsa_activity_log_usage_mode import GsaActivityLogUsageMode
+from .models.gsa_activity_log_usage_mode_filter import GsaActivityLogUsageModeFilter
 from .models.gsa_activity_log_username_filter import GsaActivityLogUsernameFilter
 from .models.gsa_add_database import GsaAddDatabase
 from .models.gsa_add_database_issue_type import GsaAddDatabaseIssueType
@@ -813,6 +815,7 @@ from .models.gsa_numeric_restricted_interpolation_parameter_error_detail import 
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .models.gsa_object_identifier import GsaObjectIdentifier
+from .models.gsa_pagination_links import GsaPaginationLinks
 from .models.gsa_paging_options import GsaPagingOptions
 from .models.gsa_parameter import GsaParameter
 from .models.gsa_parameter_constraint import GsaParameterConstraint
@@ -1343,12 +1346,14 @@ __all__ = [
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
+    "GsaActivityLogDatabaseKeyFilter",
     "GsaActivityLogDateFilter",
     "GsaActivityLogEntriesFilter",
     "GsaActivityLogEntriesInfo",
     "GsaActivityLogEntry",
     "GsaActivityLogMatchType",
     "GsaActivityLogUsageMode",
+    "GsaActivityLogUsageModeFilter",
     "GsaActivityLogUsernameFilter",
     "GsaAddDatabase",
     "GsaAddDatabaseIssueType",
@@ -1900,6 +1905,7 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
+    "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",
     "GsaParameterConstraint",

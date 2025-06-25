@@ -49,9 +49,13 @@ class ActivityLogApi(ApiBase):
     """
 
     def get_entries(
-        self, *, body: "Optional[GsaActivityLogEntriesFilter]" = None
+        self,
+        *,
+        body: "Optional[GsaActivityLogEntriesFilter]" = None,
+        page_size: "Optional[int]" = 1000,
+        page: "Optional[int]" = 1,
     ) -> "Union[GsaActivityLogEntriesInfo, None]":
-        """Get filtered activity log entries.
+        """Get filtered activity log entries, ordered from newest to oldest.
 
         This method makes a synchronous HTTP request.
 
@@ -59,18 +63,33 @@ class ActivityLogApi(ApiBase):
         ----------
         body: GsaActivityLogEntriesFilter
             Filter object used to narrow down the entries to return.
+        page_size: int
+            Page size. Defaults to 1 000. The limit is 10 000.
+        page: int
+            Page number. Defaults to 1.
 
         Returns
         -------
         Union[GsaActivityLogEntriesInfo, None]
         """
-        data = self._get_entries_with_http_info(body, _return_http_data_only=True)
+        data = self._get_entries_with_http_info(body, page_size, page, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_entries_with_http_info(
-        self, body: "Optional[GsaActivityLogEntriesFilter]" = None, **kwargs: Any
+        self,
+        body: "Optional[GsaActivityLogEntriesFilter]" = None,
+        page_size: "Optional[int]" = 1000,
+        page: "Optional[int]" = 1,
+        **kwargs: Any,
     ) -> Any:
-        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+        all_params = [
+            "body",
+            "page_size",
+            "page",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -84,6 +103,10 @@ class ActivityLogApi(ApiBase):
         path_params: dict[str, Any] = {}
 
         query_params: list[Any] = []
+        if "page_size" in params and page_size is not None:
+            query_params.append(("pageSize", params["page_size"]))
+        if "page" in params and page is not None:
+            query_params.append(("page", params["page"]))
 
         header_params: dict[str, Any] = {}
 
@@ -110,7 +133,7 @@ class ActivityLogApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/activity-log",
+            "/v1alpha/activity-log/entries",
             "POST",
             path_params,
             query_params,
