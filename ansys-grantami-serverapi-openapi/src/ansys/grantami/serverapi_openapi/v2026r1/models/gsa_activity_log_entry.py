@@ -63,7 +63,7 @@ class GsaActivityLogEntry(ModelBase):
     swagger_types: dict[str, str] = {
         "_date": "datetime",
         "application_names": "list[str]",
-        "mode": "GsaActivityLogUsageMode",
+        "usage_mode": "GsaActivityLogUsageMode",
         "username": "str",
         "database_key": "str",
     }
@@ -71,13 +71,13 @@ class GsaActivityLogEntry(ModelBase):
     attribute_map: dict[str, str] = {
         "_date": "date",
         "application_names": "applicationNames",
-        "mode": "mode",
+        "usage_mode": "usageMode",
         "username": "username",
         "database_key": "databaseKey",
     }
 
     subtype_mapping: dict[str, str] = {
-        "mode": "GsaActivityLogUsageMode",
+        "usageMode": "GsaActivityLogUsageMode",
     }
 
     discriminator: Optional[str] = None
@@ -87,7 +87,7 @@ class GsaActivityLogEntry(ModelBase):
         *,
         _date: "datetime",
         application_names: "list[str]",
-        mode: "GsaActivityLogUsageMode",
+        usage_mode: "GsaActivityLogUsageMode",
         username: "str",
         database_key: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
@@ -97,7 +97,7 @@ class GsaActivityLogEntry(ModelBase):
         ----------
         _date: datetime
         application_names: list[str]
-        mode: GsaActivityLogUsageMode
+        usage_mode: GsaActivityLogUsageMode
         username: str
         database_key: str, optional
         """
@@ -105,14 +105,14 @@ class GsaActivityLogEntry(ModelBase):
         self._username: str
         self._application_names: list[str]
         self._database_key: Union[str, None, Unset_Type] = Unset
-        self._mode: GsaActivityLogUsageMode
+        self._usage_mode: GsaActivityLogUsageMode
 
         self._date = _date
         self.username = username
         self.application_names = application_names
         if database_key is not Unset:
             self.database_key = database_key
-        self.mode = mode
+        self.usage_mode = usage_mode
 
     @property
     def _date(self) -> "datetime":
@@ -221,32 +221,32 @@ class GsaActivityLogEntry(ModelBase):
         self._database_key = database_key
 
     @property
-    def mode(self) -> "GsaActivityLogUsageMode":
-        """Gets the mode of this GsaActivityLogEntry.
+    def usage_mode(self) -> "GsaActivityLogUsageMode":
+        """Gets the usage_mode of this GsaActivityLogEntry.
 
         Returns
         -------
         GsaActivityLogUsageMode
-            The mode of this GsaActivityLogEntry.
+            The usage_mode of this GsaActivityLogEntry.
         """
-        return self._mode
+        return self._usage_mode
 
-    @mode.setter
-    def mode(self, mode: "GsaActivityLogUsageMode") -> None:
-        """Sets the mode of this GsaActivityLogEntry.
+    @usage_mode.setter
+    def usage_mode(self, usage_mode: "GsaActivityLogUsageMode") -> None:
+        """Sets the usage_mode of this GsaActivityLogEntry.
 
         Parameters
         ----------
-        mode: GsaActivityLogUsageMode
-            The mode of this GsaActivityLogEntry.
+        usage_mode: GsaActivityLogUsageMode
+            The usage_mode of this GsaActivityLogEntry.
         """
         # Field is not nullable
-        if mode is None:
-            raise ValueError("Invalid value for 'mode', must not be 'None'")
+        if usage_mode is None:
+            raise ValueError("Invalid value for 'usage_mode', must not be 'None'")
         # Field is required
-        if mode is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'mode', must not be 'Unset'")
-        self._mode = mode
+        if usage_mode is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'usage_mode', must not be 'Unset'")
+        self._usage_mode = usage_mode
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

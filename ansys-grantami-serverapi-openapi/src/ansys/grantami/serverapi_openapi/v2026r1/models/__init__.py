@@ -59,12 +59,14 @@ from .gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
 )
 from .gsa_activity_log_collection_match_type import GsaActivityLogCollectionMatchType
+from .gsa_activity_log_database_key_filter import GsaActivityLogDatabaseKeyFilter
 from .gsa_activity_log_date_filter import GsaActivityLogDateFilter
 from .gsa_activity_log_entries_filter import GsaActivityLogEntriesFilter
 from .gsa_activity_log_entries_info import GsaActivityLogEntriesInfo
 from .gsa_activity_log_entry import GsaActivityLogEntry
 from .gsa_activity_log_match_type import GsaActivityLogMatchType
 from .gsa_activity_log_usage_mode import GsaActivityLogUsageMode
+from .gsa_activity_log_usage_mode_filter import GsaActivityLogUsageModeFilter
 from .gsa_activity_log_username_filter import GsaActivityLogUsernameFilter
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_database_issue_type import GsaAddDatabaseIssueType
@@ -720,6 +722,7 @@ from .gsa_numeric_restricted_interpolation_parameter_error_detail import (
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .gsa_object_identifier import GsaObjectIdentifier
+from .gsa_pagination_links import GsaPaginationLinks
 from .gsa_paging_options import GsaPagingOptions
 from .gsa_parameter import GsaParameter
 from .gsa_parameter_constraint import GsaParameterConstraint
@@ -1196,12 +1199,14 @@ __all__ = [
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
+    "GsaActivityLogDatabaseKeyFilter",
     "GsaActivityLogDateFilter",
     "GsaActivityLogEntriesFilter",
     "GsaActivityLogEntriesInfo",
     "GsaActivityLogEntry",
     "GsaActivityLogMatchType",
     "GsaActivityLogUsageMode",
+    "GsaActivityLogUsageModeFilter",
     "GsaActivityLogUsernameFilter",
     "GsaAddDatabase",
     "GsaAddDatabaseIssueType",
@@ -1753,6 +1758,7 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
+    "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",
     "GsaParameterConstraint",
