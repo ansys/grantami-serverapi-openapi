@@ -53,6 +53,7 @@ from .schema___data_rules_api import SchemaDataRulesApi
 from .schema___databases_api import SchemaDatabasesApi
 from .schema___discrete_types___discrete_values_api import SchemaDiscreteTypesDiscreteValuesApi
 from .schema___discrete_types_api import SchemaDiscreteTypesApi
+from .schema___display_names_api import SchemaDisplayNamesApi
 from .schema___exporters_api import SchemaExportersApi
 from .schema___expressions_api import SchemaExpressionsApi
 from .schema___global_standard_names_api import SchemaGlobalStandardNamesApi
@@ -104,6 +105,7 @@ __all__ = [
     "SchemaDatabasesApi",
     "SchemaDiscreteTypesDiscreteValuesApi",
     "SchemaDiscreteTypesApi",
+    "SchemaDisplayNamesApi",
     "SchemaExportersApi",
     "SchemaExpressionsApi",
     "SchemaGlobalStandardNamesApi",
