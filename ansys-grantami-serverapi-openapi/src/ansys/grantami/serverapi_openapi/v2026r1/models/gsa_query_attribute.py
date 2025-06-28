@@ -74,6 +74,7 @@ class GsaQueryAttribute(ModelBase):
         "is_functional_range": "bool",
         "is_hidden_from_search_criteria": "bool",
         "is_multi_valued": "bool",
+        "is_protected": "bool",
         "name": "str",
         "tabular_columns": "list[GsaQuerySlimNamedEntity]",
         "target": "GsaQueryTabularAttributeTarget",
@@ -95,6 +96,7 @@ class GsaQueryAttribute(ModelBase):
         "is_functional_range": "isFunctionalRange",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_multi_valued": "isMultiValued",
+        "is_protected": "isProtected",
         "name": "name",
         "tabular_columns": "tabularColumns",
         "target": "target",
@@ -135,6 +137,7 @@ class GsaQueryAttribute(ModelBase):
         is_functional_range: "Union[bool, None, Unset_Type]" = Unset,
         is_hidden_from_search_criteria: "Union[bool, None, Unset_Type]" = Unset,
         is_multi_valued: "Union[bool, None, Unset_Type]" = Unset,
+        is_protected: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
         tabular_columns: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         target: "Union[GsaQueryTabularAttributeTarget, Unset_Type]" = Unset,
@@ -158,12 +161,14 @@ class GsaQueryAttribute(ModelBase):
         is_functional_range: bool, optional
         is_hidden_from_search_criteria: bool, optional
         is_multi_valued: bool, optional
+        is_protected: bool, optional
         name: str, optional
         tabular_columns: list[GsaQuerySlimNamedEntity], optional
         target: GsaQueryTabularAttributeTarget, optional
         type: GsaAttributeType, optional
         unit: GsaQueryUnit, optional
         """
+        self._is_protected: Union[bool, None, Unset_Type] = Unset
         self._type: Union[GsaAttributeType, Unset_Type] = Unset
         self._default_threshold_type: Union[GsaAttributeThresholdType, Unset_Type] = Unset
         self._is_hidden_from_search_criteria: Union[bool, None, Unset_Type] = Unset
@@ -183,6 +188,8 @@ class GsaQueryAttribute(ModelBase):
         self._name: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
+        if is_protected is not Unset:
+            self.is_protected = is_protected
         if type is not Unset:
             self.type = type
         if default_threshold_type is not Unset:
@@ -219,6 +226,28 @@ class GsaQueryAttribute(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def is_protected(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the is_protected of this GsaQueryAttribute.
+
+        Returns
+        -------
+        Union[bool, None, Unset_Type]
+            The is_protected of this GsaQueryAttribute.
+        """
+        return self._is_protected
+
+    @is_protected.setter
+    def is_protected(self, is_protected: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the is_protected of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        is_protected: Union[bool, None, Unset_Type]
+            The is_protected of this GsaQueryAttribute.
+        """
+        self._is_protected = is_protected
 
     @property
     def type(self) -> "Union[GsaAttributeType, Unset_Type]":

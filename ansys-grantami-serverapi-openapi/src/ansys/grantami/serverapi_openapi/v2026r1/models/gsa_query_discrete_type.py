@@ -64,6 +64,7 @@ class GsaQueryDiscreteType(ModelBase):
         "discrete_values": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
         "is_ordered": "bool",
+        "is_protected": "bool",
         "name": "str",
     }
 
@@ -71,6 +72,7 @@ class GsaQueryDiscreteType(ModelBase):
         "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
+        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -86,6 +88,7 @@ class GsaQueryDiscreteType(ModelBase):
         discrete_values: "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]" = Unset,
         guid: "Union[str, None, Unset_Type]" = Unset,
         is_ordered: "Union[bool, None, Unset_Type]" = Unset,
+        is_protected: "Union[bool, None, Unset_Type]" = Unset,
         name: "Union[str, None, Unset_Type]" = Unset,
     ) -> None:
         """GsaQueryDiscreteType - a model defined in Swagger
@@ -95,13 +98,17 @@ class GsaQueryDiscreteType(ModelBase):
         discrete_values: list[GsaQuerySlimNamedEntity], optional
         guid: str, optional
         is_ordered: bool, optional
+        is_protected: bool, optional
         name: str, optional
         """
+        self._is_protected: Union[bool, None, Unset_Type] = Unset
         self._discrete_values: Union[list[GsaQuerySlimNamedEntity], None, Unset_Type] = Unset
         self._is_ordered: Union[bool, None, Unset_Type] = Unset
         self._name: Union[str, None, Unset_Type] = Unset
         self._guid: Union[str, None, Unset_Type] = Unset
 
+        if is_protected is not Unset:
+            self.is_protected = is_protected
         if discrete_values is not Unset:
             self.discrete_values = discrete_values
         if is_ordered is not Unset:
@@ -110,6 +117,28 @@ class GsaQueryDiscreteType(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def is_protected(self) -> "Union[bool, None, Unset_Type]":
+        """Gets the is_protected of this GsaQueryDiscreteType.
+
+        Returns
+        -------
+        Union[bool, None, Unset_Type]
+            The is_protected of this GsaQueryDiscreteType.
+        """
+        return self._is_protected
+
+    @is_protected.setter
+    def is_protected(self, is_protected: "Union[bool, None, Unset_Type]") -> None:
+        """Sets the is_protected of this GsaQueryDiscreteType.
+
+        Parameters
+        ----------
+        is_protected: Union[bool, None, Unset_Type]
+            The is_protected of this GsaQueryDiscreteType.
+        """
+        self._is_protected = is_protected
 
     @property
     def discrete_values(self) -> "Union[list[GsaQuerySlimNamedEntity], None, Unset_Type]":
