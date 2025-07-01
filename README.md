@@ -102,7 +102,7 @@ from ansys.openapi.common import (
     generate_user_agent,
     SessionConfiguration,
 )
-from ansys.grantami.serverapi_openapi.2025r2 import models  # Use different bindings with a different submodule, e.g. 2024r2
+from ansys.grantami.serverapi_openapi.v2025r2 import models  # Use different bindings with a different submodule, e.g. 2024r2
 
 SERVICE_PATH = "/proxy/v1.svc/mi"  # "/proxy/v1.svc" for Granta MI 2024 R1 and older
 MI_AUTH_PATH = "/v1alpha/schema/mi-version"
@@ -134,7 +134,7 @@ class Connection(ApiClientFactory):
 
 
 if __name__ == '__main__':
-    from ansys.grantami.serverapi_openapi.2025r2 import api  # Use different bindings with a different submodule, e.g. 2024r2
+    from ansys.grantami.serverapi_openapi.v2025r2 import api  # Use different bindings with a different submodule, e.g. 2024r2
 
     # Update URL and connection method for your system
     URL = "http://my_server_name/mi_servicelayer"
