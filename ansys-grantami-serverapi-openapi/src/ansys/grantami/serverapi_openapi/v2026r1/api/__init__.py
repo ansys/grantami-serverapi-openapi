@@ -26,7 +26,6 @@
 from ansys.openapi.common import ApiBase
 
 # import apis into api package
-from .activity_log_api import ActivityLogApi
 from .aggregation_api import AggregationApi
 from .bulk_api import BulkApi
 from .data_api import DataApi
@@ -53,7 +52,6 @@ from .schema___data_rules_api import SchemaDataRulesApi
 from .schema___databases_api import SchemaDatabasesApi
 from .schema___discrete_types___discrete_values_api import SchemaDiscreteTypesDiscreteValuesApi
 from .schema___discrete_types_api import SchemaDiscreteTypesApi
-from .schema___display_names_api import SchemaDisplayNamesApi
 from .schema___exporters_api import SchemaExportersApi
 from .schema___expressions_api import SchemaExpressionsApi
 from .schema___global_standard_names_api import SchemaGlobalStandardNamesApi
@@ -72,12 +70,12 @@ from .schema___tables_api import SchemaTablesApi
 from .schema___units_api import SchemaUnitsApi
 from .schema_api import SchemaApi
 from .search_api import SearchApi
+from .selection_searches_api import SelectionSearchesApi
 from .server_manager_api import ServerManagerApi
 from .status_api import StatusApi
 
 __all__ = [
     "ApiBase",
-    "ActivityLogApi",
     "AggregationApi",
     "BulkApi",
     "DataApi",
@@ -105,7 +103,6 @@ __all__ = [
     "SchemaDatabasesApi",
     "SchemaDiscreteTypesDiscreteValuesApi",
     "SchemaDiscreteTypesApi",
-    "SchemaDisplayNamesApi",
     "SchemaExportersApi",
     "SchemaExpressionsApi",
     "SchemaGlobalStandardNamesApi",
@@ -123,6 +120,7 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitsApi",
     "SearchApi",
+    "SelectionSearchesApi",
     "ServerManagerApi",
     "StatusApi",
 ]
