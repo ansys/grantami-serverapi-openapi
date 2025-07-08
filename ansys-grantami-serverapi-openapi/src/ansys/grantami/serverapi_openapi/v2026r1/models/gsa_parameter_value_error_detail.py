@@ -81,6 +81,7 @@ class GsaParameterValueErrorDetail(ModelBase):
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityParameterValueErrorDetail",
         "nameWhitespace".lower(): "#/components/schemas/GsaNameWhitespaceParameterValueErrorDetail",
         "parameterValueType".lower(): "#/components/schemas/GsaParameterValueTypeParameterValueErrorDetail",
+        "valueNotProvided".lower(): "#/components/schemas/GsaValueNotProvidedParameterValueErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

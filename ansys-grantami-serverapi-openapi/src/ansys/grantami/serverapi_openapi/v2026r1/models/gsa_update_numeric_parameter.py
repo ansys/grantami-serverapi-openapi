@@ -74,6 +74,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "name": "str",
         "scale_type": "GsaParameterScaleType",
         "unit": "GsaSlimEntity",
+        "values": "list[GsaUpdateNumericParameterValue]",
     }
 
     attribute_map: dict[str, str] = {
@@ -85,10 +86,12 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "name": "name",
         "scale_type": "scaleType",
         "unit": "unit",
+        "values": "values",
     }
 
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
+        "values": "GsaUpdateNumericParameterValue",
         "interpolationType": "GsaParameterInterpolationType",
         "scaleType": "GsaParameterScaleType",
     }
@@ -106,6 +109,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         name: "str | Unset_Type" = Unset,
         scale_type: "GsaParameterScaleType | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
+        values: "list[GsaUpdateNumericParameterValue] | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateNumericParameter - a model defined in Swagger
 
@@ -119,6 +123,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         name: str, optional
         scale_type: GsaParameterScaleType, optional
         unit: GsaSlimEntity, optional
+        values: list[GsaUpdateNumericParameterValue], optional
         """
         super().__init__(
             type=type,
@@ -128,11 +133,14 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
             name=name,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
+        self._values: list[GsaUpdateNumericParameterValue] | Unset_Type = Unset
         self._interpolation_type: GsaParameterInterpolationType | Unset_Type = Unset
         self._scale_type: GsaParameterScaleType | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
+        if values is not Unset:
+            self.values = values
         if interpolation_type is not Unset:
             self.interpolation_type = interpolation_type
         if scale_type is not Unset:
@@ -162,6 +170,33 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         if unit is None:
             raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
+
+    @property
+    def values(self) -> "list[GsaUpdateNumericParameterValue] | Unset_Type":
+        """Gets the values of this GsaUpdateNumericParameter.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
+
+        Returns
+        -------
+        list[GsaUpdateNumericParameterValue] | Unset_Type
+            The values of this GsaUpdateNumericParameter.
+        """
+        return self._values
+
+    @values.setter
+    def values(self, values: "list[GsaUpdateNumericParameterValue] | Unset_Type") -> None:
+        """Sets the values of this GsaUpdateNumericParameter.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
+
+        Parameters
+        ----------
+        values: list[GsaUpdateNumericParameterValue] | Unset_Type
+            The values of this GsaUpdateNumericParameter.
+        """
+        # Field is not nullable
+        if values is None:
+            raise ValueError("Invalid value for 'values', must not be 'None'")
+        self._values = values
 
     @property
     def interpolation_type(self) -> "GsaParameterInterpolationType | Unset_Type":

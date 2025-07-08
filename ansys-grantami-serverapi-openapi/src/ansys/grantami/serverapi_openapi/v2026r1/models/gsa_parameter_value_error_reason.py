@@ -46,3 +46,4 @@ class GsaParameterValueErrorReason(Enum):
     NAMEDENTITY = "namedEntity"
     NAMEWHITESPACE = "nameWhitespace"
     PARAMETERVALUETYPE = "parameterValueType"
+    VALUENOTPROVIDED = "valueNotProvided"
