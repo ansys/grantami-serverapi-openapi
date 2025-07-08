@@ -1264,6 +1264,9 @@ from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
 from .models.gsa_user_role import GsaUserRole
 from .models.gsa_validate_attribute_request import GsaValidateAttributeRequest
+from .models.gsa_value_not_provided_parameter_value_error_detail import (
+    GsaValueNotProvidedParameterValueErrorDetail,
+)
 from .models.gsa_value_specifier import GsaValueSpecifier
 from .models.gsa_value_specifier_type import GsaValueSpecifierType
 from .models.gsa_value_with_count_of_boolean import GsaValueWithCountOfBoolean
@@ -2302,6 +2305,7 @@ __all__ = [
     "GsaUserPermissionsInfo",
     "GsaUserRole",
     "GsaValidateAttributeRequest",
+    "GsaValueNotProvidedParameterValueErrorDetail",
     "GsaValueSpecifier",
     "GsaValueSpecifierType",
     "GsaValueWithCountOfBoolean",
