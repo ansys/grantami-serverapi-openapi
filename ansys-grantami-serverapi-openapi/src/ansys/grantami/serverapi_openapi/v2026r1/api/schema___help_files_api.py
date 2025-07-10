@@ -55,7 +55,7 @@ class SchemaHelpFilesApi(ApiBase):
         folder_guid: "str",
         file: "Optional[BinaryIO | pathlib.Path]" = None,
         description: "Optional[str]" = None,
-    ) -> "GsaFileHeader | None":
+    ) -> "GsaFileCreationException | GsaFileHeader | None":
         """Create a new Help File.
 
         This method makes a synchronous HTTP request.
@@ -69,7 +69,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFileHeader | None
+        GsaFileCreationException | GsaFileHeader | None
         """
         data = self._create_help_file_with_http_info(
             database_key, folder_guid, file, description, _return_http_data_only=True
@@ -143,7 +143,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaFileHeader",
-            400: None,
+            400: "GsaFileCreationException",
             403: None,
             404: None,
         }
@@ -166,7 +166,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def create_help_folder(
         self, *, database_key: "str", body: "Optional[GsaCreateFolder]" = None
-    ) -> "GsaFolder | None":
+    ) -> "GsaFolder | GsaFolderCreationException | None":
         """Create a new Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -178,7 +178,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFolder | None
+        GsaFolder | GsaFolderCreationException | None
         """
         data = self._create_help_folder_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -238,7 +238,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaFolder",
-            400: None,
+            400: "GsaFolderCreationException",
             403: None,
             404: None,
         }
@@ -358,7 +358,9 @@ class SchemaHelpFilesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_help_folder(self, *, database_key: "str", folder_guid: "str") -> "None":
+    def delete_help_folder(
+        self, *, database_key: "str", folder_guid: "str"
+    ) -> "GsaFolderDeletionException | None":
         """Delete a Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -370,7 +372,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        None
+        GsaFolderDeletionException | None
         """
         data = self._delete_help_folder_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -423,8 +425,13 @@ class SchemaHelpFilesApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
 
         response_type_map: dict[int, Optional[str]] = {
+            400: "GsaFolderDeletionException",
             200: None,
             403: None,
             404: None,
@@ -1173,7 +1180,7 @@ class SchemaHelpFilesApi(ApiBase):
         folder_guid: "str",
         file_guid: "str",
         body: "Optional[GsaMoveFile]" = None,
-    ) -> "GsaFileHeader | None":
+    ) -> "GsaFileHeader | GsaFileMoveException | None":
         """Move an existing Help File.
 
         This method makes a synchronous HTTP request.
@@ -1187,7 +1194,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFileHeader | None
+        GsaFileHeader | GsaFileMoveException | None
         """
         data = self._move_help_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1268,7 +1275,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileHeader",
-            400: None,
+            400: "GsaFileMoveException",
             403: None,
             404: None,
         }
@@ -1291,7 +1298,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def move_help_folder(
         self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaMoveFolder]" = None
-    ) -> "GsaFolder | None":
+    ) -> "GsaFolder | GsaFolderMoveException | None":
         """Move an existing Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -1304,7 +1311,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFolder | None
+        GsaFolder | GsaFolderMoveException | None
         """
         data = self._move_help_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1376,7 +1383,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFolder",
-            400: None,
+            400: "GsaFolderMoveException",
             403: None,
             404: None,
         }
@@ -1404,7 +1411,7 @@ class SchemaHelpFilesApi(ApiBase):
         folder_guid: "str",
         file_guid: "str",
         body: "Optional[GsaUpdateFile]" = None,
-    ) -> "GsaFileHeader | None":
+    ) -> "GsaFileHeader | GsaFileUpdateException | None":
         """Update an existing Help File.
 
         This method makes a synchronous HTTP request.
@@ -1418,7 +1425,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFileHeader | None
+        GsaFileHeader | GsaFileUpdateException | None
         """
         data = self._update_help_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1499,7 +1506,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileHeader",
-            400: None,
+            400: "GsaFileUpdateException",
             403: None,
             404: None,
         }
@@ -1522,7 +1529,7 @@ class SchemaHelpFilesApi(ApiBase):
 
     def update_help_folder(
         self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaUpdateFolder]" = None
-    ) -> "GsaFolder | None":
+    ) -> "GsaFolder | GsaFolderUpdateException | None":
         """Update an existing Help File Folder.
 
         This method makes a synchronous HTTP request.
@@ -1535,7 +1542,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         Returns
         -------
-        GsaFolder | None
+        GsaFolder | GsaFolderUpdateException | None
         """
         data = self._update_help_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1607,7 +1614,7 @@ class SchemaHelpFilesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFolder",
-            400: None,
+            400: "GsaFolderUpdateException",
             403: None,
             404: None,
         }

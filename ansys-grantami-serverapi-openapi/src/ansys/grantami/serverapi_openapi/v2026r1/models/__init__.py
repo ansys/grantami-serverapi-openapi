@@ -138,6 +138,9 @@ from .gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
 from .gsa_bulk_request_item import GsaBulkRequestItem
 from .gsa_bulk_response_item import GsaBulkResponseItem
 from .gsa_calendar_interval import GsaCalendarInterval
+from .gsa_circular_reference_folder_move_error_detail import (
+    GsaCircularReferenceFolderMoveErrorDetail,
+)
 from .gsa_configuration import GsaConfiguration
 from .gsa_configurations_info import GsaConfigurationsInfo
 from .gsa_connection_details import GsaConnectionDetails
@@ -347,6 +350,7 @@ from .gsa_default_parameter_value_usage_data_modification_error_detail import (
 )
 from .gsa_delete_record_list_item import GsaDeleteRecordListItem
 from .gsa_delete_record_list_items import GsaDeleteRecordListItems
+from .gsa_description_length_file_error_detail import GsaDescriptionLengthFileErrorDetail
 from .gsa_discrete_attribute import GsaDiscreteAttribute
 from .gsa_discrete_datum import GsaDiscreteDatum
 from .gsa_discrete_datum_exists_criterion import GsaDiscreteDatumExistsCriterion
@@ -465,12 +469,22 @@ from .gsa_expressions_have_unknown_parameters_maths_functional_error_detail impo
     GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail,
 )
 from .gsa_expressions_info import GsaExpressionsInfo
+from .gsa_file_already_exists_file_move_error_detail import GsaFileAlreadyExistsFileMoveErrorDetail
 from .gsa_file_attribute import GsaFileAttribute
+from .gsa_file_creation_exception import GsaFileCreationException
 from .gsa_file_datum import GsaFileDatum
 from .gsa_file_datum_criterion import GsaFileDatumCriterion
 from .gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
+from .gsa_file_error_detail import GsaFileErrorDetail
+from .gsa_file_error_reason import GsaFileErrorReason
 from .gsa_file_header import GsaFileHeader
+from .gsa_file_move_error_detail import GsaFileMoveErrorDetail
+from .gsa_file_move_error_reason import GsaFileMoveErrorReason
+from .gsa_file_move_exception import GsaFileMoveException
+from .gsa_file_name_file_error_detail import GsaFileNameFileErrorDetail
+from .gsa_file_name_folder_error_detail import GsaFileNameFolderErrorDetail
 from .gsa_file_prefix_datum_criterion import GsaFilePrefixDatumCriterion
+from .gsa_file_update_exception import GsaFileUpdateException
 from .gsa_files_info import GsaFilesInfo
 from .gsa_find_standard_names import GsaFindStandardNames
 from .gsa_float_functional_aggregation import GsaFloatFunctionalAggregation
@@ -499,6 +513,20 @@ from .gsa_float_series import GsaFloatSeries
 from .gsa_float_series_graph import GsaFloatSeriesGraph
 from .gsa_float_series_point import GsaFloatSeriesPoint
 from .gsa_folder import GsaFolder
+from .gsa_folder_already_exists_folder_move_error_detail import (
+    GsaFolderAlreadyExistsFolderMoveErrorDetail,
+)
+from .gsa_folder_creation_exception import GsaFolderCreationException
+from .gsa_folder_deletion_error_detail import GsaFolderDeletionErrorDetail
+from .gsa_folder_deletion_error_reason import GsaFolderDeletionErrorReason
+from .gsa_folder_deletion_exception import GsaFolderDeletionException
+from .gsa_folder_error_detail import GsaFolderErrorDetail
+from .gsa_folder_error_reason import GsaFolderErrorReason
+from .gsa_folder_move_error_detail import GsaFolderMoveErrorDetail
+from .gsa_folder_move_error_reason import GsaFolderMoveErrorReason
+from .gsa_folder_move_exception import GsaFolderMoveException
+from .gsa_folder_type import GsaFolderType
+from .gsa_folder_update_exception import GsaFolderUpdateException
 from .gsa_folders_info import GsaFoldersInfo
 from .gsa_free_text_aggregation import GsaFreeTextAggregation
 from .gsa_free_text_aggregation_criterion import GsaFreeTextAggregationCriterion
@@ -689,6 +717,8 @@ from .gsa_named_criterion import GsaNamedCriterion
 from .gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
 from .gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
 from .gsa_named_entity_error_reason import GsaNamedEntityErrorReason
+from .gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
+from .gsa_named_entity_folder_error_detail import GsaNamedEntityFolderErrorDetail
 from .gsa_named_entity_parameter_error_detail import GsaNamedEntityParameterErrorDetail
 from .gsa_named_entity_parameter_value_error_detail import GsaNamedEntityParameterValueErrorDetail
 from .gsa_new_layout_association_chain_item import GsaNewLayoutAssociationChainItem
@@ -699,15 +729,19 @@ from .gsa_new_layout_item import GsaNewLayoutItem
 from .gsa_new_layout_item_type import GsaNewLayoutItemType
 from .gsa_new_layout_record_link_item import GsaNewLayoutRecordLinkItem
 from .gsa_new_layout_smart_link_item import GsaNewLayoutSmartLinkItem
+from .gsa_no_data_file_error_detail import GsaNoDataFileErrorDetail
 from .gsa_no_expressions_maths_functional_error_detail import (
     GsaNoExpressionsMathsFunctionalErrorDetail,
 )
+from .gsa_no_file_file_error_detail import GsaNoFileFileErrorDetail
 from .gsa_no_parameter_values_parameter_error_detail import GsaNoParameterValuesParameterErrorDetail
 from .gsa_no_such_entity_attribute_error_detail import GsaNoSuchEntityAttributeErrorDetail
 from .gsa_no_such_entity_tabular_column_error_detail import GsaNoSuchEntityTabularColumnErrorDetail
 from .gsa_no_such_expressions_maths_functional_error_detail import (
     GsaNoSuchExpressionsMathsFunctionalErrorDetail,
 )
+from .gsa_no_such_new_parent_file_move_error_detail import GsaNoSuchNewParentFileMoveErrorDetail
+from .gsa_no_such_new_parent_folder_move_error_detail import GsaNoSuchNewParentFolderMoveErrorDetail
 from .gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
 )
@@ -913,6 +947,9 @@ from .gsa_rich_text_type import GsaRichTextType
 from .gsa_rich_text_value import GsaRichTextValue
 from .gsa_rollup_export_failure import GsaRollupExportFailure
 from .gsa_rollup_reference import GsaRollupReference
+from .gsa_root_folder_move_error_detail import GsaRootFolderMoveErrorDetail
+from .gsa_same_parent_file_move_error_detail import GsaSameParentFileMoveErrorDetail
+from .gsa_same_parent_folder_move_error_detail import GsaSameParentFolderMoveErrorDetail
 from .gsa_schema_too_new_add_database_validation_issue import (
     GsaSchemaTooNewAddDatabaseValidationIssue,
 )
@@ -1143,6 +1180,7 @@ from .gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
 from .gsa_update_record_list_properties import GsaUpdateRecordListProperties
 from .gsa_update_replacement_string import GsaUpdateReplacementString
+from .gsa_update_root_folder_error_detail import GsaUpdateRootFolderErrorDetail
 from .gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
 from .gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .gsa_update_standard_name import GsaUpdateStandardName
@@ -1284,6 +1322,7 @@ __all__ = [
     "GsaBulkRequestItem",
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
+    "GsaCircularReferenceFolderMoveErrorDetail",
     "GsaConfiguration",
     "GsaConfigurationsInfo",
     "GsaConnectionDetails",
@@ -1463,6 +1502,7 @@ __all__ = [
     "GsaDefaultParameterValueUsageDataModificationErrorDetail",
     "GsaDeleteRecordListItem",
     "GsaDeleteRecordListItems",
+    "GsaDescriptionLengthFileErrorDetail",
     "GsaDiscreteAttribute",
     "GsaDiscreteDatum",
     "GsaDiscreteDatumExistsCriterion",
@@ -1545,12 +1585,22 @@ __all__ = [
     "GsaExpressionUsageDataModificationErrorDetail",
     "GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail",
     "GsaExpressionsInfo",
+    "GsaFileAlreadyExistsFileMoveErrorDetail",
     "GsaFileAttribute",
+    "GsaFileCreationException",
     "GsaFileDatum",
     "GsaFileDatumCriterion",
     "GsaFileDatumExistsCriterion",
+    "GsaFileErrorDetail",
+    "GsaFileErrorReason",
     "GsaFileHeader",
+    "GsaFileMoveErrorDetail",
+    "GsaFileMoveErrorReason",
+    "GsaFileMoveException",
+    "GsaFileNameFileErrorDetail",
+    "GsaFileNameFolderErrorDetail",
     "GsaFilePrefixDatumCriterion",
+    "GsaFileUpdateException",
     "GsaFilesInfo",
     "GsaFindStandardNames",
     "GsaFloatFunctionalAggregation",
@@ -1573,6 +1623,18 @@ __all__ = [
     "GsaFloatSeriesGraph",
     "GsaFloatSeriesPoint",
     "GsaFolder",
+    "GsaFolderAlreadyExistsFolderMoveErrorDetail",
+    "GsaFolderCreationException",
+    "GsaFolderDeletionErrorDetail",
+    "GsaFolderDeletionErrorReason",
+    "GsaFolderDeletionException",
+    "GsaFolderErrorDetail",
+    "GsaFolderErrorReason",
+    "GsaFolderMoveErrorDetail",
+    "GsaFolderMoveErrorReason",
+    "GsaFolderMoveException",
+    "GsaFolderType",
+    "GsaFolderUpdateException",
     "GsaFoldersInfo",
     "GsaFreeTextAggregation",
     "GsaFreeTextAggregationCriterion",
@@ -1743,6 +1805,8 @@ __all__ = [
     "GsaNamedEntityAttributeErrorDetail",
     "GsaNamedEntityErrorDetail",
     "GsaNamedEntityErrorReason",
+    "GsaNamedEntityFileErrorDetail",
+    "GsaNamedEntityFolderErrorDetail",
     "GsaNamedEntityParameterErrorDetail",
     "GsaNamedEntityParameterValueErrorDetail",
     "GsaNewLayoutAssociationChainItem",
@@ -1753,11 +1817,15 @@ __all__ = [
     "GsaNewLayoutItemType",
     "GsaNewLayoutRecordLinkItem",
     "GsaNewLayoutSmartLinkItem",
+    "GsaNoDataFileErrorDetail",
     "GsaNoExpressionsMathsFunctionalErrorDetail",
+    "GsaNoFileFileErrorDetail",
     "GsaNoParameterValuesParameterErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
     "GsaNoSuchExpressionsMathsFunctionalErrorDetail",
+    "GsaNoSuchNewParentFileMoveErrorDetail",
+    "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
     "GsaNoValueExistsGraphValue",
@@ -1939,6 +2007,9 @@ __all__ = [
     "GsaRichTextValue",
     "GsaRollupExportFailure",
     "GsaRollupReference",
+    "GsaRootFolderMoveErrorDetail",
+    "GsaSameParentFileMoveErrorDetail",
+    "GsaSameParentFolderMoveErrorDetail",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
@@ -2137,6 +2208,7 @@ __all__ = [
     "GsaUpdateRecordListPermissionFlags",
     "GsaUpdateRecordListProperties",
     "GsaUpdateReplacementString",
+    "GsaUpdateRootFolderErrorDetail",
     "GsaUpdateShortTextAttribute",
     "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",
