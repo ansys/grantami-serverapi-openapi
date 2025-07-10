@@ -54,7 +54,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: "str",
         configuration_type: "str",
         body: "Optional[GsaCreateConfiguration]" = None,
-    ) -> "GsaConfiguration | None":
+    ) -> "GsaConfiguration | GsaFileCreationException | None":
         """Create a new configuration.
 
         This method makes a synchronous HTTP request.
@@ -68,7 +68,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         Returns
         -------
-        GsaConfiguration | None
+        GsaConfiguration | GsaFileCreationException | None
         """
         data = self._create_configuration_with_http_info(
             database_key, configuration_type, body, _return_http_data_only=True
@@ -138,7 +138,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaConfiguration",
-            400: None,
+            400: "GsaFileCreationException",
             403: None,
             404: None,
         }
@@ -570,7 +570,7 @@ class SchemaConfigurationsApi(ApiBase):
         configuration_type: "str",
         configuration_guid: "str",
         body: "Optional[GsaUpdateConfiguration]" = None,
-    ) -> "GsaConfiguration | None":
+    ) -> "GsaConfiguration | GsaFileUpdateException | None":
         """Update a configuration.
 
         This method makes a synchronous HTTP request.
@@ -585,7 +585,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         Returns
         -------
-        GsaConfiguration | None
+        GsaConfiguration | GsaFileUpdateException | None
         """
         data = self._update_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, body, _return_http_data_only=True
@@ -664,7 +664,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaConfiguration",
-            400: None,
+            400: "GsaFileUpdateException",
             403: None,
             404: None,
         }
