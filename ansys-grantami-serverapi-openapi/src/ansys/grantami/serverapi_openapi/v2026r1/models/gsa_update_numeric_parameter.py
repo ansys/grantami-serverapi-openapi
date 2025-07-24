@@ -68,6 +68,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     swagger_types: dict[str, str] = {
         "type": "GsaParameterType",
         "default_parameter_value_guid": "str",
+        "default_parameter_value_index": "int",
         "guid": "str",
         "help_path": "str",
         "interpolation_type": "GsaParameterInterpolationType",
@@ -80,6 +81,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     attribute_map: dict[str, str] = {
         "type": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
+        "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
         "help_path": "helpPath",
         "interpolation_type": "interpolationType",
@@ -103,6 +105,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         *,
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
+        default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         interpolation_type: "GsaParameterInterpolationType | Unset_Type" = Unset,
@@ -117,6 +120,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         ----------
         type: GsaParameterType
         default_parameter_value_guid: str, optional
+        default_parameter_value_index: int, optional
         guid: str, optional
         help_path: str | None, optional
         interpolation_type: GsaParameterInterpolationType, optional
@@ -128,6 +132,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         super().__init__(
             type=type,
             default_parameter_value_guid=default_parameter_value_guid,
+            default_parameter_value_index=default_parameter_value_index,
             guid=guid,
             help_path=help_path,
             name=name,

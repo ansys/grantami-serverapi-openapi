@@ -62,6 +62,7 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
         body: GsaCreateConfiguration
@@ -169,6 +170,7 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
         configuration_guid: str
@@ -265,7 +267,7 @@ class SchemaConfigurationsApi(ApiBase):
 
     def export_configuration(
         self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
-    ) -> "None":
+    ) -> "None | str":
         """Get individual configuration as a file
 
         This method makes a synchronous HTTP request.
@@ -273,13 +275,14 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
         configuration_guid: str
 
         Returns
         -------
-        None
+        None | str
         """
         data = self._export_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, _return_http_data_only=True
@@ -344,9 +347,11 @@ class SchemaConfigurationsApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: None,
+            200: "file",
             404: None,
         }
 
@@ -376,6 +381,7 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
         configuration_guid: str
@@ -481,6 +487,7 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
 
@@ -578,6 +585,7 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
             The configuration type.
         configuration_guid: str

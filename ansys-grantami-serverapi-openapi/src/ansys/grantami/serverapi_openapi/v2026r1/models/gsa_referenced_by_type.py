@@ -52,3 +52,5 @@ class GsaReferencedByType(Enum):
     ATTRIBUTE = "attribute"
     DATA = "data"
     DEFAULTPARAMETERVALUE = "defaultParameterValue"
+    FUNCTIONALDATADEFAULT = "functionalDataDefault"
+    MULTIVALUEDPOINTDATA = "multiValuedPointData"

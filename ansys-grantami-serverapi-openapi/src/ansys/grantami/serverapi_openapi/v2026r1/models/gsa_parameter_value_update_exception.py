@@ -61,7 +61,7 @@ class GsaParameterValueUpdateException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "errors": "list[GsaParameterValueErrorDetail]",
         "message": "str",
         "parameter_guid": "str",
@@ -77,7 +77,7 @@ class GsaParameterValueUpdateException(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "errors": "GsaParameterValueErrorDetail",
     }
 
@@ -86,7 +86,7 @@ class GsaParameterValueUpdateException(ModelBase):
     def __init__(
         self,
         *,
-        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
+        code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaParameterValueErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
         parameter_guid: "str | Unset_Type" = Unset,
@@ -96,14 +96,14 @@ class GsaParameterValueUpdateException(ModelBase):
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode, optional
+        code: GsaErrorCode, optional
         errors: list[GsaParameterValueErrorDetail] | None, optional
         message: str | None, optional
         parameter_guid: str, optional
         parameter_value_guid: str, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
+        self._code: GsaErrorCode | Unset_Type = Unset
         self._parameter_value_guid: str | Unset_Type = Unset
         self._parameter_guid: str | Unset_Type = Unset
         self._errors: list[GsaParameterValueErrorDetail] | None | Unset_Type = Unset
@@ -142,23 +142,23 @@ class GsaParameterValueUpdateException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
+    def code(self) -> "GsaErrorCode | Unset_Type":
         """Gets the code of this GsaParameterValueUpdateException.
 
         Returns
         -------
-        SystemNetHttpStatusCode | Unset_Type
+        GsaErrorCode | Unset_Type
             The code of this GsaParameterValueUpdateException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
+    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
         """Sets the code of this GsaParameterValueUpdateException.
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode | Unset_Type
+        code: GsaErrorCode | Unset_Type
             The code of this GsaParameterValueUpdateException.
         """
         # Field is not nullable

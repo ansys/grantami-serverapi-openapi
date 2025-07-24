@@ -58,7 +58,9 @@ class SchemaLayoutsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
 
         Returns
         -------
@@ -150,7 +152,9 @@ class SchemaLayoutsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         body: GsaCreateLayout
 
         Returns
@@ -256,7 +260,9 @@ class SchemaLayoutsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         layout_guid: str
 
         Returns
@@ -363,7 +369,9 @@ class SchemaLayoutsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         layout_guid: str
         show_full_detail: bool
         mode: str
@@ -614,7 +622,9 @@ class SchemaLayoutsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         layout_guid: str
         body: GsaUpdateLayout
 

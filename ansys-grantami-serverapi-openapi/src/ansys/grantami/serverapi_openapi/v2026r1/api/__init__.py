@@ -28,9 +28,12 @@ from ansys.openapi.common import ApiBase
 # import apis into api package
 from .activity_log_api import ActivityLogApi
 from .aggregation_api import AggregationApi
+from .blob_infos_api import BlobInfosApi
+from .blobs_api import BlobsApi
 from .bulk_api import BulkApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
+from .data_updater_api import DataUpdaterApi
 from .database_api import DatabaseApi
 from .graph_api import GraphApi
 from .help_location_api import HelpLocationApi
@@ -79,9 +82,12 @@ __all__ = [
     "ApiBase",
     "ActivityLogApi",
     "AggregationApi",
+    "BlobInfosApi",
+    "BlobsApi",
     "BulkApi",
     "DataApi",
     "DataExportApi",
+    "DataUpdaterApi",
     "DatabaseApi",
     "GraphApi",
     "HelpLocationApi",

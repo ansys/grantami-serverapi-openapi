@@ -58,6 +58,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateDiscreteType
 
         Returns
@@ -151,6 +152,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -244,6 +246,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -336,6 +339,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -425,6 +429,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -504,6 +509,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaQueryDiscreteTypesRequest
 
         Returns
@@ -603,6 +609,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaUpdateDiscreteType
 

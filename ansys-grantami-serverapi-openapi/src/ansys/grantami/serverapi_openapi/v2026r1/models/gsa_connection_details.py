@@ -90,7 +90,7 @@ class GsaConnectionDetails(ModelBase):
         additional_sql_parameters: "str | None | Unset_Type" = Unset,
         sql_password: "str | None | Unset_Type" = Unset,
         sql_username: "str | None | Unset_Type" = Unset,
-        use_integrated_security: "bool | None | Unset_Type" = Unset,
+        use_integrated_security: "bool | Unset_Type" = Unset,
     ) -> None:
         """GsaConnectionDetails - a model defined in Swagger
 
@@ -101,10 +101,10 @@ class GsaConnectionDetails(ModelBase):
         additional_sql_parameters: str | None, optional
         sql_password: str | None, optional
         sql_username: str | None, optional
-        use_integrated_security: bool | None, optional
+        use_integrated_security: bool, optional
         """
         self._data_source: str
-        self._use_integrated_security: bool | None | Unset_Type = Unset
+        self._use_integrated_security: bool | Unset_Type = Unset
         self._sql_username: str | None | Unset_Type = Unset
         self._sql_password: str | None | Unset_Type = Unset
         self._initial_catalog: str
@@ -152,33 +152,36 @@ class GsaConnectionDetails(ModelBase):
         self._data_source = data_source
 
     @property
-    def use_integrated_security(self) -> "bool | None | Unset_Type":
+    def use_integrated_security(self) -> "bool | Unset_Type":
         """Gets the use_integrated_security of this GsaConnectionDetails.
-        Set to true if the SQL connection to the new database should use Windows authentication
+        Set to true if the SQL connection to the database should use Windows authentication
 
         Returns
         -------
-        bool | None | Unset_Type
+        bool | Unset_Type
             The use_integrated_security of this GsaConnectionDetails.
         """
         return self._use_integrated_security
 
     @use_integrated_security.setter
-    def use_integrated_security(self, use_integrated_security: "bool | None | Unset_Type") -> None:
+    def use_integrated_security(self, use_integrated_security: "bool | Unset_Type") -> None:
         """Sets the use_integrated_security of this GsaConnectionDetails.
-        Set to true if the SQL connection to the new database should use Windows authentication
+        Set to true if the SQL connection to the database should use Windows authentication
 
         Parameters
         ----------
-        use_integrated_security: bool | None | Unset_Type
+        use_integrated_security: bool | Unset_Type
             The use_integrated_security of this GsaConnectionDetails.
         """
+        # Field is not nullable
+        if use_integrated_security is None:
+            raise ValueError("Invalid value for 'use_integrated_security', must not be 'None'")
         self._use_integrated_security = use_integrated_security
 
     @property
     def sql_username(self) -> "str | None | Unset_Type":
         """Gets the sql_username of this GsaConnectionDetails.
-        The username to use if the new database should use SQL authentication. The password must also be provided.
+        The username to use if the database should use SQL authentication. The password must also be provided.
 
         Returns
         -------
@@ -190,7 +193,7 @@ class GsaConnectionDetails(ModelBase):
     @sql_username.setter
     def sql_username(self, sql_username: "str | None | Unset_Type") -> None:
         """Sets the sql_username of this GsaConnectionDetails.
-        The username to use if the new database should use SQL authentication. The password must also be provided.
+        The username to use if the database should use SQL authentication. The password must also be provided.
 
         Parameters
         ----------
@@ -202,7 +205,7 @@ class GsaConnectionDetails(ModelBase):
     @property
     def sql_password(self) -> "str | None | Unset_Type":
         """Gets the sql_password of this GsaConnectionDetails.
-        The password to use if the new database should use SQL authentication. The username must also be provided.
+        The password to use if the database should use SQL authentication. The username must also be provided.
 
         Returns
         -------
@@ -214,7 +217,7 @@ class GsaConnectionDetails(ModelBase):
     @sql_password.setter
     def sql_password(self, sql_password: "str | None | Unset_Type") -> None:
         """Sets the sql_password of this GsaConnectionDetails.
-        The password to use if the new database should use SQL authentication. The username must also be provided.
+        The password to use if the database should use SQL authentication. The username must also be provided.
 
         Parameters
         ----------

@@ -63,6 +63,7 @@ class AggregationApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaAggregationsRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -177,7 +178,9 @@ class AggregationApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
+            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         body: GsaAggregationsRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -301,6 +304,7 @@ class AggregationApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_identity: int
         body: GsaAggregationsRequest
         x_ansys_vc_mode: str

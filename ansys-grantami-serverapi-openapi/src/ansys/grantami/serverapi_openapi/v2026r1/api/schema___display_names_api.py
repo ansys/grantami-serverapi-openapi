@@ -58,6 +58,7 @@ class SchemaDisplayNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         language: str
 
         Returns
@@ -150,6 +151,7 @@ class SchemaDisplayNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaUpdateDisplayNames
 
         Returns

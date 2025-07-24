@@ -58,6 +58,7 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateDataRule
 
         Returns
@@ -149,6 +150,7 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         data_rule_guid: str
 
         Returns
@@ -238,6 +240,7 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         data_rule_guid: str
 
         Returns
@@ -327,6 +330,7 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -409,6 +413,7 @@ class SchemaDataRulesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         data_rule_guid: str
         body: GsaUpdateDataRule
 

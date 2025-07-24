@@ -42,6 +42,7 @@ class GsaParameterValueErrorReason(Enum):
     """
     Allowed Enum values
     """
+    INUSE = "inUse"
     LOGSCALENEGATIVE = "logScaleNegative"
     NAMEDENTITY = "namedEntity"
     NAMEWHITESPACE = "nameWhitespace"

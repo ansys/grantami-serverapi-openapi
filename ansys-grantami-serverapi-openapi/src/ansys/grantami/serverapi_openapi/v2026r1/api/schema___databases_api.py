@@ -272,6 +272,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -355,6 +356,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         type: list[GsaLinkAttributeType]
             The link types to include in the response. If not provided, all link types are included.
         mode: str
@@ -536,6 +538,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -614,6 +617,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -851,6 +855,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaUpdateDatabase
         allow_reload: bool
             This must be set to true if any of the following properties are patched:              DatabaseKey, DataSource, UseIntegratedSecurity, SqlUserName, SqlPassword, InitialCatalog, Language, Guid.              The database will reload after the changes have been applied.
@@ -951,6 +956,7 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------

@@ -68,6 +68,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     swagger_types: dict[str, str] = {
         "type": "GsaParameterType",
         "default_parameter_value_guid": "str",
+        "default_parameter_value_index": "int",
         "guid": "str",
         "help_path": "str",
         "name": "str",
@@ -77,6 +78,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     attribute_map: dict[str, str] = {
         "type": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
+        "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
         "help_path": "helpPath",
         "name": "name",
@@ -94,6 +96,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         *,
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
+        default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
@@ -105,6 +108,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         ----------
         type: GsaParameterType
         default_parameter_value_guid: str, optional
+        default_parameter_value_index: int, optional
         guid: str, optional
         help_path: str | None, optional
         name: str, optional
@@ -113,6 +117,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         super().__init__(
             type=type,
             default_parameter_value_guid=default_parameter_value_guid,
+            default_parameter_value_index=default_parameter_value_index,
             guid=guid,
             help_path=help_path,
             name=name,
