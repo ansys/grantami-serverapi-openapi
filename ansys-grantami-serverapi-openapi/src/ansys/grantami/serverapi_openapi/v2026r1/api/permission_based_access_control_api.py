@@ -58,6 +58,7 @@ class PermissionBasedAccessControlApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -140,6 +141,7 @@ class PermissionBasedAccessControlApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
 
         Returns
@@ -233,6 +235,7 @@ class PermissionBasedAccessControlApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
         permission_guid: str
 
@@ -335,6 +338,7 @@ class PermissionBasedAccessControlApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
 
         Returns

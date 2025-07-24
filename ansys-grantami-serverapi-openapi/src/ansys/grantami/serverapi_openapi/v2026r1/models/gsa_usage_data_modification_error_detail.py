@@ -96,6 +96,8 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         "attribute".lower(): "#/components/schemas/GsaAttributeUsageDataModificationErrorDetail",
         "data".lower(): "#/components/schemas/GsaDataUsageDataModificationErrorDetail",
         "defaultParameterValue".lower(): "#/components/schemas/GsaDefaultParameterValueUsageDataModificationErrorDetail",
+        "functionalDataDefault".lower(): "#/components/schemas/GsaFunctionalDataDefaultUsageDataModificationErrorDetail",
+        "multiValuedPointData".lower(): "#/components/schemas/GsaMultiValuedPointDataUsageDataModificationErrorDetail",
     }
 
     discriminator: Optional[str] = "referenced_by_type"

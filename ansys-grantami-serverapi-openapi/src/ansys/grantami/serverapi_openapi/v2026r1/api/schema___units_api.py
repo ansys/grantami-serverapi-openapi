@@ -58,6 +58,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnit
 
         Returns
@@ -147,6 +148,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnitSystem
 
         Returns
@@ -238,6 +240,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -325,6 +328,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -416,6 +420,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -505,6 +510,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -588,6 +594,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaGetUnitConversionsRequest
 
         Returns
@@ -681,6 +688,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -772,6 +780,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -861,6 +870,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -937,6 +947,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -1026,6 +1037,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1107,6 +1119,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
         unit_system_guid: str
         equivalent_unit_guid: str
@@ -1223,6 +1236,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
         body: GsaUpdateUnit
 
@@ -1331,6 +1345,7 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
         body: GsaUpdateUnitSystem
 

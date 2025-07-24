@@ -77,6 +77,7 @@ class GsaParameterValueErrorDetail(ModelBase):
     }
 
     discriminator_value_class_map = {
+        "inUse".lower(): "#/components/schemas/GsaInUseParameterValueErrorDetail",
         "logScaleNegative".lower(): "#/components/schemas/GsaLogScaleNegativeParameterValueErrorDetail",
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityParameterValueErrorDetail",
         "nameWhitespace".lower(): "#/components/schemas/GsaNameWhitespaceParameterValueErrorDetail",

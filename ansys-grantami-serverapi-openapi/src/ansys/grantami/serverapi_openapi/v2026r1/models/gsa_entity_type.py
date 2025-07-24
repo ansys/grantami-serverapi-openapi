@@ -52,3 +52,4 @@ class GsaEntityType(Enum):
     TABLE = "table"
     FILE = "file"
     FOLDER = "folder"
+    RECORDHISTORY = "recordHistory"

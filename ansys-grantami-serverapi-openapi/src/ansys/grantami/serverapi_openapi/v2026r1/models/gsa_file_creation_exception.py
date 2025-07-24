@@ -61,7 +61,7 @@ class GsaFileCreationException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "errors": "list[GsaFileErrorDetail]",
         "folder_type": "GsaFolderType",
         "message": "str",
@@ -77,7 +77,7 @@ class GsaFileCreationException(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "folderType": "GsaFolderType",
         "errors": "GsaFileErrorDetail",
     }
@@ -87,7 +87,7 @@ class GsaFileCreationException(ModelBase):
     def __init__(
         self,
         *,
-        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
+        code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaFileErrorDetail] | None | Unset_Type" = Unset,
         folder_type: "GsaFolderType | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
@@ -97,14 +97,14 @@ class GsaFileCreationException(ModelBase):
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode, optional
+        code: GsaErrorCode, optional
         errors: list[GsaFileErrorDetail] | None, optional
         folder_type: GsaFolderType, optional
         message: str | None, optional
         name: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
+        self._code: GsaErrorCode | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
         self._folder_type: GsaFolderType | Unset_Type = Unset
         self._errors: list[GsaFileErrorDetail] | None | Unset_Type = Unset
@@ -143,23 +143,23 @@ class GsaFileCreationException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
+    def code(self) -> "GsaErrorCode | Unset_Type":
         """Gets the code of this GsaFileCreationException.
 
         Returns
         -------
-        SystemNetHttpStatusCode | Unset_Type
+        GsaErrorCode | Unset_Type
             The code of this GsaFileCreationException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
+    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
         """Sets the code of this GsaFileCreationException.
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode | Unset_Type
+        code: GsaErrorCode | Unset_Type
             The code of this GsaFileCreationException.
         """
         # Field is not nullable

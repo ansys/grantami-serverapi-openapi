@@ -61,7 +61,7 @@ class GsaReleaseRecordVersionControlException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "errors": "list[GsaVersionControlErrorDetail]",
         "message": "str",
     }
@@ -73,7 +73,7 @@ class GsaReleaseRecordVersionControlException(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "SystemNetHttpStatusCode",
+        "code": "GsaErrorCode",
         "errors": "GsaVersionControlErrorDetail",
     }
 
@@ -82,7 +82,7 @@ class GsaReleaseRecordVersionControlException(ModelBase):
     def __init__(
         self,
         *,
-        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
+        code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaVersionControlErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -90,12 +90,12 @@ class GsaReleaseRecordVersionControlException(ModelBase):
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode, optional
+        code: GsaErrorCode, optional
         errors: list[GsaVersionControlErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
+        self._code: GsaErrorCode | Unset_Type = Unset
         self._errors: list[GsaVersionControlErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
@@ -128,23 +128,23 @@ class GsaReleaseRecordVersionControlException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
+    def code(self) -> "GsaErrorCode | Unset_Type":
         """Gets the code of this GsaReleaseRecordVersionControlException.
 
         Returns
         -------
-        SystemNetHttpStatusCode | Unset_Type
+        GsaErrorCode | Unset_Type
             The code of this GsaReleaseRecordVersionControlException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
+    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
         """Sets the code of this GsaReleaseRecordVersionControlException.
 
         Parameters
         ----------
-        code: SystemNetHttpStatusCode | Unset_Type
+        code: GsaErrorCode | Unset_Type
             The code of this GsaReleaseRecordVersionControlException.
         """
         # Field is not nullable

@@ -44,6 +44,8 @@ class GsaParameterErrorReason(Enum):
     """
     DEFAULTPARAMETERVALUEGUID = "defaultParameterValueGuid"
     DEFAULTPARAMETERVALUEINDEX = "defaultParameterValueIndex"
+    DEFAULTPARAMETERVALUEINDEXANDGUID = "defaultParameterValueIndexAndGuid"
+    DEFAULTPARAMETERVALUEINDEXWITHOUTVALUES = "defaultParameterValueIndexWithoutValues"
     NAMEDENTITY = "namedEntity"
     NOPARAMETERVALUES = "noParameterValues"
     NOSUCHUNIT = "noSuchUnit"

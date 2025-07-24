@@ -79,6 +79,8 @@ class GsaParameterErrorDetail(ModelBase):
     discriminator_value_class_map = {
         "defaultParameterValueGuid".lower(): "#/components/schemas/GsaDefaultParameterValueGuidParameterErrorDetail",
         "defaultParameterValueIndex".lower(): "#/components/schemas/GsaDefaultParameterValueIndexParameterErrorDetail",
+        "defaultParameterValueIndexWithoutValues".lower(): "#/components/schemas/GsaDefaultParameterValueIndexWithoutValuesParameterErrorDetail",
+        "defaultParameterValueIndexAndGuid".lower(): "#/components/schemas/GsaDefaultParameterValueIndexAndGuidParameterErrorDetail",
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityParameterErrorDetail",
         "noParameterValues".lower(): "#/components/schemas/GsaNoParameterValuesParameterErrorDetail",
         "noSuchUnit".lower(): "#/components/schemas/GsaNoSuchUnitParameterErrorDetail",

@@ -63,6 +63,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file: BinaryIO | pathlib.Path
         description: str
@@ -174,6 +175,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateFolder
 
         Returns
@@ -269,6 +271,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
@@ -368,6 +371,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -455,7 +459,7 @@ class SchemaHomePagesApi(ApiBase):
 
     def export_home_page_file(
         self, *, database_key: "str", folder_guid: "str", file_guid: "str"
-    ) -> "None":
+    ) -> "None | str":
         """Get Home Page File as a file
 
         This method makes a synchronous HTTP request.
@@ -463,12 +467,13 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
         Returns
         -------
-        None
+        None | str
         """
         data = self._export_home_page_file_with_http_info(
             database_key, folder_guid, file_guid, _return_http_data_only=True
@@ -529,9 +534,11 @@ class SchemaHomePagesApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/octet-stream"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: None,
+            200: "file",
             404: None,
         }
 
@@ -559,6 +566,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -650,6 +658,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -743,6 +752,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
@@ -845,6 +855,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -938,6 +949,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -1029,6 +1041,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1107,6 +1120,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1194,6 +1208,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
         body: GsaMoveFile
@@ -1312,6 +1327,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         body: GsaMoveFolder
 
@@ -1425,6 +1441,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
         body: GsaUpdateFile
@@ -1543,6 +1560,7 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         body: GsaUpdateFolder
 

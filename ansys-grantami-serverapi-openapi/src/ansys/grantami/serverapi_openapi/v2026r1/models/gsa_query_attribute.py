@@ -70,6 +70,7 @@ class GsaQueryAttribute(ModelBase):
         "display_names": "dict(str, str)",
         "expressions": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
+        "help_path": "str",
         "info": "GsaQueryAttributeInfo",
         "is_functional_range": "bool",
         "is_hidden_from_search_criteria": "bool",
@@ -92,6 +93,7 @@ class GsaQueryAttribute(ModelBase):
         "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
+        "help_path": "helpPath",
         "info": "info",
         "is_functional_range": "isFunctionalRange",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -133,6 +135,7 @@ class GsaQueryAttribute(ModelBase):
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         expressions: "list[GsaQuerySlimNamedEntity] | None | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
         info: "GsaQueryAttributeInfo | Unset_Type" = Unset,
         is_functional_range: "bool | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
@@ -157,6 +160,7 @@ class GsaQueryAttribute(ModelBase):
         display_names: dict[str, str] | None, optional
         expressions: list[GsaQuerySlimNamedEntity] | None, optional
         guid: str | None, optional
+        help_path: str | None, optional
         info: GsaQueryAttributeInfo, optional
         is_functional_range: bool | None, optional
         is_hidden_from_search_criteria: bool | None, optional
@@ -174,6 +178,7 @@ class GsaQueryAttribute(ModelBase):
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
         self._is_multi_valued: bool | None | Unset_Type = Unset
         self._is_functional_range: bool | None | Unset_Type = Unset
+        self._help_path: str | None | Unset_Type = Unset
         self._axis_name: GsaQueryAxisName | Unset_Type = Unset
         self._info: GsaQueryAttributeInfo | Unset_Type = Unset
         self._unit: GsaQueryUnit | Unset_Type = Unset
@@ -200,6 +205,8 @@ class GsaQueryAttribute(ModelBase):
             self.is_multi_valued = is_multi_valued
         if is_functional_range is not Unset:
             self.is_functional_range = is_functional_range
+        if help_path is not Unset:
+            self.help_path = help_path
         if axis_name is not Unset:
             self.axis_name = axis_name
         if info is not Unset:
@@ -368,6 +375,28 @@ class GsaQueryAttribute(ModelBase):
             The is_functional_range of this GsaQueryAttribute.
         """
         self._is_functional_range = is_functional_range
+
+    @property
+    def help_path(self) -> "str | None | Unset_Type":
+        """Gets the help_path of this GsaQueryAttribute.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The help_path of this GsaQueryAttribute.
+        """
+        return self._help_path
+
+    @help_path.setter
+    def help_path(self, help_path: "str | None | Unset_Type") -> None:
+        """Sets the help_path of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        help_path: str | None | Unset_Type
+            The help_path of this GsaQueryAttribute.
+        """
+        self._help_path = help_path
 
     @property
     def axis_name(self) -> "GsaQueryAxisName | Unset_Type":

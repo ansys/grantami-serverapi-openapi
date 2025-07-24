@@ -58,6 +58,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateParameter
 
         Returns
@@ -155,6 +156,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaCreateParameterValue
 
@@ -261,6 +263,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -354,6 +357,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -456,6 +460,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -545,6 +550,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -636,6 +642,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -734,6 +741,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -816,6 +824,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaUpdateParameter
 
@@ -927,6 +936,7 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
         body: GsaUpdateParameterValue

@@ -129,6 +129,7 @@ from .gsa_attribute_validate_response import GsaAttributeValidateResponse
 from .gsa_attribute_value_aggregation import GsaAttributeValueAggregation
 from .gsa_attributes_info import GsaAttributesInfo
 from .gsa_axis_name import GsaAxisName
+from .gsa_blob_info_dto import GsaBlobInfoDto
 from .gsa_boolean_criterion import GsaBooleanCriterion
 from .gsa_boost_by_guid import GsaBoostByGuid
 from .gsa_boost_by_identity import GsaBoostByIdentity
@@ -142,6 +143,7 @@ from .gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
 from .gsa_configuration import GsaConfiguration
+from .gsa_configuration_details import GsaConfigurationDetails
 from .gsa_configurations_info import GsaConfigurationsInfo
 from .gsa_connection_details import GsaConnectionDetails
 from .gsa_constant import GsaConstant
@@ -296,11 +298,16 @@ from .gsa_data_modification_error_detail import GsaDataModificationErrorDetail
 from .gsa_data_modification_error_reason import GsaDataModificationErrorReason
 from .gsa_data_rule import GsaDataRule
 from .gsa_data_rules_info import GsaDataRulesInfo
+from .gsa_data_update import GsaDataUpdate
+from .gsa_data_update_header import GsaDataUpdateHeader
+from .gsa_data_update_run_info import GsaDataUpdateRunInfo
 from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModificationErrorDetail
 from .gsa_database import GsaDatabase
+from .gsa_database_issues import GsaDatabaseIssues
 from .gsa_database_key_property import GsaDatabaseKeyProperty
 from .gsa_database_status import GsaDatabaseStatus
 from .gsa_database_status_information import GsaDatabaseStatusInformation
+from .gsa_database_user_capabilities import GsaDatabaseUserCapabilities
 from .gsa_databases_info import GsaDatabasesInfo
 from .gsa_date_time_aggregation import GsaDateTimeAggregation
 from .gsa_date_time_aggregation_datum_criterion import GsaDateTimeAggregationDatumCriterion
@@ -342,8 +349,14 @@ from .gsa_default_free_parameter_not_found_maths_functional_error_detail import 
 from .gsa_default_parameter_value_guid_parameter_error_detail import (
     GsaDefaultParameterValueGuidParameterErrorDetail,
 )
+from .gsa_default_parameter_value_index_and_guid_parameter_error_detail import (
+    GsaDefaultParameterValueIndexAndGuidParameterErrorDetail,
+)
 from .gsa_default_parameter_value_index_parameter_error_detail import (
     GsaDefaultParameterValueIndexParameterErrorDetail,
+)
+from .gsa_default_parameter_value_index_without_values_parameter_error_detail import (
+    GsaDefaultParameterValueIndexWithoutValuesParameterErrorDetail,
 )
 from .gsa_default_parameter_value_usage_data_modification_error_detail import (
     GsaDefaultParameterValueUsageDataModificationErrorDetail,
@@ -454,7 +467,9 @@ from .gsa_entity_identifier_already_specified_error_detail import (
     GsaEntityIdentifierAlreadySpecifiedErrorDetail,
 )
 from .gsa_entity_type import GsaEntityType
+from .gsa_error_code import GsaErrorCode
 from .gsa_error_detail import GsaErrorDetail
+from .gsa_exception_information import GsaExceptionInformation
 from .gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
 from .gsa_existing_tabular_column_guid_error_detail import GsaExistingTabularColumnGuidErrorDetail
 from .gsa_export_failure import GsaExportFailure
@@ -535,6 +550,9 @@ from .gsa_free_text_prefix_criterion import GsaFreeTextPrefixCriterion
 from .gsa_full_layout_section import GsaFullLayoutSection
 from .gsa_full_name_property import GsaFullNameProperty
 from .gsa_func_no_params_attribute_error_detail import GsaFuncNoParamsAttributeErrorDetail
+from .gsa_functional_data_default_usage_data_modification_error_detail import (
+    GsaFunctionalDataDefaultUsageDataModificationErrorDetail,
+)
 from .gsa_functional_datum_parameter_info import GsaFunctionalDatumParameterInfo
 from .gsa_functional_parameter_setting import GsaFunctionalParameterSetting
 from .gsa_functional_type import GsaFunctionalType
@@ -574,6 +592,7 @@ from .gsa_hyperlink_datum_criterion import GsaHyperlinkDatumCriterion
 from .gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriterion
 from .gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .gsa_hyperlink_target import GsaHyperlinkTarget
+from .gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
 from .gsa_index_record_failure import GsaIndexRecordFailure
 from .gsa_indirect_links import GsaIndirectLinks
 from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
@@ -707,6 +726,9 @@ from .gsa_missing_parameter_guid_attribute_error_detail import (
 from .gsa_move_file import GsaMoveFile
 from .gsa_move_folder import GsaMoveFolder
 from .gsa_move_record_history import GsaMoveRecordHistory
+from .gsa_multi_valued_point_data_usage_data_modification_error_detail import (
+    GsaMultiValuedPointDataUsageDataModificationErrorDetail,
+)
 from .gsa_name_already_exists_error_detail import GsaNameAlreadyExistsErrorDetail
 from .gsa_name_already_specified_error_detail import GsaNameAlreadySpecifiedErrorDetail
 from .gsa_name_not_provided_error_detail import GsaNameNotProvidedErrorDetail
@@ -808,6 +830,7 @@ from .gsa_parameter_value_type_parameter_value_error_detail import (
     GsaParameterValueTypeParameterValueErrorDetail,
 )
 from .gsa_parameter_value_update_exception import GsaParameterValueUpdateException
+from .gsa_parameter_value_used_by_type import GsaParameterValueUsedByType
 from .gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .gsa_parameters_info import GsaParametersInfo
 from .gsa_permission import GsaPermission
@@ -887,7 +910,6 @@ from .gsa_range_histogram_aggregation_datum_criterion import (
 )
 from .gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
 from .gsa_record_ancestor_history_criterion import GsaRecordAncestorHistoryCriterion
-from .gsa_record_capabilities import GsaRecordCapabilities
 from .gsa_record_color import GsaRecordColor
 from .gsa_record_color_property import GsaRecordColorProperty
 from .gsa_record_export_failure import GsaRecordExportFailure
@@ -920,6 +942,7 @@ from .gsa_record_reference_type import GsaRecordReferenceType
 from .gsa_record_subset_criterion import GsaRecordSubsetCriterion
 from .gsa_record_type import GsaRecordType
 from .gsa_record_type_property import GsaRecordTypeProperty
+from .gsa_record_user_capabilities import GsaRecordUserCapabilities
 from .gsa_record_version import GsaRecordVersion
 from .gsa_record_version_reference import GsaRecordVersionReference
 from .gsa_record_with_data import GsaRecordWithData
@@ -1047,6 +1070,7 @@ from .gsa_static_record_link_group import GsaStaticRecordLinkGroup
 from .gsa_string_sorting_value import GsaStringSortingValue
 from .gsa_subset import GsaSubset
 from .gsa_subsets_info import GsaSubsetsInfo
+from .gsa_support_properties import GsaSupportProperties
 from .gsa_table import GsaTable
 from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_guid_property import GsaTableGuidProperty
@@ -1186,6 +1210,7 @@ from .gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .gsa_update_standard_name import GsaUpdateStandardName
 from .gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
 from .gsa_update_subset import GsaUpdateSubset
+from .gsa_update_support_properties import GsaUpdateSupportProperties
 from .gsa_update_table import GsaUpdateTable
 from .gsa_update_tabular_attribute import GsaUpdateTabularAttribute
 from .gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
@@ -1313,6 +1338,7 @@ __all__ = [
     "GsaAttributeValueAggregation",
     "GsaAttributesInfo",
     "GsaAxisName",
+    "GsaBlobInfoDto",
     "GsaBooleanCriterion",
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
@@ -1324,6 +1350,7 @@ __all__ = [
     "GsaCalendarInterval",
     "GsaCircularReferenceFolderMoveErrorDetail",
     "GsaConfiguration",
+    "GsaConfigurationDetails",
     "GsaConfigurationsInfo",
     "GsaConnectionDetails",
     "GsaConstant",
@@ -1464,11 +1491,16 @@ __all__ = [
     "GsaDataModificationErrorReason",
     "GsaDataRule",
     "GsaDataRulesInfo",
+    "GsaDataUpdate",
+    "GsaDataUpdateHeader",
+    "GsaDataUpdateRunInfo",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
+    "GsaDatabaseIssues",
     "GsaDatabaseKeyProperty",
     "GsaDatabaseStatus",
     "GsaDatabaseStatusInformation",
+    "GsaDatabaseUserCapabilities",
     "GsaDatabasesInfo",
     "GsaDateTimeAggregation",
     "GsaDateTimeAggregationDatumCriterion",
@@ -1498,7 +1530,9 @@ __all__ = [
     "GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultParameterValueGuidParameterErrorDetail",
+    "GsaDefaultParameterValueIndexAndGuidParameterErrorDetail",
     "GsaDefaultParameterValueIndexParameterErrorDetail",
+    "GsaDefaultParameterValueIndexWithoutValuesParameterErrorDetail",
     "GsaDefaultParameterValueUsageDataModificationErrorDetail",
     "GsaDeleteRecordListItem",
     "GsaDeleteRecordListItems",
@@ -1574,7 +1608,9 @@ __all__ = [
     "GsaEntityAlreadyExistsErrorDetail",
     "GsaEntityIdentifierAlreadySpecifiedErrorDetail",
     "GsaEntityType",
+    "GsaErrorCode",
     "GsaErrorDetail",
+    "GsaExceptionInformation",
     "GsaExcludeValuesSpecifier",
     "GsaExistingTabularColumnGuidErrorDetail",
     "GsaExportFailure",
@@ -1643,6 +1679,7 @@ __all__ = [
     "GsaFullLayoutSection",
     "GsaFullNameProperty",
     "GsaFuncNoParamsAttributeErrorDetail",
+    "GsaFunctionalDataDefaultUsageDataModificationErrorDetail",
     "GsaFunctionalDatumParameterInfo",
     "GsaFunctionalParameterSetting",
     "GsaFunctionalType",
@@ -1676,6 +1713,7 @@ __all__ = [
     "GsaHyperlinkDatumExistsCriterion",
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
+    "GsaInUseParameterValueErrorDetail",
     "GsaIndexRecordFailure",
     "GsaIndirectLinks",
     "GsaInputValidationErrorDetail",
@@ -1797,6 +1835,7 @@ __all__ = [
     "GsaMoveFile",
     "GsaMoveFolder",
     "GsaMoveRecordHistory",
+    "GsaMultiValuedPointDataUsageDataModificationErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
     "GsaNameAlreadySpecifiedErrorDetail",
     "GsaNameNotProvidedErrorDetail",
@@ -1878,6 +1917,7 @@ __all__ = [
     "GsaParameterValueType",
     "GsaParameterValueTypeParameterValueErrorDetail",
     "GsaParameterValueUpdateException",
+    "GsaParameterValueUsedByType",
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
     "GsaPermission",
@@ -1947,7 +1987,6 @@ __all__ = [
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
     "GsaRecordAncestorHistoryCriterion",
-    "GsaRecordCapabilities",
     "GsaRecordColor",
     "GsaRecordColorProperty",
     "GsaRecordExportFailure",
@@ -1980,6 +2019,7 @@ __all__ = [
     "GsaRecordSubsetCriterion",
     "GsaRecordType",
     "GsaRecordTypeProperty",
+    "GsaRecordUserCapabilities",
     "GsaRecordVersion",
     "GsaRecordVersionReference",
     "GsaRecordWithData",
@@ -2097,6 +2137,7 @@ __all__ = [
     "GsaStringSortingValue",
     "GsaSubset",
     "GsaSubsetsInfo",
+    "GsaSupportProperties",
     "GsaTable",
     "GsaTableDeletionException",
     "GsaTableGuidProperty",
@@ -2214,6 +2255,7 @@ __all__ = [
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",
     "GsaUpdateSubset",
+    "GsaUpdateSupportProperties",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",
     "GsaUpdateTabularAttributeTarget",
