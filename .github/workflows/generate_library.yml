@@ -13,7 +13,7 @@ jobs:
   generate-client-library:
     name: "Generate and update client library"
     runs-on: ubuntu-latest
-    if: ${{ github.actor != 'pyansys-ci-bot' }}
+    if: ${{ github.actor != 'pyansys-ci-bot' || github.event.action == 'opened' }}
     env:
       IS_RELEASE_BRANCH: ${{ (github.event_name == 'pull_request' && startsWith(github.event.pull_request.base.ref, 'release/')) || (github.event_name == 'workflow_dispatch' && startsWith(github.ref_name, 'release/')) }}
     steps:
