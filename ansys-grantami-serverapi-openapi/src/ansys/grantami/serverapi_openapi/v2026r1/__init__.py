@@ -886,6 +886,8 @@ from .models.gsa_numeric_restricted_interpolation_parameter_error_detail import 
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .models.gsa_object_identifier import GsaObjectIdentifier
+from .models.gsa_orphaned_search_index import GsaOrphanedSearchIndex
+from .models.gsa_orphaned_search_indexes_info import GsaOrphanedSearchIndexesInfo
 from .models.gsa_pagination_links import GsaPaginationLinks
 from .models.gsa_paging_options import GsaPagingOptions
 from .models.gsa_parameter import GsaParameter
@@ -2041,6 +2043,8 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
+    "GsaOrphanedSearchIndex",
+    "GsaOrphanedSearchIndexesInfo",
     "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",

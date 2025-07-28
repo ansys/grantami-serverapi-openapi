@@ -181,6 +181,68 @@ class StatusApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_orphaned_search_indexes(self) -> "GsaOrphanedSearchIndexesInfo | None":
+        """Returns information about orphaned search indexes
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaOrphanedSearchIndexesInfo | None
+        """
+        data = self._get_orphaned_search_indexes_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_orphaned_search_indexes_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_orphaned_search_indexes"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaOrphanedSearchIndexesInfo",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/status/orphanedSearchIndexes",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_search_cluster_status(self) -> "GsaSearchClusterStatus":
         """Returns disk status information for the search cluster
 
