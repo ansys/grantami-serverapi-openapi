@@ -48,6 +48,156 @@ class DataUpdaterApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def get_all_updates(self) -> "list[GsaDataUpdate]":
+        """get_all_updates
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        list[GsaDataUpdate]
+        """
+        data = self._get_all_updates_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_updates_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all_updates"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "list[GsaDataUpdate]",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/updates",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_update(self, *, database_key: "str", update_token_guid: "str") -> "GsaDataUpdate":
+        """get_update
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        update_token_guid: str
+
+        Returns
+        -------
+        GsaDataUpdate
+        """
+        data = self._get_update_with_http_info(
+            database_key, update_token_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_update_with_http_info(
+        self, database_key: "str", update_token_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "update_token_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_update")
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_update'"
+            )
+        # verify the required parameter "update_token_guid" is set
+        if "update_token_guid" not in params or params["update_token_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'update_token_guid' when calling 'get_update'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "update_token_guid" in params and update_token_guid is not None:
+            path_params["update-token-guid"] = params["update_token_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaDataUpdate",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/updates/{database-key}/{update-token-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_updates_for_database(self, *, database_key: "str") -> "list[GsaDataUpdate]":
         """get_updates_for_database
 
@@ -113,7 +263,7 @@ class DataUpdaterApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/dataupdater/{database-key}",
+            "/v1alpha/dataupdater/updates/{database-key}",
             "GET",
             path_params,
             query_params,

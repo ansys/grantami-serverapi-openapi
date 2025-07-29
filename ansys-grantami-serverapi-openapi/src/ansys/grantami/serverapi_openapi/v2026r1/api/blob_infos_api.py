@@ -94,7 +94,7 @@ class BlobInfosApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blobInfos/dataUpdater",
+            "/v1alpha/blob-infos/dataupdater",
             "GET",
             path_params,
             query_params,
@@ -173,9 +173,9 @@ class BlobInfosApi(ApiBase):
 
         path_params: dict[str, Any] = {}
         if "database_version_guid" in params and database_version_guid is not None:
-            path_params["databaseVersionGuid"] = params["database_version_guid"]
+            path_params["database-version-guid"] = params["database_version_guid"]
         if "blob_path" in params and blob_path is not None:
-            path_params["blobPath"] = params["blob_path"]
+            path_params["blob-path"] = params["blob_path"]
 
         query_params: list[Any] = []
         if "recursive" in params and recursive is not None:
@@ -197,7 +197,7 @@ class BlobInfosApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blobInfos/dataUpdater/{databaseVersionGuid}/{blobPath}",
+            "/v1alpha/blob-infos/dataupdater/{database-version-guid}/{blob-path}",
             "GET",
             path_params,
             query_params,

@@ -301,6 +301,7 @@ from .gsa_data_rules_info import GsaDataRulesInfo
 from .gsa_data_update import GsaDataUpdate
 from .gsa_data_update_header import GsaDataUpdateHeader
 from .gsa_data_update_run_info import GsaDataUpdateRunInfo
+from .gsa_data_update_token import GsaDataUpdateToken
 from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModificationErrorDetail
 from .gsa_database import GsaDatabase
 from .gsa_database_issues import GsaDatabaseIssues
@@ -1496,6 +1497,7 @@ __all__ = [
     "GsaDataUpdate",
     "GsaDataUpdateHeader",
     "GsaDataUpdateRunInfo",
+    "GsaDataUpdateToken",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
     "GsaDatabaseIssues",
