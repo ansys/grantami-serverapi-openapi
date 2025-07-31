@@ -666,6 +666,7 @@ from .models.gsa_guid_only_integration_schema_of_object_identifier import (
 from .models.gsa_guid_only_layout import GsaGuidOnlyLayout
 from .models.gsa_guid_only_mapping_of_object_identifier import GsaGuidOnlyMappingOfObjectIdentifier
 from .models.gsa_guid_only_source_of_object_identifier import GsaGuidOnlySourceOfObjectIdentifier
+from .models.gsa_help_paths_validation_response import GsaHelpPathsValidationResponse
 from .models.gsa_histogram import GsaHistogram
 from .models.gsa_histogram_bucket import GsaHistogramBucket
 from .models.gsa_hyperlink_attribute import GsaHyperlinkAttribute
@@ -1136,6 +1137,7 @@ from .models.gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatu
 from .models.gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .models.gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
 from .models.gsa_slim_attribute import GsaSlimAttribute
+from .models.gsa_slim_attribute_with_help_path import GsaSlimAttributeWithHelpPath
 from .models.gsa_slim_configuration import GsaSlimConfiguration
 from .models.gsa_slim_constant import GsaSlimConstant
 from .models.gsa_slim_database import GsaSlimDatabase
@@ -1150,6 +1152,7 @@ from .models.gsa_slim_named_entity import GsaSlimNamedEntity
 from .models.gsa_slim_named_unit import GsaSlimNamedUnit
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
+from .models.gsa_slim_parameter_with_help_path import GsaSlimParameterWithHelpPath
 from .models.gsa_slim_permission import GsaSlimPermission
 from .models.gsa_slim_permission_category import GsaSlimPermissionCategory
 from .models.gsa_slim_profile import GsaSlimProfile
@@ -1870,6 +1873,7 @@ __all__ = [
     "GsaGuidOnlyLayout",
     "GsaGuidOnlyMappingOfObjectIdentifier",
     "GsaGuidOnlySourceOfObjectIdentifier",
+    "GsaHelpPathsValidationResponse",
     "GsaHistogram",
     "GsaHistogramBucket",
     "GsaHyperlinkAttribute",
@@ -2260,6 +2264,7 @@ __all__ = [
     "GsaSignificantFiguresInfo",
     "GsaSimpleAttributeToExport",
     "GsaSlimAttribute",
+    "GsaSlimAttributeWithHelpPath",
     "GsaSlimConfiguration",
     "GsaSlimConstant",
     "GsaSlimDatabase",
@@ -2274,6 +2279,7 @@ __all__ = [
     "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
+    "GsaSlimParameterWithHelpPath",
     "GsaSlimPermission",
     "GsaSlimPermissionCategory",
     "GsaSlimProfile",

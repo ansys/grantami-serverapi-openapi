@@ -110,7 +110,7 @@ class BlobInfosApi(ApiBase):
         )
 
     def get_data_updater_blob_infos(
-        self, *, database_version_guid: "str", blob_path: "str", recursive: "Optional[bool]" = None
+        self, *, database_key: "str", blob_path: "str", recursive: "Optional[bool]" = None
     ) -> "list[GsaBlobInfoDto]":
         """Get a list of blob descriptors for a specific database, optionally limited by their relative path.
 
@@ -118,8 +118,8 @@ class BlobInfosApi(ApiBase):
 
         Parameters
         ----------
-        database_version_guid: str
-            Database version guid.
+        database_key: str
+            Database key.
         blob_path: str
             Path to look under. Can be empty
         recursive: bool
@@ -130,19 +130,19 @@ class BlobInfosApi(ApiBase):
         list[GsaBlobInfoDto]
         """
         data = self._get_data_updater_blob_infos_with_http_info(
-            database_version_guid, blob_path, recursive, _return_http_data_only=True
+            database_key, blob_path, recursive, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_data_updater_blob_infos_with_http_info(
         self,
-        database_version_guid: "str",
+        database_key: "str",
         blob_path: "str",
         recursive: "Optional[bool]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
-            "database_version_guid",
+            "database_key",
             "blob_path",
             "recursive",
             "_return_http_data_only",
@@ -158,10 +158,10 @@ class BlobInfosApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "database_version_guid" is set
-        if "database_version_guid" not in params or params["database_version_guid"] is None:
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_version_guid' when calling 'get_data_updater_blob_infos'"
+                "Missing the required parameter 'database_key' when calling 'get_data_updater_blob_infos'"
             )
         # verify the required parameter "blob_path" is set
         if "blob_path" not in params or params["blob_path"] is None:
@@ -172,8 +172,8 @@ class BlobInfosApi(ApiBase):
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "database_version_guid" in params and database_version_guid is not None:
-            path_params["database-version-guid"] = params["database_version_guid"]
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
         if "blob_path" in params and blob_path is not None:
             path_params["blob-path"] = params["blob_path"]
 
@@ -197,7 +197,7 @@ class BlobInfosApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blob-infos/dataupdater/{database-version-guid}/{blob-path}",
+            "/v1alpha/blob-infos/dataupdater/{database-key}/{blob-path}",
             "GET",
             path_params,
             query_params,
