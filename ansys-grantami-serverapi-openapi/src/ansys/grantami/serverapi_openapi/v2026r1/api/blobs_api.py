@@ -48,15 +48,15 @@ class BlobsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def delete_data_updater_blob(self, *, database_version_guid: "str", blob_path: "str") -> "None":
+    def delete_data_updater_blob(self, *, database_key: "str", blob_path: "str") -> "None":
         """Delete DataUpdater blob.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        database_version_guid: str
-            Database version guid
+        database_key: str
+            Database key
         blob_path: str
             Blob path to a single blob (including its name).
 
@@ -65,15 +65,15 @@ class BlobsApi(ApiBase):
         None
         """
         data = self._delete_data_updater_blob_with_http_info(
-            database_version_guid, blob_path, _return_http_data_only=True
+            database_key, blob_path, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _delete_data_updater_blob_with_http_info(
-        self, database_version_guid: "str", blob_path: "str", **kwargs: Any
+        self, database_key: "str", blob_path: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "database_version_guid",
+            "database_key",
             "blob_path",
             "_return_http_data_only",
             "_preload_content",
@@ -88,10 +88,10 @@ class BlobsApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "database_version_guid" is set
-        if "database_version_guid" not in params or params["database_version_guid"] is None:
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_version_guid' when calling 'delete_data_updater_blob'"
+                "Missing the required parameter 'database_key' when calling 'delete_data_updater_blob'"
             )
         # verify the required parameter "blob_path" is set
         if "blob_path" not in params or params["blob_path"] is None:
@@ -102,8 +102,8 @@ class BlobsApi(ApiBase):
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "database_version_guid" in params and database_version_guid is not None:
-            path_params["databaseVersionGuid"] = params["database_version_guid"]
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
         if "blob_path" in params and blob_path is not None:
             path_params["blobPath"] = params["blob_path"]
 
@@ -121,7 +121,7 @@ class BlobsApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blobs/dataUpdater/{databaseVersionGuid}/{blobPath}",
+            "/v1alpha/blobs/dataUpdater/{database-key}/{blobPath}",
             "DELETE",
             path_params,
             query_params,
@@ -136,17 +136,15 @@ class BlobsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def download_data_updater_blob(
-        self, *, database_version_guid: "str", blob_path: "str"
-    ) -> "None":
+    def download_data_updater_blob(self, *, database_key: "str", blob_path: "str") -> "None":
         """Retrieve DataUpdater blob contents by its path.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        database_version_guid: str
-            Database version guid
+        database_key: str
+            Database key
         blob_path: str
             Blob path to a single blob (including its name).
 
@@ -155,15 +153,15 @@ class BlobsApi(ApiBase):
         None
         """
         data = self._download_data_updater_blob_with_http_info(
-            database_version_guid, blob_path, _return_http_data_only=True
+            database_key, blob_path, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _download_data_updater_blob_with_http_info(
-        self, database_version_guid: "str", blob_path: "str", **kwargs: Any
+        self, database_key: "str", blob_path: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "database_version_guid",
+            "database_key",
             "blob_path",
             "_return_http_data_only",
             "_preload_content",
@@ -178,10 +176,10 @@ class BlobsApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "database_version_guid" is set
-        if "database_version_guid" not in params or params["database_version_guid"] is None:
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_version_guid' when calling 'download_data_updater_blob'"
+                "Missing the required parameter 'database_key' when calling 'download_data_updater_blob'"
             )
         # verify the required parameter "blob_path" is set
         if "blob_path" not in params or params["blob_path"] is None:
@@ -192,8 +190,8 @@ class BlobsApi(ApiBase):
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "database_version_guid" in params and database_version_guid is not None:
-            path_params["databaseVersionGuid"] = params["database_version_guid"]
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
         if "blob_path" in params and blob_path is not None:
             path_params["blobPath"] = params["blob_path"]
 
@@ -212,7 +210,7 @@ class BlobsApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blobs/dataUpdater/{databaseVersionGuid}/{blobPath}",
+            "/v1alpha/blobs/dataUpdater/{database-key}/{blobPath}",
             "GET",
             path_params,
             query_params,
@@ -228,7 +226,7 @@ class BlobsApi(ApiBase):
         )
 
     def upload_data_updater_blob(
-        self, *, database_version_guid: "str", blob_path: "str"
+        self, *, database_key: "str", blob_path: "str"
     ) -> "GsaBlobInfoDto":
         """Store DataUpdater blob contents.
 
@@ -236,8 +234,8 @@ class BlobsApi(ApiBase):
 
         Parameters
         ----------
-        database_version_guid: str
-            Database version guid
+        database_key: str
+            Database key
         blob_path: str
             Blob path to a single blob (including its name).
 
@@ -246,15 +244,15 @@ class BlobsApi(ApiBase):
         GsaBlobInfoDto
         """
         data = self._upload_data_updater_blob_with_http_info(
-            database_version_guid, blob_path, _return_http_data_only=True
+            database_key, blob_path, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _upload_data_updater_blob_with_http_info(
-        self, database_version_guid: "str", blob_path: "str", **kwargs: Any
+        self, database_key: "str", blob_path: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "database_version_guid",
+            "database_key",
             "blob_path",
             "_return_http_data_only",
             "_preload_content",
@@ -269,10 +267,10 @@ class BlobsApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "database_version_guid" is set
-        if "database_version_guid" not in params or params["database_version_guid"] is None:
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_version_guid' when calling 'upload_data_updater_blob'"
+                "Missing the required parameter 'database_key' when calling 'upload_data_updater_blob'"
             )
         # verify the required parameter "blob_path" is set
         if "blob_path" not in params or params["blob_path"] is None:
@@ -283,8 +281,8 @@ class BlobsApi(ApiBase):
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "database_version_guid" in params and database_version_guid is not None:
-            path_params["databaseVersionGuid"] = params["database_version_guid"]
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
         if "blob_path" in params and blob_path is not None:
             path_params["blobPath"] = params["blob_path"]
 
@@ -306,7 +304,7 @@ class BlobsApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/blobs/dataUpdater/{databaseVersionGuid}/{blobPath}",
+            "/v1alpha/blobs/dataUpdater/{database-key}/{blobPath}",
             "PUT",
             path_params,
             query_params,
