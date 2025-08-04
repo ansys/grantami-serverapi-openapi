@@ -61,19 +61,39 @@ class GsaDataUpdateHeader(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "database_key": "str",
+        "contains_fallback_identifiers": "bool",
+        "create_date": "datetime",
+        "description": "str",
+        "mi_version": "str",
+        "name": "str",
+        "new_version_guid": "str",
+        "prerequisite_update_guid": "str",
+        "prerequisite_update_name": "str",
+        "project_guid": "str",
         "project_name": "str",
-        "update_description": "str",
+        "source_database_key": "str",
+        "source_volume_guid": "str",
+        "supported_objects_version": "int",
+        "update_format_version": "int",
         "update_guid": "str",
-        "update_name": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "database_key": "databaseKey",
+        "contains_fallback_identifiers": "containsFallbackIdentifiers",
+        "create_date": "createDate",
+        "description": "description",
+        "mi_version": "miVersion",
+        "name": "name",
+        "new_version_guid": "newVersionGuid",
+        "prerequisite_update_guid": "prerequisiteUpdateGuid",
+        "prerequisite_update_name": "prerequisiteUpdateName",
+        "project_guid": "projectGuid",
         "project_name": "projectName",
-        "update_description": "updateDescription",
+        "source_database_key": "sourceDatabaseKey",
+        "source_volume_guid": "sourceVolumeGuid",
+        "supported_objects_version": "supportedObjectsVersion",
+        "update_format_version": "updateFormatVersion",
         "update_guid": "updateGuid",
-        "update_name": "updateName",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -83,42 +103,120 @@ class GsaDataUpdateHeader(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "str | None | Unset_Type" = Unset,
+        contains_fallback_identifiers: "bool | Unset_Type" = Unset,
+        create_date: "datetime | Unset_Type" = Unset,
+        description: "str | None | Unset_Type" = Unset,
+        mi_version: "str | None | Unset_Type" = Unset,
+        name: "str | None | Unset_Type" = Unset,
+        new_version_guid: "str | None | Unset_Type" = Unset,
+        prerequisite_update_guid: "str | None | Unset_Type" = Unset,
+        prerequisite_update_name: "str | None | Unset_Type" = Unset,
+        project_guid: "str | Unset_Type" = Unset,
         project_name: "str | None | Unset_Type" = Unset,
-        update_description: "str | None | Unset_Type" = Unset,
+        source_database_key: "str | None | Unset_Type" = Unset,
+        source_volume_guid: "str | Unset_Type" = Unset,
+        supported_objects_version: "int | Unset_Type" = Unset,
+        update_format_version: "int | Unset_Type" = Unset,
         update_guid: "str | Unset_Type" = Unset,
-        update_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDataUpdateHeader - a model defined in Swagger
 
         Parameters
         ----------
-        database_key: str | None, optional
+        contains_fallback_identifiers: bool, optional
+        create_date: datetime, optional
+        description: str | None, optional
+        mi_version: str | None, optional
+        name: str | None, optional
+        new_version_guid: str | None, optional
+        prerequisite_update_guid: str | None, optional
+        prerequisite_update_name: str | None, optional
+        project_guid: str, optional
         project_name: str | None, optional
-        update_description: str | None, optional
+        source_database_key: str | None, optional
+        source_volume_guid: str, optional
+        supported_objects_version: int, optional
+        update_format_version: int, optional
         update_guid: str, optional
-        update_name: str | None, optional
         """
+        self._create_date: datetime | Unset_Type = Unset
         self._update_guid: str | Unset_Type = Unset
+        self._prerequisite_update_guid: str | None | Unset_Type = Unset
+        self._prerequisite_update_name: str | None | Unset_Type = Unset
+        self._mi_version: str | None | Unset_Type = Unset
+        self._supported_objects_version: int | Unset_Type = Unset
+        self._update_format_version: int | Unset_Type = Unset
+        self._source_database_key: str | None | Unset_Type = Unset
+        self._source_volume_guid: str | Unset_Type = Unset
+        self._name: str | None | Unset_Type = Unset
+        self._description: str | None | Unset_Type = Unset
         self._project_name: str | None | Unset_Type = Unset
-        self._update_name: str | None | Unset_Type = Unset
-        self._update_description: str | None | Unset_Type = Unset
-        self._database_key: str | None | Unset_Type = Unset
+        self._project_guid: str | Unset_Type = Unset
+        self._contains_fallback_identifiers: bool | Unset_Type = Unset
+        self._new_version_guid: str | None | Unset_Type = Unset
 
+        if create_date is not Unset:
+            self.create_date = create_date
         if update_guid is not Unset:
             self.update_guid = update_guid
+        if prerequisite_update_guid is not Unset:
+            self.prerequisite_update_guid = prerequisite_update_guid
+        if prerequisite_update_name is not Unset:
+            self.prerequisite_update_name = prerequisite_update_name
+        if mi_version is not Unset:
+            self.mi_version = mi_version
+        if supported_objects_version is not Unset:
+            self.supported_objects_version = supported_objects_version
+        if update_format_version is not Unset:
+            self.update_format_version = update_format_version
+        if source_database_key is not Unset:
+            self.source_database_key = source_database_key
+        if source_volume_guid is not Unset:
+            self.source_volume_guid = source_volume_guid
+        if name is not Unset:
+            self.name = name
+        if description is not Unset:
+            self.description = description
         if project_name is not Unset:
             self.project_name = project_name
-        if update_name is not Unset:
-            self.update_name = update_name
-        if update_description is not Unset:
-            self.update_description = update_description
-        if database_key is not Unset:
-            self.database_key = database_key
+        if project_guid is not Unset:
+            self.project_guid = project_guid
+        if contains_fallback_identifiers is not Unset:
+            self.contains_fallback_identifiers = contains_fallback_identifiers
+        if new_version_guid is not Unset:
+            self.new_version_guid = new_version_guid
+
+    @property
+    def create_date(self) -> "datetime | Unset_Type":
+        """Gets the create_date of this GsaDataUpdateHeader.
+        The date and time that the update was created.
+
+        Returns
+        -------
+        datetime | Unset_Type
+            The create_date of this GsaDataUpdateHeader.
+        """
+        return self._create_date
+
+    @create_date.setter
+    def create_date(self, create_date: "datetime | Unset_Type") -> None:
+        """Sets the create_date of this GsaDataUpdateHeader.
+        The date and time that the update was created.
+
+        Parameters
+        ----------
+        create_date: datetime | Unset_Type
+            The create_date of this GsaDataUpdateHeader.
+        """
+        # Field is not nullable
+        if create_date is None:
+            raise ValueError("Invalid value for 'create_date', must not be 'None'")
+        self._create_date = create_date
 
     @property
     def update_guid(self) -> "str | Unset_Type":
         """Gets the update_guid of this GsaDataUpdateHeader.
+        A unique identity to disambiguate this update from all other updates.
 
         Returns
         -------
@@ -130,6 +228,7 @@ class GsaDataUpdateHeader(ModelBase):
     @update_guid.setter
     def update_guid(self, update_guid: "str | Unset_Type") -> None:
         """Sets the update_guid of this GsaDataUpdateHeader.
+        A unique identity to disambiguate this update from all other updates.
 
         Parameters
         ----------
@@ -142,8 +241,234 @@ class GsaDataUpdateHeader(ModelBase):
         self._update_guid = update_guid
 
     @property
+    def prerequisite_update_guid(self) -> "str | None | Unset_Type":
+        """Gets the prerequisite_update_guid of this GsaDataUpdateHeader.
+        GUID for the previous update that need to have been applied before this update can be applied.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The prerequisite_update_guid of this GsaDataUpdateHeader.
+        """
+        return self._prerequisite_update_guid
+
+    @prerequisite_update_guid.setter
+    def prerequisite_update_guid(self, prerequisite_update_guid: "str | None | Unset_Type") -> None:
+        """Sets the prerequisite_update_guid of this GsaDataUpdateHeader.
+        GUID for the previous update that need to have been applied before this update can be applied.
+
+        Parameters
+        ----------
+        prerequisite_update_guid: str | None | Unset_Type
+            The prerequisite_update_guid of this GsaDataUpdateHeader.
+        """
+        self._prerequisite_update_guid = prerequisite_update_guid
+
+    @property
+    def prerequisite_update_name(self) -> "str | None | Unset_Type":
+        """Gets the prerequisite_update_name of this GsaDataUpdateHeader.
+        Name of the previous update that need to have been applied before this update can be applied.  This is used only for display purposes.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The prerequisite_update_name of this GsaDataUpdateHeader.
+        """
+        return self._prerequisite_update_name
+
+    @prerequisite_update_name.setter
+    def prerequisite_update_name(self, prerequisite_update_name: "str | None | Unset_Type") -> None:
+        """Sets the prerequisite_update_name of this GsaDataUpdateHeader.
+        Name of the previous update that need to have been applied before this update can be applied.  This is used only for display purposes.
+
+        Parameters
+        ----------
+        prerequisite_update_name: str | None | Unset_Type
+            The prerequisite_update_name of this GsaDataUpdateHeader.
+        """
+        self._prerequisite_update_name = prerequisite_update_name
+
+    @property
+    def mi_version(self) -> "str | None | Unset_Type":
+        """Gets the mi_version of this GsaDataUpdateHeader.
+        Gets the version of MI that was used to create this update.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The mi_version of this GsaDataUpdateHeader.
+        """
+        return self._mi_version
+
+    @mi_version.setter
+    def mi_version(self, mi_version: "str | None | Unset_Type") -> None:
+        """Sets the mi_version of this GsaDataUpdateHeader.
+        Gets the version of MI that was used to create this update.
+
+        Parameters
+        ----------
+        mi_version: str | None | Unset_Type
+            The mi_version of this GsaDataUpdateHeader.
+        """
+        self._mi_version = mi_version
+
+    @property
+    def supported_objects_version(self) -> "int | Unset_Type":
+        """Gets the supported_objects_version of this GsaDataUpdateHeader.
+        Gets or sets the version number indicating the kinds of object that this update supports. A client will be  able to process updates with an unrecognised SupportedObjectsVersion (although in doing so it will have to  ignore fields describing objects it does not recognise).
+
+        Returns
+        -------
+        int | Unset_Type
+            The supported_objects_version of this GsaDataUpdateHeader.
+        """
+        return self._supported_objects_version
+
+    @supported_objects_version.setter
+    def supported_objects_version(self, supported_objects_version: "int | Unset_Type") -> None:
+        """Sets the supported_objects_version of this GsaDataUpdateHeader.
+        Gets or sets the version number indicating the kinds of object that this update supports. A client will be  able to process updates with an unrecognised SupportedObjectsVersion (although in doing so it will have to  ignore fields describing objects it does not recognise).
+
+        Parameters
+        ----------
+        supported_objects_version: int | Unset_Type
+            The supported_objects_version of this GsaDataUpdateHeader.
+        """
+        # Field is not nullable
+        if supported_objects_version is None:
+            raise ValueError("Invalid value for 'supported_objects_version', must not be 'None'")
+        self._supported_objects_version = supported_objects_version
+
+    @property
+    def update_format_version(self) -> "int | Unset_Type":
+        """Gets the update_format_version of this GsaDataUpdateHeader.
+        Gets or sets the version number of the format of the update. This will change if the meaning of any of the  fields in the update changes. A client must not process an update with an UpdateFormatVersion field that it  does not recognise, as it cannot be sure of the meaning of the fields it reads.
+
+        Returns
+        -------
+        int | Unset_Type
+            The update_format_version of this GsaDataUpdateHeader.
+        """
+        return self._update_format_version
+
+    @update_format_version.setter
+    def update_format_version(self, update_format_version: "int | Unset_Type") -> None:
+        """Sets the update_format_version of this GsaDataUpdateHeader.
+        Gets or sets the version number of the format of the update. This will change if the meaning of any of the  fields in the update changes. A client must not process an update with an UpdateFormatVersion field that it  does not recognise, as it cannot be sure of the meaning of the fields it reads.
+
+        Parameters
+        ----------
+        update_format_version: int | Unset_Type
+            The update_format_version of this GsaDataUpdateHeader.
+        """
+        # Field is not nullable
+        if update_format_version is None:
+            raise ValueError("Invalid value for 'update_format_version', must not be 'None'")
+        self._update_format_version = update_format_version
+
+    @property
+    def source_database_key(self) -> "str | None | Unset_Type":
+        """Gets the source_database_key of this GsaDataUpdateHeader.
+        Gets or sets the database key of the database from which this update was generated.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The source_database_key of this GsaDataUpdateHeader.
+        """
+        return self._source_database_key
+
+    @source_database_key.setter
+    def source_database_key(self, source_database_key: "str | None | Unset_Type") -> None:
+        """Sets the source_database_key of this GsaDataUpdateHeader.
+        Gets or sets the database key of the database from which this update was generated.
+
+        Parameters
+        ----------
+        source_database_key: str | None | Unset_Type
+            The source_database_key of this GsaDataUpdateHeader.
+        """
+        self._source_database_key = source_database_key
+
+    @property
+    def source_volume_guid(self) -> "str | Unset_Type":
+        """Gets the source_volume_guid of this GsaDataUpdateHeader.
+        Gets or sets the guid of the volume from which the update was generated.
+
+        Returns
+        -------
+        str | Unset_Type
+            The source_volume_guid of this GsaDataUpdateHeader.
+        """
+        return self._source_volume_guid
+
+    @source_volume_guid.setter
+    def source_volume_guid(self, source_volume_guid: "str | Unset_Type") -> None:
+        """Sets the source_volume_guid of this GsaDataUpdateHeader.
+        Gets or sets the guid of the volume from which the update was generated.
+
+        Parameters
+        ----------
+        source_volume_guid: str | Unset_Type
+            The source_volume_guid of this GsaDataUpdateHeader.
+        """
+        # Field is not nullable
+        if source_volume_guid is None:
+            raise ValueError("Invalid value for 'source_volume_guid', must not be 'None'")
+        self._source_volume_guid = source_volume_guid
+
+    @property
+    def name(self) -> "str | None | Unset_Type":
+        """Gets the name of this GsaDataUpdateHeader.
+        Gets or sets the name of the update.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The name of this GsaDataUpdateHeader.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | None | Unset_Type") -> None:
+        """Sets the name of this GsaDataUpdateHeader.
+        Gets or sets the name of the update.
+
+        Parameters
+        ----------
+        name: str | None | Unset_Type
+            The name of this GsaDataUpdateHeader.
+        """
+        self._name = name
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaDataUpdateHeader.
+        Gets or sets the description of the update.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaDataUpdateHeader.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaDataUpdateHeader.
+        Gets or sets the description of the update.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaDataUpdateHeader.
+        """
+        self._description = description
+
+    @property
     def project_name(self) -> "str | None | Unset_Type":
         """Gets the project_name of this GsaDataUpdateHeader.
+        Gets or sets the name of the project this update was created for.
 
         Returns
         -------
@@ -155,6 +480,7 @@ class GsaDataUpdateHeader(ModelBase):
     @project_name.setter
     def project_name(self, project_name: "str | None | Unset_Type") -> None:
         """Sets the project_name of this GsaDataUpdateHeader.
+        Gets or sets the name of the project this update was created for.
 
         Parameters
         ----------
@@ -164,70 +490,86 @@ class GsaDataUpdateHeader(ModelBase):
         self._project_name = project_name
 
     @property
-    def update_name(self) -> "str | None | Unset_Type":
-        """Gets the update_name of this GsaDataUpdateHeader.
+    def project_guid(self) -> "str | Unset_Type":
+        """Gets the project_guid of this GsaDataUpdateHeader.
+        Gets or sets the guid of the project this update was created for.
 
         Returns
         -------
-        str | None | Unset_Type
-            The update_name of this GsaDataUpdateHeader.
+        str | Unset_Type
+            The project_guid of this GsaDataUpdateHeader.
         """
-        return self._update_name
+        return self._project_guid
 
-    @update_name.setter
-    def update_name(self, update_name: "str | None | Unset_Type") -> None:
-        """Sets the update_name of this GsaDataUpdateHeader.
+    @project_guid.setter
+    def project_guid(self, project_guid: "str | Unset_Type") -> None:
+        """Sets the project_guid of this GsaDataUpdateHeader.
+        Gets or sets the guid of the project this update was created for.
 
         Parameters
         ----------
-        update_name: str | None | Unset_Type
-            The update_name of this GsaDataUpdateHeader.
+        project_guid: str | Unset_Type
+            The project_guid of this GsaDataUpdateHeader.
         """
-        self._update_name = update_name
+        # Field is not nullable
+        if project_guid is None:
+            raise ValueError("Invalid value for 'project_guid', must not be 'None'")
+        self._project_guid = project_guid
 
     @property
-    def update_description(self) -> "str | None | Unset_Type":
-        """Gets the update_description of this GsaDataUpdateHeader.
+    def contains_fallback_identifiers(self) -> "bool | Unset_Type":
+        """Gets the contains_fallback_identifiers of this GsaDataUpdateHeader.
+        Gets or sets the flag informing whether or not this update contains fallback identifiers (mostly names).
 
         Returns
         -------
-        str | None | Unset_Type
-            The update_description of this GsaDataUpdateHeader.
+        bool | Unset_Type
+            The contains_fallback_identifiers of this GsaDataUpdateHeader.
         """
-        return self._update_description
+        return self._contains_fallback_identifiers
 
-    @update_description.setter
-    def update_description(self, update_description: "str | None | Unset_Type") -> None:
-        """Sets the update_description of this GsaDataUpdateHeader.
+    @contains_fallback_identifiers.setter
+    def contains_fallback_identifiers(
+        self, contains_fallback_identifiers: "bool | Unset_Type"
+    ) -> None:
+        """Sets the contains_fallback_identifiers of this GsaDataUpdateHeader.
+        Gets or sets the flag informing whether or not this update contains fallback identifiers (mostly names).
 
         Parameters
         ----------
-        update_description: str | None | Unset_Type
-            The update_description of this GsaDataUpdateHeader.
+        contains_fallback_identifiers: bool | Unset_Type
+            The contains_fallback_identifiers of this GsaDataUpdateHeader.
         """
-        self._update_description = update_description
+        # Field is not nullable
+        if contains_fallback_identifiers is None:
+            raise ValueError(
+                "Invalid value for 'contains_fallback_identifiers', must not be 'None'"
+            )
+        self._contains_fallback_identifiers = contains_fallback_identifiers
 
     @property
-    def database_key(self) -> "str | None | Unset_Type":
-        """Gets the database_key of this GsaDataUpdateHeader.
+    def new_version_guid(self) -> "str | None | Unset_Type":
+        """Gets the new_version_guid of this GsaDataUpdateHeader.
+        Gets or sets the value Database Version GUID should be updated to.  If this field is set then we propose to retarget tabular attributes to link to new version of the database.
 
         Returns
         -------
         str | None | Unset_Type
-            The database_key of this GsaDataUpdateHeader.
+            The new_version_guid of this GsaDataUpdateHeader.
         """
-        return self._database_key
+        return self._new_version_guid
 
-    @database_key.setter
-    def database_key(self, database_key: "str | None | Unset_Type") -> None:
-        """Sets the database_key of this GsaDataUpdateHeader.
+    @new_version_guid.setter
+    def new_version_guid(self, new_version_guid: "str | None | Unset_Type") -> None:
+        """Sets the new_version_guid of this GsaDataUpdateHeader.
+        Gets or sets the value Database Version GUID should be updated to.  If this field is set then we propose to retarget tabular attributes to link to new version of the database.
 
         Parameters
         ----------
-        database_key: str | None | Unset_Type
-            The database_key of this GsaDataUpdateHeader.
+        new_version_guid: str | None | Unset_Type
+            The new_version_guid of this GsaDataUpdateHeader.
         """
-        self._database_key = database_key
+        self._new_version_guid = new_version_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
