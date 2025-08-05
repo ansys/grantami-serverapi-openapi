@@ -95,6 +95,7 @@ from .gsa_append_discrete_values import GsaAppendDiscreteValues
 from .gsa_append_point_values import GsaAppendPointValues
 from .gsa_applicable_datum import GsaApplicableDatum
 from .gsa_applications_info import GsaApplicationsInfo
+from .gsa_apply_options import GsaApplyOptions
 from .gsa_attribute import GsaAttribute
 from .gsa_attribute_aggregation import GsaAttributeAggregation
 from .gsa_attribute_aggregation_criterion import GsaAttributeAggregationCriterion
@@ -709,6 +710,7 @@ from .gsa_long_text_datum_criterion import GsaLongTextDatumCriterion
 from .gsa_long_text_datum_exists_criterion import GsaLongTextDatumExistsCriterion
 from .gsa_long_text_prefix_datum_criterion import GsaLongTextPrefixDatumCriterion
 from .gsa_mapping_of_object_identifier import GsaMappingOfObjectIdentifier
+from .gsa_match_mode import GsaMatchMode
 from .gsa_maths_content import GsaMathsContent
 from .gsa_maths_functional_attribute import GsaMathsFunctionalAttribute
 from .gsa_maths_functional_attribute_error_detail import GsaMathsFunctionalAttributeErrorDetail
@@ -952,6 +954,7 @@ from .gsa_record_version_reference import GsaRecordVersionReference
 from .gsa_record_with_data import GsaRecordWithData
 from .gsa_referenced_by_type import GsaReferencedByType
 from .gsa_referential_integrity_model import GsaReferentialIntegrityModel
+from .gsa_register_update_request import GsaRegisterUpdateRequest
 from .gsa_release_record_version_control_exception import GsaReleaseRecordVersionControlException
 from .gsa_release_table_version_control_exception import GsaReleaseTableVersionControlException
 from .gsa_released_date_property import GsaReleasedDateProperty
@@ -1211,6 +1214,7 @@ from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissi
 from .gsa_update_record_list_properties import GsaUpdateRecordListProperties
 from .gsa_update_replacement_string import GsaUpdateReplacementString
 from .gsa_update_root_folder_error_detail import GsaUpdateRootFolderErrorDetail
+from .gsa_update_run_status import GsaUpdateRunStatus
 from .gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
 from .gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .gsa_update_standard_name import GsaUpdateStandardName
@@ -1312,6 +1316,7 @@ __all__ = [
     "GsaAppendPointValues",
     "GsaApplicableDatum",
     "GsaApplicationsInfo",
+    "GsaApplyOptions",
     "GsaAttribute",
     "GsaAttributeAggregation",
     "GsaAttributeAggregationCriterion",
@@ -1828,6 +1833,7 @@ __all__ = [
     "GsaLongTextDatumExistsCriterion",
     "GsaLongTextPrefixDatumCriterion",
     "GsaMappingOfObjectIdentifier",
+    "GsaMatchMode",
     "GsaMathsContent",
     "GsaMathsFunctionalAttribute",
     "GsaMathsFunctionalAttributeErrorDetail",
@@ -2035,6 +2041,7 @@ __all__ = [
     "GsaRecordWithData",
     "GsaReferencedByType",
     "GsaReferentialIntegrityModel",
+    "GsaRegisterUpdateRequest",
     "GsaReleaseRecordVersionControlException",
     "GsaReleaseTableVersionControlException",
     "GsaReleasedDateProperty",
@@ -2262,6 +2269,7 @@ __all__ = [
     "GsaUpdateRecordListProperties",
     "GsaUpdateReplacementString",
     "GsaUpdateRootFolderErrorDetail",
+    "GsaUpdateRunStatus",
     "GsaUpdateShortTextAttribute",
     "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",
