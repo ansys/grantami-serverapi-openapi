@@ -42,6 +42,7 @@ class GsaFileErrorReason(Enum):
     """
     Allowed Enum values
     """
+    CONFIGINVALIDJSON = "configInvalidJson"
     DESCRIPTIONLENGTH = "descriptionLength"
     FILENAME = "fileName"
     NAMEDENTITY = "namedEntity"
