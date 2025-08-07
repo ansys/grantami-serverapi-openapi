@@ -148,6 +148,7 @@ from .models.gsa_append_discrete_values import GsaAppendDiscreteValues
 from .models.gsa_append_point_values import GsaAppendPointValues
 from .models.gsa_applicable_datum import GsaApplicableDatum
 from .models.gsa_applications_info import GsaApplicationsInfo
+from .models.gsa_apply_options import GsaApplyOptions
 from .models.gsa_attribute import GsaAttribute
 from .models.gsa_attribute_aggregation import GsaAttributeAggregation
 from .models.gsa_attribute_aggregation_criterion import GsaAttributeAggregationCriterion
@@ -197,6 +198,7 @@ from .models.gsa_calendar_interval import GsaCalendarInterval
 from .models.gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
+from .models.gsa_config_invalid_json_file_error_detail import GsaConfigInvalidJsonFileErrorDetail
 from .models.gsa_configuration import GsaConfiguration
 from .models.gsa_configuration_details import GsaConfigurationDetails
 from .models.gsa_configurations_info import GsaConfigurationsInfo
@@ -798,6 +800,7 @@ from .models.gsa_long_text_datum_criterion import GsaLongTextDatumCriterion
 from .models.gsa_long_text_datum_exists_criterion import GsaLongTextDatumExistsCriterion
 from .models.gsa_long_text_prefix_datum_criterion import GsaLongTextPrefixDatumCriterion
 from .models.gsa_mapping_of_object_identifier import GsaMappingOfObjectIdentifier
+from .models.gsa_match_mode import GsaMatchMode
 from .models.gsa_maths_content import GsaMathsContent
 from .models.gsa_maths_functional_attribute import GsaMathsFunctionalAttribute
 from .models.gsa_maths_functional_attribute_error_detail import (
@@ -1057,6 +1060,7 @@ from .models.gsa_record_version_reference import GsaRecordVersionReference
 from .models.gsa_record_with_data import GsaRecordWithData
 from .models.gsa_referenced_by_type import GsaReferencedByType
 from .models.gsa_referential_integrity_model import GsaReferentialIntegrityModel
+from .models.gsa_register_update_request import GsaRegisterUpdateRequest
 from .models.gsa_release_record_version_control_exception import (
     GsaReleaseRecordVersionControlException,
 )
@@ -1251,6 +1255,7 @@ from .models.gsa_update_cross_database_record_link_group import (
 from .models.gsa_update_data_rule import GsaUpdateDataRule
 from .models.gsa_update_database import GsaUpdateDatabase
 from .models.gsa_update_date_time_attribute import GsaUpdateDateTimeAttribute
+from .models.gsa_update_default_database import GsaUpdateDefaultDatabase
 from .models.gsa_update_default_profile import GsaUpdateDefaultProfile
 from .models.gsa_update_discrete_attribute import GsaUpdateDiscreteAttribute
 from .models.gsa_update_discrete_functional_attribute import GsaUpdateDiscreteFunctionalAttribute
@@ -1322,6 +1327,7 @@ from .models.gsa_update_record_list_permission_flags import GsaUpdateRecordListP
 from .models.gsa_update_record_list_properties import GsaUpdateRecordListProperties
 from .models.gsa_update_replacement_string import GsaUpdateReplacementString
 from .models.gsa_update_root_folder_error_detail import GsaUpdateRootFolderErrorDetail
+from .models.gsa_update_run_status import GsaUpdateRunStatus
 from .models.gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
 from .models.gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .models.gsa_update_standard_name import GsaUpdateStandardName
@@ -1473,6 +1479,7 @@ __all__ = [
     "GsaAppendPointValues",
     "GsaApplicableDatum",
     "GsaApplicationsInfo",
+    "GsaApplyOptions",
     "GsaAttribute",
     "GsaAttributeAggregation",
     "GsaAttributeAggregationCriterion",
@@ -1516,6 +1523,7 @@ __all__ = [
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
     "GsaCircularReferenceFolderMoveErrorDetail",
+    "GsaConfigInvalidJsonFileErrorDetail",
     "GsaConfiguration",
     "GsaConfigurationDetails",
     "GsaConfigurationsInfo",
@@ -1989,6 +1997,7 @@ __all__ = [
     "GsaLongTextDatumExistsCriterion",
     "GsaLongTextPrefixDatumCriterion",
     "GsaMappingOfObjectIdentifier",
+    "GsaMatchMode",
     "GsaMathsContent",
     "GsaMathsFunctionalAttribute",
     "GsaMathsFunctionalAttributeErrorDetail",
@@ -2196,6 +2205,7 @@ __all__ = [
     "GsaRecordWithData",
     "GsaReferencedByType",
     "GsaReferentialIntegrityModel",
+    "GsaRegisterUpdateRequest",
     "GsaReleaseRecordVersionControlException",
     "GsaReleaseTableVersionControlException",
     "GsaReleasedDateProperty",
@@ -2364,6 +2374,7 @@ __all__ = [
     "GsaUpdateDataRule",
     "GsaUpdateDatabase",
     "GsaUpdateDateTimeAttribute",
+    "GsaUpdateDefaultDatabase",
     "GsaUpdateDefaultProfile",
     "GsaUpdateDiscreteAttribute",
     "GsaUpdateDiscreteFunctionalAttribute",
@@ -2423,6 +2434,7 @@ __all__ = [
     "GsaUpdateRecordListProperties",
     "GsaUpdateReplacementString",
     "GsaUpdateRootFolderErrorDetail",
+    "GsaUpdateRunStatus",
     "GsaUpdateShortTextAttribute",
     "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",

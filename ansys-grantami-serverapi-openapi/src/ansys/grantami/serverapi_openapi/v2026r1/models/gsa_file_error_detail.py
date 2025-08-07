@@ -77,6 +77,7 @@ class GsaFileErrorDetail(ModelBase):
     }
 
     discriminator_value_class_map = {
+        "configInvalidJson".lower(): "#/components/schemas/GsaConfigInvalidJsonFileErrorDetail",
         "descriptionLength".lower(): "#/components/schemas/GsaDescriptionLengthFileErrorDetail",
         "fileName".lower(): "#/components/schemas/GsaFileNameFileErrorDetail",
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityFileErrorDetail",
