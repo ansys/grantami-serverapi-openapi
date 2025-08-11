@@ -61,7 +61,6 @@ class GsaTable(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "database_key": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -77,7 +76,6 @@ class GsaTable(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "database_key": "databaseKey",
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -105,7 +103,6 @@ class GsaTable(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "str",
         display_names: "dict[str, str]",
         guid: "str",
         is_hidden_from_browse: "bool",
@@ -123,7 +120,6 @@ class GsaTable(ModelBase):
 
         Parameters
         ----------
-        database_key: str
         display_names: dict[str, str]
         guid: str
         is_hidden_from_browse: bool
@@ -142,7 +138,6 @@ class GsaTable(ModelBase):
         self._default_layout: GsaSlimLayout | Unset_Type = Unset
         self._layouts: list[GsaSlimLayout]
         self._version_state: GsaVersionState
-        self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
@@ -158,7 +153,6 @@ class GsaTable(ModelBase):
             self.default_layout = default_layout
         self.layouts = layouts
         self.version_state = version_state
-        self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
         self.is_versioned = is_versioned
@@ -300,34 +294,6 @@ class GsaTable(ModelBase):
         if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
-
-    @property
-    def database_key(self) -> "str":
-        """Gets the database_key of this GsaTable.
-
-        Returns
-        -------
-        str
-            The database_key of this GsaTable.
-        """
-        return self._database_key
-
-    @database_key.setter
-    def database_key(self, database_key: "str") -> None:
-        """Sets the database_key of this GsaTable.
-
-        Parameters
-        ----------
-        database_key: str
-            The database_key of this GsaTable.
-        """
-        # Field is not nullable
-        if database_key is None:
-            raise ValueError("Invalid value for 'database_key', must not be 'None'")
-        # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
-        self._database_key = database_key
 
     @property
     def is_hidden_from_browse(self) -> "bool":
