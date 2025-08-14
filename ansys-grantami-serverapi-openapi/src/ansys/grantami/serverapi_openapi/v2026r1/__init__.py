@@ -363,6 +363,9 @@ from .models.gsa_data_update import GsaDataUpdate
 from .models.gsa_data_update_header import GsaDataUpdateHeader
 from .models.gsa_data_update_run_info import GsaDataUpdateRunInfo
 from .models.gsa_data_update_token import GsaDataUpdateToken
+from .models.gsa_data_updater_job import GsaDataUpdaterJob
+from .models.gsa_data_updater_job_status import GsaDataUpdaterJobStatus
+from .models.gsa_data_updater_job_type import GsaDataUpdaterJobType
 from .models.gsa_data_usage_data_modification_error_detail import (
     GsaDataUsageDataModificationErrorDetail,
 )
@@ -1670,6 +1673,9 @@ __all__ = [
     "GsaDataUpdateHeader",
     "GsaDataUpdateRunInfo",
     "GsaDataUpdateToken",
+    "GsaDataUpdaterJob",
+    "GsaDataUpdaterJobStatus",
+    "GsaDataUpdaterJobType",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
     "GsaDatabaseIssues",

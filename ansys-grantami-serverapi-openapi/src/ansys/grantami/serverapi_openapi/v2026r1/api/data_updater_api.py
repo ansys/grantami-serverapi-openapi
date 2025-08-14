@@ -139,8 +139,80 @@ class DataUpdaterApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def delete_completed_data_updater_job(self, *, job_id: "str") -> "None":
+        """Delete a specific job.  Only valid if job is in one of the completed states.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        job_id: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_completed_data_updater_job_with_http_info(
+            job_id, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_completed_data_updater_job_with_http_info(
+        self, job_id: "str", **kwargs: Any
+    ) -> Any:
+        all_params = ["job_id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_completed_data_updater_job"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "job_id" is set
+        if "job_id" not in params or params["job_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'job_id' when calling 'delete_completed_data_updater_job'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "job_id" in params and job_id is not None:
+            path_params["job-id"] = params["job_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/jobs/{job-id}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def delete_update(self, *, database_key: "str", update_token_guid: "str") -> "None":
-        """Deletes an update if it is in a deletable state.
+        """delete_update
 
         This method makes a synchronous HTTP request.
 
@@ -364,6 +436,139 @@ class DataUpdaterApi(ApiBase):
 
         return self.api_client.call_api(
             "/v1alpha/dataupdater/updates",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_data_updater_job(self, *, job_id: "str") -> "GsaDataUpdaterJob":
+        """Get a specific job.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        job_id: str
+
+        Returns
+        -------
+        GsaDataUpdaterJob
+        """
+        data = self._get_data_updater_job_with_http_info(job_id, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_data_updater_job_with_http_info(self, job_id: "str", **kwargs: Any) -> Any:
+        all_params = ["job_id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_data_updater_job"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "job_id" is set
+        if "job_id" not in params or params["job_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'job_id' when calling 'get_data_updater_job'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "job_id" in params and job_id is not None:
+            path_params["job-id"] = params["job_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaDataUpdaterJob",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/jobs/{job-id}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_data_updater_jobs(self) -> "list[GsaDataUpdaterJob]":
+        """Get all jobs.  (pertaining to databases that the user is administrator of)
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        list[GsaDataUpdaterJob]
+        """
+        data = self._get_data_updater_jobs_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_data_updater_jobs_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_data_updater_jobs"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "list[GsaDataUpdaterJob]",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/jobs",
             "GET",
             path_params,
             query_params,
