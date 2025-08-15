@@ -121,7 +121,7 @@ class BlobInfosApi(ApiBase):
         database_key: str
             Database key.
         blob_path: str
-            Path to look under. Can be empty
+            Path to look under (without the blob name). Can be empty
         recursive: bool
             Whether to look under sub-paths as well.
 
