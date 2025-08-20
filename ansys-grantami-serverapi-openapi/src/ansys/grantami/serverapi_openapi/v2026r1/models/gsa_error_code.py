@@ -83,5 +83,6 @@ class GsaErrorCode(Enum):
     RELEASERECORDVERSIONCONTROL = "releaseRecordVersionControl"
     RELEASETABLEVERSIONCONTROL = "releaseTableVersionControl"
     SUBTYPEDESERIALIZATION = "subtypeDeserialization"
+    SERVERNOTAVAILABLE = "serverNotAvailable"
     UPGRADEDATABASE = "upgradeDatabase"
     WITHDRAWRECORDVERSIONCONTROL = "withdrawRecordVersionControl"
