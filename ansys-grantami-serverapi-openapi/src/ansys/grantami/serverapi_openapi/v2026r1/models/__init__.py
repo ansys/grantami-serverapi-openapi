@@ -307,6 +307,7 @@ from .gsa_data_update_token import GsaDataUpdateToken
 from .gsa_data_updater_job import GsaDataUpdaterJob
 from .gsa_data_updater_job_status import GsaDataUpdaterJobStatus
 from .gsa_data_updater_job_type import GsaDataUpdaterJobType
+from .gsa_data_updater_project import GsaDataUpdaterProject
 from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModificationErrorDetail
 from .gsa_database import GsaDatabase
 from .gsa_database_issues import GsaDatabaseIssues
@@ -920,6 +921,7 @@ from .gsa_range_histogram_aggregation_datum_criterion import (
 )
 from .gsa_record_ancestor_criterion import GsaRecordAncestorCriterion
 from .gsa_record_ancestor_history_criterion import GsaRecordAncestorHistoryCriterion
+from .gsa_record_and_attribute_selection_type import GsaRecordAndAttributeSelectionType
 from .gsa_record_color import GsaRecordColor
 from .gsa_record_color_property import GsaRecordColorProperty
 from .gsa_record_export_failure import GsaRecordExportFailure
@@ -1515,6 +1517,7 @@ __all__ = [
     "GsaDataUpdaterJob",
     "GsaDataUpdaterJobStatus",
     "GsaDataUpdaterJobType",
+    "GsaDataUpdaterProject",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
     "GsaDatabaseIssues",
@@ -2012,6 +2015,7 @@ __all__ = [
     "GsaRangeHistogramAggregationDatumCriterion",
     "GsaRecordAncestorCriterion",
     "GsaRecordAncestorHistoryCriterion",
+    "GsaRecordAndAttributeSelectionType",
     "GsaRecordColor",
     "GsaRecordColorProperty",
     "GsaRecordExportFailure",
