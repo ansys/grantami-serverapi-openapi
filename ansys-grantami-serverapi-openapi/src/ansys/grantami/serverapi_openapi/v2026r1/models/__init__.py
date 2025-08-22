@@ -467,6 +467,7 @@ from .gsa_duplicate_tabular_column_names_error_detail import (
 from .gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
+from .gsa_email_generation_settings import GsaEmailGenerationSettings
 from .gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
@@ -782,6 +783,9 @@ from .gsa_no_values_specifier import GsaNoValuesSpecifier
 from .gsa_not_applicable_datum import GsaNotApplicableDatum
 from .gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
+from .gsa_notification_user import GsaNotificationUser
+from .gsa_notification_users import GsaNotificationUsers
+from .gsa_notification_watch import GsaNotificationWatch
 from .gsa_numeric_graph_parameter_value import GsaNumericGraphParameterValue
 from .gsa_numeric_parameter import GsaNumericParameter
 from .gsa_numeric_parameter_constraint import GsaNumericParameterConstraint
@@ -1205,6 +1209,7 @@ from .gsa_update_logical_attribute import GsaUpdateLogicalAttribute
 from .gsa_update_long_text_attribute import GsaUpdateLongTextAttribute
 from .gsa_update_maths_content import GsaUpdateMathsContent
 from .gsa_update_maths_functional_attribute import GsaUpdateMathsFunctionalAttribute
+from .gsa_update_notification_user import GsaUpdateNotificationUser
 from .gsa_update_numeric_parameter import GsaUpdateNumericParameter
 from .gsa_update_numeric_parameter_content import GsaUpdateNumericParameterContent
 from .gsa_update_numeric_parameter_value import GsaUpdateNumericParameterValue
@@ -1257,6 +1262,7 @@ from .gsa_version_controlled_data_usage_data_modification_error_detail import (
 from .gsa_version_number_property import GsaVersionNumberProperty
 from .gsa_version_state import GsaVersionState
 from .gsa_version_state_property import GsaVersionStateProperty
+from .gsa_watch_type import GsaWatchType
 from .gsa_withdraw_record_version_control_exception import GsaWithdrawRecordVersionControlException
 from .gsa_xy_chart_template_usage_data_modification_error_detail import (
     GsaXYChartTemplateUsageDataModificationErrorDetail,
@@ -1627,6 +1633,7 @@ __all__ = [
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
+    "GsaEmailGenerationSettings",
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
@@ -1898,6 +1905,9 @@ __all__ = [
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
+    "GsaNotificationUser",
+    "GsaNotificationUsers",
+    "GsaNotificationWatch",
     "GsaNumericGraphParameterValue",
     "GsaNumericParameter",
     "GsaNumericParameterConstraint",
@@ -2267,6 +2277,7 @@ __all__ = [
     "GsaUpdateLongTextAttribute",
     "GsaUpdateMathsContent",
     "GsaUpdateMathsFunctionalAttribute",
+    "GsaUpdateNotificationUser",
     "GsaUpdateNumericParameter",
     "GsaUpdateNumericParameterContent",
     "GsaUpdateNumericParameterValue",
@@ -2315,6 +2326,7 @@ __all__ = [
     "GsaVersionNumberProperty",
     "GsaVersionState",
     "GsaVersionStateProperty",
+    "GsaWatchType",
     "GsaWithdrawRecordVersionControlException",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
     "JobqueueFilesBody",

@@ -64,7 +64,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
         body: GsaCreateConfiguration
 
         Returns
@@ -172,7 +172,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
         configuration_guid: str
 
         Returns
@@ -277,7 +277,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
         configuration_guid: str
 
         Returns
@@ -383,7 +383,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
         configuration_guid: str
 
         Returns
@@ -489,7 +489,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
 
         Returns
         -------
@@ -587,7 +587,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type.
+            The configuration type as entered.
         configuration_guid: str
         body: GsaUpdateConfiguration
 
