@@ -48,6 +48,235 @@ class ServerManagerApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def delete_user(self, *, user_identity: "int") -> "GsaNotificationUser | None":
+        """Given a user's identity, deletes the user.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        user_identity: int
+
+        Returns
+        -------
+        GsaNotificationUser | None
+        """
+        data = self._delete_user_with_http_info(user_identity, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _delete_user_with_http_info(self, user_identity: "int", **kwargs: Any) -> Any:
+        all_params = [
+            "user_identity",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_user")
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "user_identity" is set
+        if "user_identity" not in params or params["user_identity"] is None:
+            raise ValueError(
+                "Missing the required parameter 'user_identity' when calling 'delete_user'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "user_identity" in params and user_identity is not None:
+            path_params["userIdentity"] = params["user_identity"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaNotificationUser",
+            204: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users/{userIdentity}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_watch(self, *, user_identity: "int", watch_identity: "int") -> "None":
+        """Given a user identity and a watch identity, deletes the watch.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        user_identity: int
+        watch_identity: int
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_watch_with_http_info(
+            user_identity, watch_identity, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_watch_with_http_info(
+        self, user_identity: "int", watch_identity: "int", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "user_identity",
+            "watch_identity",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_watch"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "user_identity" is set
+        if "user_identity" not in params or params["user_identity"] is None:
+            raise ValueError(
+                "Missing the required parameter 'user_identity' when calling 'delete_watch'"
+            )
+        # verify the required parameter "watch_identity" is set
+        if "watch_identity" not in params or params["watch_identity"] is None:
+            raise ValueError(
+                "Missing the required parameter 'watch_identity' when calling 'delete_watch'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "user_identity" in params and user_identity is not None:
+            path_params["userIdentity"] = params["user_identity"]
+        if "watch_identity" in params and watch_identity is not None:
+            path_params["watchIdentity"] = params["watch_identity"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+            204: None,
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users/{userIdentity}/watches/{watchIdentity}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_all_email_generation_settings(self) -> "GsaEmailGenerationSettings | None":
+        """Returns all the email generation settings for the server if the user is a system administrator.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaEmailGenerationSettings | None
+        """
+        data = self._get_all_email_generation_settings_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_email_generation_settings_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all_email_generation_settings"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaEmailGenerationSettings",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/generationSettings",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_smtp_properties(self) -> "GsaSmtpProperties":
         """get_smtp_properties
 
@@ -171,6 +400,66 @@ class ServerManagerApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_users(self) -> "GsaNotificationUsers | None":
+        """Returns all the notifications users, if the user is a system administrator.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaNotificationUsers | None
+        """
+        data = self._get_users_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_users_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_users")
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaNotificationUsers",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def put(self, *, body: "Optional[GsaSmtpProperties]" = None) -> "None":
         """put
 
@@ -223,6 +512,176 @@ class ServerManagerApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/serverManager/email",
             "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_email_generation_settings(
+        self, *, body: "Optional[GsaEmailGenerationSettings]" = None
+    ) -> "GsaEmailGenerationSettings | None":
+        """Sets all the email generation settings for the server and returns the updated object.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaEmailGenerationSettings
+
+        Returns
+        -------
+        GsaEmailGenerationSettings | None
+        """
+        data = self._set_email_generation_settings_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _set_email_generation_settings_with_http_info(
+        self, body: "Optional[GsaEmailGenerationSettings]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_email_generation_settings"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaEmailGenerationSettings",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/generationSettings",
+            "PATCH",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_user(
+        self, *, user_identity: "int", body: "Optional[GsaUpdateNotificationUser]" = None
+    ) -> "GsaNotificationUser | None":
+        """Given an existing user's identity, updates their email address.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        user_identity: int
+        body: GsaUpdateNotificationUser
+
+        Returns
+        -------
+        GsaNotificationUser | None
+        """
+        data = self._set_user_with_http_info(user_identity, body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _set_user_with_http_info(
+        self,
+        user_identity: "int",
+        body: "Optional[GsaUpdateNotificationUser]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "user_identity",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(f"Got an unexpected keyword argument '{key}' to method set_user")
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "user_identity" is set
+        if "user_identity" not in params or params["user_identity"] is None:
+            raise ValueError(
+                "Missing the required parameter 'user_identity' when calling 'set_user'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "user_identity" in params and user_identity is not None:
+            path_params["userIdentity"] = params["user_identity"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaNotificationUser",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users/{userIdentity}",
+            "PATCH",
             path_params,
             query_params,
             header_params,
