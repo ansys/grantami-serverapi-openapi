@@ -50,7 +50,7 @@ class SchemaParametersApi(ApiBase):
 
     def create_parameter(
         self, *, database_key: "str", body: "Optional[GsaCreateParameter]" = None
-    ) -> "GsaParameter | GsaParameterCreationException | None":
+    ) -> "GsaParameter | None":
         """Create a new parameter.
 
         This method makes a synchronous HTTP request.
@@ -58,12 +58,11 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateParameter
 
         Returns
         -------
-        GsaParameter | GsaParameterCreationException | None
+        GsaParameter | None
         """
         data = self._create_parameter_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +120,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameter",
-            400: "GsaParameterCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -148,7 +147,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaCreateParameterValue]" = None,
-    ) -> "GsaParameterValue | GsaParameterValueCreationException | None":
+    ) -> "GsaParameterValue | None":
         """Create a new parameter value.
 
         This method makes a synchronous HTTP request.
@@ -156,13 +155,12 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaCreateParameterValue
 
         Returns
         -------
-        GsaParameterValue | GsaParameterValueCreationException | None
+        GsaParameterValue | None
         """
         data = self._create_parameter_value_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -232,7 +230,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameterValue",
-            400: "GsaParameterValueCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -263,7 +261,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -357,7 +354,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -460,7 +456,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -550,7 +545,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -642,7 +636,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -741,7 +734,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -816,7 +808,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaUpdateParameter]" = None,
-    ) -> "GsaParameter | GsaParameterUpdateException | None":
+    ) -> "GsaParameter | None":
         """Update a parameter.
 
         This method makes a synchronous HTTP request.
@@ -824,13 +816,12 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaUpdateParameter
 
         Returns
         -------
-        GsaParameter | GsaParameterUpdateException | None
+        GsaParameter | None
         """
         data = self._update_parameter_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -900,7 +891,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameter",
-            400: "GsaParameterUpdateException",
+            400: None,
             403: None,
             404: None,
         }
@@ -928,7 +919,7 @@ class SchemaParametersApi(ApiBase):
         parameter_guid: "str",
         parameter_value_guid: "str",
         body: "Optional[GsaUpdateParameterValue]" = None,
-    ) -> "GsaParameterValue | GsaParameterValueUpdateException | None":
+    ) -> "GsaParameterValue | None":
         """Update a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -936,14 +927,13 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
         body: GsaUpdateParameterValue
 
         Returns
         -------
-        GsaParameterValue | GsaParameterValueUpdateException | None
+        GsaParameterValue | None
         """
         data = self._update_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, body, _return_http_data_only=True
@@ -1022,7 +1012,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameterValue",
-            400: "GsaParameterValueUpdateException",
+            400: None,
             403: None,
             404: None,
         }
