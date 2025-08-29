@@ -62,7 +62,7 @@ class GsaDiscreteValueAggregateException(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "reason": "GsaDiscreteValueAggregateErrorReason",
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaErrorDetail]",
         "message": "str",
     }
@@ -76,7 +76,7 @@ class GsaDiscreteValueAggregateException(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "reason": "GsaDiscreteValueAggregateErrorReason",
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "GsaErrorDetail",
     }
 
@@ -86,7 +86,7 @@ class GsaDiscreteValueAggregateException(ModelBase):
         self,
         *,
         reason: "GsaDiscreteValueAggregateErrorReason",
-        code: "GsaErrorCode | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
         errors: "list[GsaErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -95,13 +95,13 @@ class GsaDiscreteValueAggregateException(ModelBase):
         Parameters
         ----------
         reason: GsaDiscreteValueAggregateErrorReason
-        code: GsaErrorCode, optional
+        code: SystemNetHttpStatusCode, optional
         errors: list[GsaErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._reason: GsaDiscreteValueAggregateErrorReason
-        self._code: GsaErrorCode | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
         self._errors: list[GsaErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
@@ -163,23 +163,23 @@ class GsaDiscreteValueAggregateException(ModelBase):
         self._reason = reason
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaDiscreteValueAggregateException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaDiscreteValueAggregateException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaDiscreteValueAggregateException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaDiscreteValueAggregateException.
         """
         # Field is not nullable
