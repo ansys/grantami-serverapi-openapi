@@ -300,6 +300,7 @@ from .gsa_data_modification_error_detail import GsaDataModificationErrorDetail
 from .gsa_data_modification_error_reason import GsaDataModificationErrorReason
 from .gsa_data_rule import GsaDataRule
 from .gsa_data_rules_info import GsaDataRulesInfo
+from .gsa_data_source import GsaDataSource
 from .gsa_data_update import GsaDataUpdate
 from .gsa_data_update_header import GsaDataUpdateHeader
 from .gsa_data_update_run_info import GsaDataUpdateRunInfo
@@ -1012,6 +1013,7 @@ from .gsa_security_attribute_usage_data_modification_error_detail import (
 )
 from .gsa_security_groups import GsaSecurityGroups
 from .gsa_series_graph import GsaSeriesGraph
+from .gsa_server_connection_details import GsaServerConnectionDetails
 from .gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .gsa_set_datum import GsaSetDatum
 from .gsa_set_datum_type import GsaSetDatumType
@@ -1083,6 +1085,10 @@ from .gsa_sorting_value import GsaSortingValue
 from .gsa_sorting_value_type import GsaSortingValueType
 from .gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .gsa_specific_values_specifier import GsaSpecificValuesSpecifier
+from .gsa_sql_database_info import GsaSqlDatabaseInfo
+from .gsa_sql_databases_info import GsaSqlDatabasesInfo
+from .gsa_sql_server_info import GsaSqlServerInfo
+from .gsa_sql_servers_info import GsaSqlServersInfo
 from .gsa_standard_name import GsaStandardName
 from .gsa_standard_names_info import GsaStandardNamesInfo
 from .gsa_static_record_link_group import GsaStaticRecordLinkGroup
@@ -1516,6 +1522,7 @@ __all__ = [
     "GsaDataModificationErrorReason",
     "GsaDataRule",
     "GsaDataRulesInfo",
+    "GsaDataSource",
     "GsaDataUpdate",
     "GsaDataUpdateHeader",
     "GsaDataUpdateRunInfo",
@@ -2104,6 +2111,7 @@ __all__ = [
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
     "GsaSeriesGraph",
+    "GsaServerConnectionDetails",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
     "GsaSetDatumType",
@@ -2173,6 +2181,10 @@ __all__ = [
     "GsaSortingValueType",
     "GsaSourceOfObjectIdentifier",
     "GsaSpecificValuesSpecifier",
+    "GsaSqlDatabaseInfo",
+    "GsaSqlDatabasesInfo",
+    "GsaSqlServerInfo",
+    "GsaSqlServersInfo",
     "GsaStandardName",
     "GsaStandardNamesInfo",
     "GsaStaticRecordLinkGroup",
