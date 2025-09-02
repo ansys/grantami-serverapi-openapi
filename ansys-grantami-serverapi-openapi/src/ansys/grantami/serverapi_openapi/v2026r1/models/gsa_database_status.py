@@ -52,4 +52,3 @@ class GsaDatabaseStatus(Enum):
     DISABLED = "Disabled"
     SCHEMAUPGRADEREQUIRED = "SchemaUpgradeRequired"
     SCHEMADOWNGRADEREQUIRED = "SchemaDowngradeRequired"
-    MISSING = "Missing"
