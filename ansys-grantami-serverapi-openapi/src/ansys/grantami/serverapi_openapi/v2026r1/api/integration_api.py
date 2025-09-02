@@ -460,7 +460,6 @@ class IntegrationApi(ApiBase):
         ----------
         schema: str
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_identity: int
 
         Returns

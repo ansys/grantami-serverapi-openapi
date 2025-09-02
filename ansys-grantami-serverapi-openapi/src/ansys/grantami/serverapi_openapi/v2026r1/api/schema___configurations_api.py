@@ -54,7 +54,7 @@ class SchemaConfigurationsApi(ApiBase):
         database_key: "str",
         configuration_type: "str",
         body: "Optional[GsaCreateConfiguration]" = None,
-    ) -> "GsaConfiguration | GsaFileCreationException | None":
+    ) -> "GsaConfiguration | None":
         """Create a new configuration.
 
         This method makes a synchronous HTTP request.
@@ -62,14 +62,13 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
         body: GsaCreateConfiguration
 
         Returns
         -------
-        GsaConfiguration | GsaFileCreationException | None
+        GsaConfiguration | None
         """
         data = self._create_configuration_with_http_info(
             database_key, configuration_type, body, _return_http_data_only=True
@@ -139,7 +138,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaConfiguration",
-            400: "GsaFileCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -170,9 +169,8 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
         configuration_guid: str
 
         Returns
@@ -267,7 +265,7 @@ class SchemaConfigurationsApi(ApiBase):
 
     def export_configuration(
         self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
-    ) -> "None | str":
+    ) -> "None":
         """Get individual configuration as a file
 
         This method makes a synchronous HTTP request.
@@ -275,14 +273,13 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
         configuration_guid: str
 
         Returns
         -------
-        None | str
+        None
         """
         data = self._export_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, _return_http_data_only=True
@@ -347,11 +344,9 @@ class SchemaConfigurationsApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "file",
+            200: None,
             404: None,
         }
 
@@ -381,9 +376,8 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
         configuration_guid: str
 
         Returns
@@ -487,9 +481,8 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
 
         Returns
         -------
@@ -577,7 +570,7 @@ class SchemaConfigurationsApi(ApiBase):
         configuration_type: "str",
         configuration_guid: "str",
         body: "Optional[GsaUpdateConfiguration]" = None,
-    ) -> "GsaConfiguration | GsaFileUpdateException | None":
+    ) -> "GsaConfiguration | None":
         """Update a configuration.
 
         This method makes a synchronous HTTP request.
@@ -585,15 +578,14 @@ class SchemaConfigurationsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         configuration_type: str
-            The configuration type as entered.
+            The configuration type.
         configuration_guid: str
         body: GsaUpdateConfiguration
 
         Returns
         -------
-        GsaConfiguration | GsaFileUpdateException | None
+        GsaConfiguration | None
         """
         data = self._update_configuration_with_http_info(
             database_key, configuration_type, configuration_guid, body, _return_http_data_only=True
@@ -672,7 +664,7 @@ class SchemaConfigurationsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaConfiguration",
-            400: "GsaFileUpdateException",
+            400: None,
             403: None,
             404: None,
         }
