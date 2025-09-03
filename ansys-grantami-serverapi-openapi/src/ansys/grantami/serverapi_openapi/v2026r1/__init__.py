@@ -84,6 +84,7 @@ from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
+from .api.system_admin___sql_api import SystemAdminSqlApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
 
 # import models into sdk package
@@ -359,6 +360,7 @@ from .models.gsa_data_modification_error_detail import GsaDataModificationErrorD
 from .models.gsa_data_modification_error_reason import GsaDataModificationErrorReason
 from .models.gsa_data_rule import GsaDataRule
 from .models.gsa_data_rules_info import GsaDataRulesInfo
+from .models.gsa_data_source import GsaDataSource
 from .models.gsa_data_update import GsaDataUpdate
 from .models.gsa_data_update_header import GsaDataUpdateHeader
 from .models.gsa_data_update_run_info import GsaDataUpdateRunInfo
@@ -1121,6 +1123,7 @@ from .models.gsa_security_attribute_usage_data_modification_error_detail import 
 )
 from .models.gsa_security_groups import GsaSecurityGroups
 from .models.gsa_series_graph import GsaSeriesGraph
+from .models.gsa_server_connection_details import GsaServerConnectionDetails
 from .models.gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .models.gsa_set_datum import GsaSetDatum
 from .models.gsa_set_datum_type import GsaSetDatumType
@@ -1192,6 +1195,10 @@ from .models.gsa_sorting_value import GsaSortingValue
 from .models.gsa_sorting_value_type import GsaSortingValueType
 from .models.gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .models.gsa_specific_values_specifier import GsaSpecificValuesSpecifier
+from .models.gsa_sql_database_info import GsaSqlDatabaseInfo
+from .models.gsa_sql_databases_info import GsaSqlDatabasesInfo
+from .models.gsa_sql_server_info import GsaSqlServerInfo
+from .models.gsa_sql_servers_info import GsaSqlServersInfo
 from .models.gsa_standard_name import GsaStandardName
 from .models.gsa_standard_names_info import GsaStandardNamesInfo
 from .models.gsa_static_record_link_group import GsaStaticRecordLinkGroup
@@ -1440,6 +1447,7 @@ __all__ = [
     "SearchApi",
     "ServerManagerApi",
     "StatusApi",
+    "SystemAdminSqlApi",
     "AttributesAttributeguidimportfileBody",
     "AttributesAttributeguidimportfileBody1",
     "AttributesAttributeguidimportpictureBody",
@@ -1677,6 +1685,7 @@ __all__ = [
     "GsaDataModificationErrorReason",
     "GsaDataRule",
     "GsaDataRulesInfo",
+    "GsaDataSource",
     "GsaDataUpdate",
     "GsaDataUpdateHeader",
     "GsaDataUpdateRunInfo",
@@ -2265,6 +2274,7 @@ __all__ = [
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
     "GsaSeriesGraph",
+    "GsaServerConnectionDetails",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
     "GsaSetDatumType",
@@ -2334,6 +2344,10 @@ __all__ = [
     "GsaSortingValueType",
     "GsaSourceOfObjectIdentifier",
     "GsaSpecificValuesSpecifier",
+    "GsaSqlDatabaseInfo",
+    "GsaSqlDatabasesInfo",
+    "GsaSqlServerInfo",
+    "GsaSqlServersInfo",
     "GsaStandardName",
     "GsaStandardNamesInfo",
     "GsaStaticRecordLinkGroup",
