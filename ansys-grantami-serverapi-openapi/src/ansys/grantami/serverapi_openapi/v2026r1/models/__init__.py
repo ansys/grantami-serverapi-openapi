@@ -1006,6 +1006,7 @@ from .gsa_search_request import GsaSearchRequest
 from .gsa_search_response import GsaSearchResponse
 from .gsa_search_result import GsaSearchResult
 from .gsa_search_results_request import GsaSearchResultsRequest
+from .gsa_search_service_status import GsaSearchServiceStatus
 from .gsa_searchable_record_property import GsaSearchableRecordProperty
 from .gsa_security_attribute_grouping import GsaSecurityAttributeGrouping
 from .gsa_security_attribute_usage_data_modification_error_detail import (
@@ -2106,6 +2107,7 @@ __all__ = [
     "GsaSearchResponse",
     "GsaSearchResult",
     "GsaSearchResultsRequest",
+    "GsaSearchServiceStatus",
     "GsaSearchableRecordProperty",
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
