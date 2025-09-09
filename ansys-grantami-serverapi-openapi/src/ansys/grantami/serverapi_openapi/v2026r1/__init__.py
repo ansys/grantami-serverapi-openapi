@@ -888,6 +888,8 @@ from .models.gsa_no_values_specifier import GsaNoValuesSpecifier
 from .models.gsa_not_applicable_datum import GsaNotApplicableDatum
 from .models.gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .models.gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
+from .models.gsa_notification_email_allowed_request import GsaNotificationEmailAllowedRequest
+from .models.gsa_notification_email_allowed_response import GsaNotificationEmailAllowedResponse
 from .models.gsa_notification_user import GsaNotificationUser
 from .models.gsa_notification_users import GsaNotificationUsers
 from .models.gsa_notification_watch import GsaNotificationWatch
@@ -1087,6 +1089,8 @@ from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .models.gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
 from .models.gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
 from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
+from .models.gsa_resolved_notification_watch import GsaResolvedNotificationWatch
+from .models.gsa_resolved_notification_watches import GsaResolvedNotificationWatches
 from .models.gsa_response_options import GsaResponseOptions
 from .models.gsa_resubmit_job_request import GsaResubmitJobRequest
 from .models.gsa_retarget_potential_request import GsaRetargetPotentialRequest
@@ -2076,6 +2080,8 @@ __all__ = [
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
+    "GsaNotificationEmailAllowedRequest",
+    "GsaNotificationEmailAllowedResponse",
     "GsaNotificationUser",
     "GsaNotificationUsers",
     "GsaNotificationWatch",
@@ -2247,6 +2253,8 @@ __all__ = [
     "GsaResolveLinkTargetsInfo",
     "GsaResolveLinkTargetsRequest",
     "GsaResolvedLinkTarget",
+    "GsaResolvedNotificationWatch",
+    "GsaResolvedNotificationWatches",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
     "GsaRetargetPotentialRequest",
