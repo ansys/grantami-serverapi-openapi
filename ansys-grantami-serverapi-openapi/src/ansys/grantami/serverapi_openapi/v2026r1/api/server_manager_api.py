@@ -277,6 +277,86 @@ class ServerManagerApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_resolved_watches(
+        self, *, user_identity: "int"
+    ) -> "GsaResolvedNotificationWatches | None":
+        """Returns the resolved watches for a given user identity.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        user_identity: int
+
+        Returns
+        -------
+        GsaResolvedNotificationWatches | None
+        """
+        data = self._get_resolved_watches_with_http_info(user_identity, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_resolved_watches_with_http_info(self, user_identity: "int", **kwargs: Any) -> Any:
+        all_params = [
+            "user_identity",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_resolved_watches"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "user_identity" is set
+        if "user_identity" not in params or params["user_identity"] is None:
+            raise ValueError(
+                "Missing the required parameter 'user_identity' when calling 'get_resolved_watches'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "user_identity" in params and user_identity is not None:
+            path_params["userIdentity"] = params["user_identity"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaResolvedNotificationWatches",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users/{userIdentity}/resolvedWatches",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_smtp_properties(self) -> "GsaSmtpProperties":
         """get_smtp_properties
 
@@ -460,6 +540,84 @@ class ServerManagerApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def is_user_email_valid(
+        self, *, body: "Optional[GsaNotificationEmailAllowedRequest]" = None
+    ) -> "GsaNotificationEmailAllowedResponse | None":
+        """Returns whether the given email address is part of an allowed domain.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaNotificationEmailAllowedRequest
+
+        Returns
+        -------
+        GsaNotificationEmailAllowedResponse | None
+        """
+        data = self._is_user_email_valid_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _is_user_email_valid_with_http_info(
+        self, body: "Optional[GsaNotificationEmailAllowedRequest]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method is_user_email_valid"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaNotificationEmailAllowedResponse",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/emailNotifications/users/isEmailAllowed",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def put(self, *, body: "Optional[GsaSmtpProperties]" = None) -> "None":
         """put
 
@@ -583,6 +741,7 @@ class ServerManagerApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaEmailGenerationSettings",
+            400: None,
             403: None,
         }
 
@@ -675,6 +834,7 @@ class ServerManagerApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaNotificationUser",
+            400: None,
             403: None,
             404: None,
         }
