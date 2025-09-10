@@ -53,3 +53,4 @@ class GsaEntityType(Enum):
     FILE = "file"
     FOLDER = "folder"
     RECORDHISTORY = "recordHistory"
+    RECORDLINKGROUP = "recordLinkGroup"

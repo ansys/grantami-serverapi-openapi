@@ -218,6 +218,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
     @property
     def attribute_pairs(self) -> "list[GsaCreateAttributeLinkPair]":
         """Gets the attribute_pairs of this GsaCreateSmartRecordLinkGroup.
+        There must be at least one and not more than three attribute pairs.
 
         Returns
         -------
@@ -229,6 +230,7 @@ class GsaCreateSmartRecordLinkGroup(GsaCreateRecordLinkGroup):
     @attribute_pairs.setter
     def attribute_pairs(self, attribute_pairs: "list[GsaCreateAttributeLinkPair]") -> None:
         """Sets the attribute_pairs of this GsaCreateSmartRecordLinkGroup.
+        There must be at least one and not more than three attribute pairs.
 
         Parameters
         ----------

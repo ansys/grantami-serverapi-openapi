@@ -184,6 +184,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
     @property
     def attribute_pairs(self) -> "list[GsaCreateAttributeLinkPair] | Unset_Type":
         """Gets the attribute_pairs of this GsaUpdateSmartRecordLinkGroup.
+        The attribute pairs cannot be updated other than by creating a new set.  There must be at least one and not more than three attribute pairs.
 
         Returns
         -------
@@ -197,6 +198,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
         self, attribute_pairs: "list[GsaCreateAttributeLinkPair] | Unset_Type"
     ) -> None:
         """Sets the attribute_pairs of this GsaUpdateSmartRecordLinkGroup.
+        The attribute pairs cannot be updated other than by creating a new set.  There must be at least one and not more than three attribute pairs.
 
         Parameters
         ----------

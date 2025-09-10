@@ -102,6 +102,9 @@ from .gsa_attribute_aggregation_criterion import GsaAttributeAggregationCriterio
 from .gsa_attribute_aggregation_exists_criterion import GsaAttributeAggregationExistsCriterion
 from .gsa_attribute_aggregation_type import GsaAttributeAggregationType
 from .gsa_attribute_aggregation_value_criterion import GsaAttributeAggregationValueCriterion
+from .gsa_attribute_already_specified_smart_attributes_error_detail import (
+    GsaAttributeAlreadySpecifiedSmartAttributesErrorDetail,
+)
 from .gsa_attribute_creation_exception import GsaAttributeCreationException
 from .gsa_attribute_criterion import GsaAttributeCriterion
 from .gsa_attribute_criterion_type import GsaAttributeCriterionType
@@ -117,12 +120,21 @@ from .gsa_attribute_link_pair import GsaAttributeLinkPair
 from .gsa_attribute_matches_criterion import GsaAttributeMatchesCriterion
 from .gsa_attribute_no_such_entity_type import GsaAttributeNoSuchEntityType
 from .gsa_attribute_not_applicable_criterion import GsaAttributeNotApplicableCriterion
+from .gsa_attribute_pair_discrete_type_mismatch_smart_attributes_error_detail import (
+    GsaAttributePairDiscreteTypeMismatchSmartAttributesErrorDetail,
+)
+from .gsa_attribute_pair_type_mismatch_smart_attributes_error_detail import (
+    GsaAttributePairTypeMismatchSmartAttributesErrorDetail,
+)
 from .gsa_attribute_reference import GsaAttributeReference
 from .gsa_attribute_scale_type import GsaAttributeScaleType
 from .gsa_attribute_sort_criterion import GsaAttributeSortCriterion
 from .gsa_attribute_threshold_type import GsaAttributeThresholdType
 from .gsa_attribute_to_export import GsaAttributeToExport
 from .gsa_attribute_type import GsaAttributeType
+from .gsa_attribute_type_not_supported_smart_attributes_error_detail import (
+    GsaAttributeTypeNotSupportedSmartAttributesErrorDetail,
+)
 from .gsa_attribute_usage_data_modification_error_detail import (
     GsaAttributeUsageDataModificationErrorDetail,
 )
@@ -552,6 +564,9 @@ from .gsa_folder_move_exception import GsaFolderMoveException
 from .gsa_folder_type import GsaFolderType
 from .gsa_folder_update_exception import GsaFolderUpdateException
 from .gsa_folders_info import GsaFoldersInfo
+from .gsa_forbid_orphans_record_link_group_error_detail import (
+    GsaForbidOrphansRecordLinkGroupErrorDetail,
+)
 from .gsa_free_text_aggregation import GsaFreeTextAggregation
 from .gsa_free_text_aggregation_criterion import GsaFreeTextAggregationCriterion
 from .gsa_free_text_criterion import GsaFreeTextCriterion
@@ -716,6 +731,9 @@ from .gsa_long_text_datum import GsaLongTextDatum
 from .gsa_long_text_datum_criterion import GsaLongTextDatumCriterion
 from .gsa_long_text_datum_exists_criterion import GsaLongTextDatumExistsCriterion
 from .gsa_long_text_prefix_datum_criterion import GsaLongTextPrefixDatumCriterion
+from .gsa_many_to_many_forbid_orphans_record_link_group_error_detail import (
+    GsaManyToManyForbidOrphansRecordLinkGroupErrorDetail,
+)
 from .gsa_mapping_of_object_identifier import GsaMappingOfObjectIdentifier
 from .gsa_match_mode import GsaMatchMode
 from .gsa_maths_content import GsaMathsContent
@@ -740,9 +758,15 @@ from .gsa_move_record_history import GsaMoveRecordHistory
 from .gsa_multi_valued_point_data_usage_data_modification_error_detail import (
     GsaMultiValuedPointDataUsageDataModificationErrorDetail,
 )
+from .gsa_name_already_exists_as_reverse_record_link_group_error_detail import (
+    GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail,
+)
 from .gsa_name_already_exists_error_detail import GsaNameAlreadyExistsErrorDetail
 from .gsa_name_already_specified_error_detail import GsaNameAlreadySpecifiedErrorDetail
 from .gsa_name_not_provided_error_detail import GsaNameNotProvidedErrorDetail
+from .gsa_name_same_as_reverse_name_record_link_group_error_detail import (
+    GsaNameSameAsReverseNameRecordLinkGroupErrorDetail,
+)
 from .gsa_name_whitespace_parameter_value_error_detail import (
     GsaNameWhitespaceParameterValueErrorDetail,
 )
@@ -754,6 +778,9 @@ from .gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
 from .gsa_named_entity_folder_error_detail import GsaNamedEntityFolderErrorDetail
 from .gsa_named_entity_parameter_error_detail import GsaNamedEntityParameterErrorDetail
 from .gsa_named_entity_parameter_value_error_detail import GsaNamedEntityParameterValueErrorDetail
+from .gsa_named_entity_record_link_group_error_detail import (
+    GsaNamedEntityRecordLinkGroupErrorDetail,
+)
 from .gsa_new_layout_association_chain_item import GsaNewLayoutAssociationChainItem
 from .gsa_new_layout_association_chain_link import GsaNewLayoutAssociationChainLink
 from .gsa_new_layout_attribute_item import GsaNewLayoutAttributeItem
@@ -762,12 +789,18 @@ from .gsa_new_layout_item import GsaNewLayoutItem
 from .gsa_new_layout_item_type import GsaNewLayoutItemType
 from .gsa_new_layout_record_link_item import GsaNewLayoutRecordLinkItem
 from .gsa_new_layout_smart_link_item import GsaNewLayoutSmartLinkItem
+from .gsa_no_attribute_pairs_smart_attributes_error_detail import (
+    GsaNoAttributePairsSmartAttributesErrorDetail,
+)
 from .gsa_no_data_file_error_detail import GsaNoDataFileErrorDetail
 from .gsa_no_expressions_maths_functional_error_detail import (
     GsaNoExpressionsMathsFunctionalErrorDetail,
 )
 from .gsa_no_file_file_error_detail import GsaNoFileFileErrorDetail
 from .gsa_no_parameter_values_parameter_error_detail import GsaNoParameterValuesParameterErrorDetail
+from .gsa_no_such_attribute_smart_attributes_error_detail import (
+    GsaNoSuchAttributeSmartAttributesErrorDetail,
+)
 from .gsa_no_such_entity_attribute_error_detail import GsaNoSuchEntityAttributeErrorDetail
 from .gsa_no_such_entity_tabular_column_error_detail import GsaNoSuchEntityTabularColumnErrorDetail
 from .gsa_no_such_expressions_maths_functional_error_detail import (
@@ -777,6 +810,9 @@ from .gsa_no_such_new_parent_file_move_error_detail import GsaNoSuchNewParentFil
 from .gsa_no_such_new_parent_folder_move_error_detail import GsaNoSuchNewParentFolderMoveErrorDetail
 from .gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
+)
+from .gsa_no_such_target_table_record_link_group_error_detail import (
+    GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
 from .gsa_no_such_unit_parameter_error_detail import GsaNoSuchUnitParameterErrorDetail
 from .gsa_no_value_exists_graph_value import GsaNoValueExistsGraphValue
@@ -939,7 +975,11 @@ from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .gsa_record_history_reference import GsaRecordHistoryReference
 from .gsa_record_link_group import GsaRecordLinkGroup
+from .gsa_record_link_group_creation_exception import GsaRecordLinkGroupCreationException
+from .gsa_record_link_group_error_detail import GsaRecordLinkGroupErrorDetail
+from .gsa_record_link_group_error_reason import GsaRecordLinkGroupErrorReason
 from .gsa_record_link_group_type import GsaRecordLinkGroupType
+from .gsa_record_link_group_update_exception import GsaRecordLinkGroupUpdateException
 from .gsa_record_link_groups_info import GsaRecordLinkGroupsInfo
 from .gsa_record_list_header import GsaRecordListHeader
 from .gsa_record_list_headers_info import GsaRecordListHeadersInfo
@@ -967,6 +1007,9 @@ from .gsa_record_version_reference import GsaRecordVersionReference
 from .gsa_record_with_data import GsaRecordWithData
 from .gsa_referenced_by_type import GsaReferencedByType
 from .gsa_referential_integrity_model import GsaReferentialIntegrityModel
+from .gsa_referential_integrity_model_record_link_group_error_detail import (
+    GsaReferentialIntegrityModelRecordLinkGroupErrorDetail,
+)
 from .gsa_register_update_request import GsaRegisterUpdateRequest
 from .gsa_release_record_version_control_exception import GsaReleaseRecordVersionControlException
 from .gsa_release_table_version_control_exception import GsaReleaseTableVersionControlException
@@ -988,6 +1031,15 @@ from .gsa_retarget_request import GsaRetargetRequest
 from .gsa_retarget_result import GsaRetargetResult
 from .gsa_retarget_result_type import GsaRetargetResultType
 from .gsa_retarget_results_info import GsaRetargetResultsInfo
+from .gsa_reverse_name_already_exists_as_name_record_link_group_error_detail import (
+    GsaReverseNameAlreadyExistsAsNameRecordLinkGroupErrorDetail,
+)
+from .gsa_reverse_name_already_exists_record_link_group_error_detail import (
+    GsaReverseNameAlreadyExistsRecordLinkGroupErrorDetail,
+)
+from .gsa_reverse_name_not_provided_record_link_group_error_detail import (
+    GsaReverseNameNotProvidedRecordLinkGroupErrorDetail,
+)
 from .gsa_rich_text_type import GsaRichTextType
 from .gsa_rich_text_value import GsaRichTextValue
 from .gsa_rollup_export_failure import GsaRollupExportFailure
@@ -1077,6 +1129,11 @@ from .gsa_slim_table import GsaSlimTable
 from .gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .gsa_slim_unit import GsaSlimUnit
 from .gsa_slim_unit_system import GsaSlimUnitSystem
+from .gsa_smart_attributes_error_detail import GsaSmartAttributesErrorDetail
+from .gsa_smart_attributes_error_reason import GsaSmartAttributesErrorReason
+from .gsa_smart_attributes_record_link_group_error_detail import (
+    GsaSmartAttributesRecordLinkGroupErrorDetail,
+)
 from .gsa_smart_link_group_usage_data_modification_error_detail import (
     GsaSmartLinkGroupUsageDataModificationErrorDetail,
 )
@@ -1088,6 +1145,9 @@ from .gsa_sort_direction import GsaSortDirection
 from .gsa_sort_type import GsaSortType
 from .gsa_sorting_value import GsaSortingValue
 from .gsa_sorting_value_type import GsaSortingValueType
+from .gsa_source_cannot_be_target_smart_attributes_error_detail import (
+    GsaSourceCannotBeTargetSmartAttributesErrorDetail,
+)
 from .gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .gsa_specific_values_specifier import GsaSpecificValuesSpecifier
 from .gsa_sql_database_info import GsaSqlDatabaseInfo
@@ -1101,6 +1161,9 @@ from .gsa_string_sorting_value import GsaStringSortingValue
 from .gsa_subset import GsaSubset
 from .gsa_subsets_info import GsaSubsetsInfo
 from .gsa_support_properties import GsaSupportProperties
+from .gsa_swap_name_and_reverse_name_circular_record_link_group_error_detail import (
+    GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail,
+)
 from .gsa_table import GsaTable
 from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_guid_property import GsaTableGuidProperty
@@ -1137,6 +1200,9 @@ from .gsa_target_attribute_type_attribute_error_detail import (
 from .gsa_term_with_count import GsaTermWithCount
 from .gsa_text_match_behavior import GsaTextMatchBehavior
 from .gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
+from .gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
+    GsaTooManyAttributePairsSmartAttributesErrorDetail,
+)
 from .gsa_translate_guids_to_identities_request import GsaTranslateGuidsToIdentitiesRequest
 from .gsa_translate_guids_to_identities_response import GsaTranslateGuidsToIdentitiesResponse
 from .gsa_unable_to_connect_add_database_validation_issue import (
@@ -1347,6 +1413,7 @@ __all__ = [
     "GsaAttributeAggregationExistsCriterion",
     "GsaAttributeAggregationType",
     "GsaAttributeAggregationValueCriterion",
+    "GsaAttributeAlreadySpecifiedSmartAttributesErrorDetail",
     "GsaAttributeCreationException",
     "GsaAttributeCriterion",
     "GsaAttributeCriterionType",
@@ -1362,12 +1429,15 @@ __all__ = [
     "GsaAttributeMatchesCriterion",
     "GsaAttributeNoSuchEntityType",
     "GsaAttributeNotApplicableCriterion",
+    "GsaAttributePairDiscreteTypeMismatchSmartAttributesErrorDetail",
+    "GsaAttributePairTypeMismatchSmartAttributesErrorDetail",
     "GsaAttributeReference",
     "GsaAttributeScaleType",
     "GsaAttributeSortCriterion",
     "GsaAttributeThresholdType",
     "GsaAttributeToExport",
     "GsaAttributeType",
+    "GsaAttributeTypeNotSupportedSmartAttributesErrorDetail",
     "GsaAttributeUsageDataModificationErrorDetail",
     "GsaAttributeValidateResponse",
     "GsaAttributeValueAggregation",
@@ -1715,6 +1785,7 @@ __all__ = [
     "GsaFolderType",
     "GsaFolderUpdateException",
     "GsaFoldersInfo",
+    "GsaForbidOrphansRecordLinkGroupErrorDetail",
     "GsaFreeTextAggregation",
     "GsaFreeTextAggregationCriterion",
     "GsaFreeTextCriterion",
@@ -1863,6 +1934,7 @@ __all__ = [
     "GsaLongTextDatumCriterion",
     "GsaLongTextDatumExistsCriterion",
     "GsaLongTextPrefixDatumCriterion",
+    "GsaManyToManyForbidOrphansRecordLinkGroupErrorDetail",
     "GsaMappingOfObjectIdentifier",
     "GsaMatchMode",
     "GsaMathsContent",
@@ -1881,9 +1953,11 @@ __all__ = [
     "GsaMoveFolder",
     "GsaMoveRecordHistory",
     "GsaMultiValuedPointDataUsageDataModificationErrorDetail",
+    "GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
     "GsaNameAlreadySpecifiedErrorDetail",
     "GsaNameNotProvidedErrorDetail",
+    "GsaNameSameAsReverseNameRecordLinkGroupErrorDetail",
     "GsaNameWhitespaceParameterValueErrorDetail",
     "GsaNamedCriterion",
     "GsaNamedEntityAttributeErrorDetail",
@@ -1893,6 +1967,7 @@ __all__ = [
     "GsaNamedEntityFolderErrorDetail",
     "GsaNamedEntityParameterErrorDetail",
     "GsaNamedEntityParameterValueErrorDetail",
+    "GsaNamedEntityRecordLinkGroupErrorDetail",
     "GsaNewLayoutAssociationChainItem",
     "GsaNewLayoutAssociationChainLink",
     "GsaNewLayoutAttributeItem",
@@ -1901,16 +1976,19 @@ __all__ = [
     "GsaNewLayoutItemType",
     "GsaNewLayoutRecordLinkItem",
     "GsaNewLayoutSmartLinkItem",
+    "GsaNoAttributePairsSmartAttributesErrorDetail",
     "GsaNoDataFileErrorDetail",
     "GsaNoExpressionsMathsFunctionalErrorDetail",
     "GsaNoFileFileErrorDetail",
     "GsaNoParameterValuesParameterErrorDetail",
+    "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
     "GsaNoSuchExpressionsMathsFunctionalErrorDetail",
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
     "GsaNoValueExistsGraphValue",
     "GsaNoValuesSpecifier",
@@ -2050,7 +2128,11 @@ __all__ = [
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
     "GsaRecordLinkGroup",
+    "GsaRecordLinkGroupCreationException",
+    "GsaRecordLinkGroupErrorDetail",
+    "GsaRecordLinkGroupErrorReason",
     "GsaRecordLinkGroupType",
+    "GsaRecordLinkGroupUpdateException",
     "GsaRecordLinkGroupsInfo",
     "GsaRecordListHeader",
     "GsaRecordListHeadersInfo",
@@ -2078,6 +2160,7 @@ __all__ = [
     "GsaRecordWithData",
     "GsaReferencedByType",
     "GsaReferentialIntegrityModel",
+    "GsaReferentialIntegrityModelRecordLinkGroupErrorDetail",
     "GsaRegisterUpdateRequest",
     "GsaReleaseRecordVersionControlException",
     "GsaReleaseTableVersionControlException",
@@ -2099,6 +2182,9 @@ __all__ = [
     "GsaRetargetResult",
     "GsaRetargetResultType",
     "GsaRetargetResultsInfo",
+    "GsaReverseNameAlreadyExistsAsNameRecordLinkGroupErrorDetail",
+    "GsaReverseNameAlreadyExistsRecordLinkGroupErrorDetail",
+    "GsaReverseNameNotProvidedRecordLinkGroupErrorDetail",
     "GsaRichTextType",
     "GsaRichTextValue",
     "GsaRollupExportFailure",
@@ -2180,6 +2266,9 @@ __all__ = [
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
     "GsaSlimUnitSystem",
+    "GsaSmartAttributesErrorDetail",
+    "GsaSmartAttributesErrorReason",
+    "GsaSmartAttributesRecordLinkGroupErrorDetail",
     "GsaSmartLinkGroupUsageDataModificationErrorDetail",
     "GsaSmartRecordLinkGroup",
     "GsaSmtpProperties",
@@ -2189,6 +2278,7 @@ __all__ = [
     "GsaSortType",
     "GsaSortingValue",
     "GsaSortingValueType",
+    "GsaSourceCannotBeTargetSmartAttributesErrorDetail",
     "GsaSourceOfObjectIdentifier",
     "GsaSpecificValuesSpecifier",
     "GsaSqlDatabaseInfo",
@@ -2202,6 +2292,7 @@ __all__ = [
     "GsaSubset",
     "GsaSubsetsInfo",
     "GsaSupportProperties",
+    "GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail",
     "GsaTable",
     "GsaTableDeletionException",
     "GsaTableGuidProperty",
@@ -2230,6 +2321,7 @@ __all__ = [
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
+    "GsaTooManyAttributePairsSmartAttributesErrorDetail",
     "GsaTranslateGuidsToIdentitiesRequest",
     "GsaTranslateGuidsToIdentitiesResponse",
     "GsaUnableToConnectAddDatabaseValidationIssue",
