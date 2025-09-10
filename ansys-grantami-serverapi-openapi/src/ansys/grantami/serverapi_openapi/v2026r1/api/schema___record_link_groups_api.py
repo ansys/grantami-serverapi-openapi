@@ -54,7 +54,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         body: "Optional[GsaCreateRecordLinkGroup]" = None,
-    ) -> "GsaRecordLinkGroup | None":
+    ) -> "GsaRecordLinkGroup | GsaRecordLinkGroupCreationException | None":
         """Create a new record link group.
 
         This method makes a synchronous HTTP request.
@@ -69,7 +69,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         Returns
         -------
-        GsaRecordLinkGroup | None
+        GsaRecordLinkGroup | GsaRecordLinkGroupCreationException | None
         """
         data = self._create_record_link_group_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -139,7 +139,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaRecordLinkGroup",
-            400: None,
+            400: "GsaRecordLinkGroupCreationException",
             403: None,
             404: None,
         }
@@ -547,7 +547,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         table_guid: "str",
         record_link_group_guid: "str",
         body: "Optional[GsaUpdateRecordLinkGroup]" = None,
-    ) -> "GsaRecordLinkGroup | None":
+    ) -> "GsaRecordLinkGroup | GsaRecordLinkGroupUpdateException | None":
         """Update record link group.
 
         This method makes a synchronous HTTP request.
@@ -563,7 +563,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         Returns
         -------
-        GsaRecordLinkGroup | None
+        GsaRecordLinkGroup | GsaRecordLinkGroupUpdateException | None
         """
         data = self._update_record_link_group_with_http_info(
             database_key, table_guid, record_link_group_guid, body, _return_http_data_only=True
@@ -642,7 +642,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaRecordLinkGroup",
-            400: None,
+            400: "GsaRecordLinkGroupUpdateException",
             403: None,
             404: None,
         }

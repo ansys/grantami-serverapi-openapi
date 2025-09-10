@@ -75,6 +75,8 @@ class GsaErrorCode(Enum):
     RECORDHISTORYCOPY = "recordHistoryCopy"
     RECORDHISTORYCREATE = "recordHistoryCreate"
     RECORDHISTORYMOVE = "recordHistoryMove"
+    RECORDLINKGROUPCREATION = "recordLinkGroupCreation"
+    RECORDLINKGROUPUPDATE = "recordLinkGroupUpdate"
     RECORDLISTPUBLISH = "recordListPublish"
     RECORDLISTRESETAWAITINGAPPROVAL = "recordListResetAwaitingApproval"
     RECORDLISTSETAWAITINGAPPROVAL = "recordListSetAwaitingApproval"
