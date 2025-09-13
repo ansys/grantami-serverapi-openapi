@@ -139,6 +139,221 @@ class DataUpdaterApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def create_or_update_project(
+        self,
+        *,
+        database_key: "str",
+        project_id: "str",
+        body: "Optional[GsaDataUpdaterProject]" = None,
+    ) -> "None":
+        """Creates a new project or updates an existing one.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        project_id: str
+        body: GsaDataUpdaterProject
+
+        Returns
+        -------
+        None
+        """
+        data = self._create_or_update_project_with_http_info(
+            database_key, project_id, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_or_update_project_with_http_info(
+        self,
+        database_key: "str",
+        project_id: "str",
+        body: "Optional[GsaDataUpdaterProject]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "project_id",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_or_update_project"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_or_update_project'"
+            )
+        # verify the required parameter "project_id" is set
+        if "project_id" not in params or params["project_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'project_id' when calling 'create_or_update_project'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "project_id" in params and project_id is not None:
+            path_params["project-id"] = params["project_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/projects/{database-key}/{project-id}",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def create_update(
+        self,
+        *,
+        database_key: "str",
+        project_id: "str",
+        body: "Optional[GsaCreateDataUpdateServerApiRequest]" = None,
+    ) -> "str":
+        """Creates and queues a new 'create update' job for a given project.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        project_id: str
+        body: GsaCreateDataUpdateServerApiRequest
+
+        Returns
+        -------
+        str
+        """
+        data = self._create_update_with_http_info(
+            database_key, project_id, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_update_with_http_info(
+        self,
+        database_key: "str",
+        project_id: "str",
+        body: "Optional[GsaCreateDataUpdateServerApiRequest]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "project_id",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_update"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_update'"
+            )
+        # verify the required parameter "project_id" is set
+        if "project_id" not in params or params["project_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'project_id' when calling 'create_update'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "project_id" in params and project_id is not None:
+            path_params["project-id"] = params["project_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "str",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/projects/{database-key}/{project-id}",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def delete_completed_data_updater_job(self, *, job_id: "str") -> "None":
         """Delete a specific job.  Only valid if job is in one of the completed states.
 
@@ -197,6 +412,93 @@ class DataUpdaterApi(ApiBase):
 
         return self.api_client.call_api(
             "/v1alpha/dataupdater/jobs/{job-id}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_project(self, *, database_key: "str", project_id: "str") -> "None":
+        """Deletes a project.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        project_id: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._delete_project_with_http_info(
+            database_key, project_id, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_project_with_http_info(
+        self, database_key: "str", project_id: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "project_id",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_project"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'delete_project'"
+            )
+        # verify the required parameter "project_id" is set
+        if "project_id" not in params or params["project_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'project_id' when calling 'delete_project'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "project_id" in params and project_id is not None:
+            path_params["project-id"] = params["project_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/projects/{database-key}/{project-id}",
             "DELETE",
             path_params,
             query_params,
@@ -832,8 +1134,99 @@ class DataUpdaterApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_selection(self, *, database_key: "str", profile_id: "str") -> "GsaSelection":
+        """Retrieves selection based on profile and database key
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        profile_id: str
+
+        Returns
+        -------
+        GsaSelection
+        """
+        data = self._get_selection_with_http_info(
+            database_key, profile_id, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_selection_with_http_info(
+        self, database_key: "str", profile_id: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "profile_id",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_selection"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_selection'"
+            )
+        # verify the required parameter "profile_id" is set
+        if "profile_id" not in params or params["profile_id"] is None:
+            raise ValueError(
+                "Missing the required parameter 'profile_id' when calling 'get_selection'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "profile_id" in params and profile_id is not None:
+            path_params["profile-id"] = params["profile_id"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaSelection",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/profiles/{profile-id}/selections/{database-key}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_update(self, *, database_key: "str", update_token_guid: "str") -> "GsaDataUpdate":
-        """get_update
+        """Get registered update.  Retrieves info about an update that was registered by the Apply side.
 
         This method makes a synchronous HTTP request.
 
@@ -907,6 +1300,99 @@ class DataUpdaterApi(ApiBase):
 
         return self.api_client.call_api(
             "/v1alpha/dataupdater/updates/{database-key}/{update-token-guid}",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_update_header(
+        self, *, database_key: "str", update_token_guid: "str"
+    ) -> "GsaDataUpdateHeader":
+        """Get update header from update file.  Works even for unregistered updates (i.e. ones just created by the Create side).
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        update_token_guid: str
+
+        Returns
+        -------
+        GsaDataUpdateHeader
+        """
+        data = self._get_update_header_with_http_info(
+            database_key, update_token_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_update_header_with_http_info(
+        self, database_key: "str", update_token_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "update_token_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_update_header"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_update_header'"
+            )
+        # verify the required parameter "update_token_guid" is set
+        if "update_token_guid" not in params or params["update_token_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'update_token_guid' when calling 'get_update_header'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "update_token_guid" in params and update_token_guid is not None:
+            path_params["update-token-guid"] = params["update_token_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaDataUpdateHeader",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/dataupdater/updates/{database-key}/{update-token-guid}/header",
             "GET",
             path_params,
             query_params,

@@ -72,6 +72,7 @@ class GsaDataUpdaterProject(ModelBase):
         "name": "str",
         "profile_id": "str",
         "record_and_attribute_selection_type": "GsaRecordAndAttributeSelectionType",
+        "selection": "GsaSelection",
         "time_last_update_generated": "datetime",
         "time_last_update_marked_ready_for_sending": "datetime",
     }
@@ -88,12 +89,14 @@ class GsaDataUpdaterProject(ModelBase):
         "name": "name",
         "profile_id": "profileId",
         "record_and_attribute_selection_type": "recordAndAttributeSelectionType",
+        "selection": "selection",
         "time_last_update_generated": "timeLastUpdateGenerated",
         "time_last_update_marked_ready_for_sending": "timeLastUpdateMarkedReadyForSending",
     }
 
     subtype_mapping: dict[str, str] = {
         "recordAndAttributeSelectionType": "GsaRecordAndAttributeSelectionType",
+        "selection": "GsaSelection",
     }
 
     discriminator: Optional[str] = None
@@ -112,6 +115,7 @@ class GsaDataUpdaterProject(ModelBase):
         name: "str | None | Unset_Type" = Unset,
         profile_id: "str | None | Unset_Type" = Unset,
         record_and_attribute_selection_type: "GsaRecordAndAttributeSelectionType | Unset_Type" = Unset,
+        selection: "GsaSelection | Unset_Type" = Unset,
         time_last_update_generated: "datetime | Unset_Type" = Unset,
         time_last_update_marked_ready_for_sending: "datetime | Unset_Type" = Unset,
     ) -> None:
@@ -130,6 +134,7 @@ class GsaDataUpdaterProject(ModelBase):
         name: str | None, optional
         profile_id: str | None, optional
         record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType, optional
+        selection: GsaSelection, optional
         time_last_update_generated: datetime, optional
         time_last_update_marked_ready_for_sending: datetime, optional
         """
@@ -148,6 +153,7 @@ class GsaDataUpdaterProject(ModelBase):
         self._last_update_generated_by_user_name: str | None | Unset_Type = Unset
         self._time_last_update_generated: datetime | Unset_Type = Unset
         self._profile_id: str | None | Unset_Type = Unset
+        self._selection: GsaSelection | Unset_Type = Unset
 
         if guid is not Unset:
             self.guid = guid
@@ -181,6 +187,8 @@ class GsaDataUpdaterProject(ModelBase):
             self.time_last_update_generated = time_last_update_generated
         if profile_id is not Unset:
             self.profile_id = profile_id
+        if selection is not Unset:
+            self.selection = selection
 
     @property
     def guid(self) -> "str | Unset_Type":
@@ -521,6 +529,31 @@ class GsaDataUpdaterProject(ModelBase):
             The profile_id of this GsaDataUpdaterProject.
         """
         self._profile_id = profile_id
+
+    @property
+    def selection(self) -> "GsaSelection | Unset_Type":
+        """Gets the selection of this GsaDataUpdaterProject.
+
+        Returns
+        -------
+        GsaSelection | Unset_Type
+            The selection of this GsaDataUpdaterProject.
+        """
+        return self._selection
+
+    @selection.setter
+    def selection(self, selection: "GsaSelection | Unset_Type") -> None:
+        """Sets the selection of this GsaDataUpdaterProject.
+
+        Parameters
+        ----------
+        selection: GsaSelection | Unset_Type
+            The selection of this GsaDataUpdaterProject.
+        """
+        # Field is not nullable
+        if selection is None:
+            raise ValueError("Invalid value for 'selection', must not be 'None'")
+        self._selection = selection
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

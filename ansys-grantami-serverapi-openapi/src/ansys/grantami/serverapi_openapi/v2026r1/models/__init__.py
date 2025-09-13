@@ -174,6 +174,7 @@ from .gsa_create_continuous_range import GsaCreateContinuousRange
 from .gsa_create_cross_database_link_target import GsaCreateCrossDatabaseLinkTarget
 from .gsa_create_cross_database_record_link_group import GsaCreateCrossDatabaseRecordLinkGroup
 from .gsa_create_data_rule import GsaCreateDataRule
+from .gsa_create_data_update_server_api_request import GsaCreateDataUpdateServerApiRequest
 from .gsa_create_date_time_attribute import GsaCreateDateTimeAttribute
 from .gsa_create_discrete_attribute import GsaCreateDiscreteAttribute
 from .gsa_create_discrete_functional_attribute import GsaCreateDiscreteFunctionalAttribute
@@ -1069,6 +1070,7 @@ from .gsa_security_attribute_usage_data_modification_error_detail import (
     GsaSecurityAttributeUsageDataModificationErrorDetail,
 )
 from .gsa_security_groups import GsaSecurityGroups
+from .gsa_selection import GsaSelection
 from .gsa_series_graph import GsaSeriesGraph
 from .gsa_server_connection_details import GsaServerConnectionDetails
 from .gsa_set_date_time_datum import GsaSetDateTimeDatum
@@ -1473,6 +1475,7 @@ __all__ = [
     "GsaCreateCrossDatabaseLinkTarget",
     "GsaCreateCrossDatabaseRecordLinkGroup",
     "GsaCreateDataRule",
+    "GsaCreateDataUpdateServerApiRequest",
     "GsaCreateDateTimeAttribute",
     "GsaCreateDiscreteAttribute",
     "GsaCreateDiscreteFunctionalAttribute",
@@ -2206,6 +2209,7 @@ __all__ = [
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
+    "GsaSelection",
     "GsaSeriesGraph",
     "GsaServerConnectionDetails",
     "GsaSetDateTimeDatum",
