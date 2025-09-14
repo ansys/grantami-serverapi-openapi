@@ -825,7 +825,7 @@ class DatabaseApi(ApiBase):
     def get_search_index_status(
         self, *, database_key: "str", include_errors: "Optional[bool]" = None
     ) -> "GsaSearchIndexStatus | None":
-        """Get Search Index Status for a given database
+        """GetSearch Index Status for a given database
 
         This method makes a synchronous HTTP request.
 
