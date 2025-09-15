@@ -65,17 +65,14 @@ class GsaDatabase(ModelBase):
         "is_read_only": "bool",
         "key": "str",
         "status": "GsaDatabaseStatus",
-        "user_capabilities": "GsaDatabaseUserCapabilities",
         "author": "str",
         "company": "str",
-        "configuration_details": "GsaConfigurationDetails",
         "currency_code": "str",
         "guid": "str",
         "index_in_sync": "bool",
         "index_out_of_date_duration": "str",
         "index_up_to_date": "bool",
         "is_access_controlled": "bool",
-        "issues": "GsaDatabaseIssues",
         "name": "str",
         "notes": "str",
         "schema_version": "str",
@@ -87,17 +84,14 @@ class GsaDatabase(ModelBase):
         "is_read_only": "isReadOnly",
         "key": "key",
         "status": "status",
-        "user_capabilities": "userCapabilities",
         "author": "author",
         "company": "company",
-        "configuration_details": "configurationDetails",
         "currency_code": "currencyCode",
         "guid": "guid",
         "index_in_sync": "indexInSync",
         "index_out_of_date_duration": "indexOutOfDateDuration",
         "index_up_to_date": "indexUpToDate",
         "is_access_controlled": "isAccessControlled",
-        "issues": "issues",
         "name": "name",
         "notes": "notes",
         "schema_version": "schemaVersion",
@@ -106,9 +100,6 @@ class GsaDatabase(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "status": "GsaDatabaseStatus",
-        "userCapabilities": "GsaDatabaseUserCapabilities",
-        "configurationDetails": "GsaConfigurationDetails",
-        "issues": "GsaDatabaseIssues",
     }
 
     discriminator: Optional[str] = None
@@ -120,17 +111,14 @@ class GsaDatabase(ModelBase):
         is_read_only: "bool",
         key: "str",
         status: "GsaDatabaseStatus",
-        user_capabilities: "GsaDatabaseUserCapabilities",
         author: "str | None | Unset_Type" = Unset,
         company: "str | None | Unset_Type" = Unset,
-        configuration_details: "GsaConfigurationDetails | Unset_Type" = Unset,
         currency_code: "str | None | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         index_in_sync: "bool | None | Unset_Type" = Unset,
         index_out_of_date_duration: "str | None | Unset_Type" = Unset,
         index_up_to_date: "bool | None | Unset_Type" = Unset,
         is_access_controlled: "bool | None | Unset_Type" = Unset,
-        issues: "GsaDatabaseIssues | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         notes: "str | None | Unset_Type" = Unset,
         schema_version: "str | None | Unset_Type" = Unset,
@@ -144,17 +132,14 @@ class GsaDatabase(ModelBase):
         is_read_only: bool
         key: str
         status: GsaDatabaseStatus
-        user_capabilities: GsaDatabaseUserCapabilities
         author: str | None, optional
         company: str | None, optional
-        configuration_details: GsaConfigurationDetails, optional
         currency_code: str | None, optional
         guid: str | None, optional
         index_in_sync: bool | None, optional
         index_out_of_date_duration: str | None, optional
         index_up_to_date: bool | None, optional
         is_access_controlled: bool | None, optional
-        issues: GsaDatabaseIssues, optional
         name: str | None, optional
         notes: str | None, optional
         schema_version: str | None, optional
@@ -176,9 +161,6 @@ class GsaDatabase(ModelBase):
         self._index_up_to_date: bool | None | Unset_Type = Unset
         self._index_out_of_date_duration: str | None | Unset_Type = Unset
         self._schema_version: str | None | Unset_Type = Unset
-        self._user_capabilities: GsaDatabaseUserCapabilities
-        self._configuration_details: GsaConfigurationDetails | Unset_Type = Unset
-        self._issues: GsaDatabaseIssues | Unset_Type = Unset
 
         if author is not Unset:
             self.author = author
@@ -208,11 +190,6 @@ class GsaDatabase(ModelBase):
             self.index_out_of_date_duration = index_out_of_date_duration
         if schema_version is not Unset:
             self.schema_version = schema_version
-        self.user_capabilities = user_capabilities
-        if configuration_details is not Unset:
-            self.configuration_details = configuration_details
-        if issues is not Unset:
-            self.issues = issues
 
     @property
     def author(self) -> "str | None | Unset_Type":
@@ -591,86 +568,6 @@ class GsaDatabase(ModelBase):
             The schema_version of this GsaDatabase.
         """
         self._schema_version = schema_version
-
-    @property
-    def user_capabilities(self) -> "GsaDatabaseUserCapabilities":
-        """Gets the user_capabilities of this GsaDatabase.
-
-        Returns
-        -------
-        GsaDatabaseUserCapabilities
-            The user_capabilities of this GsaDatabase.
-        """
-        return self._user_capabilities
-
-    @user_capabilities.setter
-    def user_capabilities(self, user_capabilities: "GsaDatabaseUserCapabilities") -> None:
-        """Sets the user_capabilities of this GsaDatabase.
-
-        Parameters
-        ----------
-        user_capabilities: GsaDatabaseUserCapabilities
-            The user_capabilities of this GsaDatabase.
-        """
-        # Field is not nullable
-        if user_capabilities is None:
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'None'")
-        # Field is required
-        if user_capabilities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'Unset'")
-        self._user_capabilities = user_capabilities
-
-    @property
-    def configuration_details(self) -> "GsaConfigurationDetails | Unset_Type":
-        """Gets the configuration_details of this GsaDatabase.
-
-        Returns
-        -------
-        GsaConfigurationDetails | Unset_Type
-            The configuration_details of this GsaDatabase.
-        """
-        return self._configuration_details
-
-    @configuration_details.setter
-    def configuration_details(
-        self, configuration_details: "GsaConfigurationDetails | Unset_Type"
-    ) -> None:
-        """Sets the configuration_details of this GsaDatabase.
-
-        Parameters
-        ----------
-        configuration_details: GsaConfigurationDetails | Unset_Type
-            The configuration_details of this GsaDatabase.
-        """
-        # Field is not nullable
-        if configuration_details is None:
-            raise ValueError("Invalid value for 'configuration_details', must not be 'None'")
-        self._configuration_details = configuration_details
-
-    @property
-    def issues(self) -> "GsaDatabaseIssues | Unset_Type":
-        """Gets the issues of this GsaDatabase.
-
-        Returns
-        -------
-        GsaDatabaseIssues | Unset_Type
-            The issues of this GsaDatabase.
-        """
-        return self._issues
-
-    @issues.setter
-    def issues(self, issues: "GsaDatabaseIssues | Unset_Type") -> None:
-        """Sets the issues of this GsaDatabase.
-
-        Parameters
-        ----------
-        issues: GsaDatabaseIssues | Unset_Type
-            The issues of this GsaDatabase.
-        """
-        # Field is not nullable
-        if issues is None:
-            raise ValueError("Invalid value for 'issues', must not be 'None'")
-        self._issues = issues
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
