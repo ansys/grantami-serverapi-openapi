@@ -1433,6 +1433,8 @@ from .models.gsa_update_unit import GsaUpdateUnit
 from .models.gsa_update_unit_system import GsaUpdateUnitSystem
 from .models.gsa_update_user_permission import GsaUpdateUserPermission
 from .models.gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
+from .models.gsa_upgrade_database_exception import GsaUpgradeDatabaseException
+from .models.gsa_upgrade_database_failure_reason import GsaUpgradeDatabaseFailureReason
 from .models.gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
 from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
@@ -2591,6 +2593,8 @@ __all__ = [
     "GsaUpdateUnitSystem",
     "GsaUpdateUserPermission",
     "GsaUpdateUserPermissionsInfo",
+    "GsaUpgradeDatabaseException",
+    "GsaUpgradeDatabaseFailureReason",
     "GsaUsageDataModificationErrorDetail",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",

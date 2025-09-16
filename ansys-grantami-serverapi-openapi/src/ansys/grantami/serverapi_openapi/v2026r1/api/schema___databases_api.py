@@ -1145,7 +1145,9 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def upgrade_database(self, *, database_key: "str") -> "GsaSlimDatabase | None":
+    def upgrade_database(
+        self, *, database_key: "str"
+    ) -> "GsaSlimDatabase | GsaUpgradeDatabaseException | None":
         """Upgrade a database to the latest schema version. Only available to users in the System Administrator role.
 
         This method makes a synchronous HTTP request.
@@ -1157,7 +1159,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Returns
         -------
-        GsaSlimDatabase | None
+        GsaSlimDatabase | GsaUpgradeDatabaseException | None
         """
         data = self._upgrade_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -1202,8 +1204,8 @@ class SchemaDatabasesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
+            400: "GsaUpgradeDatabaseException",
             200: "GsaSlimDatabase",
-            400: None,
             403: None,
             404: None,
         }
@@ -1226,7 +1228,7 @@ class SchemaDatabasesApi(ApiBase):
 
     def upgrade_database_not_added_to_mi(
         self, *, body: "Optional[GsaConnectionDetails]" = None
-    ) -> "None":
+    ) -> "GsaUpgradeDatabaseException | None":
         """Upgrades an external database to the latest schema version. Only available to users in the System Administrator role.
 
         This method makes a synchronous HTTP request.
@@ -1237,7 +1239,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Returns
         -------
-        None
+        GsaUpgradeDatabaseException | None
         """
         data = self._upgrade_database_not_added_to_mi_with_http_info(
             body, _return_http_data_only=True
@@ -1272,14 +1274,17 @@ class SchemaDatabasesApi(ApiBase):
         body_params = None
         if "body" in params and body is not None:
             body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
             ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
+            400: "GsaUpgradeDatabaseException",
             200: None,
-            400: None,
             403: None,
         }
 
