@@ -512,6 +512,7 @@ from .gsa_file_creation_exception import GsaFileCreationException
 from .gsa_file_datum import GsaFileDatum
 from .gsa_file_datum_criterion import GsaFileDatumCriterion
 from .gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
+from .gsa_file_datum_info import GsaFileDatumInfo
 from .gsa_file_error_detail import GsaFileErrorDetail
 from .gsa_file_error_reason import GsaFileErrorReason
 from .gsa_file_header import GsaFileHeader
@@ -619,7 +620,9 @@ from .gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriteri
 from .gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .gsa_hyperlink_target import GsaHyperlinkTarget
 from .gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
+from .gsa_index_failure import GsaIndexFailure
 from .gsa_index_record_failure import GsaIndexRecordFailure
+from .gsa_index_results_report import GsaIndexResultsReport
 from .gsa_indirect_links import GsaIndirectLinks
 from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .gsa_integer_aggregation import GsaIntegerAggregation
@@ -1745,6 +1748,7 @@ __all__ = [
     "GsaFileDatum",
     "GsaFileDatumCriterion",
     "GsaFileDatumExistsCriterion",
+    "GsaFileDatumInfo",
     "GsaFileErrorDetail",
     "GsaFileErrorReason",
     "GsaFileHeader",
@@ -1834,7 +1838,9 @@ __all__ = [
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaInUseParameterValueErrorDetail",
+    "GsaIndexFailure",
     "GsaIndexRecordFailure",
+    "GsaIndexResultsReport",
     "GsaIndirectLinks",
     "GsaInputValidationErrorDetail",
     "GsaIntegerAggregation",
