@@ -88,3 +88,4 @@ class GsaErrorCode(Enum):
     SERVERNOTAVAILABLE = "serverNotAvailable"
     UPGRADEDATABASE = "upgradeDatabase"
     WITHDRAWRECORDVERSIONCONTROL = "withdrawRecordVersionControl"
+    RECORDNOTMODIFIABLE = "recordNotModifiable"

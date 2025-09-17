@@ -84,7 +84,6 @@ from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
-from .api.system_admin___sql_api import SystemAdminSqlApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
 
 # import models into sdk package
@@ -588,6 +587,7 @@ from .models.gsa_file_creation_exception import GsaFileCreationException
 from .models.gsa_file_datum import GsaFileDatum
 from .models.gsa_file_datum_criterion import GsaFileDatumCriterion
 from .models.gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
+from .models.gsa_file_datum_info import GsaFileDatumInfo
 from .models.gsa_file_error_detail import GsaFileErrorDetail
 from .models.gsa_file_error_reason import GsaFileErrorReason
 from .models.gsa_file_header import GsaFileHeader
@@ -701,7 +701,9 @@ from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExists
 from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
 from .models.gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
+from .models.gsa_index_failure import GsaIndexFailure
 from .models.gsa_index_record_failure import GsaIndexRecordFailure
+from .models.gsa_index_results_report import GsaIndexResultsReport
 from .models.gsa_indirect_links import GsaIndirectLinks
 from .models.gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .models.gsa_integer_aggregation import GsaIntegerAggregation
@@ -1522,7 +1524,6 @@ __all__ = [
     "SearchApi",
     "ServerManagerApi",
     "StatusApi",
-    "SystemAdminSqlApi",
     "AttributesAttributeguidimportfileBody",
     "AttributesAttributeguidimportfileBody1",
     "AttributesAttributeguidimportpictureBody",
@@ -1908,6 +1909,7 @@ __all__ = [
     "GsaFileDatum",
     "GsaFileDatumCriterion",
     "GsaFileDatumExistsCriterion",
+    "GsaFileDatumInfo",
     "GsaFileErrorDetail",
     "GsaFileErrorReason",
     "GsaFileHeader",
@@ -1997,7 +1999,9 @@ __all__ = [
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaInUseParameterValueErrorDetail",
+    "GsaIndexFailure",
     "GsaIndexRecordFailure",
+    "GsaIndexResultsReport",
     "GsaIndirectLinks",
     "GsaInputValidationErrorDetail",
     "GsaIntegerAggregation",

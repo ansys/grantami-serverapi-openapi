@@ -77,7 +77,6 @@ from .schema_api import SchemaApi
 from .search_api import SearchApi
 from .server_manager_api import ServerManagerApi
 from .status_api import StatusApi
-from .system_admin___sql_api import SystemAdminSqlApi
 
 __all__ = [
     "ApiBase",
@@ -132,5 +131,4 @@ __all__ = [
     "SearchApi",
     "ServerManagerApi",
     "StatusApi",
-    "SystemAdminSqlApi",
 ]
