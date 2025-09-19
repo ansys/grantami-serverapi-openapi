@@ -937,6 +937,10 @@ from .gsa_query_discrete_type_filter import GsaQueryDiscreteTypeFilter
 from .gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
 from .gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
 from .gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
+from .gsa_query_layout_filter import GsaQueryLayoutFilter
+from .gsa_query_layout_item_filter import GsaQueryLayoutItemFilter
+from .gsa_query_layout_section_filter import GsaQueryLayoutSectionFilter
+from .gsa_query_layouts_request import GsaQueryLayoutsRequest
 from .gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
 from .gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
@@ -2101,6 +2105,10 @@ __all__ = [
     "GsaQueryDiscreteTypeProperties",
     "GsaQueryDiscreteTypesInfo",
     "GsaQueryDiscreteTypesRequest",
+    "GsaQueryLayoutFilter",
+    "GsaQueryLayoutItemFilter",
+    "GsaQueryLayoutSectionFilter",
+    "GsaQueryLayoutsRequest",
     "GsaQuerySlimDiscreteType",
     "GsaQuerySlimDiscreteTypeProperties",
     "GsaQuerySlimNamedEntity",
