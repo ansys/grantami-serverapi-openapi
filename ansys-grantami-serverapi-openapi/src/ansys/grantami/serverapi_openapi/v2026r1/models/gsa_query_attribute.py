@@ -70,12 +70,10 @@ class GsaQueryAttribute(ModelBase):
         "display_names": "dict(str, str)",
         "expressions": "list[GsaQuerySlimNamedEntity]",
         "guid": "str",
-        "help_path": "str",
         "info": "GsaQueryAttributeInfo",
         "is_functional_range": "bool",
         "is_hidden_from_search_criteria": "bool",
         "is_multi_valued": "bool",
-        "is_protected": "bool",
         "name": "str",
         "tabular_columns": "list[GsaQuerySlimNamedEntity]",
         "target": "GsaQueryTabularAttributeTarget",
@@ -93,12 +91,10 @@ class GsaQueryAttribute(ModelBase):
         "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_functional_range": "isFunctionalRange",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_multi_valued": "isMultiValued",
-        "is_protected": "isProtected",
         "name": "name",
         "tabular_columns": "tabularColumns",
         "target": "target",
@@ -135,12 +131,10 @@ class GsaQueryAttribute(ModelBase):
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         expressions: "list[GsaQuerySlimNamedEntity] | None | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
-        help_path: "str | None | Unset_Type" = Unset,
         info: "GsaQueryAttributeInfo | Unset_Type" = Unset,
         is_functional_range: "bool | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
         is_multi_valued: "bool | None | Unset_Type" = Unset,
-        is_protected: "bool | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         tabular_columns: "list[GsaQuerySlimNamedEntity] | None | Unset_Type" = Unset,
         target: "GsaQueryTabularAttributeTarget | Unset_Type" = Unset,
@@ -160,25 +154,21 @@ class GsaQueryAttribute(ModelBase):
         display_names: dict[str, str] | None, optional
         expressions: list[GsaQuerySlimNamedEntity] | None, optional
         guid: str | None, optional
-        help_path: str | None, optional
         info: GsaQueryAttributeInfo, optional
         is_functional_range: bool | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         is_multi_valued: bool | None, optional
-        is_protected: bool | None, optional
         name: str | None, optional
         tabular_columns: list[GsaQuerySlimNamedEntity] | None, optional
         target: GsaQueryTabularAttributeTarget, optional
         type: GsaAttributeType, optional
         unit: GsaQueryUnit, optional
         """
-        self._is_protected: bool | None | Unset_Type = Unset
         self._type: GsaAttributeType | Unset_Type = Unset
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
         self._is_multi_valued: bool | None | Unset_Type = Unset
         self._is_functional_range: bool | None | Unset_Type = Unset
-        self._help_path: str | None | Unset_Type = Unset
         self._axis_name: GsaQueryAxisName | Unset_Type = Unset
         self._info: GsaQueryAttributeInfo | Unset_Type = Unset
         self._unit: GsaQueryUnit | Unset_Type = Unset
@@ -193,8 +183,6 @@ class GsaQueryAttribute(ModelBase):
         self._name: str | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
 
-        if is_protected is not Unset:
-            self.is_protected = is_protected
         if type is not Unset:
             self.type = type
         if default_threshold_type is not Unset:
@@ -205,8 +193,6 @@ class GsaQueryAttribute(ModelBase):
             self.is_multi_valued = is_multi_valued
         if is_functional_range is not Unset:
             self.is_functional_range = is_functional_range
-        if help_path is not Unset:
-            self.help_path = help_path
         if axis_name is not Unset:
             self.axis_name = axis_name
         if info is not Unset:
@@ -233,28 +219,6 @@ class GsaQueryAttribute(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def is_protected(self) -> "bool | None | Unset_Type":
-        """Gets the is_protected of this GsaQueryAttribute.
-
-        Returns
-        -------
-        bool | None | Unset_Type
-            The is_protected of this GsaQueryAttribute.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool | None | Unset_Type") -> None:
-        """Sets the is_protected of this GsaQueryAttribute.
-
-        Parameters
-        ----------
-        is_protected: bool | None | Unset_Type
-            The is_protected of this GsaQueryAttribute.
-        """
-        self._is_protected = is_protected
 
     @property
     def type(self) -> "GsaAttributeType | Unset_Type":
@@ -375,28 +339,6 @@ class GsaQueryAttribute(ModelBase):
             The is_functional_range of this GsaQueryAttribute.
         """
         self._is_functional_range = is_functional_range
-
-    @property
-    def help_path(self) -> "str | None | Unset_Type":
-        """Gets the help_path of this GsaQueryAttribute.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The help_path of this GsaQueryAttribute.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "str | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaQueryAttribute.
-
-        Parameters
-        ----------
-        help_path: str | None | Unset_Type
-            The help_path of this GsaQueryAttribute.
-        """
-        self._help_path = help_path
 
     @property
     def axis_name(self) -> "GsaQueryAxisName | Unset_Type":
