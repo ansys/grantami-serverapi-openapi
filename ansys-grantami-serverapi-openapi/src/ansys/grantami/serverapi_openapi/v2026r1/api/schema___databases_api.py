@@ -1227,7 +1227,7 @@ class SchemaDatabasesApi(ApiBase):
         )
 
     def upgrade_database_not_added_to_mi(
-        self, *, body: "Optional[GsaConnectionDetails]" = None
+        self, *, body: "Optional[GsaInputConnectionDetails]" = None
     ) -> "GsaUpgradeDatabaseException | None":
         """Upgrades an external database to the latest schema version. Only available to users in the System Administrator role.
 
@@ -1235,7 +1235,7 @@ class SchemaDatabasesApi(ApiBase):
 
         Parameters
         ----------
-        body: GsaConnectionDetails
+        body: GsaInputConnectionDetails
 
         Returns
         -------
@@ -1247,7 +1247,7 @@ class SchemaDatabasesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _upgrade_database_not_added_to_mi_with_http_info(
-        self, body: "Optional[GsaConnectionDetails]" = None, **kwargs: Any
+        self, body: "Optional[GsaInputConnectionDetails]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 

@@ -70,6 +70,7 @@ from .gsa_activity_log_usage_mode_filter import GsaActivityLogUsageModeFilter
 from .gsa_activity_log_username_filter import GsaActivityLogUsernameFilter
 from .gsa_add_database import GsaAddDatabase
 from .gsa_add_database_issue_type import GsaAddDatabaseIssueType
+from .gsa_add_database_security_groups import GsaAddDatabaseSecurityGroups
 from .gsa_add_database_validation_issue import GsaAddDatabaseValidationIssue
 from .gsa_add_database_validation_result import GsaAddDatabaseValidationResult
 from .gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
@@ -326,6 +327,8 @@ from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModif
 from .gsa_database import GsaDatabase
 from .gsa_database_issues import GsaDatabaseIssues
 from .gsa_database_key_property import GsaDatabaseKeyProperty
+from .gsa_database_security_groups import GsaDatabaseSecurityGroups
+from .gsa_database_security_groups_info import GsaDatabaseSecurityGroupsInfo
 from .gsa_database_status import GsaDatabaseStatus
 from .gsa_database_status_information import GsaDatabaseStatusInformation
 from .gsa_database_user_capabilities import GsaDatabaseUserCapabilities
@@ -591,6 +594,7 @@ from .gsa_get_modifiable_record_version_control_exception import (
     GsaGetModifiableRecordVersionControlException,
 )
 from .gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
+from .gsa_global_security_groups import GsaGlobalSecurityGroups
 from .gsa_graph import GsaGraph
 from .gsa_graph_decoration_type import GsaGraphDecorationType
 from .gsa_graph_evaluation_settings import GsaGraphEvaluationSettings
@@ -624,6 +628,7 @@ from .gsa_index_failure import GsaIndexFailure
 from .gsa_index_record_failure import GsaIndexRecordFailure
 from .gsa_index_results_report import GsaIndexResultsReport
 from .gsa_indirect_links import GsaIndirectLinks
+from .gsa_input_connection_details import GsaInputConnectionDetails
 from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .gsa_integer_aggregation import GsaIntegerAggregation
 from .gsa_integer_aggregation_datum_criterion import GsaIntegerAggregationDatumCriterion
@@ -1159,6 +1164,7 @@ from .gsa_source_cannot_be_target_smart_attributes_error_detail import (
 )
 from .gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .gsa_specific_values_specifier import GsaSpecificValuesSpecifier
+from .gsa_sql_credentials import GsaSqlCredentials
 from .gsa_sql_database_info import GsaSqlDatabaseInfo
 from .gsa_sql_databases_info import GsaSqlDatabasesInfo
 from .gsa_sql_server_info import GsaSqlServerInfo
@@ -1238,6 +1244,7 @@ from .gsa_update_continuous_range import GsaUpdateContinuousRange
 from .gsa_update_cross_database_record_link_group import GsaUpdateCrossDatabaseRecordLinkGroup
 from .gsa_update_data_rule import GsaUpdateDataRule
 from .gsa_update_database import GsaUpdateDatabase
+from .gsa_update_database_security_groups import GsaUpdateDatabaseSecurityGroups
 from .gsa_update_date_time_attribute import GsaUpdateDateTimeAttribute
 from .gsa_update_default_database import GsaUpdateDefaultDatabase
 from .gsa_update_default_profile import GsaUpdateDefaultProfile
@@ -1273,6 +1280,7 @@ from .gsa_update_float_functional_attribute_parameter import (
     GsaUpdateFloatFunctionalAttributeParameter,
 )
 from .gsa_update_folder import GsaUpdateFolder
+from .gsa_update_global_security_groups import GsaUpdateGlobalSecurityGroups
 from .gsa_update_hyperlink_attribute import GsaUpdateHyperlinkAttribute
 from .gsa_update_integer_attribute import GsaUpdateIntegerAttribute
 from .gsa_update_job_request import GsaUpdateJobRequest
@@ -1394,6 +1402,7 @@ __all__ = [
     "GsaActivityLogUsernameFilter",
     "GsaAddDatabase",
     "GsaAddDatabaseIssueType",
+    "GsaAddDatabaseSecurityGroups",
     "GsaAddDatabaseValidationIssue",
     "GsaAddDatabaseValidationResult",
     "GsaAddRecordHistoryToSubset",
@@ -1622,6 +1631,8 @@ __all__ = [
     "GsaDatabase",
     "GsaDatabaseIssues",
     "GsaDatabaseKeyProperty",
+    "GsaDatabaseSecurityGroups",
+    "GsaDatabaseSecurityGroupsInfo",
     "GsaDatabaseStatus",
     "GsaDatabaseStatusInformation",
     "GsaDatabaseUserCapabilities",
@@ -1815,6 +1826,7 @@ __all__ = [
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
     "GsaGetUnitConversionsRequest",
+    "GsaGlobalSecurityGroups",
     "GsaGraph",
     "GsaGraphDecorationType",
     "GsaGraphEvaluationSettings",
@@ -1846,6 +1858,7 @@ __all__ = [
     "GsaIndexRecordFailure",
     "GsaIndexResultsReport",
     "GsaIndirectLinks",
+    "GsaInputConnectionDetails",
     "GsaInputValidationErrorDetail",
     "GsaIntegerAggregation",
     "GsaIntegerAggregationDatumCriterion",
@@ -2301,6 +2314,7 @@ __all__ = [
     "GsaSourceCannotBeTargetSmartAttributesErrorDetail",
     "GsaSourceOfObjectIdentifier",
     "GsaSpecificValuesSpecifier",
+    "GsaSqlCredentials",
     "GsaSqlDatabaseInfo",
     "GsaSqlDatabasesInfo",
     "GsaSqlServerInfo",
@@ -2366,6 +2380,7 @@ __all__ = [
     "GsaUpdateCrossDatabaseRecordLinkGroup",
     "GsaUpdateDataRule",
     "GsaUpdateDatabase",
+    "GsaUpdateDatabaseSecurityGroups",
     "GsaUpdateDateTimeAttribute",
     "GsaUpdateDefaultDatabase",
     "GsaUpdateDefaultProfile",
@@ -2389,6 +2404,7 @@ __all__ = [
     "GsaUpdateFloatFunctionalAttributeNumericParameter",
     "GsaUpdateFloatFunctionalAttributeParameter",
     "GsaUpdateFolder",
+    "GsaUpdateGlobalSecurityGroups",
     "GsaUpdateHyperlinkAttribute",
     "GsaUpdateIntegerAttribute",
     "GsaUpdateJobRequest",

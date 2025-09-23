@@ -62,6 +62,7 @@ class GsaServerConnectionDetails(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "data_source": "str",
+        "existing_database_key": "str",
         "sql_password": "str",
         "sql_username": "str",
         "use_configuration_database_credentials": "bool",
@@ -70,6 +71,7 @@ class GsaServerConnectionDetails(ModelBase):
 
     attribute_map: dict[str, str] = {
         "data_source": "dataSource",
+        "existing_database_key": "existingDatabaseKey",
         "sql_password": "sqlPassword",
         "sql_username": "sqlUsername",
         "use_configuration_database_credentials": "useConfigurationDatabaseCredentials",
@@ -84,6 +86,7 @@ class GsaServerConnectionDetails(ModelBase):
         self,
         *,
         data_source: "str | None | Unset_Type" = Unset,
+        existing_database_key: "str | None | Unset_Type" = Unset,
         sql_password: "str | None | Unset_Type" = Unset,
         sql_username: "str | None | Unset_Type" = Unset,
         use_configuration_database_credentials: "bool | Unset_Type" = Unset,
@@ -94,6 +97,7 @@ class GsaServerConnectionDetails(ModelBase):
         Parameters
         ----------
         data_source: str | None, optional
+        existing_database_key: str | None, optional
         sql_password: str | None, optional
         sql_username: str | None, optional
         use_configuration_database_credentials: bool, optional
@@ -104,6 +108,7 @@ class GsaServerConnectionDetails(ModelBase):
         self._use_integrated_security: bool | Unset_Type = Unset
         self._sql_username: str | None | Unset_Type = Unset
         self._sql_password: str | None | Unset_Type = Unset
+        self._existing_database_key: str | None | Unset_Type = Unset
 
         if data_source is not Unset:
             self.data_source = data_source
@@ -115,11 +120,13 @@ class GsaServerConnectionDetails(ModelBase):
             self.sql_username = sql_username
         if sql_password is not Unset:
             self.sql_password = sql_password
+        if existing_database_key is not Unset:
+            self.existing_database_key = existing_database_key
 
     @property
     def data_source(self) -> "str | None | Unset_Type":
         """Gets the data_source of this GsaServerConnectionDetails.
-        The SQL server data source. If not provided defaults to the Configuration database data source.
+        The SQL server data source. If not provided, defaults to the Configuration database data source.
 
         Returns
         -------
@@ -131,7 +138,7 @@ class GsaServerConnectionDetails(ModelBase):
     @data_source.setter
     def data_source(self, data_source: "str | None | Unset_Type") -> None:
         """Sets the data_source of this GsaServerConnectionDetails.
-        The SQL server data source. If not provided defaults to the Configuration database data source.
+        The SQL server data source. If not provided, defaults to the Configuration database data source.
 
         Parameters
         ----------
@@ -201,7 +208,7 @@ class GsaServerConnectionDetails(ModelBase):
     @property
     def sql_username(self) -> "str | None | Unset_Type":
         """Gets the sql_username of this GsaServerConnectionDetails.
-        The username to use if the database should use SQL authentication. The password must also be provided.
+        The username to use if the database should use SQL authentication.
 
         Returns
         -------
@@ -213,7 +220,7 @@ class GsaServerConnectionDetails(ModelBase):
     @sql_username.setter
     def sql_username(self, sql_username: "str | None | Unset_Type") -> None:
         """Sets the sql_username of this GsaServerConnectionDetails.
-        The username to use if the database should use SQL authentication. The password must also be provided.
+        The username to use if the database should use SQL authentication.
 
         Parameters
         ----------
@@ -225,7 +232,7 @@ class GsaServerConnectionDetails(ModelBase):
     @property
     def sql_password(self) -> "str | None | Unset_Type":
         """Gets the sql_password of this GsaServerConnectionDetails.
-        The password to use if the database should use SQL authentication. The username must also be provided.
+        The password to use if the database should use SQL authentication. The username must also be provided.  If using SQL authentication without providing a password,  we will attempt to get the password from the existing database connection string.
 
         Returns
         -------
@@ -237,7 +244,7 @@ class GsaServerConnectionDetails(ModelBase):
     @sql_password.setter
     def sql_password(self, sql_password: "str | None | Unset_Type") -> None:
         """Sets the sql_password of this GsaServerConnectionDetails.
-        The password to use if the database should use SQL authentication. The username must also be provided.
+        The password to use if the database should use SQL authentication. The username must also be provided.  If using SQL authentication without providing a password,  we will attempt to get the password from the existing database connection string.
 
         Parameters
         ----------
@@ -245,6 +252,30 @@ class GsaServerConnectionDetails(ModelBase):
             The sql_password of this GsaServerConnectionDetails.
         """
         self._sql_password = sql_password
+
+    @property
+    def existing_database_key(self) -> "str | None | Unset_Type":
+        """Gets the existing_database_key of this GsaServerConnectionDetails.
+        Database key of an existing database. Should be provided if we are in the process of editing an existing database.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The existing_database_key of this GsaServerConnectionDetails.
+        """
+        return self._existing_database_key
+
+    @existing_database_key.setter
+    def existing_database_key(self, existing_database_key: "str | None | Unset_Type") -> None:
+        """Sets the existing_database_key of this GsaServerConnectionDetails.
+        Database key of an existing database. Should be provided if we are in the process of editing an existing database.
+
+        Parameters
+        ----------
+        existing_database_key: str | None | Unset_Type
+            The existing_database_key of this GsaServerConnectionDetails.
+        """
+        self._existing_database_key = existing_database_key
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

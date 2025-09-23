@@ -61,10 +61,12 @@ class GsaOrphanedSearchIndex(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "disk_space_used_in_bytes": "int",
         "index_name": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "disk_space_used_in_bytes": "diskSpaceUsedInBytes",
         "index_name": "indexName",
     }
 
@@ -75,17 +77,21 @@ class GsaOrphanedSearchIndex(ModelBase):
     def __init__(
         self,
         *,
+        disk_space_used_in_bytes: "int",
         index_name: "str",
     ) -> None:
         """GsaOrphanedSearchIndex - a model defined in Swagger
 
         Parameters
         ----------
+        disk_space_used_in_bytes: int
         index_name: str
         """
         self._index_name: str
+        self._disk_space_used_in_bytes: int
 
         self.index_name = index_name
+        self.disk_space_used_in_bytes = disk_space_used_in_bytes
 
     @property
     def index_name(self) -> "str":
@@ -114,6 +120,34 @@ class GsaOrphanedSearchIndex(ModelBase):
         if index_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'index_name', must not be 'Unset'")
         self._index_name = index_name
+
+    @property
+    def disk_space_used_in_bytes(self) -> "int":
+        """Gets the disk_space_used_in_bytes of this GsaOrphanedSearchIndex.
+
+        Returns
+        -------
+        int
+            The disk_space_used_in_bytes of this GsaOrphanedSearchIndex.
+        """
+        return self._disk_space_used_in_bytes
+
+    @disk_space_used_in_bytes.setter
+    def disk_space_used_in_bytes(self, disk_space_used_in_bytes: "int") -> None:
+        """Sets the disk_space_used_in_bytes of this GsaOrphanedSearchIndex.
+
+        Parameters
+        ----------
+        disk_space_used_in_bytes: int
+            The disk_space_used_in_bytes of this GsaOrphanedSearchIndex.
+        """
+        # Field is not nullable
+        if disk_space_used_in_bytes is None:
+            raise ValueError("Invalid value for 'disk_space_used_in_bytes', must not be 'None'")
+        # Field is required
+        if disk_space_used_in_bytes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'disk_space_used_in_bytes', must not be 'Unset'")
+        self._disk_space_used_in_bytes = disk_space_used_in_bytes
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
