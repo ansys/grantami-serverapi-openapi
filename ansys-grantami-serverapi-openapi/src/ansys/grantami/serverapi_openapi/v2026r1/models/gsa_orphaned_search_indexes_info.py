@@ -61,13 +61,13 @@ class GsaOrphanedSearchIndexesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "disk_space_used_in_bytes": "int",
         "orphaned_search_indexes": "list[GsaOrphanedSearchIndex]",
+        "total_disk_space_used_in_bytes": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "disk_space_used_in_bytes": "diskSpaceUsedInBytes",
         "orphaned_search_indexes": "orphanedSearchIndexes",
+        "total_disk_space_used_in_bytes": "totalDiskSpaceUsedInBytes",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -79,21 +79,21 @@ class GsaOrphanedSearchIndexesInfo(ModelBase):
     def __init__(
         self,
         *,
-        disk_space_used_in_bytes: "int",
         orphaned_search_indexes: "list[GsaOrphanedSearchIndex]",
+        total_disk_space_used_in_bytes: "int",
     ) -> None:
         """GsaOrphanedSearchIndexesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        disk_space_used_in_bytes: int
         orphaned_search_indexes: list[GsaOrphanedSearchIndex]
+        total_disk_space_used_in_bytes: int
         """
         self._orphaned_search_indexes: list[GsaOrphanedSearchIndex]
-        self._disk_space_used_in_bytes: int
+        self._total_disk_space_used_in_bytes: int
 
         self.orphaned_search_indexes = orphaned_search_indexes
-        self.disk_space_used_in_bytes = disk_space_used_in_bytes
+        self.total_disk_space_used_in_bytes = total_disk_space_used_in_bytes
 
     @property
     def orphaned_search_indexes(self) -> "list[GsaOrphanedSearchIndex]":
@@ -126,32 +126,36 @@ class GsaOrphanedSearchIndexesInfo(ModelBase):
         self._orphaned_search_indexes = orphaned_search_indexes
 
     @property
-    def disk_space_used_in_bytes(self) -> "int":
-        """Gets the disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
+    def total_disk_space_used_in_bytes(self) -> "int":
+        """Gets the total_disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
 
         Returns
         -------
         int
-            The disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
+            The total_disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
         """
-        return self._disk_space_used_in_bytes
+        return self._total_disk_space_used_in_bytes
 
-    @disk_space_used_in_bytes.setter
-    def disk_space_used_in_bytes(self, disk_space_used_in_bytes: "int") -> None:
-        """Sets the disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
+    @total_disk_space_used_in_bytes.setter
+    def total_disk_space_used_in_bytes(self, total_disk_space_used_in_bytes: "int") -> None:
+        """Sets the total_disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
 
         Parameters
         ----------
-        disk_space_used_in_bytes: int
-            The disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
+        total_disk_space_used_in_bytes: int
+            The total_disk_space_used_in_bytes of this GsaOrphanedSearchIndexesInfo.
         """
         # Field is not nullable
-        if disk_space_used_in_bytes is None:
-            raise ValueError("Invalid value for 'disk_space_used_in_bytes', must not be 'None'")
+        if total_disk_space_used_in_bytes is None:
+            raise ValueError(
+                "Invalid value for 'total_disk_space_used_in_bytes', must not be 'None'"
+            )
         # Field is required
-        if disk_space_used_in_bytes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'disk_space_used_in_bytes', must not be 'Unset'")
-        self._disk_space_used_in_bytes = disk_space_used_in_bytes
+        if total_disk_space_used_in_bytes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'total_disk_space_used_in_bytes', must not be 'Unset'"
+            )
+        self._total_disk_space_used_in_bytes = total_disk_space_used_in_bytes
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
