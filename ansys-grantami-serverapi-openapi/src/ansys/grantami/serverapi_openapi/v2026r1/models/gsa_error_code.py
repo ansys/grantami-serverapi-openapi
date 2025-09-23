@@ -89,3 +89,4 @@ class GsaErrorCode(Enum):
     UPGRADEDATABASE = "upgradeDatabase"
     WITHDRAWRECORDVERSIONCONTROL = "withdrawRecordVersionControl"
     RECORDNOTMODIFIABLE = "recordNotModifiable"
+    CONFLICTING = "conflicting"

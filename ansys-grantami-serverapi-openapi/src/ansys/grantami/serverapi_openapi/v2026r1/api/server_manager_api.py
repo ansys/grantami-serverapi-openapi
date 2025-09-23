@@ -48,6 +48,66 @@ class ServerManagerApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def delete_orphaned_search_indexes(self) -> "GsaOrphanedSearchIndexesInfo | None":
+        """Deletes orphaned search indexes
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaOrphanedSearchIndexesInfo | None
+        """
+        data = self._delete_orphaned_search_indexes_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _delete_orphaned_search_indexes_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_orphaned_search_indexes"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaOrphanedSearchIndexesInfo",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/searchIndex/orphanedSearchIndexes",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def delete_user(self, *, user_identity: "int") -> "GsaNotificationUser | None":
         """Given a user's identity, deletes the user.
 
@@ -381,10 +441,7 @@ class ServerManagerApi(ApiBase):
         )
 
     def get_available_mi_databases(
-        self,
-        *,
-        body: "Optional[GsaServerConnectionDetails]" = None,
-        db_to_modify_key: "Optional[str]" = None,
+        self, *, body: "Optional[GsaServerConnectionDetails]" = None
     ) -> "GsaSqlDatabasesInfo":
         """Gets a list of all MI Databases available in given SQL Server under specified credentials that are not already added to MI.
 
@@ -393,30 +450,18 @@ class ServerManagerApi(ApiBase):
         Parameters
         ----------
         body: GsaServerConnectionDetails
-        db_to_modify_key: str
 
         Returns
         -------
         GsaSqlDatabasesInfo
         """
-        data = self._get_available_mi_databases_with_http_info(
-            body, db_to_modify_key, _return_http_data_only=True
-        )
+        data = self._get_available_mi_databases_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_available_mi_databases_with_http_info(
-        self,
-        body: "Optional[GsaServerConnectionDetails]" = None,
-        db_to_modify_key: "Optional[str]" = None,
-        **kwargs: Any,
+        self, body: "Optional[GsaServerConnectionDetails]" = None, **kwargs: Any
     ) -> Any:
-        all_params = [
-            "body",
-            "db_to_modify_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -432,8 +477,6 @@ class ServerManagerApi(ApiBase):
         path_params: dict[str, Any] = {}
 
         query_params: list[Any] = []
-        if "db_to_modify_key" in params and db_to_modify_key is not None:
-            query_params.append(("dbToModifyKey", params["db_to_modify_key"]))
 
         header_params: dict[str, Any] = {}
 
