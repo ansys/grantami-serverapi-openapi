@@ -430,6 +430,7 @@ from .models.gsa_datum_type import GsaDatumType
 from .models.gsa_default_expression_not_found_maths_functional_error_detail import (
     GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail,
 )
+from .models.gsa_default_fallback_security_groups import GsaDefaultFallbackSecurityGroups
 from .models.gsa_default_free_parameter_not_found_maths_functional_error_detail import (
     GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail,
 )
@@ -677,7 +678,6 @@ from .models.gsa_get_modifiable_record_version_control_exception import (
     GsaGetModifiableRecordVersionControlException,
 )
 from .models.gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
-from .models.gsa_global_security_groups import GsaGlobalSecurityGroups
 from .models.gsa_graph import GsaGraph
 from .models.gsa_graph_decoration_type import GsaGraphDecorationType
 from .models.gsa_graph_evaluation_settings import GsaGraphEvaluationSettings
@@ -1363,6 +1363,9 @@ from .models.gsa_update_database import GsaUpdateDatabase
 from .models.gsa_update_database_security_groups import GsaUpdateDatabaseSecurityGroups
 from .models.gsa_update_date_time_attribute import GsaUpdateDateTimeAttribute
 from .models.gsa_update_default_database import GsaUpdateDefaultDatabase
+from .models.gsa_update_default_fallback_security_groups import (
+    GsaUpdateDefaultFallbackSecurityGroups,
+)
 from .models.gsa_update_default_profile import GsaUpdateDefaultProfile
 from .models.gsa_update_discrete_attribute import GsaUpdateDiscreteAttribute
 from .models.gsa_update_discrete_functional_attribute import GsaUpdateDiscreteFunctionalAttribute
@@ -1396,7 +1399,6 @@ from .models.gsa_update_float_functional_attribute_parameter import (
     GsaUpdateFloatFunctionalAttributeParameter,
 )
 from .models.gsa_update_folder import GsaUpdateFolder
-from .models.gsa_update_global_security_groups import GsaUpdateGlobalSecurityGroups
 from .models.gsa_update_hyperlink_attribute import GsaUpdateHyperlinkAttribute
 from .models.gsa_update_integer_attribute import GsaUpdateIntegerAttribute
 from .models.gsa_update_job_request import GsaUpdateJobRequest
@@ -1831,6 +1833,7 @@ __all__ = [
     "GsaDatumRollupType",
     "GsaDatumType",
     "GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail",
+    "GsaDefaultFallbackSecurityGroups",
     "GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultParameterValueGuidParameterErrorDetail",
     "GsaDefaultParameterValueIndexAndGuidParameterErrorDetail",
@@ -1994,7 +1997,6 @@ __all__ = [
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
     "GsaGetUnitConversionsRequest",
-    "GsaGlobalSecurityGroups",
     "GsaGraph",
     "GsaGraphDecorationType",
     "GsaGraphEvaluationSettings",
@@ -2554,6 +2556,7 @@ __all__ = [
     "GsaUpdateDatabaseSecurityGroups",
     "GsaUpdateDateTimeAttribute",
     "GsaUpdateDefaultDatabase",
+    "GsaUpdateDefaultFallbackSecurityGroups",
     "GsaUpdateDefaultProfile",
     "GsaUpdateDiscreteAttribute",
     "GsaUpdateDiscreteFunctionalAttribute",
@@ -2575,7 +2578,6 @@ __all__ = [
     "GsaUpdateFloatFunctionalAttributeNumericParameter",
     "GsaUpdateFloatFunctionalAttributeParameter",
     "GsaUpdateFolder",
-    "GsaUpdateGlobalSecurityGroups",
     "GsaUpdateHyperlinkAttribute",
     "GsaUpdateIntegerAttribute",
     "GsaUpdateJobRequest",

@@ -368,6 +368,7 @@ from .gsa_datum_type import GsaDatumType
 from .gsa_default_expression_not_found_maths_functional_error_detail import (
     GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail,
 )
+from .gsa_default_fallback_security_groups import GsaDefaultFallbackSecurityGroups
 from .gsa_default_free_parameter_not_found_maths_functional_error_detail import (
     GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail,
 )
@@ -595,7 +596,6 @@ from .gsa_get_modifiable_record_version_control_exception import (
     GsaGetModifiableRecordVersionControlException,
 )
 from .gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
-from .gsa_global_security_groups import GsaGlobalSecurityGroups
 from .gsa_graph import GsaGraph
 from .gsa_graph_decoration_type import GsaGraphDecorationType
 from .gsa_graph_evaluation_settings import GsaGraphEvaluationSettings
@@ -1251,6 +1251,7 @@ from .gsa_update_database import GsaUpdateDatabase
 from .gsa_update_database_security_groups import GsaUpdateDatabaseSecurityGroups
 from .gsa_update_date_time_attribute import GsaUpdateDateTimeAttribute
 from .gsa_update_default_database import GsaUpdateDefaultDatabase
+from .gsa_update_default_fallback_security_groups import GsaUpdateDefaultFallbackSecurityGroups
 from .gsa_update_default_profile import GsaUpdateDefaultProfile
 from .gsa_update_discrete_attribute import GsaUpdateDiscreteAttribute
 from .gsa_update_discrete_functional_attribute import GsaUpdateDiscreteFunctionalAttribute
@@ -1284,7 +1285,6 @@ from .gsa_update_float_functional_attribute_parameter import (
     GsaUpdateFloatFunctionalAttributeParameter,
 )
 from .gsa_update_folder import GsaUpdateFolder
-from .gsa_update_global_security_groups import GsaUpdateGlobalSecurityGroups
 from .gsa_update_hyperlink_attribute import GsaUpdateHyperlinkAttribute
 from .gsa_update_integer_attribute import GsaUpdateIntegerAttribute
 from .gsa_update_job_request import GsaUpdateJobRequest
@@ -1668,6 +1668,7 @@ __all__ = [
     "GsaDatumRollupType",
     "GsaDatumType",
     "GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail",
+    "GsaDefaultFallbackSecurityGroups",
     "GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultParameterValueGuidParameterErrorDetail",
     "GsaDefaultParameterValueIndexAndGuidParameterErrorDetail",
@@ -1831,7 +1832,6 @@ __all__ = [
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
     "GsaGetUnitConversionsRequest",
-    "GsaGlobalSecurityGroups",
     "GsaGraph",
     "GsaGraphDecorationType",
     "GsaGraphEvaluationSettings",
@@ -2391,6 +2391,7 @@ __all__ = [
     "GsaUpdateDatabaseSecurityGroups",
     "GsaUpdateDateTimeAttribute",
     "GsaUpdateDefaultDatabase",
+    "GsaUpdateDefaultFallbackSecurityGroups",
     "GsaUpdateDefaultProfile",
     "GsaUpdateDiscreteAttribute",
     "GsaUpdateDiscreteFunctionalAttribute",
@@ -2412,7 +2413,6 @@ __all__ = [
     "GsaUpdateFloatFunctionalAttributeNumericParameter",
     "GsaUpdateFloatFunctionalAttributeParameter",
     "GsaUpdateFolder",
-    "GsaUpdateGlobalSecurityGroups",
     "GsaUpdateHyperlinkAttribute",
     "GsaUpdateIntegerAttribute",
     "GsaUpdateJobRequest",
