@@ -83,27 +83,27 @@ class GsaAddDatabaseSecurityGroups(ModelBase):
     def __init__(
         self,
         *,
-        admin_group: "str",
-        grant_group: "str",
-        power_user_group: "str",
-        read_group: "str",
-        write_group: "str",
+        admin_group: "str | None",
+        grant_group: "str | None",
+        power_user_group: "str | None",
+        read_group: "str | None",
+        write_group: "str | None",
     ) -> None:
         """GsaAddDatabaseSecurityGroups - a model defined in Swagger
 
         Parameters
         ----------
-        admin_group: str
-        grant_group: str
-        power_user_group: str
-        read_group: str
-        write_group: str
+        admin_group: str | None
+        grant_group: str | None
+        power_user_group: str | None
+        read_group: str | None
+        write_group: str | None
         """
-        self._admin_group: str
-        self._grant_group: str
-        self._power_user_group: str
-        self._write_group: str
-        self._read_group: str
+        self._admin_group: str | None
+        self._grant_group: str | None
+        self._power_user_group: str | None
+        self._write_group: str | None
+        self._read_group: str | None
 
         self.admin_group = admin_group
         self.grant_group = grant_group
@@ -112,140 +112,125 @@ class GsaAddDatabaseSecurityGroups(ModelBase):
         self.read_group = read_group
 
     @property
-    def admin_group(self) -> "str":
+    def admin_group(self) -> "str | None":
         """Gets the admin_group of this GsaAddDatabaseSecurityGroups.
 
         Returns
         -------
-        str
+        str | None
             The admin_group of this GsaAddDatabaseSecurityGroups.
         """
         return self._admin_group
 
     @admin_group.setter
-    def admin_group(self, admin_group: "str") -> None:
+    def admin_group(self, admin_group: "str | None") -> None:
         """Sets the admin_group of this GsaAddDatabaseSecurityGroups.
 
         Parameters
         ----------
-        admin_group: str
+        admin_group: str | None
             The admin_group of this GsaAddDatabaseSecurityGroups.
         """
-        # Field is not nullable
-        if admin_group is None:
-            raise ValueError("Invalid value for 'admin_group', must not be 'None'")
         # Field is required
         if admin_group is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'admin_group', must not be 'Unset'")
         self._admin_group = admin_group
 
     @property
-    def grant_group(self) -> "str":
+    def grant_group(self) -> "str | None":
         """Gets the grant_group of this GsaAddDatabaseSecurityGroups.
 
         Returns
         -------
-        str
+        str | None
             The grant_group of this GsaAddDatabaseSecurityGroups.
         """
         return self._grant_group
 
     @grant_group.setter
-    def grant_group(self, grant_group: "str") -> None:
+    def grant_group(self, grant_group: "str | None") -> None:
         """Sets the grant_group of this GsaAddDatabaseSecurityGroups.
 
         Parameters
         ----------
-        grant_group: str
+        grant_group: str | None
             The grant_group of this GsaAddDatabaseSecurityGroups.
         """
-        # Field is not nullable
-        if grant_group is None:
-            raise ValueError("Invalid value for 'grant_group', must not be 'None'")
         # Field is required
         if grant_group is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'grant_group', must not be 'Unset'")
         self._grant_group = grant_group
 
     @property
-    def power_user_group(self) -> "str":
+    def power_user_group(self) -> "str | None":
         """Gets the power_user_group of this GsaAddDatabaseSecurityGroups.
 
         Returns
         -------
-        str
+        str | None
             The power_user_group of this GsaAddDatabaseSecurityGroups.
         """
         return self._power_user_group
 
     @power_user_group.setter
-    def power_user_group(self, power_user_group: "str") -> None:
+    def power_user_group(self, power_user_group: "str | None") -> None:
         """Sets the power_user_group of this GsaAddDatabaseSecurityGroups.
 
         Parameters
         ----------
-        power_user_group: str
+        power_user_group: str | None
             The power_user_group of this GsaAddDatabaseSecurityGroups.
         """
-        # Field is not nullable
-        if power_user_group is None:
-            raise ValueError("Invalid value for 'power_user_group', must not be 'None'")
         # Field is required
         if power_user_group is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'power_user_group', must not be 'Unset'")
         self._power_user_group = power_user_group
 
     @property
-    def write_group(self) -> "str":
+    def write_group(self) -> "str | None":
         """Gets the write_group of this GsaAddDatabaseSecurityGroups.
 
         Returns
         -------
-        str
+        str | None
             The write_group of this GsaAddDatabaseSecurityGroups.
         """
         return self._write_group
 
     @write_group.setter
-    def write_group(self, write_group: "str") -> None:
+    def write_group(self, write_group: "str | None") -> None:
         """Sets the write_group of this GsaAddDatabaseSecurityGroups.
 
         Parameters
         ----------
-        write_group: str
+        write_group: str | None
             The write_group of this GsaAddDatabaseSecurityGroups.
         """
-        # Field is not nullable
-        if write_group is None:
-            raise ValueError("Invalid value for 'write_group', must not be 'None'")
         # Field is required
         if write_group is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'write_group', must not be 'Unset'")
         self._write_group = write_group
 
     @property
-    def read_group(self) -> "str":
+    def read_group(self) -> "str | None":
         """Gets the read_group of this GsaAddDatabaseSecurityGroups.
 
         Returns
         -------
-        str
+        str | None
             The read_group of this GsaAddDatabaseSecurityGroups.
         """
         return self._read_group
 
     @read_group.setter
-    def read_group(self, read_group: "str") -> None:
+    def read_group(self, read_group: "str | None") -> None:
         """Sets the read_group of this GsaAddDatabaseSecurityGroups.
 
         Parameters
         ----------
-        read_group: str
+        read_group: str | None
             The read_group of this GsaAddDatabaseSecurityGroups.
         """
-        # Field is not nullable
-        if read_group is None:
-            raise ValueError("Invalid value for 'read_group', must not be 'None'")
         # Field is required
         if read_group is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'read_group', must not be 'Unset'")

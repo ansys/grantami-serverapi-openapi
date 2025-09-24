@@ -48,7 +48,7 @@ class SchemaSecurityGroupsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def add_database_groups(
+    def add_database_security_groups(
         self, *, database_key: "str", body: "Optional[GsaAddDatabaseSecurityGroups]" = None
     ) -> "GsaDatabaseSecurityGroups | None":
         """Adds security groups for a specific database.
@@ -65,12 +65,12 @@ class SchemaSecurityGroupsApi(ApiBase):
         -------
         GsaDatabaseSecurityGroups | None
         """
-        data = self._add_database_groups_with_http_info(
+        data = self._add_database_security_groups_with_http_info(
             database_key, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _add_database_groups_with_http_info(
+    def _add_database_security_groups_with_http_info(
         self,
         database_key: "str",
         body: "Optional[GsaAddDatabaseSecurityGroups]" = None,
@@ -88,14 +88,14 @@ class SchemaSecurityGroupsApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method add_database_groups"
+                    f"Got an unexpected keyword argument '{key}' to method add_database_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'add_database_groups'"
+                "Missing the required parameter 'database_key' when calling 'add_database_security_groups'"
             )
 
         collection_formats: dict[str, Any] = {}
@@ -146,7 +146,7 @@ class SchemaSecurityGroupsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_database_groups(self) -> "GsaDatabaseSecurityGroupsInfo | None":
+    def get_database_security_groups(self) -> "GsaDatabaseSecurityGroupsInfo | None":
         """Returns the prevailing security groups defined for each database.
 
         This method makes a synchronous HTTP request.
@@ -155,17 +155,17 @@ class SchemaSecurityGroupsApi(ApiBase):
         -------
         GsaDatabaseSecurityGroupsInfo | None
         """
-        data = self._get_database_groups_with_http_info(_return_http_data_only=True)
+        data = self._get_database_security_groups_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_database_groups_with_http_info(self, **kwargs: Any) -> Any:
+    def _get_database_security_groups_with_http_info(self, **kwargs: Any) -> Any:
         all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_database_groups"
+                    f"Got an unexpected keyword argument '{key}' to method get_database_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
@@ -206,26 +206,28 @@ class SchemaSecurityGroupsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_global_groups(self) -> "GsaGlobalSecurityGroups | None":
-        """Returns the global (fallback defaults) security groups.
+    def get_default_fallback_security_groups(self) -> "GsaDefaultFallbackSecurityGroups | None":
+        """Returns the default fallback (global) security groups.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        GsaGlobalSecurityGroups | None
+        GsaDefaultFallbackSecurityGroups | None
         """
-        data = self._get_global_groups_with_http_info(_return_http_data_only=True)
+        data = self._get_default_fallback_security_groups_with_http_info(
+            _return_http_data_only=True
+        )
         return data  # type: ignore[no-any-return]
 
-    def _get_global_groups_with_http_info(self, **kwargs: Any) -> Any:
+    def _get_default_fallback_security_groups_with_http_info(self, **kwargs: Any) -> Any:
         all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_global_groups"
+                    f"Got an unexpected keyword argument '{key}' to method get_default_fallback_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
@@ -246,12 +248,12 @@ class SchemaSecurityGroupsApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaGlobalSecurityGroups",
+            200: "GsaDefaultFallbackSecurityGroups",
             403: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/securityGroups/global",
+            "/v1alpha/securityGroups/defaultFallback",
             "GET",
             path_params,
             query_params,
@@ -266,7 +268,7 @@ class SchemaSecurityGroupsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def remove_database_groups(self, *, database_key: "str") -> "None":
+    def remove_database_security_groups(self, *, database_key: "str") -> "None":
         """Deletes the security groups defined for a specific database.
 
         This method makes a synchronous HTTP request.
@@ -280,12 +282,14 @@ class SchemaSecurityGroupsApi(ApiBase):
         -------
         None
         """
-        data = self._remove_database_groups_with_http_info(
+        data = self._remove_database_security_groups_with_http_info(
             database_key, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _remove_database_groups_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+    def _remove_database_security_groups_with_http_info(
+        self, database_key: "str", **kwargs: Any
+    ) -> Any:
         all_params = [
             "database_key",
             "_return_http_data_only",
@@ -297,14 +301,14 @@ class SchemaSecurityGroupsApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method remove_database_groups"
+                    f"Got an unexpected keyword argument '{key}' to method remove_database_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'remove_database_groups'"
+                "Missing the required parameter 'database_key' when calling 'remove_database_security_groups'"
             )
 
         collection_formats: dict[str, Any] = {}
@@ -345,7 +349,7 @@ class SchemaSecurityGroupsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def update_database_groups(
+    def update_database_security_groups(
         self, *, database_key: "str", body: "Optional[GsaUpdateDatabaseSecurityGroups]" = None
     ) -> "GsaDatabaseSecurityGroups | None":
         """Updates the security groups for a specific database.
@@ -362,12 +366,12 @@ class SchemaSecurityGroupsApi(ApiBase):
         -------
         GsaDatabaseSecurityGroups | None
         """
-        data = self._update_database_groups_with_http_info(
+        data = self._update_database_security_groups_with_http_info(
             database_key, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _update_database_groups_with_http_info(
+    def _update_database_security_groups_with_http_info(
         self,
         database_key: "str",
         body: "Optional[GsaUpdateDatabaseSecurityGroups]" = None,
@@ -385,14 +389,14 @@ class SchemaSecurityGroupsApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_database_groups"
+                    f"Got an unexpected keyword argument '{key}' to method update_database_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'update_database_groups'"
+                "Missing the required parameter 'database_key' when calling 'update_database_security_groups'"
             )
 
         collection_formats: dict[str, Any] = {}
@@ -442,26 +446,28 @@ class SchemaSecurityGroupsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def update_global_groups(
-        self, *, body: "Optional[GsaUpdateGlobalSecurityGroups]" = None
-    ) -> "GsaGlobalSecurityGroups | None":
-        """Updates the global (fallback defaults) security groups.
+    def update_default_fallback_security_groups(
+        self, *, body: "Optional[GsaUpdateDefaultFallbackSecurityGroups]" = None
+    ) -> "GsaDefaultFallbackSecurityGroups | None":
+        """Updates the default fallback (global) security groups.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GsaUpdateGlobalSecurityGroups
+        body: GsaUpdateDefaultFallbackSecurityGroups
 
         Returns
         -------
-        GsaGlobalSecurityGroups | None
+        GsaDefaultFallbackSecurityGroups | None
         """
-        data = self._update_global_groups_with_http_info(body, _return_http_data_only=True)
+        data = self._update_default_fallback_security_groups_with_http_info(
+            body, _return_http_data_only=True
+        )
         return data  # type: ignore[no-any-return]
 
-    def _update_global_groups_with_http_info(
-        self, body: "Optional[GsaUpdateGlobalSecurityGroups]" = None, **kwargs: Any
+    def _update_default_fallback_security_groups_with_http_info(
+        self, body: "Optional[GsaUpdateDefaultFallbackSecurityGroups]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -469,7 +475,7 @@ class SchemaSecurityGroupsApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_global_groups"
+                    f"Got an unexpected keyword argument '{key}' to method update_default_fallback_security_groups"
                 )
             params[key] = val
         del params["kwargs"]
@@ -497,13 +503,13 @@ class SchemaSecurityGroupsApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaGlobalSecurityGroups",
+            200: "GsaDefaultFallbackSecurityGroups",
             400: None,
             403: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/securityGroups/global",
+            "/v1alpha/securityGroups/defaultFallback",
             "PATCH",
             path_params,
             query_params,
