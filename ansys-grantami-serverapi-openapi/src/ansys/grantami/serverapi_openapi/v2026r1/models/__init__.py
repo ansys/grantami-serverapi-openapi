@@ -142,6 +142,8 @@ from .gsa_attribute_usage_data_modification_error_detail import (
 from .gsa_attribute_validate_response import GsaAttributeValidateResponse
 from .gsa_attribute_value_aggregation import GsaAttributeValueAggregation
 from .gsa_attributes_info import GsaAttributesInfo
+from .gsa_auth_info import GsaAuthInfo
+from .gsa_auth_mode import GsaAuthMode
 from .gsa_axis_name import GsaAxisName
 from .gsa_blob_info_dto import GsaBlobInfoDto
 from .gsa_boolean_criterion import GsaBooleanCriterion
@@ -1343,6 +1345,7 @@ from .gsa_update_user_permissions_info import GsaUpdateUserPermissionsInfo
 from .gsa_upgrade_database_exception import GsaUpgradeDatabaseException
 from .gsa_upgrade_database_failure_reason import GsaUpgradeDatabaseFailureReason
 from .gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
+from .gsa_user_belongs_to_group_response import GsaUserBelongsToGroupResponse
 from .gsa_user_permission import GsaUserPermission
 from .gsa_user_permissions_info import GsaUserPermissionsInfo
 from .gsa_user_role import GsaUserRole
@@ -1466,6 +1469,8 @@ __all__ = [
     "GsaAttributeValidateResponse",
     "GsaAttributeValueAggregation",
     "GsaAttributesInfo",
+    "GsaAuthInfo",
+    "GsaAuthMode",
     "GsaAxisName",
     "GsaBlobInfoDto",
     "GsaBooleanCriterion",
@@ -2471,6 +2476,7 @@ __all__ = [
     "GsaUpgradeDatabaseException",
     "GsaUpgradeDatabaseFailureReason",
     "GsaUsageDataModificationErrorDetail",
+    "GsaUserBelongsToGroupResponse",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
