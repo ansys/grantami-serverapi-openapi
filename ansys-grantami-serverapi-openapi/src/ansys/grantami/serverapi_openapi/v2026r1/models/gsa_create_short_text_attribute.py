@@ -70,7 +70,6 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         "type": "GsaAttributeType",
         "data_rule": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -82,7 +81,6 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         "type": "type",
         "data_rule": "dataRule",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -102,7 +100,6 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
         data_rule: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
@@ -116,7 +113,6 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         type: GsaAttributeType
         data_rule: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         guid: str, optional
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
@@ -126,7 +122,6 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
             name=name,
             type=type,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,

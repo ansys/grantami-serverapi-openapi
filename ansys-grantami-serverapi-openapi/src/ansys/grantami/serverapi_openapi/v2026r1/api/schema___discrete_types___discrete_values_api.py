@@ -62,7 +62,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesCreateDiscreteValue
 
@@ -169,7 +168,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
@@ -276,7 +274,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -369,7 +366,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
@@ -474,7 +470,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -570,7 +565,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesReplaceDiscreteValuesInfo
 
@@ -682,7 +676,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
         body: GsaDiscreteValuesUpdateDiscreteValue
