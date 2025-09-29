@@ -582,6 +582,7 @@ class DataUpdaterApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: None,
+            404: None,
         }
 
         return self.api_client.call_api(
