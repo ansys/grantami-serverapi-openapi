@@ -42,19 +42,19 @@ class GsaUpdateRunStatus(Enum):
     """
     Allowed Enum values
     """
-    POS_0 = 0
-    POS_1 = 1
-    POS_2 = 2
-    POS_3 = 3
-    POS_4 = 4
-    POS_5 = 5
-    POS_6 = 6
-    POS_7 = 7
-    POS_8 = 8
-    POS_9 = 9
-    POS_10 = 10
-    POS_11 = 11
-    POS_12 = 12
-    POS_13 = 13
-    POS_14 = 14
-    POS_15 = 15
+    REGISTERED = "Registered"
+    UPLOADINPROGRESS = "UploadInProgress"
+    UPLOADED = "Uploaded"
+    UPLOADFAILED = "UploadFailed"
+    DRYRUNPENDING = "DryRunPending"
+    DRYRUNCANCELLING = "DryRunCancelling"
+    DRYRUNCANCELLED = "DryRunCancelled"
+    DRYRUNINPROGRESS = "DryRunInProgress"
+    DRYRUNCOMPLETE = "DryRunComplete"
+    DRYRUNFAILED = "DryRunFailed"
+    APPLYPENDING = "ApplyPending"
+    APPLYINPROGRESS = "ApplyInProgress"
+    APPLYCANCELLING = "ApplyCancelling"
+    APPLYCANCELLED = "ApplyCancelled"
+    APPLYCOMPLETE = "ApplyComplete"
+    APPLYFAILED = "ApplyFailed"

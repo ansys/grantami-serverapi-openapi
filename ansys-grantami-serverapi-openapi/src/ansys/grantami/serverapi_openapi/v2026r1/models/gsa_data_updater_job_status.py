@@ -42,11 +42,11 @@ class GsaDataUpdaterJobStatus(Enum):
     """
     Allowed Enum values
     """
-    POS_0 = 0
-    POS_1 = 1
-    POS_2 = 2
-    POS_3 = 3
-    POS_4 = 4
-    POS_5 = 5
-    POS_6 = 6
-    POS_7 = 7
+    UNKNOWN = "Unknown"
+    QUEUED = "Queued"
+    INPROGRESS = "InProgress"
+    COMPLETED = "Completed"
+    CANCELLED = "Cancelled"
+    CANCELLING = "Cancelling"
+    FAILED = "Failed"
+    NOTFOUND = "NotFound"
