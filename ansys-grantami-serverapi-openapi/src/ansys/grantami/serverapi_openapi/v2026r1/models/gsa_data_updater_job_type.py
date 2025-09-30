@@ -42,8 +42,8 @@ class GsaDataUpdaterJobType(Enum):
     """
     Allowed Enum values
     """
-    POS_0 = 0
-    POS_1 = 1
-    POS_2 = 2
-    POS_3 = 3
-    POS_4 = 4
+    NOACTION = "NoAction"
+    CREATEUPDATE = "CreateUpdate"
+    SHIP = "Ship"
+    DRYRUNUPDATE = "DryRunUpdate"
+    APPLYUPDATE = "ApplyUpdate"

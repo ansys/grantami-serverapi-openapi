@@ -42,6 +42,6 @@ class GsaMatchMode(Enum):
     """
     Allowed Enum values
     """
-    POS_0 = 0
-    POS_1 = 1
-    POS_2 = 2
+    BASICGUIDMATCH = "BasicGuidMatch"
+    MATCHONGUIDTHENNAME = "MatchOnGuidThenName"
+    FULLGUIDSYNC = "FullGuidSync"

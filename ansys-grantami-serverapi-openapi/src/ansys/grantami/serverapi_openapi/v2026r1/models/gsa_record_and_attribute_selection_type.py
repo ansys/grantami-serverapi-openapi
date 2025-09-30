@@ -42,6 +42,6 @@ class GsaRecordAndAttributeSelectionType(Enum):
     """
     Allowed Enum values
     """
-    POS_0 = 0
-    POS_1 = 1
-    POS_2 = 2
+    PROFILE = "Profile"
+    ALLATTRIBUTES = "AllAttributes"
+    ALLATTRIBUTESANDRECORDS = "AllAttributesAndRecords"
