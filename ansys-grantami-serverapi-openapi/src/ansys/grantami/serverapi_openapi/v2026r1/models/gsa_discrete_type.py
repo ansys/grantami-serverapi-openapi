@@ -64,7 +64,6 @@ class GsaDiscreteType(ModelBase):
         "discrete_values": "list[GsaDiscreteValuesDiscreteValue]",
         "guid": "str",
         "is_ordered": "bool",
-        "is_protected": "bool",
         "name": "str",
     }
 
@@ -72,7 +71,6 @@ class GsaDiscreteType(ModelBase):
         "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
-        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -88,7 +86,6 @@ class GsaDiscreteType(ModelBase):
         discrete_values: "list[GsaDiscreteValuesDiscreteValue]",
         guid: "str",
         is_ordered: "bool",
-        is_protected: "bool",
         name: "str",
     ) -> None:
         """GsaDiscreteType - a model defined in Swagger
@@ -98,18 +95,15 @@ class GsaDiscreteType(ModelBase):
         discrete_values: list[GsaDiscreteValuesDiscreteValue]
         guid: str
         is_ordered: bool
-        is_protected: bool
         name: str
         """
         self._discrete_values: list[GsaDiscreteValuesDiscreteValue]
         self._is_ordered: bool
-        self._is_protected: bool
         self._name: str
         self._guid: str
 
         self.discrete_values = discrete_values
         self.is_ordered = is_ordered
-        self.is_protected = is_protected
         self.name = name
         self.guid = guid
 
@@ -168,36 +162,6 @@ class GsaDiscreteType(ModelBase):
         if is_ordered is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_ordered', must not be 'Unset'")
         self._is_ordered = is_ordered
-
-    @property
-    def is_protected(self) -> "bool":
-        """Gets the is_protected of this GsaDiscreteType.
-        If true, the discrete type is protected from all changes.
-
-        Returns
-        -------
-        bool
-            The is_protected of this GsaDiscreteType.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool") -> None:
-        """Sets the is_protected of this GsaDiscreteType.
-        If true, the discrete type is protected from all changes.
-
-        Parameters
-        ----------
-        is_protected: bool
-            The is_protected of this GsaDiscreteType.
-        """
-        # Field is not nullable
-        if is_protected is None:
-            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
-        # Field is required
-        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
-        self._is_protected = is_protected
 
     @property
     def name(self) -> "str":

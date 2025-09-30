@@ -63,7 +63,6 @@ class DataExportApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaDataExportRequest
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
