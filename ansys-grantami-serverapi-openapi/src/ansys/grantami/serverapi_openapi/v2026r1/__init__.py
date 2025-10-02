@@ -76,6 +76,8 @@ from .api.schema___profile_tables_api import SchemaProfileTablesApi
 from .api.schema___profiles_api import SchemaProfilesApi
 from .api.schema___record_link_groups_api import SchemaRecordLinkGroupsApi
 from .api.schema___replacement_strings_api import SchemaReplacementStringsApi
+from .api.schema___search_masks_api import SchemaSearchMasksApi
+from .api.schema___search_templates_api import SchemaSearchTemplatesApi
 from .api.schema___security_groups_api import SchemaSecurityGroupsApi
 from .api.schema___standard_names_api import SchemaStandardNamesApi
 from .api.schema___subsets_api import SchemaSubsetsApi
@@ -1182,6 +1184,7 @@ from .models.gsa_schema_too_old_add_database_validation_issue import (
 )
 from .models.gsa_search_cluster_status import GsaSearchClusterStatus
 from .models.gsa_search_index_status import GsaSearchIndexStatus
+from .models.gsa_search_mask_info import GsaSearchMaskInfo
 from .models.gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
 )
@@ -1190,6 +1193,7 @@ from .models.gsa_search_response import GsaSearchResponse
 from .models.gsa_search_result import GsaSearchResult
 from .models.gsa_search_results_request import GsaSearchResultsRequest
 from .models.gsa_search_service_status import GsaSearchServiceStatus
+from .models.gsa_search_template_info import GsaSearchTemplateInfo
 from .models.gsa_searchable_record_property import GsaSearchableRecordProperty
 from .models.gsa_security_attribute_grouping import GsaSecurityAttributeGrouping
 from .models.gsa_security_attribute_usage_data_modification_error_detail import (
@@ -1252,6 +1256,8 @@ from .models.gsa_slim_record_history import GsaSlimRecordHistory
 from .models.gsa_slim_record_link_group import GsaSlimRecordLinkGroup
 from .models.gsa_slim_record_version import GsaSlimRecordVersion
 from .models.gsa_slim_replacement_string import GsaSlimReplacementString
+from .models.gsa_slim_search_mask import GsaSlimSearchMask
+from .models.gsa_slim_search_template import GsaSlimSearchTemplate
 from .models.gsa_slim_subset import GsaSlimSubset
 from .models.gsa_slim_table import GsaSlimTable
 from .models.gsa_slim_typed_attribute import GsaSlimTypedAttribute
@@ -1539,6 +1545,8 @@ __all__ = [
     "SchemaProfilesApi",
     "SchemaRecordLinkGroupsApi",
     "SchemaReplacementStringsApi",
+    "SchemaSearchMasksApi",
+    "SchemaSearchTemplatesApi",
     "SchemaSecurityGroupsApi",
     "SchemaStandardNamesApi",
     "SchemaSubsetsApi",
@@ -2404,12 +2412,14 @@ __all__ = [
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
     "GsaSearchIndexStatus",
+    "GsaSearchMaskInfo",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
     "GsaSearchResponse",
     "GsaSearchResult",
     "GsaSearchResultsRequest",
     "GsaSearchServiceStatus",
+    "GsaSearchTemplateInfo",
     "GsaSearchableRecordProperty",
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
@@ -2470,6 +2480,8 @@ __all__ = [
     "GsaSlimRecordLinkGroup",
     "GsaSlimRecordVersion",
     "GsaSlimReplacementString",
+    "GsaSlimSearchMask",
+    "GsaSlimSearchTemplate",
     "GsaSlimSubset",
     "GsaSlimTable",
     "GsaSlimTypedAttribute",
