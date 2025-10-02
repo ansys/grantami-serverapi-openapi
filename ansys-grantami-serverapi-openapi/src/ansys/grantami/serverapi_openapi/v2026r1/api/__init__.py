@@ -69,6 +69,8 @@ from .schema___profile_tables_api import SchemaProfileTablesApi
 from .schema___profiles_api import SchemaProfilesApi
 from .schema___record_link_groups_api import SchemaRecordLinkGroupsApi
 from .schema___replacement_strings_api import SchemaReplacementStringsApi
+from .schema___search_masks_api import SchemaSearchMasksApi
+from .schema___search_templates_api import SchemaSearchTemplatesApi
 from .schema___security_groups_api import SchemaSecurityGroupsApi
 from .schema___standard_names_api import SchemaStandardNamesApi
 from .schema___subsets_api import SchemaSubsetsApi
@@ -125,6 +127,8 @@ __all__ = [
     "SchemaProfilesApi",
     "SchemaRecordLinkGroupsApi",
     "SchemaReplacementStringsApi",
+    "SchemaSearchMasksApi",
+    "SchemaSearchTemplatesApi",
     "SchemaSecurityGroupsApi",
     "SchemaStandardNamesApi",
     "SchemaSubsetsApi",

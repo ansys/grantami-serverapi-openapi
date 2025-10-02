@@ -1072,6 +1072,7 @@ from .gsa_schema_too_old_add_database_validation_issue import (
 )
 from .gsa_search_cluster_status import GsaSearchClusterStatus
 from .gsa_search_index_status import GsaSearchIndexStatus
+from .gsa_search_mask_info import GsaSearchMaskInfo
 from .gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
 )
@@ -1080,6 +1081,7 @@ from .gsa_search_response import GsaSearchResponse
 from .gsa_search_result import GsaSearchResult
 from .gsa_search_results_request import GsaSearchResultsRequest
 from .gsa_search_service_status import GsaSearchServiceStatus
+from .gsa_search_template_info import GsaSearchTemplateInfo
 from .gsa_searchable_record_property import GsaSearchableRecordProperty
 from .gsa_security_attribute_grouping import GsaSecurityAttributeGrouping
 from .gsa_security_attribute_usage_data_modification_error_detail import (
@@ -1142,6 +1144,8 @@ from .gsa_slim_record_history import GsaSlimRecordHistory
 from .gsa_slim_record_link_group import GsaSlimRecordLinkGroup
 from .gsa_slim_record_version import GsaSlimRecordVersion
 from .gsa_slim_replacement_string import GsaSlimReplacementString
+from .gsa_slim_search_mask import GsaSlimSearchMask
+from .gsa_slim_search_template import GsaSlimSearchTemplate
 from .gsa_slim_subset import GsaSlimSubset
 from .gsa_slim_table import GsaSlimTable
 from .gsa_slim_typed_attribute import GsaSlimTypedAttribute
@@ -2239,12 +2243,14 @@ __all__ = [
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
     "GsaSearchIndexStatus",
+    "GsaSearchMaskInfo",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
     "GsaSearchResponse",
     "GsaSearchResult",
     "GsaSearchResultsRequest",
     "GsaSearchServiceStatus",
+    "GsaSearchTemplateInfo",
     "GsaSearchableRecordProperty",
     "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
@@ -2305,6 +2311,8 @@ __all__ = [
     "GsaSlimRecordLinkGroup",
     "GsaSlimRecordVersion",
     "GsaSlimReplacementString",
+    "GsaSlimSearchMask",
+    "GsaSlimSearchTemplate",
     "GsaSlimSubset",
     "GsaSlimTable",
     "GsaSlimTypedAttribute",
