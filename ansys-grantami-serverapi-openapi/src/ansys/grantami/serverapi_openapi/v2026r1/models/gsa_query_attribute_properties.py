@@ -70,12 +70,10 @@ class GsaQueryAttributeProperties(ModelBase):
         "display_names": "bool",
         "expressions": "GsaQuerySlimNamedEntityProperties",
         "guid": "bool",
-        "help_path": "bool",
         "info": "GsaQueryAttributeInfoProperties",
         "is_functional_range": "bool",
         "is_hidden_from_search_criteria": "bool",
         "is_multi_valued": "bool",
-        "is_protected": "bool",
         "name": "bool",
         "tabular_columns": "GsaQuerySlimNamedEntityProperties",
         "target": "GsaQueryTabularAttributeTargetProperties",
@@ -93,12 +91,10 @@ class GsaQueryAttributeProperties(ModelBase):
         "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
-        "help_path": "helpPath",
         "info": "info",
         "is_functional_range": "isFunctionalRange",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_multi_valued": "isMultiValued",
-        "is_protected": "isProtected",
         "name": "name",
         "tabular_columns": "tabularColumns",
         "target": "target",
@@ -133,12 +129,10 @@ class GsaQueryAttributeProperties(ModelBase):
         display_names: "bool | None | Unset_Type" = Unset,
         expressions: "GsaQuerySlimNamedEntityProperties | Unset_Type" = Unset,
         guid: "bool | None | Unset_Type" = Unset,
-        help_path: "bool | None | Unset_Type" = Unset,
         info: "GsaQueryAttributeInfoProperties | Unset_Type" = Unset,
         is_functional_range: "bool | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
         is_multi_valued: "bool | None | Unset_Type" = Unset,
-        is_protected: "bool | None | Unset_Type" = Unset,
         name: "bool | None | Unset_Type" = Unset,
         tabular_columns: "GsaQuerySlimNamedEntityProperties | Unset_Type" = Unset,
         target: "GsaQueryTabularAttributeTargetProperties | Unset_Type" = Unset,
@@ -158,25 +152,21 @@ class GsaQueryAttributeProperties(ModelBase):
         display_names: bool | None, optional
         expressions: GsaQuerySlimNamedEntityProperties, optional
         guid: bool | None, optional
-        help_path: bool | None, optional
         info: GsaQueryAttributeInfoProperties, optional
         is_functional_range: bool | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         is_multi_valued: bool | None, optional
-        is_protected: bool | None, optional
         name: bool | None, optional
         tabular_columns: GsaQuerySlimNamedEntityProperties, optional
         target: GsaQueryTabularAttributeTargetProperties, optional
         type: bool | None, optional
         unit: GsaQueryUnitProperties, optional
         """
-        self._is_protected: bool | None | Unset_Type = Unset
         self._type: bool | None | Unset_Type = Unset
         self._default_threshold_type: bool | None | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
         self._is_multi_valued: bool | None | Unset_Type = Unset
         self._is_functional_range: bool | None | Unset_Type = Unset
-        self._help_path: bool | None | Unset_Type = Unset
         self._axis_name: GsaQueryAxisNameProperties | Unset_Type = Unset
         self._info: GsaQueryAttributeInfoProperties | Unset_Type = Unset
         self._unit: GsaQueryUnitProperties | Unset_Type = Unset
@@ -191,8 +181,6 @@ class GsaQueryAttributeProperties(ModelBase):
         self._name: bool | None | Unset_Type = Unset
         self._guid: bool | None | Unset_Type = Unset
 
-        if is_protected is not Unset:
-            self.is_protected = is_protected
         if type is not Unset:
             self.type = type
         if default_threshold_type is not Unset:
@@ -203,8 +191,6 @@ class GsaQueryAttributeProperties(ModelBase):
             self.is_multi_valued = is_multi_valued
         if is_functional_range is not Unset:
             self.is_functional_range = is_functional_range
-        if help_path is not Unset:
-            self.help_path = help_path
         if axis_name is not Unset:
             self.axis_name = axis_name
         if info is not Unset:
@@ -231,28 +217,6 @@ class GsaQueryAttributeProperties(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def is_protected(self) -> "bool | None | Unset_Type":
-        """Gets the is_protected of this GsaQueryAttributeProperties.
-
-        Returns
-        -------
-        bool | None | Unset_Type
-            The is_protected of this GsaQueryAttributeProperties.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool | None | Unset_Type") -> None:
-        """Sets the is_protected of this GsaQueryAttributeProperties.
-
-        Parameters
-        ----------
-        is_protected: bool | None | Unset_Type
-            The is_protected of this GsaQueryAttributeProperties.
-        """
-        self._is_protected = is_protected
 
     @property
     def type(self) -> "bool | None | Unset_Type":
@@ -367,28 +331,6 @@ class GsaQueryAttributeProperties(ModelBase):
             The is_functional_range of this GsaQueryAttributeProperties.
         """
         self._is_functional_range = is_functional_range
-
-    @property
-    def help_path(self) -> "bool | None | Unset_Type":
-        """Gets the help_path of this GsaQueryAttributeProperties.
-
-        Returns
-        -------
-        bool | None | Unset_Type
-            The help_path of this GsaQueryAttributeProperties.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "bool | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaQueryAttributeProperties.
-
-        Parameters
-        ----------
-        help_path: bool | None | Unset_Type
-            The help_path of this GsaQueryAttributeProperties.
-        """
-        self._help_path = help_path
 
     @property
     def axis_name(self) -> "GsaQueryAxisNameProperties | Unset_Type":
