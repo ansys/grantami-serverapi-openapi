@@ -75,6 +75,7 @@ class GsaTable(ModelBase):
         "version_state": "GsaVersionState",
         "default_layout": "GsaSlimLayout",
         "default_subset": "GsaSlimSubset",
+        "legal_disclaimer": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -92,6 +93,7 @@ class GsaTable(ModelBase):
         "version_state": "versionState",
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
+        "legal_disclaimer": "legalDisclaimer",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -121,6 +123,7 @@ class GsaTable(ModelBase):
         version_state: "GsaVersionState",
         default_layout: "GsaSlimLayout | Unset_Type" = Unset,
         default_subset: "GsaSlimSubset | Unset_Type" = Unset,
+        legal_disclaimer: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTable - a model defined in Swagger
 
@@ -140,6 +143,7 @@ class GsaTable(ModelBase):
         version_state: GsaVersionState
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
+        legal_disclaimer: str | None, optional
         """
         self._default_subset: GsaSlimSubset | Unset_Type = Unset
         self._subsets: list[GsaSlimSubset]
@@ -147,6 +151,7 @@ class GsaTable(ModelBase):
         self._layouts: list[GsaSlimLayout]
         self._version_state: GsaVersionState
         self._order: int
+        self._legal_disclaimer: str | None | Unset_Type = Unset
         self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
@@ -164,6 +169,8 @@ class GsaTable(ModelBase):
         self.layouts = layouts
         self.version_state = version_state
         self.order = order
+        if legal_disclaimer is not Unset:
+            self.legal_disclaimer = legal_disclaimer
         self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
@@ -334,6 +341,28 @@ class GsaTable(ModelBase):
         if order is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'order', must not be 'Unset'")
         self._order = order
+
+    @property
+    def legal_disclaimer(self) -> "str | None | Unset_Type":
+        """Gets the legal_disclaimer of this GsaTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The legal_disclaimer of this GsaTable.
+        """
+        return self._legal_disclaimer
+
+    @legal_disclaimer.setter
+    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
+        """Sets the legal_disclaimer of this GsaTable.
+
+        Parameters
+        ----------
+        legal_disclaimer: str | None | Unset_Type
+            The legal_disclaimer of this GsaTable.
+        """
+        self._legal_disclaimer = legal_disclaimer
 
     @property
     def database_key(self) -> "str":

@@ -66,6 +66,7 @@ class GsaUpdateTable(ModelBase):
         "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
+        "legal_disclaimer": "str",
         "name": "str",
     }
 
@@ -75,6 +76,7 @@ class GsaUpdateTable(ModelBase):
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
+        "legal_disclaimer": "legalDisclaimer",
         "name": "name",
     }
 
@@ -90,6 +92,7 @@ class GsaUpdateTable(ModelBase):
         guid: "str | Unset_Type" = Unset,
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
+        legal_disclaimer: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateTable - a model defined in Swagger
@@ -101,12 +104,14 @@ class GsaUpdateTable(ModelBase):
         guid: str, optional
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
+        legal_disclaimer: str | None, optional
         name: str, optional
         """
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
         self._default_subset_guid: str | None | Unset_Type = Unset
         self._default_layout_guid: str | None | Unset_Type = Unset
+        self._legal_disclaimer: str | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
@@ -118,6 +123,8 @@ class GsaUpdateTable(ModelBase):
             self.default_subset_guid = default_subset_guid
         if default_layout_guid is not Unset:
             self.default_layout_guid = default_layout_guid
+        if legal_disclaimer is not Unset:
+            self.legal_disclaimer = legal_disclaimer
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -216,6 +223,28 @@ class GsaUpdateTable(ModelBase):
             The default_layout_guid of this GsaUpdateTable.
         """
         self._default_layout_guid = default_layout_guid
+
+    @property
+    def legal_disclaimer(self) -> "str | None | Unset_Type":
+        """Gets the legal_disclaimer of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The legal_disclaimer of this GsaUpdateTable.
+        """
+        return self._legal_disclaimer
+
+    @legal_disclaimer.setter
+    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
+        """Sets the legal_disclaimer of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        legal_disclaimer: str | None | Unset_Type
+            The legal_disclaimer of this GsaUpdateTable.
+        """
+        self._legal_disclaimer = legal_disclaimer
 
     @property
     def name(self) -> "str | Unset_Type":
