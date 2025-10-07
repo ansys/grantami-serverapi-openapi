@@ -601,6 +601,7 @@ from .models.gsa_file_datum_info import GsaFileDatumInfo
 from .models.gsa_file_error_detail import GsaFileErrorDetail
 from .models.gsa_file_error_reason import GsaFileErrorReason
 from .models.gsa_file_header import GsaFileHeader
+from .models.gsa_file_header_info import GsaFileHeaderInfo
 from .models.gsa_file_move_error_detail import GsaFileMoveErrorDetail
 from .models.gsa_file_move_error_reason import GsaFileMoveErrorReason
 from .models.gsa_file_move_exception import GsaFileMoveException
@@ -1951,6 +1952,7 @@ __all__ = [
     "GsaFileErrorDetail",
     "GsaFileErrorReason",
     "GsaFileHeader",
+    "GsaFileHeaderInfo",
     "GsaFileMoveErrorDetail",
     "GsaFileMoveErrorReason",
     "GsaFileMoveException",
