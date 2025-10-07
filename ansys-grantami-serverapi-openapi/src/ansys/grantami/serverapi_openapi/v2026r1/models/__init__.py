@@ -523,6 +523,7 @@ from .gsa_file_datum_info import GsaFileDatumInfo
 from .gsa_file_error_detail import GsaFileErrorDetail
 from .gsa_file_error_reason import GsaFileErrorReason
 from .gsa_file_header import GsaFileHeader
+from .gsa_file_header_info import GsaFileHeaderInfo
 from .gsa_file_move_error_detail import GsaFileMoveErrorDetail
 from .gsa_file_move_error_reason import GsaFileMoveErrorReason
 from .gsa_file_move_exception import GsaFileMoveException
@@ -1782,6 +1783,7 @@ __all__ = [
     "GsaFileErrorDetail",
     "GsaFileErrorReason",
     "GsaFileHeader",
+    "GsaFileHeaderInfo",
     "GsaFileMoveErrorDetail",
     "GsaFileMoveErrorReason",
     "GsaFileMoveException",
