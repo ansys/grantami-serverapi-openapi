@@ -371,6 +371,101 @@ class SchemaConfigurationsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def export_configurations(
+        self, *, database_key: "str", configuration_type: "str"
+    ) -> "None | str":
+        """Get configurations as a zip file
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        configuration_type: str
+            The configuration type as entered.
+
+        Returns
+        -------
+        None | str
+        """
+        data = self._export_configurations_with_http_info(
+            database_key, configuration_type, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _export_configurations_with_http_info(
+        self, database_key: "str", configuration_type: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "configuration_type",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method export_configurations"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'export_configurations'"
+            )
+        # verify the required parameter "configuration_type" is set
+        if "configuration_type" not in params or params["configuration_type"] is None:
+            raise ValueError(
+                "Missing the required parameter 'configuration_type' when calling 'export_configurations'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "configuration_type" in params and configuration_type is not None:
+            path_params["configuration-type"] = params["configuration_type"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/zip", "application/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "file",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/configurations/{configuration-type}:export",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_configuration(
         self, *, database_key: "str", configuration_type: "str", configuration_guid: "str"
     ) -> "GsaConfiguration | None":
