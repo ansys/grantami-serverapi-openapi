@@ -61,6 +61,7 @@ class GsaServerConnectionDetails(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "additional_sql_parameters": "str",
         "data_source": "str",
         "existing_database_key": "str",
         "sql_password": "str",
@@ -70,6 +71,7 @@ class GsaServerConnectionDetails(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "additional_sql_parameters": "additionalSqlParameters",
         "data_source": "dataSource",
         "existing_database_key": "existingDatabaseKey",
         "sql_password": "sqlPassword",
@@ -85,6 +87,7 @@ class GsaServerConnectionDetails(ModelBase):
     def __init__(
         self,
         *,
+        additional_sql_parameters: "str | None | Unset_Type" = Unset,
         data_source: "str | None | Unset_Type" = Unset,
         existing_database_key: "str | None | Unset_Type" = Unset,
         sql_password: "str | None | Unset_Type" = Unset,
@@ -96,6 +99,7 @@ class GsaServerConnectionDetails(ModelBase):
 
         Parameters
         ----------
+        additional_sql_parameters: str | None, optional
         data_source: str | None, optional
         existing_database_key: str | None, optional
         sql_password: str | None, optional
@@ -109,6 +113,7 @@ class GsaServerConnectionDetails(ModelBase):
         self._sql_username: str | None | Unset_Type = Unset
         self._sql_password: str | None | Unset_Type = Unset
         self._existing_database_key: str | None | Unset_Type = Unset
+        self._additional_sql_parameters: str | None | Unset_Type = Unset
 
         if data_source is not Unset:
             self.data_source = data_source
@@ -122,6 +127,8 @@ class GsaServerConnectionDetails(ModelBase):
             self.sql_password = sql_password
         if existing_database_key is not Unset:
             self.existing_database_key = existing_database_key
+        if additional_sql_parameters is not Unset:
+            self.additional_sql_parameters = additional_sql_parameters
 
     @property
     def data_source(self) -> "str | None | Unset_Type":
@@ -276,6 +283,32 @@ class GsaServerConnectionDetails(ModelBase):
             The existing_database_key of this GsaServerConnectionDetails.
         """
         self._existing_database_key = existing_database_key
+
+    @property
+    def additional_sql_parameters(self) -> "str | None | Unset_Type":
+        """Gets the additional_sql_parameters of this GsaServerConnectionDetails.
+        (Optional) Any additional parameters added to the SQL Server connection string.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The additional_sql_parameters of this GsaServerConnectionDetails.
+        """
+        return self._additional_sql_parameters
+
+    @additional_sql_parameters.setter
+    def additional_sql_parameters(
+        self, additional_sql_parameters: "str | None | Unset_Type"
+    ) -> None:
+        """Sets the additional_sql_parameters of this GsaServerConnectionDetails.
+        (Optional) Any additional parameters added to the SQL Server connection string.
+
+        Parameters
+        ----------
+        additional_sql_parameters: str | None | Unset_Type
+            The additional_sql_parameters of this GsaServerConnectionDetails.
+        """
+        self._additional_sql_parameters = additional_sql_parameters
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
