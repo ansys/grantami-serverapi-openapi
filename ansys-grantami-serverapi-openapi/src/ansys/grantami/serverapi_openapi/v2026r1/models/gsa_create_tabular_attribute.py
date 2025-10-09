@@ -76,6 +76,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         "help_path": "str",
         "hide_unlinked_rows": "bool",
         "is_hidden_from_search_criteria": "bool",
+        "meta_attributes": "list[GsaCreateAttribute]",
         "tabular_columns": "list[GsaCreateTabularColumn]",
         "target": "GsaTabularAttributeTarget",
     }
@@ -91,6 +92,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         "help_path": "helpPath",
         "hide_unlinked_rows": "hideUnlinkedRows",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
+        "meta_attributes": "metaAttributes",
         "tabular_columns": "tabularColumns",
         "target": "target",
     }
@@ -115,6 +117,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         help_path: "str | None | Unset_Type" = Unset,
         hide_unlinked_rows: "bool | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
+        meta_attributes: "list[GsaCreateAttribute] | None | Unset_Type" = Unset,
         tabular_columns: "list[GsaCreateTabularColumn] | None | Unset_Type" = Unset,
         target: "GsaTabularAttributeTarget | Unset_Type" = Unset,
     ) -> None:
@@ -132,6 +135,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         help_path: str | None, optional
         hide_unlinked_rows: bool, optional
         is_hidden_from_search_criteria: bool | None, optional
+        meta_attributes: list[GsaCreateAttribute] | None, optional
         tabular_columns: list[GsaCreateTabularColumn] | None, optional
         target: GsaTabularAttributeTarget, optional
         """
@@ -143,6 +147,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            meta_attributes=meta_attributes,
         )
         self._display_full_table: bool | Unset_Type = Unset
         self._display_summary_row_inline: bool | Unset_Type = Unset
