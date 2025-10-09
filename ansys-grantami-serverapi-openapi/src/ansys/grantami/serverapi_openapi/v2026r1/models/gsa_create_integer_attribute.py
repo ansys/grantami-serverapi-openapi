@@ -75,6 +75,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
         "is_unique": "bool",
+        "meta_attributes": "list[GsaCreateAttribute]",
     }
 
     attribute_map: dict[str, str] = {
@@ -87,6 +88,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_unique": "isUnique",
+        "meta_attributes": "metaAttributes",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -107,6 +109,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
         is_unique: "bool | Unset_Type" = Unset,
+        meta_attributes: "list[GsaCreateAttribute] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateIntegerAttribute - a model defined in Swagger
 
@@ -121,6 +124,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         is_unique: bool, optional
+        meta_attributes: list[GsaCreateAttribute] | None, optional
         """
         super().__init__(
             name=name,
@@ -130,6 +134,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            meta_attributes=meta_attributes,
         )
         self._is_unique: bool | Unset_Type = Unset
         self._axis_name: GsaCreateAxisName | Unset_Type = Unset

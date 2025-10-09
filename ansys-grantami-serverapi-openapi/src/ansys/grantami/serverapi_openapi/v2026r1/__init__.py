@@ -852,6 +852,9 @@ from .models.gsa_maths_functional_datum_exists_criterion import (
 )
 from .models.gsa_maths_functional_error_detail import GsaMathsFunctionalErrorDetail
 from .models.gsa_maths_functional_error_reason import GsaMathsFunctionalErrorReason
+from .models.gsa_meta_attribute_cannot_have_meta_attribute_error_detail import (
+    GsaMetaAttributeCannotHaveMetaAttributeErrorDetail,
+)
 from .models.gsa_mfa_expression_error_detail import GsaMfaExpressionErrorDetail
 from .models.gsa_mfa_expression_error_reason import GsaMfaExpressionErrorReason
 from .models.gsa_mi_version import GsaMiVersion
@@ -2157,6 +2160,7 @@ __all__ = [
     "GsaMathsFunctionalDatumExistsCriterion",
     "GsaMathsFunctionalErrorDetail",
     "GsaMathsFunctionalErrorReason",
+    "GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
     "GsaMfaExpressionErrorDetail",
     "GsaMfaExpressionErrorReason",
     "GsaMiVersion",

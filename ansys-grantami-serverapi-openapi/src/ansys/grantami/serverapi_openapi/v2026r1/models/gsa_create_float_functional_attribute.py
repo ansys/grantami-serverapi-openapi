@@ -76,6 +76,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
         "is_range": "bool",
+        "meta_attributes": "list[GsaCreateAttribute]",
         "unit": "GsaSlimEntity",
     }
 
@@ -90,6 +91,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_range": "isRange",
+        "meta_attributes": "metaAttributes",
         "unit": "unit",
     }
 
@@ -114,6 +116,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
         is_range: "bool | Unset_Type" = Unset,
+        meta_attributes: "list[GsaCreateAttribute] | None | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateFloatFunctionalAttribute - a model defined in Swagger
@@ -130,6 +133,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         is_range: bool, optional
+        meta_attributes: list[GsaCreateAttribute] | None, optional
         unit: GsaSlimEntity, optional
         """
         super().__init__(
@@ -140,6 +144,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
+            meta_attributes=meta_attributes,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
         self._axis_name: GsaCreateAxisName | Unset_Type = Unset

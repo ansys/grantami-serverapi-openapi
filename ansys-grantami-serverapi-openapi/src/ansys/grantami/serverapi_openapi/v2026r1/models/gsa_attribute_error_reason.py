@@ -43,6 +43,7 @@ class GsaAttributeErrorReason(Enum):
     Allowed Enum values
     """
     ABOUTATTRIBUTECANNOTBEMETA = "aboutAttributeCannotBeMeta"
+    METAATTRIBUTECANNOTHAVEMETAATTRIBUTE = "metaAttributeCannotHaveMetaAttribute"
     DUPLICATEPARAMETERGUIDS = "duplicateParameterGuids"
     EMPTYAXISNAME = "emptyAxisName"
     FUNCNOPARAMS = "funcNoParams"
