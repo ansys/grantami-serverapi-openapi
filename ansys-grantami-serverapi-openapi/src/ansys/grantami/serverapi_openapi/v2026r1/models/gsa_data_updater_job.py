@@ -62,29 +62,29 @@ class GsaDataUpdaterJob(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "database_key": "str",
-        "description": "str",
-        "error": "str",
         "id": "str",
         "job_type": "GsaDataUpdaterJobType",
+        "status": "GsaDataUpdaterJobStatus",
+        "time_started": "datetime",
+        "description": "str",
+        "error": "str",
         "name": "str",
         "project_name": "str",
-        "status": "GsaDataUpdaterJobStatus",
         "time_completed": "datetime",
-        "time_started": "datetime",
         "update_token": "GsaDataUpdateToken",
     }
 
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
-        "description": "description",
-        "error": "error",
         "id": "id",
         "job_type": "jobType",
+        "status": "status",
+        "time_started": "timeStarted",
+        "description": "description",
+        "error": "error",
         "name": "name",
         "project_name": "projectName",
-        "status": "status",
         "time_completed": "timeCompleted",
-        "time_started": "timeStarted",
         "update_token": "updateToken",
     }
 
@@ -99,94 +99,92 @@ class GsaDataUpdaterJob(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "str | None | Unset_Type" = Unset,
+        database_key: "str",
+        id: "str",
+        job_type: "GsaDataUpdaterJobType",
+        status: "GsaDataUpdaterJobStatus",
+        time_started: "datetime",
         description: "str | None | Unset_Type" = Unset,
         error: "str | None | Unset_Type" = Unset,
-        id: "str | Unset_Type" = Unset,
-        job_type: "GsaDataUpdaterJobType | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         project_name: "str | None | Unset_Type" = Unset,
-        status: "GsaDataUpdaterJobStatus | Unset_Type" = Unset,
         time_completed: "datetime | None | Unset_Type" = Unset,
-        time_started: "datetime | Unset_Type" = Unset,
         update_token: "GsaDataUpdateToken | Unset_Type" = Unset,
     ) -> None:
         """GsaDataUpdaterJob - a model defined in Swagger
 
         Parameters
         ----------
-        database_key: str | None, optional
+        database_key: str
+        id: str
+        job_type: GsaDataUpdaterJobType
+        status: GsaDataUpdaterJobStatus
+        time_started: datetime
         description: str | None, optional
         error: str | None, optional
-        id: str, optional
-        job_type: GsaDataUpdaterJobType, optional
         name: str | None, optional
         project_name: str | None, optional
-        status: GsaDataUpdaterJobStatus, optional
         time_completed: datetime | None, optional
-        time_started: datetime, optional
         update_token: GsaDataUpdateToken, optional
         """
-        self._id: str | Unset_Type = Unset
+        self._id: str
         self._update_token: GsaDataUpdateToken | Unset_Type = Unset
-        self._job_type: GsaDataUpdaterJobType | Unset_Type = Unset
-        self._database_key: str | None | Unset_Type = Unset
+        self._job_type: GsaDataUpdaterJobType
+        self._database_key: str
         self._name: str | None | Unset_Type = Unset
         self._description: str | None | Unset_Type = Unset
-        self._status: GsaDataUpdaterJobStatus | Unset_Type = Unset
+        self._status: GsaDataUpdaterJobStatus
         self._project_name: str | None | Unset_Type = Unset
-        self._time_started: datetime | Unset_Type = Unset
+        self._time_started: datetime
         self._time_completed: datetime | None | Unset_Type = Unset
         self._error: str | None | Unset_Type = Unset
 
-        if id is not Unset:
-            self.id = id
+        self.id = id
         if update_token is not Unset:
             self.update_token = update_token
-        if job_type is not Unset:
-            self.job_type = job_type
-        if database_key is not Unset:
-            self.database_key = database_key
+        self.job_type = job_type
+        self.database_key = database_key
         if name is not Unset:
             self.name = name
         if description is not Unset:
             self.description = description
-        if status is not Unset:
-            self.status = status
+        self.status = status
         if project_name is not Unset:
             self.project_name = project_name
-        if time_started is not Unset:
-            self.time_started = time_started
+        self.time_started = time_started
         if time_completed is not Unset:
             self.time_completed = time_completed
         if error is not Unset:
             self.error = error
 
     @property
-    def id(self) -> "str | Unset_Type":
+    def id(self) -> "str":
         """Gets the id of this GsaDataUpdaterJob.
         Gets or sets the token which identifies this job.
 
         Returns
         -------
-        str | Unset_Type
+        str
             The id of this GsaDataUpdaterJob.
         """
         return self._id
 
     @id.setter
-    def id(self, id: "str | Unset_Type") -> None:
+    def id(self, id: "str") -> None:
         """Sets the id of this GsaDataUpdaterJob.
         Gets or sets the token which identifies this job.
 
         Parameters
         ----------
-        id: str | Unset_Type
+        id: str
             The id of this GsaDataUpdaterJob.
         """
         # Field is not nullable
         if id is None:
             raise ValueError("Invalid value for 'id', must not be 'None'")
+        # Field is required
+        if id is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'id', must not be 'Unset'")
         self._id = id
 
     @property
@@ -215,52 +213,61 @@ class GsaDataUpdaterJob(ModelBase):
         self._update_token = update_token
 
     @property
-    def job_type(self) -> "GsaDataUpdaterJobType | Unset_Type":
+    def job_type(self) -> "GsaDataUpdaterJobType":
         """Gets the job_type of this GsaDataUpdaterJob.
 
         Returns
         -------
-        GsaDataUpdaterJobType | Unset_Type
+        GsaDataUpdaterJobType
             The job_type of this GsaDataUpdaterJob.
         """
         return self._job_type
 
     @job_type.setter
-    def job_type(self, job_type: "GsaDataUpdaterJobType | Unset_Type") -> None:
+    def job_type(self, job_type: "GsaDataUpdaterJobType") -> None:
         """Sets the job_type of this GsaDataUpdaterJob.
 
         Parameters
         ----------
-        job_type: GsaDataUpdaterJobType | Unset_Type
+        job_type: GsaDataUpdaterJobType
             The job_type of this GsaDataUpdaterJob.
         """
         # Field is not nullable
         if job_type is None:
             raise ValueError("Invalid value for 'job_type', must not be 'None'")
+        # Field is required
+        if job_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'job_type', must not be 'Unset'")
         self._job_type = job_type
 
     @property
-    def database_key(self) -> "str | None | Unset_Type":
+    def database_key(self) -> "str":
         """Gets the database_key of this GsaDataUpdaterJob.
         Gets or sets the key of the database against which this job has been / will be run.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The database_key of this GsaDataUpdaterJob.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "str | None | Unset_Type") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GsaDataUpdaterJob.
         Gets or sets the key of the database against which this job has been / will be run.
 
         Parameters
         ----------
-        database_key: str | None | Unset_Type
+        database_key: str
             The database_key of this GsaDataUpdaterJob.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
+        # Field is required
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
     @property
@@ -312,28 +319,31 @@ class GsaDataUpdaterJob(ModelBase):
         self._description = description
 
     @property
-    def status(self) -> "GsaDataUpdaterJobStatus | Unset_Type":
+    def status(self) -> "GsaDataUpdaterJobStatus":
         """Gets the status of this GsaDataUpdaterJob.
 
         Returns
         -------
-        GsaDataUpdaterJobStatus | Unset_Type
+        GsaDataUpdaterJobStatus
             The status of this GsaDataUpdaterJob.
         """
         return self._status
 
     @status.setter
-    def status(self, status: "GsaDataUpdaterJobStatus | Unset_Type") -> None:
+    def status(self, status: "GsaDataUpdaterJobStatus") -> None:
         """Sets the status of this GsaDataUpdaterJob.
 
         Parameters
         ----------
-        status: GsaDataUpdaterJobStatus | Unset_Type
+        status: GsaDataUpdaterJobStatus
             The status of this GsaDataUpdaterJob.
         """
         # Field is not nullable
         if status is None:
             raise ValueError("Invalid value for 'status', must not be 'None'")
+        # Field is required
+        if status is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'status', must not be 'Unset'")
         self._status = status
 
     @property
@@ -361,30 +371,33 @@ class GsaDataUpdaterJob(ModelBase):
         self._project_name = project_name
 
     @property
-    def time_started(self) -> "datetime | Unset_Type":
+    def time_started(self) -> "datetime":
         """Gets the time_started of this GsaDataUpdaterJob.
         Gets or sets the time that the job started.
 
         Returns
         -------
-        datetime | Unset_Type
+        datetime
             The time_started of this GsaDataUpdaterJob.
         """
         return self._time_started
 
     @time_started.setter
-    def time_started(self, time_started: "datetime | Unset_Type") -> None:
+    def time_started(self, time_started: "datetime") -> None:
         """Sets the time_started of this GsaDataUpdaterJob.
         Gets or sets the time that the job started.
 
         Parameters
         ----------
-        time_started: datetime | Unset_Type
+        time_started: datetime
             The time_started of this GsaDataUpdaterJob.
         """
         # Field is not nullable
         if time_started is None:
             raise ValueError("Invalid value for 'time_started', must not be 'None'")
+        # Field is required
+        if time_started is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'time_started', must not be 'Unset'")
         self._time_started = time_started
 
     @property

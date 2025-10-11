@@ -65,13 +65,13 @@ class GsaDataUpdaterProject(ModelBase):
         "include_db_dependencies": "bool",
         "include_deselected_db_dependencies": "bool",
         "include_foreign_category_items": "bool",
+        "name": "str",
+        "record_and_attribute_selection_type": "GsaRecordAndAttributeSelectionType",
         "last_marked_ready_for_sending_at_revision": "int",
         "last_marked_ready_for_sending_by_user_name": "str",
         "last_update_file_name": "str",
         "last_update_generated_by_user_name": "str",
-        "name": "str",
         "profile_id": "str",
-        "record_and_attribute_selection_type": "GsaRecordAndAttributeSelectionType",
         "selection": "GsaSelection",
         "time_last_update_generated": "datetime",
         "time_last_update_marked_ready_for_sending": "datetime",
@@ -82,13 +82,13 @@ class GsaDataUpdaterProject(ModelBase):
         "include_db_dependencies": "includeDbDependencies",
         "include_deselected_db_dependencies": "includeDeselectedDbDependencies",
         "include_foreign_category_items": "includeForeignCategoryItems",
+        "name": "name",
+        "record_and_attribute_selection_type": "recordAndAttributeSelectionType",
         "last_marked_ready_for_sending_at_revision": "lastMarkedReadyForSendingAtRevision",
         "last_marked_ready_for_sending_by_user_name": "lastMarkedReadyForSendingByUserName",
         "last_update_file_name": "lastUpdateFileName",
         "last_update_generated_by_user_name": "lastUpdateGeneratedByUserName",
-        "name": "name",
         "profile_id": "profileId",
-        "record_and_attribute_selection_type": "recordAndAttributeSelectionType",
         "selection": "selection",
         "time_last_update_generated": "timeLastUpdateGenerated",
         "time_last_update_marked_ready_for_sending": "timeLastUpdateMarkedReadyForSending",
@@ -104,17 +104,17 @@ class GsaDataUpdaterProject(ModelBase):
     def __init__(
         self,
         *,
-        guid: "str | Unset_Type" = Unset,
-        include_db_dependencies: "bool | Unset_Type" = Unset,
-        include_deselected_db_dependencies: "bool | Unset_Type" = Unset,
-        include_foreign_category_items: "bool | Unset_Type" = Unset,
+        guid: "str",
+        include_db_dependencies: "bool",
+        include_deselected_db_dependencies: "bool",
+        include_foreign_category_items: "bool",
+        name: "str",
+        record_and_attribute_selection_type: "GsaRecordAndAttributeSelectionType",
         last_marked_ready_for_sending_at_revision: "int | Unset_Type" = Unset,
         last_marked_ready_for_sending_by_user_name: "str | None | Unset_Type" = Unset,
         last_update_file_name: "str | None | Unset_Type" = Unset,
         last_update_generated_by_user_name: "str | None | Unset_Type" = Unset,
-        name: "str | None | Unset_Type" = Unset,
         profile_id: "str | None | Unset_Type" = Unset,
-        record_and_attribute_selection_type: "GsaRecordAndAttributeSelectionType | Unset_Type" = Unset,
         selection: "GsaSelection | Unset_Type" = Unset,
         time_last_update_generated: "datetime | Unset_Type" = Unset,
         time_last_update_marked_ready_for_sending: "datetime | Unset_Type" = Unset,
@@ -123,29 +123,27 @@ class GsaDataUpdaterProject(ModelBase):
 
         Parameters
         ----------
-        guid: str, optional
-        include_db_dependencies: bool, optional
-        include_deselected_db_dependencies: bool, optional
-        include_foreign_category_items: bool, optional
+        guid: str
+        include_db_dependencies: bool
+        include_deselected_db_dependencies: bool
+        include_foreign_category_items: bool
+        name: str
+        record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType
         last_marked_ready_for_sending_at_revision: int, optional
         last_marked_ready_for_sending_by_user_name: str | None, optional
         last_update_file_name: str | None, optional
         last_update_generated_by_user_name: str | None, optional
-        name: str | None, optional
         profile_id: str | None, optional
-        record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType, optional
         selection: GsaSelection, optional
         time_last_update_generated: datetime, optional
         time_last_update_marked_ready_for_sending: datetime, optional
         """
-        self._guid: str | Unset_Type = Unset
-        self._name: str | None | Unset_Type = Unset
-        self._record_and_attribute_selection_type: (
-            GsaRecordAndAttributeSelectionType | Unset_Type
-        ) = Unset
-        self._include_db_dependencies: bool | Unset_Type = Unset
-        self._include_deselected_db_dependencies: bool | Unset_Type = Unset
-        self._include_foreign_category_items: bool | Unset_Type = Unset
+        self._guid: str
+        self._name: str
+        self._record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType
+        self._include_db_dependencies: bool
+        self._include_deselected_db_dependencies: bool
+        self._include_foreign_category_items: bool
         self._last_update_file_name: str | None | Unset_Type = Unset
         self._last_marked_ready_for_sending_by_user_name: str | None | Unset_Type = Unset
         self._time_last_update_marked_ready_for_sending: datetime | Unset_Type = Unset
@@ -155,18 +153,12 @@ class GsaDataUpdaterProject(ModelBase):
         self._profile_id: str | None | Unset_Type = Unset
         self._selection: GsaSelection | Unset_Type = Unset
 
-        if guid is not Unset:
-            self.guid = guid
-        if name is not Unset:
-            self.name = name
-        if record_and_attribute_selection_type is not Unset:
-            self.record_and_attribute_selection_type = record_and_attribute_selection_type
-        if include_db_dependencies is not Unset:
-            self.include_db_dependencies = include_db_dependencies
-        if include_deselected_db_dependencies is not Unset:
-            self.include_deselected_db_dependencies = include_deselected_db_dependencies
-        if include_foreign_category_items is not Unset:
-            self.include_foreign_category_items = include_foreign_category_items
+        self.guid = guid
+        self.name = name
+        self.record_and_attribute_selection_type = record_and_attribute_selection_type
+        self.include_db_dependencies = include_db_dependencies
+        self.include_deselected_db_dependencies = include_deselected_db_dependencies
+        self.include_foreign_category_items = include_foreign_category_items
         if last_update_file_name is not Unset:
             self.last_update_file_name = last_update_file_name
         if last_marked_ready_for_sending_by_user_name is not Unset:
@@ -191,74 +183,81 @@ class GsaDataUpdaterProject(ModelBase):
             self.selection = selection
 
     @property
-    def guid(self) -> "str | Unset_Type":
+    def guid(self) -> "str":
         """Gets the guid of this GsaDataUpdaterProject.
 
         Returns
         -------
-        str | Unset_Type
+        str
             The guid of this GsaDataUpdaterProject.
         """
         return self._guid
 
     @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
+    def guid(self, guid: "str") -> None:
         """Sets the guid of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        guid: str | Unset_Type
+        guid: str
             The guid of this GsaDataUpdaterProject.
         """
         # Field is not nullable
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
 
     @property
-    def name(self) -> "str | None | Unset_Type":
+    def name(self) -> "str":
         """Gets the name of this GsaDataUpdaterProject.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The name of this GsaDataUpdaterProject.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "str | None | Unset_Type") -> None:
+    def name(self, name: "str") -> None:
         """Sets the name of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        name: str | None | Unset_Type
+        name: str
             The name of this GsaDataUpdaterProject.
         """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @property
-    def record_and_attribute_selection_type(
-        self,
-    ) -> "GsaRecordAndAttributeSelectionType | Unset_Type":
+    def record_and_attribute_selection_type(self) -> "GsaRecordAndAttributeSelectionType":
         """Gets the record_and_attribute_selection_type of this GsaDataUpdaterProject.
 
         Returns
         -------
-        GsaRecordAndAttributeSelectionType | Unset_Type
+        GsaRecordAndAttributeSelectionType
             The record_and_attribute_selection_type of this GsaDataUpdaterProject.
         """
         return self._record_and_attribute_selection_type
 
     @record_and_attribute_selection_type.setter
     def record_and_attribute_selection_type(
-        self, record_and_attribute_selection_type: "GsaRecordAndAttributeSelectionType | Unset_Type"
+        self, record_and_attribute_selection_type: "GsaRecordAndAttributeSelectionType"
     ) -> None:
         """Sets the record_and_attribute_selection_type of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType | Unset_Type
+        record_and_attribute_selection_type: GsaRecordAndAttributeSelectionType
             The record_and_attribute_selection_type of this GsaDataUpdaterProject.
         """
         # Field is not nullable
@@ -266,53 +265,61 @@ class GsaDataUpdaterProject(ModelBase):
             raise ValueError(
                 "Invalid value for 'record_and_attribute_selection_type', must not be 'None'"
             )
+        # Field is required
+        if record_and_attribute_selection_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'record_and_attribute_selection_type', must not be 'Unset'"
+            )
         self._record_and_attribute_selection_type = record_and_attribute_selection_type
 
     @property
-    def include_db_dependencies(self) -> "bool | Unset_Type":
+    def include_db_dependencies(self) -> "bool":
         """Gets the include_db_dependencies of this GsaDataUpdaterProject.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The include_db_dependencies of this GsaDataUpdaterProject.
         """
         return self._include_db_dependencies
 
     @include_db_dependencies.setter
-    def include_db_dependencies(self, include_db_dependencies: "bool | Unset_Type") -> None:
+    def include_db_dependencies(self, include_db_dependencies: "bool") -> None:
         """Sets the include_db_dependencies of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        include_db_dependencies: bool | Unset_Type
+        include_db_dependencies: bool
             The include_db_dependencies of this GsaDataUpdaterProject.
         """
         # Field is not nullable
         if include_db_dependencies is None:
             raise ValueError("Invalid value for 'include_db_dependencies', must not be 'None'")
+        # Field is required
+        if include_db_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'include_db_dependencies', must not be 'Unset'")
         self._include_db_dependencies = include_db_dependencies
 
     @property
-    def include_deselected_db_dependencies(self) -> "bool | Unset_Type":
+    def include_deselected_db_dependencies(self) -> "bool":
         """Gets the include_deselected_db_dependencies of this GsaDataUpdaterProject.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The include_deselected_db_dependencies of this GsaDataUpdaterProject.
         """
         return self._include_deselected_db_dependencies
 
     @include_deselected_db_dependencies.setter
     def include_deselected_db_dependencies(
-        self, include_deselected_db_dependencies: "bool | Unset_Type"
+        self, include_deselected_db_dependencies: "bool"
     ) -> None:
         """Sets the include_deselected_db_dependencies of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        include_deselected_db_dependencies: bool | Unset_Type
+        include_deselected_db_dependencies: bool
             The include_deselected_db_dependencies of this GsaDataUpdaterProject.
         """
         # Field is not nullable
@@ -320,34 +327,42 @@ class GsaDataUpdaterProject(ModelBase):
             raise ValueError(
                 "Invalid value for 'include_deselected_db_dependencies', must not be 'None'"
             )
+        # Field is required
+        if include_deselected_db_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'include_deselected_db_dependencies', must not be 'Unset'"
+            )
         self._include_deselected_db_dependencies = include_deselected_db_dependencies
 
     @property
-    def include_foreign_category_items(self) -> "bool | Unset_Type":
+    def include_foreign_category_items(self) -> "bool":
         """Gets the include_foreign_category_items of this GsaDataUpdaterProject.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The include_foreign_category_items of this GsaDataUpdaterProject.
         """
         return self._include_foreign_category_items
 
     @include_foreign_category_items.setter
-    def include_foreign_category_items(
-        self, include_foreign_category_items: "bool | Unset_Type"
-    ) -> None:
+    def include_foreign_category_items(self, include_foreign_category_items: "bool") -> None:
         """Sets the include_foreign_category_items of this GsaDataUpdaterProject.
 
         Parameters
         ----------
-        include_foreign_category_items: bool | Unset_Type
+        include_foreign_category_items: bool
             The include_foreign_category_items of this GsaDataUpdaterProject.
         """
         # Field is not nullable
         if include_foreign_category_items is None:
             raise ValueError(
                 "Invalid value for 'include_foreign_category_items', must not be 'None'"
+            )
+        # Field is required
+        if include_foreign_category_items is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'include_foreign_category_items', must not be 'Unset'"
             )
         self._include_foreign_category_items = include_foreign_category_items
 

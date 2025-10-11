@@ -61,15 +61,15 @@ class GsaCreateDataUpdateServerApiRequest(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "description": "str",
         "name": "str",
         "project": "GsaDataUpdaterProject",
+        "description": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "description": "description",
         "name": "name",
         "project": "project",
+        "description": "description",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,49 +81,53 @@ class GsaCreateDataUpdateServerApiRequest(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
+        project: "GsaDataUpdaterProject",
         description: "str | None | Unset_Type" = Unset,
-        name: "str | None | Unset_Type" = Unset,
-        project: "GsaDataUpdaterProject | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateDataUpdateServerApiRequest - a model defined in Swagger
 
         Parameters
         ----------
+        name: str
+        project: GsaDataUpdaterProject
         description: str | None, optional
-        name: str | None, optional
-        project: GsaDataUpdaterProject, optional
         """
-        self._name: str | None | Unset_Type = Unset
+        self._name: str
         self._description: str | None | Unset_Type = Unset
-        self._project: GsaDataUpdaterProject | Unset_Type = Unset
+        self._project: GsaDataUpdaterProject
 
-        if name is not Unset:
-            self.name = name
+        self.name = name
         if description is not Unset:
             self.description = description
-        if project is not Unset:
-            self.project = project
+        self.project = project
 
     @property
-    def name(self) -> "str | None | Unset_Type":
+    def name(self) -> "str":
         """Gets the name of this GsaCreateDataUpdateServerApiRequest.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The name of this GsaCreateDataUpdateServerApiRequest.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "str | None | Unset_Type") -> None:
+    def name(self, name: "str") -> None:
         """Sets the name of this GsaCreateDataUpdateServerApiRequest.
 
         Parameters
         ----------
-        name: str | None | Unset_Type
+        name: str
             The name of this GsaCreateDataUpdateServerApiRequest.
         """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @property
@@ -149,28 +153,31 @@ class GsaCreateDataUpdateServerApiRequest(ModelBase):
         self._description = description
 
     @property
-    def project(self) -> "GsaDataUpdaterProject | Unset_Type":
+    def project(self) -> "GsaDataUpdaterProject":
         """Gets the project of this GsaCreateDataUpdateServerApiRequest.
 
         Returns
         -------
-        GsaDataUpdaterProject | Unset_Type
+        GsaDataUpdaterProject
             The project of this GsaCreateDataUpdateServerApiRequest.
         """
         return self._project
 
     @project.setter
-    def project(self, project: "GsaDataUpdaterProject | Unset_Type") -> None:
+    def project(self, project: "GsaDataUpdaterProject") -> None:
         """Sets the project of this GsaCreateDataUpdateServerApiRequest.
 
         Parameters
         ----------
-        project: GsaDataUpdaterProject | Unset_Type
+        project: GsaDataUpdaterProject
             The project of this GsaCreateDataUpdateServerApiRequest.
         """
         # Field is not nullable
         if project is None:
             raise ValueError("Invalid value for 'project', must not be 'None'")
+        # Field is required
+        if project is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'project', must not be 'Unset'")
         self._project = project
 
     @classmethod

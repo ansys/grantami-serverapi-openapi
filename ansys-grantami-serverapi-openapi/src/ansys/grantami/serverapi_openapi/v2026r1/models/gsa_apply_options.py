@@ -81,102 +81,108 @@ class GsaApplyOptions(ModelBase):
     def __init__(
         self,
         *,
-        apply_adds_as_state: "bool | Unset_Type" = Unset,
-        match_mode: "GsaMatchMode | Unset_Type" = Unset,
-        retarget_tabular_attributes: "bool | Unset_Type" = Unset,
+        apply_adds_as_state: "bool",
+        match_mode: "GsaMatchMode",
+        retarget_tabular_attributes: "bool",
     ) -> None:
         """GsaApplyOptions - a model defined in Swagger
 
         Parameters
         ----------
-        apply_adds_as_state: bool, optional
-        match_mode: GsaMatchMode, optional
-        retarget_tabular_attributes: bool, optional
+        apply_adds_as_state: bool
+        match_mode: GsaMatchMode
+        retarget_tabular_attributes: bool
         """
-        self._match_mode: GsaMatchMode | Unset_Type = Unset
-        self._apply_adds_as_state: bool | Unset_Type = Unset
-        self._retarget_tabular_attributes: bool | Unset_Type = Unset
+        self._match_mode: GsaMatchMode
+        self._apply_adds_as_state: bool
+        self._retarget_tabular_attributes: bool
 
-        if match_mode is not Unset:
-            self.match_mode = match_mode
-        if apply_adds_as_state is not Unset:
-            self.apply_adds_as_state = apply_adds_as_state
-        if retarget_tabular_attributes is not Unset:
-            self.retarget_tabular_attributes = retarget_tabular_attributes
+        self.match_mode = match_mode
+        self.apply_adds_as_state = apply_adds_as_state
+        self.retarget_tabular_attributes = retarget_tabular_attributes
 
     @property
-    def match_mode(self) -> "GsaMatchMode | Unset_Type":
+    def match_mode(self) -> "GsaMatchMode":
         """Gets the match_mode of this GsaApplyOptions.
 
         Returns
         -------
-        GsaMatchMode | Unset_Type
+        GsaMatchMode
             The match_mode of this GsaApplyOptions.
         """
         return self._match_mode
 
     @match_mode.setter
-    def match_mode(self, match_mode: "GsaMatchMode | Unset_Type") -> None:
+    def match_mode(self, match_mode: "GsaMatchMode") -> None:
         """Sets the match_mode of this GsaApplyOptions.
 
         Parameters
         ----------
-        match_mode: GsaMatchMode | Unset_Type
+        match_mode: GsaMatchMode
             The match_mode of this GsaApplyOptions.
         """
         # Field is not nullable
         if match_mode is None:
             raise ValueError("Invalid value for 'match_mode', must not be 'None'")
+        # Field is required
+        if match_mode is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'match_mode', must not be 'Unset'")
         self._match_mode = match_mode
 
     @property
-    def apply_adds_as_state(self) -> "bool | Unset_Type":
+    def apply_adds_as_state(self) -> "bool":
         """Gets the apply_adds_as_state of this GsaApplyOptions.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The apply_adds_as_state of this GsaApplyOptions.
         """
         return self._apply_adds_as_state
 
     @apply_adds_as_state.setter
-    def apply_adds_as_state(self, apply_adds_as_state: "bool | Unset_Type") -> None:
+    def apply_adds_as_state(self, apply_adds_as_state: "bool") -> None:
         """Sets the apply_adds_as_state of this GsaApplyOptions.
 
         Parameters
         ----------
-        apply_adds_as_state: bool | Unset_Type
+        apply_adds_as_state: bool
             The apply_adds_as_state of this GsaApplyOptions.
         """
         # Field is not nullable
         if apply_adds_as_state is None:
             raise ValueError("Invalid value for 'apply_adds_as_state', must not be 'None'")
+        # Field is required
+        if apply_adds_as_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'apply_adds_as_state', must not be 'Unset'")
         self._apply_adds_as_state = apply_adds_as_state
 
     @property
-    def retarget_tabular_attributes(self) -> "bool | Unset_Type":
+    def retarget_tabular_attributes(self) -> "bool":
         """Gets the retarget_tabular_attributes of this GsaApplyOptions.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The retarget_tabular_attributes of this GsaApplyOptions.
         """
         return self._retarget_tabular_attributes
 
     @retarget_tabular_attributes.setter
-    def retarget_tabular_attributes(self, retarget_tabular_attributes: "bool | Unset_Type") -> None:
+    def retarget_tabular_attributes(self, retarget_tabular_attributes: "bool") -> None:
         """Sets the retarget_tabular_attributes of this GsaApplyOptions.
 
         Parameters
         ----------
-        retarget_tabular_attributes: bool | Unset_Type
+        retarget_tabular_attributes: bool
             The retarget_tabular_attributes of this GsaApplyOptions.
         """
         # Field is not nullable
         if retarget_tabular_attributes is None:
             raise ValueError("Invalid value for 'retarget_tabular_attributes', must not be 'None'")
+        # Field is required
+        if retarget_tabular_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'retarget_tabular_attributes', must not be 'Unset'")
         self._retarget_tabular_attributes = retarget_tabular_attributes
 
     @classmethod
