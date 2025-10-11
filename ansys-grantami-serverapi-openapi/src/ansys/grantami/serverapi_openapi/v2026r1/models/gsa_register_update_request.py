@@ -80,72 +80,76 @@ class GsaRegisterUpdateRequest(ModelBase):
     def __init__(
         self,
         *,
-        apply_options: "GsaApplyOptions | Unset_Type" = Unset,
-        header: "GsaDataUpdateHeader | Unset_Type" = Unset,
+        apply_options: "GsaApplyOptions",
+        header: "GsaDataUpdateHeader",
     ) -> None:
         """GsaRegisterUpdateRequest - a model defined in Swagger
 
         Parameters
         ----------
-        apply_options: GsaApplyOptions, optional
-        header: GsaDataUpdateHeader, optional
+        apply_options: GsaApplyOptions
+        header: GsaDataUpdateHeader
         """
-        self._header: GsaDataUpdateHeader | Unset_Type = Unset
-        self._apply_options: GsaApplyOptions | Unset_Type = Unset
+        self._header: GsaDataUpdateHeader
+        self._apply_options: GsaApplyOptions
 
-        if header is not Unset:
-            self.header = header
-        if apply_options is not Unset:
-            self.apply_options = apply_options
+        self.header = header
+        self.apply_options = apply_options
 
     @property
-    def header(self) -> "GsaDataUpdateHeader | Unset_Type":
+    def header(self) -> "GsaDataUpdateHeader":
         """Gets the header of this GsaRegisterUpdateRequest.
 
         Returns
         -------
-        GsaDataUpdateHeader | Unset_Type
+        GsaDataUpdateHeader
             The header of this GsaRegisterUpdateRequest.
         """
         return self._header
 
     @header.setter
-    def header(self, header: "GsaDataUpdateHeader | Unset_Type") -> None:
+    def header(self, header: "GsaDataUpdateHeader") -> None:
         """Sets the header of this GsaRegisterUpdateRequest.
 
         Parameters
         ----------
-        header: GsaDataUpdateHeader | Unset_Type
+        header: GsaDataUpdateHeader
             The header of this GsaRegisterUpdateRequest.
         """
         # Field is not nullable
         if header is None:
             raise ValueError("Invalid value for 'header', must not be 'None'")
+        # Field is required
+        if header is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'header', must not be 'Unset'")
         self._header = header
 
     @property
-    def apply_options(self) -> "GsaApplyOptions | Unset_Type":
+    def apply_options(self) -> "GsaApplyOptions":
         """Gets the apply_options of this GsaRegisterUpdateRequest.
 
         Returns
         -------
-        GsaApplyOptions | Unset_Type
+        GsaApplyOptions
             The apply_options of this GsaRegisterUpdateRequest.
         """
         return self._apply_options
 
     @apply_options.setter
-    def apply_options(self, apply_options: "GsaApplyOptions | Unset_Type") -> None:
+    def apply_options(self, apply_options: "GsaApplyOptions") -> None:
         """Sets the apply_options of this GsaRegisterUpdateRequest.
 
         Parameters
         ----------
-        apply_options: GsaApplyOptions | Unset_Type
+        apply_options: GsaApplyOptions
             The apply_options of this GsaRegisterUpdateRequest.
         """
         # Field is not nullable
         if apply_options is None:
             raise ValueError("Invalid value for 'apply_options', must not be 'None'")
+        # Field is required
+        if apply_options is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'apply_options', must not be 'Unset'")
         self._apply_options = apply_options
 
     @classmethod
