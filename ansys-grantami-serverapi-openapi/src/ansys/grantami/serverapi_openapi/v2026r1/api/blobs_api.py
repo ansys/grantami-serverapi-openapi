@@ -205,7 +205,6 @@ class BlobsApi(ApiBase):
         body_params = None
 
         response_type_map: dict[int, Optional[str]] = {
-            200: None,
             404: None,
         }
 
@@ -226,7 +225,11 @@ class BlobsApi(ApiBase):
         )
 
     def upload_data_updater_blob(
-        self, *, database_key: "str", blob_path: "str"
+        self,
+        *,
+        database_key: "str",
+        blob_path: "str",
+        body: "Optional[BinaryIO | pathlib.Path]" = None,
     ) -> "GsaBlobInfoDto":
         """Store DataUpdater blob contents.
 
@@ -238,22 +241,28 @@ class BlobsApi(ApiBase):
             Database key
         blob_path: str
             Blob path to a single blob (including its name).
+        body: BinaryIO | pathlib.Path
 
         Returns
         -------
         GsaBlobInfoDto
         """
         data = self._upload_data_updater_blob_with_http_info(
-            database_key, blob_path, _return_http_data_only=True
+            database_key, blob_path, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _upload_data_updater_blob_with_http_info(
-        self, database_key: "str", blob_path: "str", **kwargs: Any
+        self,
+        database_key: "str",
+        blob_path: "str",
+        body: "Optional[BinaryIO | pathlib.Path]" = None,
+        **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "blob_path",
+            "body",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -294,9 +303,16 @@ class BlobsApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
         # HTTP header 'Accept'
         header_params["Accept"] = self.api_client.select_header_accept(
             ["text/plain", "application/json", "text/json"]
+        )
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/octet-stream", "application/zip"]
         )
 
         response_type_map: dict[int, Optional[str]] = {

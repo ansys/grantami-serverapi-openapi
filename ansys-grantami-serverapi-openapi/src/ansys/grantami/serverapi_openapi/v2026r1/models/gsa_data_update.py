@@ -62,14 +62,14 @@ class GsaDataUpdate(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "header": "GsaDataUpdateHeader",
-        "run_info": "GsaDataUpdateRunInfo",
         "token": "GsaDataUpdateToken",
+        "run_info": "GsaDataUpdateRunInfo",
     }
 
     attribute_map: dict[str, str] = {
         "header": "header",
-        "run_info": "runInfo",
         "token": "token",
+        "run_info": "runInfo",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -83,77 +83,81 @@ class GsaDataUpdate(ModelBase):
     def __init__(
         self,
         *,
-        header: "GsaDataUpdateHeader | Unset_Type" = Unset,
+        header: "GsaDataUpdateHeader",
+        token: "GsaDataUpdateToken",
         run_info: "GsaDataUpdateRunInfo | Unset_Type" = Unset,
-        token: "GsaDataUpdateToken | Unset_Type" = Unset,
     ) -> None:
         """GsaDataUpdate - a model defined in Swagger
 
         Parameters
         ----------
-        header: GsaDataUpdateHeader, optional
+        header: GsaDataUpdateHeader
+        token: GsaDataUpdateToken
         run_info: GsaDataUpdateRunInfo, optional
-        token: GsaDataUpdateToken, optional
         """
-        self._token: GsaDataUpdateToken | Unset_Type = Unset
-        self._header: GsaDataUpdateHeader | Unset_Type = Unset
+        self._token: GsaDataUpdateToken
+        self._header: GsaDataUpdateHeader
         self._run_info: GsaDataUpdateRunInfo | Unset_Type = Unset
 
-        if token is not Unset:
-            self.token = token
-        if header is not Unset:
-            self.header = header
+        self.token = token
+        self.header = header
         if run_info is not Unset:
             self.run_info = run_info
 
     @property
-    def token(self) -> "GsaDataUpdateToken | Unset_Type":
+    def token(self) -> "GsaDataUpdateToken":
         """Gets the token of this GsaDataUpdate.
 
         Returns
         -------
-        GsaDataUpdateToken | Unset_Type
+        GsaDataUpdateToken
             The token of this GsaDataUpdate.
         """
         return self._token
 
     @token.setter
-    def token(self, token: "GsaDataUpdateToken | Unset_Type") -> None:
+    def token(self, token: "GsaDataUpdateToken") -> None:
         """Sets the token of this GsaDataUpdate.
 
         Parameters
         ----------
-        token: GsaDataUpdateToken | Unset_Type
+        token: GsaDataUpdateToken
             The token of this GsaDataUpdate.
         """
         # Field is not nullable
         if token is None:
             raise ValueError("Invalid value for 'token', must not be 'None'")
+        # Field is required
+        if token is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'token', must not be 'Unset'")
         self._token = token
 
     @property
-    def header(self) -> "GsaDataUpdateHeader | Unset_Type":
+    def header(self) -> "GsaDataUpdateHeader":
         """Gets the header of this GsaDataUpdate.
 
         Returns
         -------
-        GsaDataUpdateHeader | Unset_Type
+        GsaDataUpdateHeader
             The header of this GsaDataUpdate.
         """
         return self._header
 
     @header.setter
-    def header(self, header: "GsaDataUpdateHeader | Unset_Type") -> None:
+    def header(self, header: "GsaDataUpdateHeader") -> None:
         """Sets the header of this GsaDataUpdate.
 
         Parameters
         ----------
-        header: GsaDataUpdateHeader | Unset_Type
+        header: GsaDataUpdateHeader
             The header of this GsaDataUpdate.
         """
         # Field is not nullable
         if header is None:
             raise ValueError("Invalid value for 'header', must not be 'None'")
+        # Field is required
+        if header is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'header', must not be 'Unset'")
         self._header = header
 
     @property
