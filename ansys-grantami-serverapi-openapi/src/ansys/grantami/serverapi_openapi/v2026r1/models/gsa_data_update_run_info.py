@@ -61,25 +61,25 @@ class GsaDataUpdateRunInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "applied_date": "datetime",
         "apply_adds_as_state": "bool",
         "database_key": "str",
-        "error_message": "str",
         "match_mode": "GsaMatchMode",
-        "progress_percentage": "float",
         "retarget_tabular_attributes": "bool",
         "status": "GsaUpdateRunStatus",
+        "applied_date": "datetime",
+        "error_message": "str",
+        "progress_percentage": "float",
     }
 
     attribute_map: dict[str, str] = {
-        "applied_date": "appliedDate",
         "apply_adds_as_state": "applyAddsAsState",
         "database_key": "databaseKey",
-        "error_message": "errorMessage",
         "match_mode": "matchMode",
-        "progress_percentage": "progressPercentage",
         "retarget_tabular_attributes": "retargetTabularAttributes",
         "status": "status",
+        "applied_date": "appliedDate",
+        "error_message": "errorMessage",
+        "progress_percentage": "progressPercentage",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -92,47 +92,42 @@ class GsaDataUpdateRunInfo(ModelBase):
     def __init__(
         self,
         *,
+        apply_adds_as_state: "bool",
+        database_key: "str",
+        match_mode: "GsaMatchMode",
+        retarget_tabular_attributes: "bool",
+        status: "GsaUpdateRunStatus",
         applied_date: "datetime | None | Unset_Type" = Unset,
-        apply_adds_as_state: "bool | Unset_Type" = Unset,
-        database_key: "str | None | Unset_Type" = Unset,
         error_message: "str | None | Unset_Type" = Unset,
-        match_mode: "GsaMatchMode | Unset_Type" = Unset,
         progress_percentage: "float | None | Unset_Type" = Unset,
-        retarget_tabular_attributes: "bool | Unset_Type" = Unset,
-        status: "GsaUpdateRunStatus | Unset_Type" = Unset,
     ) -> None:
         """GsaDataUpdateRunInfo - a model defined in Swagger
 
         Parameters
         ----------
+        apply_adds_as_state: bool
+        database_key: str
+        match_mode: GsaMatchMode
+        retarget_tabular_attributes: bool
+        status: GsaUpdateRunStatus
         applied_date: datetime | None, optional
-        apply_adds_as_state: bool, optional
-        database_key: str | None, optional
         error_message: str | None, optional
-        match_mode: GsaMatchMode, optional
         progress_percentage: float | None, optional
-        retarget_tabular_attributes: bool, optional
-        status: GsaUpdateRunStatus, optional
         """
-        self._database_key: str | None | Unset_Type = Unset
-        self._match_mode: GsaMatchMode | Unset_Type = Unset
-        self._apply_adds_as_state: bool | Unset_Type = Unset
-        self._retarget_tabular_attributes: bool | Unset_Type = Unset
-        self._status: GsaUpdateRunStatus | Unset_Type = Unset
+        self._database_key: str
+        self._match_mode: GsaMatchMode
+        self._apply_adds_as_state: bool
+        self._retarget_tabular_attributes: bool
+        self._status: GsaUpdateRunStatus
         self._progress_percentage: float | None | Unset_Type = Unset
         self._applied_date: datetime | None | Unset_Type = Unset
         self._error_message: str | None | Unset_Type = Unset
 
-        if database_key is not Unset:
-            self.database_key = database_key
-        if match_mode is not Unset:
-            self.match_mode = match_mode
-        if apply_adds_as_state is not Unset:
-            self.apply_adds_as_state = apply_adds_as_state
-        if retarget_tabular_attributes is not Unset:
-            self.retarget_tabular_attributes = retarget_tabular_attributes
-        if status is not Unset:
-            self.status = status
+        self.database_key = database_key
+        self.match_mode = match_mode
+        self.apply_adds_as_state = apply_adds_as_state
+        self.retarget_tabular_attributes = retarget_tabular_attributes
+        self.status = status
         if progress_percentage is not Unset:
             self.progress_percentage = progress_percentage
         if applied_date is not Unset:
@@ -141,125 +136,143 @@ class GsaDataUpdateRunInfo(ModelBase):
             self.error_message = error_message
 
     @property
-    def database_key(self) -> "str | None | Unset_Type":
+    def database_key(self) -> "str":
         """Gets the database_key of this GsaDataUpdateRunInfo.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The database_key of this GsaDataUpdateRunInfo.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "str | None | Unset_Type") -> None:
+    def database_key(self, database_key: "str") -> None:
         """Sets the database_key of this GsaDataUpdateRunInfo.
 
         Parameters
         ----------
-        database_key: str | None | Unset_Type
+        database_key: str
             The database_key of this GsaDataUpdateRunInfo.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
+        # Field is required
+        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
         self._database_key = database_key
 
     @property
-    def match_mode(self) -> "GsaMatchMode | Unset_Type":
+    def match_mode(self) -> "GsaMatchMode":
         """Gets the match_mode of this GsaDataUpdateRunInfo.
 
         Returns
         -------
-        GsaMatchMode | Unset_Type
+        GsaMatchMode
             The match_mode of this GsaDataUpdateRunInfo.
         """
         return self._match_mode
 
     @match_mode.setter
-    def match_mode(self, match_mode: "GsaMatchMode | Unset_Type") -> None:
+    def match_mode(self, match_mode: "GsaMatchMode") -> None:
         """Sets the match_mode of this GsaDataUpdateRunInfo.
 
         Parameters
         ----------
-        match_mode: GsaMatchMode | Unset_Type
+        match_mode: GsaMatchMode
             The match_mode of this GsaDataUpdateRunInfo.
         """
         # Field is not nullable
         if match_mode is None:
             raise ValueError("Invalid value for 'match_mode', must not be 'None'")
+        # Field is required
+        if match_mode is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'match_mode', must not be 'Unset'")
         self._match_mode = match_mode
 
     @property
-    def apply_adds_as_state(self) -> "bool | Unset_Type":
+    def apply_adds_as_state(self) -> "bool":
         """Gets the apply_adds_as_state of this GsaDataUpdateRunInfo.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The apply_adds_as_state of this GsaDataUpdateRunInfo.
         """
         return self._apply_adds_as_state
 
     @apply_adds_as_state.setter
-    def apply_adds_as_state(self, apply_adds_as_state: "bool | Unset_Type") -> None:
+    def apply_adds_as_state(self, apply_adds_as_state: "bool") -> None:
         """Sets the apply_adds_as_state of this GsaDataUpdateRunInfo.
 
         Parameters
         ----------
-        apply_adds_as_state: bool | Unset_Type
+        apply_adds_as_state: bool
             The apply_adds_as_state of this GsaDataUpdateRunInfo.
         """
         # Field is not nullable
         if apply_adds_as_state is None:
             raise ValueError("Invalid value for 'apply_adds_as_state', must not be 'None'")
+        # Field is required
+        if apply_adds_as_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'apply_adds_as_state', must not be 'Unset'")
         self._apply_adds_as_state = apply_adds_as_state
 
     @property
-    def retarget_tabular_attributes(self) -> "bool | Unset_Type":
+    def retarget_tabular_attributes(self) -> "bool":
         """Gets the retarget_tabular_attributes of this GsaDataUpdateRunInfo.
 
         Returns
         -------
-        bool | Unset_Type
+        bool
             The retarget_tabular_attributes of this GsaDataUpdateRunInfo.
         """
         return self._retarget_tabular_attributes
 
     @retarget_tabular_attributes.setter
-    def retarget_tabular_attributes(self, retarget_tabular_attributes: "bool | Unset_Type") -> None:
+    def retarget_tabular_attributes(self, retarget_tabular_attributes: "bool") -> None:
         """Sets the retarget_tabular_attributes of this GsaDataUpdateRunInfo.
 
         Parameters
         ----------
-        retarget_tabular_attributes: bool | Unset_Type
+        retarget_tabular_attributes: bool
             The retarget_tabular_attributes of this GsaDataUpdateRunInfo.
         """
         # Field is not nullable
         if retarget_tabular_attributes is None:
             raise ValueError("Invalid value for 'retarget_tabular_attributes', must not be 'None'")
+        # Field is required
+        if retarget_tabular_attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'retarget_tabular_attributes', must not be 'Unset'")
         self._retarget_tabular_attributes = retarget_tabular_attributes
 
     @property
-    def status(self) -> "GsaUpdateRunStatus | Unset_Type":
+    def status(self) -> "GsaUpdateRunStatus":
         """Gets the status of this GsaDataUpdateRunInfo.
 
         Returns
         -------
-        GsaUpdateRunStatus | Unset_Type
+        GsaUpdateRunStatus
             The status of this GsaDataUpdateRunInfo.
         """
         return self._status
 
     @status.setter
-    def status(self, status: "GsaUpdateRunStatus | Unset_Type") -> None:
+    def status(self, status: "GsaUpdateRunStatus") -> None:
         """Sets the status of this GsaDataUpdateRunInfo.
 
         Parameters
         ----------
-        status: GsaUpdateRunStatus | Unset_Type
+        status: GsaUpdateRunStatus
             The status of this GsaDataUpdateRunInfo.
         """
         # Field is not nullable
         if status is None:
             raise ValueError("Invalid value for 'status', must not be 'None'")
+        # Field is required
+        if status is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'status', must not be 'Unset'")
         self._status = status
 
     @property

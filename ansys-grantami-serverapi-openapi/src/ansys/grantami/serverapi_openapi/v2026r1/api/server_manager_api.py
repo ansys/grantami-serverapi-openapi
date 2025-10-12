@@ -504,7 +504,7 @@ class ServerManagerApi(ApiBase):
 
     def get_available_mi_databases(
         self, *, body: "Optional[GsaServerConnectionDetails]" = None
-    ) -> "GsaSqlDatabasesInfo":
+    ) -> "GsaSqlDatabasesInfo | None":
         """Gets a list of all MI Databases available in given SQL Server under specified credentials that are not already added to MI.
 
         This method makes a synchronous HTTP request.
@@ -515,7 +515,7 @@ class ServerManagerApi(ApiBase):
 
         Returns
         -------
-        GsaSqlDatabasesInfo
+        GsaSqlDatabasesInfo | None
         """
         data = self._get_available_mi_databases_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -553,11 +553,20 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaSqlDatabasesInfo",
+            400: None,
+            403: None,
         }
 
         return self.api_client.call_api(
@@ -576,14 +585,14 @@ class ServerManagerApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_available_sql_servers(self) -> "GsaSqlServersInfo":
+    def get_available_sql_servers(self) -> "GsaSqlServersInfo | None":
         """Gets a list of available SQL Servers.
 
         This method makes a synchronous HTTP request.
 
         Returns
         -------
-        GsaSqlServersInfo
+        GsaSqlServersInfo | None
         """
         data = self._get_available_sql_servers_with_http_info(_return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -617,6 +626,7 @@ class ServerManagerApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaSqlServersInfo",
+            403: None,
         }
 
         return self.api_client.call_api(
@@ -637,7 +647,7 @@ class ServerManagerApi(ApiBase):
 
     def get_mi_databases(
         self, *, body: "Optional[GsaServerConnectionDetails]" = None
-    ) -> "GsaSqlDatabasesInfo":
+    ) -> "GsaSqlDatabasesInfo | None":
         """Gets a list of all MI Databases available in given SQL Server under specified credentials.
 
         This method makes a synchronous HTTP request.
@@ -648,7 +658,7 @@ class ServerManagerApi(ApiBase):
 
         Returns
         -------
-        GsaSqlDatabasesInfo
+        GsaSqlDatabasesInfo | None
         """
         data = self._get_mi_databases_with_http_info(body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -686,11 +696,20 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaSqlDatabasesInfo",
+            400: None,
+            403: None,
         }
 
         return self.api_client.call_api(
@@ -1168,7 +1187,14 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1235,7 +1261,14 @@ class ServerManagerApi(ApiBase):
             body_params = params["body"]
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1311,7 +1344,14 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1404,7 +1444,14 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1483,7 +1530,14 @@ class ServerManagerApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
         )
 
         response_type_map: dict[int, Optional[str]] = {
