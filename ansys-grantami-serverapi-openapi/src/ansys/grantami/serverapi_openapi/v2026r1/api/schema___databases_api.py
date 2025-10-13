@@ -97,14 +97,7 @@ class SchemaDatabasesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -115,90 +108,6 @@ class SchemaDatabasesApi(ApiBase):
 
         return self.api_client.call_api(
             "/v1alpha/databases",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def check_databases_for_retarget_potential(
-        self, *, body: "Optional[GsaRetargetPotentialRequest]" = None
-    ) -> "GsaDatabasesInfo | None":
-        """Check databases for retarget potential - whether there are any cross-database tabular attributes targeting them.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GsaRetargetPotentialRequest
-
-        Returns
-        -------
-        GsaDatabasesInfo | None
-        """
-        data = self._check_databases_for_retarget_potential_with_http_info(
-            body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _check_databases_for_retarget_potential_with_http_info(
-        self, body: "Optional[GsaRetargetPotentialRequest]" = None, **kwargs: Any
-    ) -> Any:
-        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method check_databases_for_retarget_potential"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaDatabasesInfo",
-            400: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases:check-retarget-potential",
             "POST",
             path_params,
             query_params,
@@ -286,7 +195,6 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -342,236 +250,6 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}",
             "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def get_default_data_source(self) -> "GsaDataSource | None":
-        """Returns data source used by the configuration database.
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        GsaDataSource | None
-        """
-        data = self._get_default_data_source_with_http_info(_return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _get_default_data_source_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_default_data_source"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaDataSource",
-            403: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/defaultDataSource",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def get_default_database(self) -> "GsaDatabase | None":
-        """Returns details for a default database or null if the default database is not set or user cannot see it.
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        GsaDatabase | None
-        """
-        data = self._get_default_database_with_http_info(_return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _get_default_database_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_default_database"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaDatabase",
-            204: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/default",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def get_outbound_links(
-        self,
-        *,
-        database_key: "str",
-        type: "Optional[list[str]]" = None,
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-    ) -> "GsaLinksInfo | None":
-        """Get all link groups and tabular attributes pointing from the database, i.e. the source of the link is in the given database.  May include links where the target is in the same database, or where the target cannot be resolved (e.g. the target database is not loaded).
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        type: list[str]
-            The link attribute types as entered
-        mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
-        x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
-
-        Returns
-        -------
-        GsaLinksInfo | None
-        """
-        data = self._get_outbound_links_with_http_info(
-            database_key, type, mode, x_ansys_vc_mode, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _get_outbound_links_with_http_info(
-        self,
-        database_key: "str",
-        type: "Optional[list[str]]" = None,
-        mode: "Optional[str]" = None,
-        x_ansys_vc_mode: "Optional[str]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "type",
-            "mode",
-            "x_ansys_vc_mode",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_outbound_links"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_outbound_links'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: list[Any] = []
-        if "type" in params and type is not None:
-            query_params.append(("type", params["type"]))
-            collection_formats["type"] = "multi"
-        if "mode" in params and mode is not None:
-            query_params.append(("mode", params["mode"]))
-
-        header_params: dict[str, Any] = {}
-        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
-            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaLinksInfo",
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}:outbound-links",
-            "POST",
             path_params,
             query_params,
             header_params,
@@ -672,7 +350,6 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -751,7 +428,6 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -807,89 +483,6 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}",
             "DELETE",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def retarget_tabulars(
-        self, *, body: "Optional[GsaRetargetRequest]" = None
-    ) -> "GsaRetargetResultsInfo | None":
-        """Retargets tabulars from the current database to a new one.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GsaRetargetRequest
-
-        Returns
-        -------
-        GsaRetargetResultsInfo | None
-        """
-        data = self._retarget_tabulars_with_http_info(body, _return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _retarget_tabulars_with_http_info(
-        self, body: "Optional[GsaRetargetRequest]" = None, **kwargs: Any
-    ) -> Any:
-        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method retarget_tabulars"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaRetargetResultsInfo",
-            400: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases:retarget",
-            "POST",
             path_params,
             query_params,
             header_params,
@@ -996,7 +589,6 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaUpdateDatabase
         allow_reload: bool
             This must be set to true if any of the following properties are patched:              DatabaseKey, DataSource, UseIntegratedSecurity, SqlUserName, SqlPassword, InitialCatalog, Language, Guid.              The database will reload after the changes have been applied.
@@ -1063,14 +655,7 @@ class SchemaDatabasesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1096,93 +681,7 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def update_default_database(
-        self, *, body: "Optional[GsaUpdateDefaultDatabase]" = None
-    ) -> "GsaDatabase | None":
-        """Sets the default database.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        body: GsaUpdateDefaultDatabase
-
-        Returns
-        -------
-        GsaDatabase | None
-        """
-        data = self._update_default_database_with_http_info(body, _return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _update_default_database_with_http_info(
-        self, body: "Optional[GsaUpdateDefaultDatabase]" = None, **kwargs: Any
-    ) -> Any:
-        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_default_database"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaDatabase",
-            400: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/default",
-            "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def upgrade_database(
-        self, *, database_key: "str"
-    ) -> "GsaSlimDatabase | GsaUpgradeDatabaseException | None":
+    def upgrade_database(self, *, database_key: "str") -> "GsaSlimDatabase | None":
         """Upgrade a database to the latest schema version. Only available to users in the System Administrator role.
 
         This method makes a synchronous HTTP request.
@@ -1190,11 +689,10 @@ class SchemaDatabasesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
-        GsaSlimDatabase | GsaUpgradeDatabaseException | None
+        GsaSlimDatabase | None
         """
         data = self._upgrade_database_with_http_info(database_key, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -1239,8 +737,8 @@ class SchemaDatabasesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaUpgradeDatabaseException",
             200: "GsaSlimDatabase",
+            400: None,
             403: None,
             404: None,
         }
@@ -1262,19 +760,19 @@ class SchemaDatabasesApi(ApiBase):
         )
 
     def upgrade_database_not_added_to_mi(
-        self, *, body: "Optional[GsaInputConnectionDetails]" = None
-    ) -> "GsaUpgradeDatabaseException | None":
+        self, *, body: "Optional[GsaConnectionDetails]" = None
+    ) -> "None":
         """Upgrades an external database to the latest schema version. Only available to users in the System Administrator role.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        body: GsaInputConnectionDetails
+        body: GsaConnectionDetails
 
         Returns
         -------
-        GsaUpgradeDatabaseException | None
+        None
         """
         data = self._upgrade_database_not_added_to_mi_with_http_info(
             body, _return_http_data_only=True
@@ -1282,7 +780,7 @@ class SchemaDatabasesApi(ApiBase):
         return data  # type: ignore[no-any-return]
 
     def _upgrade_database_not_added_to_mi_with_http_info(
-        self, body: "Optional[GsaInputConnectionDetails]" = None, **kwargs: Any
+        self, body: "Optional[GsaConnectionDetails]" = None, **kwargs: Any
     ) -> Any:
         all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
@@ -1309,24 +807,14 @@ class SchemaDatabasesApi(ApiBase):
         body_params = None
         if "body" in params and body is not None:
             body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaUpgradeDatabaseException",
             200: None,
+            400: None,
             403: None,
         }
 
@@ -1397,14 +885,7 @@ class SchemaDatabasesApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
