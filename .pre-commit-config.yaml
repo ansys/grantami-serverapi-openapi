@@ -9,7 +9,7 @@ repos:
       - '--line-length=100'
 
 - repo: https://github.com/pycqa/isort
-  rev: 6.1.0
+  rev: 7.0.0
   hooks:
   - id: isort
     files: '^ansys-grantami-serverapi-openapi/(src|tests)'
