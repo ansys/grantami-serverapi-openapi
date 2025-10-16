@@ -287,7 +287,7 @@ class GsaServerConnectionDetails(ModelBase):
     @property
     def additional_sql_parameters(self) -> "str | None | Unset_Type":
         """Gets the additional_sql_parameters of this GsaServerConnectionDetails.
-        (Optional) Any additional parameters added to the SQL Server connection string.
+        The additional SQL connection string parameters.If not provided, defaults to the Configuration database connection string additional parameters.
 
         Returns
         -------
@@ -301,7 +301,7 @@ class GsaServerConnectionDetails(ModelBase):
         self, additional_sql_parameters: "str | None | Unset_Type"
     ) -> None:
         """Sets the additional_sql_parameters of this GsaServerConnectionDetails.
-        (Optional) Any additional parameters added to the SQL Server connection string.
+        The additional SQL connection string parameters.If not provided, defaults to the Configuration database connection string additional parameters.
 
         Parameters
         ----------
