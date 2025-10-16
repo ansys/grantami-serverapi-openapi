@@ -74,6 +74,7 @@ from .gsa_add_database_security_groups import GsaAddDatabaseSecurityGroups
 from .gsa_add_database_validation_issue import GsaAddDatabaseValidationIssue
 from .gsa_add_database_validation_result import GsaAddDatabaseValidationResult
 from .gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
+from .gsa_additional_sql_parameters import GsaAdditionalSqlParameters
 from .gsa_aggregation import GsaAggregation
 from .gsa_aggregation_criterion import GsaAggregationCriterion
 from .gsa_aggregation_datum import GsaAggregationDatum
@@ -1421,6 +1422,7 @@ __all__ = [
     "GsaAddDatabaseValidationIssue",
     "GsaAddDatabaseValidationResult",
     "GsaAddRecordHistoryToSubset",
+    "GsaAdditionalSqlParameters",
     "GsaAggregation",
     "GsaAggregationCriterion",
     "GsaAggregationDatum",
