@@ -56,6 +56,7 @@ class MetricsApi(ApiBase):
         Parameters
         ----------
         start: str
+            The number of System.DateTime.Ticks that represent the UTC start time.
 
         Returns
         -------
