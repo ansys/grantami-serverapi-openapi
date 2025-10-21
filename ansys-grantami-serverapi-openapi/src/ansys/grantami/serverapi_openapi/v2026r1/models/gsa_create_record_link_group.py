@@ -105,16 +105,69 @@ class GsaCreateRecordLinkGroup(ModelBase):
         type: GsaRecordLinkGroupType
         guid: str, optional
         """
-        self._type: GsaRecordLinkGroupType
-        self._reverse_name: str
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._type: GsaRecordLinkGroupType
+        self._reverse_name: str
 
-        self.type = type
-        self.reverse_name = reverse_name
         self.name = name
         if guid is not Unset:
             self.guid = guid
+        self.type = type
+        self.reverse_name = reverse_name
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaCreateRecordLinkGroup.
+
+        Returns
+        -------
+        str
+            The name of this GsaCreateRecordLinkGroup.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaCreateRecordLinkGroup.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaCreateRecordLinkGroup.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateRecordLinkGroup.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateRecordLinkGroup.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateRecordLinkGroup.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateRecordLinkGroup.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def type(self) -> "GsaRecordLinkGroupType":
@@ -171,59 +224,6 @@ class GsaCreateRecordLinkGroup(ModelBase):
         if reverse_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'reverse_name', must not be 'Unset'")
         self._reverse_name = reverse_name
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaCreateRecordLinkGroup.
-
-        Returns
-        -------
-        str
-            The name of this GsaCreateRecordLinkGroup.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaCreateRecordLinkGroup.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaCreateRecordLinkGroup.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateRecordLinkGroup.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateRecordLinkGroup.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateRecordLinkGroup.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateRecordLinkGroup.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

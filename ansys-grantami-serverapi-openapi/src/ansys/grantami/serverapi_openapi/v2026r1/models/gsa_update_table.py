@@ -107,14 +107,18 @@ class GsaUpdateTable(ModelBase):
         legal_disclaimer: str | None, optional
         name: str, optional
         """
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
         self._default_subset_guid: str | None | Unset_Type = Unset
         self._default_layout_guid: str | None | Unset_Type = Unset
         self._legal_disclaimer: str | None | Unset_Type = Unset
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
 
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
         if is_hidden_from_browse is not Unset:
             self.is_hidden_from_browse = is_hidden_from_browse
         if is_hidden_from_search is not Unset:
@@ -125,10 +129,56 @@ class GsaUpdateTable(ModelBase):
             self.default_layout_guid = default_layout_guid
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateTable.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateTable.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateTable.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateTable.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def is_hidden_from_browse(self) -> "bool | Unset_Type":
@@ -245,56 +295,6 @@ class GsaUpdateTable(ModelBase):
             The legal_disclaimer of this GsaUpdateTable.
         """
         self._legal_disclaimer = legal_disclaimer
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateTable.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateTable.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateTable.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateTable.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateTable.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateTable.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateTable.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateTable.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

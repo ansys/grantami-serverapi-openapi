@@ -99,21 +99,74 @@ class GsaCreateProfile(ModelBase):
         guid: str, optional
         homepage_url: str | None, optional
         """
+        self._name: str
+        self._guid: str | Unset_Type = Unset
         self._description: str | None | Unset_Type = Unset
         self._homepage_url: str | None | Unset_Type = Unset
         self._group_name: str | None | Unset_Type = Unset
-        self._name: str
-        self._guid: str | Unset_Type = Unset
 
+        self.name = name
+        if guid is not Unset:
+            self.guid = guid
         if description is not Unset:
             self.description = description
         if homepage_url is not Unset:
             self.homepage_url = homepage_url
         if group_name is not Unset:
             self.group_name = group_name
-        self.name = name
-        if guid is not Unset:
-            self.guid = guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaCreateProfile.
+
+        Returns
+        -------
+        str
+            The name of this GsaCreateProfile.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaCreateProfile.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaCreateProfile.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateProfile.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateProfile.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateProfile.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateProfile.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def description(self) -> "str | None | Unset_Type":
@@ -180,59 +233,6 @@ class GsaCreateProfile(ModelBase):
             The group_name of this GsaCreateProfile.
         """
         self._group_name = group_name
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaCreateProfile.
-
-        Returns
-        -------
-        str
-            The name of this GsaCreateProfile.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaCreateProfile.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaCreateProfile.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateProfile.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateProfile.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateProfile.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateProfile.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

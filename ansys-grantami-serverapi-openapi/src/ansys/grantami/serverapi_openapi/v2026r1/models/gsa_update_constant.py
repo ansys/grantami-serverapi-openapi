@@ -95,66 +95,19 @@ class GsaUpdateConstant(ModelBase):
         unit_guid: str | None, optional
         value: float, optional
         """
-        self._unit_guid: str | None | Unset_Type = Unset
-        self._value: float | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
+        self._unit_guid: str | None | Unset_Type = Unset
+        self._value: float | Unset_Type = Unset
 
-        if unit_guid is not Unset:
-            self.unit_guid = unit_guid
-        if value is not Unset:
-            self.value = value
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def unit_guid(self) -> "str | None | Unset_Type":
-        """Gets the unit_guid of this GsaUpdateConstant.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The unit_guid of this GsaUpdateConstant.
-        """
-        return self._unit_guid
-
-    @unit_guid.setter
-    def unit_guid(self, unit_guid: "str | None | Unset_Type") -> None:
-        """Sets the unit_guid of this GsaUpdateConstant.
-
-        Parameters
-        ----------
-        unit_guid: str | None | Unset_Type
-            The unit_guid of this GsaUpdateConstant.
-        """
-        self._unit_guid = unit_guid
-
-    @property
-    def value(self) -> "float | Unset_Type":
-        """Gets the value of this GsaUpdateConstant.
-
-        Returns
-        -------
-        float | Unset_Type
-            The value of this GsaUpdateConstant.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "float | Unset_Type") -> None:
-        """Sets the value of this GsaUpdateConstant.
-
-        Parameters
-        ----------
-        value: float | Unset_Type
-            The value of this GsaUpdateConstant.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        self._value = value
+        if unit_guid is not Unset:
+            self.unit_guid = unit_guid
+        if value is not Unset:
+            self.value = value
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -205,6 +158,53 @@ class GsaUpdateConstant(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def unit_guid(self) -> "str | None | Unset_Type":
+        """Gets the unit_guid of this GsaUpdateConstant.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The unit_guid of this GsaUpdateConstant.
+        """
+        return self._unit_guid
+
+    @unit_guid.setter
+    def unit_guid(self, unit_guid: "str | None | Unset_Type") -> None:
+        """Sets the unit_guid of this GsaUpdateConstant.
+
+        Parameters
+        ----------
+        unit_guid: str | None | Unset_Type
+            The unit_guid of this GsaUpdateConstant.
+        """
+        self._unit_guid = unit_guid
+
+    @property
+    def value(self) -> "float | Unset_Type":
+        """Gets the value of this GsaUpdateConstant.
+
+        Returns
+        -------
+        float | Unset_Type
+            The value of this GsaUpdateConstant.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "float | Unset_Type") -> None:
+        """Sets the value of this GsaUpdateConstant.
+
+        Parameters
+        ----------
+        value: float | Unset_Type
+            The value of this GsaUpdateConstant.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

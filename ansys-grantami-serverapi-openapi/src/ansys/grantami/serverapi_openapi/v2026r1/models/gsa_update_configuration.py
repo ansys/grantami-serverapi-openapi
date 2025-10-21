@@ -95,66 +95,19 @@ class GsaUpdateConfiguration(ModelBase):
         name: str, optional
         value: str, optional
         """
-        self._description: str | None | Unset_Type = Unset
-        self._value: str | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
+        self._description: str | None | Unset_Type = Unset
+        self._value: str | Unset_Type = Unset
 
-        if description is not Unset:
-            self.description = description
-        if value is not Unset:
-            self.value = value
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaUpdateConfiguration.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaUpdateConfiguration.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaUpdateConfiguration.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaUpdateConfiguration.
-        """
-        self._description = description
-
-    @property
-    def value(self) -> "str | Unset_Type":
-        """Gets the value of this GsaUpdateConfiguration.
-
-        Returns
-        -------
-        str | Unset_Type
-            The value of this GsaUpdateConfiguration.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str | Unset_Type") -> None:
-        """Sets the value of this GsaUpdateConfiguration.
-
-        Parameters
-        ----------
-        value: str | Unset_Type
-            The value of this GsaUpdateConfiguration.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        self._value = value
+        if description is not Unset:
+            self.description = description
+        if value is not Unset:
+            self.value = value
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -205,6 +158,53 @@ class GsaUpdateConfiguration(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaUpdateConfiguration.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaUpdateConfiguration.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaUpdateConfiguration.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaUpdateConfiguration.
+        """
+        self._description = description
+
+    @property
+    def value(self) -> "str | Unset_Type":
+        """Gets the value of this GsaUpdateConfiguration.
+
+        Returns
+        -------
+        str | Unset_Type
+            The value of this GsaUpdateConfiguration.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str | Unset_Type") -> None:
+        """Sets the value of this GsaUpdateConfiguration.
+
+        Parameters
+        ----------
+        value: str | Unset_Type
+            The value of this GsaUpdateConfiguration.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

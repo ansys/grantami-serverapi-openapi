@@ -96,39 +96,11 @@ class GsaParameterValue(ModelBase):
         guid: str
         type: GsaParameterValueType
         """
-        self._type: GsaParameterValueType
         self._guid: str
+        self._type: GsaParameterValueType
 
-        self.type = type
         self.guid = guid
-
-    @property
-    def type(self) -> "GsaParameterValueType":
-        """Gets the type of this GsaParameterValue.
-
-        Returns
-        -------
-        GsaParameterValueType
-            The type of this GsaParameterValue.
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type: "GsaParameterValueType") -> None:
-        """Sets the type of this GsaParameterValue.
-
-        Parameters
-        ----------
-        type: GsaParameterValueType
-            The type of this GsaParameterValue.
-        """
-        # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        self.type = type
 
     @property
     def guid(self) -> "str":
@@ -157,6 +129,34 @@ class GsaParameterValue(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def type(self) -> "GsaParameterValueType":
+        """Gets the type of this GsaParameterValue.
+
+        Returns
+        -------
+        GsaParameterValueType
+            The type of this GsaParameterValue.
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: "GsaParameterValueType") -> None:
+        """Sets the type of this GsaParameterValue.
+
+        Parameters
+        ----------
+        type: GsaParameterValueType
+            The type of this GsaParameterValue.
+        """
+        # Field is not nullable
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
+        self._type = type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

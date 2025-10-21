@@ -97,71 +97,15 @@ class GsaSlimParameter(ModelBase):
         name: str
         type: GsaParameterType
         """
-        self._type: GsaParameterType
-        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
+        self._type: GsaParameterType
+        self._display_names: dict[str, str]
 
-        self.type = type
-        self.display_names = display_names
         self.name = name
         self.guid = guid
-
-    @property
-    def type(self) -> "GsaParameterType":
-        """Gets the type of this GsaSlimParameter.
-
-        Returns
-        -------
-        GsaParameterType
-            The type of this GsaSlimParameter.
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type: "GsaParameterType") -> None:
-        """Sets the type of this GsaSlimParameter.
-
-        Parameters
-        ----------
-        type: GsaParameterType
-            The type of this GsaSlimParameter.
-        """
-        # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
-
-    @property
-    def display_names(self) -> "dict[str, str]":
-        """Gets the display_names of this GsaSlimParameter.
-
-        Returns
-        -------
-        dict[str, str]
-            The display_names of this GsaSlimParameter.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str]") -> None:
-        """Sets the display_names of this GsaSlimParameter.
-
-        Parameters
-        ----------
-        display_names: dict[str, str]
-            The display_names of this GsaSlimParameter.
-        """
-        # Field is not nullable
-        if display_names is None:
-            raise ValueError("Invalid value for 'display_names', must not be 'None'")
-        # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
-        self._display_names = display_names
+        self.type = type
+        self.display_names = display_names
 
     @property
     def name(self) -> "str":
@@ -218,6 +162,62 @@ class GsaSlimParameter(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def type(self) -> "GsaParameterType":
+        """Gets the type of this GsaSlimParameter.
+
+        Returns
+        -------
+        GsaParameterType
+            The type of this GsaSlimParameter.
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: "GsaParameterType") -> None:
+        """Sets the type of this GsaSlimParameter.
+
+        Parameters
+        ----------
+        type: GsaParameterType
+            The type of this GsaSlimParameter.
+        """
+        # Field is not nullable
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
+        self._type = type
+
+    @property
+    def display_names(self) -> "dict[str, str]":
+        """Gets the display_names of this GsaSlimParameter.
+
+        Returns
+        -------
+        dict[str, str]
+            The display_names of this GsaSlimParameter.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "dict[str, str]") -> None:
+        """Sets the display_names of this GsaSlimParameter.
+
+        Parameters
+        ----------
+        display_names: dict[str, str]
+            The display_names of this GsaSlimParameter.
+        """
+        # Field is not nullable
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
+        # Field is required
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
+        self._display_names = display_names
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

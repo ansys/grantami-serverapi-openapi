@@ -97,71 +97,15 @@ class GsaSlimRecordVersion(ModelBase):
         version_number: int
         version_state: GsaVersionState
         """
-        self._version_number: int
-        self._version_state: GsaVersionState
         self._name: str
         self._guid: str
+        self._version_number: int
+        self._version_state: GsaVersionState
 
-        self.version_number = version_number
-        self.version_state = version_state
         self.name = name
         self.guid = guid
-
-    @property
-    def version_number(self) -> "int":
-        """Gets the version_number of this GsaSlimRecordVersion.
-
-        Returns
-        -------
-        int
-            The version_number of this GsaSlimRecordVersion.
-        """
-        return self._version_number
-
-    @version_number.setter
-    def version_number(self, version_number: "int") -> None:
-        """Sets the version_number of this GsaSlimRecordVersion.
-
-        Parameters
-        ----------
-        version_number: int
-            The version_number of this GsaSlimRecordVersion.
-        """
-        # Field is not nullable
-        if version_number is None:
-            raise ValueError("Invalid value for 'version_number', must not be 'None'")
-        # Field is required
-        if version_number is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'version_number', must not be 'Unset'")
-        self._version_number = version_number
-
-    @property
-    def version_state(self) -> "GsaVersionState":
-        """Gets the version_state of this GsaSlimRecordVersion.
-
-        Returns
-        -------
-        GsaVersionState
-            The version_state of this GsaSlimRecordVersion.
-        """
-        return self._version_state
-
-    @version_state.setter
-    def version_state(self, version_state: "GsaVersionState") -> None:
-        """Sets the version_state of this GsaSlimRecordVersion.
-
-        Parameters
-        ----------
-        version_state: GsaVersionState
-            The version_state of this GsaSlimRecordVersion.
-        """
-        # Field is not nullable
-        if version_state is None:
-            raise ValueError("Invalid value for 'version_state', must not be 'None'")
-        # Field is required
-        if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
-        self._version_state = version_state
+        self.version_number = version_number
+        self.version_state = version_state
 
     @property
     def name(self) -> "str":
@@ -218,6 +162,62 @@ class GsaSlimRecordVersion(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def version_number(self) -> "int":
+        """Gets the version_number of this GsaSlimRecordVersion.
+
+        Returns
+        -------
+        int
+            The version_number of this GsaSlimRecordVersion.
+        """
+        return self._version_number
+
+    @version_number.setter
+    def version_number(self, version_number: "int") -> None:
+        """Sets the version_number of this GsaSlimRecordVersion.
+
+        Parameters
+        ----------
+        version_number: int
+            The version_number of this GsaSlimRecordVersion.
+        """
+        # Field is not nullable
+        if version_number is None:
+            raise ValueError("Invalid value for 'version_number', must not be 'None'")
+        # Field is required
+        if version_number is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'version_number', must not be 'Unset'")
+        self._version_number = version_number
+
+    @property
+    def version_state(self) -> "GsaVersionState":
+        """Gets the version_state of this GsaSlimRecordVersion.
+
+        Returns
+        -------
+        GsaVersionState
+            The version_state of this GsaSlimRecordVersion.
+        """
+        return self._version_state
+
+    @version_state.setter
+    def version_state(self, version_state: "GsaVersionState") -> None:
+        """Sets the version_state of this GsaSlimRecordVersion.
+
+        Parameters
+        ----------
+        version_state: GsaVersionState
+            The version_state of this GsaSlimRecordVersion.
+        """
+        # Field is not nullable
+        if version_state is None:
+            raise ValueError("Invalid value for 'version_state', must not be 'None'")
+        # Field is required
+        if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
+        self._version_state = version_state
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -103,13 +103,15 @@ class GsaPermission(ModelBase):
         set_message: str | None, optional
         unset_message: str | None, optional
         """
+        self._name: str
+        self._guid: str
         self._role: str
         self._description: str | None | Unset_Type = Unset
         self._set_message: str | None | Unset_Type = Unset
         self._unset_message: str | None | Unset_Type = Unset
-        self._name: str
-        self._guid: str
 
+        self.name = name
+        self.guid = guid
         self.role = role
         if description is not Unset:
             self.description = description
@@ -117,8 +119,62 @@ class GsaPermission(ModelBase):
             self.set_message = set_message
         if unset_message is not Unset:
             self.unset_message = unset_message
-        self.name = name
-        self.guid = guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaPermission.
+
+        Returns
+        -------
+        str
+            The name of this GsaPermission.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaPermission.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaPermission.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaPermission.
+
+        Returns
+        -------
+        str
+            The guid of this GsaPermission.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaPermission.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaPermission.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def role(self) -> "str":
@@ -217,62 +273,6 @@ class GsaPermission(ModelBase):
             The unset_message of this GsaPermission.
         """
         self._unset_message = unset_message
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaPermission.
-
-        Returns
-        -------
-        str
-            The name of this GsaPermission.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaPermission.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaPermission.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaPermission.
-
-        Returns
-        -------
-        str
-            The guid of this GsaPermission.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaPermission.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaPermission.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -135,15 +135,19 @@ class GsaUpdateTabularColumn(ModelBase):
         summary_row_roll_up_type: GsaTabularColumnRollUpType, optional
         summary_row_text: str | None, optional
         """
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
         self._column_type: GsaTabularColumnDtoType
         self._show_as_link: bool | Unset_Type = Unset
         self._summary_row_enabled: bool | Unset_Type = Unset
         self._summary_row_text: str | None | Unset_Type = Unset
         self._roll_up_type: GsaTabularColumnRollUpType | Unset_Type = Unset
         self._summary_row_roll_up_type: GsaTabularColumnRollUpType | Unset_Type = Unset
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
 
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
         self.column_type = column_type
         if show_as_link is not Unset:
             self.show_as_link = show_as_link
@@ -155,10 +159,56 @@ class GsaUpdateTabularColumn(ModelBase):
             self.roll_up_type = roll_up_type
         if summary_row_roll_up_type is not Unset:
             self.summary_row_roll_up_type = summary_row_roll_up_type
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateTabularColumn.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateTabularColumn.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateTabularColumn.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateTabularColumn.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateTabularColumn.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateTabularColumn.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateTabularColumn.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateTabularColumn.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def column_type(self) -> "GsaTabularColumnDtoType":
@@ -311,56 +361,6 @@ class GsaUpdateTabularColumn(ModelBase):
         if summary_row_roll_up_type is None:
             raise ValueError("Invalid value for 'summary_row_roll_up_type', must not be 'None'")
         self._summary_row_roll_up_type = summary_row_roll_up_type
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateTabularColumn.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateTabularColumn.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateTabularColumn.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateTabularColumn.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateTabularColumn.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateTabularColumn.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateTabularColumn.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateTabularColumn.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

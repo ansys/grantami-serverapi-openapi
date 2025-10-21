@@ -107,13 +107,15 @@ class GsaCreateRecordHistory(ModelBase):
         record_color: GsaRecordColor, optional
         short_name: str | None, optional
         """
+        self._guid: str | Unset_Type = Unset
         self._record_type: GsaRecordType
         self._name: str
         self._short_name: str | None | Unset_Type = Unset
         self._parent: GsaSlimRecordHistory | Unset_Type = Unset
         self._record_color: GsaRecordColor | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
 
+        if guid is not Unset:
+            self.guid = guid
         self.record_type = record_type
         self.name = name
         if short_name is not Unset:
@@ -122,8 +124,31 @@ class GsaCreateRecordHistory(ModelBase):
             self.parent = parent
         if record_color is not Unset:
             self.record_color = record_color
-        if guid is not Unset:
-            self.guid = guid
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateRecordHistory.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateRecordHistory.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateRecordHistory.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateRecordHistory.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def record_type(self) -> "GsaRecordType":
@@ -252,31 +277,6 @@ class GsaCreateRecordHistory(ModelBase):
         if record_color is None:
             raise ValueError("Invalid value for 'record_color', must not be 'None'")
         self._record_color = record_color
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateRecordHistory.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateRecordHistory.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateRecordHistory.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateRecordHistory.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

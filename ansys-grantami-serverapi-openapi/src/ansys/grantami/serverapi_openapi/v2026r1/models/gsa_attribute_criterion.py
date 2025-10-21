@@ -113,18 +113,48 @@ class GsaAttributeCriterion(GsaCriterion):
         is_meta_attribute: bool, optional
         """
         super().__init__(type=type)
+        self._attribute_criterion_type: GsaAttributeCriterionType
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._is_meta_attribute: bool | Unset_Type = Unset
-        self._attribute_criterion_type: GsaAttributeCriterionType
 
+        self.attribute_criterion_type = attribute_criterion_type
         if identity is not Unset:
             self.identity = identity
         if guid is not Unset:
             self.guid = guid
         if is_meta_attribute is not Unset:
             self.is_meta_attribute = is_meta_attribute
-        self.attribute_criterion_type = attribute_criterion_type
+
+    @property
+    def attribute_criterion_type(self) -> "GsaAttributeCriterionType":
+        """Gets the attribute_criterion_type of this GsaAttributeCriterion.
+
+        Returns
+        -------
+        GsaAttributeCriterionType
+            The attribute_criterion_type of this GsaAttributeCriterion.
+        """
+        return self._attribute_criterion_type
+
+    @attribute_criterion_type.setter
+    def attribute_criterion_type(
+        self, attribute_criterion_type: "GsaAttributeCriterionType"
+    ) -> None:
+        """Sets the attribute_criterion_type of this GsaAttributeCriterion.
+
+        Parameters
+        ----------
+        attribute_criterion_type: GsaAttributeCriterionType
+            The attribute_criterion_type of this GsaAttributeCriterion.
+        """
+        # Field is not nullable
+        if attribute_criterion_type is None:
+            raise ValueError("Invalid value for 'attribute_criterion_type', must not be 'None'")
+        # Field is required
+        if attribute_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_criterion_type', must not be 'Unset'")
+        self._attribute_criterion_type = attribute_criterion_type
 
     @property
     def identity(self) -> "int | None | Unset_Type":
@@ -194,36 +224,6 @@ class GsaAttributeCriterion(GsaCriterion):
         if is_meta_attribute is None:
             raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
         self._is_meta_attribute = is_meta_attribute
-
-    @property
-    def attribute_criterion_type(self) -> "GsaAttributeCriterionType":
-        """Gets the attribute_criterion_type of this GsaAttributeCriterion.
-
-        Returns
-        -------
-        GsaAttributeCriterionType
-            The attribute_criterion_type of this GsaAttributeCriterion.
-        """
-        return self._attribute_criterion_type
-
-    @attribute_criterion_type.setter
-    def attribute_criterion_type(
-        self, attribute_criterion_type: "GsaAttributeCriterionType"
-    ) -> None:
-        """Sets the attribute_criterion_type of this GsaAttributeCriterion.
-
-        Parameters
-        ----------
-        attribute_criterion_type: GsaAttributeCriterionType
-            The attribute_criterion_type of this GsaAttributeCriterion.
-        """
-        # Field is not nullable
-        if attribute_criterion_type is None:
-            raise ValueError("Invalid value for 'attribute_criterion_type', must not be 'None'")
-        # Field is required
-        if attribute_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'attribute_criterion_type', must not be 'Unset'")
-        self._attribute_criterion_type = attribute_criterion_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

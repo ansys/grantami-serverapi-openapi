@@ -112,22 +112,78 @@ class GsaExpression(ModelBase):
         value: str
         unit: GsaSlimUnit, optional
         """
+        self._name: str
+        self._guid: str
         self._value: str
         self._unit: GsaSlimUnit | Unset_Type = Unset
         self._attribute_dependencies: list[GsaSlimAttribute]
         self._constant_dependencies: list[GsaSlimNamedEntity]
         self._parameter_dependencies: list[GsaSlimNamedEntity]
-        self._name: str
-        self._guid: str
 
+        self.name = name
+        self.guid = guid
         self.value = value
         if unit is not Unset:
             self.unit = unit
         self.attribute_dependencies = attribute_dependencies
         self.constant_dependencies = constant_dependencies
         self.parameter_dependencies = parameter_dependencies
-        self.name = name
-        self.guid = guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaExpression.
+
+        Returns
+        -------
+        str
+            The name of this GsaExpression.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaExpression.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaExpression.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaExpression.
+
+        Returns
+        -------
+        str
+            The guid of this GsaExpression.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaExpression.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaExpression.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def value(self) -> "str":
@@ -265,62 +321,6 @@ class GsaExpression(ModelBase):
         if parameter_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'parameter_dependencies', must not be 'Unset'")
         self._parameter_dependencies = parameter_dependencies
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaExpression.
-
-        Returns
-        -------
-        str
-            The name of this GsaExpression.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaExpression.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaExpression.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaExpression.
-
-        Returns
-        -------
-        str
-            The guid of this GsaExpression.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaExpression.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaExpression.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

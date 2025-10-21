@@ -129,23 +129,23 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         target_table_identity: int | None, optional
         """
         super().__init__(type=type)
+        self._link_datum_type: GsaLinkAttributeType | Unset_Type = Unset
         self._target_table_identity: int | None | Unset_Type = Unset
         self._target_table_guid: str | None | Unset_Type = Unset
         self._target_database_key: str
-        self._link_datum_type: GsaLinkAttributeType | Unset_Type = Unset
         self._indirect_links: GsaIndirectLinks | Unset_Type = Unset
         self._search_in_reversed_direction: bool | Unset_Type = Unset
         self._local_rows_behavior: GsaLocalRowsBehavior | Unset_Type = Unset
         self._target_attribute_identity: int | None | Unset_Type = Unset
         self._target_attribute_guid: str | None | Unset_Type = Unset
 
+        if link_datum_type is not Unset:
+            self.link_datum_type = link_datum_type
         if target_table_identity is not Unset:
             self.target_table_identity = target_table_identity
         if target_table_guid is not Unset:
             self.target_table_guid = target_table_guid
         self.target_database_key = target_database_key
-        if link_datum_type is not Unset:
-            self.link_datum_type = link_datum_type
         if indirect_links is not Unset:
             self.indirect_links = indirect_links
         if search_in_reversed_direction is not Unset:
@@ -156,6 +156,31 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
             self.target_attribute_identity = target_attribute_identity
         if target_attribute_guid is not Unset:
             self.target_attribute_guid = target_attribute_guid
+
+    @property
+    def link_datum_type(self) -> "GsaLinkAttributeType | Unset_Type":
+        """Gets the link_datum_type of this GsaLinkExistsDatumCriterion.
+
+        Returns
+        -------
+        GsaLinkAttributeType | Unset_Type
+            The link_datum_type of this GsaLinkExistsDatumCriterion.
+        """
+        return self._link_datum_type
+
+    @link_datum_type.setter
+    def link_datum_type(self, link_datum_type: "GsaLinkAttributeType | Unset_Type") -> None:
+        """Sets the link_datum_type of this GsaLinkExistsDatumCriterion.
+
+        Parameters
+        ----------
+        link_datum_type: GsaLinkAttributeType | Unset_Type
+            The link_datum_type of this GsaLinkExistsDatumCriterion.
+        """
+        # Field is not nullable
+        if link_datum_type is None:
+            raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
+        self._link_datum_type = link_datum_type
 
     @property
     def target_table_identity(self) -> "int | None | Unset_Type":
@@ -234,31 +259,6 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         if target_database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'target_database_key', must not be 'Unset'")
         self._target_database_key = target_database_key
-
-    @property
-    def link_datum_type(self) -> "GsaLinkAttributeType | Unset_Type":
-        """Gets the link_datum_type of this GsaLinkExistsDatumCriterion.
-
-        Returns
-        -------
-        GsaLinkAttributeType | Unset_Type
-            The link_datum_type of this GsaLinkExistsDatumCriterion.
-        """
-        return self._link_datum_type
-
-    @link_datum_type.setter
-    def link_datum_type(self, link_datum_type: "GsaLinkAttributeType | Unset_Type") -> None:
-        """Sets the link_datum_type of this GsaLinkExistsDatumCriterion.
-
-        Parameters
-        ----------
-        link_datum_type: GsaLinkAttributeType | Unset_Type
-            The link_datum_type of this GsaLinkExistsDatumCriterion.
-        """
-        # Field is not nullable
-        if link_datum_type is None:
-            raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
-        self._link_datum_type = link_datum_type
 
     @property
     def indirect_links(self) -> "GsaIndirectLinks | Unset_Type":

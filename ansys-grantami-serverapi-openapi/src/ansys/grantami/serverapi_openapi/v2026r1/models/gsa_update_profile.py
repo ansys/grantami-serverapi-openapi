@@ -103,13 +103,15 @@ class GsaUpdateProfile(ModelBase):
         name: str, optional
         profile_table_guids: list[str] | None, optional
         """
+        self._name: str | Unset_Type = Unset
         self._description: str | None | Unset_Type = Unset
         self._homepage_url: str | None | Unset_Type = Unset
         self._profile_table_guids: list[str] | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._group_name: str | None | Unset_Type = Unset
-        self._name: str | Unset_Type = Unset
 
+        if name is not Unset:
+            self.name = name
         if description is not Unset:
             self.description = description
         if homepage_url is not Unset:
@@ -120,8 +122,31 @@ class GsaUpdateProfile(ModelBase):
             self.guid = guid
         if group_name is not Unset:
             self.group_name = group_name
-        if name is not Unset:
-            self.name = name
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateProfile.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateProfile.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateProfile.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateProfile.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
 
     @property
     def description(self) -> "str | None | Unset_Type":
@@ -234,31 +259,6 @@ class GsaUpdateProfile(ModelBase):
             The group_name of this GsaUpdateProfile.
         """
         self._group_name = group_name
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateProfile.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateProfile.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateProfile.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateProfile.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

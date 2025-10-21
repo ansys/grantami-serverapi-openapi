@@ -104,71 +104,15 @@ class GsaLayoutItem(ModelBase):
         name: str
         underlying_entity_guid: str
         """
-        self._item_type: GsaLayoutItemType
-        self._underlying_entity_guid: str
         self._name: str
         self._guid: str
+        self._item_type: GsaLayoutItemType
+        self._underlying_entity_guid: str
 
-        self.item_type = item_type
-        self.underlying_entity_guid = underlying_entity_guid
         self.name = name
         self.guid = guid
-
-    @property
-    def item_type(self) -> "GsaLayoutItemType":
-        """Gets the item_type of this GsaLayoutItem.
-
-        Returns
-        -------
-        GsaLayoutItemType
-            The item_type of this GsaLayoutItem.
-        """
-        return self._item_type
-
-    @item_type.setter
-    def item_type(self, item_type: "GsaLayoutItemType") -> None:
-        """Sets the item_type of this GsaLayoutItem.
-
-        Parameters
-        ----------
-        item_type: GsaLayoutItemType
-            The item_type of this GsaLayoutItem.
-        """
-        # Field is not nullable
-        if item_type is None:
-            raise ValueError("Invalid value for 'item_type', must not be 'None'")
-        # Field is required
-        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
-        self._item_type = item_type
-
-    @property
-    def underlying_entity_guid(self) -> "str":
-        """Gets the underlying_entity_guid of this GsaLayoutItem.
-
-        Returns
-        -------
-        str
-            The underlying_entity_guid of this GsaLayoutItem.
-        """
-        return self._underlying_entity_guid
-
-    @underlying_entity_guid.setter
-    def underlying_entity_guid(self, underlying_entity_guid: "str") -> None:
-        """Sets the underlying_entity_guid of this GsaLayoutItem.
-
-        Parameters
-        ----------
-        underlying_entity_guid: str
-            The underlying_entity_guid of this GsaLayoutItem.
-        """
-        # Field is not nullable
-        if underlying_entity_guid is None:
-            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'None'")
-        # Field is required
-        if underlying_entity_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'Unset'")
-        self._underlying_entity_guid = underlying_entity_guid
+        self.item_type = item_type
+        self.underlying_entity_guid = underlying_entity_guid
 
     @property
     def name(self) -> "str":
@@ -225,6 +169,62 @@ class GsaLayoutItem(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def item_type(self) -> "GsaLayoutItemType":
+        """Gets the item_type of this GsaLayoutItem.
+
+        Returns
+        -------
+        GsaLayoutItemType
+            The item_type of this GsaLayoutItem.
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type: "GsaLayoutItemType") -> None:
+        """Sets the item_type of this GsaLayoutItem.
+
+        Parameters
+        ----------
+        item_type: GsaLayoutItemType
+            The item_type of this GsaLayoutItem.
+        """
+        # Field is not nullable
+        if item_type is None:
+            raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
+        self._item_type = item_type
+
+    @property
+    def underlying_entity_guid(self) -> "str":
+        """Gets the underlying_entity_guid of this GsaLayoutItem.
+
+        Returns
+        -------
+        str
+            The underlying_entity_guid of this GsaLayoutItem.
+        """
+        return self._underlying_entity_guid
+
+    @underlying_entity_guid.setter
+    def underlying_entity_guid(self, underlying_entity_guid: "str") -> None:
+        """Sets the underlying_entity_guid of this GsaLayoutItem.
+
+        Parameters
+        ----------
+        underlying_entity_guid: str
+            The underlying_entity_guid of this GsaLayoutItem.
+        """
+        # Field is not nullable
+        if underlying_entity_guid is None:
+            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'None'")
+        # Field is required
+        if underlying_entity_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'Unset'")
+        self._underlying_entity_guid = underlying_entity_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

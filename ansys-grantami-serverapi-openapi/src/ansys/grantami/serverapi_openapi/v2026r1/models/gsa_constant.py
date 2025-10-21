@@ -97,69 +97,16 @@ class GsaConstant(ModelBase):
         value: float
         unit: GsaSlimUnit, optional
         """
-        self._unit: GsaSlimUnit | Unset_Type = Unset
-        self._value: float
         self._name: str
         self._guid: str
+        self._unit: GsaSlimUnit | Unset_Type = Unset
+        self._value: float
 
+        self.name = name
+        self.guid = guid
         if unit is not Unset:
             self.unit = unit
         self.value = value
-        self.name = name
-        self.guid = guid
-
-    @property
-    def unit(self) -> "GsaSlimUnit | Unset_Type":
-        """Gets the unit of this GsaConstant.
-
-        Returns
-        -------
-        GsaSlimUnit | Unset_Type
-            The unit of this GsaConstant.
-        """
-        return self._unit
-
-    @unit.setter
-    def unit(self, unit: "GsaSlimUnit | Unset_Type") -> None:
-        """Sets the unit of this GsaConstant.
-
-        Parameters
-        ----------
-        unit: GsaSlimUnit | Unset_Type
-            The unit of this GsaConstant.
-        """
-        # Field is not nullable
-        if unit is None:
-            raise ValueError("Invalid value for 'unit', must not be 'None'")
-        self._unit = unit
-
-    @property
-    def value(self) -> "float":
-        """Gets the value of this GsaConstant.
-
-        Returns
-        -------
-        float
-            The value of this GsaConstant.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "float") -> None:
-        """Sets the value of this GsaConstant.
-
-        Parameters
-        ----------
-        value: float
-            The value of this GsaConstant.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'value', must not be 'Unset'")
-        self._value = value
 
     @property
     def name(self) -> "str":
@@ -216,6 +163,59 @@ class GsaConstant(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def unit(self) -> "GsaSlimUnit | Unset_Type":
+        """Gets the unit of this GsaConstant.
+
+        Returns
+        -------
+        GsaSlimUnit | Unset_Type
+            The unit of this GsaConstant.
+        """
+        return self._unit
+
+    @unit.setter
+    def unit(self, unit: "GsaSlimUnit | Unset_Type") -> None:
+        """Sets the unit of this GsaConstant.
+
+        Parameters
+        ----------
+        unit: GsaSlimUnit | Unset_Type
+            The unit of this GsaConstant.
+        """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
+        self._unit = unit
+
+    @property
+    def value(self) -> "float":
+        """Gets the value of this GsaConstant.
+
+        Returns
+        -------
+        float
+            The value of this GsaConstant.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "float") -> None:
+        """Sets the value of this GsaConstant.
+
+        Parameters
+        ----------
+        value: float
+            The value of this GsaConstant.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
+        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
