@@ -97,71 +97,15 @@ class GsaUnitSystem(ModelBase):
         name: str
         unit_mappings: list[GsaUnitMapping]
         """
-        self._unit_mappings: list[GsaUnitMapping]
-        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
+        self._unit_mappings: list[GsaUnitMapping]
+        self._display_names: dict[str, str]
 
-        self.unit_mappings = unit_mappings
-        self.display_names = display_names
         self.name = name
         self.guid = guid
-
-    @property
-    def unit_mappings(self) -> "list[GsaUnitMapping]":
-        """Gets the unit_mappings of this GsaUnitSystem.
-
-        Returns
-        -------
-        list[GsaUnitMapping]
-            The unit_mappings of this GsaUnitSystem.
-        """
-        return self._unit_mappings
-
-    @unit_mappings.setter
-    def unit_mappings(self, unit_mappings: "list[GsaUnitMapping]") -> None:
-        """Sets the unit_mappings of this GsaUnitSystem.
-
-        Parameters
-        ----------
-        unit_mappings: list[GsaUnitMapping]
-            The unit_mappings of this GsaUnitSystem.
-        """
-        # Field is not nullable
-        if unit_mappings is None:
-            raise ValueError("Invalid value for 'unit_mappings', must not be 'None'")
-        # Field is required
-        if unit_mappings is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'unit_mappings', must not be 'Unset'")
-        self._unit_mappings = unit_mappings
-
-    @property
-    def display_names(self) -> "dict[str, str]":
-        """Gets the display_names of this GsaUnitSystem.
-
-        Returns
-        -------
-        dict[str, str]
-            The display_names of this GsaUnitSystem.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str]") -> None:
-        """Sets the display_names of this GsaUnitSystem.
-
-        Parameters
-        ----------
-        display_names: dict[str, str]
-            The display_names of this GsaUnitSystem.
-        """
-        # Field is not nullable
-        if display_names is None:
-            raise ValueError("Invalid value for 'display_names', must not be 'None'")
-        # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
-        self._display_names = display_names
+        self.unit_mappings = unit_mappings
+        self.display_names = display_names
 
     @property
     def name(self) -> "str":
@@ -218,6 +162,62 @@ class GsaUnitSystem(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def unit_mappings(self) -> "list[GsaUnitMapping]":
+        """Gets the unit_mappings of this GsaUnitSystem.
+
+        Returns
+        -------
+        list[GsaUnitMapping]
+            The unit_mappings of this GsaUnitSystem.
+        """
+        return self._unit_mappings
+
+    @unit_mappings.setter
+    def unit_mappings(self, unit_mappings: "list[GsaUnitMapping]") -> None:
+        """Sets the unit_mappings of this GsaUnitSystem.
+
+        Parameters
+        ----------
+        unit_mappings: list[GsaUnitMapping]
+            The unit_mappings of this GsaUnitSystem.
+        """
+        # Field is not nullable
+        if unit_mappings is None:
+            raise ValueError("Invalid value for 'unit_mappings', must not be 'None'")
+        # Field is required
+        if unit_mappings is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'unit_mappings', must not be 'Unset'")
+        self._unit_mappings = unit_mappings
+
+    @property
+    def display_names(self) -> "dict[str, str]":
+        """Gets the display_names of this GsaUnitSystem.
+
+        Returns
+        -------
+        dict[str, str]
+            The display_names of this GsaUnitSystem.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "dict[str, str]") -> None:
+        """Sets the display_names of this GsaUnitSystem.
+
+        Parameters
+        ----------
+        display_names: dict[str, str]
+            The display_names of this GsaUnitSystem.
+        """
+        # Field is not nullable
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
+        # Field is required
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
+        self._display_names = display_names
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

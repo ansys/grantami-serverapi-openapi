@@ -113,6 +113,7 @@ class GsaProfile(ModelBase):
         guid: str | None, optional
         homepage_url: str | None, optional
         """
+        self._name: str
         self._description: str | None | Unset_Type = Unset
         self._homepage_url: str | None | Unset_Type = Unset
         self._profile_tables: list[GsaSlimProfileTable]
@@ -120,8 +121,8 @@ class GsaProfile(ModelBase):
         self._guid: str | None | Unset_Type = Unset
         self._group_name: str | None | Unset_Type = Unset
         self._is_implicit: bool
-        self._name: str
 
+        self.name = name
         if description is not Unset:
             self.description = description
         if homepage_url is not Unset:
@@ -133,7 +134,34 @@ class GsaProfile(ModelBase):
         if group_name is not Unset:
             self.group_name = group_name
         self.is_implicit = is_implicit
-        self.name = name
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaProfile.
+
+        Returns
+        -------
+        str
+            The name of this GsaProfile.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaProfile.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaProfile.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
 
     @property
     def description(self) -> "str | None | Unset_Type":
@@ -310,34 +338,6 @@ class GsaProfile(ModelBase):
         if is_implicit is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_implicit', must not be 'Unset'")
         self._is_implicit = is_implicit
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaProfile.
-
-        Returns
-        -------
-        str
-            The name of this GsaProfile.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaProfile.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaProfile.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

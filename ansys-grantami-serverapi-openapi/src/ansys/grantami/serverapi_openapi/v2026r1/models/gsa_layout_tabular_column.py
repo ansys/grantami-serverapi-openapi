@@ -97,71 +97,15 @@ class GsaLayoutTabularColumn(ModelBase):
         name: str
         tabular_column_guid: str
         """
-        self._column_type: GsaTabularColumnDtoType
-        self._tabular_column_guid: str
         self._name: str
         self._guid: str
+        self._column_type: GsaTabularColumnDtoType
+        self._tabular_column_guid: str
 
-        self.column_type = column_type
-        self.tabular_column_guid = tabular_column_guid
         self.name = name
         self.guid = guid
-
-    @property
-    def column_type(self) -> "GsaTabularColumnDtoType":
-        """Gets the column_type of this GsaLayoutTabularColumn.
-
-        Returns
-        -------
-        GsaTabularColumnDtoType
-            The column_type of this GsaLayoutTabularColumn.
-        """
-        return self._column_type
-
-    @column_type.setter
-    def column_type(self, column_type: "GsaTabularColumnDtoType") -> None:
-        """Sets the column_type of this GsaLayoutTabularColumn.
-
-        Parameters
-        ----------
-        column_type: GsaTabularColumnDtoType
-            The column_type of this GsaLayoutTabularColumn.
-        """
-        # Field is not nullable
-        if column_type is None:
-            raise ValueError("Invalid value for 'column_type', must not be 'None'")
-        # Field is required
-        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
-        self._column_type = column_type
-
-    @property
-    def tabular_column_guid(self) -> "str":
-        """Gets the tabular_column_guid of this GsaLayoutTabularColumn.
-
-        Returns
-        -------
-        str
-            The tabular_column_guid of this GsaLayoutTabularColumn.
-        """
-        return self._tabular_column_guid
-
-    @tabular_column_guid.setter
-    def tabular_column_guid(self, tabular_column_guid: "str") -> None:
-        """Sets the tabular_column_guid of this GsaLayoutTabularColumn.
-
-        Parameters
-        ----------
-        tabular_column_guid: str
-            The tabular_column_guid of this GsaLayoutTabularColumn.
-        """
-        # Field is not nullable
-        if tabular_column_guid is None:
-            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'None'")
-        # Field is required
-        if tabular_column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'Unset'")
-        self._tabular_column_guid = tabular_column_guid
+        self.column_type = column_type
+        self.tabular_column_guid = tabular_column_guid
 
     @property
     def name(self) -> "str":
@@ -218,6 +162,62 @@ class GsaLayoutTabularColumn(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def column_type(self) -> "GsaTabularColumnDtoType":
+        """Gets the column_type of this GsaLayoutTabularColumn.
+
+        Returns
+        -------
+        GsaTabularColumnDtoType
+            The column_type of this GsaLayoutTabularColumn.
+        """
+        return self._column_type
+
+    @column_type.setter
+    def column_type(self, column_type: "GsaTabularColumnDtoType") -> None:
+        """Sets the column_type of this GsaLayoutTabularColumn.
+
+        Parameters
+        ----------
+        column_type: GsaTabularColumnDtoType
+            The column_type of this GsaLayoutTabularColumn.
+        """
+        # Field is not nullable
+        if column_type is None:
+            raise ValueError("Invalid value for 'column_type', must not be 'None'")
+        # Field is required
+        if column_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'column_type', must not be 'Unset'")
+        self._column_type = column_type
+
+    @property
+    def tabular_column_guid(self) -> "str":
+        """Gets the tabular_column_guid of this GsaLayoutTabularColumn.
+
+        Returns
+        -------
+        str
+            The tabular_column_guid of this GsaLayoutTabularColumn.
+        """
+        return self._tabular_column_guid
+
+    @tabular_column_guid.setter
+    def tabular_column_guid(self, tabular_column_guid: "str") -> None:
+        """Sets the tabular_column_guid of this GsaLayoutTabularColumn.
+
+        Parameters
+        ----------
+        tabular_column_guid: str
+            The tabular_column_guid of this GsaLayoutTabularColumn.
+        """
+        # Field is not nullable
+        if tabular_column_guid is None:
+            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'None'")
+        # Field is required
+        if tabular_column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'tabular_column_guid', must not be 'Unset'")
+        self._tabular_column_guid = tabular_column_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -97,70 +97,17 @@ class GsaCreateExpression(ModelBase):
         guid: str, optional
         unit: GsaSlimEntity, optional
         """
-        self._value: str
-        self._unit: GsaSlimEntity | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._value: str
+        self._unit: GsaSlimEntity | Unset_Type = Unset
 
-        self.value = value
-        if unit is not Unset:
-            self.unit = unit
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def value(self) -> "str":
-        """Gets the value of this GsaCreateExpression.
-
-        Returns
-        -------
-        str
-            The value of this GsaCreateExpression.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str") -> None:
-        """Sets the value of this GsaCreateExpression.
-
-        Parameters
-        ----------
-        value: str
-            The value of this GsaCreateExpression.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'value', must not be 'Unset'")
-        self._value = value
-
-    @property
-    def unit(self) -> "GsaSlimEntity | Unset_Type":
-        """Gets the unit of this GsaCreateExpression.
-
-        Returns
-        -------
-        GsaSlimEntity | Unset_Type
-            The unit of this GsaCreateExpression.
-        """
-        return self._unit
-
-    @unit.setter
-    def unit(self, unit: "GsaSlimEntity | Unset_Type") -> None:
-        """Sets the unit of this GsaCreateExpression.
-
-        Parameters
-        ----------
-        unit: GsaSlimEntity | Unset_Type
-            The unit of this GsaCreateExpression.
-        """
-        # Field is not nullable
-        if unit is None:
-            raise ValueError("Invalid value for 'unit', must not be 'None'")
-        self._unit = unit
+        self.value = value
+        if unit is not Unset:
+            self.unit = unit
 
     @property
     def name(self) -> "str":
@@ -214,6 +161,59 @@ class GsaCreateExpression(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def value(self) -> "str":
+        """Gets the value of this GsaCreateExpression.
+
+        Returns
+        -------
+        str
+            The value of this GsaCreateExpression.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str") -> None:
+        """Sets the value of this GsaCreateExpression.
+
+        Parameters
+        ----------
+        value: str
+            The value of this GsaCreateExpression.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
+        self._value = value
+
+    @property
+    def unit(self) -> "GsaSlimEntity | Unset_Type":
+        """Gets the unit of this GsaCreateExpression.
+
+        Returns
+        -------
+        GsaSlimEntity | Unset_Type
+            The unit of this GsaCreateExpression.
+        """
+        return self._unit
+
+    @unit.setter
+    def unit(self, unit: "GsaSlimEntity | Unset_Type") -> None:
+        """Sets the unit of this GsaCreateExpression.
+
+        Parameters
+        ----------
+        unit: GsaSlimEntity | Unset_Type
+            The unit of this GsaCreateExpression.
+        """
+        # Field is not nullable
+        if unit is None:
+            raise ValueError("Invalid value for 'unit', must not be 'None'")
+        self._unit = unit
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

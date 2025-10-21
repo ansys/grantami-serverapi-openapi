@@ -112,13 +112,17 @@ class GsaUpdateParameter(ModelBase):
         help_path: str | None, optional
         name: str, optional
         """
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
         self._type: GsaParameterType
         self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_guid: str | Unset_Type = Unset
         self._default_parameter_value_index: int | Unset_Type = Unset
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
 
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
         self.type = type
         if help_path is not Unset:
             self.help_path = help_path
@@ -126,10 +130,56 @@ class GsaUpdateParameter(ModelBase):
             self.default_parameter_value_guid = default_parameter_value_guid
         if default_parameter_value_index is not Unset:
             self.default_parameter_value_index = default_parameter_value_index
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateParameter.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateParameter.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateParameter.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateParameter.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateParameter.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateParameter.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateParameter.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateParameter.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @property
     def type(self) -> "GsaParameterType":
@@ -240,56 +290,6 @@ class GsaUpdateParameter(ModelBase):
                 "Invalid value for 'default_parameter_value_index', must not be 'None'"
             )
         self._default_parameter_value_index = default_parameter_value_index
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateParameter.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateParameter.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateParameter.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateParameter.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateParameter.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateParameter.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateParameter.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateParameter.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -93,40 +93,15 @@ class GsaCreateSubset(ModelBase):
         associated_layout: GsaSlimEntity, optional
         guid: str, optional
         """
-        self._associated_layout: GsaSlimEntity | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._associated_layout: GsaSlimEntity | Unset_Type = Unset
 
-        if associated_layout is not Unset:
-            self.associated_layout = associated_layout
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def associated_layout(self) -> "GsaSlimEntity | Unset_Type":
-        """Gets the associated_layout of this GsaCreateSubset.
-
-        Returns
-        -------
-        GsaSlimEntity | Unset_Type
-            The associated_layout of this GsaCreateSubset.
-        """
-        return self._associated_layout
-
-    @associated_layout.setter
-    def associated_layout(self, associated_layout: "GsaSlimEntity | Unset_Type") -> None:
-        """Sets the associated_layout of this GsaCreateSubset.
-
-        Parameters
-        ----------
-        associated_layout: GsaSlimEntity | Unset_Type
-            The associated_layout of this GsaCreateSubset.
-        """
-        # Field is not nullable
-        if associated_layout is None:
-            raise ValueError("Invalid value for 'associated_layout', must not be 'None'")
-        self._associated_layout = associated_layout
+        if associated_layout is not Unset:
+            self.associated_layout = associated_layout
 
     @property
     def name(self) -> "str":
@@ -180,6 +155,31 @@ class GsaCreateSubset(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def associated_layout(self) -> "GsaSlimEntity | Unset_Type":
+        """Gets the associated_layout of this GsaCreateSubset.
+
+        Returns
+        -------
+        GsaSlimEntity | Unset_Type
+            The associated_layout of this GsaCreateSubset.
+        """
+        return self._associated_layout
+
+    @associated_layout.setter
+    def associated_layout(self, associated_layout: "GsaSlimEntity | Unset_Type") -> None:
+        """Sets the associated_layout of this GsaCreateSubset.
+
+        Parameters
+        ----------
+        associated_layout: GsaSlimEntity | Unset_Type
+            The associated_layout of this GsaCreateSubset.
+        """
+        # Field is not nullable
+        if associated_layout is None:
+            raise ValueError("Invalid value for 'associated_layout', must not be 'None'")
+        self._associated_layout = associated_layout
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

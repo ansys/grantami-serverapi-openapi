@@ -91,42 +91,14 @@ class GsaCreateFolder(ModelBase):
         parent_guid: str
         guid: str, optional
         """
-        self._parent_guid: str
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._parent_guid: str
 
-        self.parent_guid = parent_guid
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def parent_guid(self) -> "str":
-        """Gets the parent_guid of this GsaCreateFolder.
-
-        Returns
-        -------
-        str
-            The parent_guid of this GsaCreateFolder.
-        """
-        return self._parent_guid
-
-    @parent_guid.setter
-    def parent_guid(self, parent_guid: "str") -> None:
-        """Sets the parent_guid of this GsaCreateFolder.
-
-        Parameters
-        ----------
-        parent_guid: str
-            The parent_guid of this GsaCreateFolder.
-        """
-        # Field is not nullable
-        if parent_guid is None:
-            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
-        # Field is required
-        if parent_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'parent_guid', must not be 'Unset'")
-        self._parent_guid = parent_guid
+        self.parent_guid = parent_guid
 
     @property
     def name(self) -> "str":
@@ -180,6 +152,34 @@ class GsaCreateFolder(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def parent_guid(self) -> "str":
+        """Gets the parent_guid of this GsaCreateFolder.
+
+        Returns
+        -------
+        str
+            The parent_guid of this GsaCreateFolder.
+        """
+        return self._parent_guid
+
+    @parent_guid.setter
+    def parent_guid(self, parent_guid: "str") -> None:
+        """Sets the parent_guid of this GsaCreateFolder.
+
+        Parameters
+        ----------
+        parent_guid: str
+            The parent_guid of this GsaCreateFolder.
+        """
+        # Field is not nullable
+        if parent_guid is None:
+            raise ValueError("Invalid value for 'parent_guid', must not be 'None'")
+        # Field is required
+        if parent_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'parent_guid', must not be 'Unset'")
+        self._parent_guid = parent_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

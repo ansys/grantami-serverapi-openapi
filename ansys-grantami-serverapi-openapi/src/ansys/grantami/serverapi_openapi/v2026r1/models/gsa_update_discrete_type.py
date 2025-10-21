@@ -91,41 +91,16 @@ class GsaUpdateDiscreteType(ModelBase):
         is_ordered: bool, optional
         name: str, optional
         """
-        self._is_ordered: bool | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
+        self._is_ordered: bool | Unset_Type = Unset
 
-        if is_ordered is not Unset:
-            self.is_ordered = is_ordered
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def is_ordered(self) -> "bool | Unset_Type":
-        """Gets the is_ordered of this GsaUpdateDiscreteType.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The is_ordered of this GsaUpdateDiscreteType.
-        """
-        return self._is_ordered
-
-    @is_ordered.setter
-    def is_ordered(self, is_ordered: "bool | Unset_Type") -> None:
-        """Sets the is_ordered of this GsaUpdateDiscreteType.
-
-        Parameters
-        ----------
-        is_ordered: bool | Unset_Type
-            The is_ordered of this GsaUpdateDiscreteType.
-        """
-        # Field is not nullable
-        if is_ordered is None:
-            raise ValueError("Invalid value for 'is_ordered', must not be 'None'")
-        self._is_ordered = is_ordered
+        if is_ordered is not Unset:
+            self.is_ordered = is_ordered
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -176,6 +151,31 @@ class GsaUpdateDiscreteType(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def is_ordered(self) -> "bool | Unset_Type":
+        """Gets the is_ordered of this GsaUpdateDiscreteType.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The is_ordered of this GsaUpdateDiscreteType.
+        """
+        return self._is_ordered
+
+    @is_ordered.setter
+    def is_ordered(self, is_ordered: "bool | Unset_Type") -> None:
+        """Sets the is_ordered of this GsaUpdateDiscreteType.
+
+        Parameters
+        ----------
+        is_ordered: bool | Unset_Type
+            The is_ordered of this GsaUpdateDiscreteType.
+        """
+        # Field is not nullable
+        if is_ordered is None:
+            raise ValueError("Invalid value for 'is_ordered', must not be 'None'")
+        self._is_ordered = is_ordered
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -95,67 +95,17 @@ class GsaCreateUnit(ModelBase):
         equation: str | None, optional
         guid: str, optional
         """
-        self._symbol: str
-        self._equation: str | None | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._symbol: str
+        self._equation: str | None | Unset_Type = Unset
 
-        self.symbol = symbol
-        if equation is not Unset:
-            self.equation = equation
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def symbol(self) -> "str":
-        """Gets the symbol of this GsaCreateUnit.
-
-        Returns
-        -------
-        str
-            The symbol of this GsaCreateUnit.
-        """
-        return self._symbol
-
-    @symbol.setter
-    def symbol(self, symbol: "str") -> None:
-        """Sets the symbol of this GsaCreateUnit.
-
-        Parameters
-        ----------
-        symbol: str
-            The symbol of this GsaCreateUnit.
-        """
-        # Field is not nullable
-        if symbol is None:
-            raise ValueError("Invalid value for 'symbol', must not be 'None'")
-        # Field is required
-        if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
-        self._symbol = symbol
-
-    @property
-    def equation(self) -> "str | None | Unset_Type":
-        """Gets the equation of this GsaCreateUnit.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The equation of this GsaCreateUnit.
-        """
-        return self._equation
-
-    @equation.setter
-    def equation(self, equation: "str | None | Unset_Type") -> None:
-        """Sets the equation of this GsaCreateUnit.
-
-        Parameters
-        ----------
-        equation: str | None | Unset_Type
-            The equation of this GsaCreateUnit.
-        """
-        self._equation = equation
+        self.symbol = symbol
+        if equation is not Unset:
+            self.equation = equation
 
     @property
     def name(self) -> "str":
@@ -209,6 +159,56 @@ class GsaCreateUnit(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def symbol(self) -> "str":
+        """Gets the symbol of this GsaCreateUnit.
+
+        Returns
+        -------
+        str
+            The symbol of this GsaCreateUnit.
+        """
+        return self._symbol
+
+    @symbol.setter
+    def symbol(self, symbol: "str") -> None:
+        """Sets the symbol of this GsaCreateUnit.
+
+        Parameters
+        ----------
+        symbol: str
+            The symbol of this GsaCreateUnit.
+        """
+        # Field is not nullable
+        if symbol is None:
+            raise ValueError("Invalid value for 'symbol', must not be 'None'")
+        # Field is required
+        if symbol is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'symbol', must not be 'Unset'")
+        self._symbol = symbol
+
+    @property
+    def equation(self) -> "str | None | Unset_Type":
+        """Gets the equation of this GsaCreateUnit.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The equation of this GsaCreateUnit.
+        """
+        return self._equation
+
+    @equation.setter
+    def equation(self, equation: "str | None | Unset_Type") -> None:
+        """Sets the equation of this GsaCreateUnit.
+
+        Parameters
+        ----------
+        equation: str | None | Unset_Type
+            The equation of this GsaCreateUnit.
+        """
+        self._equation = equation
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

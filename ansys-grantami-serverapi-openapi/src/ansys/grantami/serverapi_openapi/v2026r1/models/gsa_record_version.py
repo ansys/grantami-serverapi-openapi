@@ -150,6 +150,8 @@ class GsaRecordVersion(ModelBase):
         version_state: GsaVersionState
         released_date: datetime | None, optional
         """
+        self._name: str
+        self._guid: str
         self._record_history: GsaSlimRecordHistory
         self._table: GsaSlimTable
         self._database_key: str
@@ -164,9 +166,9 @@ class GsaRecordVersion(ModelBase):
         self._user_capabilities: GsaRecordUserCapabilities
         self._version_number: int
         self._version_state: GsaVersionState
-        self._name: str
-        self._guid: str
 
+        self.name = name
+        self.guid = guid
         self.record_history = record_history
         self.table = table
         self.database_key = database_key
@@ -182,8 +184,62 @@ class GsaRecordVersion(ModelBase):
         self.user_capabilities = user_capabilities
         self.version_number = version_number
         self.version_state = version_state
-        self.name = name
-        self.guid = guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaRecordVersion.
+
+        Returns
+        -------
+        str
+            The name of this GsaRecordVersion.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaRecordVersion.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaRecordVersion.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaRecordVersion.
+
+        Returns
+        -------
+        str
+            The guid of this GsaRecordVersion.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaRecordVersion.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaRecordVersion.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def record_history(self) -> "GsaSlimRecordHistory":
@@ -570,62 +626,6 @@ class GsaRecordVersion(ModelBase):
         if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaRecordVersion.
-
-        Returns
-        -------
-        str
-            The name of this GsaRecordVersion.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaRecordVersion.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaRecordVersion.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaRecordVersion.
-
-        Returns
-        -------
-        str
-            The guid of this GsaRecordVersion.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaRecordVersion.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaRecordVersion.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

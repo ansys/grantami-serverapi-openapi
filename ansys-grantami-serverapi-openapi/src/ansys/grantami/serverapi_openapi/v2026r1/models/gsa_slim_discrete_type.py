@@ -95,15 +95,71 @@ class GsaSlimDiscreteType(ModelBase):
         is_protected: bool
         name: str
         """
-        self._is_ordered: bool
-        self._is_protected: bool
         self._name: str
         self._guid: str
+        self._is_ordered: bool
+        self._is_protected: bool
 
-        self.is_ordered = is_ordered
-        self.is_protected = is_protected
         self.name = name
         self.guid = guid
+        self.is_ordered = is_ordered
+        self.is_protected = is_protected
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaSlimDiscreteType.
+
+        Returns
+        -------
+        str
+            The name of this GsaSlimDiscreteType.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaSlimDiscreteType.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaSlimDiscreteType.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaSlimDiscreteType.
+
+        Returns
+        -------
+        str
+            The guid of this GsaSlimDiscreteType.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaSlimDiscreteType.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaSlimDiscreteType.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def is_ordered(self) -> "bool":
@@ -162,62 +218,6 @@ class GsaSlimDiscreteType(ModelBase):
         if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
         self._is_protected = is_protected
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaSlimDiscreteType.
-
-        Returns
-        -------
-        str
-            The name of this GsaSlimDiscreteType.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaSlimDiscreteType.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaSlimDiscreteType.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaSlimDiscreteType.
-
-        Returns
-        -------
-        str
-            The guid of this GsaSlimDiscreteType.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaSlimDiscreteType.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaSlimDiscreteType.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

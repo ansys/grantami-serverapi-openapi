@@ -104,71 +104,15 @@ class GsaLayoutSection(ModelBase):
         name: str
         section_detail_type: GsaLayoutSectionDetailType
         """
-        self._section_detail_type: GsaLayoutSectionDetailType
-        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
+        self._section_detail_type: GsaLayoutSectionDetailType
+        self._display_names: dict[str, str]
 
-        self.section_detail_type = section_detail_type
-        self.display_names = display_names
         self.name = name
         self.guid = guid
-
-    @property
-    def section_detail_type(self) -> "GsaLayoutSectionDetailType":
-        """Gets the section_detail_type of this GsaLayoutSection.
-
-        Returns
-        -------
-        GsaLayoutSectionDetailType
-            The section_detail_type of this GsaLayoutSection.
-        """
-        return self._section_detail_type
-
-    @section_detail_type.setter
-    def section_detail_type(self, section_detail_type: "GsaLayoutSectionDetailType") -> None:
-        """Sets the section_detail_type of this GsaLayoutSection.
-
-        Parameters
-        ----------
-        section_detail_type: GsaLayoutSectionDetailType
-            The section_detail_type of this GsaLayoutSection.
-        """
-        # Field is not nullable
-        if section_detail_type is None:
-            raise ValueError("Invalid value for 'section_detail_type', must not be 'None'")
-        # Field is required
-        if section_detail_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'section_detail_type', must not be 'Unset'")
-        self._section_detail_type = section_detail_type
-
-    @property
-    def display_names(self) -> "dict[str, str]":
-        """Gets the display_names of this GsaLayoutSection.
-
-        Returns
-        -------
-        dict[str, str]
-            The display_names of this GsaLayoutSection.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str]") -> None:
-        """Sets the display_names of this GsaLayoutSection.
-
-        Parameters
-        ----------
-        display_names: dict[str, str]
-            The display_names of this GsaLayoutSection.
-        """
-        # Field is not nullable
-        if display_names is None:
-            raise ValueError("Invalid value for 'display_names', must not be 'None'")
-        # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
-        self._display_names = display_names
+        self.section_detail_type = section_detail_type
+        self.display_names = display_names
 
     @property
     def name(self) -> "str":
@@ -225,6 +169,62 @@ class GsaLayoutSection(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def section_detail_type(self) -> "GsaLayoutSectionDetailType":
+        """Gets the section_detail_type of this GsaLayoutSection.
+
+        Returns
+        -------
+        GsaLayoutSectionDetailType
+            The section_detail_type of this GsaLayoutSection.
+        """
+        return self._section_detail_type
+
+    @section_detail_type.setter
+    def section_detail_type(self, section_detail_type: "GsaLayoutSectionDetailType") -> None:
+        """Sets the section_detail_type of this GsaLayoutSection.
+
+        Parameters
+        ----------
+        section_detail_type: GsaLayoutSectionDetailType
+            The section_detail_type of this GsaLayoutSection.
+        """
+        # Field is not nullable
+        if section_detail_type is None:
+            raise ValueError("Invalid value for 'section_detail_type', must not be 'None'")
+        # Field is required
+        if section_detail_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'section_detail_type', must not be 'Unset'")
+        self._section_detail_type = section_detail_type
+
+    @property
+    def display_names(self) -> "dict[str, str]":
+        """Gets the display_names of this GsaLayoutSection.
+
+        Returns
+        -------
+        dict[str, str]
+            The display_names of this GsaLayoutSection.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "dict[str, str]") -> None:
+        """Sets the display_names of this GsaLayoutSection.
+
+        Parameters
+        ----------
+        display_names: dict[str, str]
+            The display_names of this GsaLayoutSection.
+        """
+        # Field is not nullable
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
+        # Field is required
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
+        self._display_names = display_names
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

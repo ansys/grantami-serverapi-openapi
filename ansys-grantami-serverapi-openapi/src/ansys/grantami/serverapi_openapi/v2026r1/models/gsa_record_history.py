@@ -108,20 +108,48 @@ class GsaRecordHistory(ModelBase):
         table: GsaSlimTable
         parent: GsaSlimRecordHistory, optional
         """
+        self._guid: str
         self._is_folder: bool
         self._table: GsaSlimTable
         self._parent: GsaSlimRecordHistory | Unset_Type = Unset
         self._record_versions: list[GsaSlimRecordVersion]
         self._subsets: list[GsaSlimSubset]
-        self._guid: str
 
+        self.guid = guid
         self.is_folder = is_folder
         self.table = table
         if parent is not Unset:
             self.parent = parent
         self.record_versions = record_versions
         self.subsets = subsets
-        self.guid = guid
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaRecordHistory.
+
+        Returns
+        -------
+        str
+            The guid of this GsaRecordHistory.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaRecordHistory.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaRecordHistory.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def is_folder(self) -> "bool":
@@ -259,34 +287,6 @@ class GsaRecordHistory(ModelBase):
         if subsets is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'subsets', must not be 'Unset'")
         self._subsets = subsets
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaRecordHistory.
-
-        Returns
-        -------
-        str
-            The guid of this GsaRecordHistory.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaRecordHistory.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaRecordHistory.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

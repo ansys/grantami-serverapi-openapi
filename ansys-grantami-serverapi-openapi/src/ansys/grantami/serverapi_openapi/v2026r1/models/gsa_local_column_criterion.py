@@ -109,15 +109,45 @@ class GsaLocalColumnCriterion(GsaCriterion):
         identity: int | None, optional
         """
         super().__init__(type=type)
+        self._local_column_criterion_type: GsaLocalColumnCriterionType
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
-        self._local_column_criterion_type: GsaLocalColumnCriterionType
 
+        self.local_column_criterion_type = local_column_criterion_type
         if identity is not Unset:
             self.identity = identity
         if guid is not Unset:
             self.guid = guid
-        self.local_column_criterion_type = local_column_criterion_type
+
+    @property
+    def local_column_criterion_type(self) -> "GsaLocalColumnCriterionType":
+        """Gets the local_column_criterion_type of this GsaLocalColumnCriterion.
+
+        Returns
+        -------
+        GsaLocalColumnCriterionType
+            The local_column_criterion_type of this GsaLocalColumnCriterion.
+        """
+        return self._local_column_criterion_type
+
+    @local_column_criterion_type.setter
+    def local_column_criterion_type(
+        self, local_column_criterion_type: "GsaLocalColumnCriterionType"
+    ) -> None:
+        """Sets the local_column_criterion_type of this GsaLocalColumnCriterion.
+
+        Parameters
+        ----------
+        local_column_criterion_type: GsaLocalColumnCriterionType
+            The local_column_criterion_type of this GsaLocalColumnCriterion.
+        """
+        # Field is not nullable
+        if local_column_criterion_type is None:
+            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'None'")
+        # Field is required
+        if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'Unset'")
+        self._local_column_criterion_type = local_column_criterion_type
 
     @property
     def identity(self) -> "int | None | Unset_Type":
@@ -162,36 +192,6 @@ class GsaLocalColumnCriterion(GsaCriterion):
             The guid of this GsaLocalColumnCriterion.
         """
         self._guid = guid
-
-    @property
-    def local_column_criterion_type(self) -> "GsaLocalColumnCriterionType":
-        """Gets the local_column_criterion_type of this GsaLocalColumnCriterion.
-
-        Returns
-        -------
-        GsaLocalColumnCriterionType
-            The local_column_criterion_type of this GsaLocalColumnCriterion.
-        """
-        return self._local_column_criterion_type
-
-    @local_column_criterion_type.setter
-    def local_column_criterion_type(
-        self, local_column_criterion_type: "GsaLocalColumnCriterionType"
-    ) -> None:
-        """Sets the local_column_criterion_type of this GsaLocalColumnCriterion.
-
-        Parameters
-        ----------
-        local_column_criterion_type: GsaLocalColumnCriterionType
-            The local_column_criterion_type of this GsaLocalColumnCriterion.
-        """
-        # Field is not nullable
-        if local_column_criterion_type is None:
-            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'None'")
-        # Field is required
-        if local_column_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'local_column_criterion_type', must not be 'Unset'")
-        self._local_column_criterion_type = local_column_criterion_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

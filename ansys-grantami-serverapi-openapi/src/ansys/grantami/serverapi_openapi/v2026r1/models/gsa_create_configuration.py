@@ -95,67 +95,17 @@ class GsaCreateConfiguration(ModelBase):
         description: str | None, optional
         guid: str, optional
         """
-        self._description: str | None | Unset_Type = Unset
-        self._value: str
         self._name: str
         self._guid: str | Unset_Type = Unset
+        self._description: str | None | Unset_Type = Unset
+        self._value: str
 
-        if description is not Unset:
-            self.description = description
-        self.value = value
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaCreateConfiguration.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaCreateConfiguration.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaCreateConfiguration.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaCreateConfiguration.
-        """
-        self._description = description
-
-    @property
-    def value(self) -> "str":
-        """Gets the value of this GsaCreateConfiguration.
-
-        Returns
-        -------
-        str
-            The value of this GsaCreateConfiguration.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str") -> None:
-        """Sets the value of this GsaCreateConfiguration.
-
-        Parameters
-        ----------
-        value: str
-            The value of this GsaCreateConfiguration.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'value', must not be 'Unset'")
-        self._value = value
+        if description is not Unset:
+            self.description = description
+        self.value = value
 
     @property
     def name(self) -> "str":
@@ -209,6 +159,56 @@ class GsaCreateConfiguration(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaCreateConfiguration.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaCreateConfiguration.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaCreateConfiguration.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaCreateConfiguration.
+        """
+        self._description = description
+
+    @property
+    def value(self) -> "str":
+        """Gets the value of this GsaCreateConfiguration.
+
+        Returns
+        -------
+        str
+            The value of this GsaCreateConfiguration.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str") -> None:
+        """Sets the value of this GsaCreateConfiguration.
+
+        Parameters
+        ----------
+        value: str
+            The value of this GsaCreateConfiguration.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
+        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

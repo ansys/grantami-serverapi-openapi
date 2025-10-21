@@ -91,41 +91,13 @@ class GsaReplacementString(ModelBase):
         name: str
         value: str
         """
-        self._value: str
         self._name: str
         self._guid: str
+        self._value: str
 
-        self.value = value
         self.name = name
         self.guid = guid
-
-    @property
-    def value(self) -> "str":
-        """Gets the value of this GsaReplacementString.
-
-        Returns
-        -------
-        str
-            The value of this GsaReplacementString.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str") -> None:
-        """Sets the value of this GsaReplacementString.
-
-        Parameters
-        ----------
-        value: str
-            The value of this GsaReplacementString.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        # Field is required
-        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'value', must not be 'Unset'")
-        self._value = value
+        self.value = value
 
     @property
     def name(self) -> "str":
@@ -182,6 +154,34 @@ class GsaReplacementString(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def value(self) -> "str":
+        """Gets the value of this GsaReplacementString.
+
+        Returns
+        -------
+        str
+            The value of this GsaReplacementString.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str") -> None:
+        """Sets the value of this GsaReplacementString.
+
+        Parameters
+        ----------
+        value: str
+            The value of this GsaReplacementString.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        # Field is required
+        if value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'value', must not be 'Unset'")
+        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

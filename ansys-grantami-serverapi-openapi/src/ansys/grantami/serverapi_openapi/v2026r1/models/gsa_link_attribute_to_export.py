@@ -97,12 +97,12 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
     }
 
     subtype_mapping: dict[str, str] = {
-        "localData": "GsaSimpleAttributeToExport",
         "linkAttributeType": "GsaLinkAttributeType",
+        "indirectLinksBehavior": "GsaIndirectLinks",
+        "localData": "GsaSimpleAttributeToExport",
         "recordProperties": "GsaRecordProperty",
         "attributes": "GsaAttributeToExport",
         "linkedRecordsExportBehavior": "GsaLinkedRecordExportBehavior",
-        "indirectLinksBehavior": "GsaIndirectLinks",
     }
 
     discriminator: Optional[str] = None
@@ -143,63 +143,62 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         target_table_guid: str | None, optional
         """
         super().__init__(attribute_type=attribute_type, guid=guid, identity=identity)
-        self._local_data: list[GsaSimpleAttributeToExport] | None | Unset_Type = Unset
+        self._link_attribute_type: GsaLinkAttributeType | Unset_Type = Unset
         self._target_table_guid: str | None | Unset_Type = Unset
         self._target_database_guid: str | None | Unset_Type = Unset
         self._target_attribute_guid: str | None | Unset_Type = Unset
-        self._link_attribute_type: GsaLinkAttributeType | Unset_Type = Unset
         self._export_in_reversed_direction: bool | Unset_Type = Unset
+        self._indirect_links_behavior: GsaIndirectLinks | Unset_Type = Unset
+        self._local_data: list[GsaSimpleAttributeToExport] | None | Unset_Type = Unset
         self._record_properties: list[GsaRecordProperty] | None | Unset_Type = Unset
         self._attributes: list[GsaAttributeToExport] | None | Unset_Type = Unset
         self._linked_records_export_behavior: GsaLinkedRecordExportBehavior | Unset_Type = Unset
-        self._indirect_links_behavior: GsaIndirectLinks | Unset_Type = Unset
 
-        if local_data is not Unset:
-            self.local_data = local_data
+        if link_attribute_type is not Unset:
+            self.link_attribute_type = link_attribute_type
         if target_table_guid is not Unset:
             self.target_table_guid = target_table_guid
         if target_database_guid is not Unset:
             self.target_database_guid = target_database_guid
         if target_attribute_guid is not Unset:
             self.target_attribute_guid = target_attribute_guid
-        if link_attribute_type is not Unset:
-            self.link_attribute_type = link_attribute_type
         if export_in_reversed_direction is not Unset:
             self.export_in_reversed_direction = export_in_reversed_direction
+        if indirect_links_behavior is not Unset:
+            self.indirect_links_behavior = indirect_links_behavior
+        if local_data is not Unset:
+            self.local_data = local_data
         if record_properties is not Unset:
             self.record_properties = record_properties
         if attributes is not Unset:
             self.attributes = attributes
         if linked_records_export_behavior is not Unset:
             self.linked_records_export_behavior = linked_records_export_behavior
-        if indirect_links_behavior is not Unset:
-            self.indirect_links_behavior = indirect_links_behavior
 
     @property
-    def local_data(self) -> "list[GsaSimpleAttributeToExport] | None | Unset_Type":
-        """Gets the local_data of this GsaLinkAttributeToExport.
-        The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
+    def link_attribute_type(self) -> "GsaLinkAttributeType | Unset_Type":
+        """Gets the link_attribute_type of this GsaLinkAttributeToExport.
 
         Returns
         -------
-        list[GsaSimpleAttributeToExport] | None | Unset_Type
-            The local_data of this GsaLinkAttributeToExport.
+        GsaLinkAttributeType | Unset_Type
+            The link_attribute_type of this GsaLinkAttributeToExport.
         """
-        return self._local_data
+        return self._link_attribute_type
 
-    @local_data.setter
-    def local_data(
-        self, local_data: "list[GsaSimpleAttributeToExport] | None | Unset_Type"
-    ) -> None:
-        """Sets the local_data of this GsaLinkAttributeToExport.
-        The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
+    @link_attribute_type.setter
+    def link_attribute_type(self, link_attribute_type: "GsaLinkAttributeType | Unset_Type") -> None:
+        """Sets the link_attribute_type of this GsaLinkAttributeToExport.
 
         Parameters
         ----------
-        local_data: list[GsaSimpleAttributeToExport] | None | Unset_Type
-            The local_data of this GsaLinkAttributeToExport.
+        link_attribute_type: GsaLinkAttributeType | Unset_Type
+            The link_attribute_type of this GsaLinkAttributeToExport.
         """
-        self._local_data = local_data
+        # Field is not nullable
+        if link_attribute_type is None:
+            raise ValueError("Invalid value for 'link_attribute_type', must not be 'None'")
+        self._link_attribute_type = link_attribute_type
 
     @property
     def target_table_guid(self) -> "str | None | Unset_Type":
@@ -274,31 +273,6 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         self._target_attribute_guid = target_attribute_guid
 
     @property
-    def link_attribute_type(self) -> "GsaLinkAttributeType | Unset_Type":
-        """Gets the link_attribute_type of this GsaLinkAttributeToExport.
-
-        Returns
-        -------
-        GsaLinkAttributeType | Unset_Type
-            The link_attribute_type of this GsaLinkAttributeToExport.
-        """
-        return self._link_attribute_type
-
-    @link_attribute_type.setter
-    def link_attribute_type(self, link_attribute_type: "GsaLinkAttributeType | Unset_Type") -> None:
-        """Sets the link_attribute_type of this GsaLinkAttributeToExport.
-
-        Parameters
-        ----------
-        link_attribute_type: GsaLinkAttributeType | Unset_Type
-            The link_attribute_type of this GsaLinkAttributeToExport.
-        """
-        # Field is not nullable
-        if link_attribute_type is None:
-            raise ValueError("Invalid value for 'link_attribute_type', must not be 'None'")
-        self._link_attribute_type = link_attribute_type
-
-    @property
     def export_in_reversed_direction(self) -> "bool | Unset_Type":
         """Gets the export_in_reversed_direction of this GsaLinkAttributeToExport.
 
@@ -324,6 +298,59 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
         if export_in_reversed_direction is None:
             raise ValueError("Invalid value for 'export_in_reversed_direction', must not be 'None'")
         self._export_in_reversed_direction = export_in_reversed_direction
+
+    @property
+    def indirect_links_behavior(self) -> "GsaIndirectLinks | Unset_Type":
+        """Gets the indirect_links_behavior of this GsaLinkAttributeToExport.
+
+        Returns
+        -------
+        GsaIndirectLinks | Unset_Type
+            The indirect_links_behavior of this GsaLinkAttributeToExport.
+        """
+        return self._indirect_links_behavior
+
+    @indirect_links_behavior.setter
+    def indirect_links_behavior(
+        self, indirect_links_behavior: "GsaIndirectLinks | Unset_Type"
+    ) -> None:
+        """Sets the indirect_links_behavior of this GsaLinkAttributeToExport.
+
+        Parameters
+        ----------
+        indirect_links_behavior: GsaIndirectLinks | Unset_Type
+            The indirect_links_behavior of this GsaLinkAttributeToExport.
+        """
+        # Field is not nullable
+        if indirect_links_behavior is None:
+            raise ValueError("Invalid value for 'indirect_links_behavior', must not be 'None'")
+        self._indirect_links_behavior = indirect_links_behavior
+
+    @property
+    def local_data(self) -> "list[GsaSimpleAttributeToExport] | None | Unset_Type":
+        """Gets the local_data of this GsaLinkAttributeToExport.
+        The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
+
+        Returns
+        -------
+        list[GsaSimpleAttributeToExport] | None | Unset_Type
+            The local_data of this GsaLinkAttributeToExport.
+        """
+        return self._local_data
+
+    @local_data.setter
+    def local_data(
+        self, local_data: "list[GsaSimpleAttributeToExport] | None | Unset_Type"
+    ) -> None:
+        """Sets the local_data of this GsaLinkAttributeToExport.
+        The local columns to export. Reuse the attribute object here - but the 'attribute id' is now the column id.
+
+        Parameters
+        ----------
+        local_data: list[GsaSimpleAttributeToExport] | None | Unset_Type
+            The local_data of this GsaLinkAttributeToExport.
+        """
+        self._local_data = local_data
 
     @property
     def record_properties(self) -> "list[GsaRecordProperty] | None | Unset_Type":
@@ -403,33 +430,6 @@ class GsaLinkAttributeToExport(GsaAttributeToExport):
                 "Invalid value for 'linked_records_export_behavior', must not be 'None'"
             )
         self._linked_records_export_behavior = linked_records_export_behavior
-
-    @property
-    def indirect_links_behavior(self) -> "GsaIndirectLinks | Unset_Type":
-        """Gets the indirect_links_behavior of this GsaLinkAttributeToExport.
-
-        Returns
-        -------
-        GsaIndirectLinks | Unset_Type
-            The indirect_links_behavior of this GsaLinkAttributeToExport.
-        """
-        return self._indirect_links_behavior
-
-    @indirect_links_behavior.setter
-    def indirect_links_behavior(
-        self, indirect_links_behavior: "GsaIndirectLinks | Unset_Type"
-    ) -> None:
-        """Sets the indirect_links_behavior of this GsaLinkAttributeToExport.
-
-        Parameters
-        ----------
-        indirect_links_behavior: GsaIndirectLinks | Unset_Type
-            The indirect_links_behavior of this GsaLinkAttributeToExport.
-        """
-        # Field is not nullable
-        if indirect_links_behavior is None:
-            raise ValueError("Invalid value for 'indirect_links_behavior', must not be 'None'")
-        self._indirect_links_behavior = indirect_links_behavior
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

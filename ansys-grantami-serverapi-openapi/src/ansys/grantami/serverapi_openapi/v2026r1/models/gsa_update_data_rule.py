@@ -95,69 +95,19 @@ class GsaUpdateDataRule(ModelBase):
         name: str, optional
         regular_expression: str, optional
         """
-        self._description: str | Unset_Type = Unset
-        self._regular_expression: str | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
+        self._description: str | Unset_Type = Unset
+        self._regular_expression: str | Unset_Type = Unset
 
-        if description is not Unset:
-            self.description = description
-        if regular_expression is not Unset:
-            self.regular_expression = regular_expression
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def description(self) -> "str | Unset_Type":
-        """Gets the description of this GsaUpdateDataRule.
-
-        Returns
-        -------
-        str | Unset_Type
-            The description of this GsaUpdateDataRule.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | Unset_Type") -> None:
-        """Sets the description of this GsaUpdateDataRule.
-
-        Parameters
-        ----------
-        description: str | Unset_Type
-            The description of this GsaUpdateDataRule.
-        """
-        # Field is not nullable
-        if description is None:
-            raise ValueError("Invalid value for 'description', must not be 'None'")
-        self._description = description
-
-    @property
-    def regular_expression(self) -> "str | Unset_Type":
-        """Gets the regular_expression of this GsaUpdateDataRule.
-
-        Returns
-        -------
-        str | Unset_Type
-            The regular_expression of this GsaUpdateDataRule.
-        """
-        return self._regular_expression
-
-    @regular_expression.setter
-    def regular_expression(self, regular_expression: "str | Unset_Type") -> None:
-        """Sets the regular_expression of this GsaUpdateDataRule.
-
-        Parameters
-        ----------
-        regular_expression: str | Unset_Type
-            The regular_expression of this GsaUpdateDataRule.
-        """
-        # Field is not nullable
-        if regular_expression is None:
-            raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
-        self._regular_expression = regular_expression
+        if description is not Unset:
+            self.description = description
+        if regular_expression is not Unset:
+            self.regular_expression = regular_expression
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -208,6 +158,56 @@ class GsaUpdateDataRule(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def description(self) -> "str | Unset_Type":
+        """Gets the description of this GsaUpdateDataRule.
+
+        Returns
+        -------
+        str | Unset_Type
+            The description of this GsaUpdateDataRule.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | Unset_Type") -> None:
+        """Sets the description of this GsaUpdateDataRule.
+
+        Parameters
+        ----------
+        description: str | Unset_Type
+            The description of this GsaUpdateDataRule.
+        """
+        # Field is not nullable
+        if description is None:
+            raise ValueError("Invalid value for 'description', must not be 'None'")
+        self._description = description
+
+    @property
+    def regular_expression(self) -> "str | Unset_Type":
+        """Gets the regular_expression of this GsaUpdateDataRule.
+
+        Returns
+        -------
+        str | Unset_Type
+            The regular_expression of this GsaUpdateDataRule.
+        """
+        return self._regular_expression
+
+    @regular_expression.setter
+    def regular_expression(self, regular_expression: "str | Unset_Type") -> None:
+        """Sets the regular_expression of this GsaUpdateDataRule.
+
+        Parameters
+        ----------
+        regular_expression: str | Unset_Type
+            The regular_expression of this GsaUpdateDataRule.
+        """
+        # Field is not nullable
+        if regular_expression is None:
+            raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
+        self._regular_expression = regular_expression
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

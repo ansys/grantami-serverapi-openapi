@@ -95,66 +95,19 @@ class GsaUpdateUnit(ModelBase):
         name: str, optional
         symbol: str, optional
         """
-        self._symbol: str | Unset_Type = Unset
-        self._equation: str | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
+        self._symbol: str | Unset_Type = Unset
+        self._equation: str | None | Unset_Type = Unset
 
-        if symbol is not Unset:
-            self.symbol = symbol
-        if equation is not Unset:
-            self.equation = equation
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def symbol(self) -> "str | Unset_Type":
-        """Gets the symbol of this GsaUpdateUnit.
-
-        Returns
-        -------
-        str | Unset_Type
-            The symbol of this GsaUpdateUnit.
-        """
-        return self._symbol
-
-    @symbol.setter
-    def symbol(self, symbol: "str | Unset_Type") -> None:
-        """Sets the symbol of this GsaUpdateUnit.
-
-        Parameters
-        ----------
-        symbol: str | Unset_Type
-            The symbol of this GsaUpdateUnit.
-        """
-        # Field is not nullable
-        if symbol is None:
-            raise ValueError("Invalid value for 'symbol', must not be 'None'")
-        self._symbol = symbol
-
-    @property
-    def equation(self) -> "str | None | Unset_Type":
-        """Gets the equation of this GsaUpdateUnit.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The equation of this GsaUpdateUnit.
-        """
-        return self._equation
-
-    @equation.setter
-    def equation(self, equation: "str | None | Unset_Type") -> None:
-        """Sets the equation of this GsaUpdateUnit.
-
-        Parameters
-        ----------
-        equation: str | None | Unset_Type
-            The equation of this GsaUpdateUnit.
-        """
-        self._equation = equation
+        if symbol is not Unset:
+            self.symbol = symbol
+        if equation is not Unset:
+            self.equation = equation
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -205,6 +158,53 @@ class GsaUpdateUnit(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
+
+    @property
+    def symbol(self) -> "str | Unset_Type":
+        """Gets the symbol of this GsaUpdateUnit.
+
+        Returns
+        -------
+        str | Unset_Type
+            The symbol of this GsaUpdateUnit.
+        """
+        return self._symbol
+
+    @symbol.setter
+    def symbol(self, symbol: "str | Unset_Type") -> None:
+        """Sets the symbol of this GsaUpdateUnit.
+
+        Parameters
+        ----------
+        symbol: str | Unset_Type
+            The symbol of this GsaUpdateUnit.
+        """
+        # Field is not nullable
+        if symbol is None:
+            raise ValueError("Invalid value for 'symbol', must not be 'None'")
+        self._symbol = symbol
+
+    @property
+    def equation(self) -> "str | None | Unset_Type":
+        """Gets the equation of this GsaUpdateUnit.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The equation of this GsaUpdateUnit.
+        """
+        return self._equation
+
+    @equation.setter
+    def equation(self, equation: "str | None | Unset_Type") -> None:
+        """Sets the equation of this GsaUpdateUnit.
+
+        Parameters
+        ----------
+        equation: str | None | Unset_Type
+            The equation of this GsaUpdateUnit.
+        """
+        self._equation = equation
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

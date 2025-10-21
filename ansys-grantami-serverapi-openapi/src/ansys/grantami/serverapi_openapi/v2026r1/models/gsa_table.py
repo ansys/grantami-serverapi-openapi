@@ -145,6 +145,8 @@ class GsaTable(ModelBase):
         default_subset: GsaSlimSubset, optional
         legal_disclaimer: str | None, optional
         """
+        self._name: str
+        self._guid: str
         self._default_subset: GsaSlimSubset | Unset_Type = Unset
         self._subsets: list[GsaSlimSubset]
         self._default_layout: GsaSlimLayout | Unset_Type = Unset
@@ -158,9 +160,9 @@ class GsaTable(ModelBase):
         self._is_versioned: bool
         self._table_types: list[str]
         self._display_names: dict[str, str]
-        self._name: str
-        self._guid: str
 
+        self.name = name
+        self.guid = guid
         if default_subset is not Unset:
             self.default_subset = default_subset
         self.subsets = subsets
@@ -177,8 +179,62 @@ class GsaTable(ModelBase):
         self.is_versioned = is_versioned
         self.table_types = table_types
         self.display_names = display_names
-        self.name = name
-        self.guid = guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaTable.
+
+        Returns
+        -------
+        str
+            The name of this GsaTable.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaTable.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaTable.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaTable.
+
+        Returns
+        -------
+        str
+            The guid of this GsaTable.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaTable.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaTable.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def default_subset(self) -> "GsaSlimSubset | Unset_Type":
@@ -531,62 +587,6 @@ class GsaTable(ModelBase):
         if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaTable.
-
-        Returns
-        -------
-        str
-            The name of this GsaTable.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaTable.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaTable.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaTable.
-
-        Returns
-        -------
-        str
-            The guid of this GsaTable.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaTable.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaTable.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

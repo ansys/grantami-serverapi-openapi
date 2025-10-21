@@ -93,41 +93,13 @@ class GsaSlimTypedAttribute(ModelBase):
         name: str
         type: GsaAttributeType
         """
-        self._type: GsaAttributeType
         self._name: str
         self._guid: str
+        self._type: GsaAttributeType
 
-        self.type = type
         self.name = name
         self.guid = guid
-
-    @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaSlimTypedAttribute.
-
-        Returns
-        -------
-        GsaAttributeType
-            The type of this GsaSlimTypedAttribute.
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaSlimTypedAttribute.
-
-        Parameters
-        ----------
-        type: GsaAttributeType
-            The type of this GsaSlimTypedAttribute.
-        """
-        # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        self.type = type
 
     @property
     def name(self) -> "str":
@@ -184,6 +156,34 @@ class GsaSlimTypedAttribute(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def type(self) -> "GsaAttributeType":
+        """Gets the type of this GsaSlimTypedAttribute.
+
+        Returns
+        -------
+        GsaAttributeType
+            The type of this GsaSlimTypedAttribute.
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: "GsaAttributeType") -> None:
+        """Sets the type of this GsaSlimTypedAttribute.
+
+        Parameters
+        ----------
+        type: GsaAttributeType
+            The type of this GsaSlimTypedAttribute.
+        """
+        # Field is not nullable
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
+        self._type = type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

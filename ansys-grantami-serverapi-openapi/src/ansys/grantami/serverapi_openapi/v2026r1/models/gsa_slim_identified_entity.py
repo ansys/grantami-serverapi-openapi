@@ -87,39 +87,11 @@ class GsaSlimIdentifiedEntity(ModelBase):
         guid: str
         identity: int
         """
-        self._identity: int
         self._guid: str
+        self._identity: int
 
-        self.identity = identity
         self.guid = guid
-
-    @property
-    def identity(self) -> "int":
-        """Gets the identity of this GsaSlimIdentifiedEntity.
-
-        Returns
-        -------
-        int
-            The identity of this GsaSlimIdentifiedEntity.
-        """
-        return self._identity
-
-    @identity.setter
-    def identity(self, identity: "int") -> None:
-        """Sets the identity of this GsaSlimIdentifiedEntity.
-
-        Parameters
-        ----------
-        identity: int
-            The identity of this GsaSlimIdentifiedEntity.
-        """
-        # Field is not nullable
-        if identity is None:
-            raise ValueError("Invalid value for 'identity', must not be 'None'")
-        # Field is required
-        if identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'identity', must not be 'Unset'")
-        self._identity = identity
+        self.identity = identity
 
     @property
     def guid(self) -> "str":
@@ -148,6 +120,34 @@ class GsaSlimIdentifiedEntity(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
+
+    @property
+    def identity(self) -> "int":
+        """Gets the identity of this GsaSlimIdentifiedEntity.
+
+        Returns
+        -------
+        int
+            The identity of this GsaSlimIdentifiedEntity.
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity: "int") -> None:
+        """Sets the identity of this GsaSlimIdentifiedEntity.
+
+        Parameters
+        ----------
+        identity: int
+            The identity of this GsaSlimIdentifiedEntity.
+        """
+        # Field is not nullable
+        if identity is None:
+            raise ValueError("Invalid value for 'identity', must not be 'None'")
+        # Field is required
+        if identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'identity', must not be 'Unset'")
+        self._identity = identity
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
