@@ -61,8 +61,8 @@ class GsaAttributeLinkPair(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "attribute_source": "GsaSlimAttribute",
-        "attribute_target": "GsaSlimAttribute",
+        "attribute_source": "GsaTargetAttribute",
+        "attribute_target": "GsaTargetAttribute",
     }
 
     attribute_map: dict[str, str] = {
@@ -71,8 +71,8 @@ class GsaAttributeLinkPair(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "attributeSource": "GsaSlimAttribute",
-        "attributeTarget": "GsaSlimAttribute",
+        "attributeSource": "GsaTargetAttribute",
+        "attributeTarget": "GsaTargetAttribute",
     }
 
     discriminator: Optional[str] = None
@@ -80,18 +80,18 @@ class GsaAttributeLinkPair(ModelBase):
     def __init__(
         self,
         *,
-        attribute_source: "GsaSlimAttribute | Unset_Type" = Unset,
-        attribute_target: "GsaSlimAttribute | Unset_Type" = Unset,
+        attribute_source: "GsaTargetAttribute | Unset_Type" = Unset,
+        attribute_target: "GsaTargetAttribute | Unset_Type" = Unset,
     ) -> None:
         """GsaAttributeLinkPair - a model defined in Swagger
 
         Parameters
         ----------
-        attribute_source: GsaSlimAttribute, optional
-        attribute_target: GsaSlimAttribute, optional
+        attribute_source: GsaTargetAttribute, optional
+        attribute_target: GsaTargetAttribute, optional
         """
-        self._attribute_source: GsaSlimAttribute | Unset_Type = Unset
-        self._attribute_target: GsaSlimAttribute | Unset_Type = Unset
+        self._attribute_source: GsaTargetAttribute | Unset_Type = Unset
+        self._attribute_target: GsaTargetAttribute | Unset_Type = Unset
 
         if attribute_source is not Unset:
             self.attribute_source = attribute_source
@@ -99,23 +99,23 @@ class GsaAttributeLinkPair(ModelBase):
             self.attribute_target = attribute_target
 
     @property
-    def attribute_source(self) -> "GsaSlimAttribute | Unset_Type":
+    def attribute_source(self) -> "GsaTargetAttribute | Unset_Type":
         """Gets the attribute_source of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaSlimAttribute | Unset_Type
+        GsaTargetAttribute | Unset_Type
             The attribute_source of this GsaAttributeLinkPair.
         """
         return self._attribute_source
 
     @attribute_source.setter
-    def attribute_source(self, attribute_source: "GsaSlimAttribute | Unset_Type") -> None:
+    def attribute_source(self, attribute_source: "GsaTargetAttribute | Unset_Type") -> None:
         """Sets the attribute_source of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_source: GsaSlimAttribute | Unset_Type
+        attribute_source: GsaTargetAttribute | Unset_Type
             The attribute_source of this GsaAttributeLinkPair.
         """
         # Field is not nullable
@@ -124,23 +124,23 @@ class GsaAttributeLinkPair(ModelBase):
         self._attribute_source = attribute_source
 
     @property
-    def attribute_target(self) -> "GsaSlimAttribute | Unset_Type":
+    def attribute_target(self) -> "GsaTargetAttribute | Unset_Type":
         """Gets the attribute_target of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaSlimAttribute | Unset_Type
+        GsaTargetAttribute | Unset_Type
             The attribute_target of this GsaAttributeLinkPair.
         """
         return self._attribute_target
 
     @attribute_target.setter
-    def attribute_target(self, attribute_target: "GsaSlimAttribute | Unset_Type") -> None:
+    def attribute_target(self, attribute_target: "GsaTargetAttribute | Unset_Type") -> None:
         """Sets the attribute_target of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_target: GsaSlimAttribute | Unset_Type
+        attribute_target: GsaTargetAttribute | Unset_Type
             The attribute_target of this GsaAttributeLinkPair.
         """
         # Field is not nullable

@@ -61,10 +61,12 @@ class GsaQueryLayoutSectionFilter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "str",
         "section_items": "GsaQueryLayoutItemFilter",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "section_items": "sectionItems",
     }
 
@@ -77,18 +79,45 @@ class GsaQueryLayoutSectionFilter(ModelBase):
     def __init__(
         self,
         *,
+        name: "str | None | Unset_Type" = Unset,
         section_items: "GsaQueryLayoutItemFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryLayoutSectionFilter - a model defined in Swagger
 
         Parameters
         ----------
+        name: str | None, optional
         section_items: GsaQueryLayoutItemFilter, optional
         """
+        self._name: str | None | Unset_Type = Unset
         self._section_items: GsaQueryLayoutItemFilter | Unset_Type = Unset
 
+        if name is not Unset:
+            self.name = name
         if section_items is not Unset:
             self.section_items = section_items
+
+    @property
+    def name(self) -> "str | None | Unset_Type":
+        """Gets the name of this GsaQueryLayoutSectionFilter.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The name of this GsaQueryLayoutSectionFilter.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | None | Unset_Type") -> None:
+        """Sets the name of this GsaQueryLayoutSectionFilter.
+
+        Parameters
+        ----------
+        name: str | None | Unset_Type
+            The name of this GsaQueryLayoutSectionFilter.
+        """
+        self._name = name
 
     @property
     def section_items(self) -> "GsaQueryLayoutItemFilter | Unset_Type":
