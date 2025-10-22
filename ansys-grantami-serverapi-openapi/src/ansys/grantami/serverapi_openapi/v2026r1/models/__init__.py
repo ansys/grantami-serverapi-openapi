@@ -1046,6 +1046,7 @@ from .gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
 from .gsa_resolved_link_target import GsaResolvedLinkTarget
 from .gsa_resolved_notification_watch import GsaResolvedNotificationWatch
 from .gsa_resolved_notification_watches import GsaResolvedNotificationWatches
+from .gsa_resolved_target_attribute import GsaResolvedTargetAttribute
 from .gsa_response_options import GsaResponseOptions
 from .gsa_resubmit_job_request import GsaResubmitJobRequest
 from .gsa_retarget_potential_request import GsaRetargetPotentialRequest
@@ -1221,9 +1222,11 @@ from .gsa_tabular_datum_row import GsaTabularDatumRow
 from .gsa_tabular_datum_summary_row import GsaTabularDatumSummaryRow
 from .gsa_tabular_linking_value_criterion import GsaTabularLinkingValueCriterion
 from .gsa_tabular_row_export_behavior import GsaTabularRowExportBehavior
+from .gsa_target_attribute import GsaTargetAttribute
 from .gsa_target_attribute_not_in_table_attribute_error_detail import (
     GsaTargetAttributeNotInTableAttributeErrorDetail,
 )
+from .gsa_target_attribute_type import GsaTargetAttributeType
 from .gsa_target_attribute_type_attribute_error_detail import (
     GsaTargetAttributeTypeAttributeErrorDetail,
 )
@@ -1250,6 +1253,7 @@ from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
 from .gsa_unit_usage import GsaUnitUsage
 from .gsa_units_info import GsaUnitsInfo
+from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .gsa_update_all_profiles_info import GsaUpdateAllProfilesInfo
 from .gsa_update_attribute import GsaUpdateAttribute
 from .gsa_update_axis_name import GsaUpdateAxisName
@@ -2230,6 +2234,7 @@ __all__ = [
     "GsaResolvedLinkTarget",
     "GsaResolvedNotificationWatch",
     "GsaResolvedNotificationWatches",
+    "GsaResolvedTargetAttribute",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
     "GsaRetargetPotentialRequest",
@@ -2379,7 +2384,9 @@ __all__ = [
     "GsaTabularDatumSummaryRow",
     "GsaTabularLinkingValueCriterion",
     "GsaTabularRowExportBehavior",
+    "GsaTargetAttribute",
     "GsaTargetAttributeNotInTableAttributeErrorDetail",
+    "GsaTargetAttributeType",
     "GsaTargetAttributeTypeAttributeErrorDetail",
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
@@ -2400,6 +2407,7 @@ __all__ = [
     "GsaUnitSystemsInfo",
     "GsaUnitUsage",
     "GsaUnitsInfo",
+    "GsaUnresolvedTargetAttribute",
     "GsaUpdateAllProfilesInfo",
     "GsaUpdateAttribute",
     "GsaUpdateAxisName",
