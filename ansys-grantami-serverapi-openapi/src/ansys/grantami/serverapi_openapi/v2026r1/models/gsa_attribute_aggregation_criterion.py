@@ -114,52 +114,18 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         is_meta_attribute: bool, optional
         """
         super().__init__(type=type)
-        self._attribute_aggregation_criterion_type: GsaAttributeAggregationType
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._is_meta_attribute: bool | Unset_Type = Unset
+        self._attribute_aggregation_criterion_type: GsaAttributeAggregationType
 
-        self.attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
         if identity is not Unset:
             self.identity = identity
         if guid is not Unset:
             self.guid = guid
         if is_meta_attribute is not Unset:
             self.is_meta_attribute = is_meta_attribute
-
-    @property
-    def attribute_aggregation_criterion_type(self) -> "GsaAttributeAggregationType":
-        """Gets the attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
-
-        Returns
-        -------
-        GsaAttributeAggregationType
-            The attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
-        """
-        return self._attribute_aggregation_criterion_type
-
-    @attribute_aggregation_criterion_type.setter
-    def attribute_aggregation_criterion_type(
-        self, attribute_aggregation_criterion_type: "GsaAttributeAggregationType"
-    ) -> None:
-        """Sets the attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
-
-        Parameters
-        ----------
-        attribute_aggregation_criterion_type: GsaAttributeAggregationType
-            The attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
-        """
-        # Field is not nullable
-        if attribute_aggregation_criterion_type is None:
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_criterion_type', must not be 'None'"
-            )
-        # Field is required
-        if attribute_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError(
-                "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
-            )
-        self._attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
+        self.attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
 
     @property
     def identity(self) -> "int | None | Unset_Type":
@@ -229,6 +195,40 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         if is_meta_attribute is None:
             raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
         self._is_meta_attribute = is_meta_attribute
+
+    @property
+    def attribute_aggregation_criterion_type(self) -> "GsaAttributeAggregationType":
+        """Gets the attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
+
+        Returns
+        -------
+        GsaAttributeAggregationType
+            The attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
+        """
+        return self._attribute_aggregation_criterion_type
+
+    @attribute_aggregation_criterion_type.setter
+    def attribute_aggregation_criterion_type(
+        self, attribute_aggregation_criterion_type: "GsaAttributeAggregationType"
+    ) -> None:
+        """Sets the attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
+
+        Parameters
+        ----------
+        attribute_aggregation_criterion_type: GsaAttributeAggregationType
+            The attribute_aggregation_criterion_type of this GsaAttributeAggregationCriterion.
+        """
+        # Field is not nullable
+        if attribute_aggregation_criterion_type is None:
+            raise ValueError(
+                "Invalid value for 'attribute_aggregation_criterion_type', must not be 'None'"
+            )
+        # Field is required
+        if attribute_aggregation_criterion_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'attribute_aggregation_criterion_type', must not be 'Unset'"
+            )
+        self._attribute_aggregation_criterion_type = attribute_aggregation_criterion_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

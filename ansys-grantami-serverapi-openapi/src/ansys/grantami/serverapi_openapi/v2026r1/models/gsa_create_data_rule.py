@@ -95,69 +95,16 @@ class GsaCreateDataRule(ModelBase):
         regular_expression: str
         guid: str, optional
         """
-        self._name: str
-        self._guid: str | Unset_Type = Unset
         self._description: str
         self._regular_expression: str
+        self._name: str
+        self._guid: str | Unset_Type = Unset
 
+        self.description = description
+        self.regular_expression = regular_expression
         self.name = name
         if guid is not Unset:
             self.guid = guid
-        self.description = description
-        self.regular_expression = regular_expression
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaCreateDataRule.
-
-        Returns
-        -------
-        str
-            The name of this GsaCreateDataRule.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaCreateDataRule.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaCreateDataRule.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateDataRule.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateDataRule.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateDataRule.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateDataRule.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @property
     def description(self) -> "str":
@@ -214,6 +161,59 @@ class GsaCreateDataRule(ModelBase):
         if regular_expression is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'regular_expression', must not be 'Unset'")
         self._regular_expression = regular_expression
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaCreateDataRule.
+
+        Returns
+        -------
+        str
+            The name of this GsaCreateDataRule.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaCreateDataRule.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaCreateDataRule.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateDataRule.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateDataRule.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateDataRule.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateDataRule.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

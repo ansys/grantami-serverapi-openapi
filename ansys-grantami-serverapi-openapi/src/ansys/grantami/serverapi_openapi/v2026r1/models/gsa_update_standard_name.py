@@ -108,19 +108,15 @@ class GsaUpdateStandardName(ModelBase):
         mapped_record_link_groups: list[GsaSlimEntity] | None, optional
         name: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._mapped_attributes: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._mapped_parameters: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._mapped_record_link_groups: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._mapped_cross_database_record_link_groups: list[GsaSlimEntity] | None | Unset_Type = (
             Unset
         )
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if mapped_attributes is not Unset:
             self.mapped_attributes = mapped_attributes
         if mapped_parameters is not Unset:
@@ -129,56 +125,10 @@ class GsaUpdateStandardName(ModelBase):
             self.mapped_record_link_groups = mapped_record_link_groups
         if mapped_cross_database_record_link_groups is not Unset:
             self.mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateStandardName.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateStandardName.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateStandardName.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateStandardName.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateStandardName.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateStandardName.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateStandardName.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateStandardName.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def mapped_attributes(self) -> "list[GsaSlimEntity] | None | Unset_Type":
@@ -275,6 +225,56 @@ class GsaUpdateStandardName(ModelBase):
             The mapped_cross_database_record_link_groups of this GsaUpdateStandardName.
         """
         self._mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateStandardName.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateStandardName.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateStandardName.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateStandardName.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateStandardName.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateStandardName.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateStandardName.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateStandardName.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

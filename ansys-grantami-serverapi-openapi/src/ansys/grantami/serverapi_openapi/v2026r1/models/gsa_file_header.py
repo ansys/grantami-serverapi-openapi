@@ -107,77 +107,21 @@ class GsaFileHeader(ModelBase):
         name: str
         path: str
         """
-        self._name: str
-        self._guid: str
         self._folder_guid: str
         self._description: str
         self._extension: str
         self._data_length: int
         self._path: str
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.folder_guid = folder_guid
         self.description = description
         self.extension = extension
         self.data_length = data_length
         self.path = path
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaFileHeader.
-
-        Returns
-        -------
-        str
-            The name of this GsaFileHeader.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaFileHeader.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaFileHeader.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaFileHeader.
-
-        Returns
-        -------
-        str
-            The guid of this GsaFileHeader.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaFileHeader.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaFileHeader.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def folder_guid(self) -> "str":
@@ -318,6 +262,62 @@ class GsaFileHeader(ModelBase):
         if path is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'path', must not be 'Unset'")
         self._path = path
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaFileHeader.
+
+        Returns
+        -------
+        str
+            The name of this GsaFileHeader.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaFileHeader.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaFileHeader.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaFileHeader.
+
+        Returns
+        -------
+        str
+            The guid of this GsaFileHeader.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaFileHeader.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaFileHeader.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

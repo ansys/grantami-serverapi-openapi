@@ -67,7 +67,6 @@ class GsaUpdateAttribute(ModelBase):
         "about_attribute": "GsaSlimEntity",
         "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -79,7 +78,6 @@ class GsaUpdateAttribute(ModelBase):
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -120,7 +118,6 @@ class GsaUpdateAttribute(ModelBase):
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
@@ -134,26 +131,20 @@ class GsaUpdateAttribute(ModelBase):
         about_attribute: GsaSlimEntity, optional
         axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         guid: str, optional
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         name: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._type: GsaAttributeType
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
         self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._about_attribute: GsaSlimEntity | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
-        self._display_names: dict[str, str] | None | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         self.type = type
         if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
@@ -165,58 +156,10 @@ class GsaUpdateAttribute(ModelBase):
             self.about_attribute = about_attribute
         if is_hidden_from_search_criteria is not Unset:
             self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
-        if display_names is not Unset:
-            self.display_names = display_names
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateAttribute.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateAttribute.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateAttribute.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateAttribute.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateAttribute.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateAttribute.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateAttribute.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateAttribute.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def type(self) -> "GsaAttributeType":
@@ -372,28 +315,54 @@ class GsaUpdateAttribute(ModelBase):
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
 
     @property
-    def display_names(self) -> "dict[str, str] | None | Unset_Type":
-        """Gets the display_names of this GsaUpdateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateAttribute.
 
         Returns
         -------
-        dict[str, str] | None | Unset_Type
-            The display_names of this GsaUpdateAttribute.
+        str | Unset_Type
+            The name of this GsaUpdateAttribute.
         """
-        return self._display_names
+        return self._name
 
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str] | None | Unset_Type") -> None:
-        """Sets the display_names of this GsaUpdateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateAttribute.
 
         Parameters
         ----------
-        display_names: dict[str, str] | None | Unset_Type
-            The display_names of this GsaUpdateAttribute.
+        name: str | Unset_Type
+            The name of this GsaUpdateAttribute.
         """
-        self._display_names = display_names
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateAttribute.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateAttribute.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateAttribute.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateAttribute.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

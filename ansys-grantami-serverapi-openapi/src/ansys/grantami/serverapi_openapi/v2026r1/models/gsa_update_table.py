@@ -66,7 +66,6 @@ class GsaUpdateTable(ModelBase):
         "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
-        "legal_disclaimer": "str",
         "name": "str",
     }
 
@@ -76,7 +75,6 @@ class GsaUpdateTable(ModelBase):
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
-        "legal_disclaimer": "legalDisclaimer",
         "name": "name",
     }
 
@@ -92,7 +90,6 @@ class GsaUpdateTable(ModelBase):
         guid: "str | Unset_Type" = Unset,
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
-        legal_disclaimer: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateTable - a model defined in Swagger
@@ -104,21 +101,15 @@ class GsaUpdateTable(ModelBase):
         guid: str, optional
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
-        legal_disclaimer: str | None, optional
         name: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
         self._default_subset_guid: str | None | Unset_Type = Unset
         self._default_layout_guid: str | None | Unset_Type = Unset
-        self._legal_disclaimer: str | None | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if is_hidden_from_browse is not Unset:
             self.is_hidden_from_browse = is_hidden_from_browse
         if is_hidden_from_search is not Unset:
@@ -127,58 +118,10 @@ class GsaUpdateTable(ModelBase):
             self.default_subset_guid = default_subset_guid
         if default_layout_guid is not Unset:
             self.default_layout_guid = default_layout_guid
-        if legal_disclaimer is not Unset:
-            self.legal_disclaimer = legal_disclaimer
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateTable.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateTable.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateTable.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateTable.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateTable.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateTable.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateTable.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateTable.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def is_hidden_from_browse(self) -> "bool | Unset_Type":
@@ -275,26 +218,54 @@ class GsaUpdateTable(ModelBase):
         self._default_layout_guid = default_layout_guid
 
     @property
-    def legal_disclaimer(self) -> "str | None | Unset_Type":
-        """Gets the legal_disclaimer of this GsaUpdateTable.
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateTable.
 
         Returns
         -------
-        str | None | Unset_Type
-            The legal_disclaimer of this GsaUpdateTable.
+        str | Unset_Type
+            The name of this GsaUpdateTable.
         """
-        return self._legal_disclaimer
+        return self._name
 
-    @legal_disclaimer.setter
-    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
-        """Sets the legal_disclaimer of this GsaUpdateTable.
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateTable.
 
         Parameters
         ----------
-        legal_disclaimer: str | None | Unset_Type
-            The legal_disclaimer of this GsaUpdateTable.
+        name: str | Unset_Type
+            The name of this GsaUpdateTable.
         """
-        self._legal_disclaimer = legal_disclaimer
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateTable.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateTable.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

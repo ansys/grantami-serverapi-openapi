@@ -99,37 +99,12 @@ class GsaNewLayoutItem(ModelBase):
         item_type: GsaNewLayoutItemType
         guid: str, optional
         """
-        self._guid: str | Unset_Type = Unset
         self._item_type: GsaNewLayoutItemType
+        self._guid: str | Unset_Type = Unset
 
+        self.item_type = item_type
         if guid is not Unset:
             self.guid = guid
-        self.item_type = item_type
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaNewLayoutItem.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaNewLayoutItem.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaNewLayoutItem.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaNewLayoutItem.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @property
     def item_type(self) -> "GsaNewLayoutItemType":
@@ -158,6 +133,31 @@ class GsaNewLayoutItem(ModelBase):
         if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
         self._item_type = item_type
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaNewLayoutItem.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaNewLayoutItem.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaNewLayoutItem.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaNewLayoutItem.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

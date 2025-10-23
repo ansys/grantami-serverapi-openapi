@@ -64,7 +64,6 @@ class GsaSlimAttribute(ModelBase):
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_search_criteria": "bool",
-        "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
@@ -75,7 +74,6 @@ class GsaSlimAttribute(ModelBase):
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
-        "is_protected": "isProtected",
         "name": "name",
         "table": "table",
         "type": "type",
@@ -96,7 +94,6 @@ class GsaSlimAttribute(ModelBase):
         display_names: "dict[str, str]",
         guid: "str",
         is_hidden_from_search_criteria: "bool",
-        is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType",
@@ -109,86 +106,27 @@ class GsaSlimAttribute(ModelBase):
         display_names: dict[str, str]
         guid: str
         is_hidden_from_search_criteria: bool
-        is_protected: bool
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         """
-        self._name: str
-        self._guid: str
         self._type: GsaAttributeType
         self._about_attribute: GsaSlimTypedAttribute | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool
-        self._is_protected: bool
         self._table: GsaSlimEntity
         self._display_names: dict[str, str]
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.type = type
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
-        self.is_protected = is_protected
         self.table = table
         self.display_names = display_names
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaSlimAttribute.
-
-        Returns
-        -------
-        str
-            The name of this GsaSlimAttribute.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaSlimAttribute.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaSlimAttribute.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaSlimAttribute.
-
-        Returns
-        -------
-        str
-            The guid of this GsaSlimAttribute.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaSlimAttribute.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaSlimAttribute.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def type(self) -> "GsaAttributeType":
@@ -278,36 +216,6 @@ class GsaSlimAttribute(ModelBase):
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
 
     @property
-    def is_protected(self) -> "bool":
-        """Gets the is_protected of this GsaSlimAttribute.
-        If true, the attribute is protected from all changes.
-
-        Returns
-        -------
-        bool
-            The is_protected of this GsaSlimAttribute.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool") -> None:
-        """Sets the is_protected of this GsaSlimAttribute.
-        If true, the attribute is protected from all changes.
-
-        Parameters
-        ----------
-        is_protected: bool
-            The is_protected of this GsaSlimAttribute.
-        """
-        # Field is not nullable
-        if is_protected is None:
-            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
-        # Field is required
-        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
-        self._is_protected = is_protected
-
-    @property
     def table(self) -> "GsaSlimEntity":
         """Gets the table of this GsaSlimAttribute.
 
@@ -362,6 +270,62 @@ class GsaSlimAttribute(ModelBase):
         if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaSlimAttribute.
+
+        Returns
+        -------
+        str
+            The name of this GsaSlimAttribute.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaSlimAttribute.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaSlimAttribute.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaSlimAttribute.
+
+        Returns
+        -------
+        str
+            The guid of this GsaSlimAttribute.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaSlimAttribute.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaSlimAttribute.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

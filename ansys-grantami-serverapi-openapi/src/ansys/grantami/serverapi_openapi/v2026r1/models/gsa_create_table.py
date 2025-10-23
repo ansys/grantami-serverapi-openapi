@@ -65,7 +65,6 @@ class GsaCreateTable(ModelBase):
         "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
-        "legal_disclaimer": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -73,7 +72,6 @@ class GsaCreateTable(ModelBase):
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
-        "legal_disclaimer": "legalDisclaimer",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -87,7 +85,6 @@ class GsaCreateTable(ModelBase):
         guid: "str | Unset_Type" = Unset,
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
-        legal_disclaimer: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateTable - a model defined in Swagger
 
@@ -97,23 +94,69 @@ class GsaCreateTable(ModelBase):
         guid: str, optional
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
-        legal_disclaimer: str | None, optional
         """
-        self._name: str
-        self._guid: str | Unset_Type = Unset
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
-        self._legal_disclaimer: str | None | Unset_Type = Unset
+        self._name: str
+        self._guid: str | Unset_Type = Unset
 
-        self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if is_hidden_from_browse is not Unset:
             self.is_hidden_from_browse = is_hidden_from_browse
         if is_hidden_from_search is not Unset:
             self.is_hidden_from_search = is_hidden_from_search
-        if legal_disclaimer is not Unset:
-            self.legal_disclaimer = legal_disclaimer
+        self.name = name
+        if guid is not Unset:
+            self.guid = guid
+
+    @property
+    def is_hidden_from_browse(self) -> "bool | Unset_Type":
+        """Gets the is_hidden_from_browse of this GsaCreateTable.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The is_hidden_from_browse of this GsaCreateTable.
+        """
+        return self._is_hidden_from_browse
+
+    @is_hidden_from_browse.setter
+    def is_hidden_from_browse(self, is_hidden_from_browse: "bool | Unset_Type") -> None:
+        """Sets the is_hidden_from_browse of this GsaCreateTable.
+
+        Parameters
+        ----------
+        is_hidden_from_browse: bool | Unset_Type
+            The is_hidden_from_browse of this GsaCreateTable.
+        """
+        # Field is not nullable
+        if is_hidden_from_browse is None:
+            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
+        self._is_hidden_from_browse = is_hidden_from_browse
+
+    @property
+    def is_hidden_from_search(self) -> "bool | Unset_Type":
+        """Gets the is_hidden_from_search of this GsaCreateTable.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The is_hidden_from_search of this GsaCreateTable.
+        """
+        return self._is_hidden_from_search
+
+    @is_hidden_from_search.setter
+    def is_hidden_from_search(self, is_hidden_from_search: "bool | Unset_Type") -> None:
+        """Sets the is_hidden_from_search of this GsaCreateTable.
+
+        Parameters
+        ----------
+        is_hidden_from_search: bool | Unset_Type
+            The is_hidden_from_search of this GsaCreateTable.
+        """
+        # Field is not nullable
+        if is_hidden_from_search is None:
+            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
+        self._is_hidden_from_search = is_hidden_from_search
 
     @property
     def name(self) -> "str":
@@ -167,78 +210,6 @@ class GsaCreateTable(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
-
-    @property
-    def is_hidden_from_browse(self) -> "bool | Unset_Type":
-        """Gets the is_hidden_from_browse of this GsaCreateTable.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The is_hidden_from_browse of this GsaCreateTable.
-        """
-        return self._is_hidden_from_browse
-
-    @is_hidden_from_browse.setter
-    def is_hidden_from_browse(self, is_hidden_from_browse: "bool | Unset_Type") -> None:
-        """Sets the is_hidden_from_browse of this GsaCreateTable.
-
-        Parameters
-        ----------
-        is_hidden_from_browse: bool | Unset_Type
-            The is_hidden_from_browse of this GsaCreateTable.
-        """
-        # Field is not nullable
-        if is_hidden_from_browse is None:
-            raise ValueError("Invalid value for 'is_hidden_from_browse', must not be 'None'")
-        self._is_hidden_from_browse = is_hidden_from_browse
-
-    @property
-    def is_hidden_from_search(self) -> "bool | Unset_Type":
-        """Gets the is_hidden_from_search of this GsaCreateTable.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The is_hidden_from_search of this GsaCreateTable.
-        """
-        return self._is_hidden_from_search
-
-    @is_hidden_from_search.setter
-    def is_hidden_from_search(self, is_hidden_from_search: "bool | Unset_Type") -> None:
-        """Sets the is_hidden_from_search of this GsaCreateTable.
-
-        Parameters
-        ----------
-        is_hidden_from_search: bool | Unset_Type
-            The is_hidden_from_search of this GsaCreateTable.
-        """
-        # Field is not nullable
-        if is_hidden_from_search is None:
-            raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
-        self._is_hidden_from_search = is_hidden_from_search
-
-    @property
-    def legal_disclaimer(self) -> "str | None | Unset_Type":
-        """Gets the legal_disclaimer of this GsaCreateTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The legal_disclaimer of this GsaCreateTable.
-        """
-        return self._legal_disclaimer
-
-    @legal_disclaimer.setter
-    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
-        """Sets the legal_disclaimer of this GsaCreateTable.
-
-        Parameters
-        ----------
-        legal_disclaimer: str | None | Unset_Type
-            The legal_disclaimer of this GsaCreateTable.
-        """
-        self._legal_disclaimer = legal_disclaimer
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

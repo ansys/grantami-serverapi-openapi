@@ -64,7 +64,6 @@ class GsaDiscreteType(ModelBase):
         "discrete_values": "list[GsaDiscreteValuesDiscreteValue]",
         "guid": "str",
         "is_ordered": "bool",
-        "is_protected": "bool",
         "name": "str",
     }
 
@@ -72,7 +71,6 @@ class GsaDiscreteType(ModelBase):
         "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
-        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -88,7 +86,6 @@ class GsaDiscreteType(ModelBase):
         discrete_values: "list[GsaDiscreteValuesDiscreteValue]",
         guid: "str",
         is_ordered: "bool",
-        is_protected: "bool",
         name: "str",
     ) -> None:
         """GsaDiscreteType - a model defined in Swagger
@@ -98,76 +95,17 @@ class GsaDiscreteType(ModelBase):
         discrete_values: list[GsaDiscreteValuesDiscreteValue]
         guid: str
         is_ordered: bool
-        is_protected: bool
         name: str
         """
-        self._name: str
-        self._guid: str
         self._discrete_values: list[GsaDiscreteValuesDiscreteValue]
         self._is_ordered: bool
-        self._is_protected: bool
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.discrete_values = discrete_values
         self.is_ordered = is_ordered
-        self.is_protected = is_protected
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaDiscreteType.
-
-        Returns
-        -------
-        str
-            The name of this GsaDiscreteType.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaDiscreteType.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaDiscreteType.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaDiscreteType.
-
-        Returns
-        -------
-        str
-            The guid of this GsaDiscreteType.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaDiscreteType.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaDiscreteType.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def discrete_values(self) -> "list[GsaDiscreteValuesDiscreteValue]":
@@ -226,34 +164,60 @@ class GsaDiscreteType(ModelBase):
         self._is_ordered = is_ordered
 
     @property
-    def is_protected(self) -> "bool":
-        """Gets the is_protected of this GsaDiscreteType.
-        If true, the discrete type is protected from all changes.
+    def name(self) -> "str":
+        """Gets the name of this GsaDiscreteType.
 
         Returns
         -------
-        bool
-            The is_protected of this GsaDiscreteType.
+        str
+            The name of this GsaDiscreteType.
         """
-        return self._is_protected
+        return self._name
 
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool") -> None:
-        """Sets the is_protected of this GsaDiscreteType.
-        If true, the discrete type is protected from all changes.
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaDiscreteType.
 
         Parameters
         ----------
-        is_protected: bool
-            The is_protected of this GsaDiscreteType.
+        name: str
+            The name of this GsaDiscreteType.
         """
         # Field is not nullable
-        if is_protected is None:
-            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
         # Field is required
-        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
-        self._is_protected = is_protected
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaDiscreteType.
+
+        Returns
+        -------
+        str
+            The guid of this GsaDiscreteType.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaDiscreteType.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaDiscreteType.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

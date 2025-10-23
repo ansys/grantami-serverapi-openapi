@@ -97,71 +97,15 @@ class GsaLayoutTabularColumn(ModelBase):
         name: str
         tabular_column_guid: str
         """
-        self._name: str
-        self._guid: str
         self._column_type: GsaTabularColumnDtoType
         self._tabular_column_guid: str
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.column_type = column_type
         self.tabular_column_guid = tabular_column_guid
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaLayoutTabularColumn.
-
-        Returns
-        -------
-        str
-            The name of this GsaLayoutTabularColumn.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaLayoutTabularColumn.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaLayoutTabularColumn.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaLayoutTabularColumn.
-
-        Returns
-        -------
-        str
-            The guid of this GsaLayoutTabularColumn.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaLayoutTabularColumn.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaLayoutTabularColumn.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def column_type(self) -> "GsaTabularColumnDtoType":
@@ -218,6 +162,62 @@ class GsaLayoutTabularColumn(ModelBase):
         if tabular_column_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'tabular_column_guid', must not be 'Unset'")
         self._tabular_column_guid = tabular_column_guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaLayoutTabularColumn.
+
+        Returns
+        -------
+        str
+            The name of this GsaLayoutTabularColumn.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaLayoutTabularColumn.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaLayoutTabularColumn.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaLayoutTabularColumn.
+
+        Returns
+        -------
+        str
+            The guid of this GsaLayoutTabularColumn.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaLayoutTabularColumn.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaLayoutTabularColumn.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

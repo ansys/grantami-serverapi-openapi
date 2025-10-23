@@ -98,15 +98,37 @@ class GsaAttributeToExport(ModelBase):
         guid: str | None, optional
         identity: int | None, optional
         """
+        self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._attribute_type: str | None
-        self._identity: int | None | Unset_Type = Unset
 
+        if identity is not Unset:
+            self.identity = identity
         if guid is not Unset:
             self.guid = guid
         self.attribute_type = attribute_type
-        if identity is not Unset:
-            self.identity = identity
+
+    @property
+    def identity(self) -> "int | None | Unset_Type":
+        """Gets the identity of this GsaAttributeToExport.
+
+        Returns
+        -------
+        int | None | Unset_Type
+            The identity of this GsaAttributeToExport.
+        """
+        return self._identity
+
+    @identity.setter
+    def identity(self, identity: "int | None | Unset_Type") -> None:
+        """Sets the identity of this GsaAttributeToExport.
+
+        Parameters
+        ----------
+        identity: int | None | Unset_Type
+            The identity of this GsaAttributeToExport.
+        """
+        self._identity = identity
 
     @property
     def guid(self) -> "str | None | Unset_Type":
@@ -154,28 +176,6 @@ class GsaAttributeToExport(ModelBase):
         if attribute_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_type', must not be 'Unset'")
         self._attribute_type = attribute_type
-
-    @property
-    def identity(self) -> "int | None | Unset_Type":
-        """Gets the identity of this GsaAttributeToExport.
-
-        Returns
-        -------
-        int | None | Unset_Type
-            The identity of this GsaAttributeToExport.
-        """
-        return self._identity
-
-    @identity.setter
-    def identity(self, identity: "int | None | Unset_Type") -> None:
-        """Sets the identity of this GsaAttributeToExport.
-
-        Parameters
-        ----------
-        identity: int | None | Unset_Type
-            The identity of this GsaAttributeToExport.
-        """
-        self._identity = identity
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

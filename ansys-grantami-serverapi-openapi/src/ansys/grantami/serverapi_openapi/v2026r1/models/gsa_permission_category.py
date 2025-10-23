@@ -93,13 +93,41 @@ class GsaPermissionCategory(ModelBase):
         name: str
         permissions: list[GsaSlimNamedEntity]
         """
+        self._permissions: list[GsaSlimNamedEntity]
         self._name: str
         self._guid: str
-        self._permissions: list[GsaSlimNamedEntity]
 
+        self.permissions = permissions
         self.name = name
         self.guid = guid
-        self.permissions = permissions
+
+    @property
+    def permissions(self) -> "list[GsaSlimNamedEntity]":
+        """Gets the permissions of this GsaPermissionCategory.
+
+        Returns
+        -------
+        list[GsaSlimNamedEntity]
+            The permissions of this GsaPermissionCategory.
+        """
+        return self._permissions
+
+    @permissions.setter
+    def permissions(self, permissions: "list[GsaSlimNamedEntity]") -> None:
+        """Sets the permissions of this GsaPermissionCategory.
+
+        Parameters
+        ----------
+        permissions: list[GsaSlimNamedEntity]
+            The permissions of this GsaPermissionCategory.
+        """
+        # Field is not nullable
+        if permissions is None:
+            raise ValueError("Invalid value for 'permissions', must not be 'None'")
+        # Field is required
+        if permissions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'permissions', must not be 'Unset'")
+        self._permissions = permissions
 
     @property
     def name(self) -> "str":
@@ -156,34 +184,6 @@ class GsaPermissionCategory(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def permissions(self) -> "list[GsaSlimNamedEntity]":
-        """Gets the permissions of this GsaPermissionCategory.
-
-        Returns
-        -------
-        list[GsaSlimNamedEntity]
-            The permissions of this GsaPermissionCategory.
-        """
-        return self._permissions
-
-    @permissions.setter
-    def permissions(self, permissions: "list[GsaSlimNamedEntity]") -> None:
-        """Sets the permissions of this GsaPermissionCategory.
-
-        Parameters
-        ----------
-        permissions: list[GsaSlimNamedEntity]
-            The permissions of this GsaPermissionCategory.
-        """
-        # Field is not nullable
-        if permissions is None:
-            raise ValueError("Invalid value for 'permissions', must not be 'None'")
-        # Field is required
-        if permissions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'permissions', must not be 'Unset'")
-        self._permissions = permissions
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

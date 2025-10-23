@@ -99,47 +99,19 @@ class GsaUnit(ModelBase):
         equation: str | None, optional
         relative_symbol: str | None, optional
         """
-        self._guid: str
         self._equation: str | None | Unset_Type = Unset
         self._name: str
         self._symbol: str
         self._relative_symbol: str | None | Unset_Type = Unset
+        self._guid: str
 
-        self.guid = guid
         if equation is not Unset:
             self.equation = equation
         self.name = name
         self.symbol = symbol
         if relative_symbol is not Unset:
             self.relative_symbol = relative_symbol
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaUnit.
-
-        Returns
-        -------
-        str
-            The guid of this GsaUnit.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaUnit.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaUnit.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.guid = guid
 
     @property
     def equation(self) -> "str | None | Unset_Type":
@@ -240,6 +212,34 @@ class GsaUnit(ModelBase):
             The relative_symbol of this GsaUnit.
         """
         self._relative_symbol = relative_symbol
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaUnit.
+
+        Returns
+        -------
+        str
+            The guid of this GsaUnit.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaUnit.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaUnit.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

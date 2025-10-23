@@ -97,69 +97,19 @@ class GsaUpdateExpression(ModelBase):
         unit: GsaSlimEntity, optional
         value: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._value: str | Unset_Type = Unset
         self._unit: GsaSlimEntity | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if value is not Unset:
             self.value = value
         if unit is not Unset:
             self.unit = unit
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateExpression.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateExpression.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateExpression.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateExpression.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateExpression.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateExpression.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateExpression.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateExpression.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def value(self) -> "str | Unset_Type":
@@ -210,6 +160,56 @@ class GsaUpdateExpression(ModelBase):
         if unit is None:
             raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateExpression.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateExpression.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateExpression.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateExpression.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateExpression.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateExpression.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateExpression.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateExpression.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

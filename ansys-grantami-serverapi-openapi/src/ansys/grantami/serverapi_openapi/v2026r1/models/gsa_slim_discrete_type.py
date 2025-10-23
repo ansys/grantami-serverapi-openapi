@@ -63,14 +63,12 @@ class GsaSlimDiscreteType(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "is_ordered": "bool",
-        "is_protected": "bool",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "is_ordered": "isOrdered",
-        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -83,7 +81,6 @@ class GsaSlimDiscreteType(ModelBase):
         *,
         guid: "str",
         is_ordered: "bool",
-        is_protected: "bool",
         name: "str",
     ) -> None:
         """GsaSlimDiscreteType - a model defined in Swagger
@@ -92,18 +89,43 @@ class GsaSlimDiscreteType(ModelBase):
         ----------
         guid: str
         is_ordered: bool
-        is_protected: bool
         name: str
         """
+        self._is_ordered: bool
         self._name: str
         self._guid: str
-        self._is_ordered: bool
-        self._is_protected: bool
 
+        self.is_ordered = is_ordered
         self.name = name
         self.guid = guid
-        self.is_ordered = is_ordered
-        self.is_protected = is_protected
+
+    @property
+    def is_ordered(self) -> "bool":
+        """Gets the is_ordered of this GsaSlimDiscreteType.
+
+        Returns
+        -------
+        bool
+            The is_ordered of this GsaSlimDiscreteType.
+        """
+        return self._is_ordered
+
+    @is_ordered.setter
+    def is_ordered(self, is_ordered: "bool") -> None:
+        """Sets the is_ordered of this GsaSlimDiscreteType.
+
+        Parameters
+        ----------
+        is_ordered: bool
+            The is_ordered of this GsaSlimDiscreteType.
+        """
+        # Field is not nullable
+        if is_ordered is None:
+            raise ValueError("Invalid value for 'is_ordered', must not be 'None'")
+        # Field is required
+        if is_ordered is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_ordered', must not be 'Unset'")
+        self._is_ordered = is_ordered
 
     @property
     def name(self) -> "str":
@@ -160,64 +182,6 @@ class GsaSlimDiscreteType(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def is_ordered(self) -> "bool":
-        """Gets the is_ordered of this GsaSlimDiscreteType.
-
-        Returns
-        -------
-        bool
-            The is_ordered of this GsaSlimDiscreteType.
-        """
-        return self._is_ordered
-
-    @is_ordered.setter
-    def is_ordered(self, is_ordered: "bool") -> None:
-        """Sets the is_ordered of this GsaSlimDiscreteType.
-
-        Parameters
-        ----------
-        is_ordered: bool
-            The is_ordered of this GsaSlimDiscreteType.
-        """
-        # Field is not nullable
-        if is_ordered is None:
-            raise ValueError("Invalid value for 'is_ordered', must not be 'None'")
-        # Field is required
-        if is_ordered is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_ordered', must not be 'Unset'")
-        self._is_ordered = is_ordered
-
-    @property
-    def is_protected(self) -> "bool":
-        """Gets the is_protected of this GsaSlimDiscreteType.
-        If true, the discrete type is protected from all changes.
-
-        Returns
-        -------
-        bool
-            The is_protected of this GsaSlimDiscreteType.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool") -> None:
-        """Sets the is_protected of this GsaSlimDiscreteType.
-        If true, the discrete type is protected from all changes.
-
-        Parameters
-        ----------
-        is_protected: bool
-            The is_protected of this GsaSlimDiscreteType.
-        """
-        # Field is not nullable
-        if is_protected is None:
-            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
-        # Field is required
-        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
-        self._is_protected = is_protected
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

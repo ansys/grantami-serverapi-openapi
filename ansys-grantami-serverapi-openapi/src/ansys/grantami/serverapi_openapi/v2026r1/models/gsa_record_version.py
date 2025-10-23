@@ -61,6 +61,7 @@ class GsaRecordVersion(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "capabilities": "GsaRecordCapabilities",
         "created_by_user": "str",
         "created_date": "datetime",
         "database_key": "str",
@@ -73,13 +74,13 @@ class GsaRecordVersion(ModelBase):
         "record_type": "GsaRecordType",
         "short_name": "str",
         "table": "GsaSlimTable",
-        "user_capabilities": "GsaRecordUserCapabilities",
         "version_number": "int",
         "version_state": "GsaVersionState",
         "released_date": "datetime",
     }
 
     attribute_map: dict[str, str] = {
+        "capabilities": "capabilities",
         "created_by_user": "createdByUser",
         "created_date": "createdDate",
         "database_key": "databaseKey",
@@ -92,7 +93,6 @@ class GsaRecordVersion(ModelBase):
         "record_type": "recordType",
         "short_name": "shortName",
         "table": "table",
-        "user_capabilities": "userCapabilities",
         "version_number": "versionNumber",
         "version_state": "versionState",
         "released_date": "releasedDate",
@@ -103,7 +103,7 @@ class GsaRecordVersion(ModelBase):
         "table": "GsaSlimTable",
         "recordType": "GsaRecordType",
         "recordColor": "GsaRecordColor",
-        "userCapabilities": "GsaRecordUserCapabilities",
+        "capabilities": "GsaRecordCapabilities",
         "versionState": "GsaVersionState",
     }
 
@@ -112,6 +112,7 @@ class GsaRecordVersion(ModelBase):
     def __init__(
         self,
         *,
+        capabilities: "GsaRecordCapabilities",
         created_by_user: "str",
         created_date: "datetime",
         database_key: "str",
@@ -124,7 +125,6 @@ class GsaRecordVersion(ModelBase):
         record_type: "GsaRecordType",
         short_name: "str",
         table: "GsaSlimTable",
-        user_capabilities: "GsaRecordUserCapabilities",
         version_number: "int",
         version_state: "GsaVersionState",
         released_date: "datetime | None | Unset_Type" = Unset,
@@ -133,6 +133,7 @@ class GsaRecordVersion(ModelBase):
 
         Parameters
         ----------
+        capabilities: GsaRecordCapabilities
         created_by_user: str
         created_date: datetime
         database_key: str
@@ -145,13 +146,10 @@ class GsaRecordVersion(ModelBase):
         record_type: GsaRecordType
         short_name: str
         table: GsaSlimTable
-        user_capabilities: GsaRecordUserCapabilities
         version_number: int
         version_state: GsaVersionState
         released_date: datetime | None, optional
         """
-        self._name: str
-        self._guid: str
         self._record_history: GsaSlimRecordHistory
         self._table: GsaSlimTable
         self._database_key: str
@@ -163,12 +161,12 @@ class GsaRecordVersion(ModelBase):
         self._released_date: datetime | None | Unset_Type = Unset
         self._short_name: str
         self._record_color: GsaRecordColor
-        self._user_capabilities: GsaRecordUserCapabilities
+        self._capabilities: GsaRecordCapabilities
         self._version_number: int
         self._version_state: GsaVersionState
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.record_history = record_history
         self.table = table
         self.database_key = database_key
@@ -181,65 +179,11 @@ class GsaRecordVersion(ModelBase):
             self.released_date = released_date
         self.short_name = short_name
         self.record_color = record_color
-        self.user_capabilities = user_capabilities
+        self.capabilities = capabilities
         self.version_number = version_number
         self.version_state = version_state
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaRecordVersion.
-
-        Returns
-        -------
-        str
-            The name of this GsaRecordVersion.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaRecordVersion.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaRecordVersion.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaRecordVersion.
-
-        Returns
-        -------
-        str
-            The guid of this GsaRecordVersion.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaRecordVersion.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaRecordVersion.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def record_history(self) -> "GsaSlimRecordHistory":
@@ -544,32 +488,32 @@ class GsaRecordVersion(ModelBase):
         self._record_color = record_color
 
     @property
-    def user_capabilities(self) -> "GsaRecordUserCapabilities":
-        """Gets the user_capabilities of this GsaRecordVersion.
+    def capabilities(self) -> "GsaRecordCapabilities":
+        """Gets the capabilities of this GsaRecordVersion.
 
         Returns
         -------
-        GsaRecordUserCapabilities
-            The user_capabilities of this GsaRecordVersion.
+        GsaRecordCapabilities
+            The capabilities of this GsaRecordVersion.
         """
-        return self._user_capabilities
+        return self._capabilities
 
-    @user_capabilities.setter
-    def user_capabilities(self, user_capabilities: "GsaRecordUserCapabilities") -> None:
-        """Sets the user_capabilities of this GsaRecordVersion.
+    @capabilities.setter
+    def capabilities(self, capabilities: "GsaRecordCapabilities") -> None:
+        """Sets the capabilities of this GsaRecordVersion.
 
         Parameters
         ----------
-        user_capabilities: GsaRecordUserCapabilities
-            The user_capabilities of this GsaRecordVersion.
+        capabilities: GsaRecordCapabilities
+            The capabilities of this GsaRecordVersion.
         """
         # Field is not nullable
-        if user_capabilities is None:
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'None'")
+        if capabilities is None:
+            raise ValueError("Invalid value for 'capabilities', must not be 'None'")
         # Field is required
-        if user_capabilities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'Unset'")
-        self._user_capabilities = user_capabilities
+        if capabilities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'capabilities', must not be 'Unset'")
+        self._capabilities = capabilities
 
     @property
     def version_number(self) -> "int":
@@ -626,6 +570,62 @@ class GsaRecordVersion(ModelBase):
         if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaRecordVersion.
+
+        Returns
+        -------
+        str
+            The name of this GsaRecordVersion.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaRecordVersion.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaRecordVersion.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaRecordVersion.
+
+        Returns
+        -------
+        str
+            The guid of this GsaRecordVersion.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaRecordVersion.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaRecordVersion.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

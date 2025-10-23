@@ -65,7 +65,6 @@ class GsaUpdateParameter(ModelBase):
     swagger_types: dict[str, str] = {
         "type": "GsaParameterType",
         "default_parameter_value_guid": "str",
-        "default_parameter_value_index": "int",
         "guid": "str",
         "help_path": "str",
         "name": "str",
@@ -74,7 +73,6 @@ class GsaUpdateParameter(ModelBase):
     attribute_map: dict[str, str] = {
         "type": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
-        "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
         "help_path": "helpPath",
         "name": "name",
@@ -96,7 +94,6 @@ class GsaUpdateParameter(ModelBase):
         *,
         type: "GsaParameterType",
         default_parameter_value_guid: "str | Unset_Type" = Unset,
-        default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
@@ -107,79 +104,25 @@ class GsaUpdateParameter(ModelBase):
         ----------
         type: GsaParameterType
         default_parameter_value_guid: str, optional
-        default_parameter_value_index: int, optional
         guid: str, optional
         help_path: str | None, optional
         name: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._type: GsaParameterType
         self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_guid: str | Unset_Type = Unset
-        self._default_parameter_value_index: int | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         self.type = type
         if help_path is not Unset:
             self.help_path = help_path
         if default_parameter_value_guid is not Unset:
             self.default_parameter_value_guid = default_parameter_value_guid
-        if default_parameter_value_index is not Unset:
-            self.default_parameter_value_index = default_parameter_value_index
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateParameter.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateParameter.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateParameter.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateParameter.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateParameter.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateParameter.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateParameter.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateParameter.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def type(self) -> "GsaParameterType":
@@ -234,7 +177,6 @@ class GsaUpdateParameter(ModelBase):
     @property
     def default_parameter_value_guid(self) -> "str | Unset_Type":
         """Gets the default_parameter_value_guid of this GsaUpdateParameter.
-        Use to set the default value when the parameter value GUID is known.
 
         Returns
         -------
@@ -248,7 +190,6 @@ class GsaUpdateParameter(ModelBase):
         self, default_parameter_value_guid: "str | Unset_Type"
     ) -> None:
         """Sets the default_parameter_value_guid of this GsaUpdateParameter.
-        Use to set the default value when the parameter value GUID is known.
 
         Parameters
         ----------
@@ -261,35 +202,54 @@ class GsaUpdateParameter(ModelBase):
         self._default_parameter_value_guid = default_parameter_value_guid
 
     @property
-    def default_parameter_value_index(self) -> "int | Unset_Type":
-        """Gets the default_parameter_value_index of this GsaUpdateParameter.
-        Use to set the default value when also updating parameter values, if the parameter value GUID is not known.  For example when creating a new parameter value.
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateParameter.
 
         Returns
         -------
-        int | Unset_Type
-            The default_parameter_value_index of this GsaUpdateParameter.
+        str | Unset_Type
+            The name of this GsaUpdateParameter.
         """
-        return self._default_parameter_value_index
+        return self._name
 
-    @default_parameter_value_index.setter
-    def default_parameter_value_index(
-        self, default_parameter_value_index: "int | Unset_Type"
-    ) -> None:
-        """Sets the default_parameter_value_index of this GsaUpdateParameter.
-        Use to set the default value when also updating parameter values, if the parameter value GUID is not known.  For example when creating a new parameter value.
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateParameter.
 
         Parameters
         ----------
-        default_parameter_value_index: int | Unset_Type
-            The default_parameter_value_index of this GsaUpdateParameter.
+        name: str | Unset_Type
+            The name of this GsaUpdateParameter.
         """
         # Field is not nullable
-        if default_parameter_value_index is None:
-            raise ValueError(
-                "Invalid value for 'default_parameter_value_index', must not be 'None'"
-            )
-        self._default_parameter_value_index = default_parameter_value_index
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateParameter.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateParameter.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateParameter.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateParameter.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

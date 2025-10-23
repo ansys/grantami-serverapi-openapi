@@ -91,16 +91,41 @@ class GsaUpdateReplacementString(ModelBase):
         name: str, optional
         value: str, optional
         """
+        self._value: str | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
-        self._value: str | Unset_Type = Unset
 
+        if value is not Unset:
+            self.value = value
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-        if value is not Unset:
-            self.value = value
+
+    @property
+    def value(self) -> "str | Unset_Type":
+        """Gets the value of this GsaUpdateReplacementString.
+
+        Returns
+        -------
+        str | Unset_Type
+            The value of this GsaUpdateReplacementString.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str | Unset_Type") -> None:
+        """Sets the value of this GsaUpdateReplacementString.
+
+        Parameters
+        ----------
+        value: str | Unset_Type
+            The value of this GsaUpdateReplacementString.
+        """
+        # Field is not nullable
+        if value is None:
+            raise ValueError("Invalid value for 'value', must not be 'None'")
+        self._value = value
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -151,31 +176,6 @@ class GsaUpdateReplacementString(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
-
-    @property
-    def value(self) -> "str | Unset_Type":
-        """Gets the value of this GsaUpdateReplacementString.
-
-        Returns
-        -------
-        str | Unset_Type
-            The value of this GsaUpdateReplacementString.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str | Unset_Type") -> None:
-        """Sets the value of this GsaUpdateReplacementString.
-
-        Parameters
-        ----------
-        value: str | Unset_Type
-            The value of this GsaUpdateReplacementString.
-        """
-        # Field is not nullable
-        if value is None:
-            raise ValueError("Invalid value for 'value', must not be 'None'")
-        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
