@@ -134,18 +134,15 @@ class GsaCreateTabularColumn(ModelBase):
         summary_row_roll_up_type: GsaTabularColumnRollUpType, optional
         summary_row_text: str | None, optional
         """
-        self._name: str
-        self._guid: str | Unset_Type = Unset
         self._column_type: GsaTabularColumnDtoType
         self._show_as_link: bool | Unset_Type = Unset
         self._summary_row_enabled: bool | Unset_Type = Unset
         self._summary_row_text: str | None | Unset_Type = Unset
         self._roll_up_type: GsaTabularColumnRollUpType | Unset_Type = Unset
         self._summary_row_roll_up_type: GsaTabularColumnRollUpType | Unset_Type = Unset
+        self._name: str
+        self._guid: str | Unset_Type = Unset
 
-        self.name = name
-        if guid is not Unset:
-            self.guid = guid
         self.column_type = column_type
         if show_as_link is not Unset:
             self.show_as_link = show_as_link
@@ -157,59 +154,9 @@ class GsaCreateTabularColumn(ModelBase):
             self.roll_up_type = roll_up_type
         if summary_row_roll_up_type is not Unset:
             self.summary_row_roll_up_type = summary_row_roll_up_type
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaCreateTabularColumn.
-
-        Returns
-        -------
-        str
-            The name of this GsaCreateTabularColumn.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaCreateTabularColumn.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaCreateTabularColumn.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateTabularColumn.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateTabularColumn.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateTabularColumn.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateTabularColumn.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def column_type(self) -> "GsaTabularColumnDtoType":
@@ -362,6 +309,59 @@ class GsaCreateTabularColumn(ModelBase):
         if summary_row_roll_up_type is None:
             raise ValueError("Invalid value for 'summary_row_roll_up_type', must not be 'None'")
         self._summary_row_roll_up_type = summary_row_roll_up_type
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaCreateTabularColumn.
+
+        Returns
+        -------
+        str
+            The name of this GsaCreateTabularColumn.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaCreateTabularColumn.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaCreateTabularColumn.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateTabularColumn.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateTabularColumn.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateTabularColumn.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateTabularColumn.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

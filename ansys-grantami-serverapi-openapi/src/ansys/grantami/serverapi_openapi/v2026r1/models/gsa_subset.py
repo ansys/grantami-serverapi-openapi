@@ -97,16 +97,69 @@ class GsaSubset(ModelBase):
         name: str
         associated_layout: GsaSlimLayout, optional
         """
-        self._name: str
-        self._guid: str
         self._associated_layout: GsaSlimLayout | Unset_Type = Unset
         self._display_names: dict[str, str]
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         if associated_layout is not Unset:
             self.associated_layout = associated_layout
         self.display_names = display_names
+        self.name = name
+        self.guid = guid
+
+    @property
+    def associated_layout(self) -> "GsaSlimLayout | Unset_Type":
+        """Gets the associated_layout of this GsaSubset.
+
+        Returns
+        -------
+        GsaSlimLayout | Unset_Type
+            The associated_layout of this GsaSubset.
+        """
+        return self._associated_layout
+
+    @associated_layout.setter
+    def associated_layout(self, associated_layout: "GsaSlimLayout | Unset_Type") -> None:
+        """Sets the associated_layout of this GsaSubset.
+
+        Parameters
+        ----------
+        associated_layout: GsaSlimLayout | Unset_Type
+            The associated_layout of this GsaSubset.
+        """
+        # Field is not nullable
+        if associated_layout is None:
+            raise ValueError("Invalid value for 'associated_layout', must not be 'None'")
+        self._associated_layout = associated_layout
+
+    @property
+    def display_names(self) -> "dict[str, str]":
+        """Gets the display_names of this GsaSubset.
+
+        Returns
+        -------
+        dict[str, str]
+            The display_names of this GsaSubset.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "dict[str, str]") -> None:
+        """Sets the display_names of this GsaSubset.
+
+        Parameters
+        ----------
+        display_names: dict[str, str]
+            The display_names of this GsaSubset.
+        """
+        # Field is not nullable
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
+        # Field is required
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
+        self._display_names = display_names
 
     @property
     def name(self) -> "str":
@@ -163,59 +216,6 @@ class GsaSubset(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def associated_layout(self) -> "GsaSlimLayout | Unset_Type":
-        """Gets the associated_layout of this GsaSubset.
-
-        Returns
-        -------
-        GsaSlimLayout | Unset_Type
-            The associated_layout of this GsaSubset.
-        """
-        return self._associated_layout
-
-    @associated_layout.setter
-    def associated_layout(self, associated_layout: "GsaSlimLayout | Unset_Type") -> None:
-        """Sets the associated_layout of this GsaSubset.
-
-        Parameters
-        ----------
-        associated_layout: GsaSlimLayout | Unset_Type
-            The associated_layout of this GsaSubset.
-        """
-        # Field is not nullable
-        if associated_layout is None:
-            raise ValueError("Invalid value for 'associated_layout', must not be 'None'")
-        self._associated_layout = associated_layout
-
-    @property
-    def display_names(self) -> "dict[str, str]":
-        """Gets the display_names of this GsaSubset.
-
-        Returns
-        -------
-        dict[str, str]
-            The display_names of this GsaSubset.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str]") -> None:
-        """Sets the display_names of this GsaSubset.
-
-        Parameters
-        ----------
-        display_names: dict[str, str]
-            The display_names of this GsaSubset.
-        """
-        # Field is not nullable
-        if display_names is None:
-            raise ValueError("Invalid value for 'display_names', must not be 'None'")
-        # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
-        self._display_names = display_names
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -93,10 +93,10 @@ class GsaAttribute(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "type": "GsaAttributeType",
         "defaultThresholdType": "GsaAttributeThresholdType",
         "axisName": "GsaAxisName",
         "info": "GsaAttributeInfo",
+        "type": "GsaAttributeType",
         "aboutAttribute": "GsaSlimTypedAttribute",
         "table": "GsaSlimEntity",
     }
@@ -154,118 +154,34 @@ class GsaAttribute(ModelBase):
         axis_name: GsaAxisName, optional
         help_path: str | None, optional
         """
-        self._name: str
-        self._guid: str
-        self._type: GsaAttributeType
         self._default_threshold_type: GsaAttributeThresholdType
         self._axis_name: GsaAxisName | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._info: GsaAttributeInfo
+        self._type: GsaAttributeType
         self._about_attribute: GsaSlimTypedAttribute | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool
         self._is_protected: bool
         self._table: GsaSlimEntity
         self._display_names: dict[str, str]
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
-        self.type = type
         self.default_threshold_type = default_threshold_type
         if axis_name is not Unset:
             self.axis_name = axis_name
         if help_path is not Unset:
             self.help_path = help_path
         self.info = info
+        self.type = type
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
         self.is_protected = is_protected
         self.table = table
         self.display_names = display_names
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaAttribute.
-
-        Returns
-        -------
-        str
-            The name of this GsaAttribute.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaAttribute.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaAttribute.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaAttribute.
-
-        Returns
-        -------
-        str
-            The guid of this GsaAttribute.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaAttribute.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaAttribute.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
-
-    @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaAttribute.
-
-        Returns
-        -------
-        GsaAttributeType
-            The type of this GsaAttribute.
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaAttribute.
-
-        Parameters
-        ----------
-        type: GsaAttributeType
-            The type of this GsaAttribute.
-        """
-        # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        self.name = name
+        self.guid = guid
 
     @property
     def default_threshold_type(self) -> "GsaAttributeThresholdType":
@@ -369,6 +285,34 @@ class GsaAttribute(ModelBase):
         if info is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'info', must not be 'Unset'")
         self._info = info
+
+    @property
+    def type(self) -> "GsaAttributeType":
+        """Gets the type of this GsaAttribute.
+
+        Returns
+        -------
+        GsaAttributeType
+            The type of this GsaAttribute.
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: "GsaAttributeType") -> None:
+        """Sets the type of this GsaAttribute.
+
+        Parameters
+        ----------
+        type: GsaAttributeType
+            The type of this GsaAttribute.
+        """
+        # Field is not nullable
+        if type is None:
+            raise ValueError("Invalid value for 'type', must not be 'None'")
+        # Field is required
+        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type', must not be 'Unset'")
+        self._type = type
 
     @property
     def about_attribute(self) -> "GsaSlimTypedAttribute | Unset_Type":
@@ -514,6 +458,62 @@ class GsaAttribute(ModelBase):
         if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaAttribute.
+
+        Returns
+        -------
+        str
+            The name of this GsaAttribute.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaAttribute.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaAttribute.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaAttribute.
+
+        Returns
+        -------
+        str
+            The guid of this GsaAttribute.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaAttribute.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaAttribute.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

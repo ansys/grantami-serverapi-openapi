@@ -243,6 +243,7 @@ from .gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .gsa_create_point_attribute import GsaCreatePointAttribute
 from .gsa_create_profile import GsaCreateProfile
 from .gsa_create_profile_table import GsaCreateProfileTable
+from .gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .gsa_create_range_attribute import GsaCreateRangeAttribute
 from .gsa_create_record_history import GsaCreateRecordHistory
 from .gsa_create_record_link_group import GsaCreateRecordLinkGroup
@@ -934,6 +935,8 @@ from .gsa_profile import GsaProfile
 from .gsa_profile_table import GsaProfileTable
 from .gsa_profile_tables_info import GsaProfileTablesInfo
 from .gsa_property import GsaProperty
+from .gsa_put_layout_item import GsaPutLayoutItem
+from .gsa_put_type import GsaPutType
 from .gsa_query_attribute import GsaQueryAttribute
 from .gsa_query_attribute_filter import GsaQueryAttributeFilter
 from .gsa_query_attribute_info import GsaQueryAttributeInfo
@@ -1304,6 +1307,7 @@ from .gsa_update_hyperlink_attribute import GsaUpdateHyperlinkAttribute
 from .gsa_update_integer_attribute import GsaUpdateIntegerAttribute
 from .gsa_update_job_request import GsaUpdateJobRequest
 from .gsa_update_layout import GsaUpdateLayout
+from .gsa_update_layout_section import GsaUpdateLayoutSection
 from .gsa_update_linked_attribute_tabular_column import GsaUpdateLinkedAttributeTabularColumn
 from .gsa_update_linked_column_tabular_column import GsaUpdateLinkedColumnTabularColumn
 from .gsa_update_linked_record_tabular_column import GsaUpdateLinkedRecordTabularColumn
@@ -1333,6 +1337,7 @@ from .gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .gsa_update_point_attribute import GsaUpdatePointAttribute
 from .gsa_update_profile import GsaUpdateProfile
 from .gsa_update_profile_table import GsaUpdateProfileTable
+from .gsa_update_put_layout_item import GsaUpdatePutLayoutItem
 from .gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
@@ -1569,6 +1574,7 @@ __all__ = [
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
     "GsaCreateProfileTable",
+    "GsaCreatePutLayoutItem",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
     "GsaCreateRecordLinkGroup",
@@ -2128,6 +2134,8 @@ __all__ = [
     "GsaProfileTable",
     "GsaProfileTablesInfo",
     "GsaProperty",
+    "GsaPutLayoutItem",
+    "GsaPutType",
     "GsaQueryAttribute",
     "GsaQueryAttributeFilter",
     "GsaQueryAttributeInfo",
@@ -2446,6 +2454,7 @@ __all__ = [
     "GsaUpdateIntegerAttribute",
     "GsaUpdateJobRequest",
     "GsaUpdateLayout",
+    "GsaUpdateLayoutSection",
     "GsaUpdateLinkedAttributeTabularColumn",
     "GsaUpdateLinkedColumnTabularColumn",
     "GsaUpdateLinkedRecordTabularColumn",
@@ -2475,6 +2484,7 @@ __all__ = [
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
+    "GsaUpdatePutLayoutItem",
     "GsaUpdateRangeAttribute",
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",

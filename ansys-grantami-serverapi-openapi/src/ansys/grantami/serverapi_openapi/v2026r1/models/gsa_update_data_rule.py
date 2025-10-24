@@ -95,69 +95,19 @@ class GsaUpdateDataRule(ModelBase):
         name: str, optional
         regular_expression: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._description: str | Unset_Type = Unset
         self._regular_expression: str | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if name is not Unset:
-            self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if description is not Unset:
             self.description = description
         if regular_expression is not Unset:
             self.regular_expression = regular_expression
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateDataRule.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateDataRule.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateDataRule.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateDataRule.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateDataRule.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateDataRule.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateDataRule.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateDataRule.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def description(self) -> "str | Unset_Type":
@@ -208,6 +158,56 @@ class GsaUpdateDataRule(ModelBase):
         if regular_expression is None:
             raise ValueError("Invalid value for 'regular_expression', must not be 'None'")
         self._regular_expression = regular_expression
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateDataRule.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateDataRule.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateDataRule.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateDataRule.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateDataRule.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateDataRule.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateDataRule.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateDataRule.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

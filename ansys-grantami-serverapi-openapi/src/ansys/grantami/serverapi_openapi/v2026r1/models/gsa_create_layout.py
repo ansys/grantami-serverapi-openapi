@@ -97,18 +97,66 @@ class GsaCreateLayout(ModelBase):
         guid: str, optional
         sections: list[GsaCreateLayoutSection] | None, optional
         """
-        self._name: str
-        self._guid: str | Unset_Type = Unset
         self._applicable_applications: list[str] | None | Unset_Type = Unset
         self._sections: list[GsaCreateLayoutSection] | None | Unset_Type = Unset
+        self._name: str
+        self._guid: str | Unset_Type = Unset
 
-        self.name = name
-        if guid is not Unset:
-            self.guid = guid
         if applicable_applications is not Unset:
             self.applicable_applications = applicable_applications
         if sections is not Unset:
             self.sections = sections
+        self.name = name
+        if guid is not Unset:
+            self.guid = guid
+
+    @property
+    def applicable_applications(self) -> "list[str] | None | Unset_Type":
+        """Gets the applicable_applications of this GsaCreateLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
+
+        Returns
+        -------
+        list[str] | None | Unset_Type
+            The applicable_applications of this GsaCreateLayout.
+        """
+        return self._applicable_applications
+
+    @applicable_applications.setter
+    def applicable_applications(
+        self, applicable_applications: "list[str] | None | Unset_Type"
+    ) -> None:
+        """Sets the applicable_applications of this GsaCreateLayout.
+        If there are no ApplicableApplications, the layout is applicable in all applications.
+
+        Parameters
+        ----------
+        applicable_applications: list[str] | None | Unset_Type
+            The applicable_applications of this GsaCreateLayout.
+        """
+        self._applicable_applications = applicable_applications
+
+    @property
+    def sections(self) -> "list[GsaCreateLayoutSection] | None | Unset_Type":
+        """Gets the sections of this GsaCreateLayout.
+
+        Returns
+        -------
+        list[GsaCreateLayoutSection] | None | Unset_Type
+            The sections of this GsaCreateLayout.
+        """
+        return self._sections
+
+    @sections.setter
+    def sections(self, sections: "list[GsaCreateLayoutSection] | None | Unset_Type") -> None:
+        """Sets the sections of this GsaCreateLayout.
+
+        Parameters
+        ----------
+        sections: list[GsaCreateLayoutSection] | None | Unset_Type
+            The sections of this GsaCreateLayout.
+        """
+        self._sections = sections
 
     @property
     def name(self) -> "str":
@@ -162,54 +210,6 @@ class GsaCreateLayout(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
-
-    @property
-    def applicable_applications(self) -> "list[str] | None | Unset_Type":
-        """Gets the applicable_applications of this GsaCreateLayout.
-        If there are no ApplicableApplications, the layout is applicable in all applications.
-
-        Returns
-        -------
-        list[str] | None | Unset_Type
-            The applicable_applications of this GsaCreateLayout.
-        """
-        return self._applicable_applications
-
-    @applicable_applications.setter
-    def applicable_applications(
-        self, applicable_applications: "list[str] | None | Unset_Type"
-    ) -> None:
-        """Sets the applicable_applications of this GsaCreateLayout.
-        If there are no ApplicableApplications, the layout is applicable in all applications.
-
-        Parameters
-        ----------
-        applicable_applications: list[str] | None | Unset_Type
-            The applicable_applications of this GsaCreateLayout.
-        """
-        self._applicable_applications = applicable_applications
-
-    @property
-    def sections(self) -> "list[GsaCreateLayoutSection] | None | Unset_Type":
-        """Gets the sections of this GsaCreateLayout.
-
-        Returns
-        -------
-        list[GsaCreateLayoutSection] | None | Unset_Type
-            The sections of this GsaCreateLayout.
-        """
-        return self._sections
-
-    @sections.setter
-    def sections(self, sections: "list[GsaCreateLayoutSection] | None | Unset_Type") -> None:
-        """Sets the sections of this GsaCreateLayout.
-
-        Parameters
-        ----------
-        sections: list[GsaCreateLayoutSection] | None | Unset_Type
-            The sections of this GsaCreateLayout.
-        """
-        self._sections = sections
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

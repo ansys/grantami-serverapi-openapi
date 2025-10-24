@@ -97,16 +97,66 @@ class GsaSlimSearchTemplate(ModelBase):
         table: GsaSlimEntity
         description: str | None, optional
         """
-        self._name: str
-        self._guid: str
         self._description: str | None | Unset_Type = Unset
         self._table: GsaSlimEntity
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         if description is not Unset:
             self.description = description
         self.table = table
+        self.name = name
+        self.guid = guid
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaSlimSearchTemplate.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaSlimSearchTemplate.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaSlimSearchTemplate.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaSlimSearchTemplate.
+        """
+        self._description = description
+
+    @property
+    def table(self) -> "GsaSlimEntity":
+        """Gets the table of this GsaSlimSearchTemplate.
+
+        Returns
+        -------
+        GsaSlimEntity
+            The table of this GsaSlimSearchTemplate.
+        """
+        return self._table
+
+    @table.setter
+    def table(self, table: "GsaSlimEntity") -> None:
+        """Sets the table of this GsaSlimSearchTemplate.
+
+        Parameters
+        ----------
+        table: GsaSlimEntity
+            The table of this GsaSlimSearchTemplate.
+        """
+        # Field is not nullable
+        if table is None:
+            raise ValueError("Invalid value for 'table', must not be 'None'")
+        # Field is required
+        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'table', must not be 'Unset'")
+        self._table = table
 
     @property
     def name(self) -> "str":
@@ -163,56 +213,6 @@ class GsaSlimSearchTemplate(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaSlimSearchTemplate.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaSlimSearchTemplate.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaSlimSearchTemplate.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaSlimSearchTemplate.
-        """
-        self._description = description
-
-    @property
-    def table(self) -> "GsaSlimEntity":
-        """Gets the table of this GsaSlimSearchTemplate.
-
-        Returns
-        -------
-        GsaSlimEntity
-            The table of this GsaSlimSearchTemplate.
-        """
-        return self._table
-
-    @table.setter
-    def table(self, table: "GsaSlimEntity") -> None:
-        """Sets the table of this GsaSlimSearchTemplate.
-
-        Parameters
-        ----------
-        table: GsaSlimEntity
-            The table of this GsaSlimSearchTemplate.
-        """
-        # Field is not nullable
-        if table is None:
-            raise ValueError("Invalid value for 'table', must not be 'None'")
-        # Field is required
-        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'table', must not be 'Unset'")
-        self._table = table
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

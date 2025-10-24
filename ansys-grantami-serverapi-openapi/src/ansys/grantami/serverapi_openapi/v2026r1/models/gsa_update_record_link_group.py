@@ -105,68 +105,18 @@ class GsaUpdateRecordLinkGroup(ModelBase):
         name: str, optional
         reverse_name: str, optional
         """
-        self._name: str | Unset_Type = Unset
-        self._guid: str | Unset_Type = Unset
         self._type: GsaRecordLinkGroupType
         self._reverse_name: str | Unset_Type = Unset
+        self._name: str | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
+        self.type = type
+        if reverse_name is not Unset:
+            self.reverse_name = reverse_name
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-        self.type = type
-        if reverse_name is not Unset:
-            self.reverse_name = reverse_name
-
-    @property
-    def name(self) -> "str | Unset_Type":
-        """Gets the name of this GsaUpdateRecordLinkGroup.
-
-        Returns
-        -------
-        str | Unset_Type
-            The name of this GsaUpdateRecordLinkGroup.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | Unset_Type") -> None:
-        """Sets the name of this GsaUpdateRecordLinkGroup.
-
-        Parameters
-        ----------
-        name: str | Unset_Type
-            The name of this GsaUpdateRecordLinkGroup.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaUpdateRecordLinkGroup.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaUpdateRecordLinkGroup.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaUpdateRecordLinkGroup.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaUpdateRecordLinkGroup.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
 
     @property
     def type(self) -> "GsaRecordLinkGroupType":
@@ -220,6 +170,56 @@ class GsaUpdateRecordLinkGroup(ModelBase):
         if reverse_name is None:
             raise ValueError("Invalid value for 'reverse_name', must not be 'None'")
         self._reverse_name = reverse_name
+
+    @property
+    def name(self) -> "str | Unset_Type":
+        """Gets the name of this GsaUpdateRecordLinkGroup.
+
+        Returns
+        -------
+        str | Unset_Type
+            The name of this GsaUpdateRecordLinkGroup.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | Unset_Type") -> None:
+        """Sets the name of this GsaUpdateRecordLinkGroup.
+
+        Parameters
+        ----------
+        name: str | Unset_Type
+            The name of this GsaUpdateRecordLinkGroup.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaUpdateRecordLinkGroup.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaUpdateRecordLinkGroup.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaUpdateRecordLinkGroup.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaUpdateRecordLinkGroup.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

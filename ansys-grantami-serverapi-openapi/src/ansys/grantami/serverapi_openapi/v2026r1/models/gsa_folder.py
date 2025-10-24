@@ -99,76 +99,20 @@ class GsaFolder(ModelBase):
         has_files: bool, optional
         parent_guid: str | None, optional
         """
-        self._name: str
-        self._guid: str
         self._parent_guid: str | None | Unset_Type = Unset
         self._has_files: bool | Unset_Type = Unset
         self._has_child_folders: bool | Unset_Type = Unset
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         if parent_guid is not Unset:
             self.parent_guid = parent_guid
         if has_files is not Unset:
             self.has_files = has_files
         if has_child_folders is not Unset:
             self.has_child_folders = has_child_folders
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaFolder.
-
-        Returns
-        -------
-        str
-            The name of this GsaFolder.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaFolder.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaFolder.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaFolder.
-
-        Returns
-        -------
-        str
-            The guid of this GsaFolder.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaFolder.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaFolder.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def parent_guid(self) -> "str | None | Unset_Type":
@@ -241,6 +185,62 @@ class GsaFolder(ModelBase):
         if has_child_folders is None:
             raise ValueError("Invalid value for 'has_child_folders', must not be 'None'")
         self._has_child_folders = has_child_folders
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaFolder.
+
+        Returns
+        -------
+        str
+            The name of this GsaFolder.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaFolder.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaFolder.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaFolder.
+
+        Returns
+        -------
+        str
+            The guid of this GsaFolder.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaFolder.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaFolder.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

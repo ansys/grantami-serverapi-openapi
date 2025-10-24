@@ -87,39 +87,11 @@ class GsaSlimIdentifiedEntity(ModelBase):
         guid: str
         identity: int
         """
-        self._guid: str
         self._identity: int
+        self._guid: str
 
-        self.guid = guid
         self.identity = identity
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaSlimIdentifiedEntity.
-
-        Returns
-        -------
-        str
-            The guid of this GsaSlimIdentifiedEntity.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaSlimIdentifiedEntity.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaSlimIdentifiedEntity.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.guid = guid
 
     @property
     def identity(self) -> "int":
@@ -148,6 +120,34 @@ class GsaSlimIdentifiedEntity(ModelBase):
         if identity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'identity', must not be 'Unset'")
         self._identity = identity
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaSlimIdentifiedEntity.
+
+        Returns
+        -------
+        str
+            The guid of this GsaSlimIdentifiedEntity.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaSlimIdentifiedEntity.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaSlimIdentifiedEntity.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

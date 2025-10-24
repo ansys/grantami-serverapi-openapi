@@ -303,6 +303,7 @@ from .models.gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .models.gsa_create_point_attribute import GsaCreatePointAttribute
 from .models.gsa_create_profile import GsaCreateProfile
 from .models.gsa_create_profile_table import GsaCreateProfileTable
+from .models.gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .models.gsa_create_range_attribute import GsaCreateRangeAttribute
 from .models.gsa_create_record_history import GsaCreateRecordHistory
 from .models.gsa_create_record_link_group import GsaCreateRecordLinkGroup
@@ -1040,6 +1041,8 @@ from .models.gsa_profile import GsaProfile
 from .models.gsa_profile_table import GsaProfileTable
 from .models.gsa_profile_tables_info import GsaProfileTablesInfo
 from .models.gsa_property import GsaProperty
+from .models.gsa_put_layout_item import GsaPutLayoutItem
+from .models.gsa_put_type import GsaPutType
 from .models.gsa_query_attribute import GsaQueryAttribute
 from .models.gsa_query_attribute_filter import GsaQueryAttributeFilter
 from .models.gsa_query_attribute_info import GsaQueryAttributeInfo
@@ -1420,6 +1423,7 @@ from .models.gsa_update_hyperlink_attribute import GsaUpdateHyperlinkAttribute
 from .models.gsa_update_integer_attribute import GsaUpdateIntegerAttribute
 from .models.gsa_update_job_request import GsaUpdateJobRequest
 from .models.gsa_update_layout import GsaUpdateLayout
+from .models.gsa_update_layout_section import GsaUpdateLayoutSection
 from .models.gsa_update_linked_attribute_tabular_column import GsaUpdateLinkedAttributeTabularColumn
 from .models.gsa_update_linked_column_tabular_column import GsaUpdateLinkedColumnTabularColumn
 from .models.gsa_update_linked_record_tabular_column import GsaUpdateLinkedRecordTabularColumn
@@ -1449,6 +1453,7 @@ from .models.gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .models.gsa_update_point_attribute import GsaUpdatePointAttribute
 from .models.gsa_update_profile import GsaUpdateProfile
 from .models.gsa_update_profile_table import GsaUpdateProfileTable
+from .models.gsa_update_put_layout_item import GsaUpdatePutLayoutItem
 from .models.gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .models.gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .models.gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
@@ -1738,6 +1743,7 @@ __all__ = [
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
     "GsaCreateProfileTable",
+    "GsaCreatePutLayoutItem",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
     "GsaCreateRecordLinkGroup",
@@ -2297,6 +2303,8 @@ __all__ = [
     "GsaProfileTable",
     "GsaProfileTablesInfo",
     "GsaProperty",
+    "GsaPutLayoutItem",
+    "GsaPutType",
     "GsaQueryAttribute",
     "GsaQueryAttributeFilter",
     "GsaQueryAttributeInfo",
@@ -2615,6 +2623,7 @@ __all__ = [
     "GsaUpdateIntegerAttribute",
     "GsaUpdateJobRequest",
     "GsaUpdateLayout",
+    "GsaUpdateLayoutSection",
     "GsaUpdateLinkedAttributeTabularColumn",
     "GsaUpdateLinkedColumnTabularColumn",
     "GsaUpdateLinkedRecordTabularColumn",
@@ -2644,6 +2653,7 @@ __all__ = [
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
+    "GsaUpdatePutLayoutItem",
     "GsaUpdateRangeAttribute",
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",

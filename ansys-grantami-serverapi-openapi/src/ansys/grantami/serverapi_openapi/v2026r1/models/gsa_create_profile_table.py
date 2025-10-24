@@ -99,45 +99,20 @@ class GsaCreateProfileTable(ModelBase):
         layout_guid: str | None, optional
         subset_guid: str | None, optional
         """
-        self._guid: str | Unset_Type = Unset
         self._database_guid: str
         self._table_guid: str
         self._subset_guid: str | None | Unset_Type = Unset
         self._layout_guid: str | None | Unset_Type = Unset
+        self._guid: str | Unset_Type = Unset
 
-        if guid is not Unset:
-            self.guid = guid
         self.database_guid = database_guid
         self.table_guid = table_guid
         if subset_guid is not Unset:
             self.subset_guid = subset_guid
         if layout_guid is not Unset:
             self.layout_guid = layout_guid
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateProfileTable.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateProfileTable.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateProfileTable.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateProfileTable.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def database_guid(self) -> "str":
@@ -238,6 +213,31 @@ class GsaCreateProfileTable(ModelBase):
             The layout_guid of this GsaCreateProfileTable.
         """
         self._layout_guid = layout_guid
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateProfileTable.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateProfileTable.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateProfileTable.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateProfileTable.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
