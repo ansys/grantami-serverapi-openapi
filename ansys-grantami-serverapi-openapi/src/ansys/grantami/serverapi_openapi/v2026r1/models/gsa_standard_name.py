@@ -120,8 +120,6 @@ class GsaStandardName(ModelBase):
         mapped_record_link_groups: list[GsaSlimNamedEntity]
         name: str
         """
-        self._name: str
-        self._guid: str
         self._mapped_attributes: list[GsaSlimAttribute]
         self._mapped_parameters: list[GsaSlimNamedEntity]
         self._mapped_record_link_groups: list[GsaSlimNamedEntity]
@@ -129,9 +127,9 @@ class GsaStandardName(ModelBase):
         self._database_key: str
         self._database_guid: str
         self._database_version_guid: str
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.mapped_attributes = mapped_attributes
         self.mapped_parameters = mapped_parameters
         self.mapped_record_link_groups = mapped_record_link_groups
@@ -139,62 +137,8 @@ class GsaStandardName(ModelBase):
         self.database_key = database_key
         self.database_guid = database_guid
         self.database_version_guid = database_version_guid
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaStandardName.
-
-        Returns
-        -------
-        str
-            The name of this GsaStandardName.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaStandardName.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaStandardName.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaStandardName.
-
-        Returns
-        -------
-        str
-            The guid of this GsaStandardName.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaStandardName.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaStandardName.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def mapped_attributes(self) -> "list[GsaSlimAttribute]":
@@ -399,6 +343,62 @@ class GsaStandardName(ModelBase):
         if database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_version_guid', must not be 'Unset'")
         self._database_version_guid = database_version_guid
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaStandardName.
+
+        Returns
+        -------
+        str
+            The name of this GsaStandardName.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaStandardName.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaStandardName.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaStandardName.
+
+        Returns
+        -------
+        str
+            The guid of this GsaStandardName.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaStandardName.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaStandardName.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

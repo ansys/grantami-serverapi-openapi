@@ -101,73 +101,17 @@ class GsaLayout(ModelBase):
         name: str
         sections: list[GsaLayoutSection]
         """
-        self._name: str
-        self._guid: str
         self._sections: list[GsaLayoutSection]
         self._applicable_applications: list[str]
         self._display_names: dict[str, str]
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.sections = sections
         self.applicable_applications = applicable_applications
         self.display_names = display_names
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaLayout.
-
-        Returns
-        -------
-        str
-            The name of this GsaLayout.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaLayout.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaLayout.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaLayout.
-
-        Returns
-        -------
-        str
-            The guid of this GsaLayout.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaLayout.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaLayout.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def sections(self) -> "list[GsaLayoutSection]":
@@ -254,6 +198,62 @@ class GsaLayout(ModelBase):
         if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaLayout.
+
+        Returns
+        -------
+        str
+            The name of this GsaLayout.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaLayout.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaLayout.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaLayout.
+
+        Returns
+        -------
+        str
+            The guid of this GsaLayout.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaLayout.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaLayout.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

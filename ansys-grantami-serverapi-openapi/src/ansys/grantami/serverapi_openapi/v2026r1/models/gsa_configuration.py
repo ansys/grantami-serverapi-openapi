@@ -95,17 +95,61 @@ class GsaConfiguration(ModelBase):
         description: str | None, optional
         value: str | None, optional
         """
-        self._name: str
-        self._guid: str
         self._description: str | None | Unset_Type = Unset
         self._value: str | None | Unset_Type = Unset
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         if description is not Unset:
             self.description = description
         if value is not Unset:
             self.value = value
+        self.name = name
+        self.guid = guid
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaConfiguration.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaConfiguration.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaConfiguration.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaConfiguration.
+        """
+        self._description = description
+
+    @property
+    def value(self) -> "str | None | Unset_Type":
+        """Gets the value of this GsaConfiguration.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The value of this GsaConfiguration.
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value: "str | None | Unset_Type") -> None:
+        """Sets the value of this GsaConfiguration.
+
+        Parameters
+        ----------
+        value: str | None | Unset_Type
+            The value of this GsaConfiguration.
+        """
+        self._value = value
 
     @property
     def name(self) -> "str":
@@ -162,50 +206,6 @@ class GsaConfiguration(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaConfiguration.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaConfiguration.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaConfiguration.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaConfiguration.
-        """
-        self._description = description
-
-    @property
-    def value(self) -> "str | None | Unset_Type":
-        """Gets the value of this GsaConfiguration.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The value of this GsaConfiguration.
-        """
-        return self._value
-
-    @value.setter
-    def value(self, value: "str | None | Unset_Type") -> None:
-        """Sets the value of this GsaConfiguration.
-
-        Parameters
-        ----------
-        value: str | None | Unset_Type
-            The value of this GsaConfiguration.
-        """
-        self._value = value
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

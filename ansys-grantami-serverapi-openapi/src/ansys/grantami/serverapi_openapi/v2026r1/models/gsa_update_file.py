@@ -91,16 +91,38 @@ class GsaUpdateFile(ModelBase):
         guid: str, optional
         name: str, optional
         """
+        self._description: str | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
-        self._description: str | None | Unset_Type = Unset
 
+        if description is not Unset:
+            self.description = description
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
-        if description is not Unset:
-            self.description = description
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaUpdateFile.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaUpdateFile.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaUpdateFile.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaUpdateFile.
+        """
+        self._description = description
 
     @property
     def name(self) -> "str | Unset_Type":
@@ -151,28 +173,6 @@ class GsaUpdateFile(ModelBase):
         if guid is None:
             raise ValueError("Invalid value for 'guid', must not be 'None'")
         self._guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaUpdateFile.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaUpdateFile.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaUpdateFile.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaUpdateFile.
-        """
-        self._description = description
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -99,47 +99,19 @@ class GsaSlimProfile(ModelBase):
         group_name: str | None, optional
         guid: str | None, optional
         """
-        self._name: str
         self._key: str
         self._guid: str | None | Unset_Type = Unset
         self._group_name: str | None | Unset_Type = Unset
         self._is_implicit: bool
+        self._name: str
 
-        self.name = name
         self.key = key
         if guid is not Unset:
             self.guid = guid
         if group_name is not Unset:
             self.group_name = group_name
         self.is_implicit = is_implicit
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaSlimProfile.
-
-        Returns
-        -------
-        str
-            The name of this GsaSlimProfile.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaSlimProfile.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaSlimProfile.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
+        self.name = name
 
     @property
     def key(self) -> "str":
@@ -244,6 +216,34 @@ class GsaSlimProfile(ModelBase):
         if is_implicit is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'is_implicit', must not be 'Unset'")
         self._is_implicit = is_implicit
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaSlimProfile.
+
+        Returns
+        -------
+        str
+            The name of this GsaSlimProfile.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaSlimProfile.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaSlimProfile.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

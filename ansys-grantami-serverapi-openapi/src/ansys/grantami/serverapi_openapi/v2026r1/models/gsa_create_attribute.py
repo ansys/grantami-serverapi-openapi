@@ -135,18 +135,15 @@ class GsaCreateAttribute(ModelBase):
         is_hidden_from_search_criteria: bool | None, optional
         meta_attributes: list[GsaCreateAttribute] | None, optional
         """
-        self._name: str
-        self._guid: str | Unset_Type = Unset
         self._type: GsaAttributeType
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
         self._meta_attributes: list[GsaCreateAttribute] | None | Unset_Type = Unset
         self._display_names: dict[str, str] | None | Unset_Type = Unset
+        self._name: str
+        self._guid: str | Unset_Type = Unset
 
-        self.name = name
-        if guid is not Unset:
-            self.guid = guid
         self.type = type
         if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
@@ -158,59 +155,9 @@ class GsaCreateAttribute(ModelBase):
             self.meta_attributes = meta_attributes
         if display_names is not Unset:
             self.display_names = display_names
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaCreateAttribute.
-
-        Returns
-        -------
-        str
-            The name of this GsaCreateAttribute.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaCreateAttribute.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaCreateAttribute.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str | Unset_Type":
-        """Gets the guid of this GsaCreateAttribute.
-
-        Returns
-        -------
-        str | Unset_Type
-            The guid of this GsaCreateAttribute.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str | Unset_Type") -> None:
-        """Sets the guid of this GsaCreateAttribute.
-
-        Parameters
-        ----------
-        guid: str | Unset_Type
-            The guid of this GsaCreateAttribute.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        self._guid = guid
+        self.name = name
+        if guid is not Unset:
+            self.guid = guid
 
     @property
     def type(self) -> "GsaAttributeType":
@@ -362,6 +309,59 @@ class GsaCreateAttribute(ModelBase):
             The display_names of this GsaCreateAttribute.
         """
         self._display_names = display_names
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaCreateAttribute.
+
+        Returns
+        -------
+        str
+            The name of this GsaCreateAttribute.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaCreateAttribute.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaCreateAttribute.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str | Unset_Type":
+        """Gets the guid of this GsaCreateAttribute.
+
+        Returns
+        -------
+        str | Unset_Type
+            The guid of this GsaCreateAttribute.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | Unset_Type") -> None:
+        """Sets the guid of this GsaCreateAttribute.
+
+        Parameters
+        ----------
+        guid: str | Unset_Type
+            The guid of this GsaCreateAttribute.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

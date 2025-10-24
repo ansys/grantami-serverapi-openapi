@@ -91,14 +91,36 @@ class GsaSlimSearchMask(ModelBase):
         name: str
         description: str | None, optional
         """
+        self._description: str | None | Unset_Type = Unset
         self._name: str
         self._guid: str
-        self._description: str | None | Unset_Type = Unset
 
-        self.name = name
-        self.guid = guid
         if description is not Unset:
             self.description = description
+        self.name = name
+        self.guid = guid
+
+    @property
+    def description(self) -> "str | None | Unset_Type":
+        """Gets the description of this GsaSlimSearchMask.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The description of this GsaSlimSearchMask.
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: "str | None | Unset_Type") -> None:
+        """Sets the description of this GsaSlimSearchMask.
+
+        Parameters
+        ----------
+        description: str | None | Unset_Type
+            The description of this GsaSlimSearchMask.
+        """
+        self._description = description
 
     @property
     def name(self) -> "str":
@@ -155,28 +177,6 @@ class GsaSlimSearchMask(ModelBase):
         if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'guid', must not be 'Unset'")
         self._guid = guid
-
-    @property
-    def description(self) -> "str | None | Unset_Type":
-        """Gets the description of this GsaSlimSearchMask.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The description of this GsaSlimSearchMask.
-        """
-        return self._description
-
-    @description.setter
-    def description(self, description: "str | None | Unset_Type") -> None:
-        """Sets the description of this GsaSlimSearchMask.
-
-        Parameters
-        ----------
-        description: str | None | Unset_Type
-            The description of this GsaSlimSearchMask.
-        """
-        self._description = description
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -119,83 +119,49 @@ class GsaSlimAttributeWithHelpPath(ModelBase):
         about_attribute: GsaSlimTypedAttribute, optional
         help_path: str | None, optional
         """
-        self._name: str
-        self._guid: str
-        self._type: GsaAttributeType
         self._help_path: str | None | Unset_Type = Unset
+        self._type: GsaAttributeType
         self._about_attribute: GsaSlimTypedAttribute | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool
         self._is_protected: bool
         self._table: GsaSlimEntity
         self._display_names: dict[str, str]
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
-        self.type = type
         if help_path is not Unset:
             self.help_path = help_path
+        self.type = type
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
         self.is_protected = is_protected
         self.table = table
         self.display_names = display_names
+        self.name = name
+        self.guid = guid
 
     @property
-    def name(self) -> "str":
-        """Gets the name of this GsaSlimAttributeWithHelpPath.
+    def help_path(self) -> "str | None | Unset_Type":
+        """Gets the help_path of this GsaSlimAttributeWithHelpPath.
 
         Returns
         -------
-        str
-            The name of this GsaSlimAttributeWithHelpPath.
+        str | None | Unset_Type
+            The help_path of this GsaSlimAttributeWithHelpPath.
         """
-        return self._name
+        return self._help_path
 
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaSlimAttributeWithHelpPath.
+    @help_path.setter
+    def help_path(self, help_path: "str | None | Unset_Type") -> None:
+        """Sets the help_path of this GsaSlimAttributeWithHelpPath.
 
         Parameters
         ----------
-        name: str
-            The name of this GsaSlimAttributeWithHelpPath.
+        help_path: str | None | Unset_Type
+            The help_path of this GsaSlimAttributeWithHelpPath.
         """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaSlimAttributeWithHelpPath.
-
-        Returns
-        -------
-        str
-            The guid of this GsaSlimAttributeWithHelpPath.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaSlimAttributeWithHelpPath.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaSlimAttributeWithHelpPath.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self._help_path = help_path
 
     @property
     def type(self) -> "GsaAttributeType":
@@ -224,28 +190,6 @@ class GsaSlimAttributeWithHelpPath(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
-
-    @property
-    def help_path(self) -> "str | None | Unset_Type":
-        """Gets the help_path of this GsaSlimAttributeWithHelpPath.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The help_path of this GsaSlimAttributeWithHelpPath.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "str | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaSlimAttributeWithHelpPath.
-
-        Parameters
-        ----------
-        help_path: str | None | Unset_Type
-            The help_path of this GsaSlimAttributeWithHelpPath.
-        """
-        self._help_path = help_path
 
     @property
     def about_attribute(self) -> "GsaSlimTypedAttribute | Unset_Type":
@@ -391,6 +335,62 @@ class GsaSlimAttributeWithHelpPath(ModelBase):
         if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
         self._display_names = display_names
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaSlimAttributeWithHelpPath.
+
+        Returns
+        -------
+        str
+            The name of this GsaSlimAttributeWithHelpPath.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaSlimAttributeWithHelpPath.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaSlimAttributeWithHelpPath.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaSlimAttributeWithHelpPath.
+
+        Returns
+        -------
+        str
+            The guid of this GsaSlimAttributeWithHelpPath.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaSlimAttributeWithHelpPath.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaSlimAttributeWithHelpPath.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

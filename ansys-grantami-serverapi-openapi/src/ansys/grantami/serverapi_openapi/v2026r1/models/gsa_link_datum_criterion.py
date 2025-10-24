@@ -98,11 +98,11 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
     }
 
     subtype_mapping: dict[str, str] = {
+        "localCriterion": "GsaCriterion",
         "linkDatumType": "GsaLinkAttributeType",
         "indirectLinks": "GsaIndirectLinks",
-        "localRowsBehavior": "GsaLocalRowsBehavior",
-        "localCriterion": "GsaCriterion",
         "innerCriterion": "GsaCriterion",
+        "localRowsBehavior": "GsaLocalRowsBehavior",
     }
 
     discriminator: Optional[str] = None
@@ -141,25 +141,27 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         target_table_identity: int | None, optional
         """
         super().__init__(type=type)
-        self._link_datum_type: GsaLinkAttributeType
         self._target_table_identity: int | None | Unset_Type = Unset
         self._target_table_guid: str | None | Unset_Type = Unset
         self._target_database_key: str | None | Unset_Type = Unset
+        self._local_criterion: GsaCriterion | Unset_Type = Unset
+        self._link_datum_type: GsaLinkAttributeType
         self._indirect_links: GsaIndirectLinks | Unset_Type = Unset
         self._search_in_reversed_direction: bool | Unset_Type = Unset
         self._target_attribute_identity: int | None | Unset_Type = Unset
         self._target_attribute_guid: str | None | Unset_Type = Unset
-        self._local_rows_behavior: GsaLocalRowsBehavior | Unset_Type = Unset
-        self._local_criterion: GsaCriterion | Unset_Type = Unset
         self._inner_criterion: GsaCriterion | Unset_Type = Unset
+        self._local_rows_behavior: GsaLocalRowsBehavior | Unset_Type = Unset
 
-        self.link_datum_type = link_datum_type
         if target_table_identity is not Unset:
             self.target_table_identity = target_table_identity
         if target_table_guid is not Unset:
             self.target_table_guid = target_table_guid
         if target_database_key is not Unset:
             self.target_database_key = target_database_key
+        if local_criterion is not Unset:
+            self.local_criterion = local_criterion
+        self.link_datum_type = link_datum_type
         if indirect_links is not Unset:
             self.indirect_links = indirect_links
         if search_in_reversed_direction is not Unset:
@@ -168,40 +170,10 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
             self.target_attribute_identity = target_attribute_identity
         if target_attribute_guid is not Unset:
             self.target_attribute_guid = target_attribute_guid
-        if local_rows_behavior is not Unset:
-            self.local_rows_behavior = local_rows_behavior
-        if local_criterion is not Unset:
-            self.local_criterion = local_criterion
         if inner_criterion is not Unset:
             self.inner_criterion = inner_criterion
-
-    @property
-    def link_datum_type(self) -> "GsaLinkAttributeType":
-        """Gets the link_datum_type of this GsaLinkDatumCriterion.
-
-        Returns
-        -------
-        GsaLinkAttributeType
-            The link_datum_type of this GsaLinkDatumCriterion.
-        """
-        return self._link_datum_type
-
-    @link_datum_type.setter
-    def link_datum_type(self, link_datum_type: "GsaLinkAttributeType") -> None:
-        """Sets the link_datum_type of this GsaLinkDatumCriterion.
-
-        Parameters
-        ----------
-        link_datum_type: GsaLinkAttributeType
-            The link_datum_type of this GsaLinkDatumCriterion.
-        """
-        # Field is not nullable
-        if link_datum_type is None:
-            raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
-        # Field is required
-        if link_datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'link_datum_type', must not be 'Unset'")
-        self._link_datum_type = link_datum_type
+        if local_rows_behavior is not Unset:
+            self.local_rows_behavior = local_rows_behavior
 
     @property
     def target_table_identity(self) -> "int | None | Unset_Type":
@@ -274,6 +246,59 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
             The target_database_key of this GsaLinkDatumCriterion.
         """
         self._target_database_key = target_database_key
+
+    @property
+    def local_criterion(self) -> "GsaCriterion | Unset_Type":
+        """Gets the local_criterion of this GsaLinkDatumCriterion.
+
+        Returns
+        -------
+        GsaCriterion | Unset_Type
+            The local_criterion of this GsaLinkDatumCriterion.
+        """
+        return self._local_criterion
+
+    @local_criterion.setter
+    def local_criterion(self, local_criterion: "GsaCriterion | Unset_Type") -> None:
+        """Sets the local_criterion of this GsaLinkDatumCriterion.
+
+        Parameters
+        ----------
+        local_criterion: GsaCriterion | Unset_Type
+            The local_criterion of this GsaLinkDatumCriterion.
+        """
+        # Field is not nullable
+        if local_criterion is None:
+            raise ValueError("Invalid value for 'local_criterion', must not be 'None'")
+        self._local_criterion = local_criterion
+
+    @property
+    def link_datum_type(self) -> "GsaLinkAttributeType":
+        """Gets the link_datum_type of this GsaLinkDatumCriterion.
+
+        Returns
+        -------
+        GsaLinkAttributeType
+            The link_datum_type of this GsaLinkDatumCriterion.
+        """
+        return self._link_datum_type
+
+    @link_datum_type.setter
+    def link_datum_type(self, link_datum_type: "GsaLinkAttributeType") -> None:
+        """Sets the link_datum_type of this GsaLinkDatumCriterion.
+
+        Parameters
+        ----------
+        link_datum_type: GsaLinkAttributeType
+            The link_datum_type of this GsaLinkDatumCriterion.
+        """
+        # Field is not nullable
+        if link_datum_type is None:
+            raise ValueError("Invalid value for 'link_datum_type', must not be 'None'")
+        # Field is required
+        if link_datum_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'link_datum_type', must not be 'Unset'")
+        self._link_datum_type = link_datum_type
 
     @property
     def indirect_links(self) -> "GsaIndirectLinks | Unset_Type":
@@ -378,56 +403,6 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         self._target_attribute_guid = target_attribute_guid
 
     @property
-    def local_rows_behavior(self) -> "GsaLocalRowsBehavior | Unset_Type":
-        """Gets the local_rows_behavior of this GsaLinkDatumCriterion.
-
-        Returns
-        -------
-        GsaLocalRowsBehavior | Unset_Type
-            The local_rows_behavior of this GsaLinkDatumCriterion.
-        """
-        return self._local_rows_behavior
-
-    @local_rows_behavior.setter
-    def local_rows_behavior(self, local_rows_behavior: "GsaLocalRowsBehavior | Unset_Type") -> None:
-        """Sets the local_rows_behavior of this GsaLinkDatumCriterion.
-
-        Parameters
-        ----------
-        local_rows_behavior: GsaLocalRowsBehavior | Unset_Type
-            The local_rows_behavior of this GsaLinkDatumCriterion.
-        """
-        # Field is not nullable
-        if local_rows_behavior is None:
-            raise ValueError("Invalid value for 'local_rows_behavior', must not be 'None'")
-        self._local_rows_behavior = local_rows_behavior
-
-    @property
-    def local_criterion(self) -> "GsaCriterion | Unset_Type":
-        """Gets the local_criterion of this GsaLinkDatumCriterion.
-
-        Returns
-        -------
-        GsaCriterion | Unset_Type
-            The local_criterion of this GsaLinkDatumCriterion.
-        """
-        return self._local_criterion
-
-    @local_criterion.setter
-    def local_criterion(self, local_criterion: "GsaCriterion | Unset_Type") -> None:
-        """Sets the local_criterion of this GsaLinkDatumCriterion.
-
-        Parameters
-        ----------
-        local_criterion: GsaCriterion | Unset_Type
-            The local_criterion of this GsaLinkDatumCriterion.
-        """
-        # Field is not nullable
-        if local_criterion is None:
-            raise ValueError("Invalid value for 'local_criterion', must not be 'None'")
-        self._local_criterion = local_criterion
-
-    @property
     def inner_criterion(self) -> "GsaCriterion | Unset_Type":
         """Gets the inner_criterion of this GsaLinkDatumCriterion.
 
@@ -451,6 +426,31 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         if inner_criterion is None:
             raise ValueError("Invalid value for 'inner_criterion', must not be 'None'")
         self._inner_criterion = inner_criterion
+
+    @property
+    def local_rows_behavior(self) -> "GsaLocalRowsBehavior | Unset_Type":
+        """Gets the local_rows_behavior of this GsaLinkDatumCriterion.
+
+        Returns
+        -------
+        GsaLocalRowsBehavior | Unset_Type
+            The local_rows_behavior of this GsaLinkDatumCriterion.
+        """
+        return self._local_rows_behavior
+
+    @local_rows_behavior.setter
+    def local_rows_behavior(self, local_rows_behavior: "GsaLocalRowsBehavior | Unset_Type") -> None:
+        """Sets the local_rows_behavior of this GsaLinkDatumCriterion.
+
+        Parameters
+        ----------
+        local_rows_behavior: GsaLocalRowsBehavior | Unset_Type
+            The local_rows_behavior of this GsaLinkDatumCriterion.
+        """
+        # Field is not nullable
+        if local_rows_behavior is None:
+            raise ValueError("Invalid value for 'local_rows_behavior', must not be 'None'")
+        self._local_rows_behavior = local_rows_behavior
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

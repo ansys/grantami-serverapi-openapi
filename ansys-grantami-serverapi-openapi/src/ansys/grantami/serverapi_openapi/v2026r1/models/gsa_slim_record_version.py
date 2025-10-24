@@ -97,71 +97,15 @@ class GsaSlimRecordVersion(ModelBase):
         version_number: int
         version_state: GsaVersionState
         """
-        self._name: str
-        self._guid: str
         self._version_number: int
         self._version_state: GsaVersionState
+        self._name: str
+        self._guid: str
 
-        self.name = name
-        self.guid = guid
         self.version_number = version_number
         self.version_state = version_state
-
-    @property
-    def name(self) -> "str":
-        """Gets the name of this GsaSlimRecordVersion.
-
-        Returns
-        -------
-        str
-            The name of this GsaSlimRecordVersion.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str") -> None:
-        """Sets the name of this GsaSlimRecordVersion.
-
-        Parameters
-        ----------
-        name: str
-            The name of this GsaSlimRecordVersion.
-        """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
-        self._name = name
-
-    @property
-    def guid(self) -> "str":
-        """Gets the guid of this GsaSlimRecordVersion.
-
-        Returns
-        -------
-        str
-            The guid of this GsaSlimRecordVersion.
-        """
-        return self._guid
-
-    @guid.setter
-    def guid(self, guid: "str") -> None:
-        """Sets the guid of this GsaSlimRecordVersion.
-
-        Parameters
-        ----------
-        guid: str
-            The guid of this GsaSlimRecordVersion.
-        """
-        # Field is not nullable
-        if guid is None:
-            raise ValueError("Invalid value for 'guid', must not be 'None'")
-        # Field is required
-        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
-        self._guid = guid
+        self.name = name
+        self.guid = guid
 
     @property
     def version_number(self) -> "int":
@@ -218,6 +162,62 @@ class GsaSlimRecordVersion(ModelBase):
         if version_state is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'version_state', must not be 'Unset'")
         self._version_state = version_state
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaSlimRecordVersion.
+
+        Returns
+        -------
+        str
+            The name of this GsaSlimRecordVersion.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaSlimRecordVersion.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaSlimRecordVersion.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaSlimRecordVersion.
+
+        Returns
+        -------
+        str
+            The guid of this GsaSlimRecordVersion.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaSlimRecordVersion.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaSlimRecordVersion.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
