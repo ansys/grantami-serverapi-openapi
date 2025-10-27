@@ -54,6 +54,8 @@ from .granta_mi_record_property_fake_attribute_identities import (
 from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
+from .gsa_access_control_info import GsaAccessControlInfo
+from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
 from .gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
@@ -107,6 +109,7 @@ from .gsa_attribute_aggregation_value_criterion import GsaAttributeAggregationVa
 from .gsa_attribute_already_specified_smart_attributes_error_detail import (
     GsaAttributeAlreadySpecifiedSmartAttributesErrorDetail,
 )
+from .gsa_attribute_based_access_control_info import GsaAttributeBasedAccessControlInfo
 from .gsa_attribute_creation_exception import GsaAttributeCreationException
 from .gsa_attribute_criterion import GsaAttributeCriterion
 from .gsa_attribute_criterion_type import GsaAttributeCriterionType
@@ -906,6 +909,7 @@ from .gsa_parameter_value_used_by_type import GsaParameterValueUsedByType
 from .gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .gsa_parameters_info import GsaParametersInfo
 from .gsa_permission import GsaPermission
+from .gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .gsa_permission_category import GsaPermissionCategory
 from .gsa_permissions_info import GsaPermissionsInfo
@@ -1071,6 +1075,9 @@ from .gsa_rich_text_value import GsaRichTextValue
 from .gsa_rollup_export_failure import GsaRollupExportFailure
 from .gsa_rollup_reference import GsaRollupReference
 from .gsa_root_folder_move_error_detail import GsaRootFolderMoveErrorDetail
+from .gsa_rule_engine import GsaRuleEngine
+from .gsa_rule_engine_config import GsaRuleEngineConfig
+from .gsa_rule_engines_info import GsaRuleEnginesInfo
 from .gsa_same_parent_file_move_error_detail import GsaSameParentFileMoveErrorDetail
 from .gsa_same_parent_folder_move_error_detail import GsaSameParentFolderMoveErrorDetail
 from .gsa_schema_too_new_add_database_validation_issue import (
@@ -1257,13 +1264,16 @@ from .gsa_unit_systems_info import GsaUnitSystemsInfo
 from .gsa_unit_usage import GsaUnitUsage
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
+from .gsa_update_access_control import GsaUpdateAccessControl
 from .gsa_update_all_profiles_info import GsaUpdateAllProfilesInfo
 from .gsa_update_attribute import GsaUpdateAttribute
+from .gsa_update_attribute_based_access_control import GsaUpdateAttributeBasedAccessControl
 from .gsa_update_axis_name import GsaUpdateAxisName
 from .gsa_update_configuration import GsaUpdateConfiguration
 from .gsa_update_constant import GsaUpdateConstant
 from .gsa_update_continuous_range import GsaUpdateContinuousRange
 from .gsa_update_cross_database_record_link_group import GsaUpdateCrossDatabaseRecordLinkGroup
+from .gsa_update_current_rule_engine import GsaUpdateCurrentRuleEngine
 from .gsa_update_data_rule import GsaUpdateDataRule
 from .gsa_update_database import GsaUpdateDatabase
 from .gsa_update_database_security_groups import GsaUpdateDatabaseSecurityGroups
@@ -1333,6 +1343,7 @@ from .gsa_update_numeric_parameter_value import GsaUpdateNumericParameterValue
 from .gsa_update_parameter import GsaUpdateParameter
 from .gsa_update_parameter_content import GsaUpdateParameterContent
 from .gsa_update_parameter_value import GsaUpdateParameterValue
+from .gsa_update_permission_based_access_control import GsaUpdatePermissionBasedAccessControl
 from .gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .gsa_update_point_attribute import GsaUpdatePointAttribute
 from .gsa_update_profile import GsaUpdateProfile
@@ -1413,6 +1424,8 @@ __all__ = [
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+    "GsaAccessControlInfo",
+    "GsaAccessControlMode",
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
@@ -1460,6 +1473,7 @@ __all__ = [
     "GsaAttributeAggregationType",
     "GsaAttributeAggregationValueCriterion",
     "GsaAttributeAlreadySpecifiedSmartAttributesErrorDetail",
+    "GsaAttributeBasedAccessControlInfo",
     "GsaAttributeCreationException",
     "GsaAttributeCriterion",
     "GsaAttributeCriterionType",
@@ -2111,6 +2125,7 @@ __all__ = [
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
     "GsaPermission",
+    "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
     "GsaPermissionsInfo",
@@ -2258,6 +2273,9 @@ __all__ = [
     "GsaRollupExportFailure",
     "GsaRollupReference",
     "GsaRootFolderMoveErrorDetail",
+    "GsaRuleEngine",
+    "GsaRuleEngineConfig",
+    "GsaRuleEnginesInfo",
     "GsaSameParentFileMoveErrorDetail",
     "GsaSameParentFolderMoveErrorDetail",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
@@ -2416,13 +2434,16 @@ __all__ = [
     "GsaUnitUsage",
     "GsaUnitsInfo",
     "GsaUnresolvedTargetAttribute",
+    "GsaUpdateAccessControl",
     "GsaUpdateAllProfilesInfo",
     "GsaUpdateAttribute",
+    "GsaUpdateAttributeBasedAccessControl",
     "GsaUpdateAxisName",
     "GsaUpdateConfiguration",
     "GsaUpdateConstant",
     "GsaUpdateContinuousRange",
     "GsaUpdateCrossDatabaseRecordLinkGroup",
+    "GsaUpdateCurrentRuleEngine",
     "GsaUpdateDataRule",
     "GsaUpdateDatabase",
     "GsaUpdateDatabaseSecurityGroups",
@@ -2480,6 +2501,7 @@ __all__ = [
     "GsaUpdateParameter",
     "GsaUpdateParameterContent",
     "GsaUpdateParameterValue",
+    "GsaUpdatePermissionBasedAccessControl",
     "GsaUpdatePictureAttribute",
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",

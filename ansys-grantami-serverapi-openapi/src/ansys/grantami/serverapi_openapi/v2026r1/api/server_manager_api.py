@@ -585,6 +585,67 @@ class ServerManagerApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_available_rule_engines(self) -> "GsaRuleEnginesInfo | None":
+        """Gets the available rule engines.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaRuleEnginesInfo | None
+        """
+        data = self._get_available_rule_engines_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_available_rule_engines_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_available_rule_engines"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRuleEnginesInfo",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/attributeBased/ruleEngines",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_available_sql_servers(self) -> "GsaSqlServersInfo | None":
         """Gets a list of available SQL Servers.
 
@@ -631,6 +692,190 @@ class ServerManagerApi(ApiBase):
 
         return self.api_client.call_api(
             "/v1alpha/serverManager/sql/servers",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_current_access_control(self) -> "GsaAccessControlInfo | None":
+        """Gets the information about current access control.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaAccessControlInfo | None
+        """
+        data = self._get_current_access_control_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_current_access_control_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_current_access_control"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaAccessControlInfo",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/current",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_current_rule_engine(self) -> "GsaRuleEngine | None":
+        """Gets the currently set rule engine or null.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaRuleEngine | None
+        """
+        data = self._get_current_rule_engine_with_http_info(_return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_current_rule_engine_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_current_rule_engine"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRuleEngine",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/attributeBased/ruleEngines/current",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_current_rule_engine_configuration(self) -> "GsaRuleEngineConfig | None":
+        """Gets the configuration for the currently set rule engine or null if rule engine is not configurable.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        GsaRuleEngineConfig | None
+        """
+        data = self._get_current_rule_engine_configuration_with_http_info(
+            _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_current_rule_engine_configuration_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_current_rule_engine_configuration"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRuleEngineConfig",
+            204: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/attributeBased/ruleEngines/current/configuration",
             "GET",
             path_params,
             query_params,
@@ -1278,6 +1523,255 @@ class ServerManagerApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/serverManager/email",
             "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_current_access_control(
+        self, *, body: "Optional[GsaUpdateAccessControl]" = None
+    ) -> "GsaAccessControlInfo | None":
+        """Sets the current access control.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaUpdateAccessControl
+
+        Returns
+        -------
+        GsaAccessControlInfo | None
+        """
+        data = self._set_current_access_control_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _set_current_access_control_with_http_info(
+        self, body: "Optional[GsaUpdateAccessControl]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_current_access_control"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaAccessControlInfo",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/current",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_current_rule_engine(
+        self, *, body: "Optional[GsaUpdateCurrentRuleEngine]" = None
+    ) -> "GsaRuleEngine | None":
+        """Sets the current rule engine.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaUpdateCurrentRuleEngine
+
+        Returns
+        -------
+        GsaRuleEngine | None
+        """
+        data = self._set_current_rule_engine_with_http_info(body, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _set_current_rule_engine_with_http_info(
+        self, body: "Optional[GsaUpdateCurrentRuleEngine]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_current_rule_engine"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRuleEngine",
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/attributeBased/ruleEngines/current",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def set_current_rule_engine_configuration(
+        self, *, body: "Optional[GsaRuleEngineConfig]" = None
+    ) -> "GsaRuleEngineConfig | None":
+        """Sets the configuration for the currently set rule engine.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        body: GsaRuleEngineConfig
+
+        Returns
+        -------
+        GsaRuleEngineConfig | None
+        """
+        data = self._set_current_rule_engine_configuration_with_http_info(
+            body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_current_rule_engine_configuration_with_http_info(
+        self, body: "Optional[GsaRuleEngineConfig]" = None, **kwargs: Any
+    ) -> Any:
+        all_params = ["body", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_current_rule_engine_configuration"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            [
+                "application/octet-stream",
+                "application/zip",
+                "application/json-patch+json",
+                "application/json",
+                "text/json",
+                "application/*+json",
+            ]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaRuleEngineConfig",
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/serverManager/accessControl/attributeBased/ruleEngines/current/configuration",
+            "POST",
             path_params,
             query_params,
             header_params,
