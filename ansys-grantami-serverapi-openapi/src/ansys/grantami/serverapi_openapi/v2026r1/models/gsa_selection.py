@@ -61,7 +61,6 @@ class GsaSelection(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "all_identifiers": "list[str]",
         "attribute_guids": "list[str]",
         "constant_guids": "list[str]",
         "cross_database_link_group_guids": "list[str]",
@@ -83,7 +82,6 @@ class GsaSelection(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "all_identifiers": "allIdentifiers",
         "attribute_guids": "attributeGuids",
         "constant_guids": "constantGuids",
         "cross_database_link_group_guids": "crossDatabaseLinkGroupGuids",
@@ -111,7 +109,6 @@ class GsaSelection(ModelBase):
     def __init__(
         self,
         *,
-        all_identifiers: "list[str] | None | Unset_Type" = Unset,
         attribute_guids: "list[str] | None | Unset_Type" = Unset,
         constant_guids: "list[str] | None | Unset_Type" = Unset,
         cross_database_link_group_guids: "list[str] | None | Unset_Type" = Unset,
@@ -135,7 +132,6 @@ class GsaSelection(ModelBase):
 
         Parameters
         ----------
-        all_identifiers: list[str] | None, optional
         attribute_guids: list[str] | None, optional
         constant_guids: list[str] | None, optional
         cross_database_link_group_guids: list[str] | None, optional
@@ -173,7 +169,6 @@ class GsaSelection(ModelBase):
         self._search_template_guids: list[str] | None | Unset_Type = Unset
         self._dynamic_link_group_guids: list[str] | None | Unset_Type = Unset
         self._cross_database_link_group_guids: list[str] | None | Unset_Type = Unset
-        self._all_identifiers: list[str] | None | Unset_Type = Unset
 
         if table_guids is not Unset:
             self.table_guids = table_guids
@@ -211,8 +206,6 @@ class GsaSelection(ModelBase):
             self.dynamic_link_group_guids = dynamic_link_group_guids
         if cross_database_link_group_guids is not Unset:
             self.cross_database_link_group_guids = cross_database_link_group_guids
-        if all_identifiers is not Unset:
-            self.all_identifiers = all_identifiers
 
     @property
     def table_guids(self) -> "list[str] | None | Unset_Type":
@@ -617,28 +610,6 @@ class GsaSelection(ModelBase):
             The cross_database_link_group_guids of this GsaSelection.
         """
         self._cross_database_link_group_guids = cross_database_link_group_guids
-
-    @property
-    def all_identifiers(self) -> "list[str] | None | Unset_Type":
-        """Gets the all_identifiers of this GsaSelection.
-
-        Returns
-        -------
-        list[str] | None | Unset_Type
-            The all_identifiers of this GsaSelection.
-        """
-        return self._all_identifiers
-
-    @all_identifiers.setter
-    def all_identifiers(self, all_identifiers: "list[str] | None | Unset_Type") -> None:
-        """Sets the all_identifiers of this GsaSelection.
-
-        Parameters
-        ----------
-        all_identifiers: list[str] | None | Unset_Type
-            The all_identifiers of this GsaSelection.
-        """
-        self._all_identifiers = all_identifiers
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
