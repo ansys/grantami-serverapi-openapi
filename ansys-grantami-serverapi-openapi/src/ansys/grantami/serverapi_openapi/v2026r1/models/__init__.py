@@ -270,7 +270,9 @@ from .gsa_created_date_property import GsaCreatedDateProperty
 from .gsa_criterion import GsaCriterion
 from .gsa_criterion_type import GsaCriterionType
 from .gsa_cross_database_link import GsaCrossDatabaseLink
+from .gsa_cross_database_record_link import GsaCrossDatabaseRecordLink
 from .gsa_cross_database_record_link_group import GsaCrossDatabaseRecordLinkGroup
+from .gsa_cross_database_record_link_result import GsaCrossDatabaseRecordLinkResult
 from .gsa_current_user import GsaCurrentUser
 from .gsa_data_export_applicable_datum import GsaDataExportApplicableDatum
 from .gsa_data_export_binary_data import GsaDataExportBinaryData
@@ -957,9 +959,18 @@ from .gsa_query_discrete_type_filter import GsaQueryDiscreteTypeFilter
 from .gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
 from .gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
 from .gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
+from .gsa_query_layout import GsaQueryLayout
 from .gsa_query_layout_filter import GsaQueryLayoutFilter
+from .gsa_query_layout_item import GsaQueryLayoutItem
 from .gsa_query_layout_item_filter import GsaQueryLayoutItemFilter
+from .gsa_query_layout_item_properties import GsaQueryLayoutItemProperties
+from .gsa_query_layout_properties import GsaQueryLayoutProperties
+from .gsa_query_layout_section import GsaQueryLayoutSection
 from .gsa_query_layout_section_filter import GsaQueryLayoutSectionFilter
+from .gsa_query_layout_section_properties import GsaQueryLayoutSectionProperties
+from .gsa_query_layout_sections_info import GsaQueryLayoutSectionsInfo
+from .gsa_query_layout_sections_request import GsaQueryLayoutSectionsRequest
+from .gsa_query_layouts_info import GsaQueryLayoutsInfo
 from .gsa_query_layouts_request import GsaQueryLayoutsRequest
 from .gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
@@ -1003,6 +1014,7 @@ from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .gsa_record_history_reference import GsaRecordHistoryReference
 from .gsa_record_link import GsaRecordLink
+from .gsa_record_link_base import GsaRecordLinkBase
 from .gsa_record_link_group import GsaRecordLinkGroup
 from .gsa_record_link_group_creation_exception import GsaRecordLinkGroupCreationException
 from .gsa_record_link_group_error_detail import GsaRecordLinkGroupErrorDetail
@@ -1010,6 +1022,8 @@ from .gsa_record_link_group_error_reason import GsaRecordLinkGroupErrorReason
 from .gsa_record_link_group_type import GsaRecordLinkGroupType
 from .gsa_record_link_group_update_exception import GsaRecordLinkGroupUpdateException
 from .gsa_record_link_groups_info import GsaRecordLinkGroupsInfo
+from .gsa_record_link_result import GsaRecordLinkResult
+from .gsa_record_link_results import GsaRecordLinkResults
 from .gsa_record_list_header import GsaRecordListHeader
 from .gsa_record_list_headers_info import GsaRecordListHeadersInfo
 from .gsa_record_list_items_info import GsaRecordListItemsInfo
@@ -1177,6 +1191,7 @@ from .gsa_smart_link_group_usage_data_modification_error_detail import (
     GsaSmartLinkGroupUsageDataModificationErrorDetail,
 )
 from .gsa_smart_record_link_group import GsaSmartRecordLinkGroup
+from .gsa_smart_record_link_result import GsaSmartRecordLinkResult
 from .gsa_smtp_properties import GsaSmtpProperties
 from .gsa_sort_criterion import GsaSortCriterion
 from .gsa_sort_criterion_type import GsaSortCriterionType
@@ -1196,7 +1211,9 @@ from .gsa_sql_server_info import GsaSqlServerInfo
 from .gsa_sql_servers_info import GsaSqlServersInfo
 from .gsa_standard_name import GsaStandardName
 from .gsa_standard_names_info import GsaStandardNamesInfo
+from .gsa_static_record_link import GsaStaticRecordLink
 from .gsa_static_record_link_group import GsaStaticRecordLinkGroup
+from .gsa_static_record_link_result import GsaStaticRecordLinkResult
 from .gsa_string_sorting_value import GsaStringSortingValue
 from .gsa_subset import GsaSubset
 from .gsa_subsets_info import GsaSubsetsInfo
@@ -1612,7 +1629,9 @@ __all__ = [
     "GsaCriterion",
     "GsaCriterionType",
     "GsaCrossDatabaseLink",
+    "GsaCrossDatabaseRecordLink",
     "GsaCrossDatabaseRecordLinkGroup",
+    "GsaCrossDatabaseRecordLinkResult",
     "GsaCurrentUser",
     "GsaDataExportApplicableDatum",
     "GsaDataExportBinaryData",
@@ -2167,9 +2186,18 @@ __all__ = [
     "GsaQueryDiscreteTypeProperties",
     "GsaQueryDiscreteTypesInfo",
     "GsaQueryDiscreteTypesRequest",
+    "GsaQueryLayout",
     "GsaQueryLayoutFilter",
+    "GsaQueryLayoutItem",
     "GsaQueryLayoutItemFilter",
+    "GsaQueryLayoutItemProperties",
+    "GsaQueryLayoutProperties",
+    "GsaQueryLayoutSection",
     "GsaQueryLayoutSectionFilter",
+    "GsaQueryLayoutSectionProperties",
+    "GsaQueryLayoutSectionsInfo",
+    "GsaQueryLayoutSectionsRequest",
+    "GsaQueryLayoutsInfo",
     "GsaQueryLayoutsRequest",
     "GsaQuerySlimDiscreteType",
     "GsaQuerySlimDiscreteTypeProperties",
@@ -2209,6 +2237,7 @@ __all__ = [
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
     "GsaRecordLink",
+    "GsaRecordLinkBase",
     "GsaRecordLinkGroup",
     "GsaRecordLinkGroupCreationException",
     "GsaRecordLinkGroupErrorDetail",
@@ -2216,6 +2245,8 @@ __all__ = [
     "GsaRecordLinkGroupType",
     "GsaRecordLinkGroupUpdateException",
     "GsaRecordLinkGroupsInfo",
+    "GsaRecordLinkResult",
+    "GsaRecordLinkResults",
     "GsaRecordListHeader",
     "GsaRecordListHeadersInfo",
     "GsaRecordListItemsInfo",
@@ -2363,6 +2394,7 @@ __all__ = [
     "GsaSmartLink",
     "GsaSmartLinkGroupUsageDataModificationErrorDetail",
     "GsaSmartRecordLinkGroup",
+    "GsaSmartRecordLinkResult",
     "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
@@ -2380,7 +2412,9 @@ __all__ = [
     "GsaSqlServersInfo",
     "GsaStandardName",
     "GsaStandardNamesInfo",
+    "GsaStaticRecordLink",
     "GsaStaticRecordLinkGroup",
+    "GsaStaticRecordLinkResult",
     "GsaStringSortingValue",
     "GsaSubset",
     "GsaSubsetsInfo",

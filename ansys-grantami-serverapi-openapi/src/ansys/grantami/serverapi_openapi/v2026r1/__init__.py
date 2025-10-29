@@ -54,6 +54,7 @@ from .api.list_management_api import ListManagementApi
 from .api.list_permissions_api import ListPermissionsApi
 from .api.metrics_api import MetricsApi
 from .api.permission_based_access_control_api import PermissionBasedAccessControlApi
+from .api.record_links_api import RecordLinksApi
 from .api.records___record_histories_api import RecordsRecordHistoriesApi
 from .api.records___record_versions_api import RecordsRecordVersionsApi
 from .api.schema___attributes_api import SchemaAttributesApi
@@ -330,7 +331,9 @@ from .models.gsa_created_date_property import GsaCreatedDateProperty
 from .models.gsa_criterion import GsaCriterion
 from .models.gsa_criterion_type import GsaCriterionType
 from .models.gsa_cross_database_link import GsaCrossDatabaseLink
+from .models.gsa_cross_database_record_link import GsaCrossDatabaseRecordLink
 from .models.gsa_cross_database_record_link_group import GsaCrossDatabaseRecordLinkGroup
+from .models.gsa_cross_database_record_link_result import GsaCrossDatabaseRecordLinkResult
 from .models.gsa_current_user import GsaCurrentUser
 from .models.gsa_data_export_applicable_datum import GsaDataExportApplicableDatum
 from .models.gsa_data_export_binary_data import GsaDataExportBinaryData
@@ -1063,9 +1066,18 @@ from .models.gsa_query_discrete_type_filter import GsaQueryDiscreteTypeFilter
 from .models.gsa_query_discrete_type_properties import GsaQueryDiscreteTypeProperties
 from .models.gsa_query_discrete_types_info import GsaQueryDiscreteTypesInfo
 from .models.gsa_query_discrete_types_request import GsaQueryDiscreteTypesRequest
+from .models.gsa_query_layout import GsaQueryLayout
 from .models.gsa_query_layout_filter import GsaQueryLayoutFilter
+from .models.gsa_query_layout_item import GsaQueryLayoutItem
 from .models.gsa_query_layout_item_filter import GsaQueryLayoutItemFilter
+from .models.gsa_query_layout_item_properties import GsaQueryLayoutItemProperties
+from .models.gsa_query_layout_properties import GsaQueryLayoutProperties
+from .models.gsa_query_layout_section import GsaQueryLayoutSection
 from .models.gsa_query_layout_section_filter import GsaQueryLayoutSectionFilter
+from .models.gsa_query_layout_section_properties import GsaQueryLayoutSectionProperties
+from .models.gsa_query_layout_sections_info import GsaQueryLayoutSectionsInfo
+from .models.gsa_query_layout_sections_request import GsaQueryLayoutSectionsRequest
+from .models.gsa_query_layouts_info import GsaQueryLayoutsInfo
 from .models.gsa_query_layouts_request import GsaQueryLayoutsRequest
 from .models.gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .models.gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
@@ -1111,6 +1123,7 @@ from .models.gsa_record_history_guid_property import GsaRecordHistoryGuidPropert
 from .models.gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .models.gsa_record_history_reference import GsaRecordHistoryReference
 from .models.gsa_record_link import GsaRecordLink
+from .models.gsa_record_link_base import GsaRecordLinkBase
 from .models.gsa_record_link_group import GsaRecordLinkGroup
 from .models.gsa_record_link_group_creation_exception import GsaRecordLinkGroupCreationException
 from .models.gsa_record_link_group_error_detail import GsaRecordLinkGroupErrorDetail
@@ -1118,6 +1131,8 @@ from .models.gsa_record_link_group_error_reason import GsaRecordLinkGroupErrorRe
 from .models.gsa_record_link_group_type import GsaRecordLinkGroupType
 from .models.gsa_record_link_group_update_exception import GsaRecordLinkGroupUpdateException
 from .models.gsa_record_link_groups_info import GsaRecordLinkGroupsInfo
+from .models.gsa_record_link_result import GsaRecordLinkResult
+from .models.gsa_record_link_results import GsaRecordLinkResults
 from .models.gsa_record_list_header import GsaRecordListHeader
 from .models.gsa_record_list_headers_info import GsaRecordListHeadersInfo
 from .models.gsa_record_list_items_info import GsaRecordListItemsInfo
@@ -1289,6 +1304,7 @@ from .models.gsa_smart_link_group_usage_data_modification_error_detail import (
     GsaSmartLinkGroupUsageDataModificationErrorDetail,
 )
 from .models.gsa_smart_record_link_group import GsaSmartRecordLinkGroup
+from .models.gsa_smart_record_link_result import GsaSmartRecordLinkResult
 from .models.gsa_smtp_properties import GsaSmtpProperties
 from .models.gsa_sort_criterion import GsaSortCriterion
 from .models.gsa_sort_criterion_type import GsaSortCriterionType
@@ -1308,7 +1324,9 @@ from .models.gsa_sql_server_info import GsaSqlServerInfo
 from .models.gsa_sql_servers_info import GsaSqlServersInfo
 from .models.gsa_standard_name import GsaStandardName
 from .models.gsa_standard_names_info import GsaStandardNamesInfo
+from .models.gsa_static_record_link import GsaStaticRecordLink
 from .models.gsa_static_record_link_group import GsaStaticRecordLinkGroup
+from .models.gsa_static_record_link_result import GsaStaticRecordLinkResult
 from .models.gsa_string_sorting_value import GsaStringSortingValue
 from .models.gsa_subset import GsaSubset
 from .models.gsa_subsets_info import GsaSubsetsInfo
@@ -1547,6 +1565,7 @@ __all__ = [
     "ListPermissionsApi",
     "MetricsApi",
     "PermissionBasedAccessControlApi",
+    "RecordLinksApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
     "SchemaApi",
@@ -1781,7 +1800,9 @@ __all__ = [
     "GsaCriterion",
     "GsaCriterionType",
     "GsaCrossDatabaseLink",
+    "GsaCrossDatabaseRecordLink",
     "GsaCrossDatabaseRecordLinkGroup",
+    "GsaCrossDatabaseRecordLinkResult",
     "GsaCurrentUser",
     "GsaDataExportApplicableDatum",
     "GsaDataExportBinaryData",
@@ -2336,9 +2357,18 @@ __all__ = [
     "GsaQueryDiscreteTypeProperties",
     "GsaQueryDiscreteTypesInfo",
     "GsaQueryDiscreteTypesRequest",
+    "GsaQueryLayout",
     "GsaQueryLayoutFilter",
+    "GsaQueryLayoutItem",
     "GsaQueryLayoutItemFilter",
+    "GsaQueryLayoutItemProperties",
+    "GsaQueryLayoutProperties",
+    "GsaQueryLayoutSection",
     "GsaQueryLayoutSectionFilter",
+    "GsaQueryLayoutSectionProperties",
+    "GsaQueryLayoutSectionsInfo",
+    "GsaQueryLayoutSectionsRequest",
+    "GsaQueryLayoutsInfo",
     "GsaQueryLayoutsRequest",
     "GsaQuerySlimDiscreteType",
     "GsaQuerySlimDiscreteTypeProperties",
@@ -2378,6 +2408,7 @@ __all__ = [
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
     "GsaRecordLink",
+    "GsaRecordLinkBase",
     "GsaRecordLinkGroup",
     "GsaRecordLinkGroupCreationException",
     "GsaRecordLinkGroupErrorDetail",
@@ -2385,6 +2416,8 @@ __all__ = [
     "GsaRecordLinkGroupType",
     "GsaRecordLinkGroupUpdateException",
     "GsaRecordLinkGroupsInfo",
+    "GsaRecordLinkResult",
+    "GsaRecordLinkResults",
     "GsaRecordListHeader",
     "GsaRecordListHeadersInfo",
     "GsaRecordListItemsInfo",
@@ -2532,6 +2565,7 @@ __all__ = [
     "GsaSmartLink",
     "GsaSmartLinkGroupUsageDataModificationErrorDetail",
     "GsaSmartRecordLinkGroup",
+    "GsaSmartRecordLinkResult",
     "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
@@ -2549,7 +2583,9 @@ __all__ = [
     "GsaSqlServersInfo",
     "GsaStandardName",
     "GsaStandardNamesInfo",
+    "GsaStaticRecordLink",
     "GsaStaticRecordLinkGroup",
+    "GsaStaticRecordLinkResult",
     "GsaStringSortingValue",
     "GsaSubset",
     "GsaSubsetsInfo",

@@ -47,6 +47,7 @@ from .list_management_api import ListManagementApi
 from .list_permissions_api import ListPermissionsApi
 from .metrics_api import MetricsApi
 from .permission_based_access_control_api import PermissionBasedAccessControlApi
+from .record_links_api import RecordLinksApi
 from .records___record_histories_api import RecordsRecordHistoriesApi
 from .records___record_versions_api import RecordsRecordVersionsApi
 from .schema___attributes_api import SchemaAttributesApi
@@ -104,6 +105,7 @@ __all__ = [
     "ListPermissionsApi",
     "MetricsApi",
     "PermissionBasedAccessControlApi",
+    "RecordLinksApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
     "SchemaApi",

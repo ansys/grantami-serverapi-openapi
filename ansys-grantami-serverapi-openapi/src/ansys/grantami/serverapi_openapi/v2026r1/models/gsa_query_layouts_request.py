@@ -61,14 +61,17 @@ class GsaQueryLayoutsRequest(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "properties": "GsaQueryLayoutProperties",
         "filter": "GsaQueryLayoutFilter",
     }
 
     attribute_map: dict[str, str] = {
+        "properties": "properties",
         "filter": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
+        "properties": "GsaQueryLayoutProperties",
         "filter": "GsaQueryLayoutFilter",
     }
 
@@ -77,18 +80,50 @@ class GsaQueryLayoutsRequest(ModelBase):
     def __init__(
         self,
         *,
+        properties: "GsaQueryLayoutProperties",
         filter: "GsaQueryLayoutFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryLayoutsRequest - a model defined in Swagger
 
         Parameters
         ----------
+        properties: GsaQueryLayoutProperties
         filter: GsaQueryLayoutFilter, optional
         """
+        self._properties: GsaQueryLayoutProperties
         self._filter: GsaQueryLayoutFilter | Unset_Type = Unset
 
+        self.properties = properties
         if filter is not Unset:
             self.filter = filter
+
+    @property
+    def properties(self) -> "GsaQueryLayoutProperties":
+        """Gets the properties of this GsaQueryLayoutsRequest.
+
+        Returns
+        -------
+        GsaQueryLayoutProperties
+            The properties of this GsaQueryLayoutsRequest.
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: "GsaQueryLayoutProperties") -> None:
+        """Sets the properties of this GsaQueryLayoutsRequest.
+
+        Parameters
+        ----------
+        properties: GsaQueryLayoutProperties
+            The properties of this GsaQueryLayoutsRequest.
+        """
+        # Field is not nullable
+        if properties is None:
+            raise ValueError("Invalid value for 'properties', must not be 'None'")
+        # Field is required
+        if properties is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'properties', must not be 'Unset'")
+        self._properties = properties
 
     @property
     def filter(self) -> "GsaQueryLayoutFilter | Unset_Type":

@@ -623,7 +623,7 @@ class SchemaLayoutsApi(ApiBase):
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         application: "Optional[str]" = None,
-    ) -> "GsaLayoutsInfo | None":
+    ) -> "GsaQueryLayoutsInfo | None":
         """Query all layouts for table, optionally filter layouts returned
 
         This method makes a synchronous HTTP request.
@@ -643,7 +643,7 @@ class SchemaLayoutsApi(ApiBase):
 
         Returns
         -------
-        GsaLayoutsInfo | None
+        GsaQueryLayoutsInfo | None
         """
         data = self._query_layouts_with_http_info(
             database_key,
@@ -737,7 +737,7 @@ class SchemaLayoutsApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaLayoutsInfo",
+            200: "GsaQueryLayoutsInfo",
             404: None,
         }
 
