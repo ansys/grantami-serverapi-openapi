@@ -76,7 +76,6 @@ class GsaUpdateDatabase(ModelBase):
         "notes": "str",
         "sql_password": "str",
         "sql_user_name": "str",
-        "use_configuration_database_credentials": "bool",
         "use_integrated_security": "bool",
         "version_guid": "str",
     }
@@ -97,7 +96,6 @@ class GsaUpdateDatabase(ModelBase):
         "notes": "notes",
         "sql_password": "sqlPassword",
         "sql_user_name": "sqlUserName",
-        "use_configuration_database_credentials": "useConfigurationDatabaseCredentials",
         "use_integrated_security": "useIntegratedSecurity",
         "version_guid": "versionGuid",
     }
@@ -124,7 +122,6 @@ class GsaUpdateDatabase(ModelBase):
         notes: "str | None | Unset_Type" = Unset,
         sql_password: "str | None | Unset_Type" = Unset,
         sql_user_name: "str | None | Unset_Type" = Unset,
-        use_configuration_database_credentials: "bool | None | Unset_Type" = Unset,
         use_integrated_security: "bool | None | Unset_Type" = Unset,
         version_guid: "str | Unset_Type" = Unset,
     ) -> None:
@@ -147,7 +144,6 @@ class GsaUpdateDatabase(ModelBase):
         notes: str | None, optional
         sql_password: str | None, optional
         sql_user_name: str | None, optional
-        use_configuration_database_credentials: bool | None, optional
         use_integrated_security: bool | None, optional
         version_guid: str, optional
         """
@@ -162,7 +158,6 @@ class GsaUpdateDatabase(ModelBase):
         self._language: str | None | Unset_Type = Unset
         self._database_key: str | None | Unset_Type = Unset
         self._data_source: str | None | Unset_Type = Unset
-        self._use_configuration_database_credentials: bool | None | Unset_Type = Unset
         self._use_integrated_security: bool | None | Unset_Type = Unset
         self._sql_user_name: str | None | Unset_Type = Unset
         self._sql_password: str | None | Unset_Type = Unset
@@ -192,8 +187,6 @@ class GsaUpdateDatabase(ModelBase):
             self.database_key = database_key
         if data_source is not Unset:
             self.data_source = data_source
-        if use_configuration_database_credentials is not Unset:
-            self.use_configuration_database_credentials = use_configuration_database_credentials
         if use_integrated_security is not Unset:
             self.use_integrated_security = use_integrated_security
         if sql_user_name is not Unset:
@@ -482,32 +475,6 @@ class GsaUpdateDatabase(ModelBase):
             The data_source of this GsaUpdateDatabase.
         """
         self._data_source = data_source
-
-    @property
-    def use_configuration_database_credentials(self) -> "bool | None | Unset_Type":
-        """Gets the use_configuration_database_credentials of this GsaUpdateDatabase.
-        Set to true if the SQL connection to the database should use the same credentials as connection to Configuration Database. Can only be edited by a system administrator
-
-        Returns
-        -------
-        bool | None | Unset_Type
-            The use_configuration_database_credentials of this GsaUpdateDatabase.
-        """
-        return self._use_configuration_database_credentials
-
-    @use_configuration_database_credentials.setter
-    def use_configuration_database_credentials(
-        self, use_configuration_database_credentials: "bool | None | Unset_Type"
-    ) -> None:
-        """Sets the use_configuration_database_credentials of this GsaUpdateDatabase.
-        Set to true if the SQL connection to the database should use the same credentials as connection to Configuration Database. Can only be edited by a system administrator
-
-        Parameters
-        ----------
-        use_configuration_database_credentials: bool | None | Unset_Type
-            The use_configuration_database_credentials of this GsaUpdateDatabase.
-        """
-        self._use_configuration_database_credentials = use_configuration_database_credentials
 
     @property
     def use_integrated_security(self) -> "bool | None | Unset_Type":
