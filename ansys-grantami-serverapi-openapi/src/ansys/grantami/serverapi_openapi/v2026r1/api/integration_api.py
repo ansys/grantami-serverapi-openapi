@@ -99,14 +99,7 @@ class IntegrationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -467,7 +460,6 @@ class IntegrationApi(ApiBase):
         ----------
         schema: str
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_identity: int
 
         Returns
@@ -783,14 +775,7 @@ class IntegrationApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
