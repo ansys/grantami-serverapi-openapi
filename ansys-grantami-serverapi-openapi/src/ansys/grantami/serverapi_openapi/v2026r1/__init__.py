@@ -86,7 +86,6 @@ from .api.schema___tables_api import SchemaTablesApi
 from .api.schema___units_api import SchemaUnitsApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
-from .api.server_manager_api import ServerManagerApi
 from .api.status_api import StatusApi
 from .models.attributes_attributeguidimportfile_body1 import AttributesAttributeguidimportfileBody1
 
@@ -205,8 +204,6 @@ from .models.gsa_attribute_usage_data_modification_error_detail import (
 from .models.gsa_attribute_validate_response import GsaAttributeValidateResponse
 from .models.gsa_attribute_value_aggregation import GsaAttributeValueAggregation
 from .models.gsa_attributes_info import GsaAttributesInfo
-from .models.gsa_auth_info import GsaAuthInfo
-from .models.gsa_auth_mode import GsaAuthMode
 from .models.gsa_axis_name import GsaAxisName
 from .models.gsa_blob_info_dto import GsaBlobInfoDto
 from .models.gsa_boolean_criterion import GsaBooleanCriterion
@@ -221,6 +218,8 @@ from .models.gsa_calendar_interval import GsaCalendarInterval
 from .models.gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
+from .models.gsa_code_missing_currency_error_detail import GsaCodeMissingCurrencyErrorDetail
+from .models.gsa_code_whitespace_currency_error_detail import GsaCodeWhitespaceCurrencyErrorDetail
 from .models.gsa_config_invalid_json_file_error_detail import GsaConfigInvalidJsonFileErrorDetail
 from .models.gsa_configuration import GsaConfiguration
 from .models.gsa_configuration_details import GsaConfigurationDetails
@@ -334,6 +333,8 @@ from .models.gsa_cross_database_link import GsaCrossDatabaseLink
 from .models.gsa_cross_database_record_link import GsaCrossDatabaseRecordLink
 from .models.gsa_cross_database_record_link_group import GsaCrossDatabaseRecordLinkGroup
 from .models.gsa_cross_database_record_link_result import GsaCrossDatabaseRecordLinkResult
+from .models.gsa_currency_error_detail import GsaCurrencyErrorDetail
+from .models.gsa_currency_error_reason import GsaCurrencyErrorReason
 from .models.gsa_current_user import GsaCurrentUser
 from .models.gsa_data_export_applicable_datum import GsaDataExportApplicableDatum
 from .models.gsa_data_export_binary_data import GsaDataExportBinaryData
@@ -544,6 +545,7 @@ from .models.gsa_display_names_import_error_reason import GsaDisplayNamesImportE
 from .models.gsa_display_names_import_exception import GsaDisplayNamesImportException
 from .models.gsa_display_names_info import GsaDisplayNamesInfo
 from .models.gsa_double_sorting_value import GsaDoubleSortingValue
+from .models.gsa_duplicate_code_currency_error_detail import GsaDuplicateCodeCurrencyErrorDetail
 from .models.gsa_duplicate_database_add_database_validation_issue import (
     GsaDuplicateDatabaseAddDatabaseValidationIssue,
 )
@@ -556,6 +558,7 @@ from .models.gsa_duplicate_guid_add_database_validation_issue import (
 from .models.gsa_duplicate_key_add_database_validation_issue import (
     GsaDuplicateKeyAddDatabaseValidationIssue,
 )
+from .models.gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyErrorDetail
 from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
 )
@@ -568,7 +571,6 @@ from .models.gsa_duplicate_tabular_column_names_error_detail import (
 from .models.gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
-from .models.gsa_email_generation_settings import GsaEmailGenerationSettings
 from .models.gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .models.gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .models.gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
@@ -605,7 +607,6 @@ from .models.gsa_file_creation_exception import GsaFileCreationException
 from .models.gsa_file_datum import GsaFileDatum
 from .models.gsa_file_datum_criterion import GsaFileDatumCriterion
 from .models.gsa_file_datum_exists_criterion import GsaFileDatumExistsCriterion
-from .models.gsa_file_datum_info import GsaFileDatumInfo
 from .models.gsa_file_error_detail import GsaFileErrorDetail
 from .models.gsa_file_error_reason import GsaFileErrorReason
 from .models.gsa_file_header import GsaFileHeader
@@ -720,9 +721,7 @@ from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExists
 from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
 from .models.gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
-from .models.gsa_index_failure import GsaIndexFailure
 from .models.gsa_index_record_failure import GsaIndexRecordFailure
-from .models.gsa_index_results_report import GsaIndexResultsReport
 from .models.gsa_indirect_links import GsaIndirectLinks
 from .models.gsa_input_connection_details import GsaInputConnectionDetails
 from .models.gsa_input_validation_error_detail import GsaInputValidationErrorDetail
@@ -751,6 +750,9 @@ from .models.gsa_integration_schema_of_object_identifier import (
     GsaIntegrationSchemaOfObjectIdentifier,
 )
 from .models.gsa_integration_schema_status import GsaIntegrationSchemaStatus
+from .models.gsa_invalid_exchange_rate_currency_error_detail import (
+    GsaInvalidExchangeRateCurrencyErrorDetail,
+)
 from .models.gsa_invalid_key_add_database_validation_issue import (
     GsaInvalidKeyAddDatabaseValidationIssue,
 )
@@ -883,10 +885,12 @@ from .models.gsa_name_already_exists_as_reverse_record_link_group_error_detail i
 )
 from .models.gsa_name_already_exists_error_detail import GsaNameAlreadyExistsErrorDetail
 from .models.gsa_name_already_specified_error_detail import GsaNameAlreadySpecifiedErrorDetail
+from .models.gsa_name_missing_currency_error_detail import GsaNameMissingCurrencyErrorDetail
 from .models.gsa_name_not_provided_error_detail import GsaNameNotProvidedErrorDetail
 from .models.gsa_name_same_as_reverse_name_record_link_group_error_detail import (
     GsaNameSameAsReverseNameRecordLinkGroupErrorDetail,
 )
+from .models.gsa_name_whitespace_currency_error_detail import GsaNameWhitespaceCurrencyErrorDetail
 from .models.gsa_name_whitespace_parameter_value_error_detail import (
     GsaNameWhitespaceParameterValueErrorDetail,
 )
@@ -950,11 +954,6 @@ from .models.gsa_no_values_specifier import GsaNoValuesSpecifier
 from .models.gsa_not_applicable_datum import GsaNotApplicableDatum
 from .models.gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .models.gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
-from .models.gsa_notification_email_allowed_request import GsaNotificationEmailAllowedRequest
-from .models.gsa_notification_email_allowed_response import GsaNotificationEmailAllowedResponse
-from .models.gsa_notification_user import GsaNotificationUser
-from .models.gsa_notification_users import GsaNotificationUsers
-from .models.gsa_notification_watch import GsaNotificationWatch
 from .models.gsa_numeric_graph_parameter_value import GsaNumericGraphParameterValue
 from .models.gsa_numeric_parameter import GsaNumericParameter
 from .models.gsa_numeric_parameter_constraint import GsaNumericParameterConstraint
@@ -965,8 +964,6 @@ from .models.gsa_numeric_restricted_interpolation_parameter_error_detail import 
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .models.gsa_object_identifier import GsaObjectIdentifier
-from .models.gsa_orphaned_search_index import GsaOrphanedSearchIndex
-from .models.gsa_orphaned_search_indexes_info import GsaOrphanedSearchIndexesInfo
 from .models.gsa_pagination_links import GsaPaginationLinks
 from .models.gsa_paging_options import GsaPagingOptions
 from .models.gsa_parameter import GsaParameter
@@ -1178,8 +1175,6 @@ from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .models.gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
 from .models.gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
 from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
-from .models.gsa_resolved_notification_watch import GsaResolvedNotificationWatch
-from .models.gsa_resolved_notification_watches import GsaResolvedNotificationWatches
 from .models.gsa_resolved_target_attribute import GsaResolvedTargetAttribute
 from .models.gsa_response_options import GsaResponseOptions
 from .models.gsa_resubmit_job_request import GsaResubmitJobRequest
@@ -1203,8 +1198,6 @@ from .models.gsa_rollup_export_failure import GsaRollupExportFailure
 from .models.gsa_rollup_reference import GsaRollupReference
 from .models.gsa_root_folder_move_error_detail import GsaRootFolderMoveErrorDetail
 from .models.gsa_rule_engine import GsaRuleEngine
-from .models.gsa_rule_engine_config import GsaRuleEngineConfig
-from .models.gsa_rule_engines_info import GsaRuleEnginesInfo
 from .models.gsa_same_parent_file_move_error_detail import GsaSameParentFileMoveErrorDetail
 from .models.gsa_same_parent_folder_move_error_detail import GsaSameParentFolderMoveErrorDetail
 from .models.gsa_schema_too_new_add_database_validation_issue import (
@@ -1233,7 +1226,6 @@ from .models.gsa_security_attribute_usage_data_modification_error_detail import 
 from .models.gsa_security_groups import GsaSecurityGroups
 from .models.gsa_selection import GsaSelection
 from .models.gsa_series_graph import GsaSeriesGraph
-from .models.gsa_server_connection_details import GsaServerConnectionDetails
 from .models.gsa_set_date_time_datum import GsaSetDateTimeDatum
 from .models.gsa_set_datum import GsaSetDatum
 from .models.gsa_set_datum_type import GsaSetDatumType
@@ -1305,7 +1297,6 @@ from .models.gsa_smart_link_group_usage_data_modification_error_detail import (
 )
 from .models.gsa_smart_record_link_group import GsaSmartRecordLinkGroup
 from .models.gsa_smart_record_link_result import GsaSmartRecordLinkResult
-from .models.gsa_smtp_properties import GsaSmtpProperties
 from .models.gsa_sort_criterion import GsaSortCriterion
 from .models.gsa_sort_criterion_type import GsaSortCriterionType
 from .models.gsa_sort_direction import GsaSortDirection
@@ -1318,10 +1309,6 @@ from .models.gsa_source_cannot_be_target_smart_attributes_error_detail import (
 from .models.gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .models.gsa_specific_values_specifier import GsaSpecificValuesSpecifier
 from .models.gsa_sql_credentials import GsaSqlCredentials
-from .models.gsa_sql_database_info import GsaSqlDatabaseInfo
-from .models.gsa_sql_databases_info import GsaSqlDatabasesInfo
-from .models.gsa_sql_server_info import GsaSqlServerInfo
-from .models.gsa_sql_servers_info import GsaSqlServersInfo
 from .models.gsa_standard_name import GsaStandardName
 from .models.gsa_standard_names_info import GsaStandardNamesInfo
 from .models.gsa_static_record_link import GsaStaticRecordLink
@@ -1330,7 +1317,6 @@ from .models.gsa_static_record_link_result import GsaStaticRecordLinkResult
 from .models.gsa_string_sorting_value import GsaStringSortingValue
 from .models.gsa_subset import GsaSubset
 from .models.gsa_subsets_info import GsaSubsetsInfo
-from .models.gsa_support_properties import GsaSupportProperties
 from .models.gsa_swap_name_and_reverse_name_circular_record_link_group_error_detail import (
     GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail,
 )
@@ -1373,6 +1359,7 @@ from .models.gsa_target_attribute_type_attribute_error_detail import (
 from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
 from .models.gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
+from .models.gsa_too_long_code_currency_error_detail import GsaTooLongCodeCurrencyErrorDetail
 from .models.gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
     GsaTooManyAttributePairsSmartAttributesErrorDetail,
 )
@@ -1470,7 +1457,6 @@ from .models.gsa_update_logical_attribute import GsaUpdateLogicalAttribute
 from .models.gsa_update_long_text_attribute import GsaUpdateLongTextAttribute
 from .models.gsa_update_maths_content import GsaUpdateMathsContent
 from .models.gsa_update_maths_functional_attribute import GsaUpdateMathsFunctionalAttribute
-from .models.gsa_update_notification_user import GsaUpdateNotificationUser
 from .models.gsa_update_numeric_parameter import GsaUpdateNumericParameter
 from .models.gsa_update_numeric_parameter_content import GsaUpdateNumericParameterContent
 from .models.gsa_update_numeric_parameter_value import GsaUpdateNumericParameterValue
@@ -1495,7 +1481,6 @@ from .models.gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkG
 from .models.gsa_update_standard_name import GsaUpdateStandardName
 from .models.gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
 from .models.gsa_update_subset import GsaUpdateSubset
-from .models.gsa_update_support_properties import GsaUpdateSupportProperties
 from .models.gsa_update_table import GsaUpdateTable
 from .models.gsa_update_tabular_attribute import GsaUpdateTabularAttribute
 from .models.gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
@@ -1508,7 +1493,6 @@ from .models.gsa_update_user_permissions_info import GsaUpdateUserPermissionsInf
 from .models.gsa_upgrade_database_exception import GsaUpgradeDatabaseException
 from .models.gsa_upgrade_database_failure_reason import GsaUpgradeDatabaseFailureReason
 from .models.gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
-from .models.gsa_user_belongs_to_group_response import GsaUserBelongsToGroupResponse
 from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
 from .models.gsa_user_role import GsaUserRole
@@ -1528,7 +1512,6 @@ from .models.gsa_version_controlled_data_usage_data_modification_error_detail im
 from .models.gsa_version_number_property import GsaVersionNumberProperty
 from .models.gsa_version_state import GsaVersionState
 from .models.gsa_version_state_property import GsaVersionStateProperty
-from .models.gsa_watch_type import GsaWatchType
 from .models.gsa_withdraw_record_version_control_exception import (
     GsaWithdrawRecordVersionControlException,
 )
@@ -1597,7 +1580,6 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitsApi",
     "SearchApi",
-    "ServerManagerApi",
     "StatusApi",
     "AttributesAttributeguidimportfileBody",
     "AttributesAttributeguidimportfileBody1",
@@ -1690,8 +1672,6 @@ __all__ = [
     "GsaAttributeValidateResponse",
     "GsaAttributeValueAggregation",
     "GsaAttributesInfo",
-    "GsaAuthInfo",
-    "GsaAuthMode",
     "GsaAxisName",
     "GsaBlobInfoDto",
     "GsaBooleanCriterion",
@@ -1704,6 +1684,8 @@ __all__ = [
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
     "GsaCircularReferenceFolderMoveErrorDetail",
+    "GsaCodeMissingCurrencyErrorDetail",
+    "GsaCodeWhitespaceCurrencyErrorDetail",
     "GsaConfigInvalidJsonFileErrorDetail",
     "GsaConfiguration",
     "GsaConfigurationDetails",
@@ -1803,6 +1785,8 @@ __all__ = [
     "GsaCrossDatabaseRecordLink",
     "GsaCrossDatabaseRecordLinkGroup",
     "GsaCrossDatabaseRecordLinkResult",
+    "GsaCurrencyErrorDetail",
+    "GsaCurrencyErrorReason",
     "GsaCurrentUser",
     "GsaDataExportApplicableDatum",
     "GsaDataExportBinaryData",
@@ -1965,15 +1949,16 @@ __all__ = [
     "GsaDisplayNamesImportException",
     "GsaDisplayNamesInfo",
     "GsaDoubleSortingValue",
+    "GsaDuplicateCodeCurrencyErrorDetail",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
     "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
     "GsaDuplicateGuidAddDatabaseValidationIssue",
     "GsaDuplicateKeyAddDatabaseValidationIssue",
+    "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
-    "GsaEmailGenerationSettings",
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
@@ -1998,7 +1983,6 @@ __all__ = [
     "GsaFileDatum",
     "GsaFileDatumCriterion",
     "GsaFileDatumExistsCriterion",
-    "GsaFileDatumInfo",
     "GsaFileErrorDetail",
     "GsaFileErrorReason",
     "GsaFileHeader",
@@ -2089,9 +2073,7 @@ __all__ = [
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaInUseParameterValueErrorDetail",
-    "GsaIndexFailure",
     "GsaIndexRecordFailure",
-    "GsaIndexResultsReport",
     "GsaIndirectLinks",
     "GsaInputConnectionDetails",
     "GsaInputValidationErrorDetail",
@@ -2112,6 +2094,7 @@ __all__ = [
     "GsaIntegrationSchemaGenerationErrorDetail",
     "GsaIntegrationSchemaOfObjectIdentifier",
     "GsaIntegrationSchemaStatus",
+    "GsaInvalidExchangeRateCurrencyErrorDetail",
     "GsaInvalidKeyAddDatabaseValidationIssue",
     "GsaInvalidParentStateErrorDetail",
     "GsaInvalidVersionStateErrorDetail",
@@ -2220,8 +2203,10 @@ __all__ = [
     "GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
     "GsaNameAlreadySpecifiedErrorDetail",
+    "GsaNameMissingCurrencyErrorDetail",
     "GsaNameNotProvidedErrorDetail",
     "GsaNameSameAsReverseNameRecordLinkGroupErrorDetail",
+    "GsaNameWhitespaceCurrencyErrorDetail",
     "GsaNameWhitespaceParameterValueErrorDetail",
     "GsaNamedCriterion",
     "GsaNamedEntityAttributeErrorDetail",
@@ -2259,11 +2244,6 @@ __all__ = [
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
-    "GsaNotificationEmailAllowedRequest",
-    "GsaNotificationEmailAllowedResponse",
-    "GsaNotificationUser",
-    "GsaNotificationUsers",
-    "GsaNotificationWatch",
     "GsaNumericGraphParameterValue",
     "GsaNumericParameter",
     "GsaNumericParameterConstraint",
@@ -2272,8 +2252,6 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
-    "GsaOrphanedSearchIndex",
-    "GsaOrphanedSearchIndexesInfo",
     "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",
@@ -2457,8 +2435,6 @@ __all__ = [
     "GsaResolveLinkTargetsInfo",
     "GsaResolveLinkTargetsRequest",
     "GsaResolvedLinkTarget",
-    "GsaResolvedNotificationWatch",
-    "GsaResolvedNotificationWatches",
     "GsaResolvedTargetAttribute",
     "GsaResponseOptions",
     "GsaResubmitJobRequest",
@@ -2476,8 +2452,6 @@ __all__ = [
     "GsaRollupReference",
     "GsaRootFolderMoveErrorDetail",
     "GsaRuleEngine",
-    "GsaRuleEngineConfig",
-    "GsaRuleEnginesInfo",
     "GsaSameParentFileMoveErrorDetail",
     "GsaSameParentFolderMoveErrorDetail",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
@@ -2498,7 +2472,6 @@ __all__ = [
     "GsaSecurityGroups",
     "GsaSelection",
     "GsaSeriesGraph",
-    "GsaServerConnectionDetails",
     "GsaSetDateTimeDatum",
     "GsaSetDatum",
     "GsaSetDatumType",
@@ -2566,7 +2539,6 @@ __all__ = [
     "GsaSmartLinkGroupUsageDataModificationErrorDetail",
     "GsaSmartRecordLinkGroup",
     "GsaSmartRecordLinkResult",
-    "GsaSmtpProperties",
     "GsaSortCriterion",
     "GsaSortCriterionType",
     "GsaSortDirection",
@@ -2577,10 +2549,6 @@ __all__ = [
     "GsaSourceOfObjectIdentifier",
     "GsaSpecificValuesSpecifier",
     "GsaSqlCredentials",
-    "GsaSqlDatabaseInfo",
-    "GsaSqlDatabasesInfo",
-    "GsaSqlServerInfo",
-    "GsaSqlServersInfo",
     "GsaStandardName",
     "GsaStandardNamesInfo",
     "GsaStaticRecordLink",
@@ -2589,7 +2557,6 @@ __all__ = [
     "GsaStringSortingValue",
     "GsaSubset",
     "GsaSubsetsInfo",
-    "GsaSupportProperties",
     "GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail",
     "GsaTable",
     "GsaTableDeletionException",
@@ -2622,6 +2589,7 @@ __all__ = [
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
+    "GsaTooLongCodeCurrencyErrorDetail",
     "GsaTooManyAttributePairsSmartAttributesErrorDetail",
     "GsaTranslateGuidsToIdentitiesRequest",
     "GsaTranslateGuidsToIdentitiesResponse",
@@ -2699,7 +2667,6 @@ __all__ = [
     "GsaUpdateLongTextAttribute",
     "GsaUpdateMathsContent",
     "GsaUpdateMathsFunctionalAttribute",
-    "GsaUpdateNotificationUser",
     "GsaUpdateNumericParameter",
     "GsaUpdateNumericParameterContent",
     "GsaUpdateNumericParameterValue",
@@ -2724,7 +2691,6 @@ __all__ = [
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",
     "GsaUpdateSubset",
-    "GsaUpdateSupportProperties",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",
     "GsaUpdateTabularAttributeTarget",
@@ -2737,7 +2703,6 @@ __all__ = [
     "GsaUpgradeDatabaseException",
     "GsaUpgradeDatabaseFailureReason",
     "GsaUsageDataModificationErrorDetail",
-    "GsaUserBelongsToGroupResponse",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
@@ -2753,7 +2718,6 @@ __all__ = [
     "GsaVersionNumberProperty",
     "GsaVersionState",
     "GsaVersionStateProperty",
-    "GsaWatchType",
     "GsaWithdrawRecordVersionControlException",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
     "JobqueueFilesBody",

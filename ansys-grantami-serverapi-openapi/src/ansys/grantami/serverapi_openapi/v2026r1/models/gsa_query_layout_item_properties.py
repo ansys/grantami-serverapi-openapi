@@ -64,12 +64,14 @@ class GsaQueryLayoutItemProperties(ModelBase):
         "guid": "bool",
         "item_type": "bool",
         "name": "bool",
+        "underlying_entity_guid": "bool",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "item_type": "itemType",
         "name": "name",
+        "underlying_entity_guid": "underlyingEntityGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -82,6 +84,7 @@ class GsaQueryLayoutItemProperties(ModelBase):
         guid: "bool | None | Unset_Type" = Unset,
         item_type: "bool | None | Unset_Type" = Unset,
         name: "bool | None | Unset_Type" = Unset,
+        underlying_entity_guid: "bool | None | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryLayoutItemProperties - a model defined in Swagger
 
@@ -90,17 +93,43 @@ class GsaQueryLayoutItemProperties(ModelBase):
         guid: bool | None, optional
         item_type: bool | None, optional
         name: bool | None, optional
+        underlying_entity_guid: bool | None, optional
         """
+        self._underlying_entity_guid: bool | None | Unset_Type = Unset
         self._item_type: bool | None | Unset_Type = Unset
         self._name: bool | None | Unset_Type = Unset
         self._guid: bool | None | Unset_Type = Unset
 
+        if underlying_entity_guid is not Unset:
+            self.underlying_entity_guid = underlying_entity_guid
         if item_type is not Unset:
             self.item_type = item_type
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def underlying_entity_guid(self) -> "bool | None | Unset_Type":
+        """Gets the underlying_entity_guid of this GsaQueryLayoutItemProperties.
+
+        Returns
+        -------
+        bool | None | Unset_Type
+            The underlying_entity_guid of this GsaQueryLayoutItemProperties.
+        """
+        return self._underlying_entity_guid
+
+    @underlying_entity_guid.setter
+    def underlying_entity_guid(self, underlying_entity_guid: "bool | None | Unset_Type") -> None:
+        """Sets the underlying_entity_guid of this GsaQueryLayoutItemProperties.
+
+        Parameters
+        ----------
+        underlying_entity_guid: bool | None | Unset_Type
+            The underlying_entity_guid of this GsaQueryLayoutItemProperties.
+        """
+        self._underlying_entity_guid = underlying_entity_guid
 
     @property
     def item_type(self) -> "bool | None | Unset_Type":
