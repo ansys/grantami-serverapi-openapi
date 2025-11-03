@@ -90,3 +90,7 @@ class GsaErrorCode(Enum):
     WITHDRAWRECORDVERSIONCONTROL = "withdrawRecordVersionControl"
     RECORDNOTMODIFIABLE = "recordNotModifiable"
     CONFLICTING = "conflicting"
+    CURRENCYCREATION = "currencyCreation"
+    CURRENCYUPDATE = "currencyUpdate"
+    CURRENCYIMPORT = "currencyImport"
+    CURRENCYIMPORTDUPLICATES = "currencyImportDuplicates"

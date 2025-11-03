@@ -64,15 +64,19 @@ class GsaQueryLayout(ModelBase):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
+        "sections": "list[GsaQueryLayoutSection]",
     }
 
     attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
+        "sections": "sections",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "sections": "GsaQueryLayoutSection",
+    }
 
     discriminator: Optional[str] = None
 
@@ -82,6 +86,7 @@ class GsaQueryLayout(ModelBase):
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
+        sections: "list[GsaQueryLayoutSection] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryLayout - a model defined in Swagger
 
@@ -90,17 +95,43 @@ class GsaQueryLayout(ModelBase):
         display_names: dict[str, str] | None, optional
         guid: str | None, optional
         name: str | None, optional
+        sections: list[GsaQueryLayoutSection] | None, optional
         """
+        self._sections: list[GsaQueryLayoutSection] | None | Unset_Type = Unset
         self._display_names: dict[str, str] | None | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
 
+        if sections is not Unset:
+            self.sections = sections
         if display_names is not Unset:
             self.display_names = display_names
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def sections(self) -> "list[GsaQueryLayoutSection] | None | Unset_Type":
+        """Gets the sections of this GsaQueryLayout.
+
+        Returns
+        -------
+        list[GsaQueryLayoutSection] | None | Unset_Type
+            The sections of this GsaQueryLayout.
+        """
+        return self._sections
+
+    @sections.setter
+    def sections(self, sections: "list[GsaQueryLayoutSection] | None | Unset_Type") -> None:
+        """Sets the sections of this GsaQueryLayout.
+
+        Parameters
+        ----------
+        sections: list[GsaQueryLayoutSection] | None | Unset_Type
+            The sections of this GsaQueryLayout.
+        """
+        self._sections = sections
 
     @property
     def display_names(self) -> "dict[str, str] | None | Unset_Type":

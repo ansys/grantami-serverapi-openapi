@@ -68,11 +68,13 @@ class GsaSmartRecordLinkResult(GsaRecordLinkResult):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "is_link_to_target": "bool",
         "linked_record": "GsaSlimRecordVersion",
         "record_link_group_type": "GsaRecordLinkGroupType",
     }
 
     attribute_map: dict[str, str] = {
+        "is_link_to_target": "isLinkToTarget",
         "linked_record": "linkedRecord",
         "record_link_group_type": "recordLinkGroupType",
     }
@@ -84,6 +86,7 @@ class GsaSmartRecordLinkResult(GsaRecordLinkResult):
     def __init__(
         self,
         *,
+        is_link_to_target: "bool",
         linked_record: "GsaSlimRecordVersion",
         record_link_group_type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
     ) -> None:
@@ -91,10 +94,44 @@ class GsaSmartRecordLinkResult(GsaRecordLinkResult):
 
         Parameters
         ----------
+        is_link_to_target: bool
         linked_record: GsaSlimRecordVersion
         record_link_group_type: GsaRecordLinkGroupType
         """
         super().__init__(linked_record=linked_record, record_link_group_type=record_link_group_type)
+        self._is_link_to_target: bool
+
+        self.is_link_to_target = is_link_to_target
+
+    @property
+    def is_link_to_target(self) -> "bool":
+        """Gets the is_link_to_target of this GsaSmartRecordLinkResult.
+        Smart links have a 'source' and a 'target' determined by the attribute pairs on the link group. If this property is 'true' then the linked record is on the 'target' side of the link, if 'false' the linked record is on the 'source' side..
+
+        Returns
+        -------
+        bool
+            The is_link_to_target of this GsaSmartRecordLinkResult.
+        """
+        return self._is_link_to_target
+
+    @is_link_to_target.setter
+    def is_link_to_target(self, is_link_to_target: "bool") -> None:
+        """Sets the is_link_to_target of this GsaSmartRecordLinkResult.
+        Smart links have a 'source' and a 'target' determined by the attribute pairs on the link group. If this property is 'true' then the linked record is on the 'target' side of the link, if 'false' the linked record is on the 'source' side..
+
+        Parameters
+        ----------
+        is_link_to_target: bool
+            The is_link_to_target of this GsaSmartRecordLinkResult.
+        """
+        # Field is not nullable
+        if is_link_to_target is None:
+            raise ValueError("Invalid value for 'is_link_to_target', must not be 'None'")
+        # Field is required
+        if is_link_to_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'is_link_to_target', must not be 'Unset'")
+        self._is_link_to_target = is_link_to_target
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
