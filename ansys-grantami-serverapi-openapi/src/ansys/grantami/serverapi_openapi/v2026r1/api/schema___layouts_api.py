@@ -623,6 +623,7 @@ class SchemaLayoutsApi(ApiBase):
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         application: "Optional[str]" = None,
+        cascade_filter: "Optional[bool]" = None,
     ) -> "GsaQueryLayoutsInfo | None":
         """Query all layouts for table, optionally filter layouts returned
 
@@ -640,6 +641,8 @@ class SchemaLayoutsApi(ApiBase):
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         application: str
+        cascade_filter: bool
+            If cascadeFilter is true, we apply the filter to the returned layout sections and items, as well as filtering the layouts themselves.
 
         Returns
         -------
@@ -652,6 +655,7 @@ class SchemaLayoutsApi(ApiBase):
             x_ansys_vc_mode,
             mode,
             application,
+            cascade_filter,
             _return_http_data_only=True,
         )
         return data  # type: ignore[no-any-return]
@@ -664,6 +668,7 @@ class SchemaLayoutsApi(ApiBase):
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
         application: "Optional[str]" = None,
+        cascade_filter: "Optional[bool]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
@@ -673,6 +678,7 @@ class SchemaLayoutsApi(ApiBase):
             "x_ansys_vc_mode",
             "mode",
             "application",
+            "cascade_filter",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -710,6 +716,8 @@ class SchemaLayoutsApi(ApiBase):
             query_params.append(("mode", params["mode"]))
         if "application" in params and application is not None:
             query_params.append(("application", params["application"]))
+        if "cascade_filter" in params and cascade_filter is not None:
+            query_params.append(("cascadeFilter", params["cascade_filter"]))
 
         header_params: dict[str, Any] = {}
         if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
