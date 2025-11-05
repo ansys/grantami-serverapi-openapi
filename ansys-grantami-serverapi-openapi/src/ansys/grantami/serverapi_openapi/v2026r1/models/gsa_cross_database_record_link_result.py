@@ -68,13 +68,17 @@ class GsaCrossDatabaseRecordLinkResult(GsaRecordLinkResult):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "linked_database_key": "str",
         "linked_record": "GsaSlimRecordVersion",
         "record_link_group_type": "GsaRecordLinkGroupType",
+        "notes": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "linked_database_key": "linkedDatabaseKey",
         "linked_record": "linkedRecord",
         "record_link_group_type": "recordLinkGroupType",
+        "notes": "notes",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -84,17 +88,77 @@ class GsaCrossDatabaseRecordLinkResult(GsaRecordLinkResult):
     def __init__(
         self,
         *,
+        linked_database_key: "str",
         linked_record: "GsaSlimRecordVersion",
         record_link_group_type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.CROSSDATABASE,
+        notes: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCrossDatabaseRecordLinkResult - a model defined in Swagger
 
         Parameters
         ----------
+        linked_database_key: str
         linked_record: GsaSlimRecordVersion
         record_link_group_type: GsaRecordLinkGroupType
+        notes: str | None, optional
         """
         super().__init__(linked_record=linked_record, record_link_group_type=record_link_group_type)
+        self._linked_database_key: str
+        self._notes: str | None | Unset_Type = Unset
+
+        self.linked_database_key = linked_database_key
+        if notes is not Unset:
+            self.notes = notes
+
+    @property
+    def linked_database_key(self) -> "str":
+        """Gets the linked_database_key of this GsaCrossDatabaseRecordLinkResult.
+
+        Returns
+        -------
+        str
+            The linked_database_key of this GsaCrossDatabaseRecordLinkResult.
+        """
+        return self._linked_database_key
+
+    @linked_database_key.setter
+    def linked_database_key(self, linked_database_key: "str") -> None:
+        """Sets the linked_database_key of this GsaCrossDatabaseRecordLinkResult.
+
+        Parameters
+        ----------
+        linked_database_key: str
+            The linked_database_key of this GsaCrossDatabaseRecordLinkResult.
+        """
+        # Field is not nullable
+        if linked_database_key is None:
+            raise ValueError("Invalid value for 'linked_database_key', must not be 'None'")
+        # Field is required
+        if linked_database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'linked_database_key', must not be 'Unset'")
+        self._linked_database_key = linked_database_key
+
+    @property
+    def notes(self) -> "str | None | Unset_Type":
+        """Gets the notes of this GsaCrossDatabaseRecordLinkResult.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The notes of this GsaCrossDatabaseRecordLinkResult.
+        """
+        return self._notes
+
+    @notes.setter
+    def notes(self, notes: "str | None | Unset_Type") -> None:
+        """Sets the notes of this GsaCrossDatabaseRecordLinkResult.
+
+        Parameters
+        ----------
+        notes: str | None | Unset_Type
+            The notes of this GsaCrossDatabaseRecordLinkResult.
+        """
+        self._notes = notes
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
