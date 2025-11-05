@@ -58,7 +58,7 @@ class RecordLinksApi(ApiBase):
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaRecordLinkResults | None":
-        """Get record link results for the latest version of a given record history for a given record link group  Note that this is currently only implemented for static record link groups. If called for a smart or cross database record link group an error response will be returned.
+        """Get record link results for the latest version of a given record history for a given record link group
 
         This method makes a synchronous HTTP request.
 
@@ -200,7 +200,7 @@ class RecordLinksApi(ApiBase):
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaRecordLinkResults | None":
-        """Get record link results for the latest version of a given record history in a given table for a given record link group.  Note that this is currently only implemented for static record link groups. If called for a smart or cross database record link group an error response will be returned.
+        """Get record link results for the latest version of a given record history in a given table for a given record link group.
 
         This method makes a synchronous HTTP request.
 
@@ -354,7 +354,7 @@ class RecordLinksApi(ApiBase):
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaRecordLinkResults | None":
-        """Get record link results for a given record version of a given record history for a given record link group  Note that this is currently only implemented for static record link groups. If called for a smart or cross database record link group an error response will be returned.
+        """Get record link results for a given record version of a given record history for a given record link group
 
         This method makes a synchronous HTTP request.
 
@@ -508,7 +508,7 @@ class RecordLinksApi(ApiBase):
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaRecordLinkResults | None":
-        """Get record link results for a given record version in a given table and record history for a given record link group  Note that this is currently only implemented for static record link groups. If called for a smart or cross database record link group an error response will be returned.
+        """Get record link results for a given record version in a given table and record history for a given record link group
 
         This method makes a synchronous HTTP request.
 
