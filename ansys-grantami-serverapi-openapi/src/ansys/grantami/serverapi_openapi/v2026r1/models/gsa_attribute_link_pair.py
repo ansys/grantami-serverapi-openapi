@@ -80,72 +80,76 @@ class GsaAttributeLinkPair(ModelBase):
     def __init__(
         self,
         *,
-        attribute_source: "GsaTargetAttribute | Unset_Type" = Unset,
-        attribute_target: "GsaTargetAttribute | Unset_Type" = Unset,
+        attribute_source: "GsaTargetAttribute",
+        attribute_target: "GsaTargetAttribute",
     ) -> None:
         """GsaAttributeLinkPair - a model defined in Swagger
 
         Parameters
         ----------
-        attribute_source: GsaTargetAttribute, optional
-        attribute_target: GsaTargetAttribute, optional
+        attribute_source: GsaTargetAttribute
+        attribute_target: GsaTargetAttribute
         """
-        self._attribute_source: GsaTargetAttribute | Unset_Type = Unset
-        self._attribute_target: GsaTargetAttribute | Unset_Type = Unset
+        self._attribute_source: GsaTargetAttribute
+        self._attribute_target: GsaTargetAttribute
 
-        if attribute_source is not Unset:
-            self.attribute_source = attribute_source
-        if attribute_target is not Unset:
-            self.attribute_target = attribute_target
+        self.attribute_source = attribute_source
+        self.attribute_target = attribute_target
 
     @property
-    def attribute_source(self) -> "GsaTargetAttribute | Unset_Type":
+    def attribute_source(self) -> "GsaTargetAttribute":
         """Gets the attribute_source of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaTargetAttribute | Unset_Type
+        GsaTargetAttribute
             The attribute_source of this GsaAttributeLinkPair.
         """
         return self._attribute_source
 
     @attribute_source.setter
-    def attribute_source(self, attribute_source: "GsaTargetAttribute | Unset_Type") -> None:
+    def attribute_source(self, attribute_source: "GsaTargetAttribute") -> None:
         """Sets the attribute_source of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_source: GsaTargetAttribute | Unset_Type
+        attribute_source: GsaTargetAttribute
             The attribute_source of this GsaAttributeLinkPair.
         """
         # Field is not nullable
         if attribute_source is None:
             raise ValueError("Invalid value for 'attribute_source', must not be 'None'")
+        # Field is required
+        if attribute_source is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_source', must not be 'Unset'")
         self._attribute_source = attribute_source
 
     @property
-    def attribute_target(self) -> "GsaTargetAttribute | Unset_Type":
+    def attribute_target(self) -> "GsaTargetAttribute":
         """Gets the attribute_target of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaTargetAttribute | Unset_Type
+        GsaTargetAttribute
             The attribute_target of this GsaAttributeLinkPair.
         """
         return self._attribute_target
 
     @attribute_target.setter
-    def attribute_target(self, attribute_target: "GsaTargetAttribute | Unset_Type") -> None:
+    def attribute_target(self, attribute_target: "GsaTargetAttribute") -> None:
         """Sets the attribute_target of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_target: GsaTargetAttribute | Unset_Type
+        attribute_target: GsaTargetAttribute
             The attribute_target of this GsaAttributeLinkPair.
         """
         # Field is not nullable
         if attribute_target is None:
             raise ValueError("Invalid value for 'attribute_target', must not be 'None'")
+        # Field is required
+        if attribute_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attribute_target', must not be 'Unset'")
         self._attribute_target = attribute_target
 
     @classmethod
