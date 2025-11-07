@@ -570,7 +570,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         discrete_type_guid: "str",
         body: "Optional[GsaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
     ) -> "GsaDiscreteValuesDiscreteValuesInfo | None":
-        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.
+        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.  If any discrete values are included in the request that have a guid that matches an existing discrete value then the existing discrete value will be modified.  If any discrete values are included in the request body where the name matches an existing discrete value but no guid is provided, or the guid does not match, the operation will fail.
 
         This method makes a synchronous HTTP request.
 
