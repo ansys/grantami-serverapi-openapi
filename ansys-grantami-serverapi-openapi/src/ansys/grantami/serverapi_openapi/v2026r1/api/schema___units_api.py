@@ -58,7 +58,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnit
 
         Returns
@@ -112,14 +111,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -155,7 +147,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnitSystem
 
         Returns
@@ -213,14 +204,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -254,7 +238,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -342,7 +325,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -434,7 +416,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -524,7 +505,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -608,7 +588,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaGetUnitConversionsRequest
 
         Returns
@@ -669,14 +648,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -709,7 +681,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -801,7 +772,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -891,7 +861,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -968,7 +937,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -1058,7 +1026,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1140,7 +1107,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
         unit_system_guid: str
         equivalent_unit_guid: str
@@ -1257,7 +1223,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
         body: GsaUpdateUnit
 
@@ -1326,14 +1291,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
@@ -1373,7 +1331,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
         body: GsaUpdateUnitSystem
 
@@ -1444,14 +1401,7 @@ class SchemaUnitsApi(ApiBase):
 
         # HTTP header 'Content-Type'
         header_params["Content-Type"] = self.api_client.select_header_content_type(
-            [
-                "application/octet-stream",
-                "application/zip",
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json",
-            ]
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
         )
 
         response_type_map: dict[int, Optional[str]] = {
