@@ -27,8 +27,8 @@ env:
 jobs:
 
   tests:
-    name: "Test Python ${{ matrix.python-version }}"
-    runs-on: ubuntu-latest
+    name: "Test Python ${{ matrix.python-version }} - ${{ matrix.platform }}"
+    runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
         platform: [ 'ubuntu-latest', 'windows-latest' ]
