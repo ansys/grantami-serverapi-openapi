@@ -65,23 +65,22 @@ class GsaSetRangeDatum(GsaSetDatum):
     """
     swagger_types: dict[str, str] = {
         "estimated": "bool",
-        "high_value": "float",
-        "high_value_is_inclusive": "bool",
-        "low_value": "float",
-        "low_value_is_inclusive": "bool",
         "set_datum_type": "GsaSetDatumType",
+        "high_endpoint": "GsaRangeEndpoint",
+        "low_endpoint": "GsaRangeEndpoint",
     }
 
     attribute_map: dict[str, str] = {
         "estimated": "estimated",
-        "high_value": "highValue",
-        "high_value_is_inclusive": "highValueIsInclusive",
-        "low_value": "lowValue",
-        "low_value_is_inclusive": "lowValueIsInclusive",
         "set_datum_type": "setDatumType",
+        "high_endpoint": "highEndpoint",
+        "low_endpoint": "lowEndpoint",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "lowEndpoint": "GsaRangeEndpoint",
+        "highEndpoint": "GsaRangeEndpoint",
+    }
 
     discriminator: Optional[str] = None
 
@@ -89,147 +88,79 @@ class GsaSetRangeDatum(GsaSetDatum):
         self,
         *,
         estimated: "bool",
-        high_value: "float",
-        high_value_is_inclusive: "bool",
-        low_value: "float",
-        low_value_is_inclusive: "bool",
         set_datum_type: "GsaSetDatumType" = GsaSetDatumType.RANGE,
+        high_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
+        low_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
     ) -> None:
         """GsaSetRangeDatum - a model defined in Swagger
 
         Parameters
         ----------
         estimated: bool
-        high_value: float
-        high_value_is_inclusive: bool
-        low_value: float
-        low_value_is_inclusive: bool
         set_datum_type: GsaSetDatumType
+        high_endpoint: GsaRangeEndpoint, optional
+        low_endpoint: GsaRangeEndpoint, optional
         """
         super().__init__(set_datum_type=set_datum_type)
-        self._low_value: float
-        self._high_value: float
-        self._low_value_is_inclusive: bool
-        self._high_value_is_inclusive: bool
+        self._low_endpoint: GsaRangeEndpoint | Unset_Type = Unset
+        self._high_endpoint: GsaRangeEndpoint | Unset_Type = Unset
         self._estimated: bool
 
-        self.low_value = low_value
-        self.high_value = high_value
-        self.low_value_is_inclusive = low_value_is_inclusive
-        self.high_value_is_inclusive = high_value_is_inclusive
+        if low_endpoint is not Unset:
+            self.low_endpoint = low_endpoint
+        if high_endpoint is not Unset:
+            self.high_endpoint = high_endpoint
         self.estimated = estimated
 
     @property
-    def low_value(self) -> "float":
-        """Gets the low_value of this GsaSetRangeDatum.
+    def low_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
+        """Gets the low_endpoint of this GsaSetRangeDatum.
 
         Returns
         -------
-        float
-            The low_value of this GsaSetRangeDatum.
+        GsaRangeEndpoint | Unset_Type
+            The low_endpoint of this GsaSetRangeDatum.
         """
-        return self._low_value
+        return self._low_endpoint
 
-    @low_value.setter
-    def low_value(self, low_value: "float") -> None:
-        """Sets the low_value of this GsaSetRangeDatum.
+    @low_endpoint.setter
+    def low_endpoint(self, low_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
+        """Sets the low_endpoint of this GsaSetRangeDatum.
 
         Parameters
         ----------
-        low_value: float
-            The low_value of this GsaSetRangeDatum.
+        low_endpoint: GsaRangeEndpoint | Unset_Type
+            The low_endpoint of this GsaSetRangeDatum.
         """
         # Field is not nullable
-        if low_value is None:
-            raise ValueError("Invalid value for 'low_value', must not be 'None'")
-        # Field is required
-        if low_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'low_value', must not be 'Unset'")
-        self._low_value = low_value
+        if low_endpoint is None:
+            raise ValueError("Invalid value for 'low_endpoint', must not be 'None'")
+        self._low_endpoint = low_endpoint
 
     @property
-    def high_value(self) -> "float":
-        """Gets the high_value of this GsaSetRangeDatum.
+    def high_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
+        """Gets the high_endpoint of this GsaSetRangeDatum.
 
         Returns
         -------
-        float
-            The high_value of this GsaSetRangeDatum.
+        GsaRangeEndpoint | Unset_Type
+            The high_endpoint of this GsaSetRangeDatum.
         """
-        return self._high_value
+        return self._high_endpoint
 
-    @high_value.setter
-    def high_value(self, high_value: "float") -> None:
-        """Sets the high_value of this GsaSetRangeDatum.
+    @high_endpoint.setter
+    def high_endpoint(self, high_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
+        """Sets the high_endpoint of this GsaSetRangeDatum.
 
         Parameters
         ----------
-        high_value: float
-            The high_value of this GsaSetRangeDatum.
+        high_endpoint: GsaRangeEndpoint | Unset_Type
+            The high_endpoint of this GsaSetRangeDatum.
         """
         # Field is not nullable
-        if high_value is None:
-            raise ValueError("Invalid value for 'high_value', must not be 'None'")
-        # Field is required
-        if high_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'high_value', must not be 'Unset'")
-        self._high_value = high_value
-
-    @property
-    def low_value_is_inclusive(self) -> "bool":
-        """Gets the low_value_is_inclusive of this GsaSetRangeDatum.
-
-        Returns
-        -------
-        bool
-            The low_value_is_inclusive of this GsaSetRangeDatum.
-        """
-        return self._low_value_is_inclusive
-
-    @low_value_is_inclusive.setter
-    def low_value_is_inclusive(self, low_value_is_inclusive: "bool") -> None:
-        """Sets the low_value_is_inclusive of this GsaSetRangeDatum.
-
-        Parameters
-        ----------
-        low_value_is_inclusive: bool
-            The low_value_is_inclusive of this GsaSetRangeDatum.
-        """
-        # Field is not nullable
-        if low_value_is_inclusive is None:
-            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'None'")
-        # Field is required
-        if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'Unset'")
-        self._low_value_is_inclusive = low_value_is_inclusive
-
-    @property
-    def high_value_is_inclusive(self) -> "bool":
-        """Gets the high_value_is_inclusive of this GsaSetRangeDatum.
-
-        Returns
-        -------
-        bool
-            The high_value_is_inclusive of this GsaSetRangeDatum.
-        """
-        return self._high_value_is_inclusive
-
-    @high_value_is_inclusive.setter
-    def high_value_is_inclusive(self, high_value_is_inclusive: "bool") -> None:
-        """Sets the high_value_is_inclusive of this GsaSetRangeDatum.
-
-        Parameters
-        ----------
-        high_value_is_inclusive: bool
-            The high_value_is_inclusive of this GsaSetRangeDatum.
-        """
-        # Field is not nullable
-        if high_value_is_inclusive is None:
-            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'None'")
-        # Field is required
-        if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'Unset'")
-        self._high_value_is_inclusive = high_value_is_inclusive
+        if high_endpoint is None:
+            raise ValueError("Invalid value for 'high_endpoint', must not be 'None'")
+        self._high_endpoint = high_endpoint
 
     @property
     def estimated(self) -> "bool":
