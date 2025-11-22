@@ -637,6 +637,7 @@ from .gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriteri
 from .gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .gsa_hyperlink_target import GsaHyperlinkTarget
 from .gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
+from .gsa_inclusiveness import GsaInclusiveness
 from .gsa_index_record_failure import GsaIndexRecordFailure
 from .gsa_indirect_links import GsaIndirectLinks
 from .gsa_input_connection_details import GsaInputConnectionDetails
@@ -991,6 +992,7 @@ from .gsa_range_attribute import GsaRangeAttribute
 from .gsa_range_datum import GsaRangeDatum
 from .gsa_range_datum_criterion import GsaRangeDatumCriterion
 from .gsa_range_datum_exists_criterion import GsaRangeDatumExistsCriterion
+from .gsa_range_endpoint import GsaRangeEndpoint
 from .gsa_range_fixed_width_histogram_aggregation_datum_criterion import (
     GsaRangeFixedWidthHistogramAggregationDatumCriterion,
 )
@@ -1904,6 +1906,7 @@ __all__ = [
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaInUseParameterValueErrorDetail",
+    "GsaInclusiveness",
     "GsaIndexRecordFailure",
     "GsaIndirectLinks",
     "GsaInputConnectionDetails",
@@ -2200,6 +2203,7 @@ __all__ = [
     "GsaRangeDatum",
     "GsaRangeDatumCriterion",
     "GsaRangeDatumExistsCriterion",
+    "GsaRangeEndpoint",
     "GsaRangeFixedWidthHistogramAggregationDatumCriterion",
     "GsaRangeGraphValue",
     "GsaRangeHistogramAggregation",
