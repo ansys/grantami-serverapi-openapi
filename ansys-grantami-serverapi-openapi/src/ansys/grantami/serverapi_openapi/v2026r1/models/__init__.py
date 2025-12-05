@@ -1215,6 +1215,7 @@ from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_guid_property import GsaTableGuidProperty
 from .gsa_table_identity_property import GsaTableIdentityProperty
 from .gsa_table_name_property import GsaTableNameProperty
+from .gsa_table_search_behaviour import GsaTableSearchBehaviour
 from .gsa_tables_info import GsaTablesInfo
 from .gsa_tabular_attribute import GsaTabularAttribute
 from .gsa_tabular_attribute_link import GsaTabularAttributeLink
@@ -2398,6 +2399,7 @@ __all__ = [
     "GsaTableGuidProperty",
     "GsaTableIdentityProperty",
     "GsaTableNameProperty",
+    "GsaTableSearchBehaviour",
     "GsaTablesInfo",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",

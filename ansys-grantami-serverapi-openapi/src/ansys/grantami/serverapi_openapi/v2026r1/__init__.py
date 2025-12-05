@@ -1327,6 +1327,7 @@ from .models.gsa_table_deletion_exception import GsaTableDeletionException
 from .models.gsa_table_guid_property import GsaTableGuidProperty
 from .models.gsa_table_identity_property import GsaTableIdentityProperty
 from .models.gsa_table_name_property import GsaTableNameProperty
+from .models.gsa_table_search_behaviour import GsaTableSearchBehaviour
 from .models.gsa_tables_info import GsaTablesInfo
 from .models.gsa_tabular_attribute import GsaTabularAttribute
 from .models.gsa_tabular_attribute_link import GsaTabularAttributeLink
@@ -2567,6 +2568,7 @@ __all__ = [
     "GsaTableGuidProperty",
     "GsaTableIdentityProperty",
     "GsaTableNameProperty",
+    "GsaTableSearchBehaviour",
     "GsaTablesInfo",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",
