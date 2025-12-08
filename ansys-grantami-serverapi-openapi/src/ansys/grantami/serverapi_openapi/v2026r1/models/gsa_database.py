@@ -75,6 +75,7 @@ class GsaDatabase(ModelBase):
         "index_out_of_date_duration": "str",
         "index_up_to_date": "bool",
         "is_access_controlled": "bool",
+        "is_implicit_profile_disabled": "bool",
         "issues": "GsaDatabaseIssues",
         "name": "str",
         "notes": "str",
@@ -97,6 +98,7 @@ class GsaDatabase(ModelBase):
         "index_out_of_date_duration": "indexOutOfDateDuration",
         "index_up_to_date": "indexUpToDate",
         "is_access_controlled": "isAccessControlled",
+        "is_implicit_profile_disabled": "isImplicitProfileDisabled",
         "issues": "issues",
         "name": "name",
         "notes": "notes",
@@ -130,6 +132,7 @@ class GsaDatabase(ModelBase):
         index_out_of_date_duration: "str | None | Unset_Type" = Unset,
         index_up_to_date: "bool | None | Unset_Type" = Unset,
         is_access_controlled: "bool | None | Unset_Type" = Unset,
+        is_implicit_profile_disabled: "bool | None | Unset_Type" = Unset,
         issues: "GsaDatabaseIssues | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         notes: "str | None | Unset_Type" = Unset,
@@ -154,6 +157,7 @@ class GsaDatabase(ModelBase):
         index_out_of_date_duration: str | None, optional
         index_up_to_date: bool | None, optional
         is_access_controlled: bool | None, optional
+        is_implicit_profile_disabled: bool | None, optional
         issues: GsaDatabaseIssues, optional
         name: str | None, optional
         notes: str | None, optional
@@ -165,6 +169,7 @@ class GsaDatabase(ModelBase):
         self._notes: str | None | Unset_Type = Unset
         self._currency_code: str | None | Unset_Type = Unset
         self._is_access_controlled: bool | None | Unset_Type = Unset
+        self._is_implicit_profile_disabled: bool | None | Unset_Type = Unset
         self._key: str
         self._status: GsaDatabaseStatus
         self._is_read_only: bool
@@ -190,6 +195,8 @@ class GsaDatabase(ModelBase):
             self.currency_code = currency_code
         if is_access_controlled is not Unset:
             self.is_access_controlled = is_access_controlled
+        if is_implicit_profile_disabled is not Unset:
+            self.is_implicit_profile_disabled = is_implicit_profile_disabled
         self.key = key
         self.status = status
         self.is_read_only = is_read_only
@@ -323,6 +330,32 @@ class GsaDatabase(ModelBase):
             The is_access_controlled of this GsaDatabase.
         """
         self._is_access_controlled = is_access_controlled
+
+    @property
+    def is_implicit_profile_disabled(self) -> "bool | None | Unset_Type":
+        """Gets the is_implicit_profile_disabled of this GsaDatabase.
+        When a database is added to the Granta MI system, it automatically has a standalone database Profile known as an implicit Profile.  The implicit Profile for this database can be disabled by setting this flag.
+
+        Returns
+        -------
+        bool | None | Unset_Type
+            The is_implicit_profile_disabled of this GsaDatabase.
+        """
+        return self._is_implicit_profile_disabled
+
+    @is_implicit_profile_disabled.setter
+    def is_implicit_profile_disabled(
+        self, is_implicit_profile_disabled: "bool | None | Unset_Type"
+    ) -> None:
+        """Sets the is_implicit_profile_disabled of this GsaDatabase.
+        When a database is added to the Granta MI system, it automatically has a standalone database Profile known as an implicit Profile.  The implicit Profile for this database can be disabled by setting this flag.
+
+        Parameters
+        ----------
+        is_implicit_profile_disabled: bool | None | Unset_Type
+            The is_implicit_profile_disabled of this GsaDatabase.
+        """
+        self._is_implicit_profile_disabled = is_implicit_profile_disabled
 
     @property
     def key(self) -> "str":

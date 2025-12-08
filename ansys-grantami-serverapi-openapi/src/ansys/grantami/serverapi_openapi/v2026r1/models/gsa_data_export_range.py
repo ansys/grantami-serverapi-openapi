@@ -61,147 +61,92 @@ class GsaDataExportRange(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "high_value": "float",
-        "high_value_is_inclusive": "bool",
-        "low_value": "float",
-        "low_value_is_inclusive": "bool",
+        "high_endpoint": "GsaRangeEndpoint",
+        "low_endpoint": "GsaRangeEndpoint",
     }
 
     attribute_map: dict[str, str] = {
-        "high_value": "highValue",
-        "high_value_is_inclusive": "highValueIsInclusive",
-        "low_value": "lowValue",
-        "low_value_is_inclusive": "lowValueIsInclusive",
+        "high_endpoint": "highEndpoint",
+        "low_endpoint": "lowEndpoint",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "highEndpoint": "GsaRangeEndpoint",
+        "lowEndpoint": "GsaRangeEndpoint",
+    }
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        high_value: "float | None | Unset_Type" = Unset,
-        high_value_is_inclusive: "bool | Unset_Type" = Unset,
-        low_value: "float | None | Unset_Type" = Unset,
-        low_value_is_inclusive: "bool | Unset_Type" = Unset,
+        high_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
+        low_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
     ) -> None:
         """GsaDataExportRange - a model defined in Swagger
 
         Parameters
         ----------
-        high_value: float | None, optional
-        high_value_is_inclusive: bool, optional
-        low_value: float | None, optional
-        low_value_is_inclusive: bool, optional
+        high_endpoint: GsaRangeEndpoint, optional
+        low_endpoint: GsaRangeEndpoint, optional
         """
-        self._high_value: float | None | Unset_Type = Unset
-        self._low_value: float | None | Unset_Type = Unset
-        self._high_value_is_inclusive: bool | Unset_Type = Unset
-        self._low_value_is_inclusive: bool | Unset_Type = Unset
+        self._high_endpoint: GsaRangeEndpoint | Unset_Type = Unset
+        self._low_endpoint: GsaRangeEndpoint | Unset_Type = Unset
 
-        if high_value is not Unset:
-            self.high_value = high_value
-        if low_value is not Unset:
-            self.low_value = low_value
-        if high_value_is_inclusive is not Unset:
-            self.high_value_is_inclusive = high_value_is_inclusive
-        if low_value_is_inclusive is not Unset:
-            self.low_value_is_inclusive = low_value_is_inclusive
+        if high_endpoint is not Unset:
+            self.high_endpoint = high_endpoint
+        if low_endpoint is not Unset:
+            self.low_endpoint = low_endpoint
 
     @property
-    def high_value(self) -> "float | None | Unset_Type":
-        """Gets the high_value of this GsaDataExportRange.
+    def high_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
+        """Gets the high_endpoint of this GsaDataExportRange.
 
         Returns
         -------
-        float | None | Unset_Type
-            The high_value of this GsaDataExportRange.
+        GsaRangeEndpoint | Unset_Type
+            The high_endpoint of this GsaDataExportRange.
         """
-        return self._high_value
+        return self._high_endpoint
 
-    @high_value.setter
-    def high_value(self, high_value: "float | None | Unset_Type") -> None:
-        """Sets the high_value of this GsaDataExportRange.
+    @high_endpoint.setter
+    def high_endpoint(self, high_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
+        """Sets the high_endpoint of this GsaDataExportRange.
 
         Parameters
         ----------
-        high_value: float | None | Unset_Type
-            The high_value of this GsaDataExportRange.
-        """
-        self._high_value = high_value
-
-    @property
-    def low_value(self) -> "float | None | Unset_Type":
-        """Gets the low_value of this GsaDataExportRange.
-
-        Returns
-        -------
-        float | None | Unset_Type
-            The low_value of this GsaDataExportRange.
-        """
-        return self._low_value
-
-    @low_value.setter
-    def low_value(self, low_value: "float | None | Unset_Type") -> None:
-        """Sets the low_value of this GsaDataExportRange.
-
-        Parameters
-        ----------
-        low_value: float | None | Unset_Type
-            The low_value of this GsaDataExportRange.
-        """
-        self._low_value = low_value
-
-    @property
-    def high_value_is_inclusive(self) -> "bool | Unset_Type":
-        """Gets the high_value_is_inclusive of this GsaDataExportRange.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The high_value_is_inclusive of this GsaDataExportRange.
-        """
-        return self._high_value_is_inclusive
-
-    @high_value_is_inclusive.setter
-    def high_value_is_inclusive(self, high_value_is_inclusive: "bool | Unset_Type") -> None:
-        """Sets the high_value_is_inclusive of this GsaDataExportRange.
-
-        Parameters
-        ----------
-        high_value_is_inclusive: bool | Unset_Type
-            The high_value_is_inclusive of this GsaDataExportRange.
+        high_endpoint: GsaRangeEndpoint | Unset_Type
+            The high_endpoint of this GsaDataExportRange.
         """
         # Field is not nullable
-        if high_value_is_inclusive is None:
-            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'None'")
-        self._high_value_is_inclusive = high_value_is_inclusive
+        if high_endpoint is None:
+            raise ValueError("Invalid value for 'high_endpoint', must not be 'None'")
+        self._high_endpoint = high_endpoint
 
     @property
-    def low_value_is_inclusive(self) -> "bool | Unset_Type":
-        """Gets the low_value_is_inclusive of this GsaDataExportRange.
+    def low_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
+        """Gets the low_endpoint of this GsaDataExportRange.
 
         Returns
         -------
-        bool | Unset_Type
-            The low_value_is_inclusive of this GsaDataExportRange.
+        GsaRangeEndpoint | Unset_Type
+            The low_endpoint of this GsaDataExportRange.
         """
-        return self._low_value_is_inclusive
+        return self._low_endpoint
 
-    @low_value_is_inclusive.setter
-    def low_value_is_inclusive(self, low_value_is_inclusive: "bool | Unset_Type") -> None:
-        """Sets the low_value_is_inclusive of this GsaDataExportRange.
+    @low_endpoint.setter
+    def low_endpoint(self, low_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
+        """Sets the low_endpoint of this GsaDataExportRange.
 
         Parameters
         ----------
-        low_value_is_inclusive: bool | Unset_Type
-            The low_value_is_inclusive of this GsaDataExportRange.
+        low_endpoint: GsaRangeEndpoint | Unset_Type
+            The low_endpoint of this GsaDataExportRange.
         """
         # Field is not nullable
-        if low_value_is_inclusive is None:
-            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'None'")
-        self._low_value_is_inclusive = low_value_is_inclusive
+        if low_endpoint is None:
+            raise ValueError("Invalid value for 'low_endpoint', must not be 'None'")
+        self._low_endpoint = low_endpoint
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

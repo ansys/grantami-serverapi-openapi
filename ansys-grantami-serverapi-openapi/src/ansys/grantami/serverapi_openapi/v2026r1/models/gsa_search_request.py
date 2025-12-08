@@ -64,18 +64,21 @@ class GsaSearchRequest(ModelBase):
         "criterion": "GsaCriterion",
         "paging_options": "GsaPagingOptions",
         "sort_criteria": "list[GsaSortCriterion]",
+        "table_search_behaviour": "GsaTableSearchBehaviour",
     }
 
     attribute_map: dict[str, str] = {
         "criterion": "criterion",
         "paging_options": "pagingOptions",
         "sort_criteria": "sortCriteria",
+        "table_search_behaviour": "tableSearchBehaviour",
     }
 
     subtype_mapping: dict[str, str] = {
         "criterion": "GsaCriterion",
         "sortCriteria": "GsaSortCriterion",
         "pagingOptions": "GsaPagingOptions",
+        "tableSearchBehaviour": "GsaTableSearchBehaviour",
     }
 
     discriminator: Optional[str] = None
@@ -86,6 +89,7 @@ class GsaSearchRequest(ModelBase):
         criterion: "GsaCriterion | Unset_Type" = Unset,
         paging_options: "GsaPagingOptions | Unset_Type" = Unset,
         sort_criteria: "list[GsaSortCriterion] | None | Unset_Type" = Unset,
+        table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type" = Unset,
     ) -> None:
         """GsaSearchRequest - a model defined in Swagger
 
@@ -94,10 +98,12 @@ class GsaSearchRequest(ModelBase):
         criterion: GsaCriterion, optional
         paging_options: GsaPagingOptions, optional
         sort_criteria: list[GsaSortCriterion] | None, optional
+        table_search_behaviour: GsaTableSearchBehaviour, optional
         """
         self._criterion: GsaCriterion | Unset_Type = Unset
         self._sort_criteria: list[GsaSortCriterion] | None | Unset_Type = Unset
         self._paging_options: GsaPagingOptions | Unset_Type = Unset
+        self._table_search_behaviour: GsaTableSearchBehaviour | Unset_Type = Unset
 
         if criterion is not Unset:
             self.criterion = criterion
@@ -105,6 +111,8 @@ class GsaSearchRequest(ModelBase):
             self.sort_criteria = sort_criteria
         if paging_options is not Unset:
             self.paging_options = paging_options
+        if table_search_behaviour is not Unset:
+            self.table_search_behaviour = table_search_behaviour
 
     @property
     def criterion(self) -> "GsaCriterion | Unset_Type":
@@ -179,6 +187,33 @@ class GsaSearchRequest(ModelBase):
         if paging_options is None:
             raise ValueError("Invalid value for 'paging_options', must not be 'None'")
         self._paging_options = paging_options
+
+    @property
+    def table_search_behaviour(self) -> "GsaTableSearchBehaviour | Unset_Type":
+        """Gets the table_search_behaviour of this GsaSearchRequest.
+
+        Returns
+        -------
+        GsaTableSearchBehaviour | Unset_Type
+            The table_search_behaviour of this GsaSearchRequest.
+        """
+        return self._table_search_behaviour
+
+    @table_search_behaviour.setter
+    def table_search_behaviour(
+        self, table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type"
+    ) -> None:
+        """Sets the table_search_behaviour of this GsaSearchRequest.
+
+        Parameters
+        ----------
+        table_search_behaviour: GsaTableSearchBehaviour | Unset_Type
+            The table_search_behaviour of this GsaSearchRequest.
+        """
+        # Field is not nullable
+        if table_search_behaviour is None:
+            raise ValueError("Invalid value for 'table_search_behaviour', must not be 'None'")
+        self._table_search_behaviour = table_search_behaviour
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -69,6 +69,7 @@ class GsaUpdateDatabase(ModelBase):
         "database_key": "str",
         "guid": "str",
         "initial_catalog": "str",
+        "is_implicit_profile_disabled": "bool",
         "is_read_only": "bool",
         "language": "str",
         "loading_order": "int",
@@ -90,6 +91,7 @@ class GsaUpdateDatabase(ModelBase):
         "database_key": "databaseKey",
         "guid": "guid",
         "initial_catalog": "initialCatalog",
+        "is_implicit_profile_disabled": "isImplicitProfileDisabled",
         "is_read_only": "isReadOnly",
         "language": "language",
         "loading_order": "loadingOrder",
@@ -117,6 +119,7 @@ class GsaUpdateDatabase(ModelBase):
         database_key: "str | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         initial_catalog: "str | None | Unset_Type" = Unset,
+        is_implicit_profile_disabled: "bool | Unset_Type" = Unset,
         is_read_only: "bool | Unset_Type" = Unset,
         language: "str | None | Unset_Type" = Unset,
         loading_order: "int | Unset_Type" = Unset,
@@ -140,6 +143,7 @@ class GsaUpdateDatabase(ModelBase):
         database_key: str | None, optional
         guid: str, optional
         initial_catalog: str | None, optional
+        is_implicit_profile_disabled: bool, optional
         is_read_only: bool, optional
         language: str | None, optional
         loading_order: int, optional
@@ -158,6 +162,7 @@ class GsaUpdateDatabase(ModelBase):
         self._version_guid: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
+        self._is_implicit_profile_disabled: bool | Unset_Type = Unset
         self._is_read_only: bool | Unset_Type = Unset
         self._language: str | None | Unset_Type = Unset
         self._database_key: str | None | Unset_Type = Unset
@@ -184,6 +189,8 @@ class GsaUpdateDatabase(ModelBase):
             self.guid = guid
         if name is not Unset:
             self.name = name
+        if is_implicit_profile_disabled is not Unset:
+            self.is_implicit_profile_disabled = is_implicit_profile_disabled
         if is_read_only is not Unset:
             self.is_read_only = is_read_only
         if language is not Unset:
@@ -383,6 +390,35 @@ class GsaUpdateDatabase(ModelBase):
         if name is None:
             raise ValueError("Invalid value for 'name', must not be 'None'")
         self._name = name
+
+    @property
+    def is_implicit_profile_disabled(self) -> "bool | Unset_Type":
+        """Gets the is_implicit_profile_disabled of this GsaUpdateDatabase.
+        Whether the implicit Profile for this database is disabled. Can only be edited by a database data administrator
+
+        Returns
+        -------
+        bool | Unset_Type
+            The is_implicit_profile_disabled of this GsaUpdateDatabase.
+        """
+        return self._is_implicit_profile_disabled
+
+    @is_implicit_profile_disabled.setter
+    def is_implicit_profile_disabled(
+        self, is_implicit_profile_disabled: "bool | Unset_Type"
+    ) -> None:
+        """Sets the is_implicit_profile_disabled of this GsaUpdateDatabase.
+        Whether the implicit Profile for this database is disabled. Can only be edited by a database data administrator
+
+        Parameters
+        ----------
+        is_implicit_profile_disabled: bool | Unset_Type
+            The is_implicit_profile_disabled of this GsaUpdateDatabase.
+        """
+        # Field is not nullable
+        if is_implicit_profile_disabled is None:
+            raise ValueError("Invalid value for 'is_implicit_profile_disabled', must not be 'None'")
+        self._is_implicit_profile_disabled = is_implicit_profile_disabled
 
     @property
     def is_read_only(self) -> "bool | Unset_Type":

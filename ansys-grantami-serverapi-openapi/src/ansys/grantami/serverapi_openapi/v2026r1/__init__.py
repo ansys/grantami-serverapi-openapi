@@ -721,6 +721,7 @@ from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExists
 from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
 from .models.gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
+from .models.gsa_inclusiveness import GsaInclusiveness
 from .models.gsa_index_record_failure import GsaIndexRecordFailure
 from .models.gsa_indirect_links import GsaIndirectLinks
 from .models.gsa_input_connection_details import GsaInputConnectionDetails
@@ -1099,6 +1100,7 @@ from .models.gsa_range_attribute import GsaRangeAttribute
 from .models.gsa_range_datum import GsaRangeDatum
 from .models.gsa_range_datum_criterion import GsaRangeDatumCriterion
 from .models.gsa_range_datum_exists_criterion import GsaRangeDatumExistsCriterion
+from .models.gsa_range_endpoint import GsaRangeEndpoint
 from .models.gsa_range_fixed_width_histogram_aggregation_datum_criterion import (
     GsaRangeFixedWidthHistogramAggregationDatumCriterion,
 )
@@ -1325,6 +1327,7 @@ from .models.gsa_table_deletion_exception import GsaTableDeletionException
 from .models.gsa_table_guid_property import GsaTableGuidProperty
 from .models.gsa_table_identity_property import GsaTableIdentityProperty
 from .models.gsa_table_name_property import GsaTableNameProperty
+from .models.gsa_table_search_behaviour import GsaTableSearchBehaviour
 from .models.gsa_tables_info import GsaTablesInfo
 from .models.gsa_tabular_attribute import GsaTabularAttribute
 from .models.gsa_tabular_attribute_link import GsaTabularAttributeLink
@@ -2073,6 +2076,7 @@ __all__ = [
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
     "GsaInUseParameterValueErrorDetail",
+    "GsaInclusiveness",
     "GsaIndexRecordFailure",
     "GsaIndirectLinks",
     "GsaInputConnectionDetails",
@@ -2369,6 +2373,7 @@ __all__ = [
     "GsaRangeDatum",
     "GsaRangeDatumCriterion",
     "GsaRangeDatumExistsCriterion",
+    "GsaRangeEndpoint",
     "GsaRangeFixedWidthHistogramAggregationDatumCriterion",
     "GsaRangeGraphValue",
     "GsaRangeHistogramAggregation",
@@ -2563,6 +2568,7 @@ __all__ = [
     "GsaTableGuidProperty",
     "GsaTableIdentityProperty",
     "GsaTableNameProperty",
+    "GsaTableSearchBehaviour",
     "GsaTablesInfo",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",
