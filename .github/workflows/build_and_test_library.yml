@@ -21,19 +21,24 @@ on:
       - ".github/workflows/build_and_test_library.yml"
 
 env:
-  MAIN_PYTHON_VERSION: '3.12'
+  MAIN_PYTHON_VERSION: '3.13'
   LIBRARY_NAME: 'ansys-grantami-serverapi-openapi'
 
 jobs:
 
   tests:
-    name: "Test Python ${{ matrix.python-version }}"
-    runs-on: ubuntu-latest
+    name: "Test Python ${{ matrix.python-version }} - ${{ matrix.platform }}"
+    runs-on: ${{ matrix.platform }}
     strategy:
       matrix:
-        python-version: [ '3.10', '3.11', '3.12', '3.13' ]
+        platform: [ 'ubuntu-latest', 'windows-latest' ]
+        python-version: [ '3.10', '3.11', '3.12', '3.13', '3.14' ]
       fail-fast: false
     steps:
+      - name: "Enable long paths on Windows"
+        if: runner.os == 'Windows'
+        run: |
+          git config --system core.longpaths true
 
       - name: "Checkout the project"
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
