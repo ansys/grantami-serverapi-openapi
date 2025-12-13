@@ -61,8 +61,8 @@ class GsaAttributeLinkPair(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "attribute_source": "GsaTargetAttribute",
-        "attribute_target": "GsaTargetAttribute",
+        "attribute_source": "GsaSlimAttribute",
+        "attribute_target": "GsaSlimAttribute",
     }
 
     attribute_map: dict[str, str] = {
@@ -71,8 +71,8 @@ class GsaAttributeLinkPair(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "attributeSource": "GsaTargetAttribute",
-        "attributeTarget": "GsaTargetAttribute",
+        "attributeSource": "GsaSlimAttribute",
+        "attributeTarget": "GsaSlimAttribute",
     }
 
     discriminator: Optional[str] = None
@@ -80,76 +80,72 @@ class GsaAttributeLinkPair(ModelBase):
     def __init__(
         self,
         *,
-        attribute_source: "GsaTargetAttribute",
-        attribute_target: "GsaTargetAttribute",
+        attribute_source: "GsaSlimAttribute | Unset_Type" = Unset,
+        attribute_target: "GsaSlimAttribute | Unset_Type" = Unset,
     ) -> None:
         """GsaAttributeLinkPair - a model defined in Swagger
 
         Parameters
         ----------
-        attribute_source: GsaTargetAttribute
-        attribute_target: GsaTargetAttribute
+        attribute_source: GsaSlimAttribute, optional
+        attribute_target: GsaSlimAttribute, optional
         """
-        self._attribute_source: GsaTargetAttribute
-        self._attribute_target: GsaTargetAttribute
+        self._attribute_source: GsaSlimAttribute | Unset_Type = Unset
+        self._attribute_target: GsaSlimAttribute | Unset_Type = Unset
 
-        self.attribute_source = attribute_source
-        self.attribute_target = attribute_target
+        if attribute_source is not Unset:
+            self.attribute_source = attribute_source
+        if attribute_target is not Unset:
+            self.attribute_target = attribute_target
 
     @property
-    def attribute_source(self) -> "GsaTargetAttribute":
+    def attribute_source(self) -> "GsaSlimAttribute | Unset_Type":
         """Gets the attribute_source of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaTargetAttribute
+        GsaSlimAttribute | Unset_Type
             The attribute_source of this GsaAttributeLinkPair.
         """
         return self._attribute_source
 
     @attribute_source.setter
-    def attribute_source(self, attribute_source: "GsaTargetAttribute") -> None:
+    def attribute_source(self, attribute_source: "GsaSlimAttribute | Unset_Type") -> None:
         """Sets the attribute_source of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_source: GsaTargetAttribute
+        attribute_source: GsaSlimAttribute | Unset_Type
             The attribute_source of this GsaAttributeLinkPair.
         """
         # Field is not nullable
         if attribute_source is None:
             raise ValueError("Invalid value for 'attribute_source', must not be 'None'")
-        # Field is required
-        if attribute_source is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'attribute_source', must not be 'Unset'")
         self._attribute_source = attribute_source
 
     @property
-    def attribute_target(self) -> "GsaTargetAttribute":
+    def attribute_target(self) -> "GsaSlimAttribute | Unset_Type":
         """Gets the attribute_target of this GsaAttributeLinkPair.
 
         Returns
         -------
-        GsaTargetAttribute
+        GsaSlimAttribute | Unset_Type
             The attribute_target of this GsaAttributeLinkPair.
         """
         return self._attribute_target
 
     @attribute_target.setter
-    def attribute_target(self, attribute_target: "GsaTargetAttribute") -> None:
+    def attribute_target(self, attribute_target: "GsaSlimAttribute | Unset_Type") -> None:
         """Sets the attribute_target of this GsaAttributeLinkPair.
 
         Parameters
         ----------
-        attribute_target: GsaTargetAttribute
+        attribute_target: GsaSlimAttribute | Unset_Type
             The attribute_target of this GsaAttributeLinkPair.
         """
         # Field is not nullable
         if attribute_target is None:
             raise ValueError("Invalid value for 'attribute_target', must not be 'None'")
-        # Field is required
-        if attribute_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'attribute_target', must not be 'Unset'")
         self._attribute_target = attribute_target
 
     @classmethod
