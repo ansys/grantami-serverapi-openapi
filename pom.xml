@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.swagger</groupId>
   <artifactId>AnsysPython-swagger-codegen</artifactId>
-  <version>5.1.0rc0</version>
+  <version>5.1.0</version>
   <packaging>jar</packaging>
   <name>AnsysPython-swagger-codegen</name>
 
