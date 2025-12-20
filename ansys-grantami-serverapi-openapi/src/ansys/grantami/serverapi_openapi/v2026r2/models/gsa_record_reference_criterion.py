@@ -66,8 +66,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
     swagger_types: dict[str, str] = {
         "database_key": "str",
         "type": "GsaCriterionType",
-        "any_record_guids": "list[str]",
-        "any_record_history_guids": "list[str]",
         "record_guid": "str",
         "record_history_guid": "str",
     }
@@ -75,8 +73,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
         "type": "type",
-        "any_record_guids": "anyRecordGuids",
-        "any_record_history_guids": "anyRecordHistoryGuids",
         "record_guid": "recordGuid",
         "record_history_guid": "recordHistoryGuid",
     }
@@ -90,8 +86,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         *,
         database_key: "str",
         type: "GsaCriterionType" = GsaCriterionType.REFERENCE,
-        any_record_guids: "list[str] | None | Unset_Type" = Unset,
-        any_record_history_guids: "list[str] | None | Unset_Type" = Unset,
         record_guid: "str | None | Unset_Type" = Unset,
         record_history_guid: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -101,27 +95,19 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         ----------
         database_key: str
         type: GsaCriterionType
-        any_record_guids: list[str] | None, optional
-        any_record_history_guids: list[str] | None, optional
         record_guid: str | None, optional
         record_history_guid: str | None, optional
         """
         super().__init__(type=type)
         self._database_key: str
-        self._record_guid: str | None | Unset_Type = Unset
         self._record_history_guid: str | None | Unset_Type = Unset
-        self._any_record_history_guids: list[str] | None | Unset_Type = Unset
-        self._any_record_guids: list[str] | None | Unset_Type = Unset
+        self._record_guid: str | None | Unset_Type = Unset
 
         self.database_key = database_key
-        if record_guid is not Unset:
-            self.record_guid = record_guid
         if record_history_guid is not Unset:
             self.record_history_guid = record_history_guid
-        if any_record_history_guids is not Unset:
-            self.any_record_history_guids = any_record_history_guids
-        if any_record_guids is not Unset:
-            self.any_record_guids = any_record_guids
+        if record_guid is not Unset:
+            self.record_guid = record_guid
 
     @property
     def database_key(self) -> "str":
@@ -152,28 +138,6 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         self._database_key = database_key
 
     @property
-    def record_guid(self) -> "str | None | Unset_Type":
-        """Gets the record_guid of this GsaRecordReferenceCriterion.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The record_guid of this GsaRecordReferenceCriterion.
-        """
-        return self._record_guid
-
-    @record_guid.setter
-    def record_guid(self, record_guid: "str | None | Unset_Type") -> None:
-        """Sets the record_guid of this GsaRecordReferenceCriterion.
-
-        Parameters
-        ----------
-        record_guid: str | None | Unset_Type
-            The record_guid of this GsaRecordReferenceCriterion.
-        """
-        self._record_guid = record_guid
-
-    @property
     def record_history_guid(self) -> "str | None | Unset_Type":
         """Gets the record_history_guid of this GsaRecordReferenceCriterion.
 
@@ -196,50 +160,26 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         self._record_history_guid = record_history_guid
 
     @property
-    def any_record_history_guids(self) -> "list[str] | None | Unset_Type":
-        """Gets the any_record_history_guids of this GsaRecordReferenceCriterion.
+    def record_guid(self) -> "str | None | Unset_Type":
+        """Gets the record_guid of this GsaRecordReferenceCriterion.
 
         Returns
         -------
-        list[str] | None | Unset_Type
-            The any_record_history_guids of this GsaRecordReferenceCriterion.
+        str | None | Unset_Type
+            The record_guid of this GsaRecordReferenceCriterion.
         """
-        return self._any_record_history_guids
+        return self._record_guid
 
-    @any_record_history_guids.setter
-    def any_record_history_guids(
-        self, any_record_history_guids: "list[str] | None | Unset_Type"
-    ) -> None:
-        """Sets the any_record_history_guids of this GsaRecordReferenceCriterion.
+    @record_guid.setter
+    def record_guid(self, record_guid: "str | None | Unset_Type") -> None:
+        """Sets the record_guid of this GsaRecordReferenceCriterion.
 
         Parameters
         ----------
-        any_record_history_guids: list[str] | None | Unset_Type
-            The any_record_history_guids of this GsaRecordReferenceCriterion.
+        record_guid: str | None | Unset_Type
+            The record_guid of this GsaRecordReferenceCriterion.
         """
-        self._any_record_history_guids = any_record_history_guids
-
-    @property
-    def any_record_guids(self) -> "list[str] | None | Unset_Type":
-        """Gets the any_record_guids of this GsaRecordReferenceCriterion.
-
-        Returns
-        -------
-        list[str] | None | Unset_Type
-            The any_record_guids of this GsaRecordReferenceCriterion.
-        """
-        return self._any_record_guids
-
-    @any_record_guids.setter
-    def any_record_guids(self, any_record_guids: "list[str] | None | Unset_Type") -> None:
-        """Sets the any_record_guids of this GsaRecordReferenceCriterion.
-
-        Parameters
-        ----------
-        any_record_guids: list[str] | None | Unset_Type
-            The any_record_guids of this GsaRecordReferenceCriterion.
-        """
-        self._any_record_guids = any_record_guids
+        self._record_guid = record_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
