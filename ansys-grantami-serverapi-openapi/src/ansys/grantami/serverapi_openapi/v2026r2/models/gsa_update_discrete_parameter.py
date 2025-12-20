@@ -68,26 +68,20 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     swagger_types: dict[str, str] = {
         "type": "GsaParameterType",
         "default_parameter_value_guid": "str",
-        "default_parameter_value_index": "int",
         "guid": "str",
         "help_path": "str",
         "name": "str",
-        "values": "list[GsaUpdateDiscreteParameterValue]",
     }
 
     attribute_map: dict[str, str] = {
         "type": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
-        "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
         "help_path": "helpPath",
         "name": "name",
-        "values": "values",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "values": "GsaUpdateDiscreteParameterValue",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -96,11 +90,9 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         *,
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
-        default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
-        values: "list[GsaUpdateDiscreteParameterValue] | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateDiscreteParameter - a model defined in Swagger
 
@@ -108,51 +100,17 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         ----------
         type: GsaParameterType
         default_parameter_value_guid: str, optional
-        default_parameter_value_index: int, optional
         guid: str, optional
         help_path: str | None, optional
         name: str, optional
-        values: list[GsaUpdateDiscreteParameterValue], optional
         """
         super().__init__(
             type=type,
             default_parameter_value_guid=default_parameter_value_guid,
-            default_parameter_value_index=default_parameter_value_index,
             guid=guid,
             help_path=help_path,
             name=name,
         )
-        self._values: list[GsaUpdateDiscreteParameterValue] | Unset_Type = Unset
-
-        if values is not Unset:
-            self.values = values
-
-    @property
-    def values(self) -> "list[GsaUpdateDiscreteParameterValue] | Unset_Type":
-        """Gets the values of this GsaUpdateDiscreteParameter.
-        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
-
-        Returns
-        -------
-        list[GsaUpdateDiscreteParameterValue] | Unset_Type
-            The values of this GsaUpdateDiscreteParameter.
-        """
-        return self._values
-
-    @values.setter
-    def values(self, values: "list[GsaUpdateDiscreteParameterValue] | Unset_Type") -> None:
-        """Sets the values of this GsaUpdateDiscreteParameter.
-        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
-
-        Parameters
-        ----------
-        values: list[GsaUpdateDiscreteParameterValue] | Unset_Type
-            The values of this GsaUpdateDiscreteParameter.
-        """
-        # Field is not nullable
-        if values is None:
-            raise ValueError("Invalid value for 'values', must not be 'None'")
-        self._values = values
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
