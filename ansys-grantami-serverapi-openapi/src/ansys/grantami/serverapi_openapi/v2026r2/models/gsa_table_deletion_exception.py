@@ -61,7 +61,7 @@ class GsaTableDeletionException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaDataModificationErrorDetail]",
         "message": "str",
     }
@@ -73,7 +73,7 @@ class GsaTableDeletionException(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "GsaDataModificationErrorDetail",
     }
 
@@ -82,7 +82,7 @@ class GsaTableDeletionException(ModelBase):
     def __init__(
         self,
         *,
-        code: "GsaErrorCode | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
         errors: "list[GsaDataModificationErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -90,12 +90,12 @@ class GsaTableDeletionException(ModelBase):
 
         Parameters
         ----------
-        code: GsaErrorCode, optional
+        code: SystemNetHttpStatusCode, optional
         errors: list[GsaDataModificationErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: GsaErrorCode | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
         self._errors: list[GsaDataModificationErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
@@ -128,23 +128,23 @@ class GsaTableDeletionException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaTableDeletionException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaTableDeletionException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaTableDeletionException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaTableDeletionException.
         """
         # Field is not nullable

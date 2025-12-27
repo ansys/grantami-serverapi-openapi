@@ -94,7 +94,6 @@ class GsaAttributeErrorDetail(ModelBase):
         "tabularColumnNameNotProvided".lower(): "#/components/schemas/GsaTabularColumnNameNotProvidedErrorDetail",
         "duplicateTabularColumnNames".lower(): "#/components/schemas/GsaDuplicateTabularColumnNamesErrorDetail",
         "tabularColumnNoSuchEntity".lower(): "#/components/schemas/GsaNoSuchEntityTabularColumnErrorDetail",
-        "metaAttributeCannotHaveMetaAttribute".lower(): "#/components/schemas/GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
