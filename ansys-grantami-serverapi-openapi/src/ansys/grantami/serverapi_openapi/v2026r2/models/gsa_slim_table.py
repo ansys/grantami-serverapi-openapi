@@ -61,7 +61,6 @@ class GsaSlimTable(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "database_key": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -72,7 +71,6 @@ class GsaSlimTable(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "database_key": "databaseKey",
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -89,7 +87,6 @@ class GsaSlimTable(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "str",
         display_names: "dict[str, str]",
         guid: "str",
         is_hidden_from_browse: "bool",
@@ -102,7 +99,6 @@ class GsaSlimTable(ModelBase):
 
         Parameters
         ----------
-        database_key: str
         display_names: dict[str, str]
         guid: str
         is_hidden_from_browse: bool
@@ -111,7 +107,6 @@ class GsaSlimTable(ModelBase):
         name: str
         table_types: list[str]
         """
-        self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
@@ -120,7 +115,6 @@ class GsaSlimTable(ModelBase):
         self._name: str
         self._guid: str
 
-        self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
         self.is_versioned = is_versioned
@@ -128,34 +122,6 @@ class GsaSlimTable(ModelBase):
         self.display_names = display_names
         self.name = name
         self.guid = guid
-
-    @property
-    def database_key(self) -> "str":
-        """Gets the database_key of this GsaSlimTable.
-
-        Returns
-        -------
-        str
-            The database_key of this GsaSlimTable.
-        """
-        return self._database_key
-
-    @database_key.setter
-    def database_key(self, database_key: "str") -> None:
-        """Sets the database_key of this GsaSlimTable.
-
-        Parameters
-        ----------
-        database_key: str
-            The database_key of this GsaSlimTable.
-        """
-        # Field is not nullable
-        if database_key is None:
-            raise ValueError("Invalid value for 'database_key', must not be 'None'")
-        # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
-        self._database_key = database_key
 
     @property
     def is_hidden_from_browse(self) -> "bool":

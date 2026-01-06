@@ -54,7 +54,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         database_key: "str",
         table_guid: "str",
         body: "Optional[GsaCreateRecordLinkGroup]" = None,
-    ) -> "GsaRecordLinkGroup | GsaRecordLinkGroupCreationException | None":
+    ) -> "GsaRecordLinkGroup | None":
         """Create a new record link group.
 
         This method makes a synchronous HTTP request.
@@ -62,14 +62,12 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         body: GsaCreateRecordLinkGroup
 
         Returns
         -------
-        GsaRecordLinkGroup | GsaRecordLinkGroupCreationException | None
+        GsaRecordLinkGroup | None
         """
         data = self._create_record_link_group_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -139,7 +137,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaRecordLinkGroup",
-            400: "GsaRecordLinkGroupCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -175,12 +173,10 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_link_group_guid: str
         record_link_group_type: str
-            The record link group type as entered.
+            The record link group type.
 
         Returns
         -------
@@ -302,12 +298,10 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_link_group_guid: str
         record_link_group_type: str
-            The record link group type as entered.
+            The record link group type.
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -442,9 +436,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -547,7 +539,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         table_guid: "str",
         record_link_group_guid: "str",
         body: "Optional[GsaUpdateRecordLinkGroup]" = None,
-    ) -> "GsaRecordLinkGroup | GsaRecordLinkGroupUpdateException | None":
+    ) -> "GsaRecordLinkGroup | None":
         """Update record link group.
 
         This method makes a synchronous HTTP request.
@@ -555,15 +547,13 @@ class SchemaRecordLinkGroupsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_link_group_guid: str
         body: GsaUpdateRecordLinkGroup
 
         Returns
         -------
-        GsaRecordLinkGroup | GsaRecordLinkGroupUpdateException | None
+        GsaRecordLinkGroup | None
         """
         data = self._update_record_link_group_with_http_info(
             database_key, table_guid, record_link_group_guid, body, _return_http_data_only=True
@@ -642,7 +632,7 @@ class SchemaRecordLinkGroupsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaRecordLinkGroup",
-            400: "GsaRecordLinkGroupUpdateException",
+            400: None,
             403: None,
             404: None,
         }
