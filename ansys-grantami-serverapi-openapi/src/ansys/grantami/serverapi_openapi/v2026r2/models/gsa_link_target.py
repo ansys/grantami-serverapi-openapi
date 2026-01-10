@@ -61,15 +61,15 @@ class GsaLinkTarget(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "table_guid": "str",
         "database_guid": "str",
         "database_version_guid": "str",
+        "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "table_guid": "tableGuid",
         "database_guid": "databaseGuid",
         "database_version_guid": "databaseVersionGuid",
+        "table_guid": "tableGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -79,27 +79,28 @@ class GsaLinkTarget(ModelBase):
     def __init__(
         self,
         *,
-        table_guid: "str",
         database_guid: "str | None | Unset_Type" = Unset,
         database_version_guid: "str | None | Unset_Type" = Unset,
+        table_guid: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaLinkTarget - a model defined in Swagger
 
         Parameters
         ----------
-        table_guid: str
         database_guid: str | None, optional
         database_version_guid: str | None, optional
+        table_guid: str | None, optional
         """
         self._database_guid: str | None | Unset_Type = Unset
         self._database_version_guid: str | None | Unset_Type = Unset
-        self._table_guid: str
+        self._table_guid: str | None | Unset_Type = Unset
 
         if database_guid is not Unset:
             self.database_guid = database_guid
         if database_version_guid is not Unset:
             self.database_version_guid = database_version_guid
-        self.table_guid = table_guid
+        if table_guid is not Unset:
+            self.table_guid = table_guid
 
     @property
     def database_guid(self) -> "str | None | Unset_Type":
@@ -146,31 +147,25 @@ class GsaLinkTarget(ModelBase):
         self._database_version_guid = database_version_guid
 
     @property
-    def table_guid(self) -> "str":
+    def table_guid(self) -> "str | None | Unset_Type":
         """Gets the table_guid of this GsaLinkTarget.
 
         Returns
         -------
-        str
+        str | None | Unset_Type
             The table_guid of this GsaLinkTarget.
         """
         return self._table_guid
 
     @table_guid.setter
-    def table_guid(self, table_guid: "str") -> None:
+    def table_guid(self, table_guid: "str | None | Unset_Type") -> None:
         """Sets the table_guid of this GsaLinkTarget.
 
         Parameters
         ----------
-        table_guid: str
+        table_guid: str | None | Unset_Type
             The table_guid of this GsaLinkTarget.
         """
-        # Field is not nullable
-        if table_guid is None:
-            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
-        # Field is required
-        if table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'table_guid', must not be 'Unset'")
         self._table_guid = table_guid
 
     @classmethod
