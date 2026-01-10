@@ -71,12 +71,10 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         "type": "GsaAttributeType",
         "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
         "is_range": "bool",
-        "meta_attributes": "list[GsaCreateAttribute]",
         "unit": "GsaSlimEntity",
     }
 
@@ -86,12 +84,10 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         "type": "type",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_range": "isRange",
-        "meta_attributes": "metaAttributes",
         "unit": "unit",
     }
 
@@ -111,12 +107,10 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         axis_name: "GsaCreateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
         is_range: "bool | Unset_Type" = Unset,
-        meta_attributes: "list[GsaCreateAttribute] | None | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateFloatFunctionalAttribute - a model defined in Swagger
@@ -128,23 +122,19 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         type: GsaAttributeType
         axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         guid: str, optional
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
         is_range: bool, optional
-        meta_attributes: list[GsaCreateAttribute] | None, optional
         unit: GsaSlimEntity, optional
         """
         super().__init__(
             name=name,
             type=type,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
-            meta_attributes=meta_attributes,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
         self._axis_name: GsaCreateAxisName | Unset_Type = Unset
