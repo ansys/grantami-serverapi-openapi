@@ -73,7 +73,6 @@ class GsaNumericParameter(GsaParameter):
         "scale_type": "GsaParameterScaleType",
         "type": "GsaParameterType",
         "values": "list[GsaNumericParameterValue]",
-        "help_path": "str",
         "unit": "GsaSlimUnit",
     }
 
@@ -87,7 +86,6 @@ class GsaNumericParameter(GsaParameter):
         "scale_type": "scaleType",
         "type": "type",
         "values": "values",
-        "help_path": "helpPath",
         "unit": "unit",
     }
 
@@ -112,7 +110,6 @@ class GsaNumericParameter(GsaParameter):
         scale_type: "GsaParameterScaleType",
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "list[GsaNumericParameterValue]",
-        help_path: "str | None | Unset_Type" = Unset,
         unit: "GsaSlimUnit | Unset_Type" = Unset,
     ) -> None:
         """GsaNumericParameter - a model defined in Swagger
@@ -128,7 +125,6 @@ class GsaNumericParameter(GsaParameter):
         scale_type: GsaParameterScaleType
         type: GsaParameterType
         values: list[GsaNumericParameterValue]
-        help_path: str | None, optional
         unit: GsaSlimUnit, optional
         """
         super().__init__(
@@ -137,7 +133,6 @@ class GsaNumericParameter(GsaParameter):
             guid=guid,
             name=name,
             type=type,
-            help_path=help_path,
         )
         self._is_restricted: bool
         self._unit: GsaSlimUnit | Unset_Type = Unset

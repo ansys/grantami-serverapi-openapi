@@ -1269,7 +1269,6 @@ from .models.gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .models.gsa_slim_layout import GsaSlimLayout
 from .models.gsa_slim_layout_section import GsaSlimLayoutSection
 from .models.gsa_slim_named_entity import GsaSlimNamedEntity
-from .models.gsa_slim_named_unit import GsaSlimNamedUnit
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
 from .models.gsa_slim_parameter_with_help_path import GsaSlimParameterWithHelpPath
@@ -2518,7 +2517,6 @@ __all__ = [
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
-    "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
     "GsaSlimParameterWithHelpPath",

@@ -67,7 +67,6 @@ class GsaUpdateParameter(ModelBase):
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
-        "help_path": "str",
         "name": "str",
     }
 
@@ -76,7 +75,6 @@ class GsaUpdateParameter(ModelBase):
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
-        "help_path": "helpPath",
         "name": "name",
     }
 
@@ -98,7 +96,6 @@ class GsaUpdateParameter(ModelBase):
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
-        help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateParameter - a model defined in Swagger
@@ -109,19 +106,15 @@ class GsaUpdateParameter(ModelBase):
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
-        help_path: str | None, optional
         name: str, optional
         """
         self._type: GsaParameterType
-        self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_guid: str | Unset_Type = Unset
         self._default_parameter_value_index: int | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
         self.type = type
-        if help_path is not Unset:
-            self.help_path = help_path
         if default_parameter_value_guid is not Unset:
             self.default_parameter_value_guid = default_parameter_value_guid
         if default_parameter_value_index is not Unset:
@@ -158,28 +151,6 @@ class GsaUpdateParameter(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
-
-    @property
-    def help_path(self) -> "str | None | Unset_Type":
-        """Gets the help_path of this GsaUpdateParameter.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The help_path of this GsaUpdateParameter.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "str | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaUpdateParameter.
-
-        Parameters
-        ----------
-        help_path: str | None | Unset_Type
-            The help_path of this GsaUpdateParameter.
-        """
-        self._help_path = help_path
 
     @property
     def default_parameter_value_guid(self) -> "str | Unset_Type":
