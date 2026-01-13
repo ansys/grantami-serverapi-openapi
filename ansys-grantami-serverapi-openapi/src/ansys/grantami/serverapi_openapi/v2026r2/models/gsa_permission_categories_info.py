@@ -61,7 +61,7 @@ class GsaPermissionCategoriesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "categories": "list[GsaSlimPermissionCategory]",
+        "categories": "list[GsaPermissionCategory]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaPermissionCategoriesInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "categories": "GsaSlimPermissionCategory",
+        "categories": "GsaPermissionCategory",
     }
 
     discriminator: Optional[str] = None
@@ -77,36 +77,36 @@ class GsaPermissionCategoriesInfo(ModelBase):
     def __init__(
         self,
         *,
-        categories: "list[GsaSlimPermissionCategory]",
+        categories: "list[GsaPermissionCategory]",
     ) -> None:
         """GsaPermissionCategoriesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        categories: list[GsaSlimPermissionCategory]
+        categories: list[GsaPermissionCategory]
         """
-        self._categories: list[GsaSlimPermissionCategory]
+        self._categories: list[GsaPermissionCategory]
 
         self.categories = categories
 
     @property
-    def categories(self) -> "list[GsaSlimPermissionCategory]":
+    def categories(self) -> "list[GsaPermissionCategory]":
         """Gets the categories of this GsaPermissionCategoriesInfo.
 
         Returns
         -------
-        list[GsaSlimPermissionCategory]
+        list[GsaPermissionCategory]
             The categories of this GsaPermissionCategoriesInfo.
         """
         return self._categories
 
     @categories.setter
-    def categories(self, categories: "list[GsaSlimPermissionCategory]") -> None:
+    def categories(self, categories: "list[GsaPermissionCategory]") -> None:
         """Sets the categories of this GsaPermissionCategoriesInfo.
 
         Parameters
         ----------
-        categories: list[GsaSlimPermissionCategory]
+        categories: list[GsaPermissionCategory]
             The categories of this GsaPermissionCategoriesInfo.
         """
         # Field is not nullable

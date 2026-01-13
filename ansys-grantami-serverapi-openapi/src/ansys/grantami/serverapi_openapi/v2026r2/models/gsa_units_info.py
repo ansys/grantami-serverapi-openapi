@@ -61,7 +61,7 @@ class GsaUnitsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "units": "list[GsaSlimNamedUnit]",
+        "units": "list[GsaUnit]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaUnitsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "units": "GsaSlimNamedUnit",
+        "units": "GsaUnit",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,37 @@ class GsaUnitsInfo(ModelBase):
     def __init__(
         self,
         *,
-        units: "list[GsaSlimNamedUnit] | None | Unset_Type" = Unset,
+        units: "list[GsaUnit] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUnitsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        units: list[GsaSlimNamedUnit] | None, optional
+        units: list[GsaUnit] | None, optional
         """
-        self._units: list[GsaSlimNamedUnit] | None | Unset_Type = Unset
+        self._units: list[GsaUnit] | None | Unset_Type = Unset
 
         if units is not Unset:
             self.units = units
 
     @property
-    def units(self) -> "list[GsaSlimNamedUnit] | None | Unset_Type":
+    def units(self) -> "list[GsaUnit] | None | Unset_Type":
         """Gets the units of this GsaUnitsInfo.
 
         Returns
         -------
-        list[GsaSlimNamedUnit] | None | Unset_Type
+        list[GsaUnit] | None | Unset_Type
             The units of this GsaUnitsInfo.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "list[GsaSlimNamedUnit] | None | Unset_Type") -> None:
+    def units(self, units: "list[GsaUnit] | None | Unset_Type") -> None:
         """Sets the units of this GsaUnitsInfo.
 
         Parameters
         ----------
-        units: list[GsaSlimNamedUnit] | None | Unset_Type
+        units: list[GsaUnit] | None | Unset_Type
             The units of this GsaUnitsInfo.
         """
         self._units = units
