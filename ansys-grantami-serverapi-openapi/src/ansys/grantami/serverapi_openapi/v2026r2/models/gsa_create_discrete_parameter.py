@@ -71,7 +71,6 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         "type": "GsaParameterType",
         "values": "list[GsaCreateDiscreteParameterValue]",
         "guid": "str",
-        "help_path": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -80,7 +79,6 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         "type": "type",
         "values": "values",
         "guid": "guid",
-        "help_path": "helpPath",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -97,7 +95,6 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         type: "GsaParameterType" = GsaParameterType.DISCRETE,
         values: "list[GsaCreateDiscreteParameterValue]",
         guid: "str | Unset_Type" = Unset,
-        help_path: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateDiscreteParameter - a model defined in Swagger
 
@@ -108,14 +105,12 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         type: GsaParameterType
         values: list[GsaCreateDiscreteParameterValue]
         guid: str, optional
-        help_path: str | None, optional
         """
         super().__init__(
             default_parameter_value_index=default_parameter_value_index,
             name=name,
             type=type,
             guid=guid,
-            help_path=help_path,
         )
         self._values: list[GsaCreateDiscreteParameterValue]
 

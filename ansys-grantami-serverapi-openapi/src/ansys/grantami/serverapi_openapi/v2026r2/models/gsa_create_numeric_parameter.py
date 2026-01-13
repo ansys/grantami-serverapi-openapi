@@ -74,7 +74,6 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "type": "GsaParameterType",
         "values": "list[GsaCreateNumericParameterValue]",
         "guid": "str",
-        "help_path": "str",
         "unit": "GsaSlimEntity",
     }
 
@@ -87,7 +86,6 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "type": "type",
         "values": "values",
         "guid": "guid",
-        "help_path": "helpPath",
         "unit": "unit",
     }
 
@@ -111,7 +109,6 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "list[GsaCreateNumericParameterValue]",
         guid: "str | Unset_Type" = Unset,
-        help_path: "str | None | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateNumericParameter - a model defined in Swagger
@@ -126,7 +123,6 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         type: GsaParameterType
         values: list[GsaCreateNumericParameterValue]
         guid: str, optional
-        help_path: str | None, optional
         unit: GsaSlimEntity, optional
         """
         super().__init__(
@@ -134,7 +130,6 @@ class GsaCreateNumericParameter(GsaCreateParameter):
             name=name,
             type=type,
             guid=guid,
-            help_path=help_path,
         )
         self._is_restricted: bool
         self._unit: GsaSlimEntity | Unset_Type = Unset

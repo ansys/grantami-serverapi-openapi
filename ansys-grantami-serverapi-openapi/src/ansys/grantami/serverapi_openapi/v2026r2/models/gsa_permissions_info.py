@@ -61,7 +61,7 @@ class GsaPermissionsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "permissions": "list[GsaSlimPermission]",
+        "permissions": "list[GsaPermission]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaPermissionsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "permissions": "GsaSlimPermission",
+        "permissions": "GsaPermission",
     }
 
     discriminator: Optional[str] = None
@@ -77,36 +77,36 @@ class GsaPermissionsInfo(ModelBase):
     def __init__(
         self,
         *,
-        permissions: "list[GsaSlimPermission]",
+        permissions: "list[GsaPermission]",
     ) -> None:
         """GsaPermissionsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        permissions: list[GsaSlimPermission]
+        permissions: list[GsaPermission]
         """
-        self._permissions: list[GsaSlimPermission]
+        self._permissions: list[GsaPermission]
 
         self.permissions = permissions
 
     @property
-    def permissions(self) -> "list[GsaSlimPermission]":
+    def permissions(self) -> "list[GsaPermission]":
         """Gets the permissions of this GsaPermissionsInfo.
 
         Returns
         -------
-        list[GsaSlimPermission]
+        list[GsaPermission]
             The permissions of this GsaPermissionsInfo.
         """
         return self._permissions
 
     @permissions.setter
-    def permissions(self, permissions: "list[GsaSlimPermission]") -> None:
+    def permissions(self, permissions: "list[GsaPermission]") -> None:
         """Sets the permissions of this GsaPermissionsInfo.
 
         Parameters
         ----------
-        permissions: list[GsaSlimPermission]
+        permissions: list[GsaPermission]
             The permissions of this GsaPermissionsInfo.
         """
         # Field is not nullable

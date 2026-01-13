@@ -68,7 +68,6 @@ class GsaParameter(ModelBase):
         "guid": "str",
         "name": "str",
         "type": "GsaParameterType",
-        "help_path": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -77,7 +76,6 @@ class GsaParameter(ModelBase):
         "guid": "guid",
         "name": "name",
         "type": "type",
-        "help_path": "helpPath",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -99,7 +97,6 @@ class GsaParameter(ModelBase):
         guid: "str",
         name: "str",
         type: "GsaParameterType",
-        help_path: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaParameter - a model defined in Swagger
 
@@ -110,18 +107,14 @@ class GsaParameter(ModelBase):
         guid: str
         name: str
         type: GsaParameterType
-        help_path: str | None, optional
         """
         self._type: GsaParameterType
-        self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_guid: str
         self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
         self.type = type
-        if help_path is not Unset:
-            self.help_path = help_path
         self.default_parameter_value_guid = default_parameter_value_guid
         self.display_names = display_names
         self.name = name
@@ -154,28 +147,6 @@ class GsaParameter(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
-
-    @property
-    def help_path(self) -> "str | None | Unset_Type":
-        """Gets the help_path of this GsaParameter.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The help_path of this GsaParameter.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "str | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaParameter.
-
-        Parameters
-        ----------
-        help_path: str | None | Unset_Type
-            The help_path of this GsaParameter.
-        """
-        self._help_path = help_path
 
     @property
     def default_parameter_value_guid(self) -> "str":

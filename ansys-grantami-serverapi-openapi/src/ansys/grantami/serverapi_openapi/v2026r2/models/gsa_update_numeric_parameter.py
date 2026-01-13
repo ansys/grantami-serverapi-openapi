@@ -70,7 +70,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
-        "help_path": "str",
         "interpolation_type": "GsaParameterInterpolationType",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
@@ -83,7 +82,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
-        "help_path": "helpPath",
         "interpolation_type": "interpolationType",
         "name": "name",
         "scale_type": "scaleType",
@@ -107,7 +105,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
-        help_path: "str | None | Unset_Type" = Unset,
         interpolation_type: "GsaParameterInterpolationType | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
         scale_type: "GsaParameterScaleType | Unset_Type" = Unset,
@@ -122,7 +119,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
-        help_path: str | None, optional
         interpolation_type: GsaParameterInterpolationType, optional
         name: str, optional
         scale_type: GsaParameterScaleType, optional
@@ -134,7 +130,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
             default_parameter_value_guid=default_parameter_value_guid,
             default_parameter_value_index=default_parameter_value_index,
             guid=guid,
-            help_path=help_path,
             name=name,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
