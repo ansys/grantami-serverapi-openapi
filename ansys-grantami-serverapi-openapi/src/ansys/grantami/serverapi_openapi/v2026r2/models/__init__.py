@@ -1157,9 +1157,12 @@ from .gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .gsa_slim_layout import GsaSlimLayout
 from .gsa_slim_layout_section import GsaSlimLayoutSection
 from .gsa_slim_named_entity import GsaSlimNamedEntity
+from .gsa_slim_named_unit import GsaSlimNamedUnit
 from .gsa_slim_objects import GsaSlimObjects
 from .gsa_slim_parameter import GsaSlimParameter
 from .gsa_slim_parameter_with_help_path import GsaSlimParameterWithHelpPath
+from .gsa_slim_permission import GsaSlimPermission
+from .gsa_slim_permission_category import GsaSlimPermissionCategory
 from .gsa_slim_profile import GsaSlimProfile
 from .gsa_slim_profile_table import GsaSlimProfileTable
 from .gsa_slim_record_history import GsaSlimRecordHistory
@@ -2346,9 +2349,12 @@ __all__ = [
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
+    "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
     "GsaSlimParameterWithHelpPath",
+    "GsaSlimPermission",
+    "GsaSlimPermissionCategory",
     "GsaSlimProfile",
     "GsaSlimProfileTable",
     "GsaSlimRecordHistory",
