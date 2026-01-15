@@ -200,6 +200,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
     @property
     def values(self) -> "list[GsaCreateNumericParameterValue]":
         """Gets the values of this GsaCreateNumericParameter.
+        Numeric parameter values cannot be ordered - they are ordered by numeric value.
 
         Returns
         -------
@@ -211,6 +212,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
     @values.setter
     def values(self, values: "list[GsaCreateNumericParameterValue]") -> None:
         """Sets the values of this GsaCreateNumericParameter.
+        Numeric parameter values cannot be ordered - they are ordered by numeric value.
 
         Parameters
         ----------
