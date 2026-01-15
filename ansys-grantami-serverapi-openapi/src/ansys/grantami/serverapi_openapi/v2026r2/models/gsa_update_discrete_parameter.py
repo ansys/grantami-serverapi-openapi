@@ -70,6 +70,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
+        "help_path": "str",
         "name": "str",
         "values": "list[GsaUpdateDiscreteParameterValue]",
     }
@@ -79,6 +80,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
+        "help_path": "helpPath",
         "name": "name",
         "values": "values",
     }
@@ -96,6 +98,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
         values: "list[GsaUpdateDiscreteParameterValue] | Unset_Type" = Unset,
     ) -> None:
@@ -107,6 +110,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
+        help_path: str | None, optional
         name: str, optional
         values: list[GsaUpdateDiscreteParameterValue], optional
         """
@@ -115,6 +119,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
             default_parameter_value_guid=default_parameter_value_guid,
             default_parameter_value_index=default_parameter_value_index,
             guid=guid,
+            help_path=help_path,
             name=name,
         )
         self._values: list[GsaUpdateDiscreteParameterValue] | Unset_Type = Unset
