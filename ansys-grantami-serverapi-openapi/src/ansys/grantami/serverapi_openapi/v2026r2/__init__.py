@@ -1379,6 +1379,7 @@ from .models.gsa_unit_mapping import GsaUnitMapping
 from .models.gsa_unit_system import GsaUnitSystem
 from .models.gsa_unit_systems_info import GsaUnitSystemsInfo
 from .models.gsa_unit_usage import GsaUnitUsage
+from .models.gsa_unit_usage_type import GsaUnitUsageType
 from .models.gsa_units_info import GsaUnitsInfo
 from .models.gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .models.gsa_update_access_control import GsaUpdateAccessControl
@@ -2605,6 +2606,7 @@ __all__ = [
     "GsaUnitSystem",
     "GsaUnitSystemsInfo",
     "GsaUnitUsage",
+    "GsaUnitUsageType",
     "GsaUnitsInfo",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",

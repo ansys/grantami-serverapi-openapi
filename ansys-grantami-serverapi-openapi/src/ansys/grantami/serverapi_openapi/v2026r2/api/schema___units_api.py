@@ -939,7 +939,13 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_unit_usages(self, *, database_key: "str", unit_guid: "str") -> "GsaUnitUsage | None":
+    def get_unit_usages(
+        self,
+        *,
+        database_key: "str",
+        unit_guid: "str",
+        response_filters: "Optional[list[GsaUnitUsageType]]" = None,
+    ) -> "GsaUnitUsage | None":
         """Get all usages of unit
 
         This method makes a synchronous HTTP request.
@@ -949,22 +955,29 @@ class SchemaUnitsApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
+        response_filters: list[GsaUnitUsageType]
+            The unit usage types to include in the response. If none are provided, all types are included.
 
         Returns
         -------
         GsaUnitUsage | None
         """
         data = self._get_unit_usages_with_http_info(
-            database_key, unit_guid, _return_http_data_only=True
+            database_key, unit_guid, response_filters, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_unit_usages_with_http_info(
-        self, database_key: "str", unit_guid: "str", **kwargs: Any
+        self,
+        database_key: "str",
+        unit_guid: "str",
+        response_filters: "Optional[list[GsaUnitUsageType]]" = None,
+        **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "unit_guid",
+            "response_filters",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -998,6 +1011,9 @@ class SchemaUnitsApi(ApiBase):
             path_params["unit-guid"] = params["unit_guid"]
 
         query_params: list[Any] = []
+        if "response_filters" in params and response_filters is not None:
+            query_params.append(("response-filters", params["response_filters"]))
+            collection_formats["response-filters"] = "multi"
 
         header_params: dict[str, Any] = {}
 

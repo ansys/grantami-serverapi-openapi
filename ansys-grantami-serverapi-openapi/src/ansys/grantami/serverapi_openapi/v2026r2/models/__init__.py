@@ -1267,6 +1267,7 @@ from .gsa_unit_mapping import GsaUnitMapping
 from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
 from .gsa_unit_usage import GsaUnitUsage
+from .gsa_unit_usage_type import GsaUnitUsageType
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .gsa_update_access_control import GsaUpdateAccessControl
@@ -2436,6 +2437,7 @@ __all__ = [
     "GsaUnitSystem",
     "GsaUnitSystemsInfo",
     "GsaUnitUsage",
+    "GsaUnitUsageType",
     "GsaUnitsInfo",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",
