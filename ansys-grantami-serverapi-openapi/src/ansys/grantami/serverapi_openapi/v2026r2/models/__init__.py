@@ -56,6 +56,7 @@ from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
 )
 from .gsa_access_control_info import GsaAccessControlInfo
 from .gsa_access_control_mode import GsaAccessControlMode
+from .gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
 from .gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
@@ -449,6 +450,7 @@ from .gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatum
 from .gsa_discrete_type import GsaDiscreteType
 from .gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
 from .gsa_discrete_type_usage import GsaDiscreteTypeUsage
+from .gsa_discrete_type_usage_type import GsaDiscreteTypeUsageType
 from .gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .gsa_discrete_value import GsaDiscreteValue
 from .gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
@@ -1428,6 +1430,7 @@ __all__ = [
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
+    "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
@@ -1763,6 +1766,7 @@ __all__ = [
     "GsaDiscreteType",
     "GsaDiscreteTypeDeletionException",
     "GsaDiscreteTypeUsage",
+    "GsaDiscreteTypeUsageType",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
     "GsaDiscreteValueAggregateErrorReason",
