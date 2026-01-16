@@ -70,6 +70,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
+        "help_path": "str",
         "name": "str",
         "values": "list[GsaUpdateDiscreteParameterValue]",
     }
@@ -79,6 +80,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
+        "help_path": "helpPath",
         "name": "name",
         "values": "values",
     }
@@ -96,6 +98,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
         values: "list[GsaUpdateDiscreteParameterValue] | Unset_Type" = Unset,
     ) -> None:
@@ -107,6 +110,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
+        help_path: str | None, optional
         name: str, optional
         values: list[GsaUpdateDiscreteParameterValue], optional
         """
@@ -115,6 +119,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
             default_parameter_value_guid=default_parameter_value_guid,
             default_parameter_value_index=default_parameter_value_index,
             guid=guid,
+            help_path=help_path,
             name=name,
         )
         self._values: list[GsaUpdateDiscreteParameterValue] | Unset_Type = Unset
@@ -125,7 +130,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     @property
     def values(self) -> "list[GsaUpdateDiscreteParameterValue] | Unset_Type":
         """Gets the values of this GsaUpdateDiscreteParameter.
-        Update the set of parameter values.  This can result in adding, modifying, deleting and reordering parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
 
         Returns
         -------
@@ -137,7 +142,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     @values.setter
     def values(self, values: "list[GsaUpdateDiscreteParameterValue] | Unset_Type") -> None:
         """Sets the values of this GsaUpdateDiscreteParameter.
-        Update the set of parameter values.  This can result in adding, modifying, deleting and reordering parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a name.
 
         Parameters
         ----------
