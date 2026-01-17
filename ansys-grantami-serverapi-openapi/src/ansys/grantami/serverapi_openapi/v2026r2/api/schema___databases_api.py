@@ -527,7 +527,7 @@ class SchemaDatabasesApi(ApiBase):
         self,
         *,
         database_key: "str",
-        type: "Optional[list[GsaLinkAttributeType]]" = None,
+        type: "Optional[list[str]]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaLinksInfo | None":
@@ -539,8 +539,8 @@ class SchemaDatabasesApi(ApiBase):
         ----------
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        type: list[GsaLinkAttributeType]
-            The link types to include in the response. If not provided, all link types are included.
+        type: list[str]
+            The link attribute types as entered
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -558,7 +558,7 @@ class SchemaDatabasesApi(ApiBase):
     def _get_outbound_links_with_http_info(
         self,
         database_key: "str",
-        type: "Optional[list[GsaLinkAttributeType]]" = None,
+        type: "Optional[list[str]]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         **kwargs: Any,

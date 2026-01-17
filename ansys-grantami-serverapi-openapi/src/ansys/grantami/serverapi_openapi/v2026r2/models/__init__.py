@@ -56,7 +56,6 @@ from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
 )
 from .gsa_access_control_info import GsaAccessControlInfo
 from .gsa_access_control_mode import GsaAccessControlMode
-from .gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
 from .gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
@@ -450,7 +449,6 @@ from .gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatum
 from .gsa_discrete_type import GsaDiscreteType
 from .gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
 from .gsa_discrete_type_usage import GsaDiscreteTypeUsage
-from .gsa_discrete_type_usage_type import GsaDiscreteTypeUsageType
 from .gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .gsa_discrete_value import GsaDiscreteValue
 from .gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
@@ -1159,9 +1157,12 @@ from .gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .gsa_slim_layout import GsaSlimLayout
 from .gsa_slim_layout_section import GsaSlimLayoutSection
 from .gsa_slim_named_entity import GsaSlimNamedEntity
+from .gsa_slim_named_unit import GsaSlimNamedUnit
 from .gsa_slim_objects import GsaSlimObjects
 from .gsa_slim_parameter import GsaSlimParameter
 from .gsa_slim_parameter_with_help_path import GsaSlimParameterWithHelpPath
+from .gsa_slim_permission import GsaSlimPermission
+from .gsa_slim_permission_category import GsaSlimPermissionCategory
 from .gsa_slim_profile import GsaSlimProfile
 from .gsa_slim_profile_table import GsaSlimProfileTable
 from .gsa_slim_record_history import GsaSlimRecordHistory
@@ -1269,7 +1270,6 @@ from .gsa_unit_mapping import GsaUnitMapping
 from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
 from .gsa_unit_usage import GsaUnitUsage
-from .gsa_unit_usage_type import GsaUnitUsageType
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .gsa_update_access_control import GsaUpdateAccessControl
@@ -1430,7 +1430,6 @@ __all__ = [
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
-    "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
@@ -1766,7 +1765,6 @@ __all__ = [
     "GsaDiscreteType",
     "GsaDiscreteTypeDeletionException",
     "GsaDiscreteTypeUsage",
-    "GsaDiscreteTypeUsageType",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
     "GsaDiscreteValueAggregateErrorReason",
@@ -2351,9 +2349,12 @@ __all__ = [
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
     "GsaSlimNamedEntity",
+    "GsaSlimNamedUnit",
     "GsaSlimObjects",
     "GsaSlimParameter",
     "GsaSlimParameterWithHelpPath",
+    "GsaSlimPermission",
+    "GsaSlimPermissionCategory",
     "GsaSlimProfile",
     "GsaSlimProfileTable",
     "GsaSlimRecordHistory",
@@ -2441,7 +2442,6 @@ __all__ = [
     "GsaUnitSystem",
     "GsaUnitSystemsInfo",
     "GsaUnitUsage",
-    "GsaUnitUsageType",
     "GsaUnitsInfo",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",

@@ -89,147 +89,172 @@ class GsaUnitUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        constants: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        expressions: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        parameters: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        units: "list[GsaSlimUnit] | None | Unset_Type" = Unset,
+        attributes: "list[GsaSlimNamedEntity]",
+        constants: "list[GsaSlimNamedEntity]",
+        expressions: "list[GsaSlimNamedEntity]",
+        parameters: "list[GsaSlimNamedEntity]",
+        units: "list[GsaSlimUnit]",
     ) -> None:
         """GsaUnitUsage - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: list[GsaSlimNamedEntity] | None, optional
-        constants: list[GsaSlimNamedEntity] | None, optional
-        expressions: list[GsaSlimNamedEntity] | None, optional
-        parameters: list[GsaSlimNamedEntity] | None, optional
-        units: list[GsaSlimUnit] | None, optional
+        attributes: list[GsaSlimNamedEntity]
+        constants: list[GsaSlimNamedEntity]
+        expressions: list[GsaSlimNamedEntity]
+        parameters: list[GsaSlimNamedEntity]
+        units: list[GsaSlimUnit]
         """
-        self._attributes: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._parameters: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._constants: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._expressions: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._units: list[GsaSlimUnit] | None | Unset_Type = Unset
+        self._attributes: list[GsaSlimNamedEntity]
+        self._parameters: list[GsaSlimNamedEntity]
+        self._constants: list[GsaSlimNamedEntity]
+        self._expressions: list[GsaSlimNamedEntity]
+        self._units: list[GsaSlimUnit]
 
-        if attributes is not Unset:
-            self.attributes = attributes
-        if parameters is not Unset:
-            self.parameters = parameters
-        if constants is not Unset:
-            self.constants = constants
-        if expressions is not Unset:
-            self.expressions = expressions
-        if units is not Unset:
-            self.units = units
+        self.attributes = attributes
+        self.parameters = parameters
+        self.constants = constants
+        self.expressions = expressions
+        self.units = units
 
     @property
-    def attributes(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def attributes(self) -> "list[GsaSlimNamedEntity]":
         """Gets the attributes of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimNamedEntity]
             The attributes of this GsaUnitUsage.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def attributes(self, attributes: "list[GsaSlimNamedEntity]") -> None:
         """Sets the attributes of this GsaUnitUsage.
 
         Parameters
         ----------
-        attributes: list[GsaSlimNamedEntity] | None | Unset_Type
+        attributes: list[GsaSlimNamedEntity]
             The attributes of this GsaUnitUsage.
         """
+        # Field is not nullable
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
+        # Field is required
+        if attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attributes', must not be 'Unset'")
         self._attributes = attributes
 
     @property
-    def parameters(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def parameters(self) -> "list[GsaSlimNamedEntity]":
         """Gets the parameters of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimNamedEntity]
             The parameters of this GsaUnitUsage.
         """
         return self._parameters
 
     @parameters.setter
-    def parameters(self, parameters: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def parameters(self, parameters: "list[GsaSlimNamedEntity]") -> None:
         """Sets the parameters of this GsaUnitUsage.
 
         Parameters
         ----------
-        parameters: list[GsaSlimNamedEntity] | None | Unset_Type
+        parameters: list[GsaSlimNamedEntity]
             The parameters of this GsaUnitUsage.
         """
+        # Field is not nullable
+        if parameters is None:
+            raise ValueError("Invalid value for 'parameters', must not be 'None'")
+        # Field is required
+        if parameters is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'parameters', must not be 'Unset'")
         self._parameters = parameters
 
     @property
-    def constants(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def constants(self) -> "list[GsaSlimNamedEntity]":
         """Gets the constants of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimNamedEntity]
             The constants of this GsaUnitUsage.
         """
         return self._constants
 
     @constants.setter
-    def constants(self, constants: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def constants(self, constants: "list[GsaSlimNamedEntity]") -> None:
         """Sets the constants of this GsaUnitUsage.
 
         Parameters
         ----------
-        constants: list[GsaSlimNamedEntity] | None | Unset_Type
+        constants: list[GsaSlimNamedEntity]
             The constants of this GsaUnitUsage.
         """
+        # Field is not nullable
+        if constants is None:
+            raise ValueError("Invalid value for 'constants', must not be 'None'")
+        # Field is required
+        if constants is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'constants', must not be 'Unset'")
         self._constants = constants
 
     @property
-    def expressions(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def expressions(self) -> "list[GsaSlimNamedEntity]":
         """Gets the expressions of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimNamedEntity]
             The expressions of this GsaUnitUsage.
         """
         return self._expressions
 
     @expressions.setter
-    def expressions(self, expressions: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def expressions(self, expressions: "list[GsaSlimNamedEntity]") -> None:
         """Sets the expressions of this GsaUnitUsage.
 
         Parameters
         ----------
-        expressions: list[GsaSlimNamedEntity] | None | Unset_Type
+        expressions: list[GsaSlimNamedEntity]
             The expressions of this GsaUnitUsage.
         """
+        # Field is not nullable
+        if expressions is None:
+            raise ValueError("Invalid value for 'expressions', must not be 'None'")
+        # Field is required
+        if expressions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'expressions', must not be 'Unset'")
         self._expressions = expressions
 
     @property
-    def units(self) -> "list[GsaSlimUnit] | None | Unset_Type":
+    def units(self) -> "list[GsaSlimUnit]":
         """Gets the units of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimUnit] | None | Unset_Type
+        list[GsaSlimUnit]
             The units of this GsaUnitUsage.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "list[GsaSlimUnit] | None | Unset_Type") -> None:
+    def units(self, units: "list[GsaSlimUnit]") -> None:
         """Sets the units of this GsaUnitUsage.
 
         Parameters
         ----------
-        units: list[GsaSlimUnit] | None | Unset_Type
+        units: list[GsaSlimUnit]
             The units of this GsaUnitUsage.
         """
+        # Field is not nullable
+        if units is None:
+            raise ValueError("Invalid value for 'units', must not be 'None'")
+        # Field is required
+        if units is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'units', must not be 'Unset'")
         self._units = units
 
     @classmethod

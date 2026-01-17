@@ -70,6 +70,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
+        "help_path": "str",
         "interpolation_type": "GsaParameterInterpolationType",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
@@ -82,6 +83,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
+        "help_path": "helpPath",
         "interpolation_type": "interpolationType",
         "name": "name",
         "scale_type": "scaleType",
@@ -105,6 +107,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
         interpolation_type: "GsaParameterInterpolationType | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
         scale_type: "GsaParameterScaleType | Unset_Type" = Unset,
@@ -119,6 +122,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
+        help_path: str | None, optional
         interpolation_type: GsaParameterInterpolationType, optional
         name: str, optional
         scale_type: GsaParameterScaleType, optional
@@ -130,6 +134,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
             default_parameter_value_guid=default_parameter_value_guid,
             default_parameter_value_index=default_parameter_value_index,
             guid=guid,
+            help_path=help_path,
             name=name,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
@@ -174,7 +179,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     @property
     def values(self) -> "list[GsaUpdateNumericParameterValue] | Unset_Type":
         """Gets the values of this GsaUpdateNumericParameter.
-        Update the set of parameter values.  This can result in adding, modifying and deleting parameter values.  Numeric parameter values can not be reordered - they are ordered by numeric value.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
 
         Returns
         -------
@@ -186,7 +191,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     @values.setter
     def values(self, values: "list[GsaUpdateNumericParameterValue] | Unset_Type") -> None:
         """Sets the values of this GsaUpdateNumericParameter.
-        Update the set of parameter values.  This can result in adding, modifying and deleting parameter values.  Numeric parameter values can not be reordered - they are ordered by numeric value.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
+        Update the set of parameter values.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
 
         Parameters
         ----------
