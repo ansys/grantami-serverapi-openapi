@@ -80,68 +80,76 @@ class GsaDiscreteTypeUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "list[GsaSlimAttribute] | None | Unset_Type" = Unset,
-        tabular_columns: "list[GsaTabularAttributeWithColumns] | None | Unset_Type" = Unset,
+        attributes: "list[GsaSlimAttribute]",
+        tabular_columns: "list[GsaTabularAttributeWithColumns]",
     ) -> None:
         """GsaDiscreteTypeUsage - a model defined in Swagger
 
         Parameters
         ----------
-        attributes: list[GsaSlimAttribute] | None, optional
-        tabular_columns: list[GsaTabularAttributeWithColumns] | None, optional
+        attributes: list[GsaSlimAttribute]
+        tabular_columns: list[GsaTabularAttributeWithColumns]
         """
-        self._attributes: list[GsaSlimAttribute] | None | Unset_Type = Unset
-        self._tabular_columns: list[GsaTabularAttributeWithColumns] | None | Unset_Type = Unset
+        self._attributes: list[GsaSlimAttribute]
+        self._tabular_columns: list[GsaTabularAttributeWithColumns]
 
-        if attributes is not Unset:
-            self.attributes = attributes
-        if tabular_columns is not Unset:
-            self.tabular_columns = tabular_columns
+        self.attributes = attributes
+        self.tabular_columns = tabular_columns
 
     @property
-    def attributes(self) -> "list[GsaSlimAttribute] | None | Unset_Type":
+    def attributes(self) -> "list[GsaSlimAttribute]":
         """Gets the attributes of this GsaDiscreteTypeUsage.
 
         Returns
         -------
-        list[GsaSlimAttribute] | None | Unset_Type
+        list[GsaSlimAttribute]
             The attributes of this GsaDiscreteTypeUsage.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "list[GsaSlimAttribute] | None | Unset_Type") -> None:
+    def attributes(self, attributes: "list[GsaSlimAttribute]") -> None:
         """Sets the attributes of this GsaDiscreteTypeUsage.
 
         Parameters
         ----------
-        attributes: list[GsaSlimAttribute] | None | Unset_Type
+        attributes: list[GsaSlimAttribute]
             The attributes of this GsaDiscreteTypeUsage.
         """
+        # Field is not nullable
+        if attributes is None:
+            raise ValueError("Invalid value for 'attributes', must not be 'None'")
+        # Field is required
+        if attributes is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'attributes', must not be 'Unset'")
         self._attributes = attributes
 
     @property
-    def tabular_columns(self) -> "list[GsaTabularAttributeWithColumns] | None | Unset_Type":
+    def tabular_columns(self) -> "list[GsaTabularAttributeWithColumns]":
         """Gets the tabular_columns of this GsaDiscreteTypeUsage.
 
         Returns
         -------
-        list[GsaTabularAttributeWithColumns] | None | Unset_Type
+        list[GsaTabularAttributeWithColumns]
             The tabular_columns of this GsaDiscreteTypeUsage.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
-    def tabular_columns(
-        self, tabular_columns: "list[GsaTabularAttributeWithColumns] | None | Unset_Type"
-    ) -> None:
+    def tabular_columns(self, tabular_columns: "list[GsaTabularAttributeWithColumns]") -> None:
         """Sets the tabular_columns of this GsaDiscreteTypeUsage.
 
         Parameters
         ----------
-        tabular_columns: list[GsaTabularAttributeWithColumns] | None | Unset_Type
+        tabular_columns: list[GsaTabularAttributeWithColumns]
             The tabular_columns of this GsaDiscreteTypeUsage.
         """
+        # Field is not nullable
+        if tabular_columns is None:
+            raise ValueError("Invalid value for 'tabular_columns', must not be 'None'")
+        # Field is required
+        if tabular_columns is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'tabular_columns', must not be 'Unset'")
         self._tabular_columns = tabular_columns
 
     @classmethod

@@ -58,7 +58,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateDiscreteType
 
         Returns
@@ -152,7 +151,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -237,11 +235,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
     def get_attributes_for_type(
-        self,
-        *,
-        database_key: "str",
-        discrete_type_guid: "str",
-        response_filters: "Optional[list[GsaDiscreteTypeUsageType]]" = None,
+        self, *, database_key: "str", discrete_type_guid: "str"
     ) -> "GsaDiscreteTypeUsage | None":
         """Gets objects that are using this discrete type.
 
@@ -250,31 +244,23 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
-        response_filters: list[GsaDiscreteTypeUsageType]
-            The discrete type usage types to include in the response. If none are provided, all types are included.
 
         Returns
         -------
         GsaDiscreteTypeUsage | None
         """
         data = self._get_attributes_for_type_with_http_info(
-            database_key, discrete_type_guid, response_filters, _return_http_data_only=True
+            database_key, discrete_type_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_attributes_for_type_with_http_info(
-        self,
-        database_key: "str",
-        discrete_type_guid: "str",
-        response_filters: "Optional[list[GsaDiscreteTypeUsageType]]" = None,
-        **kwargs: Any,
+        self, database_key: "str", discrete_type_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
             "discrete_type_guid",
-            "response_filters",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -308,9 +294,6 @@ class SchemaDiscreteTypesApi(ApiBase):
             path_params["discrete-type-guid"] = params["discrete_type_guid"]
 
         query_params: list[Any] = []
-        if "response_filters" in params and response_filters is not None:
-            query_params.append(("response-filters", params["response_filters"]))
-            collection_formats["response-filters"] = "multi"
 
         header_params: dict[str, Any] = {}
 
@@ -353,7 +336,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -443,7 +425,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -523,7 +504,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaQueryDiscreteTypesRequest
 
         Returns
@@ -623,7 +603,6 @@ class SchemaDiscreteTypesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaUpdateDiscreteType
 
