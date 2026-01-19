@@ -25,10 +25,7 @@
 # import API ABC
 from ansys.openapi.common import ApiBase
 
-from .access_control___permission_based_schema_api import AccessControlPermissionBasedSchemaApi
-
 # import apis into api package
-from .access_control_api import AccessControlApi
 from .activity_log_api import ActivityLogApi
 from .aggregation_api import AggregationApi
 from .blob_infos_api import BlobInfosApi
@@ -49,6 +46,7 @@ from .list_item_api import ListItemApi
 from .list_management_api import ListManagementApi
 from .list_permissions_api import ListPermissionsApi
 from .metrics_api import MetricsApi
+from .permission_based_access_control_api import PermissionBasedAccessControlApi
 from .record_links_api import RecordLinksApi
 from .records___record_histories_api import RecordsRecordHistoriesApi
 from .records___record_versions_api import RecordsRecordVersionsApi
@@ -85,8 +83,6 @@ from .status_api import StatusApi
 
 __all__ = [
     "ApiBase",
-    "AccessControlApi",
-    "AccessControlPermissionBasedSchemaApi",
     "ActivityLogApi",
     "AggregationApi",
     "BlobInfosApi",
@@ -107,6 +103,7 @@ __all__ = [
     "ListManagementApi",
     "ListPermissionsApi",
     "MetricsApi",
+    "PermissionBasedAccessControlApi",
     "RecordLinksApi",
     "RecordsRecordHistoriesApi",
     "RecordsRecordVersionsApi",
