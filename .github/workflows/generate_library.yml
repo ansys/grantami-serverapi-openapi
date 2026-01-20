@@ -41,19 +41,19 @@ jobs:
         SERVER_USERNAME: ${{ secrets.REPO_USER }}
         SERVER_PASSWORD: ${{ secrets.REPO_TOKEN }}
 
-    - uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548  # v6.1.0
+    - name: "Install uv"
+      uses: astral-sh/setup-uv@681c641aba71e4a1c380be3ab5e12ad51f415867  # zizmor: ignore[cache-poisoning] - This job does not produce artifacts used by release
       with:
-        python-version: "3.12"
+        python-version: 3.12
 
-    - name: "Ensure poetry.lock file is up to date"
+    - name: "Ensure uv.lock file is up to date"
       run: |
-        pip install poetry
-        poetry lock
+        uv lock
       working-directory: ansys-grantami-serverapi-openapi
 
     - name: "Install and run pre-commit"
       run: |
-        pip install pre-commit
+        uv tool install pre-commit
         git add ansys-grantami-serverapi-openapi/
         ! pre-commit run --all-files
 
