@@ -54,6 +54,10 @@ from .granta_mi_record_property_fake_attribute_identities import (
 from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
+from .gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
+from .gsa_access_control_category import GsaAccessControlCategory
+from .gsa_access_control_category_include import GsaAccessControlCategoryInclude
+from .gsa_access_control_category_table_mapping import GsaAccessControlCategoryTableMapping
 from .gsa_access_control_info import GsaAccessControlInfo
 from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_access_control_mode_info import GsaAccessControlModeInfo
@@ -976,6 +980,7 @@ from .gsa_query_layouts_request import GsaQueryLayoutsRequest
 from .gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
 from .gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
+from .gsa_query_slim_named_entity_filter import GsaQuerySlimNamedEntityFilter
 from .gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
 from .gsa_query_slim_typed_attribute import GsaQuerySlimTypedAttribute
 from .gsa_query_slim_typed_attribute_properties import GsaQuerySlimTypedAttributeProperties
@@ -1111,7 +1116,6 @@ from .gsa_search_results_request import GsaSearchResultsRequest
 from .gsa_search_service_status import GsaSearchServiceStatus
 from .gsa_search_template_info import GsaSearchTemplateInfo
 from .gsa_searchable_record_property import GsaSearchableRecordProperty
-from .gsa_security_attribute_grouping import GsaSecurityAttributeGrouping
 from .gsa_security_attribute_usage_data_modification_error_detail import (
     GsaSecurityAttributeUsageDataModificationErrorDetail,
 )
@@ -1149,7 +1153,6 @@ from .gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
 from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_attribute_with_help_path import GsaSlimAttributeWithHelpPath
 from .gsa_slim_configuration import GsaSlimConfiguration
-from .gsa_slim_constant import GsaSlimConstant
 from .gsa_slim_database import GsaSlimDatabase
 from .gsa_slim_discrete_type import GsaSlimDiscreteType
 from .gsa_slim_entity import GsaSlimEntity
@@ -1428,6 +1431,10 @@ __all__ = [
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+    "GsaAccessControlCategoriesInfo",
+    "GsaAccessControlCategory",
+    "GsaAccessControlCategoryInclude",
+    "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
@@ -2188,6 +2195,7 @@ __all__ = [
     "GsaQuerySlimDiscreteType",
     "GsaQuerySlimDiscreteTypeProperties",
     "GsaQuerySlimNamedEntity",
+    "GsaQuerySlimNamedEntityFilter",
     "GsaQuerySlimNamedEntityProperties",
     "GsaQuerySlimTypedAttribute",
     "GsaQuerySlimTypedAttributeProperties",
@@ -2305,7 +2313,6 @@ __all__ = [
     "GsaSearchServiceStatus",
     "GsaSearchTemplateInfo",
     "GsaSearchableRecordProperty",
-    "GsaSecurityAttributeGrouping",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",
     "GsaSelection",
@@ -2341,7 +2348,6 @@ __all__ = [
     "GsaSlimAttribute",
     "GsaSlimAttributeWithHelpPath",
     "GsaSlimConfiguration",
-    "GsaSlimConstant",
     "GsaSlimDatabase",
     "GsaSlimDiscreteType",
     "GsaSlimEntity",

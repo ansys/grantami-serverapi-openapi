@@ -25,6 +25,7 @@
 # import API ABC
 from ansys.openapi.common import ApiBase
 
+from .access_control___categories_api import AccessControlCategoriesApi
 from .access_control___permission_based_schema_api import AccessControlPermissionBasedSchemaApi
 
 # import apis into api package
@@ -86,6 +87,7 @@ from .status_api import StatusApi
 __all__ = [
     "ApiBase",
     "AccessControlApi",
+    "AccessControlCategoriesApi",
     "AccessControlPermissionBasedSchemaApi",
     "ActivityLogApi",
     "AggregationApi",

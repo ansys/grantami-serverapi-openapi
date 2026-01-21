@@ -48,65 +48,6 @@ class SchemaApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def get_security_attribute_groupings(self) -> "dict[str, list[GsaSecurityAttributeGrouping]]":
-        """Gets all security attribute groupings for a given database.
-
-        This method makes a synchronous HTTP request.
-
-        Returns
-        -------
-        dict[str, list[GsaSecurityAttributeGrouping]]
-        """
-        data = self._get_security_attribute_groupings_with_http_info(_return_http_data_only=True)
-        return data  # type: ignore[no-any-return]
-
-    def _get_security_attribute_groupings_with_http_info(self, **kwargs: Any) -> Any:
-        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_security_attribute_groupings"
-                )
-            params[key] = val
-        del params["kwargs"]
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "dict(str, list[GsaSecurityAttributeGrouping])",
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/security-attribute-groupings",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
     def get_version(self) -> "GsaMiVersion":
         """Returns the currently running MI version to the caller.
 

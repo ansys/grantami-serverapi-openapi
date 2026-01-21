@@ -61,12 +61,14 @@ class GsaQueryAttributeFilter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "discrete_type": "GsaQuerySlimNamedEntityFilter",
         "guid": "list[str]",
         "name": "list[str]",
         "type": "list[GsaAttributeType]",
     }
 
     attribute_map: dict[str, str] = {
+        "discrete_type": "discreteType",
         "guid": "guid",
         "name": "name",
         "type": "type",
@@ -74,6 +76,7 @@ class GsaQueryAttributeFilter(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
+        "discreteType": "GsaQuerySlimNamedEntityFilter",
     }
 
     discriminator: Optional[str] = None
@@ -81,6 +84,7 @@ class GsaQueryAttributeFilter(ModelBase):
     def __init__(
         self,
         *,
+        discrete_type: "GsaQuerySlimNamedEntityFilter | Unset_Type" = Unset,
         guid: "list[str] | None | Unset_Type" = Unset,
         name: "list[str] | None | Unset_Type" = Unset,
         type: "list[GsaAttributeType] | None | Unset_Type" = Unset,
@@ -89,6 +93,7 @@ class GsaQueryAttributeFilter(ModelBase):
 
         Parameters
         ----------
+        discrete_type: GsaQuerySlimNamedEntityFilter, optional
         guid: list[str] | None, optional
         name: list[str] | None, optional
         type: list[GsaAttributeType] | None, optional
@@ -96,6 +101,7 @@ class GsaQueryAttributeFilter(ModelBase):
         self._type: list[GsaAttributeType] | None | Unset_Type = Unset
         self._name: list[str] | None | Unset_Type = Unset
         self._guid: list[str] | None | Unset_Type = Unset
+        self._discrete_type: GsaQuerySlimNamedEntityFilter | Unset_Type = Unset
 
         if type is not Unset:
             self.type = type
@@ -103,6 +109,8 @@ class GsaQueryAttributeFilter(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
+        if discrete_type is not Unset:
+            self.discrete_type = discrete_type
 
     @property
     def type(self) -> "list[GsaAttributeType] | None | Unset_Type":
@@ -175,6 +183,31 @@ class GsaQueryAttributeFilter(ModelBase):
             The guid of this GsaQueryAttributeFilter.
         """
         self._guid = guid
+
+    @property
+    def discrete_type(self) -> "GsaQuerySlimNamedEntityFilter | Unset_Type":
+        """Gets the discrete_type of this GsaQueryAttributeFilter.
+
+        Returns
+        -------
+        GsaQuerySlimNamedEntityFilter | Unset_Type
+            The discrete_type of this GsaQueryAttributeFilter.
+        """
+        return self._discrete_type
+
+    @discrete_type.setter
+    def discrete_type(self, discrete_type: "GsaQuerySlimNamedEntityFilter | Unset_Type") -> None:
+        """Sets the discrete_type of this GsaQueryAttributeFilter.
+
+        Parameters
+        ----------
+        discrete_type: GsaQuerySlimNamedEntityFilter | Unset_Type
+            The discrete_type of this GsaQueryAttributeFilter.
+        """
+        # Field is not nullable
+        if discrete_type is None:
+            raise ValueError("Invalid value for 'discrete_type', must not be 'None'")
+        self._discrete_type = discrete_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
