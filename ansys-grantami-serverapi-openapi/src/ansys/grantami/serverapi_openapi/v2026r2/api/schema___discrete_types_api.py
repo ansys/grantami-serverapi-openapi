@@ -50,7 +50,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def create_discrete_type(
         self, *, database_key: "str", body: "Optional[GsaCreateDiscreteType]" = None
-    ) -> "GsaSlimDiscreteType | None":
+    ) -> "GsaDiscreteType | None":
         """Create a new discrete type.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        GsaSlimDiscreteType | None
+        GsaDiscreteType | None
         """
         data = self._create_discrete_type_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -120,7 +120,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            201: "GsaSlimDiscreteType",
+            201: "GsaDiscreteType",
             400: None,
             403: None,
             404: None,

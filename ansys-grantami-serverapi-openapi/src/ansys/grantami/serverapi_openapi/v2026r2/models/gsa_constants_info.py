@@ -61,7 +61,7 @@ class GsaConstantsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "constants": "list[GsaSlimConstant]",
+        "constants": "list[GsaConstant]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaConstantsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "constants": "GsaSlimConstant",
+        "constants": "GsaConstant",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,37 @@ class GsaConstantsInfo(ModelBase):
     def __init__(
         self,
         *,
-        constants: "list[GsaSlimConstant] | None | Unset_Type" = Unset,
+        constants: "list[GsaConstant] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaConstantsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        constants: list[GsaSlimConstant] | None, optional
+        constants: list[GsaConstant] | None, optional
         """
-        self._constants: list[GsaSlimConstant] | None | Unset_Type = Unset
+        self._constants: list[GsaConstant] | None | Unset_Type = Unset
 
         if constants is not Unset:
             self.constants = constants
 
     @property
-    def constants(self) -> "list[GsaSlimConstant] | None | Unset_Type":
+    def constants(self) -> "list[GsaConstant] | None | Unset_Type":
         """Gets the constants of this GsaConstantsInfo.
 
         Returns
         -------
-        list[GsaSlimConstant] | None | Unset_Type
+        list[GsaConstant] | None | Unset_Type
             The constants of this GsaConstantsInfo.
         """
         return self._constants
 
     @constants.setter
-    def constants(self, constants: "list[GsaSlimConstant] | None | Unset_Type") -> None:
+    def constants(self, constants: "list[GsaConstant] | None | Unset_Type") -> None:
         """Sets the constants of this GsaConstantsInfo.
 
         Parameters
         ----------
-        constants: list[GsaSlimConstant] | None | Unset_Type
+        constants: list[GsaConstant] | None | Unset_Type
             The constants of this GsaConstantsInfo.
         """
         self._constants = constants
