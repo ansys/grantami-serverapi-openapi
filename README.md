@@ -76,16 +76,16 @@ be used for all development against Granta MI 2024 R1 and newer.
 
 During active development phases of Granta MI, this repository is kept up to date with new versions of the API
 documentation. To use the most up-to-date version of this package in another project, add a dependency on the
-repository's main branch, e.g. with poetry:
+repository's main branch, e.g. with uv:
 
 ```console
-   poetry add git+https://github.com/pyansys/grantami-serverapi-openapi#subdirectory=ansys-grantami-serverapi-openapi
+   uv add git+https://github.com/ansys/grantami-serverapi-openapi#subdirectory=ansys-grantami-serverapi-openapi
 ```
 
 Or with pip:
 
 ```console
-   pip install git+https://github.com/pyansys/grantami-serverapi-openapi.git#subdirectory=ansys-grantami-serverapi-openapi
+   pip install git+https://github.com/ansys/grantami-serverapi-openapi.git#subdirectory=ansys-grantami-serverapi-openapi
 ```
 
 ### Minimal setup
