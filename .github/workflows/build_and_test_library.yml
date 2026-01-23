@@ -25,10 +25,30 @@ env:
   LIBRARY_NAME: 'ansys-grantami-serverapi-openapi'
 
 jobs:
+  check-style:
+    name: "Check code style"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout the project"
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@61cb8a9741eeb8a550a1b8544337180c0fc8476b  # v7.2.0
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: "Install pre-commit"
+        run: |
+          uv tool install pre-commit
+
+      - name: "Run pre-commit"
+        run: |
+          pre-commit run --all-files
 
   tests:
     name: "Test Python ${{ matrix.python-version }} - ${{ matrix.platform }}"
     runs-on: ${{ matrix.platform }}
+    needs: check-style
     strategy:
       matrix:
         platform: [ 'ubuntu-latest', 'windows-latest' ]
