@@ -58,7 +58,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateStandardName
 
         Returns
@@ -150,7 +149,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
 
         Returns
@@ -242,7 +240,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
 
         Returns
@@ -332,7 +329,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -415,7 +411,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
         body: GsaUpdateStandardName
 
