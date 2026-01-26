@@ -51,6 +51,7 @@ from .folderguid_files_body import FolderguidFilesBody
 from .granta_mi_record_property_fake_attribute_identities import (
     GrantaMIRecordPropertyFakeAttributeIdentities,
 )
+from .granta_mi_search_free_text_identifiers import GrantaMISearchFreeTextIdentifiers
 from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
     GsaAboutAttributeCannotBeMetaAttributeErrorDetail,
 )
@@ -496,6 +497,7 @@ from .gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyEr
 from .gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
 )
+from .gsa_duplicate_symbol_error_detail import GsaDuplicateSymbolErrorDetail
 from .gsa_duplicate_tabular_column_guids_error_detail import (
     GsaDuplicateTabularColumnGuidsErrorDetail,
 )
@@ -506,6 +508,7 @@ from .gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
 from .gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
+from .gsa_empty_symbol_error_detail import GsaEmptySymbolErrorDetail
 from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
 from .gsa_entity_identifier_already_specified_error_detail import (
@@ -816,6 +819,7 @@ from .gsa_named_entity_parameter_value_error_detail import GsaNamedEntityParamet
 from .gsa_named_entity_record_link_group_error_detail import (
     GsaNamedEntityRecordLinkGroupErrorDetail,
 )
+from .gsa_named_entity_unit_error_detail import GsaNamedEntityUnitErrorDetail
 from .gsa_new_layout_association_chain_item import GsaNewLayoutAssociationChainItem
 from .gsa_new_layout_association_chain_link import GsaNewLayoutAssociationChainLink
 from .gsa_new_layout_attribute_item import GsaNewLayoutAttributeItem
@@ -1268,6 +1272,8 @@ from .gsa_unit_conversion_set_request import GsaUnitConversionSetRequest
 from .gsa_unit_conversions_info import GsaUnitConversionsInfo
 from .gsa_unit_equivalent import GsaUnitEquivalent
 from .gsa_unit_equivalents_info import GsaUnitEquivalentsInfo
+from .gsa_unit_error_detail import GsaUnitErrorDetail
+from .gsa_unit_error_reason import GsaUnitErrorReason
 from .gsa_unit_mapping import GsaUnitMapping
 from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
@@ -1430,6 +1436,7 @@ __all__ = [
     "FolderguidFilesBody1",
     "FolderguidFilesBody2",
     "GrantaMIRecordPropertyFakeAttributeIdentities",
+    "GrantaMISearchFreeTextIdentifiers",
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAccessControlCategoriesInfo",
     "GsaAccessControlCategory",
@@ -1799,10 +1806,12 @@ __all__ = [
     "GsaDuplicateKeyAddDatabaseValidationIssue",
     "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
+    "GsaDuplicateSymbolErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
     "GsaEmptyAxisNameAttributeErrorDetail",
+    "GsaEmptySymbolErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
     "GsaEntityIdentifierAlreadySpecifiedErrorDetail",
@@ -2061,6 +2070,7 @@ __all__ = [
     "GsaNamedEntityParameterErrorDetail",
     "GsaNamedEntityParameterValueErrorDetail",
     "GsaNamedEntityRecordLinkGroupErrorDetail",
+    "GsaNamedEntityUnitErrorDetail",
     "GsaNewLayoutAssociationChainItem",
     "GsaNewLayoutAssociationChainLink",
     "GsaNewLayoutAttributeItem",
@@ -2443,6 +2453,8 @@ __all__ = [
     "GsaUnitConversionsInfo",
     "GsaUnitEquivalent",
     "GsaUnitEquivalentsInfo",
+    "GsaUnitErrorDetail",
+    "GsaUnitErrorReason",
     "GsaUnitMapping",
     "GsaUnitSystem",
     "GsaUnitSystemsInfo",

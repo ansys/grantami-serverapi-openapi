@@ -94,3 +94,5 @@ class GsaErrorCode(Enum):
     CURRENCYUPDATE = "currencyUpdate"
     CURRENCYIMPORT = "currencyImport"
     CURRENCYIMPORTDUPLICATES = "currencyImportDuplicates"
+    UNITCREATION = "unitCreation"
+    UNITUPDATE = "unitUpdate"
