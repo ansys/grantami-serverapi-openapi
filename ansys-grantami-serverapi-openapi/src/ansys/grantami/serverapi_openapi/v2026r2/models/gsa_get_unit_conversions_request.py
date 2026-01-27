@@ -61,15 +61,15 @@ class GsaGetUnitConversionsRequest(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "source_units": "list[GsaUnitConversionSetRequest]",
+        "conversions": "list[GsaUnitConversionSetRequest]",
     }
 
     attribute_map: dict[str, str] = {
-        "source_units": "sourceUnits",
+        "conversions": "conversions",
     }
 
     subtype_mapping: dict[str, str] = {
-        "sourceUnits": "GsaUnitConversionSetRequest",
+        "conversions": "GsaUnitConversionSetRequest",
     }
 
     discriminator: Optional[str] = None
@@ -77,45 +77,45 @@ class GsaGetUnitConversionsRequest(ModelBase):
     def __init__(
         self,
         *,
-        source_units: "list[GsaUnitConversionSetRequest]",
+        conversions: "list[GsaUnitConversionSetRequest]",
     ) -> None:
         """GsaGetUnitConversionsRequest - a model defined in Swagger
 
         Parameters
         ----------
-        source_units: list[GsaUnitConversionSetRequest]
+        conversions: list[GsaUnitConversionSetRequest]
         """
-        self._source_units: list[GsaUnitConversionSetRequest]
+        self._conversions: list[GsaUnitConversionSetRequest]
 
-        self.source_units = source_units
+        self.conversions = conversions
 
     @property
-    def source_units(self) -> "list[GsaUnitConversionSetRequest]":
-        """Gets the source_units of this GsaGetUnitConversionsRequest.
+    def conversions(self) -> "list[GsaUnitConversionSetRequest]":
+        """Gets the conversions of this GsaGetUnitConversionsRequest.
 
         Returns
         -------
         list[GsaUnitConversionSetRequest]
-            The source_units of this GsaGetUnitConversionsRequest.
+            The conversions of this GsaGetUnitConversionsRequest.
         """
-        return self._source_units
+        return self._conversions
 
-    @source_units.setter
-    def source_units(self, source_units: "list[GsaUnitConversionSetRequest]") -> None:
-        """Sets the source_units of this GsaGetUnitConversionsRequest.
+    @conversions.setter
+    def conversions(self, conversions: "list[GsaUnitConversionSetRequest]") -> None:
+        """Sets the conversions of this GsaGetUnitConversionsRequest.
 
         Parameters
         ----------
-        source_units: list[GsaUnitConversionSetRequest]
-            The source_units of this GsaGetUnitConversionsRequest.
+        conversions: list[GsaUnitConversionSetRequest]
+            The conversions of this GsaGetUnitConversionsRequest.
         """
         # Field is not nullable
-        if source_units is None:
-            raise ValueError("Invalid value for 'source_units', must not be 'None'")
+        if conversions is None:
+            raise ValueError("Invalid value for 'conversions', must not be 'None'")
         # Field is required
-        if source_units is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'source_units', must not be 'Unset'")
-        self._source_units = source_units
+        if conversions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'conversions', must not be 'Unset'")
+        self._conversions = conversions
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

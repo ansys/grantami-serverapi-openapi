@@ -77,6 +77,7 @@ class GsaQueryAttribute(ModelBase):
         "is_multi_valued": "bool",
         "is_protected": "bool",
         "name": "str",
+        "table": "GsaQuerySlimEntity",
         "tabular_columns": "list[GsaQuerySlimNamedEntity]",
         "target": "GsaQueryTabularAttributeTarget",
         "type": "GsaAttributeType",
@@ -100,6 +101,7 @@ class GsaQueryAttribute(ModelBase):
         "is_multi_valued": "isMultiValued",
         "is_protected": "isProtected",
         "name": "name",
+        "table": "table",
         "tabular_columns": "tabularColumns",
         "target": "target",
         "type": "type",
@@ -111,6 +113,7 @@ class GsaQueryAttribute(ModelBase):
         "defaultThresholdType": "GsaAttributeThresholdType",
         "axisName": "GsaQueryAxisName",
         "info": "GsaQueryAttributeInfo",
+        "table": "GsaQuerySlimEntity",
         "unit": "GsaQueryUnit",
         "discreteType": "GsaQuerySlimDiscreteType",
         "dataRule": "GsaQueryDataRule",
@@ -142,6 +145,7 @@ class GsaQueryAttribute(ModelBase):
         is_multi_valued: "bool | None | Unset_Type" = Unset,
         is_protected: "bool | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
+        table: "GsaQuerySlimEntity | Unset_Type" = Unset,
         tabular_columns: "list[GsaQuerySlimNamedEntity] | None | Unset_Type" = Unset,
         target: "GsaQueryTabularAttributeTarget | Unset_Type" = Unset,
         type: "GsaAttributeType | Unset_Type" = Unset,
@@ -167,6 +171,7 @@ class GsaQueryAttribute(ModelBase):
         is_multi_valued: bool | None, optional
         is_protected: bool | None, optional
         name: str | None, optional
+        table: GsaQuerySlimEntity, optional
         tabular_columns: list[GsaQuerySlimNamedEntity] | None, optional
         target: GsaQueryTabularAttributeTarget, optional
         type: GsaAttributeType, optional
@@ -181,6 +186,7 @@ class GsaQueryAttribute(ModelBase):
         self._help_path: str | None | Unset_Type = Unset
         self._axis_name: GsaQueryAxisName | Unset_Type = Unset
         self._info: GsaQueryAttributeInfo | Unset_Type = Unset
+        self._table: GsaQuerySlimEntity | Unset_Type = Unset
         self._unit: GsaQueryUnit | Unset_Type = Unset
         self._discrete_type: GsaQuerySlimDiscreteType | Unset_Type = Unset
         self._data_rule: GsaQueryDataRule | Unset_Type = Unset
@@ -211,6 +217,8 @@ class GsaQueryAttribute(ModelBase):
             self.axis_name = axis_name
         if info is not Unset:
             self.info = info
+        if table is not Unset:
+            self.table = table
         if unit is not Unset:
             self.unit = unit
         if discrete_type is not Unset:
@@ -447,6 +455,31 @@ class GsaQueryAttribute(ModelBase):
         if info is None:
             raise ValueError("Invalid value for 'info', must not be 'None'")
         self._info = info
+
+    @property
+    def table(self) -> "GsaQuerySlimEntity | Unset_Type":
+        """Gets the table of this GsaQueryAttribute.
+
+        Returns
+        -------
+        GsaQuerySlimEntity | Unset_Type
+            The table of this GsaQueryAttribute.
+        """
+        return self._table
+
+    @table.setter
+    def table(self, table: "GsaQuerySlimEntity | Unset_Type") -> None:
+        """Sets the table of this GsaQueryAttribute.
+
+        Parameters
+        ----------
+        table: GsaQuerySlimEntity | Unset_Type
+            The table of this GsaQueryAttribute.
+        """
+        # Field is not nullable
+        if table is None:
+            raise ValueError("Invalid value for 'table', must not be 'None'")
+        self._table = table
 
     @property
     def unit(self) -> "GsaQueryUnit | Unset_Type":

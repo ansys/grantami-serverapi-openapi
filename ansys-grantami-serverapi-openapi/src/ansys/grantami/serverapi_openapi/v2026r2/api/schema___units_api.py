@@ -586,7 +586,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_unit_conversions(
         self, *, database_key: "str", body: "Optional[GsaGetUnitConversionsRequest]" = None
-    ) -> "GsaUnitConversionsInfo":
+    ) -> "GsaUnitConversionsInfo | None":
         """Gets all the equivalent units and their conversion factors for the specified source units,  including any errors that occurred.
 
         This method makes a synchronous HTTP request.
@@ -599,7 +599,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        GsaUnitConversionsInfo
+        GsaUnitConversionsInfo | None
         """
         data = self._get_unit_conversions_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -660,6 +660,7 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaUnitConversionsInfo",
+            400: None,
         }
 
         return self.api_client.call_api(

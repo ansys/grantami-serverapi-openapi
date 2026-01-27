@@ -55,3 +55,4 @@ class GsaEntityType(Enum):
     RECORDHISTORY = "recordHistory"
     RECORDLINKGROUP = "recordLinkGroup"
     UNIT = "unit"
+    CONSTANT = "constant"
