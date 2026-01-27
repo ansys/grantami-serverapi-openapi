@@ -236,6 +236,8 @@ from .models.gsa_configurations_info import GsaConfigurationsInfo
 from .models.gsa_connection_details import GsaConnectionDetails
 from .models.gsa_constant import GsaConstant
 from .models.gsa_constant_deletion_exception import GsaConstantDeletionException
+from .models.gsa_constant_error_detail import GsaConstantErrorDetail
+from .models.gsa_constant_error_reason import GsaConstantErrorReason
 from .models.gsa_constants_info import GsaConstantsInfo
 from .models.gsa_continuous_range import GsaContinuousRange
 from .models.gsa_copy_record_history import GsaCopyRecordHistory
@@ -909,6 +911,7 @@ from .models.gsa_name_whitespace_parameter_value_error_detail import (
 )
 from .models.gsa_named_criterion import GsaNamedCriterion
 from .models.gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
+from .models.gsa_named_entity_constant_error_detail import GsaNamedEntityConstantErrorDetail
 from .models.gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
 from .models.gsa_named_entity_error_reason import GsaNamedEntityErrorReason
 from .models.gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
@@ -962,6 +965,7 @@ from .models.gsa_no_such_parameter_value_parameter_content_error_detail import (
 from .models.gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
+from .models.gsa_no_such_unit_constant_error_detail import GsaNoSuchUnitConstantErrorDetail
 from .models.gsa_no_such_unit_parameter_error_detail import GsaNoSuchUnitParameterErrorDetail
 from .models.gsa_no_value_exists_graph_value import GsaNoValueExistsGraphValue
 from .models.gsa_no_values_specifier import GsaNoValuesSpecifier
@@ -1092,6 +1096,8 @@ from .models.gsa_query_layouts_info import GsaQueryLayoutsInfo
 from .models.gsa_query_layouts_request import GsaQueryLayoutsRequest
 from .models.gsa_query_slim_discrete_type import GsaQuerySlimDiscreteType
 from .models.gsa_query_slim_discrete_type_properties import GsaQuerySlimDiscreteTypeProperties
+from .models.gsa_query_slim_entity import GsaQuerySlimEntity
+from .models.gsa_query_slim_entity_properties import GsaQuerySlimEntityProperties
 from .models.gsa_query_slim_named_entity import GsaQuerySlimNamedEntity
 from .models.gsa_query_slim_named_entity_filter import GsaQuerySlimNamedEntityFilter
 from .models.gsa_query_slim_named_entity_properties import GsaQuerySlimNamedEntityProperties
@@ -1716,6 +1722,8 @@ __all__ = [
     "GsaConnectionDetails",
     "GsaConstant",
     "GsaConstantDeletionException",
+    "GsaConstantErrorDetail",
+    "GsaConstantErrorReason",
     "GsaConstantsInfo",
     "GsaContinuousRange",
     "GsaCopyRecordHistory",
@@ -2237,6 +2245,7 @@ __all__ = [
     "GsaNameWhitespaceParameterValueErrorDetail",
     "GsaNamedCriterion",
     "GsaNamedEntityAttributeErrorDetail",
+    "GsaNamedEntityConstantErrorDetail",
     "GsaNamedEntityErrorDetail",
     "GsaNamedEntityErrorReason",
     "GsaNamedEntityFileErrorDetail",
@@ -2266,6 +2275,7 @@ __all__ = [
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
+    "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
     "GsaNoValueExistsGraphValue",
     "GsaNoValuesSpecifier",
@@ -2378,6 +2388,8 @@ __all__ = [
     "GsaQueryLayoutsRequest",
     "GsaQuerySlimDiscreteType",
     "GsaQuerySlimDiscreteTypeProperties",
+    "GsaQuerySlimEntity",
+    "GsaQuerySlimEntityProperties",
     "GsaQuerySlimNamedEntity",
     "GsaQuerySlimNamedEntityFilter",
     "GsaQuerySlimNamedEntityProperties",
