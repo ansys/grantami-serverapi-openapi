@@ -98,3 +98,5 @@ class GsaErrorCode(Enum):
     UNITUPDATE = "unitUpdate"
     CONSTANTCREATION = "constantCreation"
     CONSTANTUPDATE = "constantUpdate"
+    STANDARDNAMECREATION = "standardNameCreation"
+    STANDARDNAMEUPDATE = "standardNameUpdate"

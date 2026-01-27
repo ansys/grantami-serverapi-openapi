@@ -4,7 +4,7 @@ requires-python = ">=3.10"
 
 [[package]]
 name = "ansys-grantami-serverapi-openapi"
-version = "5.2.0.dev958"
+version = "5.2.0.dev960"
 source = { editable = "." }
 dependencies = [
     { name = "ansys-openapi-common" },
