@@ -570,6 +570,18 @@ from .models.gsa_duplicate_guid_add_database_validation_issue import (
 from .models.gsa_duplicate_key_add_database_validation_issue import (
     GsaDuplicateKeyAddDatabaseValidationIssue,
 )
+from .models.gsa_duplicate_mapped_attribute_guids_error_detail import (
+    GsaDuplicateMappedAttributeGuidsErrorDetail,
+)
+from .models.gsa_duplicate_mapped_cross_database_record_link_group_guids_error_detail import (
+    GsaDuplicateMappedCrossDatabaseRecordLinkGroupGuidsErrorDetail,
+)
+from .models.gsa_duplicate_mapped_parameter_guids_error_detail import (
+    GsaDuplicateMappedParameterGuidsErrorDetail,
+)
+from .models.gsa_duplicate_mapped_record_link_group_guids_error_detail import (
+    GsaDuplicateMappedRecordLinkGroupGuidsErrorDetail,
+)
 from .models.gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyErrorDetail
 from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
@@ -1327,6 +1339,11 @@ from .models.gsa_source_of_object_identifier import GsaSourceOfObjectIdentifier
 from .models.gsa_specific_values_specifier import GsaSpecificValuesSpecifier
 from .models.gsa_sql_credentials import GsaSqlCredentials
 from .models.gsa_standard_name import GsaStandardName
+from .models.gsa_standard_name_already_exists_error_detail import (
+    GsaStandardNameAlreadyExistsErrorDetail,
+)
+from .models.gsa_standard_name_error_detail import GsaStandardNameErrorDetail
+from .models.gsa_standard_name_error_reason import GsaStandardNameErrorReason
 from .models.gsa_standard_names_info import GsaStandardNamesInfo
 from .models.gsa_static_record_link import GsaStaticRecordLink
 from .models.gsa_static_record_link_group import GsaStaticRecordLinkGroup
@@ -1381,8 +1398,11 @@ from .models.gsa_too_long_code_currency_error_detail import GsaTooLongCodeCurren
 from .models.gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
     GsaTooManyAttributePairsSmartAttributesErrorDetail,
 )
+from .models.gsa_translate_between_guids_and_identities_response import (
+    GsaTranslateBetweenGuidsAndIdentitiesResponse,
+)
 from .models.gsa_translate_guids_to_identities_request import GsaTranslateGuidsToIdentitiesRequest
-from .models.gsa_translate_guids_to_identities_response import GsaTranslateGuidsToIdentitiesResponse
+from .models.gsa_translate_identities_to_guids_request import GsaTranslateIdentitiesToGuidsRequest
 from .models.gsa_unable_to_connect_add_database_validation_issue import (
     GsaUnableToConnectAddDatabaseValidationIssue,
 )
@@ -1401,6 +1421,18 @@ from .models.gsa_unit_systems_info import GsaUnitSystemsInfo
 from .models.gsa_unit_usage import GsaUnitUsage
 from .models.gsa_unit_usage_type import GsaUnitUsageType
 from .models.gsa_units_info import GsaUnitsInfo
+from .models.gsa_unresolved_attribute_guids_error_detail import (
+    GsaUnresolvedAttributeGuidsErrorDetail,
+)
+from .models.gsa_unresolved_cross_database_record_link_group_guids_error_detail import (
+    GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail,
+)
+from .models.gsa_unresolved_parameter_guids_error_detail import (
+    GsaUnresolvedParameterGuidsErrorDetail,
+)
+from .models.gsa_unresolved_record_link_group_guids_error_detail import (
+    GsaUnresolvedRecordLinkGroupGuidsErrorDetail,
+)
 from .models.gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .models.gsa_update_access_control import GsaUpdateAccessControl
 from .models.gsa_update_all_profiles_info import GsaUpdateAllProfilesInfo
@@ -1986,6 +2018,10 @@ __all__ = [
     "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
     "GsaDuplicateGuidAddDatabaseValidationIssue",
     "GsaDuplicateKeyAddDatabaseValidationIssue",
+    "GsaDuplicateMappedAttributeGuidsErrorDetail",
+    "GsaDuplicateMappedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
+    "GsaDuplicateMappedParameterGuidsErrorDetail",
+    "GsaDuplicateMappedRecordLinkGroupGuidsErrorDetail",
     "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
     "GsaDuplicateSymbolErrorDetail",
@@ -2587,6 +2623,9 @@ __all__ = [
     "GsaSpecificValuesSpecifier",
     "GsaSqlCredentials",
     "GsaStandardName",
+    "GsaStandardNameAlreadyExistsErrorDetail",
+    "GsaStandardNameErrorDetail",
+    "GsaStandardNameErrorReason",
     "GsaStandardNamesInfo",
     "GsaStaticRecordLink",
     "GsaStaticRecordLinkGroup",
@@ -2629,8 +2668,9 @@ __all__ = [
     "GsaThresholdTypeAttributeErrorDetail",
     "GsaTooLongCodeCurrencyErrorDetail",
     "GsaTooManyAttributePairsSmartAttributesErrorDetail",
+    "GsaTranslateBetweenGuidsAndIdentitiesResponse",
     "GsaTranslateGuidsToIdentitiesRequest",
-    "GsaTranslateGuidsToIdentitiesResponse",
+    "GsaTranslateIdentitiesToGuidsRequest",
     "GsaUnableToConnectAddDatabaseValidationIssue",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
@@ -2647,6 +2687,10 @@ __all__ = [
     "GsaUnitUsage",
     "GsaUnitUsageType",
     "GsaUnitsInfo",
+    "GsaUnresolvedAttributeGuidsErrorDetail",
+    "GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
+    "GsaUnresolvedParameterGuidsErrorDetail",
+    "GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",
     "GsaUpdateAllProfilesInfo",
