@@ -61,7 +61,7 @@ class GsaUnitSystemsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "unit_systems": "list[GsaSlimUnitSystem]",
+        "unit_systems": "list[GsaSlimLocalizedEntity]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaUnitSystemsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "unitSystems": "GsaSlimUnitSystem",
+        "unitSystems": "GsaSlimLocalizedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,39 @@ class GsaUnitSystemsInfo(ModelBase):
     def __init__(
         self,
         *,
-        unit_systems: "list[GsaSlimUnitSystem] | None | Unset_Type" = Unset,
+        unit_systems: "list[GsaSlimLocalizedEntity] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUnitSystemsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        unit_systems: list[GsaSlimUnitSystem] | None, optional
+        unit_systems: list[GsaSlimLocalizedEntity] | None, optional
         """
-        self._unit_systems: list[GsaSlimUnitSystem] | None | Unset_Type = Unset
+        self._unit_systems: list[GsaSlimLocalizedEntity] | None | Unset_Type = Unset
 
         if unit_systems is not Unset:
             self.unit_systems = unit_systems
 
     @property
-    def unit_systems(self) -> "list[GsaSlimUnitSystem] | None | Unset_Type":
+    def unit_systems(self) -> "list[GsaSlimLocalizedEntity] | None | Unset_Type":
         """Gets the unit_systems of this GsaUnitSystemsInfo.
 
         Returns
         -------
-        list[GsaSlimUnitSystem] | None | Unset_Type
+        list[GsaSlimLocalizedEntity] | None | Unset_Type
             The unit_systems of this GsaUnitSystemsInfo.
         """
         return self._unit_systems
 
     @unit_systems.setter
-    def unit_systems(self, unit_systems: "list[GsaSlimUnitSystem] | None | Unset_Type") -> None:
+    def unit_systems(
+        self, unit_systems: "list[GsaSlimLocalizedEntity] | None | Unset_Type"
+    ) -> None:
         """Sets the unit_systems of this GsaUnitSystemsInfo.
 
         Parameters
         ----------
-        unit_systems: list[GsaSlimUnitSystem] | None | Unset_Type
+        unit_systems: list[GsaSlimLocalizedEntity] | None | Unset_Type
             The unit_systems of this GsaUnitSystemsInfo.
         """
         self._unit_systems = unit_systems

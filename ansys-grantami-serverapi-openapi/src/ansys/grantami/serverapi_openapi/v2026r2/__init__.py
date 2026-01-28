@@ -1298,6 +1298,7 @@ from .models.gsa_slim_file import GsaSlimFile
 from .models.gsa_slim_identified_entity import GsaSlimIdentifiedEntity
 from .models.gsa_slim_layout import GsaSlimLayout
 from .models.gsa_slim_layout_section import GsaSlimLayoutSection
+from .models.gsa_slim_localized_entity import GsaSlimLocalizedEntity
 from .models.gsa_slim_named_entity import GsaSlimNamedEntity
 from .models.gsa_slim_objects import GsaSlimObjects
 from .models.gsa_slim_parameter import GsaSlimParameter
@@ -1314,7 +1315,6 @@ from .models.gsa_slim_subset import GsaSlimSubset
 from .models.gsa_slim_table import GsaSlimTable
 from .models.gsa_slim_typed_attribute import GsaSlimTypedAttribute
 from .models.gsa_slim_unit import GsaSlimUnit
-from .models.gsa_slim_unit_system import GsaSlimUnitSystem
 from .models.gsa_smart_attributes_error_detail import GsaSmartAttributesErrorDetail
 from .models.gsa_smart_attributes_error_reason import GsaSmartAttributesErrorReason
 from .models.gsa_smart_attributes_record_link_group_error_detail import (
@@ -2588,6 +2588,7 @@ __all__ = [
     "GsaSlimIdentifiedEntity",
     "GsaSlimLayout",
     "GsaSlimLayoutSection",
+    "GsaSlimLocalizedEntity",
     "GsaSlimNamedEntity",
     "GsaSlimObjects",
     "GsaSlimParameter",
@@ -2604,7 +2605,6 @@ __all__ = [
     "GsaSlimTable",
     "GsaSlimTypedAttribute",
     "GsaSlimUnit",
-    "GsaSlimUnitSystem",
     "GsaSmartAttributesErrorDetail",
     "GsaSmartAttributesErrorReason",
     "GsaSmartAttributesRecordLinkGroupErrorDetail",
