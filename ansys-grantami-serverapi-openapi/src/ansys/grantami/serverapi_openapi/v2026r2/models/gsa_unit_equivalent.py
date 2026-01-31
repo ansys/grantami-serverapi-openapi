@@ -63,7 +63,7 @@ class GsaUnitEquivalent(ModelBase):
     swagger_types: dict[str, str] = {
         "equivalent_unit": "GsaUnit",
         "unit": "GsaUnit",
-        "unit_system": "GsaSlimNamedEntity",
+        "unit_system": "GsaUnitSystem",
     }
 
     attribute_map: dict[str, str] = {
@@ -74,7 +74,7 @@ class GsaUnitEquivalent(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "unit": "GsaUnit",
-        "unitSystem": "GsaSlimNamedEntity",
+        "unitSystem": "GsaUnitSystem",
         "equivalentUnit": "GsaUnit",
     }
 
@@ -85,7 +85,7 @@ class GsaUnitEquivalent(ModelBase):
         *,
         equivalent_unit: "GsaUnit",
         unit: "GsaUnit",
-        unit_system: "GsaSlimNamedEntity",
+        unit_system: "GsaUnitSystem",
     ) -> None:
         """GsaUnitEquivalent - a model defined in Swagger
 
@@ -93,10 +93,10 @@ class GsaUnitEquivalent(ModelBase):
         ----------
         equivalent_unit: GsaUnit
         unit: GsaUnit
-        unit_system: GsaSlimNamedEntity
+        unit_system: GsaUnitSystem
         """
         self._unit: GsaUnit
-        self._unit_system: GsaSlimNamedEntity
+        self._unit_system: GsaUnitSystem
         self._equivalent_unit: GsaUnit
 
         self.unit = unit
@@ -132,23 +132,23 @@ class GsaUnitEquivalent(ModelBase):
         self._unit = unit
 
     @property
-    def unit_system(self) -> "GsaSlimNamedEntity":
+    def unit_system(self) -> "GsaUnitSystem":
         """Gets the unit_system of this GsaUnitEquivalent.
 
         Returns
         -------
-        GsaSlimNamedEntity
+        GsaUnitSystem
             The unit_system of this GsaUnitEquivalent.
         """
         return self._unit_system
 
     @unit_system.setter
-    def unit_system(self, unit_system: "GsaSlimNamedEntity") -> None:
+    def unit_system(self, unit_system: "GsaUnitSystem") -> None:
         """Sets the unit_system of this GsaUnitEquivalent.
 
         Parameters
         ----------
-        unit_system: GsaSlimNamedEntity
+        unit_system: GsaUnitSystem
             The unit_system of this GsaUnitEquivalent.
         """
         # Field is not nullable
