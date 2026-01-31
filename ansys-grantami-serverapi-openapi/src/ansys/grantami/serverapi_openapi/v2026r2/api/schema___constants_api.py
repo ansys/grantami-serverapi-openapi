@@ -50,7 +50,7 @@ class SchemaConstantsApi(ApiBase):
 
     def create_constant(
         self, *, database_key: "str", body: "Optional[GsaCreateConstant]" = None
-    ) -> "GsaConstant | None":
+    ) -> "GsaConstant | GsaConstantCreationException | None":
         """Create a new constant.
 
         This method makes a synchronous HTTP request.
@@ -64,7 +64,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        GsaConstant | None
+        GsaConstant | GsaConstantCreationException | None
         """
         data = self._create_constant_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -120,7 +120,7 @@ class SchemaConstantsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaConstant",
-            400: None,
+            400: "GsaConstantCreationException",
             403: None,
             404: None,
         }
@@ -410,7 +410,7 @@ class SchemaConstantsApi(ApiBase):
         database_key: "str",
         constant_guid: "str",
         body: "Optional[GsaUpdateConstant]" = None,
-    ) -> "GsaConstant | None":
+    ) -> "GsaConstant | GsaConstantUpdateException | None":
         """Update constant.
 
         This method makes a synchronous HTTP request.
@@ -426,7 +426,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        GsaConstant | None
+        GsaConstant | GsaConstantUpdateException | None
         """
         data = self._update_constant_with_http_info(
             database_key, constant_guid, body, _return_http_data_only=True
@@ -496,7 +496,7 @@ class SchemaConstantsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaConstant",
-            400: None,
+            400: "GsaConstantUpdateException",
             403: None,
             404: None,
         }

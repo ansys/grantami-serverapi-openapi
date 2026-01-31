@@ -98,6 +98,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         "defaultParameterValue".lower(): "#/components/schemas/GsaDefaultParameterValueUsageDataModificationErrorDetail",
         "functionalDataDefault".lower(): "#/components/schemas/GsaFunctionalDataDefaultUsageDataModificationErrorDetail",
         "multiValuedPointData".lower(): "#/components/schemas/GsaMultiValuedPointDataUsageDataModificationErrorDetail",
+        "tabularColumn".lower(): "#/components/schemas/GsaTabularColumnUsageDataModificationErrorDetail",
     }
 
     discriminator: Optional[str] = "referenced_by_type"

@@ -48,6 +48,225 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def create_permission(
+        self,
+        *,
+        database_key: "str",
+        category_guid: "str",
+        body: "Optional[GsaCreatePermission]" = None,
+    ) -> "GsaPermission | GsaPermissionCreationException | None":
+        """Create a new permission-based access control permission.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
+        body: GsaCreatePermission
+
+        Returns
+        -------
+        GsaPermission | GsaPermissionCreationException | None
+        """
+        data = self._create_permission_with_http_info(
+            database_key, category_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _create_permission_with_http_info(
+        self,
+        database_key: "str",
+        category_guid: "str",
+        body: "Optional[GsaCreatePermission]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "category_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method create_permission"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'create_permission'"
+            )
+        # verify the required parameter "category_guid" is set
+        if "category_guid" not in params or params["category_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'category_guid' when calling 'create_permission'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "category_guid" in params and category_guid is not None:
+            path_params["category-guid"] = params["category_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            201: "GsaPermission",
+            400: "GsaPermissionCreationException",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-categories/{category-guid}/permissions",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def delete_permission(
+        self, *, database_key: "str", category_guid: "str", permission_guid: "str"
+    ) -> "GsaPermissionDeletionException | None":
+        """Delete a permission-based access control permission.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
+        permission_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionsInCategory](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionsInCategory)
+
+        Returns
+        -------
+        GsaPermissionDeletionException | None
+        """
+        data = self._delete_permission_with_http_info(
+            database_key, category_guid, permission_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _delete_permission_with_http_info(
+        self, database_key: "str", category_guid: "str", permission_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "category_guid",
+            "permission_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method delete_permission"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'delete_permission'"
+            )
+        # verify the required parameter "category_guid" is set
+        if "category_guid" not in params or params["category_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'category_guid' when calling 'delete_permission'"
+            )
+        # verify the required parameter "permission_guid" is set
+        if "permission_guid" not in params or params["permission_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'permission_guid' when calling 'delete_permission'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "category_guid" in params and category_guid is not None:
+            path_params["category-guid"] = params["category_guid"]
+        if "permission_guid" in params and permission_guid is not None:
+            path_params["permission-guid"] = params["permission_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            400: "GsaPermissionDeletionException",
+            200: None,
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-categories/{category-guid}/permissions/{permission-guid}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_permission_categories(
         self, *, database_key: "str"
     ) -> "GsaPermissionCategoriesInfo | None":
@@ -143,6 +362,7 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
 
         Returns
         -------
@@ -237,7 +457,9 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
         permission_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionsInCategory](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionsInCategory)
 
         Returns
         -------
@@ -340,6 +562,7 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
 
         Returns
         -------
@@ -409,6 +632,131 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/permission-categories/{category-guid}/permissions",
             "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def update_permission(
+        self,
+        *,
+        database_key: "str",
+        category_guid: "str",
+        permission_guid: "str",
+        body: "Optional[GsaUpdatePermission]" = None,
+    ) -> "GsaPermission | GsaPermissionUpdateException | None":
+        """Update a permission-based access control permission.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        category_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionCategories](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionCategories)
+        permission_guid: str
+            See [Access Control - Permission-Based Schema/GetPermissionsInCategory](#/Access%20Control%20-%20Permission-Based%20Schema/GetPermissionsInCategory)
+        body: GsaUpdatePermission
+
+        Returns
+        -------
+        GsaPermission | GsaPermissionUpdateException | None
+        """
+        data = self._update_permission_with_http_info(
+            database_key, category_guid, permission_guid, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _update_permission_with_http_info(
+        self,
+        database_key: "str",
+        category_guid: "str",
+        permission_guid: "str",
+        body: "Optional[GsaUpdatePermission]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "category_guid",
+            "permission_guid",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method update_permission"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'update_permission'"
+            )
+        # verify the required parameter "category_guid" is set
+        if "category_guid" not in params or params["category_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'category_guid' when calling 'update_permission'"
+            )
+        # verify the required parameter "permission_guid" is set
+        if "permission_guid" not in params or params["permission_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'permission_guid' when calling 'update_permission'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "category_guid" in params and category_guid is not None:
+            path_params["category-guid"] = params["category_guid"]
+        if "permission_guid" in params and permission_guid is not None:
+            path_params["permission-guid"] = params["permission_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaPermission",
+            400: "GsaPermissionUpdateException",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-categories/{category-guid}/permissions/{permission-guid}",
+            "PATCH",
             path_params,
             query_params,
             header_params,
