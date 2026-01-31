@@ -100,3 +100,6 @@ class GsaErrorCode(Enum):
     CONSTANTUPDATE = "constantUpdate"
     STANDARDNAMECREATION = "standardNameCreation"
     STANDARDNAMEUPDATE = "standardNameUpdate"
+    PERMISSIONCREATION = "permissionCreation"
+    PERMISSIONUPDATE = "permissionUpdate"
+    PERMISSIONDELETION = "permissionDeletion"

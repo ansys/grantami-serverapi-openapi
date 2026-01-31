@@ -50,7 +50,7 @@ class SchemaStandardNamesApi(ApiBase):
 
     def create_standard_name(
         self, *, database_key: "str", body: "Optional[GsaCreateStandardName]" = None
-    ) -> "GsaStandardName | None":
+    ) -> "GsaStandardName | GsaStandardNameCreationException | None":
         """Create a new standard name
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         Returns
         -------
-        GsaStandardName | None
+        GsaStandardName | GsaStandardNameCreationException | None
         """
         data = self._create_standard_name_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +121,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaStandardName",
-            400: None,
+            400: "GsaStandardNameCreationException",
             403: None,
             404: None,
         }
@@ -407,7 +407,7 @@ class SchemaStandardNamesApi(ApiBase):
         database_key: "str",
         standard_name_guid: "str",
         body: "Optional[GsaUpdateStandardName]" = None,
-    ) -> "GsaStandardName | None":
+    ) -> "GsaStandardName | GsaStandardNameUpdateException | None":
         """Edit a standard name
 
         This method makes a synchronous HTTP request.
@@ -421,7 +421,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         Returns
         -------
-        GsaStandardName | None
+        GsaStandardName | GsaStandardNameUpdateException | None
         """
         data = self._update_standard_name_with_http_info(
             database_key, standard_name_guid, body, _return_http_data_only=True
@@ -491,7 +491,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaStandardName",
-            400: None,
+            400: "GsaStandardNameUpdateException",
             403: None,
             404: None,
         }
