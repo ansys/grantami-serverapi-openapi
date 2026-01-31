@@ -56,3 +56,5 @@ class GsaEntityType(Enum):
     RECORDLINKGROUP = "recordLinkGroup"
     UNIT = "unit"
     CONSTANT = "constant"
+    PERMISSION = "permission"
+    PERMISSIONCATEGORY = "permissionCategory"

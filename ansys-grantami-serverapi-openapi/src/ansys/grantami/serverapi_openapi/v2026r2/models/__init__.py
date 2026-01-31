@@ -250,6 +250,7 @@ from .gsa_create_numeric_parameter_value import GsaCreateNumericParameterValue
 from .gsa_create_parameter import GsaCreateParameter
 from .gsa_create_parameter_content import GsaCreateParameterContent
 from .gsa_create_parameter_value import GsaCreateParameterValue
+from .gsa_create_permission import GsaCreatePermission
 from .gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .gsa_create_point_attribute import GsaCreatePointAttribute
 from .gsa_create_profile import GsaCreateProfile
@@ -790,6 +791,9 @@ from .gsa_maths_functional_datum_criterion import GsaMathsFunctionalDatumCriteri
 from .gsa_maths_functional_datum_exists_criterion import GsaMathsFunctionalDatumExistsCriterion
 from .gsa_maths_functional_error_detail import GsaMathsFunctionalErrorDetail
 from .gsa_maths_functional_error_reason import GsaMathsFunctionalErrorReason
+from .gsa_max_permissions_reached_permission_error_detail import (
+    GsaMaxPermissionsReachedPermissionErrorDetail,
+)
 from .gsa_meta_attribute_cannot_have_meta_attribute_error_detail import (
     GsaMetaAttributeCannotHaveMetaAttributeErrorDetail,
 )
@@ -831,6 +835,7 @@ from .gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
 from .gsa_named_entity_folder_error_detail import GsaNamedEntityFolderErrorDetail
 from .gsa_named_entity_parameter_error_detail import GsaNamedEntityParameterErrorDetail
 from .gsa_named_entity_parameter_value_error_detail import GsaNamedEntityParameterValueErrorDetail
+from .gsa_named_entity_permission_error_detail import GsaNamedEntityPermissionErrorDetail
 from .gsa_named_entity_record_link_group_error_detail import (
     GsaNamedEntityRecordLinkGroupErrorDetail,
 )
@@ -939,6 +944,13 @@ from .gsa_permission import GsaPermission
 from .gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .gsa_permission_category import GsaPermissionCategory
+from .gsa_permission_creation_exception import GsaPermissionCreationException
+from .gsa_permission_deletion_error_detail import GsaPermissionDeletionErrorDetail
+from .gsa_permission_deletion_error_reason import GsaPermissionDeletionErrorReason
+from .gsa_permission_deletion_exception import GsaPermissionDeletionException
+from .gsa_permission_error_detail import GsaPermissionErrorDetail
+from .gsa_permission_error_reason import GsaPermissionErrorReason
+from .gsa_permission_update_exception import GsaPermissionUpdateException
 from .gsa_permissions_info import GsaPermissionsInfo
 from .gsa_picture_attribute import GsaPictureAttribute
 from .gsa_picture_datum import GsaPictureDatum
@@ -1113,6 +1125,7 @@ from .gsa_reverse_name_not_provided_record_link_group_error_detail import (
 )
 from .gsa_rich_text_type import GsaRichTextType
 from .gsa_rich_text_value import GsaRichTextValue
+from .gsa_role_not_provided_permission_error_detail import GsaRoleNotProvidedPermissionErrorDetail
 from .gsa_rollup_export_failure import GsaRollupExportFailure
 from .gsa_rollup_reference import GsaRollupReference
 from .gsa_root_folder_move_error_detail import GsaRootFolderMoveErrorDetail
@@ -1225,8 +1238,10 @@ from .gsa_specific_values_specifier import GsaSpecificValuesSpecifier
 from .gsa_sql_credentials import GsaSqlCredentials
 from .gsa_standard_name import GsaStandardName
 from .gsa_standard_name_already_exists_error_detail import GsaStandardNameAlreadyExistsErrorDetail
+from .gsa_standard_name_creation_exception import GsaStandardNameCreationException
 from .gsa_standard_name_error_detail import GsaStandardNameErrorDetail
 from .gsa_standard_name_error_reason import GsaStandardNameErrorReason
+from .gsa_standard_name_update_exception import GsaStandardNameUpdateException
 from .gsa_standard_names_info import GsaStandardNamesInfo
 from .gsa_static_record_link import GsaStaticRecordLink
 from .gsa_static_record_link_group import GsaStaticRecordLinkGroup
@@ -1258,6 +1273,9 @@ from .gsa_tabular_column_name_not_provided_error_detail import (
 )
 from .gsa_tabular_column_no_such_entity_type import GsaTabularColumnNoSuchEntityType
 from .gsa_tabular_column_roll_up_type import GsaTabularColumnRollUpType
+from .gsa_tabular_column_usage_data_modification_error_detail import (
+    GsaTabularColumnUsageDataModificationErrorDetail,
+)
 from .gsa_tabular_datum import GsaTabularDatum
 from .gsa_tabular_datum_cell import GsaTabularDatumCell
 from .gsa_tabular_datum_exists_criterion import GsaTabularDatumExistsCriterion
@@ -1294,6 +1312,7 @@ from .gsa_unit import GsaUnit
 from .gsa_unit_conversion_set import GsaUnitConversionSet
 from .gsa_unit_conversion_set_request import GsaUnitConversionSetRequest
 from .gsa_unit_conversions_info import GsaUnitConversionsInfo
+from .gsa_unit_creation_exception import GsaUnitCreationException
 from .gsa_unit_equivalent import GsaUnitEquivalent
 from .gsa_unit_equivalents_info import GsaUnitEquivalentsInfo
 from .gsa_unit_error_detail import GsaUnitErrorDetail
@@ -1301,6 +1320,7 @@ from .gsa_unit_error_reason import GsaUnitErrorReason
 from .gsa_unit_mapping import GsaUnitMapping
 from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
+from .gsa_unit_update_exception import GsaUnitUpdateException
 from .gsa_unit_usage import GsaUnitUsage
 from .gsa_unit_usage_type import GsaUnitUsageType
 from .gsa_units_info import GsaUnitsInfo
@@ -1391,6 +1411,7 @@ from .gsa_update_numeric_parameter_value import GsaUpdateNumericParameterValue
 from .gsa_update_parameter import GsaUpdateParameter
 from .gsa_update_parameter_content import GsaUpdateParameterContent
 from .gsa_update_parameter_value import GsaUpdateParameterValue
+from .gsa_update_permission import GsaUpdatePermission
 from .gsa_update_permission_based_access_control import GsaUpdatePermissionBasedAccessControl
 from .gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .gsa_update_point_attribute import GsaUpdatePointAttribute
@@ -1637,6 +1658,7 @@ __all__ = [
     "GsaCreateParameter",
     "GsaCreateParameterContent",
     "GsaCreateParameterValue",
+    "GsaCreatePermission",
     "GsaCreatePictureAttribute",
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
@@ -2081,6 +2103,7 @@ __all__ = [
     "GsaMathsFunctionalDatumExistsCriterion",
     "GsaMathsFunctionalErrorDetail",
     "GsaMathsFunctionalErrorReason",
+    "GsaMaxPermissionsReachedPermissionErrorDetail",
     "GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
     "GsaMfaExpressionErrorDetail",
     "GsaMfaExpressionErrorReason",
@@ -2108,6 +2131,7 @@ __all__ = [
     "GsaNamedEntityFolderErrorDetail",
     "GsaNamedEntityParameterErrorDetail",
     "GsaNamedEntityParameterValueErrorDetail",
+    "GsaNamedEntityPermissionErrorDetail",
     "GsaNamedEntityRecordLinkGroupErrorDetail",
     "GsaNamedEntityUnitErrorDetail",
     "GsaNewLayoutAssociationChainItem",
@@ -2190,6 +2214,13 @@ __all__ = [
     "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
+    "GsaPermissionCreationException",
+    "GsaPermissionDeletionErrorDetail",
+    "GsaPermissionDeletionErrorReason",
+    "GsaPermissionDeletionException",
+    "GsaPermissionErrorDetail",
+    "GsaPermissionErrorReason",
+    "GsaPermissionUpdateException",
     "GsaPermissionsInfo",
     "GsaPictureAttribute",
     "GsaPictureDatum",
@@ -2346,6 +2377,7 @@ __all__ = [
     "GsaReverseNameNotProvidedRecordLinkGroupErrorDetail",
     "GsaRichTextType",
     "GsaRichTextValue",
+    "GsaRoleNotProvidedPermissionErrorDetail",
     "GsaRollupExportFailure",
     "GsaRollupReference",
     "GsaRootFolderMoveErrorDetail",
@@ -2444,8 +2476,10 @@ __all__ = [
     "GsaSqlCredentials",
     "GsaStandardName",
     "GsaStandardNameAlreadyExistsErrorDetail",
+    "GsaStandardNameCreationException",
     "GsaStandardNameErrorDetail",
     "GsaStandardNameErrorReason",
+    "GsaStandardNameUpdateException",
     "GsaStandardNamesInfo",
     "GsaStaticRecordLink",
     "GsaStaticRecordLinkGroup",
@@ -2471,6 +2505,7 @@ __all__ = [
     "GsaTabularColumnNameNotProvidedErrorDetail",
     "GsaTabularColumnNoSuchEntityType",
     "GsaTabularColumnRollUpType",
+    "GsaTabularColumnUsageDataModificationErrorDetail",
     "GsaTabularDatum",
     "GsaTabularDatumCell",
     "GsaTabularDatumExistsCriterion",
@@ -2497,6 +2532,7 @@ __all__ = [
     "GsaUnitConversionSet",
     "GsaUnitConversionSetRequest",
     "GsaUnitConversionsInfo",
+    "GsaUnitCreationException",
     "GsaUnitEquivalent",
     "GsaUnitEquivalentsInfo",
     "GsaUnitErrorDetail",
@@ -2504,6 +2540,7 @@ __all__ = [
     "GsaUnitMapping",
     "GsaUnitSystem",
     "GsaUnitSystemsInfo",
+    "GsaUnitUpdateException",
     "GsaUnitUsage",
     "GsaUnitUsageType",
     "GsaUnitsInfo",
@@ -2578,6 +2615,7 @@ __all__ = [
     "GsaUpdateParameter",
     "GsaUpdateParameterContent",
     "GsaUpdateParameterValue",
+    "GsaUpdatePermission",
     "GsaUpdatePermissionBasedAccessControl",
     "GsaUpdatePictureAttribute",
     "GsaUpdatePointAttribute",

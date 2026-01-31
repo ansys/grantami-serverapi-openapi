@@ -50,7 +50,7 @@ class SchemaUnitsApi(ApiBase):
 
     def create_unit(
         self, *, database_key: "str", body: "Optional[GsaCreateUnit]" = None
-    ) -> "GsaUnit | None":
+    ) -> "GsaUnit | GsaUnitCreationException | None":
         """Create a new unit.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        GsaUnit | None
+        GsaUnit | GsaUnitCreationException | None
         """
         data = self._create_unit_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -117,7 +117,7 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaUnit",
-            400: None,
+            400: "GsaUnitCreationException",
             403: None,
             404: None,
         }
@@ -1245,7 +1245,7 @@ class SchemaUnitsApi(ApiBase):
 
     def update_unit(
         self, *, database_key: "str", unit_guid: "str", body: "Optional[GsaUpdateUnit]" = None
-    ) -> "GsaUnit | None":
+    ) -> "GsaUnit | GsaUnitUpdateException | None":
         """Update unit.
 
         This method makes a synchronous HTTP request.
@@ -1259,7 +1259,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        GsaUnit | None
+        GsaUnit | GsaUnitUpdateException | None
         """
         data = self._update_unit_with_http_info(
             database_key, unit_guid, body, _return_http_data_only=True
@@ -1327,7 +1327,7 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaUnit",
-            400: None,
+            400: "GsaUnitUpdateException",
             403: None,
             404: None,
         }
