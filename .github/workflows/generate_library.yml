@@ -13,7 +13,12 @@ jobs:
   generate-client-library:
     name: "Generate and update client library"
     runs-on: ubuntu-latest
-    if: ${{ !(github.actor == 'pyansys-ci-bot' && github.event.action == 'synchronize') }}
+    # Skip if PR is triggered by pyansys-ci-bot or if PR is created by dependabot with 'uv' label
+    if: |
+      ${{
+        !(github.actor == 'pyansys-ci-bot' && github.event.action == 'synchronize') &&
+        !(github.event_name == 'pull_request' && github.event.pull_request.user.login == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'uv'))
+      }}
     env:
       IS_RELEASE_BRANCH: ${{ (github.event_name == 'pull_request' && startsWith(github.event.pull_request.base.ref, 'release/')) || (github.event_name == 'workflow_dispatch' && startsWith(github.ref_name, 'release/')) }}
     steps:
