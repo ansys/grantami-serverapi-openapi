@@ -54,3 +54,4 @@ class GsaReferencedByType(Enum):
     DEFAULTPARAMETERVALUE = "defaultParameterValue"
     FUNCTIONALDATADEFAULT = "functionalDataDefault"
     MULTIVALUEDPOINTDATA = "multiValuedPointData"
+    TABULARCOLUMN = "tabularColumn"
