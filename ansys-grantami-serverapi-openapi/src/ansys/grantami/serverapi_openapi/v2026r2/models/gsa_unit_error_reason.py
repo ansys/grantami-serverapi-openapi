@@ -44,4 +44,6 @@ class GsaUnitErrorReason(Enum):
     """
     EMPTYSYMBOL = "emptySymbol"
     DUPLICATESYMBOL = "duplicateSymbol"
+    SYMBOLCANNOTCONTAINCOMMA = "symbolCannotContainComma"
     NAMEDENTITY = "namedEntity"
+    EQUATION = "equation"

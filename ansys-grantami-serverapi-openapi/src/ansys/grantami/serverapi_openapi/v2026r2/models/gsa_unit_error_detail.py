@@ -77,9 +77,11 @@ class GsaUnitErrorDetail(ModelBase):
     }
 
     discriminator_value_class_map = {
-        "emptySymbol".lower(): "#/components/schemas/GsaEmptySymbolErrorDetail",
-        "duplicateSymbol".lower(): "#/components/schemas/GsaDuplicateSymbolErrorDetail",
+        "emptySymbol".lower(): "#/components/schemas/GsaEmptySymbolUnitErrorDetail",
+        "duplicateSymbol".lower(): "#/components/schemas/GsaDuplicateSymbolUnitErrorDetail",
+        "symbolCannotContainComma".lower(): "#/components/schemas/GsaSymbolCannotContainCommaUnitErrorDetail",
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityUnitErrorDetail",
+        "equation".lower(): "#/components/schemas/GsaEquationUnitErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

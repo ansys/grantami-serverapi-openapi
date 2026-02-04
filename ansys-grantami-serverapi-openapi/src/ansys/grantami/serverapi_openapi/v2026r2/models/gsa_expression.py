@@ -66,6 +66,7 @@ class GsaExpression(ModelBase):
         "guid": "str",
         "name": "str",
         "parameter_dependencies": "list[GsaSlimNamedEntity]",
+        "table": "GsaSlimEntity",
         "value": "str",
         "unit": "GsaSlimUnit",
     }
@@ -76,6 +77,7 @@ class GsaExpression(ModelBase):
         "guid": "guid",
         "name": "name",
         "parameter_dependencies": "parameterDependencies",
+        "table": "table",
         "value": "value",
         "unit": "unit",
     }
@@ -85,6 +87,7 @@ class GsaExpression(ModelBase):
         "attributeDependencies": "GsaSlimAttribute",
         "constantDependencies": "GsaSlimNamedEntity",
         "parameterDependencies": "GsaSlimNamedEntity",
+        "table": "GsaSlimEntity",
     }
 
     discriminator: Optional[str] = None
@@ -97,6 +100,7 @@ class GsaExpression(ModelBase):
         guid: "str",
         name: "str",
         parameter_dependencies: "list[GsaSlimNamedEntity]",
+        table: "GsaSlimEntity",
         value: "str",
         unit: "GsaSlimUnit | Unset_Type" = Unset,
     ) -> None:
@@ -109,6 +113,7 @@ class GsaExpression(ModelBase):
         guid: str
         name: str
         parameter_dependencies: list[GsaSlimNamedEntity]
+        table: GsaSlimEntity
         value: str
         unit: GsaSlimUnit, optional
         """
@@ -117,6 +122,7 @@ class GsaExpression(ModelBase):
         self._attribute_dependencies: list[GsaSlimAttribute]
         self._constant_dependencies: list[GsaSlimNamedEntity]
         self._parameter_dependencies: list[GsaSlimNamedEntity]
+        self._table: GsaSlimEntity
         self._name: str
         self._guid: str
 
@@ -126,6 +132,7 @@ class GsaExpression(ModelBase):
         self.attribute_dependencies = attribute_dependencies
         self.constant_dependencies = constant_dependencies
         self.parameter_dependencies = parameter_dependencies
+        self.table = table
         self.name = name
         self.guid = guid
 
@@ -265,6 +272,34 @@ class GsaExpression(ModelBase):
         if parameter_dependencies is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'parameter_dependencies', must not be 'Unset'")
         self._parameter_dependencies = parameter_dependencies
+
+    @property
+    def table(self) -> "GsaSlimEntity":
+        """Gets the table of this GsaExpression.
+
+        Returns
+        -------
+        GsaSlimEntity
+            The table of this GsaExpression.
+        """
+        return self._table
+
+    @table.setter
+    def table(self, table: "GsaSlimEntity") -> None:
+        """Sets the table of this GsaExpression.
+
+        Parameters
+        ----------
+        table: GsaSlimEntity
+            The table of this GsaExpression.
+        """
+        # Field is not nullable
+        if table is None:
+            raise ValueError("Invalid value for 'table', must not be 'None'")
+        # Field is required
+        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'table', must not be 'Unset'")
+        self._table = table
 
     @property
     def name(self) -> "str":
