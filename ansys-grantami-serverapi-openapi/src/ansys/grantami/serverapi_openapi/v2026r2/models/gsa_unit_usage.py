@@ -65,7 +65,7 @@ class GsaUnitUsage(ModelBase):
         "constants": "list[GsaSlimNamedEntity]",
         "expressions": "list[GsaSlimNamedEntity]",
         "parameters": "list[GsaSlimNamedEntity]",
-        "units": "list[GsaSlimUnit]",
+        "units": "list[GsaUnit]",
     }
 
     attribute_map: dict[str, str] = {
@@ -81,7 +81,7 @@ class GsaUnitUsage(ModelBase):
         "parameters": "GsaSlimNamedEntity",
         "constants": "GsaSlimNamedEntity",
         "expressions": "GsaSlimNamedEntity",
-        "units": "GsaSlimUnit",
+        "units": "GsaUnit",
     }
 
     discriminator: Optional[str] = None
@@ -93,7 +93,7 @@ class GsaUnitUsage(ModelBase):
         constants: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
         expressions: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
         parameters: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        units: "list[GsaSlimUnit] | None | Unset_Type" = Unset,
+        units: "list[GsaUnit] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUnitUsage - a model defined in Swagger
 
@@ -103,13 +103,13 @@ class GsaUnitUsage(ModelBase):
         constants: list[GsaSlimNamedEntity] | None, optional
         expressions: list[GsaSlimNamedEntity] | None, optional
         parameters: list[GsaSlimNamedEntity] | None, optional
-        units: list[GsaSlimUnit] | None, optional
+        units: list[GsaUnit] | None, optional
         """
         self._attributes: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
         self._parameters: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
         self._constants: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
         self._expressions: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._units: list[GsaSlimUnit] | None | Unset_Type = Unset
+        self._units: list[GsaUnit] | None | Unset_Type = Unset
 
         if attributes is not Unset:
             self.attributes = attributes
@@ -211,23 +211,23 @@ class GsaUnitUsage(ModelBase):
         self._expressions = expressions
 
     @property
-    def units(self) -> "list[GsaSlimUnit] | None | Unset_Type":
+    def units(self) -> "list[GsaUnit] | None | Unset_Type":
         """Gets the units of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimUnit] | None | Unset_Type
+        list[GsaUnit] | None | Unset_Type
             The units of this GsaUnitUsage.
         """
         return self._units
 
     @units.setter
-    def units(self, units: "list[GsaSlimUnit] | None | Unset_Type") -> None:
+    def units(self, units: "list[GsaUnit] | None | Unset_Type") -> None:
         """Sets the units of this GsaUnitUsage.
 
         Parameters
         ----------
-        units: list[GsaSlimUnit] | None | Unset_Type
+        units: list[GsaUnit] | None | Unset_Type
             The units of this GsaUnitUsage.
         """
         self._units = units

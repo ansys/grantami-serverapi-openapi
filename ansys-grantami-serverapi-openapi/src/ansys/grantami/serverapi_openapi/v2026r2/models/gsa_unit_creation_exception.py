@@ -61,12 +61,14 @@ class GsaUnitCreationException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "str",
         "code": "GsaErrorCode",
         "errors": "list[GsaUnitErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "code": "code",
         "errors": "errors",
         "message": "message",
@@ -82,6 +84,7 @@ class GsaUnitCreationException(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaUnitErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
@@ -90,18 +93,21 @@ class GsaUnitCreationException(ModelBase):
 
         Parameters
         ----------
+        name: str
         code: GsaErrorCode, optional
         errors: list[GsaUnitErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._name: str
         self._errors: list[GsaUnitErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        self.name = name
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +157,34 @@ class GsaUnitCreationException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaUnitCreationException.
+
+        Returns
+        -------
+        str
+            The name of this GsaUnitCreationException.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaUnitCreationException.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaUnitCreationException.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
 
     @property
     def errors(self) -> "list[GsaUnitErrorDetail] | None | Unset_Type":

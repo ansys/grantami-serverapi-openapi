@@ -157,6 +157,9 @@ from .gsa_blob_info_dto import GsaBlobInfoDto
 from .gsa_boolean_criterion import GsaBooleanCriterion
 from .gsa_boost_by_guid import GsaBoostByGuid
 from .gsa_boost_by_identity import GsaBoostByIdentity
+from .gsa_bracket_mismatch_unit_equation_error_detail import (
+    GsaBracketMismatchUnitEquationErrorDetail,
+)
 from .gsa_bulk_info import GsaBulkInfo
 from .gsa_bulk_request import GsaBulkRequest
 from .gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
@@ -484,6 +487,7 @@ from .gsa_display_names_import_error_detail import GsaDisplayNamesImportErrorDet
 from .gsa_display_names_import_error_reason import GsaDisplayNamesImportErrorReason
 from .gsa_display_names_import_exception import GsaDisplayNamesImportException
 from .gsa_display_names_info import GsaDisplayNamesInfo
+from .gsa_divide_by_zero_unit_equation_error_detail import GsaDivideByZeroUnitEquationErrorDetail
 from .gsa_double_sorting_value import GsaDoubleSortingValue
 from .gsa_duplicate_code_currency_error_detail import GsaDuplicateCodeCurrencyErrorDetail
 from .gsa_duplicate_database_add_database_validation_issue import (
@@ -514,7 +518,7 @@ from .gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyEr
 from .gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
 )
-from .gsa_duplicate_symbol_error_detail import GsaDuplicateSymbolErrorDetail
+from .gsa_duplicate_symbol_unit_error_detail import GsaDuplicateSymbolUnitErrorDetail
 from .gsa_duplicate_tabular_column_guids_error_detail import (
     GsaDuplicateTabularColumnGuidsErrorDetail,
 )
@@ -525,13 +529,14 @@ from .gsa_duplicate_version_guid_add_database_validation_issue import (
     GsaDuplicateVersionGuidAddDatabaseValidationIssue,
 )
 from .gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
-from .gsa_empty_symbol_error_detail import GsaEmptySymbolErrorDetail
+from .gsa_empty_symbol_unit_error_detail import GsaEmptySymbolUnitErrorDetail
 from .gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
 from .gsa_entity_identifier_already_specified_error_detail import (
     GsaEntityIdentifierAlreadySpecifiedErrorDetail,
 )
 from .gsa_entity_type import GsaEntityType
+from .gsa_equation_unit_error_detail import GsaEquationUnitErrorDetail
 from .gsa_error_code import GsaErrorCode
 from .gsa_error_detail import GsaErrorDetail
 from .gsa_exception_information import GsaExceptionInformation
@@ -625,6 +630,7 @@ from .gsa_functional_data_default_usage_data_modification_error_detail import (
 from .gsa_functional_datum_parameter_info import GsaFunctionalDatumParameterInfo
 from .gsa_functional_parameter_setting import GsaFunctionalParameterSetting
 from .gsa_functional_type import GsaFunctionalType
+from .gsa_general_unit_equation_error_detail import GsaGeneralUnitEquationErrorDetail
 from .gsa_generated_integration_schema_of_object_identifier import (
     GsaGeneratedIntegrationSchemaOfObjectIdentifier,
 )
@@ -882,6 +888,7 @@ from .gsa_no_values_specifier import GsaNoValuesSpecifier
 from .gsa_not_applicable_datum import GsaNotApplicableDatum
 from .gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
+from .gsa_number_parsing_unit_equation_error_detail import GsaNumberParsingUnitEquationErrorDetail
 from .gsa_numeric_graph_parameter_value import GsaNumericGraphParameterValue
 from .gsa_numeric_parameter import GsaNumericParameter
 from .gsa_numeric_parameter_constraint import GsaNumericParameterConstraint
@@ -1254,6 +1261,9 @@ from .gsa_subsets_info import GsaSubsetsInfo
 from .gsa_swap_name_and_reverse_name_circular_record_link_group_error_detail import (
     GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail,
 )
+from .gsa_symbol_cannot_contain_comma_unit_error_detail import (
+    GsaSymbolCannotContainCommaUnitErrorDetail,
+)
 from .gsa_table import GsaTable
 from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_guid_property import GsaTableGuidProperty
@@ -1311,10 +1321,15 @@ from .gsa_unable_to_connect_add_database_validation_issue import (
 )
 from .gsa_unavailable_tabular_column import GsaUnavailableTabularColumn
 from .gsa_unit import GsaUnit
+from .gsa_unit_as_exponent_unit_equation_error_detail import (
+    GsaUnitAsExponentUnitEquationErrorDetail,
+)
 from .gsa_unit_conversion_set import GsaUnitConversionSet
 from .gsa_unit_conversion_set_request import GsaUnitConversionSetRequest
 from .gsa_unit_conversions_info import GsaUnitConversionsInfo
 from .gsa_unit_creation_exception import GsaUnitCreationException
+from .gsa_unit_equation_error_detail import GsaUnitEquationErrorDetail
+from .gsa_unit_equation_error_reason import GsaUnitEquationErrorReason
 from .gsa_unit_equivalent import GsaUnitEquivalent
 from .gsa_unit_equivalents_info import GsaUnitEquivalentsInfo
 from .gsa_unit_error_detail import GsaUnitErrorDetail
@@ -1326,6 +1341,9 @@ from .gsa_unit_update_exception import GsaUnitUpdateException
 from .gsa_unit_usage import GsaUnitUsage
 from .gsa_unit_usage_type import GsaUnitUsageType
 from .gsa_units_info import GsaUnitsInfo
+from .gsa_unknown_unit_symbol_unit_equation_error_detail import (
+    GsaUnknownUnitSymbolUnitEquationErrorDetail,
+)
 from .gsa_unresolved_attribute_guids_error_detail import GsaUnresolvedAttributeGuidsErrorDetail
 from .gsa_unresolved_cross_database_record_link_group_guids_error_detail import (
     GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail,
@@ -1448,6 +1466,8 @@ from .gsa_user_permission import GsaUserPermission
 from .gsa_user_permissions_info import GsaUserPermissionsInfo
 from .gsa_user_role import GsaUserRole
 from .gsa_validate_attribute_request import GsaValidateAttributeRequest
+from .gsa_validate_unit_equation_request import GsaValidateUnitEquationRequest
+from .gsa_validate_unit_equation_response import GsaValidateUnitEquationResponse
 from .gsa_value_not_provided_parameter_value_error_detail import (
     GsaValueNotProvidedParameterValueErrorDetail,
 )
@@ -1581,6 +1601,7 @@ __all__ = [
     "GsaBooleanCriterion",
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
+    "GsaBracketMismatchUnitEquationErrorDetail",
     "GsaBulkInfo",
     "GsaBulkRequest",
     "GsaBulkRequestHttpMethod",
@@ -1858,6 +1879,7 @@ __all__ = [
     "GsaDisplayNamesImportErrorReason",
     "GsaDisplayNamesImportException",
     "GsaDisplayNamesInfo",
+    "GsaDivideByZeroUnitEquationErrorDetail",
     "GsaDoubleSortingValue",
     "GsaDuplicateCodeCurrencyErrorDetail",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
@@ -1870,16 +1892,17 @@ __all__ = [
     "GsaDuplicateMappedRecordLinkGroupGuidsErrorDetail",
     "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
-    "GsaDuplicateSymbolErrorDetail",
+    "GsaDuplicateSymbolUnitErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
     "GsaEmptyAxisNameAttributeErrorDetail",
-    "GsaEmptySymbolErrorDetail",
+    "GsaEmptySymbolUnitErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
     "GsaEntityIdentifierAlreadySpecifiedErrorDetail",
     "GsaEntityType",
+    "GsaEquationUnitErrorDetail",
     "GsaErrorCode",
     "GsaErrorDetail",
     "GsaExceptionInformation",
@@ -1957,6 +1980,7 @@ __all__ = [
     "GsaFunctionalDatumParameterInfo",
     "GsaFunctionalParameterSetting",
     "GsaFunctionalType",
+    "GsaGeneralUnitEquationErrorDetail",
     "GsaGeneratedIntegrationSchemaOfObjectIdentifier",
     "GsaGetJobsResponse",
     "GsaGetJobsSummaryResponse",
@@ -2166,6 +2190,7 @@ __all__ = [
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
+    "GsaNumberParsingUnitEquationErrorDetail",
     "GsaNumericGraphParameterValue",
     "GsaNumericParameter",
     "GsaNumericParameterConstraint",
@@ -2492,6 +2517,7 @@ __all__ = [
     "GsaSubset",
     "GsaSubsetsInfo",
     "GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail",
+    "GsaSymbolCannotContainCommaUnitErrorDetail",
     "GsaTable",
     "GsaTableDeletionException",
     "GsaTableGuidProperty",
@@ -2533,10 +2559,13 @@ __all__ = [
     "GsaUnableToConnectAddDatabaseValidationIssue",
     "GsaUnavailableTabularColumn",
     "GsaUnit",
+    "GsaUnitAsExponentUnitEquationErrorDetail",
     "GsaUnitConversionSet",
     "GsaUnitConversionSetRequest",
     "GsaUnitConversionsInfo",
     "GsaUnitCreationException",
+    "GsaUnitEquationErrorDetail",
+    "GsaUnitEquationErrorReason",
     "GsaUnitEquivalent",
     "GsaUnitEquivalentsInfo",
     "GsaUnitErrorDetail",
@@ -2548,6 +2577,7 @@ __all__ = [
     "GsaUnitUsage",
     "GsaUnitUsageType",
     "GsaUnitsInfo",
+    "GsaUnknownUnitSymbolUnitEquationErrorDetail",
     "GsaUnresolvedAttributeGuidsErrorDetail",
     "GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedParameterGuidsErrorDetail",
@@ -2654,6 +2684,8 @@ __all__ = [
     "GsaUserPermissionsInfo",
     "GsaUserRole",
     "GsaValidateAttributeRequest",
+    "GsaValidateUnitEquationRequest",
+    "GsaValidateUnitEquationResponse",
     "GsaValueNotProvidedParameterValueErrorDetail",
     "GsaValueSpecifier",
     "GsaValueSpecifierType",
