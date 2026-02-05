@@ -1149,6 +1149,8 @@ from .models.gsa_query_tabular_attribute_target import GsaQueryTabularAttributeT
 from .models.gsa_query_tabular_attribute_target_properties import (
     GsaQueryTabularAttributeTargetProperties,
 )
+from .models.gsa_query_tabular_column import GsaQueryTabularColumn
+from .models.gsa_query_tabular_column_properties import GsaQueryTabularColumnProperties
 from .models.gsa_query_unit import GsaQueryUnit
 from .models.gsa_query_unit_properties import GsaQueryUnitProperties
 from .models.gsa_range_aggregation import GsaRangeAggregation
@@ -2504,6 +2506,8 @@ __all__ = [
     "GsaQueryTablesRequest",
     "GsaQueryTabularAttributeTarget",
     "GsaQueryTabularAttributeTargetProperties",
+    "GsaQueryTabularColumn",
+    "GsaQueryTabularColumnProperties",
     "GsaQueryUnit",
     "GsaQueryUnitProperties",
     "GsaRangeAggregation",

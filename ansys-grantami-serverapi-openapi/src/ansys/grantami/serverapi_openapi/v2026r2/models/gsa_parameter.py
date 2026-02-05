@@ -181,6 +181,7 @@ class GsaParameter(ModelBase):
     @property
     def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GsaParameter.
+        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Returns
         -------
@@ -192,6 +193,7 @@ class GsaParameter(ModelBase):
     @display_names.setter
     def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GsaParameter.
+        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Parameters
         ----------
