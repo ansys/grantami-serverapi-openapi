@@ -67,11 +67,13 @@ class GsaTabularColumn(ModelBase):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
+        "order": "int",
         "roll_up_type": "GsaTabularColumnRollUpType",
         "show_as_link": "bool",
         "summary_row_enabled": "bool",
         "summary_row_roll_up_type": "GsaTabularColumnRollUpType",
         "summary_row_text": "str",
+        "summary_row_translations": "dict(str, str)",
     }
 
     attribute_map: dict[str, str] = {
@@ -79,11 +81,13 @@ class GsaTabularColumn(ModelBase):
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
+        "order": "order",
         "roll_up_type": "rollUpType",
         "show_as_link": "showAsLink",
         "summary_row_enabled": "summaryRowEnabled",
         "summary_row_roll_up_type": "summaryRowRollUpType",
         "summary_row_text": "summaryRowText",
+        "summary_row_translations": "summaryRowTranslations",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -119,11 +123,13 @@ class GsaTabularColumn(ModelBase):
         display_names: "dict[str, str]",
         guid: "str",
         name: "str",
+        order: "int",
         roll_up_type: "GsaTabularColumnRollUpType",
         show_as_link: "bool",
         summary_row_enabled: "bool",
         summary_row_roll_up_type: "GsaTabularColumnRollUpType",
         summary_row_text: "str",
+        summary_row_translations: "dict[str, str]",
     ) -> None:
         """GsaTabularColumn - a model defined in Swagger
 
@@ -133,16 +139,20 @@ class GsaTabularColumn(ModelBase):
         display_names: dict[str, str]
         guid: str
         name: str
+        order: int
         roll_up_type: GsaTabularColumnRollUpType
         show_as_link: bool
         summary_row_enabled: bool
         summary_row_roll_up_type: GsaTabularColumnRollUpType
         summary_row_text: str
+        summary_row_translations: dict[str, str]
         """
         self._column_type: GsaTabularColumnDtoType
         self._show_as_link: bool
         self._summary_row_enabled: bool
         self._summary_row_text: str
+        self._summary_row_translations: dict[str, str]
+        self._order: int
         self._roll_up_type: GsaTabularColumnRollUpType
         self._summary_row_roll_up_type: GsaTabularColumnRollUpType
         self._display_names: dict[str, str]
@@ -153,6 +163,8 @@ class GsaTabularColumn(ModelBase):
         self.show_as_link = show_as_link
         self.summary_row_enabled = summary_row_enabled
         self.summary_row_text = summary_row_text
+        self.summary_row_translations = summary_row_translations
+        self.order = order
         self.roll_up_type = roll_up_type
         self.summary_row_roll_up_type = summary_row_roll_up_type
         self.display_names = display_names
@@ -272,6 +284,66 @@ class GsaTabularColumn(ModelBase):
         self._summary_row_text = summary_row_text
 
     @property
+    def summary_row_translations(self) -> "dict[str, str]":
+        """Gets the summary_row_translations of this GsaTabularColumn.
+        A dictionary of the culture name to the row text that should be used in that culture for the item
+
+        Returns
+        -------
+        dict[str, str]
+            The summary_row_translations of this GsaTabularColumn.
+        """
+        return self._summary_row_translations
+
+    @summary_row_translations.setter
+    def summary_row_translations(self, summary_row_translations: "dict[str, str]") -> None:
+        """Sets the summary_row_translations of this GsaTabularColumn.
+        A dictionary of the culture name to the row text that should be used in that culture for the item
+
+        Parameters
+        ----------
+        summary_row_translations: dict[str, str]
+            The summary_row_translations of this GsaTabularColumn.
+        """
+        # Field is not nullable
+        if summary_row_translations is None:
+            raise ValueError("Invalid value for 'summary_row_translations', must not be 'None'")
+        # Field is required
+        if summary_row_translations is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'summary_row_translations', must not be 'Unset'")
+        self._summary_row_translations = summary_row_translations
+
+    @property
+    def order(self) -> "int":
+        """Gets the order of this GsaTabularColumn.
+        The order that this column appears in the tabular attribute. Columns on an attribute object are returned from the API in the correct sorted order.
+
+        Returns
+        -------
+        int
+            The order of this GsaTabularColumn.
+        """
+        return self._order
+
+    @order.setter
+    def order(self, order: "int") -> None:
+        """Sets the order of this GsaTabularColumn.
+        The order that this column appears in the tabular attribute. Columns on an attribute object are returned from the API in the correct sorted order.
+
+        Parameters
+        ----------
+        order: int
+            The order of this GsaTabularColumn.
+        """
+        # Field is not nullable
+        if order is None:
+            raise ValueError("Invalid value for 'order', must not be 'None'")
+        # Field is required
+        if order is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'order', must not be 'Unset'")
+        self._order = order
+
+    @property
     def roll_up_type(self) -> "GsaTabularColumnRollUpType":
         """Gets the roll_up_type of this GsaTabularColumn.
 
@@ -332,6 +404,7 @@ class GsaTabularColumn(ModelBase):
     @property
     def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GsaTabularColumn.
+        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Returns
         -------
@@ -343,6 +416,7 @@ class GsaTabularColumn(ModelBase):
     @display_names.setter
     def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GsaTabularColumn.
+        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Parameters
         ----------

@@ -78,7 +78,7 @@ class GsaQueryAttribute(ModelBase):
         "is_protected": "bool",
         "name": "str",
         "table": "GsaQuerySlimEntity",
-        "tabular_columns": "list[GsaQuerySlimNamedEntity]",
+        "tabular_columns": "list[GsaQueryTabularColumn]",
         "target": "GsaQueryTabularAttributeTarget",
         "type": "GsaAttributeType",
         "unit": "GsaQueryUnit",
@@ -119,7 +119,7 @@ class GsaQueryAttribute(ModelBase):
         "dataRule": "GsaQueryDataRule",
         "target": "GsaQueryTabularAttributeTarget",
         "aboutAttribute": "GsaQuerySlimTypedAttribute",
-        "tabularColumns": "GsaQuerySlimNamedEntity",
+        "tabularColumns": "GsaQueryTabularColumn",
         "attributeParameters": "GsaQuerySlimNamedEntity",
         "expressions": "GsaQuerySlimNamedEntity",
     }
@@ -146,7 +146,7 @@ class GsaQueryAttribute(ModelBase):
         is_protected: "bool | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         table: "GsaQuerySlimEntity | Unset_Type" = Unset,
-        tabular_columns: "list[GsaQuerySlimNamedEntity] | None | Unset_Type" = Unset,
+        tabular_columns: "list[GsaQueryTabularColumn] | None | Unset_Type" = Unset,
         target: "GsaQueryTabularAttributeTarget | Unset_Type" = Unset,
         type: "GsaAttributeType | Unset_Type" = Unset,
         unit: "GsaQueryUnit | Unset_Type" = Unset,
@@ -172,7 +172,7 @@ class GsaQueryAttribute(ModelBase):
         is_protected: bool | None, optional
         name: str | None, optional
         table: GsaQuerySlimEntity, optional
-        tabular_columns: list[GsaQuerySlimNamedEntity] | None, optional
+        tabular_columns: list[GsaQueryTabularColumn] | None, optional
         target: GsaQueryTabularAttributeTarget, optional
         type: GsaAttributeType, optional
         unit: GsaQueryUnit, optional
@@ -192,7 +192,7 @@ class GsaQueryAttribute(ModelBase):
         self._data_rule: GsaQueryDataRule | Unset_Type = Unset
         self._target: GsaQueryTabularAttributeTarget | Unset_Type = Unset
         self._about_attribute: GsaQuerySlimTypedAttribute | Unset_Type = Unset
-        self._tabular_columns: list[GsaQuerySlimNamedEntity] | None | Unset_Type = Unset
+        self._tabular_columns: list[GsaQueryTabularColumn] | None | Unset_Type = Unset
         self._attribute_parameters: list[GsaQuerySlimNamedEntity] | None | Unset_Type = Unset
         self._expressions: list[GsaQuerySlimNamedEntity] | None | Unset_Type = Unset
         self._display_names: dict[str, str] | None | Unset_Type = Unset
@@ -607,25 +607,25 @@ class GsaQueryAttribute(ModelBase):
         self._about_attribute = about_attribute
 
     @property
-    def tabular_columns(self) -> "list[GsaQuerySlimNamedEntity] | None | Unset_Type":
+    def tabular_columns(self) -> "list[GsaQueryTabularColumn] | None | Unset_Type":
         """Gets the tabular_columns of this GsaQueryAttribute.
 
         Returns
         -------
-        list[GsaQuerySlimNamedEntity] | None | Unset_Type
+        list[GsaQueryTabularColumn] | None | Unset_Type
             The tabular_columns of this GsaQueryAttribute.
         """
         return self._tabular_columns
 
     @tabular_columns.setter
     def tabular_columns(
-        self, tabular_columns: "list[GsaQuerySlimNamedEntity] | None | Unset_Type"
+        self, tabular_columns: "list[GsaQueryTabularColumn] | None | Unset_Type"
     ) -> None:
         """Sets the tabular_columns of this GsaQueryAttribute.
 
         Parameters
         ----------
-        tabular_columns: list[GsaQuerySlimNamedEntity] | None | Unset_Type
+        tabular_columns: list[GsaQueryTabularColumn] | None | Unset_Type
             The tabular_columns of this GsaQueryAttribute.
         """
         self._tabular_columns = tabular_columns
