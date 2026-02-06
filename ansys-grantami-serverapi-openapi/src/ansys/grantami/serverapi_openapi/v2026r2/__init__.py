@@ -319,6 +319,7 @@ from .models.gsa_create_parameter import GsaCreateParameter
 from .models.gsa_create_parameter_content import GsaCreateParameterContent
 from .models.gsa_create_parameter_value import GsaCreateParameterValue
 from .models.gsa_create_permission import GsaCreatePermission
+from .models.gsa_create_permission_category import GsaCreatePermissionCategory
 from .models.gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .models.gsa_create_point_attribute import GsaCreatePointAttribute
 from .models.gsa_create_profile import GsaCreateProfile
@@ -594,6 +595,9 @@ from .models.gsa_duplicate_mapped_record_link_group_guids_error_detail import (
 from .models.gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyErrorDetail
 from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
+)
+from .models.gsa_duplicate_permissions_permission_category_error_detail import (
+    GsaDuplicatePermissionsPermissionCategoryErrorDetail,
 )
 from .models.gsa_duplicate_symbol_unit_error_detail import GsaDuplicateSymbolUnitErrorDetail
 from .models.gsa_duplicate_tabular_column_guids_error_detail import (
@@ -970,6 +974,9 @@ from .models.gsa_no_file_file_error_detail import GsaNoFileFileErrorDetail
 from .models.gsa_no_parameter_values_parameter_error_detail import (
     GsaNoParameterValuesParameterErrorDetail,
 )
+from .models.gsa_no_permissions_permission_category_error_detail import (
+    GsaNoPermissionsPermissionCategoryErrorDetail,
+)
 from .models.gsa_no_such_attribute_smart_attributes_error_detail import (
     GsaNoSuchAttributeSmartAttributesErrorDetail,
 )
@@ -1066,12 +1073,21 @@ from .models.gsa_permission import GsaPermission
 from .models.gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .models.gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .models.gsa_permission_category import GsaPermissionCategory
+from .models.gsa_permission_category_creation_exception import (
+    GsaPermissionCategoryCreationException,
+)
+from .models.gsa_permission_category_error_detail import GsaPermissionCategoryErrorDetail
+from .models.gsa_permission_category_error_reason import GsaPermissionCategoryErrorReason
+from .models.gsa_permission_category_update_exception import GsaPermissionCategoryUpdateException
 from .models.gsa_permission_creation_exception import GsaPermissionCreationException
 from .models.gsa_permission_deletion_error_detail import GsaPermissionDeletionErrorDetail
 from .models.gsa_permission_deletion_error_reason import GsaPermissionDeletionErrorReason
 from .models.gsa_permission_deletion_exception import GsaPermissionDeletionException
 from .models.gsa_permission_error_detail import GsaPermissionErrorDetail
 from .models.gsa_permission_error_reason import GsaPermissionErrorReason
+from .models.gsa_permission_permission_category_error_detail import (
+    GsaPermissionPermissionCategoryErrorDetail,
+)
 from .models.gsa_permission_update_exception import GsaPermissionUpdateException
 from .models.gsa_permissions_info import GsaPermissionsInfo
 from .models.gsa_picture_attribute import GsaPictureAttribute
@@ -1436,6 +1452,9 @@ from .models.gsa_too_long_code_currency_error_detail import GsaTooLongCodeCurren
 from .models.gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
     GsaTooManyAttributePairsSmartAttributesErrorDetail,
 )
+from .models.gsa_too_many_permissions_permission_category_error_detail import (
+    GsaTooManyPermissionsPermissionCategoryErrorDetail,
+)
 from .models.gsa_translate_between_guids_and_identities_response import (
     GsaTranslateBetweenGuidsAndIdentitiesResponse,
 )
@@ -1566,6 +1585,7 @@ from .models.gsa_update_parameter_content import GsaUpdateParameterContent
 from .models.gsa_update_parameter_value import GsaUpdateParameterValue
 from .models.gsa_update_permission import GsaUpdatePermission
 from .models.gsa_update_permission_based_access_control import GsaUpdatePermissionBasedAccessControl
+from .models.gsa_update_permission_category import GsaUpdatePermissionCategory
 from .models.gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .models.gsa_update_point_attribute import GsaUpdatePointAttribute
 from .models.gsa_update_profile import GsaUpdateProfile
@@ -1872,6 +1892,7 @@ __all__ = [
     "GsaCreateParameterContent",
     "GsaCreateParameterValue",
     "GsaCreatePermission",
+    "GsaCreatePermissionCategory",
     "GsaCreatePictureAttribute",
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
@@ -2080,6 +2101,7 @@ __all__ = [
     "GsaDuplicateMappedRecordLinkGroupGuidsErrorDetail",
     "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
+    "GsaDuplicatePermissionsPermissionCategoryErrorDetail",
     "GsaDuplicateSymbolUnitErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
@@ -2363,6 +2385,7 @@ __all__ = [
     "GsaNoExpressionsMathsFunctionalErrorDetail",
     "GsaNoFileFileErrorDetail",
     "GsaNoParameterValuesParameterErrorDetail",
+    "GsaNoPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2431,12 +2454,17 @@ __all__ = [
     "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
+    "GsaPermissionCategoryCreationException",
+    "GsaPermissionCategoryErrorDetail",
+    "GsaPermissionCategoryErrorReason",
+    "GsaPermissionCategoryUpdateException",
     "GsaPermissionCreationException",
     "GsaPermissionDeletionErrorDetail",
     "GsaPermissionDeletionErrorReason",
     "GsaPermissionDeletionException",
     "GsaPermissionErrorDetail",
     "GsaPermissionErrorReason",
+    "GsaPermissionPermissionCategoryErrorDetail",
     "GsaPermissionUpdateException",
     "GsaPermissionsInfo",
     "GsaPictureAttribute",
@@ -2743,6 +2771,7 @@ __all__ = [
     "GsaThresholdTypeAttributeErrorDetail",
     "GsaTooLongCodeCurrencyErrorDetail",
     "GsaTooManyAttributePairsSmartAttributesErrorDetail",
+    "GsaTooManyPermissionsPermissionCategoryErrorDetail",
     "GsaTranslateBetweenGuidsAndIdentitiesResponse",
     "GsaTranslateGuidsToIdentitiesRequest",
     "GsaTranslateIdentitiesToGuidsRequest",
@@ -2841,6 +2870,7 @@ __all__ = [
     "GsaUpdateParameterValue",
     "GsaUpdatePermission",
     "GsaUpdatePermissionBasedAccessControl",
+    "GsaUpdatePermissionCategory",
     "GsaUpdatePictureAttribute",
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
