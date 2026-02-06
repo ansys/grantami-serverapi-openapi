@@ -103,3 +103,6 @@ class GsaErrorCode(Enum):
     PERMISSIONCREATION = "permissionCreation"
     PERMISSIONUPDATE = "permissionUpdate"
     PERMISSIONDELETION = "permissionDeletion"
+    PERMISSIONCATEGORYCREATION = "permissionCategoryCreation"
+    PERMISSIONCATEGORYUPDATE = "permissionCategoryUpdate"
+    PERMISSIONCATEGORYDELETION = "permissionCategoryDeletion"

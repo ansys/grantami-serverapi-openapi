@@ -68,15 +68,15 @@ class GsaNamedEntityPermissionErrorDetail(GsaPermissionErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "errors": "list[GsaNamedEntityErrorDetail]",
         "message": "str",
         "reason": "GsaPermissionErrorReason",
-        "errors": "list[GsaNamedEntityErrorDetail]",
     }
 
     attribute_map: dict[str, str] = {
+        "errors": "errors",
         "message": "message",
         "reason": "reason",
-        "errors": "errors",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -88,44 +88,49 @@ class GsaNamedEntityPermissionErrorDetail(GsaPermissionErrorDetail):
     def __init__(
         self,
         *,
+        errors: "list[GsaNamedEntityErrorDetail]",
         message: "str",
         reason: "GsaPermissionErrorReason" = GsaPermissionErrorReason.NAMEDENTITY,
-        errors: "list[GsaNamedEntityErrorDetail] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaNamedEntityPermissionErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
+        errors: list[GsaNamedEntityErrorDetail]
         message: str
         reason: GsaPermissionErrorReason
-        errors: list[GsaNamedEntityErrorDetail] | None, optional
         """
         super().__init__(message=message, reason=reason)
-        self._errors: list[GsaNamedEntityErrorDetail] | None | Unset_Type = Unset
+        self._errors: list[GsaNamedEntityErrorDetail]
 
-        if errors is not Unset:
-            self.errors = errors
+        self.errors = errors
 
     @property
-    def errors(self) -> "list[GsaNamedEntityErrorDetail] | None | Unset_Type":
+    def errors(self) -> "list[GsaNamedEntityErrorDetail]":
         """Gets the errors of this GsaNamedEntityPermissionErrorDetail.
 
         Returns
         -------
-        list[GsaNamedEntityErrorDetail] | None | Unset_Type
+        list[GsaNamedEntityErrorDetail]
             The errors of this GsaNamedEntityPermissionErrorDetail.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "list[GsaNamedEntityErrorDetail] | None | Unset_Type") -> None:
+    def errors(self, errors: "list[GsaNamedEntityErrorDetail]") -> None:
         """Sets the errors of this GsaNamedEntityPermissionErrorDetail.
 
         Parameters
         ----------
-        errors: list[GsaNamedEntityErrorDetail] | None | Unset_Type
+        errors: list[GsaNamedEntityErrorDetail]
             The errors of this GsaNamedEntityPermissionErrorDetail.
         """
+        # Field is not nullable
+        if errors is None:
+            raise ValueError("Invalid value for 'errors', must not be 'None'")
+        # Field is required
+        if errors is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'errors', must not be 'Unset'")
         self._errors = errors
 
     @classmethod

@@ -61,12 +61,14 @@ class GsaPermissionCreationException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "str",
         "code": "GsaErrorCode",
         "errors": "list[GsaPermissionErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "code": "code",
         "errors": "errors",
         "message": "message",
@@ -82,6 +84,7 @@ class GsaPermissionCreationException(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaPermissionErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
@@ -90,18 +93,21 @@ class GsaPermissionCreationException(ModelBase):
 
         Parameters
         ----------
+        name: str
         code: GsaErrorCode, optional
         errors: list[GsaPermissionErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._name: str
         self._errors: list[GsaPermissionErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        self.name = name
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +157,34 @@ class GsaPermissionCreationException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def name(self) -> "str":
+        """Gets the name of this GsaPermissionCreationException.
+
+        Returns
+        -------
+        str
+            The name of this GsaPermissionCreationException.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str") -> None:
+        """Sets the name of this GsaPermissionCreationException.
+
+        Parameters
+        ----------
+        name: str
+            The name of this GsaPermissionCreationException.
+        """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
+        self._name = name
 
     @property
     def errors(self) -> "list[GsaPermissionErrorDetail] | None | Unset_Type":

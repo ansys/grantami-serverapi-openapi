@@ -68,15 +68,15 @@ class GsaMaxPermissionsReachedPermissionErrorDetail(GsaPermissionErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "max_number_of_permissions": "int",
         "message": "str",
         "reason": "GsaPermissionErrorReason",
-        "max_number_of_permissions": "int",
     }
 
     attribute_map: dict[str, str] = {
+        "max_number_of_permissions": "maxNumberOfPermissions",
         "message": "message",
         "reason": "reason",
-        "max_number_of_permissions": "maxNumberOfPermissions",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,47 +86,49 @@ class GsaMaxPermissionsReachedPermissionErrorDetail(GsaPermissionErrorDetail):
     def __init__(
         self,
         *,
+        max_number_of_permissions: "int",
         message: "str",
         reason: "GsaPermissionErrorReason" = GsaPermissionErrorReason.MAXPERMISSIONSREACHED,
-        max_number_of_permissions: "int | Unset_Type" = Unset,
     ) -> None:
         """GsaMaxPermissionsReachedPermissionErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
+        max_number_of_permissions: int
         message: str
         reason: GsaPermissionErrorReason
-        max_number_of_permissions: int, optional
         """
         super().__init__(message=message, reason=reason)
-        self._max_number_of_permissions: int | Unset_Type = Unset
+        self._max_number_of_permissions: int
 
-        if max_number_of_permissions is not Unset:
-            self.max_number_of_permissions = max_number_of_permissions
+        self.max_number_of_permissions = max_number_of_permissions
 
     @property
-    def max_number_of_permissions(self) -> "int | Unset_Type":
+    def max_number_of_permissions(self) -> "int":
         """Gets the max_number_of_permissions of this GsaMaxPermissionsReachedPermissionErrorDetail.
 
         Returns
         -------
-        int | Unset_Type
+        int
             The max_number_of_permissions of this GsaMaxPermissionsReachedPermissionErrorDetail.
         """
         return self._max_number_of_permissions
 
     @max_number_of_permissions.setter
-    def max_number_of_permissions(self, max_number_of_permissions: "int | Unset_Type") -> None:
+    def max_number_of_permissions(self, max_number_of_permissions: "int") -> None:
         """Sets the max_number_of_permissions of this GsaMaxPermissionsReachedPermissionErrorDetail.
 
         Parameters
         ----------
-        max_number_of_permissions: int | Unset_Type
+        max_number_of_permissions: int
             The max_number_of_permissions of this GsaMaxPermissionsReachedPermissionErrorDetail.
         """
         # Field is not nullable
         if max_number_of_permissions is None:
             raise ValueError("Invalid value for 'max_number_of_permissions', must not be 'None'")
+        # Field is required
+        if max_number_of_permissions is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'max_number_of_permissions', must not be 'Unset'")
         self._max_number_of_permissions = max_number_of_permissions
 
     @classmethod
