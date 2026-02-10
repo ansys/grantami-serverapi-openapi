@@ -86,6 +86,7 @@ from .api.schema___security_groups_api import SchemaSecurityGroupsApi
 from .api.schema___standard_names_api import SchemaStandardNamesApi
 from .api.schema___subsets_api import SchemaSubsetsApi
 from .api.schema___tables_api import SchemaTablesApi
+from .api.schema___unit_equivalents_api import SchemaUnitEquivalentsApi
 from .api.schema___units_api import SchemaUnitsApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
@@ -1704,6 +1705,7 @@ __all__ = [
     "SchemaStandardNamesApi",
     "SchemaSubsetsApi",
     "SchemaTablesApi",
+    "SchemaUnitEquivalentsApi",
     "SchemaUnitsApi",
     "SearchApi",
     "StatusApi",

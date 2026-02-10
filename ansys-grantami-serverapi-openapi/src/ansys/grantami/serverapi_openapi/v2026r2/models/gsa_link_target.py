@@ -104,6 +104,7 @@ class GsaLinkTarget(ModelBase):
     @property
     def database_guid(self) -> "str | None | Unset_Type":
         """Gets the database_guid of this GsaLinkTarget.
+        Gets the guid of the database that this link group is referencing.  If `null` it means match any database with a matching table (only the case for cross database links)
 
         Returns
         -------
@@ -115,6 +116,7 @@ class GsaLinkTarget(ModelBase):
     @database_guid.setter
     def database_guid(self, database_guid: "str | None | Unset_Type") -> None:
         """Sets the database_guid of this GsaLinkTarget.
+        Gets the guid of the database that this link group is referencing.  If `null` it means match any database with a matching table (only the case for cross database links)
 
         Parameters
         ----------
@@ -126,6 +128,7 @@ class GsaLinkTarget(ModelBase):
     @property
     def database_version_guid(self) -> "str | None | Unset_Type":
         """Gets the database_version_guid of this GsaLinkTarget.
+        Database version GUID. Null for forwards cross database link targets.
 
         Returns
         -------
@@ -137,6 +140,7 @@ class GsaLinkTarget(ModelBase):
     @database_version_guid.setter
     def database_version_guid(self, database_version_guid: "str | None | Unset_Type") -> None:
         """Sets the database_version_guid of this GsaLinkTarget.
+        Database version GUID. Null for forwards cross database link targets.
 
         Parameters
         ----------

@@ -63,6 +63,7 @@ class GsaLayoutItem(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "display_names": "dict(str, str)",
         "guid": "str",
         "item_type": "GsaLayoutItemType",
         "name": "str",
@@ -70,6 +71,7 @@ class GsaLayoutItem(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "display_names": "displayNames",
         "guid": "guid",
         "item_type": "itemType",
         "name": "name",
@@ -90,6 +92,7 @@ class GsaLayoutItem(ModelBase):
     def __init__(
         self,
         *,
+        display_names: "dict[str, str]",
         guid: "str",
         item_type: "GsaLayoutItemType",
         name: "str",
@@ -99,6 +102,7 @@ class GsaLayoutItem(ModelBase):
 
         Parameters
         ----------
+        display_names: dict[str, str]
         guid: str
         item_type: GsaLayoutItemType
         name: str
@@ -106,11 +110,13 @@ class GsaLayoutItem(ModelBase):
         """
         self._item_type: GsaLayoutItemType
         self._underlying_entity_guid: str
+        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
         self.item_type = item_type
         self.underlying_entity_guid = underlying_entity_guid
+        self.display_names = display_names
         self.name = name
         self.guid = guid
 
@@ -169,6 +175,36 @@ class GsaLayoutItem(ModelBase):
         if underlying_entity_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'underlying_entity_guid', must not be 'Unset'")
         self._underlying_entity_guid = underlying_entity_guid
+
+    @property
+    def display_names(self) -> "dict[str, str]":
+        """Gets the display_names of this GsaLayoutItem.
+        A dictionary of the culture name to the name that should be used in that culture for the item
+
+        Returns
+        -------
+        dict[str, str]
+            The display_names of this GsaLayoutItem.
+        """
+        return self._display_names
+
+    @display_names.setter
+    def display_names(self, display_names: "dict[str, str]") -> None:
+        """Sets the display_names of this GsaLayoutItem.
+        A dictionary of the culture name to the name that should be used in that culture for the item
+
+        Parameters
+        ----------
+        display_names: dict[str, str]
+            The display_names of this GsaLayoutItem.
+        """
+        # Field is not nullable
+        if display_names is None:
+            raise ValueError("Invalid value for 'display_names', must not be 'None'")
+        # Field is required
+        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
+        self._display_names = display_names
 
     @property
     def name(self) -> "str":

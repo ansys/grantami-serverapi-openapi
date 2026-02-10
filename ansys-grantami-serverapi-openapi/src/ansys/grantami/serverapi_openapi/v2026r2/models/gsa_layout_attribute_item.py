@@ -67,6 +67,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
     """
     swagger_types: dict[str, str] = {
         "attribute_type": "GsaAttributeType",
+        "display_names": "dict(str, str)",
         "guid": "str",
         "item_type": "GsaLayoutItemType",
         "name": "str",
@@ -79,6 +80,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
 
     attribute_map: dict[str, str] = {
         "attribute_type": "attributeType",
+        "display_names": "displayNames",
         "guid": "guid",
         "item_type": "itemType",
         "name": "name",
@@ -101,6 +103,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         self,
         *,
         attribute_type: "GsaAttributeType",
+        display_names: "dict[str, str]",
         guid: "str",
         item_type: "GsaLayoutItemType" = GsaLayoutItemType.ATTRIBUTE,
         name: "str",
@@ -115,6 +118,7 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         Parameters
         ----------
         attribute_type: GsaAttributeType
+        display_names: dict[str, str]
         guid: str
         item_type: GsaLayoutItemType
         name: str
@@ -125,7 +129,11 @@ class GsaLayoutAttributeItem(GsaLayoutItem):
         tabular_columns: list[GsaLayoutTabularColumn] | None, optional
         """
         super().__init__(
-            guid=guid, item_type=item_type, name=name, underlying_entity_guid=underlying_entity_guid
+            display_names=display_names,
+            guid=guid,
+            item_type=item_type,
+            name=name,
+            underlying_entity_guid=underlying_entity_guid,
         )
         self._attribute_type: GsaAttributeType
         self._required: bool
