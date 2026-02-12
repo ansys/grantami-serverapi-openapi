@@ -70,15 +70,17 @@ class GsaPermissionPermissionCategoryErrorDetail(GsaPermissionCategoryErrorDetai
     swagger_types: dict[str, str] = {
         "errors": "list[GsaPermissionErrorDetail]",
         "message": "str",
-        "name": "str",
         "reason": "GsaPermissionCategoryErrorReason",
+        "guid": "str",
+        "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "errors": "errors",
         "message": "message",
-        "name": "name",
         "reason": "reason",
+        "guid": "guid",
+        "name": "name",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -92,8 +94,9 @@ class GsaPermissionPermissionCategoryErrorDetail(GsaPermissionCategoryErrorDetai
         *,
         errors: "list[GsaPermissionErrorDetail]",
         message: "str",
-        name: "str",
         reason: "GsaPermissionCategoryErrorReason" = GsaPermissionCategoryErrorReason.PERMISSION,
+        guid: "str | None | Unset_Type" = Unset,
+        name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaPermissionPermissionCategoryErrorDetail - a model defined in Swagger
 
@@ -101,43 +104,64 @@ class GsaPermissionPermissionCategoryErrorDetail(GsaPermissionCategoryErrorDetai
         ----------
         errors: list[GsaPermissionErrorDetail]
         message: str
-        name: str
         reason: GsaPermissionCategoryErrorReason
+        guid: str | None, optional
+        name: str | None, optional
         """
         super().__init__(message=message, reason=reason)
-        self._name: str
+        self._name: str | None | Unset_Type = Unset
+        self._guid: str | None | Unset_Type = Unset
         self._errors: list[GsaPermissionErrorDetail]
 
-        self.name = name
+        if name is not Unset:
+            self.name = name
+        if guid is not Unset:
+            self.guid = guid
         self.errors = errors
 
     @property
-    def name(self) -> "str":
+    def name(self) -> "str | None | Unset_Type":
         """Gets the name of this GsaPermissionPermissionCategoryErrorDetail.
 
         Returns
         -------
-        str
+        str | None | Unset_Type
             The name of this GsaPermissionPermissionCategoryErrorDetail.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "str") -> None:
+    def name(self, name: "str | None | Unset_Type") -> None:
         """Sets the name of this GsaPermissionPermissionCategoryErrorDetail.
 
         Parameters
         ----------
-        name: str
+        name: str | None | Unset_Type
             The name of this GsaPermissionPermissionCategoryErrorDetail.
         """
-        # Field is not nullable
-        if name is None:
-            raise ValueError("Invalid value for 'name', must not be 'None'")
-        # Field is required
-        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
+
+    @property
+    def guid(self) -> "str | None | Unset_Type":
+        """Gets the guid of this GsaPermissionPermissionCategoryErrorDetail.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The guid of this GsaPermissionPermissionCategoryErrorDetail.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str | None | Unset_Type") -> None:
+        """Sets the guid of this GsaPermissionPermissionCategoryErrorDetail.
+
+        Parameters
+        ----------
+        guid: str | None | Unset_Type
+            The guid of this GsaPermissionPermissionCategoryErrorDetail.
+        """
+        self._guid = guid
 
     @property
     def errors(self) -> "list[GsaPermissionErrorDetail]":

@@ -82,6 +82,7 @@ class GsaPermissionCategoryErrorDetail(ModelBase):
         "tooManyPermissions".lower(): "#/components/schemas/GsaTooManyPermissionsPermissionCategoryErrorDetail",
         "duplicatePermissions".lower(): "#/components/schemas/GsaDuplicatePermissionsPermissionCategoryErrorDetail",
         "permission".lower(): "#/components/schemas/GsaPermissionPermissionCategoryErrorDetail",
+        "noSuchPermissions".lower(): "#/components/schemas/GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

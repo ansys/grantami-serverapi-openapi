@@ -262,6 +262,7 @@ from .gsa_create_point_attribute import GsaCreatePointAttribute
 from .gsa_create_profile import GsaCreateProfile
 from .gsa_create_profile_table import GsaCreateProfileTable
 from .gsa_create_put_layout_item import GsaCreatePutLayoutItem
+from .gsa_create_put_permission import GsaCreatePutPermission
 from .gsa_create_range_attribute import GsaCreateRangeAttribute
 from .gsa_create_record_history import GsaCreateRecordHistory
 from .gsa_create_record_link_group import GsaCreateRecordLinkGroup
@@ -885,6 +886,9 @@ from .gsa_no_such_new_parent_folder_move_error_detail import GsaNoSuchNewParentF
 from .gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
 )
+from .gsa_no_such_permissions_permission_category_error_detail import (
+    GsaNoSuchPermissionsPermissionCategoryErrorDetail,
+)
 from .gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
@@ -1002,6 +1006,7 @@ from .gsa_profile_table import GsaProfileTable
 from .gsa_profile_tables_info import GsaProfileTablesInfo
 from .gsa_property import GsaProperty
 from .gsa_put_layout_item import GsaPutLayoutItem
+from .gsa_put_permission import GsaPutPermission
 from .gsa_put_type import GsaPutType
 from .gsa_query_attribute import GsaQueryAttribute
 from .gsa_query_attribute_filter import GsaQueryAttributeFilter
@@ -1458,6 +1463,7 @@ from .gsa_update_point_attribute import GsaUpdatePointAttribute
 from .gsa_update_profile import GsaUpdateProfile
 from .gsa_update_profile_table import GsaUpdateProfileTable
 from .gsa_update_put_layout_item import GsaUpdatePutLayoutItem
+from .gsa_update_put_permission import GsaUpdatePutPermission
 from .gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
@@ -1710,6 +1716,7 @@ __all__ = [
     "GsaCreateProfile",
     "GsaCreateProfileTable",
     "GsaCreatePutLayoutItem",
+    "GsaCreatePutPermission",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
     "GsaCreateRecordLinkGroup",
@@ -2205,6 +2212,7 @@ __all__ = [
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
@@ -2300,6 +2308,7 @@ __all__ = [
     "GsaProfileTablesInfo",
     "GsaProperty",
     "GsaPutLayoutItem",
+    "GsaPutPermission",
     "GsaPutType",
     "GsaQueryAttribute",
     "GsaQueryAttributeFilter",
@@ -2688,6 +2697,7 @@ __all__ = [
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
     "GsaUpdatePutLayoutItem",
+    "GsaUpdatePutPermission",
     "GsaUpdateRangeAttribute",
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",

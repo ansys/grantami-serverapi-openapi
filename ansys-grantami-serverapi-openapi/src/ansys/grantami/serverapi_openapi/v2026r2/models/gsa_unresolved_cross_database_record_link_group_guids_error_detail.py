@@ -70,11 +70,13 @@ class GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail(GsaStandardNameE
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaStandardNameErrorReason",
+        "unresolved_guids": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "unresolved_guids": "unresolvedGuids",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,6 +88,7 @@ class GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail(GsaStandardNameE
         *,
         message: "str",
         reason: "GsaStandardNameErrorReason" = GsaStandardNameErrorReason.UNRESOLVEDCROSSDATABASERECORDLINKGROUPGUIDS,
+        unresolved_guids: "list[str]",
     ) -> None:
         """GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail - a model defined in Swagger
 
@@ -93,8 +96,40 @@ class GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail(GsaStandardNameE
         ----------
         message: str
         reason: GsaStandardNameErrorReason
+        unresolved_guids: list[str]
         """
         super().__init__(message=message, reason=reason)
+        self._unresolved_guids: list[str]
+
+        self.unresolved_guids = unresolved_guids
+
+    @property
+    def unresolved_guids(self) -> "list[str]":
+        """Gets the unresolved_guids of this GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail.
+
+        Returns
+        -------
+        list[str]
+            The unresolved_guids of this GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail.
+        """
+        return self._unresolved_guids
+
+    @unresolved_guids.setter
+    def unresolved_guids(self, unresolved_guids: "list[str]") -> None:
+        """Sets the unresolved_guids of this GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail.
+
+        Parameters
+        ----------
+        unresolved_guids: list[str]
+            The unresolved_guids of this GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail.
+        """
+        # Field is not nullable
+        if unresolved_guids is None:
+            raise ValueError("Invalid value for 'unresolved_guids', must not be 'None'")
+        # Field is required
+        if unresolved_guids is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'unresolved_guids', must not be 'Unset'")
+        self._unresolved_guids = unresolved_guids
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
