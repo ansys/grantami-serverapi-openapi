@@ -70,11 +70,13 @@ class GsaStandardNameAlreadyExistsErrorDetail(GsaStandardNameErrorDetail):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaStandardNameErrorReason",
+        "standard_name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "standard_name": "standardName",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,6 +88,7 @@ class GsaStandardNameAlreadyExistsErrorDetail(GsaStandardNameErrorDetail):
         *,
         message: "str",
         reason: "GsaStandardNameErrorReason" = GsaStandardNameErrorReason.STANDARDNAMEALREADYEXISTS,
+        standard_name: "str",
     ) -> None:
         """GsaStandardNameAlreadyExistsErrorDetail - a model defined in Swagger
 
@@ -93,8 +96,40 @@ class GsaStandardNameAlreadyExistsErrorDetail(GsaStandardNameErrorDetail):
         ----------
         message: str
         reason: GsaStandardNameErrorReason
+        standard_name: str
         """
         super().__init__(message=message, reason=reason)
+        self._standard_name: str
+
+        self.standard_name = standard_name
+
+    @property
+    def standard_name(self) -> "str":
+        """Gets the standard_name of this GsaStandardNameAlreadyExistsErrorDetail.
+
+        Returns
+        -------
+        str
+            The standard_name of this GsaStandardNameAlreadyExistsErrorDetail.
+        """
+        return self._standard_name
+
+    @standard_name.setter
+    def standard_name(self, standard_name: "str") -> None:
+        """Sets the standard_name of this GsaStandardNameAlreadyExistsErrorDetail.
+
+        Parameters
+        ----------
+        standard_name: str
+            The standard_name of this GsaStandardNameAlreadyExistsErrorDetail.
+        """
+        # Field is not nullable
+        if standard_name is None:
+            raise ValueError("Invalid value for 'standard_name', must not be 'None'")
+        # Field is required
+        if standard_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'standard_name', must not be 'Unset'")
+        self._standard_name = standard_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

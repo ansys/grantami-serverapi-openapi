@@ -63,14 +63,18 @@ class GsaUpdatePermissionCategory(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
+        "permissions": "list[GsaPutPermission]",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
+        "permissions": "permissions",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "permissions": "GsaPutPermission",
+    }
 
     discriminator: Optional[str] = None
 
@@ -79,6 +83,7 @@ class GsaUpdatePermissionCategory(ModelBase):
         *,
         guid: "str | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
+        permissions: "list[GsaPutPermission] | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdatePermissionCategory - a model defined in Swagger
 
@@ -86,14 +91,43 @@ class GsaUpdatePermissionCategory(ModelBase):
         ----------
         guid: str, optional
         name: str, optional
+        permissions: list[GsaPutPermission], optional
         """
+        self._permissions: list[GsaPutPermission] | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
+        if permissions is not Unset:
+            self.permissions = permissions
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def permissions(self) -> "list[GsaPutPermission] | Unset_Type":
+        """Gets the permissions of this GsaUpdatePermissionCategory.
+
+        Returns
+        -------
+        list[GsaPutPermission] | Unset_Type
+            The permissions of this GsaUpdatePermissionCategory.
+        """
+        return self._permissions
+
+    @permissions.setter
+    def permissions(self, permissions: "list[GsaPutPermission] | Unset_Type") -> None:
+        """Sets the permissions of this GsaUpdatePermissionCategory.
+
+        Parameters
+        ----------
+        permissions: list[GsaPutPermission] | Unset_Type
+            The permissions of this GsaUpdatePermissionCategory.
+        """
+        # Field is not nullable
+        if permissions is None:
+            raise ValueError("Invalid value for 'permissions', must not be 'None'")
+        self._permissions = permissions
 
     @property
     def name(self) -> "str | Unset_Type":

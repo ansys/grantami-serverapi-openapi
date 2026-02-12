@@ -326,6 +326,7 @@ from .models.gsa_create_point_attribute import GsaCreatePointAttribute
 from .models.gsa_create_profile import GsaCreateProfile
 from .models.gsa_create_profile_table import GsaCreateProfileTable
 from .models.gsa_create_put_layout_item import GsaCreatePutLayoutItem
+from .models.gsa_create_put_permission import GsaCreatePutPermission
 from .models.gsa_create_range_attribute import GsaCreateRangeAttribute
 from .models.gsa_create_record_history import GsaCreateRecordHistory
 from .models.gsa_create_record_link_group import GsaCreateRecordLinkGroup
@@ -997,6 +998,9 @@ from .models.gsa_no_such_new_parent_folder_move_error_detail import (
 from .models.gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
 )
+from .models.gsa_no_such_permissions_permission_category_error_detail import (
+    GsaNoSuchPermissionsPermissionCategoryErrorDetail,
+)
 from .models.gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
@@ -1118,6 +1122,7 @@ from .models.gsa_profile_table import GsaProfileTable
 from .models.gsa_profile_tables_info import GsaProfileTablesInfo
 from .models.gsa_property import GsaProperty
 from .models.gsa_put_layout_item import GsaPutLayoutItem
+from .models.gsa_put_permission import GsaPutPermission
 from .models.gsa_put_type import GsaPutType
 from .models.gsa_query_attribute import GsaQueryAttribute
 from .models.gsa_query_attribute_filter import GsaQueryAttributeFilter
@@ -1592,6 +1597,7 @@ from .models.gsa_update_point_attribute import GsaUpdatePointAttribute
 from .models.gsa_update_profile import GsaUpdateProfile
 from .models.gsa_update_profile_table import GsaUpdateProfileTable
 from .models.gsa_update_put_layout_item import GsaUpdatePutLayoutItem
+from .models.gsa_update_put_permission import GsaUpdatePutPermission
 from .models.gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .models.gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .models.gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
@@ -1900,6 +1906,7 @@ __all__ = [
     "GsaCreateProfile",
     "GsaCreateProfileTable",
     "GsaCreatePutLayoutItem",
+    "GsaCreatePutPermission",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
     "GsaCreateRecordLinkGroup",
@@ -2395,6 +2402,7 @@ __all__ = [
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
@@ -2490,6 +2498,7 @@ __all__ = [
     "GsaProfileTablesInfo",
     "GsaProperty",
     "GsaPutLayoutItem",
+    "GsaPutPermission",
     "GsaPutType",
     "GsaQueryAttribute",
     "GsaQueryAttributeFilter",
@@ -2878,6 +2887,7 @@ __all__ = [
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
     "GsaUpdatePutLayoutItem",
+    "GsaUpdatePutPermission",
     "GsaUpdateRangeAttribute",
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",

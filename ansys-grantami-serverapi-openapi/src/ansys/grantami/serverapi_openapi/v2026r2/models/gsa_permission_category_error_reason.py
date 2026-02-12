@@ -47,3 +47,4 @@ class GsaPermissionCategoryErrorReason(Enum):
     TOOMANYPERMISSIONS = "tooManyPermissions"
     DUPLICATEPERMISSIONS = "duplicatePermissions"
     PERMISSION = "permission"
+    NOSUCHPERMISSIONS = "noSuchPermissions"
