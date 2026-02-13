@@ -232,7 +232,9 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_unit(self, *, database_key: "str", unit_guid: "str") -> "None":
+    def delete_unit(
+        self, *, database_key: "str", unit_guid: "str"
+    ) -> "GsaUnitDeletionException | None":
         """Delete unit.
 
         This method makes a synchronous HTTP request.
@@ -245,7 +247,7 @@ class SchemaUnitsApi(ApiBase):
 
         Returns
         -------
-        None
+        GsaUnitDeletionException | None
         """
         data = self._delete_unit_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
@@ -296,10 +298,12 @@ class SchemaUnitsApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
+            400: "GsaUnitDeletionException",
             200: None,
-            400: None,
             403: None,
             404: None,
         }

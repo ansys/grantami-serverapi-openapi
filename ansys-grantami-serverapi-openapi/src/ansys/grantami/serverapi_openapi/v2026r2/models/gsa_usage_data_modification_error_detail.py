@@ -99,6 +99,10 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         "functionalDataDefault".lower(): "#/components/schemas/GsaFunctionalDataDefaultUsageDataModificationErrorDetail",
         "multiValuedPointData".lower(): "#/components/schemas/GsaMultiValuedPointDataUsageDataModificationErrorDetail",
         "tabularColumn".lower(): "#/components/schemas/GsaTabularColumnUsageDataModificationErrorDetail",
+        "databaseCurrencyUnit".lower(): "#/components/schemas/GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail",
+        "unit".lower(): "#/components/schemas/GsaUnitUsageDataModificationErrorDetail",
+        "parameter".lower(): "#/components/schemas/GsaParameterUsageDataModificationErrorDetail",
+        "constant".lower(): "#/components/schemas/GsaConstantUsageDataModificationErrorDetail",
     }
 
     discriminator: Optional[str] = "referenced_by_type"

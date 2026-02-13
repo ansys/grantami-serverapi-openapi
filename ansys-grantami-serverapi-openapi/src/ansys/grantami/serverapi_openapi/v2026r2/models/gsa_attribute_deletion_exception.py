@@ -61,12 +61,14 @@ class GsaAttributeDeletionException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "guid": "str",
         "code": "GsaErrorCode",
         "errors": "list[GsaDataModificationErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
+        "guid": "guid",
         "code": "code",
         "errors": "errors",
         "message": "message",
@@ -82,6 +84,7 @@ class GsaAttributeDeletionException(ModelBase):
     def __init__(
         self,
         *,
+        guid: "str",
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaDataModificationErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
@@ -90,18 +93,21 @@ class GsaAttributeDeletionException(ModelBase):
 
         Parameters
         ----------
+        guid: str
         code: GsaErrorCode, optional
         errors: list[GsaDataModificationErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._guid: str
         self._errors: list[GsaDataModificationErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        self.guid = guid
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +157,34 @@ class GsaAttributeDeletionException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def guid(self) -> "str":
+        """Gets the guid of this GsaAttributeDeletionException.
+
+        Returns
+        -------
+        str
+            The guid of this GsaAttributeDeletionException.
+        """
+        return self._guid
+
+    @guid.setter
+    def guid(self, guid: "str") -> None:
+        """Sets the guid of this GsaAttributeDeletionException.
+
+        Parameters
+        ----------
+        guid: str
+            The guid of this GsaAttributeDeletionException.
+        """
+        # Field is not nullable
+        if guid is None:
+            raise ValueError("Invalid value for 'guid', must not be 'None'")
+        # Field is required
+        if guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'guid', must not be 'Unset'")
+        self._guid = guid
 
     @property
     def errors(self) -> "list[GsaDataModificationErrorDetail] | None | Unset_Type":

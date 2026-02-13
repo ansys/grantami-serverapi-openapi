@@ -57,8 +57,17 @@ from .gsa_about_attribute_cannot_be_meta_attribute_error_detail import (
 )
 from .gsa_access_control_categories_info import GsaAccessControlCategoriesInfo
 from .gsa_access_control_category import GsaAccessControlCategory
+from .gsa_access_control_category_creation_exception import (
+    GsaAccessControlCategoryCreationException,
+)
+from .gsa_access_control_category_error_detail import GsaAccessControlCategoryErrorDetail
+from .gsa_access_control_category_error_reason import GsaAccessControlCategoryErrorReason
 from .gsa_access_control_category_include import GsaAccessControlCategoryInclude
+from .gsa_access_control_category_no_such_entity_type import (
+    GsaAccessControlCategoryNoSuchEntityType,
+)
 from .gsa_access_control_category_table_mapping import GsaAccessControlCategoryTableMapping
+from .gsa_access_control_category_update_exception import GsaAccessControlCategoryUpdateException
 from .gsa_access_control_info import GsaAccessControlInfo
 from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_access_control_mode_info import GsaAccessControlModeInfo
@@ -120,6 +129,9 @@ from .gsa_attribute_creation_exception import GsaAttributeCreationException
 from .gsa_attribute_criterion import GsaAttributeCriterion
 from .gsa_attribute_criterion_type import GsaAttributeCriterionType
 from .gsa_attribute_deletion_exception import GsaAttributeDeletionException
+from .gsa_attribute_discrete_type_mismatch_error_detail import (
+    GsaAttributeDiscreteTypeMismatchErrorDetail,
+)
 from .gsa_attribute_error_detail import GsaAttributeErrorDetail
 from .gsa_attribute_error_reason import GsaAttributeErrorReason
 from .gsa_attribute_exists_aggregation import GsaAttributeExistsAggregation
@@ -131,6 +143,7 @@ from .gsa_attribute_link_pair import GsaAttributeLinkPair
 from .gsa_attribute_matches_criterion import GsaAttributeMatchesCriterion
 from .gsa_attribute_no_such_entity_type import GsaAttributeNoSuchEntityType
 from .gsa_attribute_not_applicable_criterion import GsaAttributeNotApplicableCriterion
+from .gsa_attribute_not_on_table_error_detail import GsaAttributeNotOnTableErrorDetail
 from .gsa_attribute_pair_discrete_type_mismatch_smart_attributes_error_detail import (
     GsaAttributePairDiscreteTypeMismatchSmartAttributesErrorDetail,
 )
@@ -182,9 +195,16 @@ from .gsa_constant_deletion_exception import GsaConstantDeletionException
 from .gsa_constant_error_detail import GsaConstantErrorDetail
 from .gsa_constant_error_reason import GsaConstantErrorReason
 from .gsa_constant_update_exception import GsaConstantUpdateException
+from .gsa_constant_usage_data_modification_error_detail import (
+    GsaConstantUsageDataModificationErrorDetail,
+)
 from .gsa_constants_info import GsaConstantsInfo
 from .gsa_continuous_range import GsaContinuousRange
 from .gsa_copy_record_history import GsaCopyRecordHistory
+from .gsa_create_access_control_category import GsaCreateAccessControlCategory
+from .gsa_create_access_control_category_table_mapping import (
+    GsaCreateAccessControlCategoryTableMapping,
+)
 from .gsa_create_attribute import GsaCreateAttribute
 from .gsa_create_attribute_link_pair import GsaCreateAttributeLinkPair
 from .gsa_create_axis_name import GsaCreateAxisName
@@ -353,6 +373,9 @@ from .gsa_data_updater_job_type import GsaDataUpdaterJobType
 from .gsa_data_updater_project import GsaDataUpdaterProject
 from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModificationErrorDetail
 from .gsa_database import GsaDatabase
+from .gsa_database_currency_unit_usage_data_modification_error_detail import (
+    GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail,
+)
 from .gsa_database_issues import GsaDatabaseIssues
 from .gsa_database_key_property import GsaDatabaseKeyProperty
 from .gsa_database_security_groups import GsaDatabaseSecurityGroups
@@ -470,6 +493,9 @@ from .gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .gsa_discrete_value import GsaDiscreteValue
 from .gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
 from .gsa_discrete_value_aggregate_exception import GsaDiscreteValueAggregateException
+from .gsa_discrete_value_not_in_discrete_type_error_detail import (
+    GsaDiscreteValueNotInDiscreteTypeErrorDetail,
+)
 from .gsa_discrete_values_create_discrete_value import GsaDiscreteValuesCreateDiscreteValue
 from .gsa_discrete_values_discrete_value import GsaDiscreteValuesDiscreteValue
 from .gsa_discrete_values_discrete_values_info import GsaDiscreteValuesDiscreteValuesInfo
@@ -495,6 +521,7 @@ from .gsa_duplicate_code_currency_error_detail import GsaDuplicateCodeCurrencyEr
 from .gsa_duplicate_database_add_database_validation_issue import (
     GsaDuplicateDatabaseAddDatabaseValidationIssue,
 )
+from .gsa_duplicate_discrete_value_error_detail import GsaDuplicateDiscreteValueErrorDetail
 from .gsa_duplicate_expression_guids_maths_functional_error_detail import (
     GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail,
 )
@@ -524,6 +551,7 @@ from .gsa_duplicate_permissions_permission_category_error_detail import (
     GsaDuplicatePermissionsPermissionCategoryErrorDetail,
 )
 from .gsa_duplicate_symbol_unit_error_detail import GsaDuplicateSymbolUnitErrorDetail
+from .gsa_duplicate_table_error_detail import GsaDuplicateTableErrorDetail
 from .gsa_duplicate_tabular_column_guids_error_detail import (
     GsaDuplicateTabularColumnGuidsErrorDetail,
 )
@@ -825,6 +853,9 @@ from .gsa_move_record_history import GsaMoveRecordHistory
 from .gsa_multi_valued_point_data_usage_data_modification_error_detail import (
     GsaMultiValuedPointDataUsageDataModificationErrorDetail,
 )
+from .gsa_multiple_table_discrete_values_in_single_valued_discrete_error_detail import (
+    GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail,
+)
 from .gsa_name_already_exists_as_reverse_record_link_group_error_detail import (
     GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail,
 )
@@ -840,6 +871,9 @@ from .gsa_name_whitespace_parameter_value_error_detail import (
     GsaNameWhitespaceParameterValueErrorDetail,
 )
 from .gsa_named_criterion import GsaNamedCriterion
+from .gsa_named_entity_access_control_category_error_detail import (
+    GsaNamedEntityAccessControlCategoryErrorDetail,
+)
 from .gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
 from .gsa_named_entity_constant_error_detail import GsaNamedEntityConstantErrorDetail
 from .gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
@@ -875,6 +909,9 @@ from .gsa_no_permissions_permission_category_error_detail import (
 )
 from .gsa_no_such_attribute_smart_attributes_error_detail import (
     GsaNoSuchAttributeSmartAttributesErrorDetail,
+)
+from .gsa_no_such_entity_access_control_category_error_detail import (
+    GsaNoSuchEntityAccessControlCategoryErrorDetail,
 )
 from .gsa_no_such_entity_attribute_error_detail import GsaNoSuchEntityAttributeErrorDetail
 from .gsa_no_such_entity_tabular_column_error_detail import GsaNoSuchEntityTabularColumnErrorDetail
@@ -946,6 +983,9 @@ from .gsa_parameter_type_parameter_content_error_detail import (
 )
 from .gsa_parameter_type_parameter_error_detail import GsaParameterTypeParameterErrorDetail
 from .gsa_parameter_update_exception import GsaParameterUpdateException
+from .gsa_parameter_usage_data_modification_error_detail import (
+    GsaParameterUsageDataModificationErrorDetail,
+)
 from .gsa_parameter_value import GsaParameterValue
 from .gsa_parameter_value_creation_exception import GsaParameterValueCreationException
 from .gsa_parameter_value_deletion_exception import GsaParameterValueDeletionException
@@ -1352,6 +1392,7 @@ from .gsa_unit_conversion_set import GsaUnitConversionSet
 from .gsa_unit_conversion_set_request import GsaUnitConversionSetRequest
 from .gsa_unit_conversions_info import GsaUnitConversionsInfo
 from .gsa_unit_creation_exception import GsaUnitCreationException
+from .gsa_unit_deletion_exception import GsaUnitDeletionException
 from .gsa_unit_equation_error_detail import GsaUnitEquationErrorDetail
 from .gsa_unit_equation_error_reason import GsaUnitEquationErrorReason
 from .gsa_unit_equivalent import GsaUnitEquivalent
@@ -1363,6 +1404,7 @@ from .gsa_unit_system import GsaUnitSystem
 from .gsa_unit_systems_info import GsaUnitSystemsInfo
 from .gsa_unit_update_exception import GsaUnitUpdateException
 from .gsa_unit_usage import GsaUnitUsage
+from .gsa_unit_usage_data_modification_error_detail import GsaUnitUsageDataModificationErrorDetail
 from .gsa_unit_usage_type import GsaUnitUsageType
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_unknown_unit_symbol_unit_equation_error_detail import (
@@ -1378,6 +1420,10 @@ from .gsa_unresolved_record_link_group_guids_error_detail import (
 )
 from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .gsa_update_access_control import GsaUpdateAccessControl
+from .gsa_update_access_control_category import GsaUpdateAccessControlCategory
+from .gsa_update_access_control_category_table_mapping import (
+    GsaUpdateAccessControlCategoryTableMapping,
+)
 from .gsa_update_all_profiles_info import GsaUpdateAllProfilesInfo
 from .gsa_update_attribute import GsaUpdateAttribute
 from .gsa_update_attribute_based_access_control import GsaUpdateAttributeBasedAccessControl
@@ -1541,8 +1587,13 @@ __all__ = [
     "GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
     "GsaAccessControlCategoriesInfo",
     "GsaAccessControlCategory",
+    "GsaAccessControlCategoryCreationException",
+    "GsaAccessControlCategoryErrorDetail",
+    "GsaAccessControlCategoryErrorReason",
     "GsaAccessControlCategoryInclude",
+    "GsaAccessControlCategoryNoSuchEntityType",
     "GsaAccessControlCategoryTableMapping",
+    "GsaAccessControlCategoryUpdateException",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
@@ -1598,6 +1649,7 @@ __all__ = [
     "GsaAttributeCriterion",
     "GsaAttributeCriterionType",
     "GsaAttributeDeletionException",
+    "GsaAttributeDiscreteTypeMismatchErrorDetail",
     "GsaAttributeErrorDetail",
     "GsaAttributeErrorReason",
     "GsaAttributeExistsAggregation",
@@ -1609,6 +1661,7 @@ __all__ = [
     "GsaAttributeMatchesCriterion",
     "GsaAttributeNoSuchEntityType",
     "GsaAttributeNotApplicableCriterion",
+    "GsaAttributeNotOnTableErrorDetail",
     "GsaAttributePairDiscreteTypeMismatchSmartAttributesErrorDetail",
     "GsaAttributePairTypeMismatchSmartAttributesErrorDetail",
     "GsaAttributeReference",
@@ -1648,9 +1701,12 @@ __all__ = [
     "GsaConstantErrorDetail",
     "GsaConstantErrorReason",
     "GsaConstantUpdateException",
+    "GsaConstantUsageDataModificationErrorDetail",
     "GsaConstantsInfo",
     "GsaContinuousRange",
     "GsaCopyRecordHistory",
+    "GsaCreateAccessControlCategory",
+    "GsaCreateAccessControlCategoryTableMapping",
     "GsaCreateAttribute",
     "GsaCreateAttributeLinkPair",
     "GsaCreateAxisName",
@@ -1805,6 +1861,7 @@ __all__ = [
     "GsaDataUpdaterProject",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
+    "GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail",
     "GsaDatabaseIssues",
     "GsaDatabaseKeyProperty",
     "GsaDatabaseSecurityGroups",
@@ -1894,6 +1951,7 @@ __all__ = [
     "GsaDiscreteValue",
     "GsaDiscreteValueAggregateErrorReason",
     "GsaDiscreteValueAggregateException",
+    "GsaDiscreteValueNotInDiscreteTypeErrorDetail",
     "GsaDiscreteValuesCreateDiscreteValue",
     "GsaDiscreteValuesDiscreteValue",
     "GsaDiscreteValuesDiscreteValuesInfo",
@@ -1911,6 +1969,7 @@ __all__ = [
     "GsaDoubleSortingValue",
     "GsaDuplicateCodeCurrencyErrorDetail",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
+    "GsaDuplicateDiscreteValueErrorDetail",
     "GsaDuplicateExpressionGuidsMathsFunctionalErrorDetail",
     "GsaDuplicateGuidAddDatabaseValidationIssue",
     "GsaDuplicateKeyAddDatabaseValidationIssue",
@@ -1922,6 +1981,7 @@ __all__ = [
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
     "GsaDuplicatePermissionsPermissionCategoryErrorDetail",
     "GsaDuplicateSymbolUnitErrorDetail",
+    "GsaDuplicateTableErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
@@ -2171,6 +2231,7 @@ __all__ = [
     "GsaMoveFolder",
     "GsaMoveRecordHistory",
     "GsaMultiValuedPointDataUsageDataModificationErrorDetail",
+    "GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail",
     "GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
     "GsaNameAlreadySpecifiedErrorDetail",
@@ -2180,6 +2241,7 @@ __all__ = [
     "GsaNameWhitespaceCurrencyErrorDetail",
     "GsaNameWhitespaceParameterValueErrorDetail",
     "GsaNamedCriterion",
+    "GsaNamedEntityAccessControlCategoryErrorDetail",
     "GsaNamedEntityAttributeErrorDetail",
     "GsaNamedEntityConstantErrorDetail",
     "GsaNamedEntityErrorDetail",
@@ -2206,6 +2268,7 @@ __all__ = [
     "GsaNoParameterValuesParameterErrorDetail",
     "GsaNoPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
+    "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
     "GsaNoSuchExpressionsMathsFunctionalErrorDetail",
@@ -2258,6 +2321,7 @@ __all__ = [
     "GsaParameterTypeParameterContentErrorDetail",
     "GsaParameterTypeParameterErrorDetail",
     "GsaParameterUpdateException",
+    "GsaParameterUsageDataModificationErrorDetail",
     "GsaParameterValue",
     "GsaParameterValueCreationException",
     "GsaParameterValueDeletionException",
@@ -2604,6 +2668,7 @@ __all__ = [
     "GsaUnitConversionSetRequest",
     "GsaUnitConversionsInfo",
     "GsaUnitCreationException",
+    "GsaUnitDeletionException",
     "GsaUnitEquationErrorDetail",
     "GsaUnitEquationErrorReason",
     "GsaUnitEquivalent",
@@ -2615,6 +2680,7 @@ __all__ = [
     "GsaUnitSystemsInfo",
     "GsaUnitUpdateException",
     "GsaUnitUsage",
+    "GsaUnitUsageDataModificationErrorDetail",
     "GsaUnitUsageType",
     "GsaUnitsInfo",
     "GsaUnknownUnitSymbolUnitEquationErrorDetail",
@@ -2624,6 +2690,8 @@ __all__ = [
     "GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",
+    "GsaUpdateAccessControlCategory",
+    "GsaUpdateAccessControlCategoryTableMapping",
     "GsaUpdateAllProfilesInfo",
     "GsaUpdateAttribute",
     "GsaUpdateAttributeBasedAccessControl",

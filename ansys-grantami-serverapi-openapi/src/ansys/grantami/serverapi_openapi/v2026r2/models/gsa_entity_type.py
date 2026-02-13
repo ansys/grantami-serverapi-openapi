@@ -58,3 +58,4 @@ class GsaEntityType(Enum):
     CONSTANT = "constant"
     PERMISSION = "permission"
     PERMISSIONCATEGORY = "permissionCategory"
+    ACCESSCONTROLCATEGORY = "accessControlCategory"
