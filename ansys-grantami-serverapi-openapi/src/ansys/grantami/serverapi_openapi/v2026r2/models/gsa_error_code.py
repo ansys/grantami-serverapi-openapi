@@ -106,3 +106,5 @@ class GsaErrorCode(Enum):
     PERMISSIONCATEGORYCREATION = "permissionCategoryCreation"
     PERMISSIONCATEGORYUPDATE = "permissionCategoryUpdate"
     PERMISSIONCATEGORYDELETION = "permissionCategoryDeletion"
+    ACCESSCONTROLCATEGORYCREATION = "accessControlCategoryCreation"
+    ACCESSCONTROLCATEGORYUPDATE = "accessControlCategoryUpdate"

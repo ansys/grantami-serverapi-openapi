@@ -61,9 +61,9 @@ class GsaUnitUsage(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "attributes": "list[GsaSlimNamedEntity]",
+        "attributes": "list[GsaSlimAttribute]",
         "constants": "list[GsaSlimNamedEntity]",
-        "expressions": "list[GsaSlimNamedEntity]",
+        "expressions": "list[GsaSlimExpression]",
         "parameters": "list[GsaSlimNamedEntity]",
         "units": "list[GsaUnit]",
     }
@@ -77,10 +77,10 @@ class GsaUnitUsage(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "attributes": "GsaSlimNamedEntity",
+        "attributes": "GsaSlimAttribute",
         "parameters": "GsaSlimNamedEntity",
         "constants": "GsaSlimNamedEntity",
-        "expressions": "GsaSlimNamedEntity",
+        "expressions": "GsaSlimExpression",
         "units": "GsaUnit",
     }
 
@@ -89,9 +89,9 @@ class GsaUnitUsage(ModelBase):
     def __init__(
         self,
         *,
-        attributes: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
+        attributes: "list[GsaSlimAttribute] | None | Unset_Type" = Unset,
         constants: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
-        expressions: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
+        expressions: "list[GsaSlimExpression] | None | Unset_Type" = Unset,
         parameters: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
         units: "list[GsaUnit] | None | Unset_Type" = Unset,
     ) -> None:
@@ -99,16 +99,16 @@ class GsaUnitUsage(ModelBase):
 
         Parameters
         ----------
-        attributes: list[GsaSlimNamedEntity] | None, optional
+        attributes: list[GsaSlimAttribute] | None, optional
         constants: list[GsaSlimNamedEntity] | None, optional
-        expressions: list[GsaSlimNamedEntity] | None, optional
+        expressions: list[GsaSlimExpression] | None, optional
         parameters: list[GsaSlimNamedEntity] | None, optional
         units: list[GsaUnit] | None, optional
         """
-        self._attributes: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
+        self._attributes: list[GsaSlimAttribute] | None | Unset_Type = Unset
         self._parameters: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
         self._constants: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._expressions: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
+        self._expressions: list[GsaSlimExpression] | None | Unset_Type = Unset
         self._units: list[GsaUnit] | None | Unset_Type = Unset
 
         if attributes is not Unset:
@@ -123,23 +123,23 @@ class GsaUnitUsage(ModelBase):
             self.units = units
 
     @property
-    def attributes(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def attributes(self) -> "list[GsaSlimAttribute] | None | Unset_Type":
         """Gets the attributes of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimAttribute] | None | Unset_Type
             The attributes of this GsaUnitUsage.
         """
         return self._attributes
 
     @attributes.setter
-    def attributes(self, attributes: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def attributes(self, attributes: "list[GsaSlimAttribute] | None | Unset_Type") -> None:
         """Sets the attributes of this GsaUnitUsage.
 
         Parameters
         ----------
-        attributes: list[GsaSlimNamedEntity] | None | Unset_Type
+        attributes: list[GsaSlimAttribute] | None | Unset_Type
             The attributes of this GsaUnitUsage.
         """
         self._attributes = attributes
@@ -189,23 +189,23 @@ class GsaUnitUsage(ModelBase):
         self._constants = constants
 
     @property
-    def expressions(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+    def expressions(self) -> "list[GsaSlimExpression] | None | Unset_Type":
         """Gets the expressions of this GsaUnitUsage.
 
         Returns
         -------
-        list[GsaSlimNamedEntity] | None | Unset_Type
+        list[GsaSlimExpression] | None | Unset_Type
             The expressions of this GsaUnitUsage.
         """
         return self._expressions
 
     @expressions.setter
-    def expressions(self, expressions: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
+    def expressions(self, expressions: "list[GsaSlimExpression] | None | Unset_Type") -> None:
         """Sets the expressions of this GsaUnitUsage.
 
         Parameters
         ----------
-        expressions: list[GsaSlimNamedEntity] | None | Unset_Type
+        expressions: list[GsaSlimExpression] | None | Unset_Type
             The expressions of this GsaUnitUsage.
         """
         self._expressions = expressions
