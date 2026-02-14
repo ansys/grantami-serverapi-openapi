@@ -179,6 +179,9 @@ from .gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
 from .gsa_bulk_request_item import GsaBulkRequestItem
 from .gsa_bulk_response_item import GsaBulkResponseItem
 from .gsa_calendar_interval import GsaCalendarInterval
+from .gsa_category_replace_permission_category_error_detail import (
+    GsaCategoryReplacePermissionCategoryErrorDetail,
+)
 from .gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
@@ -283,6 +286,7 @@ from .gsa_create_profile import GsaCreateProfile
 from .gsa_create_profile_table import GsaCreateProfileTable
 from .gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .gsa_create_put_permission import GsaCreatePutPermission
+from .gsa_create_put_permission_category import GsaCreatePutPermissionCategory
 from .gsa_create_range_attribute import GsaCreateRangeAttribute
 from .gsa_create_record_history import GsaCreateRecordHistory
 from .gsa_create_record_link_group import GsaCreateRecordLinkGroup
@@ -517,6 +521,9 @@ from .gsa_display_names_import_exception import GsaDisplayNamesImportException
 from .gsa_display_names_info import GsaDisplayNamesInfo
 from .gsa_divide_by_zero_unit_equation_error_detail import GsaDivideByZeroUnitEquationErrorDetail
 from .gsa_double_sorting_value import GsaDoubleSortingValue
+from .gsa_duplicate_categories_replace_permission_category_error_detail import (
+    GsaDuplicateCategoriesReplacePermissionCategoryErrorDetail,
+)
 from .gsa_duplicate_code_currency_error_detail import GsaDuplicateCodeCurrencyErrorDetail
 from .gsa_duplicate_database_add_database_validation_issue import (
     GsaDuplicateDatabaseAddDatabaseValidationIssue,
@@ -673,6 +680,7 @@ from .gsa_get_modifiable_record_version_control_exception import (
     GsaGetModifiableRecordVersionControlException,
 )
 from .gsa_get_unit_conversions_request import GsaGetUnitConversionsRequest
+from .gsa_get_unit_equivalents_exception import GsaGetUnitEquivalentsException
 from .gsa_graph import GsaGraph
 from .gsa_graph_decoration_type import GsaGraphDecorationType
 from .gsa_graph_evaluation_settings import GsaGraphEvaluationSettings
@@ -910,6 +918,9 @@ from .gsa_no_permissions_permission_category_error_detail import (
 from .gsa_no_such_attribute_smart_attributes_error_detail import (
     GsaNoSuchAttributeSmartAttributesErrorDetail,
 )
+from .gsa_no_such_categories_replace_permission_category_error_detail import (
+    GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail,
+)
 from .gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
 )
@@ -931,6 +942,10 @@ from .gsa_no_such_target_table_record_link_group_error_detail import (
 )
 from .gsa_no_such_unit_constant_error_detail import GsaNoSuchUnitConstantErrorDetail
 from .gsa_no_such_unit_parameter_error_detail import GsaNoSuchUnitParameterErrorDetail
+from .gsa_no_such_unit_system_unit_equivalent_error_detail import (
+    GsaNoSuchUnitSystemUnitEquivalentErrorDetail,
+)
+from .gsa_no_such_unit_unit_equivalent_error_detail import GsaNoSuchUnitUnitEquivalentErrorDetail
 from .gsa_no_value_exists_graph_value import GsaNoValueExistsGraphValue
 from .gsa_no_values_specifier import GsaNoValuesSpecifier
 from .gsa_not_applicable_datum import GsaNotApplicableDatum
@@ -1007,6 +1022,7 @@ from .gsa_permission_category import GsaPermissionCategory
 from .gsa_permission_category_creation_exception import GsaPermissionCategoryCreationException
 from .gsa_permission_category_error_detail import GsaPermissionCategoryErrorDetail
 from .gsa_permission_category_error_reason import GsaPermissionCategoryErrorReason
+from .gsa_permission_category_replace_exception import GsaPermissionCategoryReplaceException
 from .gsa_permission_category_update_exception import GsaPermissionCategoryUpdateException
 from .gsa_permission_creation_exception import GsaPermissionCreationException
 from .gsa_permission_deletion_error_detail import GsaPermissionDeletionErrorDetail
@@ -1047,6 +1063,7 @@ from .gsa_profile_tables_info import GsaProfileTablesInfo
 from .gsa_property import GsaProperty
 from .gsa_put_layout_item import GsaPutLayoutItem
 from .gsa_put_permission import GsaPutPermission
+from .gsa_put_permission_category import GsaPutPermissionCategory
 from .gsa_put_type import GsaPutType
 from .gsa_query_attribute import GsaQueryAttribute
 from .gsa_query_attribute_filter import GsaQueryAttributeFilter
@@ -1171,6 +1188,9 @@ from .gsa_released_date_property import GsaReleasedDateProperty
 from .gsa_relevance_sort_criterion import GsaRelevanceSortCriterion
 from .gsa_remove_record_history_from_subset import GsaRemoveRecordHistoryFromSubset
 from .gsa_reorder_sections_info import GsaReorderSectionsInfo
+from .gsa_replace_permission_categories_request import GsaReplacePermissionCategoriesRequest
+from .gsa_replace_permission_category_error_detail import GsaReplacePermissionCategoryErrorDetail
+from .gsa_replace_permission_category_error_reason import GsaReplacePermissionCategoryErrorReason
 from .gsa_replacement_string import GsaReplacementString
 from .gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
@@ -1375,6 +1395,9 @@ from .gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
 from .gsa_too_many_permissions_permission_category_error_detail import (
     GsaTooManyPermissionsPermissionCategoryErrorDetail,
 )
+from .gsa_too_many_permissions_replace_permission_category_error_detail import (
+    GsaTooManyPermissionsReplacePermissionCategoryErrorDetail,
+)
 from .gsa_translate_between_guids_and_identities_response import (
     GsaTranslateBetweenGuidsAndIdentitiesResponse,
 )
@@ -1396,6 +1419,8 @@ from .gsa_unit_deletion_exception import GsaUnitDeletionException
 from .gsa_unit_equation_error_detail import GsaUnitEquationErrorDetail
 from .gsa_unit_equation_error_reason import GsaUnitEquationErrorReason
 from .gsa_unit_equivalent import GsaUnitEquivalent
+from .gsa_unit_equivalent_error_detail import GsaUnitEquivalentErrorDetail
+from .gsa_unit_equivalent_error_reason import GsaUnitEquivalentErrorReason
 from .gsa_unit_equivalents_info import GsaUnitEquivalentsInfo
 from .gsa_unit_error_detail import GsaUnitErrorDetail
 from .gsa_unit_error_reason import GsaUnitErrorReason
@@ -1510,6 +1535,7 @@ from .gsa_update_profile import GsaUpdateProfile
 from .gsa_update_profile_table import GsaUpdateProfileTable
 from .gsa_update_put_layout_item import GsaUpdatePutLayoutItem
 from .gsa_update_put_permission import GsaUpdatePutPermission
+from .gsa_update_put_permission_category import GsaUpdatePutPermissionCategory
 from .gsa_update_range_attribute import GsaUpdateRangeAttribute
 from .gsa_update_record_link_group import GsaUpdateRecordLinkGroup
 from .gsa_update_record_list_permission_flags import GsaUpdateRecordListPermissionFlags
@@ -1687,6 +1713,7 @@ __all__ = [
     "GsaBulkRequestItem",
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
+    "GsaCategoryReplacePermissionCategoryErrorDetail",
     "GsaCircularReferenceFolderMoveErrorDetail",
     "GsaCodeMissingCurrencyErrorDetail",
     "GsaCodeWhitespaceCurrencyErrorDetail",
@@ -1773,6 +1800,7 @@ __all__ = [
     "GsaCreateProfileTable",
     "GsaCreatePutLayoutItem",
     "GsaCreatePutPermission",
+    "GsaCreatePutPermissionCategory",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
     "GsaCreateRecordLinkGroup",
@@ -1967,6 +1995,7 @@ __all__ = [
     "GsaDisplayNamesInfo",
     "GsaDivideByZeroUnitEquationErrorDetail",
     "GsaDoubleSortingValue",
+    "GsaDuplicateCategoriesReplacePermissionCategoryErrorDetail",
     "GsaDuplicateCodeCurrencyErrorDetail",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
     "GsaDuplicateDiscreteValueErrorDetail",
@@ -2075,6 +2104,7 @@ __all__ = [
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
     "GsaGetUnitConversionsRequest",
+    "GsaGetUnitEquivalentsException",
     "GsaGraph",
     "GsaGraphDecorationType",
     "GsaGraphEvaluationSettings",
@@ -2268,6 +2298,7 @@ __all__ = [
     "GsaNoParameterValuesParameterErrorDetail",
     "GsaNoPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
+    "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2279,6 +2310,8 @@ __all__ = [
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
+    "GsaNoSuchUnitSystemUnitEquivalentErrorDetail",
+    "GsaNoSuchUnitUnitEquivalentErrorDetail",
     "GsaNoValueExistsGraphValue",
     "GsaNoValuesSpecifier",
     "GsaNotApplicableDatum",
@@ -2341,6 +2374,7 @@ __all__ = [
     "GsaPermissionCategoryCreationException",
     "GsaPermissionCategoryErrorDetail",
     "GsaPermissionCategoryErrorReason",
+    "GsaPermissionCategoryReplaceException",
     "GsaPermissionCategoryUpdateException",
     "GsaPermissionCreationException",
     "GsaPermissionDeletionErrorDetail",
@@ -2373,6 +2407,7 @@ __all__ = [
     "GsaProperty",
     "GsaPutLayoutItem",
     "GsaPutPermission",
+    "GsaPutPermissionCategory",
     "GsaPutType",
     "GsaQueryAttribute",
     "GsaQueryAttributeFilter",
@@ -2491,6 +2526,9 @@ __all__ = [
     "GsaRelevanceSortCriterion",
     "GsaRemoveRecordHistoryFromSubset",
     "GsaReorderSectionsInfo",
+    "GsaReplacePermissionCategoriesRequest",
+    "GsaReplacePermissionCategoryErrorDetail",
+    "GsaReplacePermissionCategoryErrorReason",
     "GsaReplacementString",
     "GsaReplacementStringsInfo",
     "GsaResolveLinkTargetsInfo",
@@ -2657,6 +2695,7 @@ __all__ = [
     "GsaTooLongCodeCurrencyErrorDetail",
     "GsaTooManyAttributePairsSmartAttributesErrorDetail",
     "GsaTooManyPermissionsPermissionCategoryErrorDetail",
+    "GsaTooManyPermissionsReplacePermissionCategoryErrorDetail",
     "GsaTranslateBetweenGuidsAndIdentitiesResponse",
     "GsaTranslateGuidsToIdentitiesRequest",
     "GsaTranslateIdentitiesToGuidsRequest",
@@ -2672,6 +2711,8 @@ __all__ = [
     "GsaUnitEquationErrorDetail",
     "GsaUnitEquationErrorReason",
     "GsaUnitEquivalent",
+    "GsaUnitEquivalentErrorDetail",
+    "GsaUnitEquivalentErrorReason",
     "GsaUnitEquivalentsInfo",
     "GsaUnitErrorDetail",
     "GsaUnitErrorReason",
@@ -2766,6 +2807,7 @@ __all__ = [
     "GsaUpdateProfileTable",
     "GsaUpdatePutLayoutItem",
     "GsaUpdatePutPermission",
+    "GsaUpdatePutPermissionCategory",
     "GsaUpdateRangeAttribute",
     "GsaUpdateRecordLinkGroup",
     "GsaUpdateRecordListPermissionFlags",
