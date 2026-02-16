@@ -834,6 +834,104 @@ class AccessControlPermissionBasedSchemaApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def replace_permission_categories(
+        self, *, database_key: "str", body: "Optional[GsaReplacePermissionCategoriesRequest]" = None
+    ) -> "GsaPermissionCategoriesInfo | GsaPermissionCategoryReplaceException | None":
+        """Replace all permission-based access control categories.  This can result in adding, modifying and deleting permission categories.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        body: GsaReplacePermissionCategoriesRequest
+
+        Returns
+        -------
+        GsaPermissionCategoriesInfo | GsaPermissionCategoryReplaceException | None
+        """
+        data = self._replace_permission_categories_with_http_info(
+            database_key, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _replace_permission_categories_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GsaReplacePermissionCategoriesRequest]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method replace_permission_categories"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'replace_permission_categories'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaPermissionCategoriesInfo",
+            400: "GsaPermissionCategoryReplaceException",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-categories",
+            "PUT",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def update_permission(
         self,
         *,
