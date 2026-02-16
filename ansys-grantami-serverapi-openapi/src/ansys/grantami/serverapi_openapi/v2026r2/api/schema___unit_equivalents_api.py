@@ -48,7 +48,13 @@ class SchemaUnitEquivalentsApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def get_unit_equivalents(self, *, database_key: "str") -> "GsaUnitEquivalentsInfo | None":
+    def get_unit_equivalents(
+        self,
+        *,
+        database_key: "str",
+        unit: "Optional[list[str]]" = None,
+        unit_system: "Optional[list[str]]" = None,
+    ) -> "GsaGetUnitEquivalentsException | GsaUnitEquivalentsInfo | None":
         """Get unit equivalents
 
         This method makes a synchronous HTTP request.
@@ -57,17 +63,29 @@ class SchemaUnitEquivalentsApi(ApiBase):
         ----------
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        unit: list[str]
+        unit_system: list[str]
 
         Returns
         -------
-        GsaUnitEquivalentsInfo | None
+        GsaGetUnitEquivalentsException | GsaUnitEquivalentsInfo | None
         """
-        data = self._get_unit_equivalents_with_http_info(database_key, _return_http_data_only=True)
+        data = self._get_unit_equivalents_with_http_info(
+            database_key, unit, unit_system, _return_http_data_only=True
+        )
         return data  # type: ignore[no-any-return]
 
-    def _get_unit_equivalents_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+    def _get_unit_equivalents_with_http_info(
+        self,
+        database_key: "str",
+        unit: "Optional[list[str]]" = None,
+        unit_system: "Optional[list[str]]" = None,
+        **kwargs: Any,
+    ) -> Any:
         all_params = [
             "database_key",
+            "unit",
+            "unit_system",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -94,6 +112,12 @@ class SchemaUnitEquivalentsApi(ApiBase):
             path_params["database-key"] = params["database_key"]
 
         query_params: list[Any] = []
+        if "unit" in params and unit is not None:
+            query_params.append(("unit", params["unit"]))
+            collection_formats["unit"] = "multi"
+        if "unit_system" in params and unit_system is not None:
+            query_params.append(("unitSystem", params["unit_system"]))
+            collection_formats["unitSystem"] = "multi"
 
         header_params: dict[str, Any] = {}
 
@@ -106,6 +130,7 @@ class SchemaUnitEquivalentsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaUnitEquivalentsInfo",
+            400: "GsaGetUnitEquivalentsException",
             404: None,
         }
 

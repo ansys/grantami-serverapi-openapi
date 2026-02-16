@@ -107,6 +107,7 @@ class GsaUpdatePermissionCategory(ModelBase):
     @property
     def permissions(self) -> "list[GsaPutPermission] | Unset_Type":
         """Gets the permissions of this GsaUpdatePermissionCategory.
+        This can result in adding, modifying and deleting permissions.  To insert a new permission, use a [GsaCreatePutPermission](#model-GsaCreatePutPermission).  To modify an existing permission, use a [GsaUpdatePutPermission](#model-GsaUpdatePutPermission).  Existing permissions will be matched by GUID.  If an existing permission is not included, it will be deleted.
 
         Returns
         -------
@@ -118,6 +119,7 @@ class GsaUpdatePermissionCategory(ModelBase):
     @permissions.setter
     def permissions(self, permissions: "list[GsaPutPermission] | Unset_Type") -> None:
         """Sets the permissions of this GsaUpdatePermissionCategory.
+        This can result in adding, modifying and deleting permissions.  To insert a new permission, use a [GsaCreatePutPermission](#model-GsaCreatePutPermission).  To modify an existing permission, use a [GsaUpdatePutPermission](#model-GsaUpdatePutPermission).  Existing permissions will be matched by GUID.  If an existing permission is not included, it will be deleted.
 
         Parameters
         ----------
