@@ -83,6 +83,7 @@ from .schema___subsets_api import SchemaSubsetsApi
 from .schema___tables_api import SchemaTablesApi
 from .schema___unit_equivalents_api import SchemaUnitEquivalentsApi
 from .schema___units_api import SchemaUnitsApi
+from .schema___xy_chart_templates_api import SchemaXYChartTemplatesApi
 from .schema_api import SchemaApi
 from .search_api import SearchApi
 from .status_api import StatusApi
@@ -144,6 +145,7 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitEquivalentsApi",
     "SchemaUnitsApi",
+    "SchemaXYChartTemplatesApi",
     "SearchApi",
     "StatusApi",
 ]

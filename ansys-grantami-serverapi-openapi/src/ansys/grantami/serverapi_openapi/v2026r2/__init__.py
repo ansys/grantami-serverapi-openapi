@@ -90,6 +90,7 @@ from .api.schema___subsets_api import SchemaSubsetsApi
 from .api.schema___tables_api import SchemaTablesApi
 from .api.schema___unit_equivalents_api import SchemaUnitEquivalentsApi
 from .api.schema___units_api import SchemaUnitsApi
+from .api.schema___xy_chart_templates_api import SchemaXYChartTemplatesApi
 from .api.schema_api import SchemaApi
 from .api.search_api import SearchApi
 from .api.status_api import StatusApi
@@ -1082,6 +1083,8 @@ from .models.gsa_numeric_restricted_interpolation_parameter_error_detail import 
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .models.gsa_object_identifier import GsaObjectIdentifier
+from .models.gsa_paginated_item_type import GsaPaginatedItemType
+from .models.gsa_paginated_response_of import GsaPaginatedResponseOf
 from .models.gsa_pagination_links import GsaPaginationLinks
 from .models.gsa_paging_options import GsaPagingOptions
 from .models.gsa_parameter import GsaParameter
@@ -1481,6 +1484,7 @@ from .models.gsa_swap_name_and_reverse_name_circular_record_link_group_error_det
 from .models.gsa_symbol_cannot_contain_comma_unit_error_detail import (
     GsaSymbolCannotContainCommaUnitErrorDetail,
 )
+from .models.gsa_t_item import GsaTItem
 from .models.gsa_table import GsaTable
 from .models.gsa_table_deletion_exception import GsaTableDeletionException
 from .models.gsa_table_guid_property import GsaTableGuidProperty
@@ -1730,9 +1734,12 @@ from .models.gsa_version_state_property import GsaVersionStateProperty
 from .models.gsa_withdraw_record_version_control_exception import (
     GsaWithdrawRecordVersionControlException,
 )
+from .models.gsa_xy_chart_template import GsaXYChartTemplate
 from .models.gsa_xy_chart_template_usage_data_modification_error_detail import (
     GsaXYChartTemplateUsageDataModificationErrorDetail,
 )
+from .models.gsa_xy_chart_templates_info import GsaXYChartTemplatesInfo
+from .models.gsa_xy_template_axis import GsaXYTemplateAxis
 from .models.jobqueue_files_body import JobqueueFilesBody
 from .models.json_patch_document import JsonPatchDocument
 from .models.microsoft_asp_net_core_mvc_formatters_i_output_formatter import (
@@ -1797,6 +1804,7 @@ __all__ = [
     "SchemaTablesApi",
     "SchemaUnitEquivalentsApi",
     "SchemaUnitsApi",
+    "SchemaXYChartTemplatesApi",
     "SearchApi",
     "StatusApi",
     "AttributesAttributeguidimportfileBody",
@@ -2528,6 +2536,8 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
+    "GsaPaginatedItemType",
+    "GsaPaginatedResponseOf",
     "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",
@@ -2861,6 +2871,7 @@ __all__ = [
     "GsaSubsetsInfo",
     "GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail",
     "GsaSymbolCannotContainCommaUnitErrorDetail",
+    "GsaTItem",
     "GsaTable",
     "GsaTableDeletionException",
     "GsaTableGuidProperty",
@@ -3052,7 +3063,10 @@ __all__ = [
     "GsaVersionState",
     "GsaVersionStateProperty",
     "GsaWithdrawRecordVersionControlException",
+    "GsaXYChartTemplate",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
+    "GsaXYChartTemplatesInfo",
+    "GsaXYTemplateAxis",
     "JobqueueFilesBody",
     "JsonPatchDocument",
     "MicrosoftAspNetCoreMvcFormattersIOutputFormatter",
