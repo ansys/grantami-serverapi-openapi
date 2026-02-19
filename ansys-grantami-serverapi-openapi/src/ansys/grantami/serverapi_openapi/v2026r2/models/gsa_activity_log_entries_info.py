@@ -62,15 +62,18 @@ class GsaActivityLogEntriesInfo(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "entries": "list[GsaActivityLogEntry]",
+        "item_type": "GsaPaginatedItemType",
         "links": "GsaPaginationLinks",
     }
 
     attribute_map: dict[str, str] = {
         "entries": "entries",
+        "item_type": "itemType",
         "links": "links",
     }
 
     subtype_mapping: dict[str, str] = {
+        "itemType": "GsaPaginatedItemType",
         "entries": "GsaActivityLogEntry",
         "links": "GsaPaginationLinks",
     }
@@ -81,6 +84,7 @@ class GsaActivityLogEntriesInfo(ModelBase):
         self,
         *,
         entries: "list[GsaActivityLogEntry]",
+        item_type: "GsaPaginatedItemType",
         links: "GsaPaginationLinks",
     ) -> None:
         """GsaActivityLogEntriesInfo - a model defined in Swagger
@@ -88,13 +92,44 @@ class GsaActivityLogEntriesInfo(ModelBase):
         Parameters
         ----------
         entries: list[GsaActivityLogEntry]
+        item_type: GsaPaginatedItemType
         links: GsaPaginationLinks
         """
+        self._item_type: GsaPaginatedItemType
         self._entries: list[GsaActivityLogEntry]
         self._links: GsaPaginationLinks
 
+        self.item_type = item_type
         self.entries = entries
         self.links = links
+
+    @property
+    def item_type(self) -> "GsaPaginatedItemType":
+        """Gets the item_type of this GsaActivityLogEntriesInfo.
+
+        Returns
+        -------
+        GsaPaginatedItemType
+            The item_type of this GsaActivityLogEntriesInfo.
+        """
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, item_type: "GsaPaginatedItemType") -> None:
+        """Sets the item_type of this GsaActivityLogEntriesInfo.
+
+        Parameters
+        ----------
+        item_type: GsaPaginatedItemType
+            The item_type of this GsaActivityLogEntriesInfo.
+        """
+        # Field is not nullable
+        if item_type is None:
+            raise ValueError("Invalid value for 'item_type', must not be 'None'")
+        # Field is required
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
+        self._item_type = item_type
 
     @property
     def entries(self) -> "list[GsaActivityLogEntry]":

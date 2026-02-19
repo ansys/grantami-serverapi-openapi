@@ -962,6 +962,8 @@ from .gsa_numeric_restricted_interpolation_parameter_error_detail import (
     GsaNumericRestrictedInterpolationParameterErrorDetail,
 )
 from .gsa_object_identifier import GsaObjectIdentifier
+from .gsa_paginated_item_type import GsaPaginatedItemType
+from .gsa_paginated_response_of import GsaPaginatedResponseOf
 from .gsa_pagination_links import GsaPaginationLinks
 from .gsa_paging_options import GsaPagingOptions
 from .gsa_parameter import GsaParameter
@@ -1345,6 +1347,7 @@ from .gsa_swap_name_and_reverse_name_circular_record_link_group_error_detail imp
 from .gsa_symbol_cannot_contain_comma_unit_error_detail import (
     GsaSymbolCannotContainCommaUnitErrorDetail,
 )
+from .gsa_t_item import GsaTItem
 from .gsa_table import GsaTable
 from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_guid_property import GsaTableGuidProperty
@@ -1582,9 +1585,12 @@ from .gsa_version_number_property import GsaVersionNumberProperty
 from .gsa_version_state import GsaVersionState
 from .gsa_version_state_property import GsaVersionStateProperty
 from .gsa_withdraw_record_version_control_exception import GsaWithdrawRecordVersionControlException
+from .gsa_xy_chart_template import GsaXYChartTemplate
 from .gsa_xy_chart_template_usage_data_modification_error_detail import (
     GsaXYChartTemplateUsageDataModificationErrorDetail,
 )
+from .gsa_xy_chart_templates_info import GsaXYChartTemplatesInfo
+from .gsa_xy_template_axis import GsaXYTemplateAxis
 from .jobqueue_files_body import JobqueueFilesBody
 from .json_patch_document import JsonPatchDocument
 from .microsoft_asp_net_core_mvc_formatters_i_output_formatter import (
@@ -2326,6 +2332,8 @@ __all__ = [
     "GsaNumericParameterValue",
     "GsaNumericRestrictedInterpolationParameterErrorDetail",
     "GsaObjectIdentifier",
+    "GsaPaginatedItemType",
+    "GsaPaginatedResponseOf",
     "GsaPaginationLinks",
     "GsaPagingOptions",
     "GsaParameter",
@@ -2659,6 +2667,7 @@ __all__ = [
     "GsaSubsetsInfo",
     "GsaSwapNameAndReverseNameCircularRecordLinkGroupErrorDetail",
     "GsaSymbolCannotContainCommaUnitErrorDetail",
+    "GsaTItem",
     "GsaTable",
     "GsaTableDeletionException",
     "GsaTableGuidProperty",
@@ -2850,7 +2859,10 @@ __all__ = [
     "GsaVersionState",
     "GsaVersionStateProperty",
     "GsaWithdrawRecordVersionControlException",
+    "GsaXYChartTemplate",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
+    "GsaXYChartTemplatesInfo",
+    "GsaXYTemplateAxis",
     "JobqueueFilesBody",
     "JsonPatchDocument",
     "MicrosoftAspNetCoreMvcFormattersIOutputFormatter",
