@@ -50,7 +50,7 @@ class SchemaUnitsApi(ApiBase):
 
     def create_unit(
         self, *, database_key: "str", body: "Optional[GsaCreateUnit]" = None
-    ) -> "GsaUnit | GsaUnitCreationException | None":
+    ) -> "GsaUnit | None":
         """Create a new unit.
 
         This method makes a synchronous HTTP request.
@@ -58,12 +58,11 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnit
 
         Returns
         -------
-        GsaUnit | GsaUnitCreationException | None
+        GsaUnit | None
         """
         data = self._create_unit_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -117,7 +116,7 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaUnit",
-            400: "GsaUnitCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -148,7 +147,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateUnitSystem
 
         Returns
@@ -232,9 +230,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_unit(
-        self, *, database_key: "str", unit_guid: "str"
-    ) -> "GsaUnitDeletionException | None":
+    def delete_unit(self, *, database_key: "str", unit_guid: "str") -> "None":
         """Delete unit.
 
         This method makes a synchronous HTTP request.
@@ -242,12 +238,11 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
         -------
-        GsaUnitDeletionException | None
+        None
         """
         data = self._delete_unit_with_http_info(
             database_key, unit_guid, _return_http_data_only=True
@@ -298,12 +293,10 @@ class SchemaUnitsApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaUnitDeletionException",
             200: None,
+            400: None,
             403: None,
             404: None,
         }
@@ -332,7 +325,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -424,7 +416,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -514,7 +505,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
 
         Returns
@@ -590,7 +580,7 @@ class SchemaUnitsApi(ApiBase):
 
     def get_unit_conversions(
         self, *, database_key: "str", body: "Optional[GsaGetUnitConversionsRequest]" = None
-    ) -> "GsaUnitConversionsInfo | None":
+    ) -> "GsaUnitConversionsInfo":
         """Gets all the equivalent units and their conversion factors for the specified source units,  including any errors that occurred.
 
         This method makes a synchronous HTTP request.
@@ -598,12 +588,11 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaGetUnitConversionsRequest
 
         Returns
         -------
-        GsaUnitConversionsInfo | None
+        GsaUnitConversionsInfo
         """
         data = self._get_unit_conversions_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -664,12 +653,102 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaUnitConversionsInfo",
-            400: None,
         }
 
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/unit-conversions",
             "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_unit_equivalents(
+        self, *, database_key: "str", unit_guid: "str"
+    ) -> "GsaUnitEquivalentsInfo | None":
+        """Get equivalent units (one per unit system)
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_guid: str
+
+        Returns
+        -------
+        GsaUnitEquivalentsInfo | None
+        """
+        data = self._get_unit_equivalents_with_http_info(
+            database_key, unit_guid, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_unit_equivalents_with_http_info(
+        self, database_key: "str", unit_guid: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_unit_equivalents"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_unit_equivalents'"
+            )
+        # verify the required parameter "unit_guid" is set
+        if "unit_guid" not in params or params["unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_guid' when calling 'get_unit_equivalents'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_guid" in params and unit_guid is not None:
+            path_params["unit-guid"] = params["unit_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaUnitEquivalentsInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units",
+            "GET",
             path_params,
             query_params,
             header_params,
@@ -693,7 +772,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
 
         Returns
@@ -783,7 +861,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -852,13 +929,7 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_unit_usages(
-        self,
-        *,
-        database_key: "str",
-        unit_guid: "str",
-        response_filters: "Optional[list[GsaUnitUsageType]]" = None,
-    ) -> "GsaUnitUsage | None":
+    def get_unit_usages(self, *, database_key: "str", unit_guid: "str") -> "GsaUnitUsage | None":
         """Get all usages of unit
 
         This method makes a synchronous HTTP request.
@@ -866,31 +937,23 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
-        response_filters: list[GsaUnitUsageType]
-            The unit usage types to include in the response. If none are provided, all types are included.
 
         Returns
         -------
         GsaUnitUsage | None
         """
         data = self._get_unit_usages_with_http_info(
-            database_key, unit_guid, response_filters, _return_http_data_only=True
+            database_key, unit_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_unit_usages_with_http_info(
-        self,
-        database_key: "str",
-        unit_guid: "str",
-        response_filters: "Optional[list[GsaUnitUsageType]]" = None,
-        **kwargs: Any,
+        self, database_key: "str", unit_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
             "unit_guid",
-            "response_filters",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -924,9 +987,6 @@ class SchemaUnitsApi(ApiBase):
             path_params["unit-guid"] = params["unit_guid"]
 
         query_params: list[Any] = []
-        if "response_filters" in params and response_filters is not None:
-            query_params.append(("response-filters", params["response_filters"]))
-            collection_formats["response-filters"] = "multi"
 
         header_params: dict[str, Any] = {}
 
@@ -966,7 +1026,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1033,9 +1092,130 @@ class SchemaUnitsApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def set_unit_equivalent(
+        self,
+        *,
+        database_key: "str",
+        unit_guid: "str",
+        unit_system_guid: "str",
+        equivalent_unit_guid: "str",
+    ) -> "None":
+        """Set the equivalent unit for a given unit system
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+        unit_guid: str
+        unit_system_guid: str
+        equivalent_unit_guid: str
+
+        Returns
+        -------
+        None
+        """
+        data = self._set_unit_equivalent_with_http_info(
+            database_key,
+            unit_guid,
+            unit_system_guid,
+            equivalent_unit_guid,
+            _return_http_data_only=True,
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _set_unit_equivalent_with_http_info(
+        self,
+        database_key: "str",
+        unit_guid: "str",
+        unit_system_guid: "str",
+        equivalent_unit_guid: "str",
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "unit_guid",
+            "unit_system_guid",
+            "equivalent_unit_guid",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method set_unit_equivalent"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "unit_guid" is set
+        if "unit_guid" not in params or params["unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_guid' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "unit_system_guid" is set
+        if "unit_system_guid" not in params or params["unit_system_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'unit_system_guid' when calling 'set_unit_equivalent'"
+            )
+        # verify the required parameter "equivalent_unit_guid" is set
+        if "equivalent_unit_guid" not in params or params["equivalent_unit_guid"] is None:
+            raise ValueError(
+                "Missing the required parameter 'equivalent_unit_guid' when calling 'set_unit_equivalent'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+        if "unit_guid" in params and unit_guid is not None:
+            path_params["unit-guid"] = params["unit_guid"]
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            path_params["unit-system-guid"] = params["unit_system_guid"]
+        if "equivalent_unit_guid" in params and equivalent_unit_guid is not None:
+            path_params["equivalent-unit-guid"] = params["equivalent_unit_guid"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/units/{unit-guid}/equivalent-units/unit-system/{unit-system-guid}/equivalent-unit/{equivalent-unit-guid}:set-equivalent-unit",
+            "POST",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def update_unit(
         self, *, database_key: "str", unit_guid: "str", body: "Optional[GsaUpdateUnit]" = None
-    ) -> "GsaUnit | GsaUnitUpdateException | None":
+    ) -> "GsaUnit | None":
         """Update unit.
 
         This method makes a synchronous HTTP request.
@@ -1043,13 +1223,12 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_guid: str
         body: GsaUpdateUnit
 
         Returns
         -------
-        GsaUnit | GsaUnitUpdateException | None
+        GsaUnit | None
         """
         data = self._update_unit_with_http_info(
             database_key, unit_guid, body, _return_http_data_only=True
@@ -1117,7 +1296,7 @@ class SchemaUnitsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaUnit",
-            400: "GsaUnitUpdateException",
+            400: None,
             403: None,
             404: None,
         }
@@ -1152,7 +1331,6 @@ class SchemaUnitsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         unit_system_guid: str
         body: GsaUpdateUnitSystem
 
@@ -1236,102 +1414,6 @@ class SchemaUnitsApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/unit-systems/{unit-system-guid}",
             "PATCH",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def validate_unit_equation(
-        self, *, database_key: "str", body: "Optional[GsaValidateUnitEquationRequest]" = None
-    ) -> "GsaValidateUnitEquationResponse | None":
-        """Check whether the unit equation is valid.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        body: GsaValidateUnitEquationRequest
-
-        Returns
-        -------
-        GsaValidateUnitEquationResponse | None
-        """
-        data = self._validate_unit_equation_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _validate_unit_equation_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GsaValidateUnitEquationRequest]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method validate_unit_equation"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'validate_unit_equation'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaValidateUnitEquationResponse",
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/units:validate-equation",
-            "POST",
             path_params,
             query_params,
             header_params,

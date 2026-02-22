@@ -73,13 +73,11 @@ class GsaLocalPictureTabularColumn(GsaTabularColumn):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "order": "int",
         "roll_up_type": "GsaTabularColumnRollUpType",
         "show_as_link": "bool",
         "summary_row_enabled": "bool",
         "summary_row_roll_up_type": "GsaTabularColumnRollUpType",
         "summary_row_text": "str",
-        "summary_row_translations": "dict(str, str)",
     }
 
     attribute_map: dict[str, str] = {
@@ -88,13 +86,11 @@ class GsaLocalPictureTabularColumn(GsaTabularColumn):
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "order": "order",
         "roll_up_type": "rollUpType",
         "show_as_link": "showAsLink",
         "summary_row_enabled": "summaryRowEnabled",
         "summary_row_roll_up_type": "summaryRowRollUpType",
         "summary_row_text": "summaryRowText",
-        "summary_row_translations": "summaryRowTranslations",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -111,13 +107,11 @@ class GsaLocalPictureTabularColumn(GsaTabularColumn):
         display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        order: "int",
         roll_up_type: "GsaTabularColumnRollUpType",
         show_as_link: "bool",
         summary_row_enabled: "bool",
         summary_row_roll_up_type: "GsaTabularColumnRollUpType",
         summary_row_text: "str",
-        summary_row_translations: "dict[str, str]",
     ) -> None:
         """GsaLocalPictureTabularColumn - a model defined in Swagger
 
@@ -128,26 +122,22 @@ class GsaLocalPictureTabularColumn(GsaTabularColumn):
         display_names: dict[str, str]
         guid: str
         name: str
-        order: int
         roll_up_type: GsaTabularColumnRollUpType
         show_as_link: bool
         summary_row_enabled: bool
         summary_row_roll_up_type: GsaTabularColumnRollUpType
         summary_row_text: str
-        summary_row_translations: dict[str, str]
         """
         super().__init__(
             column_type=column_type,
             display_names=display_names,
             guid=guid,
             name=name,
-            order=order,
             roll_up_type=roll_up_type,
             show_as_link=show_as_link,
             summary_row_enabled=summary_row_enabled,
             summary_row_roll_up_type=summary_row_roll_up_type,
             summary_row_text=summary_row_text,
-            summary_row_translations=summary_row_translations,
         )
         self._default_threshold_type: GsaAttributeThresholdType
 
