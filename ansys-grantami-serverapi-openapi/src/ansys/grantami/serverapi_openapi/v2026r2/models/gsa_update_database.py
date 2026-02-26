@@ -67,6 +67,7 @@ class GsaUpdateDatabase(ModelBase):
         "currency_code": "str",
         "data_source": "str",
         "database_key": "str",
+        "default_table": "GsaSlimEntity",
         "guid": "str",
         "initial_catalog": "str",
         "is_implicit_profile_disabled": "bool",
@@ -89,6 +90,7 @@ class GsaUpdateDatabase(ModelBase):
         "currency_code": "currencyCode",
         "data_source": "dataSource",
         "database_key": "databaseKey",
+        "default_table": "defaultTable",
         "guid": "guid",
         "initial_catalog": "initialCatalog",
         "is_implicit_profile_disabled": "isImplicitProfileDisabled",
@@ -104,7 +106,9 @@ class GsaUpdateDatabase(ModelBase):
         "version_guid": "versionGuid",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "defaultTable": "GsaSlimEntity",
+    }
 
     discriminator: Optional[str] = None
 
@@ -117,6 +121,7 @@ class GsaUpdateDatabase(ModelBase):
         currency_code: "str | None | Unset_Type" = Unset,
         data_source: "str | None | Unset_Type" = Unset,
         database_key: "str | None | Unset_Type" = Unset,
+        default_table: "GsaSlimEntity | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         initial_catalog: "str | None | Unset_Type" = Unset,
         is_implicit_profile_disabled: "bool | Unset_Type" = Unset,
@@ -141,6 +146,7 @@ class GsaUpdateDatabase(ModelBase):
         currency_code: str | None, optional
         data_source: str | None, optional
         database_key: str | None, optional
+        default_table: GsaSlimEntity, optional
         guid: str, optional
         initial_catalog: str | None, optional
         is_implicit_profile_disabled: bool, optional
@@ -174,6 +180,7 @@ class GsaUpdateDatabase(ModelBase):
         self._initial_catalog: str | None | Unset_Type = Unset
         self._additional_sql_parameters: str | None | Unset_Type = Unset
         self._loading_order: int | Unset_Type = Unset
+        self._default_table: GsaSlimEntity | Unset_Type = Unset
 
         if author is not Unset:
             self.author = author
@@ -213,6 +220,8 @@ class GsaUpdateDatabase(ModelBase):
             self.additional_sql_parameters = additional_sql_parameters
         if loading_order is not Unset:
             self.loading_order = loading_order
+        if default_table is not Unset:
+            self.default_table = default_table
 
     @property
     def author(self) -> "str | None | Unset_Type":
@@ -693,6 +702,31 @@ class GsaUpdateDatabase(ModelBase):
         if loading_order is None:
             raise ValueError("Invalid value for 'loading_order', must not be 'None'")
         self._loading_order = loading_order
+
+    @property
+    def default_table(self) -> "GsaSlimEntity | Unset_Type":
+        """Gets the default_table of this GsaUpdateDatabase.
+
+        Returns
+        -------
+        GsaSlimEntity | Unset_Type
+            The default_table of this GsaUpdateDatabase.
+        """
+        return self._default_table
+
+    @default_table.setter
+    def default_table(self, default_table: "GsaSlimEntity | Unset_Type") -> None:
+        """Sets the default_table of this GsaUpdateDatabase.
+
+        Parameters
+        ----------
+        default_table: GsaSlimEntity | Unset_Type
+            The default_table of this GsaUpdateDatabase.
+        """
+        # Field is not nullable
+        if default_table is None:
+            raise ValueError("Invalid value for 'default_table', must not be 'None'")
+        self._default_table = default_table
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

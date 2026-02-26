@@ -124,6 +124,72 @@ class LicenseApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def ensure_advanced_selection_license_available(
+        self,
+    ) -> "MicrosoftAspNetCoreMvcObjectResult | None":
+        """Determines whether the requesting user has an Advanced Selection license available.  If a user has a license available this will be checked out.
+
+        This method makes a synchronous HTTP request.
+
+        Returns
+        -------
+        MicrosoftAspNetCoreMvcObjectResult | None
+        """
+        data = self._ensure_advanced_selection_license_available_with_http_info(
+            _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _ensure_advanced_selection_license_available_with_http_info(self, **kwargs: Any) -> Any:
+        all_params = ["_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method ensure_advanced_selection_license_available"
+                )
+            params[key] = val
+        del params["kwargs"]
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: None,
+            403: "MicrosoftAspNetCoreMvcObjectResult",
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/license/advanced-selection-license:ensure-checked-out",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def ensure_user_license_available(self) -> "MicrosoftAspNetCoreMvcObjectResult | None":
         """Either checks out a user license for the requesting user, or returns an error response if no such license is available.  This method is a no-op because it relies on license check to happen within Granta.Server.Api.Auth.UserContextFilter
 
