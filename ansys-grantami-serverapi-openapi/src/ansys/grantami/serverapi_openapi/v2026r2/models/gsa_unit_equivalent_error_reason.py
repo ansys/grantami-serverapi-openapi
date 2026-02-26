@@ -44,3 +44,5 @@ class GsaUnitEquivalentErrorReason(Enum):
     """
     NOSUCHUNIT = "noSuchUnit"
     NOSUCHUNITSYSTEM = "noSuchUnitSystem"
+    INCOMPATIBLEUNITS = "incompatibleUnits"
+    INVALIDEQUIVALENCETARGET = "invalidEquivalenceTarget"

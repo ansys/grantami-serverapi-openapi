@@ -70,6 +70,7 @@ class GsaDatabase(ModelBase):
         "company": "str",
         "configuration_details": "GsaConfigurationDetails",
         "currency_code": "str",
+        "default_table": "GsaSlimNamedEntity",
         "guid": "str",
         "index_in_sync": "bool",
         "index_out_of_date_duration": "str",
@@ -93,6 +94,7 @@ class GsaDatabase(ModelBase):
         "company": "company",
         "configuration_details": "configurationDetails",
         "currency_code": "currencyCode",
+        "default_table": "defaultTable",
         "guid": "guid",
         "index_in_sync": "indexInSync",
         "index_out_of_date_duration": "indexOutOfDateDuration",
@@ -107,6 +109,7 @@ class GsaDatabase(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
+        "defaultTable": "GsaSlimNamedEntity",
         "status": "GsaDatabaseStatus",
         "userCapabilities": "GsaDatabaseUserCapabilities",
         "configurationDetails": "GsaConfigurationDetails",
@@ -127,6 +130,7 @@ class GsaDatabase(ModelBase):
         company: "str | None | Unset_Type" = Unset,
         configuration_details: "GsaConfigurationDetails | Unset_Type" = Unset,
         currency_code: "str | None | Unset_Type" = Unset,
+        default_table: "GsaSlimNamedEntity | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         index_in_sync: "bool | None | Unset_Type" = Unset,
         index_out_of_date_duration: "str | None | Unset_Type" = Unset,
@@ -152,6 +156,7 @@ class GsaDatabase(ModelBase):
         company: str | None, optional
         configuration_details: GsaConfigurationDetails, optional
         currency_code: str | None, optional
+        default_table: GsaSlimNamedEntity, optional
         guid: str | None, optional
         index_in_sync: bool | None, optional
         index_out_of_date_duration: str | None, optional
@@ -170,6 +175,7 @@ class GsaDatabase(ModelBase):
         self._currency_code: str | None | Unset_Type = Unset
         self._is_access_controlled: bool | None | Unset_Type = Unset
         self._is_implicit_profile_disabled: bool | None | Unset_Type = Unset
+        self._default_table: GsaSlimNamedEntity | Unset_Type = Unset
         self._key: str
         self._status: GsaDatabaseStatus
         self._is_read_only: bool
@@ -197,6 +203,8 @@ class GsaDatabase(ModelBase):
             self.is_access_controlled = is_access_controlled
         if is_implicit_profile_disabled is not Unset:
             self.is_implicit_profile_disabled = is_implicit_profile_disabled
+        if default_table is not Unset:
+            self.default_table = default_table
         self.key = key
         self.status = status
         self.is_read_only = is_read_only
@@ -356,6 +364,31 @@ class GsaDatabase(ModelBase):
             The is_implicit_profile_disabled of this GsaDatabase.
         """
         self._is_implicit_profile_disabled = is_implicit_profile_disabled
+
+    @property
+    def default_table(self) -> "GsaSlimNamedEntity | Unset_Type":
+        """Gets the default_table of this GsaDatabase.
+
+        Returns
+        -------
+        GsaSlimNamedEntity | Unset_Type
+            The default_table of this GsaDatabase.
+        """
+        return self._default_table
+
+    @default_table.setter
+    def default_table(self, default_table: "GsaSlimNamedEntity | Unset_Type") -> None:
+        """Sets the default_table of this GsaDatabase.
+
+        Parameters
+        ----------
+        default_table: GsaSlimNamedEntity | Unset_Type
+            The default_table of this GsaDatabase.
+        """
+        # Field is not nullable
+        if default_table is None:
+            raise ValueError("Invalid value for 'default_table', must not be 'None'")
+        self._default_table = default_table
 
     @property
     def key(self) -> "str":

@@ -79,6 +79,8 @@ class GsaUnitEquivalentErrorDetail(ModelBase):
     discriminator_value_class_map = {
         "noSuchUnit".lower(): "#/components/schemas/GsaNoSuchUnitUnitEquivalentErrorDetail",
         "noSuchUnitSystem".lower(): "#/components/schemas/GsaNoSuchUnitSystemUnitEquivalentErrorDetail",
+        "incompatibleUnits".lower(): "#/components/schemas/GsaIncompatibleUnitsErrorDetail",
+        "invalidEquivalenceTarget".lower(): "#/components/schemas/GsaInvalidEquivalenceTargetErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

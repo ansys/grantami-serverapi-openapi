@@ -110,3 +110,4 @@ class GsaErrorCode(Enum):
     ACCESSCONTROLCATEGORYCREATION = "accessControlCategoryCreation"
     ACCESSCONTROLCATEGORYUPDATE = "accessControlCategoryUpdate"
     GETUNITEQUIVALENTS = "getUnitEquivalents"
+    SETUNITEQUIVALENTS = "setUnitEquivalents"

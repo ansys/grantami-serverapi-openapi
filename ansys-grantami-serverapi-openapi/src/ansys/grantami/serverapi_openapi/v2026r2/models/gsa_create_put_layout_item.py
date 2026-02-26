@@ -62,86 +62,101 @@ class GsaCreatePutLayoutItem(GsaPutLayoutItem):
         The key is attribute name and the value is json key in definition.
     subtype_mapping: dict[str, str]
         The key is the unmangled property name and the value is the corresponding type.
+    discriminator_class_map: dict[str, str]
+        They key is discriminator value and the value is associated subtype.
     discriminator: Optional[str]
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "item": "GsaNewLayoutItem",
+        "item_type": "GsaNewLayoutItemType",
         "type": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
-        "item": "item",
+        "item_type": "itemType",
         "type": "type",
     }
 
     subtype_mapping: dict[str, str] = {
-        "item": "GsaNewLayoutItem",
+        "itemType": "GsaNewLayoutItemType",
     }
 
-    discriminator: Optional[str] = None
+    discriminator_value_class_map = {
+        "attribute".lower(): "#/components/schemas/GsaAttributeCreatePutLayoutItem",
+        "recordLink".lower(): "#/components/schemas/GsaRecordLinkCreatePutLayoutItem",
+        "smartLink".lower(): "#/components/schemas/GsaSmartLinkCreatePutLayoutItem",
+        "crossDatabaseLink".lower(): "#/components/schemas/GsaCrossDatabaseLinkCreatePutLayoutItem",
+        "associationChain".lower(): "#/components/schemas/GsaAssociationChainCreatePutLayoutItem",
+    }
+
+    discriminator: Optional[str] = "item_type"
 
     def __init__(
         self,
         *,
-        item: "GsaNewLayoutItem",
+        item_type: "GsaNewLayoutItemType",
         type: "GsaPutType" = GsaPutType.CREATE,
     ) -> None:
         """GsaCreatePutLayoutItem - a model defined in Swagger
 
         Parameters
         ----------
-        item: GsaNewLayoutItem
+        item_type: GsaNewLayoutItemType
         type: GsaPutType
         """
         super().__init__(type=type)
-        self._item: GsaNewLayoutItem
+        self._item_type: GsaNewLayoutItemType
 
-        self.item = item
+        self.item_type = item_type
 
     @property
-    def item(self) -> "GsaNewLayoutItem":
-        """Gets the item of this GsaCreatePutLayoutItem.
+    def item_type(self) -> "GsaNewLayoutItemType":
+        """Gets the item_type of this GsaCreatePutLayoutItem.
 
         Returns
         -------
-        GsaNewLayoutItem
-            The item of this GsaCreatePutLayoutItem.
+        GsaNewLayoutItemType
+            The item_type of this GsaCreatePutLayoutItem.
         """
-        return self._item
+        return self._item_type
 
-    @item.setter
-    def item(self, item: "GsaNewLayoutItem") -> None:
-        """Sets the item of this GsaCreatePutLayoutItem.
+    @item_type.setter
+    def item_type(self, item_type: "GsaNewLayoutItemType") -> None:
+        """Sets the item_type of this GsaCreatePutLayoutItem.
 
         Parameters
         ----------
-        item: GsaNewLayoutItem
-            The item of this GsaCreatePutLayoutItem.
+        item_type: GsaNewLayoutItemType
+            The item_type of this GsaCreatePutLayoutItem.
         """
         # Field is not nullable
-        if item is None:
-            raise ValueError("Invalid value for 'item', must not be 'None'")
+        if item_type is None:
+            raise ValueError("Invalid value for 'item_type', must not be 'None'")
         # Field is required
-        if item is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'item', must not be 'Unset'")
-        self._item = item
+        if item_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'item_type', must not be 'Unset'")
+        self._item_type = item_type
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
-        """Raises a NotImplementedError for a type without a discriminator defined.
+        """Returns the real base class as determined by the discriminator
 
         Parameters
         ----------
         data: ModelBase
             Object representing a subclass of this class
-
-        Raises
-        ------
-        NotImplementedError
-            This class has no discriminator, and hence no subclasses
         """
-        raise NotImplementedError()
+        discriminator_value = str(data[cls._get_discriminator_field_name()]).lower()
+        # The actual class name is not available in swagger-codegen,
+        # so we have to extract it from the JSON reference
+        return cls.discriminator_value_class_map[discriminator_value].rsplit("/", 1)[-1]
+
+    @classmethod
+    def _get_discriminator_field_name(cls) -> str:
+        assert cls.discriminator
+        name_tokens = cls.discriminator.split("_")
+        later_tokens = [element.capitalize() for element in name_tokens[1:]]
+        return "".join([name_tokens[0], *later_tokens])
 
     def __repr__(self) -> str:
         """For 'print' and 'pprint'"""
