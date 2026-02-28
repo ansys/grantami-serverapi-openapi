@@ -65,13 +65,10 @@ class GsaSlimDatabase(ModelBase):
         "is_read_only": "bool",
         "key": "str",
         "status": "GsaDatabaseStatus",
-        "user_capabilities": "GsaDatabaseUserCapabilities",
-        "configuration_details": "GsaConfigurationDetails",
         "guid": "str",
         "index_in_sync": "bool",
         "index_out_of_date_duration": "str",
         "index_up_to_date": "bool",
-        "issues": "GsaDatabaseIssues",
         "name": "str",
         "schema_version": "str",
         "version_guid": "str",
@@ -82,13 +79,10 @@ class GsaSlimDatabase(ModelBase):
         "is_read_only": "isReadOnly",
         "key": "key",
         "status": "status",
-        "user_capabilities": "userCapabilities",
-        "configuration_details": "configurationDetails",
         "guid": "guid",
         "index_in_sync": "indexInSync",
         "index_out_of_date_duration": "indexOutOfDateDuration",
         "index_up_to_date": "indexUpToDate",
-        "issues": "issues",
         "name": "name",
         "schema_version": "schemaVersion",
         "version_guid": "versionGuid",
@@ -96,9 +90,6 @@ class GsaSlimDatabase(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "status": "GsaDatabaseStatus",
-        "userCapabilities": "GsaDatabaseUserCapabilities",
-        "configurationDetails": "GsaConfigurationDetails",
-        "issues": "GsaDatabaseIssues",
     }
 
     discriminator: Optional[str] = None
@@ -110,13 +101,10 @@ class GsaSlimDatabase(ModelBase):
         is_read_only: "bool",
         key: "str",
         status: "GsaDatabaseStatus",
-        user_capabilities: "GsaDatabaseUserCapabilities",
-        configuration_details: "GsaConfigurationDetails | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         index_in_sync: "bool | None | Unset_Type" = Unset,
         index_out_of_date_duration: "str | None | Unset_Type" = Unset,
         index_up_to_date: "bool | None | Unset_Type" = Unset,
-        issues: "GsaDatabaseIssues | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         schema_version: "str | None | Unset_Type" = Unset,
         version_guid: "str | None | Unset_Type" = Unset,
@@ -129,13 +117,10 @@ class GsaSlimDatabase(ModelBase):
         is_read_only: bool
         key: str
         status: GsaDatabaseStatus
-        user_capabilities: GsaDatabaseUserCapabilities
-        configuration_details: GsaConfigurationDetails, optional
         guid: str | None, optional
         index_in_sync: bool | None, optional
         index_out_of_date_duration: str | None, optional
         index_up_to_date: bool | None, optional
-        issues: GsaDatabaseIssues, optional
         name: str | None, optional
         schema_version: str | None, optional
         version_guid: str | None, optional
@@ -151,9 +136,6 @@ class GsaSlimDatabase(ModelBase):
         self._index_up_to_date: bool | None | Unset_Type = Unset
         self._index_out_of_date_duration: str | None | Unset_Type = Unset
         self._schema_version: str | None | Unset_Type = Unset
-        self._user_capabilities: GsaDatabaseUserCapabilities
-        self._configuration_details: GsaConfigurationDetails | Unset_Type = Unset
-        self._issues: GsaDatabaseIssues | Unset_Type = Unset
 
         self.key = key
         self.status = status
@@ -173,11 +155,6 @@ class GsaSlimDatabase(ModelBase):
             self.index_out_of_date_duration = index_out_of_date_duration
         if schema_version is not Unset:
             self.schema_version = schema_version
-        self.user_capabilities = user_capabilities
-        if configuration_details is not Unset:
-            self.configuration_details = configuration_details
-        if issues is not Unset:
-            self.issues = issues
 
     @property
     def key(self) -> "str":
@@ -446,86 +423,6 @@ class GsaSlimDatabase(ModelBase):
             The schema_version of this GsaSlimDatabase.
         """
         self._schema_version = schema_version
-
-    @property
-    def user_capabilities(self) -> "GsaDatabaseUserCapabilities":
-        """Gets the user_capabilities of this GsaSlimDatabase.
-
-        Returns
-        -------
-        GsaDatabaseUserCapabilities
-            The user_capabilities of this GsaSlimDatabase.
-        """
-        return self._user_capabilities
-
-    @user_capabilities.setter
-    def user_capabilities(self, user_capabilities: "GsaDatabaseUserCapabilities") -> None:
-        """Sets the user_capabilities of this GsaSlimDatabase.
-
-        Parameters
-        ----------
-        user_capabilities: GsaDatabaseUserCapabilities
-            The user_capabilities of this GsaSlimDatabase.
-        """
-        # Field is not nullable
-        if user_capabilities is None:
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'None'")
-        # Field is required
-        if user_capabilities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'user_capabilities', must not be 'Unset'")
-        self._user_capabilities = user_capabilities
-
-    @property
-    def configuration_details(self) -> "GsaConfigurationDetails | Unset_Type":
-        """Gets the configuration_details of this GsaSlimDatabase.
-
-        Returns
-        -------
-        GsaConfigurationDetails | Unset_Type
-            The configuration_details of this GsaSlimDatabase.
-        """
-        return self._configuration_details
-
-    @configuration_details.setter
-    def configuration_details(
-        self, configuration_details: "GsaConfigurationDetails | Unset_Type"
-    ) -> None:
-        """Sets the configuration_details of this GsaSlimDatabase.
-
-        Parameters
-        ----------
-        configuration_details: GsaConfigurationDetails | Unset_Type
-            The configuration_details of this GsaSlimDatabase.
-        """
-        # Field is not nullable
-        if configuration_details is None:
-            raise ValueError("Invalid value for 'configuration_details', must not be 'None'")
-        self._configuration_details = configuration_details
-
-    @property
-    def issues(self) -> "GsaDatabaseIssues | Unset_Type":
-        """Gets the issues of this GsaSlimDatabase.
-
-        Returns
-        -------
-        GsaDatabaseIssues | Unset_Type
-            The issues of this GsaSlimDatabase.
-        """
-        return self._issues
-
-    @issues.setter
-    def issues(self, issues: "GsaDatabaseIssues | Unset_Type") -> None:
-        """Sets the issues of this GsaSlimDatabase.
-
-        Parameters
-        ----------
-        issues: GsaDatabaseIssues | Unset_Type
-            The issues of this GsaSlimDatabase.
-        """
-        # Field is not nullable
-        if issues is None:
-            raise ValueError("Invalid value for 'issues', must not be 'None'")
-        self._issues = issues
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
