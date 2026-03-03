@@ -134,6 +134,7 @@ from .models.gsa_access_control_category_update_exception import (
     GsaAccessControlCategoryUpdateException,
 )
 from .models.gsa_access_control_info import GsaAccessControlInfo
+from .models.gsa_access_control_level import GsaAccessControlLevel
 from .models.gsa_access_control_mode import GsaAccessControlMode
 from .models.gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .models.gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
@@ -1150,9 +1151,14 @@ from .models.gsa_parameter_value_used_by_type import GsaParameterValueUsedByType
 from .models.gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .models.gsa_parameters_info import GsaParametersInfo
 from .models.gsa_permission import GsaPermission
+from .models.gsa_permission_access_control import GsaPermissionAccessControl
 from .models.gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .models.gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .models.gsa_permission_category import GsaPermissionCategory
+from .models.gsa_permission_category_access_control import GsaPermissionCategoryAccessControl
+from .models.gsa_permission_category_access_control_info import (
+    GsaPermissionCategoryAccessControlInfo,
+)
 from .models.gsa_permission_category_creation_exception import (
     GsaPermissionCategoryCreationException,
 )
@@ -1847,6 +1853,7 @@ __all__ = [
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
     "GsaAccessControlInfo",
+    "GsaAccessControlLevel",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
@@ -2601,9 +2608,12 @@ __all__ = [
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
     "GsaPermission",
+    "GsaPermissionAccessControl",
     "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
+    "GsaPermissionCategoryAccessControl",
+    "GsaPermissionCategoryAccessControlInfo",
     "GsaPermissionCategoryCreationException",
     "GsaPermissionCategoryErrorDetail",
     "GsaPermissionCategoryErrorReason",
