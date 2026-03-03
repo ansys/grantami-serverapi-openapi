@@ -73,6 +73,8 @@ class GsaTable(ModelBase):
         "subsets": "list[GsaSlimSubset]",
         "table_types": "list[str]",
         "version_state": "GsaVersionState",
+        "datasheet_footer": "str",
+        "datasheet_header": "str",
         "default_layout": "GsaSlimLayout",
         "default_subset": "GsaSlimSubset",
         "legal_disclaimer": "str",
@@ -91,6 +93,8 @@ class GsaTable(ModelBase):
         "subsets": "subsets",
         "table_types": "tableTypes",
         "version_state": "versionState",
+        "datasheet_footer": "datasheetFooter",
+        "datasheet_header": "datasheetHeader",
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
         "legal_disclaimer": "legalDisclaimer",
@@ -121,6 +125,8 @@ class GsaTable(ModelBase):
         subsets: "list[GsaSlimSubset]",
         table_types: "list[str]",
         version_state: "GsaVersionState",
+        datasheet_footer: "str | None | Unset_Type" = Unset,
+        datasheet_header: "str | None | Unset_Type" = Unset,
         default_layout: "GsaSlimLayout | Unset_Type" = Unset,
         default_subset: "GsaSlimSubset | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
@@ -141,6 +147,8 @@ class GsaTable(ModelBase):
         subsets: list[GsaSlimSubset]
         table_types: list[str]
         version_state: GsaVersionState
+        datasheet_footer: str | None, optional
+        datasheet_header: str | None, optional
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
         legal_disclaimer: str | None, optional
@@ -152,6 +160,8 @@ class GsaTable(ModelBase):
         self._version_state: GsaVersionState
         self._order: int
         self._legal_disclaimer: str | None | Unset_Type = Unset
+        self._datasheet_header: str | None | Unset_Type = Unset
+        self._datasheet_footer: str | None | Unset_Type = Unset
         self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
@@ -171,6 +181,10 @@ class GsaTable(ModelBase):
         self.order = order
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
+        if datasheet_header is not Unset:
+            self.datasheet_header = datasheet_header
+        if datasheet_footer is not Unset:
+            self.datasheet_footer = datasheet_footer
         self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
@@ -363,6 +377,50 @@ class GsaTable(ModelBase):
             The legal_disclaimer of this GsaTable.
         """
         self._legal_disclaimer = legal_disclaimer
+
+    @property
+    def datasheet_header(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_header of this GsaTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_header of this GsaTable.
+        """
+        return self._datasheet_header
+
+    @datasheet_header.setter
+    def datasheet_header(self, datasheet_header: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_header of this GsaTable.
+
+        Parameters
+        ----------
+        datasheet_header: str | None | Unset_Type
+            The datasheet_header of this GsaTable.
+        """
+        self._datasheet_header = datasheet_header
+
+    @property
+    def datasheet_footer(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_footer of this GsaTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_footer of this GsaTable.
+        """
+        return self._datasheet_footer
+
+    @datasheet_footer.setter
+    def datasheet_footer(self, datasheet_footer: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_footer of this GsaTable.
+
+        Parameters
+        ----------
+        datasheet_footer: str | None | Unset_Type
+            The datasheet_footer of this GsaTable.
+        """
+        self._datasheet_footer = datasheet_footer
 
     @property
     def database_key(self) -> "str":

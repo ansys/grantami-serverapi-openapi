@@ -61,6 +61,8 @@ class GsaUpdateTable(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "datasheet_footer": "str",
+        "datasheet_header": "str",
         "default_layout_guid": "str",
         "default_subset_guid": "str",
         "guid": "str",
@@ -71,6 +73,8 @@ class GsaUpdateTable(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "datasheet_footer": "datasheetFooter",
+        "datasheet_header": "datasheetHeader",
         "default_layout_guid": "defaultLayoutGuid",
         "default_subset_guid": "defaultSubsetGuid",
         "guid": "guid",
@@ -87,6 +91,8 @@ class GsaUpdateTable(ModelBase):
     def __init__(
         self,
         *,
+        datasheet_footer: "str | None | Unset_Type" = Unset,
+        datasheet_header: "str | None | Unset_Type" = Unset,
         default_layout_guid: "str | None | Unset_Type" = Unset,
         default_subset_guid: "str | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -99,6 +105,8 @@ class GsaUpdateTable(ModelBase):
 
         Parameters
         ----------
+        datasheet_footer: str | None, optional
+        datasheet_header: str | None, optional
         default_layout_guid: str | None, optional
         default_subset_guid: str | None, optional
         guid: str, optional
@@ -112,6 +120,8 @@ class GsaUpdateTable(ModelBase):
         self._default_subset_guid: str | None | Unset_Type = Unset
         self._default_layout_guid: str | None | Unset_Type = Unset
         self._legal_disclaimer: str | None | Unset_Type = Unset
+        self._datasheet_header: str | None | Unset_Type = Unset
+        self._datasheet_footer: str | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
@@ -125,6 +135,10 @@ class GsaUpdateTable(ModelBase):
             self.default_layout_guid = default_layout_guid
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
+        if datasheet_header is not Unset:
+            self.datasheet_header = datasheet_header
+        if datasheet_footer is not Unset:
+            self.datasheet_footer = datasheet_footer
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -245,6 +259,50 @@ class GsaUpdateTable(ModelBase):
             The legal_disclaimer of this GsaUpdateTable.
         """
         self._legal_disclaimer = legal_disclaimer
+
+    @property
+    def datasheet_header(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_header of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_header of this GsaUpdateTable.
+        """
+        return self._datasheet_header
+
+    @datasheet_header.setter
+    def datasheet_header(self, datasheet_header: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_header of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        datasheet_header: str | None | Unset_Type
+            The datasheet_header of this GsaUpdateTable.
+        """
+        self._datasheet_header = datasheet_header
+
+    @property
+    def datasheet_footer(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_footer of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_footer of this GsaUpdateTable.
+        """
+        return self._datasheet_footer
+
+    @datasheet_footer.setter
+    def datasheet_footer(self, datasheet_footer: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_footer of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        datasheet_footer: str | None | Unset_Type
+            The datasheet_footer of this GsaUpdateTable.
+        """
+        self._datasheet_footer = datasheet_footer
 
     @property
     def name(self) -> "str | Unset_Type":
