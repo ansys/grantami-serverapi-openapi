@@ -69,6 +69,7 @@ from .gsa_access_control_category_no_such_entity_type import (
 from .gsa_access_control_category_table_mapping import GsaAccessControlCategoryTableMapping
 from .gsa_access_control_category_update_exception import GsaAccessControlCategoryUpdateException
 from .gsa_access_control_info import GsaAccessControlInfo
+from .gsa_access_control_level import GsaAccessControlLevel
 from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
@@ -1023,9 +1024,12 @@ from .gsa_parameter_value_used_by_type import GsaParameterValueUsedByType
 from .gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .gsa_parameters_info import GsaParametersInfo
 from .gsa_permission import GsaPermission
+from .gsa_permission_access_control import GsaPermissionAccessControl
 from .gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .gsa_permission_category import GsaPermissionCategory
+from .gsa_permission_category_access_control import GsaPermissionCategoryAccessControl
+from .gsa_permission_category_access_control_info import GsaPermissionCategoryAccessControlInfo
 from .gsa_permission_category_creation_exception import GsaPermissionCategoryCreationException
 from .gsa_permission_category_error_detail import GsaPermissionCategoryErrorDetail
 from .gsa_permission_category_error_reason import GsaPermissionCategoryErrorReason
@@ -1637,6 +1641,7 @@ __all__ = [
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
     "GsaAccessControlInfo",
+    "GsaAccessControlLevel",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
@@ -2391,9 +2396,12 @@ __all__ = [
     "GsaParameterWithDataValue",
     "GsaParametersInfo",
     "GsaPermission",
+    "GsaPermissionAccessControl",
     "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
+    "GsaPermissionCategoryAccessControl",
+    "GsaPermissionCategoryAccessControlInfo",
     "GsaPermissionCategoryCreationException",
     "GsaPermissionCategoryErrorDetail",
     "GsaPermissionCategoryErrorReason",
