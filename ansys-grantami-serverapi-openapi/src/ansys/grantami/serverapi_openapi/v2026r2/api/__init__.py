@@ -73,6 +73,7 @@ from .schema___layouts_api import SchemaLayoutsApi
 from .schema___parameters_api import SchemaParametersApi
 from .schema___profile_tables_api import SchemaProfileTablesApi
 from .schema___profiles_api import SchemaProfilesApi
+from .schema___quality_systems_api import SchemaQualitySystemsApi
 from .schema___record_link_groups_api import SchemaRecordLinkGroupsApi
 from .schema___replacement_strings_api import SchemaReplacementStringsApi
 from .schema___search_masks_api import SchemaSearchMasksApi
@@ -135,6 +136,7 @@ __all__ = [
     "SchemaParametersApi",
     "SchemaProfileTablesApi",
     "SchemaProfilesApi",
+    "SchemaQualitySystemsApi",
     "SchemaRecordLinkGroupsApi",
     "SchemaReplacementStringsApi",
     "SchemaSearchMasksApi",

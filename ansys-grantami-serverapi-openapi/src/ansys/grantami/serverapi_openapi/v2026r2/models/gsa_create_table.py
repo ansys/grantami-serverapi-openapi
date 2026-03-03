@@ -62,6 +62,8 @@ class GsaCreateTable(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
+        "datasheet_footer": "str",
+        "datasheet_header": "str",
         "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
@@ -70,6 +72,8 @@ class GsaCreateTable(ModelBase):
 
     attribute_map: dict[str, str] = {
         "name": "name",
+        "datasheet_footer": "datasheetFooter",
+        "datasheet_header": "datasheetHeader",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
@@ -84,6 +88,8 @@ class GsaCreateTable(ModelBase):
         self,
         *,
         name: "str",
+        datasheet_footer: "str | None | Unset_Type" = Unset,
+        datasheet_header: "str | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
@@ -94,6 +100,8 @@ class GsaCreateTable(ModelBase):
         Parameters
         ----------
         name: str
+        datasheet_footer: str | None, optional
+        datasheet_header: str | None, optional
         guid: str, optional
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
@@ -102,6 +110,8 @@ class GsaCreateTable(ModelBase):
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
         self._legal_disclaimer: str | None | Unset_Type = Unset
+        self._datasheet_header: str | None | Unset_Type = Unset
+        self._datasheet_footer: str | None | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
 
@@ -111,6 +121,10 @@ class GsaCreateTable(ModelBase):
             self.is_hidden_from_search = is_hidden_from_search
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
+        if datasheet_header is not Unset:
+            self.datasheet_header = datasheet_header
+        if datasheet_footer is not Unset:
+            self.datasheet_footer = datasheet_footer
         self.name = name
         if guid is not Unset:
             self.guid = guid
@@ -186,6 +200,50 @@ class GsaCreateTable(ModelBase):
             The legal_disclaimer of this GsaCreateTable.
         """
         self._legal_disclaimer = legal_disclaimer
+
+    @property
+    def datasheet_header(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_header of this GsaCreateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_header of this GsaCreateTable.
+        """
+        return self._datasheet_header
+
+    @datasheet_header.setter
+    def datasheet_header(self, datasheet_header: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_header of this GsaCreateTable.
+
+        Parameters
+        ----------
+        datasheet_header: str | None | Unset_Type
+            The datasheet_header of this GsaCreateTable.
+        """
+        self._datasheet_header = datasheet_header
+
+    @property
+    def datasheet_footer(self) -> "str | None | Unset_Type":
+        """Gets the datasheet_footer of this GsaCreateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The datasheet_footer of this GsaCreateTable.
+        """
+        return self._datasheet_footer
+
+    @datasheet_footer.setter
+    def datasheet_footer(self, datasheet_footer: "str | None | Unset_Type") -> None:
+        """Sets the datasheet_footer of this GsaCreateTable.
+
+        Parameters
+        ----------
+        datasheet_footer: str | None | Unset_Type
+            The datasheet_footer of this GsaCreateTable.
+        """
+        self._datasheet_footer = datasheet_footer
 
     @property
     def name(self) -> "str":
