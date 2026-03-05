@@ -70,6 +70,8 @@ class GsaUpdateTable(ModelBase):
         "is_hidden_from_search": "bool",
         "legal_disclaimer": "str",
         "name": "str",
+        "should_show_version_control_signatures": "bool",
+        "table_type": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -82,6 +84,8 @@ class GsaUpdateTable(ModelBase):
         "is_hidden_from_search": "isHiddenFromSearch",
         "legal_disclaimer": "legalDisclaimer",
         "name": "name",
+        "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
+        "table_type": "tableType",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -100,6 +104,8 @@ class GsaUpdateTable(ModelBase):
         is_hidden_from_search: "bool | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
+        should_show_version_control_signatures: "bool | Unset_Type" = Unset,
+        table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateTable - a model defined in Swagger
 
@@ -114,6 +120,8 @@ class GsaUpdateTable(ModelBase):
         is_hidden_from_search: bool, optional
         legal_disclaimer: str | None, optional
         name: str, optional
+        should_show_version_control_signatures: bool, optional
+        table_type: str | None, optional
         """
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
@@ -122,6 +130,8 @@ class GsaUpdateTable(ModelBase):
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
+        self._table_type: str | None | Unset_Type = Unset
+        self._should_show_version_control_signatures: bool | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
@@ -139,6 +149,10 @@ class GsaUpdateTable(ModelBase):
             self.datasheet_header = datasheet_header
         if datasheet_footer is not Unset:
             self.datasheet_footer = datasheet_footer
+        if table_type is not Unset:
+            self.table_type = table_type
+        if should_show_version_control_signatures is not Unset:
+            self.should_show_version_control_signatures = should_show_version_control_signatures
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -303,6 +317,57 @@ class GsaUpdateTable(ModelBase):
             The datasheet_footer of this GsaUpdateTable.
         """
         self._datasheet_footer = datasheet_footer
+
+    @property
+    def table_type(self) -> "str | None | Unset_Type":
+        """Gets the table_type of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The table_type of this GsaUpdateTable.
+        """
+        return self._table_type
+
+    @table_type.setter
+    def table_type(self, table_type: "str | None | Unset_Type") -> None:
+        """Sets the table_type of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        table_type: str | None | Unset_Type
+            The table_type of this GsaUpdateTable.
+        """
+        self._table_type = table_type
+
+    @property
+    def should_show_version_control_signatures(self) -> "bool | Unset_Type":
+        """Gets the should_show_version_control_signatures of this GsaUpdateTable.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The should_show_version_control_signatures of this GsaUpdateTable.
+        """
+        return self._should_show_version_control_signatures
+
+    @should_show_version_control_signatures.setter
+    def should_show_version_control_signatures(
+        self, should_show_version_control_signatures: "bool | Unset_Type"
+    ) -> None:
+        """Sets the should_show_version_control_signatures of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        should_show_version_control_signatures: bool | Unset_Type
+            The should_show_version_control_signatures of this GsaUpdateTable.
+        """
+        # Field is not nullable
+        if should_show_version_control_signatures is None:
+            raise ValueError(
+                "Invalid value for 'should_show_version_control_signatures', must not be 'None'"
+            )
+        self._should_show_version_control_signatures = should_show_version_control_signatures
 
     @property
     def name(self) -> "str | Unset_Type":

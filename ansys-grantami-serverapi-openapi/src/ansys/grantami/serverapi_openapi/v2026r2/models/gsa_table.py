@@ -78,6 +78,8 @@ class GsaTable(ModelBase):
         "default_layout": "GsaSlimLayout",
         "default_subset": "GsaSlimSubset",
         "legal_disclaimer": "str",
+        "should_show_version_control_signatures": "bool",
+        "table_type": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -98,6 +100,8 @@ class GsaTable(ModelBase):
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
         "legal_disclaimer": "legalDisclaimer",
+        "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
+        "table_type": "tableType",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -130,6 +134,8 @@ class GsaTable(ModelBase):
         default_layout: "GsaSlimLayout | Unset_Type" = Unset,
         default_subset: "GsaSlimSubset | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
+        should_show_version_control_signatures: "bool | Unset_Type" = Unset,
+        table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTable - a model defined in Swagger
 
@@ -152,6 +158,8 @@ class GsaTable(ModelBase):
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
         legal_disclaimer: str | None, optional
+        should_show_version_control_signatures: bool, optional
+        table_type: str | None, optional
         """
         self._default_subset: GsaSlimSubset | Unset_Type = Unset
         self._subsets: list[GsaSlimSubset]
@@ -162,6 +170,8 @@ class GsaTable(ModelBase):
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
+        self._table_type: str | None | Unset_Type = Unset
+        self._should_show_version_control_signatures: bool | Unset_Type = Unset
         self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
@@ -185,6 +195,10 @@ class GsaTable(ModelBase):
             self.datasheet_header = datasheet_header
         if datasheet_footer is not Unset:
             self.datasheet_footer = datasheet_footer
+        if table_type is not Unset:
+            self.table_type = table_type
+        if should_show_version_control_signatures is not Unset:
+            self.should_show_version_control_signatures = should_show_version_control_signatures
         self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
@@ -421,6 +435,59 @@ class GsaTable(ModelBase):
             The datasheet_footer of this GsaTable.
         """
         self._datasheet_footer = datasheet_footer
+
+    @property
+    def table_type(self) -> "str | None | Unset_Type":
+        """Gets the table_type of this GsaTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The table_type of this GsaTable.
+        """
+        return self._table_type
+
+    @table_type.setter
+    def table_type(self, table_type: "str | None | Unset_Type") -> None:
+        """Sets the table_type of this GsaTable.
+
+        Parameters
+        ----------
+        table_type: str | None | Unset_Type
+            The table_type of this GsaTable.
+        """
+        self._table_type = table_type
+
+    @property
+    def should_show_version_control_signatures(self) -> "bool | Unset_Type":
+        """Gets the should_show_version_control_signatures of this GsaTable.
+        Gets or sets whether version control signatures should be shown when data is shown to a user.  'Version control signatures' show when a record was released, who released it and on which revision.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The should_show_version_control_signatures of this GsaTable.
+        """
+        return self._should_show_version_control_signatures
+
+    @should_show_version_control_signatures.setter
+    def should_show_version_control_signatures(
+        self, should_show_version_control_signatures: "bool | Unset_Type"
+    ) -> None:
+        """Sets the should_show_version_control_signatures of this GsaTable.
+        Gets or sets whether version control signatures should be shown when data is shown to a user.  'Version control signatures' show when a record was released, who released it and on which revision.
+
+        Parameters
+        ----------
+        should_show_version_control_signatures: bool | Unset_Type
+            The should_show_version_control_signatures of this GsaTable.
+        """
+        # Field is not nullable
+        if should_show_version_control_signatures is None:
+            raise ValueError(
+                "Invalid value for 'should_show_version_control_signatures', must not be 'None'"
+            )
+        self._should_show_version_control_signatures = should_show_version_control_signatures
 
     @property
     def database_key(self) -> "str":
