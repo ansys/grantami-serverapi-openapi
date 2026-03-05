@@ -25,6 +25,7 @@ definition. All development is done in the following repositories:
 
 - [ansys-grantami-recordlists](https://github.com/pyansys/grantami-recordlists)
 - [ansys-grantami-jobqueue](https://github.com/pyansys/grantami-jobqueue)
+- [ansys-grantami-system](https://github.com/ansys/grantami-system)
 
 ## Releasing
 
