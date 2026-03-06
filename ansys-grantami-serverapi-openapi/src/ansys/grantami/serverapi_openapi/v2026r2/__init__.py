@@ -1602,6 +1602,7 @@ from .models.gsa_unit_usage_data_modification_error_detail import (
     GsaUnitUsageDataModificationErrorDetail,
 )
 from .models.gsa_unit_usage_type import GsaUnitUsageType
+from .models.gsa_units_grouping_info import GsaUnitsGroupingInfo
 from .models.gsa_units_info import GsaUnitsInfo
 from .models.gsa_unknown_unit_symbol_unit_equation_error_detail import (
     GsaUnknownUnitSymbolUnitEquationErrorDetail,
@@ -2986,6 +2987,7 @@ __all__ = [
     "GsaUnitUsage",
     "GsaUnitUsageDataModificationErrorDetail",
     "GsaUnitUsageType",
+    "GsaUnitsGroupingInfo",
     "GsaUnitsInfo",
     "GsaUnknownUnitSymbolUnitEquationErrorDetail",
     "GsaUnresolvedAttributeGuidsErrorDetail",
