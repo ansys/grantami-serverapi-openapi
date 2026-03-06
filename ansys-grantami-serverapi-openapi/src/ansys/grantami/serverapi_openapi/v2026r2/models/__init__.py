@@ -1454,6 +1454,7 @@ from .gsa_unit_update_exception import GsaUnitUpdateException
 from .gsa_unit_usage import GsaUnitUsage
 from .gsa_unit_usage_data_modification_error_detail import GsaUnitUsageDataModificationErrorDetail
 from .gsa_unit_usage_type import GsaUnitUsageType
+from .gsa_units_grouping_info import GsaUnitsGroupingInfo
 from .gsa_units_info import GsaUnitsInfo
 from .gsa_unknown_unit_symbol_unit_equation_error_detail import (
     GsaUnknownUnitSymbolUnitEquationErrorDetail,
@@ -2772,6 +2773,7 @@ __all__ = [
     "GsaUnitUsage",
     "GsaUnitUsageDataModificationErrorDetail",
     "GsaUnitUsageType",
+    "GsaUnitsGroupingInfo",
     "GsaUnitsInfo",
     "GsaUnknownUnitSymbolUnitEquationErrorDetail",
     "GsaUnresolvedAttributeGuidsErrorDetail",
