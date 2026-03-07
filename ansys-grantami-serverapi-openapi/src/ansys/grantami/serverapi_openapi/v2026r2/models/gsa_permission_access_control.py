@@ -61,18 +61,19 @@ class GsaPermissionAccessControl(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "access_control_level": "GsaAccessControlLevel",
+        "can_read": "bool",
+        "can_write": "bool",
         "permission": "GsaSlimEntity",
     }
 
     attribute_map: dict[str, str] = {
-        "access_control_level": "accessControlLevel",
+        "can_read": "canRead",
+        "can_write": "canWrite",
         "permission": "permission",
     }
 
     subtype_mapping: dict[str, str] = {
         "permission": "GsaSlimEntity",
-        "accessControlLevel": "GsaAccessControlLevel",
     }
 
     discriminator: Optional[str] = None
@@ -80,21 +81,25 @@ class GsaPermissionAccessControl(ModelBase):
     def __init__(
         self,
         *,
-        access_control_level: "GsaAccessControlLevel",
+        can_read: "bool",
+        can_write: "bool",
         permission: "GsaSlimEntity",
     ) -> None:
         """GsaPermissionAccessControl - a model defined in Swagger
 
         Parameters
         ----------
-        access_control_level: GsaAccessControlLevel
+        can_read: bool
+        can_write: bool
         permission: GsaSlimEntity
         """
         self._permission: GsaSlimEntity
-        self._access_control_level: GsaAccessControlLevel
+        self._can_read: bool
+        self._can_write: bool
 
         self.permission = permission
-        self.access_control_level = access_control_level
+        self.can_read = can_read
+        self.can_write = can_write
 
     @property
     def permission(self) -> "GsaSlimEntity":
@@ -125,32 +130,60 @@ class GsaPermissionAccessControl(ModelBase):
         self._permission = permission
 
     @property
-    def access_control_level(self) -> "GsaAccessControlLevel":
-        """Gets the access_control_level of this GsaPermissionAccessControl.
+    def can_read(self) -> "bool":
+        """Gets the can_read of this GsaPermissionAccessControl.
 
         Returns
         -------
-        GsaAccessControlLevel
-            The access_control_level of this GsaPermissionAccessControl.
+        bool
+            The can_read of this GsaPermissionAccessControl.
         """
-        return self._access_control_level
+        return self._can_read
 
-    @access_control_level.setter
-    def access_control_level(self, access_control_level: "GsaAccessControlLevel") -> None:
-        """Sets the access_control_level of this GsaPermissionAccessControl.
+    @can_read.setter
+    def can_read(self, can_read: "bool") -> None:
+        """Sets the can_read of this GsaPermissionAccessControl.
 
         Parameters
         ----------
-        access_control_level: GsaAccessControlLevel
-            The access_control_level of this GsaPermissionAccessControl.
+        can_read: bool
+            The can_read of this GsaPermissionAccessControl.
         """
         # Field is not nullable
-        if access_control_level is None:
-            raise ValueError("Invalid value for 'access_control_level', must not be 'None'")
+        if can_read is None:
+            raise ValueError("Invalid value for 'can_read', must not be 'None'")
         # Field is required
-        if access_control_level is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'access_control_level', must not be 'Unset'")
-        self._access_control_level = access_control_level
+        if can_read is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_read', must not be 'Unset'")
+        self._can_read = can_read
+
+    @property
+    def can_write(self) -> "bool":
+        """Gets the can_write of this GsaPermissionAccessControl.
+
+        Returns
+        -------
+        bool
+            The can_write of this GsaPermissionAccessControl.
+        """
+        return self._can_write
+
+    @can_write.setter
+    def can_write(self, can_write: "bool") -> None:
+        """Sets the can_write of this GsaPermissionAccessControl.
+
+        Parameters
+        ----------
+        can_write: bool
+            The can_write of this GsaPermissionAccessControl.
+        """
+        # Field is not nullable
+        if can_write is None:
+            raise ValueError("Invalid value for 'can_write', must not be 'None'")
+        # Field is required
+        if can_write is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'can_write', must not be 'Unset'")
+        self._can_write = can_write
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
