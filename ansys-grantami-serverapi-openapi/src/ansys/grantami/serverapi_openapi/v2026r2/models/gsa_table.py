@@ -61,7 +61,6 @@ class GsaTable(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "database_key": "str",
         "display_names": "dict(str, str)",
         "guid": "str",
         "is_hidden_from_browse": "bool",
@@ -69,21 +68,14 @@ class GsaTable(ModelBase):
         "is_versioned": "bool",
         "layouts": "list[GsaSlimLayout]",
         "name": "str",
-        "order": "int",
         "subsets": "list[GsaSlimSubset]",
         "table_types": "list[str]",
         "version_state": "GsaVersionState",
-        "datasheet_footer": "str",
-        "datasheet_header": "str",
         "default_layout": "GsaSlimLayout",
         "default_subset": "GsaSlimSubset",
-        "legal_disclaimer": "str",
-        "should_show_version_control_signatures": "bool",
-        "table_type": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "database_key": "databaseKey",
         "display_names": "displayNames",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
@@ -91,17 +83,11 @@ class GsaTable(ModelBase):
         "is_versioned": "isVersioned",
         "layouts": "layouts",
         "name": "name",
-        "order": "order",
         "subsets": "subsets",
         "table_types": "tableTypes",
         "version_state": "versionState",
-        "datasheet_footer": "datasheetFooter",
-        "datasheet_header": "datasheetHeader",
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
-        "legal_disclaimer": "legalDisclaimer",
-        "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
-        "table_type": "tableType",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -117,7 +103,6 @@ class GsaTable(ModelBase):
     def __init__(
         self,
         *,
-        database_key: "str",
         display_names: "dict[str, str]",
         guid: "str",
         is_hidden_from_browse: "bool",
@@ -125,23 +110,16 @@ class GsaTable(ModelBase):
         is_versioned: "bool",
         layouts: "list[GsaSlimLayout]",
         name: "str",
-        order: "int",
         subsets: "list[GsaSlimSubset]",
         table_types: "list[str]",
         version_state: "GsaVersionState",
-        datasheet_footer: "str | None | Unset_Type" = Unset,
-        datasheet_header: "str | None | Unset_Type" = Unset,
         default_layout: "GsaSlimLayout | Unset_Type" = Unset,
         default_subset: "GsaSlimSubset | Unset_Type" = Unset,
-        legal_disclaimer: "str | None | Unset_Type" = Unset,
-        should_show_version_control_signatures: "bool | Unset_Type" = Unset,
-        table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTable - a model defined in Swagger
 
         Parameters
         ----------
-        database_key: str
         display_names: dict[str, str]
         guid: str
         is_hidden_from_browse: bool
@@ -149,30 +127,17 @@ class GsaTable(ModelBase):
         is_versioned: bool
         layouts: list[GsaSlimLayout]
         name: str
-        order: int
         subsets: list[GsaSlimSubset]
         table_types: list[str]
         version_state: GsaVersionState
-        datasheet_footer: str | None, optional
-        datasheet_header: str | None, optional
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
-        legal_disclaimer: str | None, optional
-        should_show_version_control_signatures: bool, optional
-        table_type: str | None, optional
         """
         self._default_subset: GsaSlimSubset | Unset_Type = Unset
         self._subsets: list[GsaSlimSubset]
         self._default_layout: GsaSlimLayout | Unset_Type = Unset
         self._layouts: list[GsaSlimLayout]
         self._version_state: GsaVersionState
-        self._order: int
-        self._legal_disclaimer: str | None | Unset_Type = Unset
-        self._datasheet_header: str | None | Unset_Type = Unset
-        self._datasheet_footer: str | None | Unset_Type = Unset
-        self._table_type: str | None | Unset_Type = Unset
-        self._should_show_version_control_signatures: bool | Unset_Type = Unset
-        self._database_key: str
         self._is_hidden_from_browse: bool
         self._is_hidden_from_search: bool
         self._is_versioned: bool
@@ -188,18 +153,6 @@ class GsaTable(ModelBase):
             self.default_layout = default_layout
         self.layouts = layouts
         self.version_state = version_state
-        self.order = order
-        if legal_disclaimer is not Unset:
-            self.legal_disclaimer = legal_disclaimer
-        if datasheet_header is not Unset:
-            self.datasheet_header = datasheet_header
-        if datasheet_footer is not Unset:
-            self.datasheet_footer = datasheet_footer
-        if table_type is not Unset:
-            self.table_type = table_type
-        if should_show_version_control_signatures is not Unset:
-            self.should_show_version_control_signatures = should_show_version_control_signatures
-        self.database_key = database_key
         self.is_hidden_from_browse = is_hidden_from_browse
         self.is_hidden_from_search = is_hidden_from_search
         self.is_versioned = is_versioned
@@ -343,181 +296,6 @@ class GsaTable(ModelBase):
         self._version_state = version_state
 
     @property
-    def order(self) -> "int":
-        """Gets the order of this GsaTable.
-
-        Returns
-        -------
-        int
-            The order of this GsaTable.
-        """
-        return self._order
-
-    @order.setter
-    def order(self, order: "int") -> None:
-        """Sets the order of this GsaTable.
-
-        Parameters
-        ----------
-        order: int
-            The order of this GsaTable.
-        """
-        # Field is not nullable
-        if order is None:
-            raise ValueError("Invalid value for 'order', must not be 'None'")
-        # Field is required
-        if order is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'order', must not be 'Unset'")
-        self._order = order
-
-    @property
-    def legal_disclaimer(self) -> "str | None | Unset_Type":
-        """Gets the legal_disclaimer of this GsaTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The legal_disclaimer of this GsaTable.
-        """
-        return self._legal_disclaimer
-
-    @legal_disclaimer.setter
-    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
-        """Sets the legal_disclaimer of this GsaTable.
-
-        Parameters
-        ----------
-        legal_disclaimer: str | None | Unset_Type
-            The legal_disclaimer of this GsaTable.
-        """
-        self._legal_disclaimer = legal_disclaimer
-
-    @property
-    def datasheet_header(self) -> "str | None | Unset_Type":
-        """Gets the datasheet_header of this GsaTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The datasheet_header of this GsaTable.
-        """
-        return self._datasheet_header
-
-    @datasheet_header.setter
-    def datasheet_header(self, datasheet_header: "str | None | Unset_Type") -> None:
-        """Sets the datasheet_header of this GsaTable.
-
-        Parameters
-        ----------
-        datasheet_header: str | None | Unset_Type
-            The datasheet_header of this GsaTable.
-        """
-        self._datasheet_header = datasheet_header
-
-    @property
-    def datasheet_footer(self) -> "str | None | Unset_Type":
-        """Gets the datasheet_footer of this GsaTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The datasheet_footer of this GsaTable.
-        """
-        return self._datasheet_footer
-
-    @datasheet_footer.setter
-    def datasheet_footer(self, datasheet_footer: "str | None | Unset_Type") -> None:
-        """Sets the datasheet_footer of this GsaTable.
-
-        Parameters
-        ----------
-        datasheet_footer: str | None | Unset_Type
-            The datasheet_footer of this GsaTable.
-        """
-        self._datasheet_footer = datasheet_footer
-
-    @property
-    def table_type(self) -> "str | None | Unset_Type":
-        """Gets the table_type of this GsaTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The table_type of this GsaTable.
-        """
-        return self._table_type
-
-    @table_type.setter
-    def table_type(self, table_type: "str | None | Unset_Type") -> None:
-        """Sets the table_type of this GsaTable.
-
-        Parameters
-        ----------
-        table_type: str | None | Unset_Type
-            The table_type of this GsaTable.
-        """
-        self._table_type = table_type
-
-    @property
-    def should_show_version_control_signatures(self) -> "bool | Unset_Type":
-        """Gets the should_show_version_control_signatures of this GsaTable.
-        Gets or sets whether version control signatures should be shown when data is shown to a user.  'Version control signatures' show when a record was released, who released it and on which revision.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The should_show_version_control_signatures of this GsaTable.
-        """
-        return self._should_show_version_control_signatures
-
-    @should_show_version_control_signatures.setter
-    def should_show_version_control_signatures(
-        self, should_show_version_control_signatures: "bool | Unset_Type"
-    ) -> None:
-        """Sets the should_show_version_control_signatures of this GsaTable.
-        Gets or sets whether version control signatures should be shown when data is shown to a user.  'Version control signatures' show when a record was released, who released it and on which revision.
-
-        Parameters
-        ----------
-        should_show_version_control_signatures: bool | Unset_Type
-            The should_show_version_control_signatures of this GsaTable.
-        """
-        # Field is not nullable
-        if should_show_version_control_signatures is None:
-            raise ValueError(
-                "Invalid value for 'should_show_version_control_signatures', must not be 'None'"
-            )
-        self._should_show_version_control_signatures = should_show_version_control_signatures
-
-    @property
-    def database_key(self) -> "str":
-        """Gets the database_key of this GsaTable.
-
-        Returns
-        -------
-        str
-            The database_key of this GsaTable.
-        """
-        return self._database_key
-
-    @database_key.setter
-    def database_key(self, database_key: "str") -> None:
-        """Sets the database_key of this GsaTable.
-
-        Parameters
-        ----------
-        database_key: str
-            The database_key of this GsaTable.
-        """
-        # Field is not nullable
-        if database_key is None:
-            raise ValueError("Invalid value for 'database_key', must not be 'None'")
-        # Field is required
-        if database_key is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'database_key', must not be 'Unset'")
-        self._database_key = database_key
-
-    @property
     def is_hidden_from_browse(self) -> "bool":
         """Gets the is_hidden_from_browse of this GsaTable.
 
@@ -632,7 +410,6 @@ class GsaTable(ModelBase):
     @property
     def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GsaTable.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Returns
         -------
@@ -644,7 +421,6 @@ class GsaTable(ModelBase):
     @display_names.setter
     def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GsaTable.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Parameters
         ----------
