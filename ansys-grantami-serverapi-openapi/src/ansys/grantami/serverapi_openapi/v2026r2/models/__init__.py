@@ -69,7 +69,6 @@ from .gsa_access_control_category_no_such_entity_type import (
 from .gsa_access_control_category_table_mapping import GsaAccessControlCategoryTableMapping
 from .gsa_access_control_category_update_exception import GsaAccessControlCategoryUpdateException
 from .gsa_access_control_info import GsaAccessControlInfo
-from .gsa_access_control_level import GsaAccessControlLevel
 from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
@@ -1648,7 +1647,6 @@ __all__ = [
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
     "GsaAccessControlInfo",
-    "GsaAccessControlLevel",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
