@@ -50,7 +50,7 @@ class SchemaStandardNamesApi(ApiBase):
 
     def create_standard_name(
         self, *, database_key: "str", body: "Optional[GsaCreateStandardName]" = None
-    ) -> "GsaStandardName | GsaStandardNameCreationException | None":
+    ) -> "GsaStandardName | None":
         """Create a new standard name
 
         This method makes a synchronous HTTP request.
@@ -58,12 +58,11 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateStandardName
 
         Returns
         -------
-        GsaStandardName | GsaStandardNameCreationException | None
+        GsaStandardName | None
         """
         data = self._create_standard_name_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +120,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaStandardName",
-            400: "GsaStandardNameCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -150,7 +149,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
 
         Returns
@@ -242,7 +240,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
 
         Returns
@@ -332,7 +329,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -407,7 +403,7 @@ class SchemaStandardNamesApi(ApiBase):
         database_key: "str",
         standard_name_guid: "str",
         body: "Optional[GsaUpdateStandardName]" = None,
-    ) -> "GsaStandardName | GsaStandardNameUpdateException | None":
+    ) -> "GsaStandardName | None":
         """Edit a standard name
 
         This method makes a synchronous HTTP request.
@@ -415,13 +411,12 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
         body: GsaUpdateStandardName
 
         Returns
         -------
-        GsaStandardName | GsaStandardNameUpdateException | None
+        GsaStandardName | None
         """
         data = self._update_standard_name_with_http_info(
             database_key, standard_name_guid, body, _return_http_data_only=True
@@ -491,7 +486,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaStandardName",
-            400: "GsaStandardNameUpdateException",
+            400: None,
             403: None,
             404: None,
         }
