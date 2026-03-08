@@ -135,7 +135,6 @@ from .models.gsa_access_control_category_update_exception import (
     GsaAccessControlCategoryUpdateException,
 )
 from .models.gsa_access_control_info import GsaAccessControlInfo
-from .models.gsa_access_control_level import GsaAccessControlLevel
 from .models.gsa_access_control_mode import GsaAccessControlMode
 from .models.gsa_access_control_mode_info import GsaAccessControlModeInfo
 from .models.gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
@@ -1862,7 +1861,6 @@ __all__ = [
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
     "GsaAccessControlInfo",
-    "GsaAccessControlLevel",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
     "GsaActivityLogApplicationNameFilter",
