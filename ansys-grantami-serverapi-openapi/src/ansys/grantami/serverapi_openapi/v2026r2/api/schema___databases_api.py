@@ -633,10 +633,10 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_permission_access_control(
+    def get_permission_category_access_controls(
         self, *, database_key: "str"
     ) -> "GsaPermissionCategoryAccessControlInfo | None":
-        """Get permission-based access control settings for a given database.  Returns the access control level for each permission in each category.
+        """Get permission-based access control settings for a given database.  Returns the access control for each permission in each category.
 
         This method makes a synchronous HTTP request.
 
@@ -649,12 +649,12 @@ class SchemaDatabasesApi(ApiBase):
         -------
         GsaPermissionCategoryAccessControlInfo | None
         """
-        data = self._get_permission_access_control_with_http_info(
+        data = self._get_permission_category_access_controls_with_http_info(
             database_key, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _get_permission_access_control_with_http_info(
+    def _get_permission_category_access_controls_with_http_info(
         self, database_key: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -668,14 +668,14 @@ class SchemaDatabasesApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_permission_access_control"
+                    f"Got an unexpected keyword argument '{key}' to method get_permission_category_access_controls"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "database_key" is set
         if "database_key" not in params or params["database_key"] is None:
             raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_permission_access_control'"
+                "Missing the required parameter 'database_key' when calling 'get_permission_category_access_controls'"
             )
 
         collection_formats: dict[str, Any] = {}
@@ -703,7 +703,7 @@ class SchemaDatabasesApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/permission-access-control",
+            "/v1alpha/databases/{database-key}/permission-category-access-controls",
             "GET",
             path_params,
             query_params,
