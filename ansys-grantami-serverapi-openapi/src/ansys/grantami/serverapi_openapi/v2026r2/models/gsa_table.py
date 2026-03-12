@@ -78,6 +78,7 @@ class GsaTable(ModelBase):
         "default_layout": "GsaSlimLayout",
         "default_subset": "GsaSlimSubset",
         "legal_disclaimer": "str",
+        "quality_system": "GsaSlimNamedEntity",
         "should_show_version_control_signatures": "bool",
         "table_type": "str",
     }
@@ -100,6 +101,7 @@ class GsaTable(ModelBase):
         "default_layout": "defaultLayout",
         "default_subset": "defaultSubset",
         "legal_disclaimer": "legalDisclaimer",
+        "quality_system": "qualitySystem",
         "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
         "table_type": "tableType",
     }
@@ -110,6 +112,7 @@ class GsaTable(ModelBase):
         "defaultLayout": "GsaSlimLayout",
         "layouts": "GsaSlimLayout",
         "versionState": "GsaVersionState",
+        "qualitySystem": "GsaSlimNamedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -134,6 +137,7 @@ class GsaTable(ModelBase):
         default_layout: "GsaSlimLayout | Unset_Type" = Unset,
         default_subset: "GsaSlimSubset | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
+        quality_system: "GsaSlimNamedEntity | Unset_Type" = Unset,
         should_show_version_control_signatures: "bool | Unset_Type" = Unset,
         table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -158,6 +162,7 @@ class GsaTable(ModelBase):
         default_layout: GsaSlimLayout, optional
         default_subset: GsaSlimSubset, optional
         legal_disclaimer: str | None, optional
+        quality_system: GsaSlimNamedEntity, optional
         should_show_version_control_signatures: bool, optional
         table_type: str | None, optional
         """
@@ -167,6 +172,7 @@ class GsaTable(ModelBase):
         self._layouts: list[GsaSlimLayout]
         self._version_state: GsaVersionState
         self._order: int
+        self._quality_system: GsaSlimNamedEntity | Unset_Type = Unset
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
@@ -189,6 +195,8 @@ class GsaTable(ModelBase):
         self.layouts = layouts
         self.version_state = version_state
         self.order = order
+        if quality_system is not Unset:
+            self.quality_system = quality_system
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
         if datasheet_header is not Unset:
@@ -369,6 +377,31 @@ class GsaTable(ModelBase):
         if order is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'order', must not be 'Unset'")
         self._order = order
+
+    @property
+    def quality_system(self) -> "GsaSlimNamedEntity | Unset_Type":
+        """Gets the quality_system of this GsaTable.
+
+        Returns
+        -------
+        GsaSlimNamedEntity | Unset_Type
+            The quality_system of this GsaTable.
+        """
+        return self._quality_system
+
+    @quality_system.setter
+    def quality_system(self, quality_system: "GsaSlimNamedEntity | Unset_Type") -> None:
+        """Sets the quality_system of this GsaTable.
+
+        Parameters
+        ----------
+        quality_system: GsaSlimNamedEntity | Unset_Type
+            The quality_system of this GsaTable.
+        """
+        # Field is not nullable
+        if quality_system is None:
+            raise ValueError("Invalid value for 'quality_system', must not be 'None'")
+        self._quality_system = quality_system
 
     @property
     def legal_disclaimer(self) -> "str | None | Unset_Type":

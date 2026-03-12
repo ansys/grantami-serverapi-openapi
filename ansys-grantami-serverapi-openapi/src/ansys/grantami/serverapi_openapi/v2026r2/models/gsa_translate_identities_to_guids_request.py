@@ -64,6 +64,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "database_key": "str",
         "attributes": "list[int]",
         "constants": "list[int]",
+        "cross_database_link_groups": "list[int]",
         "data": "list[int]",
         "discrete_types": "list[int]",
         "discrete_values": "list[int]",
@@ -76,6 +77,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "standard_names": "list[int]",
         "subsets": "list[int]",
         "tables": "list[int]",
+        "tabular_columns": "list[int]",
         "unit_systems": "list[int]",
         "units": "list[int]",
     }
@@ -84,6 +86,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "database_key": "databaseKey",
         "attributes": "attributes",
         "constants": "constants",
+        "cross_database_link_groups": "crossDatabaseLinkGroups",
         "data": "data",
         "discrete_types": "discreteTypes",
         "discrete_values": "discreteValues",
@@ -96,6 +99,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "standard_names": "standardNames",
         "subsets": "subsets",
         "tables": "tables",
+        "tabular_columns": "tabularColumns",
         "unit_systems": "unitSystems",
         "units": "units",
     }
@@ -110,6 +114,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         database_key: "str",
         attributes: "list[int] | None | Unset_Type" = Unset,
         constants: "list[int] | None | Unset_Type" = Unset,
+        cross_database_link_groups: "list[int] | None | Unset_Type" = Unset,
         data: "list[int] | None | Unset_Type" = Unset,
         discrete_types: "list[int] | None | Unset_Type" = Unset,
         discrete_values: "list[int] | None | Unset_Type" = Unset,
@@ -122,6 +127,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         standard_names: "list[int] | None | Unset_Type" = Unset,
         subsets: "list[int] | None | Unset_Type" = Unset,
         tables: "list[int] | None | Unset_Type" = Unset,
+        tabular_columns: "list[int] | None | Unset_Type" = Unset,
         unit_systems: "list[int] | None | Unset_Type" = Unset,
         units: "list[int] | None | Unset_Type" = Unset,
     ) -> None:
@@ -132,6 +138,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         database_key: str
         attributes: list[int] | None, optional
         constants: list[int] | None, optional
+        cross_database_link_groups: list[int] | None, optional
         data: list[int] | None, optional
         discrete_types: list[int] | None, optional
         discrete_values: list[int] | None, optional
@@ -144,6 +151,7 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         standard_names: list[int] | None, optional
         subsets: list[int] | None, optional
         tables: list[int] | None, optional
+        tabular_columns: list[int] | None, optional
         unit_systems: list[int] | None, optional
         units: list[int] | None, optional
         """
@@ -163,6 +171,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         self._standard_names: list[int] | None | Unset_Type = Unset
         self._constants: list[int] | None | Unset_Type = Unset
         self._record_link_groups: list[int] | None | Unset_Type = Unset
+        self._cross_database_link_groups: list[int] | None | Unset_Type = Unset
+        self._tabular_columns: list[int] | None | Unset_Type = Unset
         self._data: list[int] | None | Unset_Type = Unset
 
         self.database_key = database_key
@@ -196,6 +206,10 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
             self.constants = constants
         if record_link_groups is not Unset:
             self.record_link_groups = record_link_groups
+        if cross_database_link_groups is not Unset:
+            self.cross_database_link_groups = cross_database_link_groups
+        if tabular_columns is not Unset:
+            self.tabular_columns = tabular_columns
         if data is not Unset:
             self.data = data
 
@@ -556,6 +570,52 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
             The record_link_groups of this GsaTranslateIdentitiesToGuidsRequest.
         """
         self._record_link_groups = record_link_groups
+
+    @property
+    def cross_database_link_groups(self) -> "list[int] | None | Unset_Type":
+        """Gets the cross_database_link_groups of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Returns
+        -------
+        list[int] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        return self._cross_database_link_groups
+
+    @cross_database_link_groups.setter
+    def cross_database_link_groups(
+        self, cross_database_link_groups: "list[int] | None | Unset_Type"
+    ) -> None:
+        """Sets the cross_database_link_groups of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Parameters
+        ----------
+        cross_database_link_groups: list[int] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        self._cross_database_link_groups = cross_database_link_groups
+
+    @property
+    def tabular_columns(self) -> "list[int] | None | Unset_Type":
+        """Gets the tabular_columns of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Returns
+        -------
+        list[int] | None | Unset_Type
+            The tabular_columns of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        return self._tabular_columns
+
+    @tabular_columns.setter
+    def tabular_columns(self, tabular_columns: "list[int] | None | Unset_Type") -> None:
+        """Sets the tabular_columns of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Parameters
+        ----------
+        tabular_columns: list[int] | None | Unset_Type
+            The tabular_columns of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        self._tabular_columns = tabular_columns
 
     @property
     def data(self) -> "list[int] | None | Unset_Type":

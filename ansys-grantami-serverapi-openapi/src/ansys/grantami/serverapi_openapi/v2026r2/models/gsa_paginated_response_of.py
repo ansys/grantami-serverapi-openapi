@@ -82,7 +82,7 @@ class GsaPaginatedResponseOf(ModelBase):
 
     discriminator_value_class_map = {
         "xyChartTemplate".lower(): "#/components/schemas/GsaXYChartTemplatesInfo",
-        "activityLog".lower(): "#/components/schemas/GsaXYChartTemplatesInfo",
+        "activityLog".lower(): "#/components/schemas/GsaActivityLogEntriesInfo",
     }
 
     discriminator: Optional[str] = "itemType"
