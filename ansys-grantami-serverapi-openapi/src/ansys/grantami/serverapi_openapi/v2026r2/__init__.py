@@ -617,6 +617,9 @@ from .models.gsa_double_sorting_value import GsaDoubleSortingValue
 from .models.gsa_duplicate_categories_replace_permission_category_error_detail import (
     GsaDuplicateCategoriesReplacePermissionCategoryErrorDetail,
 )
+from .models.gsa_duplicate_category_guids_access_control_error_detail import (
+    GsaDuplicateCategoryGuidsAccessControlErrorDetail,
+)
 from .models.gsa_duplicate_code_currency_error_detail import GsaDuplicateCodeCurrencyErrorDetail
 from .models.gsa_duplicate_database_add_database_validation_issue import (
     GsaDuplicateDatabaseAddDatabaseValidationIssue,
@@ -646,6 +649,9 @@ from .models.gsa_duplicate_mapped_record_link_group_guids_error_detail import (
 from .models.gsa_duplicate_name_currency_error_detail import GsaDuplicateNameCurrencyErrorDetail
 from .models.gsa_duplicate_parameter_guids_attribute_error_detail import (
     GsaDuplicateParameterGuidsAttributeErrorDetail,
+)
+from .models.gsa_duplicate_permission_guids_access_control_error_detail import (
+    GsaDuplicatePermissionGuidsAccessControlErrorDetail,
 )
 from .models.gsa_duplicate_permissions_permission_category_error_detail import (
     GsaDuplicatePermissionsPermissionCategoryErrorDetail,
@@ -1046,6 +1052,9 @@ from .models.gsa_no_such_attribute_smart_attributes_error_detail import (
 from .models.gsa_no_such_categories_replace_permission_category_error_detail import (
     GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail,
 )
+from .models.gsa_no_such_category_access_control_error_detail import (
+    GsaNoSuchCategoryAccessControlErrorDetail,
+)
 from .models.gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
 )
@@ -1064,6 +1073,9 @@ from .models.gsa_no_such_new_parent_folder_move_error_detail import (
 )
 from .models.gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
+)
+from .models.gsa_no_such_permission_access_control_error_detail import (
+    GsaNoSuchPermissionAccessControlErrorDetail,
 )
 from .models.gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
@@ -1155,6 +1167,15 @@ from .models.gsa_parameters_info import GsaParametersInfo
 from .models.gsa_permission import GsaPermission
 from .models.gsa_permission_access_control import GsaPermissionAccessControl
 from .models.gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
+from .models.gsa_permission_categories_access_control_error_detail import (
+    GsaPermissionCategoriesAccessControlErrorDetail,
+)
+from .models.gsa_permission_categories_access_control_error_reason import (
+    GsaPermissionCategoriesAccessControlErrorReason,
+)
+from .models.gsa_permission_categories_access_control_update_exception import (
+    GsaPermissionCategoriesAccessControlUpdateException,
+)
 from .models.gsa_permission_categories_info import GsaPermissionCategoriesInfo
 from .models.gsa_permission_category import GsaPermissionCategory
 from .models.gsa_permission_category_access_control import GsaPermissionCategoryAccessControl
@@ -1706,8 +1727,15 @@ from .models.gsa_update_parameter import GsaUpdateParameter
 from .models.gsa_update_parameter_content import GsaUpdateParameterContent
 from .models.gsa_update_parameter_value import GsaUpdateParameterValue
 from .models.gsa_update_permission import GsaUpdatePermission
+from .models.gsa_update_permission_access_control import GsaUpdatePermissionAccessControl
 from .models.gsa_update_permission_based_access_control import GsaUpdatePermissionBasedAccessControl
 from .models.gsa_update_permission_category import GsaUpdatePermissionCategory
+from .models.gsa_update_permission_category_access_control import (
+    GsaUpdatePermissionCategoryAccessControl,
+)
+from .models.gsa_update_permission_category_access_control_request import (
+    GsaUpdatePermissionCategoryAccessControlRequest,
+)
 from .models.gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .models.gsa_update_point_attribute import GsaUpdatePointAttribute
 from .models.gsa_update_profile import GsaUpdateProfile
@@ -2241,6 +2269,7 @@ __all__ = [
     "GsaDivideByZeroUnitEquationErrorDetail",
     "GsaDoubleSortingValue",
     "GsaDuplicateCategoriesReplacePermissionCategoryErrorDetail",
+    "GsaDuplicateCategoryGuidsAccessControlErrorDetail",
     "GsaDuplicateCodeCurrencyErrorDetail",
     "GsaDuplicateDatabaseAddDatabaseValidationIssue",
     "GsaDuplicateDiscreteValueErrorDetail",
@@ -2253,6 +2282,7 @@ __all__ = [
     "GsaDuplicateMappedRecordLinkGroupGuidsErrorDetail",
     "GsaDuplicateNameCurrencyErrorDetail",
     "GsaDuplicateParameterGuidsAttributeErrorDetail",
+    "GsaDuplicatePermissionGuidsAccessControlErrorDetail",
     "GsaDuplicatePermissionsPermissionCategoryErrorDetail",
     "GsaDuplicateSymbolUnitErrorDetail",
     "GsaDuplicateTableErrorDetail",
@@ -2546,6 +2576,7 @@ __all__ = [
     "GsaNoPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
+    "GsaNoSuchCategoryAccessControlErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2553,6 +2584,7 @@ __all__ = [
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
@@ -2619,6 +2651,9 @@ __all__ = [
     "GsaPermission",
     "GsaPermissionAccessControl",
     "GsaPermissionBasedAccessControlInfo",
+    "GsaPermissionCategoriesAccessControlErrorDetail",
+    "GsaPermissionCategoriesAccessControlErrorReason",
+    "GsaPermissionCategoriesAccessControlUpdateException",
     "GsaPermissionCategoriesInfo",
     "GsaPermissionCategory",
     "GsaPermissionCategoryAccessControl",
@@ -3062,8 +3097,11 @@ __all__ = [
     "GsaUpdateParameterContent",
     "GsaUpdateParameterValue",
     "GsaUpdatePermission",
+    "GsaUpdatePermissionAccessControl",
     "GsaUpdatePermissionBasedAccessControl",
     "GsaUpdatePermissionCategory",
+    "GsaUpdatePermissionCategoryAccessControl",
+    "GsaUpdatePermissionCategoryAccessControlRequest",
     "GsaUpdatePictureAttribute",
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",

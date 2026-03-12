@@ -64,6 +64,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         "database_key": "str",
         "attributes": "list[GsaSlimEntity]",
         "constants": "list[GsaSlimEntity]",
+        "cross_database_link_groups": "list[GsaSlimEntity]",
         "data": "list[GsaSlimEntity]",
         "discrete_types": "list[GsaSlimEntity]",
         "discrete_values": "list[GsaSlimEntity]",
@@ -76,6 +77,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         "standard_names": "list[GsaSlimEntity]",
         "subsets": "list[GsaSlimEntity]",
         "tables": "list[GsaSlimEntity]",
+        "tabular_columns": "list[GsaSlimEntity]",
         "unit_systems": "list[GsaSlimEntity]",
         "units": "list[GsaSlimEntity]",
     }
@@ -84,6 +86,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         "database_key": "databaseKey",
         "attributes": "attributes",
         "constants": "constants",
+        "cross_database_link_groups": "crossDatabaseLinkGroups",
         "data": "data",
         "discrete_types": "discreteTypes",
         "discrete_values": "discreteValues",
@@ -96,6 +99,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         "standard_names": "standardNames",
         "subsets": "subsets",
         "tables": "tables",
+        "tabular_columns": "tabularColumns",
         "unit_systems": "unitSystems",
         "units": "units",
     }
@@ -116,6 +120,8 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         "standardNames": "GsaSlimEntity",
         "constants": "GsaSlimEntity",
         "recordLinkGroups": "GsaSlimEntity",
+        "crossDatabaseLinkGroups": "GsaSlimEntity",
+        "tabularColumns": "GsaSlimEntity",
         "data": "GsaSlimEntity",
     }
 
@@ -127,6 +133,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         database_key: "str",
         attributes: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         constants: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
+        cross_database_link_groups: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         data: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         discrete_types: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         discrete_values: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
@@ -139,6 +146,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         standard_names: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         subsets: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         tables: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
+        tabular_columns: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         unit_systems: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         units: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
     ) -> None:
@@ -149,6 +157,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         database_key: str
         attributes: list[GsaSlimEntity] | None, optional
         constants: list[GsaSlimEntity] | None, optional
+        cross_database_link_groups: list[GsaSlimEntity] | None, optional
         data: list[GsaSlimEntity] | None, optional
         discrete_types: list[GsaSlimEntity] | None, optional
         discrete_values: list[GsaSlimEntity] | None, optional
@@ -161,6 +170,7 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         standard_names: list[GsaSlimEntity] | None, optional
         subsets: list[GsaSlimEntity] | None, optional
         tables: list[GsaSlimEntity] | None, optional
+        tabular_columns: list[GsaSlimEntity] | None, optional
         unit_systems: list[GsaSlimEntity] | None, optional
         units: list[GsaSlimEntity] | None, optional
         """
@@ -180,6 +190,8 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
         self._standard_names: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._constants: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._record_link_groups: list[GsaSlimEntity] | None | Unset_Type = Unset
+        self._cross_database_link_groups: list[GsaSlimEntity] | None | Unset_Type = Unset
+        self._tabular_columns: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._data: list[GsaSlimEntity] | None | Unset_Type = Unset
 
         self.database_key = database_key
@@ -213,6 +225,10 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
             self.constants = constants
         if record_link_groups is not Unset:
             self.record_link_groups = record_link_groups
+        if cross_database_link_groups is not Unset:
+            self.cross_database_link_groups = cross_database_link_groups
+        if tabular_columns is not Unset:
+            self.tabular_columns = tabular_columns
         if data is not Unset:
             self.data = data
 
@@ -577,6 +593,52 @@ class GsaTranslateGuidsToIdentitiesRequest(ModelBase):
             The record_link_groups of this GsaTranslateGuidsToIdentitiesRequest.
         """
         self._record_link_groups = record_link_groups
+
+    @property
+    def cross_database_link_groups(self) -> "list[GsaSlimEntity] | None | Unset_Type":
+        """Gets the cross_database_link_groups of this GsaTranslateGuidsToIdentitiesRequest.
+
+        Returns
+        -------
+        list[GsaSlimEntity] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateGuidsToIdentitiesRequest.
+        """
+        return self._cross_database_link_groups
+
+    @cross_database_link_groups.setter
+    def cross_database_link_groups(
+        self, cross_database_link_groups: "list[GsaSlimEntity] | None | Unset_Type"
+    ) -> None:
+        """Sets the cross_database_link_groups of this GsaTranslateGuidsToIdentitiesRequest.
+
+        Parameters
+        ----------
+        cross_database_link_groups: list[GsaSlimEntity] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateGuidsToIdentitiesRequest.
+        """
+        self._cross_database_link_groups = cross_database_link_groups
+
+    @property
+    def tabular_columns(self) -> "list[GsaSlimEntity] | None | Unset_Type":
+        """Gets the tabular_columns of this GsaTranslateGuidsToIdentitiesRequest.
+
+        Returns
+        -------
+        list[GsaSlimEntity] | None | Unset_Type
+            The tabular_columns of this GsaTranslateGuidsToIdentitiesRequest.
+        """
+        return self._tabular_columns
+
+    @tabular_columns.setter
+    def tabular_columns(self, tabular_columns: "list[GsaSlimEntity] | None | Unset_Type") -> None:
+        """Sets the tabular_columns of this GsaTranslateGuidsToIdentitiesRequest.
+
+        Parameters
+        ----------
+        tabular_columns: list[GsaSlimEntity] | None | Unset_Type
+            The tabular_columns of this GsaTranslateGuidsToIdentitiesRequest.
+        """
+        self._tabular_columns = tabular_columns
 
     @property
     def data(self) -> "list[GsaSlimEntity] | None | Unset_Type":

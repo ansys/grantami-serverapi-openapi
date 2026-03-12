@@ -70,6 +70,7 @@ class GsaUpdateTable(ModelBase):
         "is_hidden_from_search": "bool",
         "legal_disclaimer": "str",
         "name": "str",
+        "quality_system_guid": "str",
         "should_show_version_control_signatures": "bool",
         "table_type": "str",
     }
@@ -84,6 +85,7 @@ class GsaUpdateTable(ModelBase):
         "is_hidden_from_search": "isHiddenFromSearch",
         "legal_disclaimer": "legalDisclaimer",
         "name": "name",
+        "quality_system_guid": "qualitySystemGuid",
         "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
         "table_type": "tableType",
     }
@@ -104,6 +106,7 @@ class GsaUpdateTable(ModelBase):
         is_hidden_from_search: "bool | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
+        quality_system_guid: "str | None | Unset_Type" = Unset,
         should_show_version_control_signatures: "bool | Unset_Type" = Unset,
         table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -120,6 +123,7 @@ class GsaUpdateTable(ModelBase):
         is_hidden_from_search: bool, optional
         legal_disclaimer: str | None, optional
         name: str, optional
+        quality_system_guid: str | None, optional
         should_show_version_control_signatures: bool, optional
         table_type: str | None, optional
         """
@@ -127,6 +131,7 @@ class GsaUpdateTable(ModelBase):
         self._is_hidden_from_search: bool | Unset_Type = Unset
         self._default_subset_guid: str | None | Unset_Type = Unset
         self._default_layout_guid: str | None | Unset_Type = Unset
+        self._quality_system_guid: str | None | Unset_Type = Unset
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
@@ -143,6 +148,8 @@ class GsaUpdateTable(ModelBase):
             self.default_subset_guid = default_subset_guid
         if default_layout_guid is not Unset:
             self.default_layout_guid = default_layout_guid
+        if quality_system_guid is not Unset:
+            self.quality_system_guid = quality_system_guid
         if legal_disclaimer is not Unset:
             self.legal_disclaimer = legal_disclaimer
         if datasheet_header is not Unset:
@@ -251,6 +258,28 @@ class GsaUpdateTable(ModelBase):
             The default_layout_guid of this GsaUpdateTable.
         """
         self._default_layout_guid = default_layout_guid
+
+    @property
+    def quality_system_guid(self) -> "str | None | Unset_Type":
+        """Gets the quality_system_guid of this GsaUpdateTable.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The quality_system_guid of this GsaUpdateTable.
+        """
+        return self._quality_system_guid
+
+    @quality_system_guid.setter
+    def quality_system_guid(self, quality_system_guid: "str | None | Unset_Type") -> None:
+        """Sets the quality_system_guid of this GsaUpdateTable.
+
+        Parameters
+        ----------
+        quality_system_guid: str | None | Unset_Type
+            The quality_system_guid of this GsaUpdateTable.
+        """
+        self._quality_system_guid = quality_system_guid
 
     @property
     def legal_disclaimer(self) -> "str | None | Unset_Type":

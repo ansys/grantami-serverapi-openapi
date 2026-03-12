@@ -64,6 +64,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "database_key": "str",
         "attributes": "list[GsaSlimIdentifiedEntity]",
         "constants": "list[GsaSlimIdentifiedEntity]",
+        "cross_database_link_groups": "list[GsaSlimIdentifiedEntity]",
         "data": "list[GsaSlimIdentifiedEntity]",
         "discrete_types": "list[GsaSlimIdentifiedEntity]",
         "discrete_values": "list[GsaSlimIdentifiedEntity]",
@@ -76,6 +77,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "standard_names": "list[GsaSlimIdentifiedEntity]",
         "subsets": "list[GsaSlimIdentifiedEntity]",
         "tables": "list[GsaSlimIdentifiedEntity]",
+        "tabular_columns": "list[GsaSlimIdentifiedEntity]",
         "unit_systems": "list[GsaSlimIdentifiedEntity]",
         "units": "list[GsaSlimIdentifiedEntity]",
     }
@@ -84,6 +86,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "database_key": "databaseKey",
         "attributes": "attributes",
         "constants": "constants",
+        "cross_database_link_groups": "crossDatabaseLinkGroups",
         "data": "data",
         "discrete_types": "discreteTypes",
         "discrete_values": "discreteValues",
@@ -96,6 +99,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "standard_names": "standardNames",
         "subsets": "subsets",
         "tables": "tables",
+        "tabular_columns": "tabularColumns",
         "unit_systems": "unitSystems",
         "units": "units",
     }
@@ -116,6 +120,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "standardNames": "GsaSlimIdentifiedEntity",
         "constants": "GsaSlimIdentifiedEntity",
         "recordLinkGroups": "GsaSlimIdentifiedEntity",
+        "crossDatabaseLinkGroups": "GsaSlimIdentifiedEntity",
+        "tabularColumns": "GsaSlimIdentifiedEntity",
         "data": "GsaSlimIdentifiedEntity",
     }
 
@@ -127,6 +133,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         database_key: "str",
         attributes: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         constants: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
+        cross_database_link_groups: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         data: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         discrete_types: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         discrete_values: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
@@ -139,6 +146,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         standard_names: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         subsets: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         tables: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
+        tabular_columns: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         unit_systems: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         units: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
     ) -> None:
@@ -149,6 +157,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         database_key: str
         attributes: list[GsaSlimIdentifiedEntity] | None, optional
         constants: list[GsaSlimIdentifiedEntity] | None, optional
+        cross_database_link_groups: list[GsaSlimIdentifiedEntity] | None, optional
         data: list[GsaSlimIdentifiedEntity] | None, optional
         discrete_types: list[GsaSlimIdentifiedEntity] | None, optional
         discrete_values: list[GsaSlimIdentifiedEntity] | None, optional
@@ -161,6 +170,7 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         standard_names: list[GsaSlimIdentifiedEntity] | None, optional
         subsets: list[GsaSlimIdentifiedEntity] | None, optional
         tables: list[GsaSlimIdentifiedEntity] | None, optional
+        tabular_columns: list[GsaSlimIdentifiedEntity] | None, optional
         unit_systems: list[GsaSlimIdentifiedEntity] | None, optional
         units: list[GsaSlimIdentifiedEntity] | None, optional
         """
@@ -180,6 +190,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         self._standard_names: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
         self._constants: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
         self._record_link_groups: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
+        self._cross_database_link_groups: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
+        self._tabular_columns: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
         self._data: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
 
         self.database_key = database_key
@@ -213,6 +225,10 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
             self.constants = constants
         if record_link_groups is not Unset:
             self.record_link_groups = record_link_groups
+        if cross_database_link_groups is not Unset:
+            self.cross_database_link_groups = cross_database_link_groups
+        if tabular_columns is not Unset:
+            self.tabular_columns = tabular_columns
         if data is not Unset:
             self.data = data
 
@@ -589,6 +605,54 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
             The record_link_groups of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
         """
         self._record_link_groups = record_link_groups
+
+    @property
+    def cross_database_link_groups(self) -> "list[GsaSlimIdentifiedEntity] | None | Unset_Type":
+        """Gets the cross_database_link_groups of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Returns
+        -------
+        list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        return self._cross_database_link_groups
+
+    @cross_database_link_groups.setter
+    def cross_database_link_groups(
+        self, cross_database_link_groups: "list[GsaSlimIdentifiedEntity] | None | Unset_Type"
+    ) -> None:
+        """Sets the cross_database_link_groups of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Parameters
+        ----------
+        cross_database_link_groups: list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The cross_database_link_groups of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        self._cross_database_link_groups = cross_database_link_groups
+
+    @property
+    def tabular_columns(self) -> "list[GsaSlimIdentifiedEntity] | None | Unset_Type":
+        """Gets the tabular_columns of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Returns
+        -------
+        list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The tabular_columns of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        return self._tabular_columns
+
+    @tabular_columns.setter
+    def tabular_columns(
+        self, tabular_columns: "list[GsaSlimIdentifiedEntity] | None | Unset_Type"
+    ) -> None:
+        """Sets the tabular_columns of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Parameters
+        ----------
+        tabular_columns: list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The tabular_columns of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        self._tabular_columns = tabular_columns
 
     @property
     def data(self) -> "list[GsaSlimIdentifiedEntity] | None | Unset_Type":
