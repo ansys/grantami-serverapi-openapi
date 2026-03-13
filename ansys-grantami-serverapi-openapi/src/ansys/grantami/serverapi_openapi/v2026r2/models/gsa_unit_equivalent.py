@@ -61,7 +61,7 @@ class GsaUnitEquivalent(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "equivalent_unit": "GsaSlimEntity",
+        "equivalent_unit": "GsaSlimUnit",
         "unit": "GsaSlimEntity",
         "unit_system": "GsaSlimEntity",
     }
@@ -75,7 +75,7 @@ class GsaUnitEquivalent(ModelBase):
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "unitSystem": "GsaSlimEntity",
-        "equivalentUnit": "GsaSlimEntity",
+        "equivalentUnit": "GsaSlimUnit",
     }
 
     discriminator: Optional[str] = None
@@ -83,7 +83,7 @@ class GsaUnitEquivalent(ModelBase):
     def __init__(
         self,
         *,
-        equivalent_unit: "GsaSlimEntity",
+        equivalent_unit: "GsaSlimUnit",
         unit: "GsaSlimEntity",
         unit_system: "GsaSlimEntity",
     ) -> None:
@@ -91,13 +91,13 @@ class GsaUnitEquivalent(ModelBase):
 
         Parameters
         ----------
-        equivalent_unit: GsaSlimEntity
+        equivalent_unit: GsaSlimUnit
         unit: GsaSlimEntity
         unit_system: GsaSlimEntity
         """
         self._unit: GsaSlimEntity
         self._unit_system: GsaSlimEntity
-        self._equivalent_unit: GsaSlimEntity
+        self._equivalent_unit: GsaSlimUnit
 
         self.unit = unit
         self.unit_system = unit_system
@@ -160,23 +160,23 @@ class GsaUnitEquivalent(ModelBase):
         self._unit_system = unit_system
 
     @property
-    def equivalent_unit(self) -> "GsaSlimEntity":
+    def equivalent_unit(self) -> "GsaSlimUnit":
         """Gets the equivalent_unit of this GsaUnitEquivalent.
 
         Returns
         -------
-        GsaSlimEntity
+        GsaSlimUnit
             The equivalent_unit of this GsaUnitEquivalent.
         """
         return self._equivalent_unit
 
     @equivalent_unit.setter
-    def equivalent_unit(self, equivalent_unit: "GsaSlimEntity") -> None:
+    def equivalent_unit(self, equivalent_unit: "GsaSlimUnit") -> None:
         """Sets the equivalent_unit of this GsaUnitEquivalent.
 
         Parameters
         ----------
-        equivalent_unit: GsaSlimEntity
+        equivalent_unit: GsaSlimUnit
             The equivalent_unit of this GsaUnitEquivalent.
         """
         # Field is not nullable
