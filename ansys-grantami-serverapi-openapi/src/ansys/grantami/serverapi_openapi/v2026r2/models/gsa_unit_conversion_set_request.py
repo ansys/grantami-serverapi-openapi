@@ -96,6 +96,7 @@ class GsaUnitConversionSetRequest(ModelBase):
     @property
     def source_unit_symbol(self) -> "str":
         """Gets the source_unit_symbol of this GsaUnitConversionSetRequest.
+        Symbol of the unit to convert from  If the unit contains a currency, this can be unresolved (i.e. as the \"currency\" string), or resolved to the three letter currency code
 
         Returns
         -------
@@ -107,6 +108,7 @@ class GsaUnitConversionSetRequest(ModelBase):
     @source_unit_symbol.setter
     def source_unit_symbol(self, source_unit_symbol: "str") -> None:
         """Sets the source_unit_symbol of this GsaUnitConversionSetRequest.
+        Symbol of the unit to convert from  If the unit contains a currency, this can be unresolved (i.e. as the \"currency\" string), or resolved to the three letter currency code
 
         Parameters
         ----------
@@ -124,6 +126,7 @@ class GsaUnitConversionSetRequest(ModelBase):
     @property
     def target_unit_symbol(self) -> "str":
         """Gets the target_unit_symbol of this GsaUnitConversionSetRequest.
+        Symbol of the unit to convert from  If the unit contains a currency, this can be unresolved (i.e. as the \"currency\" string), or resolved to the three letter currency code
 
         Returns
         -------
@@ -135,6 +138,7 @@ class GsaUnitConversionSetRequest(ModelBase):
     @target_unit_symbol.setter
     def target_unit_symbol(self, target_unit_symbol: "str") -> None:
         """Sets the target_unit_symbol of this GsaUnitConversionSetRequest.
+        Symbol of the unit to convert from  If the unit contains a currency, this can be unresolved (i.e. as the \"currency\" string), or resolved to the three letter currency code
 
         Parameters
         ----------
