@@ -80,7 +80,6 @@ class GsaTable(ModelBase):
         "legal_disclaimer": "str",
         "quality_system": "GsaSlimNamedEntity",
         "should_show_version_control_signatures": "bool",
-        "table_type": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -103,7 +102,6 @@ class GsaTable(ModelBase):
         "legal_disclaimer": "legalDisclaimer",
         "quality_system": "qualitySystem",
         "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
-        "table_type": "tableType",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -139,7 +137,6 @@ class GsaTable(ModelBase):
         legal_disclaimer: "str | None | Unset_Type" = Unset,
         quality_system: "GsaSlimNamedEntity | Unset_Type" = Unset,
         should_show_version_control_signatures: "bool | Unset_Type" = Unset,
-        table_type: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTable - a model defined in Swagger
 
@@ -164,7 +161,6 @@ class GsaTable(ModelBase):
         legal_disclaimer: str | None, optional
         quality_system: GsaSlimNamedEntity, optional
         should_show_version_control_signatures: bool, optional
-        table_type: str | None, optional
         """
         self._default_subset: GsaSlimSubset | Unset_Type = Unset
         self._subsets: list[GsaSlimSubset]
@@ -176,7 +172,6 @@ class GsaTable(ModelBase):
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
-        self._table_type: str | None | Unset_Type = Unset
         self._should_show_version_control_signatures: bool | Unset_Type = Unset
         self._database_key: str
         self._is_hidden_from_browse: bool
@@ -203,8 +198,6 @@ class GsaTable(ModelBase):
             self.datasheet_header = datasheet_header
         if datasheet_footer is not Unset:
             self.datasheet_footer = datasheet_footer
-        if table_type is not Unset:
-            self.table_type = table_type
         if should_show_version_control_signatures is not Unset:
             self.should_show_version_control_signatures = should_show_version_control_signatures
         self.database_key = database_key
@@ -468,28 +461,6 @@ class GsaTable(ModelBase):
             The datasheet_footer of this GsaTable.
         """
         self._datasheet_footer = datasheet_footer
-
-    @property
-    def table_type(self) -> "str | None | Unset_Type":
-        """Gets the table_type of this GsaTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The table_type of this GsaTable.
-        """
-        return self._table_type
-
-    @table_type.setter
-    def table_type(self, table_type: "str | None | Unset_Type") -> None:
-        """Sets the table_type of this GsaTable.
-
-        Parameters
-        ----------
-        table_type: str | None | Unset_Type
-            The table_type of this GsaTable.
-        """
-        self._table_type = table_type
 
     @property
     def should_show_version_control_signatures(self) -> "bool | Unset_Type":
