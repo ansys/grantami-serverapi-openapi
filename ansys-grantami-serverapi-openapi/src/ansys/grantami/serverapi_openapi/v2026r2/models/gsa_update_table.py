@@ -72,7 +72,7 @@ class GsaUpdateTable(ModelBase):
         "name": "str",
         "quality_system_guid": "str",
         "should_show_version_control_signatures": "bool",
-        "table_type": "str",
+        "table_types": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
@@ -87,7 +87,7 @@ class GsaUpdateTable(ModelBase):
         "name": "name",
         "quality_system_guid": "qualitySystemGuid",
         "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
-        "table_type": "tableType",
+        "table_types": "tableTypes",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -108,7 +108,7 @@ class GsaUpdateTable(ModelBase):
         name: "str | Unset_Type" = Unset,
         quality_system_guid: "str | None | Unset_Type" = Unset,
         should_show_version_control_signatures: "bool | Unset_Type" = Unset,
-        table_type: "str | None | Unset_Type" = Unset,
+        table_types: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateTable - a model defined in Swagger
 
@@ -125,7 +125,7 @@ class GsaUpdateTable(ModelBase):
         name: str, optional
         quality_system_guid: str | None, optional
         should_show_version_control_signatures: bool, optional
-        table_type: str | None, optional
+        table_types: list[str] | None, optional
         """
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
@@ -135,7 +135,7 @@ class GsaUpdateTable(ModelBase):
         self._legal_disclaimer: str | None | Unset_Type = Unset
         self._datasheet_header: str | None | Unset_Type = Unset
         self._datasheet_footer: str | None | Unset_Type = Unset
-        self._table_type: str | None | Unset_Type = Unset
+        self._table_types: list[str] | None | Unset_Type = Unset
         self._should_show_version_control_signatures: bool | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
@@ -156,8 +156,8 @@ class GsaUpdateTable(ModelBase):
             self.datasheet_header = datasheet_header
         if datasheet_footer is not Unset:
             self.datasheet_footer = datasheet_footer
-        if table_type is not Unset:
-            self.table_type = table_type
+        if table_types is not Unset:
+            self.table_types = table_types
         if should_show_version_control_signatures is not Unset:
             self.should_show_version_control_signatures = should_show_version_control_signatures
         if name is not Unset:
@@ -348,26 +348,28 @@ class GsaUpdateTable(ModelBase):
         self._datasheet_footer = datasheet_footer
 
     @property
-    def table_type(self) -> "str | None | Unset_Type":
-        """Gets the table_type of this GsaUpdateTable.
+    def table_types(self) -> "list[str] | None | Unset_Type":
+        """Gets the table_types of this GsaUpdateTable.
+        If specified any existing table types are replaced.
 
         Returns
         -------
-        str | None | Unset_Type
-            The table_type of this GsaUpdateTable.
+        list[str] | None | Unset_Type
+            The table_types of this GsaUpdateTable.
         """
-        return self._table_type
+        return self._table_types
 
-    @table_type.setter
-    def table_type(self, table_type: "str | None | Unset_Type") -> None:
-        """Sets the table_type of this GsaUpdateTable.
+    @table_types.setter
+    def table_types(self, table_types: "list[str] | None | Unset_Type") -> None:
+        """Sets the table_types of this GsaUpdateTable.
+        If specified any existing table types are replaced.
 
         Parameters
         ----------
-        table_type: str | None | Unset_Type
-            The table_type of this GsaUpdateTable.
+        table_types: list[str] | None | Unset_Type
+            The table_types of this GsaUpdateTable.
         """
-        self._table_type = table_type
+        self._table_types = table_types
 
     @property
     def should_show_version_control_signatures(self) -> "bool | Unset_Type":
