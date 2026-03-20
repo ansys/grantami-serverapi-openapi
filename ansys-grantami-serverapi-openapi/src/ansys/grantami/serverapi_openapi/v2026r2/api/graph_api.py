@@ -70,6 +70,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -226,6 +227,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -387,6 +389,7 @@ class GraphApi(ApiBase):
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -531,6 +534,7 @@ class GraphApi(ApiBase):
             See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaGraphEvaluationSettings
         x_ansys_vc_mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
@@ -681,6 +685,7 @@ class GraphApi(ApiBase):
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -813,6 +818,7 @@ class GraphApi(ApiBase):
             See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -954,6 +960,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -1098,6 +1105,7 @@ class GraphApi(ApiBase):
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
+            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str

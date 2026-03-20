@@ -341,6 +341,91 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_database_permission_category_access_controls(
+        self, *, database_key: "str"
+    ) -> "GsaPermissionCategoryAccessControlInfo | None":
+        """Get permission-based access control settings for the database.  Returns the access control for each permission in each category.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+
+        Returns
+        -------
+        GsaPermissionCategoryAccessControlInfo | None
+        """
+        data = self._get_database_permission_category_access_controls_with_http_info(
+            database_key, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_database_permission_category_access_controls_with_http_info(
+        self, database_key: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_database_permission_category_access_controls"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_database_permission_category_access_controls'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaPermissionCategoryAccessControlInfo",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-category-access-controls",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_default_additional_sql_parameters(self) -> "GsaAdditionalSqlParameters | None":
         """Returns additional SQL parameters used by the configuration database.
 
@@ -620,91 +705,6 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}:outbound-links",
             "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def get_permission_category_access_controls(
-        self, *, database_key: "str"
-    ) -> "GsaPermissionCategoryAccessControlInfo | None":
-        """Get permission-based access control settings for the database.  Returns the access control for each permission in each category.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-
-        Returns
-        -------
-        GsaPermissionCategoryAccessControlInfo | None
-        """
-        data = self._get_permission_category_access_controls_with_http_info(
-            database_key, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _get_permission_category_access_controls_with_http_info(
-        self, database_key: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_permission_category_access_controls"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_permission_category_access_controls'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaPermissionCategoryAccessControlInfo",
-            403: None,
-            404: None,
-            422: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/permission-category-access-controls",
-            "GET",
             path_params,
             query_params,
             header_params,
