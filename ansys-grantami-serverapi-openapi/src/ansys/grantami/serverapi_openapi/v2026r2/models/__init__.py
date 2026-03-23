@@ -184,6 +184,8 @@ from .gsa_calendar_interval import GsaCalendarInterval
 from .gsa_category_replace_permission_category_error_detail import (
     GsaCategoryReplacePermissionCategoryErrorDetail,
 )
+from .gsa_chart_data import GsaChartData
+from .gsa_chart_data_type import GsaChartDataType
 from .gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
@@ -449,6 +451,7 @@ from .gsa_delete_record_list_item import GsaDeleteRecordListItem
 from .gsa_delete_record_list_items import GsaDeleteRecordListItems
 from .gsa_description_length_file_error_detail import GsaDescriptionLengthFileErrorDetail
 from .gsa_discrete_attribute import GsaDiscreteAttribute
+from .gsa_discrete_chart_data import GsaDiscreteChartData
 from .gsa_discrete_datum import GsaDiscreteDatum
 from .gsa_discrete_datum_exists_criterion import GsaDiscreteDatumExistsCriterion
 from .gsa_discrete_functional_attribute import GsaDiscreteFunctionalAttribute
@@ -730,6 +733,7 @@ from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .gsa_integer_aggregation import GsaIntegerAggregation
 from .gsa_integer_aggregation_datum_criterion import GsaIntegerAggregationDatumCriterion
 from .gsa_integer_attribute import GsaIntegerAttribute
+from .gsa_integer_chart_data import GsaIntegerChartData
 from .gsa_integer_datum import GsaIntegerDatum
 from .gsa_integer_datum_criterion import GsaIntegerDatumCriterion
 from .gsa_integer_datum_exists_criterion import GsaIntegerDatumExistsCriterion
@@ -832,6 +836,7 @@ from .gsa_log_scale_negative_parameter_value_error_detail import (
 from .gsa_logical_aggregation import GsaLogicalAggregation
 from .gsa_logical_aggregation_datum_criterion import GsaLogicalAggregationDatumCriterion
 from .gsa_logical_attribute import GsaLogicalAttribute
+from .gsa_logical_chart_data import GsaLogicalChartData
 from .gsa_logical_datum import GsaLogicalDatum
 from .gsa_logical_datum_criterion import GsaLogicalDatumCriterion
 from .gsa_logical_datum_exists_criterion import GsaLogicalDatumExistsCriterion
@@ -1075,6 +1080,7 @@ from .gsa_picture_datum_exists_criterion import GsaPictureDatumExistsCriterion
 from .gsa_point_aggregation import GsaPointAggregation
 from .gsa_point_aggregation_datum_criterion import GsaPointAggregationDatumCriterion
 from .gsa_point_attribute import GsaPointAttribute
+from .gsa_point_chart_data import GsaPointChartData
 from .gsa_point_data_value import GsaPointDataValue
 from .gsa_point_datum import GsaPointDatum
 from .gsa_point_datum_criterion import GsaPointDatumCriterion
@@ -1154,6 +1160,7 @@ from .gsa_query_unit_properties import GsaQueryUnitProperties
 from .gsa_range_aggregation import GsaRangeAggregation
 from .gsa_range_aggregation_datum_criterion import GsaRangeAggregationDatumCriterion
 from .gsa_range_attribute import GsaRangeAttribute
+from .gsa_range_chart_data import GsaRangeChartData
 from .gsa_range_datum import GsaRangeDatum
 from .gsa_range_datum_criterion import GsaRangeDatumCriterion
 from .gsa_range_datum_exists_criterion import GsaRangeDatumExistsCriterion
@@ -1768,6 +1775,8 @@ __all__ = [
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
+    "GsaChartData",
+    "GsaChartDataType",
     "GsaCircularReferenceFolderMoveErrorDetail",
     "GsaCodeMissingCurrencyErrorDetail",
     "GsaCodeWhitespaceCurrencyErrorDetail",
@@ -1991,6 +2000,7 @@ __all__ = [
     "GsaDeleteRecordListItems",
     "GsaDescriptionLengthFileErrorDetail",
     "GsaDiscreteAttribute",
+    "GsaDiscreteChartData",
     "GsaDiscreteDatum",
     "GsaDiscreteDatumExistsCriterion",
     "GsaDiscreteFunctionalAttribute",
@@ -2200,6 +2210,7 @@ __all__ = [
     "GsaIntegerAggregation",
     "GsaIntegerAggregationDatumCriterion",
     "GsaIntegerAttribute",
+    "GsaIntegerChartData",
     "GsaIntegerDatum",
     "GsaIntegerDatumCriterion",
     "GsaIntegerDatumExistsCriterion",
@@ -2292,6 +2303,7 @@ __all__ = [
     "GsaLogicalAggregation",
     "GsaLogicalAggregationDatumCriterion",
     "GsaLogicalAttribute",
+    "GsaLogicalChartData",
     "GsaLogicalDatum",
     "GsaLogicalDatumCriterion",
     "GsaLogicalDatumExistsCriterion",
@@ -2463,6 +2475,7 @@ __all__ = [
     "GsaPointAggregation",
     "GsaPointAggregationDatumCriterion",
     "GsaPointAttribute",
+    "GsaPointChartData",
     "GsaPointDataValue",
     "GsaPointDatum",
     "GsaPointDatumCriterion",
@@ -2536,6 +2549,7 @@ __all__ = [
     "GsaRangeAggregation",
     "GsaRangeAggregationDatumCriterion",
     "GsaRangeAttribute",
+    "GsaRangeChartData",
     "GsaRangeDatum",
     "GsaRangeDatumCriterion",
     "GsaRangeDatumExistsCriterion",
