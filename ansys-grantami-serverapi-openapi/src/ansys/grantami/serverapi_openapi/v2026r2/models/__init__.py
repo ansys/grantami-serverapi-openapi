@@ -184,6 +184,8 @@ from .gsa_calendar_interval import GsaCalendarInterval
 from .gsa_category_replace_permission_category_error_detail import (
     GsaCategoryReplacePermissionCategoryErrorDetail,
 )
+from .gsa_chart_data import GsaChartData
+from .gsa_chart_data_type import GsaChartDataType
 from .gsa_circular_reference_folder_move_error_detail import (
     GsaCircularReferenceFolderMoveErrorDetail,
 )
@@ -307,6 +309,7 @@ from .gsa_create_table import GsaCreateTable
 from .gsa_create_tabular_attribute import GsaCreateTabularAttribute
 from .gsa_create_tabular_column import GsaCreateTabularColumn
 from .gsa_create_unit import GsaCreateUnit
+from .gsa_create_unit_mapping import GsaCreateUnitMapping
 from .gsa_create_unit_system import GsaCreateUnitSystem
 from .gsa_created_by_user_property import GsaCreatedByUserProperty
 from .gsa_created_date_property import GsaCreatedDateProperty
@@ -449,6 +452,7 @@ from .gsa_delete_record_list_item import GsaDeleteRecordListItem
 from .gsa_delete_record_list_items import GsaDeleteRecordListItems
 from .gsa_description_length_file_error_detail import GsaDescriptionLengthFileErrorDetail
 from .gsa_discrete_attribute import GsaDiscreteAttribute
+from .gsa_discrete_chart_data import GsaDiscreteChartData
 from .gsa_discrete_datum import GsaDiscreteDatum
 from .gsa_discrete_datum_exists_criterion import GsaDiscreteDatumExistsCriterion
 from .gsa_discrete_functional_attribute import GsaDiscreteFunctionalAttribute
@@ -730,6 +734,7 @@ from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
 from .gsa_integer_aggregation import GsaIntegerAggregation
 from .gsa_integer_aggregation_datum_criterion import GsaIntegerAggregationDatumCriterion
 from .gsa_integer_attribute import GsaIntegerAttribute
+from .gsa_integer_chart_data import GsaIntegerChartData
 from .gsa_integer_datum import GsaIntegerDatum
 from .gsa_integer_datum_criterion import GsaIntegerDatumCriterion
 from .gsa_integer_datum_exists_criterion import GsaIntegerDatumExistsCriterion
@@ -832,6 +837,7 @@ from .gsa_log_scale_negative_parameter_value_error_detail import (
 from .gsa_logical_aggregation import GsaLogicalAggregation
 from .gsa_logical_aggregation_datum_criterion import GsaLogicalAggregationDatumCriterion
 from .gsa_logical_attribute import GsaLogicalAttribute
+from .gsa_logical_chart_data import GsaLogicalChartData
 from .gsa_logical_datum import GsaLogicalDatum
 from .gsa_logical_datum_criterion import GsaLogicalDatumCriterion
 from .gsa_logical_datum_exists_criterion import GsaLogicalDatumExistsCriterion
@@ -967,6 +973,9 @@ from .gsa_no_such_unit_system_unit_equivalent_error_detail import (
 from .gsa_no_such_unit_unit_equivalent_error_detail import GsaNoSuchUnitUnitEquivalentErrorDetail
 from .gsa_no_value_exists_graph_value import GsaNoValueExistsGraphValue
 from .gsa_no_values_specifier import GsaNoValuesSpecifier
+from .gsa_non_custom_standard_name_cannot_be_changed_error_detail import (
+    GsaNonCustomStandardNameCannotBeChangedErrorDetail,
+)
 from .gsa_not_applicable_datum import GsaNotApplicableDatum
 from .gsa_not_the_latest_version_error_detail import GsaNotTheLatestVersionErrorDetail
 from .gsa_not_versioned_error_detail import GsaNotVersionedErrorDetail
@@ -1075,6 +1084,7 @@ from .gsa_picture_datum_exists_criterion import GsaPictureDatumExistsCriterion
 from .gsa_point_aggregation import GsaPointAggregation
 from .gsa_point_aggregation_datum_criterion import GsaPointAggregationDatumCriterion
 from .gsa_point_attribute import GsaPointAttribute
+from .gsa_point_chart_data import GsaPointChartData
 from .gsa_point_data_value import GsaPointDataValue
 from .gsa_point_datum import GsaPointDatum
 from .gsa_point_datum_criterion import GsaPointDatumCriterion
@@ -1154,6 +1164,7 @@ from .gsa_query_unit_properties import GsaQueryUnitProperties
 from .gsa_range_aggregation import GsaRangeAggregation
 from .gsa_range_aggregation_datum_criterion import GsaRangeAggregationDatumCriterion
 from .gsa_range_attribute import GsaRangeAttribute
+from .gsa_range_chart_data import GsaRangeChartData
 from .gsa_range_datum import GsaRangeDatum
 from .gsa_range_datum_criterion import GsaRangeDatumCriterion
 from .gsa_range_datum_exists_criterion import GsaRangeDatumExistsCriterion
@@ -1371,6 +1382,9 @@ from .gsa_sql_credentials import GsaSqlCredentials
 from .gsa_standard_name import GsaStandardName
 from .gsa_standard_name_already_exists_error_detail import GsaStandardNameAlreadyExistsErrorDetail
 from .gsa_standard_name_creation_exception import GsaStandardNameCreationException
+from .gsa_standard_name_deletion_error_detail import GsaStandardNameDeletionErrorDetail
+from .gsa_standard_name_deletion_error_reason import GsaStandardNameDeletionErrorReason
+from .gsa_standard_name_deletion_exception import GsaStandardNameDeletionException
 from .gsa_standard_name_error_detail import GsaStandardNameErrorDetail
 from .gsa_standard_name_error_reason import GsaStandardNameErrorReason
 from .gsa_standard_name_update_exception import GsaStandardNameUpdateException
@@ -1394,6 +1408,7 @@ from .gsa_table_guid_property import GsaTableGuidProperty
 from .gsa_table_identity_property import GsaTableIdentityProperty
 from .gsa_table_name_property import GsaTableNameProperty
 from .gsa_table_search_behaviour import GsaTableSearchBehaviour
+from .gsa_table_types_info import GsaTableTypesInfo
 from .gsa_tables_info import GsaTablesInfo
 from .gsa_tabular_attribute import GsaTabularAttribute
 from .gsa_tabular_attribute_link import GsaTabularAttributeLink
@@ -1768,6 +1783,8 @@ __all__ = [
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
+    "GsaChartData",
+    "GsaChartDataType",
     "GsaCircularReferenceFolderMoveErrorDetail",
     "GsaCodeMissingCurrencyErrorDetail",
     "GsaCodeWhitespaceCurrencyErrorDetail",
@@ -1873,6 +1890,7 @@ __all__ = [
     "GsaCreateTabularAttribute",
     "GsaCreateTabularColumn",
     "GsaCreateUnit",
+    "GsaCreateUnitMapping",
     "GsaCreateUnitSystem",
     "GsaCreatedByUserProperty",
     "GsaCreatedDateProperty",
@@ -1991,6 +2009,7 @@ __all__ = [
     "GsaDeleteRecordListItems",
     "GsaDescriptionLengthFileErrorDetail",
     "GsaDiscreteAttribute",
+    "GsaDiscreteChartData",
     "GsaDiscreteDatum",
     "GsaDiscreteDatumExistsCriterion",
     "GsaDiscreteFunctionalAttribute",
@@ -2200,6 +2219,7 @@ __all__ = [
     "GsaIntegerAggregation",
     "GsaIntegerAggregationDatumCriterion",
     "GsaIntegerAttribute",
+    "GsaIntegerChartData",
     "GsaIntegerDatum",
     "GsaIntegerDatumCriterion",
     "GsaIntegerDatumExistsCriterion",
@@ -2292,6 +2312,7 @@ __all__ = [
     "GsaLogicalAggregation",
     "GsaLogicalAggregationDatumCriterion",
     "GsaLogicalAttribute",
+    "GsaLogicalChartData",
     "GsaLogicalDatum",
     "GsaLogicalDatumCriterion",
     "GsaLogicalDatumExistsCriterion",
@@ -2377,6 +2398,7 @@ __all__ = [
     "GsaNoSuchUnitUnitEquivalentErrorDetail",
     "GsaNoValueExistsGraphValue",
     "GsaNoValuesSpecifier",
+    "GsaNonCustomStandardNameCannotBeChangedErrorDetail",
     "GsaNotApplicableDatum",
     "GsaNotTheLatestVersionErrorDetail",
     "GsaNotVersionedErrorDetail",
@@ -2463,6 +2485,7 @@ __all__ = [
     "GsaPointAggregation",
     "GsaPointAggregationDatumCriterion",
     "GsaPointAttribute",
+    "GsaPointChartData",
     "GsaPointDataValue",
     "GsaPointDatum",
     "GsaPointDatumCriterion",
@@ -2536,6 +2559,7 @@ __all__ = [
     "GsaRangeAggregation",
     "GsaRangeAggregationDatumCriterion",
     "GsaRangeAttribute",
+    "GsaRangeChartData",
     "GsaRangeDatum",
     "GsaRangeDatumCriterion",
     "GsaRangeDatumExistsCriterion",
@@ -2727,6 +2751,9 @@ __all__ = [
     "GsaStandardName",
     "GsaStandardNameAlreadyExistsErrorDetail",
     "GsaStandardNameCreationException",
+    "GsaStandardNameDeletionErrorDetail",
+    "GsaStandardNameDeletionErrorReason",
+    "GsaStandardNameDeletionException",
     "GsaStandardNameErrorDetail",
     "GsaStandardNameErrorReason",
     "GsaStandardNameUpdateException",
@@ -2746,6 +2773,7 @@ __all__ = [
     "GsaTableIdentityProperty",
     "GsaTableNameProperty",
     "GsaTableSearchBehaviour",
+    "GsaTableTypesInfo",
     "GsaTablesInfo",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",
