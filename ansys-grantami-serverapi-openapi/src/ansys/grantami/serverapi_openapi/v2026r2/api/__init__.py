@@ -41,6 +41,7 @@ from .data_api import DataApi
 from .data_export_api import DataExportApi
 from .data_updater_api import DataUpdaterApi
 from .database_api import DatabaseApi
+from .find_similar_api import FindSimilarApi
 from .graph_api import GraphApi
 from .help_location_api import HelpLocationApi
 from .identities_api import IdentitiesApi
@@ -103,6 +104,7 @@ __all__ = [
     "DataExportApi",
     "DataUpdaterApi",
     "DatabaseApi",
+    "FindSimilarApi",
     "GraphApi",
     "HelpLocationApi",
     "IdentitiesApi",

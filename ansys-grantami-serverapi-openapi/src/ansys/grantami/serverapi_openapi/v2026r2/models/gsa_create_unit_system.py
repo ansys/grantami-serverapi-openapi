@@ -63,14 +63,18 @@ class GsaCreateUnitSystem(ModelBase):
     swagger_types: dict[str, str] = {
         "name": "str",
         "guid": "str",
+        "unit_mappings": "list[GsaCreateUnitMapping]",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
         "guid": "guid",
+        "unit_mappings": "unitMappings",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "unitMappings": "GsaCreateUnitMapping",
+    }
 
     discriminator: Optional[str] = None
 
@@ -79,6 +83,7 @@ class GsaCreateUnitSystem(ModelBase):
         *,
         name: "str",
         guid: "str | Unset_Type" = Unset,
+        unit_mappings: "list[GsaCreateUnitMapping] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateUnitSystem - a model defined in Swagger
 
@@ -86,13 +91,43 @@ class GsaCreateUnitSystem(ModelBase):
         ----------
         name: str
         guid: str, optional
+        unit_mappings: list[GsaCreateUnitMapping] | None, optional
         """
+        self._unit_mappings: list[GsaCreateUnitMapping] | None | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
 
+        if unit_mappings is not Unset:
+            self.unit_mappings = unit_mappings
         self.name = name
         if guid is not Unset:
             self.guid = guid
+
+    @property
+    def unit_mappings(self) -> "list[GsaCreateUnitMapping] | None | Unset_Type":
+        """Gets the unit_mappings of this GsaCreateUnitSystem.
+        Unit mappings will default to each unit being mapped to itself but optionally one or more non-default mappings can be specified here.
+
+        Returns
+        -------
+        list[GsaCreateUnitMapping] | None | Unset_Type
+            The unit_mappings of this GsaCreateUnitSystem.
+        """
+        return self._unit_mappings
+
+    @unit_mappings.setter
+    def unit_mappings(
+        self, unit_mappings: "list[GsaCreateUnitMapping] | None | Unset_Type"
+    ) -> None:
+        """Sets the unit_mappings of this GsaCreateUnitSystem.
+        Unit mappings will default to each unit being mapped to itself but optionally one or more non-default mappings can be specified here.
+
+        Parameters
+        ----------
+        unit_mappings: list[GsaCreateUnitMapping] | None | Unset_Type
+            The unit_mappings of this GsaCreateUnitSystem.
+        """
+        self._unit_mappings = unit_mappings
 
     @property
     def name(self) -> "str":
