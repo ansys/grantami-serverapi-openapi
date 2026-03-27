@@ -53,3 +53,4 @@ class GsaStandardNameErrorReason(Enum):
     UNRESOLVEDPARAMETERGUIDS = "unresolvedParameterGuids"
     UNRESOLVEDRECORDLINKGROUPGUIDS = "unresolvedRecordLinkGroupGuids"
     UNRESOLVEDCROSSDATABASERECORDLINKGROUPGUIDS = "unresolvedCrossDatabaseRecordLinkGroupGuids"
+    NONCUSTOMSTANDARDNAMECANNOTBECHANGED = "nonCustomStandardNameCannotBeChanged"

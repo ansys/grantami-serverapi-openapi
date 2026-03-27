@@ -264,6 +264,82 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def get_all_table_types(self, *, database_key: "str") -> "GsaTableTypesInfo | None":
+        """Get Protection Status for a given database. The user must be an Admin user for the database.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+
+        Returns
+        -------
+        GsaTableTypesInfo | None
+        """
+        data = self._get_all_table_types_with_http_info(database_key, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _get_all_table_types_with_http_info(self, database_key: "str", **kwargs: Any) -> Any:
+        all_params = [
+            "database_key",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_all_table_types"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'get_all_table_types'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaTableTypesInfo",
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/all-table-types",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def get_database(self, *, database_key: "str") -> "GsaDatabase | None":
         """Returns details for a given database.
 
@@ -1215,6 +1291,107 @@ class SchemaDatabasesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
+    def update_database_permission_category_access_controls(
+        self,
+        *,
+        database_key: "str",
+        body: "Optional[GsaUpdatePermissionCategoryAccessControlRequest]" = None,
+    ) -> "GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None":
+        """Update permission-based access control settings for the database.  Sets the access control for the given permissions.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
+        body: GsaUpdatePermissionCategoryAccessControlRequest
+
+        Returns
+        -------
+        GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None
+        """
+        data = self._update_database_permission_category_access_controls_with_http_info(
+            database_key, body, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _update_database_permission_category_access_controls_with_http_info(
+        self,
+        database_key: "str",
+        body: "Optional[GsaUpdatePermissionCategoryAccessControlRequest]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "database_key",
+            "body",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method update_database_permission_category_access_controls"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'update_database_permission_category_access_controls'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        if "body" in params and body is not None:
+            body_params = params["body"]
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
+
+        # HTTP header 'Content-Type'
+        header_params["Content-Type"] = self.api_client.select_header_content_type(
+            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaPermissionCategoryAccessControlInfo",
+            400: "GsaPermissionCategoriesAccessControlUpdateException",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/databases/{database-key}/permission-category-access-controls",
+            "PATCH",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def update_default_database(
         self, *, body: "Optional[GsaUpdateDefaultDatabase]" = None
     ) -> "GsaDatabase | None":
@@ -1279,107 +1456,6 @@ class SchemaDatabasesApi(ApiBase):
         return self.api_client.call_api(
             "/v1alpha/databases/default",
             "POST",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def update_permission_category_access_controls(
-        self,
-        *,
-        database_key: "str",
-        body: "Optional[GsaUpdatePermissionCategoryAccessControlRequest]" = None,
-    ) -> "GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None":
-        """Update permission-based access control settings for the database.  Sets the access control for the given permissions.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        body: GsaUpdatePermissionCategoryAccessControlRequest
-
-        Returns
-        -------
-        GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None
-        """
-        data = self._update_permission_category_access_controls_with_http_info(
-            database_key, body, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _update_permission_category_access_controls_with_http_info(
-        self,
-        database_key: "str",
-        body: "Optional[GsaUpdatePermissionCategoryAccessControlRequest]" = None,
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "body",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method update_permission_category_access_controls"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'update_permission_category_access_controls'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        if "body" in params and body is not None:
-            body_params = params["body"]
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        # HTTP header 'Content-Type'
-        header_params["Content-Type"] = self.api_client.select_header_content_type(
-            ["application/json-patch+json", "application/json", "text/json", "application/*+json"]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaPermissionCategoryAccessControlInfo",
-            400: "GsaPermissionCategoriesAccessControlUpdateException",
-            403: None,
-            404: None,
-            422: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/permission-category-access-controls",
-            "PATCH",
             path_params,
             query_params,
             header_params,
