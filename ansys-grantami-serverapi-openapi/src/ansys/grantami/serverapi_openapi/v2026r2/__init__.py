@@ -1430,6 +1430,7 @@ from .models.gsa_schema_too_old_add_database_validation_issue import (
 )
 from .models.gsa_search_cluster_status import GsaSearchClusterStatus
 from .models.gsa_search_index_status import GsaSearchIndexStatus
+from .models.gsa_search_mask import GsaSearchMask
 from .models.gsa_search_mask_info import GsaSearchMaskInfo
 from .models.gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
@@ -1439,7 +1440,13 @@ from .models.gsa_search_response import GsaSearchResponse
 from .models.gsa_search_result import GsaSearchResult
 from .models.gsa_search_results_request import GsaSearchResultsRequest
 from .models.gsa_search_service_status import GsaSearchServiceStatus
+from .models.gsa_search_template import GsaSearchTemplate
+from .models.gsa_search_template_attribute_item import GsaSearchTemplateAttributeItem
 from .models.gsa_search_template_info import GsaSearchTemplateInfo
+from .models.gsa_search_template_item import GsaSearchTemplateItem
+from .models.gsa_search_template_item_type import GsaSearchTemplateItemType
+from .models.gsa_search_template_link_item import GsaSearchTemplateLinkItem
+from .models.gsa_search_template_tabular_column_item import GsaSearchTemplateTabularColumnItem
 from .models.gsa_searchable_record_property import GsaSearchableRecordProperty
 from .models.gsa_security_attribute_usage_data_modification_error_detail import (
     GsaSecurityAttributeUsageDataModificationErrorDetail,
@@ -2891,6 +2898,7 @@ __all__ = [
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
     "GsaSearchIndexStatus",
+    "GsaSearchMask",
     "GsaSearchMaskInfo",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
@@ -2898,7 +2906,13 @@ __all__ = [
     "GsaSearchResult",
     "GsaSearchResultsRequest",
     "GsaSearchServiceStatus",
+    "GsaSearchTemplate",
+    "GsaSearchTemplateAttributeItem",
     "GsaSearchTemplateInfo",
+    "GsaSearchTemplateItem",
+    "GsaSearchTemplateItemType",
+    "GsaSearchTemplateLinkItem",
+    "GsaSearchTemplateTabularColumnItem",
     "GsaSearchableRecordProperty",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",

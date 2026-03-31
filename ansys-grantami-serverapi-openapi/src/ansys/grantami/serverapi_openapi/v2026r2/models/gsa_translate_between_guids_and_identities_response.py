@@ -74,6 +74,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "record_link_groups": "list[GsaSlimIdentifiedEntity]",
         "record_versions": "list[GsaSlimIdentifiedEntity]",
         "replacement_strings": "list[GsaSlimIdentifiedEntity]",
+        "search_masks": "list[GsaSlimIdentifiedEntity]",
+        "search_templates": "list[GsaSlimIdentifiedEntity]",
         "standard_names": "list[GsaSlimIdentifiedEntity]",
         "subsets": "list[GsaSlimIdentifiedEntity]",
         "tables": "list[GsaSlimIdentifiedEntity]",
@@ -96,6 +98,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "record_link_groups": "recordLinkGroups",
         "record_versions": "recordVersions",
         "replacement_strings": "replacementStrings",
+        "search_masks": "searchMasks",
+        "search_templates": "searchTemplates",
         "standard_names": "standardNames",
         "subsets": "subsets",
         "tables": "tables",
@@ -123,6 +127,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         "crossDatabaseLinkGroups": "GsaSlimIdentifiedEntity",
         "tabularColumns": "GsaSlimIdentifiedEntity",
         "data": "GsaSlimIdentifiedEntity",
+        "searchMasks": "GsaSlimIdentifiedEntity",
+        "searchTemplates": "GsaSlimIdentifiedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -143,6 +149,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         record_link_groups: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         record_versions: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         replacement_strings: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
+        search_masks: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
+        search_templates: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         standard_names: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         subsets: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
         tables: "list[GsaSlimIdentifiedEntity] | None | Unset_Type" = Unset,
@@ -167,6 +175,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         record_link_groups: list[GsaSlimIdentifiedEntity] | None, optional
         record_versions: list[GsaSlimIdentifiedEntity] | None, optional
         replacement_strings: list[GsaSlimIdentifiedEntity] | None, optional
+        search_masks: list[GsaSlimIdentifiedEntity] | None, optional
+        search_templates: list[GsaSlimIdentifiedEntity] | None, optional
         standard_names: list[GsaSlimIdentifiedEntity] | None, optional
         subsets: list[GsaSlimIdentifiedEntity] | None, optional
         tables: list[GsaSlimIdentifiedEntity] | None, optional
@@ -193,6 +203,8 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
         self._cross_database_link_groups: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
         self._tabular_columns: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
         self._data: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
+        self._search_masks: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
+        self._search_templates: list[GsaSlimIdentifiedEntity] | None | Unset_Type = Unset
 
         self.database_key = database_key
         if attributes is not Unset:
@@ -231,6 +243,10 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
             self.tabular_columns = tabular_columns
         if data is not Unset:
             self.data = data
+        if search_masks is not Unset:
+            self.search_masks = search_masks
+        if search_templates is not Unset:
+            self.search_templates = search_templates
 
     @property
     def database_key(self) -> "str":
@@ -675,6 +691,54 @@ class GsaTranslateBetweenGuidsAndIdentitiesResponse(ModelBase):
             The data of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
         """
         self._data = data
+
+    @property
+    def search_masks(self) -> "list[GsaSlimIdentifiedEntity] | None | Unset_Type":
+        """Gets the search_masks of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Returns
+        -------
+        list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The search_masks of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        return self._search_masks
+
+    @search_masks.setter
+    def search_masks(
+        self, search_masks: "list[GsaSlimIdentifiedEntity] | None | Unset_Type"
+    ) -> None:
+        """Sets the search_masks of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Parameters
+        ----------
+        search_masks: list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The search_masks of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        self._search_masks = search_masks
+
+    @property
+    def search_templates(self) -> "list[GsaSlimIdentifiedEntity] | None | Unset_Type":
+        """Gets the search_templates of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Returns
+        -------
+        list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The search_templates of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        return self._search_templates
+
+    @search_templates.setter
+    def search_templates(
+        self, search_templates: "list[GsaSlimIdentifiedEntity] | None | Unset_Type"
+    ) -> None:
+        """Sets the search_templates of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+
+        Parameters
+        ----------
+        search_templates: list[GsaSlimIdentifiedEntity] | None | Unset_Type
+            The search_templates of this GsaTranslateBetweenGuidsAndIdentitiesResponse.
+        """
+        self._search_templates = search_templates
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
