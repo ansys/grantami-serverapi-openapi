@@ -1285,6 +1285,7 @@ from .gsa_schema_too_old_add_database_validation_issue import (
 )
 from .gsa_search_cluster_status import GsaSearchClusterStatus
 from .gsa_search_index_status import GsaSearchIndexStatus
+from .gsa_search_mask import GsaSearchMask
 from .gsa_search_mask_info import GsaSearchMaskInfo
 from .gsa_search_mask_usage_data_modification_error_detail import (
     GsaSearchMaskUsageDataModificationErrorDetail,
@@ -1294,7 +1295,13 @@ from .gsa_search_response import GsaSearchResponse
 from .gsa_search_result import GsaSearchResult
 from .gsa_search_results_request import GsaSearchResultsRequest
 from .gsa_search_service_status import GsaSearchServiceStatus
+from .gsa_search_template import GsaSearchTemplate
+from .gsa_search_template_attribute_item import GsaSearchTemplateAttributeItem
 from .gsa_search_template_info import GsaSearchTemplateInfo
+from .gsa_search_template_item import GsaSearchTemplateItem
+from .gsa_search_template_item_type import GsaSearchTemplateItemType
+from .gsa_search_template_link_item import GsaSearchTemplateLinkItem
+from .gsa_search_template_tabular_column_item import GsaSearchTemplateTabularColumnItem
 from .gsa_searchable_record_property import GsaSearchableRecordProperty
 from .gsa_security_attribute_usage_data_modification_error_detail import (
     GsaSecurityAttributeUsageDataModificationErrorDetail,
@@ -2673,6 +2680,7 @@ __all__ = [
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
     "GsaSearchIndexStatus",
+    "GsaSearchMask",
     "GsaSearchMaskInfo",
     "GsaSearchMaskUsageDataModificationErrorDetail",
     "GsaSearchRequest",
@@ -2680,7 +2688,13 @@ __all__ = [
     "GsaSearchResult",
     "GsaSearchResultsRequest",
     "GsaSearchServiceStatus",
+    "GsaSearchTemplate",
+    "GsaSearchTemplateAttributeItem",
     "GsaSearchTemplateInfo",
+    "GsaSearchTemplateItem",
+    "GsaSearchTemplateItemType",
+    "GsaSearchTemplateLinkItem",
+    "GsaSearchTemplateTabularColumnItem",
     "GsaSearchableRecordProperty",
     "GsaSecurityAttributeUsageDataModificationErrorDetail",
     "GsaSecurityGroups",

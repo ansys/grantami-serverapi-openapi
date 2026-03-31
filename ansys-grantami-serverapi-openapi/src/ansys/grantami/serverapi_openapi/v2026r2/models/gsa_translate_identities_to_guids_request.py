@@ -74,6 +74,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "record_link_groups": "list[int]",
         "record_versions": "list[int]",
         "replacement_strings": "list[int]",
+        "search_masks": "list[int]",
+        "search_templates": "list[int]",
         "standard_names": "list[int]",
         "subsets": "list[int]",
         "tables": "list[int]",
@@ -96,6 +98,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         "record_link_groups": "recordLinkGroups",
         "record_versions": "recordVersions",
         "replacement_strings": "replacementStrings",
+        "search_masks": "searchMasks",
+        "search_templates": "searchTemplates",
         "standard_names": "standardNames",
         "subsets": "subsets",
         "tables": "tables",
@@ -124,6 +128,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         record_link_groups: "list[int] | None | Unset_Type" = Unset,
         record_versions: "list[int] | None | Unset_Type" = Unset,
         replacement_strings: "list[int] | None | Unset_Type" = Unset,
+        search_masks: "list[int] | None | Unset_Type" = Unset,
+        search_templates: "list[int] | None | Unset_Type" = Unset,
         standard_names: "list[int] | None | Unset_Type" = Unset,
         subsets: "list[int] | None | Unset_Type" = Unset,
         tables: "list[int] | None | Unset_Type" = Unset,
@@ -148,6 +154,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         record_link_groups: list[int] | None, optional
         record_versions: list[int] | None, optional
         replacement_strings: list[int] | None, optional
+        search_masks: list[int] | None, optional
+        search_templates: list[int] | None, optional
         standard_names: list[int] | None, optional
         subsets: list[int] | None, optional
         tables: list[int] | None, optional
@@ -174,6 +182,8 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
         self._cross_database_link_groups: list[int] | None | Unset_Type = Unset
         self._tabular_columns: list[int] | None | Unset_Type = Unset
         self._data: list[int] | None | Unset_Type = Unset
+        self._search_masks: list[int] | None | Unset_Type = Unset
+        self._search_templates: list[int] | None | Unset_Type = Unset
 
         self.database_key = database_key
         if attributes is not Unset:
@@ -212,6 +222,10 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
             self.tabular_columns = tabular_columns
         if data is not Unset:
             self.data = data
+        if search_masks is not Unset:
+            self.search_masks = search_masks
+        if search_templates is not Unset:
+            self.search_templates = search_templates
 
     @property
     def database_key(self) -> "str":
@@ -638,6 +652,50 @@ class GsaTranslateIdentitiesToGuidsRequest(ModelBase):
             The data of this GsaTranslateIdentitiesToGuidsRequest.
         """
         self._data = data
+
+    @property
+    def search_masks(self) -> "list[int] | None | Unset_Type":
+        """Gets the search_masks of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Returns
+        -------
+        list[int] | None | Unset_Type
+            The search_masks of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        return self._search_masks
+
+    @search_masks.setter
+    def search_masks(self, search_masks: "list[int] | None | Unset_Type") -> None:
+        """Sets the search_masks of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Parameters
+        ----------
+        search_masks: list[int] | None | Unset_Type
+            The search_masks of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        self._search_masks = search_masks
+
+    @property
+    def search_templates(self) -> "list[int] | None | Unset_Type":
+        """Gets the search_templates of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Returns
+        -------
+        list[int] | None | Unset_Type
+            The search_templates of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        return self._search_templates
+
+    @search_templates.setter
+    def search_templates(self, search_templates: "list[int] | None | Unset_Type") -> None:
+        """Sets the search_templates of this GsaTranslateIdentitiesToGuidsRequest.
+
+        Parameters
+        ----------
+        search_templates: list[int] | None | Unset_Type
+            The search_templates of this GsaTranslateIdentitiesToGuidsRequest.
+        """
+        self._search_templates = search_templates
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
