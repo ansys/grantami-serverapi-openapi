@@ -50,7 +50,7 @@ class SchemaTablesApi(ApiBase):
 
     def create_table(
         self, *, database_key: "str", body: "Optional[GsaCreateTable]" = None
-    ) -> "GsaTable | None":
+    ) -> "GsaTable | GsaTableCreationException | None":
         """Create a new table.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        GsaTable | None
+        GsaTable | GsaTableCreationException | None
         """
         data = self._create_table_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -119,7 +119,7 @@ class SchemaTablesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaTable",
-            400: None,
+            400: "GsaTableCreationException",
             403: None,
             404: None,
         }
@@ -964,7 +964,7 @@ class SchemaTablesApi(ApiBase):
 
     def update_table(
         self, *, database_key: "str", table_guid: "str", body: "Optional[GsaUpdateTable]" = None
-    ) -> "GsaTable | None":
+    ) -> "GsaTable | GsaTableUpdateException | None":
         """Update a table.
 
         This method makes a synchronous HTTP request.
@@ -979,7 +979,7 @@ class SchemaTablesApi(ApiBase):
 
         Returns
         -------
-        GsaTable | None
+        GsaTable | GsaTableUpdateException | None
         """
         data = self._update_table_with_http_info(
             database_key, table_guid, body, _return_http_data_only=True
@@ -1049,7 +1049,7 @@ class SchemaTablesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaTable",
-            400: None,
+            400: "GsaTableUpdateException",
             403: None,
             404: None,
         }

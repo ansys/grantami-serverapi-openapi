@@ -512,6 +512,7 @@ from .models.gsa_default_fallback_security_groups import GsaDefaultFallbackSecur
 from .models.gsa_default_free_parameter_not_found_maths_functional_error_detail import (
     GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail,
 )
+from .models.gsa_default_layout_guid_error_detail import GsaDefaultLayoutGuidErrorDetail
 from .models.gsa_default_parameter_value_guid_parameter_error_detail import (
     GsaDefaultParameterValueGuidParameterErrorDetail,
 )
@@ -527,6 +528,7 @@ from .models.gsa_default_parameter_value_index_without_values_parameter_error_de
 from .models.gsa_default_parameter_value_usage_data_modification_error_detail import (
     GsaDefaultParameterValueUsageDataModificationErrorDetail,
 )
+from .models.gsa_default_subset_guid_error_detail import GsaDefaultSubsetGuidErrorDetail
 from .models.gsa_delete_record_list_item import GsaDeleteRecordListItem
 from .models.gsa_delete_record_list_items import GsaDeleteRecordListItems
 from .models.gsa_description_length_file_error_detail import GsaDescriptionLengthFileErrorDetail
@@ -674,6 +676,7 @@ from .models.gsa_duplicate_version_guid_add_database_validation_issue import (
 )
 from .models.gsa_empty_axis_name_attribute_error_detail import GsaEmptyAxisNameAttributeErrorDetail
 from .models.gsa_empty_symbol_unit_error_detail import GsaEmptySymbolUnitErrorDetail
+from .models.gsa_empty_table_type_error_detail import GsaEmptyTableTypeErrorDetail
 from .models.gsa_enabled_licenses_info import GsaEnabledLicensesInfo
 from .models.gsa_entity_already_exists_error_detail import GsaEntityAlreadyExistsErrorDetail
 from .models.gsa_entity_identifier_already_specified_error_detail import (
@@ -1035,6 +1038,7 @@ from .models.gsa_named_entity_permission_error_detail import GsaNamedEntityPermi
 from .models.gsa_named_entity_record_link_group_error_detail import (
     GsaNamedEntityRecordLinkGroupErrorDetail,
 )
+from .models.gsa_named_entity_table_error_detail import GsaNamedEntityTableErrorDetail
 from .models.gsa_named_entity_unit_error_detail import GsaNamedEntityUnitErrorDetail
 from .models.gsa_new_layout_association_chain_item import GsaNewLayoutAssociationChainItem
 from .models.gsa_new_layout_association_chain_link import GsaNewLayoutAssociationChainLink
@@ -1248,6 +1252,7 @@ from .models.gsa_put_permission_category import GsaPutPermissionCategory
 from .models.gsa_put_type import GsaPutType
 from .models.gsa_quality_discrete_value import GsaQualityDiscreteValue
 from .models.gsa_quality_system import GsaQualitySystem
+from .models.gsa_quality_system_guid_error_detail import GsaQualitySystemGuidErrorDetail
 from .models.gsa_quality_system_type import GsaQualitySystemType
 from .models.gsa_quality_systems_info import GsaQualitySystemsInfo
 from .models.gsa_query_attribute import GsaQueryAttribute
@@ -1419,6 +1424,9 @@ from .models.gsa_role_not_provided_permission_error_detail import (
 from .models.gsa_rollup_export_failure import GsaRollupExportFailure
 from .models.gsa_rollup_reference import GsaRollupReference
 from .models.gsa_root_folder_move_error_detail import GsaRootFolderMoveErrorDetail
+from .models.gsa_root_record_not_available_to_rename_error_detail import (
+    GsaRootRecordNotAvailableToRenameErrorDetail,
+)
 from .models.gsa_rule_engine import GsaRuleEngine
 from .models.gsa_same_parent_file_move_error_detail import GsaSameParentFileMoveErrorDetail
 from .models.gsa_same_parent_folder_move_error_detail import GsaSameParentFolderMoveErrorDetail
@@ -1565,12 +1573,20 @@ from .models.gsa_symbol_cannot_contain_comma_unit_error_detail import (
 )
 from .models.gsa_t_item import GsaTItem
 from .models.gsa_table import GsaTable
+from .models.gsa_table_creation_exception import GsaTableCreationException
 from .models.gsa_table_deletion_exception import GsaTableDeletionException
+from .models.gsa_table_error_detail import GsaTableErrorDetail
+from .models.gsa_table_error_reason import GsaTableErrorReason
 from .models.gsa_table_guid_property import GsaTableGuidProperty
 from .models.gsa_table_identity_property import GsaTableIdentityProperty
 from .models.gsa_table_name_property import GsaTableNameProperty
 from .models.gsa_table_search_behaviour import GsaTableSearchBehaviour
+from .models.gsa_table_type_contains_comma_error_detail import GsaTableTypeContainsCommaErrorDetail
+from .models.gsa_table_type_error_detail import GsaTableTypeErrorDetail
+from .models.gsa_table_type_error_reason import GsaTableTypeErrorReason
+from .models.gsa_table_types_error_detail import GsaTableTypesErrorDetail
 from .models.gsa_table_types_info import GsaTableTypesInfo
+from .models.gsa_table_update_exception import GsaTableUpdateException
 from .models.gsa_tables_info import GsaTablesInfo
 from .models.gsa_tabular_attribute import GsaTabularAttribute
 from .models.gsa_tabular_attribute_link import GsaTabularAttributeLink
@@ -2234,11 +2250,13 @@ __all__ = [
     "GsaDefaultExpressionNotFoundMathsFunctionalErrorDetail",
     "GsaDefaultFallbackSecurityGroups",
     "GsaDefaultFreeParameterNotFoundMathsFunctionalErrorDetail",
+    "GsaDefaultLayoutGuidErrorDetail",
     "GsaDefaultParameterValueGuidParameterErrorDetail",
     "GsaDefaultParameterValueIndexAndGuidParameterErrorDetail",
     "GsaDefaultParameterValueIndexParameterErrorDetail",
     "GsaDefaultParameterValueIndexWithoutValuesParameterErrorDetail",
     "GsaDefaultParameterValueUsageDataModificationErrorDetail",
+    "GsaDefaultSubsetGuidErrorDetail",
     "GsaDeleteRecordListItem",
     "GsaDeleteRecordListItems",
     "GsaDescriptionLengthFileErrorDetail",
@@ -2328,6 +2346,7 @@ __all__ = [
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
     "GsaEmptyAxisNameAttributeErrorDetail",
     "GsaEmptySymbolUnitErrorDetail",
+    "GsaEmptyTableTypeErrorDetail",
     "GsaEnabledLicensesInfo",
     "GsaEntityAlreadyExistsErrorDetail",
     "GsaEntityIdentifierAlreadySpecifiedErrorDetail",
@@ -2603,6 +2622,7 @@ __all__ = [
     "GsaNamedEntityParameterValueErrorDetail",
     "GsaNamedEntityPermissionErrorDetail",
     "GsaNamedEntityRecordLinkGroupErrorDetail",
+    "GsaNamedEntityTableErrorDetail",
     "GsaNamedEntityUnitErrorDetail",
     "GsaNewLayoutAssociationChainItem",
     "GsaNewLayoutAssociationChainLink",
@@ -2744,6 +2764,7 @@ __all__ = [
     "GsaPutType",
     "GsaQualityDiscreteValue",
     "GsaQualitySystem",
+    "GsaQualitySystemGuidErrorDetail",
     "GsaQualitySystemType",
     "GsaQualitySystemsInfo",
     "GsaQueryAttribute",
@@ -2891,6 +2912,7 @@ __all__ = [
     "GsaRollupExportFailure",
     "GsaRollupReference",
     "GsaRootFolderMoveErrorDetail",
+    "GsaRootRecordNotAvailableToRenameErrorDetail",
     "GsaRuleEngine",
     "GsaSameParentFileMoveErrorDetail",
     "GsaSameParentFolderMoveErrorDetail",
@@ -3017,12 +3039,20 @@ __all__ = [
     "GsaSymbolCannotContainCommaUnitErrorDetail",
     "GsaTItem",
     "GsaTable",
+    "GsaTableCreationException",
     "GsaTableDeletionException",
+    "GsaTableErrorDetail",
+    "GsaTableErrorReason",
     "GsaTableGuidProperty",
     "GsaTableIdentityProperty",
     "GsaTableNameProperty",
     "GsaTableSearchBehaviour",
+    "GsaTableTypeContainsCommaErrorDetail",
+    "GsaTableTypeErrorDetail",
+    "GsaTableTypeErrorReason",
+    "GsaTableTypesErrorDetail",
     "GsaTableTypesInfo",
+    "GsaTableUpdateException",
     "GsaTablesInfo",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",
