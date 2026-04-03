@@ -320,6 +320,8 @@ from .gsa_cross_database_link_create_put_layout_item import GsaCrossDatabaseLink
 from .gsa_cross_database_record_link import GsaCrossDatabaseRecordLink
 from .gsa_cross_database_record_link_group import GsaCrossDatabaseRecordLinkGroup
 from .gsa_cross_database_record_link_result import GsaCrossDatabaseRecordLinkResult
+from .gsa_currencies_info import GsaCurrenciesInfo
+from .gsa_currency import GsaCurrency
 from .gsa_currency_error_detail import GsaCurrencyErrorDetail
 from .gsa_currency_error_reason import GsaCurrencyErrorReason
 from .gsa_current_user import GsaCurrentUser
@@ -1933,6 +1935,8 @@ __all__ = [
     "GsaCrossDatabaseRecordLink",
     "GsaCrossDatabaseRecordLinkGroup",
     "GsaCrossDatabaseRecordLinkResult",
+    "GsaCurrenciesInfo",
+    "GsaCurrency",
     "GsaCurrencyErrorDetail",
     "GsaCurrencyErrorReason",
     "GsaCurrentUser",
