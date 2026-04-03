@@ -37,6 +37,7 @@ from .aggregation_api import AggregationApi
 from .blob_infos_api import BlobInfosApi
 from .blobs_api import BlobsApi
 from .bulk_api import BulkApi
+from .currencies_api import CurrenciesApi
 from .data_api import DataApi
 from .data_export_api import DataExportApi
 from .data_updater_api import DataUpdaterApi
@@ -100,6 +101,7 @@ __all__ = [
     "BlobInfosApi",
     "BlobsApi",
     "BulkApi",
+    "CurrenciesApi",
     "DataApi",
     "DataExportApi",
     "DataUpdaterApi",

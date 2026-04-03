@@ -44,6 +44,7 @@ from .api.aggregation_api import AggregationApi
 from .api.blob_infos_api import BlobInfosApi
 from .api.blobs_api import BlobsApi
 from .api.bulk_api import BulkApi
+from .api.currencies_api import CurrenciesApi
 from .api.data_api import DataApi
 from .api.data_export_api import DataExportApi
 from .api.data_updater_api import DataUpdaterApi
@@ -395,6 +396,8 @@ from .models.gsa_cross_database_link_create_put_layout_item import (
 from .models.gsa_cross_database_record_link import GsaCrossDatabaseRecordLink
 from .models.gsa_cross_database_record_link_group import GsaCrossDatabaseRecordLinkGroup
 from .models.gsa_cross_database_record_link_result import GsaCrossDatabaseRecordLinkResult
+from .models.gsa_currencies_info import GsaCurrenciesInfo
+from .models.gsa_currency import GsaCurrency
 from .models.gsa_currency_error_detail import GsaCurrencyErrorDetail
 from .models.gsa_currency_error_reason import GsaCurrencyErrorReason
 from .models.gsa_current_user import GsaCurrentUser
@@ -1862,6 +1865,7 @@ __all__ = [
     "BlobInfosApi",
     "BlobsApi",
     "BulkApi",
+    "CurrenciesApi",
     "DataApi",
     "DataExportApi",
     "DataUpdaterApi",
@@ -2151,6 +2155,8 @@ __all__ = [
     "GsaCrossDatabaseRecordLink",
     "GsaCrossDatabaseRecordLinkGroup",
     "GsaCrossDatabaseRecordLinkResult",
+    "GsaCurrenciesInfo",
+    "GsaCurrency",
     "GsaCurrencyErrorDetail",
     "GsaCurrencyErrorReason",
     "GsaCurrentUser",
