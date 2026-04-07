@@ -63,10 +63,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaAppendDiscreteValues
 
         Returns
@@ -187,12 +185,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaAppendDiscreteValues
 
         Returns
@@ -326,10 +321,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaAppendPointValues
 
         Returns
@@ -450,12 +443,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaAppendPointValues
 
         Returns
@@ -590,10 +580,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
 
@@ -727,12 +715,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
 
@@ -869,10 +854,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
 
         Returns
         -------
@@ -975,12 +958,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
 
         Returns
         -------
@@ -1103,10 +1083,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -1250,12 +1228,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -1409,11 +1384,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -1568,13 +1541,10 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -1739,10 +1709,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -1910,12 +1878,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2093,11 +2058,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2276,13 +2239,10 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2467,10 +2427,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2621,12 +2579,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2787,11 +2742,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -2953,13 +2906,10 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         mode: str
@@ -3129,10 +3079,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -3273,12 +3221,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -3429,11 +3374,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -3585,13 +3528,10 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         record_version_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
         x_ansys_vc_mode: str
@@ -3750,10 +3690,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         body: GsaSetDatum
@@ -3902,12 +3840,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         body: GsaSetDatum
@@ -4068,10 +4003,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         file: BinaryIO | pathlib.Path
@@ -4239,12 +4172,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         file: BinaryIO | pathlib.Path
@@ -4418,10 +4348,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         picture: BinaryIO | pathlib.Path
@@ -4569,12 +4497,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         row_guid: str
         column_guid: str
         picture: BinaryIO | pathlib.Path
@@ -4729,10 +4654,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaSetDatum
 
         Returns
@@ -4854,12 +4777,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         body: GsaSetDatum
 
         Returns
@@ -4989,10 +4909,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
 
         Returns
         -------
@@ -5095,12 +5013,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
 
         Returns
         -------
@@ -5223,10 +5138,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         file: BinaryIO | pathlib.Path
         description: str
         target: str
@@ -5370,12 +5283,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         file: BinaryIO | pathlib.Path
         description: str
         target: str
@@ -5525,10 +5435,8 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         picture: BinaryIO | pathlib.Path
 
         Returns
@@ -5648,12 +5556,9 @@ class DataApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         picture: BinaryIO | pathlib.Path
 
         Returns

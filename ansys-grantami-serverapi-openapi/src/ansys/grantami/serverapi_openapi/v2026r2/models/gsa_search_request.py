@@ -62,25 +62,20 @@ class GsaSearchRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "criterion": "GsaCriterion",
-        "find_similar_id": "str",
         "paging_options": "GsaPagingOptions",
         "sort_criteria": "list[GsaSortCriterion]",
-        "table_search_behaviour": "GsaTableSearchBehaviour",
     }
 
     attribute_map: dict[str, str] = {
         "criterion": "criterion",
-        "find_similar_id": "findSimilarId",
         "paging_options": "pagingOptions",
         "sort_criteria": "sortCriteria",
-        "table_search_behaviour": "tableSearchBehaviour",
     }
 
     subtype_mapping: dict[str, str] = {
         "criterion": "GsaCriterion",
         "sortCriteria": "GsaSortCriterion",
         "pagingOptions": "GsaPagingOptions",
-        "tableSearchBehaviour": "GsaTableSearchBehaviour",
     }
 
     discriminator: Optional[str] = None
@@ -89,26 +84,20 @@ class GsaSearchRequest(ModelBase):
         self,
         *,
         criterion: "GsaCriterion | Unset_Type" = Unset,
-        find_similar_id: "str | None | Unset_Type" = Unset,
         paging_options: "GsaPagingOptions | Unset_Type" = Unset,
         sort_criteria: "list[GsaSortCriterion] | None | Unset_Type" = Unset,
-        table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type" = Unset,
     ) -> None:
         """GsaSearchRequest - a model defined in Swagger
 
         Parameters
         ----------
         criterion: GsaCriterion, optional
-        find_similar_id: str | None, optional
         paging_options: GsaPagingOptions, optional
         sort_criteria: list[GsaSortCriterion] | None, optional
-        table_search_behaviour: GsaTableSearchBehaviour, optional
         """
         self._criterion: GsaCriterion | Unset_Type = Unset
         self._sort_criteria: list[GsaSortCriterion] | None | Unset_Type = Unset
         self._paging_options: GsaPagingOptions | Unset_Type = Unset
-        self._table_search_behaviour: GsaTableSearchBehaviour | Unset_Type = Unset
-        self._find_similar_id: str | None | Unset_Type = Unset
 
         if criterion is not Unset:
             self.criterion = criterion
@@ -116,10 +105,6 @@ class GsaSearchRequest(ModelBase):
             self.sort_criteria = sort_criteria
         if paging_options is not Unset:
             self.paging_options = paging_options
-        if table_search_behaviour is not Unset:
-            self.table_search_behaviour = table_search_behaviour
-        if find_similar_id is not Unset:
-            self.find_similar_id = find_similar_id
 
     @property
     def criterion(self) -> "GsaCriterion | Unset_Type":
@@ -194,57 +179,6 @@ class GsaSearchRequest(ModelBase):
         if paging_options is None:
             raise ValueError("Invalid value for 'paging_options', must not be 'None'")
         self._paging_options = paging_options
-
-    @property
-    def table_search_behaviour(self) -> "GsaTableSearchBehaviour | Unset_Type":
-        """Gets the table_search_behaviour of this GsaSearchRequest.
-
-        Returns
-        -------
-        GsaTableSearchBehaviour | Unset_Type
-            The table_search_behaviour of this GsaSearchRequest.
-        """
-        return self._table_search_behaviour
-
-    @table_search_behaviour.setter
-    def table_search_behaviour(
-        self, table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type"
-    ) -> None:
-        """Sets the table_search_behaviour of this GsaSearchRequest.
-
-        Parameters
-        ----------
-        table_search_behaviour: GsaTableSearchBehaviour | Unset_Type
-            The table_search_behaviour of this GsaSearchRequest.
-        """
-        # Field is not nullable
-        if table_search_behaviour is None:
-            raise ValueError("Invalid value for 'table_search_behaviour', must not be 'None'")
-        self._table_search_behaviour = table_search_behaviour
-
-    @property
-    def find_similar_id(self) -> "str | None | Unset_Type":
-        """Gets the find_similar_id of this GsaSearchRequest.
-        An optional identifier of a find similar calculation to include in this search. Results will include a similarity score.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The find_similar_id of this GsaSearchRequest.
-        """
-        return self._find_similar_id
-
-    @find_similar_id.setter
-    def find_similar_id(self, find_similar_id: "str | None | Unset_Type") -> None:
-        """Sets the find_similar_id of this GsaSearchRequest.
-        An optional identifier of a find similar calculation to include in this search. Results will include a similarity score.
-
-        Parameters
-        ----------
-        find_similar_id: str | None | Unset_Type
-            The find_similar_id of this GsaSearchRequest.
-        """
-        self._find_similar_id = find_similar_id
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

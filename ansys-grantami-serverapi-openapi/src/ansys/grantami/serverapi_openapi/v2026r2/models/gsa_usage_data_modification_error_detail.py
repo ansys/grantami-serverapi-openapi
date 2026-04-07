@@ -88,7 +88,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
     discriminator_value_class_map = {
         "expression".lower(): "#/components/schemas/GsaExpressionUsageDataModificationErrorDetail",
         "versionControlledData".lower(): "#/components/schemas/GsaVersionControlledDataUsageDataModificationErrorDetail",
-        "smartLinkGroup".lower(): "#/components/schemas/GsaSmartLinkGroupUsageDataModificationErrorDetail",
+        "dynamicLinkGroup".lower(): "#/components/schemas/GsaDynamicLinkGroupUsageDataModificationErrorDetail",
         "tabularAttribute".lower(): "#/components/schemas/GsaTabularAttributeUsageDataModificationErrorDetail",
         "xyChartTemplate".lower(): "#/components/schemas/GsaXYChartTemplateUsageDataModificationErrorDetail",
         "searchMask".lower(): "#/components/schemas/GsaSearchMaskUsageDataModificationErrorDetail",
@@ -96,13 +96,6 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         "attribute".lower(): "#/components/schemas/GsaAttributeUsageDataModificationErrorDetail",
         "data".lower(): "#/components/schemas/GsaDataUsageDataModificationErrorDetail",
         "defaultParameterValue".lower(): "#/components/schemas/GsaDefaultParameterValueUsageDataModificationErrorDetail",
-        "functionalDataDefault".lower(): "#/components/schemas/GsaFunctionalDataDefaultUsageDataModificationErrorDetail",
-        "multiValuedPointData".lower(): "#/components/schemas/GsaMultiValuedPointDataUsageDataModificationErrorDetail",
-        "tabularColumn".lower(): "#/components/schemas/GsaTabularColumnUsageDataModificationErrorDetail",
-        "databaseCurrencyUnit".lower(): "#/components/schemas/GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail",
-        "unit".lower(): "#/components/schemas/GsaUnitUsageDataModificationErrorDetail",
-        "parameter".lower(): "#/components/schemas/GsaParameterUsageDataModificationErrorDetail",
-        "constant".lower(): "#/components/schemas/GsaConstantUsageDataModificationErrorDetail",
     }
 
     discriminator: Optional[str] = "referenced_by_type"
