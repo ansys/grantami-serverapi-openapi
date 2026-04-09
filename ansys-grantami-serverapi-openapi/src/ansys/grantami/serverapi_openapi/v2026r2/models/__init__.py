@@ -699,6 +699,7 @@ from .gsa_general_unit_equation_error_detail import GsaGeneralUnitEquationErrorD
 from .gsa_generated_integration_schema_of_object_identifier import (
     GsaGeneratedIntegrationSchemaOfObjectIdentifier,
 )
+from .gsa_get_find_similar_results_response import GsaGetFindSimilarResultsResponse
 from .gsa_get_jobs_response import GsaGetJobsResponse
 from .gsa_get_jobs_summary_response import GsaGetJobsSummaryResponse
 from .gsa_get_modifiable_record_version_control_exception import (
@@ -2222,6 +2223,7 @@ __all__ = [
     "GsaFunctionalType",
     "GsaGeneralUnitEquationErrorDetail",
     "GsaGeneratedIntegrationSchemaOfObjectIdentifier",
+    "GsaGetFindSimilarResultsResponse",
     "GsaGetJobsResponse",
     "GsaGetJobsSummaryResponse",
     "GsaGetModifiableRecordVersionControlException",
