@@ -61,61 +61,36 @@ class GsaFindSimilarResponse(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "calculation_complete": "bool",
-        "error": "GsaErrorResponse",
         "find_similar_id": "str",
-        "results": "list[GsaFindSimilarResult]",
     }
 
     attribute_map: dict[str, str] = {
-        "calculation_complete": "calculationComplete",
-        "error": "error",
         "find_similar_id": "findSimilarId",
-        "results": "results",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "results": "GsaFindSimilarResult",
-        "error": "GsaErrorResponse",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        calculation_complete: "bool | Unset_Type" = Unset,
-        error: "GsaErrorResponse | Unset_Type" = Unset,
         find_similar_id: "str | Unset_Type" = Unset,
-        results: "list[GsaFindSimilarResult] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaFindSimilarResponse - a model defined in Swagger
 
         Parameters
         ----------
-        calculation_complete: bool, optional
-        error: GsaErrorResponse, optional
         find_similar_id: str, optional
-        results: list[GsaFindSimilarResult] | None, optional
         """
         self._find_similar_id: str | Unset_Type = Unset
-        self._calculation_complete: bool | Unset_Type = Unset
-        self._results: list[GsaFindSimilarResult] | None | Unset_Type = Unset
-        self._error: GsaErrorResponse | Unset_Type = Unset
 
         if find_similar_id is not Unset:
             self.find_similar_id = find_similar_id
-        if calculation_complete is not Unset:
-            self.calculation_complete = calculation_complete
-        if results is not Unset:
-            self.results = results
-        if error is not Unset:
-            self.error = error
 
     @property
     def find_similar_id(self) -> "str | Unset_Type":
         """Gets the find_similar_id of this GsaFindSimilarResponse.
-        The Identifier of the find similar calculation
 
         Returns
         -------
@@ -127,7 +102,6 @@ class GsaFindSimilarResponse(ModelBase):
     @find_similar_id.setter
     def find_similar_id(self, find_similar_id: "str | Unset_Type") -> None:
         """Sets the find_similar_id of this GsaFindSimilarResponse.
-        The Identifier of the find similar calculation
 
         Parameters
         ----------
@@ -138,82 +112,6 @@ class GsaFindSimilarResponse(ModelBase):
         if find_similar_id is None:
             raise ValueError("Invalid value for 'find_similar_id', must not be 'None'")
         self._find_similar_id = find_similar_id
-
-    @property
-    def calculation_complete(self) -> "bool | Unset_Type":
-        """Gets the calculation_complete of this GsaFindSimilarResponse.
-        Indicates whether the calculation is complete. Granta.Server.Api.FindSimilar.FindSimilarResponse.Results will only be populated if this is true.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The calculation_complete of this GsaFindSimilarResponse.
-        """
-        return self._calculation_complete
-
-    @calculation_complete.setter
-    def calculation_complete(self, calculation_complete: "bool | Unset_Type") -> None:
-        """Sets the calculation_complete of this GsaFindSimilarResponse.
-        Indicates whether the calculation is complete. Granta.Server.Api.FindSimilar.FindSimilarResponse.Results will only be populated if this is true.
-
-        Parameters
-        ----------
-        calculation_complete: bool | Unset_Type
-            The calculation_complete of this GsaFindSimilarResponse.
-        """
-        # Field is not nullable
-        if calculation_complete is None:
-            raise ValueError("Invalid value for 'calculation_complete', must not be 'None'")
-        self._calculation_complete = calculation_complete
-
-    @property
-    def results(self) -> "list[GsaFindSimilarResult] | None | Unset_Type":
-        """Gets the results of this GsaFindSimilarResponse.
-        Results of the find similar calculation, only set if Granta.Server.Api.FindSimilar.FindSimilarResponse.CalculationComplete is true and Granta.Server.Api.FindSimilar.FindSimilarResponse.Error is not set.
-
-        Returns
-        -------
-        list[GsaFindSimilarResult] | None | Unset_Type
-            The results of this GsaFindSimilarResponse.
-        """
-        return self._results
-
-    @results.setter
-    def results(self, results: "list[GsaFindSimilarResult] | None | Unset_Type") -> None:
-        """Sets the results of this GsaFindSimilarResponse.
-        Results of the find similar calculation, only set if Granta.Server.Api.FindSimilar.FindSimilarResponse.CalculationComplete is true and Granta.Server.Api.FindSimilar.FindSimilarResponse.Error is not set.
-
-        Parameters
-        ----------
-        results: list[GsaFindSimilarResult] | None | Unset_Type
-            The results of this GsaFindSimilarResponse.
-        """
-        self._results = results
-
-    @property
-    def error(self) -> "GsaErrorResponse | Unset_Type":
-        """Gets the error of this GsaFindSimilarResponse.
-
-        Returns
-        -------
-        GsaErrorResponse | Unset_Type
-            The error of this GsaFindSimilarResponse.
-        """
-        return self._error
-
-    @error.setter
-    def error(self, error: "GsaErrorResponse | Unset_Type") -> None:
-        """Sets the error of this GsaFindSimilarResponse.
-
-        Parameters
-        ----------
-        error: GsaErrorResponse | Unset_Type
-            The error of this GsaFindSimilarResponse.
-        """
-        # Field is not nullable
-        if error is None:
-            raise ValueError("Invalid value for 'error', must not be 'None'")
-        self._error = error
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

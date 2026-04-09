@@ -61,11 +61,13 @@ class GsaFindSimilarResult(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "str",
         "record_guid": "str",
         "score": "float",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "record_guid": "recordGuid",
         "score": "score",
     }
@@ -77,6 +79,7 @@ class GsaFindSimilarResult(ModelBase):
     def __init__(
         self,
         *,
+        name: "str | None | Unset_Type" = Unset,
         record_guid: "str | Unset_Type" = Unset,
         score: "float | Unset_Type" = Unset,
     ) -> None:
@@ -84,14 +87,18 @@ class GsaFindSimilarResult(ModelBase):
 
         Parameters
         ----------
+        name: str | None, optional
         record_guid: str, optional
         score: float, optional
         """
         self._record_guid: str | Unset_Type = Unset
+        self._name: str | None | Unset_Type = Unset
         self._score: float | Unset_Type = Unset
 
         if record_guid is not Unset:
             self.record_guid = record_guid
+        if name is not Unset:
+            self.name = name
         if score is not Unset:
             self.score = score
 
@@ -119,6 +126,28 @@ class GsaFindSimilarResult(ModelBase):
         if record_guid is None:
             raise ValueError("Invalid value for 'record_guid', must not be 'None'")
         self._record_guid = record_guid
+
+    @property
+    def name(self) -> "str | None | Unset_Type":
+        """Gets the name of this GsaFindSimilarResult.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The name of this GsaFindSimilarResult.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | None | Unset_Type") -> None:
+        """Sets the name of this GsaFindSimilarResult.
+
+        Parameters
+        ----------
+        name: str | None | Unset_Type
+            The name of this GsaFindSimilarResult.
+        """
+        self._name = name
 
     @property
     def score(self) -> "float | Unset_Type":

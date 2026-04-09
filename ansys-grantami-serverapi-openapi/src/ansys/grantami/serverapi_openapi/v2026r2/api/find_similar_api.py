@@ -136,7 +136,7 @@ class FindSimilarApi(ApiBase):
         body: "Optional[GsaFindSimilarRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "str":
+    ) -> "GsaFindSimilarResponse":
         """Finds similar records in a given database and table for a given record
 
         This method makes a synchronous HTTP request.
@@ -156,7 +156,7 @@ class FindSimilarApi(ApiBase):
 
         Returns
         -------
-        str
+        GsaFindSimilarResponse
         """
         data = self._find_similar_with_http_info(
             database_key,
@@ -250,7 +250,7 @@ class FindSimilarApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "str",
+            200: "GsaFindSimilarResponse",
         }
 
         return self.api_client.call_api(
@@ -271,7 +271,7 @@ class FindSimilarApi(ApiBase):
 
     def get_find_similar_results(
         self, *, find_similar_identifier: "str"
-    ) -> "GsaFindSimilarResponse | None":
+    ) -> "GsaGetFindSimilarResultsResponse | None":
         """Returns find similar results by identifier
 
         This method makes a synchronous HTTP request.
@@ -282,7 +282,7 @@ class FindSimilarApi(ApiBase):
 
         Returns
         -------
-        GsaFindSimilarResponse | None
+        GsaGetFindSimilarResultsResponse | None
         """
         data = self._get_find_similar_results_with_http_info(
             find_similar_identifier, _return_http_data_only=True
@@ -333,7 +333,7 @@ class FindSimilarApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaFindSimilarResponse",
+            200: "GsaGetFindSimilarResultsResponse",
             403: None,
             404: None,
         }
@@ -356,7 +356,7 @@ class FindSimilarApi(ApiBase):
 
     def integration_find_similar(
         self, *, schema: "str", record_guid: "str", body: "Optional[GsaFindSimilarRequest]" = None
-    ) -> "None | str":
+    ) -> "GsaFindSimilarResponse | None":
         """Runs a find similar calculation against the integration schema.
 
         This method makes a synchronous HTTP request.
@@ -369,7 +369,7 @@ class FindSimilarApi(ApiBase):
 
         Returns
         -------
-        None | str
+        GsaFindSimilarResponse | None
         """
         data = self._integration_find_similar_with_http_info(
             schema, record_guid, body, _return_http_data_only=True
@@ -440,7 +440,7 @@ class FindSimilarApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "str",
+            200: "GsaFindSimilarResponse",
             404: None,
             422: None,
         }
