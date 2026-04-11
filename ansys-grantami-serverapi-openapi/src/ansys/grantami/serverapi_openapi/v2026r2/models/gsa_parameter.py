@@ -113,16 +113,16 @@ class GsaParameter(ModelBase):
         help_path: str | None, optional
         """
         self._type: GsaParameterType
-        self._default_parameter_value_guid: str
         self._help_path: str | None | Unset_Type = Unset
+        self._default_parameter_value_guid: str
         self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
         self.type = type
-        self.default_parameter_value_guid = default_parameter_value_guid
         if help_path is not Unset:
             self.help_path = help_path
+        self.default_parameter_value_guid = default_parameter_value_guid
         self.display_names = display_names
         self.name = name
         self.guid = guid
@@ -156,6 +156,28 @@ class GsaParameter(ModelBase):
         self._type = type
 
     @property
+    def help_path(self) -> "str | None | Unset_Type":
+        """Gets the help_path of this GsaParameter.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The help_path of this GsaParameter.
+        """
+        return self._help_path
+
+    @help_path.setter
+    def help_path(self, help_path: "str | None | Unset_Type") -> None:
+        """Sets the help_path of this GsaParameter.
+
+        Parameters
+        ----------
+        help_path: str | None | Unset_Type
+            The help_path of this GsaParameter.
+        """
+        self._help_path = help_path
+
+    @property
     def default_parameter_value_guid(self) -> "str":
         """Gets the default_parameter_value_guid of this GsaParameter.
 
@@ -186,31 +208,8 @@ class GsaParameter(ModelBase):
         self._default_parameter_value_guid = default_parameter_value_guid
 
     @property
-    def help_path(self) -> "str | None | Unset_Type":
-        """Gets the help_path of this GsaParameter.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The help_path of this GsaParameter.
-        """
-        return self._help_path
-
-    @help_path.setter
-    def help_path(self, help_path: "str | None | Unset_Type") -> None:
-        """Sets the help_path of this GsaParameter.
-
-        Parameters
-        ----------
-        help_path: str | None | Unset_Type
-            The help_path of this GsaParameter.
-        """
-        self._help_path = help_path
-
-    @property
     def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GsaParameter.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Returns
         -------
@@ -222,7 +221,6 @@ class GsaParameter(ModelBase):
     @display_names.setter
     def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GsaParameter.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Parameters
         ----------

@@ -62,26 +62,16 @@ class GsaCreateTable(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "datasheet_footer": "str",
-        "datasheet_header": "str",
         "guid": "str",
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
-        "legal_disclaimer": "str",
-        "should_show_version_control_signatures": "bool",
-        "table_types": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "datasheet_footer": "datasheetFooter",
-        "datasheet_header": "datasheetHeader",
         "guid": "guid",
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
-        "legal_disclaimer": "legalDisclaimer",
-        "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
-        "table_types": "tableTypes",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -92,36 +82,21 @@ class GsaCreateTable(ModelBase):
         self,
         *,
         name: "str",
-        datasheet_footer: "str | None | Unset_Type" = Unset,
-        datasheet_header: "str | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
-        legal_disclaimer: "str | None | Unset_Type" = Unset,
-        should_show_version_control_signatures: "bool | Unset_Type" = Unset,
-        table_types: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateTable - a model defined in Swagger
 
         Parameters
         ----------
         name: str
-        datasheet_footer: str | None, optional
-        datasheet_header: str | None, optional
         guid: str, optional
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
-        legal_disclaimer: str | None, optional
-        should_show_version_control_signatures: bool, optional
-        table_types: list[str] | None, optional
         """
         self._is_hidden_from_browse: bool | Unset_Type = Unset
         self._is_hidden_from_search: bool | Unset_Type = Unset
-        self._legal_disclaimer: str | None | Unset_Type = Unset
-        self._datasheet_header: str | None | Unset_Type = Unset
-        self._datasheet_footer: str | None | Unset_Type = Unset
-        self._table_types: list[str] | None | Unset_Type = Unset
-        self._should_show_version_control_signatures: bool | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
 
@@ -129,16 +104,6 @@ class GsaCreateTable(ModelBase):
             self.is_hidden_from_browse = is_hidden_from_browse
         if is_hidden_from_search is not Unset:
             self.is_hidden_from_search = is_hidden_from_search
-        if legal_disclaimer is not Unset:
-            self.legal_disclaimer = legal_disclaimer
-        if datasheet_header is not Unset:
-            self.datasheet_header = datasheet_header
-        if datasheet_footer is not Unset:
-            self.datasheet_footer = datasheet_footer
-        if table_types is not Unset:
-            self.table_types = table_types
-        if should_show_version_control_signatures is not Unset:
-            self.should_show_version_control_signatures = should_show_version_control_signatures
         self.name = name
         if guid is not Unset:
             self.guid = guid
@@ -192,123 +157,6 @@ class GsaCreateTable(ModelBase):
         if is_hidden_from_search is None:
             raise ValueError("Invalid value for 'is_hidden_from_search', must not be 'None'")
         self._is_hidden_from_search = is_hidden_from_search
-
-    @property
-    def legal_disclaimer(self) -> "str | None | Unset_Type":
-        """Gets the legal_disclaimer of this GsaCreateTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The legal_disclaimer of this GsaCreateTable.
-        """
-        return self._legal_disclaimer
-
-    @legal_disclaimer.setter
-    def legal_disclaimer(self, legal_disclaimer: "str | None | Unset_Type") -> None:
-        """Sets the legal_disclaimer of this GsaCreateTable.
-
-        Parameters
-        ----------
-        legal_disclaimer: str | None | Unset_Type
-            The legal_disclaimer of this GsaCreateTable.
-        """
-        self._legal_disclaimer = legal_disclaimer
-
-    @property
-    def datasheet_header(self) -> "str | None | Unset_Type":
-        """Gets the datasheet_header of this GsaCreateTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The datasheet_header of this GsaCreateTable.
-        """
-        return self._datasheet_header
-
-    @datasheet_header.setter
-    def datasheet_header(self, datasheet_header: "str | None | Unset_Type") -> None:
-        """Sets the datasheet_header of this GsaCreateTable.
-
-        Parameters
-        ----------
-        datasheet_header: str | None | Unset_Type
-            The datasheet_header of this GsaCreateTable.
-        """
-        self._datasheet_header = datasheet_header
-
-    @property
-    def datasheet_footer(self) -> "str | None | Unset_Type":
-        """Gets the datasheet_footer of this GsaCreateTable.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The datasheet_footer of this GsaCreateTable.
-        """
-        return self._datasheet_footer
-
-    @datasheet_footer.setter
-    def datasheet_footer(self, datasheet_footer: "str | None | Unset_Type") -> None:
-        """Sets the datasheet_footer of this GsaCreateTable.
-
-        Parameters
-        ----------
-        datasheet_footer: str | None | Unset_Type
-            The datasheet_footer of this GsaCreateTable.
-        """
-        self._datasheet_footer = datasheet_footer
-
-    @property
-    def table_types(self) -> "list[str] | None | Unset_Type":
-        """Gets the table_types of this GsaCreateTable.
-
-        Returns
-        -------
-        list[str] | None | Unset_Type
-            The table_types of this GsaCreateTable.
-        """
-        return self._table_types
-
-    @table_types.setter
-    def table_types(self, table_types: "list[str] | None | Unset_Type") -> None:
-        """Sets the table_types of this GsaCreateTable.
-
-        Parameters
-        ----------
-        table_types: list[str] | None | Unset_Type
-            The table_types of this GsaCreateTable.
-        """
-        self._table_types = table_types
-
-    @property
-    def should_show_version_control_signatures(self) -> "bool | Unset_Type":
-        """Gets the should_show_version_control_signatures of this GsaCreateTable.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The should_show_version_control_signatures of this GsaCreateTable.
-        """
-        return self._should_show_version_control_signatures
-
-    @should_show_version_control_signatures.setter
-    def should_show_version_control_signatures(
-        self, should_show_version_control_signatures: "bool | Unset_Type"
-    ) -> None:
-        """Sets the should_show_version_control_signatures of this GsaCreateTable.
-
-        Parameters
-        ----------
-        should_show_version_control_signatures: bool | Unset_Type
-            The should_show_version_control_signatures of this GsaCreateTable.
-        """
-        # Field is not nullable
-        if should_show_version_control_signatures is None:
-            raise ValueError(
-                "Invalid value for 'should_show_version_control_signatures', must not be 'None'"
-            )
-        self._should_show_version_control_signatures = should_show_version_control_signatures
 
     @property
     def name(self) -> "str":

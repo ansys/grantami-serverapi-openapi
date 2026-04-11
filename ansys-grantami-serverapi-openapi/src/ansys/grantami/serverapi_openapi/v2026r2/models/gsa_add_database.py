@@ -61,8 +61,8 @@ class GsaAddDatabase(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "connection_details": "GsaConnectionDetails",
         "database_key": "str",
-        "input_connection_details": "GsaInputConnectionDetails",
         "is_read_only": "bool",
         "language": "str",
         "loading_order": "int",
@@ -70,8 +70,8 @@ class GsaAddDatabase(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
+        "connection_details": "connectionDetails",
         "database_key": "databaseKey",
-        "input_connection_details": "inputConnectionDetails",
         "is_read_only": "isReadOnly",
         "language": "language",
         "loading_order": "loadingOrder",
@@ -79,7 +79,7 @@ class GsaAddDatabase(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "inputConnectionDetails": "GsaInputConnectionDetails",
+        "connectionDetails": "GsaConnectionDetails",
     }
 
     discriminator: Optional[str] = None
@@ -87,8 +87,8 @@ class GsaAddDatabase(ModelBase):
     def __init__(
         self,
         *,
+        connection_details: "GsaConnectionDetails",
         database_key: "str",
-        input_connection_details: "GsaInputConnectionDetails",
         is_read_only: "bool | None | Unset_Type" = Unset,
         language: "str | None | Unset_Type" = Unset,
         loading_order: "int | None | Unset_Type" = Unset,
@@ -98,22 +98,22 @@ class GsaAddDatabase(ModelBase):
 
         Parameters
         ----------
+        connection_details: GsaConnectionDetails
         database_key: str
-        input_connection_details: GsaInputConnectionDetails
         is_read_only: bool | None, optional
         language: str | None, optional
         loading_order: int | None, optional
         version_guid: str | None, optional
         """
         self._database_key: str
-        self._input_connection_details: GsaInputConnectionDetails
+        self._connection_details: GsaConnectionDetails
         self._is_read_only: bool | None | Unset_Type = Unset
         self._loading_order: int | None | Unset_Type = Unset
         self._language: str | None | Unset_Type = Unset
         self._version_guid: str | None | Unset_Type = Unset
 
         self.database_key = database_key
-        self.input_connection_details = input_connection_details
+        self.connection_details = connection_details
         if is_read_only is not Unset:
             self.is_read_only = is_read_only
         if loading_order is not Unset:
@@ -152,34 +152,32 @@ class GsaAddDatabase(ModelBase):
         self._database_key = database_key
 
     @property
-    def input_connection_details(self) -> "GsaInputConnectionDetails":
-        """Gets the input_connection_details of this GsaAddDatabase.
+    def connection_details(self) -> "GsaConnectionDetails":
+        """Gets the connection_details of this GsaAddDatabase.
 
         Returns
         -------
-        GsaInputConnectionDetails
-            The input_connection_details of this GsaAddDatabase.
+        GsaConnectionDetails
+            The connection_details of this GsaAddDatabase.
         """
-        return self._input_connection_details
+        return self._connection_details
 
-    @input_connection_details.setter
-    def input_connection_details(
-        self, input_connection_details: "GsaInputConnectionDetails"
-    ) -> None:
-        """Sets the input_connection_details of this GsaAddDatabase.
+    @connection_details.setter
+    def connection_details(self, connection_details: "GsaConnectionDetails") -> None:
+        """Sets the connection_details of this GsaAddDatabase.
 
         Parameters
         ----------
-        input_connection_details: GsaInputConnectionDetails
-            The input_connection_details of this GsaAddDatabase.
+        connection_details: GsaConnectionDetails
+            The connection_details of this GsaAddDatabase.
         """
         # Field is not nullable
-        if input_connection_details is None:
-            raise ValueError("Invalid value for 'input_connection_details', must not be 'None'")
+        if connection_details is None:
+            raise ValueError("Invalid value for 'connection_details', must not be 'None'")
         # Field is required
-        if input_connection_details is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'input_connection_details', must not be 'Unset'")
-        self._input_connection_details = input_connection_details
+        if connection_details is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'connection_details', must not be 'Unset'")
+        self._connection_details = connection_details
 
     @property
     def is_read_only(self) -> "bool | None | Unset_Type":
