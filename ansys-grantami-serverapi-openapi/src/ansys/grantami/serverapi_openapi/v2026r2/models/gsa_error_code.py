@@ -115,3 +115,4 @@ class GsaErrorCode(Enum):
     SETUNITEQUIVALENTS = "setUnitEquivalents"
     TABLECREATION = "tableCreation"
     TABLEUPDATE = "tableUpdate"
+    REORDERTABLES = "reorderTables"

@@ -48,3 +48,4 @@ class GsaTableErrorReason(Enum):
     DEFAULTSUBSETGUID = "defaultSubsetGuid"
     DEFAULTLAYOUTGUID = "defaultLayoutGuid"
     QUALITYSYSTEMGUID = "qualitySystemGuid"
+    TABLEGUIDS = "tableGuids"
