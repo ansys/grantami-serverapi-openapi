@@ -578,6 +578,9 @@ from .gsa_duplicate_permissions_permission_category_error_detail import (
 )
 from .gsa_duplicate_symbol_unit_error_detail import GsaDuplicateSymbolUnitErrorDetail
 from .gsa_duplicate_table_error_detail import GsaDuplicateTableErrorDetail
+from .gsa_duplicate_tables_reorder_tables_error_detail import (
+    GsaDuplicateTablesReorderTablesErrorDetail,
+)
 from .gsa_duplicate_tabular_column_guids_error_detail import (
     GsaDuplicateTabularColumnGuidsErrorDetail,
 )
@@ -974,6 +977,7 @@ from .gsa_no_such_permission_access_control_error_detail import (
 from .gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
 )
+from .gsa_no_such_tables_reorder_tables_error_detail import GsaNoSuchTablesReorderTablesErrorDetail
 from .gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
@@ -1253,6 +1257,10 @@ from .gsa_released_date_property import GsaReleasedDateProperty
 from .gsa_relevance_sort_criterion import GsaRelevanceSortCriterion
 from .gsa_remove_record_history_from_subset import GsaRemoveRecordHistoryFromSubset
 from .gsa_reorder_sections_info import GsaReorderSectionsInfo
+from .gsa_reorder_tables_error_detail import GsaReorderTablesErrorDetail
+from .gsa_reorder_tables_error_reason import GsaReorderTablesErrorReason
+from .gsa_reorder_tables_exception import GsaReorderTablesException
+from .gsa_reorder_tables_request import GsaReorderTablesRequest
 from .gsa_replace_permission_categories_request import GsaReplacePermissionCategoriesRequest
 from .gsa_replace_permission_category_error_detail import GsaReplacePermissionCategoryErrorDetail
 from .gsa_replace_permission_category_error_reason import GsaReplacePermissionCategoryErrorReason
@@ -1446,6 +1454,7 @@ from .gsa_table_types_error_detail import GsaTableTypesErrorDetail
 from .gsa_table_types_info import GsaTableTypesInfo
 from .gsa_table_update_exception import GsaTableUpdateException
 from .gsa_tables_info import GsaTablesInfo
+from .gsa_tables_missing_reorder_tables_error_detail import GsaTablesMissingReorderTablesErrorDetail
 from .gsa_tabular_attribute import GsaTabularAttribute
 from .gsa_tabular_attribute_link import GsaTabularAttributeLink
 from .gsa_tabular_attribute_target import GsaTabularAttributeTarget
@@ -2130,6 +2139,7 @@ __all__ = [
     "GsaDuplicatePermissionsPermissionCategoryErrorDetail",
     "GsaDuplicateSymbolUnitErrorDetail",
     "GsaDuplicateTableErrorDetail",
+    "GsaDuplicateTablesReorderTablesErrorDetail",
     "GsaDuplicateTabularColumnGuidsErrorDetail",
     "GsaDuplicateTabularColumnNamesErrorDetail",
     "GsaDuplicateVersionGuidAddDatabaseValidationIssue",
@@ -2440,6 +2450,7 @@ __all__ = [
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
+    "GsaNoSuchTablesReorderTablesErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
@@ -2679,6 +2690,10 @@ __all__ = [
     "GsaRelevanceSortCriterion",
     "GsaRemoveRecordHistoryFromSubset",
     "GsaReorderSectionsInfo",
+    "GsaReorderTablesErrorDetail",
+    "GsaReorderTablesErrorReason",
+    "GsaReorderTablesException",
+    "GsaReorderTablesRequest",
     "GsaReplacePermissionCategoriesRequest",
     "GsaReplacePermissionCategoryErrorDetail",
     "GsaReplacePermissionCategoryErrorReason",
@@ -2846,6 +2861,7 @@ __all__ = [
     "GsaTableTypesInfo",
     "GsaTableUpdateException",
     "GsaTablesInfo",
+    "GsaTablesMissingReorderTablesErrorDetail",
     "GsaTabularAttribute",
     "GsaTabularAttributeLink",
     "GsaTabularAttributeTarget",
