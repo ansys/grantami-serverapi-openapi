@@ -363,6 +363,7 @@ from .models.gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .models.gsa_create_point_attribute import GsaCreatePointAttribute
 from .models.gsa_create_profile import GsaCreateProfile
 from .models.gsa_create_profile_table import GsaCreateProfileTable
+from .models.gsa_create_put_discrete_value import GsaCreatePutDiscreteValue
 from .models.gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .models.gsa_create_put_permission import GsaCreatePutPermission
 from .models.gsa_create_put_permission_category import GsaCreatePutPermissionCategory
@@ -1258,6 +1259,7 @@ from .models.gsa_profile import GsaProfile
 from .models.gsa_profile_table import GsaProfileTable
 from .models.gsa_profile_tables_info import GsaProfileTablesInfo
 from .models.gsa_property import GsaProperty
+from .models.gsa_put_discrete_value import GsaPutDiscreteValue
 from .models.gsa_put_layout_item import GsaPutLayoutItem
 from .models.gsa_put_permission import GsaPutPermission
 from .models.gsa_put_permission_category import GsaPutPermissionCategory
@@ -1806,6 +1808,7 @@ from .models.gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .models.gsa_update_point_attribute import GsaUpdatePointAttribute
 from .models.gsa_update_profile import GsaUpdateProfile
 from .models.gsa_update_profile_table import GsaUpdateProfileTable
+from .models.gsa_update_put_discrete_value import GsaUpdatePutDiscreteValue
 from .models.gsa_update_put_layout_item import GsaUpdatePutLayoutItem
 from .models.gsa_update_put_permission import GsaUpdatePutPermission
 from .models.gsa_update_put_permission_category import GsaUpdatePutPermissionCategory
@@ -2140,6 +2143,7 @@ __all__ = [
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
     "GsaCreateProfileTable",
+    "GsaCreatePutDiscreteValue",
     "GsaCreatePutLayoutItem",
     "GsaCreatePutPermission",
     "GsaCreatePutPermissionCategory",
@@ -2785,6 +2789,7 @@ __all__ = [
     "GsaProfileTable",
     "GsaProfileTablesInfo",
     "GsaProperty",
+    "GsaPutDiscreteValue",
     "GsaPutLayoutItem",
     "GsaPutPermission",
     "GsaPutPermissionCategory",
@@ -3229,6 +3234,7 @@ __all__ = [
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
+    "GsaUpdatePutDiscreteValue",
     "GsaUpdatePutLayoutItem",
     "GsaUpdatePutPermission",
     "GsaUpdatePutPermissionCategory",

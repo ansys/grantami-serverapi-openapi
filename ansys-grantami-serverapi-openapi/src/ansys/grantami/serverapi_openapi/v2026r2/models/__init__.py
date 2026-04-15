@@ -289,6 +289,7 @@ from .gsa_create_picture_attribute import GsaCreatePictureAttribute
 from .gsa_create_point_attribute import GsaCreatePointAttribute
 from .gsa_create_profile import GsaCreateProfile
 from .gsa_create_profile_table import GsaCreateProfileTable
+from .gsa_create_put_discrete_value import GsaCreatePutDiscreteValue
 from .gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .gsa_create_put_permission import GsaCreatePutPermission
 from .gsa_create_put_permission_category import GsaCreatePutPermissionCategory
@@ -1122,6 +1123,7 @@ from .gsa_profile import GsaProfile
 from .gsa_profile_table import GsaProfileTable
 from .gsa_profile_tables_info import GsaProfileTablesInfo
 from .gsa_property import GsaProperty
+from .gsa_put_discrete_value import GsaPutDiscreteValue
 from .gsa_put_layout_item import GsaPutLayoutItem
 from .gsa_put_permission import GsaPutPermission
 from .gsa_put_permission_category import GsaPutPermissionCategory
@@ -1642,6 +1644,7 @@ from .gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .gsa_update_point_attribute import GsaUpdatePointAttribute
 from .gsa_update_profile import GsaUpdateProfile
 from .gsa_update_profile_table import GsaUpdateProfileTable
+from .gsa_update_put_discrete_value import GsaUpdatePutDiscreteValue
 from .gsa_update_put_layout_item import GsaUpdatePutLayoutItem
 from .gsa_update_put_permission import GsaUpdatePutPermission
 from .gsa_update_put_permission_category import GsaUpdatePutPermissionCategory
@@ -1916,6 +1919,7 @@ __all__ = [
     "GsaCreatePointAttribute",
     "GsaCreateProfile",
     "GsaCreateProfileTable",
+    "GsaCreatePutDiscreteValue",
     "GsaCreatePutLayoutItem",
     "GsaCreatePutPermission",
     "GsaCreatePutPermissionCategory",
@@ -2561,6 +2565,7 @@ __all__ = [
     "GsaProfileTable",
     "GsaProfileTablesInfo",
     "GsaProperty",
+    "GsaPutDiscreteValue",
     "GsaPutLayoutItem",
     "GsaPutPermission",
     "GsaPutPermissionCategory",
@@ -3005,6 +3010,7 @@ __all__ = [
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
     "GsaUpdateProfileTable",
+    "GsaUpdatePutDiscreteValue",
     "GsaUpdatePutLayoutItem",
     "GsaUpdatePutPermission",
     "GsaUpdatePutPermissionCategory",
