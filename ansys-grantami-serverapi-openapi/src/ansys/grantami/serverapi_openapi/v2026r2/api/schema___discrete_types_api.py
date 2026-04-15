@@ -615,7 +615,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         body: "Optional[GsaUpdateDiscreteType]" = None,
-    ) -> "GsaSlimDiscreteType | None":
+    ) -> "GsaDiscreteType | None":
         """Update discrete type.
 
         This method makes a synchronous HTTP request.
@@ -629,7 +629,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        GsaSlimDiscreteType | None
+        GsaDiscreteType | None
         """
         data = self._update_discrete_type_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -698,7 +698,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaSlimDiscreteType",
+            200: "GsaDiscreteType",
             400: None,
             403: None,
             404: None,
