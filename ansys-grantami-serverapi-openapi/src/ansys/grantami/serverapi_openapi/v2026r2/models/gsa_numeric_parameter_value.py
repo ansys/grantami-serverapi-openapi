@@ -72,6 +72,7 @@ class GsaNumericParameterValue(GsaParameterValue):
         "type": "GsaParameterValueType",
         "value": "float",
         "name": "str",
+        "parameter_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -79,6 +80,7 @@ class GsaNumericParameterValue(GsaParameterValue):
         "type": "type",
         "value": "value",
         "name": "name",
+        "parameter_guid": "parameterGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -92,6 +94,7 @@ class GsaNumericParameterValue(GsaParameterValue):
         type: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
         value: "float",
         name: "str | None | Unset_Type" = Unset,
+        parameter_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaNumericParameterValue - a model defined in Swagger
 
@@ -101,8 +104,9 @@ class GsaNumericParameterValue(GsaParameterValue):
         type: GsaParameterValueType
         value: float
         name: str | None, optional
+        parameter_guid: str, optional
         """
-        super().__init__(guid=guid, type=type)
+        super().__init__(guid=guid, type=type, parameter_guid=parameter_guid)
         self._value: float
         self._name: str | None | Unset_Type = Unset
 
