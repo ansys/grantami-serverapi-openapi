@@ -61,29 +61,24 @@ class GsaUpdateDiscreteType(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "discrete_values": "list[GsaPutDiscreteValue]",
         "guid": "str",
         "is_ordered": "bool",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
         "name": "name",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "discreteValues": "GsaPutDiscreteValue",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        discrete_values: "list[GsaPutDiscreteValue] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         is_ordered: "bool | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
@@ -92,20 +87,16 @@ class GsaUpdateDiscreteType(ModelBase):
 
         Parameters
         ----------
-        discrete_values: list[GsaPutDiscreteValue] | None, optional
         guid: str, optional
         is_ordered: bool, optional
         name: str, optional
         """
         self._is_ordered: bool | Unset_Type = Unset
-        self._discrete_values: list[GsaPutDiscreteValue] | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
         if is_ordered is not Unset:
             self.is_ordered = is_ordered
-        if discrete_values is not Unset:
-            self.discrete_values = discrete_values
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -135,30 +126,6 @@ class GsaUpdateDiscreteType(ModelBase):
         if is_ordered is None:
             raise ValueError("Invalid value for 'is_ordered', must not be 'None'")
         self._is_ordered = is_ordered
-
-    @property
-    def discrete_values(self) -> "list[GsaPutDiscreteValue] | None | Unset_Type":
-        """Gets the discrete_values of this GsaUpdateDiscreteType.
-
-        Returns
-        -------
-        list[GsaPutDiscreteValue] | None | Unset_Type
-            The discrete_values of this GsaUpdateDiscreteType.
-        """
-        return self._discrete_values
-
-    @discrete_values.setter
-    def discrete_values(
-        self, discrete_values: "list[GsaPutDiscreteValue] | None | Unset_Type"
-    ) -> None:
-        """Sets the discrete_values of this GsaUpdateDiscreteType.
-
-        Parameters
-        ----------
-        discrete_values: list[GsaPutDiscreteValue] | None | Unset_Type
-            The discrete_values of this GsaUpdateDiscreteType.
-        """
-        self._discrete_values = discrete_values
 
     @property
     def name(self) -> "str | Unset_Type":

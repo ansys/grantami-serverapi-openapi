@@ -62,7 +62,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesCreateDiscreteValue
 
@@ -169,7 +168,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
@@ -276,7 +274,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -369,7 +366,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
@@ -474,7 +470,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -563,14 +558,13 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         discrete_type_guid: "str",
         body: "Optional[GsaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
     ) -> "GsaDiscreteValuesDiscreteValuesInfo | None":
-        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.  If any 'update' discrete values are included in the request where the guid does not match an existing discrete value the operation will fail.  If any 'create' discrete values are included in the request body where the name matches an existing discrete value the operation will fail.
+        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesReplaceDiscreteValuesInfo
 
@@ -682,7 +676,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
         body: GsaDiscreteValuesUpdateDiscreteValue

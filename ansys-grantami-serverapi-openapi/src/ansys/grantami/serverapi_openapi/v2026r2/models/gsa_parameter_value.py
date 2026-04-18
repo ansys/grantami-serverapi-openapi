@@ -65,13 +65,11 @@ class GsaParameterValue(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "type": "GsaParameterValueType",
-        "parameter_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "type": "type",
-        "parameter_guid": "parameterGuid",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -90,7 +88,6 @@ class GsaParameterValue(ModelBase):
         *,
         guid: "str",
         type: "GsaParameterValueType",
-        parameter_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaParameterValue - a model defined in Swagger
 
@@ -98,41 +95,12 @@ class GsaParameterValue(ModelBase):
         ----------
         guid: str
         type: GsaParameterValueType
-        parameter_guid: str, optional
         """
-        self._parameter_guid: str | Unset_Type = Unset
         self._type: GsaParameterValueType
         self._guid: str
 
-        if parameter_guid is not Unset:
-            self.parameter_guid = parameter_guid
         self.type = type
         self.guid = guid
-
-    @property
-    def parameter_guid(self) -> "str | Unset_Type":
-        """Gets the parameter_guid of this GsaParameterValue.
-
-        Returns
-        -------
-        str | Unset_Type
-            The parameter_guid of this GsaParameterValue.
-        """
-        return self._parameter_guid
-
-    @parameter_guid.setter
-    def parameter_guid(self, parameter_guid: "str | Unset_Type") -> None:
-        """Sets the parameter_guid of this GsaParameterValue.
-
-        Parameters
-        ----------
-        parameter_guid: str | Unset_Type
-            The parameter_guid of this GsaParameterValue.
-        """
-        # Field is not nullable
-        if parameter_guid is None:
-            raise ValueError("Invalid value for 'parameter_guid', must not be 'None'")
-        self._parameter_guid = parameter_guid
 
     @property
     def type(self) -> "GsaParameterValueType":

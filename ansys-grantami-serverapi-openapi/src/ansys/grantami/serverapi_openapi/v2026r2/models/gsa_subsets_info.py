@@ -61,7 +61,7 @@ class GsaSubsetsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "subsets": "list[GsaSubset]",
+        "subsets": "list[GsaSlimSubset]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaSubsetsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "subsets": "GsaSubset",
+        "subsets": "GsaSlimSubset",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,37 @@ class GsaSubsetsInfo(ModelBase):
     def __init__(
         self,
         *,
-        subsets: "list[GsaSubset] | None | Unset_Type" = Unset,
+        subsets: "list[GsaSlimSubset] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaSubsetsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        subsets: list[GsaSubset] | None, optional
+        subsets: list[GsaSlimSubset] | None, optional
         """
-        self._subsets: list[GsaSubset] | None | Unset_Type = Unset
+        self._subsets: list[GsaSlimSubset] | None | Unset_Type = Unset
 
         if subsets is not Unset:
             self.subsets = subsets
 
     @property
-    def subsets(self) -> "list[GsaSubset] | None | Unset_Type":
+    def subsets(self) -> "list[GsaSlimSubset] | None | Unset_Type":
         """Gets the subsets of this GsaSubsetsInfo.
 
         Returns
         -------
-        list[GsaSubset] | None | Unset_Type
+        list[GsaSlimSubset] | None | Unset_Type
             The subsets of this GsaSubsetsInfo.
         """
         return self._subsets
 
     @subsets.setter
-    def subsets(self, subsets: "list[GsaSubset] | None | Unset_Type") -> None:
+    def subsets(self, subsets: "list[GsaSlimSubset] | None | Unset_Type") -> None:
         """Sets the subsets of this GsaSubsetsInfo.
 
         Parameters
         ----------
-        subsets: list[GsaSubset] | None | Unset_Type
+        subsets: list[GsaSlimSubset] | None | Unset_Type
             The subsets of this GsaSubsetsInfo.
         """
         self._subsets = subsets

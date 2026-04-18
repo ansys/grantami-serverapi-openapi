@@ -63,7 +63,7 @@ class GsaPermissionCategory(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "permissions": "list[GsaPermission]",
+        "permissions": "list[GsaSlimNamedEntity]",
     }
 
     attribute_map: dict[str, str] = {
@@ -73,7 +73,7 @@ class GsaPermissionCategory(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "permissions": "GsaPermission",
+        "permissions": "GsaSlimNamedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -83,7 +83,7 @@ class GsaPermissionCategory(ModelBase):
         *,
         guid: "str",
         name: "str",
-        permissions: "list[GsaPermission]",
+        permissions: "list[GsaSlimNamedEntity]",
     ) -> None:
         """GsaPermissionCategory - a model defined in Swagger
 
@@ -91,9 +91,9 @@ class GsaPermissionCategory(ModelBase):
         ----------
         guid: str
         name: str
-        permissions: list[GsaPermission]
+        permissions: list[GsaSlimNamedEntity]
         """
-        self._permissions: list[GsaPermission]
+        self._permissions: list[GsaSlimNamedEntity]
         self._name: str
         self._guid: str
 
@@ -102,23 +102,23 @@ class GsaPermissionCategory(ModelBase):
         self.guid = guid
 
     @property
-    def permissions(self) -> "list[GsaPermission]":
+    def permissions(self) -> "list[GsaSlimNamedEntity]":
         """Gets the permissions of this GsaPermissionCategory.
 
         Returns
         -------
-        list[GsaPermission]
+        list[GsaSlimNamedEntity]
             The permissions of this GsaPermissionCategory.
         """
         return self._permissions
 
     @permissions.setter
-    def permissions(self, permissions: "list[GsaPermission]") -> None:
+    def permissions(self, permissions: "list[GsaSlimNamedEntity]") -> None:
         """Sets the permissions of this GsaPermissionCategory.
 
         Parameters
         ----------
-        permissions: list[GsaPermission]
+        permissions: list[GsaSlimNamedEntity]
             The permissions of this GsaPermissionCategory.
         """
         # Field is not nullable
