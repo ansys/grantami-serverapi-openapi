@@ -1364,6 +1364,7 @@ from .gsa_short_text_prefix_datum_criterion import GsaShortTextPrefixDatumCriter
 from .gsa_significant_figures_info import GsaSignificantFiguresInfo
 from .gsa_similarity_setting import GsaSimilaritySetting
 from .gsa_similarity_settings import GsaSimilaritySettings
+from .gsa_similarity_sort_criterion import GsaSimilaritySortCriterion
 from .gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
 from .gsa_slim_attribute import GsaSlimAttribute
 from .gsa_slim_attribute_with_help_path import GsaSlimAttributeWithHelpPath
@@ -2784,6 +2785,7 @@ __all__ = [
     "GsaSignificantFiguresInfo",
     "GsaSimilaritySetting",
     "GsaSimilaritySettings",
+    "GsaSimilaritySortCriterion",
     "GsaSimpleAttributeToExport",
     "GsaSlimAttribute",
     "GsaSlimAttributeWithHelpPath",

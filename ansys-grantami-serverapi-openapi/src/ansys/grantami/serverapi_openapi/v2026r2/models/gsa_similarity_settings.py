@@ -63,6 +63,7 @@ class GsaSimilaritySettings(ModelBase):
     swagger_types: dict[str, str] = {
         "settings": "list[GsaSimilaritySetting]",
         "is_default": "bool",
+        "name": "str",
         "table_guid": "str",
         "use_knockdown": "bool",
     }
@@ -70,6 +71,7 @@ class GsaSimilaritySettings(ModelBase):
     attribute_map: dict[str, str] = {
         "settings": "settings",
         "is_default": "isDefault",
+        "name": "name",
         "table_guid": "tableGuid",
         "use_knockdown": "useKnockdown",
     }
@@ -85,6 +87,7 @@ class GsaSimilaritySettings(ModelBase):
         *,
         settings: "list[GsaSimilaritySetting]",
         is_default: "bool | Unset_Type" = Unset,
+        name: "str | None | Unset_Type" = Unset,
         table_guid: "str | None | Unset_Type" = Unset,
         use_knockdown: "bool | Unset_Type" = Unset,
     ) -> None:
@@ -94,12 +97,14 @@ class GsaSimilaritySettings(ModelBase):
         ----------
         settings: list[GsaSimilaritySetting]
         is_default: bool, optional
+        name: str | None, optional
         table_guid: str | None, optional
         use_knockdown: bool, optional
         """
         self._table_guid: str | None | Unset_Type = Unset
         self._use_knockdown: bool | Unset_Type = Unset
         self._is_default: bool | Unset_Type = Unset
+        self._name: str | None | Unset_Type = Unset
         self._settings: list[GsaSimilaritySetting]
 
         if table_guid is not Unset:
@@ -108,6 +113,8 @@ class GsaSimilaritySettings(ModelBase):
             self.use_knockdown = use_knockdown
         if is_default is not Unset:
             self.is_default = is_default
+        if name is not Unset:
+            self.name = name
         self.settings = settings
 
     @property
@@ -181,6 +188,28 @@ class GsaSimilaritySettings(ModelBase):
         if is_default is None:
             raise ValueError("Invalid value for 'is_default', must not be 'None'")
         self._is_default = is_default
+
+    @property
+    def name(self) -> "str | None | Unset_Type":
+        """Gets the name of this GsaSimilaritySettings.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The name of this GsaSimilaritySettings.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | None | Unset_Type") -> None:
+        """Sets the name of this GsaSimilaritySettings.
+
+        Parameters
+        ----------
+        name: str | None | Unset_Type
+            The name of this GsaSimilaritySettings.
+        """
+        self._name = name
 
     @property
     def settings(self) -> "list[GsaSimilaritySetting]":
