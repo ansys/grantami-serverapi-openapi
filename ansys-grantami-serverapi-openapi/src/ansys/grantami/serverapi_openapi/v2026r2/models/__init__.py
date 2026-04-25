@@ -68,6 +68,8 @@ from .gsa_access_control_category_no_such_entity_type import (
 )
 from .gsa_access_control_category_table_mapping import GsaAccessControlCategoryTableMapping
 from .gsa_access_control_category_update_exception import GsaAccessControlCategoryUpdateException
+from .gsa_access_control_entity import GsaAccessControlEntity
+from .gsa_access_control_entity_type import GsaAccessControlEntityType
 from .gsa_access_control_info import GsaAccessControlInfo
 from .gsa_access_control_mode import GsaAccessControlMode
 from .gsa_access_control_mode_info import GsaAccessControlModeInfo
@@ -856,6 +858,9 @@ from .gsa_logical_chart_data import GsaLogicalChartData
 from .gsa_logical_datum import GsaLogicalDatum
 from .gsa_logical_datum_criterion import GsaLogicalDatumCriterion
 from .gsa_logical_datum_exists_criterion import GsaLogicalDatumExistsCriterion
+from .gsa_long_running_operation import GsaLongRunningOperation
+from .gsa_long_running_operation_include import GsaLongRunningOperationInclude
+from .gsa_long_running_status import GsaLongRunningStatus
 from .gsa_long_sorting_value import GsaLongSortingValue
 from .gsa_long_text_attribute import GsaLongTextAttribute
 from .gsa_long_text_datum import GsaLongTextDatum
@@ -924,6 +929,9 @@ from .gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
 from .gsa_named_entity_folder_error_detail import GsaNamedEntityFolderErrorDetail
 from .gsa_named_entity_parameter_error_detail import GsaNamedEntityParameterErrorDetail
 from .gsa_named_entity_parameter_value_error_detail import GsaNamedEntityParameterValueErrorDetail
+from .gsa_named_entity_permission_category_error_detail import (
+    GsaNamedEntityPermissionCategoryErrorDetail,
+)
 from .gsa_named_entity_permission_error_detail import GsaNamedEntityPermissionErrorDetail
 from .gsa_named_entity_record_link_group_error_detail import (
     GsaNamedEntityRecordLinkGroupErrorDetail,
@@ -1245,6 +1253,7 @@ from .gsa_record_type_criterion import GsaRecordTypeCriterion
 from .gsa_record_type_property import GsaRecordTypeProperty
 from .gsa_record_user_capabilities import GsaRecordUserCapabilities
 from .gsa_record_version import GsaRecordVersion
+from .gsa_record_version_access_control_entity import GsaRecordVersionAccessControlEntity
 from .gsa_record_version_reference import GsaRecordVersionReference
 from .gsa_record_with_data import GsaRecordWithData
 from .gsa_referenced_by_type import GsaReferencedByType
@@ -1641,6 +1650,9 @@ from .gsa_update_permission_category_access_control import GsaUpdatePermissionCa
 from .gsa_update_permission_category_access_control_request import (
     GsaUpdatePermissionCategoryAccessControlRequest,
 )
+from .gsa_update_permission_category_access_controls_operation_request import (
+    GsaUpdatePermissionCategoryAccessControlsOperationRequest,
+)
 from .gsa_update_picture_attribute import GsaUpdatePictureAttribute
 from .gsa_update_point_attribute import GsaUpdatePointAttribute
 from .gsa_update_profile import GsaUpdateProfile
@@ -1737,6 +1749,8 @@ __all__ = [
     "GsaAccessControlCategoryNoSuchEntityType",
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
+    "GsaAccessControlEntity",
+    "GsaAccessControlEntityType",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
     "GsaAccessControlModeInfo",
@@ -2379,6 +2393,9 @@ __all__ = [
     "GsaLogicalDatum",
     "GsaLogicalDatumCriterion",
     "GsaLogicalDatumExistsCriterion",
+    "GsaLongRunningOperation",
+    "GsaLongRunningOperationInclude",
+    "GsaLongRunningStatus",
     "GsaLongSortingValue",
     "GsaLongTextAttribute",
     "GsaLongTextDatum",
@@ -2425,6 +2442,7 @@ __all__ = [
     "GsaNamedEntityFolderErrorDetail",
     "GsaNamedEntityParameterErrorDetail",
     "GsaNamedEntityParameterValueErrorDetail",
+    "GsaNamedEntityPermissionCategoryErrorDetail",
     "GsaNamedEntityPermissionErrorDetail",
     "GsaNamedEntityRecordLinkGroupErrorDetail",
     "GsaNamedEntityTableErrorDetail",
@@ -2684,6 +2702,7 @@ __all__ = [
     "GsaRecordTypeProperty",
     "GsaRecordUserCapabilities",
     "GsaRecordVersion",
+    "GsaRecordVersionAccessControlEntity",
     "GsaRecordVersionReference",
     "GsaRecordWithData",
     "GsaReferencedByType",
@@ -3008,6 +3027,7 @@ __all__ = [
     "GsaUpdatePermissionCategory",
     "GsaUpdatePermissionCategoryAccessControl",
     "GsaUpdatePermissionCategoryAccessControlRequest",
+    "GsaUpdatePermissionCategoryAccessControlsOperationRequest",
     "GsaUpdatePictureAttribute",
     "GsaUpdatePointAttribute",
     "GsaUpdateProfile",
