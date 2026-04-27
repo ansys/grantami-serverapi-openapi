@@ -77,7 +77,7 @@ class GsaPermissionCategoryErrorDetail(ModelBase):
     }
 
     discriminator_value_class_map = {
-        "namedEntity".lower(): "#/components/schemas/GsaNamedEntityPermissionErrorDetail",
+        "namedEntity".lower(): "#/components/schemas/GsaNamedEntityPermissionCategoryErrorDetail",
         "noPermissions".lower(): "#/components/schemas/GsaNoPermissionsPermissionCategoryErrorDetail",
         "tooManyPermissions".lower(): "#/components/schemas/GsaTooManyPermissionsPermissionCategoryErrorDetail",
         "duplicatePermissions".lower(): "#/components/schemas/GsaDuplicatePermissionsPermissionCategoryErrorDetail",

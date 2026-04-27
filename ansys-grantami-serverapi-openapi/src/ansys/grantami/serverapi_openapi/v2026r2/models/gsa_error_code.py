@@ -116,3 +116,4 @@ class GsaErrorCode(Enum):
     TABLECREATION = "tableCreation"
     TABLEUPDATE = "tableUpdate"
     REORDERTABLES = "reorderTables"
+    LONGRUNNINGOPERATIONINVALIDSTATUS = "longRunningOperationInvalidStatus"
