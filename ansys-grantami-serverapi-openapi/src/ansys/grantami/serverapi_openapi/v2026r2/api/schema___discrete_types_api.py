@@ -50,7 +50,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
     def create_discrete_type(
         self, *, database_key: "str", body: "Optional[GsaCreateDiscreteType]" = None
-    ) -> "GsaDiscreteType | None":
+    ) -> "GsaDiscreteType | GsaDiscreteTypeCreationException | None":
         """Create a new discrete type.
 
         This method makes a synchronous HTTP request.
@@ -63,7 +63,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        GsaDiscreteType | None
+        GsaDiscreteType | GsaDiscreteTypeCreationException | None
         """
         data = self._create_discrete_type_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +121,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaDiscreteType",
-            400: None,
+            400: "GsaDiscreteTypeCreationException",
             403: None,
             404: None,
         }
@@ -615,7 +615,7 @@ class SchemaDiscreteTypesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         body: "Optional[GsaUpdateDiscreteType]" = None,
-    ) -> "GsaDiscreteType | None":
+    ) -> "GsaDiscreteType | GsaDiscreteTypeUpdateException | None":
         """Update discrete type.
 
         This method makes a synchronous HTTP request.
@@ -629,7 +629,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         Returns
         -------
-        GsaDiscreteType | None
+        GsaDiscreteType | GsaDiscreteTypeUpdateException | None
         """
         data = self._update_discrete_type_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -699,7 +699,7 @@ class SchemaDiscreteTypesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaDiscreteType",
-            400: None,
+            400: "GsaDiscreteTypeUpdateException",
             403: None,
             404: None,
         }

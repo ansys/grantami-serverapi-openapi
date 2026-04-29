@@ -506,19 +506,28 @@ from .gsa_discrete_text_datum_criterion import GsaDiscreteTextDatumCriterion
 from .gsa_discrete_text_prefix_datum_criterion import GsaDiscreteTextPrefixDatumCriterion
 from .gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatumCriterion
 from .gsa_discrete_type import GsaDiscreteType
+from .gsa_discrete_type_creation_exception import GsaDiscreteTypeCreationException
 from .gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
+from .gsa_discrete_type_error_detail import GsaDiscreteTypeErrorDetail
+from .gsa_discrete_type_error_reason import GsaDiscreteTypeErrorReason
+from .gsa_discrete_type_update_exception import GsaDiscreteTypeUpdateException
 from .gsa_discrete_type_usage import GsaDiscreteTypeUsage
 from .gsa_discrete_type_usage_type import GsaDiscreteTypeUsageType
 from .gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .gsa_discrete_value import GsaDiscreteValue
-from .gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
-from .gsa_discrete_value_aggregate_exception import GsaDiscreteValueAggregateException
+from .gsa_discrete_value_creation_exception import GsaDiscreteValueCreationException
+from .gsa_discrete_value_deletion_exception import GsaDiscreteValueDeletionException
+from .gsa_discrete_value_error_detail import GsaDiscreteValueErrorDetail
+from .gsa_discrete_value_error_reason import GsaDiscreteValueErrorReason
 from .gsa_discrete_value_not_in_discrete_type_error_detail import (
     GsaDiscreteValueNotInDiscreteTypeErrorDetail,
 )
+from .gsa_discrete_value_update_exception import GsaDiscreteValueUpdateException
+from .gsa_discrete_value_used_in_data_error_detail import GsaDiscreteValueUsedInDataErrorDetail
 from .gsa_discrete_values_create_discrete_value import GsaDiscreteValuesCreateDiscreteValue
 from .gsa_discrete_values_discrete_value import GsaDiscreteValuesDiscreteValue
 from .gsa_discrete_values_discrete_values_info import GsaDiscreteValuesDiscreteValuesInfo
+from .gsa_discrete_values_error_detail import GsaDiscreteValuesErrorDetail
 from .gsa_discrete_values_replace_discrete_values_info import (
     GsaDiscreteValuesReplaceDiscreteValuesInfo,
 )
@@ -923,6 +932,8 @@ from .gsa_named_entity_access_control_category_error_detail import (
 )
 from .gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
 from .gsa_named_entity_constant_error_detail import GsaNamedEntityConstantErrorDetail
+from .gsa_named_entity_discrete_type_error_detail import GsaNamedEntityDiscreteTypeErrorDetail
+from .gsa_named_entity_discrete_value_error_detail import GsaNamedEntityDiscreteValueErrorDetail
 from .gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
 from .gsa_named_entity_error_reason import GsaNamedEntityErrorReason
 from .gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
@@ -966,6 +977,9 @@ from .gsa_no_such_categories_replace_permission_category_error_detail import (
 )
 from .gsa_no_such_category_access_control_error_detail import (
     GsaNoSuchCategoryAccessControlErrorDetail,
+)
+from .gsa_no_such_discrete_value_in_discrete_type_error_detail import (
+    GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail,
 )
 from .gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
@@ -1272,6 +1286,7 @@ from .gsa_reorder_tables_error_detail import GsaReorderTablesErrorDetail
 from .gsa_reorder_tables_error_reason import GsaReorderTablesErrorReason
 from .gsa_reorder_tables_exception import GsaReorderTablesException
 from .gsa_reorder_tables_request import GsaReorderTablesRequest
+from .gsa_replace_discrete_values_exception import GsaReplaceDiscreteValuesException
 from .gsa_replace_permission_categories_request import GsaReplacePermissionCategoriesRequest
 from .gsa_replace_permission_category_error_detail import GsaReplacePermissionCategoryErrorDetail
 from .gsa_replace_permission_category_error_reason import GsaReplacePermissionCategoryErrorReason
@@ -2117,17 +2132,26 @@ __all__ = [
     "GsaDiscreteTextPrefixDatumCriterion",
     "GsaDiscreteTextValuesDatumCriterion",
     "GsaDiscreteType",
+    "GsaDiscreteTypeCreationException",
     "GsaDiscreteTypeDeletionException",
+    "GsaDiscreteTypeErrorDetail",
+    "GsaDiscreteTypeErrorReason",
+    "GsaDiscreteTypeUpdateException",
     "GsaDiscreteTypeUsage",
     "GsaDiscreteTypeUsageType",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
-    "GsaDiscreteValueAggregateErrorReason",
-    "GsaDiscreteValueAggregateException",
+    "GsaDiscreteValueCreationException",
+    "GsaDiscreteValueDeletionException",
+    "GsaDiscreteValueErrorDetail",
+    "GsaDiscreteValueErrorReason",
     "GsaDiscreteValueNotInDiscreteTypeErrorDetail",
+    "GsaDiscreteValueUpdateException",
+    "GsaDiscreteValueUsedInDataErrorDetail",
     "GsaDiscreteValuesCreateDiscreteValue",
     "GsaDiscreteValuesDiscreteValue",
     "GsaDiscreteValuesDiscreteValuesInfo",
+    "GsaDiscreteValuesErrorDetail",
     "GsaDiscreteValuesReplaceDiscreteValuesInfo",
     "GsaDiscreteValuesUpdateDiscreteValue",
     "GsaDiskStatus",
@@ -2436,6 +2460,8 @@ __all__ = [
     "GsaNamedEntityAccessControlCategoryErrorDetail",
     "GsaNamedEntityAttributeErrorDetail",
     "GsaNamedEntityConstantErrorDetail",
+    "GsaNamedEntityDiscreteTypeErrorDetail",
+    "GsaNamedEntityDiscreteValueErrorDetail",
     "GsaNamedEntityErrorDetail",
     "GsaNamedEntityErrorReason",
     "GsaNamedEntityFileErrorDetail",
@@ -2464,6 +2490,7 @@ __all__ = [
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchCategoryAccessControlErrorDetail",
+    "GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2719,6 +2746,7 @@ __all__ = [
     "GsaReorderTablesErrorReason",
     "GsaReorderTablesException",
     "GsaReorderTablesRequest",
+    "GsaReplaceDiscreteValuesException",
     "GsaReplacePermissionCategoriesRequest",
     "GsaReplacePermissionCategoryErrorDetail",
     "GsaReplacePermissionCategoryErrorReason",
