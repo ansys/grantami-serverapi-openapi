@@ -595,19 +595,30 @@ from .models.gsa_discrete_text_datum_criterion import GsaDiscreteTextDatumCriter
 from .models.gsa_discrete_text_prefix_datum_criterion import GsaDiscreteTextPrefixDatumCriterion
 from .models.gsa_discrete_text_values_datum_criterion import GsaDiscreteTextValuesDatumCriterion
 from .models.gsa_discrete_type import GsaDiscreteType
+from .models.gsa_discrete_type_creation_exception import GsaDiscreteTypeCreationException
 from .models.gsa_discrete_type_deletion_exception import GsaDiscreteTypeDeletionException
+from .models.gsa_discrete_type_error_detail import GsaDiscreteTypeErrorDetail
+from .models.gsa_discrete_type_error_reason import GsaDiscreteTypeErrorReason
+from .models.gsa_discrete_type_update_exception import GsaDiscreteTypeUpdateException
 from .models.gsa_discrete_type_usage import GsaDiscreteTypeUsage
 from .models.gsa_discrete_type_usage_type import GsaDiscreteTypeUsageType
 from .models.gsa_discrete_types_info import GsaDiscreteTypesInfo
 from .models.gsa_discrete_value import GsaDiscreteValue
-from .models.gsa_discrete_value_aggregate_error_reason import GsaDiscreteValueAggregateErrorReason
-from .models.gsa_discrete_value_aggregate_exception import GsaDiscreteValueAggregateException
+from .models.gsa_discrete_value_creation_exception import GsaDiscreteValueCreationException
+from .models.gsa_discrete_value_deletion_exception import GsaDiscreteValueDeletionException
+from .models.gsa_discrete_value_error_detail import GsaDiscreteValueErrorDetail
+from .models.gsa_discrete_value_error_reason import GsaDiscreteValueErrorReason
 from .models.gsa_discrete_value_not_in_discrete_type_error_detail import (
     GsaDiscreteValueNotInDiscreteTypeErrorDetail,
+)
+from .models.gsa_discrete_value_update_exception import GsaDiscreteValueUpdateException
+from .models.gsa_discrete_value_used_in_data_error_detail import (
+    GsaDiscreteValueUsedInDataErrorDetail,
 )
 from .models.gsa_discrete_values_create_discrete_value import GsaDiscreteValuesCreateDiscreteValue
 from .models.gsa_discrete_values_discrete_value import GsaDiscreteValuesDiscreteValue
 from .models.gsa_discrete_values_discrete_values_info import GsaDiscreteValuesDiscreteValuesInfo
+from .models.gsa_discrete_values_error_detail import GsaDiscreteValuesErrorDetail
 from .models.gsa_discrete_values_replace_discrete_values_info import (
     GsaDiscreteValuesReplaceDiscreteValuesInfo,
 )
@@ -1040,6 +1051,12 @@ from .models.gsa_named_entity_access_control_category_error_detail import (
 )
 from .models.gsa_named_entity_attribute_error_detail import GsaNamedEntityAttributeErrorDetail
 from .models.gsa_named_entity_constant_error_detail import GsaNamedEntityConstantErrorDetail
+from .models.gsa_named_entity_discrete_type_error_detail import (
+    GsaNamedEntityDiscreteTypeErrorDetail,
+)
+from .models.gsa_named_entity_discrete_value_error_detail import (
+    GsaNamedEntityDiscreteValueErrorDetail,
+)
 from .models.gsa_named_entity_error_detail import GsaNamedEntityErrorDetail
 from .models.gsa_named_entity_error_reason import GsaNamedEntityErrorReason
 from .models.gsa_named_entity_file_error_detail import GsaNamedEntityFileErrorDetail
@@ -1087,6 +1104,9 @@ from .models.gsa_no_such_categories_replace_permission_category_error_detail imp
 )
 from .models.gsa_no_such_category_access_control_error_detail import (
     GsaNoSuchCategoryAccessControlErrorDetail,
+)
+from .models.gsa_no_such_discrete_value_in_discrete_type_error_detail import (
+    GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail,
 )
 from .models.gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
@@ -1415,6 +1435,7 @@ from .models.gsa_reorder_tables_error_detail import GsaReorderTablesErrorDetail
 from .models.gsa_reorder_tables_error_reason import GsaReorderTablesErrorReason
 from .models.gsa_reorder_tables_exception import GsaReorderTablesException
 from .models.gsa_reorder_tables_request import GsaReorderTablesRequest
+from .models.gsa_replace_discrete_values_exception import GsaReplaceDiscreteValuesException
 from .models.gsa_replace_permission_categories_request import GsaReplacePermissionCategoriesRequest
 from .models.gsa_replace_permission_category_error_detail import (
     GsaReplacePermissionCategoryErrorDetail,
@@ -2343,17 +2364,26 @@ __all__ = [
     "GsaDiscreteTextPrefixDatumCriterion",
     "GsaDiscreteTextValuesDatumCriterion",
     "GsaDiscreteType",
+    "GsaDiscreteTypeCreationException",
     "GsaDiscreteTypeDeletionException",
+    "GsaDiscreteTypeErrorDetail",
+    "GsaDiscreteTypeErrorReason",
+    "GsaDiscreteTypeUpdateException",
     "GsaDiscreteTypeUsage",
     "GsaDiscreteTypeUsageType",
     "GsaDiscreteTypesInfo",
     "GsaDiscreteValue",
-    "GsaDiscreteValueAggregateErrorReason",
-    "GsaDiscreteValueAggregateException",
+    "GsaDiscreteValueCreationException",
+    "GsaDiscreteValueDeletionException",
+    "GsaDiscreteValueErrorDetail",
+    "GsaDiscreteValueErrorReason",
     "GsaDiscreteValueNotInDiscreteTypeErrorDetail",
+    "GsaDiscreteValueUpdateException",
+    "GsaDiscreteValueUsedInDataErrorDetail",
     "GsaDiscreteValuesCreateDiscreteValue",
     "GsaDiscreteValuesDiscreteValue",
     "GsaDiscreteValuesDiscreteValuesInfo",
+    "GsaDiscreteValuesErrorDetail",
     "GsaDiscreteValuesReplaceDiscreteValuesInfo",
     "GsaDiscreteValuesUpdateDiscreteValue",
     "GsaDiskStatus",
@@ -2662,6 +2692,8 @@ __all__ = [
     "GsaNamedEntityAccessControlCategoryErrorDetail",
     "GsaNamedEntityAttributeErrorDetail",
     "GsaNamedEntityConstantErrorDetail",
+    "GsaNamedEntityDiscreteTypeErrorDetail",
+    "GsaNamedEntityDiscreteValueErrorDetail",
     "GsaNamedEntityErrorDetail",
     "GsaNamedEntityErrorReason",
     "GsaNamedEntityFileErrorDetail",
@@ -2690,6 +2722,7 @@ __all__ = [
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchCategoryAccessControlErrorDetail",
+    "GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2945,6 +2978,7 @@ __all__ = [
     "GsaReorderTablesErrorReason",
     "GsaReorderTablesException",
     "GsaReorderTablesRequest",
+    "GsaReplaceDiscreteValuesException",
     "GsaReplacePermissionCategoriesRequest",
     "GsaReplacePermissionCategoryErrorDetail",
     "GsaReplacePermissionCategoryErrorReason",
