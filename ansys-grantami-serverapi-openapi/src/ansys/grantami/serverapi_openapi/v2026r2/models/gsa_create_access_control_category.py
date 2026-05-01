@@ -145,6 +145,7 @@ class GsaCreateAccessControlCategory(ModelBase):
         self,
     ) -> "list[GsaCreateAccessControlCategoryTableMapping] | None | Unset_Type":
         """Gets the table_mappings of this GsaCreateAccessControlCategory.
+        Optionally maps an attribute, and values applied to the table, for each table.  There can be at most one entry for each table.
 
         Returns
         -------
@@ -158,6 +159,7 @@ class GsaCreateAccessControlCategory(ModelBase):
         self, table_mappings: "list[GsaCreateAccessControlCategoryTableMapping] | None | Unset_Type"
     ) -> None:
         """Sets the table_mappings of this GsaCreateAccessControlCategory.
+        Optionally maps an attribute, and values applied to the table, for each table.  There can be at most one entry for each table.
 
         Parameters
         ----------

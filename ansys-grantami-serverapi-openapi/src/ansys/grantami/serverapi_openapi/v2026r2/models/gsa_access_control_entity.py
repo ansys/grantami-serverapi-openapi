@@ -76,6 +76,10 @@ class GsaAccessControlEntity(ModelBase):
 
     discriminator_value_class_map = {
         "recordVersion".lower(): "#/components/schemas/GsaRecordVersionAccessControlEntity",
+        "attribute".lower(): "#/components/schemas/GsaAttributeAccessControlEntity",
+        "database".lower(): "#/components/schemas/GsaDatabaseAccessControlEntity",
+        "table".lower(): "#/components/schemas/GsaTableAccessControlEntity",
+        "expression".lower(): "#/components/schemas/GsaExpressionAccessControlEntity",
     }
 
     discriminator: Optional[str] = "entityType"

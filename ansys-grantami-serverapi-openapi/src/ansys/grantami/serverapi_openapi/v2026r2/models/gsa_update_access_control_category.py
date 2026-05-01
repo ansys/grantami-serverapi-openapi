@@ -83,7 +83,7 @@ class GsaUpdateAccessControlCategory(ModelBase):
         *,
         guid: "str | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
-        table_mappings: "list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type" = Unset,
+        table_mappings: "list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateAccessControlCategory - a model defined in Swagger
 
@@ -91,9 +91,11 @@ class GsaUpdateAccessControlCategory(ModelBase):
         ----------
         guid: str, optional
         name: str, optional
-        table_mappings: list[GsaUpdateAccessControlCategoryTableMapping], optional
+        table_mappings: list[GsaUpdateAccessControlCategoryTableMapping] | None, optional
         """
-        self._table_mappings: list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type = Unset
+        self._table_mappings: (
+            list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type
+        ) = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
@@ -105,30 +107,31 @@ class GsaUpdateAccessControlCategory(ModelBase):
             self.guid = guid
 
     @property
-    def table_mappings(self) -> "list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type":
+    def table_mappings(
+        self,
+    ) -> "list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type":
         """Gets the table_mappings of this GsaUpdateAccessControlCategory.
+        Optionally maps an attribute, and values applied to the table, for each table.  Replaces all existing table mappings with the provided list.  There can be at most one entry for each table.  Existing mappings for tables not included in this list will be deleted.  To remove an existing mapping, include the table with a null attribute.  To remove all mappings, set this property to null.  If this property is omitted, table mappings are not changed.
 
         Returns
         -------
-        list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type
+        list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type
             The table_mappings of this GsaUpdateAccessControlCategory.
         """
         return self._table_mappings
 
     @table_mappings.setter
     def table_mappings(
-        self, table_mappings: "list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type"
+        self, table_mappings: "list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type"
     ) -> None:
         """Sets the table_mappings of this GsaUpdateAccessControlCategory.
+        Optionally maps an attribute, and values applied to the table, for each table.  Replaces all existing table mappings with the provided list.  There can be at most one entry for each table.  Existing mappings for tables not included in this list will be deleted.  To remove an existing mapping, include the table with a null attribute.  To remove all mappings, set this property to null.  If this property is omitted, table mappings are not changed.
 
         Parameters
         ----------
-        table_mappings: list[GsaUpdateAccessControlCategoryTableMapping] | Unset_Type
+        table_mappings: list[GsaUpdateAccessControlCategoryTableMapping] | None | Unset_Type
             The table_mappings of this GsaUpdateAccessControlCategory.
         """
-        # Field is not nullable
-        if table_mappings is None:
-            raise ValueError("Invalid value for 'table_mappings', must not be 'None'")
         self._table_mappings = table_mappings
 
     @property

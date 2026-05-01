@@ -85,6 +85,7 @@ class GsaAccessControlCategoryErrorDetail(ModelBase):
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityAccessControlCategoryErrorDetail",
         "duplicateTable".lower(): "#/components/schemas/GsaDuplicateTableErrorDetail",
         "duplicateDiscreteValue".lower(): "#/components/schemas/GsaDuplicateDiscreteValueErrorDetail",
+        "noSuchTableMapping".lower(): "#/components/schemas/GsaNoSuchTableMappingErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

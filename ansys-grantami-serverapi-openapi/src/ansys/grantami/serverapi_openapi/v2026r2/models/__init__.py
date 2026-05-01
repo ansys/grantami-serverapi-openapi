@@ -119,6 +119,7 @@ from .gsa_applications_info import GsaApplicationsInfo
 from .gsa_apply_options import GsaApplyOptions
 from .gsa_association_chain_create_put_layout_item import GsaAssociationChainCreatePutLayoutItem
 from .gsa_attribute import GsaAttribute
+from .gsa_attribute_access_control_entity import GsaAttributeAccessControlEntity
 from .gsa_attribute_aggregation import GsaAttributeAggregation
 from .gsa_attribute_aggregation_criterion import GsaAttributeAggregationCriterion
 from .gsa_attribute_aggregation_exists_criterion import GsaAttributeAggregationExistsCriterion
@@ -389,6 +390,7 @@ from .gsa_data_updater_job_type import GsaDataUpdaterJobType
 from .gsa_data_updater_project import GsaDataUpdaterProject
 from .gsa_data_usage_data_modification_error_detail import GsaDataUsageDataModificationErrorDetail
 from .gsa_database import GsaDatabase
+from .gsa_database_access_control_entity import GsaDatabaseAccessControlEntity
 from .gsa_database_currency_unit_usage_data_modification_error_detail import (
     GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail,
 )
@@ -622,6 +624,7 @@ from .gsa_export_failure import GsaExportFailure
 from .gsa_export_failure_type import GsaExportFailureType
 from .gsa_exporter_refetch_info import GsaExporterRefetchInfo
 from .gsa_expression import GsaExpression
+from .gsa_expression_access_control_entity import GsaExpressionAccessControlEntity
 from .gsa_expression_maths_functional_error_detail import GsaExpressionMathsFunctionalErrorDetail
 from .gsa_expression_usage_data_modification_error_detail import (
     GsaExpressionUsageDataModificationErrorDetail,
@@ -1000,6 +1003,7 @@ from .gsa_no_such_permission_access_control_error_detail import (
 from .gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
 )
+from .gsa_no_such_table_mapping_error_detail import GsaNoSuchTableMappingErrorDetail
 from .gsa_no_such_tables_reorder_tables_error_detail import GsaNoSuchTablesReorderTablesErrorDetail
 from .gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
@@ -1466,6 +1470,7 @@ from .gsa_symbol_cannot_contain_comma_unit_error_detail import (
 )
 from .gsa_t_item import GsaTItem
 from .gsa_table import GsaTable
+from .gsa_table_access_control_entity import GsaTableAccessControlEntity
 from .gsa_table_creation_exception import GsaTableCreationException
 from .gsa_table_deletion_exception import GsaTableDeletionException
 from .gsa_table_error_detail import GsaTableErrorDetail
@@ -1811,6 +1816,7 @@ __all__ = [
     "GsaApplyOptions",
     "GsaAssociationChainCreatePutLayoutItem",
     "GsaAttribute",
+    "GsaAttributeAccessControlEntity",
     "GsaAttributeAggregation",
     "GsaAttributeAggregationCriterion",
     "GsaAttributeAggregationExistsCriterion",
@@ -2045,6 +2051,7 @@ __all__ = [
     "GsaDataUpdaterProject",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
+    "GsaDatabaseAccessControlEntity",
     "GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail",
     "GsaDatabaseIssues",
     "GsaDatabaseKeyProperty",
@@ -2204,6 +2211,7 @@ __all__ = [
     "GsaExportFailureType",
     "GsaExporterRefetchInfo",
     "GsaExpression",
+    "GsaExpressionAccessControlEntity",
     "GsaExpressionMathsFunctionalErrorDetail",
     "GsaExpressionUsageDataModificationErrorDetail",
     "GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail",
@@ -2500,6 +2508,7 @@ __all__ = [
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
+    "GsaNoSuchTableMappingErrorDetail",
     "GsaNoSuchTablesReorderTablesErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
@@ -2900,6 +2909,7 @@ __all__ = [
     "GsaSymbolCannotContainCommaUnitErrorDetail",
     "GsaTItem",
     "GsaTable",
+    "GsaTableAccessControlEntity",
     "GsaTableCreationException",
     "GsaTableDeletionException",
     "GsaTableErrorDetail",
