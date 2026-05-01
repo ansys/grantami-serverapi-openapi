@@ -190,6 +190,7 @@ from .models.gsa_association_chain_create_put_layout_item import (
     GsaAssociationChainCreatePutLayoutItem,
 )
 from .models.gsa_attribute import GsaAttribute
+from .models.gsa_attribute_access_control_entity import GsaAttributeAccessControlEntity
 from .models.gsa_attribute_aggregation import GsaAttributeAggregation
 from .models.gsa_attribute_aggregation_criterion import GsaAttributeAggregationCriterion
 from .models.gsa_attribute_aggregation_exists_criterion import (
@@ -470,6 +471,7 @@ from .models.gsa_data_usage_data_modification_error_detail import (
     GsaDataUsageDataModificationErrorDetail,
 )
 from .models.gsa_database import GsaDatabase
+from .models.gsa_database_access_control_entity import GsaDatabaseAccessControlEntity
 from .models.gsa_database_currency_unit_usage_data_modification_error_detail import (
     GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail,
 )
@@ -717,6 +719,7 @@ from .models.gsa_export_failure import GsaExportFailure
 from .models.gsa_export_failure_type import GsaExportFailureType
 from .models.gsa_exporter_refetch_info import GsaExporterRefetchInfo
 from .models.gsa_expression import GsaExpression
+from .models.gsa_expression_access_control_entity import GsaExpressionAccessControlEntity
 from .models.gsa_expression_maths_functional_error_detail import (
     GsaExpressionMathsFunctionalErrorDetail,
 )
@@ -1133,6 +1136,7 @@ from .models.gsa_no_such_permission_access_control_error_detail import (
 from .models.gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
 )
+from .models.gsa_no_such_table_mapping_error_detail import GsaNoSuchTableMappingErrorDetail
 from .models.gsa_no_such_tables_reorder_tables_error_detail import (
     GsaNoSuchTablesReorderTablesErrorDetail,
 )
@@ -1623,6 +1627,7 @@ from .models.gsa_symbol_cannot_contain_comma_unit_error_detail import (
 )
 from .models.gsa_t_item import GsaTItem
 from .models.gsa_table import GsaTable
+from .models.gsa_table_access_control_entity import GsaTableAccessControlEntity
 from .models.gsa_table_creation_exception import GsaTableCreationException
 from .models.gsa_table_deletion_exception import GsaTableDeletionException
 from .models.gsa_table_error_detail import GsaTableErrorDetail
@@ -2043,6 +2048,7 @@ __all__ = [
     "GsaApplyOptions",
     "GsaAssociationChainCreatePutLayoutItem",
     "GsaAttribute",
+    "GsaAttributeAccessControlEntity",
     "GsaAttributeAggregation",
     "GsaAttributeAggregationCriterion",
     "GsaAttributeAggregationExistsCriterion",
@@ -2277,6 +2283,7 @@ __all__ = [
     "GsaDataUpdaterProject",
     "GsaDataUsageDataModificationErrorDetail",
     "GsaDatabase",
+    "GsaDatabaseAccessControlEntity",
     "GsaDatabaseCurrencyUnitUsageDataModificationErrorDetail",
     "GsaDatabaseIssues",
     "GsaDatabaseKeyProperty",
@@ -2436,6 +2443,7 @@ __all__ = [
     "GsaExportFailureType",
     "GsaExporterRefetchInfo",
     "GsaExpression",
+    "GsaExpressionAccessControlEntity",
     "GsaExpressionMathsFunctionalErrorDetail",
     "GsaExpressionUsageDataModificationErrorDetail",
     "GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail",
@@ -2732,6 +2740,7 @@ __all__ = [
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
+    "GsaNoSuchTableMappingErrorDetail",
     "GsaNoSuchTablesReorderTablesErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
@@ -3132,6 +3141,7 @@ __all__ = [
     "GsaSymbolCannotContainCommaUnitErrorDetail",
     "GsaTItem",
     "GsaTable",
+    "GsaTableAccessControlEntity",
     "GsaTableCreationException",
     "GsaTableDeletionException",
     "GsaTableErrorDetail",

@@ -2072,6 +2072,7 @@ class SchemaAttributesApi(ApiBase):
     ) -> "GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None":
         """Update permission-based access control settings for a given attribute.  Sets the access control for the given permissions.
 
+            Can also be run as a long-running operation at [Access Control - Permission-Based/UpdatePermissionCategoryAccessControlsOperation](#/Access%20Control%20-%20Permission-Based/UpdatePermissionCategoryAccessControlsOperation)
         This method makes a synchronous HTTP request.
 
         Parameters
@@ -2320,6 +2321,7 @@ class SchemaAttributesApi(ApiBase):
     ) -> "GsaPermissionCategoriesAccessControlUpdateException | GsaPermissionCategoryAccessControlInfo | None":
         """Update permission-based access control settings for a given meta-attribute.  Sets the access control for the given permissions.
 
+            Can also be run as a long-running operation at [Access Control - Permission-Based/UpdatePermissionCategoryAccessControlsOperation](#/Access%20Control%20-%20Permission-Based/UpdatePermissionCategoryAccessControlsOperation)
         This method makes a synchronous HTTP request.
 
         Parameters

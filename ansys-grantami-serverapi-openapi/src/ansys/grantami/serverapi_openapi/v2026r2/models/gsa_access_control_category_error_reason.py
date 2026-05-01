@@ -50,3 +50,4 @@ class GsaAccessControlCategoryErrorReason(Enum):
     NAMEDENTITY = "namedEntity"
     DUPLICATETABLE = "duplicateTable"
     DUPLICATEDISCRETEVALUE = "duplicateDiscreteValue"
+    NOSUCHTABLEMAPPING = "noSuchTableMapping"

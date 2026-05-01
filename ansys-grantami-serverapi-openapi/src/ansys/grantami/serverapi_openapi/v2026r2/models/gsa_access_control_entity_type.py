@@ -43,3 +43,7 @@ class GsaAccessControlEntityType(Enum):
     Allowed Enum values
     """
     RECORDVERSION = "recordVersion"
+    ATTRIBUTE = "attribute"
+    DATABASE = "database"
+    TABLE = "table"
+    EXPRESSION = "expression"

@@ -140,7 +140,7 @@ class GsaAccessControlCategory(ModelBase):
     @property
     def table_mappings(self) -> "list[GsaAccessControlCategoryTableMapping] | None | Unset_Type":
         """Gets the table_mappings of this GsaAccessControlCategory.
-        Information specific to each table.
+        Optionally maps an attribute, and values applied to the table, for each table.  There can be at most one entry for each table.
 
         Returns
         -------
@@ -154,7 +154,7 @@ class GsaAccessControlCategory(ModelBase):
         self, table_mappings: "list[GsaAccessControlCategoryTableMapping] | None | Unset_Type"
     ) -> None:
         """Sets the table_mappings of this GsaAccessControlCategory.
-        Information specific to each table.
+        Optionally maps an attribute, and values applied to the table, for each table.  There can be at most one entry for each table.
 
         Parameters
         ----------
