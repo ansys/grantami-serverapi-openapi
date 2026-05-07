@@ -80,21 +80,20 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "GsaStandardNameDeletionErrorReason | Unset_Type" = Unset,
+        reason: "GsaStandardNameDeletionErrorReason",
     ) -> None:
         """GsaStandardNameDeletionErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: GsaStandardNameDeletionErrorReason, optional
+        reason: GsaStandardNameDeletionErrorReason
         """
         self._message: str
-        self._reason: GsaStandardNameDeletionErrorReason | Unset_Type = Unset
+        self._reason: GsaStandardNameDeletionErrorReason
 
         self.message = message
-        if reason is not Unset:
-            self.reason = reason
+        self.reason = reason
 
     @property
     def message(self) -> "str":
@@ -125,28 +124,31 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "GsaStandardNameDeletionErrorReason | Unset_Type":
+    def reason(self) -> "GsaStandardNameDeletionErrorReason":
         """Gets the reason of this GsaStandardNameDeletionErrorDetail.
 
         Returns
         -------
-        GsaStandardNameDeletionErrorReason | Unset_Type
+        GsaStandardNameDeletionErrorReason
             The reason of this GsaStandardNameDeletionErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "GsaStandardNameDeletionErrorReason | Unset_Type") -> None:
+    def reason(self, reason: "GsaStandardNameDeletionErrorReason") -> None:
         """Sets the reason of this GsaStandardNameDeletionErrorDetail.
 
         Parameters
         ----------
-        reason: GsaStandardNameDeletionErrorReason | Unset_Type
+        reason: GsaStandardNameDeletionErrorReason
             The reason of this GsaStandardNameDeletionErrorDetail.
         """
         # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod

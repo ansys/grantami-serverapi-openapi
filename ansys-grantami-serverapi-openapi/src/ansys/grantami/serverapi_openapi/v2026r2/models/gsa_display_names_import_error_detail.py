@@ -62,19 +62,19 @@ class GsaDisplayNamesImportErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
+        "reason": "GsaDisplayNamesImportErrorReason",
         "column_header": "str",
         "field_value": "str",
         "item_type": "str",
-        "reason": "GsaDisplayNamesImportErrorReason",
         "row_index": "int",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
+        "reason": "reason",
         "column_header": "columnHeader",
         "field_value": "fieldValue",
         "item_type": "itemType",
-        "reason": "reason",
         "row_index": "rowIndex",
     }
 
@@ -88,10 +88,10 @@ class GsaDisplayNamesImportErrorDetail(ModelBase):
         self,
         *,
         message: "str",
+        reason: "GsaDisplayNamesImportErrorReason",
         column_header: "str | None | Unset_Type" = Unset,
         field_value: "str | None | Unset_Type" = Unset,
         item_type: "str | None | Unset_Type" = Unset,
-        reason: "GsaDisplayNamesImportErrorReason | Unset_Type" = Unset,
         row_index: "int | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDisplayNamesImportErrorDetail - a model defined in Swagger
@@ -99,22 +99,21 @@ class GsaDisplayNamesImportErrorDetail(ModelBase):
         Parameters
         ----------
         message: str
+        reason: GsaDisplayNamesImportErrorReason
         column_header: str | None, optional
         field_value: str | None, optional
         item_type: str | None, optional
-        reason: GsaDisplayNamesImportErrorReason, optional
         row_index: int | None, optional
         """
         self._message: str
-        self._reason: GsaDisplayNamesImportErrorReason | Unset_Type = Unset
+        self._reason: GsaDisplayNamesImportErrorReason
         self._row_index: int | None | Unset_Type = Unset
         self._field_value: str | None | Unset_Type = Unset
         self._column_header: str | None | Unset_Type = Unset
         self._item_type: str | None | Unset_Type = Unset
 
         self.message = message
-        if reason is not Unset:
-            self.reason = reason
+        self.reason = reason
         if row_index is not Unset:
             self.row_index = row_index
         if field_value is not Unset:
@@ -153,28 +152,31 @@ class GsaDisplayNamesImportErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "GsaDisplayNamesImportErrorReason | Unset_Type":
+    def reason(self) -> "GsaDisplayNamesImportErrorReason":
         """Gets the reason of this GsaDisplayNamesImportErrorDetail.
 
         Returns
         -------
-        GsaDisplayNamesImportErrorReason | Unset_Type
+        GsaDisplayNamesImportErrorReason
             The reason of this GsaDisplayNamesImportErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "GsaDisplayNamesImportErrorReason | Unset_Type") -> None:
+    def reason(self, reason: "GsaDisplayNamesImportErrorReason") -> None:
         """Sets the reason of this GsaDisplayNamesImportErrorDetail.
 
         Parameters
         ----------
-        reason: GsaDisplayNamesImportErrorReason | Unset_Type
+        reason: GsaDisplayNamesImportErrorReason
             The reason of this GsaDisplayNamesImportErrorDetail.
         """
         # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
+        # Field is required
+        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @property

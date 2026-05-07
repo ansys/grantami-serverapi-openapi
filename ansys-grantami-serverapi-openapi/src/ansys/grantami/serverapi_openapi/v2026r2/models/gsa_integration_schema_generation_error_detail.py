@@ -62,7 +62,7 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "str",
+        "reason": "GsaSchemaGenerationWarningReason",
     }
 
     attribute_map: dict[str, str] = {
@@ -70,7 +70,9 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         "reason": "reason",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "reason": "GsaSchemaGenerationWarningReason",
+    }
 
     discriminator: Optional[str] = None
 
@@ -78,17 +80,17 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "GsaSchemaGenerationWarningReason",
     ) -> None:
         """GsaIntegrationSchemaGenerationErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: str
+        reason: GsaSchemaGenerationWarningReason
         """
         self._message: str
-        self._reason: str
+        self._reason: GsaSchemaGenerationWarningReason
 
         self.message = message
         self.reason = reason
@@ -122,23 +124,23 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "str":
+    def reason(self) -> "GsaSchemaGenerationWarningReason":
         """Gets the reason of this GsaIntegrationSchemaGenerationErrorDetail.
 
         Returns
         -------
-        str
+        GsaSchemaGenerationWarningReason
             The reason of this GsaIntegrationSchemaGenerationErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "str") -> None:
+    def reason(self, reason: "GsaSchemaGenerationWarningReason") -> None:
         """Sets the reason of this GsaIntegrationSchemaGenerationErrorDetail.
 
         Parameters
         ----------
-        reason: str
+        reason: GsaSchemaGenerationWarningReason
             The reason of this GsaIntegrationSchemaGenerationErrorDetail.
         """
         # Field is not nullable

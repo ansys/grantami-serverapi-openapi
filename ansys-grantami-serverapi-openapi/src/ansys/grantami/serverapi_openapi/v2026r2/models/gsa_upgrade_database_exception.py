@@ -64,7 +64,7 @@ class GsaUpgradeDatabaseException(ModelBase):
         "upgrade_database_failure_reason": "GsaUpgradeDatabaseFailureReason",
         "additional_information": "str",
         "code": "GsaErrorCode",
-        "errors": "list[GsaErrorDetail]",
+        "errors": "list[GsaErrorDetailOfUpgradeDatabaseFailureReason]",
         "message": "str",
     }
 
@@ -79,7 +79,7 @@ class GsaUpgradeDatabaseException(ModelBase):
     subtype_mapping: dict[str, str] = {
         "code": "GsaErrorCode",
         "upgradeDatabaseFailureReason": "GsaUpgradeDatabaseFailureReason",
-        "errors": "GsaErrorDetail",
+        "errors": "GsaErrorDetailOfUpgradeDatabaseFailureReason",
     }
 
     discriminator: Optional[str] = None
@@ -90,7 +90,7 @@ class GsaUpgradeDatabaseException(ModelBase):
         upgrade_database_failure_reason: "GsaUpgradeDatabaseFailureReason",
         additional_information: "str | None | Unset_Type" = Unset,
         code: "GsaErrorCode | Unset_Type" = Unset,
-        errors: "list[GsaErrorDetail] | None | Unset_Type" = Unset,
+        errors: "list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaUpgradeDatabaseException - a model defined in Swagger
@@ -100,14 +100,14 @@ class GsaUpgradeDatabaseException(ModelBase):
         upgrade_database_failure_reason: GsaUpgradeDatabaseFailureReason
         additional_information: str | None, optional
         code: GsaErrorCode, optional
-        errors: list[GsaErrorDetail] | None, optional
+        errors: list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
         self._upgrade_database_failure_reason: GsaUpgradeDatabaseFailureReason
         self._additional_information: str | None | Unset_Type = Unset
-        self._errors: list[GsaErrorDetail] | None | Unset_Type = Unset
+        self._errors: list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
@@ -223,23 +223,25 @@ class GsaUpgradeDatabaseException(ModelBase):
         self._additional_information = additional_information
 
     @property
-    def errors(self) -> "list[GsaErrorDetail] | None | Unset_Type":
+    def errors(self) -> "list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type":
         """Gets the errors of this GsaUpgradeDatabaseException.
 
         Returns
         -------
-        list[GsaErrorDetail] | None | Unset_Type
+        list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type
             The errors of this GsaUpgradeDatabaseException.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "list[GsaErrorDetail] | None | Unset_Type") -> None:
+    def errors(
+        self, errors: "list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type"
+    ) -> None:
         """Sets the errors of this GsaUpgradeDatabaseException.
 
         Parameters
         ----------
-        errors: list[GsaErrorDetail] | None | Unset_Type
+        errors: list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type
             The errors of this GsaUpgradeDatabaseException.
         """
         self._errors = errors
