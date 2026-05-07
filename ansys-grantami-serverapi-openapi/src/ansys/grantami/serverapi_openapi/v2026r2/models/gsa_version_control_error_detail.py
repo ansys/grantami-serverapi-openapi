@@ -64,7 +64,7 @@ class GsaVersionControlErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "str",
+        "reason": "GsaVersionControlErrorReason",
     }
 
     attribute_map: dict[str, str] = {
@@ -72,7 +72,9 @@ class GsaVersionControlErrorDetail(ModelBase):
         "reason": "reason",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "reason": "GsaVersionControlErrorReason",
+    }
 
     discriminator_value_class_map = {
         "invalidVersionState".lower(): "#/components/schemas/GsaInvalidVersionStateErrorDetail",
@@ -87,17 +89,17 @@ class GsaVersionControlErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "GsaVersionControlErrorReason",
     ) -> None:
         """GsaVersionControlErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: str
+        reason: GsaVersionControlErrorReason
         """
         self._message: str
-        self._reason: str
+        self._reason: GsaVersionControlErrorReason
 
         self.message = message
         self.reason = reason
@@ -131,23 +133,23 @@ class GsaVersionControlErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "str":
+    def reason(self) -> "GsaVersionControlErrorReason":
         """Gets the reason of this GsaVersionControlErrorDetail.
 
         Returns
         -------
-        str
+        GsaVersionControlErrorReason
             The reason of this GsaVersionControlErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "str") -> None:
+    def reason(self, reason: "GsaVersionControlErrorReason") -> None:
         """Sets the reason of this GsaVersionControlErrorDetail.
 
         Parameters
         ----------
-        reason: str
+        reason: GsaVersionControlErrorReason
             The reason of this GsaVersionControlErrorDetail.
         """
         # Field is not nullable

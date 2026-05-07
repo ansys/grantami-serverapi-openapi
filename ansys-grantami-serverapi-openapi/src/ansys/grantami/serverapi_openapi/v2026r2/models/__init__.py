@@ -615,7 +615,12 @@ from .gsa_entity_identifier_already_specified_error_detail import (
 from .gsa_entity_type import GsaEntityType
 from .gsa_equation_unit_error_detail import GsaEquationUnitErrorDetail
 from .gsa_error_code import GsaErrorCode
-from .gsa_error_detail import GsaErrorDetail
+from .gsa_error_detail_of_record_history_error_reason import (
+    GsaErrorDetailOfRecordHistoryErrorReason,
+)
+from .gsa_error_detail_of_upgrade_database_failure_reason import (
+    GsaErrorDetailOfUpgradeDatabaseFailureReason,
+)
 from .gsa_error_response import GsaErrorResponse
 from .gsa_exception_information import GsaExceptionInformation
 from .gsa_exclude_values_specifier import GsaExcludeValuesSpecifier
@@ -760,6 +765,7 @@ from .gsa_index_record_failure import GsaIndexRecordFailure
 from .gsa_indirect_links import GsaIndirectLinks
 from .gsa_input_connection_details import GsaInputConnectionDetails
 from .gsa_input_validation_error_detail import GsaInputValidationErrorDetail
+from .gsa_input_validation_error_reason import GsaInputValidationErrorReason
 from .gsa_integer_aggregation import GsaIntegerAggregation
 from .gsa_integer_aggregation_datum_criterion import GsaIntegerAggregationDatumCriterion
 from .gsa_integer_attribute import GsaIntegerAttribute
@@ -1121,6 +1127,7 @@ from .gsa_permission_permission_category_error_detail import (
     GsaPermissionPermissionCategoryErrorDetail,
 )
 from .gsa_permission_update_exception import GsaPermissionUpdateException
+from .gsa_permissions_in_use_info import GsaPermissionsInUseInfo
 from .gsa_permissions_info import GsaPermissionsInfo
 from .gsa_picture_attribute import GsaPictureAttribute
 from .gsa_picture_datum import GsaPictureDatum
@@ -1233,6 +1240,7 @@ from .gsa_record_export_failure import GsaRecordExportFailure
 from .gsa_record_guid_property import GsaRecordGuidProperty
 from .gsa_record_history import GsaRecordHistory
 from .gsa_record_history_copy_exception import GsaRecordHistoryCopyException
+from .gsa_record_history_error_reason import GsaRecordHistoryErrorReason
 from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
 from .gsa_record_history_reference import GsaRecordHistoryReference
@@ -1328,6 +1336,7 @@ from .gsa_root_record_not_available_to_rename_error_detail import (
 from .gsa_rule_engine import GsaRuleEngine
 from .gsa_same_parent_file_move_error_detail import GsaSameParentFileMoveErrorDetail
 from .gsa_same_parent_folder_move_error_detail import GsaSameParentFolderMoveErrorDetail
+from .gsa_schema_generation_warning_reason import GsaSchemaGenerationWarningReason
 from .gsa_schema_too_new_add_database_validation_issue import (
     GsaSchemaTooNewAddDatabaseValidationIssue,
 )
@@ -1720,6 +1729,7 @@ from .gsa_value_with_count_of_boolean import GsaValueWithCountOfBoolean
 from .gsa_value_with_count_of_guid import GsaValueWithCountOfGuid
 from .gsa_value_with_count_of_int32 import GsaValueWithCountOfInt32
 from .gsa_version_control_error_detail import GsaVersionControlErrorDetail
+from .gsa_version_control_error_reason import GsaVersionControlErrorReason
 from .gsa_version_controlled_data_usage_data_modification_error_detail import (
     GsaVersionControlledDataUsageDataModificationErrorDetail,
 )
@@ -2202,7 +2212,8 @@ __all__ = [
     "GsaEntityType",
     "GsaEquationUnitErrorDetail",
     "GsaErrorCode",
-    "GsaErrorDetail",
+    "GsaErrorDetailOfRecordHistoryErrorReason",
+    "GsaErrorDetailOfUpgradeDatabaseFailureReason",
     "GsaErrorResponse",
     "GsaExceptionInformation",
     "GsaExcludeValuesSpecifier",
@@ -2325,6 +2336,7 @@ __all__ = [
     "GsaIndirectLinks",
     "GsaInputConnectionDetails",
     "GsaInputValidationErrorDetail",
+    "GsaInputValidationErrorReason",
     "GsaIntegerAggregation",
     "GsaIntegerAggregationDatumCriterion",
     "GsaIntegerAttribute",
@@ -2598,6 +2610,7 @@ __all__ = [
     "GsaPermissionErrorReason",
     "GsaPermissionPermissionCategoryErrorDetail",
     "GsaPermissionUpdateException",
+    "GsaPermissionsInUseInfo",
     "GsaPermissionsInfo",
     "GsaPictureAttribute",
     "GsaPictureDatum",
@@ -2700,6 +2713,7 @@ __all__ = [
     "GsaRecordGuidProperty",
     "GsaRecordHistory",
     "GsaRecordHistoryCopyException",
+    "GsaRecordHistoryErrorReason",
     "GsaRecordHistoryGuidProperty",
     "GsaRecordHistoryMoveException",
     "GsaRecordHistoryReference",
@@ -2785,6 +2799,7 @@ __all__ = [
     "GsaRuleEngine",
     "GsaSameParentFileMoveErrorDetail",
     "GsaSameParentFolderMoveErrorDetail",
+    "GsaSchemaGenerationWarningReason",
     "GsaSchemaTooNewAddDatabaseValidationIssue",
     "GsaSchemaTooOldAddDatabaseValidationIssue",
     "GsaSearchClusterStatus",
@@ -3111,6 +3126,7 @@ __all__ = [
     "GsaValueWithCountOfGuid",
     "GsaValueWithCountOfInt32",
     "GsaVersionControlErrorDetail",
+    "GsaVersionControlErrorReason",
     "GsaVersionControlledDataUsageDataModificationErrorDetail",
     "GsaVersionNumberProperty",
     "GsaVersionState",

@@ -62,7 +62,7 @@ class GsaInputValidationErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "str",
+        "reason": "GsaInputValidationErrorReason",
     }
 
     attribute_map: dict[str, str] = {
@@ -70,7 +70,9 @@ class GsaInputValidationErrorDetail(ModelBase):
         "reason": "reason",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "reason": "GsaInputValidationErrorReason",
+    }
 
     discriminator: Optional[str] = None
 
@@ -78,17 +80,17 @@ class GsaInputValidationErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "str",
+        reason: "GsaInputValidationErrorReason",
     ) -> None:
         """GsaInputValidationErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: str
+        reason: GsaInputValidationErrorReason
         """
         self._message: str
-        self._reason: str
+        self._reason: GsaInputValidationErrorReason
 
         self.message = message
         self.reason = reason
@@ -122,23 +124,23 @@ class GsaInputValidationErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "str":
+    def reason(self) -> "GsaInputValidationErrorReason":
         """Gets the reason of this GsaInputValidationErrorDetail.
 
         Returns
         -------
-        str
+        GsaInputValidationErrorReason
             The reason of this GsaInputValidationErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "str") -> None:
+    def reason(self, reason: "GsaInputValidationErrorReason") -> None:
         """Sets the reason of this GsaInputValidationErrorDetail.
 
         Parameters
         ----------
-        reason: str
+        reason: GsaInputValidationErrorReason
             The reason of this GsaInputValidationErrorDetail.
         """
         # Field is not nullable

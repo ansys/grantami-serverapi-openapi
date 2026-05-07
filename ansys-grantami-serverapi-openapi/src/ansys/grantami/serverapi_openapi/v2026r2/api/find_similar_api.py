@@ -355,7 +355,12 @@ class FindSimilarApi(ApiBase):
         )
 
     def integration_find_similar(
-        self, *, schema: "str", record_guid: "str", body: "Optional[GsaFindSimilarRequest]" = None
+        self,
+        *,
+        schema: "str",
+        database_key: "str",
+        record_guid: "str",
+        body: "Optional[GsaFindSimilarRequest]" = None,
     ) -> "GsaFindSimilarResponse | None":
         """Runs a find similar calculation against the integration schema.
 
@@ -364,6 +369,8 @@ class FindSimilarApi(ApiBase):
         Parameters
         ----------
         schema: str
+        database_key: str
+            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_guid: str
         body: GsaFindSimilarRequest
 
@@ -372,19 +379,21 @@ class FindSimilarApi(ApiBase):
         GsaFindSimilarResponse | None
         """
         data = self._integration_find_similar_with_http_info(
-            schema, record_guid, body, _return_http_data_only=True
+            schema, database_key, record_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _integration_find_similar_with_http_info(
         self,
         schema: "str",
+        database_key: "str",
         record_guid: "str",
         body: "Optional[GsaFindSimilarRequest]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "schema",
+            "database_key",
             "record_guid",
             "body",
             "_return_http_data_only",
@@ -405,6 +414,11 @@ class FindSimilarApi(ApiBase):
             raise ValueError(
                 "Missing the required parameter 'schema' when calling 'integration_find_similar'"
             )
+        # verify the required parameter "database_key" is set
+        if "database_key" not in params or params["database_key"] is None:
+            raise ValueError(
+                "Missing the required parameter 'database_key' when calling 'integration_find_similar'"
+            )
         # verify the required parameter "record_guid" is set
         if "record_guid" not in params or params["record_guid"] is None:
             raise ValueError(
@@ -416,6 +430,8 @@ class FindSimilarApi(ApiBase):
         path_params: dict[str, Any] = {}
         if "schema" in params and schema is not None:
             path_params["schema"] = params["schema"]
+        if "database_key" in params and database_key is not None:
+            path_params["database-key"] = params["database_key"]
         if "record_guid" in params and record_guid is not None:
             path_params["record-guid"] = params["record_guid"]
 
@@ -446,7 +462,7 @@ class FindSimilarApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/integration-schemas/{schema}/record/{record-guid}:findsimilar",
+            "/v1alpha/integration-schemas/{schema}/databases/{database-key}/record/{record-guid}:findsimilar",
             "POST",
             path_params,
             query_params,

@@ -62,7 +62,7 @@ class GsaRecordHistoryCopyException(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "code": "GsaErrorCode",
-        "errors": "list[GsaErrorDetail]",
+        "errors": "list[GsaErrorDetailOfRecordHistoryErrorReason]",
         "message": "str",
     }
 
@@ -74,7 +74,7 @@ class GsaRecordHistoryCopyException(ModelBase):
 
     subtype_mapping: dict[str, str] = {
         "code": "GsaErrorCode",
-        "errors": "GsaErrorDetail",
+        "errors": "GsaErrorDetailOfRecordHistoryErrorReason",
     }
 
     discriminator: Optional[str] = None
@@ -83,7 +83,7 @@ class GsaRecordHistoryCopyException(ModelBase):
         self,
         *,
         code: "GsaErrorCode | Unset_Type" = Unset,
-        errors: "list[GsaErrorDetail] | None | Unset_Type" = Unset,
+        errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordHistoryCopyException - a model defined in Swagger
@@ -91,12 +91,12 @@ class GsaRecordHistoryCopyException(ModelBase):
         Parameters
         ----------
         code: GsaErrorCode, optional
-        errors: list[GsaErrorDetail] | None, optional
+        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
-        self._errors: list[GsaErrorDetail] | None | Unset_Type = Unset
+        self._errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
@@ -153,23 +153,25 @@ class GsaRecordHistoryCopyException(ModelBase):
         self._code = code
 
     @property
-    def errors(self) -> "list[GsaErrorDetail] | None | Unset_Type":
+    def errors(self) -> "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type":
         """Gets the errors of this GsaRecordHistoryCopyException.
 
         Returns
         -------
-        list[GsaErrorDetail] | None | Unset_Type
+        list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
             The errors of this GsaRecordHistoryCopyException.
         """
         return self._errors
 
     @errors.setter
-    def errors(self, errors: "list[GsaErrorDetail] | None | Unset_Type") -> None:
+    def errors(
+        self, errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type"
+    ) -> None:
         """Sets the errors of this GsaRecordHistoryCopyException.
 
         Parameters
         ----------
-        errors: list[GsaErrorDetail] | None | Unset_Type
+        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
             The errors of this GsaRecordHistoryCopyException.
         """
         self._errors = errors
