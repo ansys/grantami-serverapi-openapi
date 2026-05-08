@@ -312,3 +312,74 @@ class LicenseApi(ApiBase):
             collection_formats=collection_formats,
             response_type_map=response_type_map,
         )
+
+    def remove_user_licenses(self, *, user_name: "str") -> "None":
+        """Removes all checked-out user and database licenses for the specified user.  Restricted to MI System Administrators.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        user_name: str
+            The username whose licenses should be removed.
+
+        Returns
+        -------
+        None
+        """
+        data = self._remove_user_licenses_with_http_info(user_name, _return_http_data_only=True)
+        return data  # type: ignore[no-any-return]
+
+    def _remove_user_licenses_with_http_info(self, user_name: "str", **kwargs: Any) -> Any:
+        all_params = ["user_name", "_return_http_data_only", "_preload_content", "_request_timeout"]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method remove_user_licenses"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "user_name" is set
+        if "user_name" not in params or params["user_name"] is None:
+            raise ValueError(
+                "Missing the required parameter 'user_name' when calling 'remove_user_licenses'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "user_name" in params and user_name is not None:
+            path_params["userName"] = params["user_name"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+
+        response_type_map: dict[int, Optional[str]] = {
+            204: None,
+            400: None,
+            403: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/license/users/{userName}/licenses",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )

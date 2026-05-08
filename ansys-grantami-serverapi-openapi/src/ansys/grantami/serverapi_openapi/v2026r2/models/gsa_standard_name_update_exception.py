@@ -64,12 +64,14 @@ class GsaStandardNameUpdateException(ModelBase):
         "code": "GsaErrorCode",
         "errors": "list[GsaStandardNameErrorDetail]",
         "message": "str",
+        "standard_name_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
+        "standard_name_guid": "standardNameGuid",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -85,6 +87,7 @@ class GsaStandardNameUpdateException(ModelBase):
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaStandardNameErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
+        standard_name_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaStandardNameUpdateException - a model defined in Swagger
 
@@ -93,15 +96,19 @@ class GsaStandardNameUpdateException(ModelBase):
         code: GsaErrorCode, optional
         errors: list[GsaStandardNameErrorDetail] | None, optional
         message: str | None, optional
+        standard_name_guid: str, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._standard_name_guid: str | Unset_Type = Unset
         self._errors: list[GsaStandardNameErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        if standard_name_guid is not Unset:
+            self.standard_name_guid = standard_name_guid
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +158,31 @@ class GsaStandardNameUpdateException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def standard_name_guid(self) -> "str | Unset_Type":
+        """Gets the standard_name_guid of this GsaStandardNameUpdateException.
+
+        Returns
+        -------
+        str | Unset_Type
+            The standard_name_guid of this GsaStandardNameUpdateException.
+        """
+        return self._standard_name_guid
+
+    @standard_name_guid.setter
+    def standard_name_guid(self, standard_name_guid: "str | Unset_Type") -> None:
+        """Sets the standard_name_guid of this GsaStandardNameUpdateException.
+
+        Parameters
+        ----------
+        standard_name_guid: str | Unset_Type
+            The standard_name_guid of this GsaStandardNameUpdateException.
+        """
+        # Field is not nullable
+        if standard_name_guid is None:
+            raise ValueError("Invalid value for 'standard_name_guid', must not be 'None'")
+        self._standard_name_guid = standard_name_guid
 
     @property
     def errors(self) -> "list[GsaStandardNameErrorDetail] | None | Unset_Type":
