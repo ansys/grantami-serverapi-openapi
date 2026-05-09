@@ -61,21 +61,19 @@ class GsaAttributeCreationException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaAttributeErrorDetail]",
         "message": "str",
-        "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
-        "name": "name",
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "GsaAttributeErrorDetail",
     }
 
@@ -84,31 +82,26 @@ class GsaAttributeCreationException(ModelBase):
     def __init__(
         self,
         *,
-        code: "GsaErrorCode | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
         errors: "list[GsaAttributeErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
-        name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaAttributeCreationException - a model defined in Swagger
 
         Parameters
         ----------
-        code: GsaErrorCode, optional
+        code: SystemNetHttpStatusCode, optional
         errors: list[GsaAttributeErrorDetail] | None, optional
         message: str | None, optional
-        name: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: GsaErrorCode | Unset_Type = Unset
-        self._name: str | None | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
         self._errors: list[GsaAttributeErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
-        if name is not Unset:
-            self.name = name
         if errors is not Unset:
             self.errors = errors
 
@@ -135,51 +128,29 @@ class GsaAttributeCreationException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaAttributeCreationException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaAttributeCreationException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaAttributeCreationException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaAttributeCreationException.
         """
         # Field is not nullable
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
-
-    @property
-    def name(self) -> "str | None | Unset_Type":
-        """Gets the name of this GsaAttributeCreationException.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The name of this GsaAttributeCreationException.
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: "str | None | Unset_Type") -> None:
-        """Sets the name of this GsaAttributeCreationException.
-
-        Parameters
-        ----------
-        name: str | None | Unset_Type
-            The name of this GsaAttributeCreationException.
-        """
-        self._name = name
 
     @property
     def errors(self) -> "list[GsaAttributeErrorDetail] | None | Unset_Type":

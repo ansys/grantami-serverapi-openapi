@@ -50,7 +50,7 @@ class SchemaStandardNamesApi(ApiBase):
 
     def create_standard_name(
         self, *, database_key: "str", body: "Optional[GsaCreateStandardName]" = None
-    ) -> "GsaStandardName | GsaStandardNameCreationException | None":
+    ) -> "GsaStandardName | None":
         """Create a new standard name
 
         This method makes a synchronous HTTP request.
@@ -58,12 +58,11 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateStandardName
 
         Returns
         -------
-        GsaStandardName | GsaStandardNameCreationException | None
+        GsaStandardName | None
         """
         data = self._create_standard_name_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +120,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaStandardName",
-            400: "GsaStandardNameCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -142,13 +141,7 @@ class SchemaStandardNamesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_standard_name(
-        self,
-        *,
-        database_key: "str",
-        standard_name_guid: "str",
-        force_non_custom: "Optional[bool]" = False,
-    ) -> "GsaStandardNameDeletionException | None":
+    def delete_standard_name(self, *, database_key: "str", standard_name_guid: "str") -> "None":
         """Delete a standard name.
 
         This method makes a synchronous HTTP request.
@@ -156,31 +149,23 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
-        force_non_custom: bool
-            Optionally force the deletion for non-custom standard names.
 
         Returns
         -------
-        GsaStandardNameDeletionException | None
+        None
         """
         data = self._delete_standard_name_with_http_info(
-            database_key, standard_name_guid, force_non_custom, _return_http_data_only=True
+            database_key, standard_name_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _delete_standard_name_with_http_info(
-        self,
-        database_key: "str",
-        standard_name_guid: "str",
-        force_non_custom: "Optional[bool]" = False,
-        **kwargs: Any,
+        self, database_key: "str", standard_name_guid: "str", **kwargs: Any
     ) -> Any:
         all_params = [
             "database_key",
             "standard_name_guid",
-            "force_non_custom",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -214,8 +199,6 @@ class SchemaStandardNamesApi(ApiBase):
             path_params["standard-name-guid"] = params["standard_name_guid"]
 
         query_params: list[Any] = []
-        if "force_non_custom" in params and force_non_custom is not None:
-            query_params.append(("forceNonCustom", params["force_non_custom"]))
 
         header_params: dict[str, Any] = {}
 
@@ -223,12 +206,10 @@ class SchemaStandardNamesApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaStandardNameDeletionException",
             200: None,
+            400: None,
             403: None,
             404: None,
         }
@@ -259,7 +240,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
 
         Returns
@@ -349,7 +329,6 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -424,8 +403,7 @@ class SchemaStandardNamesApi(ApiBase):
         database_key: "str",
         standard_name_guid: "str",
         body: "Optional[GsaUpdateStandardName]" = None,
-        force_non_custom: "Optional[bool]" = False,
-    ) -> "GsaStandardName | GsaStandardNameUpdateException | None":
+    ) -> "GsaStandardName | None":
         """Edit a standard name
 
         This method makes a synchronous HTTP request.
@@ -433,18 +411,15 @@ class SchemaStandardNamesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         standard_name_guid: str
         body: GsaUpdateStandardName
-        force_non_custom: bool
-            Optionally force the update for non-custom standard names.
 
         Returns
         -------
-        GsaStandardName | GsaStandardNameUpdateException | None
+        GsaStandardName | None
         """
         data = self._update_standard_name_with_http_info(
-            database_key, standard_name_guid, body, force_non_custom, _return_http_data_only=True
+            database_key, standard_name_guid, body, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -453,14 +428,12 @@ class SchemaStandardNamesApi(ApiBase):
         database_key: "str",
         standard_name_guid: "str",
         body: "Optional[GsaUpdateStandardName]" = None,
-        force_non_custom: "Optional[bool]" = False,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "standard_name_guid",
             "body",
-            "force_non_custom",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -494,8 +467,6 @@ class SchemaStandardNamesApi(ApiBase):
             path_params["standard-name-guid"] = params["standard_name_guid"]
 
         query_params: list[Any] = []
-        if "force_non_custom" in params and force_non_custom is not None:
-            query_params.append(("forceNonCustom", params["force_non_custom"]))
 
         header_params: dict[str, Any] = {}
 
@@ -515,7 +486,7 @@ class SchemaStandardNamesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaStandardName",
-            400: "GsaStandardNameUpdateException",
+            400: None,
             403: None,
             404: None,
         }
