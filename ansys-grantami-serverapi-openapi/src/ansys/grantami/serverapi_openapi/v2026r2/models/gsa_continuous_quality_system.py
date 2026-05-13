@@ -68,7 +68,7 @@ class GsaContinuousQualitySystem(GsaQualitySystem):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "does_quality_increase_with_value": "bool",
+        "does_quality_decrease_with_value": "bool",
         "guid": "str",
         "name": "str",
         "threshold_value": "float",
@@ -76,7 +76,7 @@ class GsaContinuousQualitySystem(GsaQualitySystem):
     }
 
     attribute_map: dict[str, str] = {
-        "does_quality_increase_with_value": "doesQualityIncreaseWithValue",
+        "does_quality_decrease_with_value": "doesQualityDecreaseWithValue",
         "guid": "guid",
         "name": "name",
         "threshold_value": "thresholdValue",
@@ -90,7 +90,7 @@ class GsaContinuousQualitySystem(GsaQualitySystem):
     def __init__(
         self,
         *,
-        does_quality_increase_with_value: "bool",
+        does_quality_decrease_with_value: "bool",
         guid: "str",
         name: "str",
         threshold_value: "float",
@@ -100,50 +100,50 @@ class GsaContinuousQualitySystem(GsaQualitySystem):
 
         Parameters
         ----------
-        does_quality_increase_with_value: bool
+        does_quality_decrease_with_value: bool
         guid: str
         name: str
         threshold_value: float
         type: GsaQualitySystemType
         """
         super().__init__(guid=guid, name=name, type=type)
-        self._does_quality_increase_with_value: bool
+        self._does_quality_decrease_with_value: bool
         self._threshold_value: float
 
-        self.does_quality_increase_with_value = does_quality_increase_with_value
+        self.does_quality_decrease_with_value = does_quality_decrease_with_value
         self.threshold_value = threshold_value
 
     @property
-    def does_quality_increase_with_value(self) -> "bool":
-        """Gets the does_quality_increase_with_value of this GsaContinuousQualitySystem.
+    def does_quality_decrease_with_value(self) -> "bool":
+        """Gets the does_quality_decrease_with_value of this GsaContinuousQualitySystem.
 
         Returns
         -------
         bool
-            The does_quality_increase_with_value of this GsaContinuousQualitySystem.
+            The does_quality_decrease_with_value of this GsaContinuousQualitySystem.
         """
-        return self._does_quality_increase_with_value
+        return self._does_quality_decrease_with_value
 
-    @does_quality_increase_with_value.setter
-    def does_quality_increase_with_value(self, does_quality_increase_with_value: "bool") -> None:
-        """Sets the does_quality_increase_with_value of this GsaContinuousQualitySystem.
+    @does_quality_decrease_with_value.setter
+    def does_quality_decrease_with_value(self, does_quality_decrease_with_value: "bool") -> None:
+        """Sets the does_quality_decrease_with_value of this GsaContinuousQualitySystem.
 
         Parameters
         ----------
-        does_quality_increase_with_value: bool
-            The does_quality_increase_with_value of this GsaContinuousQualitySystem.
+        does_quality_decrease_with_value: bool
+            The does_quality_decrease_with_value of this GsaContinuousQualitySystem.
         """
         # Field is not nullable
-        if does_quality_increase_with_value is None:
+        if does_quality_decrease_with_value is None:
             raise ValueError(
-                "Invalid value for 'does_quality_increase_with_value', must not be 'None'"
+                "Invalid value for 'does_quality_decrease_with_value', must not be 'None'"
             )
         # Field is required
-        if does_quality_increase_with_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+        if does_quality_decrease_with_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError(
-                "Invalid value for 'does_quality_increase_with_value', must not be 'Unset'"
+                "Invalid value for 'does_quality_decrease_with_value', must not be 'Unset'"
             )
-        self._does_quality_increase_with_value = does_quality_increase_with_value
+        self._does_quality_decrease_with_value = does_quality_decrease_with_value
 
     @property
     def threshold_value(self) -> "float":
