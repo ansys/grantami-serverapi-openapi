@@ -36,9 +36,6 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional  # noqa: F401
 from ansys.grantami.serverapi_openapi.v2026r2.models.gsa_version_control_error_detail import (  # noqa: F401
     GsaVersionControlErrorDetail,
 )
-from ansys.grantami.serverapi_openapi.v2026r2.models.gsa_version_control_error_reason import (
-    GsaVersionControlErrorReason,
-)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -69,7 +66,7 @@ class GsaInvalidVersionStateErrorDetail(GsaVersionControlErrorDetail):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "GsaVersionControlErrorReason",
+        "reason": "str",
         "version_state": "GsaVersionState",
     }
 
@@ -89,7 +86,7 @@ class GsaInvalidVersionStateErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "GsaVersionControlErrorReason" = GsaVersionControlErrorReason.INVALIDVERSIONSTATE,
+        reason: "str" = "invalidVersionState",
         version_state: "GsaVersionState | Unset_Type" = Unset,
     ) -> None:
         """GsaInvalidVersionStateErrorDetail - a model defined in Swagger
@@ -97,7 +94,7 @@ class GsaInvalidVersionStateErrorDetail(GsaVersionControlErrorDetail):
         Parameters
         ----------
         message: str
-        reason: GsaVersionControlErrorReason
+        reason: str
         version_state: GsaVersionState, optional
         """
         super().__init__(message=message, reason=reason)

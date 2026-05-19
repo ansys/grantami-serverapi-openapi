@@ -61,8 +61,8 @@ class GsaRecordHistoryCopyException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "GsaErrorCode",
-        "errors": "list[GsaErrorDetailOfRecordHistoryErrorReason]",
+        "code": "SystemNetHttpStatusCode",
+        "errors": "list[GsaErrorDetail]",
         "message": "str",
     }
 
@@ -73,8 +73,8 @@ class GsaRecordHistoryCopyException(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "GsaErrorCode",
-        "errors": "GsaErrorDetailOfRecordHistoryErrorReason",
+        "code": "SystemNetHttpStatusCode",
+        "errors": "GsaErrorDetail",
     }
 
     discriminator: Optional[str] = None
@@ -82,21 +82,21 @@ class GsaRecordHistoryCopyException(ModelBase):
     def __init__(
         self,
         *,
-        code: "GsaErrorCode | Unset_Type" = Unset,
-        errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
+        errors: "list[GsaErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordHistoryCopyException - a model defined in Swagger
 
         Parameters
         ----------
-        code: GsaErrorCode, optional
-        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None, optional
+        code: SystemNetHttpStatusCode, optional
+        errors: list[GsaErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: GsaErrorCode | Unset_Type = Unset
-        self._errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
+        self._errors: list[GsaErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
@@ -128,23 +128,23 @@ class GsaRecordHistoryCopyException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaRecordHistoryCopyException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaRecordHistoryCopyException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaRecordHistoryCopyException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaRecordHistoryCopyException.
         """
         # Field is not nullable
@@ -153,25 +153,23 @@ class GsaRecordHistoryCopyException(ModelBase):
         self._code = code
 
     @property
-    def errors(self) -> "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type":
+    def errors(self) -> "list[GsaErrorDetail] | None | Unset_Type":
         """Gets the errors of this GsaRecordHistoryCopyException.
 
         Returns
         -------
-        list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
+        list[GsaErrorDetail] | None | Unset_Type
             The errors of this GsaRecordHistoryCopyException.
         """
         return self._errors
 
     @errors.setter
-    def errors(
-        self, errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type"
-    ) -> None:
+    def errors(self, errors: "list[GsaErrorDetail] | None | Unset_Type") -> None:
         """Sets the errors of this GsaRecordHistoryCopyException.
 
         Parameters
         ----------
-        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
+        errors: list[GsaErrorDetail] | None | Unset_Type
             The errors of this GsaRecordHistoryCopyException.
         """
         self._errors = errors
