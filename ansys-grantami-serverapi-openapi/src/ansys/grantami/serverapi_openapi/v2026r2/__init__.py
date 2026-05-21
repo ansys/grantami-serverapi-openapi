@@ -373,6 +373,7 @@ from .models.gsa_create_put_discrete_value import GsaCreatePutDiscreteValue
 from .models.gsa_create_put_layout_item import GsaCreatePutLayoutItem
 from .models.gsa_create_put_permission import GsaCreatePutPermission
 from .models.gsa_create_put_permission_category import GsaCreatePutPermissionCategory
+from .models.gsa_create_quality_discrete_value import GsaCreateQualityDiscreteValue
 from .models.gsa_create_quality_system import GsaCreateQualitySystem
 from .models.gsa_create_range_attribute import GsaCreateRangeAttribute
 from .models.gsa_create_record_history import GsaCreateRecordHistory
@@ -1081,6 +1082,9 @@ from .models.gsa_named_entity_permission_category_error_detail import (
     GsaNamedEntityPermissionCategoryErrorDetail,
 )
 from .models.gsa_named_entity_permission_error_detail import GsaNamedEntityPermissionErrorDetail
+from .models.gsa_named_entity_quality_discrete_value_error_detail import (
+    GsaNamedEntityQualityDiscreteValueErrorDetail,
+)
 from .models.gsa_named_entity_quality_system_error_detail import (
     GsaNamedEntityQualitySystemErrorDetail,
 )
@@ -1311,6 +1315,9 @@ from .models.gsa_put_permission import GsaPutPermission
 from .models.gsa_put_permission_category import GsaPutPermissionCategory
 from .models.gsa_put_type import GsaPutType
 from .models.gsa_quality_discrete_value import GsaQualityDiscreteValue
+from .models.gsa_quality_discrete_value_error_detail import GsaQualityDiscreteValueErrorDetail
+from .models.gsa_quality_discrete_value_error_reason import GsaQualityDiscreteValueErrorReason
+from .models.gsa_quality_discrete_values_error_detail import GsaQualityDiscreteValuesErrorDetail
 from .models.gsa_quality_system import GsaQualitySystem
 from .models.gsa_quality_system_creation_exception import GsaQualitySystemCreationException
 from .models.gsa_quality_system_error_detail import GsaQualitySystemErrorDetail
@@ -1700,6 +1707,12 @@ from .models.gsa_target_attribute_type_attribute_error_detail import (
 from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
 from .models.gsa_threshold_type_attribute_error_detail import GsaThresholdTypeAttributeErrorDetail
+from .models.gsa_threshold_value_name_empty_error_detail import (
+    GsaThresholdValueNameEmptyErrorDetail,
+)
+from .models.gsa_threshold_value_name_invalid_error_detail import (
+    GsaThresholdValueNameInvalidErrorDetail,
+)
 from .models.gsa_too_long_code_currency_error_detail import GsaTooLongCodeCurrencyErrorDetail
 from .models.gsa_too_many_attribute_pairs_smart_attributes_error_detail import (
     GsaTooManyAttributePairsSmartAttributesErrorDetail,
@@ -2212,6 +2225,7 @@ __all__ = [
     "GsaCreatePutLayoutItem",
     "GsaCreatePutPermission",
     "GsaCreatePutPermissionCategory",
+    "GsaCreateQualityDiscreteValue",
     "GsaCreateQualitySystem",
     "GsaCreateRangeAttribute",
     "GsaCreateRecordHistory",
@@ -2734,6 +2748,7 @@ __all__ = [
     "GsaNamedEntityParameterValueErrorDetail",
     "GsaNamedEntityPermissionCategoryErrorDetail",
     "GsaNamedEntityPermissionErrorDetail",
+    "GsaNamedEntityQualityDiscreteValueErrorDetail",
     "GsaNamedEntityQualitySystemErrorDetail",
     "GsaNamedEntityRecordLinkGroupErrorDetail",
     "GsaNamedEntityTableErrorDetail",
@@ -2884,6 +2899,9 @@ __all__ = [
     "GsaPutPermissionCategory",
     "GsaPutType",
     "GsaQualityDiscreteValue",
+    "GsaQualityDiscreteValueErrorDetail",
+    "GsaQualityDiscreteValueErrorReason",
+    "GsaQualityDiscreteValuesErrorDetail",
     "GsaQualitySystem",
     "GsaQualitySystemCreationException",
     "GsaQualitySystemErrorDetail",
@@ -3215,6 +3233,8 @@ __all__ = [
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
+    "GsaThresholdValueNameEmptyErrorDetail",
+    "GsaThresholdValueNameInvalidErrorDetail",
     "GsaTooLongCodeCurrencyErrorDetail",
     "GsaTooManyAttributePairsSmartAttributesErrorDetail",
     "GsaTooManyPermissionsPermissionCategoryErrorDetail",

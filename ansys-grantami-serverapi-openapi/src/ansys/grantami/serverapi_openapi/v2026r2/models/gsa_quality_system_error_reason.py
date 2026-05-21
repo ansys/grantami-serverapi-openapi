@@ -43,3 +43,6 @@ class GsaQualitySystemErrorReason(Enum):
     Allowed Enum values
     """
     NAMEDENTITY = "namedEntity"
+    QUALITYDISCRETEVALUES = "qualityDiscreteValues"
+    THRESHOLDVALUENAMEINVALID = "thresholdValueNameInvalid"
+    THRESHOLDVALUENAMEEMPTY = "thresholdValueNameEmpty"

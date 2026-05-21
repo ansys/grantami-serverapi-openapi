@@ -69,17 +69,23 @@ class GsaCreateDiscreteQualitySystem(GsaCreateQualitySystem):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
+        "quality_discrete_values": "list[GsaCreateQualityDiscreteValue]",
         "type": "GsaQualitySystemType",
         "guid": "str",
+        "threshold_value_name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
+        "quality_discrete_values": "qualityDiscreteValues",
         "type": "type",
         "guid": "guid",
+        "threshold_value_name": "thresholdValueName",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "qualityDiscreteValues": "GsaCreateQualityDiscreteValue",
+    }
 
     discriminator: Optional[str] = None
 
@@ -87,18 +93,80 @@ class GsaCreateDiscreteQualitySystem(GsaCreateQualitySystem):
         self,
         *,
         name: "str",
+        quality_discrete_values: "list[GsaCreateQualityDiscreteValue]",
         type: "GsaQualitySystemType" = GsaQualitySystemType.DISCRETE,
         guid: "str | Unset_Type" = Unset,
+        threshold_value_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateDiscreteQualitySystem - a model defined in Swagger
 
         Parameters
         ----------
         name: str
+        quality_discrete_values: list[GsaCreateQualityDiscreteValue]
         type: GsaQualitySystemType
         guid: str, optional
+        threshold_value_name: str | None, optional
         """
         super().__init__(name=name, type=type, guid=guid)
+        self._threshold_value_name: str | None | Unset_Type = Unset
+        self._quality_discrete_values: list[GsaCreateQualityDiscreteValue]
+
+        if threshold_value_name is not Unset:
+            self.threshold_value_name = threshold_value_name
+        self.quality_discrete_values = quality_discrete_values
+
+    @property
+    def threshold_value_name(self) -> "str | None | Unset_Type":
+        """Gets the threshold_value_name of this GsaCreateDiscreteQualitySystem.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The threshold_value_name of this GsaCreateDiscreteQualitySystem.
+        """
+        return self._threshold_value_name
+
+    @threshold_value_name.setter
+    def threshold_value_name(self, threshold_value_name: "str | None | Unset_Type") -> None:
+        """Sets the threshold_value_name of this GsaCreateDiscreteQualitySystem.
+
+        Parameters
+        ----------
+        threshold_value_name: str | None | Unset_Type
+            The threshold_value_name of this GsaCreateDiscreteQualitySystem.
+        """
+        self._threshold_value_name = threshold_value_name
+
+    @property
+    def quality_discrete_values(self) -> "list[GsaCreateQualityDiscreteValue]":
+        """Gets the quality_discrete_values of this GsaCreateDiscreteQualitySystem.
+
+        Returns
+        -------
+        list[GsaCreateQualityDiscreteValue]
+            The quality_discrete_values of this GsaCreateDiscreteQualitySystem.
+        """
+        return self._quality_discrete_values
+
+    @quality_discrete_values.setter
+    def quality_discrete_values(
+        self, quality_discrete_values: "list[GsaCreateQualityDiscreteValue]"
+    ) -> None:
+        """Sets the quality_discrete_values of this GsaCreateDiscreteQualitySystem.
+
+        Parameters
+        ----------
+        quality_discrete_values: list[GsaCreateQualityDiscreteValue]
+            The quality_discrete_values of this GsaCreateDiscreteQualitySystem.
+        """
+        # Field is not nullable
+        if quality_discrete_values is None:
+            raise ValueError("Invalid value for 'quality_discrete_values', must not be 'None'")
+        # Field is required
+        if quality_discrete_values is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'quality_discrete_values', must not be 'Unset'")
+        self._quality_discrete_values = quality_discrete_values
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

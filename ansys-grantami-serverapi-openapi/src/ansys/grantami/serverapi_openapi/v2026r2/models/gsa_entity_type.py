@@ -60,3 +60,4 @@ class GsaEntityType(Enum):
     PERMISSIONCATEGORY = "permissionCategory"
     ACCESSCONTROLCATEGORY = "accessControlCategory"
     QUALITYSYSTEM = "qualitySystem"
+    QUALITYDISCRETEVALUE = "qualityDiscreteValue"

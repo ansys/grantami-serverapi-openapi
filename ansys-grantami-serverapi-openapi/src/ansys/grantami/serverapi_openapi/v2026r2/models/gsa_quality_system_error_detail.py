@@ -78,6 +78,9 @@ class GsaQualitySystemErrorDetail(ModelBase):
 
     discriminator_value_class_map = {
         "namedEntity".lower(): "#/components/schemas/GsaNamedEntityQualitySystemErrorDetail",
+        "qualityDiscreteValues".lower(): "#/components/schemas/GsaQualityDiscreteValuesErrorDetail",
+        "thresholdValueNameInvalid".lower(): "#/components/schemas/GsaThresholdValueNameInvalidErrorDetail",
+        "thresholdValueNameEmpty".lower(): "#/components/schemas/GsaThresholdValueNameEmptyErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
