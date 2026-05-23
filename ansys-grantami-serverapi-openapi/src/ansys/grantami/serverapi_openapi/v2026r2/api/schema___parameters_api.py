@@ -50,7 +50,7 @@ class SchemaParametersApi(ApiBase):
 
     def create_parameter(
         self, *, database_key: "str", body: "Optional[GsaCreateParameter]" = None
-    ) -> "GsaParameter | GsaParameterCreationException | None":
+    ) -> "GsaParameter | None":
         """Create a new parameter.
 
         This method makes a synchronous HTTP request.
@@ -58,12 +58,11 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateParameter
 
         Returns
         -------
-        GsaParameter | GsaParameterCreationException | None
+        GsaParameter | None
         """
         data = self._create_parameter_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -121,7 +120,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameter",
-            400: "GsaParameterCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -148,7 +147,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaCreateParameterValue]" = None,
-    ) -> "GsaParameterValue | GsaParameterValueCreationException | None":
+    ) -> "GsaParameterValue | None":
         """Create a new parameter value.
 
         This method makes a synchronous HTTP request.
@@ -156,13 +155,12 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaCreateParameterValue
 
         Returns
         -------
-        GsaParameterValue | GsaParameterValueCreationException | None
+        GsaParameterValue | None
         """
         data = self._create_parameter_value_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -232,7 +230,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaParameterValue",
-            400: "GsaParameterValueCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -263,7 +261,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -357,7 +354,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -450,233 +446,6 @@ class SchemaParametersApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_default_parameter_value_for_attribute(
-        self, *, database_key: "str", parameter_guid: "str", attribute_guid: "str"
-    ) -> "GsaParameterDefaultValue | None":
-        """Get the default value for a parameter on an attribute.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        parameter_guid: str
-        attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
-
-        Returns
-        -------
-        GsaParameterDefaultValue | None
-        """
-        data = self._get_default_parameter_value_for_attribute_with_http_info(
-            database_key, parameter_guid, attribute_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _get_default_parameter_value_for_attribute_with_http_info(
-        self, database_key: "str", parameter_guid: "str", attribute_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "parameter_guid",
-            "attribute_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_default_parameter_value_for_attribute"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_default_parameter_value_for_attribute'"
-            )
-        # verify the required parameter "parameter_guid" is set
-        if "parameter_guid" not in params or params["parameter_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'parameter_guid' when calling 'get_default_parameter_value_for_attribute'"
-            )
-        # verify the required parameter "attribute_guid" is set
-        if "attribute_guid" not in params or params["attribute_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'attribute_guid' when calling 'get_default_parameter_value_for_attribute'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "parameter_guid" in params and parameter_guid is not None:
-            path_params["parameter-guid"] = params["parameter_guid"]
-        if "attribute_guid" in params and attribute_guid is not None:
-            path_params["attribute-guid"] = params["attribute_guid"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaParameterDefaultValue",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/parameters/{parameter-guid}/default-value/attributes/{attribute-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def get_default_parameter_value_for_datum(
-        self,
-        *,
-        database_key: "str",
-        parameter_guid: "str",
-        record_version_guid: "str",
-        attribute_guid: "str",
-    ) -> "GsaParameterDefaultValue | None":
-        """Get the default value for a parameter on a datum, identified by record version and attribute.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        parameter_guid: str
-        record_version_guid: str
-        attribute_guid: str
-            See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
-
-        Returns
-        -------
-        GsaParameterDefaultValue | None
-        """
-        data = self._get_default_parameter_value_for_datum_with_http_info(
-            database_key,
-            parameter_guid,
-            record_version_guid,
-            attribute_guid,
-            _return_http_data_only=True,
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _get_default_parameter_value_for_datum_with_http_info(
-        self,
-        database_key: "str",
-        parameter_guid: "str",
-        record_version_guid: "str",
-        attribute_guid: "str",
-        **kwargs: Any,
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "parameter_guid",
-            "record_version_guid",
-            "attribute_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_default_parameter_value_for_datum"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_default_parameter_value_for_datum'"
-            )
-        # verify the required parameter "parameter_guid" is set
-        if "parameter_guid" not in params or params["parameter_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'parameter_guid' when calling 'get_default_parameter_value_for_datum'"
-            )
-        # verify the required parameter "record_version_guid" is set
-        if "record_version_guid" not in params or params["record_version_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'record_version_guid' when calling 'get_default_parameter_value_for_datum'"
-            )
-        # verify the required parameter "attribute_guid" is set
-        if "attribute_guid" not in params or params["attribute_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'attribute_guid' when calling 'get_default_parameter_value_for_datum'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "parameter_guid" in params and parameter_guid is not None:
-            path_params["parameter-guid"] = params["parameter_guid"]
-        if "record_version_guid" in params and record_version_guid is not None:
-            path_params["record-version-guid"] = params["record_version_guid"]
-        if "attribute_guid" in params and attribute_guid is not None:
-            path_params["attribute-guid"] = params["attribute_guid"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaParameterDefaultValue",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/parameters/{parameter-guid}/default-value/record-versions/{record-version-guid}/attributes/{attribute-guid}",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
     def get_objects_using_parameter(
         self, *, database_key: "str", parameter_guid: "str"
     ) -> "GsaSlimObjects | None":
@@ -687,7 +456,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -777,7 +545,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
 
         Returns
@@ -869,7 +636,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
 
@@ -968,7 +734,6 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1043,7 +808,7 @@ class SchemaParametersApi(ApiBase):
         database_key: "str",
         parameter_guid: "str",
         body: "Optional[GsaUpdateParameter]" = None,
-    ) -> "GsaParameter | GsaParameterUpdateException | None":
+    ) -> "GsaParameter | None":
         """Update a parameter.
 
         This method makes a synchronous HTTP request.
@@ -1051,13 +816,12 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         body: GsaUpdateParameter
 
         Returns
         -------
-        GsaParameter | GsaParameterUpdateException | None
+        GsaParameter | None
         """
         data = self._update_parameter_with_http_info(
             database_key, parameter_guid, body, _return_http_data_only=True
@@ -1127,7 +891,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameter",
-            400: "GsaParameterUpdateException",
+            400: None,
             403: None,
             404: None,
         }
@@ -1155,7 +919,7 @@ class SchemaParametersApi(ApiBase):
         parameter_guid: "str",
         parameter_value_guid: "str",
         body: "Optional[GsaUpdateParameterValue]" = None,
-    ) -> "GsaParameterValue | GsaParameterValueUpdateException | None":
+    ) -> "GsaParameterValue | None":
         """Update a parameter value.
 
         This method makes a synchronous HTTP request.
@@ -1163,14 +927,13 @@ class SchemaParametersApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         parameter_guid: str
         parameter_value_guid: str
         body: GsaUpdateParameterValue
 
         Returns
         -------
-        GsaParameterValue | GsaParameterValueUpdateException | None
+        GsaParameterValue | None
         """
         data = self._update_parameter_value_with_http_info(
             database_key, parameter_guid, parameter_value_guid, body, _return_http_data_only=True
@@ -1249,7 +1012,7 @@ class SchemaParametersApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaParameterValue",
-            400: "GsaParameterValueUpdateException",
+            400: None,
             403: None,
             404: None,
         }

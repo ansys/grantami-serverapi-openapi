@@ -63,19 +63,16 @@ class GsaAggregationsRequest(ModelBase):
     swagger_types: dict[str, str] = {
         "aggregation_criteria": "list[GsaAggregationCriterion]",
         "criterion": "GsaCriterion",
-        "table_search_behaviour": "GsaTableSearchBehaviour",
     }
 
     attribute_map: dict[str, str] = {
         "aggregation_criteria": "aggregationCriteria",
         "criterion": "criterion",
-        "table_search_behaviour": "tableSearchBehaviour",
     }
 
     subtype_mapping: dict[str, str] = {
         "criterion": "GsaCriterion",
         "aggregationCriteria": "GsaAggregationCriterion",
-        "tableSearchBehaviour": "GsaTableSearchBehaviour",
     }
 
     discriminator: Optional[str] = None
@@ -85,7 +82,6 @@ class GsaAggregationsRequest(ModelBase):
         *,
         aggregation_criteria: "list[GsaAggregationCriterion] | None | Unset_Type" = Unset,
         criterion: "GsaCriterion | Unset_Type" = Unset,
-        table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type" = Unset,
     ) -> None:
         """GsaAggregationsRequest - a model defined in Swagger
 
@@ -93,18 +89,14 @@ class GsaAggregationsRequest(ModelBase):
         ----------
         aggregation_criteria: list[GsaAggregationCriterion] | None, optional
         criterion: GsaCriterion, optional
-        table_search_behaviour: GsaTableSearchBehaviour, optional
         """
         self._criterion: GsaCriterion | Unset_Type = Unset
         self._aggregation_criteria: list[GsaAggregationCriterion] | None | Unset_Type = Unset
-        self._table_search_behaviour: GsaTableSearchBehaviour | Unset_Type = Unset
 
         if criterion is not Unset:
             self.criterion = criterion
         if aggregation_criteria is not Unset:
             self.aggregation_criteria = aggregation_criteria
-        if table_search_behaviour is not Unset:
-            self.table_search_behaviour = table_search_behaviour
 
     @property
     def criterion(self) -> "GsaCriterion | Unset_Type":
@@ -156,33 +148,6 @@ class GsaAggregationsRequest(ModelBase):
             The aggregation_criteria of this GsaAggregationsRequest.
         """
         self._aggregation_criteria = aggregation_criteria
-
-    @property
-    def table_search_behaviour(self) -> "GsaTableSearchBehaviour | Unset_Type":
-        """Gets the table_search_behaviour of this GsaAggregationsRequest.
-
-        Returns
-        -------
-        GsaTableSearchBehaviour | Unset_Type
-            The table_search_behaviour of this GsaAggregationsRequest.
-        """
-        return self._table_search_behaviour
-
-    @table_search_behaviour.setter
-    def table_search_behaviour(
-        self, table_search_behaviour: "GsaTableSearchBehaviour | Unset_Type"
-    ) -> None:
-        """Sets the table_search_behaviour of this GsaAggregationsRequest.
-
-        Parameters
-        ----------
-        table_search_behaviour: GsaTableSearchBehaviour | Unset_Type
-            The table_search_behaviour of this GsaAggregationsRequest.
-        """
-        # Field is not nullable
-        if table_search_behaviour is None:
-            raise ValueError("Invalid value for 'table_search_behaviour', must not be 'None'")
-        self._table_search_behaviour = table_search_behaviour
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
