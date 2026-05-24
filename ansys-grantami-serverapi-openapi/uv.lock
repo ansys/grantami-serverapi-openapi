@@ -8,7 +8,7 @@ resolution-markers = [
 
 [[package]]
 name = "ansys-grantami-serverapi-openapi"
-version = "5.2.0.dev1131"
+version = "5.2.0.dev1136"
 source = { editable = "." }
 dependencies = [
     { name = "ansys-openapi-common" },

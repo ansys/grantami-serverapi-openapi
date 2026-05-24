@@ -70,12 +70,14 @@ class GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail(GsaDiscreteValueErrorDetai
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaDiscreteValueErrorReason",
+        "discrete_type_guid": "str",
         "missing_guids": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "discrete_type_guid": "discreteTypeGuid",
         "missing_guids": "missingGuids",
     }
 
@@ -88,6 +90,7 @@ class GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail(GsaDiscreteValueErrorDetai
         *,
         message: "str",
         reason: "GsaDiscreteValueErrorReason" = GsaDiscreteValueErrorReason.NOSUCHDISCRETEVALUESINDISCRETEVALUES,
+        discrete_type_guid: "str | Unset_Type" = Unset,
         missing_guids: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail - a model defined in Swagger
@@ -96,13 +99,42 @@ class GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail(GsaDiscreteValueErrorDetai
         ----------
         message: str
         reason: GsaDiscreteValueErrorReason
+        discrete_type_guid: str, optional
         missing_guids: list[str] | None, optional
         """
         super().__init__(message=message, reason=reason)
+        self._discrete_type_guid: str | Unset_Type = Unset
         self._missing_guids: list[str] | None | Unset_Type = Unset
 
+        if discrete_type_guid is not Unset:
+            self.discrete_type_guid = discrete_type_guid
         if missing_guids is not Unset:
             self.missing_guids = missing_guids
+
+    @property
+    def discrete_type_guid(self) -> "str | Unset_Type":
+        """Gets the discrete_type_guid of this GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The discrete_type_guid of this GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail.
+        """
+        return self._discrete_type_guid
+
+    @discrete_type_guid.setter
+    def discrete_type_guid(self, discrete_type_guid: "str | Unset_Type") -> None:
+        """Sets the discrete_type_guid of this GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail.
+
+        Parameters
+        ----------
+        discrete_type_guid: str | Unset_Type
+            The discrete_type_guid of this GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail.
+        """
+        # Field is not nullable
+        if discrete_type_guid is None:
+            raise ValueError("Invalid value for 'discrete_type_guid', must not be 'None'")
+        self._discrete_type_guid = discrete_type_guid
 
     @property
     def missing_guids(self) -> "list[str] | None | Unset_Type":
