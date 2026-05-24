@@ -64,12 +64,14 @@ class GsaGetModifiableRecordVersionControlException(ModelBase):
         "code": "GsaErrorCode",
         "errors": "list[GsaVersionControlErrorDetail]",
         "message": "str",
+        "record_version_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
+        "record_version_guid": "recordVersionGuid",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -85,6 +87,7 @@ class GsaGetModifiableRecordVersionControlException(ModelBase):
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaVersionControlErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
+        record_version_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaGetModifiableRecordVersionControlException - a model defined in Swagger
 
@@ -93,15 +96,19 @@ class GsaGetModifiableRecordVersionControlException(ModelBase):
         code: GsaErrorCode, optional
         errors: list[GsaVersionControlErrorDetail] | None, optional
         message: str | None, optional
+        record_version_guid: str, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._record_version_guid: str | Unset_Type = Unset
         self._errors: list[GsaVersionControlErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        if record_version_guid is not Unset:
+            self.record_version_guid = record_version_guid
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +158,31 @@ class GsaGetModifiableRecordVersionControlException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def record_version_guid(self) -> "str | Unset_Type":
+        """Gets the record_version_guid of this GsaGetModifiableRecordVersionControlException.
+
+        Returns
+        -------
+        str | Unset_Type
+            The record_version_guid of this GsaGetModifiableRecordVersionControlException.
+        """
+        return self._record_version_guid
+
+    @record_version_guid.setter
+    def record_version_guid(self, record_version_guid: "str | Unset_Type") -> None:
+        """Sets the record_version_guid of this GsaGetModifiableRecordVersionControlException.
+
+        Parameters
+        ----------
+        record_version_guid: str | Unset_Type
+            The record_version_guid of this GsaGetModifiableRecordVersionControlException.
+        """
+        # Field is not nullable
+        if record_version_guid is None:
+            raise ValueError("Invalid value for 'record_version_guid', must not be 'None'")
+        self._record_version_guid = record_version_guid
 
     @property
     def errors(self) -> "list[GsaVersionControlErrorDetail] | None | Unset_Type":

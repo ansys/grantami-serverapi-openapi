@@ -70,11 +70,15 @@ class GsaQualitySystemGuidErrorDetail(GsaTableErrorDetail):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaTableErrorReason",
+        "database_key": "str",
+        "quality_system_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "database_key": "databaseKey",
+        "quality_system_guid": "qualitySystemGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,6 +90,8 @@ class GsaQualitySystemGuidErrorDetail(GsaTableErrorDetail):
         *,
         message: "str",
         reason: "GsaTableErrorReason" = GsaTableErrorReason.QUALITYSYSTEMGUID,
+        database_key: "str | None | Unset_Type" = Unset,
+        quality_system_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaQualitySystemGuidErrorDetail - a model defined in Swagger
 
@@ -93,8 +99,64 @@ class GsaQualitySystemGuidErrorDetail(GsaTableErrorDetail):
         ----------
         message: str
         reason: GsaTableErrorReason
+        database_key: str | None, optional
+        quality_system_guid: str, optional
         """
         super().__init__(message=message, reason=reason)
+        self._database_key: str | None | Unset_Type = Unset
+        self._quality_system_guid: str | Unset_Type = Unset
+
+        if database_key is not Unset:
+            self.database_key = database_key
+        if quality_system_guid is not Unset:
+            self.quality_system_guid = quality_system_guid
+
+    @property
+    def database_key(self) -> "str | None | Unset_Type":
+        """Gets the database_key of this GsaQualitySystemGuidErrorDetail.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The database_key of this GsaQualitySystemGuidErrorDetail.
+        """
+        return self._database_key
+
+    @database_key.setter
+    def database_key(self, database_key: "str | None | Unset_Type") -> None:
+        """Sets the database_key of this GsaQualitySystemGuidErrorDetail.
+
+        Parameters
+        ----------
+        database_key: str | None | Unset_Type
+            The database_key of this GsaQualitySystemGuidErrorDetail.
+        """
+        self._database_key = database_key
+
+    @property
+    def quality_system_guid(self) -> "str | Unset_Type":
+        """Gets the quality_system_guid of this GsaQualitySystemGuidErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The quality_system_guid of this GsaQualitySystemGuidErrorDetail.
+        """
+        return self._quality_system_guid
+
+    @quality_system_guid.setter
+    def quality_system_guid(self, quality_system_guid: "str | Unset_Type") -> None:
+        """Sets the quality_system_guid of this GsaQualitySystemGuidErrorDetail.
+
+        Parameters
+        ----------
+        quality_system_guid: str | Unset_Type
+            The quality_system_guid of this GsaQualitySystemGuidErrorDetail.
+        """
+        # Field is not nullable
+        if quality_system_guid is None:
+            raise ValueError("Invalid value for 'quality_system_guid', must not be 'None'")
+        self._quality_system_guid = quality_system_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

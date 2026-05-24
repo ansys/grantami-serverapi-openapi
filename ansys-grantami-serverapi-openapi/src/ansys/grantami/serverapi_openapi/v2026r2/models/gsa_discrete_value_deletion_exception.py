@@ -62,12 +62,14 @@ class GsaDiscreteValueDeletionException(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "code": "GsaErrorCode",
+        "discrete_value_guid": "str",
         "errors": "list[GsaDiscreteValueUsedInDataErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
+        "discrete_value_guid": "discreteValueGuid",
         "errors": "errors",
         "message": "message",
     }
@@ -83,6 +85,7 @@ class GsaDiscreteValueDeletionException(ModelBase):
         self,
         *,
         code: "GsaErrorCode | Unset_Type" = Unset,
+        discrete_value_guid: "str | Unset_Type" = Unset,
         errors: "list[GsaDiscreteValueUsedInDataErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -91,17 +94,21 @@ class GsaDiscreteValueDeletionException(ModelBase):
         Parameters
         ----------
         code: GsaErrorCode, optional
+        discrete_value_guid: str, optional
         errors: list[GsaDiscreteValueUsedInDataErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._discrete_value_guid: str | Unset_Type = Unset
         self._errors: list[GsaDiscreteValueUsedInDataErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        if discrete_value_guid is not Unset:
+            self.discrete_value_guid = discrete_value_guid
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +158,31 @@ class GsaDiscreteValueDeletionException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def discrete_value_guid(self) -> "str | Unset_Type":
+        """Gets the discrete_value_guid of this GsaDiscreteValueDeletionException.
+
+        Returns
+        -------
+        str | Unset_Type
+            The discrete_value_guid of this GsaDiscreteValueDeletionException.
+        """
+        return self._discrete_value_guid
+
+    @discrete_value_guid.setter
+    def discrete_value_guid(self, discrete_value_guid: "str | Unset_Type") -> None:
+        """Sets the discrete_value_guid of this GsaDiscreteValueDeletionException.
+
+        Parameters
+        ----------
+        discrete_value_guid: str | Unset_Type
+            The discrete_value_guid of this GsaDiscreteValueDeletionException.
+        """
+        # Field is not nullable
+        if discrete_value_guid is None:
+            raise ValueError("Invalid value for 'discrete_value_guid', must not be 'None'")
+        self._discrete_value_guid = discrete_value_guid
 
     @property
     def errors(self) -> "list[GsaDiscreteValueUsedInDataErrorDetail] | None | Unset_Type":

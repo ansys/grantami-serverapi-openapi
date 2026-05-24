@@ -70,11 +70,15 @@ class GsaDefaultLayoutGuidErrorDetail(GsaTableErrorDetail):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaTableErrorReason",
+        "layout_guid": "str",
+        "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "layout_guid": "layoutGuid",
+        "table_guid": "tableGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,6 +90,8 @@ class GsaDefaultLayoutGuidErrorDetail(GsaTableErrorDetail):
         *,
         message: "str",
         reason: "GsaTableErrorReason" = GsaTableErrorReason.DEFAULTLAYOUTGUID,
+        layout_guid: "str | Unset_Type" = Unset,
+        table_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaDefaultLayoutGuidErrorDetail - a model defined in Swagger
 
@@ -93,8 +99,67 @@ class GsaDefaultLayoutGuidErrorDetail(GsaTableErrorDetail):
         ----------
         message: str
         reason: GsaTableErrorReason
+        layout_guid: str, optional
+        table_guid: str, optional
         """
         super().__init__(message=message, reason=reason)
+        self._table_guid: str | Unset_Type = Unset
+        self._layout_guid: str | Unset_Type = Unset
+
+        if table_guid is not Unset:
+            self.table_guid = table_guid
+        if layout_guid is not Unset:
+            self.layout_guid = layout_guid
+
+    @property
+    def table_guid(self) -> "str | Unset_Type":
+        """Gets the table_guid of this GsaDefaultLayoutGuidErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The table_guid of this GsaDefaultLayoutGuidErrorDetail.
+        """
+        return self._table_guid
+
+    @table_guid.setter
+    def table_guid(self, table_guid: "str | Unset_Type") -> None:
+        """Sets the table_guid of this GsaDefaultLayoutGuidErrorDetail.
+
+        Parameters
+        ----------
+        table_guid: str | Unset_Type
+            The table_guid of this GsaDefaultLayoutGuidErrorDetail.
+        """
+        # Field is not nullable
+        if table_guid is None:
+            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
+        self._table_guid = table_guid
+
+    @property
+    def layout_guid(self) -> "str | Unset_Type":
+        """Gets the layout_guid of this GsaDefaultLayoutGuidErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The layout_guid of this GsaDefaultLayoutGuidErrorDetail.
+        """
+        return self._layout_guid
+
+    @layout_guid.setter
+    def layout_guid(self, layout_guid: "str | Unset_Type") -> None:
+        """Sets the layout_guid of this GsaDefaultLayoutGuidErrorDetail.
+
+        Parameters
+        ----------
+        layout_guid: str | Unset_Type
+            The layout_guid of this GsaDefaultLayoutGuidErrorDetail.
+        """
+        # Field is not nullable
+        if layout_guid is None:
+            raise ValueError("Invalid value for 'layout_guid', must not be 'None'")
+        self._layout_guid = layout_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

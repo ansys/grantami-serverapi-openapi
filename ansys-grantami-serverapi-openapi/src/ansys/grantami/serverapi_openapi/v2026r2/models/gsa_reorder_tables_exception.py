@@ -62,12 +62,14 @@ class GsaReorderTablesException(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "code": "GsaErrorCode",
+        "database_key": "str",
         "errors": "list[GsaReorderTablesErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
+        "database_key": "databaseKey",
         "errors": "errors",
         "message": "message",
     }
@@ -83,6 +85,7 @@ class GsaReorderTablesException(ModelBase):
         self,
         *,
         code: "GsaErrorCode | Unset_Type" = Unset,
+        database_key: "str | None | Unset_Type" = Unset,
         errors: "list[GsaReorderTablesErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -91,17 +94,21 @@ class GsaReorderTablesException(ModelBase):
         Parameters
         ----------
         code: GsaErrorCode, optional
+        database_key: str | None, optional
         errors: list[GsaReorderTablesErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._database_key: str | None | Unset_Type = Unset
         self._errors: list[GsaReorderTablesErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        if database_key is not Unset:
+            self.database_key = database_key
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +158,28 @@ class GsaReorderTablesException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def database_key(self) -> "str | None | Unset_Type":
+        """Gets the database_key of this GsaReorderTablesException.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The database_key of this GsaReorderTablesException.
+        """
+        return self._database_key
+
+    @database_key.setter
+    def database_key(self, database_key: "str | None | Unset_Type") -> None:
+        """Sets the database_key of this GsaReorderTablesException.
+
+        Parameters
+        ----------
+        database_key: str | None | Unset_Type
+            The database_key of this GsaReorderTablesException.
+        """
+        self._database_key = database_key
 
     @property
     def errors(self) -> "list[GsaReorderTablesErrorDetail] | None | Unset_Type":
