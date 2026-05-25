@@ -66,6 +66,7 @@ class GsaUpgradeDatabaseException(ModelBase):
         "code": "GsaErrorCode",
         "errors": "list[GsaErrorDetailOfUpgradeDatabaseFailureReason]",
         "message": "str",
+        "status_code": "SystemNetHttpStatusCode",
     }
 
     attribute_map: dict[str, str] = {
@@ -74,11 +75,13 @@ class GsaUpgradeDatabaseException(ModelBase):
         "code": "code",
         "errors": "errors",
         "message": "message",
+        "status_code": "statusCode",
     }
 
     subtype_mapping: dict[str, str] = {
         "code": "GsaErrorCode",
         "upgradeDatabaseFailureReason": "GsaUpgradeDatabaseFailureReason",
+        "statusCode": "SystemNetHttpStatusCode",
         "errors": "GsaErrorDetailOfUpgradeDatabaseFailureReason",
     }
 
@@ -92,6 +95,7 @@ class GsaUpgradeDatabaseException(ModelBase):
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
+        status_code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
     ) -> None:
         """GsaUpgradeDatabaseException - a model defined in Swagger
 
@@ -102,11 +106,13 @@ class GsaUpgradeDatabaseException(ModelBase):
         code: GsaErrorCode, optional
         errors: list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None, optional
         message: str | None, optional
+        status_code: SystemNetHttpStatusCode, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
         self._upgrade_database_failure_reason: GsaUpgradeDatabaseFailureReason
         self._additional_information: str | None | Unset_Type = Unset
+        self._status_code: SystemNetHttpStatusCode | Unset_Type = Unset
         self._errors: list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type = Unset
 
         if message is not Unset:
@@ -116,6 +122,8 @@ class GsaUpgradeDatabaseException(ModelBase):
         self.upgrade_database_failure_reason = upgrade_database_failure_reason
         if additional_information is not Unset:
             self.additional_information = additional_information
+        if status_code is not Unset:
+            self.status_code = status_code
         if errors is not Unset:
             self.errors = errors
 
@@ -221,6 +229,31 @@ class GsaUpgradeDatabaseException(ModelBase):
             The additional_information of this GsaUpgradeDatabaseException.
         """
         self._additional_information = additional_information
+
+    @property
+    def status_code(self) -> "SystemNetHttpStatusCode | Unset_Type":
+        """Gets the status_code of this GsaUpgradeDatabaseException.
+
+        Returns
+        -------
+        SystemNetHttpStatusCode | Unset_Type
+            The status_code of this GsaUpgradeDatabaseException.
+        """
+        return self._status_code
+
+    @status_code.setter
+    def status_code(self, status_code: "SystemNetHttpStatusCode | Unset_Type") -> None:
+        """Sets the status_code of this GsaUpgradeDatabaseException.
+
+        Parameters
+        ----------
+        status_code: SystemNetHttpStatusCode | Unset_Type
+            The status_code of this GsaUpgradeDatabaseException.
+        """
+        # Field is not nullable
+        if status_code is None:
+            raise ValueError("Invalid value for 'status_code', must not be 'None'")
+        self._status_code = status_code
 
     @property
     def errors(self) -> "list[GsaErrorDetailOfUpgradeDatabaseFailureReason] | None | Unset_Type":

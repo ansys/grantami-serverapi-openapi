@@ -63,11 +63,13 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaStandardNameDeletionErrorReason",
+        "standard_name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "standard_name": "standardName",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,6 +83,7 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
         *,
         message: "str",
         reason: "GsaStandardNameDeletionErrorReason",
+        standard_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaStandardNameDeletionErrorDetail - a model defined in Swagger
 
@@ -88,12 +91,16 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
         ----------
         message: str
         reason: GsaStandardNameDeletionErrorReason
+        standard_name: str | None, optional
         """
         self._message: str
         self._reason: GsaStandardNameDeletionErrorReason
+        self._standard_name: str | None | Unset_Type = Unset
 
         self.message = message
         self.reason = reason
+        if standard_name is not Unset:
+            self.standard_name = standard_name
 
     @property
     def message(self) -> "str":
@@ -150,6 +157,28 @@ class GsaStandardNameDeletionErrorDetail(ModelBase):
         if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
+
+    @property
+    def standard_name(self) -> "str | None | Unset_Type":
+        """Gets the standard_name of this GsaStandardNameDeletionErrorDetail.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The standard_name of this GsaStandardNameDeletionErrorDetail.
+        """
+        return self._standard_name
+
+    @standard_name.setter
+    def standard_name(self, standard_name: "str | None | Unset_Type") -> None:
+        """Sets the standard_name of this GsaStandardNameDeletionErrorDetail.
+
+        Parameters
+        ----------
+        standard_name: str | None | Unset_Type
+            The standard_name of this GsaStandardNameDeletionErrorDetail.
+        """
+        self._standard_name = standard_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
