@@ -464,6 +464,7 @@ from .models.gsa_data_rule import GsaDataRule
 from .models.gsa_data_rules_info import GsaDataRulesInfo
 from .models.gsa_data_source import GsaDataSource
 from .models.gsa_data_update import GsaDataUpdate
+from .models.gsa_data_update_deletion_exception import GsaDataUpdateDeletionException
 from .models.gsa_data_update_header import GsaDataUpdateHeader
 from .models.gsa_data_update_run_info import GsaDataUpdateRunInfo
 from .models.gsa_data_update_token import GsaDataUpdateToken
@@ -544,6 +545,8 @@ from .models.gsa_default_parameter_value_usage_data_modification_error_detail im
 from .models.gsa_default_subset_guid_error_detail import GsaDefaultSubsetGuidErrorDetail
 from .models.gsa_delete_record_list_item import GsaDeleteRecordListItem
 from .models.gsa_delete_record_list_items import GsaDeleteRecordListItems
+from .models.gsa_deletion_entity_type import GsaDeletionEntityType
+from .models.gsa_deletion_exception import GsaDeletionException
 from .models.gsa_description_length_file_error_detail import GsaDescriptionLengthFileErrorDetail
 from .models.gsa_discrete_attribute import GsaDiscreteAttribute
 from .models.gsa_discrete_chart_data import GsaDiscreteChartData
@@ -729,6 +732,7 @@ from .models.gsa_export_failure_type import GsaExportFailureType
 from .models.gsa_exporter_refetch_info import GsaExporterRefetchInfo
 from .models.gsa_expression import GsaExpression
 from .models.gsa_expression_access_control_entity import GsaExpressionAccessControlEntity
+from .models.gsa_expression_deletion_exception import GsaExpressionDeletionException
 from .models.gsa_expression_maths_functional_error_detail import (
     GsaExpressionMathsFunctionalErrorDetail,
 )
@@ -2310,6 +2314,7 @@ __all__ = [
     "GsaDataRulesInfo",
     "GsaDataSource",
     "GsaDataUpdate",
+    "GsaDataUpdateDeletionException",
     "GsaDataUpdateHeader",
     "GsaDataUpdateRunInfo",
     "GsaDataUpdateToken",
@@ -2366,6 +2371,8 @@ __all__ = [
     "GsaDefaultSubsetGuidErrorDetail",
     "GsaDeleteRecordListItem",
     "GsaDeleteRecordListItems",
+    "GsaDeletionEntityType",
+    "GsaDeletionException",
     "GsaDescriptionLengthFileErrorDetail",
     "GsaDiscreteAttribute",
     "GsaDiscreteChartData",
@@ -2481,6 +2488,7 @@ __all__ = [
     "GsaExporterRefetchInfo",
     "GsaExpression",
     "GsaExpressionAccessControlEntity",
+    "GsaExpressionDeletionException",
     "GsaExpressionMathsFunctionalErrorDetail",
     "GsaExpressionUsageDataModificationErrorDetail",
     "GsaExpressionsHaveUnknownParametersMathsFunctionalErrorDetail",
