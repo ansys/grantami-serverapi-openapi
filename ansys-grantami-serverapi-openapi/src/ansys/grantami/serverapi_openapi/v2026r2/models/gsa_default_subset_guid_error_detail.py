@@ -70,11 +70,15 @@ class GsaDefaultSubsetGuidErrorDetail(GsaTableErrorDetail):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaTableErrorReason",
+        "subset_guid": "str",
+        "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
+        "subset_guid": "subsetGuid",
+        "table_guid": "tableGuid",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,6 +90,8 @@ class GsaDefaultSubsetGuidErrorDetail(GsaTableErrorDetail):
         *,
         message: "str",
         reason: "GsaTableErrorReason" = GsaTableErrorReason.DEFAULTSUBSETGUID,
+        subset_guid: "str | Unset_Type" = Unset,
+        table_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaDefaultSubsetGuidErrorDetail - a model defined in Swagger
 
@@ -93,8 +99,67 @@ class GsaDefaultSubsetGuidErrorDetail(GsaTableErrorDetail):
         ----------
         message: str
         reason: GsaTableErrorReason
+        subset_guid: str, optional
+        table_guid: str, optional
         """
         super().__init__(message=message, reason=reason)
+        self._table_guid: str | Unset_Type = Unset
+        self._subset_guid: str | Unset_Type = Unset
+
+        if table_guid is not Unset:
+            self.table_guid = table_guid
+        if subset_guid is not Unset:
+            self.subset_guid = subset_guid
+
+    @property
+    def table_guid(self) -> "str | Unset_Type":
+        """Gets the table_guid of this GsaDefaultSubsetGuidErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The table_guid of this GsaDefaultSubsetGuidErrorDetail.
+        """
+        return self._table_guid
+
+    @table_guid.setter
+    def table_guid(self, table_guid: "str | Unset_Type") -> None:
+        """Sets the table_guid of this GsaDefaultSubsetGuidErrorDetail.
+
+        Parameters
+        ----------
+        table_guid: str | Unset_Type
+            The table_guid of this GsaDefaultSubsetGuidErrorDetail.
+        """
+        # Field is not nullable
+        if table_guid is None:
+            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
+        self._table_guid = table_guid
+
+    @property
+    def subset_guid(self) -> "str | Unset_Type":
+        """Gets the subset_guid of this GsaDefaultSubsetGuidErrorDetail.
+
+        Returns
+        -------
+        str | Unset_Type
+            The subset_guid of this GsaDefaultSubsetGuidErrorDetail.
+        """
+        return self._subset_guid
+
+    @subset_guid.setter
+    def subset_guid(self, subset_guid: "str | Unset_Type") -> None:
+        """Sets the subset_guid of this GsaDefaultSubsetGuidErrorDetail.
+
+        Parameters
+        ----------
+        subset_guid: str | Unset_Type
+            The subset_guid of this GsaDefaultSubsetGuidErrorDetail.
+        """
+        # Field is not nullable
+        if subset_guid is None:
+            raise ValueError("Invalid value for 'subset_guid', must not be 'None'")
+        self._subset_guid = subset_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

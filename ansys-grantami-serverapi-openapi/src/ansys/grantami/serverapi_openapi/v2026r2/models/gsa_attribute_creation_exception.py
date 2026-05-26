@@ -63,6 +63,7 @@ class GsaAttributeCreationException(ModelBase):
     swagger_types: dict[str, str] = {
         "code": "GsaErrorCode",
         "errors": "list[GsaAttributeErrorDetail]",
+        "is_meta_attribute": "bool",
         "message": "str",
         "name": "str",
     }
@@ -70,6 +71,7 @@ class GsaAttributeCreationException(ModelBase):
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
+        "is_meta_attribute": "isMetaAttribute",
         "message": "message",
         "name": "name",
     }
@@ -86,6 +88,7 @@ class GsaAttributeCreationException(ModelBase):
         *,
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaAttributeErrorDetail] | None | Unset_Type" = Unset,
+        is_meta_attribute: "bool | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -95,12 +98,14 @@ class GsaAttributeCreationException(ModelBase):
         ----------
         code: GsaErrorCode, optional
         errors: list[GsaAttributeErrorDetail] | None, optional
+        is_meta_attribute: bool, optional
         message: str | None, optional
         name: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
+        self._is_meta_attribute: bool | Unset_Type = Unset
         self._errors: list[GsaAttributeErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
@@ -109,6 +114,8 @@ class GsaAttributeCreationException(ModelBase):
             self.code = code
         if name is not Unset:
             self.name = name
+        if is_meta_attribute is not Unset:
+            self.is_meta_attribute = is_meta_attribute
         if errors is not Unset:
             self.errors = errors
 
@@ -180,6 +187,31 @@ class GsaAttributeCreationException(ModelBase):
             The name of this GsaAttributeCreationException.
         """
         self._name = name
+
+    @property
+    def is_meta_attribute(self) -> "bool | Unset_Type":
+        """Gets the is_meta_attribute of this GsaAttributeCreationException.
+
+        Returns
+        -------
+        bool | Unset_Type
+            The is_meta_attribute of this GsaAttributeCreationException.
+        """
+        return self._is_meta_attribute
+
+    @is_meta_attribute.setter
+    def is_meta_attribute(self, is_meta_attribute: "bool | Unset_Type") -> None:
+        """Sets the is_meta_attribute of this GsaAttributeCreationException.
+
+        Parameters
+        ----------
+        is_meta_attribute: bool | Unset_Type
+            The is_meta_attribute of this GsaAttributeCreationException.
+        """
+        # Field is not nullable
+        if is_meta_attribute is None:
+            raise ValueError("Invalid value for 'is_meta_attribute', must not be 'None'")
+        self._is_meta_attribute = is_meta_attribute
 
     @property
     def errors(self) -> "list[GsaAttributeErrorDetail] | None | Unset_Type":

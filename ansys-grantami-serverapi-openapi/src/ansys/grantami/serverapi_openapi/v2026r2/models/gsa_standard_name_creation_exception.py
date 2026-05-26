@@ -64,12 +64,14 @@ class GsaStandardNameCreationException(ModelBase):
         "code": "GsaErrorCode",
         "errors": "list[GsaStandardNameErrorDetail]",
         "message": "str",
+        "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
+        "name": "name",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -85,6 +87,7 @@ class GsaStandardNameCreationException(ModelBase):
         code: "GsaErrorCode | Unset_Type" = Unset,
         errors: "list[GsaStandardNameErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
+        name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaStandardNameCreationException - a model defined in Swagger
 
@@ -93,15 +96,19 @@ class GsaStandardNameCreationException(ModelBase):
         code: GsaErrorCode, optional
         errors: list[GsaStandardNameErrorDetail] | None, optional
         message: str | None, optional
+        name: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
+        self._name: str | None | Unset_Type = Unset
         self._errors: list[GsaStandardNameErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
+        if name is not Unset:
+            self.name = name
         if errors is not Unset:
             self.errors = errors
 
@@ -151,6 +158,28 @@ class GsaStandardNameCreationException(ModelBase):
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
+
+    @property
+    def name(self) -> "str | None | Unset_Type":
+        """Gets the name of this GsaStandardNameCreationException.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The name of this GsaStandardNameCreationException.
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: "str | None | Unset_Type") -> None:
+        """Sets the name of this GsaStandardNameCreationException.
+
+        Parameters
+        ----------
+        name: str | None | Unset_Type
+            The name of this GsaStandardNameCreationException.
+        """
+        self._name = name
 
     @property
     def errors(self) -> "list[GsaStandardNameErrorDetail] | None | Unset_Type":
