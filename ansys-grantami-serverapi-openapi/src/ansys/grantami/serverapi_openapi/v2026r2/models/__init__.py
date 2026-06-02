@@ -1179,6 +1179,7 @@ from .gsa_quality_discrete_value_error_reason import GsaQualityDiscreteValueErro
 from .gsa_quality_discrete_values_error_detail import GsaQualityDiscreteValuesErrorDetail
 from .gsa_quality_system import GsaQualitySystem
 from .gsa_quality_system_creation_exception import GsaQualitySystemCreationException
+from .gsa_quality_system_deletion_exception import GsaQualitySystemDeletionException
 from .gsa_quality_system_error_detail import GsaQualitySystemErrorDetail
 from .gsa_quality_system_error_reason import GsaQualitySystemErrorReason
 from .gsa_quality_system_guid_error_detail import GsaQualitySystemGuidErrorDetail
@@ -1512,6 +1513,7 @@ from .gsa_table_type_error_reason import GsaTableTypeErrorReason
 from .gsa_table_types_error_detail import GsaTableTypesErrorDetail
 from .gsa_table_types_info import GsaTableTypesInfo
 from .gsa_table_update_exception import GsaTableUpdateException
+from .gsa_table_usage_data_modification_error_detail import GsaTableUsageDataModificationErrorDetail
 from .gsa_tables_info import GsaTablesInfo
 from .gsa_tables_missing_reorder_tables_error_detail import GsaTablesMissingReorderTablesErrorDetail
 from .gsa_tabular_attribute import GsaTabularAttribute
@@ -2674,6 +2676,7 @@ __all__ = [
     "GsaQualityDiscreteValuesErrorDetail",
     "GsaQualitySystem",
     "GsaQualitySystemCreationException",
+    "GsaQualitySystemDeletionException",
     "GsaQualitySystemErrorDetail",
     "GsaQualitySystemErrorReason",
     "GsaQualitySystemGuidErrorDetail",
@@ -2975,6 +2978,7 @@ __all__ = [
     "GsaTableTypesErrorDetail",
     "GsaTableTypesInfo",
     "GsaTableUpdateException",
+    "GsaTableUsageDataModificationErrorDetail",
     "GsaTablesInfo",
     "GsaTablesMissingReorderTablesErrorDetail",
     "GsaTabularAttribute",

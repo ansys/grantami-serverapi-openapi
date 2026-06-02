@@ -48,85 +48,6 @@ class FindSimilarApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
-    def delete_find_similar_results(self, *, find_similar_identifier: "str") -> "None":
-        """Delete find similar results by identifier
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        find_similar_identifier: str
-
-        Returns
-        -------
-        None
-        """
-        data = self._delete_find_similar_results_with_http_info(
-            find_similar_identifier, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _delete_find_similar_results_with_http_info(
-        self, find_similar_identifier: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "find_similar_identifier",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method delete_find_similar_results"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "find_similar_identifier" is set
-        if "find_similar_identifier" not in params or params["find_similar_identifier"] is None:
-            raise ValueError(
-                "Missing the required parameter 'find_similar_identifier' when calling 'delete_find_similar_results'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "find_similar_identifier" in params and find_similar_identifier is not None:
-            path_params["find-similar-identifier"] = params["find_similar_identifier"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: None,
-            403: None,
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/{find-similar-identifier}",
-            "DELETE",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
     def find_similar(
         self,
         *,
@@ -136,8 +57,8 @@ class FindSimilarApi(ApiBase):
         body: "Optional[GsaFindSimilarRequest]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         mode: "Optional[str]" = None,
-    ) -> "GsaFindSimilarResponse":
-        """Finds similar records in a given database and table for a given record
+    ) -> "GsaLongRunningOperation":
+        """Gets the long-running operation for running the finds similar records calculation in a given database and table for a given record
 
         This method makes a synchronous HTTP request.
 
@@ -156,7 +77,7 @@ class FindSimilarApi(ApiBase):
 
         Returns
         -------
-        GsaFindSimilarResponse
+        GsaLongRunningOperation
         """
         data = self._find_similar_with_http_info(
             database_key,
@@ -250,11 +171,11 @@ class FindSimilarApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaFindSimilarResponse",
+            200: "GsaLongRunningOperation",
         }
 
         return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/tables/{table-guid}/record/{record-guid}:findsimilar",
+            "/v1alpha/find-similar/databases/{database-key}/tables/{table-guid}/record/{record-guid}",
             "POST",
             path_params,
             query_params,
@@ -269,10 +190,10 @@ class FindSimilarApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_find_similar_results(
+    def get_find_similar_operation_full_result(
         self, *, find_similar_identifier: "str"
     ) -> "GsaGetFindSimilarResultsResponse | None":
-        """Returns find similar results by identifier
+        """Returns the find similar results for a given find similar identifier.
 
         This method makes a synchronous HTTP request.
 
@@ -284,12 +205,12 @@ class FindSimilarApi(ApiBase):
         -------
         GsaGetFindSimilarResultsResponse | None
         """
-        data = self._get_find_similar_results_with_http_info(
+        data = self._get_find_similar_operation_full_result_with_http_info(
             find_similar_identifier, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
-    def _get_find_similar_results_with_http_info(
+    def _get_find_similar_operation_full_result_with_http_info(
         self, find_similar_identifier: "str", **kwargs: Any
     ) -> Any:
         all_params = [
@@ -303,14 +224,14 @@ class FindSimilarApi(ApiBase):
         for key, val in params["kwargs"].items():
             if key not in all_params:
                 raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_find_similar_results"
+                    f"Got an unexpected keyword argument '{key}' to method get_find_similar_operation_full_result"
                 )
             params[key] = val
         del params["kwargs"]
         # verify the required parameter "find_similar_identifier" is set
         if "find_similar_identifier" not in params or params["find_similar_identifier"] is None:
             raise ValueError(
-                "Missing the required parameter 'find_similar_identifier' when calling 'get_find_similar_results'"
+                "Missing the required parameter 'find_similar_identifier' when calling 'get_find_similar_operation_full_result'"
             )
 
         collection_formats: dict[str, Any] = {}
@@ -339,8 +260,190 @@ class FindSimilarApi(ApiBase):
         }
 
         return self.api_client.call_api(
-            "/v1alpha/{find-similar-identifier}/results",
-            "POST",
+            "/v1alpha/find-similar/{find-similar-identifier}/full-results",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_find_similar_operation_result(
+        self, *, operation_identifier: "str"
+    ) -> "GsaFindSimilarResponse | None":
+        """Gets the result of a long-running operation running a find similar calculation.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        operation_identifier: str
+
+        Returns
+        -------
+        GsaFindSimilarResponse | None
+        """
+        data = self._get_find_similar_operation_result_with_http_info(
+            operation_identifier, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_find_similar_operation_result_with_http_info(
+        self, operation_identifier: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "operation_identifier",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_find_similar_operation_result"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "operation_identifier" is set
+        if "operation_identifier" not in params or params["operation_identifier"] is None:
+            raise ValueError(
+                "Missing the required parameter 'operation_identifier' when calling 'get_find_similar_operation_result'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "operation_identifier" in params and operation_identifier is not None:
+            path_params["operation-identifier"] = params["operation_identifier"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaFindSimilarResponse",
+            403: None,
+            404: None,
+            422: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/find-similar/{operation-identifier}/result",
+            "GET",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
+    def get_run_find_similar_operation(
+        self,
+        *,
+        operation_identifier: "str",
+        include: "Optional[list[GsaLongRunningOperationInclude]]" = None,
+    ) -> "GsaLongRunningOperation | None":
+        """Gets the long-running operation for calculating the find similar results.
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        operation_identifier: str
+        include: list[GsaLongRunningOperationInclude]
+
+        Returns
+        -------
+        GsaLongRunningOperation | None
+        """
+        data = self._get_run_find_similar_operation_with_http_info(
+            operation_identifier, include, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _get_run_find_similar_operation_with_http_info(
+        self,
+        operation_identifier: "str",
+        include: "Optional[list[GsaLongRunningOperationInclude]]" = None,
+        **kwargs: Any,
+    ) -> Any:
+        all_params = [
+            "operation_identifier",
+            "include",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method get_run_find_similar_operation"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "operation_identifier" is set
+        if "operation_identifier" not in params or params["operation_identifier"] is None:
+            raise ValueError(
+                "Missing the required parameter 'operation_identifier' when calling 'get_run_find_similar_operation'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "operation_identifier" in params and operation_identifier is not None:
+            path_params["operation-identifier"] = params["operation_identifier"]
+
+        query_params: list[Any] = []
+        if "include" in params and include is not None:
+            query_params.append(("include", params["include"]))
+            collection_formats["include"] = "multi"
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaLongRunningOperation",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/find-similar/{operation-identifier}",
+            "GET",
             path_params,
             query_params,
             header_params,
@@ -361,8 +464,8 @@ class FindSimilarApi(ApiBase):
         database_key: "str",
         record_guid: "str",
         body: "Optional[GsaFindSimilarRequest]" = None,
-    ) -> "GsaFindSimilarResponse | None":
-        """Runs a find similar calculation against the integration schema.
+    ) -> "GsaLongRunningOperation | None":
+        """Gets the long-running operation for running a find similar calculation against an integration schema.
 
         This method makes a synchronous HTTP request.
 
@@ -376,7 +479,7 @@ class FindSimilarApi(ApiBase):
 
         Returns
         -------
-        GsaFindSimilarResponse | None
+        GsaLongRunningOperation | None
         """
         data = self._integration_find_similar_with_http_info(
             schema, database_key, record_guid, body, _return_http_data_only=True
@@ -456,13 +559,13 @@ class FindSimilarApi(ApiBase):
         )
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaFindSimilarResponse",
+            200: "GsaLongRunningOperation",
             404: None,
             422: None,
         }
 
         return self.api_client.call_api(
-            "/v1alpha/integration-schemas/{schema}/databases/{database-key}/record/{record-guid}:findsimilar",
+            "/v1alpha/find-similar/integration-schemas/{schema}/databases/{database-key}/record/{record-guid}",
             "POST",
             path_params,
             query_params,

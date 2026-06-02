@@ -94,6 +94,7 @@ class GsaDeletionException(ModelBase):
         "parameterValue".lower(): "#/components/schemas/GsaParameterValueDeletionException",
         "table".lower(): "#/components/schemas/GsaTableDeletionException",
         "unit".lower(): "#/components/schemas/GsaUnitDeletionException",
+        "qualitySystem".lower(): "#/components/schemas/GsaQualitySystemDeletionException",
     }
 
     discriminator: Optional[str] = "entityType"

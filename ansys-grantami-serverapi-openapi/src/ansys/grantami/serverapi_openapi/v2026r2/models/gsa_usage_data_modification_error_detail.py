@@ -103,6 +103,7 @@ class GsaUsageDataModificationErrorDetail(GsaDataModificationErrorDetail):
         "unit".lower(): "#/components/schemas/GsaUnitUsageDataModificationErrorDetail",
         "parameter".lower(): "#/components/schemas/GsaParameterUsageDataModificationErrorDetail",
         "constant".lower(): "#/components/schemas/GsaConstantUsageDataModificationErrorDetail",
+        "table".lower(): "#/components/schemas/GsaTableUsageDataModificationErrorDetail",
     }
 
     discriminator: Optional[str] = "referenced_by_type"

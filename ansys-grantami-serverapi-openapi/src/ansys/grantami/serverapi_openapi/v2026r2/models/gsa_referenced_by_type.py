@@ -59,3 +59,4 @@ class GsaReferencedByType(Enum):
     UNIT = "unit"
     PARAMETER = "parameter"
     CONSTANT = "constant"
+    TABLE = "table"
