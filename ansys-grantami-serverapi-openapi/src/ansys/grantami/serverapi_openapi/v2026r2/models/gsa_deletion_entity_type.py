@@ -51,3 +51,4 @@ class GsaDeletionEntityType(Enum):
     PARAMETERVALUE = "parameterValue"
     TABLE = "table"
     UNIT = "unit"
+    QUALITYSYSTEM = "qualitySystem"

@@ -61,17 +61,17 @@ class GsaSimilaritySettings(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
+        "name": "str",
         "settings": "list[GsaSimilaritySetting]",
         "is_default": "bool",
-        "name": "str",
         "table_guid": "str",
         "use_knockdown": "bool",
     }
 
     attribute_map: dict[str, str] = {
+        "name": "name",
         "settings": "settings",
         "is_default": "isDefault",
-        "name": "name",
         "table_guid": "tableGuid",
         "use_knockdown": "useKnockdown",
     }
@@ -85,9 +85,9 @@ class GsaSimilaritySettings(ModelBase):
     def __init__(
         self,
         *,
+        name: "str",
         settings: "list[GsaSimilaritySetting]",
         is_default: "bool | Unset_Type" = Unset,
-        name: "str | None | Unset_Type" = Unset,
         table_guid: "str | None | Unset_Type" = Unset,
         use_knockdown: "bool | Unset_Type" = Unset,
     ) -> None:
@@ -95,16 +95,16 @@ class GsaSimilaritySettings(ModelBase):
 
         Parameters
         ----------
+        name: str
         settings: list[GsaSimilaritySetting]
         is_default: bool, optional
-        name: str | None, optional
         table_guid: str | None, optional
         use_knockdown: bool, optional
         """
         self._table_guid: str | None | Unset_Type = Unset
         self._use_knockdown: bool | Unset_Type = Unset
         self._is_default: bool | Unset_Type = Unset
-        self._name: str | None | Unset_Type = Unset
+        self._name: str
         self._settings: list[GsaSimilaritySetting]
 
         if table_guid is not Unset:
@@ -113,8 +113,7 @@ class GsaSimilaritySettings(ModelBase):
             self.use_knockdown = use_knockdown
         if is_default is not Unset:
             self.is_default = is_default
-        if name is not Unset:
-            self.name = name
+        self.name = name
         self.settings = settings
 
     @property
@@ -190,25 +189,31 @@ class GsaSimilaritySettings(ModelBase):
         self._is_default = is_default
 
     @property
-    def name(self) -> "str | None | Unset_Type":
+    def name(self) -> "str":
         """Gets the name of this GsaSimilaritySettings.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The name of this GsaSimilaritySettings.
         """
         return self._name
 
     @name.setter
-    def name(self, name: "str | None | Unset_Type") -> None:
+    def name(self, name: "str") -> None:
         """Sets the name of this GsaSimilaritySettings.
 
         Parameters
         ----------
-        name: str | None | Unset_Type
+        name: str
             The name of this GsaSimilaritySettings.
         """
+        # Field is not nullable
+        if name is None:
+            raise ValueError("Invalid value for 'name', must not be 'None'")
+        # Field is required
+        if name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'name', must not be 'Unset'")
         self._name = name
 
     @property
