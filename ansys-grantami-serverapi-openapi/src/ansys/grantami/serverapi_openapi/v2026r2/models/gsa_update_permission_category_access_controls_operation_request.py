@@ -62,17 +62,17 @@ class GsaUpdatePermissionCategoryAccessControlsOperationRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "category_access_controls": "list[GsaUpdatePermissionCategoryAccessControl]",
-        "entity": "GsaAccessControlEntity",
+        "entities": "list[GsaAccessControlEntity]",
     }
 
     attribute_map: dict[str, str] = {
         "category_access_controls": "categoryAccessControls",
-        "entity": "entity",
+        "entities": "entities",
     }
 
     subtype_mapping: dict[str, str] = {
         "categoryAccessControls": "GsaUpdatePermissionCategoryAccessControl",
-        "entity": "GsaAccessControlEntity",
+        "entities": "GsaAccessControlEntity",
     }
 
     discriminator: Optional[str] = None
@@ -81,20 +81,20 @@ class GsaUpdatePermissionCategoryAccessControlsOperationRequest(ModelBase):
         self,
         *,
         category_access_controls: "list[GsaUpdatePermissionCategoryAccessControl]",
-        entity: "GsaAccessControlEntity",
+        entities: "list[GsaAccessControlEntity]",
     ) -> None:
         """GsaUpdatePermissionCategoryAccessControlsOperationRequest - a model defined in Swagger
 
         Parameters
         ----------
         category_access_controls: list[GsaUpdatePermissionCategoryAccessControl]
-        entity: GsaAccessControlEntity
+        entities: list[GsaAccessControlEntity]
         """
         self._category_access_controls: list[GsaUpdatePermissionCategoryAccessControl]
-        self._entity: GsaAccessControlEntity
+        self._entities: list[GsaAccessControlEntity]
 
         self.category_access_controls = category_access_controls
-        self.entity = entity
+        self.entities = entities
 
     @property
     def category_access_controls(self) -> "list[GsaUpdatePermissionCategoryAccessControl]":
@@ -127,32 +127,32 @@ class GsaUpdatePermissionCategoryAccessControlsOperationRequest(ModelBase):
         self._category_access_controls = category_access_controls
 
     @property
-    def entity(self) -> "GsaAccessControlEntity":
-        """Gets the entity of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
+    def entities(self) -> "list[GsaAccessControlEntity]":
+        """Gets the entities of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
 
         Returns
         -------
-        GsaAccessControlEntity
-            The entity of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
+        list[GsaAccessControlEntity]
+            The entities of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
         """
-        return self._entity
+        return self._entities
 
-    @entity.setter
-    def entity(self, entity: "GsaAccessControlEntity") -> None:
-        """Sets the entity of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
+    @entities.setter
+    def entities(self, entities: "list[GsaAccessControlEntity]") -> None:
+        """Sets the entities of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
 
         Parameters
         ----------
-        entity: GsaAccessControlEntity
-            The entity of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
+        entities: list[GsaAccessControlEntity]
+            The entities of this GsaUpdatePermissionCategoryAccessControlsOperationRequest.
         """
         # Field is not nullable
-        if entity is None:
-            raise ValueError("Invalid value for 'entity', must not be 'None'")
+        if entities is None:
+            raise ValueError("Invalid value for 'entities', must not be 'None'")
         # Field is required
-        if entity is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'entity', must not be 'Unset'")
-        self._entity = entity
+        if entities is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'entities', must not be 'Unset'")
+        self._entities = entities
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
