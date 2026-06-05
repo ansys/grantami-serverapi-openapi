@@ -65,6 +65,8 @@ class GsaRetargetResult(ModelBase):
         "result": "GsaRetargetResultType",
         "source_database_key": "str",
         "table_name": "str",
+        "target_database_key": "str",
+        "target_table_name": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -72,6 +74,8 @@ class GsaRetargetResult(ModelBase):
         "result": "result",
         "source_database_key": "sourceDatabaseKey",
         "table_name": "tableName",
+        "target_database_key": "targetDatabaseKey",
+        "target_table_name": "targetTableName",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -87,6 +91,8 @@ class GsaRetargetResult(ModelBase):
         result: "GsaRetargetResultType",
         source_database_key: "str",
         table_name: "str",
+        target_database_key: "str | None | Unset_Type" = Unset,
+        target_table_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRetargetResult - a model defined in Swagger
 
@@ -96,15 +102,23 @@ class GsaRetargetResult(ModelBase):
         result: GsaRetargetResultType
         source_database_key: str
         table_name: str
+        target_database_key: str | None, optional
+        target_table_name: str | None, optional
         """
         self._source_database_key: str
         self._table_name: str
         self._attribute_name: str
+        self._target_database_key: str | None | Unset_Type = Unset
+        self._target_table_name: str | None | Unset_Type = Unset
         self._result: GsaRetargetResultType
 
         self.source_database_key = source_database_key
         self.table_name = table_name
         self.attribute_name = attribute_name
+        if target_database_key is not Unset:
+            self.target_database_key = target_database_key
+        if target_table_name is not Unset:
+            self.target_table_name = target_table_name
         self.result = result
 
     @property
@@ -196,6 +210,54 @@ class GsaRetargetResult(ModelBase):
         if attribute_name is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'attribute_name', must not be 'Unset'")
         self._attribute_name = attribute_name
+
+    @property
+    def target_database_key(self) -> "str | None | Unset_Type":
+        """Gets the target_database_key of this GsaRetargetResult.
+        Database key of the target database of the retargeted tabular attribute if the retarget was successful.  Otherwise, Null if the retarget was not successful.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The target_database_key of this GsaRetargetResult.
+        """
+        return self._target_database_key
+
+    @target_database_key.setter
+    def target_database_key(self, target_database_key: "str | None | Unset_Type") -> None:
+        """Sets the target_database_key of this GsaRetargetResult.
+        Database key of the target database of the retargeted tabular attribute if the retarget was successful.  Otherwise, Null if the retarget was not successful.
+
+        Parameters
+        ----------
+        target_database_key: str | None | Unset_Type
+            The target_database_key of this GsaRetargetResult.
+        """
+        self._target_database_key = target_database_key
+
+    @property
+    def target_table_name(self) -> "str | None | Unset_Type":
+        """Gets the target_table_name of this GsaRetargetResult.
+        Table name of the target table of the retargeted tabular attribute if the retarget was successful.  Otherwise, Null if the retarget was not successful.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The target_table_name of this GsaRetargetResult.
+        """
+        return self._target_table_name
+
+    @target_table_name.setter
+    def target_table_name(self, target_table_name: "str | None | Unset_Type") -> None:
+        """Sets the target_table_name of this GsaRetargetResult.
+        Table name of the target table of the retargeted tabular attribute if the retarget was successful.  Otherwise, Null if the retarget was not successful.
+
+        Parameters
+        ----------
+        target_table_name: str | None | Unset_Type
+            The target_table_name of this GsaRetargetResult.
+        """
+        self._target_table_name = target_table_name
 
     @property
     def result(self) -> "GsaRetargetResultType":

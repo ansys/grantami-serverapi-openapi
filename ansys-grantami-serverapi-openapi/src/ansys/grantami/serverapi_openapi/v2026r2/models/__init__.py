@@ -1002,6 +1002,9 @@ from .gsa_no_such_category_access_control_error_detail import (
 from .gsa_no_such_discrete_value_in_discrete_type_error_detail import (
     GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail,
 )
+from .gsa_no_such_entities_update_operations_error_detail import (
+    GsaNoSuchEntitiesUpdateOperationsErrorDetail,
+)
 from .gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
 )
@@ -1111,6 +1114,15 @@ from .gsa_parameters_info import GsaParametersInfo
 from .gsa_permission import GsaPermission
 from .gsa_permission_access_control import GsaPermissionAccessControl
 from .gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
+from .gsa_permission_based_access_control_update_operation_exception import (
+    GsaPermissionBasedAccessControlUpdateOperationException,
+)
+from .gsa_permission_based_access_control_update_operations_error_detail import (
+    GsaPermissionBasedAccessControlUpdateOperationsErrorDetail,
+)
+from .gsa_permission_based_access_control_update_operations_error_reason import (
+    GsaPermissionBasedAccessControlUpdateOperationsErrorReason,
+)
 from .gsa_permission_categories_access_control_error_detail import (
     GsaPermissionCategoriesAccessControlErrorDetail,
 )
@@ -1121,6 +1133,9 @@ from .gsa_permission_categories_access_control_update_exception import (
     GsaPermissionCategoriesAccessControlUpdateException,
 )
 from .gsa_permission_categories_info import GsaPermissionCategoriesInfo
+from .gsa_permission_categories_update_operations_error_detail import (
+    GsaPermissionCategoriesUpdateOperationsErrorDetail,
+)
 from .gsa_permission_category import GsaPermissionCategory
 from .gsa_permission_category_access_control import GsaPermissionCategoryAccessControl
 from .gsa_permission_category_access_control_info import GsaPermissionCategoryAccessControlInfo
@@ -2543,6 +2558,7 @@ __all__ = [
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchCategoryAccessControlErrorDetail",
     "GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail",
+    "GsaNoSuchEntitiesUpdateOperationsErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2622,10 +2638,14 @@ __all__ = [
     "GsaPermission",
     "GsaPermissionAccessControl",
     "GsaPermissionBasedAccessControlInfo",
+    "GsaPermissionBasedAccessControlUpdateOperationException",
+    "GsaPermissionBasedAccessControlUpdateOperationsErrorDetail",
+    "GsaPermissionBasedAccessControlUpdateOperationsErrorReason",
     "GsaPermissionCategoriesAccessControlErrorDetail",
     "GsaPermissionCategoriesAccessControlErrorReason",
     "GsaPermissionCategoriesAccessControlUpdateException",
     "GsaPermissionCategoriesInfo",
+    "GsaPermissionCategoriesUpdateOperationsErrorDetail",
     "GsaPermissionCategory",
     "GsaPermissionCategoryAccessControl",
     "GsaPermissionCategoryAccessControlInfo",

@@ -122,3 +122,4 @@ class GsaErrorCode(Enum):
     REORDERTABLES = "reorderTables"
     LONGRUNNINGOPERATIONINVALIDSTATUS = "longRunningOperationInvalidStatus"
     QUALITYSYSTEMCREATION = "qualitySystemCreation"
+    PERMISSIONBASEDACCESSCONTROLUPDATEOPERATION = "permissionBasedAccessControlUpdateOperation"

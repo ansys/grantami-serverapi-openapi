@@ -157,7 +157,7 @@ class AccessControlPermissionBasedApi(ApiBase):
 
     def get_permission_category_access_controls_operation_result(
         self, *, database_key: "str", operation_identifier: "str"
-    ) -> "GsaPermissionCategoryAccessControlInfo | None":
+    ) -> "None":
         """Gets the result of a long-running operation for updating permission-based access control settings.
 
         This method makes a synchronous HTTP request.
@@ -170,7 +170,7 @@ class AccessControlPermissionBasedApi(ApiBase):
 
         Returns
         -------
-        GsaPermissionCategoryAccessControlInfo | None
+        None
         """
         data = self._get_permission_category_access_controls_operation_result_with_http_info(
             database_key, operation_identifier, _return_http_data_only=True
@@ -223,11 +223,9 @@ class AccessControlPermissionBasedApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "GsaPermissionCategoryAccessControlInfo",
+            204: None,
             403: None,
             404: None,
             422: None,
@@ -254,8 +252,8 @@ class AccessControlPermissionBasedApi(ApiBase):
         *,
         database_key: "str",
         body: "Optional[GsaUpdatePermissionCategoryAccessControlsOperationRequest]" = None,
-    ) -> "GsaLongRunningOperation | GsaPermissionCategoriesAccessControlUpdateException | None":
-        """Update permission-based access control settings for an entity.  Sets the access control for the given permissions.  This runs as a long-running operation.
+    ) -> "GsaLongRunningOperation | GsaPermissionBasedAccessControlUpdateOperationException | None":
+        """Update permission-based access control settings for entities.  Sets the access control for the given permissions on each entity.  If setting access control on a record, its data will also be updated, but constrained by the attribute.  If setting access control on an attribute, its data will also be updated, but constrained by the latest relevant recordVersion.  This runs as a long-running operation.
 
         This method makes a synchronous HTTP request.
 
@@ -267,7 +265,7 @@ class AccessControlPermissionBasedApi(ApiBase):
 
         Returns
         -------
-        GsaLongRunningOperation | GsaPermissionCategoriesAccessControlUpdateException | None
+        GsaLongRunningOperation | GsaPermissionBasedAccessControlUpdateOperationException | None
         """
         data = self._update_permission_category_access_controls_operation_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -328,7 +326,7 @@ class AccessControlPermissionBasedApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             202: "GsaLongRunningOperation",
-            400: "GsaPermissionCategoriesAccessControlUpdateException",
+            400: "GsaPermissionBasedAccessControlUpdateOperationException",
             403: None,
             404: None,
             422: None,
