@@ -43,6 +43,7 @@ class GsaAttributeErrorReason(Enum):
     Allowed Enum values
     """
     ABOUTATTRIBUTECANNOTBEMETA = "aboutAttributeCannotBeMeta"
+    ATTRIBUTETYPE = "attributeType"
     METAATTRIBUTECANNOTHAVEMETAATTRIBUTE = "metaAttributeCannotHaveMetaAttribute"
     DUPLICATEPARAMETERGUIDS = "duplicateParameterGuids"
     EMPTYAXISNAME = "emptyAxisName"
@@ -60,3 +61,4 @@ class GsaAttributeErrorReason(Enum):
     TABULARCOLUMNNAMENOTPROVIDED = "tabularColumnNameNotProvided"
     DUPLICATETABULARCOLUMNNAMES = "duplicateTabularColumnNames"
     TABULARCOLUMNNOSUCHENTITY = "tabularColumnNoSuchEntity"
+    MULTIVALUED = "multiValued"

@@ -98,6 +98,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "attributeParameters": "GsaSlimEntity",
+        "axisName": "GsaUpdateAxisName",
     }
 
     discriminator: Optional[str] = None
@@ -138,7 +139,6 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
@@ -149,6 +149,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
         self._unit: GsaSlimEntity | Unset_Type = Unset
         self._is_multi_valued: bool | Unset_Type = Unset
         self._attribute_parameters: list[GsaSlimEntity] | None | Unset_Type = Unset
+        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
@@ -156,6 +157,8 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
             self.is_multi_valued = is_multi_valued
         if attribute_parameters is not Unset:
             self.attribute_parameters = attribute_parameters
+        if axis_name is not Unset:
+            self.axis_name = axis_name
 
     @property
     def unit(self) -> "GsaSlimEntity | Unset_Type":
@@ -230,6 +233,31 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
             The attribute_parameters of this GsaUpdatePointAttribute.
         """
         self._attribute_parameters = attribute_parameters
+
+    @property
+    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
+        """Gets the axis_name of this GsaUpdatePointAttribute.
+
+        Returns
+        -------
+        GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdatePointAttribute.
+        """
+        return self._axis_name
+
+    @axis_name.setter
+    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
+        """Sets the axis_name of this GsaUpdatePointAttribute.
+
+        Parameters
+        ----------
+        axis_name: GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdatePointAttribute.
+        """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
+        self._axis_name = axis_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

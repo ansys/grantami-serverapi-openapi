@@ -78,6 +78,7 @@ class GsaAttributeErrorDetail(ModelBase):
 
     discriminator_value_class_map = {
         "aboutAttributeCannotBeMeta".lower(): "#/components/schemas/GsaAboutAttributeCannotBeMetaAttributeErrorDetail",
+        "attributeType".lower(): "#/components/schemas/GsaAttributeTypeAttributeErrorDetail",
         "duplicateParameterGuids".lower(): "#/components/schemas/GsaDuplicateParameterGuidsAttributeErrorDetail",
         "emptyAxisName".lower(): "#/components/schemas/GsaEmptyAxisNameAttributeErrorDetail",
         "funcNoParams".lower(): "#/components/schemas/GsaFuncNoParamsAttributeErrorDetail",
@@ -95,6 +96,7 @@ class GsaAttributeErrorDetail(ModelBase):
         "duplicateTabularColumnNames".lower(): "#/components/schemas/GsaDuplicateTabularColumnNamesErrorDetail",
         "tabularColumnNoSuchEntity".lower(): "#/components/schemas/GsaNoSuchEntityTabularColumnErrorDetail",
         "metaAttributeCannotHaveMetaAttribute".lower(): "#/components/schemas/GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
+        "multiValued".lower(): "#/components/schemas/GsaMultiValuedAttributeErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

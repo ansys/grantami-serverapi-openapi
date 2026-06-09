@@ -69,7 +69,6 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "attribute_parameters": "list[GsaUpdateDiscreteFunctionalAttributeParameter]",
-        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -82,7 +81,6 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         "type": "type",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
-        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -103,7 +101,6 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         attribute_parameters: "list[GsaUpdateDiscreteFunctionalAttributeParameter] | Unset_Type" = Unset,
-        axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -118,7 +115,6 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         attribute_parameters: list[GsaUpdateDiscreteFunctionalAttributeParameter], optional
-        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_names: dict[str, str] | None, optional
         guid: str, optional
@@ -129,7 +125,6 @@ class GsaUpdateDiscreteFunctionalAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,

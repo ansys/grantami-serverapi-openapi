@@ -1945,7 +1945,7 @@ class SchemaAttributesApi(ApiBase):
         table_guid: "str",
         attribute_guid: "str",
         body: "Optional[GsaUpdateAttribute]" = None,
-    ) -> "GsaAttribute | None":
+    ) -> "GsaAttribute | GsaAttributeUpdateException | None":
         """Update attribute.
 
         This method makes a synchronous HTTP request.
@@ -1962,7 +1962,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        GsaAttribute | None
+        GsaAttribute | GsaAttributeUpdateException | None
         """
         data = self._update_attribute_with_http_info(
             database_key, table_guid, attribute_guid, body, _return_http_data_only=True
@@ -2041,7 +2041,7 @@ class SchemaAttributesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaAttribute",
-            400: None,
+            400: "GsaAttributeUpdateException",
             403: None,
             404: None,
         }
@@ -2195,7 +2195,7 @@ class SchemaAttributesApi(ApiBase):
         table_guid: "str",
         meta_attribute_guid: "str",
         body: "Optional[GsaUpdateAttribute]" = None,
-    ) -> "GsaAttribute | None":
+    ) -> "GsaAttribute | GsaAttributeUpdateException | None":
         """Update meta-attribute.
 
         This method makes a synchronous HTTP request.
@@ -2211,7 +2211,7 @@ class SchemaAttributesApi(ApiBase):
 
         Returns
         -------
-        GsaAttribute | None
+        GsaAttribute | GsaAttributeUpdateException | None
         """
         data = self._update_meta_attribute_with_http_info(
             database_key, table_guid, meta_attribute_guid, body, _return_http_data_only=True
@@ -2290,7 +2290,7 @@ class SchemaAttributesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaAttribute",
-            400: None,
+            400: "GsaAttributeUpdateException",
             403: None,
             404: None,
         }

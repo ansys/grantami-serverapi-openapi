@@ -98,6 +98,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
         "attributeParameters": "GsaUpdateFloatFunctionalAttributeParameter",
+        "axisName": "GsaUpdateAxisName",
     }
 
     discriminator: Optional[str] = None
@@ -138,7 +139,6 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
@@ -151,6 +151,7 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
             list[GsaUpdateFloatFunctionalAttributeParameter] | Unset_Type
         ) = Unset
         self._is_range: bool | Unset_Type = Unset
+        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
@@ -158,6 +159,8 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
             self.attribute_parameters = attribute_parameters
         if is_range is not Unset:
             self.is_range = is_range
+        if axis_name is not Unset:
+            self.axis_name = axis_name
 
     @property
     def unit(self) -> "GsaSlimEntity | Unset_Type":
@@ -237,6 +240,31 @@ class GsaUpdateFloatFunctionalAttribute(GsaUpdateAttribute):
         if is_range is None:
             raise ValueError("Invalid value for 'is_range', must not be 'None'")
         self._is_range = is_range
+
+    @property
+    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
+        """Gets the axis_name of this GsaUpdateFloatFunctionalAttribute.
+
+        Returns
+        -------
+        GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateFloatFunctionalAttribute.
+        """
+        return self._axis_name
+
+    @axis_name.setter
+    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
+        """Sets the axis_name of this GsaUpdateFloatFunctionalAttribute.
+
+        Parameters
+        ----------
+        axis_name: GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateFloatFunctionalAttribute.
+        """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
+        self._axis_name = axis_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

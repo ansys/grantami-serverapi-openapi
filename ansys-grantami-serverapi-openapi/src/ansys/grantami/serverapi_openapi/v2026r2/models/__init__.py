@@ -161,9 +161,11 @@ from .gsa_attribute_sort_criterion import GsaAttributeSortCriterion
 from .gsa_attribute_threshold_type import GsaAttributeThresholdType
 from .gsa_attribute_to_export import GsaAttributeToExport
 from .gsa_attribute_type import GsaAttributeType
+from .gsa_attribute_type_attribute_error_detail import GsaAttributeTypeAttributeErrorDetail
 from .gsa_attribute_type_not_supported_smart_attributes_error_detail import (
     GsaAttributeTypeNotSupportedSmartAttributesErrorDetail,
 )
+from .gsa_attribute_update_exception import GsaAttributeUpdateException
 from .gsa_attribute_usage_data_modification_error_detail import (
     GsaAttributeUsageDataModificationErrorDetail,
 )
@@ -923,9 +925,11 @@ from .gsa_missing_parameter_guid_attribute_error_detail import (
 from .gsa_move_file import GsaMoveFile
 from .gsa_move_folder import GsaMoveFolder
 from .gsa_move_record_history import GsaMoveRecordHistory
+from .gsa_multi_valued_attribute_error_detail import GsaMultiValuedAttributeErrorDetail
 from .gsa_multi_valued_point_data_usage_data_modification_error_detail import (
     GsaMultiValuedPointDataUsageDataModificationErrorDetail,
 )
+from .gsa_multi_valued_reason import GsaMultiValuedReason
 from .gsa_multiple_table_discrete_values_in_single_valued_discrete_error_detail import (
     GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail,
 )
@@ -1023,6 +1027,9 @@ from .gsa_no_such_permission_access_control_error_detail import (
 )
 from .gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
+)
+from .gsa_no_such_subset_update_operations_error_detail import (
+    GsaNoSuchSubsetUpdateOperationsErrorDetail,
 )
 from .gsa_no_such_table_mapping_error_detail import GsaNoSuchTableMappingErrorDetail
 from .gsa_no_such_tables_reorder_tables_error_detail import GsaNoSuchTablesReorderTablesErrorDetail
@@ -1274,6 +1281,9 @@ from .gsa_record_export_failure import GsaRecordExportFailure
 from .gsa_record_guid_property import GsaRecordGuidProperty
 from .gsa_record_history import GsaRecordHistory
 from .gsa_record_history_copy_exception import GsaRecordHistoryCopyException
+from .gsa_record_history_descendants_access_control_entity import (
+    GsaRecordHistoryDescendantsAccessControlEntity,
+)
 from .gsa_record_history_error_reason import GsaRecordHistoryErrorReason
 from .gsa_record_history_guid_property import GsaRecordHistoryGuidProperty
 from .gsa_record_history_move_exception import GsaRecordHistoryMoveException
@@ -1516,6 +1526,7 @@ from .gsa_table import GsaTable
 from .gsa_table_access_control_entity import GsaTableAccessControlEntity
 from .gsa_table_creation_exception import GsaTableCreationException
 from .gsa_table_deletion_exception import GsaTableDeletionException
+from .gsa_table_descendants_access_control_entity import GsaTableDescendantsAccessControlEntity
 from .gsa_table_error_detail import GsaTableErrorDetail
 from .gsa_table_error_reason import GsaTableErrorReason
 from .gsa_table_guid_property import GsaTableGuidProperty
@@ -1897,7 +1908,9 @@ __all__ = [
     "GsaAttributeThresholdType",
     "GsaAttributeToExport",
     "GsaAttributeType",
+    "GsaAttributeTypeAttributeErrorDetail",
     "GsaAttributeTypeNotSupportedSmartAttributesErrorDetail",
+    "GsaAttributeUpdateException",
     "GsaAttributeUsageDataModificationErrorDetail",
     "GsaAttributeValidateResponse",
     "GsaAttributeValueAggregation",
@@ -2511,7 +2524,9 @@ __all__ = [
     "GsaMoveFile",
     "GsaMoveFolder",
     "GsaMoveRecordHistory",
+    "GsaMultiValuedAttributeErrorDetail",
     "GsaMultiValuedPointDataUsageDataModificationErrorDetail",
+    "GsaMultiValuedReason",
     "GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail",
     "GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
@@ -2568,6 +2583,7 @@ __all__ = [
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
+    "GsaNoSuchSubsetUpdateOperationsErrorDetail",
     "GsaNoSuchTableMappingErrorDetail",
     "GsaNoSuchTablesReorderTablesErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
@@ -2772,6 +2788,7 @@ __all__ = [
     "GsaRecordGuidProperty",
     "GsaRecordHistory",
     "GsaRecordHistoryCopyException",
+    "GsaRecordHistoryDescendantsAccessControlEntity",
     "GsaRecordHistoryErrorReason",
     "GsaRecordHistoryGuidProperty",
     "GsaRecordHistoryMoveException",
@@ -2986,6 +3003,7 @@ __all__ = [
     "GsaTableAccessControlEntity",
     "GsaTableCreationException",
     "GsaTableDeletionException",
+    "GsaTableDescendantsAccessControlEntity",
     "GsaTableErrorDetail",
     "GsaTableErrorReason",
     "GsaTableGuidProperty",
