@@ -91,7 +91,9 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
         "name": "name",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "axisName": "GsaUpdateAxisName",
+    }
 
     discriminator: Optional[str] = None
 
@@ -127,7 +129,6 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
-            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,
@@ -136,9 +137,12 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
             name=name,
         )
         self._is_unique: bool | Unset_Type = Unset
+        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
 
         if is_unique is not Unset:
             self.is_unique = is_unique
+        if axis_name is not Unset:
+            self.axis_name = axis_name
 
     @property
     def is_unique(self) -> "bool | Unset_Type":
@@ -166,6 +170,31 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
         if is_unique is None:
             raise ValueError("Invalid value for 'is_unique', must not be 'None'")
         self._is_unique = is_unique
+
+    @property
+    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
+        """Gets the axis_name of this GsaUpdateIntegerAttribute.
+
+        Returns
+        -------
+        GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateIntegerAttribute.
+        """
+        return self._axis_name
+
+    @axis_name.setter
+    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
+        """Sets the axis_name of this GsaUpdateIntegerAttribute.
+
+        Parameters
+        ----------
+        axis_name: GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateIntegerAttribute.
+        """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
+        self._axis_name = axis_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

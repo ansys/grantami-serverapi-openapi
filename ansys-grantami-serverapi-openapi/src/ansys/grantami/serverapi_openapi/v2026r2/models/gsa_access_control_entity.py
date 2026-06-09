@@ -80,6 +80,8 @@ class GsaAccessControlEntity(ModelBase):
         "database".lower(): "#/components/schemas/GsaDatabaseAccessControlEntity",
         "table".lower(): "#/components/schemas/GsaTableAccessControlEntity",
         "expression".lower(): "#/components/schemas/GsaExpressionAccessControlEntity",
+        "tableDescendants".lower(): "#/components/schemas/GsaTableDescendantsAccessControlEntity",
+        "recordHistoryDescendants".lower(): "#/components/schemas/GsaRecordHistoryDescendantsAccessControlEntity",
     }
 
     discriminator: Optional[str] = "entityType"

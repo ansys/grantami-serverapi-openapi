@@ -47,3 +47,5 @@ class GsaAccessControlEntityType(Enum):
     DATABASE = "database"
     TABLE = "table"
     EXPRESSION = "expression"
+    TABLEDESCENDANTS = "tableDescendants"
+    RECORDHISTORYDESCENDANTS = "recordHistoryDescendants"

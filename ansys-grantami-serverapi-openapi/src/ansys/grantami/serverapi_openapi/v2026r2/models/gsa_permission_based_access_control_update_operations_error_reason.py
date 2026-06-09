@@ -44,3 +44,4 @@ class GsaPermissionBasedAccessControlUpdateOperationsErrorReason(Enum):
     """
     NOSUCHENTITIES = "noSuchEntities"
     PERMISSIONCATEGORIES = "permissionCategories"
+    NOSUCHSUBSET = "noSuchSubset"

@@ -123,3 +123,4 @@ class GsaErrorCode(Enum):
     LONGRUNNINGOPERATIONINVALIDSTATUS = "longRunningOperationInvalidStatus"
     QUALITYSYSTEMCREATION = "qualitySystemCreation"
     PERMISSIONBASEDACCESSCONTROLUPDATEOPERATION = "permissionBasedAccessControlUpdateOperation"
+    ATTRIBUTEUPDATE = "attributeUpdate"
