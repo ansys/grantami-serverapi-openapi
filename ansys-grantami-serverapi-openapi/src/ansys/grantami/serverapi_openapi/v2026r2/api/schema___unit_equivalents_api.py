@@ -52,8 +52,8 @@ class SchemaUnitEquivalentsApi(ApiBase):
         self,
         *,
         database_key: "str",
-        unit: "Optional[list[str]]" = None,
-        unit_system: "Optional[list[str]]" = None,
+        unit_guid: "Optional[list[str]]" = None,
+        unit_system_guid: "Optional[list[str]]" = None,
     ) -> "GsaGetUnitEquivalentsException | GsaUnitEquivalentsInfo | None":
         """Get unit equivalents
 
@@ -63,29 +63,31 @@ class SchemaUnitEquivalentsApi(ApiBase):
         ----------
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        unit: list[str]
-        unit_system: list[str]
+        unit_guid: list[str]
+            The GUIDs of the units to include in the response. If none are provided, all units are included.
+        unit_system_guid: list[str]
+            The GUIDs of the unit systems to include in the response. If none are provided, all unit systems are included.
 
         Returns
         -------
         GsaGetUnitEquivalentsException | GsaUnitEquivalentsInfo | None
         """
         data = self._get_unit_equivalents_with_http_info(
-            database_key, unit, unit_system, _return_http_data_only=True
+            database_key, unit_guid, unit_system_guid, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _get_unit_equivalents_with_http_info(
         self,
         database_key: "str",
-        unit: "Optional[list[str]]" = None,
-        unit_system: "Optional[list[str]]" = None,
+        unit_guid: "Optional[list[str]]" = None,
+        unit_system_guid: "Optional[list[str]]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
-            "unit",
-            "unit_system",
+            "unit_guid",
+            "unit_system_guid",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -112,12 +114,12 @@ class SchemaUnitEquivalentsApi(ApiBase):
             path_params["database-key"] = params["database_key"]
 
         query_params: list[Any] = []
-        if "unit" in params and unit is not None:
-            query_params.append(("unit", params["unit"]))
-            collection_formats["unit"] = "multi"
-        if "unit_system" in params and unit_system is not None:
-            query_params.append(("unitSystem", params["unit_system"]))
-            collection_formats["unitSystem"] = "multi"
+        if "unit_guid" in params and unit_guid is not None:
+            query_params.append(("unit-guid", params["unit_guid"]))
+            collection_formats["unit-guid"] = "multi"
+        if "unit_system_guid" in params and unit_system_guid is not None:
+            query_params.append(("unit-system-guid", params["unit_system_guid"]))
+            collection_formats["unit-system-guid"] = "multi"
 
         header_params: dict[str, Any] = {}
 

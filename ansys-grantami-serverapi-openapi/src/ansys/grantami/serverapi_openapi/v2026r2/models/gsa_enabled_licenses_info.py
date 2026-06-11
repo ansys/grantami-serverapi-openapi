@@ -61,7 +61,6 @@ class GsaEnabledLicensesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "is_flex_licensing_enabled": "bool",
         "mi_server_enabled": "bool",
         "ml_enabled": "bool",
         "plm_sync_enabled": "bool",
@@ -72,7 +71,6 @@ class GsaEnabledLicensesInfo(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "is_flex_licensing_enabled": "isFlexLicensingEnabled",
         "mi_server_enabled": "miServerEnabled",
         "ml_enabled": "MLEnabled",
         "plm_sync_enabled": "PLMSyncEnabled",
@@ -89,7 +87,6 @@ class GsaEnabledLicensesInfo(ModelBase):
     def __init__(
         self,
         *,
-        is_flex_licensing_enabled: "bool",
         mi_server_enabled: "bool",
         ml_enabled: "bool",
         plm_sync_enabled: "bool",
@@ -102,7 +99,6 @@ class GsaEnabledLicensesInfo(ModelBase):
 
         Parameters
         ----------
-        is_flex_licensing_enabled: bool
         mi_server_enabled: bool
         ml_enabled: bool
         plm_sync_enabled: bool
@@ -111,7 +107,6 @@ class GsaEnabledLicensesInfo(ModelBase):
         workflow_advanced_enabled: bool
         expiry_date: datetime | None, optional
         """
-        self._is_flex_licensing_enabled: bool
         self._mi_server_enabled: bool
         self._workflow_advanced_enabled: bool
         self._restricted_substances_ba_enabled: bool
@@ -120,7 +115,6 @@ class GsaEnabledLicensesInfo(ModelBase):
         self._ml_enabled: bool
         self._expiry_date: datetime | None | Unset_Type = Unset
 
-        self.is_flex_licensing_enabled = is_flex_licensing_enabled
         self.mi_server_enabled = mi_server_enabled
         self.workflow_advanced_enabled = workflow_advanced_enabled
         self.restricted_substances_ba_enabled = restricted_substances_ba_enabled
@@ -131,39 +125,9 @@ class GsaEnabledLicensesInfo(ModelBase):
             self.expiry_date = expiry_date
 
     @property
-    def is_flex_licensing_enabled(self) -> "bool":
-        """Gets the is_flex_licensing_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether FlexLM licensing is enabled. If true, MI is in Ansys  licensing mode. If false, MI is in classic licensing mode.
-
-        Returns
-        -------
-        bool
-            The is_flex_licensing_enabled of this GsaEnabledLicensesInfo.
-        """
-        return self._is_flex_licensing_enabled
-
-    @is_flex_licensing_enabled.setter
-    def is_flex_licensing_enabled(self, is_flex_licensing_enabled: "bool") -> None:
-        """Sets the is_flex_licensing_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether FlexLM licensing is enabled. If true, MI is in Ansys  licensing mode. If false, MI is in classic licensing mode.
-
-        Parameters
-        ----------
-        is_flex_licensing_enabled: bool
-            The is_flex_licensing_enabled of this GsaEnabledLicensesInfo.
-        """
-        # Field is not nullable
-        if is_flex_licensing_enabled is None:
-            raise ValueError("Invalid value for 'is_flex_licensing_enabled', must not be 'None'")
-        # Field is required
-        if is_flex_licensing_enabled is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_flex_licensing_enabled', must not be 'Unset'")
-        self._is_flex_licensing_enabled = is_flex_licensing_enabled
-
-    @property
     def mi_server_enabled(self) -> "bool":
         """Gets the mi_server_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether MI Server is enabled. In Ansys licensing mode, this corresponds  to an MI Server license having been checked out. In classic licensing mode, it is set to true.
+        Gets a flag indicating whether MI Server is enabled. This corresponds to an MI Server license having been checked out.
 
         Returns
         -------
@@ -175,7 +139,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @mi_server_enabled.setter
     def mi_server_enabled(self, mi_server_enabled: "bool") -> None:
         """Sets the mi_server_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether MI Server is enabled. In Ansys licensing mode, this corresponds  to an MI Server license having been checked out. In classic licensing mode, it is set to true.
+        Gets a flag indicating whether MI Server is enabled. This corresponds to an MI Server license having been checked out.
 
         Parameters
         ----------
@@ -193,7 +157,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @property
     def workflow_advanced_enabled(self) -> "bool":
         """Gets the workflow_advanced_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether advanced workflow features are enabled. In Ansys  licensing mode, this corresponds to a Workflow Advanced license having been checked out. In classic licensing mode, it  is set to true.
+        Gets a flag indicating whether advanced workflow features are enabled. This corresponds to a Workflow Advanced license having been checked out.
 
         Returns
         -------
@@ -205,7 +169,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @workflow_advanced_enabled.setter
     def workflow_advanced_enabled(self, workflow_advanced_enabled: "bool") -> None:
         """Sets the workflow_advanced_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether advanced workflow features are enabled. In Ansys  licensing mode, this corresponds to a Workflow Advanced license having been checked out. In classic licensing mode, it  is set to true.
+        Gets a flag indicating whether advanced workflow features are enabled. This corresponds to a Workflow Advanced license having been checked out.
 
         Parameters
         ----------
@@ -223,7 +187,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @property
     def restricted_substances_ba_enabled(self) -> "bool":
         """Gets the restricted_substances_ba_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the Restricted Substances Analytics  product are enabled. In Ansys licensing mode, this corresponds to a Restricted Substances Analytics license (granta_mi_rsba) having been checked  out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the Restricted Substances Analytics  product are enabled. This corresponds to a Restricted Substances Analytics license (granta_mi_rsba) having been checked  out.
 
         Returns
         -------
@@ -235,7 +199,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @restricted_substances_ba_enabled.setter
     def restricted_substances_ba_enabled(self, restricted_substances_ba_enabled: "bool") -> None:
         """Sets the restricted_substances_ba_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the Restricted Substances Analytics  product are enabled. In Ansys licensing mode, this corresponds to a Restricted Substances Analytics license (granta_mi_rsba) having been checked  out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the Restricted Substances Analytics  product are enabled. This corresponds to a Restricted Substances Analytics license (granta_mi_rsba) having been checked  out.
 
         Parameters
         ----------
@@ -257,7 +221,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @property
     def sustainability_enabled_enabled(self) -> "bool":
         """Gets the sustainability_enabled_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the Sustainability Analytics  product are enabled. In Ansys licensing mode, this corresponds to a Sustainability Analytics license (granta_mi_sus) having been checked  out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the Sustainability Analytics  product are enabled. This corresponds to a Sustainability Analytics license (granta_mi_sus) having been checked  out.
 
         Returns
         -------
@@ -269,7 +233,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @sustainability_enabled_enabled.setter
     def sustainability_enabled_enabled(self, sustainability_enabled_enabled: "bool") -> None:
         """Sets the sustainability_enabled_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the Sustainability Analytics  product are enabled. In Ansys licensing mode, this corresponds to a Sustainability Analytics license (granta_mi_sus) having been checked  out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the Sustainability Analytics  product are enabled. This corresponds to a Sustainability Analytics license (granta_mi_sus) having been checked  out.
 
         Parameters
         ----------
@@ -291,7 +255,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @property
     def plm_sync_enabled(self) -> "bool":
         """Gets the plm_sync_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the PLM Sync (notably MI Enterprise Connect) are enabled.  In Ansys licensing mode, this corresponds to a PLM sync license having been checked out. In classic licensing mode, it is set to true.
+        Gets a flag indicating whether features associated with the PLM Sync (notably MI Enterprise Connect) are enabled.  This corresponds to a PLM sync license having been checked out.
 
         Returns
         -------
@@ -303,7 +267,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @plm_sync_enabled.setter
     def plm_sync_enabled(self, plm_sync_enabled: "bool") -> None:
         """Sets the plm_sync_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the PLM Sync (notably MI Enterprise Connect) are enabled.  In Ansys licensing mode, this corresponds to a PLM sync license having been checked out. In classic licensing mode, it is set to true.
+        Gets a flag indicating whether features associated with the PLM Sync (notably MI Enterprise Connect) are enabled.  This corresponds to a PLM sync license having been checked out.
 
         Parameters
         ----------
@@ -321,7 +285,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @property
     def ml_enabled(self) -> "bool":
         """Gets the ml_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the ML (Machine Learning) are enabled.  In Ansys licensing mode, this corresponds to a ML license having been checked out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the ML (Machine Learning) are enabled.  This corresponds to a ML license having been checked out.
 
         Returns
         -------
@@ -333,7 +297,7 @@ class GsaEnabledLicensesInfo(ModelBase):
     @ml_enabled.setter
     def ml_enabled(self, ml_enabled: "bool") -> None:
         """Sets the ml_enabled of this GsaEnabledLicensesInfo.
-        Gets a flag indicating whether features associated with the ML (Machine Learning) are enabled.  In Ansys licensing mode, this corresponds to a ML license having been checked out. In classic licensing mode, it is set to false.
+        Gets a flag indicating whether features associated with the ML (Machine Learning) are enabled.  This corresponds to a ML license having been checked out.
 
         Parameters
         ----------
