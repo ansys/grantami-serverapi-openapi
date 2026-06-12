@@ -68,6 +68,7 @@ class GsaCreateTable(ModelBase):
         "is_hidden_from_browse": "bool",
         "is_hidden_from_search": "bool",
         "legal_disclaimer": "str",
+        "quality_system": "GsaSlimEntity",
         "should_show_version_control_signatures": "bool",
         "table_types": "list[str]",
     }
@@ -80,11 +81,14 @@ class GsaCreateTable(ModelBase):
         "is_hidden_from_browse": "isHiddenFromBrowse",
         "is_hidden_from_search": "isHiddenFromSearch",
         "legal_disclaimer": "legalDisclaimer",
+        "quality_system": "qualitySystem",
         "should_show_version_control_signatures": "shouldShowVersionControlSignatures",
         "table_types": "tableTypes",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "qualitySystem": "GsaSlimEntity",
+    }
 
     discriminator: Optional[str] = None
 
@@ -98,6 +102,7 @@ class GsaCreateTable(ModelBase):
         is_hidden_from_browse: "bool | Unset_Type" = Unset,
         is_hidden_from_search: "bool | Unset_Type" = Unset,
         legal_disclaimer: "str | None | Unset_Type" = Unset,
+        quality_system: "GsaSlimEntity | Unset_Type" = Unset,
         should_show_version_control_signatures: "bool | Unset_Type" = Unset,
         table_types: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
@@ -112,6 +117,7 @@ class GsaCreateTable(ModelBase):
         is_hidden_from_browse: bool, optional
         is_hidden_from_search: bool, optional
         legal_disclaimer: str | None, optional
+        quality_system: GsaSlimEntity, optional
         should_show_version_control_signatures: bool, optional
         table_types: list[str] | None, optional
         """
@@ -122,6 +128,7 @@ class GsaCreateTable(ModelBase):
         self._datasheet_footer: str | None | Unset_Type = Unset
         self._table_types: list[str] | None | Unset_Type = Unset
         self._should_show_version_control_signatures: bool | Unset_Type = Unset
+        self._quality_system: GsaSlimEntity | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
 
@@ -139,6 +146,8 @@ class GsaCreateTable(ModelBase):
             self.table_types = table_types
         if should_show_version_control_signatures is not Unset:
             self.should_show_version_control_signatures = should_show_version_control_signatures
+        if quality_system is not Unset:
+            self.quality_system = quality_system
         self.name = name
         if guid is not Unset:
             self.guid = guid
@@ -309,6 +318,31 @@ class GsaCreateTable(ModelBase):
                 "Invalid value for 'should_show_version_control_signatures', must not be 'None'"
             )
         self._should_show_version_control_signatures = should_show_version_control_signatures
+
+    @property
+    def quality_system(self) -> "GsaSlimEntity | Unset_Type":
+        """Gets the quality_system of this GsaCreateTable.
+
+        Returns
+        -------
+        GsaSlimEntity | Unset_Type
+            The quality_system of this GsaCreateTable.
+        """
+        return self._quality_system
+
+    @quality_system.setter
+    def quality_system(self, quality_system: "GsaSlimEntity | Unset_Type") -> None:
+        """Sets the quality_system of this GsaCreateTable.
+
+        Parameters
+        ----------
+        quality_system: GsaSlimEntity | Unset_Type
+            The quality_system of this GsaCreateTable.
+        """
+        # Field is not nullable
+        if quality_system is None:
+            raise ValueError("Invalid value for 'quality_system', must not be 'None'")
+        self._quality_system = quality_system
 
     @property
     def name(self) -> "str":
