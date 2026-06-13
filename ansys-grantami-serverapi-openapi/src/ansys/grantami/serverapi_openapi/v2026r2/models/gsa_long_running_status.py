@@ -47,3 +47,4 @@ class GsaLongRunningStatus(Enum):
     SUCCEEDED = "succeeded"
     FAILED = "failed"
     CANCELLED = "cancelled"
+    AWAITINGCANCELLATION = "awaitingCancellation"
