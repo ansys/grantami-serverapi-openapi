@@ -873,6 +873,7 @@ from .models.gsa_hyperlink_datum_criterion import GsaHyperlinkDatumCriterion
 from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriterion
 from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
+from .models.gsa_i_error_detail import GsaIErrorDetail
 from .models.gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
 from .models.gsa_inclusiveness import GsaInclusiveness
 from .models.gsa_incompatible_units_error_detail import GsaIncompatibleUnitsErrorDetail
@@ -1003,6 +1004,9 @@ from .models.gsa_logical_datum_criterion import GsaLogicalDatumCriterion
 from .models.gsa_logical_datum_exists_criterion import GsaLogicalDatumExistsCriterion
 from .models.gsa_long_running_operation import GsaLongRunningOperation
 from .models.gsa_long_running_operation_include import GsaLongRunningOperationInclude
+from .models.gsa_long_running_operation_invalid_status_exception import (
+    GsaLongRunningOperationInvalidStatusException,
+)
 from .models.gsa_long_running_status import GsaLongRunningStatus
 from .models.gsa_long_sorting_value import GsaLongSortingValue
 from .models.gsa_long_text_attribute import GsaLongTextAttribute
@@ -2629,6 +2633,7 @@ __all__ = [
     "GsaHyperlinkDatumExistsCriterion",
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
+    "GsaIErrorDetail",
     "GsaInUseParameterValueErrorDetail",
     "GsaInclusiveness",
     "GsaIncompatibleUnitsErrorDetail",
@@ -2739,6 +2744,7 @@ __all__ = [
     "GsaLogicalDatumExistsCriterion",
     "GsaLongRunningOperation",
     "GsaLongRunningOperationInclude",
+    "GsaLongRunningOperationInvalidStatusException",
     "GsaLongRunningStatus",
     "GsaLongSortingValue",
     "GsaLongTextAttribute",
