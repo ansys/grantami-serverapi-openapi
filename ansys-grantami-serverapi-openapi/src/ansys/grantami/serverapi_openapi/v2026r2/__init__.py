@@ -137,6 +137,13 @@ from .models.gsa_access_control_category_table_mapping import GsaAccessControlCa
 from .models.gsa_access_control_category_update_exception import (
     GsaAccessControlCategoryUpdateException,
 )
+from .models.gsa_access_control_entities_aggregation_error_detail import (
+    GsaAccessControlEntitiesAggregationErrorDetail,
+)
+from .models.gsa_access_control_entities_error_detail import GsaAccessControlEntitiesErrorDetail
+from .models.gsa_access_control_entities_update_operations_error_detail import (
+    GsaAccessControlEntitiesUpdateOperationsErrorDetail,
+)
 from .models.gsa_access_control_entity import GsaAccessControlEntity
 from .models.gsa_access_control_entity_type import GsaAccessControlEntityType
 from .models.gsa_access_control_info import GsaAccessControlInfo
@@ -163,6 +170,9 @@ from .models.gsa_add_database_validation_issue import GsaAddDatabaseValidationIs
 from .models.gsa_add_database_validation_result import GsaAddDatabaseValidationResult
 from .models.gsa_add_record_history_to_subset import GsaAddRecordHistoryToSubset
 from .models.gsa_additional_sql_parameters import GsaAdditionalSqlParameters
+from .models.gsa_aggregate_permission_access_controls_request import (
+    GsaAggregatePermissionAccessControlsRequest,
+)
 from .models.gsa_aggregation import GsaAggregation
 from .models.gsa_aggregation_criterion import GsaAggregationCriterion
 from .models.gsa_aggregation_datum import GsaAggregationDatum
@@ -1139,8 +1149,8 @@ from .models.gsa_no_such_category_access_control_error_detail import (
 from .models.gsa_no_such_discrete_value_in_discrete_type_error_detail import (
     GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail,
 )
-from .models.gsa_no_such_entities_update_operations_error_detail import (
-    GsaNoSuchEntitiesUpdateOperationsErrorDetail,
+from .models.gsa_no_such_entities_access_control_entities_error_detail import (
+    GsaNoSuchEntitiesAccessControlEntitiesErrorDetail,
 )
 from .models.gsa_no_such_entity_access_control_category_error_detail import (
     GsaNoSuchEntityAccessControlCategoryErrorDetail,
@@ -1167,8 +1177,8 @@ from .models.gsa_no_such_permission_access_control_error_detail import (
 from .models.gsa_no_such_permissions_permission_category_error_detail import (
     GsaNoSuchPermissionsPermissionCategoryErrorDetail,
 )
-from .models.gsa_no_such_subset_update_operations_error_detail import (
-    GsaNoSuchSubsetUpdateOperationsErrorDetail,
+from .models.gsa_no_such_subset_access_control_entities_error_detail import (
+    GsaNoSuchSubsetAccessControlEntitiesErrorDetail,
 )
 from .models.gsa_no_such_table_mapping_error_detail import GsaNoSuchTableMappingErrorDetail
 from .models.gsa_no_such_tables_reorder_tables_error_detail import (
@@ -1265,6 +1275,19 @@ from .models.gsa_parameter_with_data_value import GsaParameterWithDataValue
 from .models.gsa_parameters_info import GsaParametersInfo
 from .models.gsa_permission import GsaPermission
 from .models.gsa_permission_access_control import GsaPermissionAccessControl
+from .models.gsa_permission_access_control_aggregate import GsaPermissionAccessControlAggregate
+from .models.gsa_permission_based_access_control_aggregation_error_detail import (
+    GsaPermissionBasedAccessControlAggregationErrorDetail,
+)
+from .models.gsa_permission_based_access_control_aggregation_error_reason import (
+    GsaPermissionBasedAccessControlAggregationErrorReason,
+)
+from .models.gsa_permission_based_access_control_aggregation_exception import (
+    GsaPermissionBasedAccessControlAggregationException,
+)
+from .models.gsa_permission_based_access_control_entities_error_reason import (
+    GsaPermissionBasedAccessControlEntitiesErrorReason,
+)
 from .models.gsa_permission_based_access_control_info import GsaPermissionBasedAccessControlInfo
 from .models.gsa_permission_based_access_control_update_operation_exception import (
     GsaPermissionBasedAccessControlUpdateOperationException,
@@ -1290,6 +1313,12 @@ from .models.gsa_permission_categories_update_operations_error_detail import (
 )
 from .models.gsa_permission_category import GsaPermissionCategory
 from .models.gsa_permission_category_access_control import GsaPermissionCategoryAccessControl
+from .models.gsa_permission_category_access_control_aggregate import (
+    GsaPermissionCategoryAccessControlAggregate,
+)
+from .models.gsa_permission_category_access_control_aggregate_info import (
+    GsaPermissionCategoryAccessControlAggregateInfo,
+)
 from .models.gsa_permission_category_access_control_info import (
     GsaPermissionCategoryAccessControlInfo,
 )
@@ -2073,6 +2102,9 @@ __all__ = [
     "GsaAccessControlCategoryNoSuchEntityType",
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
+    "GsaAccessControlEntitiesAggregationErrorDetail",
+    "GsaAccessControlEntitiesErrorDetail",
+    "GsaAccessControlEntitiesUpdateOperationsErrorDetail",
     "GsaAccessControlEntity",
     "GsaAccessControlEntityType",
     "GsaAccessControlInfo",
@@ -2097,6 +2129,7 @@ __all__ = [
     "GsaAddDatabaseValidationResult",
     "GsaAddRecordHistoryToSubset",
     "GsaAdditionalSqlParameters",
+    "GsaAggregatePermissionAccessControlsRequest",
     "GsaAggregation",
     "GsaAggregationCriterion",
     "GsaAggregationDatum",
@@ -2821,7 +2854,7 @@ __all__ = [
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchCategoryAccessControlErrorDetail",
     "GsaNoSuchDiscreteValueInDiscreteTypeErrorDetail",
-    "GsaNoSuchEntitiesUpdateOperationsErrorDetail",
+    "GsaNoSuchEntitiesAccessControlEntitiesErrorDetail",
     "GsaNoSuchEntityAccessControlCategoryErrorDetail",
     "GsaNoSuchEntityAttributeErrorDetail",
     "GsaNoSuchEntityTabularColumnErrorDetail",
@@ -2831,7 +2864,7 @@ __all__ = [
     "GsaNoSuchParameterValueParameterContentErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
-    "GsaNoSuchSubsetUpdateOperationsErrorDetail",
+    "GsaNoSuchSubsetAccessControlEntitiesErrorDetail",
     "GsaNoSuchTableMappingErrorDetail",
     "GsaNoSuchTablesReorderTablesErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
@@ -2901,6 +2934,11 @@ __all__ = [
     "GsaParametersInfo",
     "GsaPermission",
     "GsaPermissionAccessControl",
+    "GsaPermissionAccessControlAggregate",
+    "GsaPermissionBasedAccessControlAggregationErrorDetail",
+    "GsaPermissionBasedAccessControlAggregationErrorReason",
+    "GsaPermissionBasedAccessControlAggregationException",
+    "GsaPermissionBasedAccessControlEntitiesErrorReason",
     "GsaPermissionBasedAccessControlInfo",
     "GsaPermissionBasedAccessControlUpdateOperationException",
     "GsaPermissionBasedAccessControlUpdateOperationsErrorDetail",
@@ -2912,6 +2950,8 @@ __all__ = [
     "GsaPermissionCategoriesUpdateOperationsErrorDetail",
     "GsaPermissionCategory",
     "GsaPermissionCategoryAccessControl",
+    "GsaPermissionCategoryAccessControlAggregate",
+    "GsaPermissionCategoryAccessControlAggregateInfo",
     "GsaPermissionCategoryAccessControlInfo",
     "GsaPermissionCategoryCreationException",
     "GsaPermissionCategoryErrorDetail",

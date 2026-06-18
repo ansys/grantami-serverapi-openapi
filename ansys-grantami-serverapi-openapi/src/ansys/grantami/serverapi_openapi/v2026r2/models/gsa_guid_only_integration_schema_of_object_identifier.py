@@ -67,7 +67,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         "key": "str",
         "layouts": "list[GsaGuidOnlyLayout]",
         "security_groups": "GsaSecurityGroups",
-        "similarity_settings": "GsaSimilaritySettings",
+        "similarity_settings": "list[GsaSimilaritySettings]",
         "sources": "list[GsaGuidOnlySourceOfObjectIdentifier]",
         "unit_system": "str",
         "version": "int",
@@ -106,7 +106,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         key: "str | None | Unset_Type" = Unset,
         layouts: "list[GsaGuidOnlyLayout] | None | Unset_Type" = Unset,
         security_groups: "GsaSecurityGroups | Unset_Type" = Unset,
-        similarity_settings: "GsaSimilaritySettings | Unset_Type" = Unset,
+        similarity_settings: "list[GsaSimilaritySettings] | None | Unset_Type" = Unset,
         sources: "list[GsaGuidOnlySourceOfObjectIdentifier] | None | Unset_Type" = Unset,
         unit_system: "str | None | Unset_Type" = Unset,
         version: "int | None | Unset_Type" = Unset,
@@ -121,7 +121,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         key: str | None, optional
         layouts: list[GsaGuidOnlyLayout] | None, optional
         security_groups: GsaSecurityGroups, optional
-        similarity_settings: GsaSimilaritySettings, optional
+        similarity_settings: list[GsaSimilaritySettings] | None, optional
         sources: list[GsaGuidOnlySourceOfObjectIdentifier] | None, optional
         unit_system: str | None, optional
         version: int | None, optional
@@ -135,7 +135,7 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._sources: list[GsaGuidOnlySourceOfObjectIdentifier] | None | Unset_Type = Unset
         self._access_control_category_values: dict[str, list[str]] | None | Unset_Type = Unset
         self._security_groups: GsaSecurityGroups | Unset_Type = Unset
-        self._similarity_settings: GsaSimilaritySettings | Unset_Type = Unset
+        self._similarity_settings: list[GsaSimilaritySettings] | None | Unset_Type = Unset
 
         if key is not Unset:
             self.key = key
@@ -366,30 +366,27 @@ class GsaGuidOnlyIntegrationSchemaOfObjectIdentifier(ModelBase):
         self._security_groups = security_groups
 
     @property
-    def similarity_settings(self) -> "GsaSimilaritySettings | Unset_Type":
+    def similarity_settings(self) -> "list[GsaSimilaritySettings] | None | Unset_Type":
         """Gets the similarity_settings of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Returns
         -------
-        GsaSimilaritySettings | Unset_Type
+        list[GsaSimilaritySettings] | None | Unset_Type
             The similarity_settings of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
         return self._similarity_settings
 
     @similarity_settings.setter
     def similarity_settings(
-        self, similarity_settings: "GsaSimilaritySettings | Unset_Type"
+        self, similarity_settings: "list[GsaSimilaritySettings] | None | Unset_Type"
     ) -> None:
         """Sets the similarity_settings of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
 
         Parameters
         ----------
-        similarity_settings: GsaSimilaritySettings | Unset_Type
+        similarity_settings: list[GsaSimilaritySettings] | None | Unset_Type
             The similarity_settings of this GsaGuidOnlyIntegrationSchemaOfObjectIdentifier.
         """
-        # Field is not nullable
-        if similarity_settings is None:
-            raise ValueError("Invalid value for 'similarity_settings', must not be 'None'")
         self._similarity_settings = similarity_settings
 
     @classmethod
