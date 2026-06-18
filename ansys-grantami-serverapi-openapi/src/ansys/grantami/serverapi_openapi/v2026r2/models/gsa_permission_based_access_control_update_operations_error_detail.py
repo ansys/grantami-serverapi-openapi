@@ -77,9 +77,8 @@ class GsaPermissionBasedAccessControlUpdateOperationsErrorDetail(ModelBase):
     }
 
     discriminator_value_class_map = {
-        "noSuchEntities".lower(): "#/components/schemas/GsaNoSuchEntitiesUpdateOperationsErrorDetail",
+        "accessControlEntities".lower(): "#/components/schemas/GsaAccessControlEntitiesUpdateOperationsErrorDetail",
         "permissionCategories".lower(): "#/components/schemas/GsaPermissionCategoriesUpdateOperationsErrorDetail",
-        "noSuchSubset".lower(): "#/components/schemas/GsaNoSuchSubsetUpdateOperationsErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

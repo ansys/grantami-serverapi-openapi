@@ -42,6 +42,5 @@ class GsaPermissionBasedAccessControlUpdateOperationsErrorReason(Enum):
     """
     Allowed Enum values
     """
-    NOSUCHENTITIES = "noSuchEntities"
+    ACCESSCONTROLENTITIES = "accessControlEntities"
     PERMISSIONCATEGORIES = "permissionCategories"
-    NOSUCHSUBSET = "noSuchSubset"

@@ -124,3 +124,4 @@ class GsaErrorCode(Enum):
     QUALITYSYSTEMCREATION = "qualitySystemCreation"
     PERMISSIONBASEDACCESSCONTROLUPDATEOPERATION = "permissionBasedAccessControlUpdateOperation"
     ATTRIBUTEUPDATE = "attributeUpdate"
+    PERMISSIONBASEDACCESSCONTROLAGGREGATION = "permissionBasedAccessControlAggregation"
