@@ -63,17 +63,17 @@ class GsaSimilaritySettings(ModelBase):
     swagger_types: dict[str, str] = {
         "name": "str",
         "settings": "list[GsaSimilaritySetting]",
+        "include_missing_data": "bool",
         "is_default": "bool",
         "table_guid": "str",
-        "use_knockdown": "bool",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
         "settings": "settings",
+        "include_missing_data": "includeMissingData",
         "is_default": "isDefault",
         "table_guid": "tableGuid",
-        "use_knockdown": "useKnockdown",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -87,9 +87,9 @@ class GsaSimilaritySettings(ModelBase):
         *,
         name: "str",
         settings: "list[GsaSimilaritySetting]",
+        include_missing_data: "bool | Unset_Type" = Unset,
         is_default: "bool | Unset_Type" = Unset,
         table_guid: "str | None | Unset_Type" = Unset,
-        use_knockdown: "bool | Unset_Type" = Unset,
     ) -> None:
         """GsaSimilaritySettings - a model defined in Swagger
 
@@ -97,20 +97,20 @@ class GsaSimilaritySettings(ModelBase):
         ----------
         name: str
         settings: list[GsaSimilaritySetting]
+        include_missing_data: bool, optional
         is_default: bool, optional
         table_guid: str | None, optional
-        use_knockdown: bool, optional
         """
         self._table_guid: str | None | Unset_Type = Unset
-        self._use_knockdown: bool | Unset_Type = Unset
+        self._include_missing_data: bool | Unset_Type = Unset
         self._is_default: bool | Unset_Type = Unset
         self._name: str
         self._settings: list[GsaSimilaritySetting]
 
         if table_guid is not Unset:
             self.table_guid = table_guid
-        if use_knockdown is not Unset:
-            self.use_knockdown = use_knockdown
+        if include_missing_data is not Unset:
+            self.include_missing_data = include_missing_data
         if is_default is not Unset:
             self.is_default = is_default
         self.name = name
@@ -139,29 +139,29 @@ class GsaSimilaritySettings(ModelBase):
         self._table_guid = table_guid
 
     @property
-    def use_knockdown(self) -> "bool | Unset_Type":
-        """Gets the use_knockdown of this GsaSimilaritySettings.
+    def include_missing_data(self) -> "bool | Unset_Type":
+        """Gets the include_missing_data of this GsaSimilaritySettings.
 
         Returns
         -------
         bool | Unset_Type
-            The use_knockdown of this GsaSimilaritySettings.
+            The include_missing_data of this GsaSimilaritySettings.
         """
-        return self._use_knockdown
+        return self._include_missing_data
 
-    @use_knockdown.setter
-    def use_knockdown(self, use_knockdown: "bool | Unset_Type") -> None:
-        """Sets the use_knockdown of this GsaSimilaritySettings.
+    @include_missing_data.setter
+    def include_missing_data(self, include_missing_data: "bool | Unset_Type") -> None:
+        """Sets the include_missing_data of this GsaSimilaritySettings.
 
         Parameters
         ----------
-        use_knockdown: bool | Unset_Type
-            The use_knockdown of this GsaSimilaritySettings.
+        include_missing_data: bool | Unset_Type
+            The include_missing_data of this GsaSimilaritySettings.
         """
         # Field is not nullable
-        if use_knockdown is None:
-            raise ValueError("Invalid value for 'use_knockdown', must not be 'None'")
-        self._use_knockdown = use_knockdown
+        if include_missing_data is None:
+            raise ValueError("Invalid value for 'include_missing_data', must not be 'None'")
+        self._include_missing_data = include_missing_data
 
     @property
     def is_default(self) -> "bool | Unset_Type":
