@@ -48,6 +48,92 @@ class FindSimilarApi(ApiBase):
     Ref: https://github.com/swagger-api/swagger-codegen
     """
 
+    def cancel_find_similar_run(
+        self, *, operation_identifier: "str"
+    ) -> "GsaLongRunningOperation | GsaLongRunningOperationInvalidStatusException | None":
+        """Requests cancellation of a long-running operation for calculating similarity scores.  Cancellation will only happen when the operation is pending or in progress, and is not guaranteed - it is a best-effort attempt to stop the operation early.  The long-running operation status will be set to awaitingCancellation; then to cancelled if cancellation is successful.  If the long-running operation has already completed (succeeded or failed), an error will be returned.  If the long-running operation has already been cancelled, the status will remain as is (awaitingCancellation or cancelled).
+
+        This method makes a synchronous HTTP request.
+
+        Parameters
+        ----------
+        operation_identifier: str
+
+        Returns
+        -------
+        GsaLongRunningOperation | GsaLongRunningOperationInvalidStatusException | None
+        """
+        data = self._cancel_find_similar_run_with_http_info(
+            operation_identifier, _return_http_data_only=True
+        )
+        return data  # type: ignore[no-any-return]
+
+    def _cancel_find_similar_run_with_http_info(
+        self, operation_identifier: "str", **kwargs: Any
+    ) -> Any:
+        all_params = [
+            "operation_identifier",
+            "_return_http_data_only",
+            "_preload_content",
+            "_request_timeout",
+        ]
+
+        params = locals()
+        for key, val in params["kwargs"].items():
+            if key not in all_params:
+                raise TypeError(
+                    f"Got an unexpected keyword argument '{key}' to method cancel_find_similar_run"
+                )
+            params[key] = val
+        del params["kwargs"]
+        # verify the required parameter "operation_identifier" is set
+        if "operation_identifier" not in params or params["operation_identifier"] is None:
+            raise ValueError(
+                "Missing the required parameter 'operation_identifier' when calling 'cancel_find_similar_run'"
+            )
+
+        collection_formats: dict[str, Any] = {}
+
+        path_params: dict[str, Any] = {}
+        if "operation_identifier" in params and operation_identifier is not None:
+            path_params["operation-identifier"] = params["operation_identifier"]
+
+        query_params: list[Any] = []
+
+        header_params: dict[str, Any] = {}
+
+        form_params: list[Any] = []
+        local_var_files: dict[str, Any] = {}
+
+        body_params = None
+        # HTTP header 'Accept'
+        header_params["Accept"] = self.api_client.select_header_accept(
+            ["text/plain", "application/json", "text/json"]
+        )
+
+        response_type_map: dict[int, Optional[str]] = {
+            200: "GsaLongRunningOperation",
+            422: "GsaLongRunningOperationInvalidStatusException",
+            403: None,
+            404: None,
+        }
+
+        return self.api_client.call_api(
+            "/v1alpha/find-similar/{operation-identifier}",
+            "DELETE",
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            _return_http_data_only=params.get("_return_http_data_only"),
+            _preload_content=params.get("_preload_content", True),
+            _request_timeout=params.get("_request_timeout"),
+            collection_formats=collection_formats,
+            response_type_map=response_type_map,
+        )
+
     def find_similar(
         self,
         *,

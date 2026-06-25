@@ -70,16 +70,20 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
     swagger_types: dict[str, str] = {
         "entity_type": "GsaAccessControlEntityType",
         "table_guid": "str",
+        "latest_version_filter": "list[GsaVersionControlMode]",
         "subset_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "entity_type": "entityType",
         "table_guid": "tableGuid",
+        "latest_version_filter": "latestVersionFilter",
         "subset_guid": "subsetGuid",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "latestVersionFilter": "GsaVersionControlMode",
+    }
 
     discriminator: Optional[str] = None
 
@@ -88,6 +92,7 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
         *,
         entity_type: "GsaAccessControlEntityType" = GsaAccessControlEntityType.TABLEDESCENDANTS,
         table_guid: "str",
+        latest_version_filter: "list[GsaVersionControlMode] | None | Unset_Type" = Unset,
         subset_guid: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTableDescendantsAccessControlEntity - a model defined in Swagger
@@ -96,15 +101,19 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
         ----------
         entity_type: GsaAccessControlEntityType
         table_guid: str
+        latest_version_filter: list[GsaVersionControlMode] | None, optional
         subset_guid: str | None, optional
         """
         super().__init__(entity_type=entity_type)
         self._table_guid: str
         self._subset_guid: str | None | Unset_Type = Unset
+        self._latest_version_filter: list[GsaVersionControlMode] | None | Unset_Type = Unset
 
         self.table_guid = table_guid
         if subset_guid is not Unset:
             self.subset_guid = subset_guid
+        if latest_version_filter is not Unset:
+            self.latest_version_filter = latest_version_filter
 
     @property
     def table_guid(self) -> "str":
@@ -137,7 +146,7 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
     @property
     def subset_guid(self) -> "str | None | Unset_Type":
         """Gets the subset_guid of this GsaTableDescendantsAccessControlEntity.
-        Optional - if set, only update the access control for descendants in this subset
+        Optional.  If set, only include descendants in this subset
 
         Returns
         -------
@@ -149,7 +158,7 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
     @subset_guid.setter
     def subset_guid(self, subset_guid: "str | None | Unset_Type") -> None:
         """Sets the subset_guid of this GsaTableDescendantsAccessControlEntity.
-        Optional - if set, only update the access control for descendants in this subset
+        Optional.  If set, only include descendants in this subset
 
         Parameters
         ----------
@@ -157,6 +166,32 @@ class GsaTableDescendantsAccessControlEntity(GsaAccessControlEntity):
             The subset_guid of this GsaTableDescendantsAccessControlEntity.
         """
         self._subset_guid = subset_guid
+
+    @property
+    def latest_version_filter(self) -> "list[GsaVersionControlMode] | None | Unset_Type":
+        """Gets the latest_version_filter of this GsaTableDescendantsAccessControlEntity.
+        Optional.  If set, only include descendants that match this filter.  For each descendant record history:   - read: include only the record version that is the latest version in read mode.   - write: include only the record version that is the latest version in write mode.   - read and write: include the record versions that are the latest versions in read or write mode.   - empty: include record versions that are not the latest version in read or write mode.  If not set, include all versions of all descendant record histories.
+
+        Returns
+        -------
+        list[GsaVersionControlMode] | None | Unset_Type
+            The latest_version_filter of this GsaTableDescendantsAccessControlEntity.
+        """
+        return self._latest_version_filter
+
+    @latest_version_filter.setter
+    def latest_version_filter(
+        self, latest_version_filter: "list[GsaVersionControlMode] | None | Unset_Type"
+    ) -> None:
+        """Sets the latest_version_filter of this GsaTableDescendantsAccessControlEntity.
+        Optional.  If set, only include descendants that match this filter.  For each descendant record history:   - read: include only the record version that is the latest version in read mode.   - write: include only the record version that is the latest version in write mode.   - read and write: include the record versions that are the latest versions in read or write mode.   - empty: include record versions that are not the latest version in read or write mode.  If not set, include all versions of all descendant record histories.
+
+        Parameters
+        ----------
+        latest_version_filter: list[GsaVersionControlMode] | None | Unset_Type
+            The latest_version_filter of this GsaTableDescendantsAccessControlEntity.
+        """
+        self._latest_version_filter = latest_version_filter
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
