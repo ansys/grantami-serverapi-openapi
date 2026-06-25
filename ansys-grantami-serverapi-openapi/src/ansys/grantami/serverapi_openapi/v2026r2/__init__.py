@@ -1238,8 +1238,6 @@ from .models.gsa_parameter_content_unknown_parameters_maths_functional_error_det
 )
 from .models.gsa_parameter_creation_exception import GsaParameterCreationException
 from .models.gsa_parameter_data_value import GsaParameterDataValue
-from .models.gsa_parameter_default_value import GsaParameterDefaultValue
-from .models.gsa_parameter_default_value_source import GsaParameterDefaultValueSource
 from .models.gsa_parameter_deletion_exception import GsaParameterDeletionException
 from .models.gsa_parameter_error_detail import GsaParameterErrorDetail
 from .models.gsa_parameter_error_reason import GsaParameterErrorReason
@@ -1992,6 +1990,7 @@ from .models.gsa_value_with_count_of_guid import GsaValueWithCountOfGuid
 from .models.gsa_value_with_count_of_int32 import GsaValueWithCountOfInt32
 from .models.gsa_version_control_error_detail import GsaVersionControlErrorDetail
 from .models.gsa_version_control_error_reason import GsaVersionControlErrorReason
+from .models.gsa_version_control_mode import GsaVersionControlMode
 from .models.gsa_version_controlled_data_usage_data_modification_error_detail import (
     GsaVersionControlledDataUsageDataModificationErrorDetail,
 )
@@ -2903,8 +2902,6 @@ __all__ = [
     "GsaParameterContentUnknownParametersMathsFunctionalErrorDetail",
     "GsaParameterCreationException",
     "GsaParameterDataValue",
-    "GsaParameterDefaultValue",
-    "GsaParameterDefaultValueSource",
     "GsaParameterDeletionException",
     "GsaParameterErrorDetail",
     "GsaParameterErrorReason",
@@ -3495,6 +3492,7 @@ __all__ = [
     "GsaValueWithCountOfInt32",
     "GsaVersionControlErrorDetail",
     "GsaVersionControlErrorReason",
+    "GsaVersionControlMode",
     "GsaVersionControlledDataUsageDataModificationErrorDetail",
     "GsaVersionNumberProperty",
     "GsaVersionState",
