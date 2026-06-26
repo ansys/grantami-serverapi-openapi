@@ -125,3 +125,4 @@ class GsaErrorCode(Enum):
     PERMISSIONBASEDACCESSCONTROLUPDATEOPERATION = "permissionBasedAccessControlUpdateOperation"
     ATTRIBUTEUPDATE = "attributeUpdate"
     PERMISSIONBASEDACCESSCONTROLAGGREGATION = "permissionBasedAccessControlAggregation"
+    SCHEMAVALIDATION = "schemaValidation"
