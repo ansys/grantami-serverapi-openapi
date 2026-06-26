@@ -883,7 +883,6 @@ from .models.gsa_hyperlink_datum_criterion import GsaHyperlinkDatumCriterion
 from .models.gsa_hyperlink_datum_exists_criterion import GsaHyperlinkDatumExistsCriterion
 from .models.gsa_hyperlink_prefix_datum_criterion import GsaHyperlinkPrefixDatumCriterion
 from .models.gsa_hyperlink_target import GsaHyperlinkTarget
-from .models.gsa_i_error_detail import GsaIErrorDetail
 from .models.gsa_in_use_parameter_value_error_detail import GsaInUseParameterValueErrorDetail
 from .models.gsa_inclusiveness import GsaInclusiveness
 from .models.gsa_incompatible_units_error_detail import GsaIncompatibleUnitsErrorDetail
@@ -2665,7 +2664,6 @@ __all__ = [
     "GsaHyperlinkDatumExistsCriterion",
     "GsaHyperlinkPrefixDatumCriterion",
     "GsaHyperlinkTarget",
-    "GsaIErrorDetail",
     "GsaInUseParameterValueErrorDetail",
     "GsaInclusiveness",
     "GsaIncompatibleUnitsErrorDetail",

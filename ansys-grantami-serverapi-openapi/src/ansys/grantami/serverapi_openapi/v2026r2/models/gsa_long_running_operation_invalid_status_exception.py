@@ -63,21 +63,18 @@ class GsaLongRunningOperationInvalidStatusException(ModelBase):
     swagger_types: dict[str, str] = {
         "status": "GsaLongRunningStatus",
         "code": "GsaErrorCode",
-        "errors": "list[GsaIErrorDetail]",
         "message": "str",
     }
 
     attribute_map: dict[str, str] = {
         "status": "status",
         "code": "code",
-        "errors": "errors",
         "message": "message",
     }
 
     subtype_mapping: dict[str, str] = {
         "code": "GsaErrorCode",
         "status": "GsaLongRunningStatus",
-        "errors": "GsaIErrorDetail",
     }
 
     discriminator: Optional[str] = None
@@ -87,7 +84,6 @@ class GsaLongRunningOperationInvalidStatusException(ModelBase):
         *,
         status: "GsaLongRunningStatus",
         code: "GsaErrorCode | Unset_Type" = Unset,
-        errors: "list[GsaIErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaLongRunningOperationInvalidStatusException - a model defined in Swagger
@@ -96,21 +92,17 @@ class GsaLongRunningOperationInvalidStatusException(ModelBase):
         ----------
         status: GsaLongRunningStatus
         code: GsaErrorCode, optional
-        errors: list[GsaIErrorDetail] | None, optional
         message: str | None, optional
         """
         self._message: str | None | Unset_Type = Unset
         self._code: GsaErrorCode | Unset_Type = Unset
         self._status: GsaLongRunningStatus
-        self._errors: list[GsaIErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
         self.status = status
-        if errors is not Unset:
-            self.errors = errors
 
     @property
     def message(self) -> "str | None | Unset_Type":
@@ -186,28 +178,6 @@ class GsaLongRunningOperationInvalidStatusException(ModelBase):
         if status is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'status', must not be 'Unset'")
         self._status = status
-
-    @property
-    def errors(self) -> "list[GsaIErrorDetail] | None | Unset_Type":
-        """Gets the errors of this GsaLongRunningOperationInvalidStatusException.
-
-        Returns
-        -------
-        list[GsaIErrorDetail] | None | Unset_Type
-            The errors of this GsaLongRunningOperationInvalidStatusException.
-        """
-        return self._errors
-
-    @errors.setter
-    def errors(self, errors: "list[GsaIErrorDetail] | None | Unset_Type") -> None:
-        """Sets the errors of this GsaLongRunningOperationInvalidStatusException.
-
-        Parameters
-        ----------
-        errors: list[GsaIErrorDetail] | None | Unset_Type
-            The errors of this GsaLongRunningOperationInvalidStatusException.
-        """
-        self._errors = errors
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
