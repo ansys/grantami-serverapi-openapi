@@ -63,31 +63,26 @@ class GsaNamedEntityErrorDetail(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
+        "entity_type_name": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
+        "entity_type_name": "entityTypeName",
     }
 
     subtype_mapping: dict[str, str] = {
         "reason": "GsaNamedEntityErrorReason",
-        "entityType": "GsaEntityType",
     }
 
     discriminator_value_class_map = {
         "entityAlreadyExists".lower(): "#/components/schemas/GsaEntityAlreadyExistsErrorDetail",
         "nameNotProvided".lower(): "#/components/schemas/GsaNameNotProvidedErrorDetail",
         "nameAlreadyExists".lower(): "#/components/schemas/GsaNameAlreadyExistsErrorDetail",
-        "nameAlreadySpecified".lower(): "#/components/schemas/GsaNameAlreadySpecifiedErrorDetail",
         "entityIdentifierAlreadySpecified".lower(): "#/components/schemas/GsaEntityIdentifierAlreadySpecifiedErrorDetail",
-        "displayNameEmpty".lower(): "#/components/schemas/GsaDisplayNameEmptyErrorDetail",
-        "displayNameLanguageNotProvided".lower(): "#/components/schemas/GsaDisplayNameLanguageNotProvidedErrorDetail",
-        "displayNameLanguageNotSupported".lower(): "#/components/schemas/GsaDisplayNameLanguageNotSupportedErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
@@ -95,25 +90,26 @@ class GsaNamedEntityErrorDetail(ModelBase):
     def __init__(
         self,
         *,
-        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason",
+        entity_type_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaNamedEntityErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
+        entity_type_name: str | None, optional
         """
         self._message: str
         self._reason: GsaNamedEntityErrorReason
-        self._entity_type: GsaEntityType
+        self._entity_type_name: str | None | Unset_Type = Unset
 
         self.message = message
         self.reason = reason
-        self.entity_type = entity_type
+        if entity_type_name is not Unset:
+            self.entity_type_name = entity_type_name
 
     @property
     def message(self) -> "str":
@@ -172,32 +168,28 @@ class GsaNamedEntityErrorDetail(ModelBase):
         self._reason = reason
 
     @property
-    def entity_type(self) -> "GsaEntityType":
-        """Gets the entity_type of this GsaNamedEntityErrorDetail.
+    def entity_type_name(self) -> "str | None | Unset_Type":
+        """Gets the entity_type_name of this GsaNamedEntityErrorDetail.
+        e.g. 'Attribute', 'Meta-attribute'
 
         Returns
         -------
-        GsaEntityType
-            The entity_type of this GsaNamedEntityErrorDetail.
+        str | None | Unset_Type
+            The entity_type_name of this GsaNamedEntityErrorDetail.
         """
-        return self._entity_type
+        return self._entity_type_name
 
-    @entity_type.setter
-    def entity_type(self, entity_type: "GsaEntityType") -> None:
-        """Sets the entity_type of this GsaNamedEntityErrorDetail.
+    @entity_type_name.setter
+    def entity_type_name(self, entity_type_name: "str | None | Unset_Type") -> None:
+        """Sets the entity_type_name of this GsaNamedEntityErrorDetail.
+        e.g. 'Attribute', 'Meta-attribute'
 
         Parameters
         ----------
-        entity_type: GsaEntityType
-            The entity_type of this GsaNamedEntityErrorDetail.
+        entity_type_name: str | None | Unset_Type
+            The entity_type_name of this GsaNamedEntityErrorDetail.
         """
-        # Field is not nullable
-        if entity_type is None:
-            raise ValueError("Invalid value for 'entity_type', must not be 'None'")
-        # Field is required
-        if entity_type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'entity_type', must not be 'Unset'")
-        self._entity_type = entity_type
+        self._entity_type_name = entity_type_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

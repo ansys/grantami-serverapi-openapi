@@ -68,30 +68,27 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     swagger_types: dict[str, str] = {
         "type": "GsaParameterType",
         "default_parameter_value_guid": "str",
-        "default_parameter_value_index": "int",
         "guid": "str",
+        "help_path": "str",
         "interpolation_type": "GsaParameterInterpolationType",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
         "unit": "GsaSlimEntity",
-        "values": "list[GsaUpdateNumericParameterValue]",
     }
 
     attribute_map: dict[str, str] = {
         "type": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
-        "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
+        "help_path": "helpPath",
         "interpolation_type": "interpolationType",
         "name": "name",
         "scale_type": "scaleType",
         "unit": "unit",
-        "values": "values",
     }
 
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
-        "values": "GsaUpdateNumericParameterValue",
         "interpolationType": "GsaParameterInterpolationType",
         "scaleType": "GsaParameterScaleType",
     }
@@ -103,13 +100,12 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         *,
         type: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
-        default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
         interpolation_type: "GsaParameterInterpolationType | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
         scale_type: "GsaParameterScaleType | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
-        values: "list[GsaUpdateNumericParameterValue] | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateNumericParameter - a model defined in Swagger
 
@@ -117,30 +113,26 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         ----------
         type: GsaParameterType
         default_parameter_value_guid: str, optional
-        default_parameter_value_index: int, optional
         guid: str, optional
+        help_path: str | None, optional
         interpolation_type: GsaParameterInterpolationType, optional
         name: str, optional
         scale_type: GsaParameterScaleType, optional
         unit: GsaSlimEntity, optional
-        values: list[GsaUpdateNumericParameterValue], optional
         """
         super().__init__(
             type=type,
             default_parameter_value_guid=default_parameter_value_guid,
-            default_parameter_value_index=default_parameter_value_index,
             guid=guid,
+            help_path=help_path,
             name=name,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
-        self._values: list[GsaUpdateNumericParameterValue] | Unset_Type = Unset
         self._interpolation_type: GsaParameterInterpolationType | Unset_Type = Unset
         self._scale_type: GsaParameterScaleType | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
-        if values is not Unset:
-            self.values = values
         if interpolation_type is not Unset:
             self.interpolation_type = interpolation_type
         if scale_type is not Unset:
@@ -170,33 +162,6 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         if unit is None:
             raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
-
-    @property
-    def values(self) -> "list[GsaUpdateNumericParameterValue] | Unset_Type":
-        """Gets the values of this GsaUpdateNumericParameter.
-        Update the set of parameter values.  This can result in adding, modifying and deleting parameter values.  Numeric parameter values can not be reordered - they are ordered by numeric value.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
-
-        Returns
-        -------
-        list[GsaUpdateNumericParameterValue] | Unset_Type
-            The values of this GsaUpdateNumericParameter.
-        """
-        return self._values
-
-    @values.setter
-    def values(self, values: "list[GsaUpdateNumericParameterValue] | Unset_Type") -> None:
-        """Sets the values of this GsaUpdateNumericParameter.
-        Update the set of parameter values.  This can result in adding, modifying and deleting parameter values.  Numeric parameter values can not be reordered - they are ordered by numeric value.  Existing parameter values will be matched by GUID.  If an existing parameter value is not included, it will be deleted.  If a GUID is not provided, or the GUID does not match an existing value, a new value will be created.  New values must have a value.
-
-        Parameters
-        ----------
-        values: list[GsaUpdateNumericParameterValue] | Unset_Type
-            The values of this GsaUpdateNumericParameter.
-        """
-        # Field is not nullable
-        if values is None:
-            raise ValueError("Invalid value for 'values', must not be 'None'")
-        self._values = values
 
     @property
     def interpolation_type(self) -> "GsaParameterInterpolationType | Unset_Type":

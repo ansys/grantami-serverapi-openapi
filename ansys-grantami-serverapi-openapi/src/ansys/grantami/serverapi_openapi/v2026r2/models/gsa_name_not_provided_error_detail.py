@@ -68,15 +68,15 @@ class GsaNameNotProvidedErrorDetail(GsaNamedEntityErrorDetail):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "entity_type": "GsaEntityType",
         "message": "str",
         "reason": "GsaNamedEntityErrorReason",
+        "entity_type_name": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "entity_type": "entityType",
         "message": "message",
         "reason": "reason",
+        "entity_type_name": "entityTypeName",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -86,19 +86,19 @@ class GsaNameNotProvidedErrorDetail(GsaNamedEntityErrorDetail):
     def __init__(
         self,
         *,
-        entity_type: "GsaEntityType",
         message: "str",
         reason: "GsaNamedEntityErrorReason" = GsaNamedEntityErrorReason.NAMENOTPROVIDED,
+        entity_type_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaNameNotProvidedErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
-        entity_type: GsaEntityType
         message: str
         reason: GsaNamedEntityErrorReason
+        entity_type_name: str | None, optional
         """
-        super().__init__(entity_type=entity_type, message=message, reason=reason)
+        super().__init__(message=message, reason=reason, entity_type_name=entity_type_name)
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
