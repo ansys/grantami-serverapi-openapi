@@ -126,3 +126,4 @@ class GsaErrorCode(Enum):
     ATTRIBUTEUPDATE = "attributeUpdate"
     PERMISSIONBASEDACCESSCONTROLAGGREGATION = "permissionBasedAccessControlAggregation"
     SCHEMAVALIDATION = "schemaValidation"
+    SIMILARITYNODATA = "similarityNoData"
