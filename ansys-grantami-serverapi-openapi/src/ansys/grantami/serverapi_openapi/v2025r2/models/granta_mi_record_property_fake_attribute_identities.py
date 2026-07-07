@@ -63,7 +63,9 @@ class GrantaMIRecordPropertyFakeAttributeIdentities(Enum):
     RECORDNAME_IDENTITY_4_GUID_00000001_0000_0000_0000_000000000000_ = (
         '{"name":"RecordName","identity":-4,"guid":"00000001 - 0000-0000 - 0000-000000000000"}'
     )
-    RECORDMODIFIEDBY_IDENTITY_3_GUID_00000009_0000_0000_0000_000000000000_ = '{"name":"RecordModifiedBy","identity":-3,"guid":"00000009 - 0000-0000 - 0000-000000000000"}'
+    RECORDMODIFIEDBY_IDENTITY_3_GUID_00000009_0000_0000_0000_000000000000_ = (
+        '{"name":"RecordModifiedBy","identity":-3,"guid":"00000009 - 0000-0000 - 0000-000000000000"}'
+    )
     RECORDCREATEDBY_IDENTITY_2_GUID_00000008_0000_0000_0000_000000000000_ = (
         '{"name":"RecordCreatedBy","identity":-2,"guid":"00000008 - 0000-0000 - 0000-000000000000"}'
     )
