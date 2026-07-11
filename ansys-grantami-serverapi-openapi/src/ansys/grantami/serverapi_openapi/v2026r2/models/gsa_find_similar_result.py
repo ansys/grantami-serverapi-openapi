@@ -78,17 +78,17 @@ class GsaFindSimilarResult(ModelBase):
         self,
         *,
         record_guid: "str | Unset_Type" = Unset,
-        score: "float | Unset_Type" = Unset,
+        score: "float | None | Unset_Type" = Unset,
     ) -> None:
         """GsaFindSimilarResult - a model defined in Swagger
 
         Parameters
         ----------
         record_guid: str, optional
-        score: float, optional
+        score: float | None, optional
         """
         self._record_guid: str | Unset_Type = Unset
-        self._score: float | Unset_Type = Unset
+        self._score: float | None | Unset_Type = Unset
 
         if record_guid is not Unset:
             self.record_guid = record_guid
@@ -121,28 +121,25 @@ class GsaFindSimilarResult(ModelBase):
         self._record_guid = record_guid
 
     @property
-    def score(self) -> "float | Unset_Type":
+    def score(self) -> "float | None | Unset_Type":
         """Gets the score of this GsaFindSimilarResult.
 
         Returns
         -------
-        float | Unset_Type
+        float | None | Unset_Type
             The score of this GsaFindSimilarResult.
         """
         return self._score
 
     @score.setter
-    def score(self, score: "float | Unset_Type") -> None:
+    def score(self, score: "float | None | Unset_Type") -> None:
         """Sets the score of this GsaFindSimilarResult.
 
         Parameters
         ----------
-        score: float | Unset_Type
+        score: float | None | Unset_Type
             The score of this GsaFindSimilarResult.
         """
-        # Field is not nullable
-        if score is None:
-            raise ValueError("Invalid value for 'score', must not be 'None'")
         self._score = score
 
     @classmethod

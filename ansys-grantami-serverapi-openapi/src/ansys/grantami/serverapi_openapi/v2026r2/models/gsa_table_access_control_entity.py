@@ -70,14 +70,18 @@ class GsaTableAccessControlEntity(GsaAccessControlEntity):
     swagger_types: dict[str, str] = {
         "entity_type": "GsaAccessControlEntityType",
         "table_guid": "str",
+        "latest_version_filter": "list[GsaVersionControlMode]",
     }
 
     attribute_map: dict[str, str] = {
         "entity_type": "entityType",
         "table_guid": "tableGuid",
+        "latest_version_filter": "latestVersionFilter",
     }
 
-    subtype_mapping: dict[str, str] = {}
+    subtype_mapping: dict[str, str] = {
+        "latestVersionFilter": "GsaVersionControlMode",
+    }
 
     discriminator: Optional[str] = None
 
@@ -86,6 +90,7 @@ class GsaTableAccessControlEntity(GsaAccessControlEntity):
         *,
         entity_type: "GsaAccessControlEntityType" = GsaAccessControlEntityType.TABLE,
         table_guid: "str",
+        latest_version_filter: "list[GsaVersionControlMode] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTableAccessControlEntity - a model defined in Swagger
 
@@ -93,11 +98,15 @@ class GsaTableAccessControlEntity(GsaAccessControlEntity):
         ----------
         entity_type: GsaAccessControlEntityType
         table_guid: str
+        latest_version_filter: list[GsaVersionControlMode] | None, optional
         """
         super().__init__(entity_type=entity_type)
         self._table_guid: str
+        self._latest_version_filter: list[GsaVersionControlMode] | None | Unset_Type = Unset
 
         self.table_guid = table_guid
+        if latest_version_filter is not Unset:
+            self.latest_version_filter = latest_version_filter
 
     @property
     def table_guid(self) -> "str":
@@ -126,6 +135,32 @@ class GsaTableAccessControlEntity(GsaAccessControlEntity):
         if table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'table_guid', must not be 'Unset'")
         self._table_guid = table_guid
+
+    @property
+    def latest_version_filter(self) -> "list[GsaVersionControlMode] | None | Unset_Type":
+        """Gets the latest_version_filter of this GsaTableAccessControlEntity.
+        Optional.  If set, only include versions of the table that match this filter:   - read: include only the latest version in read mode   - write: include only the latest version in write mode   - read and write: include the latest versions in read or write mode   - empty: include versions that are not the latest in read or write mode  If not set, include all versions
+
+        Returns
+        -------
+        list[GsaVersionControlMode] | None | Unset_Type
+            The latest_version_filter of this GsaTableAccessControlEntity.
+        """
+        return self._latest_version_filter
+
+    @latest_version_filter.setter
+    def latest_version_filter(
+        self, latest_version_filter: "list[GsaVersionControlMode] | None | Unset_Type"
+    ) -> None:
+        """Sets the latest_version_filter of this GsaTableAccessControlEntity.
+        Optional.  If set, only include versions of the table that match this filter:   - read: include only the latest version in read mode   - write: include only the latest version in write mode   - read and write: include the latest versions in read or write mode   - empty: include versions that are not the latest in read or write mode  If not set, include all versions
+
+        Parameters
+        ----------
+        latest_version_filter: list[GsaVersionControlMode] | None | Unset_Type
+            The latest_version_filter of this GsaTableAccessControlEntity.
+        """
+        self._latest_version_filter = latest_version_filter
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
