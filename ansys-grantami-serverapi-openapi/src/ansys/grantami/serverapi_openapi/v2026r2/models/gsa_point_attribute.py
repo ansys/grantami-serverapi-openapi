@@ -71,7 +71,6 @@ class GsaPointAttribute(GsaAttribute):
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
         "is_multi_valued": "bool",
-        "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
@@ -89,7 +88,6 @@ class GsaPointAttribute(GsaAttribute):
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "is_multi_valued": "isMultiValued",
-        "is_protected": "isProtected",
         "name": "name",
         "table": "table",
         "type": "type",
@@ -116,7 +114,6 @@ class GsaPointAttribute(GsaAttribute):
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
         is_multi_valued: "bool",
-        is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType" = GsaAttributeType.POINT,
@@ -136,7 +133,6 @@ class GsaPointAttribute(GsaAttribute):
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
         is_multi_valued: bool
-        is_protected: bool
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
@@ -151,7 +147,6 @@ class GsaPointAttribute(GsaAttribute):
             guid=guid,
             info=info,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
-            is_protected=is_protected,
             name=name,
             table=table,
             type=type,

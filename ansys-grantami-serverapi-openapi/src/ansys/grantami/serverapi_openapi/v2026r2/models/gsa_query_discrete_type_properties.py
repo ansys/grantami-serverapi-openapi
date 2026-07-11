@@ -64,7 +64,6 @@ class GsaQueryDiscreteTypeProperties(ModelBase):
         "discrete_values": "GsaQuerySlimNamedEntityProperties",
         "guid": "bool",
         "is_ordered": "bool",
-        "is_protected": "bool",
         "name": "bool",
     }
 
@@ -72,7 +71,6 @@ class GsaQueryDiscreteTypeProperties(ModelBase):
         "discrete_values": "discreteValues",
         "guid": "guid",
         "is_ordered": "isOrdered",
-        "is_protected": "isProtected",
         "name": "name",
     }
 
@@ -88,7 +86,6 @@ class GsaQueryDiscreteTypeProperties(ModelBase):
         discrete_values: "GsaQuerySlimNamedEntityProperties | Unset_Type" = Unset,
         guid: "bool | None | Unset_Type" = Unset,
         is_ordered: "bool | None | Unset_Type" = Unset,
-        is_protected: "bool | None | Unset_Type" = Unset,
         name: "bool | None | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryDiscreteTypeProperties - a model defined in Swagger
@@ -98,17 +95,13 @@ class GsaQueryDiscreteTypeProperties(ModelBase):
         discrete_values: GsaQuerySlimNamedEntityProperties, optional
         guid: bool | None, optional
         is_ordered: bool | None, optional
-        is_protected: bool | None, optional
         name: bool | None, optional
         """
-        self._is_protected: bool | None | Unset_Type = Unset
         self._discrete_values: GsaQuerySlimNamedEntityProperties | Unset_Type = Unset
         self._is_ordered: bool | None | Unset_Type = Unset
         self._name: bool | None | Unset_Type = Unset
         self._guid: bool | None | Unset_Type = Unset
 
-        if is_protected is not Unset:
-            self.is_protected = is_protected
         if discrete_values is not Unset:
             self.discrete_values = discrete_values
         if is_ordered is not Unset:
@@ -117,28 +110,6 @@ class GsaQueryDiscreteTypeProperties(ModelBase):
             self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def is_protected(self) -> "bool | None | Unset_Type":
-        """Gets the is_protected of this GsaQueryDiscreteTypeProperties.
-
-        Returns
-        -------
-        bool | None | Unset_Type
-            The is_protected of this GsaQueryDiscreteTypeProperties.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool | None | Unset_Type") -> None:
-        """Sets the is_protected of this GsaQueryDiscreteTypeProperties.
-
-        Parameters
-        ----------
-        is_protected: bool | None | Unset_Type
-            The is_protected of this GsaQueryDiscreteTypeProperties.
-        """
-        self._is_protected = is_protected
 
     @property
     def discrete_values(self) -> "GsaQuerySlimNamedEntityProperties | Unset_Type":

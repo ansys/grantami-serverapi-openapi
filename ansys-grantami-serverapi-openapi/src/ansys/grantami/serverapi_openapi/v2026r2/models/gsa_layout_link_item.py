@@ -66,7 +66,6 @@ class GsaLayoutLinkItem(GsaLayoutItem):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "display_names": "dict(str, str)",
         "forwards": "bool",
         "guid": "str",
         "item_type": "GsaLayoutItemType",
@@ -80,7 +79,6 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     }
 
     attribute_map: dict[str, str] = {
-        "display_names": "displayNames",
         "forwards": "forwards",
         "guid": "guid",
         "item_type": "itemType",
@@ -103,7 +101,6 @@ class GsaLayoutLinkItem(GsaLayoutItem):
     def __init__(
         self,
         *,
-        display_names: "dict[str, str]",
         forwards: "bool",
         guid: "str",
         item_type: "GsaLayoutItemType" = GsaLayoutItemType.LINK,
@@ -119,7 +116,6 @@ class GsaLayoutLinkItem(GsaLayoutItem):
 
         Parameters
         ----------
-        display_names: dict[str, str]
         forwards: bool
         guid: str
         item_type: GsaLayoutItemType
@@ -132,11 +128,7 @@ class GsaLayoutLinkItem(GsaLayoutItem):
         target_database_version: str | None, optional
         """
         super().__init__(
-            display_names=display_names,
-            guid=guid,
-            item_type=item_type,
-            name=name,
-            underlying_entity_guid=underlying_entity_guid,
+            guid=guid, item_type=item_type, name=name, underlying_entity_guid=underlying_entity_guid
         )
         self._link_type: GsaLayoutItemLinkType
         self._target_database: str | None | Unset_Type = Unset
