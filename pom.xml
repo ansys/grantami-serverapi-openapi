@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.swagger</groupId>
   <artifactId>AnsysPython-swagger-codegen</artifactId>
-  <version>5.2.0</version>
+  <version>6.0.0</version>
   <packaging>jar</packaging>
   <name>AnsysPython-swagger-codegen</name>
 
@@ -18,12 +18,10 @@
     <homepage-url>https://github.com/ansys/grantami-serverapi-openapi</homepage-url>
     <documentation-url>https://grantami.docs.pyansys.com</documentation-url>
     <is-namespace-package>True</is-namespace-package>
-    <v24r1-filename>server-api-24r1.json</v24r1-filename>
-    <v24r2-filename>server-api-24r2.json</v24r2-filename>
     <v25r1-filename>server-api-25r1.json</v25r1-filename>
     <v25r2-filename>server-api-25r2.json</v25r2-filename>
     <v26r1-filename>server-api-26r1.json</v26r1-filename>
-    <dev-filename>server-api.json</dev-filename>
+    <v27r1-filename>server-api.json</v27r1-filename>
   </properties>
 
   <build>
@@ -33,56 +31,6 @@
         <artifactId>swagger-codegen-maven-plugin</artifactId>
         <version>3.0.81</version>
         <executions>
-          <execution>
-            <id>${v24r1-filename}</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <inputSpec>${project.basedir}/yaml/${v24r1-filename}</inputSpec>
-              <language>${language}</language>
-              <output>${package-name}</output>
-              <generateApiTests>false</generateApiTests>
-              <generateModelTests>false</generateModelTests>
-              <configOptions>
-                <packageName>${package-import-path}</packageName>
-                <projectName>${package-name}</projectName>
-                <projectDescription>${package-description}</projectDescription>
-                <homepageUrl>${homepage-url}</homepageUrl>
-                <documentationUrl>${documentation-url}</documentationUrl>
-                <packageVersion>${project.version}</packageVersion>
-                <buildNumber>${build-id}</buildNumber>
-                <isReleaseBuild>${is-release}</isReleaseBuild>
-                <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>v2024r1</bindingNamespace>
-              </configOptions>
-            </configuration>
-          </execution>
-          <execution>
-            <id>${v24r2-filename}</id>
-            <goals>
-              <goal>generate</goal>
-            </goals>
-            <configuration>
-              <inputSpec>${project.basedir}/yaml/${v24r2-filename}</inputSpec>
-              <language>${language}</language>
-              <output>${package-name}</output>
-              <generateApiTests>false</generateApiTests>
-              <generateModelTests>false</generateModelTests>
-              <configOptions>
-                <packageName>${package-import-path}</packageName>
-                <projectName>${package-name}</projectName>
-                <projectDescription>${package-description}</projectDescription>
-                <homepageUrl>${homepage-url}</homepageUrl>
-                <documentationUrl>${documentation-url}</documentationUrl>
-                <packageVersion>${project.version}</packageVersion>
-                <buildNumber>${build-id}</buildNumber>
-                <isReleaseBuild>${is-release}</isReleaseBuild>
-                <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>v2024r2</bindingNamespace>
-              </configOptions>
-            </configuration>
-          </execution>
           <execution>
             <id>${v25r1-filename}</id>
             <goals>
@@ -159,12 +107,12 @@
             </configuration>
           </execution>
           <execution>
-            <id>${dev-filename}</id>
+            <id>${v27r1-filename}</id>
             <goals>
               <goal>generate</goal>
             </goals>
             <configuration>
-              <inputSpec>${project.basedir}/yaml/${dev-filename}</inputSpec>
+              <inputSpec>${project.basedir}/yaml/${v27r1-filename}</inputSpec>
               <language>${language}</language>
               <output>${package-name}</output>
               <generateApiTests>false</generateApiTests>
@@ -179,7 +127,7 @@
                 <buildNumber>${build-id}</buildNumber>
                 <isReleaseBuild>${is-release}</isReleaseBuild>
                 <isNamespacePackage>${is-namespace-package}</isNamespacePackage>
-                <bindingNamespace>v2026r2</bindingNamespace>
+                <bindingNamespace>v2027r1</bindingNamespace>
               </configOptions>
             </configuration>
           </execution>
