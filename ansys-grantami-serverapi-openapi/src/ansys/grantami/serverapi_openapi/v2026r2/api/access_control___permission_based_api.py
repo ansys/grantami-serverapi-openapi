@@ -353,7 +353,7 @@ class AccessControlPermissionBasedApi(ApiBase):
     def get_permission_category_access_controls_operation_result(
         self, *, database_key: "str", operation_identifier: "str"
     ) -> "None":
-        """Gets the result of a long-running operation for updating permission-based access control settings in the specified database.
+        """Gets the result of a long-running operation for updating permission-based access control settings in the specified database.  A successful response would return a 204 No Content response.  A failed response would return an error response.
 
         This method makes a synchronous HTTP request.
 
