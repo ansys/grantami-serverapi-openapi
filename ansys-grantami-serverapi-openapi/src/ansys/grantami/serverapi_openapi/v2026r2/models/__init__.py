@@ -1007,6 +1007,7 @@ from .gsa_no_parameter_values_parameter_error_detail import GsaNoParameterValues
 from .gsa_no_permissions_permission_category_error_detail import (
     GsaNoPermissionsPermissionCategoryErrorDetail,
 )
+from .gsa_no_quality_discrete_values_error_detail import GsaNoQualityDiscreteValuesErrorDetail
 from .gsa_no_such_attribute_smart_attributes_error_detail import (
     GsaNoSuchAttributeSmartAttributesErrorDetail,
 )
@@ -2605,6 +2606,7 @@ __all__ = [
     "GsaNoFileFileErrorDetail",
     "GsaNoParameterValuesParameterErrorDetail",
     "GsaNoPermissionsPermissionCategoryErrorDetail",
+    "GsaNoQualityDiscreteValuesErrorDetail",
     "GsaNoSuchAttributeSmartAttributesErrorDetail",
     "GsaNoSuchCategoriesReplacePermissionCategoryErrorDetail",
     "GsaNoSuchCategoryAccessControlErrorDetail",

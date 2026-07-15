@@ -81,6 +81,7 @@ class GsaQualitySystemErrorDetail(ModelBase):
         "qualityDiscreteValues".lower(): "#/components/schemas/GsaQualityDiscreteValuesErrorDetail",
         "thresholdValueNameInvalid".lower(): "#/components/schemas/GsaThresholdValueNameInvalidErrorDetail",
         "thresholdValueNameEmpty".lower(): "#/components/schemas/GsaThresholdValueNameEmptyErrorDetail",
+        "noQualityDiscreteValues".lower(): "#/components/schemas/GsaNoQualityDiscreteValuesErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

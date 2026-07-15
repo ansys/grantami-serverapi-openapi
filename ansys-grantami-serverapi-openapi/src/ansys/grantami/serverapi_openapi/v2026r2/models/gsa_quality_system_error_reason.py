@@ -46,3 +46,4 @@ class GsaQualitySystemErrorReason(Enum):
     QUALITYDISCRETEVALUES = "qualityDiscreteValues"
     THRESHOLDVALUENAMEINVALID = "thresholdValueNameInvalid"
     THRESHOLDVALUENAMEEMPTY = "thresholdValueNameEmpty"
+    NOQUALITYDISCRETEVALUES = "noQualityDiscreteValues"

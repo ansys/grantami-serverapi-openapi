@@ -118,12 +118,12 @@ class GsaUpdateDatabase(ModelBase):
         additional_sql_parameters: "str | None | Unset_Type" = Unset,
         author: "str | None | Unset_Type" = Unset,
         company: "str | None | Unset_Type" = Unset,
-        currency_code: "str | None | Unset_Type" = Unset,
-        data_source: "str | None | Unset_Type" = Unset,
-        database_key: "str | None | Unset_Type" = Unset,
+        currency_code: "str | Unset_Type" = Unset,
+        data_source: "str | Unset_Type" = Unset,
+        database_key: "str | Unset_Type" = Unset,
         default_table: "GsaSlimEntity | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
-        initial_catalog: "str | None | Unset_Type" = Unset,
+        initial_catalog: "str | Unset_Type" = Unset,
         is_implicit_profile_disabled: "bool | Unset_Type" = Unset,
         is_read_only: "bool | Unset_Type" = Unset,
         language: "str | None | Unset_Type" = Unset,
@@ -143,12 +143,12 @@ class GsaUpdateDatabase(ModelBase):
         additional_sql_parameters: str | None, optional
         author: str | None, optional
         company: str | None, optional
-        currency_code: str | None, optional
-        data_source: str | None, optional
-        database_key: str | None, optional
+        currency_code: str, optional
+        data_source: str, optional
+        database_key: str, optional
         default_table: GsaSlimEntity, optional
         guid: str, optional
-        initial_catalog: str | None, optional
+        initial_catalog: str, optional
         is_implicit_profile_disabled: bool, optional
         is_read_only: bool, optional
         language: str | None, optional
@@ -164,20 +164,20 @@ class GsaUpdateDatabase(ModelBase):
         self._author: str | None | Unset_Type = Unset
         self._company: str | None | Unset_Type = Unset
         self._notes: str | None | Unset_Type = Unset
-        self._currency_code: str | None | Unset_Type = Unset
+        self._currency_code: str | Unset_Type = Unset
         self._version_guid: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._is_implicit_profile_disabled: bool | Unset_Type = Unset
         self._is_read_only: bool | Unset_Type = Unset
         self._language: str | None | Unset_Type = Unset
-        self._database_key: str | None | Unset_Type = Unset
-        self._data_source: str | None | Unset_Type = Unset
+        self._database_key: str | Unset_Type = Unset
+        self._data_source: str | Unset_Type = Unset
         self._use_configuration_database_credentials: bool | None | Unset_Type = Unset
         self._use_integrated_security: bool | None | Unset_Type = Unset
         self._sql_user_name: str | None | Unset_Type = Unset
         self._sql_password: str | None | Unset_Type = Unset
-        self._initial_catalog: str | None | Unset_Type = Unset
+        self._initial_catalog: str | Unset_Type = Unset
         self._additional_sql_parameters: str | None | Unset_Type = Unset
         self._loading_order: int | Unset_Type = Unset
         self._default_table: GsaSlimEntity | Unset_Type = Unset
@@ -296,27 +296,30 @@ class GsaUpdateDatabase(ModelBase):
         self._notes = notes
 
     @property
-    def currency_code(self) -> "str | None | Unset_Type":
+    def currency_code(self) -> "str | Unset_Type":
         """Gets the currency_code of this GsaUpdateDatabase.
         The currency code on the database. Can only be edited by a database data administrator
 
         Returns
         -------
-        str | None | Unset_Type
+        str | Unset_Type
             The currency_code of this GsaUpdateDatabase.
         """
         return self._currency_code
 
     @currency_code.setter
-    def currency_code(self, currency_code: "str | None | Unset_Type") -> None:
+    def currency_code(self, currency_code: "str | Unset_Type") -> None:
         """Sets the currency_code of this GsaUpdateDatabase.
         The currency code on the database. Can only be edited by a database data administrator
 
         Parameters
         ----------
-        currency_code: str | None | Unset_Type
+        currency_code: str | Unset_Type
             The currency_code of this GsaUpdateDatabase.
         """
+        # Field is not nullable
+        if currency_code is None:
+            raise ValueError("Invalid value for 'currency_code', must not be 'None'")
         self._currency_code = currency_code
 
     @property
@@ -481,51 +484,57 @@ class GsaUpdateDatabase(ModelBase):
         self._language = language
 
     @property
-    def database_key(self) -> "str | None | Unset_Type":
+    def database_key(self) -> "str | Unset_Type":
         """Gets the database_key of this GsaUpdateDatabase.
         The unique key of the database. Can only be edited by a system administrator
 
         Returns
         -------
-        str | None | Unset_Type
+        str | Unset_Type
             The database_key of this GsaUpdateDatabase.
         """
         return self._database_key
 
     @database_key.setter
-    def database_key(self, database_key: "str | None | Unset_Type") -> None:
+    def database_key(self, database_key: "str | Unset_Type") -> None:
         """Sets the database_key of this GsaUpdateDatabase.
         The unique key of the database. Can only be edited by a system administrator
 
         Parameters
         ----------
-        database_key: str | None | Unset_Type
+        database_key: str | Unset_Type
             The database_key of this GsaUpdateDatabase.
         """
+        # Field is not nullable
+        if database_key is None:
+            raise ValueError("Invalid value for 'database_key', must not be 'None'")
         self._database_key = database_key
 
     @property
-    def data_source(self) -> "str | None | Unset_Type":
+    def data_source(self) -> "str | Unset_Type":
         """Gets the data_source of this GsaUpdateDatabase.
         The SQL server data source. Can only be edited by a system administrator
 
         Returns
         -------
-        str | None | Unset_Type
+        str | Unset_Type
             The data_source of this GsaUpdateDatabase.
         """
         return self._data_source
 
     @data_source.setter
-    def data_source(self, data_source: "str | None | Unset_Type") -> None:
+    def data_source(self, data_source: "str | Unset_Type") -> None:
         """Sets the data_source of this GsaUpdateDatabase.
         The SQL server data source. Can only be edited by a system administrator
 
         Parameters
         ----------
-        data_source: str | None | Unset_Type
+        data_source: str | Unset_Type
             The data_source of this GsaUpdateDatabase.
         """
+        # Field is not nullable
+        if data_source is None:
+            raise ValueError("Invalid value for 'data_source', must not be 'None'")
         self._data_source = data_source
 
     @property
@@ -627,27 +636,30 @@ class GsaUpdateDatabase(ModelBase):
         self._sql_password = sql_password
 
     @property
-    def initial_catalog(self) -> "str | None | Unset_Type":
+    def initial_catalog(self) -> "str | Unset_Type":
         """Gets the initial_catalog of this GsaUpdateDatabase.
         The name of the database in SQL server. Can only be edited by a system administrator
 
         Returns
         -------
-        str | None | Unset_Type
+        str | Unset_Type
             The initial_catalog of this GsaUpdateDatabase.
         """
         return self._initial_catalog
 
     @initial_catalog.setter
-    def initial_catalog(self, initial_catalog: "str | None | Unset_Type") -> None:
+    def initial_catalog(self, initial_catalog: "str | Unset_Type") -> None:
         """Sets the initial_catalog of this GsaUpdateDatabase.
         The name of the database in SQL server. Can only be edited by a system administrator
 
         Parameters
         ----------
-        initial_catalog: str | None | Unset_Type
+        initial_catalog: str | Unset_Type
             The initial_catalog of this GsaUpdateDatabase.
         """
+        # Field is not nullable
+        if initial_catalog is None:
+            raise ValueError("Invalid value for 'initial_catalog', must not be 'None'")
         self._initial_catalog = initial_catalog
 
     @property
