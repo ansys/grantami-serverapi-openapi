@@ -447,6 +447,7 @@ class AccessControlPermissionBasedApi(ApiBase):
         *,
         database_key: "str",
         include: "Optional[list[GsaLongRunningOperationInclude]]" = None,
+        status: "Optional[list[GsaLongRunningStatus]]" = None,
     ) -> "None | list[GsaLongRunningOperation]":
         """Gets all long-running operations for updating permission-based access control settings in the specified database.
 
@@ -457,13 +458,16 @@ class AccessControlPermissionBasedApi(ApiBase):
         database_key: str
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         include: list[GsaLongRunningOperationInclude]
+            Optionally include more detailed information in the response.
+        status: list[GsaLongRunningStatus]
+            Optional filter for the status of the long-running operations.
 
         Returns
         -------
         None | list[GsaLongRunningOperation]
         """
         data = self._get_permission_category_access_controls_operations_with_http_info(
-            database_key, include, _return_http_data_only=True
+            database_key, include, status, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -471,11 +475,13 @@ class AccessControlPermissionBasedApi(ApiBase):
         self,
         database_key: "str",
         include: "Optional[list[GsaLongRunningOperationInclude]]" = None,
+        status: "Optional[list[GsaLongRunningStatus]]" = None,
         **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "include",
+            "status",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -505,6 +511,9 @@ class AccessControlPermissionBasedApi(ApiBase):
         if "include" in params and include is not None:
             query_params.append(("include", params["include"]))
             collection_formats["include"] = "multi"
+        if "status" in params and status is not None:
+            query_params.append(("status", params["status"]))
+            collection_formats["status"] = "multi"
 
         header_params: dict[str, Any] = {}
 
