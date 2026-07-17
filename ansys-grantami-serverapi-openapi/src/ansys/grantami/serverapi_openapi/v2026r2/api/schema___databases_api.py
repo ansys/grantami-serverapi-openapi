@@ -265,7 +265,7 @@ class SchemaDatabasesApi(ApiBase):
         )
 
     def get_all_table_types(self, *, database_key: "str") -> "GsaTableTypesInfo | None":
-        """Get Protection Status for a given database. The user must be an Admin user for the database.
+        """Get all table types for a given database.
 
         This method makes a synchronous HTTP request.
 

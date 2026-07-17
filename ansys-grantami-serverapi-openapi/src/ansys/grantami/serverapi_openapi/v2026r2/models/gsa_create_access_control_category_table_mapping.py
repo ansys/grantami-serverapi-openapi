@@ -163,7 +163,7 @@ class GsaCreateAccessControlCategoryTableMapping(ModelBase):
     @property
     def table_discrete_values(self) -> "list[GsaSlimEntity] | None | Unset_Type":
         """Gets the table_discrete_values of this GsaCreateAccessControlCategoryTableMapping.
-        The values applied to the table for this category.
+        The discrete values applied to the table for this mapping.  If omitted or set to null or an empty array, table discrete values will be set to empty.
 
         Returns
         -------
@@ -177,7 +177,7 @@ class GsaCreateAccessControlCategoryTableMapping(ModelBase):
         self, table_discrete_values: "list[GsaSlimEntity] | None | Unset_Type"
     ) -> None:
         """Sets the table_discrete_values of this GsaCreateAccessControlCategoryTableMapping.
-        The values applied to the table for this category.
+        The discrete values applied to the table for this mapping.  If omitted or set to null or an empty array, table discrete values will be set to empty.
 
         Parameters
         ----------
