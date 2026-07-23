@@ -85,6 +85,7 @@ class GsaSmartAttributesErrorDetail(ModelBase):
         "noSuchAttribute".lower(): "#/components/schemas/GsaNoSuchAttributeSmartAttributesErrorDetail",
         "sourceCannotBeTarget".lower(): "#/components/schemas/GsaSourceCannotBeTargetSmartAttributesErrorDetail",
         "tooManyAttributePairs".lower(): "#/components/schemas/GsaTooManyAttributePairsSmartAttributesErrorDetail",
+        "multiValued".lower(): "#/components/schemas/GsaMultiValuedSmartAttributesErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

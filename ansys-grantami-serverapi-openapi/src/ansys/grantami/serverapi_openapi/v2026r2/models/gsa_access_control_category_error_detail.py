@@ -86,6 +86,7 @@ class GsaAccessControlCategoryErrorDetail(ModelBase):
         "duplicateTable".lower(): "#/components/schemas/GsaDuplicateTableErrorDetail",
         "duplicateDiscreteValue".lower(): "#/components/schemas/GsaDuplicateDiscreteValueErrorDetail",
         "noSuchTableMapping".lower(): "#/components/schemas/GsaNoSuchTableMappingErrorDetail",
+        "tableVersionState".lower(): "#/components/schemas/GsaTableVersionStateAccessControlCategoryErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
