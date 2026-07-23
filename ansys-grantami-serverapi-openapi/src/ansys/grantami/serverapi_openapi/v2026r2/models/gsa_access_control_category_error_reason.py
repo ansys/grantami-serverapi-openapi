@@ -51,3 +51,4 @@ class GsaAccessControlCategoryErrorReason(Enum):
     DUPLICATETABLE = "duplicateTable"
     DUPLICATEDISCRETEVALUE = "duplicateDiscreteValue"
     NOSUCHTABLEMAPPING = "noSuchTableMapping"
+    TABLEVERSIONSTATE = "tableVersionState"

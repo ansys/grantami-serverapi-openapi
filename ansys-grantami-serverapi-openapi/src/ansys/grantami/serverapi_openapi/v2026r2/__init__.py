@@ -1062,6 +1062,9 @@ from .models.gsa_multi_valued_point_data_usage_data_modification_error_detail im
     GsaMultiValuedPointDataUsageDataModificationErrorDetail,
 )
 from .models.gsa_multi_valued_reason import GsaMultiValuedReason
+from .models.gsa_multi_valued_smart_attributes_error_detail import (
+    GsaMultiValuedSmartAttributesErrorDetail,
+)
 from .models.gsa_multiple_table_discrete_values_in_single_valued_discrete_error_detail import (
     GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail,
 )
@@ -1735,6 +1738,9 @@ from .models.gsa_table_types_info import GsaTableTypesInfo
 from .models.gsa_table_update_exception import GsaTableUpdateException
 from .models.gsa_table_usage_data_modification_error_detail import (
     GsaTableUsageDataModificationErrorDetail,
+)
+from .models.gsa_table_version_state_access_control_category_error_detail import (
+    GsaTableVersionStateAccessControlCategoryErrorDetail,
 )
 from .models.gsa_tables_info import GsaTablesInfo
 from .models.gsa_tables_missing_reorder_tables_error_detail import (
@@ -2808,6 +2814,7 @@ __all__ = [
     "GsaMultiValuedAttributeErrorDetail",
     "GsaMultiValuedPointDataUsageDataModificationErrorDetail",
     "GsaMultiValuedReason",
+    "GsaMultiValuedSmartAttributesErrorDetail",
     "GsaMultipleTableDiscreteValuesInSingleValuedDiscreteErrorDetail",
     "GsaNameAlreadyExistsAsReverseRecordLinkGroupErrorDetail",
     "GsaNameAlreadyExistsErrorDetail",
@@ -3304,6 +3311,7 @@ __all__ = [
     "GsaTableTypesInfo",
     "GsaTableUpdateException",
     "GsaTableUsageDataModificationErrorDetail",
+    "GsaTableVersionStateAccessControlCategoryErrorDetail",
     "GsaTablesInfo",
     "GsaTablesMissingReorderTablesErrorDetail",
     "GsaTabularAttribute",

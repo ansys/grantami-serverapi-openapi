@@ -50,3 +50,4 @@ class GsaSmartAttributesErrorReason(Enum):
     NOSUCHATTRIBUTE = "noSuchAttribute"
     SOURCECANNOTBETARGET = "sourceCannotBeTarget"
     TOOMANYATTRIBUTEPAIRS = "tooManyAttributePairs"
+    MULTIVALUED = "multiValued"
