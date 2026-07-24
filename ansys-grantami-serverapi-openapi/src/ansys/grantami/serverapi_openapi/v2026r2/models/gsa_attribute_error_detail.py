@@ -97,6 +97,7 @@ class GsaAttributeErrorDetail(ModelBase):
         "tabularColumnNoSuchEntity".lower(): "#/components/schemas/GsaNoSuchEntityTabularColumnErrorDetail",
         "metaAttributeCannotHaveMetaAttribute".lower(): "#/components/schemas/GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
         "multiValued".lower(): "#/components/schemas/GsaMultiValuedAttributeErrorDetail",
+        "targetNotFullySpecified".lower(): "#/components/schemas/GsaTargetNotFullySpecifiedAttributeErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

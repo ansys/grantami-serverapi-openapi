@@ -137,6 +137,9 @@ from .models.gsa_access_control_category_table_mapping import GsaAccessControlCa
 from .models.gsa_access_control_category_update_exception import (
     GsaAccessControlCategoryUpdateException,
 )
+from .models.gsa_access_control_database_user_capabilities import (
+    GsaAccessControlDatabaseUserCapabilities,
+)
 from .models.gsa_access_control_entities_aggregation_error_detail import (
     GsaAccessControlEntitiesAggregationErrorDetail,
 )
@@ -148,7 +151,7 @@ from .models.gsa_access_control_entity import GsaAccessControlEntity
 from .models.gsa_access_control_entity_type import GsaAccessControlEntityType
 from .models.gsa_access_control_info import GsaAccessControlInfo
 from .models.gsa_access_control_mode import GsaAccessControlMode
-from .models.gsa_access_control_mode_info import GsaAccessControlModeInfo
+from .models.gsa_access_control_user_capabilities import GsaAccessControlUserCapabilities
 from .models.gsa_activity_log_application_name_filter import GsaActivityLogApplicationNameFilter
 from .models.gsa_activity_log_application_names_collection_filter import (
     GsaActivityLogApplicationNamesCollectionFilter,
@@ -1640,10 +1643,12 @@ from .models.gsa_similarity_setting import GsaSimilaritySetting
 from .models.gsa_similarity_settings import GsaSimilaritySettings
 from .models.gsa_similarity_sort_criterion import GsaSimilaritySortCriterion
 from .models.gsa_simple_attribute_to_export import GsaSimpleAttributeToExport
+from .models.gsa_slim_access_control_info import GsaSlimAccessControlInfo
 from .models.gsa_slim_attribute import GsaSlimAttribute
 from .models.gsa_slim_attribute_with_help_path import GsaSlimAttributeWithHelpPath
 from .models.gsa_slim_configuration import GsaSlimConfiguration
 from .models.gsa_slim_database import GsaSlimDatabase
+from .models.gsa_slim_database_access_control_info import GsaSlimDatabaseAccessControlInfo
 from .models.gsa_slim_discrete_type import GsaSlimDiscreteType
 from .models.gsa_slim_entity import GsaSlimEntity
 from .models.gsa_slim_expression import GsaSlimExpression
@@ -1778,6 +1783,9 @@ from .models.gsa_target_attribute_not_in_table_attribute_error_detail import (
 from .models.gsa_target_attribute_type import GsaTargetAttributeType
 from .models.gsa_target_attribute_type_attribute_error_detail import (
     GsaTargetAttributeTypeAttributeErrorDetail,
+)
+from .models.gsa_target_not_fully_specified_attribute_error_detail import (
+    GsaTargetNotFullySpecifiedAttributeErrorDetail,
 )
 from .models.gsa_term_with_count import GsaTermWithCount
 from .models.gsa_text_match_behavior import GsaTextMatchBehavior
@@ -1982,6 +1990,7 @@ from .models.gsa_update_user_permissions_info import GsaUpdateUserPermissionsInf
 from .models.gsa_upgrade_database_exception import GsaUpgradeDatabaseException
 from .models.gsa_upgrade_database_failure_reason import GsaUpgradeDatabaseFailureReason
 from .models.gsa_usage_data_modification_error_detail import GsaUsageDataModificationErrorDetail
+from .models.gsa_user_capabilities import GsaUserCapabilities
 from .models.gsa_user_permission import GsaUserPermission
 from .models.gsa_user_permissions_info import GsaUserPermissionsInfo
 from .models.gsa_user_role import GsaUserRole
@@ -2109,6 +2118,7 @@ __all__ = [
     "GsaAccessControlCategoryNoSuchEntityType",
     "GsaAccessControlCategoryTableMapping",
     "GsaAccessControlCategoryUpdateException",
+    "GsaAccessControlDatabaseUserCapabilities",
     "GsaAccessControlEntitiesAggregationErrorDetail",
     "GsaAccessControlEntitiesErrorDetail",
     "GsaAccessControlEntitiesUpdateOperationsErrorDetail",
@@ -2116,7 +2126,7 @@ __all__ = [
     "GsaAccessControlEntityType",
     "GsaAccessControlInfo",
     "GsaAccessControlMode",
-    "GsaAccessControlModeInfo",
+    "GsaAccessControlUserCapabilities",
     "GsaActivityLogApplicationNameFilter",
     "GsaActivityLogApplicationNamesCollectionFilter",
     "GsaActivityLogCollectionMatchType",
@@ -3228,10 +3238,12 @@ __all__ = [
     "GsaSimilaritySettings",
     "GsaSimilaritySortCriterion",
     "GsaSimpleAttributeToExport",
+    "GsaSlimAccessControlInfo",
     "GsaSlimAttribute",
     "GsaSlimAttributeWithHelpPath",
     "GsaSlimConfiguration",
     "GsaSlimDatabase",
+    "GsaSlimDatabaseAccessControlInfo",
     "GsaSlimDiscreteType",
     "GsaSlimEntity",
     "GsaSlimExpression",
@@ -3337,6 +3349,7 @@ __all__ = [
     "GsaTargetAttributeNotInTableAttributeErrorDetail",
     "GsaTargetAttributeType",
     "GsaTargetAttributeTypeAttributeErrorDetail",
+    "GsaTargetNotFullySpecifiedAttributeErrorDetail",
     "GsaTermWithCount",
     "GsaTextMatchBehavior",
     "GsaThresholdTypeAttributeErrorDetail",
@@ -3488,6 +3501,7 @@ __all__ = [
     "GsaUpgradeDatabaseException",
     "GsaUpgradeDatabaseFailureReason",
     "GsaUsageDataModificationErrorDetail",
+    "GsaUserCapabilities",
     "GsaUserPermission",
     "GsaUserPermissionsInfo",
     "GsaUserRole",
