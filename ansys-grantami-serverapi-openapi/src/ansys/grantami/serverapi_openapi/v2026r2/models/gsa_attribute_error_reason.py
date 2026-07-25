@@ -62,3 +62,4 @@ class GsaAttributeErrorReason(Enum):
     DUPLICATETABULARCOLUMNNAMES = "duplicateTabularColumnNames"
     TABULARCOLUMNNOSUCHENTITY = "tabularColumnNoSuchEntity"
     MULTIVALUED = "multiValued"
+    TARGETNOTFULLYSPECIFIED = "targetNotFullySpecified"
