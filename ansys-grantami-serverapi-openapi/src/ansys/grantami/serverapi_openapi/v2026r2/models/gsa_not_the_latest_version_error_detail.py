@@ -36,9 +36,6 @@ from typing import TYPE_CHECKING, Any, BinaryIO, Optional  # noqa: F401
 from ansys.grantami.serverapi_openapi.v2026r2.models.gsa_version_control_error_detail import (  # noqa: F401
     GsaVersionControlErrorDetail,
 )
-from ansys.grantami.serverapi_openapi.v2026r2.models.gsa_version_control_error_reason import (
-    GsaVersionControlErrorReason,
-)
 
 from . import ModelBase, Unset, Unset_Type
 
@@ -69,7 +66,7 @@ class GsaNotTheLatestVersionErrorDetail(GsaVersionControlErrorDetail):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "GsaVersionControlErrorReason",
+        "reason": "str",
         "newer_version": "GsaSlimRecordVersion",
     }
 
@@ -89,7 +86,7 @@ class GsaNotTheLatestVersionErrorDetail(GsaVersionControlErrorDetail):
         self,
         *,
         message: "str",
-        reason: "GsaVersionControlErrorReason" = GsaVersionControlErrorReason.NOTTHELATESTVERSION,
+        reason: "str" = "notTheLatestVersion",
         newer_version: "GsaSlimRecordVersion | Unset_Type" = Unset,
     ) -> None:
         """GsaNotTheLatestVersionErrorDetail - a model defined in Swagger
@@ -97,7 +94,7 @@ class GsaNotTheLatestVersionErrorDetail(GsaVersionControlErrorDetail):
         Parameters
         ----------
         message: str
-        reason: GsaVersionControlErrorReason
+        reason: str
         newer_version: GsaSlimRecordVersion, optional
         """
         super().__init__(message=message, reason=reason)

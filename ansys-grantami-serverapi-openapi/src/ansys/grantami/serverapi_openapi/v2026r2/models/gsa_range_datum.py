@@ -68,10 +68,12 @@ class GsaRangeDatum(GsaApplicableDatum):
     swagger_types: dict[str, str] = {
         "datum_type": "GsaDatumType",
         "estimated": "bool",
+        "high_value": "float",
+        "high_value_is_inclusive": "bool",
+        "low_value": "float",
+        "low_value_is_inclusive": "bool",
         "not_applicable": "str",
-        "high_endpoint": "GsaRangeEndpoint",
         "high_value_significant_figures_info": "GsaSignificantFiguresInfo",
-        "low_endpoint": "GsaRangeEndpoint",
         "low_value_significant_figures_info": "GsaSignificantFiguresInfo",
         "unit": "GsaSlimUnit",
     }
@@ -79,17 +81,17 @@ class GsaRangeDatum(GsaApplicableDatum):
     attribute_map: dict[str, str] = {
         "datum_type": "datumType",
         "estimated": "estimated",
+        "high_value": "highValue",
+        "high_value_is_inclusive": "highValueIsInclusive",
+        "low_value": "lowValue",
+        "low_value_is_inclusive": "lowValueIsInclusive",
         "not_applicable": "notApplicable",
-        "high_endpoint": "highEndpoint",
         "high_value_significant_figures_info": "highValueSignificantFiguresInfo",
-        "low_endpoint": "lowEndpoint",
         "low_value_significant_figures_info": "lowValueSignificantFiguresInfo",
         "unit": "unit",
     }
 
     subtype_mapping: dict[str, str] = {
-        "highEndpoint": "GsaRangeEndpoint",
-        "lowEndpoint": "GsaRangeEndpoint",
         "lowValueSignificantFiguresInfo": "GsaSignificantFiguresInfo",
         "highValueSignificantFiguresInfo": "GsaSignificantFiguresInfo",
         "unit": "GsaSlimUnit",
@@ -102,10 +104,12 @@ class GsaRangeDatum(GsaApplicableDatum):
         *,
         datum_type: "GsaDatumType" = GsaDatumType.RANGE,
         estimated: "bool",
+        high_value: "float",
+        high_value_is_inclusive: "bool",
+        low_value: "float",
+        low_value_is_inclusive: "bool",
         not_applicable: "str | None" = "applicable",
-        high_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
         high_value_significant_figures_info: "GsaSignificantFiguresInfo | Unset_Type" = Unset,
-        low_endpoint: "GsaRangeEndpoint | Unset_Type" = Unset,
         low_value_significant_figures_info: "GsaSignificantFiguresInfo | Unset_Type" = Unset,
         unit: "GsaSlimUnit | Unset_Type" = Unset,
     ) -> None:
@@ -115,25 +119,29 @@ class GsaRangeDatum(GsaApplicableDatum):
         ----------
         datum_type: GsaDatumType
         estimated: bool
+        high_value: float
+        high_value_is_inclusive: bool
+        low_value: float
+        low_value_is_inclusive: bool
         not_applicable: str | None
-        high_endpoint: GsaRangeEndpoint, optional
         high_value_significant_figures_info: GsaSignificantFiguresInfo, optional
-        low_endpoint: GsaRangeEndpoint, optional
         low_value_significant_figures_info: GsaSignificantFiguresInfo, optional
         unit: GsaSlimUnit, optional
         """
         super().__init__(datum_type=datum_type, not_applicable=not_applicable)
-        self._high_endpoint: GsaRangeEndpoint | Unset_Type = Unset
-        self._low_endpoint: GsaRangeEndpoint | Unset_Type = Unset
+        self._low_value: float
+        self._high_value: float
+        self._low_value_is_inclusive: bool
+        self._high_value_is_inclusive: bool
         self._low_value_significant_figures_info: GsaSignificantFiguresInfo | Unset_Type = Unset
         self._high_value_significant_figures_info: GsaSignificantFiguresInfo | Unset_Type = Unset
         self._estimated: bool
         self._unit: GsaSlimUnit | Unset_Type = Unset
 
-        if high_endpoint is not Unset:
-            self.high_endpoint = high_endpoint
-        if low_endpoint is not Unset:
-            self.low_endpoint = low_endpoint
+        self.low_value = low_value
+        self.high_value = high_value
+        self.low_value_is_inclusive = low_value_is_inclusive
+        self.high_value_is_inclusive = high_value_is_inclusive
         if low_value_significant_figures_info is not Unset:
             self.low_value_significant_figures_info = low_value_significant_figures_info
         if high_value_significant_figures_info is not Unset:
@@ -143,54 +151,116 @@ class GsaRangeDatum(GsaApplicableDatum):
             self.unit = unit
 
     @property
-    def high_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
-        """Gets the high_endpoint of this GsaRangeDatum.
+    def low_value(self) -> "float":
+        """Gets the low_value of this GsaRangeDatum.
 
         Returns
         -------
-        GsaRangeEndpoint | Unset_Type
-            The high_endpoint of this GsaRangeDatum.
+        float
+            The low_value of this GsaRangeDatum.
         """
-        return self._high_endpoint
+        return self._low_value
 
-    @high_endpoint.setter
-    def high_endpoint(self, high_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
-        """Sets the high_endpoint of this GsaRangeDatum.
+    @low_value.setter
+    def low_value(self, low_value: "float") -> None:
+        """Sets the low_value of this GsaRangeDatum.
 
         Parameters
         ----------
-        high_endpoint: GsaRangeEndpoint | Unset_Type
-            The high_endpoint of this GsaRangeDatum.
+        low_value: float
+            The low_value of this GsaRangeDatum.
         """
         # Field is not nullable
-        if high_endpoint is None:
-            raise ValueError("Invalid value for 'high_endpoint', must not be 'None'")
-        self._high_endpoint = high_endpoint
+        if low_value is None:
+            raise ValueError("Invalid value for 'low_value', must not be 'None'")
+        # Field is required
+        if low_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'low_value', must not be 'Unset'")
+        self._low_value = low_value
 
     @property
-    def low_endpoint(self) -> "GsaRangeEndpoint | Unset_Type":
-        """Gets the low_endpoint of this GsaRangeDatum.
+    def high_value(self) -> "float":
+        """Gets the high_value of this GsaRangeDatum.
 
         Returns
         -------
-        GsaRangeEndpoint | Unset_Type
-            The low_endpoint of this GsaRangeDatum.
+        float
+            The high_value of this GsaRangeDatum.
         """
-        return self._low_endpoint
+        return self._high_value
 
-    @low_endpoint.setter
-    def low_endpoint(self, low_endpoint: "GsaRangeEndpoint | Unset_Type") -> None:
-        """Sets the low_endpoint of this GsaRangeDatum.
+    @high_value.setter
+    def high_value(self, high_value: "float") -> None:
+        """Sets the high_value of this GsaRangeDatum.
 
         Parameters
         ----------
-        low_endpoint: GsaRangeEndpoint | Unset_Type
-            The low_endpoint of this GsaRangeDatum.
+        high_value: float
+            The high_value of this GsaRangeDatum.
         """
         # Field is not nullable
-        if low_endpoint is None:
-            raise ValueError("Invalid value for 'low_endpoint', must not be 'None'")
-        self._low_endpoint = low_endpoint
+        if high_value is None:
+            raise ValueError("Invalid value for 'high_value', must not be 'None'")
+        # Field is required
+        if high_value is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'high_value', must not be 'Unset'")
+        self._high_value = high_value
+
+    @property
+    def low_value_is_inclusive(self) -> "bool":
+        """Gets the low_value_is_inclusive of this GsaRangeDatum.
+
+        Returns
+        -------
+        bool
+            The low_value_is_inclusive of this GsaRangeDatum.
+        """
+        return self._low_value_is_inclusive
+
+    @low_value_is_inclusive.setter
+    def low_value_is_inclusive(self, low_value_is_inclusive: "bool") -> None:
+        """Sets the low_value_is_inclusive of this GsaRangeDatum.
+
+        Parameters
+        ----------
+        low_value_is_inclusive: bool
+            The low_value_is_inclusive of this GsaRangeDatum.
+        """
+        # Field is not nullable
+        if low_value_is_inclusive is None:
+            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'None'")
+        # Field is required
+        if low_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'low_value_is_inclusive', must not be 'Unset'")
+        self._low_value_is_inclusive = low_value_is_inclusive
+
+    @property
+    def high_value_is_inclusive(self) -> "bool":
+        """Gets the high_value_is_inclusive of this GsaRangeDatum.
+
+        Returns
+        -------
+        bool
+            The high_value_is_inclusive of this GsaRangeDatum.
+        """
+        return self._high_value_is_inclusive
+
+    @high_value_is_inclusive.setter
+    def high_value_is_inclusive(self, high_value_is_inclusive: "bool") -> None:
+        """Sets the high_value_is_inclusive of this GsaRangeDatum.
+
+        Parameters
+        ----------
+        high_value_is_inclusive: bool
+            The high_value_is_inclusive of this GsaRangeDatum.
+        """
+        # Field is not nullable
+        if high_value_is_inclusive is None:
+            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'None'")
+        # Field is required
+        if high_value_is_inclusive is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'high_value_is_inclusive', must not be 'Unset'")
+        self._high_value_is_inclusive = high_value_is_inclusive
 
     @property
     def low_value_significant_figures_info(self) -> "GsaSignificantFiguresInfo | Unset_Type":

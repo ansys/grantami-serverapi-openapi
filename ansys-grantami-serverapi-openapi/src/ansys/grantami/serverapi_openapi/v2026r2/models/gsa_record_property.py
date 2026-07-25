@@ -59,4 +59,3 @@ class GsaRecordProperty(Enum):
     FULLNAME = "fullName"
     SHORTNAME = "shortName"
     RECORDCOLOR = "recordColor"
-    BREADCRUMBS = "breadcrumbs"
