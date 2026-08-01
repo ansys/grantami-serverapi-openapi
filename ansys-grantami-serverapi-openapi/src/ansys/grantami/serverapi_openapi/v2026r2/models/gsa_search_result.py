@@ -69,7 +69,6 @@ class GsaSearchResult(ModelBase):
         "record_history_guid": "str",
         "record_name": "str",
         "score": "float",
-        "similarity_score": "float",
         "sorting_value": "GsaSortingValue",
         "table_guid": "str",
         "table_identity": "int",
@@ -88,7 +87,6 @@ class GsaSearchResult(ModelBase):
         "record_history_guid": "recordHistoryGuid",
         "record_name": "recordName",
         "score": "score",
-        "similarity_score": "similarityScore",
         "sorting_value": "sortingValue",
         "table_guid": "tableGuid",
         "table_identity": "tableIdentity",
@@ -116,7 +114,6 @@ class GsaSearchResult(ModelBase):
         record_history_guid: "str | Unset_Type" = Unset,
         record_name: "str | None | Unset_Type" = Unset,
         score: "float | None | Unset_Type" = Unset,
-        similarity_score: "float | None | Unset_Type" = Unset,
         sorting_value: "GsaSortingValue | Unset_Type" = Unset,
         table_guid: "str | Unset_Type" = Unset,
         table_identity: "int | Unset_Type" = Unset,
@@ -137,7 +134,6 @@ class GsaSearchResult(ModelBase):
         record_history_guid: str, optional
         record_name: str | None, optional
         score: float | None, optional
-        similarity_score: float | None, optional
         sorting_value: GsaSortingValue, optional
         table_guid: str, optional
         table_identity: int, optional
@@ -160,7 +156,6 @@ class GsaSearchResult(ModelBase):
         self._parent_guid: str | None | Unset_Type = Unset
         self._type: GsaRecordType | Unset_Type = Unset
         self._score: float | None | Unset_Type = Unset
-        self._similarity_score: float | None | Unset_Type = Unset
         self._sorting_value: GsaSortingValue | Unset_Type = Unset
 
         self.database_key = database_key
@@ -190,8 +185,6 @@ class GsaSearchResult(ModelBase):
             self.type = type
         if score is not Unset:
             self.score = score
-        if similarity_score is not Unset:
-            self.similarity_score = similarity_score
         if sorting_value is not Unset:
             self.sorting_value = sorting_value
 
@@ -526,28 +519,6 @@ class GsaSearchResult(ModelBase):
             The score of this GsaSearchResult.
         """
         self._score = score
-
-    @property
-    def similarity_score(self) -> "float | None | Unset_Type":
-        """Gets the similarity_score of this GsaSearchResult.
-
-        Returns
-        -------
-        float | None | Unset_Type
-            The similarity_score of this GsaSearchResult.
-        """
-        return self._similarity_score
-
-    @similarity_score.setter
-    def similarity_score(self, similarity_score: "float | None | Unset_Type") -> None:
-        """Sets the similarity_score of this GsaSearchResult.
-
-        Parameters
-        ----------
-        similarity_score: float | None | Unset_Type
-            The similarity_score of this GsaSearchResult.
-        """
-        self._similarity_score = similarity_score
 
     @property
     def sorting_value(self) -> "GsaSortingValue | Unset_Type":

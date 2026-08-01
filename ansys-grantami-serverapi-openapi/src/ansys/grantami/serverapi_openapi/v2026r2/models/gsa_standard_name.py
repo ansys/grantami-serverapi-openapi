@@ -65,7 +65,6 @@ class GsaStandardName(ModelBase):
         "database_key": "str",
         "database_version_guid": "str",
         "guid": "str",
-        "is_custom": "bool",
         "mapped_attributes": "list[GsaSlimAttribute]",
         "mapped_cross_database_record_link_groups": "list[GsaSlimNamedEntity]",
         "mapped_parameters": "list[GsaSlimNamedEntity]",
@@ -78,7 +77,6 @@ class GsaStandardName(ModelBase):
         "database_key": "databaseKey",
         "database_version_guid": "databaseVersionGuid",
         "guid": "guid",
-        "is_custom": "isCustom",
         "mapped_attributes": "mappedAttributes",
         "mapped_cross_database_record_link_groups": "mappedCrossDatabaseRecordLinkGroups",
         "mapped_parameters": "mappedParameters",
@@ -102,7 +100,6 @@ class GsaStandardName(ModelBase):
         database_key: "str",
         database_version_guid: "str",
         guid: "str",
-        is_custom: "bool",
         mapped_attributes: "list[GsaSlimAttribute]",
         mapped_cross_database_record_link_groups: "list[GsaSlimNamedEntity]",
         mapped_parameters: "list[GsaSlimNamedEntity]",
@@ -117,7 +114,6 @@ class GsaStandardName(ModelBase):
         database_key: str
         database_version_guid: str
         guid: str
-        is_custom: bool
         mapped_attributes: list[GsaSlimAttribute]
         mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
         mapped_parameters: list[GsaSlimNamedEntity]
@@ -131,7 +127,6 @@ class GsaStandardName(ModelBase):
         self._database_key: str
         self._database_guid: str
         self._database_version_guid: str
-        self._is_custom: bool
         self._name: str
         self._guid: str
 
@@ -142,7 +137,6 @@ class GsaStandardName(ModelBase):
         self.database_key = database_key
         self.database_guid = database_guid
         self.database_version_guid = database_version_guid
-        self.is_custom = is_custom
         self.name = name
         self.guid = guid
 
@@ -349,34 +343,6 @@ class GsaStandardName(ModelBase):
         if database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'database_version_guid', must not be 'Unset'")
         self._database_version_guid = database_version_guid
-
-    @property
-    def is_custom(self) -> "bool":
-        """Gets the is_custom of this GsaStandardName.
-
-        Returns
-        -------
-        bool
-            The is_custom of this GsaStandardName.
-        """
-        return self._is_custom
-
-    @is_custom.setter
-    def is_custom(self, is_custom: "bool") -> None:
-        """Sets the is_custom of this GsaStandardName.
-
-        Parameters
-        ----------
-        is_custom: bool
-            The is_custom of this GsaStandardName.
-        """
-        # Field is not nullable
-        if is_custom is None:
-            raise ValueError("Invalid value for 'is_custom', must not be 'None'")
-        # Field is required
-        if is_custom is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_custom', must not be 'Unset'")
-        self._is_custom = is_custom
 
     @property
     def name(self) -> "str":

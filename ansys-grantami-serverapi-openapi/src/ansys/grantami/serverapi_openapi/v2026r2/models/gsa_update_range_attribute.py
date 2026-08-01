@@ -70,7 +70,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         "about_attribute": "GsaSlimEntity",
         "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -83,7 +82,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -93,7 +91,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
 
     subtype_mapping: dict[str, str] = {
         "unit": "GsaSlimEntity",
-        "axisName": "GsaUpdateAxisName",
     }
 
     discriminator: Optional[str] = None
@@ -105,7 +102,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
@@ -120,7 +116,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         about_attribute: GsaSlimEntity, optional
         axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         guid: str, optional
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
@@ -130,20 +125,17 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
+            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
             name=name,
         )
         self._unit: GsaSlimEntity | Unset_Type = Unset
-        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
-        if axis_name is not Unset:
-            self.axis_name = axis_name
 
     @property
     def unit(self) -> "GsaSlimEntity | Unset_Type":
@@ -169,31 +161,6 @@ class GsaUpdateRangeAttribute(GsaUpdateAttribute):
         if unit is None:
             raise ValueError("Invalid value for 'unit', must not be 'None'")
         self._unit = unit
-
-    @property
-    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
-        """Gets the axis_name of this GsaUpdateRangeAttribute.
-
-        Returns
-        -------
-        GsaUpdateAxisName | Unset_Type
-            The axis_name of this GsaUpdateRangeAttribute.
-        """
-        return self._axis_name
-
-    @axis_name.setter
-    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
-        """Sets the axis_name of this GsaUpdateRangeAttribute.
-
-        Parameters
-        ----------
-        axis_name: GsaUpdateAxisName | Unset_Type
-            The axis_name of this GsaUpdateRangeAttribute.
-        """
-        # Field is not nullable
-        if axis_name is None:
-            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
-        self._axis_name = axis_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

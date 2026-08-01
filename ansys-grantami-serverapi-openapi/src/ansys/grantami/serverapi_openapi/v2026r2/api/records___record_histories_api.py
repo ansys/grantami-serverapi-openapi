@@ -62,7 +62,6 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         body: GsaCopyRecordHistory
 
@@ -174,9 +173,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         body: GsaCopyRecordHistory
 
@@ -296,9 +293,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         body: GsaCreateRecordHistory
 
         Returns
@@ -409,7 +404,6 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
@@ -522,9 +516,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
@@ -650,7 +642,6 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
@@ -763,9 +754,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
@@ -890,7 +879,6 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         record_history_guid: str
         body: GsaMoveRecordHistory
 
@@ -1002,9 +990,7 @@ class RecordsRecordHistoriesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
-            See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
         record_history_guid: str
         body: GsaMoveRecordHistory
 
