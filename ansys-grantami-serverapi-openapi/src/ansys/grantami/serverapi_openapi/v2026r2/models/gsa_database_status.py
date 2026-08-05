@@ -49,7 +49,6 @@ class GsaDatabaseStatus(Enum):
     UNLOADING = "Unloading"
     FAILEDTOLOAD = "FailedToLoad"
     FAILEDTOUNLOAD = "FailedToUnload"
-    DISABLED = "Disabled"
     SCHEMAUPGRADEREQUIRED = "SchemaUpgradeRequired"
     SCHEMADOWNGRADEREQUIRED = "SchemaDowngradeRequired"
     MISSING = "Missing"
