@@ -62,13 +62,11 @@ class GsaConfigurationDetails(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "connection_details": "GsaConnectionDetails",
-        "enabled": "bool",
         "language": "str",
     }
 
     attribute_map: dict[str, str] = {
         "connection_details": "connectionDetails",
-        "enabled": "enabled",
         "language": "language",
     }
 
@@ -82,7 +80,6 @@ class GsaConfigurationDetails(ModelBase):
         self,
         *,
         connection_details: "GsaConnectionDetails",
-        enabled: "bool",
         language: "str",
     ) -> None:
         """GsaConfigurationDetails - a model defined in Swagger
@@ -90,16 +87,13 @@ class GsaConfigurationDetails(ModelBase):
         Parameters
         ----------
         connection_details: GsaConnectionDetails
-        enabled: bool
         language: str
         """
         self._language: str
         self._connection_details: GsaConnectionDetails
-        self._enabled: bool
 
         self.language = language
         self.connection_details = connection_details
-        self.enabled = enabled
 
     @property
     def language(self) -> "str":
@@ -156,34 +150,6 @@ class GsaConfigurationDetails(ModelBase):
         if connection_details is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'connection_details', must not be 'Unset'")
         self._connection_details = connection_details
-
-    @property
-    def enabled(self) -> "bool":
-        """Gets the enabled of this GsaConfigurationDetails.
-
-        Returns
-        -------
-        bool
-            The enabled of this GsaConfigurationDetails.
-        """
-        return self._enabled
-
-    @enabled.setter
-    def enabled(self, enabled: "bool") -> None:
-        """Sets the enabled of this GsaConfigurationDetails.
-
-        Parameters
-        ----------
-        enabled: bool
-            The enabled of this GsaConfigurationDetails.
-        """
-        # Field is not nullable
-        if enabled is None:
-            raise ValueError("Invalid value for 'enabled', must not be 'None'")
-        # Field is required
-        if enabled is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'enabled', must not be 'Unset'")
-        self._enabled = enabled
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
