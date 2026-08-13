@@ -18,8 +18,6 @@
     <homepage-url>https://github.com/ansys/grantami-serverapi-openapi</homepage-url>
     <documentation-url>https://grantami.docs.pyansys.com</documentation-url>
     <is-namespace-package>True</is-namespace-package>
-    <v24r1-filename>server-api-24r1.json</v24r1-filename>
-    <v24r2-filename>server-api-24r2.json</v24r2-filename>
     <v25r1-filename>server-api-25r1.json</v25r1-filename>
     <v25r2-filename>server-api-25r2.json</v25r2-filename>
     <v26r1-filename>server-api-26r1.json</v26r1-filename>
