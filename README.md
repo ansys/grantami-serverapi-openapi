@@ -63,6 +63,7 @@ Granta MI releases and versions of the Python package.
 
 | Granta MI | ansys-grantami-serverapi-openapi        |
 |-----------|-----------------------------------------|
+| 2027 R1   | v6.0.0 via `2027r1` submodule           |
 | 2026 R1   | v5.1.0 via `2026r1` submodule           |
 | 2025 R2   | v5.0.0+ via `2025r2` submodule          |
 | 2025 R1   | v4.0.0, v5.0.0+ via `2025r1` submodule) |
