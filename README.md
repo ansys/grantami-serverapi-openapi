@@ -61,14 +61,15 @@ get started with the library.
 The `ansys-grantami-serverapi-openapi` package requires Granta MI. The following table details compatibility between
 Granta MI releases and versions of the Python package.
 
-| Granta MI | ansys-grantami-serverapi-openapi        |
-|-----------|-----------------------------------------|
-| 2026 R1   | v5.1.0 via `2026r1` submodule           |
-| 2025 R2   | v5.0.0+ via `2025r2` submodule          |
-| 2025 R1   | v4.0.0, v5.0.0+ via `2025r1` submodule) |
-| 2024 R2   | v3.0.0, v5.0.0+ via `2024r2` submodule) |
-| 2024 R1   | v2.0.0, v5.0.0+ via `2024r1` submodule) |
-| 2023 R2   | v1.0.0 only                             |
+| Granta MI | ansys-grantami-serverapi-openapi               |
+|-----------|------------------------------------------------|
+| 2027 R1   | v6.0.0 via `2027r1` submodule                  |
+| 2026 R1   | v5.1.0+ via `2026r1` submodule                 |
+| 2025 R2   | v5.0.0+ via `2025r2` submodule                 |
+| 2025 R1   | v4.0.0, v5.0.0+ via `2025r1` submodule)        |
+| 2024 R2   | v3.0.0, >=5.0.0,<6.0.0 via `2024r2` submodule) |
+| 2024 R1   | v2.0.0, >=5.0.0,<6.0.0 via `2024r1` submodule) |
+| 2023 R2   | v1.0.0 only                                    |
 
 As of v5.0.0, this package includes bindings for multiple Granta MI versions in separate submodules. v5.0.0 should
 be used for all development against Granta MI 2024 R1 and newer.
