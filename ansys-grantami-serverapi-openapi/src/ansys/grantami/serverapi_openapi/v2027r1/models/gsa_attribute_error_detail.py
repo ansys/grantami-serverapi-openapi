@@ -98,6 +98,11 @@ class GsaAttributeErrorDetail(ModelBase):
         "metaAttributeCannotHaveMetaAttribute".lower(): "#/components/schemas/GsaMetaAttributeCannotHaveMetaAttributeErrorDetail",
         "multiValued".lower(): "#/components/schemas/GsaMultiValuedAttributeErrorDetail",
         "targetNotFullySpecified".lower(): "#/components/schemas/GsaTargetNotFullySpecifiedAttributeErrorDetail",
+        "noSuchTabularColumn".lower(): "#/components/schemas/GsaNoSuchTabularColumnAttributeErrorDetail",
+        "updateTabularColumnPropertyNotProvided".lower(): "#/components/schemas/GsaUpdateTabularColumnPropertyNotProvidedAttributeErrorDetail",
+        "updateTabularColumnType".lower(): "#/components/schemas/GsaUpdateTabularColumnTypeAttributeErrorDetail",
+        "cannotDeleteTabularColumn".lower(): "#/components/schemas/GsaCannotDeleteTabularColumnAttributeErrorDetail",
+        "cannotCreateUnavailableTabularColumn".lower(): "#/components/schemas/GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
