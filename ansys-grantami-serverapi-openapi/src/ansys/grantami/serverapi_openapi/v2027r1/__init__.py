@@ -272,6 +272,12 @@ from .models.gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
 from .models.gsa_bulk_request_item import GsaBulkRequestItem
 from .models.gsa_bulk_response_item import GsaBulkResponseItem
 from .models.gsa_calendar_interval import GsaCalendarInterval
+from .models.gsa_cannot_create_unavailable_tabular_column_attribute_error_detail import (
+    GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail,
+)
+from .models.gsa_cannot_delete_tabular_column_attribute_error_detail import (
+    GsaCannotDeleteTabularColumnAttributeErrorDetail,
+)
 from .models.gsa_category_replace_permission_category_error_detail import (
     GsaCategoryReplacePermissionCategoryErrorDetail,
 )
@@ -1192,6 +1198,9 @@ from .models.gsa_no_such_table_mapping_error_detail import GsaNoSuchTableMapping
 from .models.gsa_no_such_tables_reorder_tables_error_detail import (
     GsaNoSuchTablesReorderTablesErrorDetail,
 )
+from .models.gsa_no_such_tabular_column_attribute_error_detail import (
+    GsaNoSuchTabularColumnAttributeErrorDetail,
+)
 from .models.gsa_no_such_target_table_record_link_group_error_detail import (
     GsaNoSuchTargetTableRecordLinkGroupErrorDetail,
 )
@@ -1982,6 +1991,12 @@ from .models.gsa_update_table import GsaUpdateTable
 from .models.gsa_update_tabular_attribute import GsaUpdateTabularAttribute
 from .models.gsa_update_tabular_attribute_target import GsaUpdateTabularAttributeTarget
 from .models.gsa_update_tabular_column import GsaUpdateTabularColumn
+from .models.gsa_update_tabular_column_property_not_provided_attribute_error_detail import (
+    GsaUpdateTabularColumnPropertyNotProvidedAttributeErrorDetail,
+)
+from .models.gsa_update_tabular_column_type_attribute_error_detail import (
+    GsaUpdateTabularColumnTypeAttributeErrorDetail,
+)
 from .models.gsa_update_unavailable_tabular_column import GsaUpdateUnavailableTabularColumn
 from .models.gsa_update_unit import GsaUpdateUnit
 from .models.gsa_update_unit_system import GsaUpdateUnitSystem
@@ -2223,6 +2238,8 @@ __all__ = [
     "GsaBulkRequestItem",
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
+    "GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
+    "GsaCannotDeleteTabularColumnAttributeErrorDetail",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
     "GsaChartData",
     "GsaChartDataType",
@@ -2885,6 +2902,7 @@ __all__ = [
     "GsaNoSuchSubsetAccessControlEntitiesErrorDetail",
     "GsaNoSuchTableMappingErrorDetail",
     "GsaNoSuchTablesReorderTablesErrorDetail",
+    "GsaNoSuchTabularColumnAttributeErrorDetail",
     "GsaNoSuchTargetTableRecordLinkGroupErrorDetail",
     "GsaNoSuchUnitConstantErrorDetail",
     "GsaNoSuchUnitParameterErrorDetail",
@@ -3493,6 +3511,8 @@ __all__ = [
     "GsaUpdateTabularAttribute",
     "GsaUpdateTabularAttributeTarget",
     "GsaUpdateTabularColumn",
+    "GsaUpdateTabularColumnPropertyNotProvidedAttributeErrorDetail",
+    "GsaUpdateTabularColumnTypeAttributeErrorDetail",
     "GsaUpdateUnavailableTabularColumn",
     "GsaUpdateUnit",
     "GsaUpdateUnitSystem",

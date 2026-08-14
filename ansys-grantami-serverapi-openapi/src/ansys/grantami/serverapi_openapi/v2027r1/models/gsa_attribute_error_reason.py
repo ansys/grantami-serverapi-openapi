@@ -63,3 +63,8 @@ class GsaAttributeErrorReason(Enum):
     TABULARCOLUMNNOSUCHENTITY = "tabularColumnNoSuchEntity"
     MULTIVALUED = "multiValued"
     TARGETNOTFULLYSPECIFIED = "targetNotFullySpecified"
+    NOSUCHTABULARCOLUMN = "noSuchTabularColumn"
+    UPDATETABULARCOLUMNPROPERTYNOTPROVIDED = "updateTabularColumnPropertyNotProvided"
+    UPDATETABULARCOLUMNTYPE = "updateTabularColumnType"
+    CANNOTDELETETABULARCOLUMN = "cannotDeleteTabularColumn"
+    CANNOTCREATEUNAVAILABLETABULARCOLUMN = "cannotCreateUnavailableTabularColumn"
