@@ -67,6 +67,7 @@ class GsaCreateParameter(ModelBase):
         "name": "str",
         "type": "GsaParameterType",
         "guid": "str",
+        "help_path": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -74,6 +75,7 @@ class GsaCreateParameter(ModelBase):
         "name": "name",
         "type": "type",
         "guid": "guid",
+        "help_path": "helpPath",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -94,6 +96,7 @@ class GsaCreateParameter(ModelBase):
         name: "str",
         type: "GsaParameterType",
         guid: "str | Unset_Type" = Unset,
+        help_path: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateParameter - a model defined in Swagger
 
@@ -103,13 +106,17 @@ class GsaCreateParameter(ModelBase):
         name: str
         type: GsaParameterType
         guid: str, optional
+        help_path: str | None, optional
         """
         self._type: GsaParameterType
+        self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_index: int
         self._name: str
         self._guid: str | Unset_Type = Unset
 
         self.type = type
+        if help_path is not Unset:
+            self.help_path = help_path
         self.default_parameter_value_index = default_parameter_value_index
         self.name = name
         if guid is not Unset:
@@ -142,6 +149,28 @@ class GsaCreateParameter(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
+
+    @property
+    def help_path(self) -> "str | None | Unset_Type":
+        """Gets the help_path of this GsaCreateParameter.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The help_path of this GsaCreateParameter.
+        """
+        return self._help_path
+
+    @help_path.setter
+    def help_path(self, help_path: "str | None | Unset_Type") -> None:
+        """Sets the help_path of this GsaCreateParameter.
+
+        Parameters
+        ----------
+        help_path: str | None | Unset_Type
+            The help_path of this GsaCreateParameter.
+        """
+        self._help_path = help_path
 
     @property
     def default_parameter_value_index(self) -> "int":

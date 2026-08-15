@@ -65,8 +65,8 @@ class GsaUpdateAttribute(ModelBase):
     swagger_types: dict[str, str] = {
         "type": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
+        "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "guid": "str",
         "help_path": "str",
         "is_hidden_from_search_criteria": "bool",
@@ -76,8 +76,8 @@ class GsaUpdateAttribute(ModelBase):
     attribute_map: dict[str, str] = {
         "type": "type",
         "about_attribute": "aboutAttribute",
+        "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "guid": "guid",
         "help_path": "helpPath",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
@@ -87,6 +87,7 @@ class GsaUpdateAttribute(ModelBase):
     subtype_mapping: dict[str, str] = {
         "type": "GsaAttributeType",
         "defaultThresholdType": "GsaAttributeThresholdType",
+        "axisName": "GsaUpdateAxisName",
         "aboutAttribute": "GsaSlimEntity",
     }
 
@@ -115,8 +116,8 @@ class GsaUpdateAttribute(ModelBase):
         *,
         type: "GsaAttributeType",
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
+        axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
         is_hidden_from_search_criteria: "bool | None | Unset_Type" = Unset,
@@ -128,8 +129,8 @@ class GsaUpdateAttribute(ModelBase):
         ----------
         type: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
+        axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         guid: str, optional
         help_path: str | None, optional
         is_hidden_from_search_criteria: bool | None, optional
@@ -137,24 +138,24 @@ class GsaUpdateAttribute(ModelBase):
         """
         self._type: GsaAttributeType
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
+        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._about_attribute: GsaSlimEntity | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
-        self._display_names: dict[str, str] | None | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
         self.type = type
         if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
+        if axis_name is not Unset:
+            self.axis_name = axis_name
         if help_path is not Unset:
             self.help_path = help_path
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         if is_hidden_from_search_criteria is not Unset:
             self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
-        if display_names is not Unset:
-            self.display_names = display_names
         if name is not Unset:
             self.name = name
         if guid is not Unset:
@@ -214,6 +215,31 @@ class GsaUpdateAttribute(ModelBase):
         if default_threshold_type is None:
             raise ValueError("Invalid value for 'default_threshold_type', must not be 'None'")
         self._default_threshold_type = default_threshold_type
+
+    @property
+    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
+        """Gets the axis_name of this GsaUpdateAttribute.
+
+        Returns
+        -------
+        GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateAttribute.
+        """
+        return self._axis_name
+
+    @axis_name.setter
+    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
+        """Sets the axis_name of this GsaUpdateAttribute.
+
+        Parameters
+        ----------
+        axis_name: GsaUpdateAxisName | Unset_Type
+            The axis_name of this GsaUpdateAttribute.
+        """
+        # Field is not nullable
+        if axis_name is None:
+            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
+        self._axis_name = axis_name
 
     @property
     def help_path(self) -> "str | None | Unset_Type":
@@ -287,30 +313,6 @@ class GsaUpdateAttribute(ModelBase):
             The is_hidden_from_search_criteria of this GsaUpdateAttribute.
         """
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
-
-    @property
-    def display_names(self) -> "dict[str, str] | None | Unset_Type":
-        """Gets the display_names of this GsaUpdateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
-
-        Returns
-        -------
-        dict[str, str] | None | Unset_Type
-            The display_names of this GsaUpdateAttribute.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str] | None | Unset_Type") -> None:
-        """Sets the display_names of this GsaUpdateAttribute.
-        Set a display name for different languages.  Supported languages include, but are not limited to, \"en\", \"fr\", \"de\", \"ru\", \"ko\", \"zh-CN\", \"ja\".
-
-        Parameters
-        ----------
-        display_names: dict[str, str] | None | Unset_Type
-            The display_names of this GsaUpdateAttribute.
-        """
-        self._display_names = display_names
 
     @property
     def name(self) -> "str | Unset_Type":
