@@ -1108,9 +1108,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -1257,9 +1257,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -1415,9 +1415,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -1576,9 +1576,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -1746,9 +1746,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -1919,9 +1919,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -2101,9 +2101,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -2286,9 +2286,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         max_width: int
         max_height: int
 
@@ -2474,9 +2474,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
 
         Returns
         -------
@@ -2630,9 +2630,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
 
         Returns
         -------
@@ -2795,9 +2795,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
 
         Returns
         -------
@@ -2963,9 +2963,9 @@ class DataApi(ApiBase):
         row_guid: str
         column_guid: str
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
 
         Returns
         -------
@@ -3134,9 +3134,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         filter_empty_cells: bool
         filter_empty_rows: bool
 
@@ -3280,9 +3280,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         filter_empty_cells: bool
         filter_empty_rows: bool
 
@@ -3435,9 +3435,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         filter_empty_cells: bool
         filter_empty_rows: bool
 
@@ -3593,9 +3593,9 @@ class DataApi(ApiBase):
         attribute_guid: str
             See [Schema - Attributes/GetAttributes](#/Schema%20-%20Attributes/GetAttributes) or [Schema - Attributes/QueryAttributes](#/Schema%20-%20Attributes/QueryAttributes)
         mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
         x_ansys_vc_mode: str
-            The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the query string.
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
         filter_empty_cells: bool
         filter_empty_rows: bool
 
