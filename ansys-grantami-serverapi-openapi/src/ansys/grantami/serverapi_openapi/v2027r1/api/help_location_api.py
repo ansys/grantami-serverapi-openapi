@@ -51,6 +51,7 @@ class HelpLocationApi(ApiBase):
     def get_help_url(self, *, help_key: "str") -> "None":
         """Returns the URL that the given helpKey maps to.
 
+        Honours the request's `Accept` header: if the client accepts `text/plain`, the raw URL is  returned as plain text; otherwise (including the default `application/json`) the URL is returned  as a JSON-encoded string, e.g. `\"https://example.com/help\"`.
         This method makes a synchronous HTTP request.
 
         Parameters
