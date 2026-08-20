@@ -69,7 +69,7 @@ class GsaStandardName(ModelBase):
         "mapped_attributes": "list[GsaSlimAttribute]",
         "mapped_cross_database_record_link_groups": "list[GsaSlimNamedEntity]",
         "mapped_parameters": "list[GsaSlimNamedEntity]",
-        "mapped_record_link_groups": "list[GsaSlimNamedEntity]",
+        "mapped_static_record_link_groups": "list[GsaStaticRecordLinkGroupMapping]",
         "name": "str",
     }
 
@@ -82,14 +82,14 @@ class GsaStandardName(ModelBase):
         "mapped_attributes": "mappedAttributes",
         "mapped_cross_database_record_link_groups": "mappedCrossDatabaseRecordLinkGroups",
         "mapped_parameters": "mappedParameters",
-        "mapped_record_link_groups": "mappedRecordLinkGroups",
+        "mapped_static_record_link_groups": "mappedStaticRecordLinkGroups",
         "name": "name",
     }
 
     subtype_mapping: dict[str, str] = {
         "mappedAttributes": "GsaSlimAttribute",
         "mappedParameters": "GsaSlimNamedEntity",
-        "mappedRecordLinkGroups": "GsaSlimNamedEntity",
+        "mappedStaticRecordLinkGroups": "GsaStaticRecordLinkGroupMapping",
         "mappedCrossDatabaseRecordLinkGroups": "GsaSlimNamedEntity",
     }
 
@@ -106,7 +106,7 @@ class GsaStandardName(ModelBase):
         mapped_attributes: "list[GsaSlimAttribute]",
         mapped_cross_database_record_link_groups: "list[GsaSlimNamedEntity]",
         mapped_parameters: "list[GsaSlimNamedEntity]",
-        mapped_record_link_groups: "list[GsaSlimNamedEntity]",
+        mapped_static_record_link_groups: "list[GsaStaticRecordLinkGroupMapping]",
         name: "str",
     ) -> None:
         """GsaStandardName - a model defined in Swagger
@@ -121,12 +121,12 @@ class GsaStandardName(ModelBase):
         mapped_attributes: list[GsaSlimAttribute]
         mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
         mapped_parameters: list[GsaSlimNamedEntity]
-        mapped_record_link_groups: list[GsaSlimNamedEntity]
+        mapped_static_record_link_groups: list[GsaStaticRecordLinkGroupMapping]
         name: str
         """
         self._mapped_attributes: list[GsaSlimAttribute]
         self._mapped_parameters: list[GsaSlimNamedEntity]
-        self._mapped_record_link_groups: list[GsaSlimNamedEntity]
+        self._mapped_static_record_link_groups: list[GsaStaticRecordLinkGroupMapping]
         self._mapped_cross_database_record_link_groups: list[GsaSlimNamedEntity]
         self._database_key: str
         self._database_guid: str
@@ -137,7 +137,7 @@ class GsaStandardName(ModelBase):
 
         self.mapped_attributes = mapped_attributes
         self.mapped_parameters = mapped_parameters
-        self.mapped_record_link_groups = mapped_record_link_groups
+        self.mapped_static_record_link_groups = mapped_static_record_link_groups
         self.mapped_cross_database_record_link_groups = mapped_cross_database_record_link_groups
         self.database_key = database_key
         self.database_guid = database_guid
@@ -203,34 +203,38 @@ class GsaStandardName(ModelBase):
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(self) -> "list[GsaSlimNamedEntity]":
-        """Gets the mapped_record_link_groups of this GsaStandardName.
+    def mapped_static_record_link_groups(self) -> "list[GsaStaticRecordLinkGroupMapping]":
+        """Gets the mapped_static_record_link_groups of this GsaStandardName.
 
         Returns
         -------
-        list[GsaSlimNamedEntity]
-            The mapped_record_link_groups of this GsaStandardName.
+        list[GsaStaticRecordLinkGroupMapping]
+            The mapped_static_record_link_groups of this GsaStandardName.
         """
-        return self._mapped_record_link_groups
+        return self._mapped_static_record_link_groups
 
-    @mapped_record_link_groups.setter
-    def mapped_record_link_groups(
-        self, mapped_record_link_groups: "list[GsaSlimNamedEntity]"
+    @mapped_static_record_link_groups.setter
+    def mapped_static_record_link_groups(
+        self, mapped_static_record_link_groups: "list[GsaStaticRecordLinkGroupMapping]"
     ) -> None:
-        """Sets the mapped_record_link_groups of this GsaStandardName.
+        """Sets the mapped_static_record_link_groups of this GsaStandardName.
 
         Parameters
         ----------
-        mapped_record_link_groups: list[GsaSlimNamedEntity]
-            The mapped_record_link_groups of this GsaStandardName.
+        mapped_static_record_link_groups: list[GsaStaticRecordLinkGroupMapping]
+            The mapped_static_record_link_groups of this GsaStandardName.
         """
         # Field is not nullable
-        if mapped_record_link_groups is None:
-            raise ValueError("Invalid value for 'mapped_record_link_groups', must not be 'None'")
+        if mapped_static_record_link_groups is None:
+            raise ValueError(
+                "Invalid value for 'mapped_static_record_link_groups', must not be 'None'"
+            )
         # Field is required
-        if mapped_record_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'mapped_record_link_groups', must not be 'Unset'")
-        self._mapped_record_link_groups = mapped_record_link_groups
+        if mapped_static_record_link_groups is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError(
+                "Invalid value for 'mapped_static_record_link_groups', must not be 'Unset'"
+            )
+        self._mapped_static_record_link_groups = mapped_static_record_link_groups
 
     @property
     def mapped_cross_database_record_link_groups(self) -> "list[GsaSlimNamedEntity]":

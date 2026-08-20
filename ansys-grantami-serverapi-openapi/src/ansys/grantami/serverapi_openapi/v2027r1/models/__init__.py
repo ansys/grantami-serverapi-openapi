@@ -331,6 +331,7 @@ from .gsa_create_smart_record_link_group import GsaCreateSmartRecordLinkGroup
 from .gsa_create_standard_name import GsaCreateStandardName
 from .gsa_create_static_link_target import GsaCreateStaticLinkTarget
 from .gsa_create_static_record_link_group import GsaCreateStaticRecordLinkGroup
+from .gsa_create_static_record_link_group_mapping import GsaCreateStaticRecordLinkGroupMapping
 from .gsa_create_subset import GsaCreateSubset
 from .gsa_create_table import GsaCreateTable
 from .gsa_create_tabular_attribute import GsaCreateTabularAttribute
@@ -1555,6 +1556,7 @@ from .gsa_standard_name_update_exception import GsaStandardNameUpdateException
 from .gsa_standard_names_info import GsaStandardNamesInfo
 from .gsa_static_record_link import GsaStaticRecordLink
 from .gsa_static_record_link_group import GsaStaticRecordLinkGroup
+from .gsa_static_record_link_group_mapping import GsaStaticRecordLinkGroupMapping
 from .gsa_static_record_link_result import GsaStaticRecordLinkResult
 from .gsa_string_sorting_value import GsaStringSortingValue
 from .gsa_subset import GsaSubset
@@ -1686,6 +1688,9 @@ from .gsa_unresolved_parameter_guids_error_detail import GsaUnresolvedParameterG
 from .gsa_unresolved_record_link_group_guids_error_detail import (
     GsaUnresolvedRecordLinkGroupGuidsErrorDetail,
 )
+from .gsa_unresolved_reverse_record_link_groups_error_detail import (
+    GsaUnresolvedReverseRecordLinkGroupsErrorDetail,
+)
 from .gsa_unresolved_target_attribute import GsaUnresolvedTargetAttribute
 from .gsa_update_access_control import GsaUpdateAccessControl
 from .gsa_update_access_control_category import GsaUpdateAccessControlCategory
@@ -1799,6 +1804,7 @@ from .gsa_update_short_text_attribute import GsaUpdateShortTextAttribute
 from .gsa_update_smart_record_link_group import GsaUpdateSmartRecordLinkGroup
 from .gsa_update_standard_name import GsaUpdateStandardName
 from .gsa_update_static_record_link_group import GsaUpdateStaticRecordLinkGroup
+from .gsa_update_static_record_link_group_mapping import GsaUpdateStaticRecordLinkGroupMapping
 from .gsa_update_subset import GsaUpdateSubset
 from .gsa_update_table import GsaUpdateTable
 from .gsa_update_tabular_attribute import GsaUpdateTabularAttribute
@@ -2100,6 +2106,7 @@ __all__ = [
     "GsaCreateStandardName",
     "GsaCreateStaticLinkTarget",
     "GsaCreateStaticRecordLinkGroup",
+    "GsaCreateStaticRecordLinkGroupMapping",
     "GsaCreateSubset",
     "GsaCreateTable",
     "GsaCreateTabularAttribute",
@@ -3068,6 +3075,7 @@ __all__ = [
     "GsaStandardNamesInfo",
     "GsaStaticRecordLink",
     "GsaStaticRecordLinkGroup",
+    "GsaStaticRecordLinkGroupMapping",
     "GsaStaticRecordLinkResult",
     "GsaStringSortingValue",
     "GsaSubset",
@@ -3163,6 +3171,7 @@ __all__ = [
     "GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedParameterGuidsErrorDetail",
     "GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
+    "GsaUnresolvedReverseRecordLinkGroupsErrorDetail",
     "GsaUnresolvedTargetAttribute",
     "GsaUpdateAccessControl",
     "GsaUpdateAccessControlCategory",
@@ -3258,6 +3267,7 @@ __all__ = [
     "GsaUpdateSmartRecordLinkGroup",
     "GsaUpdateStandardName",
     "GsaUpdateStaticRecordLinkGroup",
+    "GsaUpdateStaticRecordLinkGroupMapping",
     "GsaUpdateSubset",
     "GsaUpdateTable",
     "GsaUpdateTabularAttribute",

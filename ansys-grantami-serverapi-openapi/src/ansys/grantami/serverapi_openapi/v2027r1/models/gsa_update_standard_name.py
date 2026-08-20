@@ -65,7 +65,7 @@ class GsaUpdateStandardName(ModelBase):
         "mapped_attributes": "list[GsaSlimEntity]",
         "mapped_cross_database_record_link_groups": "list[GsaSlimEntity]",
         "mapped_parameters": "list[GsaSlimEntity]",
-        "mapped_record_link_groups": "list[GsaSlimEntity]",
+        "mapped_record_link_groups": "list[GsaUpdateStaticRecordLinkGroupMapping]",
         "name": "str",
     }
 
@@ -81,7 +81,7 @@ class GsaUpdateStandardName(ModelBase):
     subtype_mapping: dict[str, str] = {
         "mappedAttributes": "GsaSlimEntity",
         "mappedParameters": "GsaSlimEntity",
-        "mappedRecordLinkGroups": "GsaSlimEntity",
+        "mappedRecordLinkGroups": "GsaUpdateStaticRecordLinkGroupMapping",
         "mappedCrossDatabaseRecordLinkGroups": "GsaSlimEntity",
     }
 
@@ -94,7 +94,7 @@ class GsaUpdateStandardName(ModelBase):
         mapped_attributes: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         mapped_cross_database_record_link_groups: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         mapped_parameters: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
-        mapped_record_link_groups: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
+        mapped_record_link_groups: "list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdateStandardName - a model defined in Swagger
@@ -105,12 +105,14 @@ class GsaUpdateStandardName(ModelBase):
         mapped_attributes: list[GsaSlimEntity] | None, optional
         mapped_cross_database_record_link_groups: list[GsaSlimEntity] | None, optional
         mapped_parameters: list[GsaSlimEntity] | None, optional
-        mapped_record_link_groups: list[GsaSlimEntity] | None, optional
+        mapped_record_link_groups: list[GsaUpdateStaticRecordLinkGroupMapping] | None, optional
         name: str, optional
         """
         self._mapped_attributes: list[GsaSlimEntity] | None | Unset_Type = Unset
         self._mapped_parameters: list[GsaSlimEntity] | None | Unset_Type = Unset
-        self._mapped_record_link_groups: list[GsaSlimEntity] | None | Unset_Type = Unset
+        self._mapped_record_link_groups: (
+            list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type
+        ) = Unset
         self._mapped_cross_database_record_link_groups: list[GsaSlimEntity] | None | Unset_Type = (
             Unset
         )
@@ -179,25 +181,28 @@ class GsaUpdateStandardName(ModelBase):
         self._mapped_parameters = mapped_parameters
 
     @property
-    def mapped_record_link_groups(self) -> "list[GsaSlimEntity] | None | Unset_Type":
+    def mapped_record_link_groups(
+        self,
+    ) -> "list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type":
         """Gets the mapped_record_link_groups of this GsaUpdateStandardName.
 
         Returns
         -------
-        list[GsaSlimEntity] | None | Unset_Type
+        list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type
             The mapped_record_link_groups of this GsaUpdateStandardName.
         """
         return self._mapped_record_link_groups
 
     @mapped_record_link_groups.setter
     def mapped_record_link_groups(
-        self, mapped_record_link_groups: "list[GsaSlimEntity] | None | Unset_Type"
+        self,
+        mapped_record_link_groups: "list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type",
     ) -> None:
         """Sets the mapped_record_link_groups of this GsaUpdateStandardName.
 
         Parameters
         ----------
-        mapped_record_link_groups: list[GsaSlimEntity] | None | Unset_Type
+        mapped_record_link_groups: list[GsaUpdateStaticRecordLinkGroupMapping] | None | Unset_Type
             The mapped_record_link_groups of this GsaUpdateStandardName.
         """
         self._mapped_record_link_groups = mapped_record_link_groups

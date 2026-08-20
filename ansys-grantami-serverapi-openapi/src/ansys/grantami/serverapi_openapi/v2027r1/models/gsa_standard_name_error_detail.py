@@ -87,6 +87,7 @@ class GsaStandardNameErrorDetail(ModelBase):
         "unresolvedRecordLinkGroupGuids".lower(): "#/components/schemas/GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
         "unresolvedCrossDatabaseRecordLinkGroupGuids".lower(): "#/components/schemas/GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
         "nonCustomStandardNameCannotBeChanged".lower(): "#/components/schemas/GsaNonCustomStandardNameCannotBeChangedErrorDetail",
+        "unresolvedReverseRecordLinkGroups".lower(): "#/components/schemas/GsaUnresolvedReverseRecordLinkGroupsErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
