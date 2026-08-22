@@ -68,3 +68,4 @@ class GsaAttributeErrorReason(Enum):
     UPDATETABULARCOLUMNTYPE = "updateTabularColumnType"
     CANNOTDELETETABULARCOLUMN = "cannotDeleteTabularColumn"
     CANNOTCREATEUNAVAILABLETABULARCOLUMN = "cannotCreateUnavailableTabularColumn"
+    CANNOTCHANGEDISCRETETYPE = "cannotChangeDiscreteType"
