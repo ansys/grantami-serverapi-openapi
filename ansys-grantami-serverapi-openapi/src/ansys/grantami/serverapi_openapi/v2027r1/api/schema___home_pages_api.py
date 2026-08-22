@@ -55,7 +55,7 @@ class SchemaHomePagesApi(ApiBase):
         folder_guid: "str",
         file: "Optional[BinaryIO | pathlib.Path]" = None,
         description: "Optional[str]" = None,
-    ) -> "GsaFileCreationException | GsaFileHeader | None":
+    ) -> "GsaFileHeader | None":
         """Create a new Home Page File.
 
         This method makes a synchronous HTTP request.
@@ -63,14 +63,13 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file: BinaryIO | pathlib.Path
         description: str
 
         Returns
         -------
-        GsaFileCreationException | GsaFileHeader | None
+        GsaFileHeader | None
         """
         data = self._create_home_page_file_with_http_info(
             database_key, folder_guid, file, description, _return_http_data_only=True
@@ -144,7 +143,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaFileHeader",
-            400: "GsaFileCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -167,7 +166,7 @@ class SchemaHomePagesApi(ApiBase):
 
     def create_home_page_folder(
         self, *, database_key: "str", body: "Optional[GsaCreateFolder]" = None
-    ) -> "GsaFolder | GsaFolderCreationException | None":
+    ) -> "GsaFolder | None":
         """Create a new Home Page Folder.
 
         This method makes a synchronous HTTP request.
@@ -175,12 +174,11 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         body: GsaCreateFolder
 
         Returns
         -------
-        GsaFolder | GsaFolderCreationException | None
+        GsaFolder | None
         """
         data = self._create_home_page_folder_with_http_info(
             database_key, body, _return_http_data_only=True
@@ -240,7 +238,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaFolder",
-            400: "GsaFolderCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -271,7 +269,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
@@ -361,9 +358,7 @@ class SchemaHomePagesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_home_page_folder(
-        self, *, database_key: "str", folder_guid: "str"
-    ) -> "GsaFolderDeletionException | None":
+    def delete_home_page_folder(self, *, database_key: "str", folder_guid: "str") -> "None":
         """Delete a Home Page Folder.
 
         This method makes a synchronous HTTP request.
@@ -371,12 +366,11 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
         -------
-        GsaFolderDeletionException | None
+        None
         """
         data = self._delete_home_page_folder_with_http_info(
             database_key, folder_guid, _return_http_data_only=True
@@ -429,13 +423,8 @@ class SchemaHomePagesApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaFolderDeletionException",
             200: None,
             403: None,
             404: None,
@@ -459,7 +448,7 @@ class SchemaHomePagesApi(ApiBase):
 
     def export_home_page_file(
         self, *, database_key: "str", folder_guid: "str", file_guid: "str"
-    ) -> "None | str":
+    ) -> "None":
         """Get Home Page File as a file
 
         This method makes a synchronous HTTP request.
@@ -467,13 +456,12 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
         Returns
         -------
-        None | str
+        None
         """
         data = self._export_home_page_file_with_http_info(
             database_key, folder_guid, file_guid, _return_http_data_only=True
@@ -534,106 +522,14 @@ class SchemaHomePagesApi(ApiBase):
         local_var_files: dict[str, Any] = {}
 
         body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/octet-stream"])
 
         response_type_map: dict[int, Optional[str]] = {
-            200: "file",
+            200: None,
             404: None,
         }
 
         return self.api_client.call_api(
             "/v1alpha/databases/{database-key}/home-page-folders/{folder-guid}/files/{file-guid}:export",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
-    def export_home_page_folder(self, *, database_key: "str", folder_guid: "str") -> "None | str":
-        """Get Home Page folder and contents as a zip file
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        folder_guid: str
-
-        Returns
-        -------
-        None | str
-        """
-        data = self._export_home_page_folder_with_http_info(
-            database_key, folder_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _export_home_page_folder_with_http_info(
-        self, database_key: "str", folder_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "folder_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method export_home_page_folder"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'export_home_page_folder'"
-            )
-        # verify the required parameter "folder_guid" is set
-        if "folder_guid" not in params or params["folder_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'folder_guid' when calling 'export_home_page_folder'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "folder_guid" in params and folder_guid is not None:
-            path_params["folder-guid"] = params["folder_guid"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(["application/zip"])
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "file",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/home-page-folders/{folder-guid}:export",
             "GET",
             path_params,
             query_params,
@@ -658,7 +554,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -742,100 +637,6 @@ class SchemaHomePagesApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_home_page_descendants(
-        self, *, database_key: "str", folder_guid: "str"
-    ) -> "GsaFileHeaderInfo | None":
-        """Returns file information for all descendants of a Home Page folder.
-
-        This method makes a synchronous HTTP request.
-
-        Parameters
-        ----------
-        database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
-        folder_guid: str
-
-        Returns
-        -------
-        GsaFileHeaderInfo | None
-        """
-        data = self._get_home_page_descendants_with_http_info(
-            database_key, folder_guid, _return_http_data_only=True
-        )
-        return data  # type: ignore[no-any-return]
-
-    def _get_home_page_descendants_with_http_info(
-        self, database_key: "str", folder_guid: "str", **kwargs: Any
-    ) -> Any:
-        all_params = [
-            "database_key",
-            "folder_guid",
-            "_return_http_data_only",
-            "_preload_content",
-            "_request_timeout",
-        ]
-
-        params = locals()
-        for key, val in params["kwargs"].items():
-            if key not in all_params:
-                raise TypeError(
-                    f"Got an unexpected keyword argument '{key}' to method get_home_page_descendants"
-                )
-            params[key] = val
-        del params["kwargs"]
-        # verify the required parameter "database_key" is set
-        if "database_key" not in params or params["database_key"] is None:
-            raise ValueError(
-                "Missing the required parameter 'database_key' when calling 'get_home_page_descendants'"
-            )
-        # verify the required parameter "folder_guid" is set
-        if "folder_guid" not in params or params["folder_guid"] is None:
-            raise ValueError(
-                "Missing the required parameter 'folder_guid' when calling 'get_home_page_descendants'"
-            )
-
-        collection_formats: dict[str, Any] = {}
-
-        path_params: dict[str, Any] = {}
-        if "database_key" in params and database_key is not None:
-            path_params["database-key"] = params["database_key"]
-        if "folder_guid" in params and folder_guid is not None:
-            path_params["folder-guid"] = params["folder_guid"]
-
-        query_params: list[Any] = []
-
-        header_params: dict[str, Any] = {}
-
-        form_params: list[Any] = []
-        local_var_files: dict[str, Any] = {}
-
-        body_params = None
-        # HTTP header 'Accept'
-        header_params["Accept"] = self.api_client.select_header_accept(
-            ["text/plain", "application/json", "text/json"]
-        )
-
-        response_type_map: dict[int, Optional[str]] = {
-            200: "GsaFileHeaderInfo",
-            404: None,
-        }
-
-        return self.api_client.call_api(
-            "/v1alpha/databases/{database-key}/home-page-folders/{folder-guid}:descendants",
-            "GET",
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            _return_http_data_only=params.get("_return_http_data_only"),
-            _preload_content=params.get("_preload_content", True),
-            _request_timeout=params.get("_request_timeout"),
-            collection_formats=collection_formats,
-            response_type_map=response_type_map,
-        )
-
     def get_home_page_file(
         self, *, database_key: "str", folder_guid: "str", file_guid: "str"
     ) -> "GsaFileHeader | None":
@@ -846,7 +647,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
 
@@ -949,7 +749,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -1043,7 +842,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
 
         Returns
@@ -1135,7 +933,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1214,7 +1011,6 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -1294,7 +1090,7 @@ class SchemaHomePagesApi(ApiBase):
         folder_guid: "str",
         file_guid: "str",
         body: "Optional[GsaMoveFile]" = None,
-    ) -> "GsaFileHeader | GsaFileMoveException | None":
+    ) -> "GsaFileHeader | None":
         """Move an existing Home Page File.
 
         This method makes a synchronous HTTP request.
@@ -1302,14 +1098,13 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
         body: GsaMoveFile
 
         Returns
         -------
-        GsaFileHeader | GsaFileMoveException | None
+        GsaFileHeader | None
         """
         data = self._move_home_page_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1390,7 +1185,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileHeader",
-            400: "GsaFileMoveException",
+            400: None,
             403: None,
             404: None,
         }
@@ -1413,7 +1208,7 @@ class SchemaHomePagesApi(ApiBase):
 
     def move_home_page_folder(
         self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaMoveFolder]" = None
-    ) -> "GsaFolder | GsaFolderMoveException | None":
+    ) -> "GsaFolder | None":
         """Move an existing Home Page Folder.
 
         This method makes a synchronous HTTP request.
@@ -1421,13 +1216,12 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         body: GsaMoveFolder
 
         Returns
         -------
-        GsaFolder | GsaFolderMoveException | None
+        GsaFolder | None
         """
         data = self._move_home_page_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1499,7 +1293,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFolder",
-            400: "GsaFolderMoveException",
+            400: None,
             403: None,
             404: None,
         }
@@ -1527,7 +1321,7 @@ class SchemaHomePagesApi(ApiBase):
         folder_guid: "str",
         file_guid: "str",
         body: "Optional[GsaUpdateFile]" = None,
-    ) -> "GsaFileHeader | GsaFileUpdateException | None":
+    ) -> "GsaFileHeader | None":
         """Update an existing Home Page File.
 
         This method makes a synchronous HTTP request.
@@ -1535,14 +1329,13 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         file_guid: str
         body: GsaUpdateFile
 
         Returns
         -------
-        GsaFileHeader | GsaFileUpdateException | None
+        GsaFileHeader | None
         """
         data = self._update_home_page_file_with_http_info(
             database_key, folder_guid, file_guid, body, _return_http_data_only=True
@@ -1623,7 +1416,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFileHeader",
-            400: "GsaFileUpdateException",
+            400: None,
             403: None,
             404: None,
         }
@@ -1646,7 +1439,7 @@ class SchemaHomePagesApi(ApiBase):
 
     def update_home_page_folder(
         self, *, database_key: "str", folder_guid: "str", body: "Optional[GsaUpdateFolder]" = None
-    ) -> "GsaFolder | GsaFolderUpdateException | None":
+    ) -> "GsaFolder | None":
         """Update an existing Home Page Folder.
 
         This method makes a synchronous HTTP request.
@@ -1654,13 +1447,12 @@ class SchemaHomePagesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         folder_guid: str
         body: GsaUpdateFolder
 
         Returns
         -------
-        GsaFolder | GsaFolderUpdateException | None
+        GsaFolder | None
         """
         data = self._update_home_page_folder_with_http_info(
             database_key, folder_guid, body, _return_http_data_only=True
@@ -1732,7 +1524,7 @@ class SchemaHomePagesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaFolder",
-            400: "GsaFolderUpdateException",
+            400: None,
             403: None,
             404: None,
         }
