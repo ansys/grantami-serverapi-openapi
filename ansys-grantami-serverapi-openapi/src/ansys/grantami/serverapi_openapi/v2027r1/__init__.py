@@ -272,6 +272,9 @@ from .models.gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
 from .models.gsa_bulk_request_item import GsaBulkRequestItem
 from .models.gsa_bulk_response_item import GsaBulkResponseItem
 from .models.gsa_calendar_interval import GsaCalendarInterval
+from .models.gsa_cannot_change_discrete_type_attribute_error_detail import (
+    GsaCannotChangeDiscreteTypeAttributeErrorDetail,
+)
 from .models.gsa_cannot_create_unavailable_tabular_column_attribute_error_detail import (
     GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail,
 )
@@ -2248,6 +2251,7 @@ __all__ = [
     "GsaBulkRequestItem",
     "GsaBulkResponseItem",
     "GsaCalendarInterval",
+    "GsaCannotChangeDiscreteTypeAttributeErrorDetail",
     "GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
     "GsaCannotDeleteTabularColumnAttributeErrorDetail",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
