@@ -103,6 +103,7 @@ class GsaAttributeErrorDetail(ModelBase):
         "updateTabularColumnType".lower(): "#/components/schemas/GsaUpdateTabularColumnTypeAttributeErrorDetail",
         "cannotDeleteTabularColumn".lower(): "#/components/schemas/GsaCannotDeleteTabularColumnAttributeErrorDetail",
         "cannotCreateUnavailableTabularColumn".lower(): "#/components/schemas/GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
+        "cannotChangeDiscreteType".lower(): "#/components/schemas/GsaCannotChangeDiscreteTypeAttributeErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"
