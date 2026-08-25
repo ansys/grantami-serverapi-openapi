@@ -66,7 +66,7 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "axis_name": "GsaUpdateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
@@ -79,7 +79,7 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
@@ -100,7 +100,7 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.INTEGER,
+        type_: "GsaAttributeType" = GsaAttributeType.INTEGER,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
@@ -115,7 +115,7 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         axis_name: GsaUpdateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
@@ -127,7 +127,7 @@ class GsaUpdateIntegerAttribute(GsaUpdateAttribute):
         name: str, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             display_names=display_names,

@@ -67,7 +67,7 @@ class GsaCreateDateTimeAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -78,7 +78,7 @@ class GsaCreateDateTimeAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -95,7 +95,7 @@ class GsaCreateDateTimeAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.DATETIME,
+        type_: "GsaAttributeType" = GsaAttributeType.DATETIME,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -108,7 +108,7 @@ class GsaCreateDateTimeAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         default_threshold_type: GsaAttributeThresholdType, optional
         display_names: dict[str, str] | None, optional
         guid: str, optional
@@ -118,7 +118,7 @@ class GsaCreateDateTimeAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,

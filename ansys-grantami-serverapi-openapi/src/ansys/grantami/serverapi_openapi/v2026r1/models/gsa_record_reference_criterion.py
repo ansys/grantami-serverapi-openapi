@@ -65,7 +65,7 @@ class GsaRecordReferenceCriterion(GsaCriterion):
     """
     swagger_types: dict[str, str] = {
         "database_key": "str",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "any_record_guids": "list[str]",
         "any_record_history_guids": "list[str]",
         "record_guid": "str",
@@ -74,7 +74,7 @@ class GsaRecordReferenceCriterion(GsaCriterion):
 
     attribute_map: dict[str, str] = {
         "database_key": "databaseKey",
-        "type": "type",
+        "type_": "type",
         "any_record_guids": "anyRecordGuids",
         "any_record_history_guids": "anyRecordHistoryGuids",
         "record_guid": "recordGuid",
@@ -89,7 +89,7 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         self,
         *,
         database_key: "str",
-        type: "GsaCriterionType" = GsaCriterionType.REFERENCE,
+        type_: "GsaCriterionType" = GsaCriterionType.REFERENCE,
         any_record_guids: "list[str] | None | Unset_Type" = Unset,
         any_record_history_guids: "list[str] | None | Unset_Type" = Unset,
         record_guid: "str | None | Unset_Type" = Unset,
@@ -100,13 +100,13 @@ class GsaRecordReferenceCriterion(GsaCriterion):
         Parameters
         ----------
         database_key: str
-        type: GsaCriterionType
+        type_: GsaCriterionType
         any_record_guids: list[str] | None, optional
         any_record_history_guids: list[str] | None, optional
         record_guid: str | None, optional
         record_history_guid: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._database_key: str
         self._record_guid: str | None | Unset_Type = Unset
         self._record_history_guid: str | None | Unset_Type = Unset

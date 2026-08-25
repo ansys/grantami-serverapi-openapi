@@ -72,7 +72,7 @@ class GsaCrossDatabaseLink(GsaLink):
         "link_info": "GsaLinkInfo",
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaLinkAttributeType",
+        "type_": "GsaLinkAttributeType",
         "reverse_display_names": "dict(str, str)",
     }
 
@@ -83,7 +83,7 @@ class GsaCrossDatabaseLink(GsaLink):
         "link_info": "linkInfo",
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "reverse_display_names": "reverseDisplayNames",
     }
 
@@ -100,7 +100,7 @@ class GsaCrossDatabaseLink(GsaLink):
         link_info: "GsaLinkInfo",
         name: "str",
         reverse_name: "str",
-        type: "GsaLinkAttributeType" = GsaLinkAttributeType.CROSSDATABASELINK,
+        type_: "GsaLinkAttributeType" = GsaLinkAttributeType.CROSSDATABASELINK,
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCrossDatabaseLink - a model defined in Swagger
@@ -113,7 +113,7 @@ class GsaCrossDatabaseLink(GsaLink):
         link_info: GsaLinkInfo
         name: str
         reverse_name: str
-        type: GsaLinkAttributeType
+        type_: GsaLinkAttributeType
         reverse_display_names: dict[str, str] | None, optional
         """
         super().__init__(
@@ -122,7 +122,7 @@ class GsaCrossDatabaseLink(GsaLink):
             link_info=link_info,
             name=name,
             reverse_name=reverse_name,
-            type=type,
+            type_=type_,
             reverse_display_names=reverse_display_names,
         )
         self._include_indirect_links: bool

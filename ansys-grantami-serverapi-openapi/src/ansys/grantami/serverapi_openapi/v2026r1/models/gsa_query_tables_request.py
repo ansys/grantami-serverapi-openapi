@@ -62,12 +62,12 @@ class GsaQueryTablesRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "properties": "GsaQueryTableProperties",
-        "filter": "GsaQueryTableFilter",
+        "filter_": "GsaQueryTableFilter",
     }
 
     attribute_map: dict[str, str] = {
         "properties": "properties",
-        "filter": "filter",
+        "filter_": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,21 +81,21 @@ class GsaQueryTablesRequest(ModelBase):
         self,
         *,
         properties: "GsaQueryTableProperties",
-        filter: "GsaQueryTableFilter | Unset_Type" = Unset,
+        filter_: "GsaQueryTableFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryTablesRequest - a model defined in Swagger
 
         Parameters
         ----------
         properties: GsaQueryTableProperties
-        filter: GsaQueryTableFilter, optional
+        filter_: GsaQueryTableFilter, optional
         """
         self._properties: GsaQueryTableProperties
-        self._filter: GsaQueryTableFilter | Unset_Type = Unset
+        self._filter_: GsaQueryTableFilter | Unset_Type = Unset
 
         self.properties = properties
-        if filter is not Unset:
-            self.filter = filter
+        if filter_ is not Unset:
+            self.filter_ = filter_
 
     @property
     def properties(self) -> "GsaQueryTableProperties":
@@ -126,29 +126,29 @@ class GsaQueryTablesRequest(ModelBase):
         self._properties = properties
 
     @property
-    def filter(self) -> "GsaQueryTableFilter | Unset_Type":
-        """Gets the filter of this GsaQueryTablesRequest.
+    def filter_(self) -> "GsaQueryTableFilter | Unset_Type":
+        """Gets the filter_ of this GsaQueryTablesRequest.
 
         Returns
         -------
         GsaQueryTableFilter | Unset_Type
-            The filter of this GsaQueryTablesRequest.
+            The filter_ of this GsaQueryTablesRequest.
         """
-        return self._filter
+        return self._filter_
 
-    @filter.setter
-    def filter(self, filter: "GsaQueryTableFilter | Unset_Type") -> None:
-        """Sets the filter of this GsaQueryTablesRequest.
+    @filter_.setter
+    def filter_(self, filter_: "GsaQueryTableFilter | Unset_Type") -> None:
+        """Sets the filter_ of this GsaQueryTablesRequest.
 
         Parameters
         ----------
-        filter: GsaQueryTableFilter | Unset_Type
-            The filter of this GsaQueryTablesRequest.
+        filter_: GsaQueryTableFilter | Unset_Type
+            The filter_ of this GsaQueryTablesRequest.
         """
         # Field is not nullable
-        if filter is None:
-            raise ValueError("Invalid value for 'filter', must not be 'None'")
-        self._filter = filter
+        if filter_ is None:
+            raise ValueError("Invalid value for 'filter_', must not be 'None'")
+        self._filter_ = filter_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

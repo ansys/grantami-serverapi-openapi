@@ -64,13 +64,13 @@ class GsaCreateQualitySystem(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaQualitySystemType",
+        "type_": "GsaQualitySystemType",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
     }
 
@@ -89,7 +89,7 @@ class GsaCreateQualitySystem(ModelBase):
         self,
         *,
         name: "str",
-        type: "GsaQualitySystemType",
+        type_: "GsaQualitySystemType",
         guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateQualitySystem - a model defined in Swagger
@@ -97,45 +97,45 @@ class GsaCreateQualitySystem(ModelBase):
         Parameters
         ----------
         name: str
-        type: GsaQualitySystemType
+        type_: GsaQualitySystemType
         guid: str, optional
         """
-        self._type: GsaQualitySystemType
+        self._type_: GsaQualitySystemType
         self._name: str
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         self.name = name
         if guid is not Unset:
             self.guid = guid
 
     @property
-    def type(self) -> "GsaQualitySystemType":
-        """Gets the type of this GsaCreateQualitySystem.
+    def type_(self) -> "GsaQualitySystemType":
+        """Gets the type_ of this GsaCreateQualitySystem.
 
         Returns
         -------
         GsaQualitySystemType
-            The type of this GsaCreateQualitySystem.
+            The type_ of this GsaCreateQualitySystem.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaQualitySystemType") -> None:
-        """Sets the type of this GsaCreateQualitySystem.
+    @type_.setter
+    def type_(self, type_: "GsaQualitySystemType") -> None:
+        """Sets the type_ of this GsaCreateQualitySystem.
 
         Parameters
         ----------
-        type: GsaQualitySystemType
-            The type of this GsaCreateQualitySystem.
+        type_: GsaQualitySystemType
+            The type_ of this GsaCreateQualitySystem.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def name(self) -> "str":

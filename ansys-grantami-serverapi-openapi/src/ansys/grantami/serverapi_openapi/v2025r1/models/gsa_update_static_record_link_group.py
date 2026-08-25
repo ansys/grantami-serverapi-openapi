@@ -68,7 +68,7 @@ class GsaUpdateStaticRecordLinkGroup(GsaUpdateRecordLinkGroup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "guid": "str",
         "include_indirect_links": "bool",
         "name": "str",
@@ -76,7 +76,7 @@ class GsaUpdateStaticRecordLinkGroup(GsaUpdateRecordLinkGroup):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "include_indirect_links": "includeIndirectLinks",
         "name": "name",
@@ -90,7 +90,7 @@ class GsaUpdateStaticRecordLinkGroup(GsaUpdateRecordLinkGroup):
     def __init__(
         self,
         *,
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.STATIC,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.STATIC,
         guid: "str | Unset_Type" = Unset,
         include_indirect_links: "bool | Unset_Type" = Unset,
         name: "str | Unset_Type" = Unset,
@@ -100,13 +100,13 @@ class GsaUpdateStaticRecordLinkGroup(GsaUpdateRecordLinkGroup):
 
         Parameters
         ----------
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         guid: str, optional
         include_indirect_links: bool, optional
         name: str, optional
         reverse_name: str, optional
         """
-        super().__init__(type=type, guid=guid, name=name, reverse_name=reverse_name)
+        super().__init__(type_=type_, guid=guid, name=name, reverse_name=reverse_name)
         self._include_indirect_links: bool | Unset_Type = Unset
 
         if include_indirect_links is not Unset:

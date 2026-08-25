@@ -68,13 +68,13 @@ class GsaDateTimeDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "gte": "datetime",
         "lte": "datetime",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "gte": "gte",
         "lte": "lte",
     }
@@ -86,7 +86,7 @@ class GsaDateTimeDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DATETIME,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DATETIME,
         gte: "datetime | None | Unset_Type" = Unset,
         lte: "datetime | None | Unset_Type" = Unset,
     ) -> None:
@@ -94,11 +94,11 @@ class GsaDateTimeDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         gte: datetime | None, optional
         lte: datetime | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._gte: datetime | None | Unset_Type = Unset
         self._lte: datetime | None | Unset_Type = Unset
 

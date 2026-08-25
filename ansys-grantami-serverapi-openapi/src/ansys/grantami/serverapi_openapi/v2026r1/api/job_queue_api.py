@@ -120,24 +120,24 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def delete_job(self, *, id: "str") -> "None":
+    def delete_job(self, *, id_: "str") -> "None":
         """Delete a job.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
 
         Returns
         -------
         None
         """
-        data = self._delete_job_with_http_info(id, _return_http_data_only=True)
+        data = self._delete_job_with_http_info(id_, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _delete_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _delete_job_with_http_info(self, id_: "str", **kwargs: Any) -> Any:
+        all_params = ["id_", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -145,15 +145,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method delete_job")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'delete_job'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'delete_job'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -319,24 +319,24 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_job(self, *, id: "str") -> "GsaJob | None":
+    def get_job(self, *, id_: "str") -> "GsaJob | None":
         """Get job by ID.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
 
         Returns
         -------
         GsaJob | None
         """
-        data = self._get_job_with_http_info(id, _return_http_data_only=True)
+        data = self._get_job_with_http_info(id_, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _get_job_with_http_info(self, id_: "str", **kwargs: Any) -> Any:
+        all_params = ["id_", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -344,15 +344,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method get_job")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'get_job'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'get_job'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -388,28 +388,28 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_job_output_file(self, *, id: "str", file_name: "str") -> "None | str":
+    def get_job_output_file(self, *, id_: "str", file_name: "str") -> "None | str":
         """Retrieve a job output file.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
         file_name: str
 
         Returns
         -------
         None | str
         """
-        data = self._get_job_output_file_with_http_info(id, file_name, _return_http_data_only=True)
+        data = self._get_job_output_file_with_http_info(id_, file_name, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _get_job_output_file_with_http_info(
-        self, id: "str", file_name: "str", **kwargs: Any
+        self, id_: "str", file_name: "str", **kwargs: Any
     ) -> Any:
         all_params = [
-            "id",
+            "id_",
             "file_name",
             "_return_http_data_only",
             "_preload_content",
@@ -424,10 +424,10 @@ class JobQueueApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
             raise ValueError(
-                "Missing the required parameter 'id' when calling 'get_job_output_file'"
+                "Missing the required parameter 'id_' when calling 'get_job_output_file'"
             )
         # verify the required parameter "file_name" is set
         if "file_name" not in params or params["file_name"] is None:
@@ -438,8 +438,8 @@ class JobQueueApi(ApiBase):
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
         if "file_name" in params and file_name is not None:
@@ -598,24 +598,24 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def get_output_filenames(self, *, id: "str") -> "None | list[str]":
+    def get_output_filenames(self, *, id_: "str") -> "None | list[str]":
         """Get a job's output filenames.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
 
         Returns
         -------
         None | list[str]
         """
-        data = self._get_output_filenames_with_http_info(id, _return_http_data_only=True)
+        data = self._get_output_filenames_with_http_info(id_, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _get_output_filenames_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _get_output_filenames_with_http_info(self, id_: "str", **kwargs: Any) -> Any:
+        all_params = ["id_", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -625,17 +625,17 @@ class JobQueueApi(ApiBase):
                 )
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
             raise ValueError(
-                "Missing the required parameter 'id' when calling 'get_output_filenames'"
+                "Missing the required parameter 'id_' when calling 'get_output_filenames'"
             )
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -732,24 +732,24 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def move_to_top(self, *, id: "str") -> "None":
+    def move_to_top(self, *, id_: "str") -> "None":
         """Move a job to the top of the queue (actually sets the scheduled execution date to now, could be done with patch method).
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
 
         Returns
         -------
         None
         """
-        data = self._move_to_top_with_http_info(id, _return_http_data_only=True)
+        data = self._move_to_top_with_http_info(id_, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _move_to_top_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _move_to_top_with_http_info(self, id_: "str", **kwargs: Any) -> Any:
+        all_params = ["id_", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -757,15 +757,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method move_to_top")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'move_to_top'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'move_to_top'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -797,24 +797,24 @@ class JobQueueApi(ApiBase):
             response_type_map=response_type_map,
         )
 
-    def restore_job(self, *, id: "str") -> "GsaCreateJobRequest | None":
+    def restore_job(self, *, id_: "str") -> "GsaCreateJobRequest | None":
         """Get a job creation object based on an existing job.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
-        id: str
+        id_: str
 
         Returns
         -------
         GsaCreateJobRequest | None
         """
-        data = self._restore_job_with_http_info(id, _return_http_data_only=True)
+        data = self._restore_job_with_http_info(id_, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
-    def _restore_job_with_http_info(self, id: "str", **kwargs: Any) -> Any:
-        all_params = ["id", "_return_http_data_only", "_preload_content", "_request_timeout"]
+    def _restore_job_with_http_info(self, id_: "str", **kwargs: Any) -> Any:
+        all_params = ["id_", "_return_http_data_only", "_preload_content", "_request_timeout"]
 
         params = locals()
         for key, val in params["kwargs"].items():
@@ -822,15 +822,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method restore_job")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'restore_job'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'restore_job'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -867,7 +867,7 @@ class JobQueueApi(ApiBase):
         )
 
     def resubmit(
-        self, *, id: "str", body: "Optional[GsaResubmitJobRequest]" = None
+        self, *, id_: "str", body: "Optional[GsaResubmitJobRequest]" = None
     ) -> "GsaJob | None":
         """Resubmit a job.
 
@@ -875,21 +875,21 @@ class JobQueueApi(ApiBase):
 
         Parameters
         ----------
-        id: str
+        id_: str
         body: GsaResubmitJobRequest
 
         Returns
         -------
         GsaJob | None
         """
-        data = self._resubmit_with_http_info(id, body, _return_http_data_only=True)
+        data = self._resubmit_with_http_info(id_, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _resubmit_with_http_info(
-        self, id: "str", body: "Optional[GsaResubmitJobRequest]" = None, **kwargs: Any
+        self, id_: "str", body: "Optional[GsaResubmitJobRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
-            "id",
+            "id_",
             "body",
             "_return_http_data_only",
             "_preload_content",
@@ -902,15 +902,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method resubmit")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'resubmit'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'resubmit'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 
@@ -954,7 +954,7 @@ class JobQueueApi(ApiBase):
         )
 
     def update_job(
-        self, *, id: "str", body: "Optional[GsaUpdateJobRequest]" = None
+        self, *, id_: "str", body: "Optional[GsaUpdateJobRequest]" = None
     ) -> "GsaJob | None":
         """Update a job.
 
@@ -962,21 +962,21 @@ class JobQueueApi(ApiBase):
 
         Parameters
         ----------
-        id: str
+        id_: str
         body: GsaUpdateJobRequest
 
         Returns
         -------
         GsaJob | None
         """
-        data = self._update_job_with_http_info(id, body, _return_http_data_only=True)
+        data = self._update_job_with_http_info(id_, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
 
     def _update_job_with_http_info(
-        self, id: "str", body: "Optional[GsaUpdateJobRequest]" = None, **kwargs: Any
+        self, id_: "str", body: "Optional[GsaUpdateJobRequest]" = None, **kwargs: Any
     ) -> Any:
         all_params = [
-            "id",
+            "id_",
             "body",
             "_return_http_data_only",
             "_preload_content",
@@ -989,15 +989,15 @@ class JobQueueApi(ApiBase):
                 raise TypeError(f"Got an unexpected keyword argument '{key}' to method update_job")
             params[key] = val
         del params["kwargs"]
-        # verify the required parameter "id" is set
-        if "id" not in params or params["id"] is None:
-            raise ValueError("Missing the required parameter 'id' when calling 'update_job'")
+        # verify the required parameter "id_" is set
+        if "id_" not in params or params["id_"] is None:
+            raise ValueError("Missing the required parameter 'id_' when calling 'update_job'")
 
         collection_formats: dict[str, Any] = {}
 
         path_params: dict[str, Any] = {}
-        if "id" in params and id is not None:
-            path_params["id"] = params["id"]
+        if "id_" in params and id_ is not None:
+            path_params["id"] = params["id_"]
 
         query_params: list[Any] = []
 

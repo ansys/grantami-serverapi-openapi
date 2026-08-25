@@ -69,13 +69,13 @@ class GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion(GsaAggrega
     """
     swagger_types: dict[str, str] = {
         "interval": "GsaCalendarInterval",
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "offset": "str",
     }
 
     attribute_map: dict[str, str] = {
         "interval": "interval",
-        "type": "type",
+        "type_": "type",
         "offset": "offset",
     }
 
@@ -89,7 +89,7 @@ class GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion(GsaAggrega
         self,
         *,
         interval: "GsaCalendarInterval",
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEFIXEDCALENDARWIDTHHISTOGRAM,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEFIXEDCALENDARWIDTHHISTOGRAM,
         offset: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion - a model defined in Swagger
@@ -97,10 +97,10 @@ class GsaDateTimeFixedCalendarWidthHistogramAggregationDatumCriterion(GsaAggrega
         Parameters
         ----------
         interval: GsaCalendarInterval
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         offset: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._interval: GsaCalendarInterval
         self._offset: str | None | Unset_Type = Unset
 

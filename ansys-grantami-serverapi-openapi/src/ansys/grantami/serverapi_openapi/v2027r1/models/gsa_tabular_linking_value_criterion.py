@@ -64,13 +64,13 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "values": "list[str]",
         "linking_value_match_behavior": "GsaLinkingValueMatchBehavior",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "linking_value_match_behavior": "linkingValueMatchBehavior",
     }
@@ -84,7 +84,7 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.TABULARLINKINGVALUE,
+        type_: "GsaCriterionType" = GsaCriterionType.TABULARLINKINGVALUE,
         values: "list[str]",
         linking_value_match_behavior: "GsaLinkingValueMatchBehavior | Unset_Type" = Unset,
     ) -> None:
@@ -92,11 +92,11 @@ class GsaTabularLinkingValueCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         values: list[str]
         linking_value_match_behavior: GsaLinkingValueMatchBehavior, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._values: list[str]
         self._linking_value_match_behavior: GsaLinkingValueMatchBehavior | Unset_Type = Unset
 

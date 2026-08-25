@@ -69,7 +69,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
     """
     swagger_types: dict[str, str] = {
         "attribute_aggregation_criterion_type": "GsaAttributeAggregationType",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "guid": "str",
         "identity": "int",
         "is_meta_attribute": "bool",
@@ -77,7 +77,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
 
     attribute_map: dict[str, str] = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
         "is_meta_attribute": "isMetaAttribute",
@@ -98,7 +98,7 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         self,
         *,
         attribute_aggregation_criterion_type: "GsaAttributeAggregationType",
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
         is_meta_attribute: "bool | Unset_Type" = Unset,
@@ -108,12 +108,12 @@ class GsaAttributeAggregationCriterion(GsaAggregationCriterion):
         Parameters
         ----------
         attribute_aggregation_criterion_type: GsaAttributeAggregationType
-        type: GsaAggregationType
+        type_: GsaAggregationType
         guid: str | None, optional
         identity: int | None, optional
         is_meta_attribute: bool, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._is_meta_attribute: bool | Unset_Type = Unset

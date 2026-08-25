@@ -65,14 +65,14 @@ class GsaCreateRecordLinkGroup(ModelBase):
     swagger_types: dict[str, str] = {
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
     }
 
@@ -93,7 +93,7 @@ class GsaCreateRecordLinkGroup(ModelBase):
         *,
         name: "str",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType",
+        type_: "GsaRecordLinkGroupType",
         guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateRecordLinkGroup - a model defined in Swagger
@@ -102,47 +102,47 @@ class GsaCreateRecordLinkGroup(ModelBase):
         ----------
         name: str
         reverse_name: str
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         guid: str, optional
         """
-        self._type: GsaRecordLinkGroupType
+        self._type_: GsaRecordLinkGroupType
         self._reverse_name: str
         self._name: str
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         self.reverse_name = reverse_name
         self.name = name
         if guid is not Unset:
             self.guid = guid
 
     @property
-    def type(self) -> "GsaRecordLinkGroupType":
-        """Gets the type of this GsaCreateRecordLinkGroup.
+    def type_(self) -> "GsaRecordLinkGroupType":
+        """Gets the type_ of this GsaCreateRecordLinkGroup.
 
         Returns
         -------
         GsaRecordLinkGroupType
-            The type of this GsaCreateRecordLinkGroup.
+            The type_ of this GsaCreateRecordLinkGroup.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaRecordLinkGroupType") -> None:
-        """Sets the type of this GsaCreateRecordLinkGroup.
+    @type_.setter
+    def type_(self, type_: "GsaRecordLinkGroupType") -> None:
+        """Sets the type_ of this GsaCreateRecordLinkGroup.
 
         Parameters
         ----------
-        type: GsaRecordLinkGroupType
-            The type of this GsaCreateRecordLinkGroup.
+        type_: GsaRecordLinkGroupType
+            The type_ of this GsaCreateRecordLinkGroup.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def reverse_name(self) -> "str":

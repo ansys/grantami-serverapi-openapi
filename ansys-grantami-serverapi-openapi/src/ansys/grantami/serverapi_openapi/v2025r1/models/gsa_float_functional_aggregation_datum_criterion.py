@@ -68,12 +68,12 @@ class GsaFloatFunctionalAggregationDatumCriterion(GsaAggregationDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "number_of_parameter_values": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "number_of_parameter_values": "numberOfParameterValues",
     }
 
@@ -84,17 +84,17 @@ class GsaFloatFunctionalAggregationDatumCriterion(GsaAggregationDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.FLOATFUNCTIONALGRAPH,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.FLOATFUNCTIONALGRAPH,
         number_of_parameter_values: "int | Unset_Type" = Unset,
     ) -> None:
         """GsaFloatFunctionalAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         number_of_parameter_values: int, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._number_of_parameter_values: int | Unset_Type = Unset
 
         if number_of_parameter_values is not Unset:

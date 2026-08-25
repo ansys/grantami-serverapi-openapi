@@ -68,12 +68,12 @@ class GsaDateTimeHistogramAggregationDatumCriterion(GsaAggregationDatumCriterion
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "maximum_number_of_buckets": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "maximum_number_of_buckets": "maximumNumberOfBuckets",
     }
 
@@ -84,17 +84,17 @@ class GsaDateTimeHistogramAggregationDatumCriterion(GsaAggregationDatumCriterion
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEHISTOGRAM,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.DATETIMEHISTOGRAM,
         maximum_number_of_buckets: "int | Unset_Type" = Unset,
     ) -> None:
         """GsaDateTimeHistogramAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         maximum_number_of_buckets: int, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._maximum_number_of_buckets: int | Unset_Type = Unset
 
         if maximum_number_of_buckets is not Unset:

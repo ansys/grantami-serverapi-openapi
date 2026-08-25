@@ -80,7 +80,7 @@ class GsaQueryAttribute(ModelBase):
         "table": "GsaQuerySlimEntity",
         "tabular_columns": "list[GsaQueryTabularColumn]",
         "target": "GsaQueryTabularAttributeTarget",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "unit": "GsaQueryUnit",
     }
 
@@ -104,7 +104,7 @@ class GsaQueryAttribute(ModelBase):
         "table": "table",
         "tabular_columns": "tabularColumns",
         "target": "target",
-        "type": "type",
+        "type_": "type",
         "unit": "unit",
     }
 
@@ -148,7 +148,7 @@ class GsaQueryAttribute(ModelBase):
         table: "GsaQuerySlimEntity | Unset_Type" = Unset,
         tabular_columns: "list[GsaQueryTabularColumn] | None | Unset_Type" = Unset,
         target: "GsaQueryTabularAttributeTarget | Unset_Type" = Unset,
-        type: "GsaAttributeType | Unset_Type" = Unset,
+        type_: "GsaAttributeType | Unset_Type" = Unset,
         unit: "GsaQueryUnit | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryAttribute - a model defined in Swagger
@@ -174,11 +174,11 @@ class GsaQueryAttribute(ModelBase):
         table: GsaQuerySlimEntity, optional
         tabular_columns: list[GsaQueryTabularColumn] | None, optional
         target: GsaQueryTabularAttributeTarget, optional
-        type: GsaAttributeType, optional
+        type_: GsaAttributeType, optional
         unit: GsaQueryUnit, optional
         """
         self._is_protected: bool | None | Unset_Type = Unset
-        self._type: GsaAttributeType | Unset_Type = Unset
+        self._type_: GsaAttributeType | Unset_Type = Unset
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool | None | Unset_Type = Unset
         self._is_multi_valued: bool | None | Unset_Type = Unset
@@ -201,8 +201,8 @@ class GsaQueryAttribute(ModelBase):
 
         if is_protected is not Unset:
             self.is_protected = is_protected
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
         if is_hidden_from_search_criteria is not Unset:
@@ -265,29 +265,29 @@ class GsaQueryAttribute(ModelBase):
         self._is_protected = is_protected
 
     @property
-    def type(self) -> "GsaAttributeType | Unset_Type":
-        """Gets the type of this GsaQueryAttribute.
+    def type_(self) -> "GsaAttributeType | Unset_Type":
+        """Gets the type_ of this GsaQueryAttribute.
 
         Returns
         -------
         GsaAttributeType | Unset_Type
-            The type of this GsaQueryAttribute.
+            The type_ of this GsaQueryAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType | Unset_Type") -> None:
-        """Sets the type of this GsaQueryAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType | Unset_Type") -> None:
+        """Sets the type_ of this GsaQueryAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType | Unset_Type
-            The type of this GsaQueryAttribute.
+        type_: GsaAttributeType | Unset_Type
+            The type_ of this GsaQueryAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        self._type = type
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
+        self._type_ = type_
 
     @property
     def default_threshold_type(self) -> "GsaAttributeThresholdType | Unset_Type":

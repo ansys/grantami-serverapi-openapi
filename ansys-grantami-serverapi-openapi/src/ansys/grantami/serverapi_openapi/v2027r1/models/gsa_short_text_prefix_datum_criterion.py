@@ -69,12 +69,12 @@ class GsaShortTextPrefixDatumCriterion(GsaDatumCriterion):
     """
     swagger_types: dict[str, str] = {
         "prefix": "str",
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
     }
 
     attribute_map: dict[str, str] = {
         "prefix": "prefix",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -85,16 +85,16 @@ class GsaShortTextPrefixDatumCriterion(GsaDatumCriterion):
         self,
         *,
         prefix: "str",
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.SHORTTEXTPREFIX,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.SHORTTEXTPREFIX,
     ) -> None:
         """GsaShortTextPrefixDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
         prefix: str
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._prefix: str
 
         self.prefix = prefix

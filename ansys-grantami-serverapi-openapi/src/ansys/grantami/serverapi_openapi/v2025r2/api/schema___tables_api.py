@@ -330,7 +330,7 @@ class SchemaTablesApi(ApiBase):
         *,
         database_key: "str",
         table_guid: "str",
-        type: "Optional[list[GsaLinkAttributeType]]" = None,
+        type_: "Optional[list[GsaLinkAttributeType]]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaLinksInfo | None":
@@ -342,7 +342,7 @@ class SchemaTablesApi(ApiBase):
         ----------
         database_key: str
         table_guid: str
-        type: list[GsaLinkAttributeType]
+        type_: list[GsaLinkAttributeType]
             The link types to include in the response. If not provided, all link types are included.
         mode: str
             The version control mode. If not provided, defaults to write mode if the user is allowed to see that. Can also be set in the header.
@@ -354,7 +354,7 @@ class SchemaTablesApi(ApiBase):
         GsaLinksInfo | None
         """
         data = self._get_inbound_links_with_http_info(
-            database_key, table_guid, type, mode, x_ansys_vc_mode, _return_http_data_only=True
+            database_key, table_guid, type_, mode, x_ansys_vc_mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
@@ -362,7 +362,7 @@ class SchemaTablesApi(ApiBase):
         self,
         database_key: "str",
         table_guid: "str",
-        type: "Optional[list[GsaLinkAttributeType]]" = None,
+        type_: "Optional[list[GsaLinkAttributeType]]" = None,
         mode: "Optional[str]" = None,
         x_ansys_vc_mode: "Optional[str]" = None,
         **kwargs: Any,
@@ -370,7 +370,7 @@ class SchemaTablesApi(ApiBase):
         all_params = [
             "database_key",
             "table_guid",
-            "type",
+            "type_",
             "mode",
             "x_ansys_vc_mode",
             "_return_http_data_only",
@@ -406,8 +406,8 @@ class SchemaTablesApi(ApiBase):
             path_params["table-guid"] = params["table_guid"]
 
         query_params: list[Any] = []
-        if "type" in params and type is not None:
-            query_params.append(("type", params["type"]))
+        if "type_" in params and type_ is not None:
+            query_params.append(("type", params["type_"]))
             collection_formats["type"] = "multi"
         if "mode" in params and mode is not None:
             query_params.append(("mode", params["mode"]))

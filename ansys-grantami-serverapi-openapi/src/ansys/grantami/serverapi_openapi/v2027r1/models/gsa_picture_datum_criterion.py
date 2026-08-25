@@ -68,11 +68,11 @@ class GsaPictureDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -82,15 +82,15 @@ class GsaPictureDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.PICTURE,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.PICTURE,
     ) -> None:
         """GsaPictureDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

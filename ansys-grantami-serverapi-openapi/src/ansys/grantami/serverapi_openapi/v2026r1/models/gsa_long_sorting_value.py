@@ -68,12 +68,12 @@ class GsaLongSortingValue(GsaSortingValue):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortingValueType",
+        "type_": "GsaSortingValueType",
         "value": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -84,17 +84,17 @@ class GsaLongSortingValue(GsaSortingValue):
     def __init__(
         self,
         *,
-        type: "GsaSortingValueType" = GsaSortingValueType.LONG,
+        type_: "GsaSortingValueType" = GsaSortingValueType.LONG,
         value: "int | Unset_Type" = Unset,
     ) -> None:
         """GsaLongSortingValue - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaSortingValueType
+        type_: GsaSortingValueType
         value: int, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: int | Unset_Type = Unset
 
         if value is not Unset:

@@ -71,7 +71,7 @@ class GsaCreateCrossDatabaseRecordLinkGroup(GsaCreateRecordLinkGroup):
         "link_target": "GsaCreateCrossDatabaseLinkTarget",
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "guid": "str",
         "include_indirect_links": "bool",
     }
@@ -80,7 +80,7 @@ class GsaCreateCrossDatabaseRecordLinkGroup(GsaCreateRecordLinkGroup):
         "link_target": "linkTarget",
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "include_indirect_links": "includeIndirectLinks",
     }
@@ -97,7 +97,7 @@ class GsaCreateCrossDatabaseRecordLinkGroup(GsaCreateRecordLinkGroup):
         link_target: "GsaCreateCrossDatabaseLinkTarget",
         name: "str",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.CROSSDATABASE,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.CROSSDATABASE,
         guid: "str | Unset_Type" = Unset,
         include_indirect_links: "bool | Unset_Type" = Unset,
     ) -> None:
@@ -108,11 +108,11 @@ class GsaCreateCrossDatabaseRecordLinkGroup(GsaCreateRecordLinkGroup):
         link_target: GsaCreateCrossDatabaseLinkTarget
         name: str
         reverse_name: str
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         guid: str, optional
         include_indirect_links: bool, optional
         """
-        super().__init__(name=name, reverse_name=reverse_name, type=type, guid=guid)
+        super().__init__(name=name, reverse_name=reverse_name, type_=type_, guid=guid)
         self._link_target: GsaCreateCrossDatabaseLinkTarget
         self._include_indirect_links: bool | Unset_Type = Unset
 

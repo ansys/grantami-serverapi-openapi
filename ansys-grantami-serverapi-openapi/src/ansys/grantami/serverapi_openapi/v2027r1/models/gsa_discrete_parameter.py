@@ -68,7 +68,7 @@ class GsaDiscreteParameter(GsaParameter):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaDiscreteParameterValue]",
     }
 
@@ -77,7 +77,7 @@ class GsaDiscreteParameter(GsaParameter):
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "values": "values",
     }
 
@@ -94,7 +94,7 @@ class GsaDiscreteParameter(GsaParameter):
         display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         values: "list[GsaDiscreteParameterValue]",
     ) -> None:
         """GsaDiscreteParameter - a model defined in Swagger
@@ -105,7 +105,7 @@ class GsaDiscreteParameter(GsaParameter):
         display_names: dict[str, str]
         guid: str
         name: str
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaDiscreteParameterValue]
         """
         super().__init__(
@@ -113,7 +113,7 @@ class GsaDiscreteParameter(GsaParameter):
             display_names=display_names,
             guid=guid,
             name=name,
-            type=type,
+            type_=type_,
         )
         self._values: list[GsaDiscreteParameterValue]
 

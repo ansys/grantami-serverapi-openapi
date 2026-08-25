@@ -63,7 +63,7 @@ class GsaUpdateAttribute(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -74,7 +74,7 @@ class GsaUpdateAttribute(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -113,7 +113,7 @@ class GsaUpdateAttribute(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType",
+        type_: "GsaAttributeType",
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
@@ -126,7 +126,7 @@ class GsaUpdateAttribute(ModelBase):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_names: dict[str, str] | None, optional
@@ -135,7 +135,7 @@ class GsaUpdateAttribute(ModelBase):
         is_hidden_from_search_criteria: bool | None, optional
         name: str, optional
         """
-        self._type: GsaAttributeType
+        self._type_: GsaAttributeType
         self._default_threshold_type: GsaAttributeThresholdType | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._about_attribute: GsaSlimEntity | Unset_Type = Unset
@@ -144,7 +144,7 @@ class GsaUpdateAttribute(ModelBase):
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         if default_threshold_type is not Unset:
             self.default_threshold_type = default_threshold_type
         if help_path is not Unset:
@@ -161,32 +161,32 @@ class GsaUpdateAttribute(ModelBase):
             self.guid = guid
 
     @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaUpdateAttribute.
+    def type_(self) -> "GsaAttributeType":
+        """Gets the type_ of this GsaUpdateAttribute.
 
         Returns
         -------
         GsaAttributeType
-            The type of this GsaUpdateAttribute.
+            The type_ of this GsaUpdateAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaUpdateAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType") -> None:
+        """Sets the type_ of this GsaUpdateAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType
-            The type of this GsaUpdateAttribute.
+        type_: GsaAttributeType
+            The type_ of this GsaUpdateAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def default_threshold_type(self) -> "GsaAttributeThresholdType | Unset_Type":

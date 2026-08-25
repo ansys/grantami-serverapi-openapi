@@ -61,11 +61,11 @@ class GsaPaginationLinks(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "next": "str",
+        "next_": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "next": "next",
+        "next_": "next",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -75,40 +75,40 @@ class GsaPaginationLinks(ModelBase):
     def __init__(
         self,
         *,
-        next: "str | None | Unset_Type" = Unset,
+        next_: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaPaginationLinks - a model defined in Swagger
 
         Parameters
         ----------
-        next: str | None, optional
+        next_: str | None, optional
         """
-        self._next: str | None | Unset_Type = Unset
+        self._next_: str | None | Unset_Type = Unset
 
-        if next is not Unset:
-            self.next = next
+        if next_ is not Unset:
+            self.next_ = next_
 
     @property
-    def next(self) -> "str | None | Unset_Type":
-        """Gets the next of this GsaPaginationLinks.
+    def next_(self) -> "str | None | Unset_Type":
+        """Gets the next_ of this GsaPaginationLinks.
 
         Returns
         -------
         str | None | Unset_Type
-            The next of this GsaPaginationLinks.
+            The next_ of this GsaPaginationLinks.
         """
-        return self._next
+        return self._next_
 
-    @next.setter
-    def next(self, next: "str | None | Unset_Type") -> None:
-        """Sets the next of this GsaPaginationLinks.
+    @next_.setter
+    def next_(self, next_: "str | None | Unset_Type") -> None:
+        """Sets the next_ of this GsaPaginationLinks.
 
         Parameters
         ----------
-        next: str | None | Unset_Type
-            The next of this GsaPaginationLinks.
+        next_: str | None | Unset_Type
+            The next_ of this GsaPaginationLinks.
         """
-        self._next = next
+        self._next_ = next_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

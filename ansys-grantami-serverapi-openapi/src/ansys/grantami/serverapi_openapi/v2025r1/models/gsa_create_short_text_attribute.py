@@ -67,7 +67,7 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "data_rule": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
@@ -79,7 +79,7 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "data_rule": "dataRule",
         "default_threshold_type": "defaultThresholdType",
@@ -99,7 +99,7 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
+        type_: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         data_rule: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
@@ -113,7 +113,7 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         data_rule: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
@@ -124,7 +124,7 @@ class GsaCreateShortTextAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,

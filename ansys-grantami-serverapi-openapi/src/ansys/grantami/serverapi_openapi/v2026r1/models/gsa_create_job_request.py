@@ -67,7 +67,7 @@ class GsaCreateJobRequest(ModelBase):
         "name": "str",
         "parameters": "str",
         "scheduled_execution_date": "datetime",
-        "type": "str",
+        "type_": "str",
         "version": "int",
     }
 
@@ -78,7 +78,7 @@ class GsaCreateJobRequest(ModelBase):
         "name": "name",
         "parameters": "parameters",
         "scheduled_execution_date": "scheduledExecutionDate",
-        "type": "type",
+        "type_": "type",
         "version": "version",
     }
 
@@ -95,7 +95,7 @@ class GsaCreateJobRequest(ModelBase):
         name: "str | None | Unset_Type" = Unset,
         parameters: "str | None | Unset_Type" = Unset,
         scheduled_execution_date: "datetime | None | Unset_Type" = Unset,
-        type: "str | None | Unset_Type" = Unset,
+        type_: "str | None | Unset_Type" = Unset,
         version: "int | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateJobRequest - a model defined in Swagger
@@ -108,13 +108,13 @@ class GsaCreateJobRequest(ModelBase):
         name: str | None, optional
         parameters: str | None, optional
         scheduled_execution_date: datetime | None, optional
-        type: str | None, optional
+        type_: str | None, optional
         version: int, optional
         """
         self._name: str | None | Unset_Type = Unset
         self._description: str | None | Unset_Type = Unset
         self._culture: str | None | Unset_Type = Unset
-        self._type: str | None | Unset_Type = Unset
+        self._type_: str | None | Unset_Type = Unset
         self._version: int | Unset_Type = Unset
         self._scheduled_execution_date: datetime | None | Unset_Type = Unset
         self._input_file_ids: list[str] | None | Unset_Type = Unset
@@ -126,8 +126,8 @@ class GsaCreateJobRequest(ModelBase):
             self.description = description
         if culture is not Unset:
             self.culture = culture
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if version is not Unset:
             self.version = version
         if scheduled_execution_date is not Unset:
@@ -204,26 +204,26 @@ class GsaCreateJobRequest(ModelBase):
         self._culture = culture
 
     @property
-    def type(self) -> "str | None | Unset_Type":
-        """Gets the type of this GsaCreateJobRequest.
+    def type_(self) -> "str | None | Unset_Type":
+        """Gets the type_ of this GsaCreateJobRequest.
 
         Returns
         -------
         str | None | Unset_Type
-            The type of this GsaCreateJobRequest.
+            The type_ of this GsaCreateJobRequest.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "str | None | Unset_Type") -> None:
-        """Sets the type of this GsaCreateJobRequest.
+    @type_.setter
+    def type_(self, type_: "str | None | Unset_Type") -> None:
+        """Sets the type_ of this GsaCreateJobRequest.
 
         Parameters
         ----------
-        type: str | None | Unset_Type
-            The type of this GsaCreateJobRequest.
+        type_: str | None | Unset_Type
+            The type_ of this GsaCreateJobRequest.
         """
-        self._type = type
+        self._type_ = type_
 
     @property
     def version(self) -> "int | Unset_Type":

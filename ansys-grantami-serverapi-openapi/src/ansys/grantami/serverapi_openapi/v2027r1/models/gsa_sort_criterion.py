@@ -63,12 +63,12 @@ class GsaSortCriterion(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortCriterionType",
+        "type_": "GsaSortCriterionType",
         "sort_direction": "GsaSortDirection",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "sort_direction": "sortDirection",
     }
 
@@ -89,22 +89,22 @@ class GsaSortCriterion(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaSortCriterionType",
+        type_: "GsaSortCriterionType",
         sort_direction: "GsaSortDirection | Unset_Type" = Unset,
     ) -> None:
         """GsaSortCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaSortCriterionType
+        type_: GsaSortCriterionType
         sort_direction: GsaSortDirection, optional
         """
         self._sort_direction: GsaSortDirection | Unset_Type = Unset
-        self._type: GsaSortCriterionType
+        self._type_: GsaSortCriterionType
 
         if sort_direction is not Unset:
             self.sort_direction = sort_direction
-        self.type = type
+        self.type_ = type_
 
     @property
     def sort_direction(self) -> "GsaSortDirection | Unset_Type":
@@ -132,32 +132,32 @@ class GsaSortCriterion(ModelBase):
         self._sort_direction = sort_direction
 
     @property
-    def type(self) -> "GsaSortCriterionType":
-        """Gets the type of this GsaSortCriterion.
+    def type_(self) -> "GsaSortCriterionType":
+        """Gets the type_ of this GsaSortCriterion.
 
         Returns
         -------
         GsaSortCriterionType
-            The type of this GsaSortCriterion.
+            The type_ of this GsaSortCriterion.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaSortCriterionType") -> None:
-        """Sets the type of this GsaSortCriterion.
+    @type_.setter
+    def type_(self, type_: "GsaSortCriterionType") -> None:
+        """Sets the type_ of this GsaSortCriterion.
 
         Parameters
         ----------
-        type: GsaSortCriterionType
-            The type of this GsaSortCriterion.
+        type_: GsaSortCriterionType
+            The type_ of this GsaSortCriterion.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

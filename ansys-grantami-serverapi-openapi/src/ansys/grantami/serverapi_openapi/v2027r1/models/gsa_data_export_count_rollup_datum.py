@@ -67,7 +67,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     swagger_types: dict[str, str] = {
         "path_attribute_guids": "list[str]",
         "path_attribute_identities": "list[int]",
-        "type": "str",
+        "type_": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "count": "int",
@@ -78,7 +78,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     attribute_map: dict[str, str] = {
         "path_attribute_guids": "pathAttributeGuids",
         "path_attribute_identities": "pathAttributeIdentities",
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "count": "count",
@@ -95,7 +95,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         *,
         path_attribute_guids: "list[str]",
         path_attribute_identities: "list[int]",
-        type: "str | None" = "countRollup",
+        type_: "str | None" = "countRollup",
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         count: "int | Unset_Type" = Unset,
@@ -108,7 +108,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         ----------
         path_attribute_guids: list[str]
         path_attribute_identities: list[int]
-        type: str | None
+        type_: str | None
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         count: int, optional
@@ -118,7 +118,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         super().__init__(
             path_attribute_guids=path_attribute_guids,
             path_attribute_identities=path_attribute_identities,
-            type=type,
+            type_=type_,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             database_key=database_key,

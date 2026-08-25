@@ -67,7 +67,7 @@ class GsaCreateFileAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -76,7 +76,7 @@ class GsaCreateFileAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
         "help_path": "helpPath",
@@ -91,7 +91,7 @@ class GsaCreateFileAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.FILE,
+        type_: "GsaAttributeType" = GsaAttributeType.FILE,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -102,7 +102,7 @@ class GsaCreateFileAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str | None, optional
@@ -110,7 +110,7 @@ class GsaCreateFileAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

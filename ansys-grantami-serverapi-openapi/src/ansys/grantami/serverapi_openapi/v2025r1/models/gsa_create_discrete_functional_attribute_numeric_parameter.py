@@ -69,13 +69,13 @@ class GsaCreateDiscreteFunctionalAttributeNumericParameter(
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_value": "float",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "default_value": "defaultValue",
     }
 
@@ -87,7 +87,7 @@ class GsaCreateDiscreteFunctionalAttributeNumericParameter(
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_value: "float | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateDiscreteFunctionalAttributeNumericParameter - a model defined in Swagger
@@ -95,10 +95,10 @@ class GsaCreateDiscreteFunctionalAttributeNumericParameter(
         Parameters
         ----------
         parameter: GsaSlimEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         default_value: float | None, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._default_value: float | None | Unset_Type = Unset
 
         if default_value is not Unset:

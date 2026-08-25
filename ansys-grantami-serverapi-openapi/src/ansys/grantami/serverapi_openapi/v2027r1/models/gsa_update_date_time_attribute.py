@@ -66,7 +66,7 @@ class GsaUpdateDateTimeAttribute(GsaUpdateAttribute):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
@@ -77,7 +77,7 @@ class GsaUpdateDateTimeAttribute(GsaUpdateAttribute):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
@@ -94,7 +94,7 @@ class GsaUpdateDateTimeAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.DATETIME,
+        type_: "GsaAttributeType" = GsaAttributeType.DATETIME,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
@@ -107,7 +107,7 @@ class GsaUpdateDateTimeAttribute(GsaUpdateAttribute):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_names: dict[str, str] | None, optional
@@ -117,7 +117,7 @@ class GsaUpdateDateTimeAttribute(GsaUpdateAttribute):
         name: str, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             display_names=display_names,

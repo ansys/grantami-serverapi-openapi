@@ -68,7 +68,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
     swagger_types: dict[str, str] = {
         "default_parameter_value_index": "int",
         "name": "str",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaCreateDiscreteParameterValue]",
         "guid": "str",
         "help_path": "str",
@@ -77,7 +77,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
     attribute_map: dict[str, str] = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "guid": "guid",
         "help_path": "helpPath",
@@ -94,7 +94,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         *,
         default_parameter_value_index: "int",
         name: "str",
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         values: "list[GsaCreateDiscreteParameterValue]",
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -105,7 +105,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         ----------
         default_parameter_value_index: int
         name: str
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaCreateDiscreteParameterValue]
         guid: str, optional
         help_path: str | None, optional
@@ -113,7 +113,7 @@ class GsaCreateDiscreteParameter(GsaCreateParameter):
         super().__init__(
             default_parameter_value_index=default_parameter_value_index,
             name=name,
-            type=type,
+            type_=type_,
             guid=guid,
             help_path=help_path,
         )

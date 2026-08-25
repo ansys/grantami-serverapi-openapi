@@ -68,12 +68,12 @@ class GsaLogicalDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "value": "bool",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -84,17 +84,17 @@ class GsaLogicalDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.LOGICAL,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.LOGICAL,
         value: "bool",
     ) -> None:
         """GsaLogicalDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         value: bool
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: bool
 
         self.value = value

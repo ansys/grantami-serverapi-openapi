@@ -64,12 +64,12 @@ class GsaParameterContent(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimNamedEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -88,48 +88,48 @@ class GsaParameterContent(ModelBase):
         self,
         *,
         parameter: "GsaSlimNamedEntity",
-        type: "GsaParameterType",
+        type_: "GsaParameterType",
     ) -> None:
         """GsaParameterContent - a model defined in Swagger
 
         Parameters
         ----------
         parameter: GsaSlimNamedEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         """
-        self._type: GsaParameterType
+        self._type_: GsaParameterType
         self._parameter: GsaSlimNamedEntity
 
-        self.type = type
+        self.type_ = type_
         self.parameter = parameter
 
     @property
-    def type(self) -> "GsaParameterType":
-        """Gets the type of this GsaParameterContent.
+    def type_(self) -> "GsaParameterType":
+        """Gets the type_ of this GsaParameterContent.
 
         Returns
         -------
         GsaParameterType
-            The type of this GsaParameterContent.
+            The type_ of this GsaParameterContent.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterType") -> None:
-        """Sets the type of this GsaParameterContent.
+    @type_.setter
+    def type_(self, type_: "GsaParameterType") -> None:
+        """Sets the type_ of this GsaParameterContent.
 
         Parameters
         ----------
-        type: GsaParameterType
-            The type of this GsaParameterContent.
+        type_: GsaParameterType
+            The type_ of this GsaParameterContent.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def parameter(self) -> "GsaSlimNamedEntity":

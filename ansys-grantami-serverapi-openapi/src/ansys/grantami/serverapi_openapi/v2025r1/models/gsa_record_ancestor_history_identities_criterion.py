@@ -64,13 +64,13 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "ancestor_history_identities": "list[int]",
         "database_key": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "ancestor_history_identities": "ancestorHistoryIdentities",
         "database_key": "databaseKey",
     }
@@ -82,7 +82,7 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORIDENTITIES,
+        type_: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORIDENTITIES,
         ancestor_history_identities: "list[int] | None | Unset_Type" = Unset,
         database_key: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -90,11 +90,11 @@ class GsaRecordAncestorHistoryIdentitiesCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         ancestor_history_identities: list[int] | None, optional
         database_key: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._ancestor_history_identities: list[int] | None | Unset_Type = Unset
         self._database_key: str | None | Unset_Type = Unset
 

@@ -68,7 +68,7 @@ class GsaLink(ModelBase):
         "link_info": "GsaLinkInfo",
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaLinkAttributeType",
+        "type_": "GsaLinkAttributeType",
         "reverse_display_names": "dict(str, str)",
     }
 
@@ -78,7 +78,7 @@ class GsaLink(ModelBase):
         "link_info": "linkInfo",
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "reverse_display_names": "reverseDisplayNames",
     }
 
@@ -104,7 +104,7 @@ class GsaLink(ModelBase):
         link_info: "GsaLinkInfo",
         name: "str",
         reverse_name: "str",
-        type: "GsaLinkAttributeType",
+        type_: "GsaLinkAttributeType",
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaLink - a model defined in Swagger
@@ -116,10 +116,10 @@ class GsaLink(ModelBase):
         link_info: GsaLinkInfo
         name: str
         reverse_name: str
-        type: GsaLinkAttributeType
+        type_: GsaLinkAttributeType
         reverse_display_names: dict[str, str] | None, optional
         """
-        self._type: GsaLinkAttributeType
+        self._type_: GsaLinkAttributeType
         self._reverse_name: str
         self._reverse_display_names: dict[str, str] | None | Unset_Type = Unset
         self._link_info: GsaLinkInfo
@@ -127,7 +127,7 @@ class GsaLink(ModelBase):
         self._name: str
         self._guid: str
 
-        self.type = type
+        self.type_ = type_
         self.reverse_name = reverse_name
         if reverse_display_names is not Unset:
             self.reverse_display_names = reverse_display_names
@@ -137,32 +137,32 @@ class GsaLink(ModelBase):
         self.guid = guid
 
     @property
-    def type(self) -> "GsaLinkAttributeType":
-        """Gets the type of this GsaLink.
+    def type_(self) -> "GsaLinkAttributeType":
+        """Gets the type_ of this GsaLink.
 
         Returns
         -------
         GsaLinkAttributeType
-            The type of this GsaLink.
+            The type_ of this GsaLink.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaLinkAttributeType") -> None:
-        """Sets the type of this GsaLink.
+    @type_.setter
+    def type_(self, type_: "GsaLinkAttributeType") -> None:
+        """Sets the type_ of this GsaLink.
 
         Parameters
         ----------
-        type: GsaLinkAttributeType
-            The type of this GsaLink.
+        type_: GsaLinkAttributeType
+            The type_ of this GsaLink.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def reverse_name(self) -> "str":

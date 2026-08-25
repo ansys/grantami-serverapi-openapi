@@ -69,14 +69,14 @@ class GsaNumericParameterValue(GsaParameterValue):
     """
     swagger_types: dict[str, str] = {
         "guid": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
         "value": "float",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
-        "type": "type",
+        "type_": "type",
         "value": "value",
         "name": "name",
     }
@@ -89,7 +89,7 @@ class GsaNumericParameterValue(GsaParameterValue):
         self,
         *,
         guid: "str",
-        type: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
+        type_: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
         value: "float",
         name: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -98,11 +98,11 @@ class GsaNumericParameterValue(GsaParameterValue):
         Parameters
         ----------
         guid: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         value: float
         name: str | None, optional
         """
-        super().__init__(guid=guid, type=type)
+        super().__init__(guid=guid, type_=type_)
         self._value: float
         self._name: str | None | Unset_Type = Unset
 

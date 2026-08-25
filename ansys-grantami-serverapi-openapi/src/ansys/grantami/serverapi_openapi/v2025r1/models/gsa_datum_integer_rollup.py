@@ -66,12 +66,12 @@ class GsaDatumIntegerRollup(GsaDatumRollup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumRollupType",
+        "type_": "GsaDatumRollupType",
         "value": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -82,17 +82,17 @@ class GsaDatumIntegerRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        type: "GsaDatumRollupType" = GsaDatumRollupType.INTEGERROLLUP,
+        type_: "GsaDatumRollupType" = GsaDatumRollupType.INTEGERROLLUP,
         value: "int",
     ) -> None:
         """GsaDatumIntegerRollup - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumRollupType
+        type_: GsaDatumRollupType
         value: int
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: int
 
         self.value = value

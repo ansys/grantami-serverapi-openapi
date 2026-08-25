@@ -66,7 +66,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "attribute_parameters": "list[GsaSlimEntity]",
         "axis_name": "GsaUpdateAxisName",
@@ -81,7 +81,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
@@ -105,7 +105,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.POINT,
+        type_: "GsaAttributeType" = GsaAttributeType.POINT,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         attribute_parameters: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
@@ -122,7 +122,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         attribute_parameters: list[GsaSlimEntity] | None, optional
         axis_name: GsaUpdateAxisName, optional
@@ -136,7 +136,7 @@ class GsaUpdatePointAttribute(GsaUpdateAttribute):
         unit: GsaSlimEntity, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             axis_name=axis_name,
             default_threshold_type=default_threshold_type,
