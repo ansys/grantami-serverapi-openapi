@@ -65,13 +65,13 @@ class GsaQualitySystem(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "type": "GsaQualitySystemType",
+        "type_": "GsaQualitySystemType",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -90,7 +90,7 @@ class GsaQualitySystem(ModelBase):
         *,
         guid: "str",
         name: "str",
-        type: "GsaQualitySystemType",
+        type_: "GsaQualitySystemType",
     ) -> None:
         """GsaQualitySystem - a model defined in Swagger
 
@@ -98,43 +98,43 @@ class GsaQualitySystem(ModelBase):
         ----------
         guid: str
         name: str
-        type: GsaQualitySystemType
+        type_: GsaQualitySystemType
         """
-        self._type: GsaQualitySystemType
+        self._type_: GsaQualitySystemType
         self._name: str
         self._guid: str
 
-        self.type = type
+        self.type_ = type_
         self.name = name
         self.guid = guid
 
     @property
-    def type(self) -> "GsaQualitySystemType":
-        """Gets the type of this GsaQualitySystem.
+    def type_(self) -> "GsaQualitySystemType":
+        """Gets the type_ of this GsaQualitySystem.
 
         Returns
         -------
         GsaQualitySystemType
-            The type of this GsaQualitySystem.
+            The type_ of this GsaQualitySystem.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaQualitySystemType") -> None:
-        """Sets the type of this GsaQualitySystem.
+    @type_.setter
+    def type_(self, type_: "GsaQualitySystemType") -> None:
+        """Sets the type_ of this GsaQualitySystem.
 
         Parameters
         ----------
-        type: GsaQualitySystemType
-            The type of this GsaQualitySystem.
+        type_: GsaQualitySystemType
+            The type_ of this GsaQualitySystem.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def name(self) -> "str":

@@ -62,7 +62,7 @@ class GsaIntegrationAttribute(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "discrete_type_guid": "str",
         "discrete_type_identity": "int",
         "graph_type": "str",
@@ -78,7 +78,7 @@ class GsaIntegrationAttribute(ModelBase):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "discrete_type_guid": "discreteTypeGuid",
         "discrete_type_identity": "discreteTypeIdentity",
         "graph_type": "graphType",
@@ -105,7 +105,7 @@ class GsaIntegrationAttribute(ModelBase):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType",
+        type_: "GsaAttributeType",
         discrete_type_guid: "str | None | Unset_Type" = Unset,
         discrete_type_identity: "int | None | Unset_Type" = Unset,
         graph_type: "str | None | Unset_Type" = Unset,
@@ -123,7 +123,7 @@ class GsaIntegrationAttribute(ModelBase):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         discrete_type_guid: str | None, optional
         discrete_type_identity: int | None, optional
         graph_type: str | None, optional
@@ -139,7 +139,7 @@ class GsaIntegrationAttribute(ModelBase):
         self._name: str
         self._identity: int | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
-        self._type: GsaAttributeType
+        self._type_: GsaAttributeType
         self._unit_symbol: str | None | Unset_Type = Unset
         self._is_unitted: bool | None | Unset_Type = Unset
         self._discrete_type_identity: int | None | Unset_Type = Unset
@@ -155,7 +155,7 @@ class GsaIntegrationAttribute(ModelBase):
             self.identity = identity
         if guid is not Unset:
             self.guid = guid
-        self.type = type
+        self.type_ = type_
         if unit_symbol is not Unset:
             self.unit_symbol = unit_symbol
         if is_unitted is not Unset:
@@ -253,32 +253,32 @@ class GsaIntegrationAttribute(ModelBase):
         self._guid = guid
 
     @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaIntegrationAttribute.
+    def type_(self) -> "GsaAttributeType":
+        """Gets the type_ of this GsaIntegrationAttribute.
 
         Returns
         -------
         GsaAttributeType
-            The type of this GsaIntegrationAttribute.
+            The type_ of this GsaIntegrationAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaIntegrationAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType") -> None:
+        """Sets the type_ of this GsaIntegrationAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType
-            The type of this GsaIntegrationAttribute.
+        type_: GsaAttributeType
+            The type_ of this GsaIntegrationAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def unit_symbol(self) -> "str | None | Unset_Type":

@@ -67,7 +67,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "attribute_parameters": "list[GsaSlimEntity]",
         "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
@@ -82,7 +82,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "attribute_parameters": "attributeParameters",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
@@ -107,7 +107,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.POINT,
+        type_: "GsaAttributeType" = GsaAttributeType.POINT,
         attribute_parameters: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         axis_name: "GsaCreateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
@@ -124,7 +124,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         attribute_parameters: list[GsaSlimEntity] | None, optional
         axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
@@ -138,7 +138,7 @@ class GsaCreatePointAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,

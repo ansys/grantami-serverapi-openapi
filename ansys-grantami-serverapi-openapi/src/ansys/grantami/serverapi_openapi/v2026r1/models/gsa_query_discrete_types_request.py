@@ -62,12 +62,12 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "properties": "GsaQueryDiscreteTypeProperties",
-        "filter": "GsaQueryDiscreteTypeFilter",
+        "filter_": "GsaQueryDiscreteTypeFilter",
     }
 
     attribute_map: dict[str, str] = {
         "properties": "properties",
-        "filter": "filter",
+        "filter_": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,21 +81,21 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
         self,
         *,
         properties: "GsaQueryDiscreteTypeProperties",
-        filter: "GsaQueryDiscreteTypeFilter | Unset_Type" = Unset,
+        filter_: "GsaQueryDiscreteTypeFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryDiscreteTypesRequest - a model defined in Swagger
 
         Parameters
         ----------
         properties: GsaQueryDiscreteTypeProperties
-        filter: GsaQueryDiscreteTypeFilter, optional
+        filter_: GsaQueryDiscreteTypeFilter, optional
         """
         self._properties: GsaQueryDiscreteTypeProperties
-        self._filter: GsaQueryDiscreteTypeFilter | Unset_Type = Unset
+        self._filter_: GsaQueryDiscreteTypeFilter | Unset_Type = Unset
 
         self.properties = properties
-        if filter is not Unset:
-            self.filter = filter
+        if filter_ is not Unset:
+            self.filter_ = filter_
 
     @property
     def properties(self) -> "GsaQueryDiscreteTypeProperties":
@@ -126,29 +126,29 @@ class GsaQueryDiscreteTypesRequest(ModelBase):
         self._properties = properties
 
     @property
-    def filter(self) -> "GsaQueryDiscreteTypeFilter | Unset_Type":
-        """Gets the filter of this GsaQueryDiscreteTypesRequest.
+    def filter_(self) -> "GsaQueryDiscreteTypeFilter | Unset_Type":
+        """Gets the filter_ of this GsaQueryDiscreteTypesRequest.
 
         Returns
         -------
         GsaQueryDiscreteTypeFilter | Unset_Type
-            The filter of this GsaQueryDiscreteTypesRequest.
+            The filter_ of this GsaQueryDiscreteTypesRequest.
         """
-        return self._filter
+        return self._filter_
 
-    @filter.setter
-    def filter(self, filter: "GsaQueryDiscreteTypeFilter | Unset_Type") -> None:
-        """Sets the filter of this GsaQueryDiscreteTypesRequest.
+    @filter_.setter
+    def filter_(self, filter_: "GsaQueryDiscreteTypeFilter | Unset_Type") -> None:
+        """Sets the filter_ of this GsaQueryDiscreteTypesRequest.
 
         Parameters
         ----------
-        filter: GsaQueryDiscreteTypeFilter | Unset_Type
-            The filter of this GsaQueryDiscreteTypesRequest.
+        filter_: GsaQueryDiscreteTypeFilter | Unset_Type
+            The filter_ of this GsaQueryDiscreteTypesRequest.
         """
         # Field is not nullable
-        if filter is None:
-            raise ValueError("Invalid value for 'filter', must not be 'None'")
-        self._filter = filter
+        if filter_ is None:
+            raise ValueError("Invalid value for 'filter_', must not be 'None'")
+        self._filter_ = filter_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -71,14 +71,14 @@ class GsaAttributeExportFailure(GsaExportFailure):
         "failed_attributes": "list[GsaAttributeReference]",
         "failure_details": "str",
         "failure_reason": "str",
-        "type": "GsaExportFailureType",
+        "type_": "GsaExportFailureType",
     }
 
     attribute_map: dict[str, str] = {
         "failed_attributes": "failedAttributes",
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -93,7 +93,7 @@ class GsaAttributeExportFailure(GsaExportFailure):
         failed_attributes: "list[GsaAttributeReference]",
         failure_details: "str",
         failure_reason: "str",
-        type: "GsaExportFailureType" = GsaExportFailureType.ATTRIBUTE,
+        type_: "GsaExportFailureType" = GsaExportFailureType.ATTRIBUTE,
     ) -> None:
         """GsaAttributeExportFailure - a model defined in Swagger
 
@@ -102,9 +102,11 @@ class GsaAttributeExportFailure(GsaExportFailure):
         failed_attributes: list[GsaAttributeReference]
         failure_details: str
         failure_reason: str
-        type: GsaExportFailureType
+        type_: GsaExportFailureType
         """
-        super().__init__(failure_details=failure_details, failure_reason=failure_reason, type=type)
+        super().__init__(
+            failure_details=failure_details, failure_reason=failure_reason, type_=type_
+        )
         self._failed_attributes: list[GsaAttributeReference]
 
         self.failed_attributes = failed_attributes

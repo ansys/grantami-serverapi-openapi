@@ -68,17 +68,17 @@ class GsaDiscreteIdentityValuesDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
-        "_none": "list[int]",
-        "all": "list[int]",
-        "any": "list[int]",
+        "type_": "GsaDatumCriterionType",
+        "all_": "list[int]",
+        "any_": "list[int]",
+        "none_": "list[int]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "_none": "none",
-        "all": "all",
-        "any": "any",
+        "type_": "type",
+        "all_": "all",
+        "any_": "any",
+        "none_": "none",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -88,103 +88,103 @@ class GsaDiscreteIdentityValuesDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEIDENTITYVALUES,
-        _none: "list[int] | None | Unset_Type" = Unset,
-        all: "list[int] | None | Unset_Type" = Unset,
-        any: "list[int] | None | Unset_Type" = Unset,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEIDENTITYVALUES,
+        all_: "list[int] | None | Unset_Type" = Unset,
+        any_: "list[int] | None | Unset_Type" = Unset,
+        none_: "list[int] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteIdentityValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
-        _none: list[int] | None, optional
-        all: list[int] | None, optional
-        any: list[int] | None, optional
+        type_: GsaDatumCriterionType
+        all_: list[int] | None, optional
+        any_: list[int] | None, optional
+        none_: list[int] | None, optional
         """
-        super().__init__(type=type)
-        self._all: list[int] | None | Unset_Type = Unset
-        self._any: list[int] | None | Unset_Type = Unset
-        self.__none: list[int] | None | Unset_Type = Unset
+        super().__init__(type_=type_)
+        self._all_: list[int] | None | Unset_Type = Unset
+        self._any_: list[int] | None | Unset_Type = Unset
+        self._none_: list[int] | None | Unset_Type = Unset
 
-        if all is not Unset:
-            self.all = all
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if all_ is not Unset:
+            self.all_ = all_
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
 
     @property
-    def all(self) -> "list[int] | None | Unset_Type":
-        """Gets the all of this GsaDiscreteIdentityValuesDatumCriterion.
+    def all_(self) -> "list[int] | None | Unset_Type":
+        """Gets the all_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Returns
         -------
         list[int] | None | Unset_Type
-            The all of this GsaDiscreteIdentityValuesDatumCriterion.
+            The all_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        return self._all
+        return self._all_
 
-    @all.setter
-    def all(self, all: "list[int] | None | Unset_Type") -> None:
-        """Sets the all of this GsaDiscreteIdentityValuesDatumCriterion.
+    @all_.setter
+    def all_(self, all_: "list[int] | None | Unset_Type") -> None:
+        """Sets the all_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match all of these discrete value identities
 
         Parameters
         ----------
-        all: list[int] | None | Unset_Type
-            The all of this GsaDiscreteIdentityValuesDatumCriterion.
+        all_: list[int] | None | Unset_Type
+            The all_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        self._all = all
+        self._all_ = all_
 
     @property
-    def any(self) -> "list[int] | None | Unset_Type":
-        """Gets the any of this GsaDiscreteIdentityValuesDatumCriterion.
+    def any_(self) -> "list[int] | None | Unset_Type":
+        """Gets the any_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Returns
         -------
         list[int] | None | Unset_Type
-            The any of this GsaDiscreteIdentityValuesDatumCriterion.
+            The any_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[int] | None | Unset_Type") -> None:
-        """Sets the any of this GsaDiscreteIdentityValuesDatumCriterion.
+    @any_.setter
+    def any_(self, any_: "list[int] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match any of these discrete type identities
 
         Parameters
         ----------
-        any: list[int] | None | Unset_Type
-            The any of this GsaDiscreteIdentityValuesDatumCriterion.
+        any_: list[int] | None | Unset_Type
+            The any_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[int] | None | Unset_Type":
-        """Gets the _none of this GsaDiscreteIdentityValuesDatumCriterion.
+    def none_(self) -> "list[int] | None | Unset_Type":
+        """Gets the none_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Returns
         -------
         list[int] | None | Unset_Type
-            The _none of this GsaDiscreteIdentityValuesDatumCriterion.
+            The none_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[int] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaDiscreteIdentityValuesDatumCriterion.
+    @none_.setter
+    def none_(self, none_: "list[int] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaDiscreteIdentityValuesDatumCriterion.
         Match none of the discrete type identities
 
         Parameters
         ----------
-        _none: list[int] | None | Unset_Type
-            The _none of this GsaDiscreteIdentityValuesDatumCriterion.
+        none_: list[int] | None | Unset_Type
+            The none_ of this GsaDiscreteIdentityValuesDatumCriterion.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

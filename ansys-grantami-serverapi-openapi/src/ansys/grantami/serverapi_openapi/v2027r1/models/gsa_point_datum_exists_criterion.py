@@ -66,11 +66,11 @@ class GsaPointDatumExistsCriterion(GsaDatumExistsCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -80,15 +80,15 @@ class GsaPointDatumExistsCriterion(GsaDatumExistsCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.POINT,
+        type_: "GsaAttributeType" = GsaAttributeType.POINT,
     ) -> None:
         """GsaPointDatumExistsCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

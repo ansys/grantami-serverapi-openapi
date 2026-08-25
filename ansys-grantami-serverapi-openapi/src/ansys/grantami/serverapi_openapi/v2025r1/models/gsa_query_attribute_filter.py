@@ -61,11 +61,11 @@ class GsaQueryAttributeFilter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "list[GsaAttributeType]",
+        "type_": "list[GsaAttributeType]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -77,42 +77,42 @@ class GsaQueryAttributeFilter(ModelBase):
     def __init__(
         self,
         *,
-        type: "list[GsaAttributeType] | None | Unset_Type" = Unset,
+        type_: "list[GsaAttributeType] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryAttributeFilter - a model defined in Swagger
 
         Parameters
         ----------
-        type: list[GsaAttributeType] | None, optional
+        type_: list[GsaAttributeType] | None, optional
         """
-        self._type: list[GsaAttributeType] | None | Unset_Type = Unset
+        self._type_: list[GsaAttributeType] | None | Unset_Type = Unset
 
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
 
     @property
-    def type(self) -> "list[GsaAttributeType] | None | Unset_Type":
-        """Gets the type of this GsaQueryAttributeFilter.
+    def type_(self) -> "list[GsaAttributeType] | None | Unset_Type":
+        """Gets the type_ of this GsaQueryAttributeFilter.
         Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Returns
         -------
         list[GsaAttributeType] | None | Unset_Type
-            The type of this GsaQueryAttributeFilter.
+            The type_ of this GsaQueryAttributeFilter.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "list[GsaAttributeType] | None | Unset_Type") -> None:
-        """Sets the type of this GsaQueryAttributeFilter.
+    @type_.setter
+    def type_(self, type_: "list[GsaAttributeType] | None | Unset_Type") -> None:
+        """Sets the type_ of this GsaQueryAttributeFilter.
         Only include attributes of any of these types.  Note that Tabular attributes have type: link.
 
         Parameters
         ----------
-        type: list[GsaAttributeType] | None | Unset_Type
-            The type of this GsaQueryAttributeFilter.
+        type_: list[GsaAttributeType] | None | Unset_Type
+            The type_ of this GsaQueryAttributeFilter.
         """
-        self._type = type
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

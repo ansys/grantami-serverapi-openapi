@@ -71,14 +71,14 @@ class GsaRecordLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
     swagger_types: dict[str, str] = {
         "item_type": "GsaNewLayoutItemType",
         "link_group_guid": "str",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
         "forwards": "bool",
     }
 
     attribute_map: dict[str, str] = {
         "item_type": "itemType",
         "link_group_guid": "linkGroupGuid",
-        "type": "type",
+        "type_": "type",
         "forwards": "forwards",
     }
 
@@ -91,7 +91,7 @@ class GsaRecordLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         *,
         item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.RECORDLINK,
         link_group_guid: "str",
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
         forwards: "bool | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordLinkCreatePutLayoutItem - a model defined in Swagger
@@ -100,10 +100,10 @@ class GsaRecordLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         ----------
         item_type: GsaNewLayoutItemType
         link_group_guid: str
-        type: GsaPutType
+        type_: GsaPutType
         forwards: bool | None, optional
         """
-        super().__init__(item_type=item_type, type=type)
+        super().__init__(item_type=item_type, type_=type_)
         self._forwards: bool | None | Unset_Type = Unset
         self._link_group_guid: str
 

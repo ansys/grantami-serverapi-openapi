@@ -67,14 +67,14 @@ class GsaUpdateNumericParameterContent(GsaUpdateParameterContent):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "parameter_range": "GsaUpdateContinuousRange",
         "value": "float",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "parameter_range": "parameterRange",
         "value": "value",
     }
@@ -89,7 +89,7 @@ class GsaUpdateNumericParameterContent(GsaUpdateParameterContent):
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         parameter_range: "GsaUpdateContinuousRange | Unset_Type" = Unset,
         value: "float | None | Unset_Type" = Unset,
     ) -> None:
@@ -98,11 +98,11 @@ class GsaUpdateNumericParameterContent(GsaUpdateParameterContent):
         Parameters
         ----------
         parameter: GsaSlimEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         parameter_range: GsaUpdateContinuousRange, optional
         value: float | None, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._value: float | None | Unset_Type = Unset
         self._parameter_range: GsaUpdateContinuousRange | Unset_Type = Unset
 

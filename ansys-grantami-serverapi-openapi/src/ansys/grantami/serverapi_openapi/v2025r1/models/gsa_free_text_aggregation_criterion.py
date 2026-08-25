@@ -66,7 +66,7 @@ class GsaFreeTextAggregationCriterion(GsaAggregationCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "attributes": "GsaValueSpecifier",
         "criterion_guid": "str",
         "local_columns": "GsaValueSpecifier",
@@ -75,7 +75,7 @@ class GsaFreeTextAggregationCriterion(GsaAggregationCriterion):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attributes": "attributes",
         "criterion_guid": "criterionGuid",
         "local_columns": "localColumns",
@@ -93,7 +93,7 @@ class GsaFreeTextAggregationCriterion(GsaAggregationCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationType" = GsaAggregationType.TEXT,
+        type_: "GsaAggregationType" = GsaAggregationType.TEXT,
         attributes: "GsaValueSpecifier | Unset_Type" = Unset,
         criterion_guid: "str | Unset_Type" = Unset,
         local_columns: "GsaValueSpecifier | Unset_Type" = Unset,
@@ -104,14 +104,14 @@ class GsaFreeTextAggregationCriterion(GsaAggregationCriterion):
 
         Parameters
         ----------
-        type: GsaAggregationType
+        type_: GsaAggregationType
         attributes: GsaValueSpecifier, optional
         criterion_guid: str, optional
         local_columns: GsaValueSpecifier, optional
         number_of_terms: int, optional
         prefix: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._criterion_guid: str | Unset_Type = Unset
         self._number_of_terms: int | Unset_Type = Unset
         self._prefix: str | None | Unset_Type = Unset

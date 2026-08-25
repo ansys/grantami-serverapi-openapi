@@ -68,7 +68,7 @@ class GsaCreateDiscreteAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "discrete_type": "GsaSlimEntity",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -80,7 +80,7 @@ class GsaCreateDiscreteAttribute(GsaCreateAttribute):
     attribute_map: dict[str, str] = {
         "discrete_type": "discreteType",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -100,7 +100,7 @@ class GsaCreateDiscreteAttribute(GsaCreateAttribute):
         *,
         discrete_type: "GsaSlimEntity",
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.DISCRETE,
+        type_: "GsaAttributeType" = GsaAttributeType.DISCRETE,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -114,7 +114,7 @@ class GsaCreateDiscreteAttribute(GsaCreateAttribute):
         ----------
         discrete_type: GsaSlimEntity
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -124,7 +124,7 @@ class GsaCreateDiscreteAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,

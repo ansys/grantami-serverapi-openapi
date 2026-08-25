@@ -67,7 +67,7 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "axis_name": "str",
         "default_threshold_type": "GsaAttributeThresholdType",
@@ -79,7 +79,7 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
@@ -99,7 +99,7 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.RANGE,
+        type_: "GsaAttributeType" = GsaAttributeType.RANGE,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         axis_name: "str | None | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
@@ -113,7 +113,7 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         axis_name: str | None, optional
         default_threshold_type: GsaAttributeThresholdType, optional
@@ -124,7 +124,7 @@ class GsaCreateRangeAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,

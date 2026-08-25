@@ -65,7 +65,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "str",
+        "type_": "str",
         "contains_records": "list[GsaListItemRecordReference]",
         "contains_records_in_databases": "list[str]",
         "contains_records_in_integration_schemas": "list[str]",
@@ -80,7 +80,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "contains_records": "containsRecords",
         "contains_records_in_databases": "containsRecordsInDatabases",
         "contains_records_in_integration_schemas": "containsRecordsInIntegrationSchemas",
@@ -104,7 +104,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
     def __init__(
         self,
         *,
-        type: "str" = "recordList",
+        type_: "str" = "recordList",
         contains_records: "list[GsaListItemRecordReference] | None | Unset_Type" = Unset,
         contains_records_in_databases: "list[str] | None | Unset_Type" = Unset,
         contains_records_in_integration_schemas: "list[str] | None | Unset_Type" = Unset,
@@ -121,7 +121,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
 
         Parameters
         ----------
-        type: str
+        type_: str
         contains_records: list[GsaListItemRecordReference] | None, optional
         contains_records_in_databases: list[str] | None, optional
         contains_records_in_integration_schemas: list[str] | None, optional
@@ -134,7 +134,7 @@ class GsaRecordListSearchCriterion(GsaListCriterion):
         user_can_add_or_remove_items: bool | None, optional
         user_role: GsaUserRole, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._name_contains: str | None | Unset_Type = Unset
         self._user_role: GsaUserRole | Unset_Type = Unset
         self._is_published: bool | None | Unset_Type = Unset

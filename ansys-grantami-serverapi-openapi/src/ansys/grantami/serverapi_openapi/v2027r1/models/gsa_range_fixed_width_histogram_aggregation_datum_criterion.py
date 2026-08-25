@@ -68,13 +68,13 @@ class GsaRangeFixedWidthHistogramAggregationDatumCriterion(GsaAggregationDatumCr
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "interval": "float",
         "offset": "float",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "interval": "interval",
         "offset": "offset",
     }
@@ -86,7 +86,7 @@ class GsaRangeFixedWidthHistogramAggregationDatumCriterion(GsaAggregationDatumCr
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.RANGEFIXEDWIDTHHISTOGRAM,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.RANGEFIXEDWIDTHHISTOGRAM,
         interval: "float | Unset_Type" = Unset,
         offset: "float | Unset_Type" = Unset,
     ) -> None:
@@ -94,11 +94,11 @@ class GsaRangeFixedWidthHistogramAggregationDatumCriterion(GsaAggregationDatumCr
 
         Parameters
         ----------
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         interval: float, optional
         offset: float, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._interval: float | Unset_Type = Unset
         self._offset: float | Unset_Type = Unset
 

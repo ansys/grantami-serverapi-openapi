@@ -66,7 +66,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_parameter_value_guid": "str",
         "guid": "str",
         "help_path": "str",
@@ -74,7 +74,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "guid": "guid",
         "help_path": "helpPath",
@@ -88,7 +88,7 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
     def __init__(
         self,
         *,
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -98,14 +98,14 @@ class GsaUpdateDiscreteParameter(GsaUpdateParameter):
 
         Parameters
         ----------
-        type: GsaParameterType
+        type_: GsaParameterType
         default_parameter_value_guid: str, optional
         guid: str, optional
         help_path: str | None, optional
         name: str, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             default_parameter_value_guid=default_parameter_value_guid,
             guid=guid,
             help_path=help_path,

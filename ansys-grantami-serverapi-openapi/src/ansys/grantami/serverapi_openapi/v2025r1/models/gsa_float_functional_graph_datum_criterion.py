@@ -68,7 +68,7 @@ class GsaFloatFunctionalGraphDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "default_x_axis_parameter_guid": "str",
         "default_x_axis_parameter_identity": "int",
         "is_series_graph": "bool",
@@ -82,7 +82,7 @@ class GsaFloatFunctionalGraphDatumCriterion(GsaDatumCriterion):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "default_x_axis_parameter_guid": "defaultXAxisParameterGuid",
         "default_x_axis_parameter_identity": "defaultXAxisParameterIdentity",
         "is_series_graph": "isSeriesGraph",
@@ -102,7 +102,7 @@ class GsaFloatFunctionalGraphDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.FLOATFUNCTIONALGRAPH,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.FLOATFUNCTIONALGRAPH,
         default_x_axis_parameter_guid: "str | None | Unset_Type" = Unset,
         default_x_axis_parameter_identity: "int | None | Unset_Type" = Unset,
         is_series_graph: "bool | None | Unset_Type" = Unset,
@@ -118,7 +118,7 @@ class GsaFloatFunctionalGraphDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         default_x_axis_parameter_guid: str | None, optional
         default_x_axis_parameter_identity: int | None, optional
         is_series_graph: bool | None, optional
@@ -130,7 +130,7 @@ class GsaFloatFunctionalGraphDatumCriterion(GsaDatumCriterion):
         x_axis_parameter_guid: str | None, optional
         x_axis_parameter_identity: int | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._x_axis_parameter_identity: int | None | Unset_Type = Unset
         self._x_axis_parameter_guid: str | None | Unset_Type = Unset
         self._number_of_series_lte: int | None | Unset_Type = Unset

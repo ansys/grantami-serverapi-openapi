@@ -68,17 +68,17 @@ class GsaDiscreteGuidValuesDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
-        "_none": "list[str]",
-        "all": "list[str]",
-        "any": "list[str]",
+        "type_": "GsaDatumCriterionType",
+        "all_": "list[str]",
+        "any_": "list[str]",
+        "none_": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "_none": "none",
-        "all": "all",
-        "any": "any",
+        "type_": "type",
+        "all_": "all",
+        "any_": "any",
+        "none_": "none",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -88,103 +88,103 @@ class GsaDiscreteGuidValuesDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEGUIDVALUES,
-        _none: "list[str] | None | Unset_Type" = Unset,
-        all: "list[str] | None | Unset_Type" = Unset,
-        any: "list[str] | None | Unset_Type" = Unset,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEGUIDVALUES,
+        all_: "list[str] | None | Unset_Type" = Unset,
+        any_: "list[str] | None | Unset_Type" = Unset,
+        none_: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteGuidValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
-        _none: list[str] | None, optional
-        all: list[str] | None, optional
-        any: list[str] | None, optional
+        type_: GsaDatumCriterionType
+        all_: list[str] | None, optional
+        any_: list[str] | None, optional
+        none_: list[str] | None, optional
         """
-        super().__init__(type=type)
-        self._all: list[str] | None | Unset_Type = Unset
-        self._any: list[str] | None | Unset_Type = Unset
-        self.__none: list[str] | None | Unset_Type = Unset
+        super().__init__(type_=type_)
+        self._all_: list[str] | None | Unset_Type = Unset
+        self._any_: list[str] | None | Unset_Type = Unset
+        self._none_: list[str] | None | Unset_Type = Unset
 
-        if all is not Unset:
-            self.all = all
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if all_ is not Unset:
+            self.all_ = all_
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
 
     @property
-    def all(self) -> "list[str] | None | Unset_Type":
-        """Gets the all of this GsaDiscreteGuidValuesDatumCriterion.
+    def all_(self) -> "list[str] | None | Unset_Type":
+        """Gets the all_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The all of this GsaDiscreteGuidValuesDatumCriterion.
+            The all_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        return self._all
+        return self._all_
 
-    @all.setter
-    def all(self, all: "list[str] | None | Unset_Type") -> None:
-        """Sets the all of this GsaDiscreteGuidValuesDatumCriterion.
+    @all_.setter
+    def all_(self, all_: "list[str] | None | Unset_Type") -> None:
+        """Sets the all_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match all of these discrete value GUIDs
 
         Parameters
         ----------
-        all: list[str] | None | Unset_Type
-            The all of this GsaDiscreteGuidValuesDatumCriterion.
+        all_: list[str] | None | Unset_Type
+            The all_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        self._all = all
+        self._all_ = all_
 
     @property
-    def any(self) -> "list[str] | None | Unset_Type":
-        """Gets the any of this GsaDiscreteGuidValuesDatumCriterion.
+    def any_(self) -> "list[str] | None | Unset_Type":
+        """Gets the any_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The any of this GsaDiscreteGuidValuesDatumCriterion.
+            The any_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[str] | None | Unset_Type") -> None:
-        """Sets the any of this GsaDiscreteGuidValuesDatumCriterion.
+    @any_.setter
+    def any_(self, any_: "list[str] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match any of these discrete type GUIDs
 
         Parameters
         ----------
-        any: list[str] | None | Unset_Type
-            The any of this GsaDiscreteGuidValuesDatumCriterion.
+        any_: list[str] | None | Unset_Type
+            The any_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[str] | None | Unset_Type":
-        """Gets the _none of this GsaDiscreteGuidValuesDatumCriterion.
+    def none_(self) -> "list[str] | None | Unset_Type":
+        """Gets the none_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The _none of this GsaDiscreteGuidValuesDatumCriterion.
+            The none_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[str] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaDiscreteGuidValuesDatumCriterion.
+    @none_.setter
+    def none_(self, none_: "list[str] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaDiscreteGuidValuesDatumCriterion.
         Match none of the discrete type GUIDs
 
         Parameters
         ----------
-        _none: list[str] | None | Unset_Type
-            The _none of this GsaDiscreteGuidValuesDatumCriterion.
+        none_: list[str] | None | Unset_Type
+            The none_ of this GsaDiscreteGuidValuesDatumCriterion.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

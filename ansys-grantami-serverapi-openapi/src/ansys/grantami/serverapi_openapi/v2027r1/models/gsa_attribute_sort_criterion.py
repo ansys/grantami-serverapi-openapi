@@ -68,7 +68,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortCriterionType",
+        "type_": "GsaSortCriterionType",
         "attribute_type": "GsaAttributeType",
         "guid": "str",
         "identity": "int",
@@ -77,7 +77,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_type": "attributeType",
         "guid": "guid",
         "identity": "identity",
@@ -95,7 +95,7 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
     def __init__(
         self,
         *,
-        type: "GsaSortCriterionType" = GsaSortCriterionType.ATTRIBUTE,
+        type_: "GsaSortCriterionType" = GsaSortCriterionType.ATTRIBUTE,
         attribute_type: "GsaAttributeType | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
@@ -106,14 +106,14 @@ class GsaAttributeSortCriterion(GsaSortCriterion):
 
         Parameters
         ----------
-        type: GsaSortCriterionType
+        type_: GsaSortCriterionType
         attribute_type: GsaAttributeType, optional
         guid: str | None, optional
         identity: int | None, optional
         sort_direction: GsaSortDirection, optional
         sort_type: GsaSortType, optional
         """
-        super().__init__(type=type, sort_direction=sort_direction)
+        super().__init__(type_=type_, sort_direction=sort_direction)
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._attribute_type: GsaAttributeType | Unset_Type = Unset

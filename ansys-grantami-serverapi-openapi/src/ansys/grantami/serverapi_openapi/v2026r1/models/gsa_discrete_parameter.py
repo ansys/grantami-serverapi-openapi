@@ -68,7 +68,7 @@ class GsaDiscreteParameter(GsaParameter):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaDiscreteParameterValue]",
         "help_path": "str",
     }
@@ -78,7 +78,7 @@ class GsaDiscreteParameter(GsaParameter):
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "help_path": "helpPath",
     }
@@ -96,7 +96,7 @@ class GsaDiscreteParameter(GsaParameter):
         display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         values: "list[GsaDiscreteParameterValue]",
         help_path: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -108,7 +108,7 @@ class GsaDiscreteParameter(GsaParameter):
         display_names: dict[str, str]
         guid: str
         name: str
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaDiscreteParameterValue]
         help_path: str | None, optional
         """
@@ -117,7 +117,7 @@ class GsaDiscreteParameter(GsaParameter):
             display_names=display_names,
             guid=guid,
             name=name,
-            type=type,
+            type_=type_,
             help_path=help_path,
         )
         self._values: list[GsaDiscreteParameterValue]

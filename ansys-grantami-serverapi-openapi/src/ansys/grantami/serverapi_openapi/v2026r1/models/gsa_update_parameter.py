@@ -63,7 +63,7 @@ class GsaUpdateParameter(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
@@ -72,7 +72,7 @@ class GsaUpdateParameter(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
@@ -94,7 +94,7 @@ class GsaUpdateParameter(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaParameterType",
+        type_: "GsaParameterType",
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -105,21 +105,21 @@ class GsaUpdateParameter(ModelBase):
 
         Parameters
         ----------
-        type: GsaParameterType
+        type_: GsaParameterType
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
         help_path: str | None, optional
         name: str, optional
         """
-        self._type: GsaParameterType
+        self._type_: GsaParameterType
         self._help_path: str | None | Unset_Type = Unset
         self._default_parameter_value_guid: str | Unset_Type = Unset
         self._default_parameter_value_index: int | Unset_Type = Unset
         self._name: str | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         if help_path is not Unset:
             self.help_path = help_path
         if default_parameter_value_guid is not Unset:
@@ -132,32 +132,32 @@ class GsaUpdateParameter(ModelBase):
             self.guid = guid
 
     @property
-    def type(self) -> "GsaParameterType":
-        """Gets the type of this GsaUpdateParameter.
+    def type_(self) -> "GsaParameterType":
+        """Gets the type_ of this GsaUpdateParameter.
 
         Returns
         -------
         GsaParameterType
-            The type of this GsaUpdateParameter.
+            The type_ of this GsaUpdateParameter.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterType") -> None:
-        """Sets the type of this GsaUpdateParameter.
+    @type_.setter
+    def type_(self, type_: "GsaParameterType") -> None:
+        """Sets the type_ of this GsaUpdateParameter.
 
         Parameters
         ----------
-        type: GsaParameterType
-            The type of this GsaUpdateParameter.
+        type_: GsaParameterType
+            The type_ of this GsaUpdateParameter.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def help_path(self) -> "str | None | Unset_Type":

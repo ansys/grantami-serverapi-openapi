@@ -68,13 +68,13 @@ class GsaLinkingValueExistsDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "attribute_type": "GsaAttributeType",
         "inner_hits_identifier": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_type": "attributeType",
         "inner_hits_identifier": "innerHitsIdentifier",
     }
@@ -88,7 +88,7 @@ class GsaLinkingValueExistsDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DYNAMICLINKINGVALUE,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DYNAMICLINKINGVALUE,
         attribute_type: "GsaAttributeType | Unset_Type" = Unset,
         inner_hits_identifier: "str | Unset_Type" = Unset,
     ) -> None:
@@ -96,11 +96,11 @@ class GsaLinkingValueExistsDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         attribute_type: GsaAttributeType, optional
         inner_hits_identifier: str, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._attribute_type: GsaAttributeType | Unset_Type = Unset
         self._inner_hits_identifier: str | Unset_Type = Unset
 

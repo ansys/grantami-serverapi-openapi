@@ -67,7 +67,7 @@ class GsaCreateHyperlinkAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -77,7 +77,7 @@ class GsaCreateHyperlinkAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -93,7 +93,7 @@ class GsaCreateHyperlinkAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.HYPERLINK,
+        type_: "GsaAttributeType" = GsaAttributeType.HYPERLINK,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -105,7 +105,7 @@ class GsaCreateHyperlinkAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -114,7 +114,7 @@ class GsaCreateHyperlinkAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,

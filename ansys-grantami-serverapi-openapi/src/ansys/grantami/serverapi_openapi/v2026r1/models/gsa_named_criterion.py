@@ -64,13 +64,13 @@ class GsaNamedCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "inner_criterion": "GsaCriterion",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "inner_criterion": "innerCriterion",
         "name": "name",
     }
@@ -84,7 +84,7 @@ class GsaNamedCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.NAMEDCRITERION,
+        type_: "GsaCriterionType" = GsaCriterionType.NAMEDCRITERION,
         inner_criterion: "GsaCriterion | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -92,11 +92,11 @@ class GsaNamedCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         inner_criterion: GsaCriterion, optional
         name: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._name: str | None | Unset_Type = Unset
         self._inner_criterion: GsaCriterion | Unset_Type = Unset
 

@@ -69,16 +69,16 @@ class GsaDiscreteParameterValueConstraint(GsaParameterConstraint):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaObjectIdentifier",
-        "type": "GsaParameterConstraintType",
-        "_none": "list[float]",
-        "any": "list[float]",
+        "type_": "GsaParameterConstraintType",
+        "any_": "list[float]",
+        "none_": "list[float]",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
-        "_none": "none",
-        "any": "any",
+        "type_": "type",
+        "any_": "any",
+        "none_": "none",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -89,71 +89,71 @@ class GsaDiscreteParameterValueConstraint(GsaParameterConstraint):
         self,
         *,
         parameter: "GsaObjectIdentifier",
-        type: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETEVALUE,
-        _none: "list[float] | None | Unset_Type" = Unset,
-        any: "list[float] | None | Unset_Type" = Unset,
+        type_: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETEVALUE,
+        any_: "list[float] | None | Unset_Type" = Unset,
+        none_: "list[float] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteParameterValueConstraint - a model defined in Swagger
 
         Parameters
         ----------
         parameter: GsaObjectIdentifier
-        type: GsaParameterConstraintType
-        _none: list[float] | None, optional
-        any: list[float] | None, optional
+        type_: GsaParameterConstraintType
+        any_: list[float] | None, optional
+        none_: list[float] | None, optional
         """
-        super().__init__(parameter=parameter, type=type)
-        self._any: list[float] | None | Unset_Type = Unset
-        self.__none: list[float] | None | Unset_Type = Unset
+        super().__init__(parameter=parameter, type_=type_)
+        self._any_: list[float] | None | Unset_Type = Unset
+        self._none_: list[float] | None | Unset_Type = Unset
 
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
 
     @property
-    def any(self) -> "list[float] | None | Unset_Type":
-        """Gets the any of this GsaDiscreteParameterValueConstraint.
+    def any_(self) -> "list[float] | None | Unset_Type":
+        """Gets the any_ of this GsaDiscreteParameterValueConstraint.
 
         Returns
         -------
         list[float] | None | Unset_Type
-            The any of this GsaDiscreteParameterValueConstraint.
+            The any_ of this GsaDiscreteParameterValueConstraint.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[float] | None | Unset_Type") -> None:
-        """Sets the any of this GsaDiscreteParameterValueConstraint.
+    @any_.setter
+    def any_(self, any_: "list[float] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        any: list[float] | None | Unset_Type
-            The any of this GsaDiscreteParameterValueConstraint.
+        any_: list[float] | None | Unset_Type
+            The any_ of this GsaDiscreteParameterValueConstraint.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[float] | None | Unset_Type":
-        """Gets the _none of this GsaDiscreteParameterValueConstraint.
+    def none_(self) -> "list[float] | None | Unset_Type":
+        """Gets the none_ of this GsaDiscreteParameterValueConstraint.
 
         Returns
         -------
         list[float] | None | Unset_Type
-            The _none of this GsaDiscreteParameterValueConstraint.
+            The none_ of this GsaDiscreteParameterValueConstraint.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[float] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaDiscreteParameterValueConstraint.
+    @none_.setter
+    def none_(self, none_: "list[float] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaDiscreteParameterValueConstraint.
 
         Parameters
         ----------
-        _none: list[float] | None | Unset_Type
-            The _none of this GsaDiscreteParameterValueConstraint.
+        none_: list[float] | None | Unset_Type
+            The none_ of this GsaDiscreteParameterValueConstraint.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

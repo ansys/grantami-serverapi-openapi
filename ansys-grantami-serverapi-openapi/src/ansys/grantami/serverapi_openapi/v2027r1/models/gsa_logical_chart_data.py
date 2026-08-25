@@ -66,14 +66,14 @@ class GsaLogicalChartData(GsaChartData):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaChartDataType",
+        "type_": "GsaChartDataType",
         "bubble_axis_value": "GsaDataExportRange",
         "record_version_guid": "str",
         "value": "bool",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "bubble_axis_value": "bubbleAxisValue",
         "record_version_guid": "recordVersionGuid",
         "value": "value",
@@ -86,7 +86,7 @@ class GsaLogicalChartData(GsaChartData):
     def __init__(
         self,
         *,
-        type: "GsaChartDataType" = GsaChartDataType.LOGICAL,
+        type_: "GsaChartDataType" = GsaChartDataType.LOGICAL,
         bubble_axis_value: "GsaDataExportRange | Unset_Type" = Unset,
         record_version_guid: "str | Unset_Type" = Unset,
         value: "bool | Unset_Type" = Unset,
@@ -95,13 +95,15 @@ class GsaLogicalChartData(GsaChartData):
 
         Parameters
         ----------
-        type: GsaChartDataType
+        type_: GsaChartDataType
         bubble_axis_value: GsaDataExportRange, optional
         record_version_guid: str, optional
         value: bool, optional
         """
         super().__init__(
-            type=type, bubble_axis_value=bubble_axis_value, record_version_guid=record_version_guid
+            type_=type_,
+            bubble_axis_value=bubble_axis_value,
+            record_version_guid=record_version_guid,
         )
         self._value: bool | Unset_Type = Unset
 

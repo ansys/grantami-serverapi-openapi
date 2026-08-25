@@ -69,7 +69,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "attribute_parameters": "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         "discrete_type": "GsaSlimEntity",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
         "help_path": "str",
@@ -80,7 +80,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "attribute_parameters": "attributeParameters",
         "discrete_type": "discreteType",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
         "help_path": "helpPath",
@@ -100,7 +100,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         discrete_type: "GsaSlimEntity",
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
+        type_: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -113,7 +113,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: list[GsaCreateDiscreteFunctionalAttributeParameter]
         discrete_type: GsaSlimEntity
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
         help_path: str | None, optional
@@ -121,7 +121,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

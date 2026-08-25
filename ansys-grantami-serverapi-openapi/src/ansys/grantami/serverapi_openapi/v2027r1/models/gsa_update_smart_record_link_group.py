@@ -68,7 +68,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "attribute_pairs": "list[GsaCreateAttributeLinkPair]",
         "forbid_orphans": "bool",
         "guid": "str",
@@ -78,7 +78,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_pairs": "attributePairs",
         "forbid_orphans": "forbidOrphans",
         "guid": "guid",
@@ -97,7 +97,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
     def __init__(
         self,
         *,
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
         attribute_pairs: "list[GsaCreateAttributeLinkPair] | Unset_Type" = Unset,
         forbid_orphans: "bool | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -109,7 +109,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
 
         Parameters
         ----------
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         attribute_pairs: list[GsaCreateAttributeLinkPair], optional
         forbid_orphans: bool, optional
         guid: str, optional
@@ -117,7 +117,7 @@ class GsaUpdateSmartRecordLinkGroup(GsaUpdateRecordLinkGroup):
         referential_integrity_model: GsaReferentialIntegrityModel, optional
         reverse_name: str, optional
         """
-        super().__init__(type=type, guid=guid, name=name, reverse_name=reverse_name)
+        super().__init__(type_=type_, guid=guid, name=name, reverse_name=reverse_name)
         self._forbid_orphans: bool | Unset_Type = Unset
         self._referential_integrity_model: GsaReferentialIntegrityModel | Unset_Type = Unset
         self._attribute_pairs: list[GsaCreateAttributeLinkPair] | Unset_Type = Unset

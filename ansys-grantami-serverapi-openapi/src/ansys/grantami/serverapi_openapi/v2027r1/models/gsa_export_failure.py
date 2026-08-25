@@ -65,13 +65,13 @@ class GsaExportFailure(ModelBase):
     swagger_types: dict[str, str] = {
         "failure_details": "str",
         "failure_reason": "str",
-        "type": "GsaExportFailureType",
+        "type_": "GsaExportFailureType",
     }
 
     attribute_map: dict[str, str] = {
         "failure_details": "failureDetails",
         "failure_reason": "failureReason",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -93,7 +93,7 @@ class GsaExportFailure(ModelBase):
         *,
         failure_details: "str",
         failure_reason: "str",
-        type: "GsaExportFailureType",
+        type_: "GsaExportFailureType",
     ) -> None:
         """GsaExportFailure - a model defined in Swagger
 
@@ -101,43 +101,43 @@ class GsaExportFailure(ModelBase):
         ----------
         failure_details: str
         failure_reason: str
-        type: GsaExportFailureType
+        type_: GsaExportFailureType
         """
-        self._type: GsaExportFailureType
+        self._type_: GsaExportFailureType
         self._failure_details: str
         self._failure_reason: str
 
-        self.type = type
+        self.type_ = type_
         self.failure_details = failure_details
         self.failure_reason = failure_reason
 
     @property
-    def type(self) -> "GsaExportFailureType":
-        """Gets the type of this GsaExportFailure.
+    def type_(self) -> "GsaExportFailureType":
+        """Gets the type_ of this GsaExportFailure.
 
         Returns
         -------
         GsaExportFailureType
-            The type of this GsaExportFailure.
+            The type_ of this GsaExportFailure.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaExportFailureType") -> None:
-        """Sets the type of this GsaExportFailure.
+    @type_.setter
+    def type_(self, type_: "GsaExportFailureType") -> None:
+        """Sets the type_ of this GsaExportFailure.
 
         Parameters
         ----------
-        type: GsaExportFailureType
-            The type of this GsaExportFailure.
+        type_: GsaExportFailureType
+            The type_ of this GsaExportFailure.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def failure_details(self) -> "str":

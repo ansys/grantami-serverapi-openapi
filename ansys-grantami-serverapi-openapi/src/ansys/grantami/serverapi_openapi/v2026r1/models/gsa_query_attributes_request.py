@@ -62,12 +62,12 @@ class GsaQueryAttributesRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "properties": "GsaQueryAttributeProperties",
-        "filter": "GsaQueryAttributeFilter",
+        "filter_": "GsaQueryAttributeFilter",
     }
 
     attribute_map: dict[str, str] = {
         "properties": "properties",
-        "filter": "filter",
+        "filter_": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,21 +81,21 @@ class GsaQueryAttributesRequest(ModelBase):
         self,
         *,
         properties: "GsaQueryAttributeProperties",
-        filter: "GsaQueryAttributeFilter | Unset_Type" = Unset,
+        filter_: "GsaQueryAttributeFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryAttributesRequest - a model defined in Swagger
 
         Parameters
         ----------
         properties: GsaQueryAttributeProperties
-        filter: GsaQueryAttributeFilter, optional
+        filter_: GsaQueryAttributeFilter, optional
         """
         self._properties: GsaQueryAttributeProperties
-        self._filter: GsaQueryAttributeFilter | Unset_Type = Unset
+        self._filter_: GsaQueryAttributeFilter | Unset_Type = Unset
 
         self.properties = properties
-        if filter is not Unset:
-            self.filter = filter
+        if filter_ is not Unset:
+            self.filter_ = filter_
 
     @property
     def properties(self) -> "GsaQueryAttributeProperties":
@@ -126,29 +126,29 @@ class GsaQueryAttributesRequest(ModelBase):
         self._properties = properties
 
     @property
-    def filter(self) -> "GsaQueryAttributeFilter | Unset_Type":
-        """Gets the filter of this GsaQueryAttributesRequest.
+    def filter_(self) -> "GsaQueryAttributeFilter | Unset_Type":
+        """Gets the filter_ of this GsaQueryAttributesRequest.
 
         Returns
         -------
         GsaQueryAttributeFilter | Unset_Type
-            The filter of this GsaQueryAttributesRequest.
+            The filter_ of this GsaQueryAttributesRequest.
         """
-        return self._filter
+        return self._filter_
 
-    @filter.setter
-    def filter(self, filter: "GsaQueryAttributeFilter | Unset_Type") -> None:
-        """Sets the filter of this GsaQueryAttributesRequest.
+    @filter_.setter
+    def filter_(self, filter_: "GsaQueryAttributeFilter | Unset_Type") -> None:
+        """Sets the filter_ of this GsaQueryAttributesRequest.
 
         Parameters
         ----------
-        filter: GsaQueryAttributeFilter | Unset_Type
-            The filter of this GsaQueryAttributesRequest.
+        filter_: GsaQueryAttributeFilter | Unset_Type
+            The filter_ of this GsaQueryAttributesRequest.
         """
         # Field is not nullable
-        if filter is None:
-            raise ValueError("Invalid value for 'filter', must not be 'None'")
-        self._filter = filter
+        if filter_ is None:
+            raise ValueError("Invalid value for 'filter_', must not be 'None'")
+        self._filter_ = filter_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

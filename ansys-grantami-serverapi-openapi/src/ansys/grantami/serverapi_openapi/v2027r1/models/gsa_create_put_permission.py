@@ -68,7 +68,7 @@ class GsaCreatePutPermission(GsaPutPermission):
     swagger_types: dict[str, str] = {
         "name": "str",
         "role": "str",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
         "description": "str",
         "set_message": "str",
         "unset_message": "str",
@@ -77,7 +77,7 @@ class GsaCreatePutPermission(GsaPutPermission):
     attribute_map: dict[str, str] = {
         "name": "name",
         "role": "role",
-        "type": "type",
+        "type_": "type",
         "description": "description",
         "set_message": "setMessage",
         "unset_message": "unsetMessage",
@@ -92,7 +92,7 @@ class GsaCreatePutPermission(GsaPutPermission):
         *,
         name: "str",
         role: "str",
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
         description: "str | None | Unset_Type" = Unset,
         set_message: "str | None | Unset_Type" = Unset,
         unset_message: "str | None | Unset_Type" = Unset,
@@ -103,12 +103,12 @@ class GsaCreatePutPermission(GsaPutPermission):
         ----------
         name: str
         role: str
-        type: GsaPutType
+        type_: GsaPutType
         description: str | None, optional
         set_message: str | None, optional
         unset_message: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._name: str
         self._role: str
         self._description: str | None | Unset_Type = Unset

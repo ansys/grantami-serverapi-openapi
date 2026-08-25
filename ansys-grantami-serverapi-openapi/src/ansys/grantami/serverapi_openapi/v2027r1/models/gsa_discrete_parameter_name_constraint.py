@@ -69,16 +69,16 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaObjectIdentifier",
-        "type": "GsaParameterConstraintType",
-        "_none": "list[str]",
-        "any": "list[str]",
+        "type_": "GsaParameterConstraintType",
+        "any_": "list[str]",
+        "none_": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
-        "_none": "none",
-        "any": "any",
+        "type_": "type",
+        "any_": "any",
+        "none_": "none",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -89,71 +89,71 @@ class GsaDiscreteParameterNameConstraint(GsaParameterConstraint):
         self,
         *,
         parameter: "GsaObjectIdentifier",
-        type: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETENAME,
-        _none: "list[str] | None | Unset_Type" = Unset,
-        any: "list[str] | None | Unset_Type" = Unset,
+        type_: "GsaParameterConstraintType" = GsaParameterConstraintType.DISCRETENAME,
+        any_: "list[str] | None | Unset_Type" = Unset,
+        none_: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteParameterNameConstraint - a model defined in Swagger
 
         Parameters
         ----------
         parameter: GsaObjectIdentifier
-        type: GsaParameterConstraintType
-        _none: list[str] | None, optional
-        any: list[str] | None, optional
+        type_: GsaParameterConstraintType
+        any_: list[str] | None, optional
+        none_: list[str] | None, optional
         """
-        super().__init__(parameter=parameter, type=type)
-        self._any: list[str] | None | Unset_Type = Unset
-        self.__none: list[str] | None | Unset_Type = Unset
+        super().__init__(parameter=parameter, type_=type_)
+        self._any_: list[str] | None | Unset_Type = Unset
+        self._none_: list[str] | None | Unset_Type = Unset
 
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
 
     @property
-    def any(self) -> "list[str] | None | Unset_Type":
-        """Gets the any of this GsaDiscreteParameterNameConstraint.
+    def any_(self) -> "list[str] | None | Unset_Type":
+        """Gets the any_ of this GsaDiscreteParameterNameConstraint.
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The any of this GsaDiscreteParameterNameConstraint.
+            The any_ of this GsaDiscreteParameterNameConstraint.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[str] | None | Unset_Type") -> None:
-        """Sets the any of this GsaDiscreteParameterNameConstraint.
+    @any_.setter
+    def any_(self, any_: "list[str] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        any: list[str] | None | Unset_Type
-            The any of this GsaDiscreteParameterNameConstraint.
+        any_: list[str] | None | Unset_Type
+            The any_ of this GsaDiscreteParameterNameConstraint.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[str] | None | Unset_Type":
-        """Gets the _none of this GsaDiscreteParameterNameConstraint.
+    def none_(self) -> "list[str] | None | Unset_Type":
+        """Gets the none_ of this GsaDiscreteParameterNameConstraint.
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The _none of this GsaDiscreteParameterNameConstraint.
+            The none_ of this GsaDiscreteParameterNameConstraint.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[str] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaDiscreteParameterNameConstraint.
+    @none_.setter
+    def none_(self, none_: "list[str] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaDiscreteParameterNameConstraint.
 
         Parameters
         ----------
-        _none: list[str] | None | Unset_Type
-            The _none of this GsaDiscreteParameterNameConstraint.
+        none_: list[str] | None | Unset_Type
+            The none_ of this GsaDiscreteParameterNameConstraint.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

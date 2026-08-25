@@ -67,14 +67,14 @@ class GsaUpdateDiscreteParameterContent(GsaUpdateParameterContent):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "parameter_range": "GsaUpdateDiscreteRange",
         "parameter_value": "GsaSlimEntity",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "parameter_range": "parameterRange",
         "parameter_value": "parameterValue",
     }
@@ -90,7 +90,7 @@ class GsaUpdateDiscreteParameterContent(GsaUpdateParameterContent):
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         parameter_range: "GsaUpdateDiscreteRange | Unset_Type" = Unset,
         parameter_value: "GsaSlimEntity | Unset_Type" = Unset,
     ) -> None:
@@ -99,11 +99,11 @@ class GsaUpdateDiscreteParameterContent(GsaUpdateParameterContent):
         Parameters
         ----------
         parameter: GsaSlimEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         parameter_range: GsaUpdateDiscreteRange, optional
         parameter_value: GsaSlimEntity, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._parameter_value: GsaSlimEntity | Unset_Type = Unset
         self._parameter_range: GsaUpdateDiscreteRange | Unset_Type = Unset
 

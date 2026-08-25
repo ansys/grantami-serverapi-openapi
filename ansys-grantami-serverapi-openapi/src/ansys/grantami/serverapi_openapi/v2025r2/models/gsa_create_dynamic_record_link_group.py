@@ -72,7 +72,7 @@ class GsaCreateDynamicRecordLinkGroup(GsaCreateRecordLinkGroup):
         "link_target": "GsaLinkTarget",
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "forbid_orphans": "bool",
         "guid": "str",
         "referential_integrity_model": "GsaReferentialIntegrityModel",
@@ -83,7 +83,7 @@ class GsaCreateDynamicRecordLinkGroup(GsaCreateRecordLinkGroup):
         "link_target": "linkTarget",
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "forbid_orphans": "forbidOrphans",
         "guid": "guid",
         "referential_integrity_model": "referentialIntegrityModel",
@@ -103,7 +103,7 @@ class GsaCreateDynamicRecordLinkGroup(GsaCreateRecordLinkGroup):
         link_target: "GsaLinkTarget",
         name: "str",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.DYNAMIC,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.DYNAMIC,
         forbid_orphans: "bool | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         referential_integrity_model: "GsaReferentialIntegrityModel | Unset_Type" = Unset,
@@ -116,13 +116,13 @@ class GsaCreateDynamicRecordLinkGroup(GsaCreateRecordLinkGroup):
         link_target: GsaLinkTarget
         name: str
         reverse_name: str
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         forbid_orphans: bool, optional
         guid: str, optional
         referential_integrity_model: GsaReferentialIntegrityModel, optional
         """
         super().__init__(
-            link_target=link_target, name=name, reverse_name=reverse_name, type=type, guid=guid
+            link_target=link_target, name=name, reverse_name=reverse_name, type_=type_, guid=guid
         )
         self._forbid_orphans: bool | Unset_Type = Unset
         self._referential_integrity_model: GsaReferentialIntegrityModel | Unset_Type = Unset

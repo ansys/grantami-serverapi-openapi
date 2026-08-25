@@ -66,7 +66,7 @@ class GsaRangeChartData(GsaChartData):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaChartDataType",
+        "type_": "GsaChartDataType",
         "bubble_axis_value": "GsaDataExportRange",
         "estimated": "bool",
         "high_value": "float",
@@ -75,7 +75,7 @@ class GsaRangeChartData(GsaChartData):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "bubble_axis_value": "bubbleAxisValue",
         "estimated": "estimated",
         "high_value": "highValue",
@@ -90,7 +90,7 @@ class GsaRangeChartData(GsaChartData):
     def __init__(
         self,
         *,
-        type: "GsaChartDataType" = GsaChartDataType.RANGE,
+        type_: "GsaChartDataType" = GsaChartDataType.RANGE,
         bubble_axis_value: "GsaDataExportRange | Unset_Type" = Unset,
         estimated: "bool | Unset_Type" = Unset,
         high_value: "float | Unset_Type" = Unset,
@@ -101,7 +101,7 @@ class GsaRangeChartData(GsaChartData):
 
         Parameters
         ----------
-        type: GsaChartDataType
+        type_: GsaChartDataType
         bubble_axis_value: GsaDataExportRange, optional
         estimated: bool, optional
         high_value: float, optional
@@ -109,7 +109,9 @@ class GsaRangeChartData(GsaChartData):
         record_version_guid: str, optional
         """
         super().__init__(
-            type=type, bubble_axis_value=bubble_axis_value, record_version_guid=record_version_guid
+            type_=type_,
+            bubble_axis_value=bubble_axis_value,
+            record_version_guid=record_version_guid,
         )
         self._low_value: float | Unset_Type = Unset
         self._high_value: float | Unset_Type = Unset
