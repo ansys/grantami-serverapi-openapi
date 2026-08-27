@@ -206,6 +206,9 @@ from .gsa_cannot_create_unavailable_tabular_column_attribute_error_detail import
 from .gsa_cannot_delete_tabular_column_attribute_error_detail import (
     GsaCannotDeleteTabularColumnAttributeErrorDetail,
 )
+from .gsa_cannot_remove_parameter_in_use_attribute_error_detail import (
+    GsaCannotRemoveParameterInUseAttributeErrorDetail,
+)
 from .gsa_category_replace_permission_category_error_detail import (
     GsaCategoryReplacePermissionCategoryErrorDetail,
 )
@@ -2002,6 +2005,7 @@ __all__ = [
     "GsaCannotChangeDiscreteTypeAttributeErrorDetail",
     "GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
     "GsaCannotDeleteTabularColumnAttributeErrorDetail",
+    "GsaCannotRemoveParameterInUseAttributeErrorDetail",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
     "GsaChartData",
     "GsaChartDataType",
