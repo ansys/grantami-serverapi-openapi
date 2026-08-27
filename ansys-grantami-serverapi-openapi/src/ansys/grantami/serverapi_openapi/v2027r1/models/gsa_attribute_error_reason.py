@@ -69,3 +69,4 @@ class GsaAttributeErrorReason(Enum):
     CANNOTDELETETABULARCOLUMN = "cannotDeleteTabularColumn"
     CANNOTCREATEUNAVAILABLETABULARCOLUMN = "cannotCreateUnavailableTabularColumn"
     CANNOTCHANGEDISCRETETYPE = "cannotChangeDiscreteType"
+    CANNOTREMOVEPARAMETERINUSE = "cannotRemoveParameterInUse"
