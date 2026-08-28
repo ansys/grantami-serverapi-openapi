@@ -266,6 +266,9 @@ from .models.gsa_boost_by_identity import GsaBoostByIdentity
 from .models.gsa_bracket_mismatch_unit_equation_error_detail import (
     GsaBracketMismatchUnitEquationErrorDetail,
 )
+from .models.gsa_breadcrumb import GsaBreadcrumb
+from .models.gsa_breadcrumb_type import GsaBreadcrumbType
+from .models.gsa_breadcrumbs_property import GsaBreadcrumbsProperty
 from .models.gsa_bulk_info import GsaBulkInfo
 from .models.gsa_bulk_request import GsaBulkRequest
 from .models.gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
@@ -1562,6 +1565,7 @@ from .models.gsa_replacement_string import GsaReplacementString
 from .models.gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .models.gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
 from .models.gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
+from .models.gsa_resolved_breadcrumb import GsaResolvedBreadcrumb
 from .models.gsa_resolved_link_target import GsaResolvedLinkTarget
 from .models.gsa_resolved_target_attribute import GsaResolvedTargetAttribute
 from .models.gsa_response_options import GsaResponseOptions
@@ -1868,6 +1872,7 @@ from .models.gsa_unknown_unit_symbol_unit_equation_error_detail import (
 from .models.gsa_unresolved_attribute_guids_error_detail import (
     GsaUnresolvedAttributeGuidsErrorDetail,
 )
+from .models.gsa_unresolved_breadcrumb import GsaUnresolvedBreadcrumb
 from .models.gsa_unresolved_cross_database_record_link_group_guids_error_detail import (
     GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail,
 )
@@ -2248,6 +2253,9 @@ __all__ = [
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
     "GsaBracketMismatchUnitEquationErrorDetail",
+    "GsaBreadcrumb",
+    "GsaBreadcrumbType",
+    "GsaBreadcrumbsProperty",
     "GsaBulkInfo",
     "GsaBulkRequest",
     "GsaBulkRequestHttpMethod",
@@ -3194,6 +3202,7 @@ __all__ = [
     "GsaReplacementStringsInfo",
     "GsaResolveLinkTargetsInfo",
     "GsaResolveLinkTargetsRequest",
+    "GsaResolvedBreadcrumb",
     "GsaResolvedLinkTarget",
     "GsaResolvedTargetAttribute",
     "GsaResponseOptions",
@@ -3428,6 +3437,7 @@ __all__ = [
     "GsaUnitsInfo",
     "GsaUnknownUnitSymbolUnitEquationErrorDetail",
     "GsaUnresolvedAttributeGuidsErrorDetail",
+    "GsaUnresolvedBreadcrumb",
     "GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedParameterGuidsErrorDetail",
     "GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
