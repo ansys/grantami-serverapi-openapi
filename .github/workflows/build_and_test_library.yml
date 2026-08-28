@@ -133,6 +133,7 @@ jobs:
           twine-username: "__token__"
           twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
           verify-tag-version: false
+          skip-existing: false
 
   release:
     name: "Release"
@@ -164,6 +165,7 @@ jobs:
           library-name: ${{ env.LIBRARY_NAME }}
           twine-username: "__token__"
           twine-token: ${{ secrets.PYANSYS_PYPI_PRIVATE_PAT }}
+          skip-existing: false
 
       - name: "Release to GitHub"
         uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228  #v3.0.2
