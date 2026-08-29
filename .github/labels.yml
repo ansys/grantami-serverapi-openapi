@@ -33,3 +33,15 @@
 - name: code-gen
   description: Changes to the code generation project configuration
   color: d12dc9
+
+- name: uv
+  description: Changes to uv dependencies
+  color: a95937
+
+- name: maven
+  description: Changes to maven dependencies
+  color: e9891f
+
+- name: gh-actions
+  description: Changes to GitHub Actions dependencies
+  color: ba426a
