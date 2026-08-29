@@ -61,7 +61,7 @@ class GsaDiscreteValuesReplaceDiscreteValuesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "discrete_values": "list[GsaPutDiscreteValue]",
+        "discrete_values": "list[GsaDiscreteValuesCreateDiscreteValue]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaDiscreteValuesReplaceDiscreteValuesInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "discreteValues": "GsaPutDiscreteValue",
+        "discreteValues": "GsaDiscreteValuesCreateDiscreteValue",
     }
 
     discriminator: Optional[str] = None
@@ -77,39 +77,41 @@ class GsaDiscreteValuesReplaceDiscreteValuesInfo(ModelBase):
     def __init__(
         self,
         *,
-        discrete_values: "list[GsaPutDiscreteValue] | None | Unset_Type" = Unset,
+        discrete_values: "list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteValuesReplaceDiscreteValuesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        discrete_values: list[GsaPutDiscreteValue] | None, optional
+        discrete_values: list[GsaDiscreteValuesCreateDiscreteValue] | None, optional
         """
-        self._discrete_values: list[GsaPutDiscreteValue] | None | Unset_Type = Unset
+        self._discrete_values: list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type = (
+            Unset
+        )
 
         if discrete_values is not Unset:
             self.discrete_values = discrete_values
 
     @property
-    def discrete_values(self) -> "list[GsaPutDiscreteValue] | None | Unset_Type":
+    def discrete_values(self) -> "list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type":
         """Gets the discrete_values of this GsaDiscreteValuesReplaceDiscreteValuesInfo.
 
         Returns
         -------
-        list[GsaPutDiscreteValue] | None | Unset_Type
+        list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type
             The discrete_values of this GsaDiscreteValuesReplaceDiscreteValuesInfo.
         """
         return self._discrete_values
 
     @discrete_values.setter
     def discrete_values(
-        self, discrete_values: "list[GsaPutDiscreteValue] | None | Unset_Type"
+        self, discrete_values: "list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type"
     ) -> None:
         """Sets the discrete_values of this GsaDiscreteValuesReplaceDiscreteValuesInfo.
 
         Parameters
         ----------
-        discrete_values: list[GsaPutDiscreteValue] | None | Unset_Type
+        discrete_values: list[GsaDiscreteValuesCreateDiscreteValue] | None | Unset_Type
             The discrete_values of this GsaDiscreteValuesReplaceDiscreteValuesInfo.
         """
         self._discrete_values = discrete_values

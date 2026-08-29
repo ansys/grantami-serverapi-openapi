@@ -46,4 +46,3 @@ class GsaAttributeNoSuchEntityType(Enum):
     DISCRETETYPE = "discreteType"
     PARAMETER = "parameter"
     UNIT = "unit"
-    ABOUTATTRIBUTE = "aboutAttribute"

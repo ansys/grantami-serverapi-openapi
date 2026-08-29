@@ -74,7 +74,7 @@ class GsaExpressionUsageDataModificationErrorDetail(GsaUsageDataModificationErro
         "message": "str",
         "reason": "GsaDataModificationErrorReason",
         "referenced_by_type": "GsaReferencedByType",
-        "referenced_by": "list[GsaSlimExpression]",
+        "referenced_by": "list[GsaSlimNamedEntity]",
     }
 
     attribute_map: dict[str, str] = {
@@ -85,7 +85,7 @@ class GsaExpressionUsageDataModificationErrorDetail(GsaUsageDataModificationErro
     }
 
     subtype_mapping: dict[str, str] = {
-        "referencedBy": "GsaSlimExpression",
+        "referencedBy": "GsaSlimNamedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -96,7 +96,7 @@ class GsaExpressionUsageDataModificationErrorDetail(GsaUsageDataModificationErro
         message: "str",
         reason: "GsaDataModificationErrorReason" = GsaDataModificationErrorReason.USAGE,
         referenced_by_type: "GsaReferencedByType" = GsaReferencedByType.EXPRESSION,
-        referenced_by: "list[GsaSlimExpression] | None | Unset_Type" = Unset,
+        referenced_by: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaExpressionUsageDataModificationErrorDetail - a model defined in Swagger
 
@@ -105,32 +105,32 @@ class GsaExpressionUsageDataModificationErrorDetail(GsaUsageDataModificationErro
         message: str
         reason: GsaDataModificationErrorReason
         referenced_by_type: GsaReferencedByType
-        referenced_by: list[GsaSlimExpression] | None, optional
+        referenced_by: list[GsaSlimNamedEntity] | None, optional
         """
         super().__init__(message=message, reason=reason, referenced_by_type=referenced_by_type)
-        self._referenced_by: list[GsaSlimExpression] | None | Unset_Type = Unset
+        self._referenced_by: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
 
         if referenced_by is not Unset:
             self.referenced_by = referenced_by
 
     @property
-    def referenced_by(self) -> "list[GsaSlimExpression] | None | Unset_Type":
+    def referenced_by(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
         """Gets the referenced_by of this GsaExpressionUsageDataModificationErrorDetail.
 
         Returns
         -------
-        list[GsaSlimExpression] | None | Unset_Type
+        list[GsaSlimNamedEntity] | None | Unset_Type
             The referenced_by of this GsaExpressionUsageDataModificationErrorDetail.
         """
         return self._referenced_by
 
     @referenced_by.setter
-    def referenced_by(self, referenced_by: "list[GsaSlimExpression] | None | Unset_Type") -> None:
+    def referenced_by(self, referenced_by: "list[GsaSlimNamedEntity] | None | Unset_Type") -> None:
         """Sets the referenced_by of this GsaExpressionUsageDataModificationErrorDetail.
 
         Parameters
         ----------
-        referenced_by: list[GsaSlimExpression] | None | Unset_Type
+        referenced_by: list[GsaSlimNamedEntity] | None | Unset_Type
             The referenced_by of this GsaExpressionUsageDataModificationErrorDetail.
         """
         self._referenced_by = referenced_by
