@@ -50,7 +50,7 @@ class SchemaConstantsApi(ApiBase):
 
     def create_constant(
         self, *, database_key: "str", body: "Optional[GsaCreateConstant]" = None
-    ) -> "GsaConstant | GsaConstantCreationException | None":
+    ) -> "GsaConstant | None":
         """Create a new constant.
 
         This method makes a synchronous HTTP request.
@@ -64,7 +64,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        GsaConstant | GsaConstantCreationException | None
+        GsaConstant | None
         """
         data = self._create_constant_with_http_info(database_key, body, _return_http_data_only=True)
         return data  # type: ignore[no-any-return]
@@ -120,7 +120,7 @@ class SchemaConstantsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaConstant",
-            400: "GsaConstantCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -335,7 +335,6 @@ class SchemaConstantsApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
 
         Returns
         -------
@@ -410,7 +409,7 @@ class SchemaConstantsApi(ApiBase):
         database_key: "str",
         constant_guid: "str",
         body: "Optional[GsaUpdateConstant]" = None,
-    ) -> "GsaConstant | GsaConstantUpdateException | None":
+    ) -> "GsaConstant | None":
         """Update constant.
 
         This method makes a synchronous HTTP request.
@@ -426,7 +425,7 @@ class SchemaConstantsApi(ApiBase):
 
         Returns
         -------
-        GsaConstant | GsaConstantUpdateException | None
+        GsaConstant | None
         """
         data = self._update_constant_with_http_info(
             database_key, constant_guid, body, _return_http_data_only=True
@@ -496,7 +495,7 @@ class SchemaConstantsApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaConstant",
-            400: "GsaConstantUpdateException",
+            400: None,
             403: None,
             404: None,
         }
