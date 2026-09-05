@@ -61,14 +61,12 @@ class GsaSlimTypedAttribute(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
         "type": "GsaAttributeType",
     }
 
     attribute_map: dict[str, str] = {
-        "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
         "type": "type",
@@ -83,7 +81,6 @@ class GsaSlimTypedAttribute(ModelBase):
     def __init__(
         self,
         *,
-        display_names: "dict[str, str]",
         guid: "str",
         name: "str",
         type: "GsaAttributeType",
@@ -92,18 +89,15 @@ class GsaSlimTypedAttribute(ModelBase):
 
         Parameters
         ----------
-        display_names: dict[str, str]
         guid: str
         name: str
         type: GsaAttributeType
         """
         self._type: GsaAttributeType
-        self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
         self.type = type
-        self.display_names = display_names
         self.name = name
         self.guid = guid
 
@@ -134,36 +128,6 @@ class GsaSlimTypedAttribute(ModelBase):
         if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'type', must not be 'Unset'")
         self._type = type
-
-    @property
-    def display_names(self) -> "dict[str, str]":
-        """Gets the display_names of this GsaSlimTypedAttribute.
-        A dictionary of the culture name to the name that should be used in that culture for the item
-
-        Returns
-        -------
-        dict[str, str]
-            The display_names of this GsaSlimTypedAttribute.
-        """
-        return self._display_names
-
-    @display_names.setter
-    def display_names(self, display_names: "dict[str, str]") -> None:
-        """Sets the display_names of this GsaSlimTypedAttribute.
-        A dictionary of the culture name to the name that should be used in that culture for the item
-
-        Parameters
-        ----------
-        display_names: dict[str, str]
-            The display_names of this GsaSlimTypedAttribute.
-        """
-        # Field is not nullable
-        if display_names is None:
-            raise ValueError("Invalid value for 'display_names', must not be 'None'")
-        # Field is required
-        if display_names is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'display_names', must not be 'Unset'")
-        self._display_names = display_names
 
     @property
     def name(self) -> "str":

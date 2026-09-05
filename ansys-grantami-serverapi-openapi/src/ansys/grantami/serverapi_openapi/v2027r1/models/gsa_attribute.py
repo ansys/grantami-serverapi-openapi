@@ -68,7 +68,6 @@ class GsaAttribute(ModelBase):
         "guid": "str",
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
-        "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
         "type": "GsaAttributeType",
@@ -83,7 +82,6 @@ class GsaAttribute(ModelBase):
         "guid": "guid",
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
-        "is_protected": "isProtected",
         "name": "name",
         "table": "table",
         "type": "type",
@@ -129,7 +127,6 @@ class GsaAttribute(ModelBase):
         guid: "str",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
-        is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
         type: "GsaAttributeType",
@@ -146,7 +143,6 @@ class GsaAttribute(ModelBase):
         guid: str
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
-        is_protected: bool
         name: str
         table: GsaSlimEntity
         type: GsaAttributeType
@@ -161,7 +157,6 @@ class GsaAttribute(ModelBase):
         self._type: GsaAttributeType
         self._about_attribute: GsaSlimTypedAttribute | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool
-        self._is_protected: bool
         self._table: GsaSlimEntity
         self._display_names: dict[str, str]
         self._name: str
@@ -177,7 +172,6 @@ class GsaAttribute(ModelBase):
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
-        self.is_protected = is_protected
         self.table = table
         self.display_names = display_names
         self.name = name
@@ -374,36 +368,6 @@ class GsaAttribute(ModelBase):
         self._is_hidden_from_search_criteria = is_hidden_from_search_criteria
 
     @property
-    def is_protected(self) -> "bool":
-        """Gets the is_protected of this GsaAttribute.
-        If true, the attribute is protected from all changes.
-
-        Returns
-        -------
-        bool
-            The is_protected of this GsaAttribute.
-        """
-        return self._is_protected
-
-    @is_protected.setter
-    def is_protected(self, is_protected: "bool") -> None:
-        """Sets the is_protected of this GsaAttribute.
-        If true, the attribute is protected from all changes.
-
-        Parameters
-        ----------
-        is_protected: bool
-            The is_protected of this GsaAttribute.
-        """
-        # Field is not nullable
-        if is_protected is None:
-            raise ValueError("Invalid value for 'is_protected', must not be 'None'")
-        # Field is required
-        if is_protected is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'is_protected', must not be 'Unset'")
-        self._is_protected = is_protected
-
-    @property
     def table(self) -> "GsaSlimEntity":
         """Gets the table of this GsaAttribute.
 
@@ -434,7 +398,6 @@ class GsaAttribute(ModelBase):
     @property
     def display_names(self) -> "dict[str, str]":
         """Gets the display_names of this GsaAttribute.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Returns
         -------
@@ -446,7 +409,6 @@ class GsaAttribute(ModelBase):
     @display_names.setter
     def display_names(self, display_names: "dict[str, str]") -> None:
         """Sets the display_names of this GsaAttribute.
-        A dictionary of the culture name to the name that should be used in that culture for the item
 
         Parameters
         ----------

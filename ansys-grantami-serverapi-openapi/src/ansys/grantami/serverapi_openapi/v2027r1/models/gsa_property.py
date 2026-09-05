@@ -75,7 +75,6 @@ class GsaProperty(ModelBase):
     }
 
     discriminator_value_class_map = {
-        "breadcrumbs".lower(): "#/components/schemas/GsaBreadcrumbsProperty",
         "createdByUser".lower(): "#/components/schemas/GsaCreatedByUserProperty",
         "createdDate".lower(): "#/components/schemas/GsaCreatedDateProperty",
         "databaseKey".lower(): "#/components/schemas/GsaDatabaseKeyProperty",
