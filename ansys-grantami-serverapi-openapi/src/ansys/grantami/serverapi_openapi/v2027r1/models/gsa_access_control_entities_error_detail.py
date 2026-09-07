@@ -79,6 +79,7 @@ class GsaAccessControlEntitiesErrorDetail(ModelBase):
     discriminator_value_class_map = {
         "noSuchEntities".lower(): "#/components/schemas/GsaNoSuchEntitiesAccessControlEntitiesErrorDetail",
         "noSuchSubset".lower(): "#/components/schemas/GsaNoSuchSubsetAccessControlEntitiesErrorDetail",
+        "noSuchParentTable".lower(): "#/components/schemas/GsaNoSuchParentTableAccessControlEntitiesErrorDetail",
     }
 
     discriminator: Optional[str] = "reason"

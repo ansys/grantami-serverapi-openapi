@@ -1054,6 +1054,9 @@ from .gsa_no_such_new_parent_folder_move_error_detail import GsaNoSuchNewParentF
 from .gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
 )
+from .gsa_no_such_parent_table_access_control_entities_error_detail import (
+    GsaNoSuchParentTableAccessControlEntitiesErrorDetail,
+)
 from .gsa_no_such_permission_access_control_error_detail import (
     GsaNoSuchPermissionAccessControlErrorDetail,
 )
@@ -2672,6 +2675,7 @@ __all__ = [
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchParentTableAccessControlEntitiesErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchSubsetAccessControlEntitiesErrorDetail",
