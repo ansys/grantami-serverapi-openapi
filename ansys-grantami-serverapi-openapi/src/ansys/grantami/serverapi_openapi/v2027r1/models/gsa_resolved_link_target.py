@@ -61,96 +61,127 @@ class GsaResolvedLinkTarget(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "link_target": "GsaLinkTarget",
-        "tables": "list[GsaSlimTable]",
+        "database_guid": "str",
+        "database_version_guid": "str",
+        "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "link_target": "linkTarget",
-        "tables": "tables",
+        "database_guid": "databaseGuid",
+        "database_version_guid": "databaseVersionGuid",
+        "table_guid": "tableGuid",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "linkTarget": "GsaLinkTarget",
-        "tables": "GsaSlimTable",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
     def __init__(
         self,
         *,
-        link_target: "GsaLinkTarget",
-        tables: "list[GsaSlimTable]",
+        database_guid: "str",
+        database_version_guid: "str",
+        table_guid: "str",
     ) -> None:
         """GsaResolvedLinkTarget - a model defined in Swagger
 
         Parameters
         ----------
-        link_target: GsaLinkTarget
-        tables: list[GsaSlimTable]
+        database_guid: str
+        database_version_guid: str
+        table_guid: str
         """
-        self._link_target: GsaLinkTarget
-        self._tables: list[GsaSlimTable]
+        self._database_guid: str
+        self._database_version_guid: str
+        self._table_guid: str
 
-        self.link_target = link_target
-        self.tables = tables
+        self.database_guid = database_guid
+        self.database_version_guid = database_version_guid
+        self.table_guid = table_guid
 
     @property
-    def link_target(self) -> "GsaLinkTarget":
-        """Gets the link_target of this GsaResolvedLinkTarget.
+    def database_guid(self) -> "str":
+        """Gets the database_guid of this GsaResolvedLinkTarget.
 
         Returns
         -------
-        GsaLinkTarget
-            The link_target of this GsaResolvedLinkTarget.
+        str
+            The database_guid of this GsaResolvedLinkTarget.
         """
-        return self._link_target
+        return self._database_guid
 
-    @link_target.setter
-    def link_target(self, link_target: "GsaLinkTarget") -> None:
-        """Sets the link_target of this GsaResolvedLinkTarget.
+    @database_guid.setter
+    def database_guid(self, database_guid: "str") -> None:
+        """Sets the database_guid of this GsaResolvedLinkTarget.
 
         Parameters
         ----------
-        link_target: GsaLinkTarget
-            The link_target of this GsaResolvedLinkTarget.
+        database_guid: str
+            The database_guid of this GsaResolvedLinkTarget.
         """
         # Field is not nullable
-        if link_target is None:
-            raise ValueError("Invalid value for 'link_target', must not be 'None'")
+        if database_guid is None:
+            raise ValueError("Invalid value for 'database_guid', must not be 'None'")
         # Field is required
-        if link_target is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'link_target', must not be 'Unset'")
-        self._link_target = link_target
+        if database_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_guid', must not be 'Unset'")
+        self._database_guid = database_guid
 
     @property
-    def tables(self) -> "list[GsaSlimTable]":
-        """Gets the tables of this GsaResolvedLinkTarget.
+    def database_version_guid(self) -> "str":
+        """Gets the database_version_guid of this GsaResolvedLinkTarget.
 
         Returns
         -------
-        list[GsaSlimTable]
-            The tables of this GsaResolvedLinkTarget.
+        str
+            The database_version_guid of this GsaResolvedLinkTarget.
         """
-        return self._tables
+        return self._database_version_guid
 
-    @tables.setter
-    def tables(self, tables: "list[GsaSlimTable]") -> None:
-        """Sets the tables of this GsaResolvedLinkTarget.
+    @database_version_guid.setter
+    def database_version_guid(self, database_version_guid: "str") -> None:
+        """Sets the database_version_guid of this GsaResolvedLinkTarget.
 
         Parameters
         ----------
-        tables: list[GsaSlimTable]
-            The tables of this GsaResolvedLinkTarget.
+        database_version_guid: str
+            The database_version_guid of this GsaResolvedLinkTarget.
         """
         # Field is not nullable
-        if tables is None:
-            raise ValueError("Invalid value for 'tables', must not be 'None'")
+        if database_version_guid is None:
+            raise ValueError("Invalid value for 'database_version_guid', must not be 'None'")
         # Field is required
-        if tables is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'tables', must not be 'Unset'")
-        self._tables = tables
+        if database_version_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'database_version_guid', must not be 'Unset'")
+        self._database_version_guid = database_version_guid
+
+    @property
+    def table_guid(self) -> "str":
+        """Gets the table_guid of this GsaResolvedLinkTarget.
+
+        Returns
+        -------
+        str
+            The table_guid of this GsaResolvedLinkTarget.
+        """
+        return self._table_guid
+
+    @table_guid.setter
+    def table_guid(self, table_guid: "str") -> None:
+        """Sets the table_guid of this GsaResolvedLinkTarget.
+
+        Parameters
+        ----------
+        table_guid: str
+            The table_guid of this GsaResolvedLinkTarget.
+        """
+        # Field is not nullable
+        if table_guid is None:
+            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
+        # Field is required
+        if table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'table_guid', must not be 'Unset'")
+        self._table_guid = table_guid
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

@@ -80,20 +80,21 @@ class GsaMfaExpressionErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "GsaMfaExpressionErrorReason",
+        reason: "GsaMfaExpressionErrorReason | Unset_Type" = Unset,
     ) -> None:
         """GsaMfaExpressionErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: GsaMfaExpressionErrorReason
+        reason: GsaMfaExpressionErrorReason, optional
         """
         self._message: str
-        self._reason: GsaMfaExpressionErrorReason
+        self._reason: GsaMfaExpressionErrorReason | Unset_Type = Unset
 
         self.message = message
-        self.reason = reason
+        if reason is not Unset:
+            self.reason = reason
 
     @property
     def message(self) -> "str":
@@ -124,31 +125,28 @@ class GsaMfaExpressionErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "GsaMfaExpressionErrorReason":
+    def reason(self) -> "GsaMfaExpressionErrorReason | Unset_Type":
         """Gets the reason of this GsaMfaExpressionErrorDetail.
 
         Returns
         -------
-        GsaMfaExpressionErrorReason
+        GsaMfaExpressionErrorReason | Unset_Type
             The reason of this GsaMfaExpressionErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "GsaMfaExpressionErrorReason") -> None:
+    def reason(self, reason: "GsaMfaExpressionErrorReason | Unset_Type") -> None:
         """Sets the reason of this GsaMfaExpressionErrorDetail.
 
         Parameters
         ----------
-        reason: GsaMfaExpressionErrorReason
+        reason: GsaMfaExpressionErrorReason | Unset_Type
             The reason of this GsaMfaExpressionErrorDetail.
         """
         # Field is not nullable
         if reason is None:
             raise ValueError("Invalid value for 'reason', must not be 'None'")
-        # Field is required
-        if reason is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'reason', must not be 'Unset'")
         self._reason = reason
 
     @classmethod

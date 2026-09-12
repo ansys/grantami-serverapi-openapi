@@ -45,4 +45,3 @@ class GsaSortCriterionType(Enum):
     ATTRIBUTE = "attribute"
     RECORDPROPERTY = "recordProperty"
     RELEVANCE = "relevance"
-    SIMILARITY = "similarity"

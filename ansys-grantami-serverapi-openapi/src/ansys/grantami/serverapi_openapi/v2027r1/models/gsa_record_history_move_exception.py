@@ -61,22 +61,20 @@ class GsaRecordHistoryMoveException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "GsaErrorCode",
-        "errors": "list[GsaErrorDetailOfRecordHistoryErrorReason]",
+        "code": "SystemNetHttpStatusCode",
+        "errors": "list[GsaErrorDetail]",
         "message": "str",
-        "record_history_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
-        "record_history_guid": "recordHistoryGuid",
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "GsaErrorCode",
-        "errors": "GsaErrorDetailOfRecordHistoryErrorReason",
+        "code": "SystemNetHttpStatusCode",
+        "errors": "GsaErrorDetail",
     }
 
     discriminator: Optional[str] = None
@@ -84,31 +82,26 @@ class GsaRecordHistoryMoveException(ModelBase):
     def __init__(
         self,
         *,
-        code: "GsaErrorCode | Unset_Type" = Unset,
-        errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
+        errors: "list[GsaErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
-        record_history_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordHistoryMoveException - a model defined in Swagger
 
         Parameters
         ----------
-        code: GsaErrorCode, optional
-        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None, optional
+        code: SystemNetHttpStatusCode, optional
+        errors: list[GsaErrorDetail] | None, optional
         message: str | None, optional
-        record_history_guid: str, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: GsaErrorCode | Unset_Type = Unset
-        self._record_history_guid: str | Unset_Type = Unset
-        self._errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
+        self._errors: list[GsaErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
-        if record_history_guid is not Unset:
-            self.record_history_guid = record_history_guid
         if errors is not Unset:
             self.errors = errors
 
@@ -135,23 +128,23 @@ class GsaRecordHistoryMoveException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaRecordHistoryMoveException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaRecordHistoryMoveException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaRecordHistoryMoveException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaRecordHistoryMoveException.
         """
         # Field is not nullable
@@ -160,50 +153,23 @@ class GsaRecordHistoryMoveException(ModelBase):
         self._code = code
 
     @property
-    def record_history_guid(self) -> "str | Unset_Type":
-        """Gets the record_history_guid of this GsaRecordHistoryMoveException.
-
-        Returns
-        -------
-        str | Unset_Type
-            The record_history_guid of this GsaRecordHistoryMoveException.
-        """
-        return self._record_history_guid
-
-    @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "str | Unset_Type") -> None:
-        """Sets the record_history_guid of this GsaRecordHistoryMoveException.
-
-        Parameters
-        ----------
-        record_history_guid: str | Unset_Type
-            The record_history_guid of this GsaRecordHistoryMoveException.
-        """
-        # Field is not nullable
-        if record_history_guid is None:
-            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
-        self._record_history_guid = record_history_guid
-
-    @property
-    def errors(self) -> "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type":
+    def errors(self) -> "list[GsaErrorDetail] | None | Unset_Type":
         """Gets the errors of this GsaRecordHistoryMoveException.
 
         Returns
         -------
-        list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
+        list[GsaErrorDetail] | None | Unset_Type
             The errors of this GsaRecordHistoryMoveException.
         """
         return self._errors
 
     @errors.setter
-    def errors(
-        self, errors: "list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type"
-    ) -> None:
+    def errors(self, errors: "list[GsaErrorDetail] | None | Unset_Type") -> None:
         """Sets the errors of this GsaRecordHistoryMoveException.
 
         Parameters
         ----------
-        errors: list[GsaErrorDetailOfRecordHistoryErrorReason] | None | Unset_Type
+        errors: list[GsaErrorDetail] | None | Unset_Type
             The errors of this GsaRecordHistoryMoveException.
         """
         self._errors = errors

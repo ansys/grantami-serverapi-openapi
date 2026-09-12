@@ -61,7 +61,7 @@ class GsaRecordLinkGroupsInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "record_link_groups": "list[GsaRecordLinkGroup]",
+        "record_link_groups": "list[GsaSlimRecordLinkGroup]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaRecordLinkGroupsInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "recordLinkGroups": "GsaRecordLinkGroup",
+        "recordLinkGroups": "GsaSlimRecordLinkGroup",
     }
 
     discriminator: Optional[str] = None
@@ -77,39 +77,39 @@ class GsaRecordLinkGroupsInfo(ModelBase):
     def __init__(
         self,
         *,
-        record_link_groups: "list[GsaRecordLinkGroup] | None | Unset_Type" = Unset,
+        record_link_groups: "list[GsaSlimRecordLinkGroup] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordLinkGroupsInfo - a model defined in Swagger
 
         Parameters
         ----------
-        record_link_groups: list[GsaRecordLinkGroup] | None, optional
+        record_link_groups: list[GsaSlimRecordLinkGroup] | None, optional
         """
-        self._record_link_groups: list[GsaRecordLinkGroup] | None | Unset_Type = Unset
+        self._record_link_groups: list[GsaSlimRecordLinkGroup] | None | Unset_Type = Unset
 
         if record_link_groups is not Unset:
             self.record_link_groups = record_link_groups
 
     @property
-    def record_link_groups(self) -> "list[GsaRecordLinkGroup] | None | Unset_Type":
+    def record_link_groups(self) -> "list[GsaSlimRecordLinkGroup] | None | Unset_Type":
         """Gets the record_link_groups of this GsaRecordLinkGroupsInfo.
 
         Returns
         -------
-        list[GsaRecordLinkGroup] | None | Unset_Type
+        list[GsaSlimRecordLinkGroup] | None | Unset_Type
             The record_link_groups of this GsaRecordLinkGroupsInfo.
         """
         return self._record_link_groups
 
     @record_link_groups.setter
     def record_link_groups(
-        self, record_link_groups: "list[GsaRecordLinkGroup] | None | Unset_Type"
+        self, record_link_groups: "list[GsaSlimRecordLinkGroup] | None | Unset_Type"
     ) -> None:
         """Sets the record_link_groups of this GsaRecordLinkGroupsInfo.
 
         Parameters
         ----------
-        record_link_groups: list[GsaRecordLinkGroup] | None | Unset_Type
+        record_link_groups: list[GsaSlimRecordLinkGroup] | None | Unset_Type
             The record_link_groups of this GsaRecordLinkGroupsInfo.
         """
         self._record_link_groups = record_link_groups

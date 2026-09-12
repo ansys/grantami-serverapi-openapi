@@ -88,7 +88,7 @@ class GsaLinkingValueExistsDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.SMARTLINKINGVALUE,
+        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DYNAMICLINKINGVALUE,
         attribute_type: "GsaAttributeType | Unset_Type" = Unset,
         inner_hits_identifier: "str | Unset_Type" = Unset,
     ) -> None:

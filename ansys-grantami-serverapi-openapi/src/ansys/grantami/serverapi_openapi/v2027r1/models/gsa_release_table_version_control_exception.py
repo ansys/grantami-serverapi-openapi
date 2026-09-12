@@ -61,21 +61,19 @@ class GsaReleaseTableVersionControlException(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "list[GsaVersionControlErrorDetail]",
         "message": "str",
-        "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "code": "code",
         "errors": "errors",
         "message": "message",
-        "table_guid": "tableGuid",
     }
 
     subtype_mapping: dict[str, str] = {
-        "code": "GsaErrorCode",
+        "code": "SystemNetHttpStatusCode",
         "errors": "GsaVersionControlErrorDetail",
     }
 
@@ -84,31 +82,26 @@ class GsaReleaseTableVersionControlException(ModelBase):
     def __init__(
         self,
         *,
-        code: "GsaErrorCode | Unset_Type" = Unset,
+        code: "SystemNetHttpStatusCode | Unset_Type" = Unset,
         errors: "list[GsaVersionControlErrorDetail] | None | Unset_Type" = Unset,
         message: "str | None | Unset_Type" = Unset,
-        table_guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaReleaseTableVersionControlException - a model defined in Swagger
 
         Parameters
         ----------
-        code: GsaErrorCode, optional
+        code: SystemNetHttpStatusCode, optional
         errors: list[GsaVersionControlErrorDetail] | None, optional
         message: str | None, optional
-        table_guid: str, optional
         """
         self._message: str | None | Unset_Type = Unset
-        self._code: GsaErrorCode | Unset_Type = Unset
-        self._table_guid: str | Unset_Type = Unset
+        self._code: SystemNetHttpStatusCode | Unset_Type = Unset
         self._errors: list[GsaVersionControlErrorDetail] | None | Unset_Type = Unset
 
         if message is not Unset:
             self.message = message
         if code is not Unset:
             self.code = code
-        if table_guid is not Unset:
-            self.table_guid = table_guid
         if errors is not Unset:
             self.errors = errors
 
@@ -135,54 +128,29 @@ class GsaReleaseTableVersionControlException(ModelBase):
         self._message = message
 
     @property
-    def code(self) -> "GsaErrorCode | Unset_Type":
+    def code(self) -> "SystemNetHttpStatusCode | Unset_Type":
         """Gets the code of this GsaReleaseTableVersionControlException.
 
         Returns
         -------
-        GsaErrorCode | Unset_Type
+        SystemNetHttpStatusCode | Unset_Type
             The code of this GsaReleaseTableVersionControlException.
         """
         return self._code
 
     @code.setter
-    def code(self, code: "GsaErrorCode | Unset_Type") -> None:
+    def code(self, code: "SystemNetHttpStatusCode | Unset_Type") -> None:
         """Sets the code of this GsaReleaseTableVersionControlException.
 
         Parameters
         ----------
-        code: GsaErrorCode | Unset_Type
+        code: SystemNetHttpStatusCode | Unset_Type
             The code of this GsaReleaseTableVersionControlException.
         """
         # Field is not nullable
         if code is None:
             raise ValueError("Invalid value for 'code', must not be 'None'")
         self._code = code
-
-    @property
-    def table_guid(self) -> "str | Unset_Type":
-        """Gets the table_guid of this GsaReleaseTableVersionControlException.
-
-        Returns
-        -------
-        str | Unset_Type
-            The table_guid of this GsaReleaseTableVersionControlException.
-        """
-        return self._table_guid
-
-    @table_guid.setter
-    def table_guid(self, table_guid: "str | Unset_Type") -> None:
-        """Sets the table_guid of this GsaReleaseTableVersionControlException.
-
-        Parameters
-        ----------
-        table_guid: str | Unset_Type
-            The table_guid of this GsaReleaseTableVersionControlException.
-        """
-        # Field is not nullable
-        if table_guid is None:
-            raise ValueError("Invalid value for 'table_guid', must not be 'None'")
-        self._table_guid = table_guid
 
     @property
     def errors(self) -> "list[GsaVersionControlErrorDetail] | None | Unset_Type":

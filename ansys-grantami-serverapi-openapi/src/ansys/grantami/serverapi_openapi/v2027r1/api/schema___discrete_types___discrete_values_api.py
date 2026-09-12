@@ -54,7 +54,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         body: "Optional[GsaDiscreteValuesCreateDiscreteValue]" = None,
-    ) -> "GsaDiscreteValueCreationException | GsaDiscreteValuesDiscreteValue | None":
+    ) -> "GsaDiscreteValuesDiscreteValue | None":
         """Create new discrete value. It will be added at the end.
 
         This method makes a synchronous HTTP request.
@@ -62,13 +62,12 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesCreateDiscreteValue
 
         Returns
         -------
-        GsaDiscreteValueCreationException | GsaDiscreteValuesDiscreteValue | None
+        GsaDiscreteValuesDiscreteValue | None
         """
         data = self._create_discrete_value_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -138,7 +137,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             201: "GsaDiscreteValuesDiscreteValue",
-            400: "GsaDiscreteValueCreationException",
+            400: None,
             403: None,
             404: None,
         }
@@ -161,7 +160,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
     def delete_discrete_value(
         self, *, database_key: "str", discrete_type_guid: "str", discrete_value_guid: "str"
-    ) -> "GsaDiscreteValueDeletionException | None":
+    ) -> "GsaDiscreteValueAggregateException | None":
         """Delete a single discrete value. It must not be used by any data, or the operation will fail.
 
         This method makes a synchronous HTTP request.
@@ -169,13 +168,12 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
         Returns
         -------
-        GsaDiscreteValueDeletionException | None
+        GsaDiscreteValueAggregateException | None
         """
         data = self._delete_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, _return_http_data_only=True
@@ -244,7 +242,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         header_params["Accept"] = self.api_client.select_header_accept(["application/json"])
 
         response_type_map: dict[int, Optional[str]] = {
-            400: "GsaDiscreteValueDeletionException",
+            400: "GsaDiscreteValueAggregateException",
             200: None,
             403: None,
             404: None,
@@ -276,7 +274,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -369,7 +366,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
 
@@ -474,7 +470,6 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
 
         Returns
@@ -562,21 +557,20 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         database_key: "str",
         discrete_type_guid: "str",
         body: "Optional[GsaDiscreteValuesReplaceDiscreteValuesInfo]" = None,
-    ) -> "GsaDiscreteValuesDiscreteValuesInfo | GsaReplaceDiscreteValuesException | None":
-        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.  If any 'update' discrete values are included in the request where the guid does not match an existing discrete value the operation will fail.  If any 'create' discrete values are included in the request body where the name matches an existing discrete value the operation will fail.
+    ) -> "GsaDiscreteValuesDiscreteValuesInfo | None":
+        """Replace the whole discrete value collection for a given discrete type.  This will result in adding, modifying, deleting and reordering discrete values. If any of those operations fail, the whole operation fails.
 
         This method makes a synchronous HTTP request.
 
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         body: GsaDiscreteValuesReplaceDiscreteValuesInfo
 
         Returns
         -------
-        GsaDiscreteValuesDiscreteValuesInfo | GsaReplaceDiscreteValuesException | None
+        GsaDiscreteValuesDiscreteValuesInfo | None
         """
         data = self._replace_discrete_values_with_http_info(
             database_key, discrete_type_guid, body, _return_http_data_only=True
@@ -646,7 +640,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaDiscreteValuesDiscreteValuesInfo",
-            400: "GsaReplaceDiscreteValuesException",
+            400: None,
             403: None,
             404: None,
         }
@@ -674,7 +668,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         discrete_type_guid: "str",
         discrete_value_guid: "str",
         body: "Optional[GsaDiscreteValuesUpdateDiscreteValue]" = None,
-    ) -> "GsaDiscreteValueUpdateException | GsaDiscreteValuesDiscreteValue | None":
+    ) -> "GsaDiscreteValuesDiscreteValue | None":
         """Update discrete value.
 
         This method makes a synchronous HTTP request.
@@ -682,14 +676,13 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
         Parameters
         ----------
         database_key: str
-            See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         discrete_type_guid: str
         discrete_value_guid: str
         body: GsaDiscreteValuesUpdateDiscreteValue
 
         Returns
         -------
-        GsaDiscreteValueUpdateException | GsaDiscreteValuesDiscreteValue | None
+        GsaDiscreteValuesDiscreteValue | None
         """
         data = self._update_discrete_value_with_http_info(
             database_key, discrete_type_guid, discrete_value_guid, body, _return_http_data_only=True
@@ -768,7 +761,7 @@ class SchemaDiscreteTypesDiscreteValuesApi(ApiBase):
 
         response_type_map: dict[int, Optional[str]] = {
             200: "GsaDiscreteValuesDiscreteValue",
-            400: "GsaDiscreteValueUpdateException",
+            400: None,
             403: None,
             404: None,
         }

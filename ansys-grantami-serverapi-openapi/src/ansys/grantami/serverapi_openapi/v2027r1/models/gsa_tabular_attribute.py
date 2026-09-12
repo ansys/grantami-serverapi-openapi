@@ -72,7 +72,6 @@ class GsaTabularAttribute(GsaAttribute):
         "hide_unlinked_rows": "bool",
         "info": "GsaAttributeInfo",
         "is_hidden_from_search_criteria": "bool",
-        "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
         "tabular_columns": "list[GsaTabularColumn]",
@@ -92,7 +91,6 @@ class GsaTabularAttribute(GsaAttribute):
         "hide_unlinked_rows": "hideUnlinkedRows",
         "info": "info",
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
-        "is_protected": "isProtected",
         "name": "name",
         "table": "table",
         "tabular_columns": "tabularColumns",
@@ -121,7 +119,6 @@ class GsaTabularAttribute(GsaAttribute):
         hide_unlinked_rows: "bool",
         info: "GsaAttributeInfo",
         is_hidden_from_search_criteria: "bool",
-        is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
         tabular_columns: "list[GsaTabularColumn]",
@@ -143,7 +140,6 @@ class GsaTabularAttribute(GsaAttribute):
         hide_unlinked_rows: bool
         info: GsaAttributeInfo
         is_hidden_from_search_criteria: bool
-        is_protected: bool
         name: str
         table: GsaSlimEntity
         tabular_columns: list[GsaTabularColumn]
@@ -159,7 +155,6 @@ class GsaTabularAttribute(GsaAttribute):
             guid=guid,
             info=info,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
-            is_protected=is_protected,
             name=name,
             table=table,
             type=type,
