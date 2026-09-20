@@ -63,18 +63,14 @@ class GsaCreateLayoutSection(ModelBase):
     swagger_types: dict[str, str] = {
         "name": "str",
         "guid": "str",
-        "section_items": "list[GsaNewLayoutItem]",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
         "guid": "guid",
-        "section_items": "sectionItems",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "sectionItems": "GsaNewLayoutItem",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -83,7 +79,6 @@ class GsaCreateLayoutSection(ModelBase):
         *,
         name: "str",
         guid: "str | Unset_Type" = Unset,
-        section_items: "list[GsaNewLayoutItem] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateLayoutSection - a model defined in Swagger
 
@@ -91,39 +86,13 @@ class GsaCreateLayoutSection(ModelBase):
         ----------
         name: str
         guid: str, optional
-        section_items: list[GsaNewLayoutItem] | None, optional
         """
-        self._section_items: list[GsaNewLayoutItem] | None | Unset_Type = Unset
         self._name: str
         self._guid: str | Unset_Type = Unset
 
-        if section_items is not Unset:
-            self.section_items = section_items
         self.name = name
         if guid is not Unset:
             self.guid = guid
-
-    @property
-    def section_items(self) -> "list[GsaNewLayoutItem] | None | Unset_Type":
-        """Gets the section_items of this GsaCreateLayoutSection.
-
-        Returns
-        -------
-        list[GsaNewLayoutItem] | None | Unset_Type
-            The section_items of this GsaCreateLayoutSection.
-        """
-        return self._section_items
-
-    @section_items.setter
-    def section_items(self, section_items: "list[GsaNewLayoutItem] | None | Unset_Type") -> None:
-        """Sets the section_items of this GsaCreateLayoutSection.
-
-        Parameters
-        ----------
-        section_items: list[GsaNewLayoutItem] | None | Unset_Type
-            The section_items of this GsaCreateLayoutSection.
-        """
-        self._section_items = section_items
 
     @property
     def name(self) -> "str":

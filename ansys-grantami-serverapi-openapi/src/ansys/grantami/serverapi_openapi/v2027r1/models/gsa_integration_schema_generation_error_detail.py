@@ -62,7 +62,7 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "message": "str",
-        "reason": "GsaSchemaGenerationWarningReason",
+        "reason": "str",
     }
 
     attribute_map: dict[str, str] = {
@@ -70,9 +70,7 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         "reason": "reason",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "reason": "GsaSchemaGenerationWarningReason",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -80,17 +78,17 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         self,
         *,
         message: "str",
-        reason: "GsaSchemaGenerationWarningReason",
+        reason: "str",
     ) -> None:
         """GsaIntegrationSchemaGenerationErrorDetail - a model defined in Swagger
 
         Parameters
         ----------
         message: str
-        reason: GsaSchemaGenerationWarningReason
+        reason: str
         """
         self._message: str
-        self._reason: GsaSchemaGenerationWarningReason
+        self._reason: str
 
         self.message = message
         self.reason = reason
@@ -124,23 +122,23 @@ class GsaIntegrationSchemaGenerationErrorDetail(ModelBase):
         self._message = message
 
     @property
-    def reason(self) -> "GsaSchemaGenerationWarningReason":
+    def reason(self) -> "str":
         """Gets the reason of this GsaIntegrationSchemaGenerationErrorDetail.
 
         Returns
         -------
-        GsaSchemaGenerationWarningReason
+        str
             The reason of this GsaIntegrationSchemaGenerationErrorDetail.
         """
         return self._reason
 
     @reason.setter
-    def reason(self, reason: "GsaSchemaGenerationWarningReason") -> None:
+    def reason(self, reason: "str") -> None:
         """Sets the reason of this GsaIntegrationSchemaGenerationErrorDetail.
 
         Parameters
         ----------
-        reason: GsaSchemaGenerationWarningReason
+        reason: str
             The reason of this GsaIntegrationSchemaGenerationErrorDetail.
         """
         # Field is not nullable

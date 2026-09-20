@@ -70,21 +70,19 @@ class GsaNoSuchEntityTabularColumnErrorDetail(GsaAttributeErrorDetail):
     swagger_types: dict[str, str] = {
         "message": "str",
         "reason": "GsaAttributeErrorReason",
-        "column_guid": "str",
-        "column_name": "str",
         "database_key": "str",
         "entity_type": "GsaTabularColumnNoSuchEntityType",
         "guid": "str",
+        "tabular_column_name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "message": "message",
         "reason": "reason",
-        "column_guid": "columnGuid",
-        "column_name": "columnName",
         "database_key": "databaseKey",
         "entity_type": "entityType",
         "guid": "guid",
+        "tabular_column_name": "tabularColumnName",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -98,11 +96,10 @@ class GsaNoSuchEntityTabularColumnErrorDetail(GsaAttributeErrorDetail):
         *,
         message: "str",
         reason: "GsaAttributeErrorReason" = GsaAttributeErrorReason.TABULARCOLUMNNOSUCHENTITY,
-        column_guid: "str | None | Unset_Type" = Unset,
-        column_name: "str | None | Unset_Type" = Unset,
         database_key: "str | None | Unset_Type" = Unset,
         entity_type: "GsaTabularColumnNoSuchEntityType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
+        tabular_column_name: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaNoSuchEntityTabularColumnErrorDetail - a model defined in Swagger
 
@@ -110,23 +107,19 @@ class GsaNoSuchEntityTabularColumnErrorDetail(GsaAttributeErrorDetail):
         ----------
         message: str
         reason: GsaAttributeErrorReason
-        column_guid: str | None, optional
-        column_name: str | None, optional
         database_key: str | None, optional
         entity_type: GsaTabularColumnNoSuchEntityType, optional
         guid: str, optional
+        tabular_column_name: str | None, optional
         """
         super().__init__(message=message, reason=reason)
-        self._column_name: str | None | Unset_Type = Unset
-        self._column_guid: str | None | Unset_Type = Unset
+        self._tabular_column_name: str | None | Unset_Type = Unset
         self._guid: str | Unset_Type = Unset
         self._database_key: str | None | Unset_Type = Unset
         self._entity_type: GsaTabularColumnNoSuchEntityType | Unset_Type = Unset
 
-        if column_name is not Unset:
-            self.column_name = column_name
-        if column_guid is not Unset:
-            self.column_guid = column_guid
+        if tabular_column_name is not Unset:
+            self.tabular_column_name = tabular_column_name
         if guid is not Unset:
             self.guid = guid
         if database_key is not Unset:
@@ -135,52 +128,26 @@ class GsaNoSuchEntityTabularColumnErrorDetail(GsaAttributeErrorDetail):
             self.entity_type = entity_type
 
     @property
-    def column_name(self) -> "str | None | Unset_Type":
-        """Gets the column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
-        May be null if no column name was provided in the request.
+    def tabular_column_name(self) -> "str | None | Unset_Type":
+        """Gets the tabular_column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
 
         Returns
         -------
         str | None | Unset_Type
-            The column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
+            The tabular_column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
         """
-        return self._column_name
+        return self._tabular_column_name
 
-    @column_name.setter
-    def column_name(self, column_name: "str | None | Unset_Type") -> None:
-        """Sets the column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
-        May be null if no column name was provided in the request.
+    @tabular_column_name.setter
+    def tabular_column_name(self, tabular_column_name: "str | None | Unset_Type") -> None:
+        """Sets the tabular_column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
 
         Parameters
         ----------
-        column_name: str | None | Unset_Type
-            The column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
+        tabular_column_name: str | None | Unset_Type
+            The tabular_column_name of this GsaNoSuchEntityTabularColumnErrorDetail.
         """
-        self._column_name = column_name
-
-    @property
-    def column_guid(self) -> "str | None | Unset_Type":
-        """Gets the column_guid of this GsaNoSuchEntityTabularColumnErrorDetail.
-        Only populated when updating an existing column.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The column_guid of this GsaNoSuchEntityTabularColumnErrorDetail.
-        """
-        return self._column_guid
-
-    @column_guid.setter
-    def column_guid(self, column_guid: "str | None | Unset_Type") -> None:
-        """Sets the column_guid of this GsaNoSuchEntityTabularColumnErrorDetail.
-        Only populated when updating an existing column.
-
-        Parameters
-        ----------
-        column_guid: str | None | Unset_Type
-            The column_guid of this GsaNoSuchEntityTabularColumnErrorDetail.
-        """
-        self._column_guid = column_guid
+        self._tabular_column_name = tabular_column_name
 
     @property
     def guid(self) -> "str | Unset_Type":

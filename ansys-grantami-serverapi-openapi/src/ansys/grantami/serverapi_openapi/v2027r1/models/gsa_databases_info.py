@@ -61,7 +61,7 @@ class GsaDatabasesInfo(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "databases": "list[GsaDatabase]",
+        "databases": "list[GsaSlimDatabase]",
     }
 
     attribute_map: dict[str, str] = {
@@ -69,7 +69,7 @@ class GsaDatabasesInfo(ModelBase):
     }
 
     subtype_mapping: dict[str, str] = {
-        "databases": "GsaDatabase",
+        "databases": "GsaSlimDatabase",
     }
 
     discriminator: Optional[str] = None
@@ -77,37 +77,37 @@ class GsaDatabasesInfo(ModelBase):
     def __init__(
         self,
         *,
-        databases: "list[GsaDatabase] | None | Unset_Type" = Unset,
+        databases: "list[GsaSlimDatabase] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaDatabasesInfo - a model defined in Swagger
 
         Parameters
         ----------
-        databases: list[GsaDatabase] | None, optional
+        databases: list[GsaSlimDatabase] | None, optional
         """
-        self._databases: list[GsaDatabase] | None | Unset_Type = Unset
+        self._databases: list[GsaSlimDatabase] | None | Unset_Type = Unset
 
         if databases is not Unset:
             self.databases = databases
 
     @property
-    def databases(self) -> "list[GsaDatabase] | None | Unset_Type":
+    def databases(self) -> "list[GsaSlimDatabase] | None | Unset_Type":
         """Gets the databases of this GsaDatabasesInfo.
 
         Returns
         -------
-        list[GsaDatabase] | None | Unset_Type
+        list[GsaSlimDatabase] | None | Unset_Type
             The databases of this GsaDatabasesInfo.
         """
         return self._databases
 
     @databases.setter
-    def databases(self, databases: "list[GsaDatabase] | None | Unset_Type") -> None:
+    def databases(self, databases: "list[GsaSlimDatabase] | None | Unset_Type") -> None:
         """Sets the databases of this GsaDatabasesInfo.
 
         Parameters
         ----------
-        databases: list[GsaDatabase] | None | Unset_Type
+        databases: list[GsaSlimDatabase] | None | Unset_Type
             The databases of this GsaDatabasesInfo.
         """
         self._databases = databases
