@@ -1865,6 +1865,9 @@ from .gsa_version_state_property import GsaVersionStateProperty
 from .gsa_weighting_type import GsaWeightingType
 from .gsa_withdraw_record_version_control_exception import GsaWithdrawRecordVersionControlException
 from .gsa_xy_chart_template import GsaXYChartTemplate
+from .gsa_xy_chart_template_discrete_parameter_value import GsaXYChartTemplateDiscreteParameterValue
+from .gsa_xy_chart_template_numeric_parameter_value import GsaXYChartTemplateNumericParameterValue
+from .gsa_xy_chart_template_parameter_value import GsaXYChartTemplateParameterValue
 from .gsa_xy_chart_template_usage_data_modification_error_detail import (
     GsaXYChartTemplateUsageDataModificationErrorDetail,
 )
@@ -3328,6 +3331,9 @@ __all__ = [
     "GsaWeightingType",
     "GsaWithdrawRecordVersionControlException",
     "GsaXYChartTemplate",
+    "GsaXYChartTemplateDiscreteParameterValue",
+    "GsaXYChartTemplateNumericParameterValue",
+    "GsaXYChartTemplateParameterValue",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
     "GsaXYChartTemplatesInfo",
     "GsaXYTemplateAxis",
