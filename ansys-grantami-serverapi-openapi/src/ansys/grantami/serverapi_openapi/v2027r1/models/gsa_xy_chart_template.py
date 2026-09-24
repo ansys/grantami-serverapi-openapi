@@ -66,7 +66,6 @@ class GsaXYChartTemplate(ModelBase):
         "name": "str",
         "chart_title": "str",
         "description": "str",
-        "parameter_values": "list[GsaParameterValue]",
         "table_guid": "str",
         "use_template_parameters": "bool",
         "x_axis": "GsaXYTemplateAxis",
@@ -79,7 +78,6 @@ class GsaXYChartTemplate(ModelBase):
         "name": "name",
         "chart_title": "chartTitle",
         "description": "description",
-        "parameter_values": "parameterValues",
         "table_guid": "tableGuid",
         "use_template_parameters": "useTemplateParameters",
         "x_axis": "xAxis",
@@ -89,7 +87,6 @@ class GsaXYChartTemplate(ModelBase):
     subtype_mapping: dict[str, str] = {
         "xAxis": "GsaXYTemplateAxis",
         "yAxis": "GsaXYTemplateAxis",
-        "parameterValues": "GsaParameterValue",
     }
 
     discriminator: Optional[str] = None
@@ -102,7 +99,6 @@ class GsaXYChartTemplate(ModelBase):
         name: "str",
         chart_title: "str | None | Unset_Type" = Unset,
         description: "str | None | Unset_Type" = Unset,
-        parameter_values: "list[GsaParameterValue] | None | Unset_Type" = Unset,
         table_guid: "str | Unset_Type" = Unset,
         use_template_parameters: "bool | Unset_Type" = Unset,
         x_axis: "GsaXYTemplateAxis | Unset_Type" = Unset,
@@ -117,7 +113,6 @@ class GsaXYChartTemplate(ModelBase):
         name: str
         chart_title: str | None, optional
         description: str | None, optional
-        parameter_values: list[GsaParameterValue] | None, optional
         table_guid: str, optional
         use_template_parameters: bool, optional
         x_axis: GsaXYTemplateAxis, optional
@@ -129,7 +124,6 @@ class GsaXYChartTemplate(ModelBase):
         self._x_axis: GsaXYTemplateAxis | Unset_Type = Unset
         self._y_axis: GsaXYTemplateAxis | Unset_Type = Unset
         self._use_template_parameters: bool | Unset_Type = Unset
-        self._parameter_values: list[GsaParameterValue] | None | Unset_Type = Unset
         self._display_names: dict[str, str]
         self._name: str
         self._guid: str
@@ -146,8 +140,6 @@ class GsaXYChartTemplate(ModelBase):
             self.y_axis = y_axis
         if use_template_parameters is not Unset:
             self.use_template_parameters = use_template_parameters
-        if parameter_values is not Unset:
-            self.parameter_values = parameter_values
         self.display_names = display_names
         self.name = name
         self.guid = guid
@@ -295,30 +287,6 @@ class GsaXYChartTemplate(ModelBase):
         if use_template_parameters is None:
             raise ValueError("Invalid value for 'use_template_parameters', must not be 'None'")
         self._use_template_parameters = use_template_parameters
-
-    @property
-    def parameter_values(self) -> "list[GsaParameterValue] | None | Unset_Type":
-        """Gets the parameter_values of this GsaXYChartTemplate.
-
-        Returns
-        -------
-        list[GsaParameterValue] | None | Unset_Type
-            The parameter_values of this GsaXYChartTemplate.
-        """
-        return self._parameter_values
-
-    @parameter_values.setter
-    def parameter_values(
-        self, parameter_values: "list[GsaParameterValue] | None | Unset_Type"
-    ) -> None:
-        """Sets the parameter_values of this GsaXYChartTemplate.
-
-        Parameters
-        ----------
-        parameter_values: list[GsaParameterValue] | None | Unset_Type
-            The parameter_values of this GsaXYChartTemplate.
-        """
-        self._parameter_values = parameter_values
 
     @property
     def display_names(self) -> "dict[str, str]":
