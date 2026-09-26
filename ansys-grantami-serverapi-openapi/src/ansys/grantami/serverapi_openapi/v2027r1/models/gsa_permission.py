@@ -63,8 +63,8 @@ class GsaPermission(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "description": "str",
         "role": "str",
+        "description": "str",
         "set_message": "str",
         "unset_message": "str",
     }
@@ -72,8 +72,8 @@ class GsaPermission(ModelBase):
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "description": "description",
         "role": "role",
+        "description": "description",
         "set_message": "setMessage",
         "unset_message": "unsetMessage",
     }
@@ -87,8 +87,8 @@ class GsaPermission(ModelBase):
         *,
         guid: "str",
         name: "str",
+        role: "str",
         description: "str | None | Unset_Type" = Unset,
-        role: "str | None | Unset_Type" = Unset,
         set_message: "str | None | Unset_Type" = Unset,
         unset_message: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -98,20 +98,19 @@ class GsaPermission(ModelBase):
         ----------
         guid: str
         name: str
+        role: str
         description: str | None, optional
-        role: str | None, optional
         set_message: str | None, optional
         unset_message: str | None, optional
         """
-        self._role: str | None | Unset_Type = Unset
+        self._role: str
         self._description: str | None | Unset_Type = Unset
         self._set_message: str | None | Unset_Type = Unset
         self._unset_message: str | None | Unset_Type = Unset
         self._name: str
         self._guid: str
 
-        if role is not Unset:
-            self.role = role
+        self.role = role
         if description is not Unset:
             self.description = description
         if set_message is not Unset:
@@ -122,25 +121,31 @@ class GsaPermission(ModelBase):
         self.guid = guid
 
     @property
-    def role(self) -> "str | None | Unset_Type":
+    def role(self) -> "str":
         """Gets the role of this GsaPermission.
 
         Returns
         -------
-        str | None | Unset_Type
+        str
             The role of this GsaPermission.
         """
         return self._role
 
     @role.setter
-    def role(self, role: "str | None | Unset_Type") -> None:
+    def role(self, role: "str") -> None:
         """Sets the role of this GsaPermission.
 
         Parameters
         ----------
-        role: str | None | Unset_Type
+        role: str
             The role of this GsaPermission.
         """
+        # Field is not nullable
+        if role is None:
+            raise ValueError("Invalid value for 'role', must not be 'None'")
+        # Field is required
+        if role is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'role', must not be 'Unset'")
         self._role = role
 
     @property

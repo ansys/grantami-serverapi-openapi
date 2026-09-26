@@ -63,18 +63,14 @@ class GsaSlimExpression(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "table": "GsaSlimEntity",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "table": "table",
     }
 
-    subtype_mapping: dict[str, str] = {
-        "table": "GsaSlimEntity",
-    }
+    subtype_mapping: dict[str, str] = {}
 
     discriminator: Optional[str] = None
 
@@ -83,7 +79,6 @@ class GsaSlimExpression(ModelBase):
         *,
         guid: "str",
         name: "str",
-        table: "GsaSlimEntity",
     ) -> None:
         """GsaSlimExpression - a model defined in Swagger
 
@@ -91,43 +86,12 @@ class GsaSlimExpression(ModelBase):
         ----------
         guid: str
         name: str
-        table: GsaSlimEntity
         """
-        self._table: GsaSlimEntity
         self._name: str
         self._guid: str
 
-        self.table = table
         self.name = name
         self.guid = guid
-
-    @property
-    def table(self) -> "GsaSlimEntity":
-        """Gets the table of this GsaSlimExpression.
-
-        Returns
-        -------
-        GsaSlimEntity
-            The table of this GsaSlimExpression.
-        """
-        return self._table
-
-    @table.setter
-    def table(self, table: "GsaSlimEntity") -> None:
-        """Sets the table of this GsaSlimExpression.
-
-        Parameters
-        ----------
-        table: GsaSlimEntity
-            The table of this GsaSlimExpression.
-        """
-        # Field is not nullable
-        if table is None:
-            raise ValueError("Invalid value for 'table', must not be 'None'")
-        # Field is required
-        if table is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'table', must not be 'Unset'")
-        self._table = table
 
     @property
     def name(self) -> "str":

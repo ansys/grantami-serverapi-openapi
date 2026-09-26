@@ -81,7 +81,6 @@ class GsaSortCriterion(ModelBase):
         "attribute".lower(): "#/components/schemas/GsaAttributeSortCriterion",
         "recordProperty".lower(): "#/components/schemas/GsaRecordPropertySortCriterion",
         "relevance".lower(): "#/components/schemas/GsaRelevanceSortCriterion",
-        "similarity".lower(): "#/components/schemas/GsaSimilaritySortCriterion",
     }
 
     discriminator: Optional[str] = "type"
