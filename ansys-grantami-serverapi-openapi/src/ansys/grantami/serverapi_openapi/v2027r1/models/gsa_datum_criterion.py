@@ -103,7 +103,7 @@ class GsaDatumCriterion(ModelBase):
         "range".lower(): "#/components/schemas/GsaRangeDatumCriterion",
         "shortText".lower(): "#/components/schemas/GsaShortTextDatumCriterion",
         "shortTextPrefix".lower(): "#/components/schemas/GsaShortTextPrefixDatumCriterion",
-        "smartLinkingValue".lower(): "#/components/schemas/GsaLinkingValueExistsDatumCriterion",
+        "dynamicLinkingValue".lower(): "#/components/schemas/GsaLinkingValueExistsDatumCriterion",
     }
 
     discriminator: Optional[str] = "type"

@@ -75,7 +75,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         "axis_name": "GsaUpdateAxisName",
         "default_content": "GsaUpdateMathsContent",
         "default_threshold_type": "GsaAttributeThresholdType",
-        "display_names": "dict(str, str)",
         "expressions": "list[GsaSlimEntity]",
         "guid": "str",
         "help_path": "str",
@@ -95,7 +94,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         "axis_name": "axisName",
         "default_content": "defaultContent",
         "default_threshold_type": "defaultThresholdType",
-        "display_names": "displayNames",
         "expressions": "expressions",
         "guid": "guid",
         "help_path": "helpPath",
@@ -110,7 +108,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         "attributeParameters": "GsaSlimEntity",
         "expressions": "GsaSlimEntity",
         "defaultContent": "GsaUpdateMathsContent",
-        "axisName": "GsaUpdateAxisName",
     }
 
     discriminator: Optional[str] = None
@@ -127,7 +124,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         default_content: "GsaUpdateMathsContent | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
-        display_names: "dict[str, str] | None | Unset_Type" = Unset,
         expressions: "list[GsaSlimEntity] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -149,7 +145,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         axis_name: GsaUpdateAxisName, optional
         default_content: GsaUpdateMathsContent, optional
         default_threshold_type: GsaAttributeThresholdType, optional
-        display_names: dict[str, str] | None, optional
         expressions: list[GsaSlimEntity] | None, optional
         guid: str, optional
         help_path: str | None, optional
@@ -161,8 +156,8 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         super().__init__(
             type=type,
             about_attribute=about_attribute,
+            axis_name=axis_name,
             default_threshold_type=default_threshold_type,
-            display_names=display_names,
             guid=guid,
             help_path=help_path,
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
@@ -176,7 +171,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         self._default_content: GsaUpdateMathsContent | Unset_Type = Unset
         self._allow_all_compatible_expressions: bool | Unset_Type = Unset
         self._allow_anonymous_expressions: bool | Unset_Type = Unset
-        self._axis_name: GsaUpdateAxisName | Unset_Type = Unset
 
         if unit is not Unset:
             self.unit = unit
@@ -194,8 +188,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
             self.allow_all_compatible_expressions = allow_all_compatible_expressions
         if allow_anonymous_expressions is not Unset:
             self.allow_anonymous_expressions = allow_anonymous_expressions
-        if axis_name is not Unset:
-            self.axis_name = axis_name
 
     @property
     def unit(self) -> "GsaSlimEntity | Unset_Type":
@@ -396,31 +388,6 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         if allow_anonymous_expressions is None:
             raise ValueError("Invalid value for 'allow_anonymous_expressions', must not be 'None'")
         self._allow_anonymous_expressions = allow_anonymous_expressions
-
-    @property
-    def axis_name(self) -> "GsaUpdateAxisName | Unset_Type":
-        """Gets the axis_name of this GsaUpdateMathsFunctionalAttribute.
-
-        Returns
-        -------
-        GsaUpdateAxisName | Unset_Type
-            The axis_name of this GsaUpdateMathsFunctionalAttribute.
-        """
-        return self._axis_name
-
-    @axis_name.setter
-    def axis_name(self, axis_name: "GsaUpdateAxisName | Unset_Type") -> None:
-        """Sets the axis_name of this GsaUpdateMathsFunctionalAttribute.
-
-        Parameters
-        ----------
-        axis_name: GsaUpdateAxisName | Unset_Type
-            The axis_name of this GsaUpdateMathsFunctionalAttribute.
-        """
-        # Field is not nullable
-        if axis_name is None:
-            raise ValueError("Invalid value for 'axis_name', must not be 'None'")
-        self._axis_name = axis_name
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

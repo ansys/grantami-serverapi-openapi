@@ -70,9 +70,9 @@ class GsaAttributeInfo(ModelBase):
         "primary_data_link_groups": "list[GsaSlimNamedEntity]",
         "standard_names": "list[GsaSlimNamedEntity]",
         "type_code": "str",
-        "foreign_smart_link_groups": "list[GsaSlimNamedEntity]",
+        "foreign_dynamic_link_groups": "list[GsaSlimNamedEntity]",
         "ordered_meta_attributes": "list[GsaSlimTypedAttribute]",
-        "primary_smart_link_groups": "list[GsaSlimNamedEntity]",
+        "primary_dynamic_link_groups": "list[GsaSlimNamedEntity]",
     }
 
     attribute_map: dict[str, str] = {
@@ -85,9 +85,9 @@ class GsaAttributeInfo(ModelBase):
         "primary_data_link_groups": "primaryDataLinkGroups",
         "standard_names": "standardNames",
         "type_code": "typeCode",
-        "foreign_smart_link_groups": "foreignSmartLinkGroups",
+        "foreign_dynamic_link_groups": "foreignDynamicLinkGroups",
         "ordered_meta_attributes": "orderedMetaAttributes",
-        "primary_smart_link_groups": "primarySmartLinkGroups",
+        "primary_dynamic_link_groups": "primaryDynamicLinkGroups",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -95,8 +95,8 @@ class GsaAttributeInfo(ModelBase):
         "standardNames": "GsaSlimNamedEntity",
         "primaryDataLinkGroups": "GsaSlimNamedEntity",
         "foreignDataLinkGroups": "GsaSlimNamedEntity",
-        "primarySmartLinkGroups": "GsaSlimNamedEntity",
-        "foreignSmartLinkGroups": "GsaSlimNamedEntity",
+        "primaryDynamicLinkGroups": "GsaSlimNamedEntity",
+        "foreignDynamicLinkGroups": "GsaSlimNamedEntity",
     }
 
     discriminator: Optional[str] = None
@@ -113,9 +113,9 @@ class GsaAttributeInfo(ModelBase):
         primary_data_link_groups: "list[GsaSlimNamedEntity]",
         standard_names: "list[GsaSlimNamedEntity]",
         type_code: "str",
-        foreign_smart_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
+        foreign_dynamic_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
         ordered_meta_attributes: "list[GsaSlimTypedAttribute] | None | Unset_Type" = Unset,
-        primary_smart_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
+        primary_dynamic_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaAttributeInfo - a model defined in Swagger
 
@@ -130,9 +130,9 @@ class GsaAttributeInfo(ModelBase):
         primary_data_link_groups: list[GsaSlimNamedEntity]
         standard_names: list[GsaSlimNamedEntity]
         type_code: str
-        foreign_smart_link_groups: list[GsaSlimNamedEntity] | None, optional
+        foreign_dynamic_link_groups: list[GsaSlimNamedEntity] | None, optional
         ordered_meta_attributes: list[GsaSlimTypedAttribute] | None, optional
-        primary_smart_link_groups: list[GsaSlimNamedEntity] | None, optional
+        primary_dynamic_link_groups: list[GsaSlimNamedEntity] | None, optional
         """
         self._type_code: str
         self._chartable: bool
@@ -144,8 +144,8 @@ class GsaAttributeInfo(ModelBase):
         self._standard_names: list[GsaSlimNamedEntity]
         self._primary_data_link_groups: list[GsaSlimNamedEntity]
         self._foreign_data_link_groups: list[GsaSlimNamedEntity]
-        self._primary_smart_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
-        self._foreign_smart_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
+        self._primary_dynamic_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
+        self._foreign_dynamic_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type = Unset
 
         self.type_code = type_code
         self.chartable = chartable
@@ -158,10 +158,10 @@ class GsaAttributeInfo(ModelBase):
         self.standard_names = standard_names
         self.primary_data_link_groups = primary_data_link_groups
         self.foreign_data_link_groups = foreign_data_link_groups
-        if primary_smart_link_groups is not Unset:
-            self.primary_smart_link_groups = primary_smart_link_groups
-        if foreign_smart_link_groups is not Unset:
-            self.foreign_smart_link_groups = foreign_smart_link_groups
+        if primary_dynamic_link_groups is not Unset:
+            self.primary_dynamic_link_groups = primary_dynamic_link_groups
+        if foreign_dynamic_link_groups is not Unset:
+            self.foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
     @property
     def type_code(self) -> "str":
@@ -450,52 +450,52 @@ class GsaAttributeInfo(ModelBase):
         self._foreign_data_link_groups = foreign_data_link_groups
 
     @property
-    def primary_smart_link_groups(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
-        """Gets the primary_smart_link_groups of this GsaAttributeInfo.
+    def primary_dynamic_link_groups(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+        """Gets the primary_dynamic_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
         list[GsaSlimNamedEntity] | None | Unset_Type
-            The primary_smart_link_groups of this GsaAttributeInfo.
+            The primary_dynamic_link_groups of this GsaAttributeInfo.
         """
-        return self._primary_smart_link_groups
+        return self._primary_dynamic_link_groups
 
-    @primary_smart_link_groups.setter
-    def primary_smart_link_groups(
-        self, primary_smart_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type"
+    @primary_dynamic_link_groups.setter
+    def primary_dynamic_link_groups(
+        self, primary_dynamic_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type"
     ) -> None:
-        """Sets the primary_smart_link_groups of this GsaAttributeInfo.
+        """Sets the primary_dynamic_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        primary_smart_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type
-            The primary_smart_link_groups of this GsaAttributeInfo.
+        primary_dynamic_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type
+            The primary_dynamic_link_groups of this GsaAttributeInfo.
         """
-        self._primary_smart_link_groups = primary_smart_link_groups
+        self._primary_dynamic_link_groups = primary_dynamic_link_groups
 
     @property
-    def foreign_smart_link_groups(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
-        """Gets the foreign_smart_link_groups of this GsaAttributeInfo.
+    def foreign_dynamic_link_groups(self) -> "list[GsaSlimNamedEntity] | None | Unset_Type":
+        """Gets the foreign_dynamic_link_groups of this GsaAttributeInfo.
 
         Returns
         -------
         list[GsaSlimNamedEntity] | None | Unset_Type
-            The foreign_smart_link_groups of this GsaAttributeInfo.
+            The foreign_dynamic_link_groups of this GsaAttributeInfo.
         """
-        return self._foreign_smart_link_groups
+        return self._foreign_dynamic_link_groups
 
-    @foreign_smart_link_groups.setter
-    def foreign_smart_link_groups(
-        self, foreign_smart_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type"
+    @foreign_dynamic_link_groups.setter
+    def foreign_dynamic_link_groups(
+        self, foreign_dynamic_link_groups: "list[GsaSlimNamedEntity] | None | Unset_Type"
     ) -> None:
-        """Sets the foreign_smart_link_groups of this GsaAttributeInfo.
+        """Sets the foreign_dynamic_link_groups of this GsaAttributeInfo.
 
         Parameters
         ----------
-        foreign_smart_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type
-            The foreign_smart_link_groups of this GsaAttributeInfo.
+        foreign_dynamic_link_groups: list[GsaSlimNamedEntity] | None | Unset_Type
+            The foreign_dynamic_link_groups of this GsaAttributeInfo.
         """
-        self._foreign_smart_link_groups = foreign_smart_link_groups
+        self._foreign_dynamic_link_groups = foreign_dynamic_link_groups
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

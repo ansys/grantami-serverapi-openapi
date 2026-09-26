@@ -64,8 +64,8 @@ class GsaConnectionDetails(ModelBase):
         "data_source": "str",
         "initial_catalog": "str",
         "additional_sql_parameters": "str",
+        "sql_password": "str",
         "sql_username": "str",
-        "use_configuration_database_credentials": "bool",
         "use_integrated_security": "bool",
     }
 
@@ -73,8 +73,8 @@ class GsaConnectionDetails(ModelBase):
         "data_source": "dataSource",
         "initial_catalog": "initialCatalog",
         "additional_sql_parameters": "additionalSqlParameters",
+        "sql_password": "sqlPassword",
         "sql_username": "sqlUsername",
-        "use_configuration_database_credentials": "useConfigurationDatabaseCredentials",
         "use_integrated_security": "useIntegratedSecurity",
     }
 
@@ -88,9 +88,9 @@ class GsaConnectionDetails(ModelBase):
         data_source: "str",
         initial_catalog: "str",
         additional_sql_parameters: "str | None | Unset_Type" = Unset,
+        sql_password: "str | None | Unset_Type" = Unset,
         sql_username: "str | None | Unset_Type" = Unset,
-        use_configuration_database_credentials: "bool | Unset_Type" = Unset,
-        use_integrated_security: "bool | Unset_Type" = Unset,
+        use_integrated_security: "bool | None | Unset_Type" = Unset,
     ) -> None:
         """GsaConnectionDetails - a model defined in Swagger
 
@@ -99,25 +99,25 @@ class GsaConnectionDetails(ModelBase):
         data_source: str
         initial_catalog: str
         additional_sql_parameters: str | None, optional
+        sql_password: str | None, optional
         sql_username: str | None, optional
-        use_configuration_database_credentials: bool, optional
-        use_integrated_security: bool, optional
+        use_integrated_security: bool | None, optional
         """
         self._data_source: str
-        self._initial_catalog: str
-        self._use_configuration_database_credentials: bool | Unset_Type = Unset
-        self._use_integrated_security: bool | Unset_Type = Unset
+        self._use_integrated_security: bool | None | Unset_Type = Unset
         self._sql_username: str | None | Unset_Type = Unset
+        self._sql_password: str | None | Unset_Type = Unset
+        self._initial_catalog: str
         self._additional_sql_parameters: str | None | Unset_Type = Unset
 
         self.data_source = data_source
-        self.initial_catalog = initial_catalog
-        if use_configuration_database_credentials is not Unset:
-            self.use_configuration_database_credentials = use_configuration_database_credentials
         if use_integrated_security is not Unset:
             self.use_integrated_security = use_integrated_security
         if sql_username is not Unset:
             self.sql_username = sql_username
+        if sql_password is not Unset:
+            self.sql_password = sql_password
+        self.initial_catalog = initial_catalog
         if additional_sql_parameters is not Unset:
             self.additional_sql_parameters = additional_sql_parameters
 
@@ -152,6 +152,78 @@ class GsaConnectionDetails(ModelBase):
         self._data_source = data_source
 
     @property
+    def use_integrated_security(self) -> "bool | None | Unset_Type":
+        """Gets the use_integrated_security of this GsaConnectionDetails.
+        Set to true if the SQL connection to the new database should use Windows authentication
+
+        Returns
+        -------
+        bool | None | Unset_Type
+            The use_integrated_security of this GsaConnectionDetails.
+        """
+        return self._use_integrated_security
+
+    @use_integrated_security.setter
+    def use_integrated_security(self, use_integrated_security: "bool | None | Unset_Type") -> None:
+        """Sets the use_integrated_security of this GsaConnectionDetails.
+        Set to true if the SQL connection to the new database should use Windows authentication
+
+        Parameters
+        ----------
+        use_integrated_security: bool | None | Unset_Type
+            The use_integrated_security of this GsaConnectionDetails.
+        """
+        self._use_integrated_security = use_integrated_security
+
+    @property
+    def sql_username(self) -> "str | None | Unset_Type":
+        """Gets the sql_username of this GsaConnectionDetails.
+        The username to use if the new database should use SQL authentication. The password must also be provided.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The sql_username of this GsaConnectionDetails.
+        """
+        return self._sql_username
+
+    @sql_username.setter
+    def sql_username(self, sql_username: "str | None | Unset_Type") -> None:
+        """Sets the sql_username of this GsaConnectionDetails.
+        The username to use if the new database should use SQL authentication. The password must also be provided.
+
+        Parameters
+        ----------
+        sql_username: str | None | Unset_Type
+            The sql_username of this GsaConnectionDetails.
+        """
+        self._sql_username = sql_username
+
+    @property
+    def sql_password(self) -> "str | None | Unset_Type":
+        """Gets the sql_password of this GsaConnectionDetails.
+        The password to use if the new database should use SQL authentication. The username must also be provided.
+
+        Returns
+        -------
+        str | None | Unset_Type
+            The sql_password of this GsaConnectionDetails.
+        """
+        return self._sql_password
+
+    @sql_password.setter
+    def sql_password(self, sql_password: "str | None | Unset_Type") -> None:
+        """Sets the sql_password of this GsaConnectionDetails.
+        The password to use if the new database should use SQL authentication. The username must also be provided.
+
+        Parameters
+        ----------
+        sql_password: str | None | Unset_Type
+            The sql_password of this GsaConnectionDetails.
+        """
+        self._sql_password = sql_password
+
+    @property
     def initial_catalog(self) -> "str":
         """Gets the initial_catalog of this GsaConnectionDetails.
         The name of the database in SQL server
@@ -182,91 +254,9 @@ class GsaConnectionDetails(ModelBase):
         self._initial_catalog = initial_catalog
 
     @property
-    def use_configuration_database_credentials(self) -> "bool | Unset_Type":
-        """Gets the use_configuration_database_credentials of this GsaConnectionDetails.
-        Set to true if the SQL connection is using the credentials from the Configuration database.
-
-        Returns
-        -------
-        bool | Unset_Type
-            The use_configuration_database_credentials of this GsaConnectionDetails.
-        """
-        return self._use_configuration_database_credentials
-
-    @use_configuration_database_credentials.setter
-    def use_configuration_database_credentials(
-        self, use_configuration_database_credentials: "bool | Unset_Type"
-    ) -> None:
-        """Sets the use_configuration_database_credentials of this GsaConnectionDetails.
-        Set to true if the SQL connection is using the credentials from the Configuration database.
-
-        Parameters
-        ----------
-        use_configuration_database_credentials: bool | Unset_Type
-            The use_configuration_database_credentials of this GsaConnectionDetails.
-        """
-        # Field is not nullable
-        if use_configuration_database_credentials is None:
-            raise ValueError(
-                "Invalid value for 'use_configuration_database_credentials', must not be 'None'"
-            )
-        self._use_configuration_database_credentials = use_configuration_database_credentials
-
-    @property
-    def use_integrated_security(self) -> "bool | Unset_Type":
-        """Gets the use_integrated_security of this GsaConnectionDetails.
-        Set to true if the SQL connection to the database is using Windows authentication
-
-        Returns
-        -------
-        bool | Unset_Type
-            The use_integrated_security of this GsaConnectionDetails.
-        """
-        return self._use_integrated_security
-
-    @use_integrated_security.setter
-    def use_integrated_security(self, use_integrated_security: "bool | Unset_Type") -> None:
-        """Sets the use_integrated_security of this GsaConnectionDetails.
-        Set to true if the SQL connection to the database is using Windows authentication
-
-        Parameters
-        ----------
-        use_integrated_security: bool | Unset_Type
-            The use_integrated_security of this GsaConnectionDetails.
-        """
-        # Field is not nullable
-        if use_integrated_security is None:
-            raise ValueError("Invalid value for 'use_integrated_security', must not be 'None'")
-        self._use_integrated_security = use_integrated_security
-
-    @property
-    def sql_username(self) -> "str | None | Unset_Type":
-        """Gets the sql_username of this GsaConnectionDetails.
-        The username used if the database is using SQL authentication.
-
-        Returns
-        -------
-        str | None | Unset_Type
-            The sql_username of this GsaConnectionDetails.
-        """
-        return self._sql_username
-
-    @sql_username.setter
-    def sql_username(self, sql_username: "str | None | Unset_Type") -> None:
-        """Sets the sql_username of this GsaConnectionDetails.
-        The username used if the database is using SQL authentication.
-
-        Parameters
-        ----------
-        sql_username: str | None | Unset_Type
-            The sql_username of this GsaConnectionDetails.
-        """
-        self._sql_username = sql_username
-
-    @property
     def additional_sql_parameters(self) -> "str | None | Unset_Type":
         """Gets the additional_sql_parameters of this GsaConnectionDetails.
-        (Optional) Any additional parameters added to the SQL connection string for the database.
+        (Optional) Any additional parameters that will be added to the SQL connection string for the database. Must be a valid SQL connection string format.
 
         Returns
         -------
@@ -280,7 +270,7 @@ class GsaConnectionDetails(ModelBase):
         self, additional_sql_parameters: "str | None | Unset_Type"
     ) -> None:
         """Sets the additional_sql_parameters of this GsaConnectionDetails.
-        (Optional) Any additional parameters added to the SQL connection string for the database.
+        (Optional) Any additional parameters that will be added to the SQL connection string for the database. Must be a valid SQL connection string format.
 
         Parameters
         ----------
