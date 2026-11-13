@@ -71,14 +71,14 @@ class GsaXYChartTemplateDiscreteParameterValue(GsaXYChartTemplateParameterValue)
         "guid": "str",
         "name": "str",
         "parameter_guid": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
         "parameter_guid": "parameterGuid",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -91,7 +91,7 @@ class GsaXYChartTemplateDiscreteParameterValue(GsaXYChartTemplateParameterValue)
         guid: "str | None",
         name: "str",
         parameter_guid: "str",
-        type: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
+        type_: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
     ) -> None:
         """GsaXYChartTemplateDiscreteParameterValue - a model defined in Swagger
 
@@ -100,9 +100,9 @@ class GsaXYChartTemplateDiscreteParameterValue(GsaXYChartTemplateParameterValue)
         guid: str | None
         name: str
         parameter_guid: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         """
-        super().__init__(guid=guid, parameter_guid=parameter_guid, type=type)
+        super().__init__(guid=guid, parameter_guid=parameter_guid, type_=type_)
         self._name: str
 
         self.name = name

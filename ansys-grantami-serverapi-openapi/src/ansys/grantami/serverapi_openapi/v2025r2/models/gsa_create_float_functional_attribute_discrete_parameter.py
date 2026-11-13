@@ -69,13 +69,13 @@ class GsaCreateFloatFunctionalAttributeDiscreteParameter(
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_value": "GsaSlimEntity",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "default_value": "defaultValue",
     }
 
@@ -89,7 +89,7 @@ class GsaCreateFloatFunctionalAttributeDiscreteParameter(
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType" = GsaParameterType.DISCRETE,
+        type_: "GsaParameterType" = GsaParameterType.DISCRETE,
         default_value: "GsaSlimEntity | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateFloatFunctionalAttributeDiscreteParameter - a model defined in Swagger
@@ -97,10 +97,10 @@ class GsaCreateFloatFunctionalAttributeDiscreteParameter(
         Parameters
         ----------
         parameter: GsaSlimEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         default_value: GsaSlimEntity, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._default_value: GsaSlimEntity | Unset_Type = Unset
 
         if default_value is not Unset:

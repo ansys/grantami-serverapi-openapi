@@ -70,7 +70,7 @@ class GsaXYChartTemplateNumericParameterValue(GsaXYChartTemplateParameterValue):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "parameter_guid": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
         "value": "float",
         "name": "str",
     }
@@ -78,7 +78,7 @@ class GsaXYChartTemplateNumericParameterValue(GsaXYChartTemplateParameterValue):
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "parameter_guid": "parameterGuid",
-        "type": "type",
+        "type_": "type",
         "value": "value",
         "name": "name",
     }
@@ -92,7 +92,7 @@ class GsaXYChartTemplateNumericParameterValue(GsaXYChartTemplateParameterValue):
         *,
         guid: "str | None",
         parameter_guid: "str",
-        type: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
+        type_: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
         value: "float",
         name: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -102,11 +102,11 @@ class GsaXYChartTemplateNumericParameterValue(GsaXYChartTemplateParameterValue):
         ----------
         guid: str | None
         parameter_guid: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         value: float
         name: str | None, optional
         """
-        super().__init__(guid=guid, parameter_guid=parameter_guid, type=type)
+        super().__init__(guid=guid, parameter_guid=parameter_guid, type_=type_)
         self._value: float
         self._name: str | None | Unset_Type = Unset
 

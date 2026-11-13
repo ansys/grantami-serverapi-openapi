@@ -63,7 +63,7 @@ class GsaDataExportRollupDatum(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "str",
+        "type_": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "database_key": "str",
@@ -71,7 +71,7 @@ class GsaDataExportRollupDatum(ModelBase):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "database_key": "databaseKey",
@@ -94,7 +94,7 @@ class GsaDataExportRollupDatum(ModelBase):
     def __init__(
         self,
         *,
-        type: "str | None",
+        type_: "str | None",
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         database_key: "str | None | Unset_Type" = Unset,
@@ -104,7 +104,7 @@ class GsaDataExportRollupDatum(ModelBase):
 
         Parameters
         ----------
-        type: str | None
+        type_: str | None
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         database_key: str | None, optional
@@ -114,7 +114,7 @@ class GsaDataExportRollupDatum(ModelBase):
         self._attribute_identity: int | None | Unset_Type = Unset
         self._attribute_guid: str | None | Unset_Type = Unset
         self._roll_up_type: GsaTabularColumnRollUpType | Unset_Type = Unset
-        self._type: str | None
+        self._type_: str | None
 
         if database_key is not Unset:
             self.database_key = database_key
@@ -124,7 +124,7 @@ class GsaDataExportRollupDatum(ModelBase):
             self.attribute_guid = attribute_guid
         if roll_up_type is not Unset:
             self.roll_up_type = roll_up_type
-        self.type = type
+        self.type_ = type_
 
     @property
     def database_key(self) -> "str | None | Unset_Type":
@@ -224,29 +224,29 @@ class GsaDataExportRollupDatum(ModelBase):
         self._roll_up_type = roll_up_type
 
     @property
-    def type(self) -> "str | None":
-        """Gets the type of this GsaDataExportRollupDatum.
+    def type_(self) -> "str | None":
+        """Gets the type_ of this GsaDataExportRollupDatum.
 
         Returns
         -------
         str | None
-            The type of this GsaDataExportRollupDatum.
+            The type_ of this GsaDataExportRollupDatum.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "str | None") -> None:
-        """Sets the type of this GsaDataExportRollupDatum.
+    @type_.setter
+    def type_(self, type_: "str | None") -> None:
+        """Sets the type_ of this GsaDataExportRollupDatum.
 
         Parameters
         ----------
-        type: str | None
-            The type of this GsaDataExportRollupDatum.
+        type_: str | None
+            The type_ of this GsaDataExportRollupDatum.
         """
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

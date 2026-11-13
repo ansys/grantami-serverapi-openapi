@@ -70,13 +70,13 @@ class GsaDiscreteParameterValue(GsaParameterValue):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -88,7 +88,7 @@ class GsaDiscreteParameterValue(GsaParameterValue):
         *,
         guid: "str",
         name: "str",
-        type: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
+        type_: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
     ) -> None:
         """GsaDiscreteParameterValue - a model defined in Swagger
 
@@ -96,9 +96,9 @@ class GsaDiscreteParameterValue(GsaParameterValue):
         ----------
         guid: str
         name: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         """
-        super().__init__(guid=guid, type=type)
+        super().__init__(guid=guid, type_=type_)
         self._name: str
 
         self.name = name

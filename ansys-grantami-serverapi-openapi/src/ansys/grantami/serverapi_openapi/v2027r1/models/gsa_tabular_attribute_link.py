@@ -72,7 +72,7 @@ class GsaTabularAttributeLink(GsaLink):
         "name": "str",
         "reverse_name": "str",
         "target_attribute": "GsaSlimEntity",
-        "type": "GsaLinkAttributeType",
+        "type_": "GsaLinkAttributeType",
         "reverse_display_names": "dict(str, str)",
     }
 
@@ -83,7 +83,7 @@ class GsaTabularAttributeLink(GsaLink):
         "name": "name",
         "reverse_name": "reverseName",
         "target_attribute": "targetAttribute",
-        "type": "type",
+        "type_": "type",
         "reverse_display_names": "reverseDisplayNames",
     }
 
@@ -102,7 +102,7 @@ class GsaTabularAttributeLink(GsaLink):
         name: "str",
         reverse_name: "str",
         target_attribute: "GsaSlimEntity",
-        type: "GsaLinkAttributeType" = GsaLinkAttributeType.TABULARATTRIBUTE,
+        type_: "GsaLinkAttributeType" = GsaLinkAttributeType.TABULARATTRIBUTE,
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaTabularAttributeLink - a model defined in Swagger
@@ -115,7 +115,7 @@ class GsaTabularAttributeLink(GsaLink):
         name: str
         reverse_name: str
         target_attribute: GsaSlimEntity
-        type: GsaLinkAttributeType
+        type_: GsaLinkAttributeType
         reverse_display_names: dict[str, str] | None, optional
         """
         super().__init__(
@@ -124,7 +124,7 @@ class GsaTabularAttributeLink(GsaLink):
             link_info=link_info,
             name=name,
             reverse_name=reverse_name,
-            type=type,
+            type_=type_,
             reverse_display_names=reverse_display_names,
         )
         self._target_attribute: GsaSlimEntity

@@ -71,7 +71,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "is_restricted": "bool",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaCreateNumericParameterValue]",
         "guid": "str",
         "unit": "GsaSlimEntity",
@@ -83,7 +83,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         "is_restricted": "isRestricted",
         "name": "name",
         "scale_type": "scaleType",
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "guid": "guid",
         "unit": "unit",
@@ -106,7 +106,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         is_restricted: "bool",
         name: "str",
         scale_type: "GsaParameterScaleType",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "list[GsaCreateNumericParameterValue]",
         guid: "str | Unset_Type" = Unset,
         unit: "GsaSlimEntity | Unset_Type" = Unset,
@@ -120,7 +120,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         is_restricted: bool
         name: str
         scale_type: GsaParameterScaleType
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaCreateNumericParameterValue]
         guid: str, optional
         unit: GsaSlimEntity, optional
@@ -128,7 +128,7 @@ class GsaCreateNumericParameter(GsaCreateParameter):
         super().__init__(
             default_parameter_value_index=default_parameter_value_index,
             name=name,
-            type=type,
+            type_=type_,
             guid=guid,
         )
         self._is_restricted: bool

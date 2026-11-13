@@ -65,7 +65,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "str",
+        "type_": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "count": "int",
@@ -74,7 +74,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "count": "count",
@@ -89,7 +89,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
     def __init__(
         self,
         *,
-        type: "str | None" = "countRollup",
+        type_: "str | None" = "countRollup",
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         count: "int | Unset_Type" = Unset,
@@ -100,7 +100,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
 
         Parameters
         ----------
-        type: str | None
+        type_: str | None
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         count: int, optional
@@ -108,7 +108,7 @@ class GsaDataExportCountRollupDatum(GsaDataExportRollupDatum):
         roll_up_type: GsaTabularColumnRollUpType, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             database_key=database_key,

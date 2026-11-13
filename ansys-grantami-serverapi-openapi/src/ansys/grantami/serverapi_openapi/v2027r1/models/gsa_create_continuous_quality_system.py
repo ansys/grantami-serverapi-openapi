@@ -70,7 +70,7 @@ class GsaCreateContinuousQualitySystem(GsaCreateQualitySystem):
     swagger_types: dict[str, str] = {
         "name": "str",
         "threshold_value": "float",
-        "type": "GsaQualitySystemType",
+        "type_": "GsaQualitySystemType",
         "does_quality_decrease_with_value": "bool",
         "guid": "str",
     }
@@ -78,7 +78,7 @@ class GsaCreateContinuousQualitySystem(GsaCreateQualitySystem):
     attribute_map: dict[str, str] = {
         "name": "name",
         "threshold_value": "thresholdValue",
-        "type": "type",
+        "type_": "type",
         "does_quality_decrease_with_value": "doesQualityDecreaseWithValue",
         "guid": "guid",
     }
@@ -92,7 +92,7 @@ class GsaCreateContinuousQualitySystem(GsaCreateQualitySystem):
         *,
         name: "str",
         threshold_value: "float",
-        type: "GsaQualitySystemType" = GsaQualitySystemType.CONTINUOUS,
+        type_: "GsaQualitySystemType" = GsaQualitySystemType.CONTINUOUS,
         does_quality_decrease_with_value: "bool | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
     ) -> None:
@@ -102,11 +102,11 @@ class GsaCreateContinuousQualitySystem(GsaCreateQualitySystem):
         ----------
         name: str
         threshold_value: float
-        type: GsaQualitySystemType
+        type_: GsaQualitySystemType
         does_quality_decrease_with_value: bool, optional
         guid: str, optional
         """
-        super().__init__(name=name, type=type, guid=guid)
+        super().__init__(name=name, type_=type_, guid=guid)
         self._does_quality_decrease_with_value: bool | Unset_Type = Unset
         self._threshold_value: float
 

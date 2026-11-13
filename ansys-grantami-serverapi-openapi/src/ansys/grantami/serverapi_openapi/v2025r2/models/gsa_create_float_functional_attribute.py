@@ -68,7 +68,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
     swagger_types: dict[str, str] = {
         "attribute_parameters": "list[GsaCreateFloatFunctionalAttributeParameter]",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -81,7 +81,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
     attribute_map: dict[str, str] = {
         "attribute_parameters": "attributeParameters",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -104,7 +104,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         *,
         attribute_parameters: "list[GsaCreateFloatFunctionalAttributeParameter]",
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
+        type_: "GsaAttributeType" = GsaAttributeType.FLOATFUNCTIONAL,
         axis_name: "GsaCreateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -119,7 +119,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         ----------
         attribute_parameters: list[GsaCreateFloatFunctionalAttributeParameter]
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -130,7 +130,7 @@ class GsaCreateFloatFunctionalAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

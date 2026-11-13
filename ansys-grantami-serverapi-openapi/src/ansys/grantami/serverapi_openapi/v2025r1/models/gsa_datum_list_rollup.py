@@ -67,12 +67,12 @@ class GsaDatumListRollup(GsaDatumRollup):
     """
     swagger_types: dict[str, str] = {
         "datums": "list[GsaDatum]",
-        "type": "GsaDatumRollupType",
+        "type_": "GsaDatumRollupType",
     }
 
     attribute_map: dict[str, str] = {
         "datums": "datums",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -85,16 +85,16 @@ class GsaDatumListRollup(GsaDatumRollup):
         self,
         *,
         datums: "list[GsaDatum]",
-        type: "GsaDatumRollupType" = GsaDatumRollupType.LISTROLLUP,
+        type_: "GsaDatumRollupType" = GsaDatumRollupType.LISTROLLUP,
     ) -> None:
         """GsaDatumListRollup - a model defined in Swagger
 
         Parameters
         ----------
         datums: list[GsaDatum]
-        type: GsaDatumRollupType
+        type_: GsaDatumRollupType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._datums: list[GsaDatum]
 
         self.datums = datums

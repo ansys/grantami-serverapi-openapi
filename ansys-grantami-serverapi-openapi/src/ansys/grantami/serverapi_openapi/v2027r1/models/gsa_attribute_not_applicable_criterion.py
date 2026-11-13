@@ -70,7 +70,7 @@ class GsaAttributeNotApplicableCriterion(GsaAttributeCriterion):
     """
     swagger_types: dict[str, str] = {
         "attribute_criterion_type": "GsaAttributeCriterionType",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "guid": "str",
         "identity": "int",
         "is_meta_attribute": "bool",
@@ -78,7 +78,7 @@ class GsaAttributeNotApplicableCriterion(GsaAttributeCriterion):
 
     attribute_map: dict[str, str] = {
         "attribute_criterion_type": "attributeCriterionType",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
         "is_meta_attribute": "isMetaAttribute",
@@ -92,7 +92,7 @@ class GsaAttributeNotApplicableCriterion(GsaAttributeCriterion):
         self,
         *,
         attribute_criterion_type: "GsaAttributeCriterionType" = GsaAttributeCriterionType.NOTAPPLICABLE,
-        type: "GsaCriterionType" = GsaCriterionType.ATTRIBUTE,
+        type_: "GsaCriterionType" = GsaCriterionType.ATTRIBUTE,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
         is_meta_attribute: "bool | Unset_Type" = Unset,
@@ -102,14 +102,14 @@ class GsaAttributeNotApplicableCriterion(GsaAttributeCriterion):
         Parameters
         ----------
         attribute_criterion_type: GsaAttributeCriterionType
-        type: GsaCriterionType
+        type_: GsaCriterionType
         guid: str | None, optional
         identity: int | None, optional
         is_meta_attribute: bool, optional
         """
         super().__init__(
             attribute_criterion_type=attribute_criterion_type,
-            type=type,
+            type_=type_,
             guid=guid,
             identity=identity,
             is_meta_attribute=is_meta_attribute,

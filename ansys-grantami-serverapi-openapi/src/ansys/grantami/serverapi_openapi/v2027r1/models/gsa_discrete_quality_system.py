@@ -72,7 +72,7 @@ class GsaDiscreteQualitySystem(GsaQualitySystem):
         "name": "str",
         "quality_discrete_values": "list[GsaQualityDiscreteValue]",
         "threshold_value": "GsaQualityDiscreteValue",
-        "type": "GsaQualitySystemType",
+        "type_": "GsaQualitySystemType",
     }
 
     attribute_map: dict[str, str] = {
@@ -80,7 +80,7 @@ class GsaDiscreteQualitySystem(GsaQualitySystem):
         "name": "name",
         "quality_discrete_values": "qualityDiscreteValues",
         "threshold_value": "thresholdValue",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -97,7 +97,7 @@ class GsaDiscreteQualitySystem(GsaQualitySystem):
         name: "str",
         quality_discrete_values: "list[GsaQualityDiscreteValue]",
         threshold_value: "GsaQualityDiscreteValue",
-        type: "GsaQualitySystemType" = GsaQualitySystemType.DISCRETE,
+        type_: "GsaQualitySystemType" = GsaQualitySystemType.DISCRETE,
     ) -> None:
         """GsaDiscreteQualitySystem - a model defined in Swagger
 
@@ -107,9 +107,9 @@ class GsaDiscreteQualitySystem(GsaQualitySystem):
         name: str
         quality_discrete_values: list[GsaQualityDiscreteValue]
         threshold_value: GsaQualityDiscreteValue
-        type: GsaQualitySystemType
+        type_: GsaQualitySystemType
         """
-        super().__init__(guid=guid, name=name, type=type)
+        super().__init__(guid=guid, name=name, type_=type_)
         self._threshold_value: GsaQualityDiscreteValue
         self._quality_discrete_values: list[GsaQualityDiscreteValue]
 

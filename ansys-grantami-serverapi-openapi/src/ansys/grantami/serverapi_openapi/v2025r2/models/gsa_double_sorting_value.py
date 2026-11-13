@@ -68,12 +68,12 @@ class GsaDoubleSortingValue(GsaSortingValue):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortingValueType",
+        "type_": "GsaSortingValueType",
         "value": "float",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -84,17 +84,17 @@ class GsaDoubleSortingValue(GsaSortingValue):
     def __init__(
         self,
         *,
-        type: "GsaSortingValueType" = GsaSortingValueType.DOUBLE,
+        type_: "GsaSortingValueType" = GsaSortingValueType.DOUBLE,
         value: "float | Unset_Type" = Unset,
     ) -> None:
         """GsaDoubleSortingValue - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaSortingValueType
+        type_: GsaSortingValueType
         value: float, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: float | Unset_Type = Unset
 
         if value is not Unset:

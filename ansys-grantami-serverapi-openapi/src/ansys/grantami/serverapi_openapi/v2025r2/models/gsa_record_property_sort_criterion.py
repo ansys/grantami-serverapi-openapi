@@ -68,15 +68,15 @@ class GsaRecordPropertySortCriterion(GsaSortCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortCriterionType",
-        "_property": "GsaSearchableRecordProperty",
+        "type_": "GsaSortCriterionType",
+        "property_": "GsaSearchableRecordProperty",
         "sort_direction": "GsaSortDirection",
         "sort_type": "GsaSortType",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "_property": "property",
+        "type_": "type",
+        "property_": "property",
         "sort_direction": "sortDirection",
         "sort_type": "sortType",
     }
@@ -91,8 +91,8 @@ class GsaRecordPropertySortCriterion(GsaSortCriterion):
     def __init__(
         self,
         *,
-        type: "GsaSortCriterionType" = GsaSortCriterionType.RECORDPROPERTY,
-        _property: "GsaSearchableRecordProperty | Unset_Type" = Unset,
+        type_: "GsaSortCriterionType" = GsaSortCriterionType.RECORDPROPERTY,
+        property_: "GsaSearchableRecordProperty | Unset_Type" = Unset,
         sort_direction: "GsaSortDirection | Unset_Type" = Unset,
         sort_type: "GsaSortType | Unset_Type" = Unset,
     ) -> None:
@@ -100,44 +100,44 @@ class GsaRecordPropertySortCriterion(GsaSortCriterion):
 
         Parameters
         ----------
-        type: GsaSortCriterionType
-        _property: GsaSearchableRecordProperty, optional
+        type_: GsaSortCriterionType
+        property_: GsaSearchableRecordProperty, optional
         sort_direction: GsaSortDirection, optional
         sort_type: GsaSortType, optional
         """
-        super().__init__(type=type, sort_direction=sort_direction)
-        self.__property: GsaSearchableRecordProperty | Unset_Type = Unset
+        super().__init__(type_=type_, sort_direction=sort_direction)
+        self._property_: GsaSearchableRecordProperty | Unset_Type = Unset
         self._sort_type: GsaSortType | Unset_Type = Unset
 
-        if _property is not Unset:
-            self._property = _property
+        if property_ is not Unset:
+            self.property_ = property_
         if sort_type is not Unset:
             self.sort_type = sort_type
 
     @property
-    def _property(self) -> "GsaSearchableRecordProperty | Unset_Type":
-        """Gets the _property of this GsaRecordPropertySortCriterion.
+    def property_(self) -> "GsaSearchableRecordProperty | Unset_Type":
+        """Gets the property_ of this GsaRecordPropertySortCriterion.
 
         Returns
         -------
         GsaSearchableRecordProperty | Unset_Type
-            The _property of this GsaRecordPropertySortCriterion.
+            The property_ of this GsaRecordPropertySortCriterion.
         """
-        return self.__property
+        return self._property_
 
-    @_property.setter
-    def _property(self, _property: "GsaSearchableRecordProperty | Unset_Type") -> None:
-        """Sets the _property of this GsaRecordPropertySortCriterion.
+    @property_.setter
+    def property_(self, property_: "GsaSearchableRecordProperty | Unset_Type") -> None:
+        """Sets the property_ of this GsaRecordPropertySortCriterion.
 
         Parameters
         ----------
-        _property: GsaSearchableRecordProperty | Unset_Type
-            The _property of this GsaRecordPropertySortCriterion.
+        property_: GsaSearchableRecordProperty | Unset_Type
+            The property_ of this GsaRecordPropertySortCriterion.
         """
         # Field is not nullable
-        if _property is None:
-            raise ValueError("Invalid value for '_property', must not be 'None'")
-        self.__property = _property
+        if property_ is None:
+            raise ValueError("Invalid value for 'property_', must not be 'None'")
+        self._property_ = property_
 
     @property
     def sort_type(self) -> "GsaSortType | Unset_Type":

@@ -68,14 +68,14 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "constraints": "list[GsaParameterConstraint]",
         "gte": "float",
         "lte": "float",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "constraints": "constraints",
         "gte": "gte",
         "lte": "lte",
@@ -90,7 +90,7 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.MATHSFUNCTIONAL,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.MATHSFUNCTIONAL,
         constraints: "list[GsaParameterConstraint] | None | Unset_Type" = Unset,
         gte: "float | None | Unset_Type" = Unset,
         lte: "float | None | Unset_Type" = Unset,
@@ -99,12 +99,12 @@ class GsaMathsFunctionalDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         constraints: list[GsaParameterConstraint] | None, optional
         gte: float | None, optional
         lte: float | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._gte: float | None | Unset_Type = Unset
         self._lte: float | None | Unset_Type = Unset
         self._constraints: list[GsaParameterConstraint] | None | Unset_Type = Unset

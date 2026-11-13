@@ -63,11 +63,11 @@ class GsaListCriterion(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "str",
+        "type_": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -82,45 +82,45 @@ class GsaListCriterion(ModelBase):
     def __init__(
         self,
         *,
-        type: "str",
+        type_: "str",
     ) -> None:
         """GsaListCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: str
+        type_: str
         """
-        self._type: str
+        self._type_: str
 
-        self.type = type
+        self.type_ = type_
 
     @property
-    def type(self) -> "str":
-        """Gets the type of this GsaListCriterion.
+    def type_(self) -> "str":
+        """Gets the type_ of this GsaListCriterion.
 
         Returns
         -------
         str
-            The type of this GsaListCriterion.
+            The type_ of this GsaListCriterion.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "str") -> None:
-        """Sets the type of this GsaListCriterion.
+    @type_.setter
+    def type_(self, type_: "str") -> None:
+        """Sets the type_ of this GsaListCriterion.
 
         Parameters
         ----------
-        type: str
-            The type of this GsaListCriterion.
+        type_: str
+            The type_ of this GsaListCriterion.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

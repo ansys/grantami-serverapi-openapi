@@ -66,7 +66,7 @@ class GsaDiscreteChartData(GsaChartData):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaChartDataType",
+        "type_": "GsaChartDataType",
         "bubble_axis_value": "GsaDataExportRange",
         "name": "str",
         "order": "int",
@@ -74,7 +74,7 @@ class GsaDiscreteChartData(GsaChartData):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "bubble_axis_value": "bubbleAxisValue",
         "name": "name",
         "order": "order",
@@ -88,7 +88,7 @@ class GsaDiscreteChartData(GsaChartData):
     def __init__(
         self,
         *,
-        type: "GsaChartDataType" = GsaChartDataType.DISCRETE,
+        type_: "GsaChartDataType" = GsaChartDataType.DISCRETE,
         bubble_axis_value: "GsaDataExportRange | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         order: "int | Unset_Type" = Unset,
@@ -98,14 +98,16 @@ class GsaDiscreteChartData(GsaChartData):
 
         Parameters
         ----------
-        type: GsaChartDataType
+        type_: GsaChartDataType
         bubble_axis_value: GsaDataExportRange, optional
         name: str | None, optional
         order: int, optional
         record_version_guid: str, optional
         """
         super().__init__(
-            type=type, bubble_axis_value=bubble_axis_value, record_version_guid=record_version_guid
+            type_=type_,
+            bubble_axis_value=bubble_axis_value,
+            record_version_guid=record_version_guid,
         )
         self._order: int | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset

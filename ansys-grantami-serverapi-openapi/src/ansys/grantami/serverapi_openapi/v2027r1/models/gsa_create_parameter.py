@@ -65,14 +65,14 @@ class GsaCreateParameter(ModelBase):
     swagger_types: dict[str, str] = {
         "default_parameter_value_index": "int",
         "name": "str",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "default_parameter_value_index": "defaultParameterValueIndex",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
     }
 
@@ -92,7 +92,7 @@ class GsaCreateParameter(ModelBase):
         *,
         default_parameter_value_index: "int",
         name: "str",
-        type: "GsaParameterType",
+        type_: "GsaParameterType",
         guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateParameter - a model defined in Swagger
@@ -101,47 +101,47 @@ class GsaCreateParameter(ModelBase):
         ----------
         default_parameter_value_index: int
         name: str
-        type: GsaParameterType
+        type_: GsaParameterType
         guid: str, optional
         """
-        self._type: GsaParameterType
+        self._type_: GsaParameterType
         self._default_parameter_value_index: int
         self._name: str
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         self.default_parameter_value_index = default_parameter_value_index
         self.name = name
         if guid is not Unset:
             self.guid = guid
 
     @property
-    def type(self) -> "GsaParameterType":
-        """Gets the type of this GsaCreateParameter.
+    def type_(self) -> "GsaParameterType":
+        """Gets the type_ of this GsaCreateParameter.
 
         Returns
         -------
         GsaParameterType
-            The type of this GsaCreateParameter.
+            The type_ of this GsaCreateParameter.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterType") -> None:
-        """Sets the type of this GsaCreateParameter.
+    @type_.setter
+    def type_(self, type_: "GsaParameterType") -> None:
+        """Sets the type_ of this GsaCreateParameter.
 
         Parameters
         ----------
-        type: GsaParameterType
-            The type of this GsaCreateParameter.
+        type_: GsaParameterType
+            The type_ of this GsaCreateParameter.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def default_parameter_value_index(self) -> "int":

@@ -69,7 +69,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
     """
     swagger_types: dict[str, str] = {
         "link_datum_type": "GsaLinkAttributeType",
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "indirect_links": "GsaIndirectLinks",
         "inner_criterion": "GsaCriterion",
         "local_criterion": "GsaCriterion",
@@ -84,7 +84,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
 
     attribute_map: dict[str, str] = {
         "link_datum_type": "linkDatumType",
-        "type": "type",
+        "type_": "type",
         "indirect_links": "indirectLinks",
         "inner_criterion": "innerCriterion",
         "local_criterion": "localCriterion",
@@ -111,7 +111,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         self,
         *,
         link_datum_type: "GsaLinkAttributeType",
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.LINK,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.LINK,
         indirect_links: "GsaIndirectLinks | Unset_Type" = Unset,
         inner_criterion: "GsaCriterion | Unset_Type" = Unset,
         local_criterion: "GsaCriterion | Unset_Type" = Unset,
@@ -128,7 +128,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         Parameters
         ----------
         link_datum_type: GsaLinkAttributeType
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         indirect_links: GsaIndirectLinks, optional
         inner_criterion: GsaCriterion, optional
         local_criterion: GsaCriterion, optional
@@ -140,7 +140,7 @@ class GsaLinkDatumCriterion(GsaDatumCriterion):
         target_table_guid: str | None, optional
         target_table_identity: int | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._target_table_identity: int | None | Unset_Type = Unset
         self._target_table_guid: str | None | Unset_Type = Unset
         self._target_database_key: str | None | Unset_Type = Unset

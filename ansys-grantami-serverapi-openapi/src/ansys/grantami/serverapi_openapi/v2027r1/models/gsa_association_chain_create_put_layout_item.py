@@ -72,14 +72,14 @@ class GsaAssociationChainCreatePutLayoutItem(GsaCreatePutLayoutItem):
         "association_chain_links": "list[GsaNewLayoutAssociationChainLink]",
         "association_chain_name": "str",
         "item_type": "GsaNewLayoutItemType",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
         "association_chain_links": "associationChainLinks",
         "association_chain_name": "associationChainName",
         "item_type": "itemType",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -94,7 +94,7 @@ class GsaAssociationChainCreatePutLayoutItem(GsaCreatePutLayoutItem):
         association_chain_links: "list[GsaNewLayoutAssociationChainLink]",
         association_chain_name: "str",
         item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.ASSOCIATIONCHAIN,
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
     ) -> None:
         """GsaAssociationChainCreatePutLayoutItem - a model defined in Swagger
 
@@ -103,9 +103,9 @@ class GsaAssociationChainCreatePutLayoutItem(GsaCreatePutLayoutItem):
         association_chain_links: list[GsaNewLayoutAssociationChainLink]
         association_chain_name: str
         item_type: GsaNewLayoutItemType
-        type: GsaPutType
+        type_: GsaPutType
         """
-        super().__init__(item_type=item_type, type=type)
+        super().__init__(item_type=item_type, type_=type_)
         self._association_chain_name: str
         self._association_chain_links: list[GsaNewLayoutAssociationChainLink]
 

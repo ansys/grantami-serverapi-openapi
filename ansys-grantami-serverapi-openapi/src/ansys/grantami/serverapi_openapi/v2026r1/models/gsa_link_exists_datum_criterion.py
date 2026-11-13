@@ -67,7 +67,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
     """
     swagger_types: dict[str, str] = {
         "target_database_key": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "indirect_links": "GsaIndirectLinks",
         "link_datum_type": "GsaLinkAttributeType",
         "local_rows_behavior": "GsaLocalRowsBehavior",
@@ -80,7 +80,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
 
     attribute_map: dict[str, str] = {
         "target_database_key": "targetDatabaseKey",
-        "type": "type",
+        "type_": "type",
         "indirect_links": "indirectLinks",
         "link_datum_type": "linkDatumType",
         "local_rows_behavior": "localRowsBehavior",
@@ -103,7 +103,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         self,
         *,
         target_database_key: "str",
-        type: "GsaAttributeType" = GsaAttributeType.LINK,
+        type_: "GsaAttributeType" = GsaAttributeType.LINK,
         indirect_links: "GsaIndirectLinks | Unset_Type" = Unset,
         link_datum_type: "GsaLinkAttributeType | Unset_Type" = Unset,
         local_rows_behavior: "GsaLocalRowsBehavior | Unset_Type" = Unset,
@@ -118,7 +118,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         Parameters
         ----------
         target_database_key: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         indirect_links: GsaIndirectLinks, optional
         link_datum_type: GsaLinkAttributeType, optional
         local_rows_behavior: GsaLocalRowsBehavior, optional
@@ -128,7 +128,7 @@ class GsaLinkExistsDatumCriterion(GsaDatumExistsCriterion):
         target_table_guid: str | None, optional
         target_table_identity: int | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._target_table_identity: int | None | Unset_Type = Unset
         self._target_table_guid: str | None | Unset_Type = Unset
         self._target_database_key: str

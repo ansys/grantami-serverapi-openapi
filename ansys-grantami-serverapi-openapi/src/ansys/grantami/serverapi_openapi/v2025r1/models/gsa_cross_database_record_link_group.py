@@ -74,7 +74,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         "link_info": "GsaLinkInfo",
         "name": "str",
         "reverse_name": "str",
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "identity": "int",
         "reverse_display_names": "dict(str, str)",
     }
@@ -86,7 +86,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         "link_info": "linkInfo",
         "name": "name",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "identity": "identity",
         "reverse_display_names": "reverseDisplayNames",
     }
@@ -104,7 +104,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         link_info: "GsaLinkInfo",
         name: "str",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.CROSSDATABASE,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.CROSSDATABASE,
         identity: "int | None | Unset_Type" = Unset,
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
@@ -118,7 +118,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
         link_info: GsaLinkInfo
         name: str
         reverse_name: str
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         identity: int | None, optional
         reverse_display_names: dict[str, str] | None, optional
         """
@@ -128,7 +128,7 @@ class GsaCrossDatabaseRecordLinkGroup(GsaRecordLinkGroup):
             link_info=link_info,
             name=name,
             reverse_name=reverse_name,
-            type=type,
+            type_=type_,
             identity=identity,
             reverse_display_names=reverse_display_names,
         )

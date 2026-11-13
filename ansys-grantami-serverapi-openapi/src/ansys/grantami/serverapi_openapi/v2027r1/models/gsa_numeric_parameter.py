@@ -71,7 +71,7 @@ class GsaNumericParameter(GsaParameter):
         "is_restricted": "bool",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaNumericParameterValue]",
         "unit": "GsaSlimUnit",
     }
@@ -84,7 +84,7 @@ class GsaNumericParameter(GsaParameter):
         "is_restricted": "isRestricted",
         "name": "name",
         "scale_type": "scaleType",
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "unit": "unit",
     }
@@ -108,7 +108,7 @@ class GsaNumericParameter(GsaParameter):
         is_restricted: "bool",
         name: "str",
         scale_type: "GsaParameterScaleType",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "list[GsaNumericParameterValue]",
         unit: "GsaSlimUnit | Unset_Type" = Unset,
     ) -> None:
@@ -123,7 +123,7 @@ class GsaNumericParameter(GsaParameter):
         is_restricted: bool
         name: str
         scale_type: GsaParameterScaleType
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaNumericParameterValue]
         unit: GsaSlimUnit, optional
         """
@@ -132,7 +132,7 @@ class GsaNumericParameter(GsaParameter):
             display_names=display_names,
             guid=guid,
             name=name,
-            type=type,
+            type_=type_,
         )
         self._is_restricted: bool
         self._unit: GsaSlimUnit | Unset_Type = Unset

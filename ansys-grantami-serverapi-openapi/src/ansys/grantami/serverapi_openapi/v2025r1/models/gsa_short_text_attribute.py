@@ -72,7 +72,7 @@ class GsaShortTextAttribute(GsaAttribute):
         "is_unique": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "str",
         "data_rule": "GsaSlimNamedEntity",
@@ -88,7 +88,7 @@ class GsaShortTextAttribute(GsaAttribute):
         "is_unique": "isUnique",
         "name": "name",
         "table": "table",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "data_rule": "dataRule",
@@ -112,7 +112,7 @@ class GsaShortTextAttribute(GsaAttribute):
         is_unique: "bool",
         name: "str",
         table: "GsaSlimEntity",
-        type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
+        type_: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
         about_attribute: "GsaSlimTypedAttribute | Unset_Type" = Unset,
         axis_name: "str | None | Unset_Type" = Unset,
         data_rule: "GsaSlimNamedEntity | Unset_Type" = Unset,
@@ -130,7 +130,7 @@ class GsaShortTextAttribute(GsaAttribute):
         is_unique: bool
         name: str
         table: GsaSlimEntity
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: str | None, optional
         data_rule: GsaSlimNamedEntity, optional
@@ -144,7 +144,7 @@ class GsaShortTextAttribute(GsaAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
             name=name,
             table=table,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             axis_name=axis_name,
             help_path=help_path,

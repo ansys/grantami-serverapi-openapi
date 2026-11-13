@@ -69,7 +69,7 @@ class GsaAttributeAggregation(GsaAggregation):
     """
     swagger_types: dict[str, str] = {
         "attribute_aggregation_type": "GsaAttributeAggregationType",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "count": "int",
@@ -77,7 +77,7 @@ class GsaAttributeAggregation(GsaAggregation):
 
     attribute_map: dict[str, str] = {
         "attribute_aggregation_type": "attributeAggregationType",
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "count": "count",
@@ -98,7 +98,7 @@ class GsaAttributeAggregation(GsaAggregation):
         self,
         *,
         attribute_aggregation_type: "GsaAttributeAggregationType",
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         count: "int | Unset_Type" = Unset,
@@ -108,12 +108,12 @@ class GsaAttributeAggregation(GsaAggregation):
         Parameters
         ----------
         attribute_aggregation_type: GsaAttributeAggregationType
-        type: GsaAggregationType
+        type_: GsaAggregationType
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         count: int, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._attribute_identity: int | None | Unset_Type = Unset
         self._attribute_guid: str | None | Unset_Type = Unset
         self._attribute_aggregation_type: GsaAttributeAggregationType

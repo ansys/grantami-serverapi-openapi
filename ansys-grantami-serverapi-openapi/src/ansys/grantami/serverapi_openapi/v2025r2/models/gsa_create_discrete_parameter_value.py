@@ -69,13 +69,13 @@ class GsaCreateDiscreteParameterValue(GsaCreateParameterValue):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
     }
 
@@ -87,7 +87,7 @@ class GsaCreateDiscreteParameterValue(GsaCreateParameterValue):
         self,
         *,
         name: "str",
-        type: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
+        type_: "GsaParameterValueType" = GsaParameterValueType.DISCRETE,
         guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateDiscreteParameterValue - a model defined in Swagger
@@ -95,10 +95,10 @@ class GsaCreateDiscreteParameterValue(GsaCreateParameterValue):
         Parameters
         ----------
         name: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         guid: str, optional
         """
-        super().__init__(type=type, guid=guid)
+        super().__init__(type_=type_, guid=guid)
         self._name: str
 
         self.name = name

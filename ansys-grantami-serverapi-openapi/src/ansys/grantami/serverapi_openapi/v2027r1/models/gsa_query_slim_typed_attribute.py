@@ -64,14 +64,14 @@ class GsaQuerySlimTypedAttribute(ModelBase):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
     }
 
     attribute_map: dict[str, str] = {
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -86,7 +86,7 @@ class GsaQuerySlimTypedAttribute(ModelBase):
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
-        type: "GsaAttributeType | Unset_Type" = Unset,
+        type_: "GsaAttributeType | Unset_Type" = Unset,
     ) -> None:
         """GsaQuerySlimTypedAttribute - a model defined in Swagger
 
@@ -95,15 +95,15 @@ class GsaQuerySlimTypedAttribute(ModelBase):
         display_names: dict[str, str] | None, optional
         guid: str | None, optional
         name: str | None, optional
-        type: GsaAttributeType, optional
+        type_: GsaAttributeType, optional
         """
-        self._type: GsaAttributeType | Unset_Type = Unset
+        self._type_: GsaAttributeType | Unset_Type = Unset
         self._display_names: dict[str, str] | None | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
 
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if display_names is not Unset:
             self.display_names = display_names
         if name is not Unset:
@@ -112,29 +112,29 @@ class GsaQuerySlimTypedAttribute(ModelBase):
             self.guid = guid
 
     @property
-    def type(self) -> "GsaAttributeType | Unset_Type":
-        """Gets the type of this GsaQuerySlimTypedAttribute.
+    def type_(self) -> "GsaAttributeType | Unset_Type":
+        """Gets the type_ of this GsaQuerySlimTypedAttribute.
 
         Returns
         -------
         GsaAttributeType | Unset_Type
-            The type of this GsaQuerySlimTypedAttribute.
+            The type_ of this GsaQuerySlimTypedAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType | Unset_Type") -> None:
-        """Sets the type of this GsaQuerySlimTypedAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType | Unset_Type") -> None:
+        """Sets the type_ of this GsaQuerySlimTypedAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType | Unset_Type
-            The type of this GsaQuerySlimTypedAttribute.
+        type_: GsaAttributeType | Unset_Type
+            The type_ of this GsaQuerySlimTypedAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        self._type = type
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
+        self._type_ = type_
 
     @property
     def display_names(self) -> "dict[str, str] | None | Unset_Type":

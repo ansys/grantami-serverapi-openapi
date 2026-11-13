@@ -70,7 +70,7 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
     """
     swagger_types: dict[str, str] = {
         "attribute_aggregation_criterion_type": "GsaAttributeAggregationType",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "guid": "str",
         "identity": "int",
         "inner_criterion": "GsaAggregationDatumCriterion",
@@ -79,7 +79,7 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
 
     attribute_map: dict[str, str] = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
         "inner_criterion": "innerCriterion",
@@ -96,7 +96,7 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
         self,
         *,
         attribute_aggregation_criterion_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.VALUE,
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
         inner_criterion: "GsaAggregationDatumCriterion | Unset_Type" = Unset,
@@ -107,7 +107,7 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
         Parameters
         ----------
         attribute_aggregation_criterion_type: GsaAttributeAggregationType
-        type: GsaAggregationType
+        type_: GsaAggregationType
         guid: str | None, optional
         identity: int | None, optional
         inner_criterion: GsaAggregationDatumCriterion, optional
@@ -115,7 +115,7 @@ class GsaAttributeAggregationValueCriterion(GsaAttributeAggregationCriterion):
         """
         super().__init__(
             attribute_aggregation_criterion_type=attribute_aggregation_criterion_type,
-            type=type,
+            type_=type_,
             guid=guid,
             identity=identity,
             is_meta_attribute=is_meta_attribute,

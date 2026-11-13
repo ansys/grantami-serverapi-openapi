@@ -62,12 +62,12 @@ class GsaQueryLayoutSectionsRequest(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "properties": "GsaQueryLayoutSectionProperties",
-        "filter": "GsaQueryLayoutSectionFilter",
+        "filter_": "GsaQueryLayoutSectionFilter",
     }
 
     attribute_map: dict[str, str] = {
         "properties": "properties",
-        "filter": "filter",
+        "filter_": "filter",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -81,21 +81,21 @@ class GsaQueryLayoutSectionsRequest(ModelBase):
         self,
         *,
         properties: "GsaQueryLayoutSectionProperties",
-        filter: "GsaQueryLayoutSectionFilter | Unset_Type" = Unset,
+        filter_: "GsaQueryLayoutSectionFilter | Unset_Type" = Unset,
     ) -> None:
         """GsaQueryLayoutSectionsRequest - a model defined in Swagger
 
         Parameters
         ----------
         properties: GsaQueryLayoutSectionProperties
-        filter: GsaQueryLayoutSectionFilter, optional
+        filter_: GsaQueryLayoutSectionFilter, optional
         """
         self._properties: GsaQueryLayoutSectionProperties
-        self._filter: GsaQueryLayoutSectionFilter | Unset_Type = Unset
+        self._filter_: GsaQueryLayoutSectionFilter | Unset_Type = Unset
 
         self.properties = properties
-        if filter is not Unset:
-            self.filter = filter
+        if filter_ is not Unset:
+            self.filter_ = filter_
 
     @property
     def properties(self) -> "GsaQueryLayoutSectionProperties":
@@ -126,29 +126,29 @@ class GsaQueryLayoutSectionsRequest(ModelBase):
         self._properties = properties
 
     @property
-    def filter(self) -> "GsaQueryLayoutSectionFilter | Unset_Type":
-        """Gets the filter of this GsaQueryLayoutSectionsRequest.
+    def filter_(self) -> "GsaQueryLayoutSectionFilter | Unset_Type":
+        """Gets the filter_ of this GsaQueryLayoutSectionsRequest.
 
         Returns
         -------
         GsaQueryLayoutSectionFilter | Unset_Type
-            The filter of this GsaQueryLayoutSectionsRequest.
+            The filter_ of this GsaQueryLayoutSectionsRequest.
         """
-        return self._filter
+        return self._filter_
 
-    @filter.setter
-    def filter(self, filter: "GsaQueryLayoutSectionFilter | Unset_Type") -> None:
-        """Sets the filter of this GsaQueryLayoutSectionsRequest.
+    @filter_.setter
+    def filter_(self, filter_: "GsaQueryLayoutSectionFilter | Unset_Type") -> None:
+        """Sets the filter_ of this GsaQueryLayoutSectionsRequest.
 
         Parameters
         ----------
-        filter: GsaQueryLayoutSectionFilter | Unset_Type
-            The filter of this GsaQueryLayoutSectionsRequest.
+        filter_: GsaQueryLayoutSectionFilter | Unset_Type
+            The filter_ of this GsaQueryLayoutSectionsRequest.
         """
         # Field is not nullable
-        if filter is None:
-            raise ValueError("Invalid value for 'filter', must not be 'None'")
-        self._filter = filter
+        if filter_ is None:
+            raise ValueError("Invalid value for 'filter_', must not be 'None'")
+        self._filter_ = filter_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

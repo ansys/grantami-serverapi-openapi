@@ -66,7 +66,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "allow_all_compatible_expressions": "bool",
         "allow_anonymous_expressions": "bool",
@@ -86,7 +86,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
         "allow_anonymous_expressions": "allowAnonymousExpressions",
@@ -118,7 +118,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.MATHSFUNCTIONAL,
+        type_: "GsaAttributeType" = GsaAttributeType.MATHSFUNCTIONAL,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         allow_all_compatible_expressions: "bool | Unset_Type" = Unset,
         allow_anonymous_expressions: "bool | Unset_Type" = Unset,
@@ -140,7 +140,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         allow_all_compatible_expressions: bool, optional
         allow_anonymous_expressions: bool, optional
@@ -159,7 +159,7 @@ class GsaUpdateMathsFunctionalAttribute(GsaUpdateAttribute):
         unit: GsaSlimEntity, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             display_names=display_names,

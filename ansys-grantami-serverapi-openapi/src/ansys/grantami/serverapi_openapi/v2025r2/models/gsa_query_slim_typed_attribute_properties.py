@@ -63,13 +63,13 @@ class GsaQuerySlimTypedAttributeProperties(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "bool",
         "name": "bool",
-        "type": "bool",
+        "type_": "bool",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -81,7 +81,7 @@ class GsaQuerySlimTypedAttributeProperties(ModelBase):
         *,
         guid: "bool | None | Unset_Type" = Unset,
         name: "bool | None | Unset_Type" = Unset,
-        type: "bool | None | Unset_Type" = Unset,
+        type_: "bool | None | Unset_Type" = Unset,
     ) -> None:
         """GsaQuerySlimTypedAttributeProperties - a model defined in Swagger
 
@@ -89,40 +89,40 @@ class GsaQuerySlimTypedAttributeProperties(ModelBase):
         ----------
         guid: bool | None, optional
         name: bool | None, optional
-        type: bool | None, optional
+        type_: bool | None, optional
         """
-        self._type: bool | None | Unset_Type = Unset
+        self._type_: bool | None | Unset_Type = Unset
         self._name: bool | None | Unset_Type = Unset
         self._guid: bool | None | Unset_Type = Unset
 
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if name is not Unset:
             self.name = name
         if guid is not Unset:
             self.guid = guid
 
     @property
-    def type(self) -> "bool | None | Unset_Type":
-        """Gets the type of this GsaQuerySlimTypedAttributeProperties.
+    def type_(self) -> "bool | None | Unset_Type":
+        """Gets the type_ of this GsaQuerySlimTypedAttributeProperties.
 
         Returns
         -------
         bool | None | Unset_Type
-            The type of this GsaQuerySlimTypedAttributeProperties.
+            The type_ of this GsaQuerySlimTypedAttributeProperties.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "bool | None | Unset_Type") -> None:
-        """Sets the type of this GsaQuerySlimTypedAttributeProperties.
+    @type_.setter
+    def type_(self, type_: "bool | None | Unset_Type") -> None:
+        """Sets the type_ of this GsaQuerySlimTypedAttributeProperties.
 
         Parameters
         ----------
-        type: bool | None | Unset_Type
-            The type of this GsaQuerySlimTypedAttributeProperties.
+        type_: bool | None | Unset_Type
+            The type_ of this GsaQuerySlimTypedAttributeProperties.
         """
-        self._type = type
+        self._type_ = type_
 
     @property
     def name(self) -> "bool | None | Unset_Type":

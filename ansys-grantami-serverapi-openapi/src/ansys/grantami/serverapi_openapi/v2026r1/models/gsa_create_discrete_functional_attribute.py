@@ -69,7 +69,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "attribute_parameters": "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         "discrete_type": "GsaSlimEntity",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_names": "dict(str, str)",
         "guid": "str",
@@ -82,7 +82,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         "attribute_parameters": "attributeParameters",
         "discrete_type": "discreteType",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "default_threshold_type": "defaultThresholdType",
         "display_names": "displayNames",
         "guid": "guid",
@@ -104,7 +104,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: "list[GsaCreateDiscreteFunctionalAttributeParameter]",
         discrete_type: "GsaSlimEntity",
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
+        type_: "GsaAttributeType" = GsaAttributeType.DISCRETEFUNCTIONAL,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_names: "dict[str, str] | None | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -119,7 +119,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         attribute_parameters: list[GsaCreateDiscreteFunctionalAttributeParameter]
         discrete_type: GsaSlimEntity
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         default_threshold_type: GsaAttributeThresholdType, optional
         display_names: dict[str, str] | None, optional
         guid: str, optional
@@ -129,7 +129,7 @@ class GsaCreateDiscreteFunctionalAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,

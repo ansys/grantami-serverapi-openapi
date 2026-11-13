@@ -63,12 +63,12 @@ class GsaCreateParameterValue(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
         "guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
     }
 
@@ -86,50 +86,50 @@ class GsaCreateParameterValue(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaParameterValueType",
+        type_: "GsaParameterValueType",
         guid: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaCreateParameterValue - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         guid: str, optional
         """
-        self._type: GsaParameterValueType
+        self._type_: GsaParameterValueType
         self._guid: str | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         if guid is not Unset:
             self.guid = guid
 
     @property
-    def type(self) -> "GsaParameterValueType":
-        """Gets the type of this GsaCreateParameterValue.
+    def type_(self) -> "GsaParameterValueType":
+        """Gets the type_ of this GsaCreateParameterValue.
 
         Returns
         -------
         GsaParameterValueType
-            The type of this GsaCreateParameterValue.
+            The type_ of this GsaCreateParameterValue.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterValueType") -> None:
-        """Sets the type of this GsaCreateParameterValue.
+    @type_.setter
+    def type_(self, type_: "GsaParameterValueType") -> None:
+        """Sets the type_ of this GsaCreateParameterValue.
 
         Parameters
         ----------
-        type: GsaParameterValueType
-            The type of this GsaCreateParameterValue.
+        type_: GsaParameterValueType
+            The type_ of this GsaCreateParameterValue.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def guid(self) -> "str | Unset_Type":

@@ -65,7 +65,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
     """
     swagger_types: dict[str, str] = {
         "prefix": "str",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "attribute_guids_to_boost": "list[GsaBoostByGuid]",
         "attribute_identities_to_boost": "list[GsaBoostByIdentity]",
         "attributes": "GsaValueSpecifier",
@@ -76,7 +76,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
 
     attribute_map: dict[str, str] = {
         "prefix": "prefix",
-        "type": "type",
+        "type_": "type",
         "attribute_guids_to_boost": "attributeGuidsToBoost",
         "attribute_identities_to_boost": "attributeIdentitiesToBoost",
         "attributes": "attributes",
@@ -100,7 +100,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         self,
         *,
         prefix: "str",
-        type: "GsaCriterionType" = GsaCriterionType.TEXTPREFIX,
+        type_: "GsaCriterionType" = GsaCriterionType.TEXTPREFIX,
         attribute_guids_to_boost: "list[GsaBoostByGuid] | None | Unset_Type" = Unset,
         attribute_identities_to_boost: "list[GsaBoostByIdentity] | None | Unset_Type" = Unset,
         attributes: "GsaValueSpecifier | Unset_Type" = Unset,
@@ -113,7 +113,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         Parameters
         ----------
         prefix: str
-        type: GsaCriterionType
+        type_: GsaCriterionType
         attribute_guids_to_boost: list[GsaBoostByGuid] | None, optional
         attribute_identities_to_boost: list[GsaBoostByIdentity] | None, optional
         attributes: GsaValueSpecifier, optional
@@ -121,7 +121,7 @@ class GsaFreeTextPrefixCriterion(GsaCriterion):
         column_identities_to_boost: list[GsaBoostByIdentity] | None, optional
         local_columns: GsaValueSpecifier, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._prefix: str
         self._attributes: GsaValueSpecifier | Unset_Type = Unset
         self._local_columns: GsaValueSpecifier | Unset_Type = Unset

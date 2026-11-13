@@ -64,13 +64,13 @@ class GsaRecordAncestorCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "ancestor_identity": "int",
         "direct_parent_only": "bool",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "ancestor_identity": "ancestorIdentity",
         "direct_parent_only": "directParentOnly",
     }
@@ -82,7 +82,7 @@ class GsaRecordAncestorCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTOR,
+        type_: "GsaCriterionType" = GsaCriterionType.RECORDANCESTOR,
         ancestor_identity: "int | None | Unset_Type" = Unset,
         direct_parent_only: "bool | None | Unset_Type" = Unset,
     ) -> None:
@@ -90,11 +90,11 @@ class GsaRecordAncestorCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         ancestor_identity: int | None, optional
         direct_parent_only: bool | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._ancestor_identity: int | None | Unset_Type = Unset
         self._direct_parent_only: bool | None | Unset_Type = Unset
 

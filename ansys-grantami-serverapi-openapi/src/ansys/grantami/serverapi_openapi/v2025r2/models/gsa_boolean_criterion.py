@@ -64,17 +64,17 @@ class GsaBooleanCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
-        "_none": "list[GsaCriterion]",
-        "all": "list[GsaCriterion]",
-        "any": "list[GsaCriterion]",
+        "type_": "GsaCriterionType",
+        "all_": "list[GsaCriterion]",
+        "any_": "list[GsaCriterion]",
+        "none_": "list[GsaCriterion]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "_none": "none",
-        "all": "all",
-        "any": "any",
+        "type_": "type",
+        "all_": "all",
+        "any_": "any",
+        "none_": "none",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -88,103 +88,103 @@ class GsaBooleanCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.BOOLEAN,
-        _none: "list[GsaCriterion] | None | Unset_Type" = Unset,
-        all: "list[GsaCriterion] | None | Unset_Type" = Unset,
-        any: "list[GsaCriterion] | None | Unset_Type" = Unset,
+        type_: "GsaCriterionType" = GsaCriterionType.BOOLEAN,
+        all_: "list[GsaCriterion] | None | Unset_Type" = Unset,
+        any_: "list[GsaCriterion] | None | Unset_Type" = Unset,
+        none_: "list[GsaCriterion] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaBooleanCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaCriterionType
-        _none: list[GsaCriterion] | None, optional
-        all: list[GsaCriterion] | None, optional
-        any: list[GsaCriterion] | None, optional
+        type_: GsaCriterionType
+        all_: list[GsaCriterion] | None, optional
+        any_: list[GsaCriterion] | None, optional
+        none_: list[GsaCriterion] | None, optional
         """
-        super().__init__(type=type)
-        self._all: list[GsaCriterion] | None | Unset_Type = Unset
-        self._any: list[GsaCriterion] | None | Unset_Type = Unset
-        self.__none: list[GsaCriterion] | None | Unset_Type = Unset
+        super().__init__(type_=type_)
+        self._all_: list[GsaCriterion] | None | Unset_Type = Unset
+        self._any_: list[GsaCriterion] | None | Unset_Type = Unset
+        self._none_: list[GsaCriterion] | None | Unset_Type = Unset
 
-        if all is not Unset:
-            self.all = all
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if all_ is not Unset:
+            self.all_ = all_
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
 
     @property
-    def all(self) -> "list[GsaCriterion] | None | Unset_Type":
-        """Gets the all of this GsaBooleanCriterion.
+    def all_(self) -> "list[GsaCriterion] | None | Unset_Type":
+        """Gets the all_ of this GsaBooleanCriterion.
         Only records that match all of these criteria are returned.
 
         Returns
         -------
         list[GsaCriterion] | None | Unset_Type
-            The all of this GsaBooleanCriterion.
+            The all_ of this GsaBooleanCriterion.
         """
-        return self._all
+        return self._all_
 
-    @all.setter
-    def all(self, all: "list[GsaCriterion] | None | Unset_Type") -> None:
-        """Sets the all of this GsaBooleanCriterion.
+    @all_.setter
+    def all_(self, all_: "list[GsaCriterion] | None | Unset_Type") -> None:
+        """Sets the all_ of this GsaBooleanCriterion.
         Only records that match all of these criteria are returned.
 
         Parameters
         ----------
-        all: list[GsaCriterion] | None | Unset_Type
-            The all of this GsaBooleanCriterion.
+        all_: list[GsaCriterion] | None | Unset_Type
+            The all_ of this GsaBooleanCriterion.
         """
-        self._all = all
+        self._all_ = all_
 
     @property
-    def any(self) -> "list[GsaCriterion] | None | Unset_Type":
-        """Gets the any of this GsaBooleanCriterion.
+    def any_(self) -> "list[GsaCriterion] | None | Unset_Type":
+        """Gets the any_ of this GsaBooleanCriterion.
         Only results that match any of these criteria are returned.
 
         Returns
         -------
         list[GsaCriterion] | None | Unset_Type
-            The any of this GsaBooleanCriterion.
+            The any_ of this GsaBooleanCriterion.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[GsaCriterion] | None | Unset_Type") -> None:
-        """Sets the any of this GsaBooleanCriterion.
+    @any_.setter
+    def any_(self, any_: "list[GsaCriterion] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaBooleanCriterion.
         Only results that match any of these criteria are returned.
 
         Parameters
         ----------
-        any: list[GsaCriterion] | None | Unset_Type
-            The any of this GsaBooleanCriterion.
+        any_: list[GsaCriterion] | None | Unset_Type
+            The any_ of this GsaBooleanCriterion.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[GsaCriterion] | None | Unset_Type":
-        """Gets the _none of this GsaBooleanCriterion.
+    def none_(self) -> "list[GsaCriterion] | None | Unset_Type":
+        """Gets the none_ of this GsaBooleanCriterion.
         Only results that match none of these criteria are returned.
 
         Returns
         -------
         list[GsaCriterion] | None | Unset_Type
-            The _none of this GsaBooleanCriterion.
+            The none_ of this GsaBooleanCriterion.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[GsaCriterion] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaBooleanCriterion.
+    @none_.setter
+    def none_(self, none_: "list[GsaCriterion] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaBooleanCriterion.
         Only results that match none of these criteria are returned.
 
         Parameters
         ----------
-        _none: list[GsaCriterion] | None | Unset_Type
-            The _none of this GsaBooleanCriterion.
+        none_: list[GsaCriterion] | None | Unset_Type
+            The none_ of this GsaBooleanCriterion.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

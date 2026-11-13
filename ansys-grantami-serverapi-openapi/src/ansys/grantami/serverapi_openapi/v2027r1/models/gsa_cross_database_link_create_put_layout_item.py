@@ -73,7 +73,7 @@ class GsaCrossDatabaseLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         "link_group_guid": "str",
         "source_database_guid": "str",
         "source_table_guid": "str",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
@@ -81,7 +81,7 @@ class GsaCrossDatabaseLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         "link_group_guid": "linkGroupGuid",
         "source_database_guid": "sourceDatabaseGuid",
         "source_table_guid": "sourceTableGuid",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {}
@@ -95,7 +95,7 @@ class GsaCrossDatabaseLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         link_group_guid: "str",
         source_database_guid: "str",
         source_table_guid: "str",
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
     ) -> None:
         """GsaCrossDatabaseLinkCreatePutLayoutItem - a model defined in Swagger
 
@@ -105,9 +105,9 @@ class GsaCrossDatabaseLinkCreatePutLayoutItem(GsaCreatePutLayoutItem):
         link_group_guid: str
         source_database_guid: str
         source_table_guid: str
-        type: GsaPutType
+        type_: GsaPutType
         """
-        super().__init__(item_type=item_type, type=type)
+        super().__init__(item_type=item_type, type_=type_)
         self._source_database_guid: str
         self._source_table_guid: str
         self._link_group_guid: str

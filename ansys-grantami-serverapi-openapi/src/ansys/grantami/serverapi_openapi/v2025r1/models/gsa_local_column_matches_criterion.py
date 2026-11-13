@@ -71,7 +71,7 @@ class GsaLocalColumnMatchesCriterion(GsaLocalColumnCriterion):
     swagger_types: dict[str, str] = {
         "inner_criterion": "GsaDatumCriterion",
         "local_column_criterion_type": "GsaLocalColumnCriterionType",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "guid": "str",
         "identity": "int",
     }
@@ -79,7 +79,7 @@ class GsaLocalColumnMatchesCriterion(GsaLocalColumnCriterion):
     attribute_map: dict[str, str] = {
         "inner_criterion": "innerCriterion",
         "local_column_criterion_type": "localColumnCriterionType",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
     }
@@ -95,7 +95,7 @@ class GsaLocalColumnMatchesCriterion(GsaLocalColumnCriterion):
         *,
         inner_criterion: "GsaDatumCriterion",
         local_column_criterion_type: "GsaLocalColumnCriterionType" = GsaLocalColumnCriterionType.MATCHES,
-        type: "GsaCriterionType" = GsaCriterionType.LOCALCOLUMN,
+        type_: "GsaCriterionType" = GsaCriterionType.LOCALCOLUMN,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
     ) -> None:
@@ -105,13 +105,13 @@ class GsaLocalColumnMatchesCriterion(GsaLocalColumnCriterion):
         ----------
         inner_criterion: GsaDatumCriterion
         local_column_criterion_type: GsaLocalColumnCriterionType
-        type: GsaCriterionType
+        type_: GsaCriterionType
         guid: str | None, optional
         identity: int | None, optional
         """
         super().__init__(
             local_column_criterion_type=local_column_criterion_type,
-            type=type,
+            type_=type_,
             guid=guid,
             identity=identity,
         )

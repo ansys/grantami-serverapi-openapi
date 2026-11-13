@@ -68,14 +68,14 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "any_guids": "list[str]",
         "any_identities": "list[int]",
         "constraints": "list[GsaParameterConstraint]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "any_guids": "anyGuids",
         "any_identities": "anyIdentities",
         "constraints": "constraints",
@@ -90,7 +90,7 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEFUNCTIONALVALUES,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEFUNCTIONALVALUES,
         any_guids: "list[str] | None | Unset_Type" = Unset,
         any_identities: "list[int] | None | Unset_Type" = Unset,
         constraints: "list[GsaParameterConstraint] | None | Unset_Type" = Unset,
@@ -99,12 +99,12 @@ class GsaDiscreteFunctionalValuesDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         any_guids: list[str] | None, optional
         any_identities: list[int] | None, optional
         constraints: list[GsaParameterConstraint] | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._any_identities: list[int] | None | Unset_Type = Unset
         self._any_guids: list[str] | None | Unset_Type = Unset
         self._constraints: list[GsaParameterConstraint] | None | Unset_Type = Unset

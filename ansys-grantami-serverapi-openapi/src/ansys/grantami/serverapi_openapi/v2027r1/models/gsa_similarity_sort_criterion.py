@@ -68,12 +68,12 @@ class GsaSimilaritySortCriterion(GsaSortCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaSortCriterionType",
+        "type_": "GsaSortCriterionType",
         "sort_direction": "GsaSortDirection",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "sort_direction": "sortDirection",
     }
 
@@ -84,17 +84,17 @@ class GsaSimilaritySortCriterion(GsaSortCriterion):
     def __init__(
         self,
         *,
-        type: "GsaSortCriterionType" = GsaSortCriterionType.SIMILARITY,
+        type_: "GsaSortCriterionType" = GsaSortCriterionType.SIMILARITY,
         sort_direction: "GsaSortDirection | Unset_Type" = Unset,
     ) -> None:
         """GsaSimilaritySortCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaSortCriterionType
+        type_: GsaSortCriterionType
         sort_direction: GsaSortDirection, optional
         """
-        super().__init__(type=type, sort_direction=sort_direction)
+        super().__init__(type_=type_, sort_direction=sort_direction)
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

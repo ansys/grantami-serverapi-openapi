@@ -67,13 +67,13 @@ class GsaUpdatePutDiscreteValue(GsaPutDiscreteValue):
     """
     swagger_types: dict[str, str] = {
         "guid": "str",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
         "name": "str",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
-        "type": "type",
+        "type_": "type",
         "name": "name",
     }
 
@@ -85,7 +85,7 @@ class GsaUpdatePutDiscreteValue(GsaPutDiscreteValue):
         self,
         *,
         guid: "str",
-        type: "GsaPutType" = GsaPutType.UPDATE,
+        type_: "GsaPutType" = GsaPutType.UPDATE,
         name: "str | Unset_Type" = Unset,
     ) -> None:
         """GsaUpdatePutDiscreteValue - a model defined in Swagger
@@ -93,10 +93,10 @@ class GsaUpdatePutDiscreteValue(GsaPutDiscreteValue):
         Parameters
         ----------
         guid: str
-        type: GsaPutType
+        type_: GsaPutType
         name: str, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._guid: str
         self._name: str | Unset_Type = Unset
 

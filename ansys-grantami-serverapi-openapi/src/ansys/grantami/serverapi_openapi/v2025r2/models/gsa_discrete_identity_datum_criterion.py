@@ -68,12 +68,12 @@ class GsaDiscreteIdentityDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "value": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -84,17 +84,17 @@ class GsaDiscreteIdentityDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEIDENTITY,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETEIDENTITY,
         value: "int",
     ) -> None:
         """GsaDiscreteIdentityDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         value: int
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: int
 
         self.value = value

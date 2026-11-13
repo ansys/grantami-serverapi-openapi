@@ -67,14 +67,14 @@ class GsaUpdatePutPermissionCategory(GsaPutPermissionCategory):
     """
     swagger_types: dict[str, str] = {
         "guid": "str",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
         "name": "str",
         "permissions": "list[GsaPutPermission]",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
-        "type": "type",
+        "type_": "type",
         "name": "name",
         "permissions": "permissions",
     }
@@ -89,7 +89,7 @@ class GsaUpdatePutPermissionCategory(GsaPutPermissionCategory):
         self,
         *,
         guid: "str",
-        type: "GsaPutType" = GsaPutType.UPDATE,
+        type_: "GsaPutType" = GsaPutType.UPDATE,
         name: "str | Unset_Type" = Unset,
         permissions: "list[GsaPutPermission] | Unset_Type" = Unset,
     ) -> None:
@@ -98,11 +98,11 @@ class GsaUpdatePutPermissionCategory(GsaPutPermissionCategory):
         Parameters
         ----------
         guid: str
-        type: GsaPutType
+        type_: GsaPutType
         name: str, optional
         permissions: list[GsaPutPermission], optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._guid: str
         self._name: str | Unset_Type = Unset
         self._permissions: list[GsaPutPermission] | Unset_Type = Unset

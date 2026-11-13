@@ -68,12 +68,12 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "local_aggregation_criteria": "list[GsaLocalColumnAggregationCriterion]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "local_aggregation_criteria": "localAggregationCriteria",
     }
 
@@ -86,17 +86,17 @@ class GsaLinkAggregationDatumCriterion(GsaAggregationDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.LINK,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.LINK,
         local_aggregation_criteria: "list[GsaLocalColumnAggregationCriterion] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaLinkAggregationDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         local_aggregation_criteria: list[GsaLocalColumnAggregationCriterion] | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._local_aggregation_criteria: (
             list[GsaLocalColumnAggregationCriterion] | None | Unset_Type
         ) = Unset

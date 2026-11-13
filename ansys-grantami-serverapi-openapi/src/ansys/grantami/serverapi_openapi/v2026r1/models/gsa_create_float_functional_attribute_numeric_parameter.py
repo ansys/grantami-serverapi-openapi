@@ -67,7 +67,7 @@ class GsaCreateFloatFunctionalAttributeNumericParameter(GsaCreateFloatFunctional
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaSlimEntity",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_value": "float",
         "interpolation_method": "GsaAttributeInterpolationMethod",
         "scale_type": "GsaAttributeScaleType",
@@ -75,7 +75,7 @@ class GsaCreateFloatFunctionalAttributeNumericParameter(GsaCreateFloatFunctional
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "default_value": "defaultValue",
         "interpolation_method": "interpolationMethod",
         "scale_type": "scaleType",
@@ -92,7 +92,7 @@ class GsaCreateFloatFunctionalAttributeNumericParameter(GsaCreateFloatFunctional
         self,
         *,
         parameter: "GsaSlimEntity",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_value: "float | None | Unset_Type" = Unset,
         interpolation_method: "GsaAttributeInterpolationMethod | Unset_Type" = Unset,
         scale_type: "GsaAttributeScaleType | Unset_Type" = Unset,
@@ -102,12 +102,12 @@ class GsaCreateFloatFunctionalAttributeNumericParameter(GsaCreateFloatFunctional
         Parameters
         ----------
         parameter: GsaSlimEntity
-        type: GsaParameterType
+        type_: GsaParameterType
         default_value: float | None, optional
         interpolation_method: GsaAttributeInterpolationMethod, optional
         scale_type: GsaAttributeScaleType, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._default_value: float | None | Unset_Type = Unset
         self._interpolation_method: GsaAttributeInterpolationMethod | Unset_Type = Unset
         self._scale_type: GsaAttributeScaleType | Unset_Type = Unset

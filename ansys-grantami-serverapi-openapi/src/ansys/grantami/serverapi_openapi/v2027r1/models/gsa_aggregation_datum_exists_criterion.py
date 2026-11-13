@@ -61,11 +61,11 @@ class GsaAggregationDatumExistsCriterion(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -77,43 +77,43 @@ class GsaAggregationDatumExistsCriterion(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType | Unset_Type" = Unset,
+        type_: "GsaAttributeType | Unset_Type" = Unset,
     ) -> None:
         """GsaAggregationDatumExistsCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaAttributeType, optional
+        type_: GsaAttributeType, optional
         """
-        self._type: GsaAttributeType | Unset_Type = Unset
+        self._type_: GsaAttributeType | Unset_Type = Unset
 
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
 
     @property
-    def type(self) -> "GsaAttributeType | Unset_Type":
-        """Gets the type of this GsaAggregationDatumExistsCriterion.
+    def type_(self) -> "GsaAttributeType | Unset_Type":
+        """Gets the type_ of this GsaAggregationDatumExistsCriterion.
 
         Returns
         -------
         GsaAttributeType | Unset_Type
-            The type of this GsaAggregationDatumExistsCriterion.
+            The type_ of this GsaAggregationDatumExistsCriterion.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType | Unset_Type") -> None:
-        """Sets the type of this GsaAggregationDatumExistsCriterion.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType | Unset_Type") -> None:
+        """Sets the type_ of this GsaAggregationDatumExistsCriterion.
 
         Parameters
         ----------
-        type: GsaAttributeType | Unset_Type
-            The type of this GsaAggregationDatumExistsCriterion.
+        type_: GsaAttributeType | Unset_Type
+            The type_ of this GsaAggregationDatumExistsCriterion.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        self._type = type
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

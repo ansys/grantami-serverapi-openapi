@@ -67,12 +67,12 @@ class GsaCreatePutLayoutItem(GsaPutLayoutItem):
     """
     swagger_types: dict[str, str] = {
         "item": "GsaNewLayoutItem",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
         "item": "item",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -85,16 +85,16 @@ class GsaCreatePutLayoutItem(GsaPutLayoutItem):
         self,
         *,
         item: "GsaNewLayoutItem",
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
     ) -> None:
         """GsaCreatePutLayoutItem - a model defined in Swagger
 
         Parameters
         ----------
         item: GsaNewLayoutItem
-        type: GsaPutType
+        type_: GsaPutType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._item: GsaNewLayoutItem
 
         self.item = item

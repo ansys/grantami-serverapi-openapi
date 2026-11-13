@@ -64,7 +64,7 @@ class GsaSlimParameterWithHelpPath(ModelBase):
         "display_names": "dict(str, str)",
         "guid": "str",
         "name": "str",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "help_path": "str",
     }
 
@@ -72,7 +72,7 @@ class GsaSlimParameterWithHelpPath(ModelBase):
         "display_names": "displayNames",
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "help_path": "helpPath",
     }
 
@@ -88,7 +88,7 @@ class GsaSlimParameterWithHelpPath(ModelBase):
         display_names: "dict[str, str]",
         guid: "str",
         name: "str",
-        type: "GsaParameterType",
+        type_: "GsaParameterType",
         help_path: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaSlimParameterWithHelpPath - a model defined in Swagger
@@ -98,18 +98,18 @@ class GsaSlimParameterWithHelpPath(ModelBase):
         display_names: dict[str, str]
         guid: str
         name: str
-        type: GsaParameterType
+        type_: GsaParameterType
         help_path: str | None, optional
         """
         self._help_path: str | None | Unset_Type = Unset
-        self._type: GsaParameterType
+        self._type_: GsaParameterType
         self._display_names: dict[str, str]
         self._name: str
         self._guid: str
 
         if help_path is not Unset:
             self.help_path = help_path
-        self.type = type
+        self.type_ = type_
         self.display_names = display_names
         self.name = name
         self.guid = guid
@@ -137,32 +137,32 @@ class GsaSlimParameterWithHelpPath(ModelBase):
         self._help_path = help_path
 
     @property
-    def type(self) -> "GsaParameterType":
-        """Gets the type of this GsaSlimParameterWithHelpPath.
+    def type_(self) -> "GsaParameterType":
+        """Gets the type_ of this GsaSlimParameterWithHelpPath.
 
         Returns
         -------
         GsaParameterType
-            The type of this GsaSlimParameterWithHelpPath.
+            The type_ of this GsaSlimParameterWithHelpPath.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterType") -> None:
-        """Sets the type of this GsaSlimParameterWithHelpPath.
+    @type_.setter
+    def type_(self, type_: "GsaParameterType") -> None:
+        """Sets the type_ of this GsaSlimParameterWithHelpPath.
 
         Parameters
         ----------
-        type: GsaParameterType
-            The type of this GsaSlimParameterWithHelpPath.
+        type_: GsaParameterType
+            The type_ of this GsaSlimParameterWithHelpPath.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def display_names(self) -> "dict[str, str]":

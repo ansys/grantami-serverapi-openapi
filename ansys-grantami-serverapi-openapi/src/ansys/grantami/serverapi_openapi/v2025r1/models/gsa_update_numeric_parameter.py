@@ -66,7 +66,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_parameter_value_guid": "str",
         "guid": "str",
         "help_path": "str",
@@ -77,7 +77,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "guid": "guid",
         "help_path": "helpPath",
@@ -98,7 +98,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     def __init__(
         self,
         *,
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -111,7 +111,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
 
         Parameters
         ----------
-        type: GsaParameterType
+        type_: GsaParameterType
         default_parameter_value_guid: str, optional
         guid: str, optional
         help_path: str | None, optional
@@ -121,7 +121,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         unit: GsaSlimEntity, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             default_parameter_value_guid=default_parameter_value_guid,
             guid=guid,
             help_path=help_path,

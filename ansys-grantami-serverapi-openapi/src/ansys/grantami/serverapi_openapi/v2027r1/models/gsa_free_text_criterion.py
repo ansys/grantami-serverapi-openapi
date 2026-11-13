@@ -64,7 +64,7 @@ class GsaFreeTextCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "attribute_guids_to_boost": "list[GsaBoostByGuid]",
         "attribute_identities_to_boost": "list[GsaBoostByIdentity]",
         "attributes": "GsaValueSpecifier",
@@ -75,7 +75,7 @@ class GsaFreeTextCriterion(GsaCriterion):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "attribute_guids_to_boost": "attributeGuidsToBoost",
         "attribute_identities_to_boost": "attributeIdentitiesToBoost",
         "attributes": "attributes",
@@ -99,7 +99,7 @@ class GsaFreeTextCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.TEXT,
+        type_: "GsaCriterionType" = GsaCriterionType.TEXT,
         attribute_guids_to_boost: "list[GsaBoostByGuid] | None | Unset_Type" = Unset,
         attribute_identities_to_boost: "list[GsaBoostByIdentity] | None | Unset_Type" = Unset,
         attributes: "GsaValueSpecifier | Unset_Type" = Unset,
@@ -112,7 +112,7 @@ class GsaFreeTextCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         attribute_guids_to_boost: list[GsaBoostByGuid] | None, optional
         attribute_identities_to_boost: list[GsaBoostByIdentity] | None, optional
         attributes: GsaValueSpecifier, optional
@@ -121,7 +121,7 @@ class GsaFreeTextCriterion(GsaCriterion):
         local_columns: GsaValueSpecifier, optional
         value: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: str | None | Unset_Type = Unset
         self._attributes: GsaValueSpecifier | Unset_Type = Unset
         self._local_columns: GsaValueSpecifier | Unset_Type = Unset

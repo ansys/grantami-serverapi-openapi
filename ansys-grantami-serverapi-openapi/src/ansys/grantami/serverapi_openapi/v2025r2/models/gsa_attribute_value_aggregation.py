@@ -70,7 +70,7 @@ class GsaAttributeValueAggregation(GsaAttributeAggregation):
     """
     swagger_types: dict[str, str] = {
         "attribute_aggregation_type": "GsaAttributeAggregationType",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "aggregation_datum": "GsaAggregationDatum",
         "attribute_guid": "str",
         "attribute_identity": "int",
@@ -79,7 +79,7 @@ class GsaAttributeValueAggregation(GsaAttributeAggregation):
 
     attribute_map: dict[str, str] = {
         "attribute_aggregation_type": "attributeAggregationType",
-        "type": "type",
+        "type_": "type",
         "aggregation_datum": "aggregationDatum",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
@@ -96,7 +96,7 @@ class GsaAttributeValueAggregation(GsaAttributeAggregation):
         self,
         *,
         attribute_aggregation_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.VALUE,
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         aggregation_datum: "GsaAggregationDatum | Unset_Type" = Unset,
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
@@ -107,7 +107,7 @@ class GsaAttributeValueAggregation(GsaAttributeAggregation):
         Parameters
         ----------
         attribute_aggregation_type: GsaAttributeAggregationType
-        type: GsaAggregationType
+        type_: GsaAggregationType
         aggregation_datum: GsaAggregationDatum, optional
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
@@ -115,7 +115,7 @@ class GsaAttributeValueAggregation(GsaAttributeAggregation):
         """
         super().__init__(
             attribute_aggregation_type=attribute_aggregation_type,
-            type=type,
+            type_=type_,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             count=count,

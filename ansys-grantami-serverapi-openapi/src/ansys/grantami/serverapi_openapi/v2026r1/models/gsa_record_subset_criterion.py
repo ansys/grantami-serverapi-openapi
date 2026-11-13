@@ -64,13 +64,13 @@ class GsaRecordSubsetCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "subset_guid": "str",
         "subset_identity": "int",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "subset_guid": "subsetGuid",
         "subset_identity": "subsetIdentity",
     }
@@ -82,7 +82,7 @@ class GsaRecordSubsetCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.SUBSET,
+        type_: "GsaCriterionType" = GsaCriterionType.SUBSET,
         subset_guid: "str | None | Unset_Type" = Unset,
         subset_identity: "int | None | Unset_Type" = Unset,
     ) -> None:
@@ -90,11 +90,11 @@ class GsaRecordSubsetCriterion(GsaCriterion):
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         subset_guid: str | None, optional
         subset_identity: int | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._subset_identity: int | None | Unset_Type = Unset
         self._subset_guid: str | None | Unset_Type = Unset
 

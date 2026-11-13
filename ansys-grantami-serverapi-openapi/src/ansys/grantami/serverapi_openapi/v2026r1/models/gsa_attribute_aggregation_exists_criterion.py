@@ -71,7 +71,7 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
     swagger_types: dict[str, str] = {
         "attribute_aggregation_criterion_type": "GsaAttributeAggregationType",
         "inner_criterion": "GsaAggregationDatumExistsCriterion",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "guid": "str",
         "identity": "int",
         "is_meta_attribute": "bool",
@@ -80,7 +80,7 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
     attribute_map: dict[str, str] = {
         "attribute_aggregation_criterion_type": "attributeAggregationCriterionType",
         "inner_criterion": "innerCriterion",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
         "is_meta_attribute": "isMetaAttribute",
@@ -97,7 +97,7 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
         *,
         attribute_aggregation_criterion_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.EXISTS,
         inner_criterion: "GsaAggregationDatumExistsCriterion",
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
         is_meta_attribute: "bool | Unset_Type" = Unset,
@@ -108,14 +108,14 @@ class GsaAttributeAggregationExistsCriterion(GsaAttributeAggregationCriterion):
         ----------
         attribute_aggregation_criterion_type: GsaAttributeAggregationType
         inner_criterion: GsaAggregationDatumExistsCriterion
-        type: GsaAggregationType
+        type_: GsaAggregationType
         guid: str | None, optional
         identity: int | None, optional
         is_meta_attribute: bool, optional
         """
         super().__init__(
             attribute_aggregation_criterion_type=attribute_aggregation_criterion_type,
-            type=type,
+            type_=type_,
             guid=guid,
             identity=identity,
             is_meta_attribute=is_meta_attribute,

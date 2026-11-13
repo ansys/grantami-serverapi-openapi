@@ -71,7 +71,7 @@ class GsaAttributeCreatePutLayoutItem(GsaCreatePutLayoutItem):
     swagger_types: dict[str, str] = {
         "attribute_guid": "str",
         "item_type": "GsaNewLayoutItemType",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
         "meta_attributes": "list[GsaNewLayoutAttributeItem]",
         "read_only": "bool",
         "required": "bool",
@@ -81,7 +81,7 @@ class GsaAttributeCreatePutLayoutItem(GsaCreatePutLayoutItem):
     attribute_map: dict[str, str] = {
         "attribute_guid": "attributeGuid",
         "item_type": "itemType",
-        "type": "type",
+        "type_": "type",
         "meta_attributes": "metaAttributes",
         "read_only": "readOnly",
         "required": "required",
@@ -99,7 +99,7 @@ class GsaAttributeCreatePutLayoutItem(GsaCreatePutLayoutItem):
         *,
         attribute_guid: "str",
         item_type: "GsaNewLayoutItemType" = GsaNewLayoutItemType.ATTRIBUTE,
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
         meta_attributes: "list[GsaNewLayoutAttributeItem] | None | Unset_Type" = Unset,
         read_only: "bool | Unset_Type" = Unset,
         required: "bool | Unset_Type" = Unset,
@@ -111,13 +111,13 @@ class GsaAttributeCreatePutLayoutItem(GsaCreatePutLayoutItem):
         ----------
         attribute_guid: str
         item_type: GsaNewLayoutItemType
-        type: GsaPutType
+        type_: GsaPutType
         meta_attributes: list[GsaNewLayoutAttributeItem] | None, optional
         read_only: bool, optional
         required: bool, optional
         tabular_column_guids: list[str] | None, optional
         """
-        super().__init__(item_type=item_type, type=type)
+        super().__init__(item_type=item_type, type_=type_)
         self._attribute_guid: str
         self._required: bool | Unset_Type = Unset
         self._read_only: bool | Unset_Type = Unset

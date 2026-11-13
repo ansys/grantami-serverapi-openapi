@@ -63,13 +63,13 @@ class GsaChartData(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaChartDataType",
+        "type_": "GsaChartDataType",
         "bubble_axis_value": "GsaDataExportRange",
         "record_version_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "bubble_axis_value": "bubbleAxisValue",
         "record_version_guid": "recordVersionGuid",
     }
@@ -92,7 +92,7 @@ class GsaChartData(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaChartDataType",
+        type_: "GsaChartDataType",
         bubble_axis_value: "GsaDataExportRange | Unset_Type" = Unset,
         record_version_guid: "str | Unset_Type" = Unset,
     ) -> None:
@@ -100,47 +100,47 @@ class GsaChartData(ModelBase):
 
         Parameters
         ----------
-        type: GsaChartDataType
+        type_: GsaChartDataType
         bubble_axis_value: GsaDataExportRange, optional
         record_version_guid: str, optional
         """
-        self._type: GsaChartDataType
+        self._type_: GsaChartDataType
         self._record_version_guid: str | Unset_Type = Unset
         self._bubble_axis_value: GsaDataExportRange | Unset_Type = Unset
 
-        self.type = type
+        self.type_ = type_
         if record_version_guid is not Unset:
             self.record_version_guid = record_version_guid
         if bubble_axis_value is not Unset:
             self.bubble_axis_value = bubble_axis_value
 
     @property
-    def type(self) -> "GsaChartDataType":
-        """Gets the type of this GsaChartData.
+    def type_(self) -> "GsaChartDataType":
+        """Gets the type_ of this GsaChartData.
 
         Returns
         -------
         GsaChartDataType
-            The type of this GsaChartData.
+            The type_ of this GsaChartData.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaChartDataType") -> None:
-        """Sets the type of this GsaChartData.
+    @type_.setter
+    def type_(self, type_: "GsaChartDataType") -> None:
+        """Sets the type_ of this GsaChartData.
 
         Parameters
         ----------
-        type: GsaChartDataType
-            The type of this GsaChartData.
+        type_: GsaChartDataType
+            The type_ of this GsaChartData.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def record_version_guid(self) -> "str | Unset_Type":

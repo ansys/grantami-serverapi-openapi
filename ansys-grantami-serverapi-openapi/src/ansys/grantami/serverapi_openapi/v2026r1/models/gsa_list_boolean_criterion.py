@@ -65,13 +65,13 @@ class GsaListBooleanCriterion(GsaListCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "str",
+        "type_": "str",
         "match_all": "list[GsaListCriterion]",
         "match_any": "list[GsaListCriterion]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "match_all": "matchAll",
         "match_any": "matchAny",
     }
@@ -86,7 +86,7 @@ class GsaListBooleanCriterion(GsaListCriterion):
     def __init__(
         self,
         *,
-        type: "str" = "listBoolean",
+        type_: "str" = "listBoolean",
         match_all: "list[GsaListCriterion] | None | Unset_Type" = Unset,
         match_any: "list[GsaListCriterion] | None | Unset_Type" = Unset,
     ) -> None:
@@ -94,11 +94,11 @@ class GsaListBooleanCriterion(GsaListCriterion):
 
         Parameters
         ----------
-        type: str
+        type_: str
         match_all: list[GsaListCriterion] | None, optional
         match_any: list[GsaListCriterion] | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._match_any: list[GsaListCriterion] | None | Unset_Type = Unset
         self._match_all: list[GsaListCriterion] | None | Unset_Type = Unset
 

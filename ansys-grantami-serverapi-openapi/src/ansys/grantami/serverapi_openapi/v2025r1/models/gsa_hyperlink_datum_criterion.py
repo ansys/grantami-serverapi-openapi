@@ -68,12 +68,12 @@ class GsaHyperlinkDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "value": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
     }
 
@@ -84,17 +84,17 @@ class GsaHyperlinkDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.HYPERLINK,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.HYPERLINK,
         value: "str",
     ) -> None:
         """GsaHyperlinkDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         value: str
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: str
 
         self.value = value

@@ -71,7 +71,7 @@ class GsaAttribute(ModelBase):
         "is_protected": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "GsaAxisName",
         "help_path": "str",
@@ -86,7 +86,7 @@ class GsaAttribute(ModelBase):
         "is_protected": "isProtected",
         "name": "name",
         "table": "table",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "help_path": "helpPath",
@@ -132,7 +132,7 @@ class GsaAttribute(ModelBase):
         is_protected: "bool",
         name: "str",
         table: "GsaSlimEntity",
-        type: "GsaAttributeType",
+        type_: "GsaAttributeType",
         about_attribute: "GsaSlimTypedAttribute | Unset_Type" = Unset,
         axis_name: "GsaAxisName | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -149,7 +149,7 @@ class GsaAttribute(ModelBase):
         is_protected: bool
         name: str
         table: GsaSlimEntity
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: GsaAxisName, optional
         help_path: str | None, optional
@@ -158,7 +158,7 @@ class GsaAttribute(ModelBase):
         self._axis_name: GsaAxisName | Unset_Type = Unset
         self._help_path: str | None | Unset_Type = Unset
         self._info: GsaAttributeInfo
-        self._type: GsaAttributeType
+        self._type_: GsaAttributeType
         self._about_attribute: GsaSlimTypedAttribute | Unset_Type = Unset
         self._is_hidden_from_search_criteria: bool
         self._is_protected: bool
@@ -173,7 +173,7 @@ class GsaAttribute(ModelBase):
         if help_path is not Unset:
             self.help_path = help_path
         self.info = info
-        self.type = type
+        self.type_ = type_
         if about_attribute is not Unset:
             self.about_attribute = about_attribute
         self.is_hidden_from_search_criteria = is_hidden_from_search_criteria
@@ -287,32 +287,32 @@ class GsaAttribute(ModelBase):
         self._info = info
 
     @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaAttribute.
+    def type_(self) -> "GsaAttributeType":
+        """Gets the type_ of this GsaAttribute.
 
         Returns
         -------
         GsaAttributeType
-            The type of this GsaAttribute.
+            The type_ of this GsaAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType") -> None:
+        """Sets the type_ of this GsaAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType
-            The type of this GsaAttribute.
+        type_: GsaAttributeType
+            The type_ of this GsaAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def about_attribute(self) -> "GsaSlimTypedAttribute | Unset_Type":

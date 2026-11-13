@@ -68,13 +68,13 @@ class GsaShortTextDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
+        "type_": "GsaDatumCriterionType",
         "value": "str",
         "text_match_behavior": "GsaTextMatchBehavior",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
         "text_match_behavior": "textMatchBehavior",
     }
@@ -88,7 +88,7 @@ class GsaShortTextDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.SHORTTEXT,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.SHORTTEXT,
         value: "str",
         text_match_behavior: "GsaTextMatchBehavior | Unset_Type" = Unset,
     ) -> None:
@@ -96,11 +96,11 @@ class GsaShortTextDatumCriterion(GsaDatumCriterion):
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
+        type_: GsaDatumCriterionType
         value: str
         text_match_behavior: GsaTextMatchBehavior, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: str
         self._text_match_behavior: GsaTextMatchBehavior | Unset_Type = Unset
 

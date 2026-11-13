@@ -67,14 +67,14 @@ class GsaLocalColumnCriterion(GsaCriterion):
     """
     swagger_types: dict[str, str] = {
         "local_column_criterion_type": "GsaLocalColumnCriterionType",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "guid": "str",
         "identity": "int",
     }
 
     attribute_map: dict[str, str] = {
         "local_column_criterion_type": "localColumnCriterionType",
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "identity": "identity",
     }
@@ -95,7 +95,7 @@ class GsaLocalColumnCriterion(GsaCriterion):
         self,
         *,
         local_column_criterion_type: "GsaLocalColumnCriterionType",
-        type: "GsaCriterionType" = GsaCriterionType.LOCALCOLUMN,
+        type_: "GsaCriterionType" = GsaCriterionType.LOCALCOLUMN,
         guid: "str | None | Unset_Type" = Unset,
         identity: "int | None | Unset_Type" = Unset,
     ) -> None:
@@ -104,11 +104,11 @@ class GsaLocalColumnCriterion(GsaCriterion):
         Parameters
         ----------
         local_column_criterion_type: GsaLocalColumnCriterionType
-        type: GsaCriterionType
+        type_: GsaCriterionType
         guid: str | None, optional
         identity: int | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._identity: int | None | Unset_Type = Unset
         self._guid: str | None | Unset_Type = Unset
         self._local_column_criterion_type: GsaLocalColumnCriterionType

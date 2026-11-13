@@ -67,7 +67,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "axis_name": "GsaCreateAxisName",
         "default_threshold_type": "GsaAttributeThresholdType",
         "guid": "str",
@@ -78,7 +78,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "axis_name": "axisName",
         "default_threshold_type": "defaultThresholdType",
         "guid": "guid",
@@ -97,7 +97,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.INTEGER,
+        type_: "GsaAttributeType" = GsaAttributeType.INTEGER,
         axis_name: "GsaCreateAxisName | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -110,7 +110,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         axis_name: GsaCreateAxisName, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         guid: str, optional
@@ -120,7 +120,7 @@ class GsaCreateIntegerAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             guid=guid,
             help_path=help_path,

@@ -63,11 +63,11 @@ class GsaPutPermissionCategory(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -84,45 +84,45 @@ class GsaPutPermissionCategory(ModelBase):
     def __init__(
         self,
         *,
-        type: "GsaPutType",
+        type_: "GsaPutType",
     ) -> None:
         """GsaPutPermissionCategory - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaPutType
+        type_: GsaPutType
         """
-        self._type: GsaPutType
+        self._type_: GsaPutType
 
-        self.type = type
+        self.type_ = type_
 
     @property
-    def type(self) -> "GsaPutType":
-        """Gets the type of this GsaPutPermissionCategory.
+    def type_(self) -> "GsaPutType":
+        """Gets the type_ of this GsaPutPermissionCategory.
 
         Returns
         -------
         GsaPutType
-            The type of this GsaPutPermissionCategory.
+            The type_ of this GsaPutPermissionCategory.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaPutType") -> None:
-        """Sets the type of this GsaPutPermissionCategory.
+    @type_.setter
+    def type_(self, type_: "GsaPutType") -> None:
+        """Sets the type_ of this GsaPutPermissionCategory.
 
         Parameters
         ----------
-        type: GsaPutType
-            The type of this GsaPutPermissionCategory.
+        type_: GsaPutType
+            The type_ of this GsaPutPermissionCategory.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

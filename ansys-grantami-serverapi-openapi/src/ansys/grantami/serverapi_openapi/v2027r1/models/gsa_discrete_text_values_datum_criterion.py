@@ -68,18 +68,18 @@ class GsaDiscreteTextValuesDatumCriterion(GsaDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumCriterionType",
-        "_none": "list[str]",
-        "all": "list[str]",
-        "any": "list[str]",
+        "type_": "GsaDatumCriterionType",
+        "all_": "list[str]",
+        "any_": "list[str]",
+        "none_": "list[str]",
         "text_match_behavior": "GsaTextMatchBehavior",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
-        "_none": "none",
-        "all": "all",
-        "any": "any",
+        "type_": "type",
+        "all_": "all",
+        "any_": "any",
+        "none_": "none",
         "text_match_behavior": "textMatchBehavior",
     }
 
@@ -92,102 +92,102 @@ class GsaDiscreteTextValuesDatumCriterion(GsaDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETETEXTVALUES,
-        _none: "list[str] | None | Unset_Type" = Unset,
-        all: "list[str] | None | Unset_Type" = Unset,
-        any: "list[str] | None | Unset_Type" = Unset,
+        type_: "GsaDatumCriterionType" = GsaDatumCriterionType.DISCRETETEXTVALUES,
+        all_: "list[str] | None | Unset_Type" = Unset,
+        any_: "list[str] | None | Unset_Type" = Unset,
+        none_: "list[str] | None | Unset_Type" = Unset,
         text_match_behavior: "GsaTextMatchBehavior | Unset_Type" = Unset,
     ) -> None:
         """GsaDiscreteTextValuesDatumCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaDatumCriterionType
-        _none: list[str] | None, optional
-        all: list[str] | None, optional
-        any: list[str] | None, optional
+        type_: GsaDatumCriterionType
+        all_: list[str] | None, optional
+        any_: list[str] | None, optional
+        none_: list[str] | None, optional
         text_match_behavior: GsaTextMatchBehavior, optional
         """
-        super().__init__(type=type)
-        self._all: list[str] | None | Unset_Type = Unset
-        self._any: list[str] | None | Unset_Type = Unset
-        self.__none: list[str] | None | Unset_Type = Unset
+        super().__init__(type_=type_)
+        self._all_: list[str] | None | Unset_Type = Unset
+        self._any_: list[str] | None | Unset_Type = Unset
+        self._none_: list[str] | None | Unset_Type = Unset
         self._text_match_behavior: GsaTextMatchBehavior | Unset_Type = Unset
 
-        if all is not Unset:
-            self.all = all
-        if any is not Unset:
-            self.any = any
-        if _none is not Unset:
-            self._none = _none
+        if all_ is not Unset:
+            self.all_ = all_
+        if any_ is not Unset:
+            self.any_ = any_
+        if none_ is not Unset:
+            self.none_ = none_
         if text_match_behavior is not Unset:
             self.text_match_behavior = text_match_behavior
 
     @property
-    def all(self) -> "list[str] | None | Unset_Type":
-        """Gets the all of this GsaDiscreteTextValuesDatumCriterion.
+    def all_(self) -> "list[str] | None | Unset_Type":
+        """Gets the all_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The all of this GsaDiscreteTextValuesDatumCriterion.
+            The all_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        return self._all
+        return self._all_
 
-    @all.setter
-    def all(self, all: "list[str] | None | Unset_Type") -> None:
-        """Sets the all of this GsaDiscreteTextValuesDatumCriterion.
+    @all_.setter
+    def all_(self, all_: "list[str] | None | Unset_Type") -> None:
+        """Sets the all_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Parameters
         ----------
-        all: list[str] | None | Unset_Type
-            The all of this GsaDiscreteTextValuesDatumCriterion.
+        all_: list[str] | None | Unset_Type
+            The all_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        self._all = all
+        self._all_ = all_
 
     @property
-    def any(self) -> "list[str] | None | Unset_Type":
-        """Gets the any of this GsaDiscreteTextValuesDatumCriterion.
+    def any_(self) -> "list[str] | None | Unset_Type":
+        """Gets the any_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The any of this GsaDiscreteTextValuesDatumCriterion.
+            The any_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        return self._any
+        return self._any_
 
-    @any.setter
-    def any(self, any: "list[str] | None | Unset_Type") -> None:
-        """Sets the any of this GsaDiscreteTextValuesDatumCriterion.
+    @any_.setter
+    def any_(self, any_: "list[str] | None | Unset_Type") -> None:
+        """Sets the any_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Parameters
         ----------
-        any: list[str] | None | Unset_Type
-            The any of this GsaDiscreteTextValuesDatumCriterion.
+        any_: list[str] | None | Unset_Type
+            The any_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        self._any = any
+        self._any_ = any_
 
     @property
-    def _none(self) -> "list[str] | None | Unset_Type":
-        """Gets the _none of this GsaDiscreteTextValuesDatumCriterion.
+    def none_(self) -> "list[str] | None | Unset_Type":
+        """Gets the none_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Returns
         -------
         list[str] | None | Unset_Type
-            The _none of this GsaDiscreteTextValuesDatumCriterion.
+            The none_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        return self.__none
+        return self._none_
 
-    @_none.setter
-    def _none(self, _none: "list[str] | None | Unset_Type") -> None:
-        """Sets the _none of this GsaDiscreteTextValuesDatumCriterion.
+    @none_.setter
+    def none_(self, none_: "list[str] | None | Unset_Type") -> None:
+        """Sets the none_ of this GsaDiscreteTextValuesDatumCriterion.
 
         Parameters
         ----------
-        _none: list[str] | None | Unset_Type
-            The _none of this GsaDiscreteTextValuesDatumCriterion.
+        none_: list[str] | None | Unset_Type
+            The none_ of this GsaDiscreteTextValuesDatumCriterion.
         """
-        self.__none = _none
+        self._none_ = none_
 
     @property
     def text_match_behavior(self) -> "GsaTextMatchBehavior | Unset_Type":

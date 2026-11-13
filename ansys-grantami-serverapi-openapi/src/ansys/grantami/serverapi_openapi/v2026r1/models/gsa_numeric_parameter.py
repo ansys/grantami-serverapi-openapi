@@ -71,7 +71,7 @@ class GsaNumericParameter(GsaParameter):
         "is_restricted": "bool",
         "name": "str",
         "scale_type": "GsaParameterScaleType",
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "values": "list[GsaNumericParameterValue]",
         "help_path": "str",
         "unit": "GsaSlimUnit",
@@ -85,7 +85,7 @@ class GsaNumericParameter(GsaParameter):
         "is_restricted": "isRestricted",
         "name": "name",
         "scale_type": "scaleType",
-        "type": "type",
+        "type_": "type",
         "values": "values",
         "help_path": "helpPath",
         "unit": "unit",
@@ -110,7 +110,7 @@ class GsaNumericParameter(GsaParameter):
         is_restricted: "bool",
         name: "str",
         scale_type: "GsaParameterScaleType",
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         values: "list[GsaNumericParameterValue]",
         help_path: "str | None | Unset_Type" = Unset,
         unit: "GsaSlimUnit | Unset_Type" = Unset,
@@ -126,7 +126,7 @@ class GsaNumericParameter(GsaParameter):
         is_restricted: bool
         name: str
         scale_type: GsaParameterScaleType
-        type: GsaParameterType
+        type_: GsaParameterType
         values: list[GsaNumericParameterValue]
         help_path: str | None, optional
         unit: GsaSlimUnit, optional
@@ -136,7 +136,7 @@ class GsaNumericParameter(GsaParameter):
             display_names=display_names,
             guid=guid,
             name=name,
-            type=type,
+            type_=type_,
             help_path=help_path,
         )
         self._is_restricted: bool

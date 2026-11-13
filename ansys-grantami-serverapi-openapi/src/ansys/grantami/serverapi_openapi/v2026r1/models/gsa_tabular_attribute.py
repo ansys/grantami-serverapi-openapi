@@ -76,7 +76,7 @@ class GsaTabularAttribute(GsaAttribute):
         "name": "str",
         "table": "GsaSlimEntity",
         "tabular_columns": "list[GsaTabularColumn]",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "GsaAxisName",
         "help_path": "str",
@@ -96,7 +96,7 @@ class GsaTabularAttribute(GsaAttribute):
         "name": "name",
         "table": "table",
         "tabular_columns": "tabularColumns",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "help_path": "helpPath",
@@ -125,7 +125,7 @@ class GsaTabularAttribute(GsaAttribute):
         name: "str",
         table: "GsaSlimEntity",
         tabular_columns: "list[GsaTabularColumn]",
-        type: "GsaAttributeType" = GsaAttributeType.LINK,
+        type_: "GsaAttributeType" = GsaAttributeType.LINK,
         about_attribute: "GsaSlimTypedAttribute | Unset_Type" = Unset,
         axis_name: "GsaAxisName | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -147,7 +147,7 @@ class GsaTabularAttribute(GsaAttribute):
         name: str
         table: GsaSlimEntity
         tabular_columns: list[GsaTabularColumn]
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: GsaAxisName, optional
         help_path: str | None, optional
@@ -162,7 +162,7 @@ class GsaTabularAttribute(GsaAttribute):
             is_protected=is_protected,
             name=name,
             table=table,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             axis_name=axis_name,
             help_path=help_path,

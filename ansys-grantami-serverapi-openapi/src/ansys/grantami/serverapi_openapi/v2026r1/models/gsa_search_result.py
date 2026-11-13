@@ -73,7 +73,7 @@ class GsaSearchResult(ModelBase):
         "table_guid": "str",
         "table_identity": "int",
         "tree_name": "str",
-        "type": "GsaRecordType",
+        "type_": "GsaRecordType",
         "version_control_state": "str",
         "version_number": "int",
     }
@@ -91,7 +91,7 @@ class GsaSearchResult(ModelBase):
         "table_guid": "tableGuid",
         "table_identity": "tableIdentity",
         "tree_name": "treeName",
-        "type": "type",
+        "type_": "type",
         "version_control_state": "versionControlState",
         "version_number": "versionNumber",
     }
@@ -118,7 +118,7 @@ class GsaSearchResult(ModelBase):
         table_guid: "str | Unset_Type" = Unset,
         table_identity: "int | Unset_Type" = Unset,
         tree_name: "str | None | Unset_Type" = Unset,
-        type: "GsaRecordType | Unset_Type" = Unset,
+        type_: "GsaRecordType | Unset_Type" = Unset,
         version_control_state: "str | None | Unset_Type" = Unset,
         version_number: "int | Unset_Type" = Unset,
     ) -> None:
@@ -138,7 +138,7 @@ class GsaSearchResult(ModelBase):
         table_guid: str, optional
         table_identity: int, optional
         tree_name: str | None, optional
-        type: GsaRecordType, optional
+        type_: GsaRecordType, optional
         version_control_state: str | None, optional
         version_number: int, optional
         """
@@ -154,7 +154,7 @@ class GsaSearchResult(ModelBase):
         self._version_control_state: str | None | Unset_Type = Unset
         self._version_number: int | Unset_Type = Unset
         self._parent_guid: str | None | Unset_Type = Unset
-        self._type: GsaRecordType | Unset_Type = Unset
+        self._type_: GsaRecordType | Unset_Type = Unset
         self._score: float | None | Unset_Type = Unset
         self._sorting_value: GsaSortingValue | Unset_Type = Unset
 
@@ -181,8 +181,8 @@ class GsaSearchResult(ModelBase):
             self.version_number = version_number
         if parent_guid is not Unset:
             self.parent_guid = parent_guid
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if score is not Unset:
             self.score = score
         if sorting_value is not Unset:
@@ -474,29 +474,29 @@ class GsaSearchResult(ModelBase):
         self._parent_guid = parent_guid
 
     @property
-    def type(self) -> "GsaRecordType | Unset_Type":
-        """Gets the type of this GsaSearchResult.
+    def type_(self) -> "GsaRecordType | Unset_Type":
+        """Gets the type_ of this GsaSearchResult.
 
         Returns
         -------
         GsaRecordType | Unset_Type
-            The type of this GsaSearchResult.
+            The type_ of this GsaSearchResult.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaRecordType | Unset_Type") -> None:
-        """Sets the type of this GsaSearchResult.
+    @type_.setter
+    def type_(self, type_: "GsaRecordType | Unset_Type") -> None:
+        """Sets the type_ of this GsaSearchResult.
 
         Parameters
         ----------
-        type: GsaRecordType | Unset_Type
-            The type of this GsaSearchResult.
+        type_: GsaRecordType | Unset_Type
+            The type_ of this GsaSearchResult.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
-        self._type = type
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
+        self._type_ = type_
 
     @property
     def score(self) -> "float | None | Unset_Type":

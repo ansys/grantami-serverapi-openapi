@@ -65,14 +65,14 @@ class GsaRecordPropertyCriterion(GsaCriterion):
     """
     swagger_types: dict[str, str] = {
         "inner_criterion": "GsaDatumCriterion",
-        "type": "GsaCriterionType",
-        "_property": "GsaSearchableRecordProperty",
+        "type_": "GsaCriterionType",
+        "property_": "GsaSearchableRecordProperty",
     }
 
     attribute_map: dict[str, str] = {
         "inner_criterion": "innerCriterion",
-        "type": "type",
-        "_property": "property",
+        "type_": "type",
+        "property_": "property",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -86,49 +86,49 @@ class GsaRecordPropertyCriterion(GsaCriterion):
         self,
         *,
         inner_criterion: "GsaDatumCriterion",
-        type: "GsaCriterionType" = GsaCriterionType.RECORDPROPERTY,
-        _property: "GsaSearchableRecordProperty | Unset_Type" = Unset,
+        type_: "GsaCriterionType" = GsaCriterionType.RECORDPROPERTY,
+        property_: "GsaSearchableRecordProperty | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordPropertyCriterion - a model defined in Swagger
 
         Parameters
         ----------
         inner_criterion: GsaDatumCriterion
-        type: GsaCriterionType
-        _property: GsaSearchableRecordProperty, optional
+        type_: GsaCriterionType
+        property_: GsaSearchableRecordProperty, optional
         """
-        super().__init__(type=type)
-        self.__property: GsaSearchableRecordProperty | Unset_Type = Unset
+        super().__init__(type_=type_)
+        self._property_: GsaSearchableRecordProperty | Unset_Type = Unset
         self._inner_criterion: GsaDatumCriterion
 
-        if _property is not Unset:
-            self._property = _property
+        if property_ is not Unset:
+            self.property_ = property_
         self.inner_criterion = inner_criterion
 
     @property
-    def _property(self) -> "GsaSearchableRecordProperty | Unset_Type":
-        """Gets the _property of this GsaRecordPropertyCriterion.
+    def property_(self) -> "GsaSearchableRecordProperty | Unset_Type":
+        """Gets the property_ of this GsaRecordPropertyCriterion.
 
         Returns
         -------
         GsaSearchableRecordProperty | Unset_Type
-            The _property of this GsaRecordPropertyCriterion.
+            The property_ of this GsaRecordPropertyCriterion.
         """
-        return self.__property
+        return self._property_
 
-    @_property.setter
-    def _property(self, _property: "GsaSearchableRecordProperty | Unset_Type") -> None:
-        """Sets the _property of this GsaRecordPropertyCriterion.
+    @property_.setter
+    def property_(self, property_: "GsaSearchableRecordProperty | Unset_Type") -> None:
+        """Sets the property_ of this GsaRecordPropertyCriterion.
 
         Parameters
         ----------
-        _property: GsaSearchableRecordProperty | Unset_Type
-            The _property of this GsaRecordPropertyCriterion.
+        property_: GsaSearchableRecordProperty | Unset_Type
+            The property_ of this GsaRecordPropertyCriterion.
         """
         # Field is not nullable
-        if _property is None:
-            raise ValueError("Invalid value for '_property', must not be 'None'")
-        self.__property = _property
+        if property_ is None:
+            raise ValueError("Invalid value for 'property_', must not be 'None'")
+        self._property_ = property_
 
     @property
     def inner_criterion(self) -> "GsaDatumCriterion":

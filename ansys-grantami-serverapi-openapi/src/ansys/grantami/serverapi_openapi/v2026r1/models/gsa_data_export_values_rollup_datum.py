@@ -67,7 +67,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
     swagger_types: dict[str, str] = {
         "path_attribute_guids": "list[str]",
         "path_attribute_identities": "list[int]",
-        "type": "str",
+        "type_": "str",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "database_key": "str",
@@ -79,7 +79,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
     attribute_map: dict[str, str] = {
         "path_attribute_guids": "pathAttributeGuids",
         "path_attribute_identities": "pathAttributeIdentities",
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "database_key": "databaseKey",
@@ -97,7 +97,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         *,
         path_attribute_guids: "list[str]",
         path_attribute_identities: "list[int]",
-        type: "str | None" = "valuesRollup",
+        type_: "str | None" = "valuesRollup",
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         database_key: "str | None | Unset_Type" = Unset,
@@ -111,7 +111,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         ----------
         path_attribute_guids: list[str]
         path_attribute_identities: list[int]
-        type: str | None
+        type_: str | None
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         database_key: str | None, optional
@@ -122,7 +122,7 @@ class GsaDataExportValuesRollupDatum(GsaDataExportRollupDatum):
         super().__init__(
             path_attribute_guids=path_attribute_guids,
             path_attribute_identities=path_attribute_identities,
-            type=type,
+            type_=type_,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             database_key=database_key,

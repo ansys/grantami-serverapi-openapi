@@ -67,7 +67,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "allow_all_compatible_expressions": "bool",
         "allow_anonymous_expressions": "bool",
         "allow_extrapolation": "bool",
@@ -87,7 +87,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "allow_all_compatible_expressions": "allowAllCompatibleExpressions",
         "allow_anonymous_expressions": "allowAnonymousExpressions",
         "allow_extrapolation": "allowExtrapolation",
@@ -119,7 +119,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.MATHSFUNCTIONAL,
+        type_: "GsaAttributeType" = GsaAttributeType.MATHSFUNCTIONAL,
         allow_all_compatible_expressions: "bool | Unset_Type" = Unset,
         allow_anonymous_expressions: "bool | Unset_Type" = Unset,
         allow_extrapolation: "bool | Unset_Type" = Unset,
@@ -141,7 +141,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         allow_all_compatible_expressions: bool, optional
         allow_anonymous_expressions: bool, optional
         allow_extrapolation: bool, optional
@@ -160,7 +160,7 @@ class GsaCreateMathsFunctionalAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             default_threshold_type=default_threshold_type,
             display_names=display_names,
             guid=guid,

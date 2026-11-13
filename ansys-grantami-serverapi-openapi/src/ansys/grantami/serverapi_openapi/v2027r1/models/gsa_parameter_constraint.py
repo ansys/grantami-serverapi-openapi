@@ -64,12 +64,12 @@ class GsaParameterConstraint(ModelBase):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaObjectIdentifier",
-        "type": "GsaParameterConstraintType",
+        "type_": "GsaParameterConstraintType",
     }
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -89,20 +89,20 @@ class GsaParameterConstraint(ModelBase):
         self,
         *,
         parameter: "GsaObjectIdentifier",
-        type: "GsaParameterConstraintType",
+        type_: "GsaParameterConstraintType",
     ) -> None:
         """GsaParameterConstraint - a model defined in Swagger
 
         Parameters
         ----------
         parameter: GsaObjectIdentifier
-        type: GsaParameterConstraintType
+        type_: GsaParameterConstraintType
         """
         self._parameter: GsaObjectIdentifier
-        self._type: GsaParameterConstraintType
+        self._type_: GsaParameterConstraintType
 
         self.parameter = parameter
-        self.type = type
+        self.type_ = type_
 
     @property
     def parameter(self) -> "GsaObjectIdentifier":
@@ -133,32 +133,32 @@ class GsaParameterConstraint(ModelBase):
         self._parameter = parameter
 
     @property
-    def type(self) -> "GsaParameterConstraintType":
-        """Gets the type of this GsaParameterConstraint.
+    def type_(self) -> "GsaParameterConstraintType":
+        """Gets the type_ of this GsaParameterConstraint.
 
         Returns
         -------
         GsaParameterConstraintType
-            The type of this GsaParameterConstraint.
+            The type_ of this GsaParameterConstraint.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterConstraintType") -> None:
-        """Sets the type of this GsaParameterConstraint.
+    @type_.setter
+    def type_(self, type_: "GsaParameterConstraintType") -> None:
+        """Sets the type_ of this GsaParameterConstraint.
 
         Parameters
         ----------
-        type: GsaParameterConstraintType
-            The type of this GsaParameterConstraint.
+        type_: GsaParameterConstraintType
+            The type_ of this GsaParameterConstraint.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:

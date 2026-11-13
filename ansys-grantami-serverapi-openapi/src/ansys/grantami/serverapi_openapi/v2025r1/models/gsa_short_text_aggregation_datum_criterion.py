@@ -68,13 +68,13 @@ class GsaShortTextAggregationDatumCriterion(GsaAggregationDatumCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationDatumCriterionType",
+        "type_": "GsaAggregationDatumCriterionType",
         "number_of_terms": "int",
         "prefix": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "number_of_terms": "numberOfTerms",
         "prefix": "prefix",
     }
@@ -86,7 +86,7 @@ class GsaShortTextAggregationDatumCriterion(GsaAggregationDatumCriterion):
     def __init__(
         self,
         *,
-        type: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.SHORTTEXT,
+        type_: "GsaAggregationDatumCriterionType" = GsaAggregationDatumCriterionType.SHORTTEXT,
         number_of_terms: "int | Unset_Type" = Unset,
         prefix: "str | None | Unset_Type" = Unset,
     ) -> None:
@@ -94,11 +94,11 @@ class GsaShortTextAggregationDatumCriterion(GsaAggregationDatumCriterion):
 
         Parameters
         ----------
-        type: GsaAggregationDatumCriterionType
+        type_: GsaAggregationDatumCriterionType
         number_of_terms: int, optional
         prefix: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._number_of_terms: int | Unset_Type = Unset
         self._prefix: str | None | Unset_Type = Unset
 

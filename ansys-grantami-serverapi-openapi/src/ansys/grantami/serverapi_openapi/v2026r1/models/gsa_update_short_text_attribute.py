@@ -66,7 +66,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "axis_name": "GsaUpdateAxisName",
         "data_rule": "GsaSlimEntity",
@@ -80,7 +80,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "data_rule": "dataRule",
@@ -102,7 +102,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
     def __init__(
         self,
         *,
-        type: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
+        type_: "GsaAttributeType" = GsaAttributeType.SHORTTEXT,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         axis_name: "GsaUpdateAxisName | Unset_Type" = Unset,
         data_rule: "GsaSlimEntity | Unset_Type" = Unset,
@@ -118,7 +118,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
 
         Parameters
         ----------
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         axis_name: GsaUpdateAxisName, optional
         data_rule: GsaSlimEntity, optional
@@ -131,7 +131,7 @@ class GsaUpdateShortTextAttribute(GsaUpdateAttribute):
         name: str, optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             axis_name=axis_name,
             default_threshold_type=default_threshold_type,

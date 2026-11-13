@@ -66,7 +66,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterType",
+        "type_": "GsaParameterType",
         "default_parameter_value_guid": "str",
         "default_parameter_value_index": "int",
         "guid": "str",
@@ -78,7 +78,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "default_parameter_value_guid": "defaultParameterValueGuid",
         "default_parameter_value_index": "defaultParameterValueIndex",
         "guid": "guid",
@@ -101,7 +101,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
     def __init__(
         self,
         *,
-        type: "GsaParameterType" = GsaParameterType.NUMERIC,
+        type_: "GsaParameterType" = GsaParameterType.NUMERIC,
         default_parameter_value_guid: "str | Unset_Type" = Unset,
         default_parameter_value_index: "int | Unset_Type" = Unset,
         guid: "str | Unset_Type" = Unset,
@@ -115,7 +115,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
 
         Parameters
         ----------
-        type: GsaParameterType
+        type_: GsaParameterType
         default_parameter_value_guid: str, optional
         default_parameter_value_index: int, optional
         guid: str, optional
@@ -126,7 +126,7 @@ class GsaUpdateNumericParameter(GsaUpdateParameter):
         values: list[GsaUpdateNumericParameterValue], optional
         """
         super().__init__(
-            type=type,
+            type_=type_,
             default_parameter_value_guid=default_parameter_value_guid,
             default_parameter_value_index=default_parameter_value_index,
             guid=guid,

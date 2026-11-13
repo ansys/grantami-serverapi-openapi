@@ -68,13 +68,13 @@ class GsaCreatePutPermissionCategory(GsaPutPermissionCategory):
     swagger_types: dict[str, str] = {
         "name": "str",
         "permissions": "list[GsaCreatePermission]",
-        "type": "GsaPutType",
+        "type_": "GsaPutType",
     }
 
     attribute_map: dict[str, str] = {
         "name": "name",
         "permissions": "permissions",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -88,7 +88,7 @@ class GsaCreatePutPermissionCategory(GsaPutPermissionCategory):
         *,
         name: "str",
         permissions: "list[GsaCreatePermission]",
-        type: "GsaPutType" = GsaPutType.CREATE,
+        type_: "GsaPutType" = GsaPutType.CREATE,
     ) -> None:
         """GsaCreatePutPermissionCategory - a model defined in Swagger
 
@@ -96,9 +96,9 @@ class GsaCreatePutPermissionCategory(GsaPutPermissionCategory):
         ----------
         name: str
         permissions: list[GsaCreatePermission]
-        type: GsaPutType
+        type_: GsaPutType
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._name: str
         self._permissions: list[GsaCreatePermission]
 

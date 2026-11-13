@@ -61,16 +61,16 @@ class GsaActivityLogEntry(ModelBase):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "_date": "datetime",
         "application_names": "list[str]",
+        "date_": "datetime",
         "usage_mode": "GsaActivityLogUsageMode",
         "username": "str",
         "database_key": "str",
     }
 
     attribute_map: dict[str, str] = {
-        "_date": "date",
         "application_names": "applicationNames",
+        "date_": "date",
         "usage_mode": "usageMode",
         "username": "username",
         "database_key": "databaseKey",
@@ -85,8 +85,8 @@ class GsaActivityLogEntry(ModelBase):
     def __init__(
         self,
         *,
-        _date: "datetime",
         application_names: "list[str]",
+        date_: "datetime",
         usage_mode: "GsaActivityLogUsageMode",
         username: "str",
         database_key: "str | None | Unset_Type" = Unset,
@@ -95,19 +95,19 @@ class GsaActivityLogEntry(ModelBase):
 
         Parameters
         ----------
-        _date: datetime
         application_names: list[str]
+        date_: datetime
         usage_mode: GsaActivityLogUsageMode
         username: str
         database_key: str | None, optional
         """
-        self.__date: datetime
+        self._date_: datetime
         self._username: str
         self._application_names: list[str]
         self._database_key: str | None | Unset_Type = Unset
         self._usage_mode: GsaActivityLogUsageMode
 
-        self._date = _date
+        self.date_ = date_
         self.username = username
         self.application_names = application_names
         if database_key is not Unset:
@@ -115,32 +115,32 @@ class GsaActivityLogEntry(ModelBase):
         self.usage_mode = usage_mode
 
     @property
-    def _date(self) -> "datetime":
-        """Gets the _date of this GsaActivityLogEntry.
+    def date_(self) -> "datetime":
+        """Gets the date_ of this GsaActivityLogEntry.
 
         Returns
         -------
         datetime
-            The _date of this GsaActivityLogEntry.
+            The date_ of this GsaActivityLogEntry.
         """
-        return self.__date
+        return self._date_
 
-    @_date.setter
-    def _date(self, _date: "datetime") -> None:
-        """Sets the _date of this GsaActivityLogEntry.
+    @date_.setter
+    def date_(self, date_: "datetime") -> None:
+        """Sets the date_ of this GsaActivityLogEntry.
 
         Parameters
         ----------
-        _date: datetime
-            The _date of this GsaActivityLogEntry.
+        date_: datetime
+            The date_ of this GsaActivityLogEntry.
         """
         # Field is not nullable
-        if _date is None:
-            raise ValueError("Invalid value for '_date', must not be 'None'")
+        if date_ is None:
+            raise ValueError("Invalid value for 'date_', must not be 'None'")
         # Field is required
-        if _date is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for '_date', must not be 'Unset'")
-        self.__date = _date
+        if date_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'date_', must not be 'Unset'")
+        self._date_ = date_
 
     @property
     def username(self) -> "str":

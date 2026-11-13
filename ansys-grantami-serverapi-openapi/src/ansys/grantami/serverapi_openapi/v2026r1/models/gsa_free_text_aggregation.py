@@ -66,13 +66,13 @@ class GsaFreeTextAggregation(GsaAggregation):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "guid": "str",
         "terms": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "terms": "terms",
     }
@@ -84,7 +84,7 @@ class GsaFreeTextAggregation(GsaAggregation):
     def __init__(
         self,
         *,
-        type: "GsaAggregationType" = GsaAggregationType.TEXT,
+        type_: "GsaAggregationType" = GsaAggregationType.TEXT,
         guid: "str | Unset_Type" = Unset,
         terms: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
@@ -92,11 +92,11 @@ class GsaFreeTextAggregation(GsaAggregation):
 
         Parameters
         ----------
-        type: GsaAggregationType
+        type_: GsaAggregationType
         guid: str, optional
         terms: list[str] | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._guid: str | Unset_Type = Unset
         self._terms: list[str] | None | Unset_Type = Unset
 

@@ -76,7 +76,7 @@ class GsaSmartRecordLinkGroup(GsaRecordLinkGroup):
         "name": "str",
         "referential_integrity_model": "GsaReferentialIntegrityModel",
         "reverse_name": "str",
-        "type": "GsaRecordLinkGroupType",
+        "type_": "GsaRecordLinkGroupType",
         "identity": "int",
         "reverse_display_names": "dict(str, str)",
     }
@@ -90,7 +90,7 @@ class GsaSmartRecordLinkGroup(GsaRecordLinkGroup):
         "name": "name",
         "referential_integrity_model": "referentialIntegrityModel",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "identity": "identity",
         "reverse_display_names": "reverseDisplayNames",
     }
@@ -113,7 +113,7 @@ class GsaSmartRecordLinkGroup(GsaRecordLinkGroup):
         name: "str",
         referential_integrity_model: "GsaReferentialIntegrityModel",
         reverse_name: "str",
-        type: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
+        type_: "GsaRecordLinkGroupType" = GsaRecordLinkGroupType.SMART,
         identity: "int | None | Unset_Type" = Unset,
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
@@ -129,7 +129,7 @@ class GsaSmartRecordLinkGroup(GsaRecordLinkGroup):
         name: str
         referential_integrity_model: GsaReferentialIntegrityModel
         reverse_name: str
-        type: GsaRecordLinkGroupType
+        type_: GsaRecordLinkGroupType
         identity: int | None, optional
         reverse_display_names: dict[str, str] | None, optional
         """
@@ -139,7 +139,7 @@ class GsaSmartRecordLinkGroup(GsaRecordLinkGroup):
             link_info=link_info,
             name=name,
             reverse_name=reverse_name,
-            type=type,
+            type_=type_,
             identity=identity,
             reverse_display_names=reverse_display_names,
         )

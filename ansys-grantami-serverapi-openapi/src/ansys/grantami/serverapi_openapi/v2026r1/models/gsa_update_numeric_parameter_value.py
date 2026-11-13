@@ -68,14 +68,14 @@ class GsaUpdateNumericParameterValue(GsaUpdateParameterValue):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
         "guid": "str",
         "name": "str",
         "value": "float",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "guid": "guid",
         "name": "name",
         "value": "value",
@@ -88,7 +88,7 @@ class GsaUpdateNumericParameterValue(GsaUpdateParameterValue):
     def __init__(
         self,
         *,
-        type: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
+        type_: "GsaParameterValueType" = GsaParameterValueType.NUMERIC,
         guid: "str | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
         value: "float | Unset_Type" = Unset,
@@ -97,12 +97,12 @@ class GsaUpdateNumericParameterValue(GsaUpdateParameterValue):
 
         Parameters
         ----------
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         guid: str, optional
         name: str | None, optional
         value: float, optional
         """
-        super().__init__(type=type, guid=guid)
+        super().__init__(type_=type_, guid=guid)
         self._value: float | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
 

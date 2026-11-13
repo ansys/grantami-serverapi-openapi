@@ -71,7 +71,7 @@ class GsaDateTimeAttribute(GsaAttribute):
         "is_hidden_from_search_criteria": "bool",
         "name": "str",
         "table": "GsaSlimEntity",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimTypedAttribute",
         "axis_name": "GsaAxisName",
         "help_path": "str",
@@ -85,7 +85,7 @@ class GsaDateTimeAttribute(GsaAttribute):
         "is_hidden_from_search_criteria": "isHiddenFromSearchCriteria",
         "name": "name",
         "table": "table",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "axis_name": "axisName",
         "help_path": "helpPath",
@@ -105,7 +105,7 @@ class GsaDateTimeAttribute(GsaAttribute):
         is_hidden_from_search_criteria: "bool",
         name: "str",
         table: "GsaSlimEntity",
-        type: "GsaAttributeType" = GsaAttributeType.DATETIME,
+        type_: "GsaAttributeType" = GsaAttributeType.DATETIME,
         about_attribute: "GsaSlimTypedAttribute | Unset_Type" = Unset,
         axis_name: "GsaAxisName | Unset_Type" = Unset,
         help_path: "str | None | Unset_Type" = Unset,
@@ -121,7 +121,7 @@ class GsaDateTimeAttribute(GsaAttribute):
         is_hidden_from_search_criteria: bool
         name: str
         table: GsaSlimEntity
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimTypedAttribute, optional
         axis_name: GsaAxisName, optional
         help_path: str | None, optional
@@ -134,7 +134,7 @@ class GsaDateTimeAttribute(GsaAttribute):
             is_hidden_from_search_criteria=is_hidden_from_search_criteria,
             name=name,
             table=table,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             axis_name=axis_name,
             help_path=help_path,

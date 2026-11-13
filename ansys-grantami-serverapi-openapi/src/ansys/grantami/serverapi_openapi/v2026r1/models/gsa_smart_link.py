@@ -74,7 +74,7 @@ class GsaSmartLink(GsaLink):
         "name": "str",
         "referential_integrity_model": "GsaReferentialIntegrityModel",
         "reverse_name": "str",
-        "type": "GsaLinkAttributeType",
+        "type_": "GsaLinkAttributeType",
         "reverse_display_names": "dict(str, str)",
     }
 
@@ -87,7 +87,7 @@ class GsaSmartLink(GsaLink):
         "name": "name",
         "referential_integrity_model": "referentialIntegrityModel",
         "reverse_name": "reverseName",
-        "type": "type",
+        "type_": "type",
         "reverse_display_names": "reverseDisplayNames",
     }
 
@@ -109,7 +109,7 @@ class GsaSmartLink(GsaLink):
         name: "str",
         referential_integrity_model: "GsaReferentialIntegrityModel",
         reverse_name: "str",
-        type: "GsaLinkAttributeType" = GsaLinkAttributeType.SMARTLINK,
+        type_: "GsaLinkAttributeType" = GsaLinkAttributeType.SMARTLINK,
         reverse_display_names: "dict[str, str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaSmartLink - a model defined in Swagger
@@ -124,7 +124,7 @@ class GsaSmartLink(GsaLink):
         name: str
         referential_integrity_model: GsaReferentialIntegrityModel
         reverse_name: str
-        type: GsaLinkAttributeType
+        type_: GsaLinkAttributeType
         reverse_display_names: dict[str, str] | None, optional
         """
         super().__init__(
@@ -133,7 +133,7 @@ class GsaSmartLink(GsaLink):
             link_info=link_info,
             name=name,
             reverse_name=reverse_name,
-            type=type,
+            type_=type_,
             reverse_display_names=reverse_display_names,
         )
         self._forbid_orphans: bool

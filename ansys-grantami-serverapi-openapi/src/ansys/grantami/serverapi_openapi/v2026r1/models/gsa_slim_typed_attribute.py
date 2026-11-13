@@ -63,13 +63,13 @@ class GsaSlimTypedAttribute(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "name": "name",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -83,7 +83,7 @@ class GsaSlimTypedAttribute(ModelBase):
         *,
         guid: "str",
         name: "str",
-        type: "GsaAttributeType",
+        type_: "GsaAttributeType",
     ) -> None:
         """GsaSlimTypedAttribute - a model defined in Swagger
 
@@ -91,43 +91,43 @@ class GsaSlimTypedAttribute(ModelBase):
         ----------
         guid: str
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         """
-        self._type: GsaAttributeType
+        self._type_: GsaAttributeType
         self._name: str
         self._guid: str
 
-        self.type = type
+        self.type_ = type_
         self.name = name
         self.guid = guid
 
     @property
-    def type(self) -> "GsaAttributeType":
-        """Gets the type of this GsaSlimTypedAttribute.
+    def type_(self) -> "GsaAttributeType":
+        """Gets the type_ of this GsaSlimTypedAttribute.
 
         Returns
         -------
         GsaAttributeType
-            The type of this GsaSlimTypedAttribute.
+            The type_ of this GsaSlimTypedAttribute.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaAttributeType") -> None:
-        """Sets the type of this GsaSlimTypedAttribute.
+    @type_.setter
+    def type_(self, type_: "GsaAttributeType") -> None:
+        """Sets the type_ of this GsaSlimTypedAttribute.
 
         Parameters
         ----------
-        type: GsaAttributeType
-            The type of this GsaSlimTypedAttribute.
+        type_: GsaAttributeType
+            The type_ of this GsaSlimTypedAttribute.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @property
     def name(self) -> "str":

@@ -64,12 +64,12 @@ class GsaRecordListMemberCriterion(GsaCriterion):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "record_list_identifiers": "list[str]",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "record_list_identifiers": "recordListIdentifiers",
     }
 
@@ -80,17 +80,17 @@ class GsaRecordListMemberCriterion(GsaCriterion):
     def __init__(
         self,
         *,
-        type: "GsaCriterionType" = GsaCriterionType.RECORDLISTMEMBER,
+        type_: "GsaCriterionType" = GsaCriterionType.RECORDLISTMEMBER,
         record_list_identifiers: "list[str] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordListMemberCriterion - a model defined in Swagger
 
         Parameters
         ----------
-        type: GsaCriterionType
+        type_: GsaCriterionType
         record_list_identifiers: list[str] | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._record_list_identifiers: list[str] | None | Unset_Type = Unset
 
         if record_list_identifiers is not Unset:

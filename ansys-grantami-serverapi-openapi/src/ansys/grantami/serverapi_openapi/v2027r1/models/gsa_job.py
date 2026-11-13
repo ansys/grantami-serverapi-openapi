@@ -64,7 +64,7 @@ class GsaJob(ModelBase):
         "completion_date": "datetime",
         "description": "str",
         "execution_date": "datetime",
-        "id": "str",
+        "id_": "str",
         "input_file_ids": "list[str]",
         "job_specific_outputs": "dict(str, object)",
         "name": "str",
@@ -75,14 +75,14 @@ class GsaJob(ModelBase):
         "submission_date": "datetime",
         "submitter_name": "str",
         "submitter_roles": "list[str]",
-        "type": "str",
+        "type_": "str",
     }
 
     attribute_map: dict[str, str] = {
         "completion_date": "completionDate",
         "description": "description",
         "execution_date": "executionDate",
-        "id": "id",
+        "id_": "id",
         "input_file_ids": "inputFileIds",
         "job_specific_outputs": "jobSpecificOutputs",
         "name": "name",
@@ -93,7 +93,7 @@ class GsaJob(ModelBase):
         "submission_date": "submissionDate",
         "submitter_name": "submitterName",
         "submitter_roles": "submitterRoles",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -108,7 +108,7 @@ class GsaJob(ModelBase):
         completion_date: "datetime | None | Unset_Type" = Unset,
         description: "str | None | Unset_Type" = Unset,
         execution_date: "datetime | None | Unset_Type" = Unset,
-        id: "str | Unset_Type" = Unset,
+        id_: "str | Unset_Type" = Unset,
         input_file_ids: "list[str] | None | Unset_Type" = Unset,
         job_specific_outputs: "dict[str, object] | None | Unset_Type" = Unset,
         name: "str | None | Unset_Type" = Unset,
@@ -119,7 +119,7 @@ class GsaJob(ModelBase):
         submission_date: "datetime | None | Unset_Type" = Unset,
         submitter_name: "str | None | Unset_Type" = Unset,
         submitter_roles: "list[str] | None | Unset_Type" = Unset,
-        type: "str | None | Unset_Type" = Unset,
+        type_: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaJob - a model defined in Swagger
 
@@ -128,7 +128,7 @@ class GsaJob(ModelBase):
         completion_date: datetime | None, optional
         description: str | None, optional
         execution_date: datetime | None, optional
-        id: str, optional
+        id_: str, optional
         input_file_ids: list[str] | None, optional
         job_specific_outputs: dict[str, object] | None, optional
         name: str | None, optional
@@ -139,12 +139,12 @@ class GsaJob(ModelBase):
         submission_date: datetime | None, optional
         submitter_name: str | None, optional
         submitter_roles: list[str] | None, optional
-        type: str | None, optional
+        type_: str | None, optional
         """
-        self._id: str | Unset_Type = Unset
+        self._id_: str | Unset_Type = Unset
         self._name: str | None | Unset_Type = Unset
         self._description: str | None | Unset_Type = Unset
-        self._type: str | None | Unset_Type = Unset
+        self._type_: str | None | Unset_Type = Unset
         self._submitter_name: str | None | Unset_Type = Unset
         self._submitter_roles: list[str] | None | Unset_Type = Unset
         self._submission_date: datetime | None | Unset_Type = Unset
@@ -157,14 +157,14 @@ class GsaJob(ModelBase):
         self._position: int | None | Unset_Type = Unset
         self._job_specific_outputs: dict[str, object] | None | Unset_Type = Unset
 
-        if id is not Unset:
-            self.id = id
+        if id_ is not Unset:
+            self.id_ = id_
         if name is not Unset:
             self.name = name
         if description is not Unset:
             self.description = description
-        if type is not Unset:
-            self.type = type
+        if type_ is not Unset:
+            self.type_ = type_
         if submitter_name is not Unset:
             self.submitter_name = submitter_name
         if submitter_roles is not Unset:
@@ -189,29 +189,29 @@ class GsaJob(ModelBase):
             self.job_specific_outputs = job_specific_outputs
 
     @property
-    def id(self) -> "str | Unset_Type":
-        """Gets the id of this GsaJob.
+    def id_(self) -> "str | Unset_Type":
+        """Gets the id_ of this GsaJob.
 
         Returns
         -------
         str | Unset_Type
-            The id of this GsaJob.
+            The id_ of this GsaJob.
         """
-        return self._id
+        return self._id_
 
-    @id.setter
-    def id(self, id: "str | Unset_Type") -> None:
-        """Sets the id of this GsaJob.
+    @id_.setter
+    def id_(self, id_: "str | Unset_Type") -> None:
+        """Sets the id_ of this GsaJob.
 
         Parameters
         ----------
-        id: str | Unset_Type
-            The id of this GsaJob.
+        id_: str | Unset_Type
+            The id_ of this GsaJob.
         """
         # Field is not nullable
-        if id is None:
-            raise ValueError("Invalid value for 'id', must not be 'None'")
-        self._id = id
+        if id_ is None:
+            raise ValueError("Invalid value for 'id_', must not be 'None'")
+        self._id_ = id_
 
     @property
     def name(self) -> "str | None | Unset_Type":
@@ -258,26 +258,26 @@ class GsaJob(ModelBase):
         self._description = description
 
     @property
-    def type(self) -> "str | None | Unset_Type":
-        """Gets the type of this GsaJob.
+    def type_(self) -> "str | None | Unset_Type":
+        """Gets the type_ of this GsaJob.
 
         Returns
         -------
         str | None | Unset_Type
-            The type of this GsaJob.
+            The type_ of this GsaJob.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "str | None | Unset_Type") -> None:
-        """Sets the type of this GsaJob.
+    @type_.setter
+    def type_(self, type_: "str | None | Unset_Type") -> None:
+        """Sets the type_ of this GsaJob.
 
         Parameters
         ----------
-        type: str | None | Unset_Type
-            The type of this GsaJob.
+        type_: str | None | Unset_Type
+            The type_ of this GsaJob.
         """
-        self._type = type
+        self._type_ = type_
 
     @property
     def submitter_name(self) -> "str | None | Unset_Type":

@@ -69,7 +69,7 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
     """
     swagger_types: dict[str, str] = {
         "parameter": "GsaObjectIdentifier",
-        "type": "GsaParameterConstraintType",
+        "type_": "GsaParameterConstraintType",
         "gte": "float",
         "lte": "float",
         "significant_figures": "int",
@@ -77,7 +77,7 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
 
     attribute_map: dict[str, str] = {
         "parameter": "parameter",
-        "type": "type",
+        "type_": "type",
         "gte": "gte",
         "lte": "lte",
         "significant_figures": "significantFigures",
@@ -91,7 +91,7 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
         self,
         *,
         parameter: "GsaObjectIdentifier",
-        type: "GsaParameterConstraintType" = GsaParameterConstraintType.NUMERIC,
+        type_: "GsaParameterConstraintType" = GsaParameterConstraintType.NUMERIC,
         gte: "float | None | Unset_Type" = Unset,
         lte: "float | None | Unset_Type" = Unset,
         significant_figures: "int | None | Unset_Type" = Unset,
@@ -101,12 +101,12 @@ class GsaNumericParameterConstraint(GsaParameterConstraint):
         Parameters
         ----------
         parameter: GsaObjectIdentifier
-        type: GsaParameterConstraintType
+        type_: GsaParameterConstraintType
         gte: float | None, optional
         lte: float | None, optional
         significant_figures: int | None, optional
         """
-        super().__init__(parameter=parameter, type=type)
+        super().__init__(parameter=parameter, type_=type_)
         self._gte: float | None | Unset_Type = Unset
         self._lte: float | None | Unset_Type = Unset
         self._significant_figures: int | None | Unset_Type = Unset

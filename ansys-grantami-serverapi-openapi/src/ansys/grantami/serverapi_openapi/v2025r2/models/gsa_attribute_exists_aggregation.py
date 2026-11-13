@@ -70,7 +70,7 @@ class GsaAttributeExistsAggregation(GsaAttributeAggregation):
     """
     swagger_types: dict[str, str] = {
         "attribute_aggregation_type": "GsaAttributeAggregationType",
-        "type": "GsaAggregationType",
+        "type_": "GsaAggregationType",
         "attribute_guid": "str",
         "attribute_identity": "int",
         "count": "int",
@@ -78,7 +78,7 @@ class GsaAttributeExistsAggregation(GsaAttributeAggregation):
 
     attribute_map: dict[str, str] = {
         "attribute_aggregation_type": "attributeAggregationType",
-        "type": "type",
+        "type_": "type",
         "attribute_guid": "attributeGuid",
         "attribute_identity": "attributeIdentity",
         "count": "count",
@@ -92,7 +92,7 @@ class GsaAttributeExistsAggregation(GsaAttributeAggregation):
         self,
         *,
         attribute_aggregation_type: "GsaAttributeAggregationType" = GsaAttributeAggregationType.EXISTS,
-        type: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
+        type_: "GsaAggregationType" = GsaAggregationType.ATTRIBUTE,
         attribute_guid: "str | None | Unset_Type" = Unset,
         attribute_identity: "int | None | Unset_Type" = Unset,
         count: "int | Unset_Type" = Unset,
@@ -102,14 +102,14 @@ class GsaAttributeExistsAggregation(GsaAttributeAggregation):
         Parameters
         ----------
         attribute_aggregation_type: GsaAttributeAggregationType
-        type: GsaAggregationType
+        type_: GsaAggregationType
         attribute_guid: str | None, optional
         attribute_identity: int | None, optional
         count: int, optional
         """
         super().__init__(
             attribute_aggregation_type=attribute_aggregation_type,
-            type=type,
+            type_=type_,
             attribute_guid=attribute_guid,
             attribute_identity=attribute_identity,
             count=count,

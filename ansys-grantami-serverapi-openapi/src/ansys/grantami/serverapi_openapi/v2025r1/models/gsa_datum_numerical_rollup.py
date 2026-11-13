@@ -66,13 +66,13 @@ class GsaDatumNumericalRollup(GsaDatumRollup):
         Name of the property used as discriminator for subtypes.
     """
     swagger_types: dict[str, str] = {
-        "type": "GsaDatumRollupType",
+        "type_": "GsaDatumRollupType",
         "value": "float",
         "unit": "GsaSlimUnit",
     }
 
     attribute_map: dict[str, str] = {
-        "type": "type",
+        "type_": "type",
         "value": "value",
         "unit": "unit",
     }
@@ -86,7 +86,7 @@ class GsaDatumNumericalRollup(GsaDatumRollup):
     def __init__(
         self,
         *,
-        type: "GsaDatumRollupType" = GsaDatumRollupType.NUMERICALROLLUP,
+        type_: "GsaDatumRollupType" = GsaDatumRollupType.NUMERICALROLLUP,
         value: "float",
         unit: "GsaSlimUnit | Unset_Type" = Unset,
     ) -> None:
@@ -94,11 +94,11 @@ class GsaDatumNumericalRollup(GsaDatumRollup):
 
         Parameters
         ----------
-        type: GsaDatumRollupType
+        type_: GsaDatumRollupType
         value: float
         unit: GsaSlimUnit, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._value: float
         self._unit: GsaSlimUnit | Unset_Type = Unset
 

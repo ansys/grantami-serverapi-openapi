@@ -65,13 +65,13 @@ class GsaRecordAncestorHistoryCriterion(GsaCriterion):
     """
     swagger_types: dict[str, str] = {
         "direct_parent_only": "bool",
-        "type": "GsaCriterionType",
+        "type_": "GsaCriterionType",
         "ancestor_history_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "direct_parent_only": "directParentOnly",
-        "type": "type",
+        "type_": "type",
         "ancestor_history_guid": "ancestorHistoryGuid",
     }
 
@@ -83,7 +83,7 @@ class GsaRecordAncestorHistoryCriterion(GsaCriterion):
         self,
         *,
         direct_parent_only: "bool",
-        type: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORHISTORY,
+        type_: "GsaCriterionType" = GsaCriterionType.RECORDANCESTORHISTORY,
         ancestor_history_guid: "str | None | Unset_Type" = Unset,
     ) -> None:
         """GsaRecordAncestorHistoryCriterion - a model defined in Swagger
@@ -91,10 +91,10 @@ class GsaRecordAncestorHistoryCriterion(GsaCriterion):
         Parameters
         ----------
         direct_parent_only: bool
-        type: GsaCriterionType
+        type_: GsaCriterionType
         ancestor_history_guid: str | None, optional
         """
-        super().__init__(type=type)
+        super().__init__(type_=type_)
         self._ancestor_history_guid: str | None | Unset_Type = Unset
         self._direct_parent_only: bool
 

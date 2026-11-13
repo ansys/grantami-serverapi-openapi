@@ -67,7 +67,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
     """
     swagger_types: dict[str, str] = {
         "name": "str",
-        "type": "GsaAttributeType",
+        "type_": "GsaAttributeType",
         "about_attribute": "GsaSlimEntity",
         "default_threshold_type": "GsaAttributeThresholdType",
         "display_full_table": "bool",
@@ -82,7 +82,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
 
     attribute_map: dict[str, str] = {
         "name": "name",
-        "type": "type",
+        "type_": "type",
         "about_attribute": "aboutAttribute",
         "default_threshold_type": "defaultThresholdType",
         "display_full_table": "displayFullTable",
@@ -106,7 +106,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         self,
         *,
         name: "str",
-        type: "GsaAttributeType" = GsaAttributeType.LINK,
+        type_: "GsaAttributeType" = GsaAttributeType.LINK,
         about_attribute: "GsaSlimEntity | Unset_Type" = Unset,
         default_threshold_type: "GsaAttributeThresholdType | Unset_Type" = Unset,
         display_full_table: "bool | Unset_Type" = Unset,
@@ -123,7 +123,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         Parameters
         ----------
         name: str
-        type: GsaAttributeType
+        type_: GsaAttributeType
         about_attribute: GsaSlimEntity, optional
         default_threshold_type: GsaAttributeThresholdType, optional
         display_full_table: bool, optional
@@ -137,7 +137,7 @@ class GsaCreateTabularAttribute(GsaCreateAttribute):
         """
         super().__init__(
             name=name,
-            type=type,
+            type_=type_,
             about_attribute=about_attribute,
             default_threshold_type=default_threshold_type,
             guid=guid,
