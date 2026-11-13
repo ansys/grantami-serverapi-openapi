@@ -65,13 +65,13 @@ class GsaXYChartTemplateParameterValue(ModelBase):
     swagger_types: dict[str, str] = {
         "guid": "str",
         "parameter_guid": "str",
-        "type": "GsaParameterValueType",
+        "type_": "GsaParameterValueType",
     }
 
     attribute_map: dict[str, str] = {
         "guid": "guid",
         "parameter_guid": "parameterGuid",
-        "type": "type",
+        "type_": "type",
     }
 
     subtype_mapping: dict[str, str] = {
@@ -90,7 +90,7 @@ class GsaXYChartTemplateParameterValue(ModelBase):
         *,
         guid: "str | None",
         parameter_guid: "str",
-        type: "GsaParameterValueType",
+        type_: "GsaParameterValueType",
     ) -> None:
         """GsaXYChartTemplateParameterValue - a model defined in Swagger
 
@@ -98,15 +98,15 @@ class GsaXYChartTemplateParameterValue(ModelBase):
         ----------
         guid: str | None
         parameter_guid: str
-        type: GsaParameterValueType
+        type_: GsaParameterValueType
         """
         self._parameter_guid: str
         self._guid: str | None
-        self._type: GsaParameterValueType
+        self._type_: GsaParameterValueType
 
         self.parameter_guid = parameter_guid
         self.guid = guid
-        self.type = type
+        self.type_ = type_
 
     @property
     def parameter_guid(self) -> "str":
@@ -162,32 +162,32 @@ class GsaXYChartTemplateParameterValue(ModelBase):
         self._guid = guid
 
     @property
-    def type(self) -> "GsaParameterValueType":
-        """Gets the type of this GsaXYChartTemplateParameterValue.
+    def type_(self) -> "GsaParameterValueType":
+        """Gets the type_ of this GsaXYChartTemplateParameterValue.
 
         Returns
         -------
         GsaParameterValueType
-            The type of this GsaXYChartTemplateParameterValue.
+            The type_ of this GsaXYChartTemplateParameterValue.
         """
-        return self._type
+        return self._type_
 
-    @type.setter
-    def type(self, type: "GsaParameterValueType") -> None:
-        """Sets the type of this GsaXYChartTemplateParameterValue.
+    @type_.setter
+    def type_(self, type_: "GsaParameterValueType") -> None:
+        """Sets the type_ of this GsaXYChartTemplateParameterValue.
 
         Parameters
         ----------
-        type: GsaParameterValueType
-            The type of this GsaXYChartTemplateParameterValue.
+        type_: GsaParameterValueType
+            The type_ of this GsaXYChartTemplateParameterValue.
         """
         # Field is not nullable
-        if type is None:
-            raise ValueError("Invalid value for 'type', must not be 'None'")
+        if type_ is None:
+            raise ValueError("Invalid value for 'type_', must not be 'None'")
         # Field is required
-        if type is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'type', must not be 'Unset'")
-        self._type = type
+        if type_ is Unset:  # type: ignore[comparison-overlap, unused-ignore]
+            raise ValueError("Invalid value for 'type_', must not be 'Unset'")
+        self._type_ = type_
 
     @classmethod
     def get_real_child_model(cls, data: dict[str, str]) -> str:
