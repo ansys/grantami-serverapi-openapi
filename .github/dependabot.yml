@@ -20,6 +20,10 @@ updates:
     labels:
       - "maintenance"
       - "dependencies"
+    groups:
+       actions:
+          patterns:
+            - "*"
 
   - package-ecosystem: "uv" # See documentation for possible values
     directory: "/ansys-grantami-serverapi-openapi/" # Location of package manifests
@@ -28,3 +32,9 @@ updates:
     labels:
       - "maintenance"
       - "dependencies"
+    groups:
+      dev-deps:
+        patterns:
+        - "pytest*"
+        - "mypy"
+        - "requests-mock"

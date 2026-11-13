@@ -191,6 +191,9 @@ from .gsa_boost_by_identity import GsaBoostByIdentity
 from .gsa_bracket_mismatch_unit_equation_error_detail import (
     GsaBracketMismatchUnitEquationErrorDetail,
 )
+from .gsa_breadcrumb import GsaBreadcrumb
+from .gsa_breadcrumb_type import GsaBreadcrumbType
+from .gsa_breadcrumbs_property import GsaBreadcrumbsProperty
 from .gsa_bulk_info import GsaBulkInfo
 from .gsa_bulk_request import GsaBulkRequest
 from .gsa_bulk_request_http_method import GsaBulkRequestHttpMethod
@@ -205,6 +208,9 @@ from .gsa_cannot_create_unavailable_tabular_column_attribute_error_detail import
 )
 from .gsa_cannot_delete_tabular_column_attribute_error_detail import (
     GsaCannotDeleteTabularColumnAttributeErrorDetail,
+)
+from .gsa_cannot_remove_parameter_in_use_attribute_error_detail import (
+    GsaCannotRemoveParameterInUseAttributeErrorDetail,
 )
 from .gsa_category_replace_permission_category_error_detail import (
     GsaCategoryReplacePermissionCategoryErrorDetail,
@@ -1048,6 +1054,9 @@ from .gsa_no_such_new_parent_folder_move_error_detail import GsaNoSuchNewParentF
 from .gsa_no_such_parameter_value_parameter_content_error_detail import (
     GsaNoSuchParameterValueParameterContentErrorDetail,
 )
+from .gsa_no_such_parent_table_access_control_entities_error_detail import (
+    GsaNoSuchParentTableAccessControlEntitiesErrorDetail,
+)
 from .gsa_no_such_permission_access_control_error_detail import (
     GsaNoSuchPermissionAccessControlErrorDetail,
 )
@@ -1396,6 +1405,7 @@ from .gsa_replacement_string import GsaReplacementString
 from .gsa_replacement_strings_info import GsaReplacementStringsInfo
 from .gsa_resolve_link_targets_info import GsaResolveLinkTargetsInfo
 from .gsa_resolve_link_targets_request import GsaResolveLinkTargetsRequest
+from .gsa_resolved_breadcrumb import GsaResolvedBreadcrumb
 from .gsa_resolved_link_target import GsaResolvedLinkTarget
 from .gsa_resolved_target_attribute import GsaResolvedTargetAttribute
 from .gsa_response_options import GsaResponseOptions
@@ -1684,6 +1694,7 @@ from .gsa_unknown_unit_symbol_unit_equation_error_detail import (
     GsaUnknownUnitSymbolUnitEquationErrorDetail,
 )
 from .gsa_unresolved_attribute_guids_error_detail import GsaUnresolvedAttributeGuidsErrorDetail
+from .gsa_unresolved_breadcrumb import GsaUnresolvedBreadcrumb
 from .gsa_unresolved_cross_database_record_link_group_guids_error_detail import (
     GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail,
 )
@@ -1854,6 +1865,9 @@ from .gsa_version_state_property import GsaVersionStateProperty
 from .gsa_weighting_type import GsaWeightingType
 from .gsa_withdraw_record_version_control_exception import GsaWithdrawRecordVersionControlException
 from .gsa_xy_chart_template import GsaXYChartTemplate
+from .gsa_xy_chart_template_discrete_parameter_value import GsaXYChartTemplateDiscreteParameterValue
+from .gsa_xy_chart_template_numeric_parameter_value import GsaXYChartTemplateNumericParameterValue
+from .gsa_xy_chart_template_parameter_value import GsaXYChartTemplateParameterValue
 from .gsa_xy_chart_template_usage_data_modification_error_detail import (
     GsaXYChartTemplateUsageDataModificationErrorDetail,
 )
@@ -1993,6 +2007,9 @@ __all__ = [
     "GsaBoostByGuid",
     "GsaBoostByIdentity",
     "GsaBracketMismatchUnitEquationErrorDetail",
+    "GsaBreadcrumb",
+    "GsaBreadcrumbType",
+    "GsaBreadcrumbsProperty",
     "GsaBulkInfo",
     "GsaBulkRequest",
     "GsaBulkRequestHttpMethod",
@@ -2002,6 +2019,7 @@ __all__ = [
     "GsaCannotChangeDiscreteTypeAttributeErrorDetail",
     "GsaCannotCreateUnavailableTabularColumnAttributeErrorDetail",
     "GsaCannotDeleteTabularColumnAttributeErrorDetail",
+    "GsaCannotRemoveParameterInUseAttributeErrorDetail",
     "GsaCategoryReplacePermissionCategoryErrorDetail",
     "GsaChartData",
     "GsaChartDataType",
@@ -2660,6 +2678,7 @@ __all__ = [
     "GsaNoSuchNewParentFileMoveErrorDetail",
     "GsaNoSuchNewParentFolderMoveErrorDetail",
     "GsaNoSuchParameterValueParameterContentErrorDetail",
+    "GsaNoSuchParentTableAccessControlEntitiesErrorDetail",
     "GsaNoSuchPermissionAccessControlErrorDetail",
     "GsaNoSuchPermissionsPermissionCategoryErrorDetail",
     "GsaNoSuchSubsetAccessControlEntitiesErrorDetail",
@@ -2938,6 +2957,7 @@ __all__ = [
     "GsaReplacementStringsInfo",
     "GsaResolveLinkTargetsInfo",
     "GsaResolveLinkTargetsRequest",
+    "GsaResolvedBreadcrumb",
     "GsaResolvedLinkTarget",
     "GsaResolvedTargetAttribute",
     "GsaResponseOptions",
@@ -3172,6 +3192,7 @@ __all__ = [
     "GsaUnitsInfo",
     "GsaUnknownUnitSymbolUnitEquationErrorDetail",
     "GsaUnresolvedAttributeGuidsErrorDetail",
+    "GsaUnresolvedBreadcrumb",
     "GsaUnresolvedCrossDatabaseRecordLinkGroupGuidsErrorDetail",
     "GsaUnresolvedParameterGuidsErrorDetail",
     "GsaUnresolvedRecordLinkGroupGuidsErrorDetail",
@@ -3310,6 +3331,9 @@ __all__ = [
     "GsaWeightingType",
     "GsaWithdrawRecordVersionControlException",
     "GsaXYChartTemplate",
+    "GsaXYChartTemplateDiscreteParameterValue",
+    "GsaXYChartTemplateNumericParameterValue",
+    "GsaXYChartTemplateParameterValue",
     "GsaXYChartTemplateUsageDataModificationErrorDetail",
     "GsaXYChartTemplatesInfo",
     "GsaXYTemplateAxis",

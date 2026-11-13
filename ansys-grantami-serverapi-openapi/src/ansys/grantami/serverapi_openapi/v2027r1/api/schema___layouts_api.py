@@ -49,7 +49,12 @@ class SchemaLayoutsApi(ApiBase):
     """
 
     def applications(
-        self, *, database_key: "str", table_guid: "str"
+        self,
+        *,
+        database_key: "str",
+        table_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
     ) -> "GsaApplicationsInfo | None":
         """Returns applications that are either MI Applications, or in use in layouts in this table.  Can be used as applicable applications for layouts.
 
@@ -61,22 +66,33 @@ class SchemaLayoutsApi(ApiBase):
             See [Schema - Databases/GetAllDatabases](#/Schema%20-%20Databases/GetAllDatabases)
         table_guid: str
             See [Schema - Tables/GetTables](#/Schema%20-%20Tables/GetTables) or [Schema - Tables/QueryTables](#/Schema%20-%20Tables/QueryTables)
+        mode: str
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the header.
+        x_ansys_vc_mode: str
+            The version control mode.  - If set to read, uses the latest version of records and tables available in read mode.  - If set to write, uses the latest version of records and tables available in write mode, and will error if the user does not have write access to the database.  - If not provided, defaults to write mode if the user is allowed to see that.  Can also be set in the query string.
 
         Returns
         -------
         GsaApplicationsInfo | None
         """
         data = self._applications_with_http_info(
-            database_key, table_guid, _return_http_data_only=True
+            database_key, table_guid, mode, x_ansys_vc_mode, _return_http_data_only=True
         )
         return data  # type: ignore[no-any-return]
 
     def _applications_with_http_info(
-        self, database_key: "str", table_guid: "str", **kwargs: Any
+        self,
+        database_key: "str",
+        table_guid: "str",
+        mode: "Optional[str]" = None,
+        x_ansys_vc_mode: "Optional[str]" = None,
+        **kwargs: Any,
     ) -> Any:
         all_params = [
             "database_key",
             "table_guid",
+            "mode",
+            "x_ansys_vc_mode",
             "_return_http_data_only",
             "_preload_content",
             "_request_timeout",
@@ -110,8 +126,12 @@ class SchemaLayoutsApi(ApiBase):
             path_params["table-guid"] = params["table_guid"]
 
         query_params: list[Any] = []
+        if "mode" in params and mode is not None:
+            query_params.append(("mode", params["mode"]))
 
         header_params: dict[str, Any] = {}
+        if "x_ansys_vc_mode" in params and x_ansys_vc_mode is not None:
+            header_params["X-Ansys-VC-Mode"] = params["x_ansys_vc_mode"]
 
         form_params: list[Any] = []
         local_var_files: dict[str, Any] = {}

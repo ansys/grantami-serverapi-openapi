@@ -44,3 +44,4 @@ class GsaPermissionBasedAccessControlEntitiesErrorReason(Enum):
     """
     NOSUCHENTITIES = "noSuchEntities"
     NOSUCHSUBSET = "noSuchSubset"
+    NOSUCHPARENTTABLE = "noSuchParentTable"

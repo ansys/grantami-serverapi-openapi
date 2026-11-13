@@ -68,6 +68,7 @@ class GsaXYTemplateAxis(ModelBase):
         "auto_scale": "bool",
         "bounds": "GsaDataExportRange",
         "logarithmic": "bool",
+        "parameter_values": "list[GsaXYChartTemplateParameterValue]",
     }
 
     attribute_map: dict[str, str] = {
@@ -78,9 +79,11 @@ class GsaXYTemplateAxis(ModelBase):
         "auto_scale": "autoScale",
         "bounds": "bounds",
         "logarithmic": "logarithmic",
+        "parameter_values": "parameterValues",
     }
 
     subtype_mapping: dict[str, str] = {
+        "parameterValues": "GsaXYChartTemplateParameterValue",
         "bounds": "GsaDataExportRange",
         "attributeUnit": "GsaUnit",
     }
@@ -97,6 +100,7 @@ class GsaXYTemplateAxis(ModelBase):
         auto_scale: "bool | Unset_Type" = Unset,
         bounds: "GsaDataExportRange | Unset_Type" = Unset,
         logarithmic: "bool | Unset_Type" = Unset,
+        parameter_values: "list[GsaXYChartTemplateParameterValue] | None | Unset_Type" = Unset,
     ) -> None:
         """GsaXYTemplateAxis - a model defined in Swagger
 
@@ -109,7 +113,9 @@ class GsaXYTemplateAxis(ModelBase):
         auto_scale: bool, optional
         bounds: GsaDataExportRange, optional
         logarithmic: bool, optional
+        parameter_values: list[GsaXYChartTemplateParameterValue] | None, optional
         """
+        self._parameter_values: list[GsaXYChartTemplateParameterValue] | None | Unset_Type = Unset
         self._attribute_guid: str | Unset_Type = Unset
         self._logarithmic: bool | Unset_Type = Unset
         self._bounds: GsaDataExportRange | Unset_Type = Unset
@@ -118,6 +124,8 @@ class GsaXYTemplateAxis(ModelBase):
         self._name: str
         self._guid: str
 
+        if parameter_values is not Unset:
+            self.parameter_values = parameter_values
         if attribute_guid is not Unset:
             self.attribute_guid = attribute_guid
         if logarithmic is not Unset:
@@ -130,6 +138,30 @@ class GsaXYTemplateAxis(ModelBase):
             self.auto_scale = auto_scale
         self.name = name
         self.guid = guid
+
+    @property
+    def parameter_values(self) -> "list[GsaXYChartTemplateParameterValue] | None | Unset_Type":
+        """Gets the parameter_values of this GsaXYTemplateAxis.
+
+        Returns
+        -------
+        list[GsaXYChartTemplateParameterValue] | None | Unset_Type
+            The parameter_values of this GsaXYTemplateAxis.
+        """
+        return self._parameter_values
+
+    @parameter_values.setter
+    def parameter_values(
+        self, parameter_values: "list[GsaXYChartTemplateParameterValue] | None | Unset_Type"
+    ) -> None:
+        """Sets the parameter_values of this GsaXYTemplateAxis.
+
+        Parameters
+        ----------
+        parameter_values: list[GsaXYChartTemplateParameterValue] | None | Unset_Type
+            The parameter_values of this GsaXYTemplateAxis.
+        """
+        self._parameter_values = parameter_values
 
     @property
     def attribute_guid(self) -> "str | Unset_Type":

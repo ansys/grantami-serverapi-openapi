@@ -69,14 +69,12 @@ class GsaRecordVersionAccessControlEntity(GsaAccessControlEntity):
     """
     swagger_types: dict[str, str] = {
         "entity_type": "GsaAccessControlEntityType",
-        "record_history_guid": "str",
         "record_version_guid": "str",
         "table_guid": "str",
     }
 
     attribute_map: dict[str, str] = {
         "entity_type": "entityType",
-        "record_history_guid": "recordHistoryGuid",
         "record_version_guid": "recordVersionGuid",
         "table_guid": "tableGuid",
     }
@@ -89,7 +87,6 @@ class GsaRecordVersionAccessControlEntity(GsaAccessControlEntity):
         self,
         *,
         entity_type: "GsaAccessControlEntityType" = GsaAccessControlEntityType.RECORDVERSION,
-        record_history_guid: "str",
         record_version_guid: "str",
         table_guid: "str",
     ) -> None:
@@ -98,17 +95,14 @@ class GsaRecordVersionAccessControlEntity(GsaAccessControlEntity):
         Parameters
         ----------
         entity_type: GsaAccessControlEntityType
-        record_history_guid: str
         record_version_guid: str
         table_guid: str
         """
         super().__init__(entity_type=entity_type)
         self._table_guid: str
-        self._record_history_guid: str
         self._record_version_guid: str
 
         self.table_guid = table_guid
-        self.record_history_guid = record_history_guid
         self.record_version_guid = record_version_guid
 
     @property
@@ -138,34 +132,6 @@ class GsaRecordVersionAccessControlEntity(GsaAccessControlEntity):
         if table_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
             raise ValueError("Invalid value for 'table_guid', must not be 'Unset'")
         self._table_guid = table_guid
-
-    @property
-    def record_history_guid(self) -> "str":
-        """Gets the record_history_guid of this GsaRecordVersionAccessControlEntity.
-
-        Returns
-        -------
-        str
-            The record_history_guid of this GsaRecordVersionAccessControlEntity.
-        """
-        return self._record_history_guid
-
-    @record_history_guid.setter
-    def record_history_guid(self, record_history_guid: "str") -> None:
-        """Sets the record_history_guid of this GsaRecordVersionAccessControlEntity.
-
-        Parameters
-        ----------
-        record_history_guid: str
-            The record_history_guid of this GsaRecordVersionAccessControlEntity.
-        """
-        # Field is not nullable
-        if record_history_guid is None:
-            raise ValueError("Invalid value for 'record_history_guid', must not be 'None'")
-        # Field is required
-        if record_history_guid is Unset:  # type: ignore[comparison-overlap, unused-ignore]
-            raise ValueError("Invalid value for 'record_history_guid', must not be 'Unset'")
-        self._record_history_guid = record_history_guid
 
     @property
     def record_version_guid(self) -> "str":
